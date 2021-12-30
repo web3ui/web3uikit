@@ -2,60 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import buttonStyles from "./Button.styles";
 import Icon from "../../components/Icon/Icon";
-import { iconTypes } from "../../components/Icon/collection";
-
-interface Props {
-	/**
-	 * The button ID will generated if not assigned
-	 */
-	id?: string;
-
-	/**
-	 * the function to be called on click
-	 */
-	onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-
-	/**
-	 * set the button to be interactive, or not
-	 */
-	disabled?: boolean;
-
-	/**
-	 * What size should the button be
-	 */
-	size?: "small" | "regular" | "large";
-
-	/**
-	 * The text to display in the button
-	 */
-	text?: string;
-
-	/**
-	 * Set the color to show its importance to the user
-	 */
-	theme?: "primary" | "outline" | "secondary" | "colored";
-
-	/**
-	 * If 'theme' is set to 'colored', you can choose the color from these options
-	 */
-	color?: "blue" | "green" | "yellow" | "red";
-
-	/**
-	 * Set the HTML button type for form interaction
-	 */
-	type?: "button" | "submit" | "reset";
-
-	/**
-	 * set an icon to show inside the button
-	 * import { iconTypes } from "../../components/Icon/collection"
-	 */
-	icon?: iconTypes;
-
-	/**
-	 * set an icon position, or maybe show only the icon
-	 */
-	iconLayout?: "leading" | "trailing" | "icon-only";
-}
+import { ButtonProps } from ".";
 
 const getThemeStyles = (theme: string) => {
 	switch (theme) {
@@ -128,7 +75,7 @@ const iconOnlyBorderFix = (theme: string) => {
 };
 
 const ButtonStyled = styled.button<
-	Pick<Props, "theme" | "iconLayout" | "size" | "color">
+	Pick<ButtonProps, "theme" | "iconLayout" | "size" | "color">
 >`
 	${buttonStyles.initialStyles}
 
@@ -144,7 +91,7 @@ const ButtonStyled = styled.button<
   ${(p) => p.iconLayout === "icon-only" && iconOnlyBorderFix(p.theme)}
 `;
 
-const Button: React.FC<Props> = ({
+const Button: React.FC<ButtonProps> = ({
 	color,
 	disabled = false,
 	icon,
@@ -155,7 +102,7 @@ const Button: React.FC<Props> = ({
 	text = "click",
 	theme,
 	type = "button",
-}: Props) => {
+}: ButtonProps) => {
 	return (
 		<ButtonStyled
 			color={color}

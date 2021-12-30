@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@rollup/plugin-typescript": "^8.3.0",
 		"@storybook/addon-docs": "^6.4.0",
 		"@storybook/testing-react": "^1.2.1",
 		"@testing-library/jest-dom": "^5.14.1",
@@ -23,6 +24,7 @@
 		"react-dom": "^17.0.2",
 		"react-scripts": "5.0.0",
 		"react-test-renderer": "^17.0.2",
+		"rollup": "^2.62.0",
 		"storybook-addon-rtl": "^0.4.2",
 		"styled-components": "^5.3.3",
 		"styled-normalize": "^8.0.7",
@@ -31,11 +33,12 @@
 	},
 	"scripts": {
 		"start": "start-storybook -p 6006 -s public",
-		"build": "build-storybook -s public",
+		"build": "rollup -c",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"storybook": "start-storybook -p 6006 -s public",
-		"build-storybook": "build-storybook -s public"
+		"build-storybook": "build-storybook -s public",
+		"prepare": "npm run build"
 	},
 	"eslintConfig": {
 		"extends": [

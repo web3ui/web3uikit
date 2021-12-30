@@ -1,14 +1,16 @@
+import React from 'react';
+
 const calendarIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>calendar icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>calendar icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -33,6 +35,6 @@ const calendarIcon = (fill: string, size: number) => (
       d="M4 10.3636C4 9.91177 4.35817 9.54545 4.8 9.54545H19.2C19.6418 9.54545 20 9.91177 20 10.3636C20 10.8155 19.6418 11.1818 19.2 11.1818H4.8C4.35817 11.1818 4 10.8155 4 10.3636Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default calendarIcon;

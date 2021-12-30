@@ -1,14 +1,16 @@
+import React from 'react';
+
 const networkIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>network icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>network icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -39,6 +41,6 @@ const networkIcon = (fill: string, size: number) => (
       d="M12 19.3636C12.4519 19.3636 12.8182 18.9973 12.8182 18.5455C12.8182 18.0936 12.4519 17.7273 12 17.7273C11.5481 17.7273 11.1818 18.0936 11.1818 18.5455C11.1818 18.9973 11.5481 19.3636 12 19.3636ZM12 21C13.3556 21 14.4545 19.9011 14.4545 18.5455C14.4545 17.1898 13.3556 16.0909 12 16.0909C10.6444 16.0909 9.54545 17.1898 9.54545 18.5455C9.54545 19.9011 10.6444 21 12 21Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default networkIcon;

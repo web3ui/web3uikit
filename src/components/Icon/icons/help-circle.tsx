@@ -1,14 +1,16 @@
+import React from 'react';
+
 const helpCircleIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>help circle icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>help circle icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -27,6 +29,6 @@ const helpCircleIcon = (fill: string, size: number) => (
       d="M11.1954 16.5977C11.1954 16.1533 11.5556 15.7931 12 15.7931H12.0092C12.4536 15.7931 12.8138 16.1533 12.8138 16.5977C12.8138 17.0421 12.4536 17.4023 12.0092 17.4023H12C11.5556 17.4023 11.1954 17.0421 11.1954 16.5977Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default helpCircleIcon;

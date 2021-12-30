@@ -1,14 +1,16 @@
+import React from 'react';
+
 const serverIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>server icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>server icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -19,6 +21,6 @@ const serverIcon = (fill: string, size: number) => (
       d="M9.5 7.09091C9.5 7.54278 9.86631 7.90909 10.3182 7.90909H10.3264C10.7782 7.90909 11.1445 7.54278 11.1445 7.09091C11.1445 6.63904 10.7782 6.27272 10.3264 6.27272H10.3182C9.86631 6.27272 9.5 6.63904 9.5 7.09091Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default serverIcon;

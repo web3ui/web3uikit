@@ -1,3 +1,5 @@
+import React from 'react';
+
 const arrowCircleRightIcon = (fill: string, size: number) => (
   <svg
     aria-hidden="true"
@@ -16,5 +18,5 @@ const arrowCircleRightIcon = (fill: string, size: number) => (
       fill={fill}
     />
   </svg>
-)
+);
 export default arrowCircleRightIcon;

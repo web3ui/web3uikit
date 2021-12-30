@@ -1,14 +1,16 @@
+import React from 'react';
+
 const bellIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>bell icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>bell icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -19,6 +21,6 @@ const bellIcon = (fill: string, size: number) => (
       d="M12 22C13.3276 22 14.3896 20.9609 14.3896 19.625H9.57246C9.57246 20.9609 10.6345 22 12 22Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default bellIcon;

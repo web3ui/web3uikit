@@ -1,14 +1,16 @@
+import React from 'react';
+
 const copyIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>copy icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>copy icon</title>
     <path
       d="M13.306 14.501H8.29229C7.82031 14.501 7.44629 14.1256 7.44629 13.6717C7.44629 13.2177 7.82922 12.8424 8.29229 12.8424H13.3149C13.7868 12.8424 14.1609 13.2177 14.1609 13.6717C14.1609 14.1256 13.7779 14.501 13.306 14.501Z"
       fill={fill}
@@ -29,6 +31,6 @@ const copyIcon = (fill: string, size: number) => (
       d="M18.3907 18.6652H16.7522C16.2802 18.6652 15.9062 18.2898 15.9062 17.8358C15.9062 17.3819 16.2891 17.0065 16.7522 17.0065H18.3907C18.8894 17.0065 19.2991 16.6049 19.2991 16.1161V4.55783C19.2991 4.06896 18.8894 3.66739 18.3907 3.66739H10.0109C9.51217 3.66739 9.10253 4.06896 9.10253 4.55783V6.16411C9.10253 6.62679 8.7196 6.99344 8.25653 6.99344C7.79346 6.99344 7.40162 6.62679 7.40162 6.16411V4.55783C7.40162 3.15233 8.56821 2 10.0109 2H18.3907C19.8334 2 21 3.15233 21 4.55783V16.1073C21 17.5216 19.8245 18.6652 18.3907 18.6652Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default copyIcon;

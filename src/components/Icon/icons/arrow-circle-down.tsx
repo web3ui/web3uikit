@@ -1,3 +1,5 @@
+import React from 'react';
+
 const arrowCircleDownIcon = (fill: string, size: number) => (
   <svg
     aria-hidden="true"
@@ -8,7 +10,7 @@ const arrowCircleDownIcon = (fill: string, size: number) => (
     width={size}
     xmlns="http://www.w3.org/2000/svg"
   >
-  <title>Arrow circle down icon</title>
+    <title>Arrow circle down icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -16,5 +18,5 @@ const arrowCircleDownIcon = (fill: string, size: number) => (
       fill={fill}
     />
   </svg>
-)
+);
 export default arrowCircleDownIcon;

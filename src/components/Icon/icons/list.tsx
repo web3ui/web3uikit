@@ -1,14 +1,16 @@
+import React from 'react';
+
 const listIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>list icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>list icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -45,6 +47,6 @@ const listIcon = (fill: string, size: number) => (
       d="M2 18C2 17.4477 2.44772 17 3 17H3.01C3.56228 17 4.01 17.4477 4.01 18C4.01 18.5523 3.56228 19 3.01 19H3C2.44772 19 2 18.5523 2 18Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default listIcon;

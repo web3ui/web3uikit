@@ -1,14 +1,16 @@
+import React from 'react';
+
 const minimizeIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>minimize icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>minimize icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -33,6 +35,6 @@ const minimizeIcon = (fill: string, size: number) => (
       d="M10.7397 13.2603C11.0868 13.6075 11.0868 14.1703 10.7397 14.5174L4.51743 20.7397C4.1703 21.0868 3.60748 21.0868 3.26035 20.7397C2.91322 20.3925 2.91322 19.8297 3.26035 19.4826L9.48257 13.2603C9.8297 12.9132 10.3925 12.9132 10.7397 13.2603Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default minimizeIcon;

@@ -3,32 +3,11 @@ import styled from "styled-components";
 import resetCSS from "../../styles/reset";
 import color from "../../styles/colors";
 import fonts from "../../styles/fonts";
-import Icon from "../../components/Icon/Icon";
-import { iconTypes } from "../../components/Icon/collection";
+import Icon from "../Icon/Icon";
+import { iconTypes } from "../Icon/collection";
+import { LinkToProps } from "./types";
 
-interface Props {
-	/**
-	 * what is the address you are linking to
-	 */
-	address: string;
-
-	/**
-	 * You can set custom text to the link, or leave blank to see the address
-	 */
-	text?: string;
-
-	/**
-	 * set to an email link or a link to another website
-	 */
-	type: "email" | "external";
-
-	/**
-	 * set the position of the icon, or icon only
-	 */
-	iconLayout?: "leading" | "trailing";
-}
-
-const LinkStyled = styled.a<Pick<Props, "iconLayout">>`
+const LinkStyled = styled.a<Pick<LinkToProps, "iconLayout">>`
 	${resetCSS}
 	${fonts.text}
   align-items: center;
@@ -58,7 +37,7 @@ const LinkStyled = styled.a<Pick<Props, "iconLayout">>`
 	}
 `;
 
-const LinkTo: React.FC<Props> = ({
+const LinkTo: React.FC<LinkToProps> = ({
 	address,
 	text,
 	type,

@@ -1,14 +1,16 @@
+import React from 'react';
+
 const xCircleIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>x circle icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>x circle icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -23,6 +25,6 @@ const xCircleIcon = (fill: string, size: number) => (
       d="M9.30664 15.7989C8.98712 16.1184 8.46907 16.1184 8.14955 15.7989C7.83003 15.4794 7.83003 14.9613 8.14955 14.6418L11.4223 11.3691C11.7418 11.0496 12.2598 11.0496 12.5794 11.3691L15.8521 14.6418C16.1716 14.9613 16.1716 15.4794 15.8521 15.7989C15.5326 16.1184 15.0145 16.1184 14.695 15.7989L12.0008 13.1047L9.30664 15.7989Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default xCircleIcon;

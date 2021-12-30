@@ -1,14 +1,16 @@
+import React from 'react';
+
 const eyeClosedIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>eye closed icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>eye closed icon</title>
     <path
       d="M16 12C16 9.79 14.21 8 12 8C11.94 8 11.89 8.01 11.83 8.02L15.98 12.17C15.99 12.11 16 12.06 16 12Z"
       fill={fill}
@@ -29,6 +31,6 @@ const eyeClosedIcon = (fill: string, size: number) => (
       d="M15.66 13.61L11.99 9.95L10.05 8.01L8.83 6.78L7.05 5C6.56 4.51 5.77 4.51 5.28 5C4.8 5.49 4.8 6.27 5.27 6.76L5.28 6.77L6.7 8.18L17.54 19.02C17.78 19.26 18.1 19.39 18.42 19.39C18.74 19.39 19.06 19.27 19.3 19.02C19.79 18.53 19.79 17.74 19.3 17.25L15.66 13.61Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default eyeClosedIcon;

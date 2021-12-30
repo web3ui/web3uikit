@@ -1,14 +1,16 @@
+import React from 'react';
+
 const pinIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>pin icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>pin icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -21,6 +23,6 @@ const pinIcon = (fill: string, size: number) => (
       d="M12 8.875C11.1025 8.875 10.375 9.60254 10.375 10.5C10.375 11.3975 11.1025 12.125 12 12.125C12.8975 12.125 13.625 11.3975 13.625 10.5C13.625 9.60254 12.8975 8.875 12 8.875ZM8.625 10.5C8.625 8.63604 10.136 7.125 12 7.125C13.864 7.125 15.375 8.63604 15.375 10.5C15.375 12.364 13.864 13.875 12 13.875C10.136 13.875 8.625 12.364 8.625 10.5Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default pinIcon;

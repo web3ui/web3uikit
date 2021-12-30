@@ -1,3 +1,5 @@
+import React from "react";
+
 const userIcon = (fill: string, size: number) => (
 	<svg
 		aria-hidden="true"

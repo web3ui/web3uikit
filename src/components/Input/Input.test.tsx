@@ -5,6 +5,7 @@ import "jest-styled-components";
 import { composeStories } from "@storybook/testing-react";
 import * as stories from "./Input.stories";
 import color from "../../styles/colors";
+import React from "react";
 
 const {
 	EmailInput,

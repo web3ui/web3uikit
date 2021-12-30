@@ -3,13 +3,9 @@ module.exports = {
     "../src/**/*.stories.mdx",
     "../src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
-  "addons": [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/preset-create-react-app"
-  ],
-  "framework": "@storybook/react",
-  "core": {
-    "builder": "webpack5"
+  addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+  // https://storybook.js.org/docs/react/configure/typescript#mainjs-configuration
+  typescript: {
+    check: true, // type-check stories during Storybook build
   }
-}
+};

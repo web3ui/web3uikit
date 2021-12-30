@@ -1,14 +1,16 @@
+import React from 'react';
+
 const testnetIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>testnet icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>testnet icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -39,6 +41,6 @@ const testnetIcon = (fill: string, size: number) => (
       d="M6.27273 16.9091C6.27273 16.4572 6.63904 16.0909 7.09091 16.0909H7.09909C7.55096 16.0909 7.91727 16.4572 7.91727 16.9091C7.91727 17.361 7.55096 17.7273 7.09909 17.7273H7.09091C6.63904 17.7273 6.27273 17.361 6.27273 16.9091Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default testnetIcon;

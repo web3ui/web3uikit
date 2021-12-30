@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom";
+import React from 'react';
 import { fireEvent } from "@testing-library/react";
 import { composeStories } from "@storybook/testing-react";
 import * as stories from "./Button.stories";

@@ -1,14 +1,16 @@
+import React from 'react';
+
 const maximizeIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>maximize icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>maximize icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -33,6 +35,6 @@ const maximizeIcon = (fill: string, size: number) => (
       d="M10.8364 13.1636C11.1879 13.5151 11.1879 14.0849 10.8364 14.4364L4.5364 20.7364C4.18492 21.0879 3.61508 21.0879 3.2636 20.7364C2.91213 20.3849 2.91213 19.8151 3.2636 19.4636L9.5636 13.1636C9.91508 12.8121 10.4849 12.8121 10.8364 13.1636Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default maximizeIcon;

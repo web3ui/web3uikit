@@ -3,33 +3,7 @@ import styled from "styled-components";
 import bannerStripStyles from "./BannerStrip.styles";
 import color from "../../styles/colors";
 import fonts from "../../styles/fonts";
-
-interface Props {
-	/**
-	 * please add the text you want to show in the banner
-	 */
-	text: string;
-
-	/**
-	 * you can set the type of banner which changes its color
-	 */
-	type?: "error" | "standard" | "success" | "warning";
-
-	/**
-	 * do you want to display a button
-	 */
-	buttonDisplayed?: boolean;
-
-	/**
-	 * a function that will be called if the button is clicked
-	 */
-	buttonClickEvent?: () => void;
-
-	/**
-	 * if you are showing a button, you can set the text of the button in the banner
-	 */
-	buttonText?: string;
-}
+import { BannerStripProps } from ".";
 
 const getBackgroundColor = (type: string) => {
 	switch (type) {
@@ -40,11 +14,11 @@ const getBackgroundColor = (type: string) => {
 		case "error":
 			return color.red;
 		default:
-			return color.blue;
+			return color.blue;  
 	}
 };
 
-const Section = styled.section<Pick<Props, "type">>`
+const Section = styled.section<Pick<BannerStripProps, "type">>`
 	${fonts.text}
 	${bannerStripStyles.section}
   background-color: ${(p) => p.type && getBackgroundColor(p.type)};
@@ -55,7 +29,7 @@ const Button = styled.button`
 	${bannerStripStyles.button}
 `;
 
-const BannerStrip: React.FC<Props> = ({
+const BannerStrip: React.FC<BannerStripProps> = ({
 	buttonClickEvent,
 	buttonDisplayed = false,
 	buttonText = "ok",

@@ -1,14 +1,16 @@
+import React from 'react';
+
 const fileIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>file icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>file icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -21,6 +23,6 @@ const fileIcon = (fill: string, size: number) => (
       d="M12.9014 2C13.337 2 13.6901 2.36023 13.6901 2.8046V8.43678H19.2113C19.6469 8.43678 20 8.79701 20 9.24138C20 9.68575 19.6469 10.046 19.2113 10.046H12.9014C12.4658 10.046 12.1127 9.68575 12.1127 9.24138V2.8046C12.1127 2.36023 12.4658 2 12.9014 2Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default fileIcon;

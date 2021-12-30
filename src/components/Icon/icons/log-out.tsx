@@ -1,14 +1,16 @@
+import React from 'react';
+
 const logOutIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>log out icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>log out icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -27,6 +29,6 @@ const logOutIcon = (fill: string, size: number) => (
       d="M11.125 12C11.125 11.5168 11.5168 11.125 12 11.125H21C21.4832 11.125 21.875 11.5168 21.875 12C21.875 12.4832 21.4832 12.875 21 12.875H12C11.5168 12.875 11.125 12.4832 11.125 12Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default logOutIcon;

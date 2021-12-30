@@ -1,0 +1,1750 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button - ColoredBlue renders ColoredBlue button with correct styles 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #F2F6FF;
+  border-color: #F2F6FF;
+  color: #2E7DAF;
+  background-color: #2E7DAF;
+  border-color: #2E7DAF;
+  color: #2E7DAF;
+  font-size: 14px;
+  padding: 4px 16px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0 svg {
+  fill: #2E7DAF;
+}
+
+.c0 svg {
+  fill: #2E7DAF;
+}
+
+.c0:after {
+  background-color: rgba( 255,255,255, 0.9 );
+}
+
+.c0:hover:after {
+  background-color: rgba( 255,255,255, 0.7 );
+}
+
+.c0:active:after {
+  background-color: rgba( 255,255,255, 0.5 );
+}
+
+.c0 svg {
+  margin-right: 8px;
+}
+
+<button
+  className="c0"
+  color="blue"
+  data-testid="test-button-colored-blue"
+  disabled={false}
+  id="test-button-colored-blue"
+  onClick={[Function]}
+  size="regular"
+  type="button"
+>
+  <span>
+    Colored Blue
+  </span>
+</button>
+`;
+
+exports[`Button - ColoredGreen renders ColoredGreen button with correct styles 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #F2F6FF;
+  border-color: #F2F6FF;
+  color: #2E7DAF;
+  background-color: #21BF96;
+  border-color: #21BF96;
+  color: #21BF96;
+  font-size: 14px;
+  padding: 4px 16px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0 svg {
+  fill: #2E7DAF;
+}
+
+.c0 svg {
+  fill: #21BF96;
+}
+
+.c0:after {
+  background-color: rgba( 255,255,255, 0.9 );
+}
+
+.c0:hover:after {
+  background-color: rgba( 255,255,255, 0.7 );
+}
+
+.c0:active:after {
+  background-color: rgba( 255,255,255, 0.5 );
+}
+
+.c0 svg {
+  margin-right: 8px;
+}
+
+<button
+  className="c0"
+  color="green"
+  data-testid="test-button-colored-green"
+  disabled={false}
+  id="test-button-colored-green"
+  onClick={[Function]}
+  size="regular"
+  type="button"
+>
+  <span>
+    Colored Green
+  </span>
+</button>
+`;
+
+exports[`Button - ColoredRed renders ColoredRed button with correct styles 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #F2F6FF;
+  border-color: #F2F6FF;
+  color: #2E7DAF;
+  background-color: #EB5757;
+  border-color: #EB5757;
+  color: #EB5757;
+  font-size: 14px;
+  padding: 4px 16px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0 svg {
+  fill: #2E7DAF;
+}
+
+.c0 svg {
+  fill: #EB5757;
+}
+
+.c0:after {
+  background-color: rgba( 255,255,255, 0.9 );
+}
+
+.c0:hover:after {
+  background-color: rgba( 255,255,255, 0.7 );
+}
+
+.c0:active:after {
+  background-color: rgba( 255,255,255, 0.5 );
+}
+
+.c0 svg {
+  margin-right: 8px;
+}
+
+<button
+  className="c0"
+  color="red"
+  data-testid="test-button-colored-red"
+  disabled={false}
+  id="test-button-colored-red"
+  onClick={[Function]}
+  size="regular"
+  type="button"
+>
+  <span>
+    Colored Red
+  </span>
+</button>
+`;
+
+exports[`Button - ColoredYellow renders ColoredYellow button with correct styles 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #F2F6FF;
+  border-color: #F2F6FF;
+  color: #2E7DAF;
+  background-color: #ECA609;
+  border-color: #ECA609;
+  color: #ECA609;
+  font-size: 14px;
+  padding: 4px 16px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0 svg {
+  fill: #2E7DAF;
+}
+
+.c0 svg {
+  fill: #ECA609;
+}
+
+.c0:after {
+  background-color: rgba( 255,255,255, 0.9 );
+}
+
+.c0:hover:after {
+  background-color: rgba( 255,255,255, 0.7 );
+}
+
+.c0:active:after {
+  background-color: rgba( 255,255,255, 0.5 );
+}
+
+.c0 svg {
+  margin-right: 8px;
+}
+
+<button
+  className="c0"
+  color="yellow"
+  data-testid="test-button-colored-yellow"
+  disabled={false}
+  id="test-button-colored-yellow"
+  onClick={[Function]}
+  size="regular"
+  type="button"
+>
+  <span>
+    Colored Yellow
+  </span>
+</button>
+`;
+
+exports[`Button - Outline renders Outline button with correct styles 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #FFFFFF;
+  border-color: #F2F6FF;
+  color: #2E7DAF;
+  font-size: 14px;
+  padding: 4px 16px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:hover {
+  background-color: #041836;
+  color: #FFFFFF;
+}
+
+.c0:hover svg {
+  fill: #FFFFFF;
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0 svg {
+  fill: #2E7DAF;
+}
+
+.c0 svg {
+  margin-right: 8px;
+}
+
+<button
+  className="c0"
+  data-testid="test-button-outline"
+  disabled={false}
+  id="test-button-outline"
+  onClick={[Function]}
+  size="regular"
+  type="button"
+>
+  <span>
+    Outline Button
+  </span>
+</button>
+`;
+
+exports[`Button - Primary Large renders PrimaryLarge button with correct styles 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #21BF96;
+  border-color: #7AD9C0;
+  color: #FFFFFF;
+  border-width: 4px;
+  font-size: 16px;
+  padding: 4px 20px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:active {
+  border-color: #7AD9C0;
+}
+
+.c0 svg {
+  fill: #FFFFFF;
+}
+
+.c0 svg {
+  margin-right: 8px;
+}
+
+<button
+  className="c0"
+  data-testid="test-button-primary-large"
+  disabled={false}
+  id="test-button-primary-large"
+  onClick={[Function]}
+  size="large"
+  type="button"
+>
+  <span>
+    Large Primary
+  </span>
+</button>
+`;
+
+exports[`Button - Primary Small renders PrimaryLarge button with correct styles 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #21BF96;
+  border-color: #7AD9C0;
+  color: #FFFFFF;
+  border: none;
+  font-size: 13px;
+  padding: 2px 12px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:active {
+  border-color: #7AD9C0;
+}
+
+.c0 svg {
+  fill: #FFFFFF;
+}
+
+.c0 svg {
+  margin-right: 8px;
+}
+
+<button
+  className="c0"
+  data-testid="test-button-primary-small"
+  disabled={false}
+  id="test-button-primary-small"
+  onClick={[Function]}
+  size="small"
+  type="button"
+>
+  <span>
+    Small Primary
+  </span>
+</button>
+`;
+
+exports[`Button - Primary icon after renders Primary button with icon after 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #21BF96;
+  border-color: #7AD9C0;
+  color: #FFFFFF;
+  font-size: 14px;
+  padding: 4px 16px;
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:active {
+  border-color: #7AD9C0;
+}
+
+.c0 svg {
+  fill: #FFFFFF;
+}
+
+.c0 svg {
+  margin-left: 8px;
+}
+
+<button
+  className="c0"
+  data-testid="test-button-primary-icon-after"
+  disabled={false}
+  id="test-button-primary-icon-after"
+  onClick={[Function]}
+  size="regular"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={20}
+    viewBox="0 0 24 24"
+    width={20}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>
+      plus icon
+    </title>
+    <path
+      d="M11 6H13V18H11V6Z"
+      fill="inherit"
+    />
+    <path
+      d="M18 11V13L6 13L6 11L18 11Z"
+      fill="inherit"
+    />
+  </svg>
+  <span>
+    Primary with icon
+  </span>
+</button>
+`;
+
+exports[`Button - Primary icon only large renders Primary button with icon only large 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #21BF96;
+  border-color: #7AD9C0;
+  color: #FFFFFF;
+  border-width: 4px;
+  font-size: 16px;
+  padding: 4px 20px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border-width: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  text-indent: -99999px;
+  width: 32px;
+  border-width: 4px;
+  height: 40px;
+  width: 40px;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:active {
+  border-color: #7AD9C0;
+}
+
+.c0 svg {
+  fill: #FFFFFF;
+}
+
+<button
+  className="c0"
+  data-testid="test-button-primary-icon-only"
+  disabled={false}
+  id="test-button-primary-icon-only"
+  onClick={[Function]}
+  size="large"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={20}
+    viewBox="0 0 24 24"
+    width={20}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>
+      plus icon
+    </title>
+    <path
+      d="M11 6H13V18H11V6Z"
+      fill="inherit"
+    />
+    <path
+      d="M18 11V13L6 13L6 11L18 11Z"
+      fill="inherit"
+    />
+  </svg>
+  <span>
+    Primary icon only
+  </span>
+</button>
+`;
+
+exports[`Button - Primary icon only renders Primary button with icon only 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #21BF96;
+  border-color: #7AD9C0;
+  color: #FFFFFF;
+  font-size: 14px;
+  padding: 4px 16px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border-width: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  text-indent: -99999px;
+  width: 32px;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:active {
+  border-color: #7AD9C0;
+}
+
+.c0 svg {
+  fill: #FFFFFF;
+}
+
+<button
+  className="c0"
+  data-testid="test-button-primary-icon-only"
+  disabled={false}
+  id="test-button-primary-icon-only"
+  onClick={[Function]}
+  size="regular"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={20}
+    viewBox="0 0 24 24"
+    width={20}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>
+      plus icon
+    </title>
+    <path
+      d="M11 6H13V18H11V6Z"
+      fill="inherit"
+    />
+    <path
+      d="M18 11V13L6 13L6 11L18 11Z"
+      fill="inherit"
+    />
+  </svg>
+  <span>
+    Primary icon only
+  </span>
+</button>
+`;
+
+exports[`Button - Primary icon only small renders Primary button with icon only small 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #21BF96;
+  border-color: #7AD9C0;
+  color: #FFFFFF;
+  border: none;
+  font-size: 13px;
+  padding: 2px 12px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border-width: 0px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  text-indent: -99999px;
+  width: 32px;
+  height: 24px;
+  width: 24px;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:active {
+  border-color: #7AD9C0;
+}
+
+.c0 svg {
+  fill: #FFFFFF;
+}
+
+<button
+  className="c0"
+  data-testid="test-button-primary-icon-only"
+  disabled={false}
+  id="test-button-primary-icon-only"
+  onClick={[Function]}
+  size="small"
+  type="button"
+>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={20}
+    viewBox="0 0 24 24"
+    width={20}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>
+      plus icon
+    </title>
+    <path
+      d="M11 6H13V18H11V6Z"
+      fill="inherit"
+    />
+    <path
+      d="M18 11V13L6 13L6 11L18 11Z"
+      fill="inherit"
+    />
+  </svg>
+  <span>
+    Primary icon only
+  </span>
+</button>
+`;
+
+exports[`Button - Primary renders Primary button with correct styles 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #21BF96;
+  border-color: #7AD9C0;
+  color: #FFFFFF;
+  font-size: 14px;
+  padding: 4px 16px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:active {
+  border-color: #7AD9C0;
+}
+
+.c0 svg {
+  fill: #FFFFFF;
+}
+
+.c0 svg {
+  margin-right: 8px;
+}
+
+<button
+  className="c0"
+  data-testid="test-button-primary"
+  disabled={false}
+  id="test-button-primary"
+  onClick={[Function]}
+  size="regular"
+  type="button"
+>
+  <span>
+    Primary Button
+  </span>
+</button>
+`;
+
+exports[`Button - Secondary renders Secondary button with correct styles 1`] = `
+.c0 {
+  border: none;
+  box-sizing: border-box;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  color: #68738D;
+  fill: #68738D;
+  font-family: "Open Sans",sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-letter-spacing: 0em;
+  -moz-letter-spacing: 0em;
+  -ms-letter-spacing: 0em;
+  letter-spacing: 0em;
+  line-height: 24px;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 600;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #F2F6FF;
+  border-color: #F2F6FF;
+  color: #2E7DAF;
+  font-size: 14px;
+  padding: 4px 16px;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.c0 span {
+  pointer-events: none;
+  z-index: 1;
+}
+
+.c0 svg {
+  height: 20px;
+  pointer-events: none;
+  width: 20px;
+  z-index: 1;
+}
+
+.c0:after {
+  background-color: rgba(0,0,0,0);
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+  z-index: 0;
+}
+
+.c0:hover:after {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0:disabled {
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.c0:active {
+  border-color: #2E7DAF;
+}
+
+.c0 svg {
+  fill: #2E7DAF;
+}
+
+.c0 svg {
+  margin-right: 8px;
+}
+
+<button
+  className="c0"
+  data-testid="test-button"
+  disabled={false}
+  id="test-button"
+  onClick={[Function]}
+  size="regular"
+  type="button"
+>
+  <span>
+    Secondary Button
+  </span>
+</button>
+`;

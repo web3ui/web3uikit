@@ -1,14 +1,16 @@
+import React from 'react';
+
 const moreIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>more icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>more icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -27,6 +29,6 @@ const moreIcon = (fill: string, size: number) => (
       d="M3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default moreIcon;

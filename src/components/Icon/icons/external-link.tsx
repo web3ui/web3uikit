@@ -1,14 +1,16 @@
+import React from 'react';
+
 const externalLinkIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>external link icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>external link icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -27,6 +29,6 @@ const externalLinkIcon = (fill: string, size: number) => (
       d="M20.7664 3.23357C21.0779 3.545 21.0779 4.04993 20.7664 4.36136L10.7411 14.3867C10.4297 14.6981 9.92475 14.6981 9.61332 14.3867C9.30189 14.0752 9.30189 13.5703 9.61332 13.2589L19.6386 3.23357C19.9501 2.92214 20.455 2.92214 20.7664 3.23357Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default externalLinkIcon;

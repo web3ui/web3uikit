@@ -1,14 +1,16 @@
+import React from 'react';
+
 const updateIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>update icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>update icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -25,6 +27,6 @@ const updateIcon = (fill: string, size: number) => (
       d="M15.8732 8.78017C16.2206 9.12683 16.2206 9.68889 15.8732 10.0356L11.3732 14.5262C11.2064 14.6927 10.9801 14.7862 10.7442 14.7862C10.5083 14.7862 10.282 14.6927 10.1152 14.5262L8.12682 12.542C7.77943 12.1953 7.77943 11.6332 8.12682 11.2866C8.4742 10.9399 9.03742 10.9399 9.38481 11.2866L10.7442 12.6431L14.6152 8.78017C14.9626 8.43351 15.5258 8.43351 15.8732 8.78017Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default updateIcon;

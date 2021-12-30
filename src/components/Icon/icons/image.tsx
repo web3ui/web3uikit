@@ -1,14 +1,16 @@
+import React from 'react';
+
 const imagineIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>imagine icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>imagine icon</title>
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -27,6 +29,6 @@ const imagineIcon = (fill: string, size: number) => (
       d="M15.0817 9.61332C15.3931 9.30189 15.898 9.30189 16.2095 9.61332L20.7664 14.1703C21.0779 14.4817 21.0779 14.9866 20.7664 15.2981C20.455 15.6095 19.9501 15.6095 19.6386 15.2981L15.6456 11.305L6.18415 20.7664C5.87272 21.0779 5.36779 21.0779 5.05636 20.7664C4.74493 20.455 4.74493 19.9501 5.05636 19.6386L15.0817 9.61332Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default imagineIcon;

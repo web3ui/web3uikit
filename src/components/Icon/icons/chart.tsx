@@ -1,14 +1,16 @@
+import React from 'react';
+
 const chartIcon = (fill: string, size: number) => (
-	<svg
-		aria-hidden="true"
-		data-testid="test-icon"
-		fill="none"
-		height={size}
-		viewBox="0 0 24 24"
-		width={size}
-		xmlns="http://www.w3.org/2000/svg"
-	>
-		<title>chart icon</title>
+  <svg
+    aria-hidden="true"
+    data-testid="test-icon"
+    fill="none"
+    height={size}
+    viewBox="0 0 24 24"
+    width={size}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <title>chart icon</title>
     <path d="M4 4H5.68421V20H4V4Z" fill={fill} />
     <path d="M20 11.2V8.8L6.52632 8.8V11.2L20 11.2Z" fill={fill} />
     <path
@@ -23,6 +25,6 @@ const chartIcon = (fill: string, size: number) => (
       d="M14.9474 19.2L14.9474 16.8L6.52632 16.8V19.2H14.9474Z"
       fill={fill}
     />
-	</svg>
+  </svg>
 );
 export default chartIcon;

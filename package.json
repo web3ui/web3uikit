@@ -1,9 +1,15 @@
 {
 	"name": "web3uikit",
 	"version": "0.1.0",
-	"private": true,
+	"main": "dist/index.cjs.js",
+	"module": "dist/index.esm.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
 	"dependencies": {
 		"@rollup/plugin-typescript": "^8.3.0",
+		"@rollup/plugin-url": "^6.1.0",
 		"@storybook/addon-docs": "^6.4.0",
 		"@storybook/testing-react": "^1.2.1",
 		"@testing-library/jest-dom": "^5.14.1",

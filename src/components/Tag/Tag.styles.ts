@@ -20,11 +20,12 @@ const regular = `
 `;
 
 const activeStatus = `
+    background: ${color.greenForestLight};
+    color: ${color.green};
+
     svg {
         padding-right: 5px;
     }
-    background: ${color.greenForestLight};
-    color: ${color.green};
 `;
 
 const inactiveStatus = `
@@ -32,14 +33,17 @@ const inactiveStatus = `
 `;
 
 const discount = `
-    border-radius: 30px;
-    height: 32px;
-    width: 32px;
-    padding: 0px 4px;
-    font-size: 12px;
+    align-item: center;
     align-items: center;
     background: ${color.green};
+    border-radius: 30px;
     color: ${color.white};
+    display: flex;
+    font-size: 12px;
+    height: 32px;
+    justify-content: center;
+    padding: 0px 4px;
+    width: 32px;
 `;
 
 const coloredGreen = `
@@ -78,16 +82,16 @@ const coloredPink = `
 `;
 
 export const tagStyles = {
-	initialStyles,
-	inactiveStatus,
 	activeStatus,
-	discount,
-	regular,
-	coloredGreen,
-	coloredRed,
-	coloredGray,
-	coloredYellow,
 	coloredBlue,
-	coloredPurple,
+	coloredGray,
+	coloredGreen,
 	coloredPink,
+	coloredPurple,
+	coloredRed,
+	coloredYellow,
+	discount,
+	inactiveStatus,
+	initialStyles,
+	regular,
 };

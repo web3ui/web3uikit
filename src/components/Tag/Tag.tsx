@@ -35,7 +35,7 @@ const getColors = (color: string | undefined) => {
 const TagStyled = styled.div<Pick<TagProps, "active">>`
 	${tagStyles.initialStyles}
 	${(p) => getTheme(p.theme, p.active)}
-    ${(p) => p.theme !== "status" && p.color && getColors(p.color)}
+  ${(p) => p.theme !== "status" && p.color && getColors(p.color)}
 `;
 
 const Tag: React.FC<TagProps> = ({

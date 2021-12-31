@@ -1,32 +1,35 @@
-import color from "src/styles/colors";
+import color from "../../styles/colors";
+import fonts from "../../styles/fonts";
+import resetCSS from "../../styles/reset";
 
 const initialStyles = `
-    display: flex;
+    ${resetCSS}
+    ${fonts.text}
     align-items: center;
-    justify-content: center;
-    text-align: center;
     border-radius: 20px;
     font-size: 14px;
-    height: 24px;
-    width: fit-content; 
-    padding: 0px 20px;
-`
+    justify-content: center;
+    overflow: hidden;
+    padding: 2px 20px;
+    text-align: center;
+    width: fit-content;
+`;
 
 const regular = `
     background: ${color.blueLight};
-`
+`;
 
 const activeStatus = `
     svg {
         padding-right: 5px;
     }
-    background: #EBF9F5;
-    color: ${color.green}
-`
+    background: ${color.greenForestLight};
+    color: ${color.green};
+`;
 
 const inactiveStatus = `
     background: ${color.blueLight};
-`
+`;
 
 const discount = `
     border-radius: 30px;
@@ -37,54 +40,54 @@ const discount = `
     align-items: center;
     background: ${color.green};
     color: ${color.white};
-`
+`;
 
 const coloredGreen = `
-    background: #EBF9F5;
+    background: ${color.greenForestLight};
     color: ${color.green}
-`
+`;
 
 const coloredRed = `
-    background: #FDF0F0;
-    color: ${color.red}
-`
+    background: ${color.redLight};
+    color: ${color.red};
+`;
 
 const coloredGray = `
-    background: #E8EAED;
-    color: ${color.blueDark}
-`
+    background: ${color.blueSkyLight};
+    color: ${color.blueDark};
+`;
 
 const coloredYellow = `
-    background: #FEF9EE;
-    color: ${color.yellow}
-`
+    background: ${color.yellowLight};
+    color: ${color.yellow};
+`;
 
 const coloredBlue = `
-    background: #EEF6FB;
-    color: #51A5DA;
-`
+    background: ${color.blueCloud};
+    color: ${color.blueSkyDark};
+`;
 
 const coloredPurple = `
-    background: #F3EEFB;
-    color: #8851DA;
-`
+    background: ${color.purpleLight};
+    color: ${color.purple};
+`;
 
 const coloredPink = `
-    background: #FDF0FA;
-    color:  #DA51BE;
-`
+    background: ${color.pinkLight};
+    color:  ${color.pink};
+`;
 
 export const tagStyles = {
-    initialStyles,
-    inactiveStatus,
-    activeStatus,
-    discount,
-    regular,
-    coloredGreen,
-    coloredRed,
-    coloredGray,
-    coloredYellow,
-    coloredBlue,
-    coloredPurple,
-    coloredPink
-}
+	initialStyles,
+	inactiveStatus,
+	activeStatus,
+	discount,
+	regular,
+	coloredGreen,
+	coloredRed,
+	coloredGray,
+	coloredYellow,
+	coloredBlue,
+	coloredPurple,
+	coloredPink,
+};

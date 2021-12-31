@@ -100,9 +100,6 @@ describe("Input - Text", () => {
 		const input: HTMLInputElement | null = container.querySelector(
 			`[data-testid="${testInputId}"]`
 		);
-		const label: HTMLLabelElement | null = container.querySelector(
-			`[data-testid="${testLabelId}"]`
-		);
 		expect(div?.classList.contains("filled")).toBeFalsy;
 		expect(div?.classList.contains("empty")).toBeTruthy;
 
@@ -978,9 +975,6 @@ describe("Input - Email", () => {
 		);
 		const input: HTMLInputElement | null = container.querySelector(
 			`[data-testid="${testInputId}"]`
-		);
-		const label: HTMLLabelElement | null = container.querySelector(
-			`[data-testid="${testLabelId}"]`
 		);
 		expect(div?.classList.contains("filled")).toBeFalsy;
 		expect(div?.classList.contains("empty")).toBeTruthy;

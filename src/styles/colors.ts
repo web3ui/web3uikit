@@ -1,17 +1,27 @@
 const color = {
 	blue: "#2E7DAF",
+	blueCloud: "#EEF6FB",
 	blueDark: "#041836",
 	blueLight: "#F2F6FF",
 	blueSky: "#9ECCEA",
+	blueSkyDark: "#51A5DA",
+	blueSkyLight: "#E8EAED",
 	green: "#21BF96",
 	greenDark: "#0FA67F",
+	greenForestLight: "#EBF9F5",
 	greenLight: "#7AD9C0",
 	grey: "#68738D",
 	greyDark: "#333333",
 	greyLight: "#C5CDD9",
+	pink: "#DA51BE",
+	pinkLight: "#FDF0FA",
+	purple: "#8851DA",
+	purpleLight: "#F3EEFB",
 	red: "#EB5757",
+	redLight: "#FDF0F0",
 	white: "#FFFFFF",
 	yellow: "#ECA609",
+	yellowLight: "#FEF9EE",
 };
 
 export const getShade = (shade: "light" | "dark", percent: number) =>

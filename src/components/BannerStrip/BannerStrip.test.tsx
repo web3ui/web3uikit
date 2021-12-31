@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import ReactDOM from "react-dom";
 import { composeStories } from "@storybook/testing-react";
 import * as stories from "./BannerStrip.stories";

@@ -1,32 +1,6 @@
 import styled from "styled-components";
 import { tagStyles } from "./Tag.styles";
-
-interface Props {
-	/**
-	 * The tag ID will be generated if not assigned
-	 */
-	id?: string;
-
-	/**
-	 * The text to display in the tag
-	 */
-	text?: string;
-
-	/**
-	 * Set Theme of tag
-	 */
-	theme?: "regular" | "status" | "discount";
-
-	/**
-	 * Set if tag is active. Must set theme to 'status' before
-	 */
-	active?: boolean;
-
-	/**
-	 * Choose a color for the tag
-	 */
-	color?: "green" | "red" | "gray" | "yellow" | "blue" | "purple" | "pink";
-}
+import { TagProps } from ".";
 
 const getTheme = (theme: string, active: boolean | undefined) => {
 	switch (theme) {
@@ -58,19 +32,19 @@ const getColors = (color: string | undefined) => {
 	}
 };
 
-const TagStyled = styled.div<Pick<Props, "active">>`
+const TagStyled = styled.div<Pick<TagProps, "active">>`
 	${tagStyles.initialStyles}
 	${(p) => getTheme(p.theme, p.active)}
     ${(p) => p.theme !== "status" && p.color && getColors(p.color)}
 `;
 
-export const Tag: React.FC<Props> = ({
+const Tag: React.FC<TagProps> = ({
 	id = String(Date.now()),
 	text = "Tag",
 	color,
 	active = false,
 	theme = "regular",
-}: Props) => {
+}: TagProps) => {
 	return (
 		<TagStyled
 			data-testid="test-tag-id"
@@ -100,3 +74,5 @@ export const Tag: React.FC<Props> = ({
 		</TagStyled>
 	);
 };
+
+export default Tag;

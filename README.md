@@ -1,5 +1,7 @@
 # Web3UIKit
 
+[![CI](https://github.com/web3ui/web3uikit/actions/workflows/main.yml/badge.svg)](https://github.com/web3ui/web3uikit/actions/workflows/main.yml)
+
 Beautiful and lightweight UI components for web3 developers. 
 This UI library will speed up your dapp development no matter which chain you build on.
 

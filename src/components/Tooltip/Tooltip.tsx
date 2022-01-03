@@ -3,9 +3,10 @@ import styled from "styled-components";
 import { tooltipStyles } from "./Tooltip.styles";
 import { TooltipProps } from "./types";
 
-const TooltipStyled = styled.div<Pick<TooltipProps, "position">>`
+const TooltipStyled = styled.div<Pick<TooltipProps, "position" | "active">>`
     ${tooltipStyles.initialStyles}
     ${(p) => getStyleByPosition(p.position)}
+    ${(p) => !p.active ? "display: none;" : ""}
 `
 
 const getStyleByPosition = (position: "top" | "bottom" | "left" | "right"  | undefined) => {
@@ -24,16 +25,21 @@ const getStyleByPosition = (position: "top" | "bottom" | "left" | "right"  | und
 const Tooltip: React.FC<TooltipProps> = ({
 id=String(Date.now()),
 position="bottom",
+active=false,
 text="Tooltip text"
 }: TooltipProps) => {
 
     return (
-        <TooltipStyled
+        <>
+        {active && <TooltipStyled
         id={id}
         position={position}
+        active={active}
+        data-testid="test-tooltip-id"
         >
             {text}
-        </TooltipStyled>   
+        </TooltipStyled>}
+        </>   
     ) 
     
 }

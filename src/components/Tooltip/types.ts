@@ -10,6 +10,11 @@ export interface TooltipProps {
 	text?: string;
 
 	/**
+	 * Set visibility of Tooltip
+	 */
+	active?: boolean;
+
+	/**
 	 * Set Position of Tooltip
 	 */
 	position?: "top" | "bottom" | "left" | "right";

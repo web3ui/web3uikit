@@ -4,7 +4,7 @@ import { composeStories } from "@storybook/testing-react";
 import * as stories from "./Tooltip.stories";
 import "jest-styled-components";
 
-const { Regular, RegularInactive } = composeStories(stories)
+const { Regular, RegularNoText, RegularInactive } = composeStories(stories)
 
 describe("Tooltip - Regular - Active", () => {
     let container: HTMLDivElement;
@@ -55,7 +55,33 @@ describe("Tooltip - Regular - Inactive", () => {
 
 	it(" does not render text", () => {
 		const element = container.querySelector(`[data-testid="${testId}"]`)?.innerHTML;
-        console.log(element)
 		expect(element).toBeUndefined();
+	});
+})
+
+describe("Tooltip - Regular - Active - No text", () => {
+    let container: HTMLDivElement;
+	const testId = "test-tooltip-id";
+	const text = "Tooltip text";
+
+    beforeEach(() => {
+		container = document.createElement("div");
+		document.body.appendChild(container);
+		ReactDOM.render(<RegularNoText />, container);
+	});
+
+	afterEach(() => {
+		document.body.removeChild(container);
+		container.remove();
+	});
+
+    it("renders the component", () => {
+		const element = container.querySelector(`[data-testid="${testId}"]`);
+		expect(element).not.toBeNull();
+	});
+
+	it("renders text correctly", () => {
+		const element = container.querySelector(`[data-testid="${testId}"]`)?.innerHTML;
+		expect(element).toBe(text);
 	});
 })

@@ -16,6 +16,11 @@ Regular.args = {
 	active: true,
 };
 
+export const RegularNoText = Template.bind({});
+RegularNoText.args = {
+	active: true,
+};
+
 export const RegularInactive = Template.bind({});
 RegularInactive.args = {
 	text: "This is a text inside a tooltip",

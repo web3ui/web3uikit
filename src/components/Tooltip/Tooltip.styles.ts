@@ -7,7 +7,6 @@ const initialStyles = `
     background-color: #112F5C;
     border-radius: 4px;
     color: white;
-    display: inline-block;
     font-family: sans-serif;
     font-size: 14px;
     left: 50%;
@@ -51,7 +50,7 @@ const bottom = `
 
 const left = `
     top: 50%;
-    left: 0;
+    left: 30%;
     transform: translateX(0) translateY(-50%);
 
     ::before {
@@ -65,7 +64,7 @@ const left = `
 
 const right = `
     top: 50%;
-    left: 80%;
+    left: 55%;
     transform: translateX(0) translateY(-50%);
 
     ::before {

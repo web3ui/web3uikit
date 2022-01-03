@@ -9,7 +9,7 @@ export interface IconProps {
     /**
      * set a pixel size, SVGs render as a square icons
      */
-    size?: number;
+    size?: number | string;
 
     /**
      * pick the icon SVG you would like to render.

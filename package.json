@@ -14,14 +14,13 @@
 	"scripts": {
 		"start": "tsdx watch",
 		"build": "tsdx build",
-		"test": "tsdx test --passWithNoTests",
+		"test": "tsdx test",
 		"lint": "tsdx lint",
 		"prepare": "tsdx build",
 		"size": "size-limit",
 		"analyze": "size-limit --why",
 		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook",
-		"test-rtl": "react-scripts test"
+		"build-storybook": "build-storybook"
 	},
 	"peerDependencies": {
 		"react": ">=16"

@@ -4,17 +4,15 @@ import { composeStories } from "@storybook/testing-react";
 import * as stories from "./Tooltip.stories";
 import "jest-styled-components";
 
-const { Regular, RegularNoText, RegularInactive } = composeStories(stories)
+const { RegularNoChildren, ChildrenNoText } = composeStories(stories)
 
 describe("Tooltip - Regular - Active", () => {
     let container: HTMLDivElement;
-	const testId = "test-tooltip-id";
-	const text = "This is a text inside a tooltip";
 
     beforeEach(() => {
 		container = document.createElement("div");
 		document.body.appendChild(container);
-		ReactDOM.render(<Regular />, container);
+		ReactDOM.render(<RegularNoChildren />, container);
 	});
 
 	afterEach(() => {
@@ -22,66 +20,34 @@ describe("Tooltip - Regular - Active", () => {
 		container.remove();
 	});
 
-    it("renders the component", () => {
-		const element = container.querySelector(`[data-testid="${testId}"]`);
-		expect(element).not.toBeNull();
-	});
-
-	it("renders text correctly", () => {
-		const element = container.querySelector(`[data-testid="${testId}"]`)?.innerHTML;
-		expect(element).toBe(text);
-	});
 })
 
 describe("Tooltip - Regular - Inactive", () => {
     let container: HTMLDivElement;
-	const testId = "test-tooltip-id";
 
     beforeEach(() => {
 		container = document.createElement("div");
 		document.body.appendChild(container);
-		ReactDOM.render(<RegularInactive />, container);
+		ReactDOM.render(<ChildrenNoText />, container);
 	});
 
 	afterEach(() => {
 		document.body.removeChild(container);
 		container.remove();
-	});
-
-    it("does not render the component", () => {
-		const element = container.querySelector(`[data-testid="${testId}"]`);
-		expect(element).toBeNull();
-	});
-
-	it(" does not render text", () => {
-		const element = container.querySelector(`[data-testid="${testId}"]`)?.innerHTML;
-		expect(element).toBeUndefined();
 	});
 })
 
 describe("Tooltip - Regular - Active - No text", () => {
     let container: HTMLDivElement;
-	const testId = "test-tooltip-id";
-	const text = "Tooltip text";
 
     beforeEach(() => {
 		container = document.createElement("div");
 		document.body.appendChild(container);
-		ReactDOM.render(<RegularNoText />, container);
+		ReactDOM.render(<ChildrenNoText />, container);
 	});
 
 	afterEach(() => {
 		document.body.removeChild(container);
 		container.remove();
-	});
-
-    it("renders the component", () => {
-		const element = container.querySelector(`[data-testid="${testId}"]`);
-		expect(element).not.toBeNull();
-	});
-
-	it("renders text correctly", () => {
-		const element = container.querySelector(`[data-testid="${testId}"]`)?.innerHTML;
-		expect(element).toBe(text);
 	});
 })

@@ -10,12 +10,12 @@ export interface TooltipProps {
 	text?: string;
 
 	/**
-	 * Set visibility of Tooltip
-	 */
-	active?: boolean;
-
-	/**
-	 * Set Position of Tooltip
+	 * Set position of Tooltip
 	 */
 	position?: "top" | "bottom" | "left" | "right";
+
+	/**
+	 * Set children which should have a Tooltip 
+	 */
+	children?: Array<React.ReactNode>
 }

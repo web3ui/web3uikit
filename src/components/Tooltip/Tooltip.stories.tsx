@@ -1,6 +1,8 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Tooltip from "./Tooltip";
+import { Icon } from "../Icon";
+import { iconTypes } from "../Icon/collection";
 
 export default {
 	title: "Popup/Tooltip",
@@ -10,19 +12,19 @@ export default {
 
 const Template: ComponentStory<typeof Tooltip> = (args) => <Tooltip {...args} />;
 
-export const Regular = Template.bind({});
-Regular.args = {
-	text: "This is a text inside a tooltip",
-	active: true,
+export const RegularNoChildren = Template.bind({});
+RegularNoChildren.args = {
+	
 };
 
-export const RegularNoText = Template.bind({});
-RegularNoText.args = {
-	active: true,
+export const ChildrenNoText = Template.bind({});
+ChildrenNoText.args = {
+	children: [ <Icon svg={iconTypes.helpCircle} fill="grey"/> ]
 };
 
-export const RegularInactive = Template.bind({});
-RegularInactive.args = {
-	text: "This is a text inside a tooltip",
-	active: false,
+export const ChildrenText = Template.bind({});
+ChildrenText.args = {
+	position: "bottom",
+	text: 'Are in trouble? No Problem we will help out!'
+,	children: [ <Icon svg={iconTypes.helpCircle} fill="grey"/> ]
 };

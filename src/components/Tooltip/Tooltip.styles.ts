@@ -5,80 +5,45 @@ const initialStyles = `
     ${resetCSS}
     ${fonts.text}
     background-color: #112F5C;
-    border-radius: 4px;
-    color: white;
-    font-family: sans-serif;
-    font-size: 14px;
-    left: 50%;
-    line-height: 1;
-    margin: 30px;
-    padding: 6px;
+`;
+
+const children = `
+    border: none;
+    background: transparent;
+    padding: 5px;
+    margin: -1px;
+    font-size: inherit;
+    color: inherit;
+    cursor: inherit;
+    display: flex;
+`
+
+const container = `
     position: absolute;
-    transform: translateX(-50%);
-    white-space: nowrap;
-
-    ::before {
-        content: " ";
-        left: 50%;
-        border: solid transparent;
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-        border-width: 6px;
-        margin-left: -6px;
-    }
-`;
-
-const top = `
-    top: -5px;
-
-    ::before {
-        top: 100%;
-        border-top-color: #112F5C;
-    }
-`;
-
-const bottom = `
-    bottom: -5px;
-
-    ::before {
-        bottom: 100%;
-        border-bottom-color: #112F5C;
-    }
+    width: 200px;
+    margin-left: -100px;
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    align-items: center;
+    left: 50%;
+    bottom: calc(100% + 5px);
+    pointer-events: none;
 `
 
-const left = `
-    top: 50%;
-    left: 30%;
-    transform: translateX(0) translateY(-50%);
-
-    ::before {
-        left: auto;
-        right: calc(6px * -2);
-        top: 50%;
-        transform: translateX(0) translateY(-50%);
-        border-left-color: #112F5C;
-    }
-`
-
-const right = `
-    top: 50%;
-    left: 55%;
-    transform: translateX(0) translateY(-50%);
-
-    ::before {
-        left: -6px;
-        top: 50%;
-        transform: translateX(0) translateY(-50%);
-        border-right-color: #112F5C;
-    }
+const box = `
+    position: relative;
+    color: #112F5C;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px 8px;
+    font-size: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.2);
 `
 
 export const tooltipStyles = {
     initialStyles,
-    top,
-    bottom,
-    right,
-    left
+    box,
+    children,
+    container,
 };

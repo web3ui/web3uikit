@@ -14,8 +14,8 @@ const Template: ComponentStory<typeof Notification> = (args) => <Notification {.
 export const Regular = Template.bind({});
 Regular.args = {
 	id: "test-Notification",
-	message: "Kresimir: Thank you for sharin...",
-    title: "New Message",
+	message: "Notification!",
+    title: "Somebody messaged you",
     active: true
 };
 

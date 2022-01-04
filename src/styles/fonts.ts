@@ -72,11 +72,11 @@ const fonts = {
   h3,
   h4,
   heading,
+  ibm,
   text,
   textBold,
   textBold700,
   textSmall,
-  ibm,
 };
 
 export default fonts;

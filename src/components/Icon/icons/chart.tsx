@@ -1,6 +1,6 @@
 import React from 'react';
 
-const chartIcon = (fill: string, size: number) => (
+const chartIcon = (fill: string, size: number | string) => (
   <svg
     aria-hidden="true"
     data-testid="test-icon"

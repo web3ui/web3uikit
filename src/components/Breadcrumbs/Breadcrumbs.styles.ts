@@ -11,7 +11,6 @@ export const olStyle = `
 `;
 export const navStyle = `
   ${resetCSS}
-  ${fonts.textBold}
 `;
 
 export const liStyle = `

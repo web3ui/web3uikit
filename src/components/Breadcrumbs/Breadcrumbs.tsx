@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BreadcrumbsProps } from '.';
-import color from '../../styles/colors';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
-import chevronRightIcon from '../Icon/icons/chevron-right';
 import {
   liStyle,
   navStyle,
   olStyle,
   separatorStyle,
 } from './Breadcrumbs.styles';
+import { IBreadcrumbs } from './types';
 
 const BreadcrumbsStyled = styled.nav`
   ${navStyle};
@@ -21,7 +19,7 @@ const BreadcrumbsOl = styled.ol`
   ${olStyle}
 `;
 
-const BreadcrumbsLi = styled.li`
+export const BreadcrumbsLi = styled.li`
   ${liStyle}
 `;
 
@@ -30,22 +28,23 @@ const BreadcrumbsSeparator = styled.li`
 `;
 
 function renderList(
-  items: Array<React.ReactNode>,
+  items: React.ReactNode[],
   separator?: React.ReactNode,
   className?: string
 ) {
-  console.log(items);
   return items.reduce(
     (acc: Array<React.ReactNode>, current: React.ReactNode, i: number) => {
       if (i < items.length - 1) {
         acc = acc.concat(
           current,
-          <BreadcrumbsSeparator
-            aria-hidden
-            key={`separator-${i}`}
-            className={className}
-          >
-            {separator}
+          <BreadcrumbsSeparator key={`separator-${i}`} className={className}>
+            {separator ?? (
+              <Icon
+                svg={iconTypes.chevron_right}
+                fill="currentColor"
+                size="1em"
+              />
+            )}
           </BreadcrumbsSeparator>
         );
       } else {
@@ -57,29 +56,14 @@ function renderList(
   );
 }
 
-const Breadcrumbs: React.FC<BreadcrumbsProps> = ({
-  color = '#B0B5BF',
-  children,
-}: BreadcrumbsProps) => {
+const Breadcrumbs: IBreadcrumbs = ({ color = '#B0B5BF', children, style }) => {
   return (
     <BreadcrumbsStyled color={color}>
-      <BreadcrumbsOl>
-        {/* <BreadcrumbsLi>
-          <Icon svg={iconTypes.server} fill="currentColor" />
-          <span>Application List</span>
-        </BreadcrumbsLi>
-        <BreadcrumbsSeparator>
-          <Icon svg={iconTypes.chevron_right} fill={color} size="1em" />
-        </BreadcrumbsSeparator>
-        <BreadcrumbsLi>Hi</BreadcrumbsLi>
-        <BreadcrumbsSeparator>
-          <Icon svg={iconTypes.chevron_right} fill={color} size="1em" />
-        </BreadcrumbsSeparator>
-        <BreadcrumbsLi>Hi</BreadcrumbsLi> */}
-        {renderList(children)}
-      </BreadcrumbsOl>
+      <BreadcrumbsOl style={style}>{renderList(children)}</BreadcrumbsOl>
     </BreadcrumbsStyled>
   );
 };
+
+Breadcrumbs.Item = BreadcrumbsLi;
 
 export default Breadcrumbs;

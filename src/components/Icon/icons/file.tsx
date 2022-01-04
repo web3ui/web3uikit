@@ -1,6 +1,6 @@
 import React from 'react';
 
-const fileIcon = (fill: string, size: number) => (
+const fileIcon = (fill: string, size: number | string) => (
   <svg
     aria-hidden="true"
     data-testid="test-icon"

@@ -3,8 +3,8 @@ import { IconProps } from '.';
 import color from '../../styles/colors';
 import collection from './collection';
 
-const Icon: React.FC<IconProps> = ({ fill = color.white, size = 18, svg }) => {
-  const getIcon = (fill: string, size: number, svg: string) => {
+const Icon: React.FC<IconProps> = ({ fill = color.white, size = "1em", svg }) => {
+  const getIcon = (fill: string, size: string | number, svg: string) => {
     switch (svg) {
       case 'arrow circle down':
         return collection?.arrowCircleDownIcon(fill, size);

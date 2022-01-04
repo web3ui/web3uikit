@@ -1,6 +1,6 @@
 import React from 'react';
 
-const minusIcon = (fill: string, size: number) => (
+const minusIcon = (fill: string, size: number | string) => (
   <svg
     aria-hidden="true"
     data-testid="test-icon"

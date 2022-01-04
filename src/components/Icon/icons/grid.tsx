@@ -1,6 +1,6 @@
 import React from 'react';
 
-const gridIcon = (fill: string, size: number) => (
+const gridIcon = (fill: string, size: number | string) => (
   <svg
     aria-hidden="true"
     data-testid="test-icon"

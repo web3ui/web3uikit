@@ -1,6 +1,6 @@
 import React from 'react';
 
-const linkIcon = (fill: string, size: number) => (
+const linkIcon = (fill: string, size: number | string) => (
   <svg
     aria-hidden="true"
     data-testid="test-icon"

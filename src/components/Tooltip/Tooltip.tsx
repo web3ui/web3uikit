@@ -122,17 +122,23 @@ children
     return (
     <TooltipWrapper
     id={id}
+    data-testid={"tooltip-wrapper-test-id"}
     onMouseEnter={() => setVisibility(true)}
     onMouseLeave={() => setVisibility(false)}
     >
-        <TooltipChildren>
+        <TooltipChildren
+        data-testid={"tooltip-children-test-id"}
+        >
             {children}
         </TooltipChildren>
         {showTooltip && (
             <TooltipContainer position={position}>
-            <TooltipBox position={position}>
-                {text}
-            </TooltipBox>
+                <TooltipBox 
+                position={position}  
+                data-testid={"tooltip-box-test-id"}
+                >
+                    {text}
+                </TooltipBox>
             </TooltipContainer>
         )}
     </TooltipWrapper>

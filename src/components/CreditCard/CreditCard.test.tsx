@@ -116,6 +116,7 @@ const runTest = (key: TCardState) => {
         const match = getStyledRule(styles[key], rules);
 
         // assert
+        expect(match.length > 0).toBeTruthy();
         match.forEach((rule) => {
           expect(rule).not.toBeUndefined();
           expect(rule.length > 0).toBeTruthy();

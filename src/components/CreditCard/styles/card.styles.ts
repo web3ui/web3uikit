@@ -51,7 +51,7 @@ const style = css`
   // children
   > * {
     font-family: 'Open Sans', sans-serif;
-    color: white;
+    color: #fff;
   }
 `;
 

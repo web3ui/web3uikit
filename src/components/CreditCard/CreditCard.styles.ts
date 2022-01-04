@@ -50,7 +50,7 @@ const Info = {
 };
 
 /**
- * brand logo
+ * card provider
  * bottom-right
  **/
 const Provider = styled.div`

@@ -56,7 +56,7 @@ const themes: Record<TCardState, FlattenSimpleInterpolation> = {
 
     //
     box-shadow: 
-      // outer-circle
+      // outer circle
       0 0 0 calc(var(--inner-size) - 2px) ${inactiveColor.outer},
       // border
       0 0 0 calc(var(--inner-size) - 1px) ${inactiveColor.border};
@@ -75,7 +75,7 @@ const themes: Record<TCardState, FlattenSimpleInterpolation> = {
 
     //
     box-shadow: 
-      // outer-circle
+      // outer circle
       0 0 0 calc(var(--inner-size) - 2px) ${activeColor.outer},
       // border
       0 0 0 calc(var(--inner-size) - 1px) ${activeColor.border};
@@ -94,7 +94,7 @@ const themes: Record<TCardState, FlattenSimpleInterpolation> = {
 
     //
     box-shadow: 
-      // outer-circle
+      // outer circle
       0 0 0 calc(var(--inner-size) - 2px) ${expiredColor.outer},
       // border
       0 0 0 calc(var(--inner-size) - 1px) ${expiredColor.border};

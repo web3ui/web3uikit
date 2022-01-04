@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { fireEvent, waitFor, screen } from "@testing-library/react";
 import { composeStories } from "@storybook/testing-react";
 import * as stories from "./Tooltip.stories";
 import "jest-styled-components";
@@ -70,6 +71,13 @@ describe("Tooltip - Bottom - Visible - With Children", () => {
 		const text = container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML;
 		expect(text).toBeUndefined();
 	});
+
+	it('should see text on hover', async () => {
+		fireEvent.mouseOver(screen.getByTestId(childrenId))
+
+		await waitFor(() => screen.getByTestId(childrenId))
+		expect(container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML).toBe("Tooltip text")
+	})
 })
 
 describe("Tooltip - Top - Visible - With Children", () => {
@@ -103,6 +111,13 @@ describe("Tooltip - Top - Visible - With Children", () => {
 		const text = container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML;
 		expect(text).toBeUndefined();
 	});
+
+	it('should see text on hover', async () => {
+		fireEvent.mouseOver(screen.getByTestId(childrenId))
+
+		await waitFor(() => screen.getByTestId(childrenId))
+		expect(container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML).toBe("Tooltip text")
+	})
 })
 
 describe("Tooltip - Left - Visible - With Children", () => {
@@ -136,6 +151,13 @@ describe("Tooltip - Left - Visible - With Children", () => {
 		const text = container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML;
 		expect(text).toBeUndefined();
 	});
+
+	it('should see text on hover', async () => {
+		fireEvent.mouseOver(screen.getByTestId(childrenId))
+
+		await waitFor(() => screen.getByTestId(childrenId))
+		expect(container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML).toBe("Tooltip text")
+	})
 })
 
 describe("Tooltip - Right - Visible - With Children", () => {
@@ -169,4 +191,10 @@ describe("Tooltip - Right - Visible - With Children", () => {
 		const text = container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML;
 		expect(text).toBeUndefined();
 	});
+
+	it('should see text on hover', async () => {
+		fireEvent.mouseOver(screen.getByTestId(childrenId))
+		await waitFor(() => screen.getByTestId(childrenId))
+		expect(container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML).toBe("Tooltip text")
+	})
 })

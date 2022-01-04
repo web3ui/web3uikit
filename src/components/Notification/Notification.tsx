@@ -1,66 +1,68 @@
-import { NotificationProps } from "./types";
-import React, { useState } from "react";
-import styled from "styled-components";
-import { Icon } from "../Icon";
-import { iconTypes } from "../Icon/collection";
-import resetCSS from "../../styles/reset";
-import fonts from "../../styles/fonts";
-import color from "../../styles/colors";
+import { NotificationProps } from './types';
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { Icon } from '../Icon';
+import { iconTypes } from '../Icon/collection';
+import { notificationStyles } from './Notification.styles';
 
 const NotificationStyled = styled.div`
-    ${resetCSS}
-    ${fonts.text}
-    background: #112F5C;
-    border-radius: 20px;
-    color: white;
-    min-width: 270px;
-    max-width: 25%;
-    height: 5%;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-`
+    ${notificationStyles.initialStyles}
+`;
 
 const BoxStyled = styled.div`
-    display: grid;
-    width: 100%;
-    margin-left: 0.5em;
-`
+    ${notificationStyles.box}
+`;
 
 const SpanStyled = styled.span`
-    color: ${color.grey};
+    ${notificationStyles.message}
+`;
+
+const ParagraphStyled = styled.p`
+    ${notificationStyles.title}
+`;
+
+const FlexStyled = styled.div`
+    ${notificationStyles.flex}
 `
 
 const Notification: React.FC<NotificationProps> = ({
-id = String(Date.now()),
-icon,
-message,
-title,
-active,
+    id = String(Date.now()),
+    icon,
+    message = "Kresimir: Thank you for sharin..",
+    title = "New Message",
+    active = false,
 }: NotificationProps) => {
-    const [ visible, setVisible ] = useState(active)
+    const [visible, setVisible] = useState(active);
+
+    useEffect(() => {
+        setVisible(active)
+    }, [active])
+
     return (
         <>
-        {visible && 
-            <NotificationStyled
-            id={id}
-            >
-                <Icon size={20} svg={icon || iconTypes.bell}/>
-                <BoxStyled>
-                    <div
-                    style={{display: 'flex', justifyContent: 'space-between'}}
-                    >
-                        <p style={{margin: 0, fontWeight: 600}}>{title}</p>
-                        <div onClick={() => setVisible(false)}>
-                            <Icon size={20} svg={iconTypes.x}/>
-                        </div>
-                    </div>
-                    <SpanStyled>{message}</SpanStyled>
-                </BoxStyled>
+        {visible && (
+            <NotificationStyled id={id} data-testid={'test-notification-id'}>
+            <Icon size={20} svg={icon || iconTypes.bell} />
+            <BoxStyled>
+                <FlexStyled>
+                <ParagraphStyled data-testid={'test-notification-title'}>
+                    {title}
+                </ParagraphStyled>
+                <div
+                    data-testid={'test-notification-x'}
+                    onClick={() => setVisible(false)}
+                >
+                    <Icon size={20} svg={iconTypes.x} />
+                </div>
+                </FlexStyled>
+                <SpanStyled data-testid={'test-notification-message'}>
+                {message}
+                </SpanStyled>
+            </BoxStyled>
             </NotificationStyled>
-        }
+        )}
         </>
-    )
-}
+    );
+};
 
 export default Notification;

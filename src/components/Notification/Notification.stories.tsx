@@ -15,8 +15,8 @@ export const Regular = Template.bind({});
 Regular.args = {
 	id: "test-Notification",
 	message: "Somebody messaged you",
+    isVisible: true,
     title: "New Notification",
-    active: true
 };
 
 export const Inactive = Template.bind({})
@@ -26,13 +26,14 @@ Inactive.args = {
 
 export const Standard = Template.bind({});
 Standard.args = {
-    active: true
+	message: "Kresimir: Thank you for sharin..",
+    isVisible: true
 };
 
 export const CustomIcon = Template.bind({});
 CustomIcon.args = {
-    active: true,
 	icon: iconTypes.cloud,
+	message: 'TX: 0x2134...e82c5',
 	title: 'New Event Sync',
-	message: 'TX: 0x2134...e82c5'
+    isVisible: true,
 };

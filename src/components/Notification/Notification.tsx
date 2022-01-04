@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import { notificationStyles } from './Notification.styles';
+import color from '../../styles/colors';
 
 const NotificationStyled = styled.div`
     ${notificationStyles.initialStyles}
@@ -28,21 +29,21 @@ const FlexStyled = styled.div`
 const Notification: React.FC<NotificationProps> = ({
     id = String(Date.now()),
     icon,
-    message = "Kresimir: Thank you for sharin..",
+    message,
     title = "New Message",
-    active = false,
+    isVisible = false,
 }: NotificationProps) => {
-    const [visible, setVisible] = useState(active);
+    const [visible, setVisible] = useState(isVisible);
 
     useEffect(() => {
-        setVisible(active)
-    }, [active])
+        setVisible(isVisible)
+    }, [isVisible])
 
     return (
         <>
         {visible && (
             <NotificationStyled id={id} data-testid={'test-notification-id'}>
-            <Icon size={20} svg={icon || iconTypes.bell} />
+            <Icon fill={`${color.white}`} size={20} svg={icon || iconTypes.bell} />
             <BoxStyled>
                 <FlexStyled>
                 <ParagraphStyled data-testid={'test-notification-title'}>
@@ -52,7 +53,7 @@ const Notification: React.FC<NotificationProps> = ({
                     data-testid={'test-notification-x'}
                     onClick={() => setVisible(false)}
                 >
-                    <Icon size={20} svg={iconTypes.x} />
+                    <Icon fill={`${color.white}`} size={20} svg={iconTypes.x} />
                 </div>
                 </FlexStyled>
                 <SpanStyled data-testid={'test-notification-message'}>

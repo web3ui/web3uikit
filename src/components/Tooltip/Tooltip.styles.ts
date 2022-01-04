@@ -4,46 +4,40 @@ import resetCSS from '../../styles/reset';
 const initialStyles = `
     ${resetCSS}
     ${fonts.text}
-    background-color: #112F5C;
 `;
 
-const children = `
-    border: none;
-    background: transparent;
-    padding: 5px;
-    margin: -1px;
-    font-size: inherit;
-    color: inherit;
-    cursor: inherit;
-    display: flex;
-`
+const marginTooltip = '40px';
+const arrowSizeTooltip = '6px';
 
 const container = `
-    position: absolute;
-    width: 200px;
-    margin-left: -100px;
-    display: flex;
-    justify-content: center;
-    border-radius: 5px;
+    ${resetCSS}
     align-items: center;
+    border-radius: 4px;
+    color: white;
+    display: flex;  
+    justify-content: center;
     left: 50%;
-    bottom: calc(100% + 5px);
+    padding: 8px;
     pointer-events: none;
-`
+    position: absolute;
+    transform: translateX(-50%);
+    white-space: nowrap;
 
-const box = `
-    position: relative;
-    color: #112F5C;
-    text-align: center;
-    border-radius: 5px;
-    padding: 10px 8px;
-    font-size: 14px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.2);
-`
+    &:before {
+        border-top-color: red;
+        border: solid ${arrowSizeTooltip} transparent;
+        content: '';
+        height: 0;
+        left: 50%;
+        margin-left: calc(${arrowSizeTooltip} * -1);
+        position: absolute;
+        width: 0;
+    }
+`;
 
 export const tooltipStyles = {
-    initialStyles,
-    box,
-    children,
-    container,
+  initialStyles,
+  container,
+  marginTooltip,
+  arrowSizeTooltip,
 };

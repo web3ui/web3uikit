@@ -24,7 +24,6 @@ const container = `
     white-space: nowrap;
 
     &:before {
-        border-top-color: red;
         border: solid ${arrowSizeTooltip} transparent;
         content: '';
         height: 0;

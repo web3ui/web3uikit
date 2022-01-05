@@ -219,20 +219,20 @@ const sizeLarge = `
 `;
 
 const buttonStyles = {
-    coloredBlue,
-    coloredGreen,
-    coloredRed,
-    coloredYellow,
-    iconLeading,
-    iconOnly,
-    iconTrailing,
-    initialStyles,
-    outline,
-    primary,
-    regular,
-    sizeLarge,
-    sizeRegular,
-    sizeSmall,
+        coloredBlue,
+        coloredGreen,
+        coloredRed,
+        coloredYellow,
+        iconLeading,
+        iconOnly,
+        iconTrailing,
+        initialStyles,
+        outline,
+        primary,
+        regular,
+        sizeLarge,
+        sizeRegular,
+        sizeSmall,
 };
 
 export default buttonStyles;

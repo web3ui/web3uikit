@@ -1,6 +1,9 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React, {useState} from "react";
+import {ComponentMeta, ComponentStory} from "@storybook/react";
 import Modal from "./Modal";
+import {Icon} from "../Icon";
+import {iconTypes} from "../Icon/collection";
+import colors from "../../styles/colors";
 
 export default {
     title: "Interaction/Modal",
@@ -8,21 +11,24 @@ export default {
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args}/>;
+const [ visible, setVisible] = useState(false)
 
 export const Regular = Template.bind({});
 Regular.args = {
     id: "regular",
-    title: "Book your flight",
+    title: "Download mp3",
+    okText: "Yes",
     cancelText: "Cancel",
-    isVisible: true,
-    onOk: () => { console.log('trigger') },
+    isVisible: visible,
+    onOk: () => { console.log('downloading ...') },
+    onCancel: () => {setVisible(false)},
     children: [
         <div
         key={"0"}
+        style={{display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column'}}
         >
-            <p>Content</p>
-            <p>Goes</p>
-            <p>Here</p>
+            <Icon svg={iconTypes.download} size={64} fill={colors.blueDark2}/>
+            <p>Are you sure you want to download this?</p>
         </div>
     ]
 };

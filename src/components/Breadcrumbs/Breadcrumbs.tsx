@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import colorPalete from "../../styles/colors";
+import colorPalette from "../../styles/colors";
 import { Icon } from "../Icon";
 import { iconTypes } from "../Icon/collection";
 import {
@@ -13,7 +13,7 @@ import { IBreadcrumbs, Route } from "./types";
 
 const BreadcrumbsNav = styled.nav`
         ${navStyle};
-        color: ${(p) => p?.color || colorPalete.grey};
+        color: ${(p) => p?.color || colorPalette.grey};
 `;
 
 const BreadcrumbsOl = styled.ol`
@@ -88,7 +88,7 @@ function renderList(
 }
 
 const Breadcrumbs: IBreadcrumbs = ({
-        color = colorPalete.greyIcons,
+        color = colorPalette.greyIcons,
         style,
         routes,
         separator,

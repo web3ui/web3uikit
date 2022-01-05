@@ -19,6 +19,11 @@ export interface PillProps {
   active?: boolean;
 
   /**
+   * set the position of the icon, or icon only
+   */
+  isBar?: boolean;
+
+  /**
    * the function to be called on click
    */
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;

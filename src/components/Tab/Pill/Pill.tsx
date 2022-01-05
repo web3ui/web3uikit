@@ -4,21 +4,23 @@ import styled from 'styled-components';
 import { pillStyles } from './Pill.styles';
 
 const TabStyled = styled.button<
-  Pick<PillProps, 'active' | 'disabled' | 'pressed'>
+  Pick<PillProps, 'active' | 'disabled' | 'pressed' | 'isBar'>
 >`
   ${pillStyles.initialStyles}
-
-  ${(p) => getPillStlyeByActivity(p.active, p.pressed, p.disabled)}
+  
+  ${(p) => getPillStyleByActivity(p.active, p.pressed, p.disabled, p.isBar)}
+  ${(p) => p.isBar ? pillStyles.isBar : ``}
 `;
 
-const getPillStlyeByActivity = (
+const getPillStyleByActivity = (
   active: boolean | undefined,
   pressed: boolean | undefined,
-  disabled: boolean | undefined
+  disabled: boolean | undefined,
+  isBar: boolean | undefined,
 ) => {
   if (active) {
     if (pressed) {
-      return pillStyles.active + pillStyles.pressedActive;
+      return !isBar ? pillStyles.active + pillStyles.pressedActive : pillStyles.active;
     }
     if (disabled) {
       return pillStyles.active + pillStyles.disabled;
@@ -36,20 +38,22 @@ const getPillStlyeByActivity = (
 };
 
 const Pill: React.FC<PillProps> = ({
-  id = String(Date.now()),
-  text = 'Tab',
-  disabled,
-  active = false,
-  onClick,
-  pressed = false,
+    id = String(Date.now()),
+    text = 'Tab',
+    disabled,
+    active = false,
+    onClick,
+    isBar = false,
+    pressed = false,
 }: PillProps) => {
   return (
     <TabStyled
       id={id}
       active={active}
+      disabled={disabled}
+      isBar={isBar}
       pressed={pressed}
       onClick={onClick}
-      disabled={disabled}
     >
       {text}
     </TabStyled>

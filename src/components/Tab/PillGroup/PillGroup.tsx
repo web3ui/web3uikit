@@ -26,6 +26,7 @@ const PillGroup: React.FC<PillGroupProps> = ({
               text={tab}
               pressed={active === index}
               active={active === index}
+              isBar={true}
             />
           );
         })}

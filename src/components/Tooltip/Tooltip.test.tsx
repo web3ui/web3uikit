@@ -5,40 +5,7 @@ import { composeStories } from "@storybook/testing-react";
 import * as stories from "./Tooltip.stories";
 import "jest-styled-components";
 
-const { NotVisible, Bottom, Top, Left, Right } = composeStories(stories)
-
-describe("Tooltip - Not Visible - No Children", () => {
-    let container: HTMLDivElement;
-	let childrenId = "tooltip-children-test-id"
-	let wrapperId = "tooltip-wrapper-test-id"
-	let boxId = "tooltip-box-test-id"
-
-    beforeEach(() => {
-		container = document.createElement("div");
-		document.body.appendChild(container);
-		ReactDOM.render(<NotVisible />, container);
-	});
-
-	afterEach(() => {
-		document.body.removeChild(container);
-		container.remove();
-	});
-
-	it("wrapper should not be visible", () => {
-		const element = container.querySelector(`[data-testid="${childrenId}"]`);
-		expect(element).toBeNull();
-	});
-
-	it("child should not be visible", () => {
-		const element = container.querySelector(`[data-testid="${wrapperId}"]`);
-		expect(element).toBeNull();
-	});
-
-	it("should not see text", () => {
-		const text = container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML;
-		expect(text).toBeUndefined();
-	});
-})
+const { Bottom, Top, Left, Right } = composeStories(stories)
 
 describe("Tooltip - Bottom - Visible - With Children", () => {
     let container: HTMLDivElement;

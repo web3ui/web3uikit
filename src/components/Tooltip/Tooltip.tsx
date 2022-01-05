@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import color from '../../styles/colors';
 import { tooltipStyles } from './Tooltip.styles';
 import { TooltipProps } from './types';
 
@@ -12,7 +11,7 @@ const TooltipWrapper = styled.div`
 const TooltipContainer = styled.div<Pick<TooltipProps, 'position'>>`
   ${tooltipStyles.initialStyles}
   ${tooltipStyles.container}
-    ${(p) => getContainerStyleByPosition(p.position)}
+  ${(p) => getContainerStyleByPosition(p.position)}
 `;
 
 const getContainerStyleByPosition = (
@@ -20,74 +19,25 @@ const getContainerStyleByPosition = (
 ) => {
   switch (position) {
     case 'top':
-      return `
-                background-color: ${color.blueDark2};
-                top: calc(${tooltipStyles.marginTooltip} * -1);
-                
-                &:before {
-                  border-top-color: ${color.blueDark2};
-                  top: 100%;
-                }
-            `;
+      return tooltipStyles.top;
     case 'bottom':
-      return `  
-                background-color: ${color.blueDark2};
-                bottom: calc(${tooltipStyles.marginTooltip} * -1);
-
-                &:before {
-                  bottom: 100%;
-                  border-bottom-color: ${color.blueDark2};
-                }
-            `;
+      return tooltipStyles.bottom;
     case 'left':
-      return `
-                background-color: ${color.blueDark2};
-                left: auto;
-                right: ${tooltipStyles.marginTooltip};
-                top: 50%;
-                transform: translateX(0) translateY(-50%);
-
-                &:before {
-                  border-left-color: ${color.blueDark2};
-                  left: auto;
-                  right: calc(${tooltipStyles.arrowSizeTooltip} * -2);
-                  top: 50%;
-                  transform: translateX(0) translateY(-50%);
-                }
-            `;
+      return tooltipStyles.left;
     case 'right':
-      return `
-                background-color: ${color.blueDark2};
-                left: ${tooltipStyles.marginTooltip};
-                top: 50%;
-                transform: translateX(0) translateY(-50%);
-
-                &:before {
-                  border-right-color: ${color.blueDark2};
-                  left: calc(${tooltipStyles.arrowSizeTooltip} * -1);
-                  top: 50%;
-                  transform: translateX(0) translateY(-50%);
-                }
-            `;
+      return tooltipStyles.right;
     default:
-      return `
-                bottom: calc(100% + 5px);
-                background-color: ${color.blueDark2};
-            `;
+      return tooltipStyles.defaultContainer;
   }
 };
 
 const Tooltip: React.FC<TooltipProps> = ({
   id = String(Date.now()),
   position = 'bottom',
-  text = 'Tooltip text',
+  text,
   children,
 }: TooltipProps) => {
   const [showTooltip, setVisibility] = useState(false);
-
-  if (!children || children?.length === 0) {
-    return <div style={{ display: 'none' }}></div>;
-  }
 
   return (
     <TooltipWrapper

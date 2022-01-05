@@ -4,7 +4,7 @@ import collection from './collection';
 
 const Icon: React.FC<IconProps> = ({
   fill = 'currentColor',
-  size = '1em',
+  size = 16,
   svg,
 }) => {
   const getIcon = (fill: string, size: string | number, svg: string) => {

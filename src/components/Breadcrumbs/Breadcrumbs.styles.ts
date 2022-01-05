@@ -4,7 +4,6 @@ import color from '../../styles/colors';
 
 export const olStyle = `
   ${resetCSS}
-  ${fonts.semiBold}
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -16,6 +15,7 @@ export const navStyle = `
 
 export const liStyle = `
   ${resetCSS}
+  ${fonts.semiBold}
   display: list-item;
   user-select: none;
   display: flex;

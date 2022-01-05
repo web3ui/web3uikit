@@ -65,11 +65,7 @@ function renderList(
           data-testid={'breadcrumbs-separator-test-id'}
         >
           {separator ?? (
-            <Icon
-              svg={iconTypes.chevron_right}
-              fill="currentColor"
-              size="1.4em"
-            />
+            <Icon svg={iconTypes.chevron_right} fill="currentColor" size={24} />
           )}
         </BreadcrumbsSeparator>
       );

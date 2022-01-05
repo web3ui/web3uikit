@@ -11,9 +11,6 @@ export default {
   component: Breadcrumbs,
 } as ComponentMeta<typeof Breadcrumbs>;
 
-// export const One = Template.bind({});
-// One.args = {};
-
 const Template: ComponentStory<typeof Breadcrumbs> = (args) => (
   <Breadcrumbs {...args} />
 );
@@ -24,7 +21,7 @@ One.args = {
     {
       breadcrumb: 'Moralis Demo App 1',
       path: '#',
-      icon: <Icon svg={iconTypes.server} size="1.4em" />,
+      icon: <Icon svg={iconTypes.server} size={20} />,
     },
   ],
   currentLocation: '#',
@@ -36,7 +33,7 @@ Two.args = {
     {
       breadcrumb: 'Moralis Demo App 1',
       path: '#',
-      icon: <Icon svg={iconTypes.server} size="1.4em" />,
+      icon: <Icon svg={iconTypes.server} size={20} />,
     },
     {
       breadcrumb: 'Server Details',
@@ -52,7 +49,7 @@ Three.args = {
     {
       breadcrumb: 'Moralis Demo App 1',
       path: 'demo',
-      icon: <Icon svg={iconTypes.server} size="1.4em" />,
+      icon: <Icon svg={iconTypes.server} size={20} />,
     },
     {
       breadcrumb: 'Server Details',
@@ -72,7 +69,7 @@ Four.args = {
     {
       breadcrumb: 'Moralis Demo App 1',
       path: '#',
-      icon: <Icon svg={iconTypes.server} size="1.4em" />,
+      icon: <Icon svg={iconTypes.server} size={20} />,
     },
     {
       breadcrumb: 'Server Details',

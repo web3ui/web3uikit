@@ -4,9 +4,9 @@ import { BreadcrumbsLi } from './Breadcrumbs';
  * Route
  */
 export interface Route {
+  icon?: React.ReactNode;
   path: string;
-  breadcrumbName: string;
-  // children?: Omit<Route, 'children'>[];
+  name: string;
 }
 
 export interface BreadcrumbsProps {
@@ -14,10 +14,6 @@ export interface BreadcrumbsProps {
    * The color of text
    */
   color?: string;
-  /**
-   * The content of the component.
-   */
-  children: Array<React.ReactNode> | React.ReactNode;
   /**
    * CSS style props
    */
@@ -29,7 +25,7 @@ export interface BreadcrumbsProps {
   /**
    * Routes
    */
-  routes?: Route[];
+  routes: Route[];
 }
 
 export interface IBreadcrumbs extends React.FC<BreadcrumbsProps> {

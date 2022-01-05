@@ -36,4 +36,6 @@ export const separatorStyle = `
   ${resetCSS}
   display: flex;
   user-select: none;
+  color: ${color.greyIcons};
+  margin: 0 2px;
 `;

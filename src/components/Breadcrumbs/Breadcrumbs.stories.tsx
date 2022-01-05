@@ -15,48 +15,73 @@ export default {
 // One.args = {};
 
 const Template: ComponentStory<typeof Breadcrumbs> = (args) => (
-  <Breadcrumbs {...args}></Breadcrumbs>
+  <Breadcrumbs {...args} />
 );
 
 export const One = Template.bind({});
 One.args = {
-  children: (
-    <Breadcrumbs.Item href="">
-      <Icon svg={iconTypes.server} size="1.3em" />
-      Moralis Demo App 1
-    </Breadcrumbs.Item>
-  ),
+  routes: [
+    {
+      name: 'Moralis Demo App 1',
+      path: '#',
+      icon: <Icon svg={iconTypes.server} size="1.4em" />,
+    },
+  ],
 };
 
-export const Two: ComponentStory<typeof Breadcrumbs> = (args) => (
-  <Breadcrumbs {...args}>
-    <Breadcrumbs.Item href="">
-      <Icon svg={iconTypes.server} size="1.3em" />
-      Moralis Demo App 1
-    </Breadcrumbs.Item>
-    <Breadcrumbs.Item href="">Server Details</Breadcrumbs.Item>
-  </Breadcrumbs>
-);
+export const Two = Template.bind({});
+Two.args = {
+  routes: [
+    {
+      name: 'Moralis Demo App 1',
+      path: '#',
+      icon: <Icon svg={iconTypes.server} size="1.4em" />,
+    },
+    {
+      name: 'Server Details',
+      path: '#',
+    },
+  ],
+};
 
-export const Three: ComponentStory<typeof Breadcrumbs> = (args) => (
-  <Breadcrumbs {...args}>
-    <Breadcrumbs.Item href="">
-      <Icon svg={iconTypes.server} size="1.3em" />
-      Moralis Demo App 1
-    </Breadcrumbs.Item>
-    <Breadcrumbs.Item href="">Server Details</Breadcrumbs.Item>
-    <Breadcrumbs.Item href="">Advanced</Breadcrumbs.Item>
-  </Breadcrumbs>
-);
+export const Three = Template.bind({});
+Three.args = {
+  routes: [
+    {
+      name: 'Moralis Demo App 1',
+      path: '#',
+      icon: <Icon svg={iconTypes.server} size="1.4em" />,
+    },
+    {
+      name: 'Server Details',
+      path: '#',
+    },
+    {
+      name: 'Advanced',
+      path: '#',
+    },
+  ],
+};
 
-export const Four: ComponentStory<typeof Breadcrumbs> = (args) => (
-  <Breadcrumbs {...args}>
-    <Breadcrumbs.Item href="">
-      <Icon svg={iconTypes.server} size="1.3em" />
-      Moralis Demo App 1
-    </Breadcrumbs.Item>
-    <Breadcrumbs.Item href="">Server Details</Breadcrumbs.Item>
-    <Breadcrumbs.Item href="">Server Details</Breadcrumbs.Item>
-    <Breadcrumbs.Item href="">Advanced</Breadcrumbs.Item>
-  </Breadcrumbs>
-);
+export const Four = Template.bind({});
+Four.args = {
+  routes: [
+    {
+      name: 'Moralis Demo App 1',
+      path: '#',
+      icon: <Icon svg={iconTypes.server} size="1.4em" />,
+    },
+    {
+      name: 'Server Details',
+      path: '#',
+    },
+    {
+      name: 'Server Details',
+      path: '#',
+    },
+    {
+      name: 'Advanced',
+      path: '#',
+    },
+  ],
+};

@@ -9,7 +9,7 @@ import {
   olStyle,
   separatorStyle,
 } from './Breadcrumbs.styles';
-import { IBreadcrumbs } from './types';
+import { IBreadcrumbs, Route } from './types';
 
 const BreadcrumbsStyled = styled.nav`
   ${navStyle};
@@ -21,7 +21,7 @@ const BreadcrumbsOl = styled.ol`
 `;
 
 interface IBreadcrumbProps {
-  href: string;
+  href?: string;
 }
 
 export const BreadcrumbsLi = styled.li<IBreadcrumbProps>`
@@ -32,47 +32,39 @@ const BreadcrumbsSeparator = styled.li`
   ${separatorStyle}
 `;
 
-function renderList(
-  items: React.ReactNode[] | React.ReactNode,
-  separator?: React.ReactNode,
-  className?: string
-) {
-  const childrenArray = React.Children.toArray(items);
-  return childrenArray.reduce(
-    (acc: Array<React.ReactNode>, current: React.ReactNode, i: number) => {
-      if (i < childrenArray.length - 1) {
-        acc = acc.concat(
-          current,
-          <BreadcrumbsSeparator key={`separator-${i}`} className={className}>
-            {separator ?? (
-              <Icon
-                svg={iconTypes.chevron_right}
-                fill="currentColor"
-                size="1.3em"
-              />
-            )}
-          </BreadcrumbsSeparator>
-        );
-      } else {
-        acc.push(current);
-      }
-      return acc;
-    },
-    []
-  );
+function renderList(routes: Route[], separator?: React.ReactNode) {
+  let separatedRoutes: any[] = [];
+  routes.forEach((route, i) => {
+    const crumb = (
+      <BreadcrumbsLi key={`breadcrumb-${i}`}>
+        {route?.icon}
+        {route.name}
+      </BreadcrumbsLi>
+    );
+    if (i < routes.length - 1) {
+      separatedRoutes = separatedRoutes.concat(
+        crumb,
+        <BreadcrumbsSeparator key={`separator-${i}`}>
+          {separator ?? (
+            <Icon
+              svg={iconTypes.chevron_right}
+              fill="currentColor"
+              size="1.4em"
+            />
+          )}
+        </BreadcrumbsSeparator>
+      );
+    } else {
+      separatedRoutes.push(crumb);
+    }
+  });
+  return separatedRoutes;
 }
 
-const Breadcrumbs: IBreadcrumbs = ({
-  color = '#B0B5BF',
-  children,
-  style,
-  routes,
-}) => {
+const Breadcrumbs: IBreadcrumbs = ({ color = '#B0B5BF', style, routes }) => {
   return (
     <BreadcrumbsStyled color={color}>
-      <BreadcrumbsOl style={style}>
-        {renderList(children, routes)}
-      </BreadcrumbsOl>
+      <BreadcrumbsOl style={style}>{renderList(routes)}</BreadcrumbsOl>
     </BreadcrumbsStyled>
   );
 };

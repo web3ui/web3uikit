@@ -66,17 +66,23 @@ const textSmall = `
   line-height: 24px;
 `;
 
+const semiBold = `
+  ${text}
+  font-weight: 600;
+`;
+
 const fonts = {
-  h1,
-  h2,
-  h3,
-  h4,
-  heading,
-  ibm,
-  text,
-  textBold,
-  textBold700,
-  textSmall,
+    h1,
+    h2,
+    h3,
+    h4,
+    heading,
+    ibm,
+    text,
+    textBold,
+    textBold700,
+    textSmall,
+    semiBold,
 };
 
 export default fonts;

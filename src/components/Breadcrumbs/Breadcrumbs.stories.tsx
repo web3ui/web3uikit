@@ -27,6 +27,7 @@ One.args = {
       icon: <Icon svg={iconTypes.server} size="1.4em" />,
     },
   ],
+  currentLocation: '#',
 };
 
 export const Two = Template.bind({});
@@ -39,9 +40,10 @@ Two.args = {
     },
     {
       name: 'Server Details',
-      path: '#',
+      path: '2',
     },
   ],
+  currentLocation: '2',
 };
 
 export const Three = Template.bind({});
@@ -49,18 +51,19 @@ Three.args = {
   routes: [
     {
       name: 'Moralis Demo App 1',
-      path: '#',
+      path: 'demo',
       icon: <Icon svg={iconTypes.server} size="1.4em" />,
     },
     {
       name: 'Server Details',
-      path: '#',
+      path: 'server',
     },
     {
       name: 'Advanced',
-      path: '#',
+      path: 'advanced',
     },
   ],
+  currentLocation: 'advanced',
 };
 
 export const Four = Template.bind({});
@@ -73,15 +76,16 @@ Four.args = {
     },
     {
       name: 'Server Details',
-      path: '#',
+      path: '2',
     },
     {
       name: 'Server Details',
-      path: '#',
+      path: '3',
     },
     {
       name: 'Advanced',
-      path: '#',
+      path: '4',
     },
   ],
+  currentLocation: '4',
 };

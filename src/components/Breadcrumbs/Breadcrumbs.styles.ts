@@ -24,7 +24,7 @@ export const liStyle = `
   transition: all 0.2s ease;
 
   &:last-child {
-    color: ${color.blueDark};
+    pointer-events: none;
   }
 
   &:hover {

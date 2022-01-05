@@ -21,11 +21,15 @@ export interface BreadcrumbsProps {
   /**
    * Current location for displaying active breadcrumb
    */
-  currentLocation: string;
+  currentLocation?: string;
   /**
    * Routes
    */
   routes: Route[];
+  /**
+   * Separator for breadcrumbs
+   */
+  separator: React.ReactNode;
 }
 
 export interface IBreadcrumbs extends React.FC<BreadcrumbsProps> {

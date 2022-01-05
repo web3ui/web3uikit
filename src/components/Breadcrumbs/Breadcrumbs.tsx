@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import color from '../../styles/colors';
+import colorPalete from '../../styles/colors';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import {
@@ -13,7 +13,7 @@ import { IBreadcrumbs, Route } from './types';
 
 const BreadcrumbsStyled = styled.nav`
   ${navStyle};
-  color: ${(p) => p?.color || color.grey};
+  color: ${(p) => p?.color || colorPalete.grey};
 `;
 
 const BreadcrumbsOl = styled.ol`
@@ -32,7 +32,19 @@ const BreadcrumbsSeparator = styled.li`
   ${separatorStyle}
 `;
 
-function renderList(routes: Route[], separator?: React.ReactNode) {
+function getNumberOfRoutesToRender(routes: Route[], currentLocation?: string) {
+  if (!currentLocation) return routes.length - 1;
+  for (let i = 0; i < routes.length; i++) {
+    if (routes[i].path === currentLocation) return i;
+  }
+  throw new Error('Routes list does not match currentLocation');
+}
+
+function renderList(
+  routes: Route[],
+  separator?: React.ReactNode,
+  currentLocation?: string
+) {
   let separatedRoutes: any[] = [];
   routes.forEach((route, i) => {
     const crumb = (
@@ -41,7 +53,11 @@ function renderList(routes: Route[], separator?: React.ReactNode) {
         {route.name}
       </BreadcrumbsLi>
     );
-    if (i < routes.length - 1) {
+    const routesWithSeparator = getNumberOfRoutesToRender(
+      routes,
+      currentLocation
+    );
+    if (i < routesWithSeparator) {
       separatedRoutes = separatedRoutes.concat(
         crumb,
         <BreadcrumbsSeparator key={`separator-${i}`}>
@@ -54,17 +70,25 @@ function renderList(routes: Route[], separator?: React.ReactNode) {
           )}
         </BreadcrumbsSeparator>
       );
-    } else {
+    } else if (routesWithSeparator === i) {
       separatedRoutes.push(crumb);
     }
   });
   return separatedRoutes;
 }
 
-const Breadcrumbs: IBreadcrumbs = ({ color = '#B0B5BF', style, routes }) => {
+const Breadcrumbs: IBreadcrumbs = ({
+  color = colorPalete.greyIcons,
+  style,
+  routes,
+  separator,
+  currentLocation,
+}) => {
   return (
     <BreadcrumbsStyled color={color}>
-      <BreadcrumbsOl style={style}>{renderList(routes)}</BreadcrumbsOl>
+      <BreadcrumbsOl style={style}>
+        {renderList(routes, separator, currentLocation)}
+      </BreadcrumbsOl>
     </BreadcrumbsStyled>
   );
 };

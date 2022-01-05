@@ -6,3 +6,4 @@ export * from "./components/Icon";
 export * from "./components/Input";
 export * from "./components/LinkTo";
 export * from "./components/Tag";
+export * from "./components/Tooltip";

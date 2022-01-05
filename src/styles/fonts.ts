@@ -1,4 +1,4 @@
-import color from "./colors";
+import color from './colors';
 
 const heading = `
   -webkit-font-smoothing: antialiased;
@@ -33,6 +33,12 @@ const h4 = `
   line-height: 28px;
 `;
 
+const ibm = `
+  font-family: IBM Plex Mono;
+  font-size: 16px;
+  font-style: normal;
+`;
+
 const text = `
   -webkit-font-smoothing: antialiased;
   color: ${color.grey};
@@ -49,14 +55,28 @@ const textBold = `
   font-weight: 600;
 `;
 
+const textBold700 = `
+  font-weight: 700;
+`;
+
+const textSmall = `
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  line-height: 24px;
+`;
+
 const fonts = {
-	h1,
-	h2,
-	h3,
-	h4,
-	heading,
-	text,
-	textBold,
+  h1,
+  h2,
+  h3,
+  h4,
+  heading,
+  ibm,
+  text,
+  textBold,
+  textBold700,
+  textSmall,
 };
 
 export default fonts;

@@ -2,6 +2,7 @@ const color = {
 	blue: "#2E7DAF",
 	blueCloud: "#EEF6FB",
 	blueDark: "#041836",
+	blueDark2: "#112F5C",
 	blueLight: "#F2F6FF",
 	blueSky: "#9ECCEA",
 	blueSkyDark: "#51A5DA",

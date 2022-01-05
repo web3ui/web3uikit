@@ -9,7 +9,7 @@ import type { LinkToProps } from "./types";
 // styles
 type TStyleProps = Pick<LinkToProps, "iconLayout">;
 
-const LinkStyled = styled.a`
+export const LinkStyled = styled.a`
 	${resetCSS}
 	${fonts.text}
   align-items: center;
@@ -22,7 +22,7 @@ const LinkStyled = styled.a`
 	}
 `;
 
-const FlexSpanStyled = styled.span<TStyleProps>`
+export const FlexSpanStyled = styled.span<TStyleProps>`
 	align-items: baseline;
 	display: flex;
 	flex-direction: ${({ iconLayout }) =>
@@ -36,9 +36,7 @@ const FlexSpanStyled = styled.span<TStyleProps>`
 	}
 `;
 
-const LinkToStyles = {
+export const LinkToStyles = {
 	LinkStyled,
 	FlexSpanStyled,
 };
-
-export default LinkToStyles;

@@ -1,6 +1,6 @@
-import resetCSS from "../../styles/reset";
-import fonts from "../../styles/fonts";
-import color from "../../styles/colors";
+import resetCSS from '../../styles/reset';
+import fonts from '../../styles/fonts';
+import color from '../../styles/colors';
 
 export const olStyle = `
   ${resetCSS}
@@ -22,6 +22,10 @@ export const liStyle = `
   align-items: center;
   cursor: pointer;
   transition: all 0.2s ease;
+
+  svg:first-child {
+    margin-right: 5px;
+  }
 
   &:last-child {
     pointer-events: none;

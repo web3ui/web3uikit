@@ -50,7 +50,7 @@ function renderList(
                 const crumb = (
                         <BreadcrumbsLi
                                 key={`breadcrumb-${i}`}
-                                data-testid={"breadcrumb-test-id"}
+                                data-testid={i == 0 ? "breadcrumb-test-id" : `breadcrumb-test-id-${i}`}
                         >
                                 {route?.icon}
                                 {route.breadcrumb}

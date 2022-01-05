@@ -1,6 +1,6 @@
-import color, { getShade } from "../../styles/colors";
-import resetCSS from "../../styles/reset";
-import fonts from "../../styles/fonts";
+import color, { getShade } from '../../styles/colors';
+import resetCSS from '../../styles/reset';
+import fonts from '../../styles/fonts';
 
 // the default styles for any button
 const initialStyles = `
@@ -31,8 +31,8 @@ const initialStyles = `
   }
 
   :after {
-    background-color: rgba(0, 0, 0, 0);
-    content: '';
+    background-color: ${getShade('dark', 0)};
+    content: "";
     display: block;
     height: 100%;
     left: 0;
@@ -46,7 +46,7 @@ const initialStyles = `
 
   :hover {
     :after {
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: ${getShade('dark', 10)};
     }
   }
 
@@ -113,18 +113,18 @@ const outline = `
 // theme = colored common shades
 const coloredShades = `
 :after {
-  background-color: ${getShade("light", 90)};
+  background-color: ${getShade('light', 90)};
 }
 
 :hover {
   :after {
-    background-color: ${getShade("light", 70)};
+    background-color: ${getShade('light', 70)};
   }
 }
 
 :active {
   :after {
-    background-color: ${getShade("light", 50)};
+    background-color: ${getShade('light', 50)};
   }
 }
 `;
@@ -219,20 +219,20 @@ const sizeLarge = `
 `;
 
 const buttonStyles = {
-	coloredBlue,
-	coloredGreen,
-	coloredRed,
-	coloredYellow,
-	iconLeading,
-	iconOnly,
-	iconTrailing,
-	initialStyles,
-	outline,
-	primary,
-	regular,
-	sizeLarge,
-	sizeRegular,
-	sizeSmall,
+    coloredBlue,
+    coloredGreen,
+    coloredRed,
+    coloredYellow,
+    iconLeading,
+    iconOnly,
+    iconTrailing,
+    initialStyles,
+    outline,
+    primary,
+    regular,
+    sizeLarge,
+    sizeRegular,
+    sizeSmall,
 };
 
 export default buttonStyles;

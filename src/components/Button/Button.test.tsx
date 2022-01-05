@@ -4,8 +4,7 @@ import { fireEvent } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Button.stories';
 import color from '../../styles/colors';
-import renderer from 'react-test-renderer';
-import 'jest-styled-components';
+import RGBToHex from '../../utils/rgbToHex';
 
 const {
     Primary,
@@ -24,15 +23,17 @@ const {
     ColoredBlue,
 } = composeStories(stories);
 
+let container: HTMLDivElement;
+const testClickEvent = jest.fn();
+const testId = 'test-button';
+
 describe('Button - Primary', () => {
-    let container: HTMLDivElement;
-    const testId = Primary?.args?.id;
     const testText = Primary?.args?.text;
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<Primary />, container);
+        ReactDOM.render(<Primary onClick={testClickEvent} />, container);
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -49,47 +50,72 @@ describe('Button - Primary', () => {
     });
 
     it('renders Primary button with correct styles', () => {
-        const tree = renderer.create(<Primary />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('background-color', `${color.green}`);
-        expect(tree).toHaveStyleRule('color', `${color.white}`);
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.green);
+        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.white);
     });
 
-    it('returns itself as a console log', () => {
-        console.log = jest.fn();
-        const testButton = container.querySelector(`#${testId}`);
-        testButton && fireEvent.click(testButton);
-        expect(console.log).toHaveBeenCalledWith(testButton);
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
     });
 });
 
 describe('Button - Primary Large', () => {
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<PrimaryLarge />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
     it('renders PrimaryLarge button with correct styles', () => {
-        const tree = renderer.create(<PrimaryLarge />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('background-color', `${color.green}`);
-        expect(tree).toHaveStyleRule('color', `${color.white}`);
-        expect(tree).toHaveStyleRule('border-width', '4px');
-        expect(tree).toHaveStyleRule('font-size', '16px');
-        expect(tree).toHaveStyleRule('padding', '4px 20px');
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.white);
+        const bgColorHex =
+            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.green);
+        expect(styles?.borderWidth).toBe('4px');
+        expect(styles?.fontSize).toBe('16px');
+        expect(styles?.padding).toBe('4px 20px');
     });
 });
 
 describe('Button - Primary Small', () => {
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<PrimarySmall />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
     it('renders PrimaryLarge button with correct styles', () => {
-        const tree = renderer.create(<PrimarySmall />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('background-color', `${color.green}`);
-        expect(tree).toHaveStyleRule('color', `${color.white}`);
-        expect(tree).toHaveStyleRule('border', 'none');
-        expect(tree).toHaveStyleRule('font-size', '13px');
-        expect(tree).toHaveStyleRule('padding', '2px 12px');
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.white);
+        const bgColorHex =
+            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.green);
+        expect(styles?.fontSize).toBe('13px');
+        expect(styles?.padding).toBe('2px 12px');
     });
 });
 
 describe('Button - Primary with icon', () => {
-    let container: HTMLDivElement;
-    const testId = PrimaryWithIcon?.args?.id;
     const testText = PrimaryWithIcon?.args?.text;
 
     beforeEach(() => {
@@ -119,48 +145,82 @@ describe('Button - Primary with icon', () => {
 });
 
 describe('Button - Primary icon after', () => {
-    it('renders Primary button with icon after', () => {
-        const tree = renderer.create(<PrimaryWithIconAfter />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('flex-direction', 'row-reverse');
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<PrimaryWithIconAfter />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+    it('renders PrimaryLarge button with correct styles', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        expect(styles?.flexDirection).toBe('row-reverse');
     });
 });
 
 describe('Button - Primary icon only', () => {
-    it('renders Primary button with icon only', () => {
-        const tree = renderer.create(<PrimaryWithIconOnly />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('border-width', '0px');
-        expect(tree).toHaveStyleRule('height', '32px');
-        expect(tree).toHaveStyleRule('text-indent', '-99999px');
-        expect(tree).toHaveStyleRule('width', '32px');
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<PrimaryWithIconOnly />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+    it('renders PrimaryLarge button with correct styles', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        expect(styles?.borderWidth).toBe('0px');
+        expect(styles?.height).toBe('32px');
+        expect(styles?.width).toBe('32px');
+        expect(styles?.textIndent).toBe('-99999px');
     });
 });
 
 describe('Button - Primary icon only large', () => {
-    it('renders Primary button with icon only large', () => {
-        const tree = renderer.create(<PrimaryWithIconOnlyLarge />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('border-width', '4px');
-        expect(tree).toHaveStyleRule('height', '40px');
-        expect(tree).toHaveStyleRule('text-indent', '-99999px');
-        expect(tree).toHaveStyleRule('width', '40px');
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<PrimaryWithIconOnlyLarge />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+    it('renders PrimaryLarge button with correct styles', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        expect(styles?.borderWidth).toBe('4px');
+        expect(styles?.height).toBe('40px');
+        expect(styles?.width).toBe('40px');
+        expect(styles?.textIndent).toBe('-99999px');
     });
 });
 
 describe('Button - Primary icon only small', () => {
-    it('renders Primary button with icon only small', () => {
-        const tree = renderer.create(<PrimaryWithIconOnlySmall />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('height', '24px');
-        expect(tree).toHaveStyleRule('text-indent', '-99999px');
-        expect(tree).toHaveStyleRule('width', '24px');
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<PrimaryWithIconOnlySmall />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+    it('renders PrimaryLarge button with correct styles', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        expect(styles?.height).toBe('24px');
+        expect(styles?.width).toBe('24px');
+        expect(styles?.textIndent).toBe('-99999px');
     });
 });
 
 describe('Button - Secondary', () => {
-    let container: HTMLDivElement;
-    const testId = Secondary?.args?.id;
     const testText = Secondary?.args?.text;
 
     beforeEach(() => {
@@ -182,23 +242,23 @@ describe('Button - Secondary', () => {
         expect(element?.textContent).toBe(testText);
     });
     it('renders Secondary button with correct styles', () => {
-        const tree = renderer.create(<Secondary />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('background-color', `${color.blueLight}`);
-        expect(tree).toHaveStyleRule('color', `${color.blue}`);
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.blueLight);
+        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.blue);
     });
 
-    it('returns itself as a console log', () => {
-        console.log = jest.fn();
-        const testButton = container.querySelector(`#${testId}`);
-        testButton && fireEvent.click(testButton);
-        expect(console.log).toHaveBeenCalledWith(testButton);
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
     });
 });
 
 describe('Button - Outline', () => {
-    let container: HTMLDivElement;
-    const testId = Outline?.args?.id;
     const testText = Outline?.args?.text;
 
     beforeEach(() => {
@@ -220,22 +280,22 @@ describe('Button - Outline', () => {
         expect(element?.textContent).toBe(testText);
     });
     it('renders Outline button with correct styles', () => {
-        const tree = renderer.create(<Outline />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('background-color', `${color.white}`);
-        expect(tree).toHaveStyleRule('color', `${color.blue}`);
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.white);
+        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.blue);
     });
-    it('returns itself as a console log', () => {
-        console.log = jest.fn();
-        const testButton = container.querySelector(`#${testId}`);
-        testButton && fireEvent.click(testButton);
-        expect(console.log).toHaveBeenCalledWith(testButton);
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
     });
 });
 
 describe('Button - ColoredRed', () => {
-    let container: HTMLDivElement;
-    const testId = ColoredRed?.args?.id;
     const testText = ColoredRed?.args?.text;
 
     beforeEach(() => {
@@ -256,24 +316,23 @@ describe('Button - ColoredRed', () => {
         const element = container.querySelector(`[data-testid="${testId}"]`);
         expect(element?.textContent).toBe(testText);
     });
-    it('renders ColoredRed button with correct styles', () => {
-        const tree = renderer.create(<ColoredRed />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('background-color', `${color.red}`);
-        expect(tree).toHaveStyleRule('border-color', `${color.red}`);
-        expect(tree).toHaveStyleRule('color', `${color.red}`);
+    it('renders Red button with correct styles', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.red);
+        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.red);
     });
-    it('returns itself as a console log', () => {
-        console.log = jest.fn();
-        const testButton = container.querySelector(`#${testId}`);
-        testButton && fireEvent.click(testButton);
-        expect(console.log).toHaveBeenCalledWith(testButton);
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
     });
 });
 
 describe('Button - ColoredBlue', () => {
-    let container: HTMLDivElement;
-    const testId = ColoredBlue?.args?.id;
     const testText = ColoredBlue?.args?.text;
 
     beforeEach(() => {
@@ -294,24 +353,23 @@ describe('Button - ColoredBlue', () => {
         const element = container.querySelector(`[data-testid="${testId}"]`);
         expect(element?.textContent).toBe(testText);
     });
-    it('renders ColoredBlue button with correct styles', () => {
-        const tree = renderer.create(<ColoredBlue />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('background-color', `${color.blue}`);
-        expect(tree).toHaveStyleRule('border-color', `${color.blue}`);
-        expect(tree).toHaveStyleRule('color', `${color.blue}`);
+    it('renders Blue button with correct styles', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.blue);
+        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.blue);
     });
-    it('returns itself as a console log', () => {
-        console.log = jest.fn();
-        const testButton = container.querySelector(`#${testId}`);
-        testButton && fireEvent.click(testButton);
-        expect(console.log).toHaveBeenCalledWith(testButton);
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
     });
 });
 
 describe('Button - ColoredGreen', () => {
-    let container: HTMLDivElement;
-    const testId = ColoredGreen?.args?.id;
     const testText = ColoredGreen?.args?.text;
 
     beforeEach(() => {
@@ -332,24 +390,23 @@ describe('Button - ColoredGreen', () => {
         const element = container.querySelector(`[data-testid="${testId}"]`);
         expect(element?.textContent).toBe(testText);
     });
-    it('renders ColoredGreen button with correct styles', () => {
-        const tree = renderer.create(<ColoredGreen />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('background-color', `${color.green}`);
-        expect(tree).toHaveStyleRule('border-color', `${color.green}`);
-        expect(tree).toHaveStyleRule('color', `${color.green}`);
+    it('renders Green button with correct styles', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.green);
+        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.green);
     });
-    it('returns itself as a console log', () => {
-        console.log = jest.fn();
-        const testButton = container.querySelector(`#${testId}`);
-        testButton && fireEvent.click(testButton);
-        expect(console.log).toHaveBeenCalledWith(testButton);
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
     });
 });
 
 describe('Button - ColoredYellow', () => {
-    let container: HTMLDivElement;
-    const testId = ColoredYellow?.args?.id;
     const testText = ColoredYellow?.args?.text;
 
     beforeEach(() => {
@@ -370,17 +427,18 @@ describe('Button - ColoredYellow', () => {
         const element = container.querySelector(`[data-testid="${testId}"]`);
         expect(element?.textContent).toBe(testText);
     });
-    it('renders ColoredYellow button with correct styles', () => {
-        const tree = renderer.create(<ColoredYellow />).toJSON();
-        expect(tree).toMatchSnapshot();
-        expect(tree).toHaveStyleRule('background-color', `${color.yellow}`);
-        expect(tree).toHaveStyleRule('border-color', `${color.yellow}`);
-        expect(tree).toHaveStyleRule('color', `${color.yellow}`);
+    it('renders Yellow button with correct styles', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.yellow);
+        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.yellow);
     });
-    it('returns itself as a console log', () => {
-        console.log = jest.fn();
-        const testButton = container.querySelector(`#${testId}`);
-        testButton && fireEvent.click(testButton);
-        expect(console.log).toHaveBeenCalledWith(testButton);
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(`[data-testid="${testId}"]`);
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
     });
 });

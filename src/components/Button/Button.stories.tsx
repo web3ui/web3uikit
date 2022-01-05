@@ -6,16 +6,13 @@ import { iconTypes } from '../Icon/collection';
 export default {
     title: 'Interaction/Button',
     component: Button,
+    argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof Button>;
-
-const testEvent = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
-    console.log(event.target);
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-    onClick: testEvent,
     id: 'test-button-primary',
     text: 'Primary Button',
     theme: 'primary',
@@ -24,7 +21,6 @@ Primary.args = {
 
 export const PrimaryLarge = Template.bind({});
 PrimaryLarge.args = {
-    onClick: testEvent,
     id: 'test-button-primary-large',
     text: 'Large Primary',
     theme: 'primary',
@@ -34,7 +30,6 @@ PrimaryLarge.args = {
 
 export const PrimarySmall = Template.bind({});
 PrimarySmall.args = {
-    onClick: testEvent,
     id: 'test-button-primary-small',
     text: 'Small Primary',
     theme: 'primary',
@@ -44,7 +39,6 @@ PrimarySmall.args = {
 
 export const PrimaryWithIcon = Template.bind({});
 PrimaryWithIcon.args = {
-    onClick: testEvent,
     id: 'test-button-primary-icon',
     text: 'Primary with icon',
     theme: 'primary',
@@ -54,7 +48,6 @@ PrimaryWithIcon.args = {
 
 export const PrimaryWithIconAfter = Template.bind({});
 PrimaryWithIconAfter.args = {
-    onClick: testEvent,
     id: 'test-button-primary-icon-after',
     text: 'Primary with icon',
     theme: 'primary',
@@ -65,7 +58,6 @@ PrimaryWithIconAfter.args = {
 
 export const PrimaryWithIconOnly = Template.bind({});
 PrimaryWithIconOnly.args = {
-    onClick: testEvent,
     id: 'test-button-primary-icon-only',
     text: 'Primary icon only',
     theme: 'primary',
@@ -76,7 +68,6 @@ PrimaryWithIconOnly.args = {
 
 export const PrimaryWithIconOnlyLarge = Template.bind({});
 PrimaryWithIconOnlyLarge.args = {
-    onClick: testEvent,
     icon: iconTypes.plus,
     iconLayout: 'icon-only',
     id: 'test-button-primary-icon-only',
@@ -88,7 +79,6 @@ PrimaryWithIconOnlyLarge.args = {
 
 export const PrimaryWithIconOnlySmall = Template.bind({});
 PrimaryWithIconOnlySmall.args = {
-    onClick: testEvent,
     icon: iconTypes.plus,
     iconLayout: 'icon-only',
     id: 'test-button-primary-icon-only',
@@ -100,7 +90,6 @@ PrimaryWithIconOnlySmall.args = {
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-    onClick: testEvent,
     id: 'test-button',
     text: 'Secondary Button',
     theme: 'secondary',
@@ -109,7 +98,6 @@ Secondary.args = {
 
 export const SecondaryWithIcon = Template.bind({});
 SecondaryWithIcon.args = {
-    onClick: testEvent,
     id: 'test-button-secondary-icon',
     text: 'Secondary with icon',
     theme: 'secondary',
@@ -119,7 +107,6 @@ SecondaryWithIcon.args = {
 
 export const SecondaryWithIconAfter = Template.bind({});
 SecondaryWithIconAfter.args = {
-    onClick: testEvent,
     id: 'test-button-secondary-icon-after',
     text: 'Secondary with icon',
     theme: 'secondary',
@@ -130,7 +117,6 @@ SecondaryWithIconAfter.args = {
 
 export const SecondaryIconOnly = Template.bind({});
 SecondaryIconOnly.args = {
-    onClick: testEvent,
     id: 'test-button-secondary-icon-only',
     text: 'Secondary icon only',
     theme: 'secondary',
@@ -141,7 +127,6 @@ SecondaryIconOnly.args = {
 
 export const SecondaryIconOnlyLarge = Template.bind({});
 SecondaryIconOnlyLarge.args = {
-    onClick: testEvent,
     id: 'test-button-secondary-icon-large',
     text: 'Secondary icon large',
     theme: 'secondary',
@@ -153,7 +138,6 @@ SecondaryIconOnlyLarge.args = {
 
 export const SecondaryIconOnlySmall = Template.bind({});
 SecondaryIconOnlySmall.args = {
-    onClick: testEvent,
     id: 'test-button-secondary-icon-small',
     text: 'Secondary icon small',
     theme: 'secondary',
@@ -165,7 +149,6 @@ SecondaryIconOnlySmall.args = {
 
 export const Outline = Template.bind({});
 Outline.args = {
-    onClick: testEvent,
     id: 'test-button-outline',
     text: 'Outline Button',
     theme: 'outline',
@@ -174,7 +157,6 @@ Outline.args = {
 
 export const OutlineWithIcon = Template.bind({});
 OutlineWithIcon.args = {
-    onClick: testEvent,
     id: 'test-button-outline-icon',
     text: 'Outline with icon',
     theme: 'outline',
@@ -184,7 +166,6 @@ OutlineWithIcon.args = {
 
 export const OutlineWithIconAfter = Template.bind({});
 OutlineWithIconAfter.args = {
-    onClick: testEvent,
     id: 'test-button-outline-icon-after',
     text: 'Outline with icon',
     theme: 'outline',
@@ -195,7 +176,6 @@ OutlineWithIconAfter.args = {
 
 export const OutlineIconOnly = Template.bind({});
 OutlineIconOnly.args = {
-    onClick: testEvent,
     id: 'test-button-outline-icon-only',
     text: 'Outline icon only',
     theme: 'outline',
@@ -206,7 +186,6 @@ OutlineIconOnly.args = {
 
 export const OutlineIconOnlyLarge = Template.bind({});
 OutlineIconOnlyLarge.args = {
-    onClick: testEvent,
     id: 'test-button-outline-icon-only',
     text: 'Outline icon only',
     theme: 'outline',
@@ -218,7 +197,6 @@ OutlineIconOnlyLarge.args = {
 
 export const OutlineIconOnlySmall = Template.bind({});
 OutlineIconOnlySmall.args = {
-    onClick: testEvent,
     id: 'test-button-outline-icon-only',
     text: 'Outline icon only',
     theme: 'outline',
@@ -230,7 +208,6 @@ OutlineIconOnlySmall.args = {
 
 export const ColoredGreen = Template.bind({});
 ColoredGreen.args = {
-    onClick: testEvent,
     id: 'test-button-colored-green',
     text: 'Colored Green',
     theme: 'colored',
@@ -240,7 +217,6 @@ ColoredGreen.args = {
 
 export const ColoredRed = Template.bind({});
 ColoredRed.args = {
-    onClick: testEvent,
     id: 'test-button-colored-red',
     text: 'Colored Red',
     theme: 'colored',
@@ -250,7 +226,6 @@ ColoredRed.args = {
 
 export const ColoredYellow = Template.bind({});
 ColoredYellow.args = {
-    onClick: testEvent,
     id: 'test-button-colored-yellow',
     text: 'Colored Yellow',
     theme: 'colored',
@@ -260,7 +235,6 @@ ColoredYellow.args = {
 
 export const ColoredBlue = Template.bind({});
 ColoredBlue.args = {
-    onClick: testEvent,
     id: 'test-button-colored-blue',
     text: 'Colored Blue',
     theme: 'colored',
@@ -270,7 +244,6 @@ ColoredBlue.args = {
 
 export const ColoredLarge = Template.bind({});
 ColoredLarge.args = {
-    onClick: testEvent,
     id: 'test-button-colored-large',
     text: 'Colored Large',
     theme: 'colored',
@@ -281,7 +254,6 @@ ColoredLarge.args = {
 
 export const ColoredSmall = Template.bind({});
 ColoredSmall.args = {
-    onClick: testEvent,
     id: 'test-button-colored-small',
     text: 'Colored Small',
     theme: 'colored',
@@ -292,7 +264,6 @@ ColoredSmall.args = {
 
 export const ColoredIcon = Template.bind({});
 ColoredIcon.args = {
-    onClick: testEvent,
     id: 'test-button-colored-icon',
     text: 'Colored Icon',
     theme: 'colored',
@@ -303,7 +274,6 @@ ColoredIcon.args = {
 
 export const ColoredIconAfter = Template.bind({});
 ColoredIconAfter.args = {
-    onClick: testEvent,
     id: 'test-button-colored-icon-after',
     text: 'Colored Icon',
     theme: 'colored',
@@ -315,7 +285,6 @@ ColoredIconAfter.args = {
 
 export const ColoredIconOnly = Template.bind({});
 ColoredIconOnly.args = {
-    onClick: testEvent,
     id: 'test-button-colored-icon-only',
     text: 'Colored Icon',
     theme: 'colored',
@@ -327,7 +296,6 @@ ColoredIconOnly.args = {
 
 export const DisabledPrimary = Template.bind({});
 DisabledPrimary.args = {
-    onClick: testEvent,
     disabled: true,
     id: 'test-button-disabled-primary',
     text: 'Disabled Button',
@@ -337,7 +305,6 @@ DisabledPrimary.args = {
 
 export const DisabledSecondary = Template.bind({});
 DisabledSecondary.args = {
-    onClick: testEvent,
     disabled: true,
     id: 'test-button-disabled-secondary',
     text: 'Disabled Button',
@@ -347,7 +314,6 @@ DisabledSecondary.args = {
 
 export const DisabledOutline = Template.bind({});
 DisabledOutline.args = {
-    onClick: testEvent,
     disabled: true,
     id: 'test-button-disabled-outline',
     text: 'Disabled Button',
@@ -357,7 +323,6 @@ DisabledOutline.args = {
 
 export const DisabledColored = Template.bind({});
 DisabledColored.args = {
-    onClick: testEvent,
     disabled: true,
     id: 'test-button-disabled-colored',
     text: 'Disabled Button',
@@ -368,7 +333,6 @@ DisabledColored.args = {
 
 export const DisabledIcon = Template.bind({});
 DisabledIcon.args = {
-    onClick: testEvent,
     disabled: true,
     id: 'test-button-disabled-icon',
     text: 'Disabled Button',
@@ -380,7 +344,6 @@ DisabledIcon.args = {
 
 export const DisabledIconAfter = Template.bind({});
 DisabledIconAfter.args = {
-    onClick: testEvent,
     disabled: true,
     id: 'test-button-disabled-icon-after',
     text: 'Disabled Button',
@@ -393,7 +356,6 @@ DisabledIconAfter.args = {
 
 export const DisabledIconOnly = Template.bind({});
 DisabledIconOnly.args = {
-    onClick: testEvent,
     disabled: true,
     id: 'test-button-disabled-icon-only',
     text: 'Disabled Button',
@@ -406,7 +368,6 @@ DisabledIconOnly.args = {
 
 export const DisabledIconOnlyLarge = Template.bind({});
 DisabledIconOnlyLarge.args = {
-    onClick: testEvent,
     disabled: true,
     id: 'test-button-disabled-icon-only-large',
     text: 'Disabled Button',
@@ -420,7 +381,6 @@ DisabledIconOnlyLarge.args = {
 
 export const DisabledIconOnlySmall = Template.bind({});
 DisabledIconOnlySmall.args = {
-    onClick: testEvent,
     disabled: true,
     id: 'test-button-disabled-icon-only-small',
     text: 'Disabled Button',

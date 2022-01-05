@@ -106,7 +106,7 @@ const Button: React.FC<ButtonProps> = ({
     return (
         <ButtonStyled
             color={color}
-            data-testid={id}
+            data-testid="test-button"
             disabled={disabled}
             iconLayout={iconLayout}
             id={id}

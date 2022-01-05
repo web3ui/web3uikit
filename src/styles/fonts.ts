@@ -1,4 +1,4 @@
-import color from './colors';
+import color from "./colors";
 
 const heading = `
   -webkit-font-smoothing: antialiased;
@@ -55,14 +55,14 @@ const semiBold = `
 `;
 
 const fonts = {
-        h1,
-        h2,
-        h3,
-        h4,
-        heading,
-        text,
-        textBold,
-        semiBold,
+    h1,
+    h2,
+    h3,
+    h4,
+    heading,
+    text,
+    textBold,
+    semiBold,
 };
 
 export default fonts;

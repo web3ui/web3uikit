@@ -1,2 +1,2 @@
-export { default as LinkTo } from "./LinkTo";
-export type { LinkToProps } from "./types";
+export { default as LinkTo } from './LinkTo';
+export type { LinkToProps } from './types';

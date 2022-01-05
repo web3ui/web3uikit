@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import renderer from "react-test-renderer";
 import { composeStories } from "@storybook/testing-react";
 import * as stories from "./LinkTo.stories";
 import "jest-styled-components";
 import color from "../../styles/colors";
+import RGBToHex from "../../utils/rgbToHex";
 
 const {
 	ExternalLink,
@@ -14,13 +14,15 @@ const {
 	LinkWithOutText,
 } = composeStories(stories);
 
+const testIcon = "test-icon";
+const testId = "test-link-to";
+const testFlexId = "test-link-flex";
+const testTextWrap = "test-link-text";
+
 describe("LinkTo - External", () => {
 	let container: HTMLDivElement;
 	const testAddress = ExternalLink?.args?.address;
-	const testIcon = "test-icon";
-	const testId = "test-link-to";
 	const testText = ExternalLink?.args?.text;
-	const testTextWrap = "test-link-text";
 
 	beforeEach(() => {
 		container = document.createElement("div");
@@ -36,18 +38,20 @@ describe("LinkTo - External", () => {
 		expect(element).not.toBeNull();
 	});
 	it("renders text correctly", () => {
-		const element = container.querySelector(`[data-testid="${testTextWrap}"]`);
+		const element = container.querySelector(
+			`[data-testid="${testTextWrap}"]`,
+		);
 		expect(element?.textContent).toBe(testText);
 	});
 	it("renders link address correctly", () => {
 		const element: HTMLAnchorElement | null = container.querySelector(
-			`[data-testid="${testId}"]`
+			`[data-testid="${testId}"]`,
 		);
 		expect(element?.href).toBe(testAddress);
 	});
 	it("renders link target correctly", () => {
 		const element: HTMLAnchorElement | null = container.querySelector(
-			`[data-testid="${testId}"]`
+			`[data-testid="${testId}"]`,
 		);
 		expect(element?.target).toBe("_blank");
 	});
@@ -56,19 +60,27 @@ describe("LinkTo - External", () => {
 		expect(iconSVG).not.toBeNull();
 		expect(iconSVG?.textContent).toBe("link icon");
 	});
-	it("renders link as blue color", () => {
-		const element = renderer.create(<ExternalLink />).toJSON();
-		expect(element).toMatchSnapshot();
-		expect(element).toHaveStyleRule("color", `${color.blue}`);
+
+	it("renders correct color for link", () => {
+		const element: HTMLAnchorElement | null = container.querySelector(
+			`[data-testid="${testId}"]`,
+		);
+		const styles = element && getComputedStyle(element);
+		const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+		expect(colorHex).toBe(color.blue);
 	});
+
 	it("renders inline so it can be mid text", () => {
-		const element = renderer.create(<ExternalLink />).toJSON();
-		expect(element).toMatchSnapshot();
-		expect(element).toHaveStyleRule("display", "inline-block");
+		const element: HTMLAnchorElement | null = container.querySelector(
+			`[data-testid="${testId}"]`,
+		);
+		const styles = element && getComputedStyle(element);
+		expect(styles?.display).toBe("inline-block");
 	});
+
 	it("renders icon in leading position", () => {
 		const flexSpan: HTMLSpanElement | null = container.querySelector(
-			`[data-testid="${testId}"] .flex`
+			`[data-testid="${testFlexId}"]`,
 		);
 		const styles = flexSpan && getComputedStyle(flexSpan);
 		expect(styles?.flexDirection).toBe("row");
@@ -78,10 +90,7 @@ describe("LinkTo - External", () => {
 describe("LinkTo - External Icon After", () => {
 	let container: HTMLDivElement;
 	const testAddress = ExternalLinkIconAfter?.args?.address;
-	const testIcon = "test-icon";
-	const testId = "test-link-to";
 	const testText = ExternalLinkIconAfter?.args?.text;
-	const testTextWrap = "test-link-text";
 
 	beforeEach(() => {
 		container = document.createElement("div");
@@ -97,18 +106,20 @@ describe("LinkTo - External Icon After", () => {
 		expect(element).not.toBeNull();
 	});
 	it("renders text correctly", () => {
-		const element = container.querySelector(`[data-testid="${testTextWrap}"]`);
+		const element = container.querySelector(
+			`[data-testid="${testTextWrap}"]`,
+		);
 		expect(element?.textContent).toBe(testText);
 	});
 	it("renders link address correctly", () => {
 		const element: HTMLAnchorElement | null = container.querySelector(
-			`[data-testid="${testId}"]`
+			`[data-testid="${testId}"]`,
 		);
 		expect(element?.href).toBe(testAddress);
 	});
 	it("renders link target correctly", () => {
 		const element: HTMLAnchorElement | null = container.querySelector(
-			`[data-testid="${testId}"]`
+			`[data-testid="${testId}"]`,
 		);
 		expect(element?.target).toBe("_blank");
 	});
@@ -117,19 +128,32 @@ describe("LinkTo - External Icon After", () => {
 		expect(iconSVG).not.toBeNull();
 		expect(iconSVG?.textContent).toBe("link icon");
 	});
-	it("renders link as blue color", () => {
-		const element = renderer.create(<ExternalLinkIconAfter />).toJSON();
-		expect(element).toMatchSnapshot();
-		expect(element).toHaveStyleRule("color", `${color.blue}`);
+	it("renders correct color for link", () => {
+		const element: HTMLAnchorElement | null = container.querySelector(
+			`[data-testid="${testId}"]`,
+		);
+		const styles = element && getComputedStyle(element);
+		const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+		expect(colorHex).toBe(color.blue);
+	});
+	it("renders correct color for link", () => {
+		const element: HTMLAnchorElement | null = container.querySelector(
+			`[data-testid="${testId}"]`,
+		);
+		const styles = element && getComputedStyle(element);
+		const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+		expect(colorHex).toBe(color.blue);
 	});
 	it("renders inline so it can be mid text", () => {
-		const element = renderer.create(<ExternalLinkIconAfter />).toJSON();
-		expect(element).toMatchSnapshot();
-		expect(element).toHaveStyleRule("display", "inline-block");
+		const element: HTMLAnchorElement | null = container.querySelector(
+			`[data-testid="${testId}"]`,
+		);
+		const styles = element && getComputedStyle(element);
+		expect(styles?.display).toBe("inline-block");
 	});
 	it("renders icon in leading position", () => {
 		const flexSpan: HTMLSpanElement | null = container.querySelector(
-			`[data-testid="${testId}"] .flex`
+			`[data-testid="${testFlexId}"]`,
 		);
 		const styles = flexSpan && getComputedStyle(flexSpan);
 		expect(styles?.flexDirection).toBe("row-reverse");
@@ -139,10 +163,7 @@ describe("LinkTo - External Icon After", () => {
 describe("LinkTo - Email", () => {
 	let container: HTMLDivElement;
 	const testAddress = `mailto:${MailToLink?.args?.address}`;
-	const testIcon = "test-icon";
-	const testId = "test-link-to";
 	const testText = MailToLink?.args?.text;
-	const testTextWrap = "test-link-text";
 
 	beforeEach(() => {
 		container = document.createElement("div");
@@ -158,18 +179,20 @@ describe("LinkTo - Email", () => {
 		expect(element).not.toBeNull();
 	});
 	it("renders text correctly", () => {
-		const element = container.querySelector(`[data-testid="${testTextWrap}"]`);
+		const element = container.querySelector(
+			`[data-testid="${testTextWrap}"]`,
+		);
 		expect(element?.textContent).toBe(testText);
 	});
 	it("renders link address correctly", () => {
 		const element: HTMLAnchorElement | null = container.querySelector(
-			`[data-testid="${testId}"]`
+			`[data-testid="${testId}"]`,
 		);
 		expect(element?.href).toBe(testAddress);
 	});
 	it("renders link target correctly", () => {
 		const element: HTMLAnchorElement | null = container.querySelector(
-			`[data-testid="${testId}"]`
+			`[data-testid="${testId}"]`,
 		);
 		expect(element?.target).toBe("_self");
 	});
@@ -178,19 +201,24 @@ describe("LinkTo - Email", () => {
 		expect(iconSVG).not.toBeNull();
 		expect(iconSVG?.textContent).toBe("mail icon");
 	});
-	it("renders link as blue color", () => {
-		const element = renderer.create(<MailToLink />).toJSON();
-		expect(element).toMatchSnapshot();
-		expect(element).toHaveStyleRule("color", `${color.blue}`);
+	it("renders correct color for link", () => {
+		const element: HTMLAnchorElement | null = container.querySelector(
+			`[data-testid="${testId}"]`,
+		);
+		const styles = element && getComputedStyle(element);
+		const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+		expect(colorHex).toBe(color.blue);
 	});
 	it("renders inline so it can be mid text", () => {
-		const element = renderer.create(<MailToLink />).toJSON();
-		expect(element).toMatchSnapshot();
-		expect(element).toHaveStyleRule("display", "inline-block");
+		const element: HTMLAnchorElement | null = container.querySelector(
+			`[data-testid="${testId}"]`,
+		);
+		const styles = element && getComputedStyle(element);
+		expect(styles?.display).toBe("inline-block");
 	});
 	it("renders icon in leading position", () => {
 		const flexSpan: HTMLSpanElement | null = container.querySelector(
-			`[data-testid="${testId}"] .flex`
+			`[data-testid="${testFlexId}"]`,
 		);
 		const styles = flexSpan && getComputedStyle(flexSpan);
 		expect(styles?.flexDirection).toBe("row");
@@ -200,10 +228,7 @@ describe("LinkTo - Email", () => {
 describe("LinkTo - External Icon After", () => {
 	let container: HTMLDivElement;
 	const testAddress = `mailto:${MailToLinkIconAfter?.args?.address}`;
-	const testIcon = "test-icon";
-	const testId = "test-link-to";
 	const testText = MailToLinkIconAfter?.args?.text;
-	const testTextWrap = "test-link-text";
 
 	beforeEach(() => {
 		container = document.createElement("div");
@@ -220,18 +245,20 @@ describe("LinkTo - External Icon After", () => {
 		expect(element).not.toBeNull();
 	});
 	it("renders text correctly", () => {
-		const element = container.querySelector(`[data-testid="${testTextWrap}"]`);
+		const element = container.querySelector(
+			`[data-testid="${testTextWrap}"]`,
+		);
 		expect(element?.textContent).toBe(testText);
 	});
 	it("renders link address correctly", () => {
 		const element: HTMLAnchorElement | null = container.querySelector(
-			`[data-testid="${testId}"]`
+			`[data-testid="${testId}"]`,
 		);
 		expect(element?.href).toBe(testAddress);
 	});
 	it("renders link target correctly", () => {
 		const element: HTMLAnchorElement | null = container.querySelector(
-			`[data-testid="${testId}"]`
+			`[data-testid="${testId}"]`,
 		);
 		expect(element?.target).toBe("_self");
 	});
@@ -240,19 +267,24 @@ describe("LinkTo - External Icon After", () => {
 		expect(iconSVG).not.toBeNull();
 		expect(iconSVG?.textContent).toBe("mail icon");
 	});
-	it("renders link as blue color", () => {
-		const element = renderer.create(<MailToLinkIconAfter />).toJSON();
-		expect(element).toMatchSnapshot();
-		expect(element).toHaveStyleRule("color", `${color.blue}`);
+	it("renders correct color for link", () => {
+		const element: HTMLAnchorElement | null = container.querySelector(
+			`[data-testid="${testId}"]`,
+		);
+		const styles = element && getComputedStyle(element);
+		const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+		expect(colorHex).toBe(color.blue);
 	});
 	it("renders inline so it can be mid text", () => {
-		const element = renderer.create(<MailToLinkIconAfter />).toJSON();
-		expect(element).toMatchSnapshot();
-		expect(element).toHaveStyleRule("display", "inline-block");
+		const element: HTMLAnchorElement | null = container.querySelector(
+			`[data-testid="${testId}"]`,
+		);
+		const styles = element && getComputedStyle(element);
+		expect(styles?.display).toBe("inline-block");
 	});
 	it("renders icon in leading position", () => {
 		const flexSpan: HTMLSpanElement | null = container.querySelector(
-			`[data-testid="${testId}"] .flex`
+			`[data-testid="${testFlexId}"]`,
 		);
 		const styles = flexSpan && getComputedStyle(flexSpan);
 		expect(styles?.flexDirection).toBe("row-reverse");
@@ -262,9 +294,6 @@ describe("LinkTo - External Icon After", () => {
 describe("LinkTo - No text set for link", () => {
 	let container: HTMLDivElement;
 	const testAddress = LinkWithOutText?.args?.address;
-	const testIcon = "test-icon";
-	const testId = "test-link-to";
-	const testTextWrap = "test-link-text";
 
 	beforeEach(() => {
 		container = document.createElement("div");
@@ -281,18 +310,20 @@ describe("LinkTo - No text set for link", () => {
 		expect(element).not.toBeNull();
 	});
 	it("renders text correctly", () => {
-		const element = container.querySelector(`[data-testid="${testTextWrap}"]`);
+		const element = container.querySelector(
+			`[data-testid="${testTextWrap}"]`,
+		);
 		expect(element?.textContent).toBe(testAddress);
 	});
 	it("renders link address correctly", () => {
 		const element: HTMLAnchorElement | null = container.querySelector(
-			`[data-testid="${testId}"]`
+			`[data-testid="${testId}"]`,
 		);
 		expect(element?.href).toBe(testAddress);
 	});
 	it("renders link target correctly", () => {
 		const element: HTMLAnchorElement | null = container.querySelector(
-			`[data-testid="${testId}"]`
+			`[data-testid="${testId}"]`,
 		);
 		expect(element?.target).toBe("_blank");
 	});
@@ -301,19 +332,24 @@ describe("LinkTo - No text set for link", () => {
 		expect(iconSVG).not.toBeNull();
 		expect(iconSVG?.textContent).toBe("link icon");
 	});
-	it("renders link as blue color", () => {
-		const element = renderer.create(<LinkWithOutText />).toJSON();
-		expect(element).toMatchSnapshot();
-		expect(element).toHaveStyleRule("color", `${color.blue}`);
+	it("renders correct color for link", () => {
+		const element: HTMLAnchorElement | null = container.querySelector(
+			`[data-testid="${testId}"]`,
+		);
+		const styles = element && getComputedStyle(element);
+		const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+		expect(colorHex).toBe(color.blue);
 	});
 	it("renders inline so it can be mid text", () => {
-		const element = renderer.create(<LinkWithOutText />).toJSON();
-		expect(element).toMatchSnapshot();
-		expect(element).toHaveStyleRule("display", "inline-block");
+		const element: HTMLAnchorElement | null = container.querySelector(
+			`[data-testid="${testId}"]`,
+		);
+		const styles = element && getComputedStyle(element);
+		expect(styles?.display).toBe("inline-block");
 	});
 	it("renders icon in leading position", () => {
 		const flexSpan: HTMLSpanElement | null = container.querySelector(
-			`[data-testid="${testId}"] .flex`
+			`[data-testid="${testFlexId}"]`,
 		);
 		const styles = flexSpan && getComputedStyle(flexSpan);
 		expect(styles?.flexDirection).toBe("row");

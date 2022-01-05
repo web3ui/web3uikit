@@ -1,9 +1,8 @@
 import React from 'react';
 import { IconProps } from '.';
-import color from '../../styles/colors';
 import collection from './collection';
 
-const Icon: React.FC<IconProps> = ({ fill = color.white, size = 18, svg }) => {
+const Icon: React.FC<IconProps> = ({ fill = 'inherit', size = 18, svg }) => {
   const getIcon = (fill: string, size: number, svg: string) => {
     switch (svg) {
       case 'arrow circle down':

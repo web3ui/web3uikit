@@ -1,3 +1,6 @@
+export const layoutState = ["leading", "trailing"] as const;
+export type TLayoutState = typeof layoutState[number];
+
 export interface LinkToProps {
 	/**
 	 * what is the address you are linking to
@@ -17,5 +20,5 @@ export interface LinkToProps {
 	/**
 	 * set the position of the icon, or icon only
 	 */
-	iconLayout?: "leading" | "trailing";
+	iconLayout?: TLayoutState;
 }

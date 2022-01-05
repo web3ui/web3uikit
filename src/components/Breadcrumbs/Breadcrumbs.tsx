@@ -50,7 +50,7 @@ function renderList(
     const crumb = (
       <BreadcrumbsLi key={`breadcrumb-${i}`}>
         {route?.icon}
-        {route.name}
+        {route.breadcrumb}
       </BreadcrumbsLi>
     );
     const routesWithSeparator = getNumberOfRoutesToRender(

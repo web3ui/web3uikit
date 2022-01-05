@@ -6,7 +6,7 @@ import { BreadcrumbsLi } from './Breadcrumbs';
 export interface Route {
   icon?: React.ReactNode;
   path: string;
-  name: string;
+  breadcrumb: React.ReactNode;
 }
 
 export interface BreadcrumbsProps {

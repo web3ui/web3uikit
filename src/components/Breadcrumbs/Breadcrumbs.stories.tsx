@@ -22,7 +22,7 @@ export const One = Template.bind({});
 One.args = {
   routes: [
     {
-      name: 'Moralis Demo App 1',
+      breadcrumb: 'Moralis Demo App 1',
       path: '#',
       icon: <Icon svg={iconTypes.server} size="1.4em" />,
     },
@@ -34,12 +34,12 @@ export const Two = Template.bind({});
 Two.args = {
   routes: [
     {
-      name: 'Moralis Demo App 1',
+      breadcrumb: 'Moralis Demo App 1',
       path: '#',
       icon: <Icon svg={iconTypes.server} size="1.4em" />,
     },
     {
-      name: 'Server Details',
+      breadcrumb: 'Server Details',
       path: '2',
     },
   ],
@@ -50,16 +50,16 @@ export const Three = Template.bind({});
 Three.args = {
   routes: [
     {
-      name: 'Moralis Demo App 1',
+      breadcrumb: 'Moralis Demo App 1',
       path: 'demo',
       icon: <Icon svg={iconTypes.server} size="1.4em" />,
     },
     {
-      name: 'Server Details',
+      breadcrumb: 'Server Details',
       path: 'server',
     },
     {
-      name: 'Advanced',
+      breadcrumb: 'Advanced',
       path: 'advanced',
     },
   ],
@@ -70,20 +70,20 @@ export const Four = Template.bind({});
 Four.args = {
   routes: [
     {
-      name: 'Moralis Demo App 1',
+      breadcrumb: 'Moralis Demo App 1',
       path: '#',
       icon: <Icon svg={iconTypes.server} size="1.4em" />,
     },
     {
-      name: 'Server Details',
+      breadcrumb: 'Server Details',
       path: '2',
     },
     {
-      name: 'Server Details',
+      breadcrumb: 'Server Details',
       path: '3',
     },
     {
-      name: 'Advanced',
+      breadcrumb: 'Advanced',
       path: '4',
     },
   ],

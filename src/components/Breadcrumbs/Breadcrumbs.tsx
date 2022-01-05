@@ -11,7 +11,7 @@ import {
 } from './Breadcrumbs.styles';
 import { IBreadcrumbs, Route } from './types';
 
-const BreadcrumbsStyled = styled.nav`
+const BreadcrumbsNav = styled.nav`
   ${navStyle};
   color: ${(p) => p?.color || colorPalete.grey};
 `;
@@ -48,7 +48,7 @@ function renderList(
   let separatedRoutes: any[] = [];
   routes.forEach((route, i) => {
     const crumb = (
-      <BreadcrumbsLi key={`breadcrumb-${i}`}>
+      <BreadcrumbsLi key={`breadcrumb-${i}`} data-testid={'breadcrumb-test-id'}>
         {route?.icon}
         {route.breadcrumb}
       </BreadcrumbsLi>
@@ -60,7 +60,10 @@ function renderList(
     if (i < routesWithSeparator) {
       separatedRoutes = separatedRoutes.concat(
         crumb,
-        <BreadcrumbsSeparator key={`separator-${i}`}>
+        <BreadcrumbsSeparator
+          key={`separator-${i}`}
+          data-testid={'breadcrumbs-separator-test-id'}
+        >
           {separator ?? (
             <Icon
               svg={iconTypes.chevron_right}
@@ -85,11 +88,11 @@ const Breadcrumbs: IBreadcrumbs = ({
   currentLocation,
 }) => {
   return (
-    <BreadcrumbsStyled color={color}>
-      <BreadcrumbsOl style={style}>
+    <BreadcrumbsNav color={color} data-testid={'breadcrumbs-nav-test-id'}>
+      <BreadcrumbsOl style={style} data-testid={'breadcrumbs-ol-test-id'}>
         {renderList(routes, separator, currentLocation)}
       </BreadcrumbsOl>
-    </BreadcrumbsStyled>
+    </BreadcrumbsNav>
   );
 };
 

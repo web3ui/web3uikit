@@ -18,9 +18,4 @@ export interface LinkToProps {
    * set the position of the icon, or icon only
    */
   iconLayout?: 'leading' | 'trailing';
-
-  /**
-   * The content of the component.
-   */
-  children?: React.ReactNode;
 }

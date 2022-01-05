@@ -42,7 +42,6 @@ const LinkTo: React.FC<LinkToProps> = ({
   text,
   type,
   iconLayout = 'leading',
-  children,
 }) => (
   <LinkStyled
     data-testid="test-link-to"
@@ -50,19 +49,15 @@ const LinkTo: React.FC<LinkToProps> = ({
     iconLayout={iconLayout}
     target={`${type === 'email' ? '_self' : '_blank'}`}
   >
-    {text ? (
-      <span className="flex">
-        <Icon
-          svg={type === 'email' ? iconTypes.mail : iconTypes.link}
-          fill={color.blue}
-          size={14}
-        />
+    <span className="flex">
+      <Icon
+        svg={type === 'email' ? iconTypes.mail : iconTypes.link}
+        fill={color.blue}
+        size={14}
+      />
 
-        <span data-testid="test-link-text">{text || address}</span>
-      </span>
-    ) : (
-      children
-    )}
+      <span data-testid="test-link-text">{text || address}</span>
+    </span>
   </LinkStyled>
 );
 

@@ -82,16 +82,16 @@ const coloredPink = `
 `;
 
 export const tagStyles = {
-        activeStatus,
-        coloredBlue,
-        coloredGray,
-        coloredGreen,
-        coloredPink,
-        coloredPurple,
-        coloredRed,
-        coloredYellow,
-        discount,
-        inactiveStatus,
-        initialStyles,
-        regular,
+	activeStatus,
+	coloredBlue,
+	coloredGray,
+	coloredGreen,
+	coloredPink,
+	coloredPurple,
+	coloredRed,
+	coloredYellow,
+	discount,
+	inactiveStatus,
+	initialStyles,
+	regular,
 };

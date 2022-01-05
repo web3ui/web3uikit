@@ -1,6 +1,7 @@
 import resetCSS from "../../styles/reset";
 import font from "../../styles/fonts";
 import color from "../../styles/colors";
+import tickSVG from "./tick.svg";
 
 export const inputStyles = `
   ${resetCSS}
@@ -73,7 +74,7 @@ export const boxCheckedStyles = `
     border-color: ${color.greenLight};
   }
   &:after {
-    background-image: url('/img/svg/tick.svg');
+    background-image: url(${tickSVG});
     background-position: center;
     background-repeat: no-repeat;
     background-size: 14px;

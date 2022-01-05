@@ -20,10 +20,10 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Install
-        run: yarn install && yarn build
+        run: yarn install
 
       - name: Test
-        run: yarn test --ci --coverage --maxWorkers=2
+        run: yarn test --ci --coverage --maxWorkers=2 --updateSnapshot
 
       - name: Build
         run: yarn build

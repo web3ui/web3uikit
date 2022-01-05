@@ -6,12 +6,23 @@ import {iconTypes} from "../Icon/collection";
 import colors from "../../styles/colors";
 import fonts from "../../styles/fonts";
 
+const BlurredBackground = styled.div`
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  height: 100vh;
+  width: 100vw;
+`
+
 const ModalStyled = styled.div<Pick<ModalProps, "isVisible">>`
   ${(p) => p.isVisible ? 'display: grid;' : 'display: none;'};
   background-color: ${colors.white};
   box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
   border-radius: 20px;
   width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   ${fonts.text};
 `
 
@@ -58,26 +69,29 @@ const Modal: React.FC<ModalProps> = ({
     }, [isVisible])
 
     return (
-        <ModalStyled
-        id={id}
-        isVisible={visible}
-        >
-            <ModalHeader>
-                <h3>{title}</h3>
-                <div>
-                    <Button onClick={() => setVisibility(false)} icon={iconTypes.x} iconLayout={"icon-only"} theme={"outline"}/>
-                </div>
-            </ModalHeader>
-            <ModalContent
-            id={"content"}
+        <>
+            {visible && <BlurredBackground/>}
+            <ModalStyled
+                id={id}
+                isVisible={visible}
             >
-                {children}
-            </ModalContent>
-            <ModalFooter>
-                <Button text={cancelText} theme={"outline"} onClick={onCancel ? onCancel : () => setVisibility(false)} />
-                <Button text={okText} theme={"primary"} onClick={onOk} />
-            </ModalFooter>
-        </ModalStyled>
+                <ModalHeader>
+                    <h3>{title}</h3>
+                    <div>
+                        <Button onClick={() => setVisibility(false)} icon={iconTypes.x} iconLayout={"icon-only"} theme={"outline"}/>
+                    </div>
+                </ModalHeader>
+                <ModalContent
+                    id={"content"}
+                >
+                    {children}
+                </ModalContent>
+                <ModalFooter>
+                    <Button text={cancelText} theme={"outline"} onClick={onCancel ? onCancel : () => setVisibility(false)} />
+                    <Button text={okText} theme={"primary"} onClick={onOk} />
+                </ModalFooter>
+            </ModalStyled>
+        </>
     )
 }
 

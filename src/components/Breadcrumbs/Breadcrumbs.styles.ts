@@ -1,9 +1,10 @@
-import resetCSS from "../../styles/reset";
-import fonts from "../../styles/fonts";
+import resetCSS from '../../styles/reset';
+import fonts from '../../styles/fonts';
+import color from '../../styles/colors';
 
 export const olStyle = `
   ${resetCSS}
-  ${fonts.text}
+  ${fonts.semiBold}
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -19,10 +20,20 @@ export const liStyle = `
   user-select: none;
   display: flex;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:last-child {
+    color: ${color.blueDark};
+  }
+
+  &:hover {
+    color: ${color.blueDark};
+  }
 `;
 
 export const separatorStyle = `
   ${resetCSS}
   display: flex;
   user-select: none;
-`
+`;

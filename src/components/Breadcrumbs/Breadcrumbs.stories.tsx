@@ -14,44 +14,49 @@ export default {
 // export const One = Template.bind({});
 // One.args = {};
 
-export const One: ComponentStory<typeof Breadcrumbs> = (args) => (
-  <Breadcrumbs {...args}>
-    <Breadcrumbs.Item>
-      <Icon svg={iconTypes.server} fill="#68738D" />
+const Template: ComponentStory<typeof Breadcrumbs> = (args) => (
+  <Breadcrumbs {...args}></Breadcrumbs>
+);
+
+export const One = Template.bind({});
+One.args = {
+  children: (
+    <Breadcrumbs.Item href="">
+      <Icon svg={iconTypes.server} size="1.3em" />
       Moralis Demo App 1
     </Breadcrumbs.Item>
-  </Breadcrumbs>
-);
+  ),
+};
 
 export const Two: ComponentStory<typeof Breadcrumbs> = (args) => (
   <Breadcrumbs {...args}>
-    <Breadcrumbs.Item>
-      <Icon svg={iconTypes.server} fill="#68738D" />
+    <Breadcrumbs.Item href="">
+      <Icon svg={iconTypes.server} size="1.3em" />
       Moralis Demo App 1
     </Breadcrumbs.Item>
-    <Breadcrumbs.Item>Server Details</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Server Details</Breadcrumbs.Item>
   </Breadcrumbs>
 );
 
 export const Three: ComponentStory<typeof Breadcrumbs> = (args) => (
   <Breadcrumbs {...args}>
-    <Breadcrumbs.Item>
-      <Icon svg={iconTypes.server} fill="#68738D" />
+    <Breadcrumbs.Item href="">
+      <Icon svg={iconTypes.server} size="1.3em" />
       Moralis Demo App 1
     </Breadcrumbs.Item>
-    <Breadcrumbs.Item>Server Details</Breadcrumbs.Item>
-    <Breadcrumbs.Item>Advanced</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Server Details</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Advanced</Breadcrumbs.Item>
   </Breadcrumbs>
 );
 
 export const Four: ComponentStory<typeof Breadcrumbs> = (args) => (
   <Breadcrumbs {...args}>
-    <Breadcrumbs.Item>
-      <Icon svg={iconTypes.server} fill="#68738D" />
+    <Breadcrumbs.Item href="">
+      <Icon svg={iconTypes.server} size="1.3em" />
       Moralis Demo App 1
     </Breadcrumbs.Item>
-    <Breadcrumbs.Item>Server Details</Breadcrumbs.Item>
-    <Breadcrumbs.Item>Server Details</Breadcrumbs.Item>
-    <Breadcrumbs.Item>Advanced</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Server Details</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Server Details</Breadcrumbs.Item>
+    <Breadcrumbs.Item href="">Advanced</Breadcrumbs.Item>
   </Breadcrumbs>
 );

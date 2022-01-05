@@ -5,6 +5,10 @@ import resetCSS from '../../../styles/reset';
 const active = `
     background-color: ${color.green};
     color: white;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/feat/tabs/pill
 `;
 
 const activeHover = `
@@ -31,6 +35,7 @@ const inactiveHover = `
     }
 `;
 
+<<<<<<< HEAD
 const isBar = `
     &:first-child {
         border-top-right-radius: 0px;
@@ -43,6 +48,8 @@ const isBar = `
     }
 `
 
+=======
+>>>>>>> origin/feat/tabs/pill
 const initialStyles = `
     ${resetCSS}
     ${fonts.text}
@@ -53,6 +60,7 @@ const initialStyles = `
 `;
 
 const pressedActive = `
+<<<<<<< HEAD
     background-color: ${color.greenDark};
     
     border: 4px solid ${color.greenLight};
@@ -73,4 +81,25 @@ export const pillStyles = {
     isBar,
     pressedActive,
     pressedInactive,
+=======
+background-color: ${color.greenDark};
+
+border: 4px solid ${color.greenLight};
+box-sizing: border-box;
+`;
+
+const pressedInactive = `
+background: radial-gradient(106.45% 108.64% at 32.33% -4.84%, #ECF5FC 0.52%, #CEE4F3 100%);
+`;
+
+export const pillStyles = {
+  active,
+  activeHover,
+  disabled,
+  inactive,
+  inactiveHover,
+  initialStyles,
+  pressedActive,
+  pressedInactive,
+>>>>>>> origin/feat/tabs/pill
 };

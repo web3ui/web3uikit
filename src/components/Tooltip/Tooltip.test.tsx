@@ -58,12 +58,12 @@ describe("Tooltip - Bottom - Visible - With Children", () => {
 	});
 
 	it("wrapper should  be visible", () => {
-		const element = container.querySelector(`[data-testid="${childrenId}"]`);
+		const element = container.querySelector(`[data-testid="${wrapperId}"]`);
 		expect(element).not.toBeNull();
 	});
 
 	it("child should be visible", () => {
-		const element = container.querySelector(`[data-testid="${wrapperId}"]`);
+		const element = container.querySelector(`[data-testid="${childrenId}"]`);
 		expect(element).not.toBeNull();
 	});
 
@@ -98,12 +98,12 @@ describe("Tooltip - Top - Visible - With Children", () => {
 	});
 
 	it("wrapper should  be visible", () => {
-		const element = container.querySelector(`[data-testid="${childrenId}"]`);
+		const element = container.querySelector(`[data-testid="${wrapperId}"]`);
 		expect(element).not.toBeNull();
 	});
 
 	it("child should be visible", () => {
-		const element = container.querySelector(`[data-testid="${wrapperId}"]`);
+		const element = container.querySelector(`[data-testid="${childrenId}"]`);
 		expect(element).not.toBeNull();
 	});
 

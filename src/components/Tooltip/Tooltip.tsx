@@ -96,9 +96,9 @@ const Tooltip: React.FC<TooltipProps> = ({
       onMouseEnter={() => setVisibility(true)}
       onMouseLeave={() => setVisibility(false)}
     >
-      {children}
+      <div data-testid={'tooltip-children-test-id'}>{children}</div>
       {showTooltip && (
-        <TooltipContainer position={position}>{text}</TooltipContainer>
+        <TooltipContainer data-testid={'tooltip-box-test-id'} position={position}>{text}</TooltipContainer>
       )}
     </TooltipWrapper>
   );

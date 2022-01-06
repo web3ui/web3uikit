@@ -9,11 +9,11 @@ const { ModalHeader, ModalStyled, ModalFooter, ModalContent} = ModalStyles;
 const Modal: React.FC<ModalProps> = ({
     id = String(Date.now()),
     children,
+    isOkDisabled,
+    isCancelDisabled,
     isVisible,
-    cancelDisabled,
     cancelText = "Cancel",
     okText = "Ok",
-    okDisabled,
     onCancel,
     onOk,
     title
@@ -55,14 +55,14 @@ const Modal: React.FC<ModalProps> = ({
             >
                 <Button
                     data-testid={"modal-cancel-button-test-id"}
-                    disabled={cancelDisabled} text={cancelText}
+                    disabled={isCancelDisabled} text={cancelText}
                     onClick={onCancel ? onCancel : () => { setVisibility(false) }}
                     theme={"outline"}
                 />
                 <Button
                     data-testid={"modal-ok-button-test-id"}
                     onClick={onOk ? onOk : () => { console.log('ok triggered') }}
-                    disabled={okDisabled}
+                    disabled={isOkDisabled}
                     text={okText}
                     theme={"primary"}
                 />

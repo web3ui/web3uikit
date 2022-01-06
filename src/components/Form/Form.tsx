@@ -1,45 +1,55 @@
-import React, { useEffect, Fragment } from "react";
+import React, { Fragment } from "react";
 import { FormProps, DataInput } from "./types";
 import { Button } from "../Button";
 import { Input } from "../Input";
 import { Checkbox } from "../Checkbox";
+import { Radios } from "../Radios";
+import { TitleStyled, SubTitleStyled, FormStyled } from "./Form.styles";
 
 const Form: React.FC<FormProps> = ({
 	data,
 	id = String(Date.now()),
 	title,
 }) => {
-	useEffect(() => {
-		console.log("data");
-		console.log(data);
-	}, [data]);
-
 	const formSubmitted = (event: React.SyntheticEvent) => {
 		event.preventDefault();
 		event.stopPropagation();
-		console.log(data);
+		console.log(data[5].selected);
+
+		const dataReturned = data.map((item) => ({
+			name: item.name,
+			value: item.selected || item.value,
+		}));
+
+		console.log(dataReturned);
 	};
 
-	const checkboxToggled = (
+	const optionAdded = (index: number, opt: string, isRadio: boolean) => {
+		if (!data[index].selected || isRadio) {
+			data[index].selected = [opt];
+		} else {
+			data[index]?.selected?.push(opt);
+		}
+	};
+
+	const optionToggled = (
 		event: React.ChangeEvent<HTMLInputElement>,
 		index: number,
 		opt: string
 	) => {
-		console.log(opt + " = " + event.target.checked);
-		console.log(data[index].selected);
-		console.log(index);
+		const isRadio = Boolean(event.target.type === "radio");
 
-		// BILL pick up here, need to make item dynamic in this array
-		if (!data[index].selected) {
-			data[index].selected = [event.target.value];
+		if (event.target.checked) {
+			optionAdded(index, opt, isRadio);
 		} else {
-			data && data[index]?.selected?.push(event.target.value);
+			const filtered = data[index]?.selected?.filter((item) => item !== opt);
+			data[index].selected = filtered;
 		}
 	};
 
 	const renderInput = (
 		input: DataInput,
-		type: "text" | "number",
+		type: "text" | "number" | "tel" | "email" | "password",
 		index: number
 	) => (
 		<Input
@@ -57,16 +67,27 @@ const Form: React.FC<FormProps> = ({
 		index: number
 	) => (
 		<Fragment key={`cb-group_${index}`}>
-			<h4>{input.value}</h4>
+			<SubTitleStyled>{input.value}</SubTitleStyled>
 			{input.options?.map((opt, i) => (
 				<Checkbox
 					key={`cb_${index}-${i}`}
 					label={opt}
 					name={input.name}
-					onChange={(e) => checkboxToggled(e, index, opt)}
+					onChange={(e) => optionToggled(e, index, opt)}
 					layout={layout}
 				/>
 			))}
+		</Fragment>
+	);
+
+	const renderRadioGroup = (input: DataInput, index: number) => (
+		<Fragment key={`${input.name}_${index}`}>
+			<SubTitleStyled>{input.value}</SubTitleStyled>
+			<Radios
+				id={`${input.name}_${index}`}
+				items={input.options || []}
+				onChange={(e) => optionToggled(e, index, e.target.value)}
+			/>
 		</Fragment>
 	);
 
@@ -74,27 +95,35 @@ const Form: React.FC<FormProps> = ({
 		switch (input.type) {
 			case "text":
 				return renderInput(input, "text", index);
+			case "tel":
+				return renderInput(input, "tel", index);
+			case "password":
+				return renderInput(input, "password", index);
+			case "email":
+				return renderInput(input, "email", index);
 			case "number":
 				return renderInput(input, "number", index);
 			case "box":
 				return renderCheckbox(input, "box", index);
 			case "switch":
 				return renderCheckbox(input, "switch", index);
+			case "radios":
+				return renderRadioGroup(input, index);
 			default:
 				return;
 		}
 	};
 
 	return (
-		<form onSubmit={formSubmitted} id={id}>
-			{title && <h3>{title}</h3>}
+		<FormStyled onSubmit={formSubmitted} id={id}>
+			{title && <TitleStyled>{title}</TitleStyled>}
 
 			{data.map((input, i) => renderInputType(input, i))}
 
-			<Button type="submit" onClick={(e) => e.preventDefault}>
+			<Button theme="primary" type="submit" onClick={(e) => e.preventDefault}>
 				Submit
 			</Button>
-		</form>
+		</FormStyled>
 	);
 };
 

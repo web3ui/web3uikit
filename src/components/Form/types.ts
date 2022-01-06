@@ -24,7 +24,15 @@ export type DataInput = {
 	/**
 	 * This collection of input types are available
 	 */
-	type: "text" | "number" | "email" | "box" | "switch" | "radios";
+	type:
+		| "text"
+		| "number"
+		| "email"
+		| "password"
+		| "tel"
+		| "box"
+		| "switch"
+		| "radios";
 
 	/**
 	 * You pass a default value if you need to, this value will be returned when the form is submitted for strings
@@ -40,19 +48,4 @@ export type DataInput = {
 	 * If you radios you will need to pass an array to return your options
 	 */
 	selected?: string[];
-
-	/**
-	 * you can add some text before the input
-	 */
-	textAfter?: string;
-
-	/**
-	 * you can add some text after the input
-	 */
-	textBefore?: string;
-
-	/**
-	 * you can add some title for the input
-	 */
-	title?: string;
 };

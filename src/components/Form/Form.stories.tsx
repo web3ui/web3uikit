@@ -19,8 +19,18 @@ DefaultForm.args = {
 			value: "",
 		},
 		{
-			name: "second name",
-			type: "text",
+			name: "your email",
+			type: "email",
+			value: "",
+		},
+		{
+			name: "your digits",
+			type: "tel",
+			value: "",
+		},
+		{
+			name: "your password",
+			type: "password",
 			value: "",
 		},
 		{

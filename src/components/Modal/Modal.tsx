@@ -1,63 +1,19 @@
 import React, {useEffect, useState} from "react";
 import {ModalProps} from "./types";
-import styled from "styled-components";
 import Button from "../Button/Button";
+import ModalStyles from "./Modal.styles"
 import {iconTypes} from "../Icon/collection";
-import colors from "../../styles/colors";
-import fonts from "../../styles/fonts";
 
-const BlurredBackground = styled.div`
-  filter: blur(2px);
-  -webkit-filter: blur(2px);
-  height: 100vh;
-  width: 100vw;
-`
-
-const ModalStyled = styled.div<Pick<ModalProps, "isVisible">>`
-  ${(p) => p.isVisible ? 'display: grid;' : 'display: none;'};
-  background-color: ${colors.white};
-  box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
-  border-radius: 20px;
-  width: 80%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  ${fonts.text};
-`
-
-const ModalHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 32px 10px;
-  h3 {
-    color: ${colors.blue}
-  }
-  
-  div {
-    border-radius: 15px;
-    border-color: ${colors.blue};
-  }
-`
-
-const ModalContent = styled.div`
-  padding: 5px 32px 15px;
-`
-
-const ModalFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid ${colors.paleBlue2};
-  padding: 15px 32px 20px;
-`
+const { ModalHeader, ModalStyled, ModalFooter, ModalContent} = ModalStyles;
 
 const Modal: React.FC<ModalProps> = ({
     id = String(Date.now()),
     children,
     isVisible,
+    cancelDisabled,
     cancelText = "Cancel",
     okText = "Ok",
+    okDisabled,
     onCancel,
     onOk,
     title
@@ -69,29 +25,50 @@ const Modal: React.FC<ModalProps> = ({
     }, [isVisible])
 
     return (
-        <>
-            {visible && <BlurredBackground/>}
-            <ModalStyled
-                id={id}
-                isVisible={visible}
+        <ModalStyled
+            id={id}
+            isVisible={visible}
+            data-testid="modal-test-id"
+        >
+            <ModalHeader
+                data-testid={"modal-header-test-id"}
             >
-                <ModalHeader>
-                    <h3>{title}</h3>
-                    <div>
-                        <Button onClick={() => setVisibility(false)} icon={iconTypes.x} iconLayout={"icon-only"} theme={"outline"}/>
-                    </div>
-                </ModalHeader>
-                <ModalContent
-                    id={"content"}
-                >
-                    {children}
-                </ModalContent>
-                <ModalFooter>
-                    <Button text={cancelText} theme={"outline"} onClick={onCancel ? onCancel : () => setVisibility(false)} />
-                    <Button text={okText} theme={"primary"} onClick={onOk} />
-                </ModalFooter>
-            </ModalStyled>
-        </>
+                <h3>{title}</h3>
+                <Button
+                    data-testid={"modal-close-test-id"}
+                    icon={iconTypes.x}
+                    iconLayout={"icon-only"}
+                    onClick={() => setVisibility(false)}
+                    theme={"outline"}
+                />
+            </ModalHeader>
+
+            <ModalContent
+                id={"content"}
+                data-testid={"modal-content-test-id"}
+            >
+                {children}
+            </ModalContent>
+
+            <ModalFooter
+                data-testid={"modal-footer-test-id"}
+            >
+                <Button
+                    data-testid={"modal-cancel-button-test-id"}
+                    disabled={cancelDisabled} text={cancelText}
+                    onClick={onCancel ? onCancel : () => setVisibility(false)}
+                    theme={"outline"}
+                />
+                <Button
+                    data-testid={"modal-ok-button-test-id"}
+                    onClick={onOk}
+                    disabled={okDisabled}
+                    text={okText}
+                    theme={"primary"}
+                />
+            </ModalFooter>
+        </ModalStyled>
+
     )
 }
 

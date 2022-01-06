@@ -16,6 +16,16 @@ export interface ModalProps {
     okText?: string;
 
     /**
+     * set if 'Ok' button is disabled
+     */
+    okDisabled?: boolean;
+
+    /**
+     * set if 'Cancel' button is disabled
+     */
+    cancelDisabled?: boolean;
+
+    /**
      * set text of 'Cancel' button
      */
     cancelText?: string;

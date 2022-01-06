@@ -15,6 +15,7 @@ const color = {
     greyDark: '#333333',
     greyIcons: '#B0B5BF',
     greyLight: '#C5CDD9',
+    paleBlue2: '#C1D8E7',
     pink: '#DA51BE',
     pinkLight: '#FDF0FA',
     purple: '#8851DA',

@@ -13,6 +13,7 @@ export const labelStyles = `
   ${resetCSS}
   ${font.text}
   display: block;
+  margin-bottom: 4px;
   overflow: hidden;
   position: relative;
   width: fit-content;

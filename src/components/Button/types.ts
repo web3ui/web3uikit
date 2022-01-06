@@ -1,4 +1,4 @@
-import { iconTypes } from "../../components/Icon/collection";
+import { iconTypes } from '../../components/Icon/collection';
 
 export interface ButtonProps {
     /**
@@ -19,7 +19,7 @@ export interface ButtonProps {
     /**
      * What size should the button be
      */
-    size?: "small" | "regular" | "large";
+    size?: 'small' | 'regular' | 'large';
 
     /**
      * The text to display in the button
@@ -29,17 +29,17 @@ export interface ButtonProps {
     /**
      * Set the color to show its importance to the user
      */
-    theme?: "primary" | "outline" | "secondary" | "colored";
+    theme?: 'primary' | 'outline' | 'secondary' | 'colored';
 
     /**
      * If 'theme' is set to 'colored', you can choose the color from these options
      */
-    color?: "blue" | "green" | "yellow" | "red";
+    color?: 'blue' | 'green' | 'yellow' | 'red';
 
     /**
      * Set the HTML button type for form interaction
      */
-    type?: "button" | "submit" | "reset";
+    type?: 'button' | 'submit' | 'reset';
 
     /**
      * set an icon to show inside the button
@@ -50,5 +50,5 @@ export interface ButtonProps {
     /**
      * set an icon position, or maybe show only the icon
      */
-    iconLayout?: "leading" | "trailing" | "icon-only";
+    iconLayout?: 'leading' | 'trailing' | 'icon-only';
 }

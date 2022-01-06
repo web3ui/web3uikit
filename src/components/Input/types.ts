@@ -27,7 +27,7 @@ export interface InputProps {
     /**
      * types of input available
      */
-    type?: "text" | "number" | "email" | "tel" | "password";
+    type?: 'text' | 'number' | 'email' | 'tel' | 'password';
 
     /**
      * you can pass a default value so the input is pre-filled
@@ -42,5 +42,5 @@ export interface InputProps {
     /**
      * the input can use state to react to user interaction
      */
-    state?: "error" | "confirmed";
+    state?: 'error' | 'confirmed';
 }

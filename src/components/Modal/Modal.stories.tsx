@@ -7,7 +7,7 @@ import colors from "../../styles/colors";
 import {Input} from "../Input";
 
 export default {
-    title: "Interaction/Modal",
+    title: "Popup/Modal",
     component: Modal,
 } as ComponentMeta<typeof Modal>;
 
@@ -18,7 +18,6 @@ Regular.args = {
     id: "regular",
     title: "Confirm",
     isVisible: true,
-    onOk: () => { console.log('downloading ...') },
     children: [
         <div
         key={"0"}
@@ -57,6 +56,8 @@ OneButtonDisabled.args = {
     okText: "Disabled",
     cancelText: "Cancel",
     isVisible: true,
+    onCancel: () => { console.log('cancel button clicked')},
+    onOk: () => {console.log('ok button clicked')},
     okDisabled: true,
     children: [
         <div

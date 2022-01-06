@@ -38,7 +38,7 @@ export interface ModalProps {
     /**
      * Run function on 'Ok'
      */
-    onOk: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onOk?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 
     /*
     *  set text of 'Ok' button

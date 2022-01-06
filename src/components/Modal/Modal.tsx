@@ -56,17 +56,18 @@ const Modal: React.FC<ModalProps> = ({
                 <Button
                     data-testid={"modal-cancel-button-test-id"}
                     disabled={cancelDisabled} text={cancelText}
-                    onClick={onCancel ? onCancel : () => setVisibility(false)}
+                    onClick={onCancel ? onCancel : () => { setVisibility(false) }}
                     theme={"outline"}
                 />
                 <Button
                     data-testid={"modal-ok-button-test-id"}
-                    onClick={onOk}
+                    onClick={onOk ? onOk : () => { console.log('ok triggered') }}
                     disabled={okDisabled}
                     text={okText}
                     theme={"primary"}
                 />
             </ModalFooter>
+
         </ModalStyled>
 
     )

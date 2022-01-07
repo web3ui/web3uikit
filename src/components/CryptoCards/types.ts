@@ -4,12 +4,18 @@ export interface CryptoCardProps {
     /**
      * A function that will be called if the button is clicked
      */
-    buttonClickEvent?: () => void;
+    onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 
     /**
      * The name of the blockchain
      */
-    chain: string;
+    chain:
+        | 'Arbitrum'
+        | 'Avalanche'
+        | 'Binance'
+        | 'Ethereum'
+        | 'Fantom'
+        | 'Polygon';
 
     /**
      * The type of the chain / a subtitle below the chain name

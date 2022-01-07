@@ -14,12 +14,10 @@ const Template: ComponentStory<typeof CryptoCards> = (args) => (
 
 export const Ethereum = Template.bind({});
 Ethereum.args = {
-    buttonClickEvent: () => {
-        alert('Clicked');
-    },
+    onClick: () => alert('Clicked'),
     chain: 'Ethereum',
     chainType: 'Network',
-    chainLogo: require('./chains/eth.png'),
+    chainLogo: require('./chains/ethereum.svg'),
     settingsColor: 'white',
     settingsIcon: iconTypes.cog,
     bgColor:
@@ -29,12 +27,10 @@ Ethereum.args = {
 
 export const Binance = Template.bind({});
 Binance.args = {
-    buttonClickEvent: () => {
-        alert('Clicked');
-    },
+    onClick: () => alert('Clicked'),
     chain: 'Binance',
     chainType: 'Network',
-    chainLogo: require('./chains/binance.png'),
+    chainLogo: require('./chains/binance.svg'),
     settingsColor: 'white',
     settingsIcon: iconTypes.cog,
     bgColor:
@@ -44,12 +40,10 @@ Binance.args = {
 
 export const Polygon = Template.bind({});
 Polygon.args = {
-    buttonClickEvent: () => {
-        alert('Clicked');
-    },
+    onClick: () => alert('Clicked'),
     chain: 'Polygon',
     chainType: 'Network',
-    chainLogo: require('./chains/polygon.png'),
+    chainLogo: require('./chains/polygon.svg'),
     settingsColor: 'white',
     settingsIcon: iconTypes.cog,
     bgColor:
@@ -59,12 +53,10 @@ Polygon.args = {
 
 export const Avalanche = Template.bind({});
 Avalanche.args = {
-    buttonClickEvent: () => {
-        alert('Clicked');
-    },
+    onClick: () => alert('Clicked'),
     chain: 'Avalanche',
     chainType: 'Network',
-    chainLogo: require('./chains/avalanche.png'),
+    chainLogo: require('./chains/avalanche.svg'),
     settingsColor: 'white',
     settingsIcon: iconTypes.cog,
     bgColor:
@@ -74,12 +66,10 @@ Avalanche.args = {
 
 export const Fantom = Template.bind({});
 Fantom.args = {
-    buttonClickEvent: () => {
-        alert('Clicked');
-    },
+    onClick: () => alert('Clicked'),
     chain: 'Fantom',
     chainType: 'Network',
-    chainLogo: require('./chains/fantom.png'),
+    chainLogo: require('./chains/fantom.svg'),
     settingsColor: 'white',
     settingsIcon: iconTypes.cog,
     bgColor:
@@ -89,12 +79,10 @@ Fantom.args = {
 
 export const Arbitrum = Template.bind({});
 Arbitrum.args = {
-    buttonClickEvent: () => {
-        alert('Clicked');
-    },
+    onClick: () => alert('Clicked'),
     chain: 'Arbitrum',
     chainType: 'Network',
-    chainLogo: require('./chains/arbitrum.png'),
+    chainLogo: require('./chains/arbitrum.svg'),
     settingsColor: 'white',
     settingsIcon: iconTypes.cog,
     bgColor:

@@ -1,31 +1,26 @@
-import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
+import styled from 'styled-components';
 import color from '../../styles/colors';
-import { css } from 'styled-components';
+import resetCSS from '../../styles/reset';
 import { getShade } from '../../styles/colors';
 
-const borderStyle = css`
-    ${resetCSS}
-    height: 336px;
-    width: 265px;
-    left: 20px;
-    top: 20px;
-    border-radius: 16px;
-    padding: 24px, 40px, 24px, 40px;
+const CryptoCardStyled = styled.div`
+    align-items: center;
+    background: ${(props) => props.color};
     border: 1px solid ${getShade('light', 10)};
-    box-sizing: border-box;
     border-radius: 16px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    padding: 24px 40px;
-    position: absolute;
-    width: 265px;
-    height: 336px;
     left: 20px;
-    top: 20px;
     overflow: hidden;
+    padding: 24px, 40px, 24px, 40px;
+    position: absolute;
+    ${resetCSS}
+    top: 20px;
+    width: 100%;
+    max-width: 256px;
     :after {
         content: '';
         display: block;
@@ -40,138 +35,127 @@ const borderStyle = css`
     }
     :hover {
         :after {
-            background: rgba(4, 24, 54, 0.2);
+            background: white; //rgba(4, 24, 54, 0.2);
         }
     }
 `;
 
-const buttonStyle = css`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+const ButtonStyles = styled.button`
     align-items: center;
-    padding: 8px 24px 8px 16px;
-    position: static;
-    width: 187px;
-    height: 40px;
-    left: 39px;
-    top: 268px;
     background: rgba(4, 24, 54, 0.2);
     border-radius: 16px;
+    display: flex;
+    flex-direction: row;
     flex: none;
-    order: 1;
     flex-grow: 0;
+    height: 40px;
+    justify-content: center;
+    left: 39px;
     margin: 16px 0px;
+    order: 1;
     overflow: hidden;
+    padding: 8px 24px 8px 16px;
+    position: static;
+    top: 268px;
+    width: 187px;
 `;
 
-const btnTxtStyle = css`
-    width: 119px;
-    height: 24px;
-    left: 44px;
-    top: 8px;
+const BtnTxtStyle = styled.p`
+    color: ${color.white};
     ${fonts.openSans};
     ${fonts.textBold};
     ${fonts.h5};
+    height: 24px;
+    left: 44px;
     line-height: 24px;
-    color: ${color.white};
     overflow: hidden;
+    top: 8px;
+    width: 119px;
     word-break: break-all;
 `;
 
-const infoStyle = css`
-    display: flex;
-    flex-direction: column;
+const InfoStyle = styled.div`
     align-items: center;
-    padding: 0px;
-    position: static;
-    width: 162px;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-grow: 0;
     height: 224px;
     left: 51.5px;
-    top: 28px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
     margin: 16px 0px;
-`;
-
-const chainSpanStyle = css`
+    order: 0;
+    padding: 0px;
     position: static;
+    top: 28px;
     width: 162px;
-    left: calc(50% - 162px / 2);
-    top: 71.43%;
-    bottom: 0%;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 0px;
 `;
 
-const networkInfoHolder = css`
+const NetworkInfoHolder = styled.div`
+    bottom: 0%;
     color: ${color.white};
-    text-align: center;
-    height: 64px;
-    width: 100%;
-    position: static;
-    left: calc(50% - 162px / 2);
-    top: 71.43%;
-    bottom: 0%;
     flex: none;
-    order: 1;
     flex-grow: 0;
+    height: 64px;
+    left: calc(50% - 162px / 2);
     margin: 0px 0px;
+    order: 1;
     overflow: hidden;
+    position: static;
+    text-align: center;
+    top: 71.43%;
+    width: 100%;
 `;
 
-const chainNameStyle = css`
-    ${fonts.montserrat};
-    ${fonts.textBold500};
-    font-size: 32px;
-    margin: 0;
-    overflow: hidden;
-    height: 50%;
-    word-break: break-all;
-`;
-
-const networkStyle = css`
+const NetworkStyle = styled.p`
+    font-size: 20px;
     ${fonts.openSans};
     ${fonts.textBold700};
-    line-height: 36px;
-    font-size: 20px;
-    margin: 0;
     height: 36px;
+    line-height: 36px;
+    margin: 0;
     overflow: hidden;
     word-break: break-all;
 `;
 
-const imageBoxStyle = css`
-    position: static;
-    width: 120px;
+const ChainNameStyle = styled.p`
+    font-size: 32px;
+    ${fonts.montserrat};
+    ${fonts.textBold500};
+    height: 50%;
+    margin: 0;
+    overflow: hidden;
+    word-break: break-all;
+`;
+
+const ImageBoxStyle = styled.div`
+    flex: none;
+    flex-grow: 0;
     height: 160px;
     left: 21px;
-    top: 0px;
-    flex: none;
     order: 0;
-    flex-grow: 0;
+    position: static;
+    top: 0px;
+    width: 120px;
 `;
 
-const logo = css`
+const Logo = styled.div`
+    border-radius: 0px;
     height: 136px;
-    width: 82px;
     left: 19px;
     top: 12px;
-    border-radius: 0px;
+    width: 82px;
 `;
 
-export const cryptoCardStyles = {
-    borderStyle,
-    buttonStyle,
-    btnTxtStyle,
-    infoStyle,
-    chainSpanStyle,
-    networkStyle,
-    chainNameStyle,
-    networkInfoHolder,
-    imageBoxStyle,
-    logo,
+const CryptoCardStyles = {
+    CryptoCardStyled,
+    ButtonStyles,
+    BtnTxtStyle,
+    InfoStyle,
+    NetworkInfoHolder,
+    NetworkStyle,
+    ChainNameStyle,
+    ImageBoxStyle,
+    Logo,
 };
+
+export default CryptoCardStyles;

@@ -20,9 +20,6 @@ export const TextAreaWrapper = styled.div<Pick<TextAreaProps, 'state'>>`
     &:focus {
         border-color: ${color.blue};
 
-        &::placeholder {
-            visibility: visible;
-        }
         + label {
             color: ${color.blue};
         }
@@ -89,8 +86,8 @@ export const TextAreaStyled = styled.textarea`
     }
 
     &::placeholder {
-        color: ${color.grey};
         visibility: hidden;
+        display: none;
     }
 
     &:focus,
@@ -101,6 +98,14 @@ export const TextAreaStyled = styled.textarea`
             line-height: 1;
             padding: 2px 4px;
             top: -10px;
+        }
+    }
+
+    &:focus {
+        &::placeholder {
+            display: none;
+            visibility: visible;
+            color: ${color.grey};
         }
     }
 `;

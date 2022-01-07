@@ -15,11 +15,6 @@ export interface TextAreaProps {
     label?: string;
 
     /**
-     * please give a descriptive name to the input, it help with accessibility
-     */
-    name?: string;
-
-    /**
      * standard onChange that returns the entire event, as normal you can access event.target
      */
     onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -28,11 +23,6 @@ export interface TextAreaProps {
      * a short piece of text to fill the input before the user interacts
      */
     placeholder?: string;
-
-    /**
-     * the input can use state to react to user interaction
-     */
-    state?: 'error' | 'confirmed';
 
     /**
      * types of input available
@@ -44,4 +34,13 @@ export interface TextAreaProps {
      */
     value?: string;
 
+    /**
+     * please give a descriptive name to the input, it help with accessibility
+     */
+    name?: string;
+
+    /**
+     * the input can use state to react to user interaction
+     */
+    state?: 'error' | 'confirmed' | "disabled";
 }

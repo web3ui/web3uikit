@@ -1,238 +1,95 @@
-import color, { getShade } from '../../styles/colors';
-import resetCSS from '../../styles/reset';
-import fonts from '../../styles/fonts';
+import styled from 'styled-components';
+import type { ButtonProps } from './types';
 
-// the default styles for any button
-const initialStyles = `
-  ${resetCSS}
-	${fonts.text}
-  align-items: center;
-  border-radius: 12px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  display: flex;
-  font-weight: 600;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-  text-align: left;
-  transition: all 0.2s ease;
-
-  span {
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  svg {
-    height: 20px;
-    pointer-events: none;
-    width: 20px;
-    z-index: 1;
-  }
-
-  :after {
-    background-color: rgba(0, 0, 0, 0);
-    content: '';
-    display: block;
-    height: 100%;
-    left: 0;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    transition: all 0.3s ease;
-    width: 100%;
-    z-index: 0;
-  }
-
-  :hover {
-    :after {
-      background-color: rgba(0, 0, 0, 0.1);
-    }
-  }
-
-  :active {
-    border-color: ${color.blue};
-  }
-
-  :disabled {
-    opacity: 50%;
-    pointer-events: none;
-  }
-`;
-
-// theme = regular | primary | outline
-const regular = `
-  background-color: ${color.blueLight};
-  border-color: ${color.blueLight};
-  color: ${color.blue};
-
-  :active {
-    border-color: ${color.blue};
-  }
-
-  svg {
-    fill: ${color.blue};
-  }
-`;
-const primary = `
-  background-color: ${color.green};
-  border-color: ${color.greenLight};
-  color: ${color.white};
-
-  :active {
-    border-color: ${color.greenLight};
-  }
-
-  svg {
-    fill: ${color.white};
-  }
-`;
-const outline = `
-  background-color: ${color.white};
-  border-color: ${color.blueLight};
-  color: ${color.blue};
-
-  :hover {
-    background-color: ${color.blueDark};
-    color: ${color.white};
-
-    svg {
-      fill: ${color.white};
-    }
-  }
-
-  :active {
-    border-color: ${color.blue};
-  }
-
-  svg {
-    fill: ${color.blue};
-  }
-`;
-
-// theme = colored common shades
-const coloredShades = `
-:after {
-  background-color: ${getShade('light', 90)};
-}
-
-:hover {
-  :after {
-    background-color: ${getShade('light', 70)};
-  }
-}
-
-:active {
-  :after {
-    background-color: ${getShade('light', 50)};
-  }
-}
-`;
-
-// theme = colored
-const coloredRed = `
-  background-color: ${color.red};
-  border-color: ${color.red};
-  color: ${color.red};
-
-  svg {
-    fill: ${color.red};
-  }
-
-  ${coloredShades}
-`;
-const coloredGreen = `
-  background-color: ${color.green};
-  border-color: ${color.green};
-  color: ${color.green};
-
-  svg {
-    fill: ${color.green};
-  }
-
-  ${coloredShades}
-`;
-const coloredBlue = `
-  background-color: ${color.blue};
-  border-color: ${color.blue};
-  color: ${color.blue};
-
-  svg {
-    fill: ${color.blue};
-  }
-
-  ${coloredShades}
-`;
-const coloredYellow = `
-  background-color: ${color.yellow};
-  border-color: ${color.yellow};
-  color: ${color.yellow};
-
-  svg {
-    fill: ${color.yellow};
-  }
-
-  ${coloredShades}
-`;
-
-// if icon styles
-const iconLeading = `
-  flex-direction: row;
-
-  svg {
-    margin-right: 8px;
-  }
-`;
-const iconTrailing = `
-  flex-direction: row-reverse;
-
-  svg {
-    margin-left: 8px;
-  }
-`;
-const iconOnly = `
-  align-items: center;
-  border-radius: 12px;
-  border-width: 0px;
-  display: flex;
-  height: 32px;
-  justify-content: center;
-  padding: 0;
-  text-indent: -99999px;
-  width: 32px;
-`;
-
-// size settings
-const sizeSmall = `
-  border: none;
-  font-size: 13px;
-  padding: 2px 12px;
-`;
-const sizeRegular = `
-  font-size: 14px;
-  padding: 4px 16px;
-`;
-const sizeLarge = `
-  border-width: 4px;
-  font-size: 16px;
-  padding: 4px 20px;
-`;
-
-const buttonStyles = {
-    coloredBlue,
-    coloredGreen,
+import { initialStyles } from './styles/inititalStyles';
+import { primary, regular, outline } from './styles/standardThemes';
+import { sizeSmall, sizeRegular, sizeLarge } from './styles/sizeStyles';
+import {
     coloredRed,
+    coloredGreen,
+    coloredBlue,
     coloredYellow,
+} from './styles/coloredThemes';
+import {
     iconLeading,
-    iconOnly,
     iconTrailing,
-    initialStyles,
-    outline,
-    primary,
-    regular,
-    sizeLarge,
-    sizeRegular,
-    sizeSmall,
+    iconOnly,
+    smallIconResize,
+    largeIconResize,
+} from './styles/iconStyles';
+
+type TStyleProps = Pick<ButtonProps, 'theme' | 'iconLayout' | 'size' | 'color'>;
+
+const getThemeStyles = (theme: string) => {
+    switch (theme) {
+        case 'primary':
+            return primary;
+        case 'outline':
+            return outline;
+        default:
+            return regular;
+    }
 };
 
-export default buttonStyles;
+const getIconLayoutStyles = (iconLayout: string) => {
+    switch (iconLayout) {
+        case 'trailing':
+            return iconTrailing;
+        case 'icon-only':
+            return iconOnly;
+        default:
+            return iconLeading;
+    }
+};
+
+const getSizeStyles = (size: string) => {
+    switch (size) {
+        case 'large':
+            return sizeLarge;
+        case 'small':
+            return sizeSmall;
+        default:
+            return sizeRegular;
+    }
+};
+
+const getColored = (color: string) => {
+    switch (color) {
+        case 'red':
+            return coloredRed;
+        case 'green':
+            return coloredGreen;
+        case 'blue':
+            return coloredBlue;
+        case 'yellow':
+            return coloredYellow;
+        default:
+            return regular;
+    }
+};
+
+const iconOnlyBorderFix = (theme: string) => {
+    switch (theme) {
+        case 'colored':
+            return 'border-width: 2px;';
+        case 'outline':
+            return 'border-width: 2px;';
+        default:
+            return;
+    }
+};
+
+export const ButtonStyled = styled.button<TStyleProps>`
+    ${initialStyles}
+
+    ${(p) => p.theme && getThemeStyles(p.theme)}
+    ${(p) => p.color && p.theme === 'colored' && getColored(p.color)}
+    ${(p) => p.size && getSizeStyles(p.size)}
+    ${(p) => p.iconLayout && getIconLayoutStyles(p.iconLayout)}
+
+    ${(p) =>
+        p.iconLayout === 'icon-only' && p.size === 'small' && smallIconResize()}
+    ${(p) =>
+        p.iconLayout === 'icon-only' && p.size === 'large' && largeIconResize()}
+    ${(p) => p.iconLayout === 'icon-only' && iconOnlyBorderFix(p.theme)}
+`;

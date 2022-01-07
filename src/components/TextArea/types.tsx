@@ -42,5 +42,5 @@ export interface TextAreaProps {
     /**
      * the input can use state to react to user interaction
      */
-    state?: 'error' | 'confirmed' | "disabled";
+    state?: 'error' | 'confirmed' | 'disabled';
 }

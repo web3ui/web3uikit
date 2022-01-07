@@ -10,7 +10,9 @@ export default {
 const testEvent = (event: React.ChangeEvent<HTMLTextAreaElement>) =>
     console.log(event.target);
 
-const Template: ComponentStory<typeof TextArea> = (args) => <TextArea {...args} />;
+const Template: ComponentStory<typeof TextArea> = (args) => (
+    <TextArea {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

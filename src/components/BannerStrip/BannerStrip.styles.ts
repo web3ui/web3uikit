@@ -1,4 +1,4 @@
-import color from "../../styles/colors";
+import color from '../../styles/colors';
 
 const section = `
   align-items: center;
@@ -34,8 +34,8 @@ const button = `
 `;
 
 const bannerStripStyles = {
-	button,
-	section,
+    button,
+    section,
 };
 
 export default bannerStripStyles;

@@ -1,7 +1,7 @@
-import resetCSS from "../../styles/reset";
-import font from "../../styles/fonts";
-import color from "../../styles/colors";
-import tickSVG from "./tick.svg";
+import resetCSS from '../../styles/reset';
+import font from '../../styles/fonts';
+import color from '../../styles/colors';
+import tickSVG from './tick.svg';
 
 export const inputStyles = `
   ${resetCSS}

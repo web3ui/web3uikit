@@ -39,9 +39,9 @@ const flex = `
 `;
 
 export const notificationStyles = {
-  box,
-  flex,
-  initialStyles,
-  message,
-  title,
+    box,
+    flex,
+    initialStyles,
+    message,
+    title,
 };

@@ -40,7 +40,16 @@ const TextArea: React.FC<TextAreaProps> = ({
             className={currentValue.length > 0 ? 'filled' : 'empty'}
             data-testid="test-textarea-wrapper"
         >
-            <Icon svg={iconTypes.expand} style={{ position: "absolute", bottom: "10px", right: "10px", zIndex: "-1" }} fill={color.blue} />
+            <Icon
+                svg={iconTypes.expand}
+                style={{
+                    position: 'absolute',
+                    bottom: '10px',
+                    right: '10px',
+                    zIndex: '-1',
+                }}
+                fill={color.blue}
+            />
             <TextAreaStyled
                 autoComplete={`${autoComplete}`}
                 data-testid="test-textarea"
@@ -53,7 +62,7 @@ const TextArea: React.FC<TextAreaProps> = ({
                 value={currentValue}
                 ref={textareaRef}
                 rows={4}
-                disabled={state === "disabled"}
+                disabled={state === 'disabled'}
             />
             {label && (
                 <LabelStyled data-testid="test-label" htmlFor={id}>

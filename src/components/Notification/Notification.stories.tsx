@@ -4,20 +4,20 @@ import Notification from '../../components/Notification/Notification';
 import { iconTypes } from '../Icon/collection';
 
 export default {
-  title: 'UI/Notification',
-  component: Notification,
+    title: 'UI/Notification',
+    component: Notification,
 } as ComponentMeta<typeof Notification>;
 
 const Template: ComponentStory<typeof Notification> = (args) => (
-  <Notification {...args} />
+    <Notification {...args} />
 );
 
 export const Regular = Template.bind({});
 Regular.args = {
-  id: 'test-Notification',
-  message: 'Somebody messaged you',
-  isVisible: true,
-  title: 'New Notification',
+    id: 'test-Notification',
+    message: 'Somebody messaged you',
+    isVisible: true,
+    title: 'New Notification',
 };
 
 export const Inactive = Template.bind({});
@@ -25,14 +25,14 @@ Inactive.args = {};
 
 export const Standard = Template.bind({});
 Standard.args = {
-  message: 'Kresimir: Thank you for sharin..',
-  isVisible: true,
+    message: 'Kresimir: Thank you for sharin..',
+    isVisible: true,
 };
 
 export const CustomIcon = Template.bind({});
 CustomIcon.args = {
-  icon: iconTypes.cloud,
-  message: 'TX: 0x2134...e82c5',
-  title: 'New Event Sync',
-  isVisible: true,
+    icon: iconTypes.cloud,
+    message: 'TX: 0x2134...e82c5',
+    title: 'New Event Sync',
+    isVisible: true,
 };

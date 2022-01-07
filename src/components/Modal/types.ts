@@ -1,5 +1,4 @@
 export interface ModalProps {
-
     /**
      * The ID of the modal will be generated automatically if not set
      */
@@ -24,25 +23,25 @@ export interface ModalProps {
      * set if 'Ok' button is disabled
      */
     isOkDisabled?: boolean;
-    
+
     /**
      * set if modal is visible
      */
     isVisible: boolean;
-    
-     /**
+
+    /**
      * Run function on 'Cancel'
      */
     onCancel?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-    
+
     /**
      * Run function on 'Ok'
      */
     onOk?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 
     /*
-    *  set text of 'Ok' button
-    */
+     *  set text of 'Ok' button
+     */
     okText?: string;
 
     /**

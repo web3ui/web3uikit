@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+import color from '../../styles/colors';
+import { Icon } from '../Icon';
+import { iconTypes } from '../Icon/collection';
 import TextAreaStyles from './TextArea.styles';
 import { TextAreaProps } from './types';
 
@@ -39,6 +42,7 @@ const TextArea: React.FC<TextAreaProps> = ({
             className={currentValue.length > 0 ? 'filled' : 'empty'}
             data-testid="test-textarea-wrapper"
         >
+            <Icon svg={iconTypes.expand} style={{ position: "absolute", bottom: "10px", right: "10px", zIndex: "-1" }} fill={color.blue} />
             <TextAreaStyled
                 autoComplete={`${autoComplete}`}
                 data-testid="test-textarea"

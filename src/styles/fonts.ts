@@ -33,6 +33,11 @@ const h4 = `
   line-height: 28px;
 `;
 
+const h5 = `
+    font-size: 16px;
+    line-height: 25px;
+`;
+
 const ibm = `
   font-family: IBM Plex Mono;
   font-size: 16px;
@@ -49,6 +54,10 @@ const text = `
   font-weight: 400;
   letter-spacing: 0em;
   line-height: 24px;
+`;
+
+const textBold500 = `
+  font-weight: 500;
 `;
 
 const textBold = `
@@ -71,11 +80,20 @@ const semiBold = `
   font-weight: 600;
 `;
 
+const openSans = `
+    font-family: Open Sans;
+`;
+
+const montserrat = `
+    font-family: Montserrat;
+`;
+
 const fonts = {
     h1,
     h2,
     h3,
     h4,
+    h5,
     heading,
     ibm,
     text,
@@ -83,6 +101,9 @@ const fonts = {
     textBold700,
     textSmall,
     semiBold,
+    textBold500,
+    openSans,
+    montserrat,
 };
 
 export default fonts;

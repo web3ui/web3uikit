@@ -1,6 +1,10 @@
 import React from 'react';
 
-const cameraIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+const cameraIcon = (
+    fill: string,
+    size: number,
+    style?: React.CSSProperties,
+) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"

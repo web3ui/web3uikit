@@ -1,6 +1,10 @@
 import React from 'react';
 
-const chevronLeftX2Icon = (fill: string, size: number, style?: React.CSSProperties) => (
+const chevronLeftX2Icon = (
+    fill: string,
+    size: number,
+    style?: React.CSSProperties,
+) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"

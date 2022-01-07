@@ -1,6 +1,10 @@
 import React from 'react';
 
-const minimizeIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+const minimizeIcon = (
+    fill: string,
+    size: number,
+    style?: React.CSSProperties,
+) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"

@@ -1,6 +1,10 @@
 import React from 'react';
 
-const discordIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+const discordIcon = (
+    fill: string,
+    size: number,
+    style?: React.CSSProperties,
+) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"

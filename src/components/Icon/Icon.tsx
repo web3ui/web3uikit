@@ -2,8 +2,18 @@ import React from 'react';
 import { IconProps } from '.';
 import collection from './collection';
 
-const Icon: React.FC<IconProps> = ({ fill = 'inherit', size = 18, svg, style }) => {
-    const getIcon = (fill: string, size: number, svg: string, style?: React.CSSProperties) => {
+const Icon: React.FC<IconProps> = ({
+    fill = 'inherit',
+    size = 18,
+    svg,
+    style,
+}) => {
+    const getIcon = (
+        fill: string,
+        size: number,
+        svg: string,
+        style?: React.CSSProperties,
+    ) => {
         switch (svg) {
             case 'arrow circle down':
                 return collection?.arrowCircleDownIcon(fill, size, style);

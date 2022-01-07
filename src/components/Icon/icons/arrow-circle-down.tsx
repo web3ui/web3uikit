@@ -1,6 +1,10 @@
 import React from 'react';
 
-const arrowCircleDownIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+const arrowCircleDownIcon = (
+    fill: string,
+    size: number,
+    style?: React.CSSProperties,
+) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"

@@ -36,8 +36,8 @@ ButtonsDisabled.args = {
     okText: "Download",
     cancelText: "Abort",
     isVisible: true,
-    okDisabled: true,
-    cancelDisabled: true,
+    isOkDisabled: true,
+    isCancelDisabled: true,
     children: [
         <div
             key={"1"}
@@ -58,7 +58,7 @@ OneButtonDisabled.args = {
     isVisible: true,
     onCancel: () => { console.log('cancel button clicked')},
     onOk: () => {console.log('ok button clicked')},
-    okDisabled: true,
+    isOkDisabled: true,
     children: [
         <div
             key={"2"}

@@ -1,6 +1,6 @@
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
-import color from "../../styles/colors";
+import color from '../../styles/colors';
 
 const initialStyles = `
     ${resetCSS}
@@ -38,7 +38,7 @@ const container = `
 const defaultContainer = `
     bottom: calc(100% + 5px);
     background-color: ${color.blueDark2};
-`
+`;
 
 const top = `
     background-color: ${color.blueDark2};
@@ -48,7 +48,7 @@ const top = `
       border-top-color: ${color.blueDark2};
       top: 100%;
     }
-`
+`;
 
 const bottom = `
     background-color: ${color.blueDark2};
@@ -58,7 +58,7 @@ const bottom = `
       bottom: 100%;
       border-bottom-color: ${color.blueDark2};
     }
-`
+`;
 
 const left = `
     background-color: ${color.blueDark2};
@@ -75,7 +75,7 @@ const left = `
       transform: translateX(0) translateY(-50%);
     }
 
-`
+`;
 
 const right = `
     background-color: ${color.blueDark2};
@@ -89,7 +89,7 @@ const right = `
       top: 50%;
       transform: translateX(0) translateY(-50%);
     }
-`
+`;
 
 export const tooltipStyles = {
     initialStyles,
@@ -100,5 +100,5 @@ export const tooltipStyles = {
     top,
     bottom,
     left,
-    right
+    right,
 };

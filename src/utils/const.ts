@@ -1,1 +1,1 @@
-export const mailToAddress = 'hello@moralis.io'
+export const mailToAddress = 'hello@moralis.io';

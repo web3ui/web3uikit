@@ -34,7 +34,7 @@ export const TextAreaWrapper = styled.div<Pick<TextAreaProps, 'state'>>`
 export const LabelStyled = styled.label`
     ${resetCSS}
     ${fonts.text}
-  background-color: ${color.white};
+    background-color: ${color.white};
     height: 24px;
     left: 12px;
     padding: 0 4px;
@@ -50,7 +50,7 @@ export const TextAreaStyled = styled.textarea`
     border: 1px solid ${color.greyLight};
     border-radius: 16px;
     padding: 16px;
-    transition: all 0.3 linear;
+    transition: all 0.3s linear;
     min-width: 320px;
     min-height: 128px;
     overflow: hidden;
@@ -86,7 +86,7 @@ export const TextAreaStyled = styled.textarea`
             height: 18px;
             line-height: 1;
             padding: 2px 4px;
-            top: 0px;
+            top: 0;
         }
     }
 `;

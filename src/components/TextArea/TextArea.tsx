@@ -24,7 +24,6 @@ const TextArea: React.FC<TextAreaProps> = ({
     };
 
     useEffect(() => {
-        console.log("rerender")
         if (textareaRef && textareaRef.current) {
             textareaRef.current.style.height = "0px";
             const scrollHeight = textareaRef.current.scrollHeight;

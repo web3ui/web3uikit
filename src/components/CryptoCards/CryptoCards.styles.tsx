@@ -4,6 +4,26 @@ import color from '../../styles/colors';
 import resetCSS from '../../styles/reset';
 import { getShade } from '../../styles/colors';
 
+const ButtonStyled = styled.button`
+    align-items: center;
+    background: rgba(4, 24, 54, 0.2);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: row;
+    flex: none;
+    flex-grow: 0;
+    height: 40px;
+    justify-content: center;
+    left: 39px;
+    margin: 16px 0px;
+    order: 1;
+    overflow: hidden;
+    padding: 8px 24px 8px 16px;
+    position: static;
+    top: 268px;
+    width: 187px;
+`;
+
 const CryptoCardStyled = styled.div`
     align-items: center;
     background: ${(props) => props.color};
@@ -40,41 +60,18 @@ const CryptoCardStyled = styled.div`
     }
 `;
 
-const ButtonStyles = styled.button`
-    align-items: center;
-    background: rgba(4, 24, 54, 0.2);
-    border-radius: 16px;
-    display: flex;
-    flex-direction: row;
+const DivImageStyled = styled.div`
     flex: none;
     flex-grow: 0;
-    height: 40px;
-    justify-content: center;
-    left: 39px;
-    margin: 16px 0px;
-    order: 1;
-    overflow: hidden;
-    padding: 8px 24px 8px 16px;
+    height: 160px;
+    left: 21px;
+    order: 0;
     position: static;
-    top: 268px;
-    width: 187px;
+    top: 0px;
+    width: 120px;
 `;
 
-const BtnTxtStyle = styled.p`
-    color: ${color.white};
-    ${fonts.openSans};
-    ${fonts.textBold};
-    ${fonts.h5};
-    height: 24px;
-    left: 44px;
-    line-height: 24px;
-    overflow: hidden;
-    top: 8px;
-    width: 119px;
-    word-break: break-all;
-`;
-
-const InfoStyle = styled.div`
+const DivInfoStyled = styled.div`
     align-items: center;
     display: flex;
     flex: none;
@@ -90,7 +87,15 @@ const InfoStyle = styled.div`
     width: 162px;
 `;
 
-const NetworkInfoHolder = styled.div`
+const DivLogoStyled = styled.div`
+    border-radius: 0px;
+    height: 136px;
+    left: 19px;
+    top: 12px;
+    width: 82px;
+`;
+
+const DivNetworkInfoStyled = styled.div`
     bottom: 0%;
     color: ${color.white};
     flex: none;
@@ -106,7 +111,31 @@ const NetworkInfoHolder = styled.div`
     width: 100%;
 `;
 
-const NetworkStyle = styled.p`
+const PButtonStyled = styled.p`
+    color: ${color.white};
+    ${fonts.openSans};
+    ${fonts.textBold};
+    ${fonts.h5};
+    height: 24px;
+    left: 44px;
+    line-height: 24px;
+    overflow: hidden;
+    top: 8px;
+    width: 119px;
+    word-break: break-all;
+`;
+
+const PChainNameStyled = styled.p`
+    font-size: 32px;
+    ${fonts.montserrat};
+    ${fonts.textBold500};
+    height: 50%;
+    margin: 0;
+    overflow: hidden;
+    word-break: break-all;
+`;
+
+const PNetworkStyled = styled.p`
     font-size: 20px;
     ${fonts.openSans};
     ${fonts.textBold700};
@@ -117,45 +146,16 @@ const NetworkStyle = styled.p`
     word-break: break-all;
 `;
 
-const ChainNameStyle = styled.p`
-    font-size: 32px;
-    ${fonts.montserrat};
-    ${fonts.textBold500};
-    height: 50%;
-    margin: 0;
-    overflow: hidden;
-    word-break: break-all;
-`;
-
-const ImageBoxStyle = styled.div`
-    flex: none;
-    flex-grow: 0;
-    height: 160px;
-    left: 21px;
-    order: 0;
-    position: static;
-    top: 0px;
-    width: 120px;
-`;
-
-const Logo = styled.div`
-    border-radius: 0px;
-    height: 136px;
-    left: 19px;
-    top: 12px;
-    width: 82px;
-`;
-
 const CryptoCardStyles = {
+    ButtonStyled,
     CryptoCardStyled,
-    ButtonStyles,
-    BtnTxtStyle,
-    InfoStyle,
-    NetworkInfoHolder,
-    NetworkStyle,
-    ChainNameStyle,
-    ImageBoxStyle,
-    Logo,
+    DivImageStyled,
+    DivInfoStyled,
+    DivLogoStyled,
+    DivNetworkInfoStyled,
+    PButtonStyled,
+    PChainNameStyled,
+    PNetworkStyled,
 };
 
 export default CryptoCardStyles;

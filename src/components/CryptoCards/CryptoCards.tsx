@@ -6,15 +6,15 @@ import React from 'react';
 import color from '../../styles/colors';
 
 const {
+    ButtonStyled,
     CryptoCardStyled,
-    ButtonStyles,
-    BtnTxtStyle,
-    InfoStyle,
-    NetworkInfoHolder,
-    NetworkStyle,
-    ChainNameStyle,
-    ImageBoxStyle,
-    Logo,
+    DivImageStyled,
+    DivInfoStyled,
+    DivLogoStyled,
+    DivNetworkInfoStyled,
+    PButtonStyled,
+    PChainNameStyled,
+    PNetworkStyled,
 } = CryptoCardStyles;
 
 const CryptoCards: React.FC<CryptoCardProps> = ({
@@ -29,27 +29,27 @@ const CryptoCards: React.FC<CryptoCardProps> = ({
 }: CryptoCardProps) => {
     return (
         <CryptoCardStyled color={bgColor} data-testid={'test-crypto-card'}>
-            <InfoStyle>
-                <ImageBoxStyle>
-                    <Logo>
+            <DivInfoStyled>
+                <DivImageStyled>
+                    <DivLogoStyled>
                         <img src={chainLogo} />
-                    </Logo>
-                </ImageBoxStyle>
-                <NetworkInfoHolder>
-                    <ChainNameStyle data-testid={'test-chain-name'}>
+                    </DivLogoStyled>
+                </DivImageStyled>
+                <DivNetworkInfoStyled>
+                    <PChainNameStyled data-testid={'test-chain-name'}>
                         {chain}
-                    </ChainNameStyle>
-                    <NetworkStyle>{chainType || 'Network'}</NetworkStyle>
-                </NetworkInfoHolder>
-            </InfoStyle>
-            <ButtonStyles onClick={onClick} data-testid={'test-button'}>
+                    </PChainNameStyled>
+                    <PNetworkStyled>{chainType || 'Network'}</PNetworkStyled>
+                </DivNetworkInfoStyled>
+            </DivInfoStyled>
+            <ButtonStyled onClick={onClick} data-testid={'test-button'}>
                 <Icon
                     fill={`${settingsColor || color.white}`}
                     size={20}
                     svg={settingsIcon || iconTypes.cog}
                 />
-                <BtnTxtStyle>{btnText}</BtnTxtStyle>
-            </ButtonStyles>
+                <PButtonStyled>{btnText}</PButtonStyled>
+            </ButtonStyled>
         </CryptoCardStyled>
     );
 };

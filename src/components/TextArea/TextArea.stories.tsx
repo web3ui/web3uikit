@@ -14,6 +14,15 @@ const Template: ComponentStory<typeof TextArea> = (args) => (
     <TextArea {...args} />
 );
 
+export const Standard = Template.bind({});
+Standard.args = {
+    onChange: testEvent,
+    label: 'Standard',
+    name: 'Test TextArea Default',
+    placeholder: 'Type here field',
+    state: undefined,
+};
+
 export const Default = Template.bind({});
 Default.args = {
     onChange: testEvent,

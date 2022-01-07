@@ -16,4 +16,9 @@ export interface IconProps {
      * import { iconTypes } from "../../components/Icon/collection"
      */
     svg: iconTypes;
+
+    /**
+     * CSS style props
+     */
+    style?: React.CSSProperties;
 }

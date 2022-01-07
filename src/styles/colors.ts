@@ -35,12 +35,11 @@ export const getShade = (shade: "light" | "dark", percent: number) =>
 
 
 export const colorPercentage = (color: string, percentage: string | number) => {
-	let r = parseInt(color.slice(1, 3), 16),
-		g = parseInt(color.slice(3, 5), 16),
-		b = parseInt(color.slice(5, 7), 16);
+	let r = parseInt(color.slice(1, 3), 16);
+	let	g = parseInt(color.slice(3, 5), 16);
+	let	b = parseInt(color.slice(5, 7), 16);
 
 	return `rgba(${r},${g},${b},${(Number(percentage) / 100)})`
-
 }
 
 export default color;

@@ -39,7 +39,7 @@ export const colorPercentage = (color: string, percentage: string | number) => {
 		g = parseInt(color.slice(3, 5), 16),
 		b = parseInt(color.slice(5, 7), 16);
 
-		return `rgba(${r},${g},${b},${(Number(percentage) / 100)})`
+	return `rgba(${r},${g},${b},${(Number(percentage) / 100)})`
 
 }
 

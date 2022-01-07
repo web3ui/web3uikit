@@ -1,6 +1,10 @@
 import React from 'react';
 
-const serverIcon = (fill: string, size: number) => (
+const serverIcon = (
+  fill: string,
+  size: number,
+  style?: React.CSSProperties,
+) => (
   <svg
     aria-hidden="true"
     data-testid="test-icon"
@@ -9,6 +13,7 @@ const serverIcon = (fill: string, size: number) => (
     viewBox="0 0 24 24"
     width={size}
     xmlns="http://www.w3.org/2000/svg"
+    style={style}
   >
     <title>server icon</title>
     <path

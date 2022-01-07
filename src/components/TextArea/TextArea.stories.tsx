@@ -7,14 +7,6 @@ export default {
     component: TextArea,
 } as ComponentMeta<typeof TextArea>;
 
-// const testEvent = (event: React.ChangeEvent<HTMLTextAreaElement>) =>
-//     console.log(event.target);
-
-// const Template: ComponentStory<typeof TextArea> = (args) => (
-//     <TextArea {...args} />
-// );
-
-
 const testEvent = (event: React.ChangeEvent<HTMLTextAreaElement>) =>
     console.log(event.target);
 
@@ -37,8 +29,16 @@ Error.args = {
     state: 'error',
 };
 
-export const TextTextAreaConfirmed = Template.bind({});
-TextTextAreaConfirmed.args = {
+export const Disabled = Template.bind({});
+Disabled.args = {
+    onChange: testEvent,
+    label: 'Label text',
+    name: 'Test TextArea disabled',
+    state: 'disabled',
+};
+
+export const Confirmed = Template.bind({});
+Confirmed.args = {
     onChange: testEvent,
     label: 'Confirmed',
     name: 'Test TextArea confirmed',

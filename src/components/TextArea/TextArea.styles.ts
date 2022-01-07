@@ -13,7 +13,8 @@ export const TextAreaWrapper = styled.div<Pick<TextAreaProps, 'state'>>`
     transition: all 0.1s linear;
 
     &:hover {
-        border-color: ${color.blue};
+        border-color: ${(p) =>
+            p.state === 'disabled' ? color.greyLight : color.blue};
     }
 
     &:focus {
@@ -38,6 +39,7 @@ export const TextAreaWrapper = styled.div<Pick<TextAreaProps, 'state'>>`
             ${(p) =>
                 p.state !== 'error' &&
                 p.state !== 'confirmed' &&
+                p.state !== 'disabled' &&
                 `color: ${color.blue};`}
         }
     }

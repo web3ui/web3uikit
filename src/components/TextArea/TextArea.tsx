@@ -27,11 +27,9 @@ const TextArea: React.FC<TextAreaProps> = ({
     };
 
     useEffect(() => {
-        console.log('rerender');
         if (textareaRef && textareaRef.current) {
             textareaRef.current.style.height = '0px';
             const scrollHeight = textareaRef.current.scrollHeight;
-            console.log(scrollHeight);
             textareaRef.current.style.height = scrollHeight + 'px';
         }
     }, [currentValue]);
@@ -55,6 +53,7 @@ const TextArea: React.FC<TextAreaProps> = ({
                 value={currentValue}
                 ref={textareaRef}
                 rows={4}
+                disabled={state === "disabled"}
             />
             {label && (
                 <LabelStyled data-testid="test-label" htmlFor={id}>

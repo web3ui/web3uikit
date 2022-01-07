@@ -35,7 +35,7 @@ const CryptoCardStyled = styled.div`
     }
     :hover {
         :after {
-            background: white; //rgba(4, 24, 54, 0.2);
+            background: rgba(4, 24, 54, 0.2);
         }
     }
 `;

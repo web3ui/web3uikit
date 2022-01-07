@@ -1,2 +1,2 @@
-export { default as Radios } from './TextArea';
-// export type { TextAreaProps } from "./types";
+export { default as TextArea } from './TextArea';
+export type { TextAreaProps } from "./types";

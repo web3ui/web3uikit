@@ -1,41 +1,11 @@
 import React from "react";
-import styled from "styled-components";
-import resetCSS from "../../styles/reset";
-import color from "../../styles/colors";
-import fonts from "../../styles/fonts";
 import Icon from "../Icon/Icon";
 import { iconTypes } from "../Icon/collection";
+import color from "../../styles/colors";
 import { LinkToProps } from "./types";
+import { LinkToStyles } from "./LinkTo.styles";
 
-const LinkStyled = styled.a<Pick<LinkToProps, "iconLayout">>`
-	${resetCSS}
-	${fonts.text}
-  align-items: center;
-	color: ${color.blue};
-	display: inline-block;
-	width: fit-content;
-
-	.flex {
-		align-items: baseline;
-		display: flex;
-		flex-direction: ${(p) =>
-			p.iconLayout === "leading" ? "row" : "row-reverse"};
-		margin: ${(p) =>
-			p.iconLayout === "leading" ? "0 2px 0 4px" : "0 4px 0 2px"};
-	}
-
-	svg {
-		margin: ${(p) => (p.iconLayout === "leading" ? "0 4px 0 0" : "0 0 0 4px")};
-	}
-
-	&:hover {
-		color: ${color.blueDark};
-
-		svg {
-			fill: ${color.blueDark};
-		}
-	}
-`;
+const { LinkStyled, FlexSpanStyled } = LinkToStyles;
 
 const LinkTo: React.FC<LinkToProps> = ({
 	address,
@@ -46,10 +16,9 @@ const LinkTo: React.FC<LinkToProps> = ({
 	<LinkStyled
 		data-testid="test-link-to"
 		href={`${type === "email" ? "mailto:" : ""}${address}`}
-		iconLayout={iconLayout}
 		target={`${type === "email" ? "_self" : "_blank"}`}
 	>
-		<span className="flex">
+		<FlexSpanStyled iconLayout={iconLayout} data-testid="test-link-flex">
 			<Icon
 				svg={type === "email" ? iconTypes.mail : iconTypes.link}
 				fill={color.blue}
@@ -57,7 +26,7 @@ const LinkTo: React.FC<LinkToProps> = ({
 			/>
 
 			<span data-testid="test-link-text">{text || address}</span>
-		</span>
+		</FlexSpanStyled>
 	</LinkStyled>
 );
 

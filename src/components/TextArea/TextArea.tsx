@@ -1,93 +1,63 @@
-import React, {
-    useState,
-    useEffect,
-    useRef,
-    TextareaHTMLAttributes,
-} from 'react';
-import {
-    StyledLabel,
-    TextAreaStyled,
-    TextAreaWrapper,
-} from './TextArea.styles';
+import React, { useState, useRef, useEffect } from 'react';
+import TextAreaStyles from './TextArea.styles';
+import { TextAreaProps } from './types';
 
-const TextArea = () => {
-    const textAreaRef = useRef<HTMLTextAreaElement>(null);
-    const [text, setText] = useState('');
-    const [textAreaHeight, setTextAreaHeight] = useState('auto');
-    const [parentHeight, setParentHeight] = useState('auto');
-    const [isPressed, setIsPressed] = useState(false);
+const { TextAreaStyled, LabelStyled, TextAreaWrapper } = TextAreaStyles;
 
-    // useEffect(() => {
-    //     setParentHeight(`${textAreaRef.current!.scrollHeight}px`);
-    //     setTextAreaHeight(`${textAreaRef.current!.scrollHeight}px`);
-    // }, [text]);
+const TextArea: React.FC<TextAreaProps> = ({
+    autoComplete = true,
+    id = String(Date.now()),
+    label,
+    name,
+    onChange,
+    placeholder,
+    state,
+    value = '',
+}: TextAreaProps) => {
+    const [currentValue, setCurrentValue] = useState(value);
 
-    // const onChangeHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    //     setTextAreaHeight("auto");
-    //     setParentHeight(`${textAreaRef.current!.scrollHeight}px`);
-    //     setText(event.target.value);
+    const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
-    //     if (props.onChange) {
-    //         props.onChange(event);
-    //     }
-    // };
-    // const inputEl = useRef(null);
-
-    const [state, setState] = useState('');
-
-    const handleMouseEvent = (type: string) => {
-        console.log('type', type);
-        switch (type) {
-            case 'mouseEntered':
-                setState('mouseEntered');
-                break;
-            case 'focused':
-                setState('focused');
-                break;
-            case 'pressed':
-                setState('pressed');
-                break;
-            case 'unfocused':
-                setState('unfocused');
-                break;
-            case 'mouseLeaved':
-                setState('mouseLeaved');
-                break;
-        }
+    const valueChanged = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setCurrentValue(event.target.value);
+        onChange(event);
     };
 
-    function toggleState() {
-        // setIsPressed(isPressed ? false : true)
-    }
-
-    const buttonRef = useRef();
+    useEffect(() => {
+        console.log("rerender")
+        if (textareaRef && textareaRef.current) {
+            textareaRef.current.style.height = "0px";
+            const scrollHeight = textareaRef.current.scrollHeight;
+            console.log(scrollHeight)
+            textareaRef.current.style.height = scrollHeight + "px";
+        }
+    }, [currentValue]);
 
     return (
         <TextAreaWrapper
-            onFocus={() => handleMouseEvent('focused')}
-            onBlur={() => handleMouseEvent('unfocused')}
-            onMouseEnter={() => handleMouseEvent('mouseEntered')}
-            onMouseLeave={() => handleMouseEvent('mouseLeaved')}
-            onClick={() => handleMouseEvent('pressed')}
+            state={state}
+            className={currentValue.length > 0 ? 'filled' : 'empty'}
+            data-testid="test-textarea-wrapper"
         >
-            <StyledLabel state={state}>Label text</StyledLabel>
-            <TextAreaStyled placeholder="" />
+            <TextAreaStyled
+                autoComplete={`${autoComplete}`}
+                data-testid="test-textarea"
+                id={id}
+                name={name}
+                onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
+                    valueChanged(event)
+                }
+                placeholder={placeholder}
+                value={currentValue}
+                ref={textareaRef}
+                rows={4}
+            />
+            {label && (
+                <LabelStyled data-testid="test-label" htmlFor={id}>
+                    {label}
+                </LabelStyled>
+            )}
         </TextAreaWrapper>
-        // <div
-        //     style={{
-        //         minHeight: parentHeight,
-        //     }}
-        // >
-        //     <textarea
-        //         {...props}
-        //         ref={textAreaRef}
-        //         rows={1}
-        //         style={{
-        //             height: textAreaHeight,
-        //         }}
-        //         onChange={onChangeHandler}
-        //     />
-        // </div>
     );
 };
 

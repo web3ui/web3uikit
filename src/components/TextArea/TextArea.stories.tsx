@@ -17,26 +17,6 @@ const Template: ComponentStory<typeof TextArea> = (args) => (
 export const One = Template.bind({});
 One.args = {
     id: 'TextArea',
-    // items: ["Charmander", "Squirtle", "Bulbasaur", "Pikachu"],
-    // onChange: testEvent,
-    // title: "Who's that Pokemon?",
+    label: 'Label text',
+    placeholder: 'Type here',
 };
-
-// export const RadioGroupWithoutTitle = Template.bind({});
-// RadioGroupWithoutTitle.args = {
-// 	id: "radios",
-// 	items: ["Charmander", "Squirtle", "Bulbasaur", "Pikachu"],
-// 	onChange: testEvent,
-// };
-
-// export const RadiosWithLongText = Template.bind({});
-// RadiosWithLongText.args = {
-// 	id: "a formatted id",
-// 	items: [
-// 		"I think anybody who is interested in keeping their money safe from the criminal banking system would want gold, silver, and Bitcoin.",
-// 		"If you like gold, there are many reasons you should like Bitcoin.",
-// 		"Whatever happens to bitcoin, other cryptocurrencies are gaining ground and more respect. Ethereum, for instance, has far more transparency.",
-// 	],
-// 	onChange: testEvent,
-// 	title: "What is your favorite bitCoin quote of 2021?",
-// };

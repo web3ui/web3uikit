@@ -1,4 +1,4 @@
-import { iconTypes } from "./collection";
+import { iconTypes } from './collection';
 
 export interface IconProps {
   /**

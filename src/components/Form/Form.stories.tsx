@@ -9,8 +9,8 @@ export default {
 
 const Template: ComponentStory<typeof Form> = (args) => <Form {...args} />;
 
-export const DefaultForm = Template.bind({});
-DefaultForm.args = {
+export const DemoForm = Template.bind({});
+DemoForm.args = {
 	title: "Test form",
 	data: [
 		{

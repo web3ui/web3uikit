@@ -6,14 +6,14 @@ export const TitleStyled = styled.h3`
 	${resetCSS}
 	${fonts.heading}
 	${fonts.h3}
-  margin-bottom: 8px;
+	margin-bottom: 8px;
 `;
 
 export const SubTitleStyled = styled.h4`
 	${resetCSS}
 	${fonts.heading}
 	${fonts.h4}
-  margin-bottom: 12px;
+	margin-bottom: 12px;
 	margin-top: 32px;
 `;
 

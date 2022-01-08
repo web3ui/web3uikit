@@ -1,42 +1,8 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import color from '../../styles/colors';
-import { divStyle, inputStyle, labelStyle } from './Input.styles';
+import InputStyles from './Input.styles';
 import { InputProps } from './types';
 
-const InputStyled = styled.input`
-    ${inputStyle}
-`;
-const LabelStyled = styled.label`
-    ${labelStyle}
-`;
-
-const StyledDiv = styled.div<Pick<InputProps, 'state'>>`
-    ${divStyle}
-
-    input {
-        ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-        ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-    & + label {
-            ${(p) => p.state === 'error' && `color: ${color.red};`}
-            ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
-        }
-
-        &:hover {
-            ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-            ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-        }
-
-        &:focus {
-            ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-            ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-      & + label {
-                ${(p) => p.state === 'error' && `color: ${color.red};`}
-                ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
-            }
-        }
-    }
-`;
+const { InputStyled, LabelStyled, StyledDiv } = InputStyles;
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
@@ -48,7 +14,9 @@ const Input: React.FC<InputProps> = ({
     state,
     type = 'text',
     value = '',
-}: InputProps) => {
+}: // prefix,
+// suffix,
+InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -62,6 +30,7 @@ const Input: React.FC<InputProps> = ({
             className={currentValue.length > 0 ? 'filled' : 'empty'}
             data-testid="test-div"
         >
+            {/* {prefix && <InputPrefix>{prefix}</InputPrefix>} */}
             <InputStyled
                 autoComplete={`${autoComplete}`}
                 data-testid="test-input"

@@ -4,7 +4,13 @@ import { Button } from '../Button';
 import { Input } from '../Input';
 import { Checkbox } from '../Checkbox';
 import { Radios } from '../Radios';
+import { TextArea } from '../TextArea';
 import { TitleStyled, SubTitleStyled, FormStyled } from './Form.styles';
+
+// TO @bill
+// validation
+// test returned data
+// best way to show data in Storybook & for end user
 
 const Form: React.FC<FormProps> = ({
     data,
@@ -74,9 +80,9 @@ const Form: React.FC<FormProps> = ({
                 <Checkbox
                     key={`cb_${index}-${i}`}
                     label={opt}
+                    layout={layout}
                     name={input.name}
                     onChange={(e) => optionToggled(e, index, opt)}
-                    layout={layout}
                 />
             ))}
         </Fragment>
@@ -89,6 +95,18 @@ const Form: React.FC<FormProps> = ({
                 id={`${input.name}_${index}`}
                 items={input.options || []}
                 onChange={(e) => optionToggled(e, index, e.target.value)}
+            />
+        </Fragment>
+    );
+
+    const renderTextArea = (input: DataInput, index: number) => (
+        <Fragment key={`${input.name}_${index}`}>
+            <SubTitleStyled>{input.value}</SubTitleStyled>
+            <TextArea
+                id={`textarea_${index}`}
+                name={input.name}
+                value={input.value}
+                onChange={(e) => (data[index].value = e.target.value)}
             />
         </Fragment>
     );
@@ -111,6 +129,8 @@ const Form: React.FC<FormProps> = ({
                 return renderCheckbox(input, 'switch', index);
             case 'radios':
                 return renderRadioGroup(input, index);
+            case 'textarea':
+                return renderTextArea(input, index);
             default:
                 return;
         }
@@ -118,9 +138,19 @@ const Form: React.FC<FormProps> = ({
 
     return (
         <FormStyled onSubmit={formSubmitted} id={id} data-testid="test-form">
-            {title && <TitleStyled>{title}</TitleStyled>}
+            {title && (
+                <TitleStyled data-testid="test-form-title">{title}</TitleStyled>
+            )}
 
-            {data.map((input, i) => renderInputType(input, i))}
+            {data.map((input, i) => (
+                <div
+                    data-testid={`form-ele-${i}`}
+                    data-testclass="form-ele"
+                    key={`form-ele-${i}`}
+                >
+                    {renderInputType(input, i)}
+                </div>
+            ))}
 
             <Button
                 theme="primary"

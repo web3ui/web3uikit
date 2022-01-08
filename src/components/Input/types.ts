@@ -25,6 +25,11 @@ export interface InputProps {
     placeholder?: string;
 
     /**
+     * Icon prefix for the input field
+     */
+    prefix?: React.ReactNode;
+
+    /**
      * types of input available
      */
     type?: 'text' | 'number' | 'email' | 'tel' | 'password';
@@ -43,4 +48,9 @@ export interface InputProps {
      * the input can use state to react to user interaction
      */
     state?: 'error' | 'confirmed';
+
+    /**
+     * Icon suffix for the input field
+     */
+    suffix?: React.ReactNode;
 }

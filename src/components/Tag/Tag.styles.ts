@@ -1,6 +1,6 @@
-import color from "../../styles/colors";
-import fonts from "../../styles/fonts";
-import resetCSS from "../../styles/reset";
+import color from '../../styles/colors';
+import fonts from '../../styles/fonts';
+import resetCSS from '../../styles/reset';
 
 const initialStyles = `
     ${resetCSS}
@@ -82,16 +82,16 @@ const coloredPink = `
 `;
 
 export const tagStyles = {
-	activeStatus,
-	coloredBlue,
-	coloredGray,
-	coloredGreen,
-	coloredPink,
-	coloredPurple,
-	coloredRed,
-	coloredYellow,
-	discount,
-	inactiveStatus,
-	initialStyles,
-	regular,
+    activeStatus,
+    coloredBlue,
+    coloredGray,
+    coloredGreen,
+    coloredPink,
+    coloredPurple,
+    coloredRed,
+    coloredYellow,
+    discount,
+    inactiveStatus,
+    initialStyles,
+    regular,
 };

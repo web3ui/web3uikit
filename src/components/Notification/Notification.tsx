@@ -7,67 +7,76 @@ import { notificationStyles } from './Notification.styles';
 import color from '../../styles/colors';
 
 const NotificationStyled = styled.div`
-  ${notificationStyles.initialStyles}
+    ${notificationStyles.initialStyles}
 `;
 
 const BoxStyled = styled.div`
-  ${notificationStyles.box}
+    ${notificationStyles.box}
 `;
 
 const SpanStyled = styled.span`
-  ${notificationStyles.message}
+    ${notificationStyles.message}
 `;
 
 const ParagraphStyled = styled.p`
-  ${notificationStyles.title}
+    ${notificationStyles.title}
 `;
 
 const FlexStyled = styled.div`
-  ${notificationStyles.flex}
+    ${notificationStyles.flex}
 `;
 
 const Notification: React.FC<NotificationProps> = ({
-  id = String(Date.now()),
-  icon,
-  message,
-  title = 'New Message',
-  isVisible = false,
+    id = String(Date.now()),
+    icon,
+    message,
+    title = 'New Message',
+    isVisible = false,
 }: NotificationProps) => {
-  const [visible, setVisible] = useState(isVisible);
+    const [visible, setVisible] = useState(isVisible);
 
-  useEffect(() => {
-    setVisible(isVisible);
-  }, [isVisible]);
+    useEffect(() => {
+        setVisible(isVisible);
+    }, [isVisible]);
 
-  return (
-    <>
-      {visible && (
-        <NotificationStyled id={id} data-testid={'test-notification-id'}>
-          <Icon
-            fill={`${color.white}`}
-            size={20}
-            svg={icon || iconTypes.bell}
-          />
-          <BoxStyled>
-            <FlexStyled>
-              <ParagraphStyled data-testid={'test-notification-title'}>
-                {title}
-              </ParagraphStyled>
-              <div
-                data-testid={'test-notification-x'}
-                onClick={() => setVisible(false)}
-              >
-                <Icon fill={`${color.white}`} size={20} svg={iconTypes.x} />
-              </div>
-            </FlexStyled>
-            <SpanStyled data-testid={'test-notification-message'}>
-              {message}
-            </SpanStyled>
-          </BoxStyled>
-        </NotificationStyled>
-      )}
-    </>
-  );
+    return (
+        <>
+            {visible && (
+                <NotificationStyled
+                    id={id}
+                    data-testid={'test-notification-id'}
+                >
+                    <Icon
+                        fill={`${color.white}`}
+                        size={20}
+                        svg={icon || iconTypes.bell}
+                    />
+                    <BoxStyled>
+                        <FlexStyled>
+                            <ParagraphStyled
+                                data-testid={'test-notification-title'}
+                            >
+                                {title}
+                            </ParagraphStyled>
+                            <div
+                                data-testid={'test-notification-x'}
+                                onClick={() => setVisible(false)}
+                            >
+                                <Icon
+                                    fill={`${color.white}`}
+                                    size={20}
+                                    svg={iconTypes.x}
+                                />
+                            </div>
+                        </FlexStyled>
+                        <SpanStyled data-testid={'test-notification-message'}>
+                            {message}
+                        </SpanStyled>
+                    </BoxStyled>
+                </NotificationStyled>
+            )}
+        </>
+    );
 };
 
 export default Notification;

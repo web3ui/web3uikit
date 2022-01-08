@@ -18,7 +18,7 @@ export const iconTrailing = css`
 export const iconOnly = css`
     align-items: center;
     border-radius: 12px;
-    border-width: 0px;
+    border-width: 0;
     display: flex;
     height: 32px;
     justify-content: center;

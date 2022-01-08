@@ -1,6 +1,6 @@
-import resetCSS from "../../styles/reset";
-import fonts from "../../styles/fonts";
-import color from "../../styles/colors";
+import resetCSS from '../../styles/reset';
+import fonts from '../../styles/fonts';
+import color from '../../styles/colors';
 
 export const inputStyle = `
   ${resetCSS}

@@ -1,6 +1,9 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Input from '../../components/Input/Input';
+import { Icon } from '../Icon';
+import { iconTypes } from '../Icon/collection';
+import color from '../../styles/colors';
 
 export default {
     title: 'Interaction/Input',
@@ -11,6 +14,17 @@ const testEvent = (event: React.ChangeEvent<HTMLInputElement>) =>
     console.log(event.target);
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
+
+export const TextInputPrefix = Template.bind({});
+TextInputPrefix.args = {
+    onChange: testEvent,
+    type: 'text',
+    label: 'Label text',
+    name: 'Test text Input',
+    state: undefined,
+    prefix: <Icon svg={iconTypes.server} />,
+    suffix: <Icon svg={iconTypes.copy} />
+};
 
 export const TextInput = Template.bind({});
 TextInput.args = {

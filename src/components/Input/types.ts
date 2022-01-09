@@ -54,3 +54,10 @@ export interface InputProps {
      */
     suffix?: React.ReactNode;
 }
+
+export interface InputIconProps {
+    /**
+     * types of input available
+     */
+    type: 'prefix' | 'suffix';
+}

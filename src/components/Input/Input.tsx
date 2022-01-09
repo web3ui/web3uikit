@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import InputStyles from './Input.styles';
+import InputStyles, { InputIcon } from './Input.styles';
 import { InputProps } from './types';
 
-const { InputStyled, LabelStyled, StyledDiv } = InputStyles;
+const { InputStyled, LabelStyled, StyledWrapper } = InputStyles;
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
@@ -14,9 +14,10 @@ const Input: React.FC<InputProps> = ({
     state,
     type = 'text',
     value = '',
-}: // prefix,
-// suffix,
-InputProps) => {
+    prefix,
+    suffix,
+}:
+    InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,12 +26,13 @@ InputProps) => {
     };
 
     return (
-        <StyledDiv
+        <StyledWrapper
             state={state}
             className={currentValue.length > 0 ? 'filled' : 'empty'}
             data-testid="test-div"
         >
-            {/* {prefix && <InputPrefix>{prefix}</InputPrefix>} */}
+            {prefix && <InputIcon type="prefix" className="input_icon">{prefix}</InputIcon>}
+            {suffix && <InputIcon type="suffix" className="input_icon">{suffix}</InputIcon>}
             <InputStyled
                 autoComplete={`${autoComplete}`}
                 data-testid="test-input"
@@ -48,7 +50,7 @@ InputProps) => {
                     {label}
                 </LabelStyled>
             )}
-        </StyledDiv>
+        </StyledWrapper>
     );
 };
 

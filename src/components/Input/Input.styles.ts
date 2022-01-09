@@ -1,19 +1,19 @@
-import resetCSS from '../../styles/reset';
+import resetCSS, { resetButtonCSS } from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 import styled from 'styled-components';
 import { InputIconProps, InputProps } from './types';
 
 export const InputWrapper = styled.div<Pick<InputProps, 'state'>>`
-    position: relative;
-    display: inline-flex;
+    ${resetCSS}
     border-radius: 16px;
     border: 1px solid ${color.greyLight};
-    transition: all 0.1s linear;
+    display: flex;
     height: 56px;
-    width: 100%;
-    max-width: 320px;
     padding: 0 16px;
+    position: relative;
+    transition: all 0.2s linear;
+    width: 320px;
 
     &:hover {
         border-color: ${(p) =>
@@ -74,7 +74,7 @@ export const LabelStyled = styled.label`
     padding: 0 4px;
     pointer-events: none;
     position: absolute;
-    top: 16px;
+    top: 15px;
     transition: all 0.1s ease-out;
 `;
 
@@ -107,7 +107,7 @@ export const InputStyled = styled.input`
     }
 `;
 
-export const InputIcon = styled.div<InputIconProps>`
+const inputIconStyle = `
     ${resetCSS}
     align-items: center;
     display: flex;
@@ -117,9 +117,30 @@ export const InputIcon = styled.div<InputIconProps>`
     width: 100%;
     & :first-child {
         fill: ${color.grey};
-        transition: fill 0.1s ease-out;
+        transition: fill 0.2s ease-out;
         width: 100%;
         height: 100%;
+    }
+`;
+
+export const InputIcon = styled.div<InputIconProps>`
+    ${inputIconStyle}
+`;
+
+export const CopyInputIcon = styled.button`
+    ${resetButtonCSS}
+    ${inputIconStyle}
+    position: relative;
+    &:hover > svg {
+        fill: ${color.blue};
+    }
+    &:before {
+        border-left: 1px solid ${color.paleBlue2};
+        content: '';
+        height: 24px;
+        left: -12px;
+        position: absolute;
+        width: 0;
     }
 `;
 
@@ -128,6 +149,7 @@ const InputStyles = {
     LabelStyled,
     InputWrapper,
     InputIcon,
+    CopyInputIcon,
 };
 
 export default InputStyles;

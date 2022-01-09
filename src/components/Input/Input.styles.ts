@@ -2,18 +2,26 @@ import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 import styled from 'styled-components';
-import { InputProps } from './types';
+import { InputIconProps, InputProps } from './types';
 
 export const InputStyled = styled.input`
     ${resetCSS}
     ${fonts.text}
-  border: 1px solid ${color.greyLight};
+    border: 1px solid ${color.greyLight};
     border-radius: 16px;
-    padding: 16px;
-    transition: all 0.3 linear;
+    padding: 16px 52px;
+    transition: all 0.1s linear;
+    display: inline-block;
+    height: 56px;
+    background-color: transparent;
 
     &:hover {
         border-color: ${color.blue};
+    }
+
+    &:hover,
+    .input_icon > svg {
+        fill: ${color.blue};
     }
 
     &:focus {
@@ -31,7 +39,9 @@ export const InputStyled = styled.input`
             height: 18px;
             line-height: 1;
             padding: 2px 4px;
-            top: 0px;
+            top: -10px;
+            left: 12px;
+            background-color: ${color.white};
         }
     }
 `;
@@ -39,19 +49,19 @@ export const InputStyled = styled.input`
 export const LabelStyled = styled.label`
     ${resetCSS}
     ${fonts.text}
-  background-color: ${color.white};
+    background-color: transparent;
     height: 24px;
-    left: 12px;
+    left: 48px;
     padding: 0 4px;
     pointer-events: none;
     position: absolute;
-    top: calc(50% - 8px);
+    top: calc(50% - 12px);
     transition: all 0.1s ease-out;
 `;
 
-export const StyledDiv = styled.div<Pick<InputProps, 'state'>>`
-    padding-top: 8px;
+export const StyledWrapper = styled.div<Pick<InputProps, 'state'>>`
     position: relative;
+    display: inline-block;
 
     input {
         ${(p) => p.state === 'error' && `border-color: ${color.red};`}
@@ -64,12 +74,15 @@ export const StyledDiv = styled.div<Pick<InputProps, 'state'>>`
         &:hover {
             ${(p) => p.state === 'error' && `border-color: ${color.red};`}
             ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
+            + label {
+                color: ${color.blue};
+            }
         }
 
         &:focus {
             ${(p) => p.state === 'error' && `border-color: ${color.red};`}
             ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-      & + label {
+            & + label {
                 ${(p) => p.state === 'error' && `color: ${color.red};`}
                 ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
             }
@@ -77,13 +90,29 @@ export const StyledDiv = styled.div<Pick<InputProps, 'state'>>`
     }
 `;
 
-export const InputPrefix = styled.div``;
+export const InputIcon = styled.div<InputIconProps>`
+    ${resetCSS}
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    max-width: 24px;
+    position: absolute;
+    width: 100%;
+    ${({ type }) => (type === 'prefix' ? 'left: 16px;' : 'right: 16px;')}
+    & :first-child {
+        fill: ${color.grey};
+        transition: fill 0.1s ease-out;
+        width: 100%;
+        height: 100%;
+    }
+`;
 
 const InputStyles = {
-    InputPrefix,
     InputStyled,
     LabelStyled,
-    StyledDiv,
+    StyledWrapper,
+    InputIcon,
 };
 
 export default InputStyles;

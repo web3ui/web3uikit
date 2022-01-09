@@ -47,7 +47,7 @@ export interface InputProps {
     /**
      * the input can use state to react to user interaction
      */
-    state?: 'error' | 'confirmed';
+    state?: 'error' | 'confirmed' | 'disabled';
 
     /**
      * Icon suffix for the input field

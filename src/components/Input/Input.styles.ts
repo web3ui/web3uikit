@@ -4,23 +4,23 @@ import color from '../../styles/colors';
 import styled from 'styled-components';
 import { InputIconProps, InputProps } from './types';
 
-export const InputStyled = styled.input`
-    ${resetCSS}
-    ${fonts.text}
-    border: 1px solid ${color.greyLight};
+export const InputWrapper = styled.div<Pick<InputProps, 'state'>>`
+    position: relative;
+    display: inline-flex;
     border-radius: 16px;
-    padding: 16px 52px;
+    border: 1px solid ${color.greyLight};
     transition: all 0.1s linear;
-    display: inline-block;
     height: 56px;
-    background-color: transparent;
+    width: 100%;
+    max-width: 320px;
+    padding: 0 16px;
 
     &:hover {
-        border-color: ${color.blue};
+        border-color: ${(p) =>
+            p.state === 'disabled' ? color.greyLight : color.blue};
     }
 
-    &:hover,
-    .input_icon > svg {
+    &:hover > .input_prefix > svg {
         fill: ${color.blue};
     }
 
@@ -32,16 +32,35 @@ export const InputStyled = styled.input`
         }
     }
 
-    &:focus,
-    .filled & {
-        + label {
-            font-size: 14px;
-            height: 18px;
-            line-height: 1;
-            padding: 2px 4px;
-            top: -10px;
-            left: 12px;
-            background-color: ${color.white};
+    ${(p) => p.state === 'error' && `border-color: ${color.red};`}
+    ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
+
+    &:hover {
+        ${(p) => p.state === 'error' && `border-color: ${color.red};`}
+        ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
+
+        label {
+            ${(p) =>
+                p.state !== 'error' &&
+                p.state !== 'confirmed' &&
+                p.state !== 'disabled' &&
+                `color: ${color.blue};`}
+        }
+    }
+
+    &:focus {
+        ${(p) => p.state === 'error' && `border-color: ${color.red};`}
+        ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
+        & + label {
+            ${(p) => p.state === 'error' && `color: ${color.red};`}
+            ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
+        }
+    }
+
+    input {
+        & + label {
+            ${(p) => p.state === 'error' && `color: ${color.red};`}
+            ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
         }
     }
 `;
@@ -49,43 +68,41 @@ export const InputStyled = styled.input`
 export const LabelStyled = styled.label`
     ${resetCSS}
     ${fonts.text}
-    background-color: transparent;
+    background-color: ${color.white};
     height: 24px;
     left: 48px;
     padding: 0 4px;
     pointer-events: none;
     position: absolute;
-    top: calc(50% - 12px);
+    top: 16px;
     transition: all 0.1s ease-out;
 `;
 
-export const StyledWrapper = styled.div<Pick<InputProps, 'state'>>`
-    position: relative;
-    display: inline-block;
+export const InputStyled = styled.input`
+    ${resetCSS}
+    ${fonts.text}
+    background-color: transparent;
+    overflow: hidden;
+    padding: 0 12px;
+    width: 100%;
 
-    input {
-        ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-        ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-    & + label {
-            ${(p) => p.state === 'error' && `color: ${color.red};`}
-            ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
+    &:focus,
+    .input_filled & {
+        + label {
+            font-size: 14px;
+            height: 18px;
+            line-height: 1;
+            padding: 2px 4px;
+            top: -12px;
+            left: 12px;
         }
+    }
 
-        &:hover {
-            ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-            ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-            + label {
-                color: ${color.blue};
-            }
-        }
-
-        &:focus {
-            ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-            ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-            & + label {
-                ${(p) => p.state === 'error' && `color: ${color.red};`}
-                ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
-            }
+    &:focus {
+        &::placeholder {
+            display: none;
+            visibility: visible;
+            color: ${color.grey};
         }
     }
 `;
@@ -97,9 +114,7 @@ export const InputIcon = styled.div<InputIconProps>`
     height: 100%;
     justify-content: center;
     max-width: 24px;
-    position: absolute;
     width: 100%;
-    ${({ type }) => (type === 'prefix' ? 'left: 16px;' : 'right: 16px;')}
     & :first-child {
         fill: ${color.grey};
         transition: fill 0.1s ease-out;
@@ -111,7 +126,7 @@ export const InputIcon = styled.div<InputIconProps>`
 const InputStyles = {
     InputStyled,
     LabelStyled,
-    StyledWrapper,
+    InputWrapper,
     InputIcon,
 };
 

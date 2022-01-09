@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import InputStyles, { InputIcon } from './Input.styles';
+import InputStyles from './Input.styles';
 import { InputProps } from './types';
 
-const { InputStyled, LabelStyled, StyledWrapper } = InputStyles;
+const { InputStyled, LabelStyled, InputWrapper, InputIcon } = InputStyles;
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
@@ -26,13 +26,12 @@ const Input: React.FC<InputProps> = ({
     };
 
     return (
-        <StyledWrapper
+        <InputWrapper
             state={state}
-            className={currentValue.length > 0 ? 'filled' : 'empty'}
+            className={`input input_${currentValue.length > 0 ? 'filled' : 'empty'}`}
             data-testid="test-div"
         >
-            {prefix && <InputIcon type="prefix" className="input_icon">{prefix}</InputIcon>}
-            {suffix && <InputIcon type="suffix" className="input_icon">{suffix}</InputIcon>}
+            {prefix && <InputIcon type="prefix" className="input_prefix">{prefix}</InputIcon>}
             <InputStyled
                 autoComplete={`${autoComplete}`}
                 data-testid="test-input"
@@ -50,7 +49,8 @@ const Input: React.FC<InputProps> = ({
                     {label}
                 </LabelStyled>
             )}
-        </StyledWrapper>
+            {suffix && <InputIcon type="suffix" className="input_icon">{suffix}</InputIcon>}
+        </InputWrapper>
     );
 };
 

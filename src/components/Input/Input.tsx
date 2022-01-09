@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import InputStyles from './Input.styles';
 import { InputProps } from './types';
 
-const { InputStyled, LabelStyled, InputWrapper, InputIcon } = InputStyles;
+const { InputStyled, LabelStyled, InputWrapper, InputIcon, CopyInputIcon } = InputStyles;
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
@@ -49,7 +49,7 @@ const Input: React.FC<InputProps> = ({
                     {label}
                 </LabelStyled>
             )}
-            {suffix && <InputIcon type="suffix" className="input_icon">{suffix}</InputIcon>}
+            {suffix && <CopyInputIcon className="input_copy">{suffix}</CopyInputIcon>}
         </InputWrapper>
     );
 };

@@ -7,7 +7,7 @@ export const CardStyled = styled.div`
   ${resetCSS}
   ${fonts.text}
   ${fonts.textBold}
-  border: 2px solid #E6EDFF;
+  border: 2px solid ${colors.blueSkyLight};
   border-radius: 16px;
   display: grid;
   grid-gap: 5px;

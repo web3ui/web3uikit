@@ -13,13 +13,13 @@ const {
     DivNetworkInfoStyled,
     PChainNameStyled,
     PNetworkStyled,
+    getChainLogo,
 } = CryptoCardStyles;
 
 const CryptoCards: React.FC<CryptoCardProps> = ({
     onClick,
     chain,
     chainType,
-    chainLogo,
     settingsIcon,
     bgColor,
     btnText,
@@ -29,7 +29,7 @@ const CryptoCards: React.FC<CryptoCardProps> = ({
             <DivInfoStyled>
                 <DivImageStyled>
                     <DivLogoStyled>
-                        <img src={chainLogo} />
+                        <img src={getChainLogo(chain.toLowerCase())} />
                     </DivLogoStyled>
                 </DivImageStyled>
                 <DivNetworkInfoStyled>

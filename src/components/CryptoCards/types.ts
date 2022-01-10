@@ -23,11 +23,6 @@ export interface CryptoCardProps {
     chainType: string;
 
     /**
-     * The chain logo
-     */
-    chainLogo: string;
-
-    /**
      * The background color of the crypto card
      */
     bgColor: string;

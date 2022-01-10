@@ -4,6 +4,25 @@ import color from '../../styles/colors';
 import resetCSS from '../../styles/reset';
 import { getShade } from '../../styles/colors';
 
+const getChainLogo = (chain: string) => {
+    switch (chain) {
+        case 'ethereum':
+            return require('./chains/ethereum.svg');
+        case 'binance':
+            return require('./chains/binance.svg');
+        case 'polygon':
+            return require('./chains/polygon.svg');
+        case 'avalanche':
+            return require('./chains/avalanche.svg');
+        case 'fantom':
+            return require('./chains/fantom.svg');
+        case 'arbitrum':
+            return require('./chains/arbitrum.svg');
+        default:
+            return;
+    }
+};
+
 const CryptoCardStyled = styled.div`
     align-items: center;
     background: ${(props) => props.color};
@@ -137,6 +156,7 @@ const CryptoCardStyles = {
     DivNetworkInfoStyled,
     PChainNameStyled,
     PNetworkStyled,
+    getChainLogo,
 };
 
 export default CryptoCardStyles;

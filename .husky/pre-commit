@@ -1,10 +1,11 @@
-#!/bin/sh -xv
+#!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 . "$(dirname "$0")/common.sh"
 
 # $ git config core.hooksPath
 # $ git commit --amend 
 # $ echo $(uname -s) >> hook.log 
+# $ chmod +x .husky/pre-commit
 
 # for github desktop and bash
 # windows - mingw | cygwin
@@ -13,7 +14,7 @@ NAME=$(uname -s)
 
 if [[ $NAME =~ ^MINGW* ]] || [[ $NAME =~ ^CYGWIN* ]]; then
     npm.cmd run lint
-    npm run prettier
+    npm.cmd run prettier
 else 
     npm run lint
     npm run prettier

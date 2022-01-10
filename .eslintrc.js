@@ -13,6 +13,7 @@ module.exports = {
   rules: {
     'object-curly-spacing': 'off',
     'valid-jsdoc': 'off',
+    'require-jsdoc': 'off',
     'indent': ['error', 2],
   },
 };

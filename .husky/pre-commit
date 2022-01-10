@@ -5,7 +5,10 @@
 # $ git config core.hooksPath
 # $ git commit --amend 
 
-if [[ $(uname -s) =~ ^CYGWIN* ]];then
+# echo $(uname -s) >> hook.log 
+
+# 
+if [[ $(uname -s) =~ ^MINGW* ]];then
     npm.cmd run echo
 else 
     npm run echo

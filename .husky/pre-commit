@@ -4,12 +4,17 @@
 
 # $ git config core.hooksPath
 # $ git commit --amend 
+# $ echo $(uname -s) >> hook.log 
 
-# echo $(uname -s) >> hook.log 
+# for github desktop and bash
+# windows - mingw | cygwin
 
-# 
-if [[ $(uname -s) =~ ^MINGW* ]];then
-    npm.cmd run echo
+NAME=$(uname -s)
+
+if [[ $NAME =~ ^MINGW* ]] || [[ $NAME =~ ^CYGWIN* ]]; then
+    npm.cmd run lint
+    npm run prettier
 else 
-    npm run echo
+    npm run lint
+    npm run prettier
 fi

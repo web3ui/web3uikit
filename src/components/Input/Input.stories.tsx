@@ -11,7 +11,7 @@ export default {
 } as ComponentMeta<typeof Input>;
 
 const testEvent = (event: React.ChangeEvent<HTMLInputElement>) =>
-    console.log(event.target);
+    console.log(event.target.value);
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
@@ -23,7 +23,6 @@ TextInputPrefix.args = {
     name: 'Test text Input',
     state: undefined,
     prefix: <Icon svg={iconTypes.server} />,
-    suffix: <Icon svg={iconTypes.copy} />
 };
 
 export const TextInput = Template.bind({});

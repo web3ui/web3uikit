@@ -50,9 +50,14 @@ export interface InputProps {
     state?: 'error' | 'confirmed' | 'disabled';
 
     /**
-     * Icon suffix for the input field
+     * hides the input text when is true
      */
-    suffix?: React.ReactNode;
+    inputHidden?: boolean;
+
+    /**
+     * shows the hide icon when is true
+     */
+    hidable?: boolean;
 }
 
 export interface InputIconProps {

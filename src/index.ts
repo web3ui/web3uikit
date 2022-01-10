@@ -6,6 +6,7 @@ export * from './components/Card';
 export * from './components/Checkbox';
 export * from './components/CryptoCards';
 export * from './components/Icon';
+export * from './components/Info';
 export * from './components/Input';
 export * from './components/LinkTo';
 export * from './components/Modal';

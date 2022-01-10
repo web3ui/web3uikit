@@ -4,7 +4,6 @@ module.exports = {
   rollup(config, options) {
     config.plugins.push(
       inlineSvg({
-        // Removes specified tags and its children. You can specify tags by setting removingTags query array.
         // default: false
         removeTags: false,
 
@@ -27,7 +26,7 @@ module.exports = {
         // Warns to console about attributes from inside the <svg>.
         // default: []
         warnTagAttrs: [],
-      })
+      }),
     );
     return config;
   },

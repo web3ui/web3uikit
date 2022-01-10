@@ -1,12 +1,13 @@
+import { css } from 'styled-components';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
 
-const initialStyles = `
+const initialStyles = css`
     ${resetCSS}
     ${fonts.text}
     align-items: center;
-    background: #112F5C;
+    background: #112f5c;
     border-radius: 20px;
     color: white;
     display: flex;
@@ -16,24 +17,24 @@ const initialStyles = `
     padding: 16px;
 `;
 
-const box = `
+const box = css`
     display: grid;
     margin-left: 10px;
     width: 100%;
 `;
 
-const message = `
-${fonts.ibm}
-${fonts.textSmall}
-color: ${color.grey};
+const message = css`
+    ${fonts.ibm}
+    ${fonts.textSmall}
+    color: ${color.grey};
 `;
 
-const title = `
+const title = css`
     ${fonts.textBold}
     margin: 0;
 `;
 
-const flex = `
+const flex = css`
     display: flex;
     justify-content: space-between;
 `;

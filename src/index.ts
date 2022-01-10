@@ -4,6 +4,7 @@ export * from './components/Breadcrumbs';
 export * from './components/Button';
 export * from './components/Card';
 export * from './components/Checkbox';
+export * from './components/CryptoCards';
 export * from './components/Icon';
 export * from './components/Input';
 export * from './components/LinkTo';

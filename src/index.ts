@@ -5,6 +5,7 @@ export * from './components/Button';
 export * from './components/Card';
 export * from './components/Checkbox';
 export * from './components/CryptoCards';
+export * from './components/Form';
 export * from './components/Icon';
 export * from './components/Info';
 export * from './components/Input';

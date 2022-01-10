@@ -17,7 +17,7 @@ const legendStyles = `
   ${fonts.h3}
   color: ${color.grey};
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
 `;
 
 const labelStyles = `

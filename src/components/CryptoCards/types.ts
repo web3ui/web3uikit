@@ -38,11 +38,6 @@ export interface CryptoCardProps {
     settingsIcon?: iconTypes;
 
     /**
-     * The color assigned to the settings icon
-     */
-    settingsColor?: string;
-
-    /**
      * The text shown in the button
      */
     btnText?: string;

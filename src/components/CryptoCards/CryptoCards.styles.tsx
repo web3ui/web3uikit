@@ -4,26 +4,6 @@ import color from '../../styles/colors';
 import resetCSS from '../../styles/reset';
 import { getShade } from '../../styles/colors';
 
-const ButtonStyled = styled.button`
-    align-items: center;
-    background: rgba(4, 24, 54, 0.2);
-    border-radius: 16px;
-    display: flex;
-    flex-direction: row;
-    flex: none;
-    flex-grow: 0;
-    height: 40px;
-    justify-content: center;
-    left: 39px;
-    margin: 16px 0px;
-    order: 1;
-    overflow: hidden;
-    padding: 8px 24px 8px 16px;
-    position: static;
-    top: 268px;
-    width: 187px;
-`;
-
 const CryptoCardStyled = styled.div`
     align-items: center;
     background: ${(props) => props.color};
@@ -111,25 +91,27 @@ const DivNetworkInfoStyled = styled.div`
     width: 100%;
 `;
 
-const PButtonStyled = styled.p`
-    color: ${color.white};
-    ${fonts.openSans};
-    ${fonts.textBold};
-    ${fonts.h5};
-    height: 24px;
-    left: 44px;
-    line-height: 24px;
-    overflow: hidden;
-    top: 8px;
-    width: 119px;
-    word-break: break-all;
+const DivButtonStyled = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    width: 187px;
+    height: 40px;
+    left: 39px;
+    top: 268px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 16px 0px;
 `;
 
 const PChainNameStyled = styled.p`
     font-size: 32px;
     ${fonts.montserrat};
     ${fonts.textBold500};
-    height: 50%;
+    height: 55%;
     margin: 0;
     overflow: hidden;
     word-break: break-all;
@@ -147,13 +129,12 @@ const PNetworkStyled = styled.p`
 `;
 
 const CryptoCardStyles = {
-    ButtonStyled,
     CryptoCardStyled,
+    DivButtonStyled,
     DivImageStyled,
     DivInfoStyled,
     DivLogoStyled,
     DivNetworkInfoStyled,
-    PButtonStyled,
     PChainNameStyled,
     PNetworkStyled,
 };

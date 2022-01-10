@@ -1,6 +1,6 @@
 import ReactDOM, { render } from 'react-dom';
 import React from 'react';
-import { fireEvent, waitFor, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './CryptoCards.stories';
 import RGBToHex from '../../utils/rgbToHex';

@@ -1,2 +1,1 @@
 export PATH="/usr/local/bin/:$PATH"
-export HUSKY_DEBUG="1"

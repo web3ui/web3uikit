@@ -14,7 +14,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test",
+    "test": "tsdx test --verbose",
     "lint": "eslint",
     "prepare": "husky install",
     "size": "size-limit",

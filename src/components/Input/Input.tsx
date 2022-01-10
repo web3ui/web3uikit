@@ -5,12 +5,21 @@ import { iconTypes } from '../Icon/collection';
 import InputStyles from './Input.styles';
 import type { InputProps } from './types';
 
-const { InputStyled, LabelStyled, InputWrapper, InputIcon, CopyInputIcon, VisibilityIcon } =
-    InputStyles;
+const {
+    CopyInputIcon,
+    ErrorLabel,
+    InputIcon,
+    InputStyled,
+    InputWrapper,
+    LabelStyled,
+    VisibilityIcon,
+} = InputStyles;
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
+    errorMessage = '',
     hidable = false,
+    copyable = false,
     id = String(Date.now()),
     inputHidden = false,
     label,
@@ -19,11 +28,14 @@ const Input: React.FC<InputProps> = ({
     placeholder = '',
     prefix,
     state,
+    style,
     type = 'text',
     value = '',
+    width = '320px',
 }: InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
     const [isCopied, setIsCopied] = useState(false);
+    const [isInputHidden, setIsInputHidden] = useState(inputHidden);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
@@ -35,12 +47,17 @@ const Input: React.FC<InputProps> = ({
         setIsCopied(true);
     };
 
+    const toggleHideInput = (): void => {
+        setIsInputHidden(!isInputHidden);
+    };
+
     return (
         <InputWrapper
             state={state}
             className={`input input_${currentValue.length > 0 ? 'filled' : 'empty'
                 }`}
             data-testid="test-div"
+            style={{ ...style, width }}
         >
             {prefix && (
                 <InputIcon type="prefix" className="input_prefix">
@@ -57,19 +74,35 @@ const Input: React.FC<InputProps> = ({
                 }
                 placeholder={placeholder}
                 type={type}
-                value={currentValue}
+                value={
+                    isInputHidden
+                        ? currentValue.replace(/./g, '*')
+                        : currentValue
+                }
             />
             {label && (
-                <LabelStyled data-testid="test-label" htmlFor={id}>
+                <LabelStyled
+                    data-testid="test-label"
+                    htmlFor={id}
+                    hasPrefix={typeof prefix !== 'undefined'}
+                >
                     {label}
                 </LabelStyled>
             )}
-            {hidable && <VisibilityIcon className="input_visibility">{isCopied ? (
-                <Icon svg={iconTypes.check} fill={color.green} />
-            ) : (
-                <Icon svg={iconTypes.copy} />
-            )}</VisibilityIcon>}
-            <CopyInputIcon
+            {errorMessage && <ErrorLabel>{errorMessage}</ErrorLabel>}
+            {hidable && (
+                <VisibilityIcon
+                    className="input_visibility"
+                    onClick={() => toggleHideInput()}
+                >
+                    {isInputHidden ? (
+                        <Icon svg={iconTypes.eyeClosed} />
+                    ) : (
+                        <Icon svg={iconTypes.eye} />
+                    )}
+                </VisibilityIcon>
+            )}
+            {copyable && <CopyInputIcon
                 className="input_copy"
                 onClick={() => copyToClipboard()}
             >
@@ -78,7 +111,7 @@ const Input: React.FC<InputProps> = ({
                 ) : (
                     <Icon svg={iconTypes.copy} />
                 )}
-            </CopyInputIcon>
+            </CopyInputIcon>}
         </InputWrapper>
     );
 };

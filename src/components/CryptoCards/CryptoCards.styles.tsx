@@ -92,19 +92,20 @@ const DivNetworkInfoStyled = styled.div`
 `;
 
 const DivButtonStyled = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-grow: 0;
+    height: 40px;
+    justify-content: center;
+    left: 39px;
+    margin: 16px 0px;
+    order: 1;
     position: static;
     width: 187px;
-    height: 40px;
-    left: 39px;
     top: 268px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 16px 0px;
+    width: 187px;
 `;
 
 const PChainNameStyled = styled.p`

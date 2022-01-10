@@ -1,6 +1,12 @@
-#!/bin/sh
+#!/bin/sh -xv
 . "$(dirname "$0")/_/husky.sh"
 . "$(dirname "$0")/common.sh"
 
-echo "Hello"
-npm.cmd prettier
+# $ git config core.hooksPath
+# $ git commit --amend 
+
+if [[ $(uname -s) =~ ^CYGWIN* ]];then
+    npm.cmd run echo
+else 
+    npm run echo
+fi

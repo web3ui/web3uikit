@@ -34,8 +34,8 @@ const button = `
 `;
 
 const bannerStripStyles = {
-    button,
-    section,
+  button,
+  section,
 };
 
 export default bannerStripStyles;

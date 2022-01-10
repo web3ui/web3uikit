@@ -3,65 +3,65 @@ import color, { getShade } from '../../../styles/colors';
 
 // theme = colored common shades
 const coloredShades = css`
+  :after {
+    background-color: ${getShade('light', 90)};
+  }
+
+  :hover {
     :after {
-        background-color: ${getShade('light', 90)};
+      background-color: ${getShade('light', 70)};
     }
+  }
 
-    :hover {
-        :after {
-            background-color: ${getShade('light', 70)};
-        }
+  :active {
+    :after {
+      background-color: ${getShade('light', 50)};
     }
-
-    :active {
-        :after {
-            background-color: ${getShade('light', 50)};
-        }
-    }
+  }
 `;
 
 // theme = colored
 export const coloredRed = css`
-    background-color: ${color.red};
-    border-color: ${color.red};
-    color: ${color.red};
+  background-color: ${color.red};
+  border-color: ${color.red};
+  color: ${color.red};
 
-    svg {
-        fill: ${color.red};
-    }
+  svg {
+    fill: ${color.red};
+  }
 
-    ${coloredShades}
+  ${coloredShades}
 `;
 export const coloredGreen = css`
-    background-color: ${color.green};
-    border-color: ${color.green};
-    color: ${color.green};
+  background-color: ${color.green};
+  border-color: ${color.green};
+  color: ${color.green};
 
-    svg {
-        fill: ${color.green};
-    }
+  svg {
+    fill: ${color.green};
+  }
 
-    ${coloredShades}
+  ${coloredShades}
 `;
 export const coloredBlue = css`
-    background-color: ${color.blue};
-    border-color: ${color.blue};
-    color: ${color.blue};
+  background-color: ${color.blue};
+  border-color: ${color.blue};
+  color: ${color.blue};
 
-    svg {
-        fill: ${color.blue};
-    }
+  svg {
+    fill: ${color.blue};
+  }
 
-    ${coloredShades}
+  ${coloredShades}
 `;
 export const coloredYellow = css`
-    background-color: ${color.yellow};
-    border-color: ${color.yellow};
-    color: ${color.yellow};
+  background-color: ${color.yellow};
+  border-color: ${color.yellow};
+  color: ${color.yellow};
 
-    svg {
-        fill: ${color.yellow};
-    }
+  svg {
+    fill: ${color.yellow};
+  }
 
-    ${coloredShades}
+  ${coloredShades}
 `;

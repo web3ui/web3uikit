@@ -92,13 +92,13 @@ const right = `
 `;
 
 export const tooltipStyles = {
-    initialStyles,
-    container,
-    defaultContainer,
-    marginTooltip,
-    arrowSizeTooltip,
-    top,
-    bottom,
-    left,
-    right,
+  initialStyles,
+  container,
+  defaultContainer,
+  marginTooltip,
+  arrowSizeTooltip,
+  top,
+  bottom,
+  left,
+  right,
 };

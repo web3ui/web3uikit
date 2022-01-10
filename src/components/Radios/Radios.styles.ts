@@ -91,10 +91,10 @@ const inputStyles = `
 `;
 
 const styles = {
-    fieldsetStyles,
-    inputStyles,
-    labelStyles,
-    legendStyles,
+  fieldsetStyles,
+  inputStyles,
+  labelStyles,
+  legendStyles,
 };
 
 export default styles;

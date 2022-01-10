@@ -3,100 +3,100 @@ import type { ButtonProps } from './types';
 
 import { initialStyles } from './styles/inititalStyles';
 import {
-    primary,
-    regular,
-    outline,
-    translucent,
+  primary,
+  regular,
+  outline,
+  translucent,
 } from './styles/standardThemes';
 import { sizeSmall, sizeRegular, sizeLarge } from './styles/sizeStyles';
 import {
-    coloredRed,
-    coloredGreen,
-    coloredBlue,
-    coloredYellow,
+  coloredRed,
+  coloredGreen,
+  coloredBlue,
+  coloredYellow,
 } from './styles/coloredThemes';
 import {
-    iconLeading,
-    iconTrailing,
-    iconOnly,
-    smallIconResize,
-    largeIconResize,
+  iconLeading,
+  iconTrailing,
+  iconOnly,
+  smallIconResize,
+  largeIconResize,
 } from './styles/iconStyles';
 
 type TStyleProps = Pick<ButtonProps, 'theme' | 'iconLayout' | 'size' | 'color'>;
 
 const getThemeStyles = (theme: string) => {
-    switch (theme) {
-        case 'primary':
-            return primary;
-        case 'outline':
-            return outline;
-        case 'translucent':
-            return translucent;
-        default:
-            return regular;
-    }
+  switch (theme) {
+    case 'primary':
+      return primary;
+    case 'outline':
+      return outline;
+    case 'translucent':
+      return translucent;
+    default:
+      return regular;
+  }
 };
 
 const getIconLayoutStyles = (iconLayout: string) => {
-    switch (iconLayout) {
-        case 'trailing':
-            return iconTrailing;
-        case 'icon-only':
-            return iconOnly;
-        default:
-            return iconLeading;
-    }
+  switch (iconLayout) {
+    case 'trailing':
+      return iconTrailing;
+    case 'icon-only':
+      return iconOnly;
+    default:
+      return iconLeading;
+  }
 };
 
 const getSizeStyles = (size: string) => {
-    switch (size) {
-        case 'large':
-            return sizeLarge;
-        case 'small':
-            return sizeSmall;
-        default:
-            return sizeRegular;
-    }
+  switch (size) {
+    case 'large':
+      return sizeLarge;
+    case 'small':
+      return sizeSmall;
+    default:
+      return sizeRegular;
+  }
 };
 
 const getColored = (color: string) => {
-    switch (color) {
-        case 'red':
-            return coloredRed;
-        case 'green':
-            return coloredGreen;
-        case 'blue':
-            return coloredBlue;
-        case 'yellow':
-            return coloredYellow;
-        default:
-            return regular;
-    }
+  switch (color) {
+    case 'red':
+      return coloredRed;
+    case 'green':
+      return coloredGreen;
+    case 'blue':
+      return coloredBlue;
+    case 'yellow':
+      return coloredYellow;
+    default:
+      return regular;
+  }
 };
 
 const iconOnlyBorderFix = (theme: string) => {
-    switch (theme) {
-        case 'colored':
-            return 'border-width: 2px;';
-        case 'outline':
-            return 'border-width: 2px;';
-        default:
-            return;
-    }
+  switch (theme) {
+    case 'colored':
+      return 'border-width: 2px;';
+    case 'outline':
+      return 'border-width: 2px;';
+    default:
+      return;
+  }
 };
 
 export const ButtonStyled = styled.button<TStyleProps>`
-    ${initialStyles}
+  ${initialStyles}
 
-    ${(p) => p.theme && getThemeStyles(p.theme)}
+  ${(p) => p.theme && getThemeStyles(p.theme)}
     ${(p) => p.color && p.theme === 'colored' && getColored(p.color)}
     ${(p) => p.size && getSizeStyles(p.size)}
     ${(p) => p.iconLayout && getIconLayoutStyles(p.iconLayout)}
 
     ${(p) =>
-        p.iconLayout === 'icon-only' && p.size === 'small' && smallIconResize()}
+    p.iconLayout === 'icon-only' && p.size === 'small' && smallIconResize()}
     ${(p) =>
-        p.iconLayout === 'icon-only' && p.size === 'large' && largeIconResize()}
+    p.iconLayout === 'icon-only' && p.size === 'large' && largeIconResize()}
     ${(p) => p.iconLayout === 'icon-only' && iconOnlyBorderFix(p.theme)}
 `;

@@ -4,91 +4,91 @@ import resetCSS from '../../styles/reset';
 import color from '../../styles/colors';
 
 const initialStyles = css`
-    ${resetCSS}
-    ${fonts.text}
+  ${resetCSS}
+  ${fonts.text}
 `;
 
 const marginTooltip = '40px';
 const arrowSizeTooltip = '6px';
 
 const container = css`
-    ${resetCSS}
-    align-items: center;
-    border-radius: 4px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    left: 50%;
-    padding: 8px;
-    pointer-events: none;
-    position: absolute;
-    transform: translateX(-50%);
-    white-space: nowrap;
+  ${resetCSS}
+  align-items: center;
+  border-radius: 4px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  padding: 8px;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
 
-    &:before {
-        border: solid ${arrowSizeTooltip} transparent;
-        content: '';
-        height: 0;
-        left: 50%;
-        margin-left: calc(${arrowSizeTooltip} * -1);
-        position: absolute;
-        width: 0;
-    }
+  &:before {
+    border: solid ${arrowSizeTooltip} transparent;
+    content: '';
+    height: 0;
+    left: 50%;
+    margin-left: calc(${arrowSizeTooltip} * -1);
+    position: absolute;
+    width: 0;
+  }
 `;
 
 const defaultContainer = css`
-    bottom: calc(100% + 5px);
-    background-color: ${color.blueDark2};
+  bottom: calc(100% + 5px);
+  background-color: ${color.blueDark2};
 `;
 
 const top = css`
-    background-color: ${color.blueDark2};
-    top: calc(${marginTooltip} * -1);
+  background-color: ${color.blueDark2};
+  top: calc(${marginTooltip} * -1);
 
-    &:before {
-        border-top-color: ${color.blueDark2};
-        top: 100%;
-    }
+  &:before {
+    border-top-color: ${color.blueDark2};
+    top: 100%;
+  }
 `;
 
 const bottom = css`
-    background-color: ${color.blueDark2};
-    bottom: calc(${marginTooltip} * -1);
+  background-color: ${color.blueDark2};
+  bottom: calc(${marginTooltip} * -1);
 
-    &:before {
-        bottom: 100%;
-        border-bottom-color: ${color.blueDark2};
-    }
+  &:before {
+    bottom: 100%;
+    border-bottom-color: ${color.blueDark2};
+  }
 `;
 
 const left = css`
-    background-color: ${color.blueDark2};
+  background-color: ${color.blueDark2};
+  left: auto;
+  right: ${marginTooltip};
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+
+  &:before {
+    border-left-color: ${color.blueDark2};
     left: auto;
-    right: ${marginTooltip};
+    right: calc(${arrowSizeTooltip} * -2);
     top: 50%;
     transform: translateX(0) translateY(-50%);
-
-    &:before {
-        border-left-color: ${color.blueDark2};
-        left: auto;
-        right: calc(${arrowSizeTooltip} * -2);
-        top: 50%;
-        transform: translateX(0) translateY(-50%);
-    }
+  }
 `;
 
 const right = css`
-    background-color: ${color.blueDark2};
-    left: ${marginTooltip};
+  background-color: ${color.blueDark2};
+  left: ${marginTooltip};
+  top: 50%;
+  transform: translateX(0) translateY(-50%);
+
+  &:before {
+    border-right-color: ${color.blueDark2};
+    left: calc(${arrowSizeTooltip} * -1);
     top: 50%;
     transform: translateX(0) translateY(-50%);
-
-    &:before {
-        border-right-color: ${color.blueDark2};
-        left: calc(${arrowSizeTooltip} * -1);
-        top: 50%;
-        transform: translateX(0) translateY(-50%);
-    }
+  }
 `;
 
 export const tooltipStyles = {

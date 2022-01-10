@@ -1,19 +1,20 @@
+import { css } from 'styled-components';
 import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 
-export const olStyle = `
+export const olStyle = css`
   ${resetCSS}
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   list-style: none;
 `;
-export const navStyle = `
+export const navStyle = css`
   ${resetCSS}
 `;
 
-export const liStyle = `
+export const liStyle = css`
   ${resetCSS}
   ${fonts.semiBold}
   display: list-item;
@@ -36,7 +37,7 @@ export const liStyle = `
   }
 `;
 
-export const separatorStyle = `
+export const separatorStyle = css`
   ${resetCSS}
   display: flex;
   user-select: none;

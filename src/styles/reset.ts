@@ -1,4 +1,6 @@
-const resetCSS = `
+import { css } from 'styled-components';
+
+const resetCSS = css`
   border: none;
   box-sizing: border-box;
   line-height: 1;

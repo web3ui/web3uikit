@@ -1,7 +1,7 @@
 export interface CardProps {
-    
+
     /**
-     * id will be generated automatically if not set
+     * set the ID of Card
      */
     id?: string;
 
@@ -28,5 +28,5 @@ export interface CardProps {
     /**
      * set text inside tooltip
      */
-    tooltipText?: string;
+    tooltipText: string;
 }

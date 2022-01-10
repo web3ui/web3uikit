@@ -13,7 +13,7 @@ const Card: React.FC<CardProps> = ({
     description,
     selected,
     title,
-    tooltipText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores corporis vero in ipsum temporibus nesciunt!",
+    tooltipText,
 }: CardProps) => {
     const [ isSelected, setSelected ] = useState<boolean | undefined>(selected);
     const [showCheckedIcon, toggleChecked] = useState<boolean | undefined>(false);
@@ -46,7 +46,7 @@ const Card: React.FC<CardProps> = ({
                     children={
                         [
                             <Icon
-                                key={"ttip-card"}
+                                key="ttip-card"
                                 data-testid={"help-test-id"}
                                 fill={colors.blue}
                                 size={22}
@@ -61,8 +61,8 @@ const Card: React.FC<CardProps> = ({
                 {children}
             </div>
             <CardFooter>
-                <p data-testid={"title-test-id"}>{title}</p>
-                <span data-testid={"desc-test-id"}>{description}</span>
+                {title && <p data-testid={"title-test-id"}>{title}</p>}
+                {description && <span data-testid={"desc-test-id"}>{description}</span>}
             </CardFooter>
         </CardStyled>
     );

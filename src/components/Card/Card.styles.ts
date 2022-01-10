@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {CardProps} from "./types";
 import resetCSS from "../../styles/reset";
 import fonts from "../../styles/fonts";
@@ -42,11 +42,11 @@ export const CardFooter = styled.div`
   }
 `
 
-const selected = `
+const selected = css`
   border: 2px solid ${colors.green};
 `
 
-const hoverNotSelected = `
+const hoverNotSelected = css`
   &:hover {
       border: 2px solid ${colors.blueSky};
   }

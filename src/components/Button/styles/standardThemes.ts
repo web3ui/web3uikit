@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import color from '../../../styles/colors';
+import color, { getShade } from '../../../styles/colors';
 
 // theme = regular | primary | outline
 export const regular = css`
@@ -50,5 +50,14 @@ export const outline = css`
 
     svg {
         fill: ${color.blue};
+    }
+`;
+
+export const translucent = css`
+    background-color: ${getShade('dark', 20)};
+    border-style: inset;
+    color: ${color.white};
+    svg {
+        fill: ${color.white};
     }
 `;

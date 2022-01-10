@@ -2,7 +2,12 @@ import styled from 'styled-components';
 import type { ButtonProps } from './types';
 
 import { initialStyles } from './styles/inititalStyles';
-import { primary, regular, outline } from './styles/standardThemes';
+import {
+    primary,
+    regular,
+    outline,
+    translucent,
+} from './styles/standardThemes';
 import { sizeSmall, sizeRegular, sizeLarge } from './styles/sizeStyles';
 import {
     coloredRed,
@@ -26,6 +31,8 @@ const getThemeStyles = (theme: string) => {
             return primary;
         case 'outline':
             return outline;
+        case 'translucent':
+            return translucent;
         default:
             return regular;
     }

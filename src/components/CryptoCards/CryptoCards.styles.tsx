@@ -105,7 +105,6 @@ const DivButtonStyled = styled.div`
     position: static;
     width: 187px;
     top: 268px;
-    width: 187px;
 `;
 
 const PChainNameStyled = styled.p`

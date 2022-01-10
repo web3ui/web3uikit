@@ -83,7 +83,7 @@ export const InputStyled = styled.input`
     ${fonts.text}
     background-color: transparent;
     overflow: hidden;
-    padding: 0 12px;
+    margin: 12px;
     width: 100%;
 
     &:focus,
@@ -144,12 +144,30 @@ export const CopyInputIcon = styled.button`
     }
 `;
 
+export const VisibilityIcon = styled.button`
+    ${resetButtonCSS}
+    ${inputIconStyle}
+    position: relative;
+    &:hover > svg {
+        fill: ${color.blue};
+    }
+    &:before {
+        border-left: 1px solid ${color.paleBlue2};
+        content: '';
+        height: 24px;
+        left: -12px;
+        position: absolute;
+        width: 0;
+    }
+`;
+
 const InputStyles = {
-    InputStyled,
-    LabelStyled,
-    InputWrapper,
-    InputIcon,
     CopyInputIcon,
+    InputIcon,
+    InputStyled,
+    InputWrapper,
+    LabelStyled,
+    VisibilityIcon,
 };
 
 export default InputStyles;

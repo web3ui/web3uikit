@@ -1,37 +1,52 @@
 import React, { useState } from 'react';
+import color from '../../styles/colors';
+import { Icon } from '../Icon';
+import { iconTypes } from '../Icon/collection';
 import InputStyles from './Input.styles';
-import { InputProps } from './types';
+import type { InputProps } from './types';
 
-const { InputStyled, LabelStyled, InputWrapper, InputIcon, CopyInputIcon } = InputStyles;
+const { InputStyled, LabelStyled, InputWrapper, InputIcon, CopyInputIcon, VisibilityIcon } =
+    InputStyles;
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
+    hidable = false,
     id = String(Date.now()),
+    inputHidden = false,
     label,
     name,
     onChange,
     placeholder = '',
+    prefix,
     state,
     type = 'text',
     value = '',
-    prefix,
-    suffix,
-}:
-    InputProps) => {
+}: InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
+    const [isCopied, setIsCopied] = useState(false);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
         onChange(event);
     };
 
+    const copyToClipboard = (): void => {
+        navigator.clipboard.writeText(currentValue);
+        setIsCopied(true);
+    };
+
     return (
         <InputWrapper
             state={state}
-            className={`input input_${currentValue.length > 0 ? 'filled' : 'empty'}`}
+            className={`input input_${currentValue.length > 0 ? 'filled' : 'empty'
+                }`}
             data-testid="test-div"
         >
-            {prefix && <InputIcon type="prefix" className="input_prefix">{prefix}</InputIcon>}
+            {prefix && (
+                <InputIcon type="prefix" className="input_prefix">
+                    {prefix}
+                </InputIcon>
+            )}
             <InputStyled
                 autoComplete={`${autoComplete}`}
                 data-testid="test-input"
@@ -49,7 +64,21 @@ const Input: React.FC<InputProps> = ({
                     {label}
                 </LabelStyled>
             )}
-            {suffix && <CopyInputIcon className="input_copy">{suffix}</CopyInputIcon>}
+            {hidable && <VisibilityIcon className="input_visibility">{isCopied ? (
+                <Icon svg={iconTypes.check} fill={color.green} />
+            ) : (
+                <Icon svg={iconTypes.copy} />
+            )}</VisibilityIcon>}
+            <CopyInputIcon
+                className="input_copy"
+                onClick={() => copyToClipboard()}
+            >
+                {isCopied ? (
+                    <Icon svg={iconTypes.check} fill={color.green} />
+                ) : (
+                    <Icon svg={iconTypes.copy} />
+                )}
+            </CopyInputIcon>
         </InputWrapper>
     );
 };

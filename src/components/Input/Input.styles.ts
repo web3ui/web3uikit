@@ -2,7 +2,7 @@ import resetCSS, { resetButtonCSS } from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 import styled from 'styled-components';
-import { InputIconProps, InputProps } from './types';
+import { InputIconProps, InputProps, LabelProps } from './types';
 
 export const InputWrapper = styled.div<Pick<InputProps, 'state'>>`
     ${resetCSS}
@@ -10,10 +10,9 @@ export const InputWrapper = styled.div<Pick<InputProps, 'state'>>`
     border: 1px solid ${color.greyLight};
     display: flex;
     height: 56px;
-    padding: 0 16px;
+    padding: 14px 16px;
     position: relative;
     transition: all 0.2s linear;
-    width: 320px;
 
     &:hover {
         border-color: ${(p) =>
@@ -65,12 +64,12 @@ export const InputWrapper = styled.div<Pick<InputProps, 'state'>>`
     }
 `;
 
-export const LabelStyled = styled.label`
+export const LabelStyled = styled.label<LabelProps>`
     ${resetCSS}
     ${fonts.text}
     background-color: ${color.white};
     height: 24px;
-    left: 48px;
+    left: ${({ hasPrefix }) => (hasPrefix ? '48px' : '16px')};
     padding: 0 4px;
     pointer-events: none;
     position: absolute;
@@ -83,7 +82,6 @@ export const InputStyled = styled.input`
     ${fonts.text}
     background-color: transparent;
     overflow: hidden;
-    margin: 12px;
     width: 100%;
 
     &:focus,
@@ -125,12 +123,14 @@ const inputIconStyle = `
 
 export const InputIcon = styled.div<InputIconProps>`
     ${inputIconStyle}
+    margin-right: 12px;
 `;
 
 export const CopyInputIcon = styled.button`
     ${resetButtonCSS}
     ${inputIconStyle}
     position: relative;
+    margin-left: 24px;
     &:hover > svg {
         fill: ${color.blue};
     }
@@ -148,21 +148,27 @@ export const VisibilityIcon = styled.button`
     ${resetButtonCSS}
     ${inputIconStyle}
     position: relative;
+    margin-left: 12px;
     &:hover > svg {
         fill: ${color.blue};
     }
-    &:before {
-        border-left: 1px solid ${color.paleBlue2};
-        content: '';
-        height: 24px;
-        left: -12px;
-        position: absolute;
-        width: 0;
-    }
+`;
+
+export const ErrorLabel = styled.label`
+    ${resetCSS}
+    ${fonts.text}
+    bottom: -23px;
+    color: ${color.red};
+    font-size: 12px;
+    height: 24px;
+    pointer-events: none;
+    position: absolute;
+    left: 16px;
 `;
 
 const InputStyles = {
     CopyInputIcon,
+    ErrorLabel,
     InputIcon,
     InputStyled,
     InputWrapper,

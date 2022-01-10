@@ -3,7 +3,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Input from '../../components/Input/Input';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
-import color from '../../styles/colors';
 
 export default {
     title: 'Interaction/Input',
@@ -15,6 +14,64 @@ const testEvent = (event: React.ChangeEvent<HTMLInputElement>) =>
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
+export const PrefixCopyableHidable = Template.bind({});
+PrefixCopyableHidable.args = {
+    copyable: true,
+    hidable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    prefix: <Icon svg={iconTypes.server} />,
+    state: undefined,
+    type: 'text',
+};
+export const PrefixCopyable = Template.bind({});
+PrefixCopyable.args = {
+    copyable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    prefix: <Icon svg={iconTypes.server} />,
+    state: undefined,
+    type: 'text',
+};
+export const PrefixHidable = Template.bind({});
+PrefixHidable.args = {
+    hidable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    prefix: <Icon svg={iconTypes.server} />,
+    state: undefined,
+    type: 'text',
+};
+export const Prefix = Template.bind({});
+Prefix.args = {
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    prefix: <Icon svg={iconTypes.server} />,
+    state: undefined,
+    type: 'text',
+};
+export const Copyable = Template.bind({});
+Copyable.args = {
+    copyable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    state: undefined,
+    type: 'text',
+};
+export const Hidable = Template.bind({});
+Hidable.args = {
+    hidable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    state: undefined,
+    type: 'text',
+};
 export const TextInputPrefix = Template.bind({});
 TextInputPrefix.args = {
     onChange: testEvent,
@@ -38,9 +95,10 @@ export const TextInputError = Template.bind({});
 TextInputError.args = {
     onChange: testEvent,
     type: 'text',
-    label: 'something went wrong',
+    label: 'Label text',
     name: 'Test text Input error',
     state: 'error',
+    errorMessage: 'Your name must contain your name'
 };
 
 export const TextInputConfirmed = Template.bind({});

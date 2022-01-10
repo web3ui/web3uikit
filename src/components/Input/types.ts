@@ -50,6 +50,11 @@ export interface InputProps {
     state?: 'error' | 'confirmed' | 'disabled';
 
     /**
+     * css style prop
+     */
+    style?: React.CSSProperties;
+
+    /**
      * hides the input text when is true
      */
     inputHidden?: boolean;
@@ -58,6 +63,22 @@ export interface InputProps {
      * shows the hide icon when is true
      */
     hidable?: boolean;
+
+    /**
+     * imput width
+     */
+
+    width?: string;
+
+    /**
+     * error message
+     */
+    errorMessage?: string;
+
+    /**
+     * shows copy icon
+     */
+    copyable?: boolean;
 }
 
 export interface InputIconProps {
@@ -65,4 +86,11 @@ export interface InputIconProps {
      * types of input available
      */
     type: 'prefix' | 'suffix';
+}
+
+export interface LabelProps {
+    /**
+     * true if the label is defined
+     */
+    hasPrefix: boolean;
 }

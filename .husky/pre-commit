@@ -2,4 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 . "$(dirname "$0")/common.sh"
 
+echo "Hello"
 npm.cmd prettier

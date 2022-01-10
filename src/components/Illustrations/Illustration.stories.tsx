@@ -90,3 +90,122 @@ BinanceXL.args = {
     size: "xl",
     ...bscColors
 }
+
+export const PolygonXS = Template.bind({});
+PolygonXS.args = {
+    logo: "polygon",
+    size: "xs",
+}
+export const PolygonS = Template.bind({});
+PolygonS.args = {
+    logo: "polygon",
+    size: "s",
+}
+
+export const PolygonM = Template.bind({});
+PolygonM.args = {
+    logo: "polygon",
+    size: "m",
+}
+
+export const PolygonL = Template.bind({});
+PolygonL.args = {
+    logo: "polygon",
+    size: "l",
+}
+
+export const PolygonXL = Template.bind({});
+PolygonXL.args = {
+    logo: "polygon",
+    size: "xl",
+}
+
+export const AvalancheXS = Template.bind({});
+AvalancheXS.args = {
+    logo: "avalanche",
+    size: "xs",
+}
+
+export const AvalancheS = Template.bind({});
+AvalancheS.args = {
+    logo: "avalanche",
+    size: "s",
+}
+
+export const AvalancheM = Template.bind({});
+AvalancheM.args = {
+    logo: "avalanche",
+    size: "m",
+}
+
+export const AvalancheL = Template.bind({});
+AvalancheL.args = {
+    logo: "avalanche",
+    size: "l",
+}
+export const AvalancheXL = Template.bind({});
+AvalancheXL.args = {
+    logo: "avalanche",
+    size: "xl",
+}
+
+
+export const FantomXS = Template.bind({});
+FantomXS.args = {
+    logo: "fantom",
+    size: "xs",
+}
+
+export const FantomS = Template.bind({});
+FantomS.args = {
+    logo: "fantom",
+    size: "s",
+}
+
+export const FantomM = Template.bind({});
+FantomM.args = {
+    logo: "fantom",
+    size: "m",
+}
+
+export const FantomL = Template.bind({});
+FantomL.args = {
+    logo: "fantom",
+    size: "l",
+}
+
+export const FantomXL = Template.bind({});
+FantomXL.args = {
+    logo: "fantom",
+    size: "xl",
+}
+
+export const ArbitrumXS = Template.bind({});
+ArbitrumXS.args = {
+    logo: "arbitrum",
+    size: "xs",
+}
+
+export const ArbitrumS = Template.bind({});
+ArbitrumS.args = {
+    logo: "arbitrum",
+    size: "s",
+}
+
+export const ArbitrumM = Template.bind({});
+ArbitrumM.args = {
+    logo: "arbitrum",
+    size: "m",
+}
+
+export const ArbitrumL = Template.bind({});
+ArbitrumL.args = {
+    logo: "arbitrum",
+    size: "l",
+}
+
+export const ArbitrumXL = Template.bind({});
+ArbitrumXL.args = {
+    logo: "arbitrum",
+    size: "xl",
+}

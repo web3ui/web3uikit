@@ -8,10 +8,23 @@ export interface IllustrationProps {
     size?: size;
 
     /**
-     * set the colors
+     * set inner color
+     */
+    fillInline?: string;
+
+    /**
+     * set border color
      */
     fillOutline?: string;
+
+    /**
+     * Use for ethereum and arbitrum only
+     */
     fillInlineLeft?: string;
+
+    /**
+     * Use for ethereum and arbitrum only
+     */
     fillInlineRight?: string
 }
 

@@ -81,11 +81,13 @@ const semiBold = `
 `;
 
 const openSans = `
-    font-family: Open Sans;
+    @import url('//fonts.googleapis.com/css?family=Open+Sans:300,400,500,600');
+    font-family: 'Open Sans', sans-serif;
 `;
 
 const montserrat = `
-    font-family: Montserrat;
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat');
+    font-family: 'Montserrat', sans-serif;
 `;
 
 const fonts = {

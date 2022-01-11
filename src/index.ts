@@ -1,4 +1,5 @@
 // Components
+export * from './components/Avatar';
 export * from './components/BannerStrip';
 export * from './components/Breadcrumbs';
 export * from './components/Button';

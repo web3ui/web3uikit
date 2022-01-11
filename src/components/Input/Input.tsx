@@ -17,9 +17,9 @@ const {
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
+    copyable = false,
     errorMessage = '',
     hidable = false,
-    copyable = false,
     id = String(Date.now()),
     inputHidden = false,
     label,
@@ -43,14 +43,16 @@ const Input: React.FC<InputProps> = ({
     };
 
     const copyToClipboard = (): void => {
+        if (state === "disabled") return;
         navigator.clipboard.writeText(currentValue);
         setIsCopied(true);
     };
 
     const toggleHideInput = (): void => {
+        if (state === "disabled") return;
         setIsInputHidden(!isInputHidden);
     };
-
+    console.log("state", state)
     return (
         <InputWrapper
             state={state}
@@ -60,13 +62,14 @@ const Input: React.FC<InputProps> = ({
             style={{ ...style, width }}
         >
             {prefix && (
-                <InputIcon type="prefix" className="input_prefix">
+                <InputIcon className="input_prefix">
                     {prefix}
                 </InputIcon>
             )}
             <InputStyled
                 autoComplete={`${autoComplete}`}
                 data-testid="test-input"
+                disabled={state == "disabled"}
                 id={id}
                 name={name}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>

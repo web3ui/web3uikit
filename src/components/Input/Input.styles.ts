@@ -36,7 +36,7 @@ export const InputWrapper = styled.div<Pick<InputProps, 'state'>>`
     }
 
     &:hover > .input_prefix > svg {
-        fill: ${(p) => p.state !== 'disabled' && color.blue};
+        fill: ${(p) => !p?.state && color.blue};
     }
 
     &:focus {

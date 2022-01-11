@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import color from '../../styles/colors';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
@@ -38,6 +38,8 @@ const Input: React.FC<InputProps> = ({
     const [isCopied, setIsCopied] = useState(false);
     const [isInputHidden, setIsInputHidden] = useState(inputHidden);
 
+    useEffect(() => setIsInputHidden(inputHidden), [inputHidden])
+
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
         onChange(event);
@@ -53,7 +55,7 @@ const Input: React.FC<InputProps> = ({
         if (state === 'disabled') return;
         setIsInputHidden(!isInputHidden);
     };
-    console.log('state', state);
+
     return (
         <InputWrapper
             state={state}

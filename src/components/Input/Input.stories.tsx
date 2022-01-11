@@ -36,7 +36,7 @@ PrefixCopyableHidden.args = {
     prefix: <Icon svg={iconTypes.server} />,
     state: undefined,
     type: 'text',
-    value: "Test"
+    value: 'Test',
 };
 export const PrefixCopyable = Template.bind({});
 PrefixCopyable.args = {
@@ -111,7 +111,7 @@ TextInputError.args = {
     label: 'Label text',
     name: 'Test text Input error',
     state: 'error',
-    errorMessage: 'Your name must contain your name'
+    errorMessage: 'Your name must contain your name',
 };
 
 export const TextInputConfirmed = Template.bind({});
@@ -236,6 +236,6 @@ PrefixCopyableHidableDisabled.args = {
     name: 'Test text Input',
     onChange: testEvent,
     prefix: <Icon svg={iconTypes.server} />,
-    state: "disabled",
+    state: 'disabled',
     type: 'text',
 };

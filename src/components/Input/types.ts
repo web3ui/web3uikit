@@ -79,6 +79,11 @@ export interface InputProps {
      * shows copy icon
      */
     copyable?: boolean;
+
+    /**
+     * disables any interaction
+     */
+    disabled?: boolean;
 }
 
 export interface LabelProps {

@@ -81,13 +81,6 @@ export interface InputProps {
     copyable?: boolean;
 }
 
-export interface InputIconProps {
-    /**
-     * types of input available
-     */
-    type: 'prefix' | 'suffix';
-}
-
 export interface LabelProps {
     /**
      * true if the label is defined

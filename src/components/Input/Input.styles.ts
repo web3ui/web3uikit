@@ -2,25 +2,41 @@ import resetCSS, { resetButtonCSS } from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 import styled from 'styled-components';
-import { InputIconProps, InputProps, LabelProps } from './types';
+import { InputProps, LabelProps } from './types';
 
 export const InputWrapper = styled.div<Pick<InputProps, 'state'>>`
     ${resetCSS}
     border-radius: 16px;
-    border: 1px solid ${color.greyLight};
+    border: 1px solid;
     display: flex;
     height: 56px;
     padding: 14px 16px;
     position: relative;
     transition: all 0.2s linear;
 
+    border-color: ${({ state }) => {
+        switch (state) {
+            case 'error':
+                return color.red;
+            case 'confirmed':
+                return color.green;
+            case 'disabled':
+                return color.greyDisabled;
+            default:
+                return color.greyLight;
+        }
+    }};
+
+    & > * > * > * {
+        ${(p) => p.state === 'disabled' && ` fill: ${color.greyDisabled};`};
+    }
+
     &:hover {
-        border-color: ${(p) =>
-            p.state === 'disabled' ? color.greyLight : color.blue};
+        border-color: ${(p) => p.state !== 'disabled' && color.blue};
     }
 
     &:hover > .input_prefix > svg {
-        fill: ${color.blue};
+        fill: ${(p) => p.state !== 'disabled' && color.blue};
     }
 
     &:focus {
@@ -31,19 +47,12 @@ export const InputWrapper = styled.div<Pick<InputProps, 'state'>>`
         }
     }
 
-    ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-    ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-
     &:hover {
         ${(p) => p.state === 'error' && `border-color: ${color.red};`}
         ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
 
         label {
-            ${(p) =>
-                p.state !== 'error' &&
-                p.state !== 'confirmed' &&
-                p.state !== 'disabled' &&
-                `color: ${color.blue};`}
+            ${(p) => !p?.state && `color: ${color.blue};`}
         }
     }
 
@@ -58,8 +67,18 @@ export const InputWrapper = styled.div<Pick<InputProps, 'state'>>`
 
     input {
         & + label {
-            ${(p) => p.state === 'error' && `color: ${color.red};`}
-            ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
+            color: ${({ state }) => {
+                switch (state) {
+                    case 'error':
+                        return color.red;
+                    case 'confirmed':
+                        return color.green;
+                    case 'disabled':
+                        return color.greyDisabled;
+                    default:
+                        return color.grey;
+                }
+            }};
         }
     }
 `;
@@ -121,7 +140,7 @@ const inputIconStyle = `
     }
 `;
 
-export const InputIcon = styled.div<InputIconProps>`
+export const InputIcon = styled.div`
     ${inputIconStyle}
     margin-right: 12px;
 `;

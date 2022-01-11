@@ -14,8 +14,8 @@ const testEvent = (event: React.ChangeEvent<HTMLInputElement>) =>
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const PrefixCopyableHidable = Template.bind({});
-PrefixCopyableHidable.args = {
+export const PrefixCopyableHidableActive = Template.bind({});
+PrefixCopyableHidableActive.args = {
     copyable: true,
     hidable: true,
     label: 'Label text',
@@ -226,4 +226,16 @@ PasswordInputError.args = {
     label: 'bad password',
     name: 'Test Password Input error',
     state: 'error',
+};
+
+export const PrefixCopyableHidableDisabled = Template.bind({});
+PrefixCopyableHidableDisabled.args = {
+    copyable: true,
+    hidable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    prefix: <Icon svg={iconTypes.server} />,
+    state: "disabled",
+    type: 'text',
 };

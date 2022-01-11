@@ -8,6 +8,7 @@ export * from './components/Checkbox';
 export * from './components/CryptoCards';
 export * from './components/Form';
 export * from './components/Icon';
+export * from './components/Illustrations';
 export * from './components/Info';
 export * from './components/Input';
 export * from './components/LinkTo';

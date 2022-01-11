@@ -1,8 +1,9 @@
+import { css } from 'styled-components';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
 
-const initialStyles = `
+const initialStyles = css`
     ${resetCSS}
     ${fonts.text}
     align-items: center;
@@ -15,11 +16,11 @@ const initialStyles = `
     width: fit-content;
 `;
 
-const regular = `
+const regular = css`
     background: ${color.blueLight};
 `;
 
-const activeStatus = `
+const activeStatus = css`
     background: ${color.greenForestLight};
     color: ${color.green};
 
@@ -28,12 +29,11 @@ const activeStatus = `
     }
 `;
 
-const inactiveStatus = `
+const inactiveStatus = css`
     background: ${color.blueLight};
 `;
 
-const discount = `
-    align-item: center;
+const discount = css`
     align-items: center;
     background: ${color.green};
     border-radius: 30px;
@@ -46,39 +46,39 @@ const discount = `
     width: 32px;
 `;
 
-const coloredGreen = `
+const coloredGreen = css`
     background: ${color.greenForestLight};
-    color: ${color.green}
+    color: ${color.green};
 `;
 
-const coloredRed = `
+const coloredRed = css`
     background: ${color.redLight};
     color: ${color.red};
 `;
 
-const coloredGray = `
+const coloredGray = css`
     background: ${color.blueSkyLight};
     color: ${color.blueDark};
 `;
 
-const coloredYellow = `
+const coloredYellow = css`
     background: ${color.yellowLight};
     color: ${color.yellow};
 `;
 
-const coloredBlue = `
+const coloredBlue = css`
     background: ${color.blueCloud};
     color: ${color.blueSkyDark};
 `;
 
-const coloredPurple = `
+const coloredPurple = css`
     background: ${color.purpleLight};
     color: ${color.purple};
 `;
 
-const coloredPink = `
+const coloredPink = css`
     background: ${color.pinkLight};
-    color:  ${color.pink};
+    color: ${color.pink};
 `;
 
 export const tagStyles = {

@@ -1,8 +1,9 @@
+import { css } from 'styled-components';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
 import color from '../../styles/colors';
 
-const initialStyles = `
+const initialStyles = css`
     ${resetCSS}
     ${fonts.text}
 `;
@@ -10,12 +11,12 @@ const initialStyles = `
 const marginTooltip = '40px';
 const arrowSizeTooltip = '6px';
 
-const container = `
+const container = css`
     ${resetCSS}
     align-items: center;
     border-radius: 4px;
     color: white;
-    display: flex;  
+    display: flex;
     justify-content: center;
     left: 50%;
     padding: 8px;
@@ -35,59 +36,58 @@ const container = `
     }
 `;
 
-const defaultContainer = `
+const defaultContainer = css`
     bottom: calc(100% + 5px);
     background-color: ${color.blueDark2};
 `;
 
-const top = `
+const top = css`
     background-color: ${color.blueDark2};
     top: calc(${marginTooltip} * -1);
-    
+
     &:before {
-      border-top-color: ${color.blueDark2};
-      top: 100%;
+        border-top-color: ${color.blueDark2};
+        top: 100%;
     }
 `;
 
-const bottom = `
+const bottom = css`
     background-color: ${color.blueDark2};
     bottom: calc(${marginTooltip} * -1);
 
     &:before {
-      bottom: 100%;
-      border-bottom-color: ${color.blueDark2};
+        bottom: 100%;
+        border-bottom-color: ${color.blueDark2};
     }
 `;
 
-const left = `
+const left = css`
     background-color: ${color.blueDark2};
     left: auto;
     right: ${marginTooltip};
     top: 50%;
     transform: translateX(0) translateY(-50%);
-    
-    &:before {
-      border-left-color: ${color.blueDark2};
-      left: auto;
-      right: calc(${arrowSizeTooltip} * -2);
-      top: 50%;
-      transform: translateX(0) translateY(-50%);
-    }
 
+    &:before {
+        border-left-color: ${color.blueDark2};
+        left: auto;
+        right: calc(${arrowSizeTooltip} * -2);
+        top: 50%;
+        transform: translateX(0) translateY(-50%);
+    }
 `;
 
-const right = `
+const right = css`
     background-color: ${color.blueDark2};
     left: ${marginTooltip};
     top: 50%;
     transform: translateX(0) translateY(-50%);
 
     &:before {
-      border-right-color: ${color.blueDark2};
-      left: calc(${arrowSizeTooltip} * -1);
-      top: 50%;
-      transform: translateX(0) translateY(-50%);
+        border-right-color: ${color.blueDark2};
+        left: calc(${arrowSizeTooltip} * -1);
+        top: 50%;
+        transform: translateX(0) translateY(-50%);
     }
 `;
 

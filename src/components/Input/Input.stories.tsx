@@ -10,7 +10,7 @@ export default {
 } as ComponentMeta<typeof Input>;
 
 const testEvent = (event: React.ChangeEvent<HTMLInputElement>) =>
-    console.log(event.target.value);
+    console.log(event.target);
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
@@ -24,6 +24,19 @@ PrefixCopyableHidable.args = {
     prefix: <Icon svg={iconTypes.server} />,
     state: undefined,
     type: 'text',
+};
+export const PrefixCopyableHidden = Template.bind({});
+PrefixCopyableHidden.args = {
+    copyable: true,
+    hidable: true,
+    inputHidden: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    prefix: <Icon svg={iconTypes.server} />,
+    state: undefined,
+    type: 'text',
+    value: "Test"
 };
 export const PrefixCopyable = Template.bind({});
 PrefixCopyable.args = {
@@ -114,7 +127,7 @@ export const EmailInput = Template.bind({});
 EmailInput.args = {
     onChange: testEvent,
     type: 'email',
-    label: 'add email',
+    label: 'Label text',
     name: 'Test email Input',
     state: undefined,
 };

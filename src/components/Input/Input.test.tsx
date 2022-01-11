@@ -17,6 +17,7 @@ const {
     PasswordInput,
     PasswordInputConfirmed,
     PasswordInputError,
+    PrefixCopyableHidden,
     TelInput,
     TelInputConfirmed,
     TelInputError,
@@ -32,6 +33,24 @@ const testInputId = 'test-input';
 const testLabelId = 'test-label';
 const testDivId = 'test-div';
 
+describe('PrefixCopyableHidden - Text', () => {
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<PrefixCopyableHidden />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the hidden value', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input?.value).toBe("****");
+    });
+})
 describe('Input - Text', () => {
     const testLabel = TextInput?.args?.label;
     const testName = TextInput?.args?.name;
@@ -81,7 +100,7 @@ describe('Input - Text', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
@@ -175,7 +194,7 @@ describe('Input - Text Error', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.red);
@@ -269,7 +288,7 @@ describe('Input - Text Confirmed', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.green);
@@ -363,7 +382,7 @@ describe('Input - Number', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
@@ -467,7 +486,7 @@ describe('Input - Number Error', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.red);
@@ -571,7 +590,7 @@ describe('Input - Number Confirmed', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.green);
@@ -675,7 +694,7 @@ describe('Input - Password', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
@@ -769,7 +788,7 @@ describe('Input - Password Error', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.red);
@@ -863,7 +882,7 @@ describe('Input - Password Confirmed', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.green);
@@ -957,7 +976,7 @@ describe('Input - Email', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
@@ -1051,7 +1070,7 @@ describe('Input - Email Error', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.red);
@@ -1145,7 +1164,7 @@ describe('Input - Email Confirmed', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.green);
@@ -1239,7 +1258,7 @@ describe('Input - Tel', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
@@ -1335,7 +1354,7 @@ describe('Input - Tel Error', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.red);
@@ -1431,7 +1450,7 @@ describe('Input - Tel Confirmed', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.green);

@@ -14,6 +14,7 @@ const color = {
     greenLight: '#7AD9C0',
     grey: '#68738D',
     greyDark: '#333333',
+    greyDisabled: '#D7DAE0',
     greyIcons: '#B0B5BF',
     greyLight: '#C5CDD9',
     paleBlue2: '#C1D8E7',

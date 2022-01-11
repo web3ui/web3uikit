@@ -18,6 +18,7 @@ const {
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
     copyable = false,
+    disabled = false,
     errorMessage = '',
     hidable = false,
     id = String(Date.now()),
@@ -27,7 +28,7 @@ const Input: React.FC<InputProps> = ({
     onChange,
     placeholder = '',
     prefix,
-    state,
+    state = disabled ? "disabled" : undefined,
     style,
     type = 'text',
     value = '',
@@ -56,9 +57,8 @@ const Input: React.FC<InputProps> = ({
     return (
         <InputWrapper
             state={state}
-            className={`input input_${
-                currentValue.length > 0 ? 'filled' : 'empty'
-            }`}
+            className={`input input_${currentValue.length > 0 ? 'filled' : 'empty'
+                }`}
             data-testid="test-div"
             style={{ ...style, width }}
         >

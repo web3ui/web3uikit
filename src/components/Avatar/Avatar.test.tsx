@@ -91,7 +91,7 @@ describe('Avatar - Custom Image', () => {
             `[data-testid="${testImageId}"]`,
         );
         expect(element?.getAttribute('src')).toEqual(
-            'https://scalebranding.com/wp-content/uploads/2021/06/penguin.jpg',
+            'https://academy.moralis.io/wp-content/uploads/2021/12/Illustration4_home.svg',
         );
     });
 });

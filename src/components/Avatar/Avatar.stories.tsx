@@ -17,7 +17,7 @@ AvatarImageDefault.args = {
 export const AvatarImageCustom = Template.bind({});
 AvatarImageCustom.args = {
     theme: 'image',
-    image: 'https://scalebranding.com/wp-content/uploads/2021/06/penguin.jpg',
+    image: 'https://academy.moralis.io/wp-content/uploads/2021/12/Illustration4_home.svg',
 };
 
 export const AvatarLetters = Template.bind({});

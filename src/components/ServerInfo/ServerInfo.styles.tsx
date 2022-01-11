@@ -4,6 +4,8 @@ import fonts from "../../styles/fonts";
 import colors from "../../styles/colors";
 
 export const ServerContainer = styled.div`
+  display: grid;
+  gap: 15px;
   padding: 16px;
 `
 

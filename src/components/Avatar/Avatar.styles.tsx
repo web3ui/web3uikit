@@ -22,7 +22,7 @@ const DivTextStyled = styled.div`
     ${fonts.h4};
     ${fonts.textBold700};
     left: calc(50% - 28px / 2);
-    padding-top: calc(52% - 28px / 2);
+    padding-top: calc(50% - 28px / 2);
     text-align: center;
 `;
 

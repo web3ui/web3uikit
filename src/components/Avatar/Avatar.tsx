@@ -13,7 +13,11 @@ const Avatar: React.FC<AvatarProps> = ({ theme, image, text }: AvatarProps) => {
                     guy()
                 )
             ) : (
-                <DivTextStyled data-testid="test-text">{text}</DivTextStyled>
+                <DivTextStyled data-testid="test-text">
+                    {text && text.length > 1
+                        ? (text = `${text[0]}${text[1]}`)
+                        : text}
+                </DivTextStyled>
             )}
         </AvatarStyled>
     );

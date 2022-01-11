@@ -1,9 +1,14 @@
 import React from 'react';
-import {getSize} from "./helper";
+import { getSize } from './helper';
 
-const ethereumLogo = (fillOutline: string, fillInlineLeft: string, fillInlineRight: string, size: "xs" | "s" | "m" | "l" | "xl") => {
+const ethereumLogo = (
+    fillOutline: string,
+    fillInlineLeft: string,
+    fillInlineRight: string,
+    size: 'xs' | 's' | 'm' | 'l' | 'xl',
+) => {
     const { height, width } = getSize(size);
-//    const { inline, outline } = getFillByColor(fill);
+    //    const { inline, outline } = getFillByColor(fill);
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -14,12 +19,9 @@ const ethereumLogo = (fillOutline: string, fillInlineLeft: string, fillInlineRig
         >
             <title>Ethereum logo</title>
 
-            {
-                /**
-                 * INSIDE COLORS
-                 */
-
-            }
+            {/**
+             * INSIDE COLORS
+             */}
             <path
                 d="M41.6279 51.8676C41.6279 35.3579 41.6279 18.8482 41.6279 2.33854C41.5142 2.33854 41.5142 2.33854 41.4005 2.22546C40.8319 3.1301 40.2634 4.03474 39.6949 4.93938C35.6017 11.7242 31.5085 18.6221 27.3015 25.4069C23.4357 31.7393 19.5699 38.0718 15.704 44.4043C12.293 49.9452 8.99569 55.4861 5.58467 61.1401C3.99285 63.854 2.28734 66.568 0.695526 69.2819C0.468125 69.6211 0.240723 69.9604 0.240723 70.2996C0.695526 70.6388 1.03663 70.4127 1.37773 70.1865C8.19979 67.1334 14.9081 64.0802 21.7302 60.914C27.9837 58.087 34.1236 55.26 40.3771 52.433C40.9456 52.433 41.4005 52.3199 41.6279 51.8676Z"
                 fill={fillInlineLeft}
@@ -44,12 +46,9 @@ const ethereumLogo = (fillOutline: string, fillInlineLeft: string, fillInlineRig
                 d="M40.522 133.783C40.522 133.457 40.522 133.021 40.522 132.694C40.522 122.783 40.522 112.872 40.522 102.961C40.522 101.981 40.7339 101.327 41.6878 100.892C46.881 97.8422 51.9683 94.6837 57.0555 91.5253C61.5068 88.8024 65.9581 86.0796 70.4095 83.3568C73.1651 81.6142 76.0266 79.9805 78.7822 78.2379C78.6762 78.4557 78.7822 78.2379 78.8882 78.3468V78.4557C78.7822 78.5646 78.7822 78.7825 78.6762 78.8914C66.0641 97.1887 53.346 115.486 40.7339 133.783C40.628 133.783 40.628 133.783 40.522 133.783Z"
                 fill={fillInlineRight}
             />
-            {
-                /**
-                 * OUTLINE COLORS
-                 */
-
-            }
+            {/**
+             * OUTLINE COLORS
+             */}
             <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -95,37 +94,67 @@ const ethereumLogo = (fillOutline: string, fillInlineLeft: string, fillInlineRig
                     y2="70.4726"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stopColor="#F2F6FF"/>
-                    <stop offset="1" stopColor="#F2F6FF" stopOpacity="0"/>
+                    <stop stopColor="#F2F6FF" />
+                    <stop offset="1" stopColor="#F2F6FF" stopOpacity="0" />
                 </linearGradient>
-                <linearGradient id="paint1_linear_118_7653" x1="21.4441" y1="78.2379" x2="21.4441" y2="133.783"
-                                gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#F2F6FF"/>
-                    <stop offset="1" stopColor="#F2F6FF" stopOpacity="0"/>
+                <linearGradient
+                    id="paint1_linear_118_7653"
+                    x1="21.4441"
+                    y1="78.2379"
+                    x2="21.4441"
+                    y2="133.783"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="#F2F6FF" />
+                    <stop offset="1" stopColor="#F2F6FF" stopOpacity="0" />
                 </linearGradient>
-                <linearGradient id="paint2_linear_118_7653" x1="60.6587" y1="4.5043" x2="60.6587" y2="70.2364"
-                                gradientUnits="userSpaceOnUse">
-                    <stop stopColor="white"/>
-                    <stop offset="1" stopColor="white" stopOpacity="0"/>
+                <linearGradient
+                    id="paint2_linear_118_7653"
+                    x1="60.6587"
+                    y1="4.5043"
+                    x2="60.6587"
+                    y2="70.2364"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
-                <linearGradient id="paint3_linear_118_7653" x1="60.4818" y1="52.3176" x2="60.4818" y2="93.5445"
-                                gradientUnits="userSpaceOnUse">
-                    <stop stopColor="white"/>
-                    <stop offset="1" stopColor="white" stopOpacity="0"/>
+                <linearGradient
+                    id="paint3_linear_118_7653"
+                    x1="60.4818"
+                    y1="52.3176"
+                    x2="60.4818"
+                    y2="93.5445"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
-                <linearGradient id="paint4_linear_118_7653" x1="22.2916" y1="52.3176" x2="22.2916" y2="93.8017"
-                                gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#F2F6FF"/>
-                    <stop offset="1" stopColor="#F2F6FF" stopOpacity="0"/>
+                <linearGradient
+                    id="paint4_linear_118_7653"
+                    x1="22.2916"
+                    y1="52.3176"
+                    x2="22.2916"
+                    y2="93.8017"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="#F2F6FF" />
+                    <stop offset="1" stopColor="#F2F6FF" stopOpacity="0" />
                 </linearGradient>
-                <linearGradient id="paint5_linear_118_7653" x1="59.7051" y1="78.2379" x2="59.7051" y2="133.783"
-                                gradientUnits="userSpaceOnUse">
-                    <stop stopColor="red"/>
-                    <stop offset="1" stopColor="white" stopOpacity="0"/>
+                <linearGradient
+                    id="paint5_linear_118_7653"
+                    x1="59.7051"
+                    y1="78.2379"
+                    x2="59.7051"
+                    y2="133.783"
+                    gradientUnits="userSpaceOnUse"
+                >
+                    <stop stopColor="red" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
             </defs>
         </svg>
-    )
-}
+    );
+};
 
 export default ethereumLogo;

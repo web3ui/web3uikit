@@ -24,7 +24,7 @@ export interface WidgetProps {
     /**
      * set icon position
      */
-    iconLayout: "leading" | "trailing" | "none"
+    iconLayout?: "leading" | "trailing" | "none"
 
     /**
      * set title of widget

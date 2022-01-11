@@ -24,12 +24,12 @@ const Widget: React.FC<WidgetProps> = ({
 }: WidgetProps) => {
     return (
         <WidgetStyled iconLayout={iconLayout} id={id}>
+            {icon && <div style={{display: "grid", placeItems: "center", marginRight: '10px'}}><Icon size={30} fill={colors.blue} svg={icon}/></div>}
             <WidgetInfoBox>
                 <WidgetTitle>{title}</WidgetTitle>
                 <WidgetInfo>{description}</WidgetInfo>
             </WidgetInfoBox>
-            {hint && getHint(iconLayout, hint)}
-            {icon && <div style={{display: "grid", placeItems: "center", marginRight: '10px'}}><Icon size={30} fill={colors.blue} svg={icon}/></div>}
+            {hint && getHint(iconLayout || "leading", hint)}
         </WidgetStyled>
     )
 }

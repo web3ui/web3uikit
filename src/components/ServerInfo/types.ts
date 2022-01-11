@@ -5,22 +5,32 @@ export interface ServerInfoProps {
     id?: string;
 
     /**
-     * set name of server
+     * set how much data is used by server in kilobytes
      */
-    name?: string;
-
-    /**
-     * set version of server
-     */
-    version?: string;
-
-    /**
-     * set network of server
-     */
-    network?: "Mainnet" | "Testnet";
+    dataUsed: string;
 
     /**
      * set if server is sleeping
      */
     isSleeping?: boolean;
+
+    /**
+     * set name of server
+     */
+    name: string;
+
+    /**
+     * set network of server
+     */
+    network: "Mainnet" | "Testnet";
+
+    /**
+     * set how much user the server has
+     */
+    numOfUser: string;
+
+    /**
+     * set version of server
+     */
+    version?: string;
 }

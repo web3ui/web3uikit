@@ -391,3 +391,13 @@ DisabledIconOnlySmall.args = {
     iconLayout: 'icon-only',
     size: 'small',
 };
+
+export const Translucent = Template.bind({});
+Translucent.args = {
+    id: 'test-button-translucent-icon-large',
+    text: 'Translucent',
+    theme: 'translucent',
+    icon: iconTypes.cog,
+    iconLayout: 'leading',
+    size: 'large',
+};

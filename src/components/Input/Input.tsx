@@ -43,33 +43,30 @@ const Input: React.FC<InputProps> = ({
     };
 
     const copyToClipboard = (): void => {
-        if (state === "disabled") return;
+        if (state === 'disabled') return;
         navigator.clipboard.writeText(currentValue);
         setIsCopied(true);
     };
 
     const toggleHideInput = (): void => {
-        if (state === "disabled") return;
+        if (state === 'disabled') return;
         setIsInputHidden(!isInputHidden);
     };
-    console.log("state", state)
+    console.log('state', state);
     return (
         <InputWrapper
             state={state}
-            className={`input input_${currentValue.length > 0 ? 'filled' : 'empty'
-                }`}
+            className={`input input_${
+                currentValue.length > 0 ? 'filled' : 'empty'
+            }`}
             data-testid="test-div"
             style={{ ...style, width }}
         >
-            {prefix && (
-                <InputIcon className="input_prefix">
-                    {prefix}
-                </InputIcon>
-            )}
+            {prefix && <InputIcon className="input_prefix">{prefix}</InputIcon>}
             <InputStyled
                 autoComplete={`${autoComplete}`}
                 data-testid="test-input"
-                disabled={state == "disabled"}
+                disabled={state == 'disabled'}
                 id={id}
                 name={name}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -105,16 +102,18 @@ const Input: React.FC<InputProps> = ({
                     )}
                 </VisibilityIcon>
             )}
-            {copyable && <CopyInputIcon
-                className="input_copy"
-                onClick={() => copyToClipboard()}
-            >
-                {isCopied ? (
-                    <Icon svg={iconTypes.check} fill={color.green} />
-                ) : (
-                    <Icon svg={iconTypes.copy} />
-                )}
-            </CopyInputIcon>}
+            {copyable && (
+                <CopyInputIcon
+                    className="input_copy"
+                    onClick={() => copyToClipboard()}
+                >
+                    {isCopied ? (
+                        <Icon svg={iconTypes.check} fill={color.green} />
+                    ) : (
+                        <Icon svg={iconTypes.copy} />
+                    )}
+                </CopyInputIcon>
+            )}
         </InputWrapper>
     );
 };

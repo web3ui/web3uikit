@@ -48,9 +48,9 @@ describe('PrefixCopyableHidden - Text', () => {
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
-        expect(input?.value).toBe("****");
+        expect(input?.value).toBe('****');
     });
-})
+});
 describe('Input - Text', () => {
     const testLabel = TextInput?.args?.label;
     const testName = TextInput?.args?.name;

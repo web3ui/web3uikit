@@ -33,8 +33,8 @@ const arbitrum = () => {
                 fill="url(#paint4_linear_173_19021)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M36.2359 61.0461C39.1281 56.221 45.3738 54.8382 50.8204 54.9319L50.8293 54.9321L57.8534 55.178L21.3413 113.538L19.6458 112.477L54.3196 57.0555L50.7772 56.9315C45.4807 56.842 40.2451 58.2318 37.9437 62.0871L37.9345 62.1026L16.9767 94.4944L16.9742 94.4983L11.5757 102.759V108.012H9.57568V102.164L15.2975 93.408L15.3 93.4042L36.2359 61.0461Z"
                 fill="url(#paint5_linear_173_19021)"
             />
@@ -43,8 +43,8 @@ const arbitrum = () => {
                 fill="url(#paint6_linear_173_19021)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M79.9985 55.1056L41.9336 119.525L41.9317 119.529L38.4114 125.538L36.6857 124.527L40.2079 118.515L40.2098 118.511L76.4805 57.1279L64.152 57.2058L26.255 118.068L24.5573 117.011L63.0369 55.2128L79.9985 55.1056Z"
                 fill="url(#paint7_linear_173_19021)"
             />
@@ -57,8 +57,8 @@ const arbitrum = () => {
                     y2="79.6129"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0.3" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0.3" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_173_19021"
@@ -68,8 +68,8 @@ const arbitrum = () => {
                     y2="136.226"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" stop-opacity="0.2" />
-                    <stop offset="0.348958" stop-color="white" />
+                    <stop stopColor="white" stopOpacity="0.2" />
+                    <stop offset="0.348958" stopColor="white" />
                 </linearGradient>
                 <linearGradient
                     id="paint2_linear_173_19021"
@@ -79,8 +79,8 @@ const arbitrum = () => {
                     y2="100.517"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0.3" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0.3" />
                 </linearGradient>
                 <linearGradient
                     id="paint3_linear_173_19021"
@@ -90,8 +90,8 @@ const arbitrum = () => {
                     y2="85.6105"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0.3" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0.3" />
                 </linearGradient>
                 <linearGradient
                     id="paint4_linear_173_19021"
@@ -101,8 +101,8 @@ const arbitrum = () => {
                     y2="84.4857"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0.3" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0.3" />
                 </linearGradient>
                 <linearGradient
                     id="paint5_linear_173_19021"
@@ -112,8 +112,8 @@ const arbitrum = () => {
                     y2="113.007"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint6_linear_173_19021"
@@ -123,8 +123,8 @@ const arbitrum = () => {
                     y2="90.5737"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0.3" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0.3" />
                 </linearGradient>
                 <linearGradient
                     id="paint7_linear_173_19021"
@@ -134,8 +134,8 @@ const arbitrum = () => {
                     y2="125.033"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
             </defs>
         </svg>

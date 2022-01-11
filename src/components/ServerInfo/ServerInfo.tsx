@@ -14,11 +14,14 @@ import {Icon} from "../Icon";
 import {iconTypes} from "../Icon/collection";
 import {Button} from "../Button";
 import colors from "../../styles/colors";
+import {Widget} from "../Widget";
 
 const ServerInfo: React.FC<ServerInfoProps> = ({
     id,
+    dataUsed,
     name,
     network,
+    numOfUser,
     version,
 }: ServerInfoProps) => {
     const [ isCollapsed, setCollapsed ] = useState<boolean>(false);
@@ -50,13 +53,13 @@ const ServerInfo: React.FC<ServerInfoProps> = ({
             { isCollapsed &&
                 <ServerContainer>
                     <WidgetRow>
-                        <div>1</div>
-                        <div>2</div>
-                        <div>3</div>
+                        <Widget description={String(network)} icon={iconTypes.network} iconLayout="leading" title={"Environment"} />
+                        <Widget description={dataUsed || "0"} title={"Data used"} />
+                        <Widget description={numOfUser || "0"} title={"Number of users"} />
                     </WidgetRow>
                     <ServerFooter>
                         <div style={{display: 'flex', alignItems: 'center', gap: "15px"}}>
-                            <Button onClick={() => {}} icon={iconTypes.server} iconLayout="icon-only" theme="outline" />
+                            <Button onClick={() => {}} icon={iconTypes.bin} iconLayout="icon-only" theme="outline" />
                             <Button onClick={() => {}} icon={iconTypes.reload} iconLayout="icon-only" theme="outline" />
                             <Button onClick={() => {}} icon={iconTypes.update} color="green" text="Update & Restart" iconLayout="trailing" theme="outline" />
                         </div>

@@ -25,7 +25,7 @@ export const WidgetStyled =  styled.div<Pick<WidgetProps, "iconLayout">>`
   gap: 5px;
   padding: 16px;
   position: relative;
-  width: fit-content;
+  width: 100%;
   
   ${(p) => p.iconLayout === "leading" ? "" : ""};
 `

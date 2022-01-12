@@ -46,7 +46,7 @@ const Accordion: React.FC<AccordionProps> = ({ id, isExpanded = false }) => {
                     <HeadingStyled>Accordion title</HeadingStyled>
                 </DivFlexStyled>
 
-                <DivFlexStyled>
+                <DivFlexStyled style={{ marginLeft: 'auto' }}>
                     <p>a sub title</p>
                     <Icon
                         svg={isOpen ? iconTypes.lockOpen : iconTypes.lockClosed}
@@ -62,34 +62,40 @@ const Accordion: React.FC<AccordionProps> = ({ id, isExpanded = false }) => {
                 ref={divElement}
                 style={{ maxHeight: height }}
             >
-                <p>
-                    Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas. Vestibulum tortor quam,
-                    feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
-                    eu libero sit amet quam egestas semper. Aenean ultricies mi
-                    vitae est. Mauris placerat eleifend leo.
-                </p>
-                <p>
-                    Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas. Vestibulum tortor quam,
-                    feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
-                    eu libero sit amet quam egestas semper. Aenean ultricies mi
-                    vitae est. Mauris placerat eleifend leo.
-                </p>
-                <p>
-                    Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas. Vestibulum tortor quam,
-                    feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
-                    eu libero sit amet quam egestas semper. Aenean ultricies mi
-                    vitae est. Mauris placerat eleifend leo.
-                </p>
-                <p>
-                    Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas. Vestibulum tortor quam,
-                    feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
-                    eu libero sit amet quam egestas semper. Aenean ultricies mi
-                    vitae est. Mauris placerat eleifend leo.
-                </p>
+                <div>
+                    <p>
+                        Pellentesque habitant morbi tristique senectus et netus
+                        et malesuada fames ac turpis egestas. Vestibulum tortor
+                        quam, feugiat vitae, ultricies eget, tempor sit amet,
+                        ante. Donec eu libero sit amet quam egestas semper.
+                        Aenean ultricies mi vitae est. Mauris placerat eleifend
+                        leo.
+                    </p>
+                    <p>
+                        Pellentesque habitant morbi tristique senectus et netus
+                        et malesuada fames ac turpis egestas. Vestibulum tortor
+                        quam, feugiat vitae, ultricies eget, tempor sit amet,
+                        ante. Donec eu libero sit amet quam egestas semper.
+                        Aenean ultricies mi vitae est. Mauris placerat eleifend
+                        leo.
+                    </p>
+                    <p>
+                        Pellentesque habitant morbi tristique senectus et netus
+                        et malesuada fames ac turpis egestas. Vestibulum tortor
+                        quam, feugiat vitae, ultricies eget, tempor sit amet,
+                        ante. Donec eu libero sit amet quam egestas semper.
+                        Aenean ultricies mi vitae est. Mauris placerat eleifend
+                        leo.
+                    </p>
+                    <p>
+                        Pellentesque habitant morbi tristique senectus et netus
+                        et malesuada fames ac turpis egestas. Vestibulum tortor
+                        quam, feugiat vitae, ultricies eget, tempor sit amet,
+                        ante. Donec eu libero sit amet quam egestas semper.
+                        Aenean ultricies mi vitae est. Mauris placerat eleifend
+                        leo.
+                    </p>
+                </div>
             </ContentDivStyled>
         </SectionStyled>
     );

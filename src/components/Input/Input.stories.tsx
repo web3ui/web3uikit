@@ -16,9 +16,8 @@ export const TextInput = Template.bind({});
 TextInput.args = {
     onChange: testEvent,
     type: 'text',
-    label: 'add text',
+    label: 'add-text',
     name: 'Test text Input',
-    state: undefined,
 };
 
 export const TextInputError = Template.bind({});

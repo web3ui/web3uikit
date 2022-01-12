@@ -14,7 +14,7 @@ export const HeaderStyled = styled.header`
     cursor: pointer;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding: 16px 12px;
+    padding: 8px 12px;
 
     &:hover {
         background-color: ${color.paleBlue2};
@@ -26,6 +26,7 @@ export const HeadingStyled = styled.h4`
     ${fonts.heading}
     ${fonts.h4}
     line-height: 1;
+    padding: 8px 0;
 `;
 
 export const DivFlexStyled = styled.div`
@@ -51,4 +52,8 @@ export const DivFlexStyled = styled.div`
 export const ContentDivStyled = styled.div`
     overflow: hidden;
     transition: max-height 0.3s ease-out;
+
+    div {
+        padding: 12px 16px 24px;
+    }
 `;

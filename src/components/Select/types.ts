@@ -100,3 +100,7 @@ export interface LabelProps {
      */
     hasPrefix: boolean;
 }
+
+export interface SelectedItemProps {
+    state?: 'error' | 'confirmed' | 'disabled';
+}

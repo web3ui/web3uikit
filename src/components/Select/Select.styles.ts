@@ -2,18 +2,54 @@ import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 import styled from 'styled-components';
-import { SelectProps, LabelProps } from './types';
+import { SelectProps, LabelProps, SelectedItemProps } from './types';
 
 export const SelectWrapper = styled.div<Pick<SelectProps, 'state'>>`
     ${resetCSS}
-    border-radius: 16px;
-    border: 1px solid;
+    position: relative;
+`;
+
+export const LabelStyled = styled.label<LabelProps>`
+    ${resetCSS}
+    ${fonts.text}
+    background-color: ${color.white};
+    font-size: 14px;
+    /* height: 18px; */
+    height: 24px;
+    /* left: ${({ hasPrefix }) => (hasPrefix ? '48px' : '16px')}; */
+    left: 12px;
+    line-height: 1;
+    /* padding: 0 4px; */
+    padding: 2px 4px;
+    pointer-events: none;
+    position: absolute;
+    top: -12px;
+    /* top: 15px; */
+    transition: all 0.1s ease-out;
+`;
+
+export const SelectStyled = styled.div`
+    ${resetCSS}
+    ${fonts.text}
+    background-color: transparent;
+    overflow: hidden;
+    width: 100%;
+`;
+
+export const SelectedItem = styled.div<SelectedItemProps>`
+    ${resetCSS}
+    ${fonts.text}
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    width: 100%;
     display: flex;
+    border-radius: 16px;
     height: 56px;
     padding: 14px 16px;
-    position: relative;
     transition: all 0.2s linear;
 
+    border: 2px solid;
     border-color: ${({ state }) => {
         switch (state) {
             case 'error':
@@ -23,7 +59,7 @@ export const SelectWrapper = styled.div<Pick<SelectProps, 'state'>>`
             case 'disabled':
                 return color.greyDisabled;
             default:
-                return color.greyLight;
+                return color.blueSky;
         }
     }};
 
@@ -83,39 +119,6 @@ export const SelectWrapper = styled.div<Pick<SelectProps, 'state'>>`
     }
 `;
 
-export const LabelStyled = styled.label<LabelProps>`
-    ${resetCSS}
-    ${fonts.text}
-    background-color: ${color.white};
-    height: 24px;
-    left: ${({ hasPrefix }) => (hasPrefix ? '48px' : '16px')};
-    padding: 0 4px;
-    pointer-events: none;
-    position: absolute;
-    top: 15px;
-    transition: all 0.1s ease-out;
-`;
-
-export const SelectStyled = styled.div`
-    ${resetCSS}
-    ${fonts.text}
-    background-color: transparent;
-    overflow: hidden;
-    width: 100%;
-
-    /* &:focus,
-    .input_filled & {
-        + label {
-            font-size: 14px;
-            height: 18px;
-            line-height: 1;
-            padding: 2px 4px;
-            top: -12px;
-            left: 12px;
-        }
-    } */
-`;
-
 const inputIconStyle = `
     ${resetCSS}
     align-items: center;
@@ -157,6 +160,7 @@ export const Options = styled.div`
     top: 100%;
     width: 100%;
     z-index: 10;
+    left: 0;
 `;
 
 export const Option = styled.div`
@@ -187,6 +191,7 @@ const SelectStyles = {
     Options,
     SelectStyled,
     SelectWrapper,
+    SelectedItem,
 };
 
 export default SelectStyles;

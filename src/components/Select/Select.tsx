@@ -4,7 +4,7 @@ import type { SelectProps } from './types';
 
 const {
     ErrorLabel,
-    SelectStyled,
+    SelectedItem,
     SelectWrapper,
     LabelStyled,
     Option,
@@ -21,12 +21,10 @@ const Select: React.FC<SelectProps> = ({
     prefix,
     state = disabled ? "disabled" : undefined,
     style,
-    value = '',
     width = '320px',
     options = [],
     defaultOptionIndex = 0
 }: SelectProps) => {
-    // const [currentValue, setCurrentValue] = useState(value);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOptionIndex, setSelectedOptionIndex] =
         useState(defaultOptionIndex);
@@ -69,8 +67,9 @@ const Select: React.FC<SelectProps> = ({
             data-testid="test-div"
             style={{ ...style, width }}
         >
-            <SelectStyled
+            <SelectedItem
                 data-testid="test-input"
+                state={state}
                 // disabled={state == 'disabled'}
                 id={id}
                 placeholder={placeholder}
@@ -78,7 +77,7 @@ const Select: React.FC<SelectProps> = ({
             // className={isOpen ? "actived" : ""}
             >
                 {options[selectedOptionIndex]?.label}
-            </SelectStyled>
+            </SelectedItem>
             {label && (
                 <LabelStyled
                     data-testid="test-label"

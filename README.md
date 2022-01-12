@@ -41,8 +41,8 @@ const App = () => (
 
 - [`web3uikit`](#web3uikit)
 - [🚀 Quick Start](#-quick-start)
-- [💿 Installation](#installation-)
-- [🧰 Usage](#avatar-)
+  - [💿 Installation](#installation-)
+  - [🧰 Usage](#avatar-)
 - [🧭 Table of contents](#-table-of-contents)
 - [📖 UI Components](#-ethereum-components)
   - [`<Avatar />`](#avatar-)

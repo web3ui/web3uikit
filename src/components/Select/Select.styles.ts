@@ -6,6 +6,7 @@ import { SelectProps, LabelProps, SelectedItemProps } from './types';
 
 export const SelectWrapper = styled.div<Pick<SelectProps, 'state'>>`
     ${resetCSS}
+    display: inline-block;
     position: relative;
 `;
 
@@ -14,18 +15,13 @@ export const LabelStyled = styled.label<LabelProps>`
     ${fonts.text}
     background-color: ${color.white};
     font-size: 14px;
-    /* height: 18px; */
     height: 24px;
-    /* left: ${({ hasPrefix }) => (hasPrefix ? '48px' : '16px')}; */
     left: 12px;
     line-height: 1;
-    /* padding: 0 4px; */
     padding: 2px 4px;
     pointer-events: none;
     position: absolute;
     top: -12px;
-    /* top: 15px; */
-    transition: all 0.1s ease-out;
 `;
 
 export const SelectStyled = styled.div`
@@ -33,23 +29,21 @@ export const SelectStyled = styled.div`
     ${fonts.text}
     background-color: transparent;
     overflow: hidden;
-    width: 100%;
 `;
 
 export const SelectedItem = styled.div<SelectedItemProps>`
     ${resetCSS}
     ${fonts.text}
     background-color: transparent;
-    cursor: pointer;
-    overflow: hidden;
-    width: 100%;
-    display: flex;
     border-radius: 16px;
+    border: 2px solid;
+    cursor: pointer;
+    display: flex;
     height: 56px;
-    padding: 14px 16px;
+    overflow: hidden;
+    padding: 14px 50px 14px 16px;
     transition: all 0.2s linear;
 
-    border: 2px solid;
     border-color: ${({ state }) => {
         switch (state) {
             case 'error':
@@ -158,6 +152,8 @@ export const ErrorLabel = styled.label`
 `;
 
 export const Options = styled.div`
+    ${resetCSS}
+    ${fonts.text}
     background-color: ${color.blueLight};
     border-radius: 16px;
     border: 2px solid ${color.blueSky};
@@ -165,22 +161,20 @@ export const Options = styled.div`
     flex-direction: column;
     height: fit-content;
     justify-content: space-around;
+    left: 0;
     margin-top: 10px;
     position: absolute;
     top: 100%;
     width: 100%;
     z-index: 10;
-    left: 0;
 `;
 
 export const Option = styled.div`
     ${resetCSS}
-    ${fonts.text}
     align-items: center;
     cursor: pointer;
     display: flex;
-    padding: 12px 0;
-    padding-left: 20px;
+    padding: 12px 0 12px 20px;
     &:hover {
         background-color: rgba(128, 128, 128, 0.1);
     }
@@ -195,15 +189,15 @@ export const Option = styled.div`
 `;
 
 const SelectStyles = {
+    DropDownIcon,
     ErrorLabel,
     LabelStyled,
     Option,
     Options,
+    PrefixIcon,
+    SelectedItem,
     SelectStyled,
     SelectWrapper,
-    SelectedItem,
-    PrefixIcon,
-    DropDownIcon,
 };
 
 export default SelectStyles;

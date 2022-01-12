@@ -26,7 +26,7 @@ const Select: React.FC<SelectProps> = ({
     prefix,
     state = disabled ? "disabled" : undefined,
     style,
-    width = '320px',
+    width,
     options = [],
     defaultOptionIndex = 0
 }: SelectProps) => {

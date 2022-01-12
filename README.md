@@ -11,7 +11,7 @@ If this boilerplate helps you build your dapps faster - please star this project
 # 🤝 `Need help?`
 If you need help with setting up the boilerplate or have other questions - don't hesitate to write in our community forum and we will check asap. [Forum link](https://forum.moralis.io). The best thing about this boilerplate is the super active community ready to help at any time! We help each other.
 
-# 🚀 Quick Start
+# 🚀 `Quick Start`
 
 ### Installation
 
@@ -37,7 +37,7 @@ const App = () => (
 );
 ```
 
-# 🧭 Table of contents
+# 🧭 `Table of contents`
 
 - [`web3uikit`](#web3uikit)
 - [🚀 Quick Start](#-quick-start)

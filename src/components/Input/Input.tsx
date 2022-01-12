@@ -28,7 +28,7 @@ const Input: React.FC<InputProps> = ({
     onChange,
     placeholder = '',
     prefix,
-    state = disabled ? 'disabled' : undefined,
+    state = disabled ? "disabled" : undefined,
     style,
     type = 'text',
     value = '',
@@ -38,7 +38,7 @@ const Input: React.FC<InputProps> = ({
     const [isCopied, setIsCopied] = useState(false);
     const [isInputHidden, setIsInputHidden] = useState(inputHidden);
 
-    useEffect(() => setIsInputHidden(inputHidden), [inputHidden]);
+    useEffect(() => setIsInputHidden(inputHidden), [inputHidden])
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
@@ -59,9 +59,8 @@ const Input: React.FC<InputProps> = ({
     return (
         <InputWrapper
             state={state}
-            className={`input input_${
-                currentValue.length > 0 ? 'filled' : 'empty'
-            }`}
+            className={`input input_${currentValue.length > 0 ? 'filled' : 'empty'
+                }`}
             data-testid="test-div"
             style={{ ...style, width }}
         >

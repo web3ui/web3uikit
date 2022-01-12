@@ -3,15 +3,17 @@ import ReactDOM from 'react-dom';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Information.stories';
 
-const { Regular } = composeStories(stories);
+const {
+    Regular,
+} = composeStories(stories);
 
 describe('Info-Card - Regular', () => {
     let container: HTMLDivElement;
     const topic = Regular?.args?.topic;
     const info = Regular?.args?.information;
-    const cardId = 'card-test-id';
-    const topicId = 'topic-test-id';
-    const infoId = 'info-test-id';
+    const cardId = "card-test-id";
+    const topicId = "topic-test-id";
+    const infoId = "info-test-id";
 
     beforeEach(() => {
         container = document.createElement('div');

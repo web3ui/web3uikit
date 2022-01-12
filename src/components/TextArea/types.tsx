@@ -43,4 +43,5 @@ export interface TextAreaProps {
      * you can pass a default value so the input is pre-filled
      */
     value?: string;
+
 }

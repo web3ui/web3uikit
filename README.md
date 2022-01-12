@@ -13,7 +13,7 @@ If you need help with setting up the boilerplate or have other questions - don't
 
 # 🚀 `Quick Start`
 
-### Installation
+### 💿 Installation
 
 ```bash
 npm install web3uikit
@@ -24,7 +24,7 @@ or
 yarn add web3uikit
 ```
 
-### Usage
+### 🧰 Usage
 
 ```jsx
 import { CryptoCards, Button } from 'web3uikit';

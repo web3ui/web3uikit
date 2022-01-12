@@ -1,70 +1,74 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from 'react';
 import color from '../../styles/colors';
-import { divStyle, inputStyle, labelStyle } from './Input.styles';
-import { InputProps } from './types';
+import { Icon } from '../Icon';
+import { iconTypes } from '../Icon/collection';
+import InputStyles from './Input.styles';
+import type { InputProps } from './types';
 
-const InputStyled = styled.input`
-    ${inputStyle}
-`;
-const LabelStyled = styled.label`
-    ${labelStyle}
-`;
-
-const StyledDiv = styled.div<Pick<InputProps, 'state'>>`
-    ${divStyle}
-
-    input {
-        ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-        ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-    & + label {
-            ${(p) => p.state === 'error' && `color: ${color.red};`}
-            ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
-        }
-
-        &:hover {
-            ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-            ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-        }
-
-        &:focus {
-            ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-            ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-      & + label {
-                ${(p) => p.state === 'error' && `color: ${color.red};`}
-                ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
-            }
-        }
-    }
-`;
+const {
+    CopyInputIcon,
+    ErrorLabel,
+    InputIcon,
+    InputStyled,
+    InputWrapper,
+    LabelStyled,
+    VisibilityIcon,
+} = InputStyles;
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
+    copyable = false,
+    disabled = false,
+    errorMessage = '',
+    hidable = false,
     id = String(Date.now()),
+    inputHidden = false,
     label,
     name,
     onChange,
     placeholder = '',
-    state,
+    prefix,
+    state = disabled ? "disabled" : undefined,
+    style,
     type = 'text',
     value = '',
+    width = '320px',
 }: InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
+    const [isCopied, setIsCopied] = useState(false);
+    const [isInputHidden, setIsInputHidden] = useState(inputHidden);
+
+    useEffect(() => setIsInputHidden(inputHidden), [inputHidden])
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
         onChange(event);
     };
 
+    const copyToClipboard = (): void => {
+        if (state === 'disabled') return;
+        navigator.clipboard.writeText(currentValue);
+        setIsCopied(true);
+    };
+
+    const toggleHideInput = (): void => {
+        if (state === 'disabled') return;
+        setIsInputHidden(!isInputHidden);
+    };
+
     return (
-        <StyledDiv
+        <InputWrapper
             state={state}
-            className={currentValue.length > 0 ? 'filled' : 'empty'}
+            className={`input input_${currentValue.length > 0 ? 'filled' : 'empty'
+                }`}
             data-testid="test-div"
+            style={{ ...style, width }}
         >
+            {prefix && <InputIcon className="input_prefix">{prefix}</InputIcon>}
             <InputStyled
                 autoComplete={`${autoComplete}`}
                 data-testid="test-input"
+                disabled={state == 'disabled'}
                 id={id}
                 name={name}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
@@ -72,14 +76,47 @@ const Input: React.FC<InputProps> = ({
                 }
                 placeholder={placeholder}
                 type={type}
-                value={currentValue}
+                value={
+                    isInputHidden
+                        ? currentValue.replace(/./g, '*')
+                        : currentValue
+                }
             />
             {label && (
-                <LabelStyled data-testid="test-label" htmlFor={id}>
+                <LabelStyled
+                    data-testid="test-label"
+                    htmlFor={id}
+                    hasPrefix={typeof prefix !== 'undefined'}
+                >
                     {label}
                 </LabelStyled>
             )}
-        </StyledDiv>
+            {errorMessage && <ErrorLabel>{errorMessage}</ErrorLabel>}
+            {hidable && (
+                <VisibilityIcon
+                    className="input_visibility"
+                    onClick={() => toggleHideInput()}
+                >
+                    {isInputHidden ? (
+                        <Icon svg={iconTypes.eyeClosed} />
+                    ) : (
+                        <Icon svg={iconTypes.eye} />
+                    )}
+                </VisibilityIcon>
+            )}
+            {copyable && (
+                <CopyInputIcon
+                    className="input_copy"
+                    onClick={() => copyToClipboard()}
+                >
+                    {isCopied ? (
+                        <Icon svg={iconTypes.check} fill={color.green} />
+                    ) : (
+                        <Icon svg={iconTypes.copy} />
+                    )}
+                </CopyInputIcon>
+            )}
+        </InputWrapper>
     );
 };
 

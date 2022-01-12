@@ -25,6 +25,11 @@ export interface InputProps {
     placeholder?: string;
 
     /**
+     * Icon prefix for the input field
+     */
+    prefix?: React.ReactNode;
+
+    /**
      * types of input available
      */
     type?: 'text' | 'number' | 'email' | 'tel' | 'password';
@@ -42,5 +47,48 @@ export interface InputProps {
     /**
      * the input can use state to react to user interaction
      */
-    state?: 'error' | 'confirmed';
+    state?: 'error' | 'confirmed' | 'disabled';
+
+    /**
+     * css style prop
+     */
+    style?: React.CSSProperties;
+
+    /**
+     * hides the input text when is true
+     */
+    inputHidden?: boolean;
+
+    /**
+     * shows the hide icon when is true
+     */
+    hidable?: boolean;
+
+    /**
+     * imput width
+     */
+
+    width?: string;
+
+    /**
+     * error message
+     */
+    errorMessage?: string;
+
+    /**
+     * shows copy icon
+     */
+    copyable?: boolean;
+
+    /**
+     * disables any interaction
+     */
+    disabled?: boolean;
+}
+
+export interface LabelProps {
+    /**
+     * true if the label is defined
+     */
+    hasPrefix: boolean;
 }

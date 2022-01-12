@@ -5,7 +5,7 @@ export interface ServerInfoProps {
     id?: string;
 
     /**
-     * set how much data is used by server in kilobytes
+     * set how much data is used by server in megabytes
      */
     dataUsed: string;
 
@@ -22,12 +22,47 @@ export interface ServerInfoProps {
     /**
      * set network of server
      */
-    network: "Mainnet" | "Testnet";
+    network: "Mainnet" | "Testnet" | "Local";
 
     /**
      * set how much user the server has
      */
     numOfUser: string;
+
+    /**
+     * run function on view dApp click
+     */
+    onDapp: () => void;
+
+    /**
+     * run function on settings click
+     */
+    onSettings: () => void;
+
+    /**
+     * server delete function
+     */
+    onDelete: () => void;
+
+    /**
+     * server restart function
+     */
+    onRestart: () => void;
+
+    /**
+     * server update function
+     */
+    onUpdate: () => void;
+
+    /**
+     * run function when Database button is clicked
+     */
+    onDatabase: () => void;
+
+    /**
+     * run wake up function
+     */
+    onWakeUp: () => void;
 
     /**
      * set version of server

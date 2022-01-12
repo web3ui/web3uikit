@@ -9,12 +9,6 @@ export const ServerContainer = styled.div`
   padding: 16px;
 `
 
-export const WidgetRow = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-`
-
 export const ServerFooter = styled.div`
   display: flex;
   align-items: center;
@@ -47,4 +41,10 @@ export const NetworkName = styled.p`
   ${fonts.textSmall};
   color: ${colors.blueDark};
   margin: 0;
+`
+
+export const WidgetRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px;
 `

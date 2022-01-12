@@ -12,10 +12,36 @@ const Template: ComponentStory<typeof ServerInfo> = (args) => (
     <ServerInfo {...args} />
 );
 
-export const Regular = Template.bind({});
-Regular.args = {
+export const Alive = Template.bind({});
+Alive.args = {
     name: "My Server",
     network: "Mainnet",
+    onDelete: () => alert('deleting server ...'),
+    onWakeUp: () => alert('waking up ...'),
+    onUpdate: () => alert('updating server'),
+    onSettings: () => alert('routing to settings'),
+    onRestart: () => alert('restarting server ...'),
+    onDapp: () => alert('routing to dApp'),
+    onDatabase: () => alert('routing to database'),
+    dataUsed: "1000",
+    numOfUser: "235,232",
     isSleeping: false,
     version: "v.0.1.5"
+};
+
+export const Sleeping = Template.bind({});
+Sleeping.args = {
+    name: "My Server",
+    network: "Mainnet",
+    onDelete: () => alert('deleting server ...'),
+    onWakeUp: () => alert('waking up ...'),
+    onUpdate: () => alert('updating server'),
+    onSettings: () => alert('routing to settings'),
+    onRestart: () => alert('restarting server ...'),
+    onDapp: () => alert('routing to dApp'),
+    onDatabase: () => alert('routing to database'),
+    dataUsed: "1000",
+    numOfUser: "235,232",
+    isSleeping: true,
+    version: "v.1.2.5"
 };

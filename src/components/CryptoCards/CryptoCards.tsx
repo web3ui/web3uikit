@@ -1,7 +1,6 @@
 import { Button } from '../Button';
 import { CryptoCardProps } from './types';
 import { iconTypes } from '../Icon/collection';
-import Illustration from '../Illustrations/Illustration';
 import CryptoCardStyles from './CryptoCards.styles';
 import React from 'react';
 
@@ -14,6 +13,7 @@ const {
     DivNetworkInfoStyled,
     PChainNameStyled,
     PNetworkStyled,
+    getChainLogo,
 } = CryptoCardStyles;
 
 const CryptoCards: React.FC<CryptoCardProps> = ({
@@ -29,12 +29,12 @@ const CryptoCards: React.FC<CryptoCardProps> = ({
             <DivInfoStyled>
                 <DivImageStyled>
                     <DivLogoStyled>
-                        {<Illustration logo={chain}></Illustration>}
+                        <img src={getChainLogo(chain.toLowerCase())} />
                     </DivLogoStyled>
                 </DivImageStyled>
                 <DivNetworkInfoStyled>
                     <PChainNameStyled data-testid={'test-chain-name'}>
-                        {`${chain.charAt(0).toUpperCase()}${chain.slice(1)}`}
+                        {chain}
                     </PChainNameStyled>
                     <PNetworkStyled>{chainType || 'Network'}</PNetworkStyled>
                 </DivNetworkInfoStyled>

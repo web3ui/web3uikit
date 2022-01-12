@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof CryptoCards> = (args) => (
 export const Ethereum = Template.bind({});
 Ethereum.args = {
     onClick: () => alert('Clicked'),
-    chain: 'ethereum',
+    chain: 'Ethereum',
     chainType: 'Network',
     settingsIcon: iconTypes.cog,
     bgColor:
@@ -26,7 +26,7 @@ Ethereum.args = {
 export const Binance = Template.bind({});
 Binance.args = {
     onClick: () => alert('Clicked'),
-    chain: 'binance',
+    chain: 'Binance',
     chainType: 'Network',
     settingsIcon: iconTypes.cog,
     bgColor:
@@ -37,7 +37,7 @@ Binance.args = {
 export const Polygon = Template.bind({});
 Polygon.args = {
     onClick: () => alert('Clicked'),
-    chain: 'polygon',
+    chain: 'Polygon',
     chainType: 'Network',
     settingsIcon: iconTypes.cog,
     bgColor:
@@ -48,7 +48,7 @@ Polygon.args = {
 export const Avalanche = Template.bind({});
 Avalanche.args = {
     onClick: () => alert('Clicked'),
-    chain: 'avalanche',
+    chain: 'Avalanche',
     chainType: 'Network',
     settingsIcon: iconTypes.cog,
     bgColor:
@@ -59,7 +59,7 @@ Avalanche.args = {
 export const Fantom = Template.bind({});
 Fantom.args = {
     onClick: () => alert('Clicked'),
-    chain: 'fantom',
+    chain: 'Fantom',
     chainType: 'Network',
     settingsIcon: iconTypes.cog,
     bgColor:
@@ -70,7 +70,7 @@ Fantom.args = {
 export const Arbitrum = Template.bind({});
 Arbitrum.args = {
     onClick: () => alert('Clicked'),
-    chain: 'arbitrum',
+    chain: 'Arbitrum',
     chainType: 'Network',
     settingsIcon: iconTypes.cog,
     bgColor:

@@ -3,9 +3,7 @@ import Icon from '../Icon/Icon';
 import { iconTypes } from '../Icon/collection';
 import color from '../../styles/colors';
 import { LinkToProps } from './types';
-import { LinkToStyles } from './LinkTo.styles';
-
-const { LinkStyled, FlexSpanStyled } = LinkToStyles;
+import { LinkStyled, FlexSpanStyled } from './LinkTo.styles';
 
 const LinkTo: React.FC<LinkToProps> = ({
     address,

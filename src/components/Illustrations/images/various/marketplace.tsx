@@ -1,10 +1,11 @@
 import React from 'react';
+import type { Size } from '../../types';
 
-const marketplace = () => {
+const marketplace = (width: Size = '292', height: Size = '398') => {
     return (
         <svg
-            width="292"
-            height="398"
+            width={width}
+            height={height}
             viewBox="0 0 292 398"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

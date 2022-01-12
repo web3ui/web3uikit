@@ -1,10 +1,11 @@
 import React from 'react';
+import type { Size } from '../../types';
 
-const lazyNft = () => {
+const lazyNft = (width: Size = '289', height: Size = '398') => {
     return (
         <svg
-            width="289"
-            height="398"
+            width={width}
+            height={height}
             viewBox="0 0 289 398"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

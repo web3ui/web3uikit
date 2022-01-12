@@ -1,10 +1,11 @@
 import React from 'react';
+import type { Size } from '../../types';
 
-const looking = () => {
+const looking = (width: Size = '323', height: Size = '391') => {
     return (
         <svg
-            width="323"
-            height="391"
+            width={width}
+            height={height}
             viewBox="0 0 323 391"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

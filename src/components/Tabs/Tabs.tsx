@@ -20,7 +20,7 @@ export const Tabs: React.FC<TabsProps> & TabsComposition = (props) => {
 
   return (
     <TabsProvider initialActiveTab={initialActiveTab}>
-      <TabsContainer>
+      <TabsContainer data-testing="tabs-container">
         {children}
       </TabsContainer>
     </TabsProvider>

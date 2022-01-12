@@ -46,6 +46,8 @@ export const WidgetTitle = styled.div`
 export const WidgetInfo = styled.div`
   color: ${colors.blueDark};
   font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
   margin: 0;
   position: relative;
 `

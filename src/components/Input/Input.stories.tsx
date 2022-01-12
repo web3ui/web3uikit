@@ -1,6 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Input from '../../components/Input/Input';
+import { Icon } from '../Icon';
+import { iconTypes } from '../Icon/collection';
 
 export default {
     title: 'Interaction/Input',
@@ -12,11 +14,92 @@ const testEvent = (event: React.ChangeEvent<HTMLInputElement>) =>
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
+export const PrefixCopyableHidableActive = Template.bind({});
+PrefixCopyableHidableActive.args = {
+    copyable: true,
+    hidable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    prefix: <Icon svg={iconTypes.server} />,
+    state: undefined,
+    type: 'text',
+};
+export const PrefixCopyableHidden = Template.bind({});
+PrefixCopyableHidden.args = {
+    copyable: true,
+    hidable: true,
+    inputHidden: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    prefix: <Icon svg={iconTypes.server} />,
+    state: undefined,
+    type: 'text',
+    value: 'Test',
+};
+export const PrefixCopyable = Template.bind({});
+PrefixCopyable.args = {
+    copyable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    prefix: <Icon svg={iconTypes.server} />,
+    state: undefined,
+    type: 'text',
+};
+export const PrefixHidable = Template.bind({});
+PrefixHidable.args = {
+    hidable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    prefix: <Icon svg={iconTypes.server} />,
+    state: undefined,
+    type: 'text',
+};
+export const Prefix = Template.bind({});
+Prefix.args = {
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    prefix: <Icon svg={iconTypes.server} />,
+    state: undefined,
+    type: 'text',
+};
+export const Copyable = Template.bind({});
+Copyable.args = {
+    copyable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    state: undefined,
+    type: 'text',
+};
+export const Hidable = Template.bind({});
+Hidable.args = {
+    hidable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    state: undefined,
+    type: 'text',
+};
+export const TextInputPrefix = Template.bind({});
+TextInputPrefix.args = {
+    onChange: testEvent,
+    type: 'text',
+    label: 'Label text',
+    name: 'Test text Input',
+    state: undefined,
+    prefix: <Icon svg={iconTypes.server} />,
+};
+
 export const TextInput = Template.bind({});
 TextInput.args = {
     onChange: testEvent,
     type: 'text',
-    label: 'add text',
+    label: 'Label text',
     name: 'Test text Input',
     state: undefined,
 };
@@ -25,9 +108,10 @@ export const TextInputError = Template.bind({});
 TextInputError.args = {
     onChange: testEvent,
     type: 'text',
-    label: 'something went wrong',
+    label: 'Label text',
     name: 'Test text Input error',
     state: 'error',
+    errorMessage: 'Your name must contain your name',
 };
 
 export const TextInputConfirmed = Template.bind({});
@@ -43,7 +127,7 @@ export const EmailInput = Template.bind({});
 EmailInput.args = {
     onChange: testEvent,
     type: 'email',
-    label: 'add email',
+    label: 'Label text',
     name: 'Test email Input',
     state: undefined,
 };
@@ -142,4 +226,16 @@ PasswordInputError.args = {
     label: 'bad password',
     name: 'Test Password Input error',
     state: 'error',
+};
+
+export const PrefixCopyableHidableDisabled = Template.bind({});
+PrefixCopyableHidableDisabled.args = {
+    copyable: true,
+    hidable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    onChange: testEvent,
+    prefix: <Icon svg={iconTypes.server} />,
+    state: 'disabled',
+    type: 'text',
 };

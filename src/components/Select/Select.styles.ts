@@ -1,7 +1,7 @@
 import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { SelectProps, LabelProps, SelectedItemProps } from './types';
 
 export const SelectWrapper = styled.div<Pick<SelectProps, 'state'>>`
@@ -119,20 +119,30 @@ export const SelectedItem = styled.div<SelectedItemProps>`
     }
 `;
 
-const inputIconStyle = `
-    ${resetCSS}
+const iconStyle = css`
     align-items: center;
     display: flex;
     height: 100%;
     justify-content: center;
+    max-height: 24px;
     max-width: 24px;
     width: 100%;
+`;
+
+export const PrefixIcon = styled.div`
+    ${resetCSS}
+    ${iconStyle}
+    margin-right: 8px;
     & :first-child {
-        fill: ${color.grey};
-        transition: fill 0.2s ease-out;
         width: 100%;
         height: 100%;
     }
+`;
+
+export const DropDownIcon = styled.div`
+    ${iconStyle}
+    position: absolute;
+    right: 16px;
 `;
 
 export const ErrorLabel = styled.label`
@@ -192,6 +202,8 @@ const SelectStyles = {
     SelectStyled,
     SelectWrapper,
     SelectedItem,
+    PrefixIcon,
+    DropDownIcon,
 };
 
 export default SelectStyles;

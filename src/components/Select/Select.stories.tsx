@@ -1,6 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Select from './Select';
+import { Icon } from '../Icon';
+import { Illustration } from '../Illustrations';
+import { iconTypes } from '../Icon/collection';
+import color from '../../styles/colors';
 
 export default {
     title: 'Interaction/Select',
@@ -20,20 +24,24 @@ export const Regular = Template.bind({});
 Regular.args = {
     options: [
         {
-            label: "Polygon",
-            value: "polygon"
+            label: "Discord",
+            value: "discord",
+            icon: <Icon svg={iconTypes.discord} fill={color.grey} />
         },
         {
-            label: "Ethereum",
-            value: "eth"
+            label: "Emoji",
+            value: "emoji",
+            icon: "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
         },
         {
-            label: "Binance",
-            value: "bsc"
+            label: "TXT",
+            value: "txt",
+            icon: "TXT"
         },
         {
-            label: "Avalanche",
-            value: "avax"
+            label: "Server",
+            value: "server",
+            icon: <Icon svg={iconTypes.server} fill={color.grey} />
         }
     ],
     // onOptionChange: onTestOptionChange,

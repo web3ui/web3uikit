@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import color from '../../styles/colors';
+import { Icon } from '../Icon';
+import { iconTypes } from '../Icon/collection';
 import SelectStyles from './Select.styles';
 import type { SelectProps } from './types';
 
@@ -9,6 +12,8 @@ const {
     LabelStyled,
     Option,
     Options,
+    PrefixIcon,
+    DropDownIcon
 } = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
@@ -76,34 +81,43 @@ const Select: React.FC<SelectProps> = ({
                 onClick={toggling}
             // className={isOpen ? "actived" : ""}
             >
+                <PrefixIcon>{options[selectedOptionIndex]?.icon}</PrefixIcon>
                 {options[selectedOptionIndex]?.label}
+
+                <DropDownIcon><Icon svg={isOpen ? iconTypes.triangleUp : iconTypes.triangleDown} fill={color.grey} /></DropDownIcon>
+
             </SelectedItem>
-            {label && (
-                <LabelStyled
-                    data-testid="test-label"
-                    htmlFor={id}
-                    hasPrefix={typeof prefix !== 'undefined'}
-                >
-                    {label}
-                </LabelStyled>
-            )}
-            {isOpen && (
-                <Options>
-                    {options.map((option, index) =>
-                        index !== selectedOptionIndex ? (
-                            <Option
-                                onClick={onOptionClicked(index)}
-                                key={option.label}
-                            >
-                                {option.label}
-                            </Option>
-                        ) : null
-                    )}
-                </Options>
-            )}
+            {
+                label && (
+                    <LabelStyled
+                        data-testid="test-label"
+                        htmlFor={id}
+                        hasPrefix={typeof prefix !== 'undefined'}
+                    >
+                        {label}
+                    </LabelStyled>
+                )
+            }
+            {
+                isOpen && (
+                    <Options>
+                        {options.map((option, index) =>
+                            index !== selectedOptionIndex ? (
+                                <Option
+                                    onClick={onOptionClicked(index)}
+                                    key={option?.label}
+                                >
+                                    <PrefixIcon>{option?.icon}</PrefixIcon>
+                                    {option?.label}
+                                </Option>
+                            ) : null
+                        )}
+                    </Options>
+                )
+            }
 
             {/* {errorMessage && <ErrorLabel>{errorMessage}</ErrorLabel>} */}
-        </SelectWrapper>
+        </SelectWrapper >
     );
 };
 

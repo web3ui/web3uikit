@@ -15,4 +15,29 @@ If you need help with setting up the boilerplate or have other questions - don't
 coming soon...
 
 # 🧭 Table of contents
-coming soon...
+
+- [`web3uikit`](#web3uikit)
+- [🚀 Quick Start](#-quick-start)
+- [🧭 Table of contents](#-table-of-contents)
+- [🏗 UI Components](#-ethereum-components)
+- - [`<Avatar />`](#avatar-)
+  - [`<BannerStrip />`](#bannerstrip-)
+  - [`<Breadcrumbs />`](#breadcrumbs-)
+  - [`<Card />`](#card-)
+  - [`<CryptoCards />`](#cryptocards-)
+  - [`<Icon />`](#icon-)
+  - [`<Illustration />`](#illustration-)
+  - [`<Information />`](#information-)
+  - [`<LinkTo />`](#linkto-)
+  - [`<Notification />`](#notification-)
+  - [`<Tag />`](#tag)
+- [🧰 Interaction Components](#-ethereum-hooks)
+  - [`<Button />`](#button)
+  - [`<Checkbox />`](#checkbox)
+  - [`<Form />`](#form)
+  - [`<Input />`](#input)
+  - [`<Radios />`](#radios)
+  - [`<TextArea />`](#textarea)
+- [🧰 Popup](#-popup)
+  - [`<Modal />`](#modal)
+  - [`<Tooltip />`](#tooltip)

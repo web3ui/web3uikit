@@ -1,31 +1,40 @@
-import React, { useState, useEffect } from "react";
-import {
-    DropDownContainer,
-    DropDownHeader,
-    DropDownList,
-    FilterText,
-    FilterListText
-} from "./Select.styles";
+import React, { useState, useEffect } from 'react';
+import SelectStyles from './Select.styles';
+import type { SelectProps } from './types';
 
-export interface SelectProps {
-    options: OptionProps[];
-    onOptionChange?: (option: OptionProps) => void;
-    defaultOptionIndex?: number;
-}
+const {
+    ErrorLabel,
+    SelectStyled,
+    SelectWrapper,
+    LabelStyled,
+    Option,
+    Options,
+} = SelectStyles;
 
-export interface OptionProps {
-    label: string;
-    value: any;
-}
-
-const Select: React.FunctionComponent<SelectProps> = ({
-    options,
+const Select: React.FC<SelectProps> = ({
+    disabled = false,
+    errorMessage = '',
+    id = String(Date.now()),
+    label,
     onOptionChange,
+    placeholder = '',
+    prefix,
+    state = disabled ? "disabled" : undefined,
+    style,
+    value = '',
+    width = '320px',
+    options = [],
     defaultOptionIndex = 0
-}) => {
+}: SelectProps) => {
+    // const [currentValue, setCurrentValue] = useState(value);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOptionIndex, setSelectedOptionIndex] =
         useState(defaultOptionIndex);
+
+    // const valueChanged = (event: React.ChangeEvent<any>) => {
+    //     setCurrentValue(event.target.value);
+    //     onChange(event);
+    // };
 
     const toggling = (event: React.MouseEvent<HTMLDivElement>) => {
         setIsOpen(!isOpen);
@@ -53,27 +62,49 @@ const Select: React.FunctionComponent<SelectProps> = ({
     }, []);
 
     return (
-        <DropDownContainer>
-            <DropDownHeader onClick={toggling} className={isOpen ? "actived" : ""}>
-                <FilterText className={isOpen ? "actived" : ""}>
-                    {options[selectedOptionIndex].label}
-                </FilterText>
-            </DropDownHeader>
+        <SelectWrapper
+            state={state}
+            // className={`input input_${currentValue.length > 0 ? 'filled' : 'empty'
+            //     }`}
+            data-testid="test-div"
+            style={{ ...style, width }}
+        >
+            <SelectStyled
+                data-testid="test-input"
+                // disabled={state == 'disabled'}
+                id={id}
+                placeholder={placeholder}
+                onClick={toggling}
+            // className={isOpen ? "actived" : ""}
+            >
+                {options[selectedOptionIndex]?.label}
+            </SelectStyled>
+            {label && (
+                <LabelStyled
+                    data-testid="test-label"
+                    htmlFor={id}
+                    hasPrefix={typeof prefix !== 'undefined'}
+                >
+                    {label}
+                </LabelStyled>
+            )}
             {isOpen && (
-                <DropDownList>
+                <Options>
                     {options.map((option, index) =>
                         index !== selectedOptionIndex ? (
-                            <FilterListText
+                            <Option
                                 onClick={onOptionClicked(index)}
                                 key={option.label}
                             >
                                 {option.label}
-                            </FilterListText>
+                            </Option>
                         ) : null
                     )}
-                </DropDownList>
+                </Options>
             )}
-        </DropDownContainer>
+
+            {/* {errorMessage && <ErrorLabel>{errorMessage}</ErrorLabel>} */}
+        </SelectWrapper>
     );
 };
 

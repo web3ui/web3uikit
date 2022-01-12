@@ -12,6 +12,7 @@ export * from './components/Illustrations';
 export * from './components/Info';
 export * from './components/Input';
 export * from './components/LinkTo';
+export * from './components/Logo';
 export * from './components/Modal';
 export * from './components/Notification';
 export * from './components/Radios';

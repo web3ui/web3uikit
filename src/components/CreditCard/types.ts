@@ -7,7 +7,16 @@ export interface CreditCardProps {
     /**
      * set date of expiration MM/YY
      */
-    expiresAt: string;
+    expiresAt: {
+        /**
+         * 01 -> Jan, 02 -> Feb, ..., 12 -> Dec
+         */
+        month: string,
+        /**
+         * 22 -> 2022 , 23 -> 2023 ..., 40 -> 2040
+         */
+        year: string;
+    }
 
     /**
      * set if credit-card is expired

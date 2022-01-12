@@ -20,7 +20,10 @@ Mastercard.args = {
     name: "Marty McFly",
     type: "mastercard",
     lastDigits: "1177",
-    expiresAt: "04/22"
+    expiresAt: {
+        month: "04",
+        year: "22"
+    }
 }
 
 export const MastercardExpired = Template.bind({});
@@ -30,5 +33,8 @@ MastercardExpired.args = {
     name: "Marty McFly",
     type: "mastercard",
     lastDigits: "1177",
-    expiresAt: "04/22"
+    expiresAt: {
+        month: "11",
+        year: "21"
+    }
 }

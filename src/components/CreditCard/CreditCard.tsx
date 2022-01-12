@@ -22,6 +22,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
     expiresAt,
     isExpired,
     lastDigits,
+    onRemove,
     name,
     type,
 }: CreditCardProps) => {
@@ -30,7 +31,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
         <CreditCardStyled isExpired={isExpired} onClick={() => setPressed(!pressed)} pressed={pressed}>
             <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
                 <Radios id={id || "radio-credit-card"} items={[""]} onChange={() => {}} />
-                <RemoveIcon onClick={() => {}}>
+                <RemoveIcon onClick={onRemove}>
                     <Icon size={20} svg={iconTypes.bin} fill={colors.red}/>
                 </RemoveIcon>
             </div>
@@ -38,7 +39,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
             <div style={{display: 'flex', justifyContent: "space-between", alignItems: "center"}}>
                 <div style={{display: "flex", gap: "15px", color: "white"}}>
                     <TextStyled>{name}</TextStyled>
-                    <TextStyled>{expiresAt}</TextStyled>
+                    <TextStyled>{`${expiresAt.month} / ${expiresAt.year}`}</TextStyled>
                 </div>
                 {getBrand(type)}
             </div>

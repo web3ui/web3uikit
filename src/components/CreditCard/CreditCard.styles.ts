@@ -16,7 +16,18 @@ export const CreditCardStyled = styled.div<Pick<CreditCardProps, "isExpired" | "
   height: 154px;
   width: 277px;
   ${(p) => p.isExpired ? expiredStyles : p.pressed ? pressedStyles : ""}
+  
+    
+  @keyframes hoverEffect {
+    from{background: linear-gradient(113.54deg, rgba(60, 87, 140, 0.5) 18.91%, rgba(70, 86, 169, 0.5) 44.21%, rgba(125, 150, 217, 0.345) 48.27%, rgba(129, 161, 225, 0.185) 55.76%), linear-gradient(151.07deg, #141659 33.25%, #4152A7 98.24%);}
+    from{background: linear-gradient(113.54deg, rgba(60, 87, 140, 0.5) 19.91%, rgba(70, 86, 169, 0.5) 45.21%, rgba(125, 150, 217, 0.345) 49.27%, rgba(129, 161, 225, 0.185) 55.76%), linear-gradient(151.07deg, #141659 33.25%, #4152A7 98.24%);}
+    to{background: linear-gradient(113.54deg, rgba(60, 87, 140, 0.5) 20.91%, rgba(70, 86, 169, 0.5) 46.21%, rgba(125, 150, 217, 0.345) 50.27%, rgba(129, 161, 225, 0.185) 55.76%), linear-gradient(151.07deg, #141659 33.25%, #4152A7 98.24%);}
+  };
+  
   :hover {
+    animation-name: hoverEffect;
+    animation-duration: 4ms;
+    background: linear-gradient(113.54deg, rgba(60, 87, 140, 0.5) 16.91%, rgba(70, 86, 169, 0.5) 45.21%, rgba(125, 150, 217, 0.345) 52.27%, rgba(129, 161, 225, 0.185) 55.76%), linear-gradient(151.07deg, #141659 33.25%, #4152A7 98.24%);
     cursor: pointer;
   }
 `

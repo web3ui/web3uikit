@@ -10,12 +10,12 @@ export interface CryptoCardProps {
      * The name of the blockchain
      */
     chain:
-        | 'arbitrum'
-        | 'avalanche'
-        | 'binance'
-        | 'ethereum'
-        | 'fantom'
-        | 'polygon';
+        | 'Arbitrum'
+        | 'Avalanche'
+        | 'Binance'
+        | 'Ethereum'
+        | 'Fantom'
+        | 'Polygon';
 
     /**
      * The type of the chain / a subtitle below the chain name

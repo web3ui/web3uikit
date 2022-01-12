@@ -11,13 +11,12 @@ import '@testing-library/jest-dom/extend-expect';
 const { Ethereum, Binance, Polygon, Avalanche, Fantom, Arbitrum } =
     composeStories(stories);
 
-let container: HTMLDivElement;
-
 describe('Ethereum', () => {
+    let container: HTMLDivElement;
     const testClickEvent = jest.fn();
     const cryptoCardId = 'test-crypto-card';
     const buttonId = 'test-button';
-    const chainNameId = 'test-chain-name';
+
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -32,20 +31,18 @@ describe('Ethereum', () => {
         container.remove();
     });
 
-    test('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${cryptoCardId}"]`,
-        );
-        expect(element).not.toBeNull();
+    test('on initial render the button is enabled', async () => {
+        render(<Ethereum />, container);
+        expect(await screen.findByTestId(buttonId)).toBeEnabled();
     });
 
-    test('triggers function on button click', async () => {
+    test('a function is triggered when the button is clicked', () => {
         const element = container.querySelector(`[data-testid="${buttonId}"]`);
         element && fireEvent.click(element);
         expect(testClickEvent).toHaveBeenCalled();
     });
 
-    test('checks the background color', () => {
+    test('the background color should be black', () => {
         const element = container.querySelector(
             `[data-testid="${cryptoCardId}"]`,
         );
@@ -55,24 +52,27 @@ describe('Ethereum', () => {
         expect(bgColorHex).toBe(color.black);
     });
 
-    test('checks the chain name', () => {
-        const element = container.querySelector(
-            `[data-testid="${chainNameId}"]`,
-        );
-        expect(element?.textContent).toEqual('Ethereum');
+    test('the chain name should be Ethereum', () => {
+        expect(screen.getByText('Ethereum')).toBeDefined();
     });
 
-    test('verifies the settings icon', async () => {
+    test('the chain name should be Binance', () => {
+        render(<Ethereum chain="Binance" />, container);
+        expect(screen.getByText('Binance')).toBeDefined();
+    });
+
+    test('verify settings icon', async () => {
         const element = await screen.findByTestId('test-icon');
         expect(element).toHaveTextContent('cog icon');
     });
 });
 
 describe('Binance', () => {
+    let container: HTMLDivElement;
     const testClickEvent = jest.fn();
     const cryptoCardId = 'test-crypto-card';
     const buttonId = 'test-button';
-    const chainNameId = 'test-chain-name';
+
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -87,20 +87,18 @@ describe('Binance', () => {
         container.remove();
     });
 
-    test('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${cryptoCardId}"]`,
-        );
-        expect(element).not.toBeNull();
+    test('on initial render the button is enabled', async () => {
+        render(<Binance />, container);
+        expect(await screen.findByTestId(buttonId)).toBeEnabled();
     });
 
-    test('triggers function on button click', async () => {
+    test('a function is triggered when the button is clicked', () => {
         const element = container.querySelector(`[data-testid="${buttonId}"]`);
         element && fireEvent.click(element);
         expect(testClickEvent).toHaveBeenCalled();
     });
 
-    test('checks the background color', () => {
+    test('the background color should be black', () => {
         const element = container.querySelector(
             `[data-testid="${cryptoCardId}"]`,
         );
@@ -110,24 +108,27 @@ describe('Binance', () => {
         expect(bgColorHex).toBe(color.black);
     });
 
-    test('checks the chain name', () => {
-        const element = container.querySelector(
-            `[data-testid="${chainNameId}"]`,
-        );
-        expect(element?.textContent).toEqual('Binance');
+    test('the chain name should be Binance', () => {
+        expect(screen.getByText('Binance')).toBeDefined();
     });
 
-    test('verifies the settings icon', async () => {
+    test('the chain name should be Ethereum', () => {
+        render(<Ethereum chain="Ethereum" />, container);
+        expect(screen.getByText('Ethereum')).toBeDefined();
+    });
+
+    test('verify settings icon', async () => {
         const element = await screen.findByTestId('test-icon');
         expect(element).toHaveTextContent('cog icon');
     });
 });
 
 describe('Polygon', () => {
+    let container: HTMLDivElement;
     const testClickEvent = jest.fn();
     const cryptoCardId = 'test-crypto-card';
     const buttonId = 'test-button';
-    const chainNameId = 'test-chain-name';
+
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -142,20 +143,18 @@ describe('Polygon', () => {
         container.remove();
     });
 
-    test('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${cryptoCardId}"]`,
-        );
-        expect(element).not.toBeNull();
+    test('on initial render the button is enabled', async () => {
+        render(<Polygon />, container);
+        expect(await screen.findByTestId(buttonId)).toBeEnabled();
     });
 
-    test('triggers function on button click', async () => {
+    test('a function is triggered when the button is clicked', () => {
         const element = container.querySelector(`[data-testid="${buttonId}"]`);
         element && fireEvent.click(element);
         expect(testClickEvent).toHaveBeenCalled();
     });
 
-    test('checks the background color', () => {
+    test('the background color should be black', () => {
         const element = container.querySelector(
             `[data-testid="${cryptoCardId}"]`,
         );
@@ -165,24 +164,27 @@ describe('Polygon', () => {
         expect(bgColorHex).toBe(color.black);
     });
 
-    test('checks the chain name', () => {
-        const element = container.querySelector(
-            `[data-testid="${chainNameId}"]`,
-        );
-        expect(element?.textContent).toEqual('Polygon');
+    test('the chain name should be Polygon', () => {
+        expect(screen.getByText('Polygon')).toBeDefined();
     });
 
-    test('verifies the settings icon', async () => {
+    test('the chain name should be Ethereum', () => {
+        render(<Ethereum chain="Ethereum" />, container);
+        expect(screen.getByText('Ethereum')).toBeDefined();
+    });
+
+    test('verify settings icon', async () => {
         const element = await screen.findByTestId('test-icon');
         expect(element).toHaveTextContent('cog icon');
     });
 });
 
 describe('Avalanche', () => {
+    let container: HTMLDivElement;
     const testClickEvent = jest.fn();
     const cryptoCardId = 'test-crypto-card';
     const buttonId = 'test-button';
-    const chainNameId = 'test-chain-name';
+
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -197,20 +199,18 @@ describe('Avalanche', () => {
         container.remove();
     });
 
-    test('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${cryptoCardId}"]`,
-        );
-        expect(element).not.toBeNull();
+    test('on initial render the button is enabled', async () => {
+        render(<Avalanche />, container);
+        expect(await screen.findByTestId(buttonId)).toBeEnabled();
     });
 
-    test('triggers function on button click', async () => {
+    test('a function is triggered when the button is clicked', () => {
         const element = container.querySelector(`[data-testid="${buttonId}"]`);
         element && fireEvent.click(element);
         expect(testClickEvent).toHaveBeenCalled();
     });
 
-    test('checks the background color', () => {
+    test('the background color should be black', () => {
         const element = container.querySelector(
             `[data-testid="${cryptoCardId}"]`,
         );
@@ -220,24 +220,27 @@ describe('Avalanche', () => {
         expect(bgColorHex).toBe(color.black);
     });
 
-    test('checks the chain name', () => {
-        const element = container.querySelector(
-            `[data-testid="${chainNameId}"]`,
-        );
-        expect(element?.textContent).toEqual('Avalanche');
+    test('the chain name should be Avalanche', () => {
+        expect(screen.getByText('Avalanche')).toBeDefined();
     });
 
-    test('verifies the settings icon', async () => {
+    test('the chain name should be Ethereum', () => {
+        render(<Ethereum chain="Ethereum" />, container);
+        expect(screen.getByText('Ethereum')).toBeDefined();
+    });
+
+    test('verify settings icon', async () => {
         const element = await screen.findByTestId('test-icon');
         expect(element).toHaveTextContent('cog icon');
     });
 });
 
 describe('Fantom', () => {
+    let container: HTMLDivElement;
     const testClickEvent = jest.fn();
     const cryptoCardId = 'test-crypto-card';
     const buttonId = 'test-button';
-    const chainNameId = 'test-chain-name';
+
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -252,20 +255,18 @@ describe('Fantom', () => {
         container.remove();
     });
 
-    test('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${cryptoCardId}"]`,
-        );
-        expect(element).not.toBeNull();
+    test('on initial render the button is enabled', async () => {
+        render(<Fantom />, container);
+        expect(await screen.findByTestId(buttonId)).toBeEnabled();
     });
 
-    test('triggers function on button click', async () => {
+    test('a function is triggered when the button is clicked', () => {
         const element = container.querySelector(`[data-testid="${buttonId}"]`);
         element && fireEvent.click(element);
         expect(testClickEvent).toHaveBeenCalled();
     });
 
-    test('checks the background color', () => {
+    test('the background color should be black', () => {
         const element = container.querySelector(
             `[data-testid="${cryptoCardId}"]`,
         );
@@ -275,24 +276,27 @@ describe('Fantom', () => {
         expect(bgColorHex).toBe(color.black);
     });
 
-    test('checks the chain name', () => {
-        const element = container.querySelector(
-            `[data-testid="${chainNameId}"]`,
-        );
-        expect(element?.textContent).toEqual('Fantom');
+    test('the chain name should be Fantom', () => {
+        expect(screen.getByText('Fantom')).toBeDefined();
     });
 
-    test('verifies the settings icon', async () => {
+    test('the chain name should be Ethereum', () => {
+        render(<Ethereum chain="Ethereum" />, container);
+        expect(screen.getByText('Ethereum')).toBeDefined();
+    });
+
+    test('verify settings icon', async () => {
         const element = await screen.findByTestId('test-icon');
         expect(element).toHaveTextContent('cog icon');
     });
 });
 
 describe('Arbitrum', () => {
+    let container: HTMLDivElement;
     const testClickEvent = jest.fn();
     const cryptoCardId = 'test-crypto-card';
     const buttonId = 'test-button';
-    const chainNameId = 'test-chain-name';
+
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -307,20 +311,18 @@ describe('Arbitrum', () => {
         container.remove();
     });
 
-    test('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${cryptoCardId}"]`,
-        );
-        expect(element).not.toBeNull();
+    test('on initial render the button is enabled', async () => {
+        render(<Arbitrum />, container);
+        expect(await screen.findByTestId(buttonId)).toBeEnabled();
     });
 
-    test('triggers function on button click', async () => {
+    test('a function is triggered when the button is clicked', () => {
         const element = container.querySelector(`[data-testid="${buttonId}"]`);
         element && fireEvent.click(element);
         expect(testClickEvent).toHaveBeenCalled();
     });
 
-    test('checks the background color', () => {
+    test('the background color should be black', () => {
         const element = container.querySelector(
             `[data-testid="${cryptoCardId}"]`,
         );
@@ -330,14 +332,16 @@ describe('Arbitrum', () => {
         expect(bgColorHex).toBe(color.black);
     });
 
-    test('checks the chain name', () => {
-        const element = container.querySelector(
-            `[data-testid="${chainNameId}"]`,
-        );
-        expect(element?.textContent).toEqual('Arbitrum');
+    test('the chain name should be Arbitrum', () => {
+        expect(screen.getByText('Arbitrum')).toBeDefined();
     });
 
-    test('verifies the settings icon', async () => {
+    test('the chain name should be Ethereum', () => {
+        render(<Ethereum chain="Ethereum" />, container);
+        expect(screen.getByText('Ethereum')).toBeDefined();
+    });
+
+    test('verify settings icon', async () => {
         const element = await screen.findByTestId('test-icon');
         expect(element).toHaveTextContent('cog icon');
     });

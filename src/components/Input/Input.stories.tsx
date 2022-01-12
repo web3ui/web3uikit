@@ -238,4 +238,4 @@ PrefixCopyableHidableDisabled.args = {
     prefix: <Icon svg={iconTypes.server} />,
     state: 'disabled',
     type: 'text',
-}
+};

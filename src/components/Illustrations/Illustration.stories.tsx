@@ -1,6 +1,5 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { themes } from '@storybook/theming';
 import Illustration from './Illustration';
 
 export default {

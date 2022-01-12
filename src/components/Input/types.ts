@@ -62,10 +62,10 @@ export interface InputProps {
     /**
      * shows the hide icon when is true
      */
-    hideable?: boolean;
+    hidable?: boolean;
 
     /**
-     *  width of input
+     * imput width
      */
 
     width?: string;

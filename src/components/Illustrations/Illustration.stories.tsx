@@ -4,40 +4,40 @@ import { themes } from '@storybook/theming';
 import Illustration from './Illustration';
 
 export default {
-    title: 'UI/Illustration',
-    component: Illustration,
+  title: 'UI/Illustration',
+  component: Illustration,
 } as ComponentMeta<typeof Illustration>;
 
 const Template: ComponentStory<typeof Illustration> = (args) => (
-    <Illustration {...args} />
+  <Illustration {...args} />
 );
 
 export const Ethereum = Template.bind({});
 Ethereum.args = {
-    logo: 'ethereum',
+  logo: 'ethereum',
 };
 
 export const Binance = Template.bind({});
 Binance.args = {
-    logo: 'binance',
+  logo: 'binance',
 };
 
 export const Polygon = Template.bind({});
 Polygon.args = {
-    logo: 'polygon',
+  logo: 'polygon',
 };
 
 export const Avalanche = Template.bind({});
 Avalanche.args = {
-    logo: 'avalanche',
+  logo: 'avalanche',
 };
 
 export const Fantom = Template.bind({});
 Fantom.args = {
-    logo: 'fantom',
+  logo: 'fantom',
 };
 
 export const Arbitrum = Template.bind({});
 Arbitrum.args = {
-    logo: 'arbitrum',
+  logo: 'arbitrum',
 };

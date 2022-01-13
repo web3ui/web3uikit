@@ -1,20 +1,15 @@
 import React from "react";
-import { useActiveTab } from "./hooks";
+import { useTabPanel } from "../app";
 import { PanelContainer } from './TabPanel.styles';
-
-export type TabPanelProps = {
-  name: string;
-};
+import { TabPanelProps } from './types';
 
 export const TabPanel: React.FC<TabPanelProps> = (props) => {
   const { children, name } = props;
-  const isActive = useActiveTab(name);
+  const { isActive, ...attrs} = useTabPanel(name);
 
   return !isActive ? null : (
-    <PanelContainer role="tabpanel">
+    <PanelContainer {...attrs}>
       {children}
     </PanelContainer>
   )
 };
-
-TabPanel.displayName = "TabPanel";

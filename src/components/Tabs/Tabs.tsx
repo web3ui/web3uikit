@@ -1,8 +1,11 @@
 import React from "react";
-import { TabsProvider } from "./TabsProvider";
-import { TabPanel, TabPanelProps } from "./TabPanel";
-import { Tab, TabProps } from "./Tab";
-import { TabList, TabListProps } from "./TabList";
+import { TabsProvider } from "./app";
+import { TabPanel } from "./TabPanel";
+import type { TabPanelProps } from "./TabPanel";
+import { Tab } from "./Tab";
+import type { TabProps } from "./Tab";
+import { TabList } from "./TabList";
+import type { TabListProps } from "./TabList";
 import { TabsContainer } from './Tabs.styles';
 
 export type TabsComposition = {
@@ -27,7 +30,6 @@ export const Tabs: React.FC<TabsProps> & TabsComposition = (props) => {
   );
 };
 
-Tabs.displayName = "Tabs";
 Tabs.Tab = Tab;
 Tabs.Panel = TabPanel;
 Tabs.TabList = TabList;

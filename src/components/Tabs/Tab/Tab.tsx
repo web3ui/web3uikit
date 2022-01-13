@@ -1,35 +1,32 @@
 import React from "react";
-import { useActiveTab, useSetActiveTab } from "./hooks";
+import { useTab } from "../app";
 import { StyledTab } from "./Tab.styles";
-
-export type TabProps = {
-  name: string;
-  className?: string;
-  disable?: boolean;
-};
+import { TabProps } from './types';
 
 export const Tab: React.FC<TabProps> = (props) => {
   const {
     name,
     disable = false,
-    className,
+    className = '',
     children
   } = props;
 
-  const isActive = useActiveTab(name);
-  const setActiveTab = useSetActiveTab(name);
+  const {
+    isActive,
+    activate,
+    ...attrs
+  } = useTab(name);
 
   return (
     <StyledTab
       className={className}
       isActive={isActive}
       disable={disable}
-      onClick={setActiveTab}
-      role="tab"
+      onClick={activate}
+
+      {...attrs}
     >
       {children}
     </StyledTab>
   );
 }
-
-Tab.displayName = "Tab";

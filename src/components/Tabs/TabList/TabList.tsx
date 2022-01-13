@@ -1,19 +1,16 @@
 import React from "react";
 import { StyledTabList } from './TabList.styles';
-import type { TabProps } from './Tab';
-
-export type TabListProps = {
-    children: React.ReactElement<TabProps>[];
-}
+import { TabListProps } from './types';
 
 export const TabList: React.FC<TabListProps> = (props) => {
     const { children } = props;
 
     return (
-        <StyledTabList role="tablist">
+        <StyledTabList 
+            role="tablist"
+            aria-orientation="horizontal"
+        >
             {children}
         </StyledTabList>
     )
 }
-
-TabList.displayName = "TabList";

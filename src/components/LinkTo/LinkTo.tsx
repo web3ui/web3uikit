@@ -24,13 +24,13 @@ const LinkTo: React.FC<LinkToProps> = ({
         font={font}
     >
         <FlexSpanStyled iconLayout={iconLayout} data-testid="test-link-flex">
-            {hasIcon === true ? (
+            {hasIcon && (
                 <Icon
                     svg={type === 'email' ? iconTypes.mail : iconTypes.link}
                     fill={color.blue}
                     size={14}
                 />
-            ) : undefined}
+            )}
 
             <span data-testid="test-link-text">{text || address}</span>
         </FlexSpanStyled>

@@ -5,6 +5,11 @@ export interface ServerInfoProps {
     id?: string;
 
     /**
+     * set if server can be revived
+     */
+    canRevive?: boolean;
+
+    /**
      * set how much data is used by server in megabytes
      */
     dataUsed: string;
@@ -48,6 +53,11 @@ export interface ServerInfoProps {
      * server restart function
      */
     onRestart: () => void;
+
+    /**
+     * revive function
+     */
+    onRevive: () => void;
 
     /**
      * server update function

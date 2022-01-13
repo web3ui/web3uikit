@@ -1,24 +1,25 @@
 import {ServerInfoProps} from "./types";
 import React, {useState} from "react";
 import {
+    Divider,
+    Flex,
     NetworkName,
     ServerContainer,
     ServerFooter,
     ServerInfoWrapper,
     ServerName,
     ServerRow,
-    WidgetRow
 } from "./ServerInfo.styles";
 import {Tag} from "../Tag";
 import {Icon} from "../Icon";
 import {iconTypes} from "../Icon/collection";
 import {Button} from "../Button";
-import colors from "../../styles/colors";
 import {Widget} from "../Widget";
 
 const ServerInfo: React.FC<ServerInfoProps> = ({
     id,
     isSleeping,
+    canRevive,
     dataUsed,
     name,
     network,
@@ -27,6 +28,7 @@ const ServerInfo: React.FC<ServerInfoProps> = ({
     onDatabase,
     onDelete,
     onRestart,
+    onRevive,
     onSettings,
     onUpdate,
     onWakeUp,
@@ -37,44 +39,51 @@ const ServerInfo: React.FC<ServerInfoProps> = ({
         <ServerInfoWrapper
         id={id}
         >
-            <ServerRow >
-                <div style={{display: 'flex', alignItems: 'center', gap: "15px"}}>
+            <ServerRow canRevive={canRevive}>
+                <Flex>
                     <ServerName>
                         {name}
                     </ServerName>
-                    <Tag text={version} color="gray"/>
-                    <div style={{display: 'flex', alignItems: 'center', gap: '5px'}}>
+                    <Tag text={version} color="grey"/>
+                    <Flex >
                         <Icon svg={iconTypes.cube} fill="black" size={16}/>
                         <NetworkName >
                             {network}
                         </NetworkName>
-                    </div>
-                </div>
+                    </Flex>
+                </Flex>
 
-                <div style={{display: 'flex', alignItems: 'center', gap: "15px"}}>
-                    {!isSleeping &&
+                <Flex >
+                    {(!isSleeping && !canRevive) &&
                         <>
                             <Button onClick={onDapp} text={"View dApp"} theme="outline"/>
                             <Button onClick={onSettings} text={"Settings"} theme="outline" />
                         </>
                     }
-                    <Button onClick={!isSleeping ? () => setCollapsed(!isCollapsed) : onWakeUp} icon={!isSleeping ? (isCollapsed ? iconTypes.chevron_up : iconTypes.chevron_down) : iconTypes.reload} iconLayout={!isSleeping ? "icon-only" : "leading"} text={isSleeping ? "Wake up Server" : ``} color={"yellow"} />
-                </div>
+                    <Button
+                        onClick={isSleeping ? onWakeUp : canRevive ? onRevive : () => setCollapsed(!isCollapsed)}
+                        icon={isSleeping ? iconTypes.reload : canRevive ? iconTypes.pulse : (isCollapsed ? iconTypes.chevron_up : iconTypes.chevron_down) }
+                        iconLayout={(isSleeping || canRevive) ? "leading" : "icon-only"}
+                        text={isSleeping ? "Wake up Server" : canRevive ? "Revive Server" : ``}
+                        theme={(isSleeping || canRevive) ? "colored" : "outline"}
+                        color={isSleeping ? "yellow" : canRevive ? "green" : `blue`}
+                    />
+                </Flex>
             </ServerRow>
-            {isCollapsed && <div style={{width: "100%", height: "1px", background: colors.paleBlue2}} />}
+            {isCollapsed && <Divider />}
             { isCollapsed &&
                 <ServerContainer>
-                    <WidgetRow>
-                        <Widget description={String(network)} icon={iconTypes.network} iconLayout="leading" title={"Environment"} />
+                    <Flex>
+                        <Widget description={String(network)} icon={iconTypes.network} title={"Environment"} />
                         <Widget description={`${dataUsed} mb` || "0"} title={"Data used"} />
                         <Widget description={numOfUser || "0"} title={"Number of users"} />
-                    </WidgetRow>
+                    </Flex>
                     <ServerFooter>
-                        <div style={{display: 'flex', alignItems: 'center', gap: "15px"}}>
+                        <Flex>
                             <Button onClick={onDelete} icon={iconTypes.bin} iconLayout="icon-only" theme="outline" />
                             <Button onClick={onRestart} icon={iconTypes.reload} iconLayout="icon-only" theme="outline" />
                             <Button onClick={onUpdate} icon={iconTypes.update} color="green" text="Update & Restart" iconLayout="trailing" theme="outline" />
-                        </div>
+                        </Flex>
                         <Button onClick={onDatabase} text="Database" iconLayout="leading" icon={iconTypes.chart} theme="outline" />
                     </ServerFooter>
                 </ServerContainer>

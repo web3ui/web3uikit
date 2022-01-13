@@ -20,7 +20,7 @@ export const LinkStyled = styled.a<LinkStyleProps>`
     color: ${(p) => (p.font ? '' : color.blue)};
     display: inline-block;
     width: fit-content;
-    text-decoration: ${(p) => (p.hasUnderLine === false ? 'none' : undefined)};
+    text-decoration: ${(p) => (p.hasUnderLine === false ? 'none' : '')};
     &:hover {
         filter: brightness(${(p) => (!p.hasHoverEffect ? '' : 0.7)});
     }

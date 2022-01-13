@@ -1,5 +1,3 @@
-import { DefaultTheme, ThemedCssFunction } from 'styled-components';
-
 export const layoutState = ['leading', 'trailing'] as const;
 export type TLayoutState = typeof layoutState[number];
 

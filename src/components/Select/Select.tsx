@@ -6,34 +6,34 @@ import SelectStyles from './Select.styles';
 import type { SelectProps } from './types';
 
 const {
+    DropDownIcon,
     ErrorLabel,
-    SelectedItem,
-    SelectWrapper,
     LabelStyled,
     Option,
     Options,
     PrefixIcon,
-    DropDownIcon,
+    SelectedItem,
+    SelectWrapper,
 } = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
+    defaultOptionIndex,
     disabled = false,
     errorMessage = '',
     id = String(Date.now()),
     label,
-    onOptionChange,
-    placeholder = '',
+    onChange,
+    options = [],
     state = disabled ? 'disabled' : undefined,
     style,
     width = '200px',
-    options = [],
-    defaultOptionIndex,
 }: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOptionIndex, setSelectedOptionIndex] =
         useState(defaultOptionIndex);
 
     const toggling = (event: React.MouseEvent<HTMLDivElement>) => {
+        if (disabled) return;
         setIsOpen(!isOpen);
         event.stopPropagation();
     };
@@ -42,8 +42,8 @@ const Select: React.FC<SelectProps> = ({
         setSelectedOptionIndex(selectedIndex);
         setIsOpen(false);
 
-        if (onOptionChange) {
-            onOptionChange(options[selectedIndex]);
+        if (onChange) {
+            onChange(options[selectedIndex]);
         }
     };
 
@@ -60,25 +60,22 @@ const Select: React.FC<SelectProps> = ({
 
     return (
         <SelectWrapper
-            state={state}
-            // className={`input input_${currentValue.length > 0 ? 'filled' : 'empty'
-            //     }`}
             data-testid="test-div"
+            state={state}
             style={{ ...style, width }}
+            aria-label="select"
         >
             <SelectedItem
                 data-testid="test-input"
                 state={state}
-                // disabled={state == 'disabled'}
                 id={id}
-                placeholder={placeholder}
                 onClick={toggling}
-                // className={isOpen ? "actived" : ""}
+                aria-label="option-selected"
             >
                 {typeof selectedOptionIndex !== 'undefined' && (
                     <>
                         <PrefixIcon>
-                            {options[selectedOptionIndex]?.icon}
+                            {options[selectedOptionIndex]?.prefix}
                         </PrefixIcon>
                         {options[selectedOptionIndex]?.label}
                     </>
@@ -107,15 +104,16 @@ const Select: React.FC<SelectProps> = ({
                 </LabelStyled>
             )}
             {isOpen && (
-                <Options>
+                <Options aria-label="select-options">
                     {options.map(
                         (option, index) =>
                             index !== selectedOptionIndex && (
                                 <Option
                                     onClick={onOptionClicked(index)}
                                     key={option?.label}
+                                    aria-label="select-option"
                                 >
-                                    <PrefixIcon>{option?.icon}</PrefixIcon>
+                                    <PrefixIcon>{option?.prefix}</PrefixIcon>
                                     {option?.label}
                                 </Option>
                             ),

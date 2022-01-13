@@ -1,8 +1,8 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 
 export interface SelectProps {
     /**
-     * it is best to set a unique ID for each input to verify change events
+     * it is best to set a unique ID for each select component to verify change events
      */
     id?: string;
 
@@ -14,35 +14,15 @@ export interface SelectProps {
     /**
      * standard onChange that returns the entire event, as normal you can access event.target
      */
-    onChange: (event: React.ChangeEvent) => void;
+    onChange: (option: OptionProps) => void;
 
     /**
-     * a short piece of text to fill the input before the user interacts
-     */
-    placeholder?: string;
-
-    /**
-     * Icon prefix for the input field
-     */
-    prefix?: React.ReactNode;
-
-    /**
-     * types of input available
-     */
-    type?: 'text' | 'number' | 'email' | 'tel' | 'password';
-
-    /**
-     * you can pass a default value so the input is pre-filled
-     */
-    value?: string;
-
-    /**
-     * please give a descriptive name to the input, it help with accessibility
+     * please give a descriptive name to the select component, it help with accessibility
      */
     name?: string;
 
     /**
-     * the input can use state to react to user interaction
+     * the select component can use state to react to user interaction
      */
     state?: 'error' | 'confirmed' | 'disabled';
 
@@ -52,17 +32,7 @@ export interface SelectProps {
     style?: React.CSSProperties;
 
     /**
-     * hides the input text when is true
-     */
-    inputHidden?: boolean;
-
-    /**
-     * shows the hide icon when is true
-     */
-    hidable?: boolean;
-
-    /**
-     * imput width
+     * select component width
      */
 
     width?: string;
@@ -73,34 +43,49 @@ export interface SelectProps {
     errorMessage?: string;
 
     /**
-     * shows copy icon
-     */
-    copyable?: boolean;
-
-    /**
      * disables any interaction
      */
     disabled?: boolean;
 
+    /**
+     * array of options for select component
+     */
     options?: OptionProps[];
 
-    onOptionChange?: (option: OptionProps) => void;
+    /**
+     * index of selected option by default
+     */
     defaultOptionIndex?: number | undefined;
 }
 
 export interface OptionProps {
-    icon?: ReactNode;
-    label: string;
-    value: any;
+    /**
+     * prefix for option text. cane be icon, picture, text etc.
+     */
+
+    prefix?: React.ReactNode;
+    /**
+     * label
+     */
+
+    label: string | number;
+
+    /**
+     * id of option. should be unique
+     */
+    id: string | number;
 }
 
 export interface LabelProps {
     /**
-     * true if the defauktIndex is defined
+     * true if the default index is defined
      */
     hasSelectedIndex: boolean;
 }
 
 export interface SelectedItemProps {
+    /**
+     * duplicate of state
+     */
     state?: 'error' | 'confirmed' | 'disabled';
 }

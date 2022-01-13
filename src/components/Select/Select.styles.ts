@@ -21,7 +21,6 @@ export const LabelStyled = styled.label<LabelProps>`
     pointer-events: none;
     position: absolute;
     padding: 0 4px;
-    /* top: -12px; */
     transition: all 0.1s ease-out;
     ${({ hasSelectedIndex }) =>
         hasSelectedIndex ? `top: -12px; font-size: 14px;` : `top: 20px;`};

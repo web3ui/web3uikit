@@ -1,3 +1,5 @@
+import { DefaultTheme, ThemedCssFunction } from 'styled-components';
+
 export const layoutState = ['leading', 'trailing'] as const;
 export type TLayoutState = typeof layoutState[number];
 
@@ -19,6 +21,26 @@ export interface LinkToProps {
      * set to an email link or a link to another website
      */
     type: TTypeState;
+
+    /**
+     * whether or not the icon is present
+     */
+    hasIcon?: boolean;
+
+    /**
+     * whether or not the link has underline
+     */
+    hasUnderLine?: boolean;
+
+    /**
+     * whether or not the link should react on hover
+     */
+    hasHoverEffect?: boolean;
+
+    /**
+     * a styled css that specify the font to use for the link
+     */
+    font?: any;
 
     /**
      * set the position of the icon, or icon only

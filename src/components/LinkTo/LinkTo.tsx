@@ -10,18 +10,27 @@ const LinkTo: React.FC<LinkToProps> = ({
     text,
     type,
     iconLayout = 'leading',
+    hasIcon = true,
+    hasUnderLine = true,
+    hasHoverEffect = true,
+    font,
 }) => (
     <LinkStyled
         data-testid="test-link-to"
         href={`${type === 'email' ? 'mailto:' : ''}${address}`}
         target={`${type === 'email' ? '_self' : '_blank'}`}
+        hasUnderLine={hasUnderLine}
+        hasHoverEffect={hasHoverEffect}
+        font={font}
     >
         <FlexSpanStyled iconLayout={iconLayout} data-testid="test-link-flex">
-            <Icon
-                svg={type === 'email' ? iconTypes.mail : iconTypes.link}
-                fill={color.blue}
-                size={14}
-            />
+            {hasIcon === true ? (
+                <Icon
+                    svg={type === 'email' ? iconTypes.mail : iconTypes.link}
+                    fill={color.blue}
+                    size={14}
+                />
+            ) : undefined}
 
             <span data-testid="test-link-text">{text || address}</span>
         </FlexSpanStyled>

@@ -8,17 +8,21 @@ import type { LinkToProps } from './types';
 
 // styles
 type TStyleProps = Pick<LinkToProps, 'iconLayout'>;
+type LinkStyleProps = Pick<
+    LinkToProps,
+    'font' | 'hasUnderLine' | 'hasHoverEffect'
+>;
 
-export const LinkStyled = styled.a`
+export const LinkStyled = styled.a<LinkStyleProps>`
     ${resetCSS}
-    ${fonts.text}
+    ${(p) => (p.font ? p.font : fonts.text)};
     align-items: center;
-    color: ${color.blue};
+    color: ${(p) => (p.font ? '' : color.blue)};
     display: inline-block;
     width: fit-content;
-
+    text-decoration: ${(p) => (p.hasUnderLine === false ? 'none' : undefined)};
     &:hover {
-        filter: brightness(0.7);
+        filter: brightness(${(p) => (!p.hasHoverEffect ? '' : 0.7)});
     }
 `;
 

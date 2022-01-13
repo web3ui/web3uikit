@@ -27,7 +27,7 @@ describe('LinkTo - External', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<ExternalLink />, container);
+        ReactDOM.render(<ExternalLink hasIcon={true} />, container);
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -95,7 +95,7 @@ describe('LinkTo - External Icon After', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<ExternalLinkIconAfter />, container);
+        ReactDOM.render(<ExternalLinkIconAfter hasIcon={true} />, container);
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -168,7 +168,7 @@ describe('LinkTo - Email', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<MailToLink />, container);
+        ReactDOM.render(<MailToLink hasIcon={true} />, container);
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -233,7 +233,7 @@ describe('LinkTo - External Icon After', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<MailToLinkIconAfter />, container);
+        ReactDOM.render(<MailToLinkIconAfter hasIcon={true} />, container);
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -298,7 +298,7 @@ describe('LinkTo - No text set for link', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<LinkWithOutText />, container);
+        ReactDOM.render(<LinkWithOutText hasIcon={true} />, container);
     });
     afterEach(() => {
         document.body.removeChild(container);

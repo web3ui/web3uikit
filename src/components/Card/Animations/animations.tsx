@@ -1,17 +1,8 @@
-import React from 'react';
+import React from 'react'
 
-const getModuleAnimation = (
-    module:
-        | 'Token'
-        | 'NFT Marketplace'
-        | 'NFT Collection'
-        | 'Bundle'
-        | 'Lazy NFT'
-        | 'Pack'
-        | undefined,
-) => {
+const getModuleAnimation = (module: "Token" | "NFT Marketplace" | "NFT Collection" | "Bundle" | "Lazy NFT" | "Pack" | undefined) => {
     switch (module) {
-        case 'Token':
+        case "Token":
             return (
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -146,7 +137,7 @@ const getModuleAnimation = (
                         fill="url(#pattern1)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         opacity="0.4"
                         d="M135.152 142.052C135.389 137.086 131.552 132.869 126.581 132.632C121.61 132.395 117.388 136.229 117.151 141.195C116.914 146.161 120.751 150.378 125.722 150.615C130.693 150.852 134.915 147.018 135.152 142.052Z"
                         fill="url(#paint19_radial_10065_65303)"
@@ -156,7 +147,7 @@ const getModuleAnimation = (
                         fill="url(#paint20_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         opacity="0.4"
                         d="M149.444 155.549C149 154.783 148.338 154.165 147.542 153.776C146.747 153.386 145.853 153.241 144.975 153.359C144.097 153.477 143.273 153.853 142.609 154.439C141.945 155.025 141.47 155.795 141.244 156.651C141.019 157.507 141.052 158.411 141.341 159.248C141.631 160.084 142.162 160.817 142.868 161.352C143.574 161.886 144.423 162.2 145.308 162.252C146.193 162.304 147.073 162.093 147.837 161.645C148.344 161.35 148.788 160.959 149.143 160.493C149.498 160.027 149.758 159.496 149.907 158.93C150.056 158.363 150.092 157.773 150.013 157.193C149.933 156.613 149.74 156.054 149.444 155.549Z"
                         fill="url(#paint21_radial_10065_65303)"
@@ -167,7 +158,7 @@ const getModuleAnimation = (
                     />
                     <g opacity="0.5">
                         <path
-                            style={{ mixBlendMode: 'lighten' }}
+                            style={{ mixBlendMode: "lighten" }}
                             opacity="0.4"
                             d="M143.647 158.759C143.349 158.26 142.909 157.861 142.385 157.611C141.86 157.361 141.273 157.272 140.697 157.354C140.122 157.436 139.584 157.687 139.15 158.074C138.717 158.461 138.407 158.967 138.261 159.529C138.115 160.091 138.138 160.684 138.328 161.233C138.518 161.782 138.866 162.263 139.328 162.615C139.791 162.966 140.347 163.174 140.927 163.211C141.507 163.248 142.086 163.113 142.589 162.823C142.928 162.628 143.225 162.367 143.462 162.056C143.699 161.745 143.871 161.39 143.97 161.012C144.068 160.634 144.09 160.24 144.035 159.853C143.98 159.466 143.848 159.094 143.647 158.759V158.759Z"
                             fill="url(#paint23_radial_10065_65303)"
@@ -179,17 +170,17 @@ const getModuleAnimation = (
                         />
                     </g>
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         d="M139.579 156.889C139.333 156.478 138.935 156.179 138.471 156.057C138.007 155.936 137.513 156.001 137.097 156.239C136.893 156.361 136.714 156.521 136.572 156.711C136.43 156.902 136.326 157.118 136.268 157.348C136.209 157.578 136.197 157.818 136.231 158.053C136.265 158.288 136.345 158.514 136.466 158.718C136.582 158.925 136.739 159.107 136.926 159.253C137.114 159.398 137.329 159.504 137.559 159.565C137.789 159.626 138.028 159.64 138.263 159.606C138.498 159.572 138.724 159.491 138.928 159.368C139.134 159.249 139.314 159.09 139.458 158.9C139.603 158.711 139.708 158.494 139.769 158.264C139.829 158.034 139.843 157.794 139.811 157.558C139.778 157.322 139.699 157.095 139.579 156.889V156.889Z"
                         fill="url(#paint25_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         d="M138.419 157.519C138.382 157.455 138.332 157.4 138.272 157.356C138.212 157.311 138.144 157.28 138.072 157.263C138 157.246 137.925 157.243 137.852 157.256C137.779 157.269 137.709 157.296 137.646 157.337C137.583 157.372 137.528 157.42 137.484 157.478C137.44 157.536 137.408 157.602 137.391 157.673C137.374 157.743 137.371 157.816 137.384 157.888C137.396 157.96 137.423 158.028 137.463 158.088C137.499 158.151 137.547 158.206 137.605 158.251C137.662 158.295 137.727 158.328 137.797 158.347C137.867 158.365 137.94 158.37 138.012 158.361C138.084 158.351 138.153 158.328 138.216 158.292C138.345 158.215 138.438 158.092 138.476 157.947C138.514 157.803 138.494 157.649 138.419 157.519V157.519Z"
                         fill="url(#paint26_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         opacity="0.4"
                         d="M141.714 132.546C141.236 131.72 140.523 131.055 139.666 130.635C138.808 130.214 137.846 130.058 136.899 130.185C135.953 130.312 135.066 130.717 134.35 131.349C133.634 131.98 133.122 132.81 132.879 133.732C132.636 134.655 132.673 135.629 132.985 136.53C133.297 137.432 133.869 138.221 134.631 138.797C135.392 139.373 136.307 139.71 137.26 139.766C138.214 139.821 139.162 139.593 139.985 139.109C141.082 138.465 141.88 137.413 142.203 136.184C142.527 134.954 142.351 133.646 141.714 132.546V132.546Z"
                         fill="url(#paint27_radial_10065_65303)"
@@ -199,7 +190,7 @@ const getModuleAnimation = (
                         fill="url(#paint28_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         opacity="0.4"
                         d="M130.852 129.112C130.369 128.297 129.655 127.643 128.8 127.233C127.945 126.823 126.988 126.674 126.049 126.807C125.11 126.94 124.232 127.347 123.524 127.978C122.817 128.609 122.313 129.435 122.075 130.352C121.837 131.269 121.876 132.236 122.187 133.13C122.499 134.025 123.068 134.808 123.825 135.379C124.581 135.951 125.489 136.286 126.436 136.342C127.383 136.399 128.325 136.174 129.143 135.696C129.69 135.377 130.167 134.953 130.549 134.449C130.931 133.945 131.209 133.371 131.368 132.759C131.527 132.147 131.563 131.51 131.474 130.884C131.386 130.258 131.174 129.656 130.852 129.112V129.112Z"
                         fill="url(#paint29_radial_10065_65303)"
@@ -209,7 +200,7 @@ const getModuleAnimation = (
                         fill="url(#paint30_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         opacity="0.4"
                         d="M35.1093 155.65C41.2205 155.65 46.1746 150.701 46.1746 144.596C46.1746 138.491 41.2205 133.542 35.1093 133.542C28.9981 133.542 24.0439 138.491 24.0439 144.596C24.0439 150.701 28.9981 155.65 35.1093 155.65Z"
                         fill="url(#paint31_radial_10065_65303)"
@@ -219,48 +210,48 @@ const getModuleAnimation = (
                         fill="url(#paint32_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         opacity="0.4"
                         d="M48.8827 177.118C51.223 174.304 50.8366 170.127 48.0197 167.789C45.2028 165.451 41.0221 165.837 38.6818 168.651C36.3415 171.465 36.7279 175.642 39.5448 177.98C42.3617 180.318 46.5424 179.932 48.8827 177.118Z"
                         fill="url(#paint33_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         d="M56.8934 147.278C56.729 146.945 56.4979 146.649 56.2142 146.41C55.9306 146.17 55.6006 145.991 55.2448 145.885C54.889 145.778 54.515 145.746 54.1461 145.79C53.7772 145.834 53.4214 145.953 53.1007 146.141C52.7801 146.328 52.5015 146.579 52.2824 146.879C52.0633 147.179 51.9083 147.52 51.8271 147.882C51.7459 148.245 51.7403 148.62 51.8105 148.984C51.8807 149.348 52.0254 149.695 52.2353 150.001C52.3996 150.334 52.6308 150.629 52.9145 150.869C53.1981 151.108 53.5281 151.287 53.8839 151.394C54.2397 151.501 54.6137 151.533 54.9826 151.489C55.3515 151.445 55.7073 151.325 56.028 151.138C56.3486 150.951 56.6272 150.699 56.8463 150.399C57.0654 150.1 57.2204 149.758 57.3016 149.396C57.3828 149.034 57.3884 148.659 57.3182 148.294C57.248 147.93 57.1033 147.584 56.8934 147.278Z"
                         fill="url(#paint34_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         d="M55.2873 148.213C55.1733 148.025 54.9897 147.89 54.7764 147.836C54.5631 147.783 54.3373 147.816 54.1482 147.928C54.0514 147.981 53.9662 148.053 53.898 148.139C53.8298 148.226 53.7799 148.325 53.7513 148.432C53.7228 148.538 53.7162 148.649 53.732 148.759C53.7478 148.868 53.7856 148.972 53.8431 149.066C53.9537 149.258 54.1359 149.397 54.3495 149.454C54.5631 149.511 54.7907 149.482 54.9822 149.371C55.1751 149.257 55.3152 149.071 55.3723 148.854C55.4294 148.638 55.3989 148.407 55.2873 148.213Z"
                         fill="url(#paint35_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         d="M55.3482 139.394C54.9679 138.746 54.4039 138.225 53.7272 137.897C53.0506 137.568 52.2918 137.448 51.5468 137.551C50.8017 137.653 50.1039 137.974 49.5414 138.473C48.9789 138.972 48.5771 139.626 48.3866 140.353C48.1962 141.08 48.2258 141.847 48.4715 142.557C48.7173 143.267 49.1683 143.888 49.7675 144.342C50.3667 144.796 51.0872 145.063 51.838 145.108C52.5887 145.153 53.336 144.975 53.9853 144.596C54.419 144.346 54.7987 144.012 55.1023 143.615C55.406 143.217 55.6276 142.763 55.7544 142.279C55.8812 141.795 55.9105 141.291 55.8408 140.796C55.7711 140.301 55.6036 139.824 55.3482 139.394V139.394Z"
                         fill="url(#paint36_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         d="M53.0695 140.714C52.9937 140.579 52.8915 140.461 52.769 140.366C52.6465 140.271 52.5062 140.202 52.3563 140.162C52.2065 140.122 52.0502 140.113 51.8967 140.134C51.7432 140.156 51.5956 140.208 51.4626 140.288C51.3291 140.366 51.2124 140.471 51.1191 140.594C51.0259 140.718 50.958 140.859 50.9192 141.009C50.8805 141.159 50.8718 141.315 50.8934 141.469C50.9151 141.622 50.9669 141.77 51.0457 141.903C51.1245 142.037 51.2288 142.153 51.3527 142.246C51.4766 142.339 51.6177 142.407 51.7678 142.446C51.918 142.485 52.0743 142.493 52.2279 142.472C52.3814 142.45 52.5292 142.398 52.6627 142.32C52.7962 142.242 52.9129 142.139 53.0059 142.016C53.0988 141.893 53.1662 141.752 53.2041 141.603C53.242 141.453 53.2496 141.297 53.2265 141.145C53.2034 140.992 53.15 140.846 53.0695 140.714Z"
                         fill="url(#paint37_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         d="M52.3173 147.461C52.1495 147.155 51.8939 146.907 51.5835 146.747C51.2731 146.588 50.9221 146.525 50.5755 146.566C50.229 146.608 49.9028 146.752 49.6388 146.98C49.3749 147.208 49.1853 147.51 49.0945 147.846C49.0036 148.183 49.0157 148.539 49.1291 148.869C49.2424 149.199 49.452 149.487 49.7307 149.697C50.0095 149.907 50.3447 150.028 50.6933 150.046C51.0418 150.064 51.3878 149.978 51.6867 149.798C52.0734 149.565 52.355 149.192 52.4725 148.756C52.59 148.321 52.5344 147.856 52.3173 147.461V147.461Z"
                         fill="url(#paint38_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         d="M51.2798 148.07C51.2443 148.007 51.1961 147.952 51.1382 147.908C51.0803 147.864 51.014 147.832 50.9434 147.815C50.8728 147.798 50.7994 147.796 50.7278 147.808C50.6562 147.821 50.5879 147.848 50.5272 147.888C50.4644 147.921 50.4094 147.967 50.3656 148.023C50.3218 148.079 50.2903 148.144 50.273 148.213C50.2557 148.282 50.2532 148.353 50.2654 148.423C50.2777 148.493 50.3045 148.56 50.3442 148.619C50.378 148.681 50.4241 148.736 50.4796 148.78C50.5351 148.824 50.5989 148.857 50.6672 148.876C50.7355 148.895 50.8069 148.9 50.8772 148.891C50.9475 148.881 51.0153 148.858 51.0764 148.822C51.1997 148.746 51.2893 148.626 51.3271 148.487C51.3649 148.347 51.348 148.198 51.2798 148.07V148.07Z"
                         fill="url(#paint39_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         d="M71.4577 140.674C71.3415 140.475 71.1872 140.301 71.0037 140.162C70.8202 140.023 70.611 139.921 70.3882 139.863C70.1653 139.804 69.933 139.79 69.7047 139.821C69.4764 139.852 69.2565 139.928 69.0575 140.044C68.8585 140.16 68.6843 140.315 68.5449 140.498C68.4055 140.681 68.3036 140.89 68.2451 141.113C68.1865 141.335 68.1725 141.567 68.2037 141.795C68.2349 142.024 68.3107 142.243 68.4269 142.442C68.5406 142.643 68.6936 142.82 68.8768 142.961C69.06 143.102 69.2698 143.206 69.4936 143.264C69.7175 143.323 69.9508 143.336 70.1799 143.303C70.4089 143.27 70.629 143.192 70.8271 143.072C71.0266 142.956 71.2013 142.803 71.3411 142.619C71.4809 142.436 71.5831 142.227 71.6417 142.004C71.7003 141.781 71.7142 141.549 71.6826 141.321C71.651 141.093 71.5746 140.873 71.4577 140.674Z"
                         fill="url(#paint40_radial_10065_65303)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         d="M70.4204 141.284C70.3446 141.16 70.2229 141.071 70.0819 141.037C69.9409 141.003 69.792 141.026 69.6678 141.101C69.6051 141.134 69.55 141.18 69.5062 141.236C69.4624 141.292 69.4309 141.357 69.4136 141.426C69.3964 141.495 69.3938 141.567 69.406 141.637C69.4183 141.707 69.4451 141.773 69.4848 141.832C69.5187 141.894 69.5647 141.949 69.6202 141.993C69.6757 142.037 69.7395 142.07 69.8078 142.089C69.8761 142.108 69.9475 142.113 70.0179 142.104C70.0882 142.095 70.1559 142.071 70.217 142.035C70.3403 141.959 70.4299 141.839 70.4677 141.7C70.5055 141.56 70.4886 141.411 70.4204 141.284V141.284Z"
                         fill="url(#paint41_radial_10065_65303)"
                     />
@@ -368,10 +359,7 @@ const getModuleAnimation = (
                             width="1"
                             height="1"
                         >
-                            <use
-                                xlinkHref="#image0_10065_65303"
-                                transform="scale(0.5 0.333333)"
-                            />
+                            <use xlinkHref="#image0_10065_65303" transform="scale(0.5 0.333333)" />
                         </pattern>
                         <pattern
                             id="pattern1"
@@ -379,10 +367,7 @@ const getModuleAnimation = (
                             width="1"
                             height="1"
                         >
-                            <use
-                                xlinkHref="#image0_10065_65303"
-                                transform="scale(0.5 0.333333)"
-                            />
+                            <use xlinkHref="#image0_10065_65303" transform="scale(0.5 0.333333)" />
                         </pattern>
                         <radialGradient
                             id="paint0_radial_10065_65303"
@@ -393,16 +378,8 @@ const getModuleAnimation = (
                             gradientTransform="translate(151.461 143.646) rotate(-30.1781) scale(7.78029 7.77643)"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint1_linear_10065_65303"
@@ -414,16 +391,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="0.82"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.82" stopColor="#42E8E0" stopOpacity="0.25" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint2_linear_10065_65303"
@@ -434,11 +403,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -451,11 +416,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -468,11 +429,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -485,11 +442,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -502,11 +455,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -519,11 +468,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -536,11 +481,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -553,11 +494,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -656,11 +593,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -673,11 +606,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -690,11 +619,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -1014,16 +939,8 @@ const getModuleAnimation = (
                             gradientTransform="translate(1501.82 722.567) scale(59.0533 58.994)"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint43_linear_10065_65303"
@@ -1035,16 +952,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="0.82"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.82" stopColor="#42E8E0" stopOpacity="0.25" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <radialGradient
                             id="paint44_radial_10065_65303"
@@ -1055,16 +964,8 @@ const getModuleAnimation = (
                             gradientTransform="translate(13716.8 32566.7) rotate(-30.178) scale(59.2858 59.2563)"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint45_linear_10065_65303"
@@ -1076,16 +977,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="0.82"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.82" stopColor="#42E8E0" stopOpacity="0.25" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <radialGradient
                             id="paint46_radial_10065_65303"
@@ -1096,16 +989,8 @@ const getModuleAnimation = (
                             gradientTransform="translate(45847 18066.6) rotate(180) scale(59.0533 58.9939)"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint47_linear_10065_65303"
@@ -1117,16 +1002,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="0.82"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.82" stopColor="#42E8E0" stopOpacity="0.25" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <radialGradient
                             id="paint48_radial_10065_65303"
@@ -1137,16 +1014,8 @@ const getModuleAnimation = (
                             gradientTransform="translate(33816.9 -13545.8) rotate(149.822) scale(59.2858 59.2564)"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint49_linear_10065_65303"
@@ -1158,16 +1027,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="0.82"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.82" stopColor="#42E8E0" stopOpacity="0.25" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint50_linear_10065_65303"
@@ -1277,11 +1138,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#43E8E1" />
-                            <stop
-                                offset="1"
-                                stopColor="#2A54D3"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#2A54D3" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint59_linear_10065_65303"
@@ -1304,7 +1161,7 @@ const getModuleAnimation = (
                     </defs>
                 </svg>
             );
-        case 'NFT Marketplace':
+        case "NFT Marketplace":
             return (
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -2175,16 +2032,8 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#D6FAF8" stopOpacity="0" />
-                            <stop
-                                offset="0.16"
-                                stopColor="#C1E9EF"
-                                stopOpacity="0.13"
-                            />
-                            <stop
-                                offset="0.51"
-                                stopColor="#8CBED7"
-                                stopOpacity="0.47"
-                            />
+                            <stop offset="0.16" stopColor="#C1E9EF" stopOpacity="0.13" />
+                            <stop offset="0.51" stopColor="#8CBED7" stopOpacity="0.47" />
                             <stop offset="1" stopColor="#3879B2" />
                         </linearGradient>
                         <radialGradient
@@ -2196,11 +2045,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(87.714 135.652) rotate(-0.572363) scale(76.9516 69.1723)"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="white"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="white" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint4_linear_10065_65300"
@@ -2210,21 +2055,9 @@ const getModuleAnimation = (
                             y2="116.717"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop
-                                offset="0.01"
-                                stopColor="#BAE3EB"
-                                stopOpacity="0.18"
-                            />
-                            <stop
-                                offset="0.36"
-                                stopColor="#A4D1E2"
-                                stopOpacity="0.32"
-                            />
-                            <stop
-                                offset="0.99"
-                                stopColor="#80B4D2"
-                                stopOpacity="0.55"
-                            />
+                            <stop offset="0.01" stopColor="#BAE3EB" stopOpacity="0.18" />
+                            <stop offset="0.36" stopColor="#A4D1E2" stopOpacity="0.32" />
+                            <stop offset="0.99" stopColor="#80B4D2" stopOpacity="0.55" />
                         </linearGradient>
                         <linearGradient
                             id="paint5_linear_10065_65300"
@@ -2368,21 +2201,9 @@ const getModuleAnimation = (
                             y2="184.554"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop
-                                offset="0.01"
-                                stopColor="#BAE3EB"
-                                stopOpacity="0.18"
-                            />
-                            <stop
-                                offset="0.36"
-                                stopColor="#A4D1E2"
-                                stopOpacity="0.32"
-                            />
-                            <stop
-                                offset="0.99"
-                                stopColor="#80B4D2"
-                                stopOpacity="0.55"
-                            />
+                            <stop offset="0.01" stopColor="#BAE3EB" stopOpacity="0.18" />
+                            <stop offset="0.36" stopColor="#A4D1E2" stopOpacity="0.32" />
+                            <stop offset="0.99" stopColor="#80B4D2" stopOpacity="0.55" />
                         </linearGradient>
                         <radialGradient
                             id="paint17_radial_10065_65300"
@@ -2393,11 +2214,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(101.095 164.292) rotate(-4.50548) scale(53.485 39.0053)"
                         >
                             <stop stopColor="#3CD1A9" stopOpacity="0.6" />
-                            <stop
-                                offset="0.01"
-                                stopColor="#3ED1AA"
-                                stopOpacity="0.61"
-                            />
+                            <stop offset="0.01" stopColor="#3ED1AA" stopOpacity="0.61" />
                             <stop offset="1" stopColor="#D4E8E6" />
                         </radialGradient>
                         <linearGradient
@@ -2629,11 +2446,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(152.132 139.083) rotate(1.36256) scale(42.9312 20.0571)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.833401" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2658,11 +2471,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(4185.64 1485.57) scale(1451.8 711.576)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2675,11 +2484,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(149.278 139.612) rotate(1.42167) scale(42.4225 20.6786)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.833401" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2692,11 +2497,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(1748.13 1281.31) scale(146.913 146.264)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2721,11 +2522,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(1748.13 1281.31) scale(146.913 146.264)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2750,11 +2547,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(1642.35 1300.7) scale(177.571 189.231)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2767,11 +2560,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(174.427 168.043) rotate(3.08868) scale(12.4255 13.1385)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.833401" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2784,11 +2573,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(923.772 825.135) scale(41.1302 40.5925)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2813,11 +2598,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(923.772 825.135) scale(41.1302 40.5925)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2842,11 +2623,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(888.659 850.512) scale(49.899 52.9269)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2859,11 +2636,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(160.62 179.236) rotate(3.07428) scale(6.59457 6.94063)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.833401" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2876,11 +2649,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(23.8344 106.068) scale(27.1208 27.0935)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2917,11 +2686,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(23.8344 106.068) scale(27.1208 27.0935)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -2988,7 +2753,7 @@ const getModuleAnimation = (
                     </defs>
                 </svg>
             );
-        case 'NFT Collection':
+        case "NFT Collection":
             return (
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -3093,7 +2858,7 @@ const getModuleAnimation = (
                         d="M80.2405 50.83L79.9805 65.95L80.9205 66.26L81.1905 50.52L80.2405 50.83Z"
                         fill="url(#paint13_linear_10004_52271)"
                     />
-                    <g style={{ mixBlendMode: 'multiply' }} opacity="0.3">
+                    <g style={{ mixBlendMode: "multiply" }} opacity="0.3">
                         <path
                             fillRule="evenodd"
                             clipRule="evenodd"
@@ -3162,7 +2927,7 @@ const getModuleAnimation = (
                         fill="url(#paint23_linear_10004_52271)"
                     />
                     <path
-                        style={{ mixBlendMode: 'multiply' }}
+                        style={{ mixBlendMode: "multiply" }}
                         opacity="0.65"
                         fillRule="evenodd"
                         clipRule="evenodd"
@@ -3170,7 +2935,7 @@ const getModuleAnimation = (
                         fill="url(#paint24_linear_10004_52271)"
                     />
                     <path
-                        style={{ mixBlendMode: 'screen' }}
+                        style={{ mixBlendMode: "screen" }}
                         fillRule="evenodd"
                         clipRule="evenodd"
                         d="M25.3096 21.38C26.6426 18.6965 28.3946 16.2424 30.4996 14.11C29.1896 14.19 23.2596 12.85 22.6496 11.71C20.5821 13.8063 18.8637 16.2202 17.5596 18.86C19.2796 18.86 24.3396 20.54 25.3096 21.38ZM54.7296 21.5C52.5483 23.7702 50.7211 26.3558 49.3096 29.17C51.6396 29.05 56.9596 31.17 57.8496 31.95C59.2885 29.0821 61.1492 26.4462 63.3696 24.13C61.8196 24.19 55.5196 22.29 54.7296 21.5Z"
@@ -3259,16 +3024,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="white" />
                             <stop offset="0.29" stopColor="white" />
-                            <stop
-                                offset="0.77"
-                                stopColor="#7FEFEA"
-                                stopOpacity="0.32"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.77" stopColor="#7FEFEA" stopOpacity="0.32" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint4_linear_10004_52271"
@@ -3279,11 +3036,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint5_linear_10004_52271"
@@ -3394,11 +3147,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(38.0604 32.8602) scale(31.95)"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="white"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="white" stopOpacity="0" />
                         </radialGradient>
                         <radialGradient
                             id="paint15_radial_10004_52271"
@@ -3409,51 +3158,15 @@ const getModuleAnimation = (
                             gradientTransform="translate(34.3004 33.3702) scale(14.4)"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="0.13"
-                                stopColor="white"
-                                stopOpacity="0.98"
-                            />
-                            <stop
-                                offset="0.26"
-                                stopColor="white"
-                                stopOpacity="0.94"
-                            />
-                            <stop
-                                offset="0.38"
-                                stopColor="white"
-                                stopOpacity="0.86"
-                            />
-                            <stop
-                                offset="0.5"
-                                stopColor="white"
-                                stopOpacity="0.75"
-                            />
-                            <stop
-                                offset="0.63"
-                                stopColor="white"
-                                stopOpacity="0.61"
-                            />
-                            <stop
-                                offset="0.75"
-                                stopColor="white"
-                                stopOpacity="0.44"
-                            />
-                            <stop
-                                offset="0.87"
-                                stopColor="white"
-                                stopOpacity="0.24"
-                            />
-                            <stop
-                                offset="0.99"
-                                stopColor="white"
-                                stopOpacity="0.01"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="white"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.13" stopColor="white" stopOpacity="0.98" />
+                            <stop offset="0.26" stopColor="white" stopOpacity="0.94" />
+                            <stop offset="0.38" stopColor="white" stopOpacity="0.86" />
+                            <stop offset="0.5" stopColor="white" stopOpacity="0.75" />
+                            <stop offset="0.63" stopColor="white" stopOpacity="0.61" />
+                            <stop offset="0.75" stopColor="white" stopOpacity="0.44" />
+                            <stop offset="0.87" stopColor="white" stopOpacity="0.24" />
+                            <stop offset="0.99" stopColor="white" stopOpacity="0.01" />
+                            <stop offset="1" stopColor="white" stopOpacity="0" />
                         </radialGradient>
                         <radialGradient
                             id="paint16_radial_10004_52271"
@@ -3464,36 +3177,12 @@ const getModuleAnimation = (
                             gradientTransform="translate(23.9703 33.3702) scale(14.4)"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="0.13"
-                                stopColor="white"
-                                stopOpacity="0.83"
-                            />
-                            <stop
-                                offset="0.37"
-                                stopColor="white"
-                                stopOpacity="0.54"
-                            />
-                            <stop
-                                offset="0.59"
-                                stopColor="white"
-                                stopOpacity="0.31"
-                            />
-                            <stop
-                                offset="0.77"
-                                stopColor="white"
-                                stopOpacity="0.14"
-                            />
-                            <stop
-                                offset="0.92"
-                                stopColor="white"
-                                stopOpacity="0.04"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="white"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.13" stopColor="white" stopOpacity="0.83" />
+                            <stop offset="0.37" stopColor="white" stopOpacity="0.54" />
+                            <stop offset="0.59" stopColor="white" stopOpacity="0.31" />
+                            <stop offset="0.77" stopColor="white" stopOpacity="0.14" />
+                            <stop offset="0.92" stopColor="white" stopOpacity="0.04" />
+                            <stop offset="1" stopColor="white" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint17_linear_10004_52271"
@@ -3581,16 +3270,8 @@ const getModuleAnimation = (
                             y2="11.6801"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop
-                                offset="0.64"
-                                stopColor="white"
-                                stopOpacity="0"
-                            />
-                            <stop
-                                offset="0.76"
-                                stopColor="#CDD1EA"
-                                stopOpacity="0.32"
-                            />
+                            <stop offset="0.64" stopColor="white" stopOpacity="0" />
+                            <stop offset="0.76" stopColor="#CDD1EA" stopOpacity="0.32" />
                             <stop offset="1" stopColor="#616DBE" />
                         </linearGradient>
                         <radialGradient
@@ -3624,11 +3305,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="white"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="white" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint28_linear_10004_52271"
@@ -3661,16 +3338,12 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="white"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="white" stopOpacity="0" />
                         </linearGradient>
                     </defs>
                 </svg>
             );
-        case 'Bundle':
+        case "Bundle":
             return (
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -4341,11 +4014,7 @@ const getModuleAnimation = (
                             y2="144.953"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop
-                                offset="0.02"
-                                stopColor="#031D36"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.02" stopColor="#031D36" stopOpacity="0" />
                             <stop offset="0.94" stopColor="#031D36" />
                         </linearGradient>
                         <linearGradient
@@ -4397,16 +4066,8 @@ const getModuleAnimation = (
                             y2="111.532"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop
-                                offset="0.01"
-                                stopColor="#49BFDA"
-                                stopOpacity="0"
-                            />
-                            <stop
-                                offset="0.5"
-                                stopColor="#2E7B9A"
-                                stopOpacity="0.52"
-                            />
+                            <stop offset="0.01" stopColor="#49BFDA" stopOpacity="0" />
+                            <stop offset="0.5" stopColor="#2E7B9A" stopOpacity="0.52" />
                             <stop offset="0.99" stopColor="#153B5E" />
                         </linearGradient>
                         <linearGradient
@@ -4531,16 +4192,8 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint16_linear_10065_65299"
@@ -4563,16 +4216,8 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint18_linear_10065_65299"
@@ -4871,11 +4516,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop offset="0.06" stopColor="#051937" />
-                            <stop
-                                offset="0.98"
-                                stopColor="#051937"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.98" stopColor="#051937" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint43_linear_10065_65299"
@@ -5003,41 +4644,13 @@ const getModuleAnimation = (
                             gradientTransform="translate(165.09 180.367) rotate(142.434) scale(9.48329 4.28188)"
                         >
                             <stop stopColor="#FF6CD0" />
-                            <stop
-                                offset="0.21"
-                                stopColor="#FC6ED1"
-                                stopOpacity="0.78"
-                            />
-                            <stop
-                                offset="0.37"
-                                stopColor="#F374D3"
-                                stopOpacity="0.62"
-                            />
-                            <stop
-                                offset="0.51"
-                                stopColor="#E37DD7"
-                                stopOpacity="0.48"
-                            />
-                            <stop
-                                offset="0.64"
-                                stopColor="#CC8BDC"
-                                stopOpacity="0.35"
-                            />
-                            <stop
-                                offset="0.76"
-                                stopColor="#AF9DE3"
-                                stopOpacity="0.22"
-                            />
-                            <stop
-                                offset="0.87"
-                                stopColor="#8BB3EB"
-                                stopOpacity="0.11"
-                            />
-                            <stop
-                                offset="0.98"
-                                stopColor="#64CBF4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.21" stopColor="#FC6ED1" stopOpacity="0.78" />
+                            <stop offset="0.37" stopColor="#F374D3" stopOpacity="0.62" />
+                            <stop offset="0.51" stopColor="#E37DD7" stopOpacity="0.48" />
+                            <stop offset="0.64" stopColor="#CC8BDC" stopOpacity="0.35" />
+                            <stop offset="0.76" stopColor="#AF9DE3" stopOpacity="0.22" />
+                            <stop offset="0.87" stopColor="#8BB3EB" stopOpacity="0.11" />
+                            <stop offset="0.98" stopColor="#64CBF4" stopOpacity="0" />
                         </radialGradient>
                         <radialGradient
                             id="paint53_radial_10065_65299"
@@ -5087,41 +4700,13 @@ const getModuleAnimation = (
                             gradientTransform="translate(403367 -133328) rotate(160.496) scale(114.905 26.8135)"
                         >
                             <stop stopColor="#FF6CD0" />
-                            <stop
-                                offset="0.21"
-                                stopColor="#FC6ED1"
-                                stopOpacity="0.78"
-                            />
-                            <stop
-                                offset="0.37"
-                                stopColor="#F374D3"
-                                stopOpacity="0.62"
-                            />
-                            <stop
-                                offset="0.51"
-                                stopColor="#E37DD7"
-                                stopOpacity="0.48"
-                            />
-                            <stop
-                                offset="0.64"
-                                stopColor="#CC8BDC"
-                                stopOpacity="0.35"
-                            />
-                            <stop
-                                offset="0.76"
-                                stopColor="#AF9DE3"
-                                stopOpacity="0.22"
-                            />
-                            <stop
-                                offset="0.87"
-                                stopColor="#8BB3EB"
-                                stopOpacity="0.11"
-                            />
-                            <stop
-                                offset="0.98"
-                                stopColor="#64CBF4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.21" stopColor="#FC6ED1" stopOpacity="0.78" />
+                            <stop offset="0.37" stopColor="#F374D3" stopOpacity="0.62" />
+                            <stop offset="0.51" stopColor="#E37DD7" stopOpacity="0.48" />
+                            <stop offset="0.64" stopColor="#CC8BDC" stopOpacity="0.35" />
+                            <stop offset="0.76" stopColor="#AF9DE3" stopOpacity="0.22" />
+                            <stop offset="0.87" stopColor="#8BB3EB" stopOpacity="0.11" />
+                            <stop offset="0.98" stopColor="#64CBF4" stopOpacity="0" />
                         </radialGradient>
                         <radialGradient
                             id="paint57_radial_10065_65299"
@@ -5266,11 +4851,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -5283,11 +4864,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -5300,11 +4877,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#A7F9EF" />
                         </linearGradient>
@@ -5369,11 +4942,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(16.3647 100.741) scale(11.2652 11.2539)"
                         >
                             <stop stopColor="#3781E8" />
-                            <stop
-                                offset="1"
-                                stopColor="#3D8EE3"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3D8EE3" stopOpacity="0" />
                         </radialGradient>
                         <radialGradient
                             id="paint75_radial_10065_65299"
@@ -5565,41 +5134,13 @@ const getModuleAnimation = (
                             gradientTransform="translate(-268542 -88485.4) rotate(21.8363) scale(111.038 31.7645)"
                         >
                             <stop stopColor="#FF6CD0" />
-                            <stop
-                                offset="0.21"
-                                stopColor="#FC6ED1"
-                                stopOpacity="0.78"
-                            />
-                            <stop
-                                offset="0.37"
-                                stopColor="#F374D3"
-                                stopOpacity="0.62"
-                            />
-                            <stop
-                                offset="0.51"
-                                stopColor="#E37DD7"
-                                stopOpacity="0.48"
-                            />
-                            <stop
-                                offset="0.64"
-                                stopColor="#CC8BDC"
-                                stopOpacity="0.35"
-                            />
-                            <stop
-                                offset="0.76"
-                                stopColor="#AF9DE3"
-                                stopOpacity="0.22"
-                            />
-                            <stop
-                                offset="0.87"
-                                stopColor="#8BB3EB"
-                                stopOpacity="0.11"
-                            />
-                            <stop
-                                offset="0.98"
-                                stopColor="#64CBF4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.21" stopColor="#FC6ED1" stopOpacity="0.78" />
+                            <stop offset="0.37" stopColor="#F374D3" stopOpacity="0.62" />
+                            <stop offset="0.51" stopColor="#E37DD7" stopOpacity="0.48" />
+                            <stop offset="0.64" stopColor="#CC8BDC" stopOpacity="0.35" />
+                            <stop offset="0.76" stopColor="#AF9DE3" stopOpacity="0.22" />
+                            <stop offset="0.87" stopColor="#8BB3EB" stopOpacity="0.11" />
+                            <stop offset="0.98" stopColor="#64CBF4" stopOpacity="0" />
                         </radialGradient>
                         <radialGradient
                             id="paint92_radial_10065_65299"
@@ -5622,41 +5163,13 @@ const getModuleAnimation = (
                             gradientTransform="translate(-151678 -108529) rotate(37.5746) scale(77.4984 27.7487)"
                         >
                             <stop stopColor="#FF6CD0" />
-                            <stop
-                                offset="0.21"
-                                stopColor="#FC6ED1"
-                                stopOpacity="0.78"
-                            />
-                            <stop
-                                offset="0.37"
-                                stopColor="#F374D3"
-                                stopOpacity="0.62"
-                            />
-                            <stop
-                                offset="0.51"
-                                stopColor="#E37DD7"
-                                stopOpacity="0.48"
-                            />
-                            <stop
-                                offset="0.64"
-                                stopColor="#CC8BDC"
-                                stopOpacity="0.35"
-                            />
-                            <stop
-                                offset="0.76"
-                                stopColor="#AF9DE3"
-                                stopOpacity="0.22"
-                            />
-                            <stop
-                                offset="0.87"
-                                stopColor="#8BB3EB"
-                                stopOpacity="0.11"
-                            />
-                            <stop
-                                offset="0.98"
-                                stopColor="#64CBF4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.21" stopColor="#FC6ED1" stopOpacity="0.78" />
+                            <stop offset="0.37" stopColor="#F374D3" stopOpacity="0.62" />
+                            <stop offset="0.51" stopColor="#E37DD7" stopOpacity="0.48" />
+                            <stop offset="0.64" stopColor="#CC8BDC" stopOpacity="0.35" />
+                            <stop offset="0.76" stopColor="#AF9DE3" stopOpacity="0.22" />
+                            <stop offset="0.87" stopColor="#8BB3EB" stopOpacity="0.11" />
+                            <stop offset="0.98" stopColor="#64CBF4" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint94_linear_10065_65299"
@@ -5705,7 +5218,7 @@ const getModuleAnimation = (
                     </defs>
                 </svg>
             );
-        case 'Lazy NFT':
+        case "Lazy NFT":
             return (
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -5811,13 +5324,13 @@ const getModuleAnimation = (
                         fill="url(#paint17_radial_10065_65302)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         opacity="0.25"
                         d="M65.4639 165.235H117.476V184.259C117.782 185.461 115.254 205.035 109.891 205.951C97.7189 207.677 85.3636 207.677 73.1913 205.951C67.8494 205.035 65.3211 185.461 65.6066 184.259L65.4639 165.235Z"
                         fill="url(#paint18_linear_10065_65302)"
                     />
                     <path
-                        style={{ mixBlendMode: 'lighten' }}
+                        style={{ mixBlendMode: "lighten" }}
                         opacity="0.25"
                         d="M69.3789 151.323H113.521V183.729C113.766 184.748 111.625 204.098 107.078 204.913C96.7246 206.379 86.216 206.379 75.8626 204.913C71.3159 204.139 69.175 184.748 69.4197 183.729L69.3789 151.323Z"
                         fill="url(#paint19_linear_10065_65302)"
@@ -6000,26 +5513,10 @@ const getModuleAnimation = (
                             gradientTransform="translate(114.03 108.887) scale(11.2751 16.1072)"
                         >
                             <stop stopColor="#65AEF8" stopOpacity="0.5" />
-                            <stop
-                                offset="0.26"
-                                stopColor="#6BB2F9"
-                                stopOpacity="0.33"
-                            />
-                            <stop
-                                offset="0.58"
-                                stopColor="#72B6F9"
-                                stopOpacity="0.15"
-                            />
-                            <stop
-                                offset="0.83"
-                                stopColor="#76B9FA"
-                                stopOpacity="0.04"
-                            />
-                            <stop
-                                offset="0.98"
-                                stopColor="#77BAFA"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.26" stopColor="#6BB2F9" stopOpacity="0.33" />
+                            <stop offset="0.58" stopColor="#72B6F9" stopOpacity="0.15" />
+                            <stop offset="0.83" stopColor="#76B9FA" stopOpacity="0.04" />
+                            <stop offset="0.98" stopColor="#77BAFA" stopOpacity="0" />
                         </radialGradient>
                         <radialGradient
                             id="paint6_radial_10065_65302"
@@ -6030,26 +5527,10 @@ const getModuleAnimation = (
                             gradientTransform="translate(42620 -120.342) rotate(180) scale(166.871 209.715)"
                         >
                             <stop stopColor="#65AEF8" stopOpacity="0.5" />
-                            <stop
-                                offset="0.26"
-                                stopColor="#6BB2F9"
-                                stopOpacity="0.33"
-                            />
-                            <stop
-                                offset="0.58"
-                                stopColor="#72B6F9"
-                                stopOpacity="0.15"
-                            />
-                            <stop
-                                offset="0.83"
-                                stopColor="#76B9FA"
-                                stopOpacity="0.04"
-                            />
-                            <stop
-                                offset="0.98"
-                                stopColor="#77BAFA"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.26" stopColor="#6BB2F9" stopOpacity="0.33" />
+                            <stop offset="0.58" stopColor="#72B6F9" stopOpacity="0.15" />
+                            <stop offset="0.83" stopColor="#76B9FA" stopOpacity="0.04" />
+                            <stop offset="0.98" stopColor="#77BAFA" stopOpacity="0" />
                         </radialGradient>
                         <radialGradient
                             id="paint7_radial_10065_65302"
@@ -6071,11 +5552,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(94.3754 80.6449) scale(14.0887 14.0746)"
                         >
                             <stop stopColor="#2F42D0" />
-                            <stop
-                                offset="1"
-                                stopColor="#3684A6"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3684A6" stopOpacity="0" />
                         </radialGradient>
                         <radialGradient
                             id="paint9_radial_10065_65302"
@@ -6152,36 +5629,12 @@ const getModuleAnimation = (
                             gradientTransform="translate(93.0085 167.618) rotate(1.36256) scale(42.8288 11.2907)"
                         >
                             <stop offset="0.32" stopColor="#9CFFFC" />
-                            <stop
-                                offset="0.33"
-                                stopColor="#9BFEFC"
-                                stopOpacity="0.98"
-                            />
-                            <stop
-                                offset="0.52"
-                                stopColor="#88ECF9"
-                                stopOpacity="0.64"
-                            />
-                            <stop
-                                offset="0.69"
-                                stopColor="#78DEF7"
-                                stopOpacity="0.37"
-                            />
-                            <stop
-                                offset="0.84"
-                                stopColor="#6DD4F5"
-                                stopOpacity="0.17"
-                            />
-                            <stop
-                                offset="0.94"
-                                stopColor="#67CDF4"
-                                stopOpacity="0.05"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#64CBF4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.33" stopColor="#9BFEFC" stopOpacity="0.98" />
+                            <stop offset="0.52" stopColor="#88ECF9" stopOpacity="0.64" />
+                            <stop offset="0.69" stopColor="#78DEF7" stopOpacity="0.37" />
+                            <stop offset="0.84" stopColor="#6DD4F5" stopOpacity="0.17" />
+                            <stop offset="0.94" stopColor="#67CDF4" stopOpacity="0.05" />
+                            <stop offset="1" stopColor="#64CBF4" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint16_linear_10065_65302"
@@ -6193,16 +5646,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="0.82"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.82" stopColor="#42E8E0" stopOpacity="0.25" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <radialGradient
                             id="paint17_radial_10065_65302"
@@ -6213,16 +5658,8 @@ const getModuleAnimation = (
                             gradientTransform="translate(127.76 139.564) rotate(-30.1485) scale(5.15048 5.14791)"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint18_linear_10065_65302"
@@ -6268,11 +5705,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(90.4974 176.677) rotate(-0.122815) scale(65.3905 11.1052)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -6285,11 +5718,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(5288.92 431.738) scale(2730.11 79.2996)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -6302,11 +5731,7 @@ const getModuleAnimation = (
                             gradientTransform="translate(3929.06 398.361) rotate(0.122815) scale(1486.89 43.2242)"
                         >
                             <stop stopColor="#42E8E0" stopOpacity="0" />
-                            <stop
-                                offset="0.18"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
+                            <stop offset="0.18" stopColor="#42E8E0" stopOpacity="0.25" />
                             <stop offset="0.71" stopColor="#42E8E0" />
                             <stop offset="1" stopColor="#D7F9EF" />
                         </radialGradient>
@@ -6320,16 +5745,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="white" />
                             <stop offset="0.44" stopColor="#42E8E0" />
-                            <stop
-                                offset="0.86"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.86" stopColor="#42E8E0" stopOpacity="0.25" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint24_linear_10065_65302"
@@ -6363,16 +5780,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="0.82"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.82" stopColor="#42E8E0" stopOpacity="0.25" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <radialGradient
                             id="paint27_radial_10065_65302"
@@ -6383,16 +5792,8 @@ const getModuleAnimation = (
                             gradientTransform="translate(-4120.94 -24592.3) scale(21.666 21.3939)"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint28_linear_10065_65302"
@@ -6404,16 +5805,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="0.82"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.82" stopColor="#42E8E0" stopOpacity="0.25" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <radialGradient
                             id="paint29_radial_10065_65302"
@@ -6424,16 +5817,8 @@ const getModuleAnimation = (
                             gradientTransform="translate(-2324.3 -16678.4) scale(10.6279 10.1789)"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint30_linear_10065_65302"
@@ -6445,16 +5830,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="0.82"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.82" stopColor="#42E8E0" stopOpacity="0.25" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <radialGradient
                             id="paint31_radial_10065_65302"
@@ -6465,16 +5842,8 @@ const getModuleAnimation = (
                             gradientTransform="translate(-4547.83 -27132) scale(26.6987 26.3302)"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint32_linear_10065_65302"
@@ -6486,16 +5855,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="0.82"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.82" stopColor="#42E8E0" stopOpacity="0.25" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <radialGradient
                             id="paint33_radial_10065_65302"
@@ -6506,16 +5867,8 @@ const getModuleAnimation = (
                             gradientTransform="translate(-4220.2 -24325) scale(21.5939 21.2108)"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint34_linear_10065_65302"
@@ -6527,16 +5880,8 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="0.82"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.25"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.82" stopColor="#42E8E0" stopOpacity="0.25" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </linearGradient>
                         <radialGradient
                             id="paint35_radial_10065_65302"
@@ -6547,16 +5892,8 @@ const getModuleAnimation = (
                             gradientTransform="translate(-2654.17 -19471.7) scale(13.4569 13.2247)"
                         >
                             <stop offset="0.01" stopColor="#CFF9FC" />
-                            <stop
-                                offset="0.41"
-                                stopColor="#96F2F1"
-                                stopOpacity="0.3"
-                            />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                         </radialGradient>
                         <linearGradient
                             id="paint36_linear_10065_65302"
@@ -6568,11 +5905,7 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.3"
-                            />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0.3" />
                         </linearGradient>
                         <linearGradient
                             id="paint37_linear_10065_65302"
@@ -6584,11 +5917,7 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.3"
-                            />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0.3" />
                         </linearGradient>
                         <linearGradient
                             id="paint38_linear_10065_65302"
@@ -6600,16 +5929,12 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="#A7F9EF" />
                             <stop offset="0.29" stopColor="#42E8E0" />
-                            <stop
-                                offset="1"
-                                stopColor="#42E8E0"
-                                stopOpacity="0.3"
-                            />
+                            <stop offset="1" stopColor="#42E8E0" stopOpacity="0.3" />
                         </linearGradient>
                     </defs>
                 </svg>
             );
-        case 'Pack':
+        case "Pack":
             return (
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -7356,11 +6681,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#2D5382" />
-                            <stop
-                                offset="1"
-                                stopColor="#3C88C4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint19_linear_10065_65304"
@@ -7394,51 +6715,15 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop offset="0.04" stopColor="white" />
-                            <stop
-                                offset="0.62"
-                                stopColor="white"
-                                stopOpacity="0"
-                            />
-                            <stop
-                                offset="0.68"
-                                stopColor="white"
-                                stopOpacity="0.01"
-                            />
-                            <stop
-                                offset="0.73"
-                                stopColor="white"
-                                stopOpacity="0.05"
-                            />
-                            <stop
-                                offset="0.78"
-                                stopColor="white"
-                                stopOpacity="0.12"
-                            />
-                            <stop
-                                offset="0.82"
-                                stopColor="white"
-                                stopOpacity="0.21"
-                            />
-                            <stop
-                                offset="0.86"
-                                stopColor="white"
-                                stopOpacity="0.33"
-                            />
-                            <stop
-                                offset="0.9"
-                                stopColor="white"
-                                stopOpacity="0.48"
-                            />
-                            <stop
-                                offset="0.94"
-                                stopColor="white"
-                                stopOpacity="0.65"
-                            />
-                            <stop
-                                offset="0.98"
-                                stopColor="white"
-                                stopOpacity="0.85"
-                            />
+                            <stop offset="0.62" stopColor="white" stopOpacity="0" />
+                            <stop offset="0.68" stopColor="white" stopOpacity="0.01" />
+                            <stop offset="0.73" stopColor="white" stopOpacity="0.05" />
+                            <stop offset="0.78" stopColor="white" stopOpacity="0.12" />
+                            <stop offset="0.82" stopColor="white" stopOpacity="0.21" />
+                            <stop offset="0.86" stopColor="white" stopOpacity="0.33" />
+                            <stop offset="0.9" stopColor="white" stopOpacity="0.48" />
+                            <stop offset="0.94" stopColor="white" stopOpacity="0.65" />
+                            <stop offset="0.98" stopColor="white" stopOpacity="0.85" />
                             <stop offset="1" stopColor="white" />
                         </linearGradient>
                         <linearGradient
@@ -7450,11 +6735,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="white"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="white" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint23_linear_10065_65304"
@@ -7465,11 +6746,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="white"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="white" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint24_linear_10065_65304"
@@ -7603,11 +6880,7 @@ const getModuleAnimation = (
                         >
                             <stop stopColor="white" />
                             <stop offset="0.67" stopColor="white" />
-                            <stop
-                                offset="0.98"
-                                stopColor="white"
-                                stopOpacity="0"
-                            />
+                            <stop offset="0.98" stopColor="white" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint36_linear_10065_65304"
@@ -7618,11 +6891,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#2D5382" />
-                            <stop
-                                offset="1"
-                                stopColor="#3C88C4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint37_linear_10065_65304"
@@ -7868,11 +7137,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="#3C88C4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint1_linear_10065_65305"
@@ -7883,11 +7148,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#86D6F5" />
-                            <stop
-                                offset="1"
-                                stopColor="#86D6F5"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#86D6F5" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint2_linear_10065_65305"
@@ -7898,11 +7159,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="#86D6F5" />
-                            <stop
-                                offset="1"
-                                stopColor="#86D6F5"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#86D6F5" stopOpacity="0" />
                         </linearGradient>
                         <radialGradient
                             id="paint3_radial_10065_65305"
@@ -8105,11 +7362,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="#3C88C4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                         </linearGradient>
                         <radialGradient
                             id="paint20_radial_10065_65305"
@@ -8198,11 +7451,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="#3C88C4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint28_linear_10065_65305"
@@ -8213,11 +7462,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="#3C88C4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint29_linear_10065_65305"
@@ -8228,11 +7473,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="#3C88C4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint30_linear_10065_65305"
@@ -8243,11 +7484,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="#3C88C4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint31_linear_10065_65305"
@@ -8258,11 +7495,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="#3C88C4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint32_linear_10065_65305"
@@ -8295,11 +7528,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="#3C88C4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="paint35_linear_10065_65305"
@@ -8310,11 +7539,7 @@ const getModuleAnimation = (
                             gradientUnits="userSpaceOnUse"
                         >
                             <stop stopColor="white" />
-                            <stop
-                                offset="1"
-                                stopColor="#3C88C4"
-                                stopOpacity="0"
-                            />
+                            <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                         </linearGradient>
                         <clipPath id="clip0_10065_65305">
                             <rect

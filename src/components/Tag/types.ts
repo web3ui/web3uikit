@@ -1,3 +1,5 @@
+export type Tone = 'dark' | 'light';
+
 export interface TagProps {
     /**
      * The tag ID will be generated if not assigned
@@ -22,5 +24,10 @@ export interface TagProps {
     /**
      * Choose a color for the tag
      */
-    color?: 'green' | 'red' | 'gray' | 'yellow' | 'blue' | 'purple' | 'pink';
+    color?: 'green' | 'red' | 'grey' | 'yellow' | 'blue' | 'purple' | 'pink';
+
+    /**
+     * Choose a tone for the selected color
+     */
+    tone?: Tone;
 }

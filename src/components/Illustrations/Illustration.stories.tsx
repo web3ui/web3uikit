@@ -40,3 +40,53 @@ export const Arbitrum = Template.bind({});
 Arbitrum.args = {
     logo: 'arbitrum',
 };
+
+export const ComingSoon = Template.bind({});
+ComingSoon.args = {
+    logo: 'comingSoon',
+};
+
+export const Confirmed = Template.bind({});
+Confirmed.args = {
+    logo: 'confirmed',
+};
+
+export const Looking = Template.bind({});
+Looking.args = {
+    logo: 'looking',
+};
+
+export const Servers = Template.bind({});
+Servers.args = {
+    logo: 'servers',
+};
+
+export const Token = Template.bind({});
+Token.args = {
+    logo: 'token',
+};
+
+export const LazyNft = Template.bind({});
+LazyNft.args = {
+    logo: 'lazyNft',
+};
+
+export const Pack = Template.bind({});
+Pack.args = {
+    logo: 'pack',
+};
+
+export const Marketplace = Template.bind({});
+Marketplace.args = {
+    logo: 'marketplace',
+};
+
+export const Chest = Template.bind({});
+Chest.args = {
+    logo: 'chest',
+};
+
+export const Bundle = Template.bind({});
+Bundle.args = {
+    logo: 'bundle',
+};

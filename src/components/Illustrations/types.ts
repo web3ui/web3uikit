@@ -6,27 +6,31 @@ export const chainState = [
     'avalanche',
     'fantom',
 ] as const;
-export type chain = typeof chainState[number];
+export type Chain = typeof chainState[number];
 
 export const logoState = [
-    'coming soon',
+    'comingSoon',
     'confirmed',
     'looking',
     'servers',
     'token',
-    'lazy nft',
+    'lazyNft',
     'pack',
     'bundle',
     'chest',
     'marketplace',
 ] as const;
-export type logos = typeof logoState[number];
+export type Logo = typeof logoState[number];
 
+export type Size = number | string;
 export interface IllustrationProps {
     id?: string;
 
     /**
      * set logo
      */
-    logo: chain | logos;
+    logo: Chain | Logo;
+
+    width?: Size;
+    height?: Size;
 }

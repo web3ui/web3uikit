@@ -39,6 +39,54 @@ const smallOptionsList = [
     },
 ];
 
+const optionsList = [
+    {
+        label: 'Discord',
+        id: 'discord',
+        prefix: <Icon svg={iconTypes.discord} fill={color.grey} />,
+    },
+    {
+        label: 'Emoji',
+        id: 'emoji',
+        prefix: '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
+    },
+    {
+        label: 'TXT',
+        id: 'txt',
+        prefix: 'TXT',
+    },
+    {
+        label: 'Server',
+        id: 'server',
+        prefix: <Icon svg={iconTypes.server} fill={color.grey} />,
+    },
+    {
+        label: 'Discord',
+        id: 'discord',
+        prefix: <Icon svg={iconTypes.discord} fill={color.grey} />,
+    },
+    {
+        label: 'Discord',
+        id: 'discord',
+        prefix: <Icon svg={iconTypes.discord} fill={color.grey} />,
+    },
+    {
+        label: 'Discord',
+        id: 'discord',
+        prefix: <Icon svg={iconTypes.discord} fill={color.grey} />,
+    },
+    {
+        label: 'Discord',
+        id: 'discord',
+        prefix: <Icon svg={iconTypes.discord} fill={color.grey} />,
+    },
+    {
+        label: 'Discord',
+        id: 'discord',
+        prefix: <Icon svg={iconTypes.discord} fill={color.grey} />,
+    },
+];
+
 export const Default = Template.bind({});
 Default.args = {
     options: smallOptionsList,
@@ -49,14 +97,14 @@ Default.args = {
 
 export const NoDefaultIndexOption = Template.bind({});
 NoDefaultIndexOption.args = {
-    options: smallOptionsList,
+    options: optionsList,
     onChange: onTestOptionChange,
     label: 'Label Text',
 };
 
 export const Error = Template.bind({});
 Error.args = {
-    options: smallOptionsList,
+    options: optionsList,
     onChange: onTestOptionChange,
     label: 'Label Text',
     state: 'error',
@@ -65,7 +113,7 @@ Error.args = {
 
 export const ErrorWithMessage = Template.bind({});
 ErrorWithMessage.args = {
-    options: smallOptionsList,
+    options: optionsList,
     onChange: onTestOptionChange,
     label: 'Label Text',
     state: 'error',
@@ -75,7 +123,7 @@ ErrorWithMessage.args = {
 
 export const Confirmed = Template.bind({});
 Confirmed.args = {
-    options: smallOptionsList,
+    options: optionsList,
     onChange: onTestOptionChange,
     label: 'Label Text',
     state: 'confirmed',
@@ -84,7 +132,7 @@ Confirmed.args = {
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-    options: smallOptionsList,
+    options: optionsList,
     onChange: onTestOptionChange,
     label: 'Label Text',
     disabled: true,

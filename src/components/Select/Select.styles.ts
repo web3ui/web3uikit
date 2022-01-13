@@ -153,16 +153,32 @@ export const Options = styled.div`
     background-color: ${color.blueLight};
     border-radius: 16px;
     border: 2px solid ${color.blueSky};
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    justify-content: space-around;
     left: 0;
     margin-top: 10px;
     position: absolute;
     top: 100%;
     width: 100%;
     z-index: 10;
+    max-height: 265px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        background: none;
+        height: 0;
+        width: 20px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-clip: padding-box;
+        background-color: ${color.greyIcons};
+        border-radius: 30px;
+        border: 8px solid transparent;
+    }
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
 `;
 
 export const Option = styled.div`
@@ -170,7 +186,7 @@ export const Option = styled.div`
     align-items: center;
     cursor: pointer;
     display: flex;
-    padding: 12px 0 12px 20px;
+    padding: 13px 20px;
     &:hover {
         background-color: rgba(128, 128, 128, 0.1);
     }

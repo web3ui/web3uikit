@@ -37,14 +37,14 @@ const smallOptionsList = [
         id: 'server',
         prefix: <Icon svg={iconTypes.server} fill={color.grey} />,
     },
-]
+];
 
 export const Default = Template.bind({});
 Default.args = {
     options: smallOptionsList,
     onChange: onTestOptionChange,
     label: 'Label Text',
-    defaultOptionIndex: 0
+    defaultOptionIndex: 0,
 };
 
 export const NoDefaultIndexOption = Template.bind({});
@@ -60,7 +60,7 @@ Error.args = {
     onChange: onTestOptionChange,
     label: 'Label Text',
     state: 'error',
-    defaultOptionIndex: 0
+    defaultOptionIndex: 0,
 };
 
 export const ErrorWithMessage = Template.bind({});
@@ -70,7 +70,7 @@ ErrorWithMessage.args = {
     label: 'Label Text',
     state: 'error',
     defaultOptionIndex: 0,
-    errorMessage: "Oops...error"
+    errorMessage: 'Oops...error',
 };
 
 export const Confirmed = Template.bind({});
@@ -79,7 +79,7 @@ Confirmed.args = {
     onChange: onTestOptionChange,
     label: 'Label Text',
     state: 'confirmed',
-    defaultOptionIndex: 0
+    defaultOptionIndex: 0,
 };
 
 export const Disabled = Template.bind({});
@@ -88,5 +88,5 @@ Disabled.args = {
     onChange: onTestOptionChange,
     label: 'Label Text',
     disabled: true,
-    defaultOptionIndex: 0
+    defaultOptionIndex: 0,
 };

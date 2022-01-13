@@ -21,7 +21,7 @@
         "analyze": "size-limit --why",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
-        "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx}\""
+        "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx,json}\""
     },
     "peerDependencies": {
         "react": ">=16"

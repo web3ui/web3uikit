@@ -23,11 +23,10 @@ TextOnlyWithHint.args = {
     hint: "Thanks for checking me"
 };
 
-export const leadingIcon = Template.bind({});
-leadingIcon.args = {
+export const withIcon = Template.bind({});
+withIcon.args = {
     title: "Environment",
     description: "4.325 cu",
     hint: "Thanks for checking me",
     icon: iconTypes.network,
-    iconLayout: "leading",
 };

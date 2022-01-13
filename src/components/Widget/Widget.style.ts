@@ -1,20 +1,15 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 import fonts from "../../styles/fonts";
 import colors from "../../styles/colors";
 import resetCSS from "../../styles/reset";
-import {WidgetProps} from "./types";
 
-export const HintStyled = styled.div<Pick<WidgetProps, "iconLayout">>`
-  ${(p) => p.iconLayout === "trailing" ? hintWithTrailingIcon : "top: 16px;"}
+export const HintStyled = styled.div`
   position: absolute;
+  top: 16px;
   right: 5px;
 `
 
-const hintWithTrailingIcon = css`
-  top: 5px;
-`
-
-export const WidgetStyled =  styled.div<Pick<WidgetProps, "iconLayout">>`
+export const WidgetStyled =  styled.div`
   ${resetCSS}
   ${fonts.text};
   align-items: center;
@@ -26,8 +21,7 @@ export const WidgetStyled =  styled.div<Pick<WidgetProps, "iconLayout">>`
   padding: 16px;
   position: relative;
   width: 100%;
-  
-  ${(p) => p.iconLayout === "leading" ? "" : ""};
+
 `
 
 export const WidgetInfoBox = styled.div`

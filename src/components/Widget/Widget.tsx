@@ -6,9 +6,9 @@ import {Icon} from "../Icon";
 import {Tooltip} from "../Tooltip"
 import {iconTypes} from "../Icon/collection";
 
-const getHint = (iconLayout: "leading" | "trailing" | "none", hint: string) => {
+const getHint = (hint: string) => {
     return (
-        <HintStyled iconLayout={iconLayout}>
+        <HintStyled>
             <Tooltip text={hint} children={[<Icon fill={colors.blue} size={14} svg={iconTypes.helpCircle}/>]} />
         </HintStyled>
     )
@@ -19,17 +19,16 @@ const Widget: React.FC<WidgetProps> = ({
     description,
     hint,
     icon,
-    iconLayout,
     title
 }: WidgetProps) => {
     return (
-        <WidgetStyled iconLayout={iconLayout} id={id}>
+        <WidgetStyled id={id}>
             {icon && <div style={{display: "grid", placeItems: "center", marginRight: '10px'}}><Icon size={30} fill={colors.blue} svg={icon}/></div>}
             <WidgetInfoBox>
                 <WidgetTitle>{title}</WidgetTitle>
                 <WidgetInfo>{description}</WidgetInfo>
             </WidgetInfoBox>
-            {hint && getHint(iconLayout || "leading", hint)}
+            {hint && getHint(hint)}
         </WidgetStyled>
     )
 }

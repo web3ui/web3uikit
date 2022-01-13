@@ -22,11 +22,6 @@ export interface WidgetProps {
     icon?: iconTypes;
 
     /**
-     * set icon position
-     */
-    iconLayout?: "leading" | "trailing" | "none"
-
-    /**
      * set title of widget
      */
     title: string;

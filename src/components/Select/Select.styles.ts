@@ -14,14 +14,17 @@ export const LabelStyled = styled.label<LabelProps>`
     ${resetCSS}
     ${fonts.text}
     background-color: ${color.white};
-    font-size: 14px;
     height: 24px;
     left: 12px;
     line-height: 1;
     padding: 2px 4px;
     pointer-events: none;
     position: absolute;
-    top: -12px;
+    padding: 0 4px;
+    /* top: -12px; */
+    transition: all 0.1s ease-out;
+    ${({ hasSelectedIndex }) =>
+        hasSelectedIndex ? `top: -12px; font-size: 14px;` : `top: 20px;`};
 `;
 
 export const SelectStyled = styled.div`
@@ -42,7 +45,7 @@ export const SelectedItem = styled.div<SelectedItemProps>`
     height: 56px;
     overflow: hidden;
     padding: 14px 50px 14px 16px;
-    transition: all 0.2s linear;
+    transition: all 0.1s linear;
 
     border-color: ${({ state }) => {
         switch (state) {
@@ -57,16 +60,12 @@ export const SelectedItem = styled.div<SelectedItemProps>`
         }
     }};
 
-    & > * > * > * {
-        ${(p) => p.state === 'disabled' && ` fill: ${color.greyDisabled};`};
-    }
+    ${({ state }) =>
+        state === 'disabled' &&
+        `& * {fill: ${color.greyDisabled};} color: ${color.greyDisabled} !important;`};
 
     &:hover {
         border-color: ${(p) => p.state !== 'disabled' && color.blue};
-    }
-
-    &:hover > .input_prefix > svg {
-        fill: ${(p) => !p?.state && color.blue};
     }
 
     &:focus {
@@ -95,21 +94,19 @@ export const SelectedItem = styled.div<SelectedItemProps>`
         }
     }
 
-    input {
-        & + label {
-            color: ${({ state }) => {
-                switch (state) {
-                    case 'error':
-                        return color.red;
-                    case 'confirmed':
-                        return color.green;
-                    case 'disabled':
-                        return color.greyDisabled;
-                    default:
-                        return color.grey;
-                }
-            }};
-        }
+    & + label {
+        color: ${({ state }) => {
+            switch (state) {
+                case 'error':
+                    return color.red;
+                case 'confirmed':
+                    return color.green;
+                case 'disabled':
+                    return color.greyDisabled;
+                default:
+                    return color.grey;
+            }
+        }};
     }
 `;
 

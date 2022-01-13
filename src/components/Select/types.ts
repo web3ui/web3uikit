@@ -85,7 +85,7 @@ export interface SelectProps {
     options?: OptionProps[];
 
     onOptionChange?: (option: OptionProps) => void;
-    defaultOptionIndex?: number;
+    defaultOptionIndex?: number | undefined;
 }
 
 export interface OptionProps {
@@ -96,9 +96,9 @@ export interface OptionProps {
 
 export interface LabelProps {
     /**
-     * true if the label is defined
+     * true if the defauktIndex is defined
      */
-    hasPrefix: boolean;
+    hasSelectedIndex: boolean;
 }
 
 export interface SelectedItemProps {

@@ -17,33 +17,33 @@ const testEvent = (event: React.ChangeEvent<HTMLInputElement>) =>
 const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
 
 const onTestOptionChange = (e: any) => {
-    console.log(e)
-}
+    console.log(e);
+};
 
 export const Regular = Template.bind({});
 Regular.args = {
     options: [
         {
-            label: "Discord",
-            value: "discord",
-            icon: <Icon svg={iconTypes.discord} fill={color.grey} />
+            label: 'Discord',
+            value: 'discord',
+            icon: <Icon svg={iconTypes.discord} fill={color.grey} />,
         },
         {
-            label: "Emoji",
-            value: "emoji",
-            icon: "🏴󠁧󠁢󠁷󠁬󠁳󠁿"
+            label: 'Emoji',
+            value: 'emoji',
+            icon: '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
         },
         {
-            label: "TXT",
-            value: "txt",
-            icon: "TXT"
+            label: 'TXT',
+            value: 'txt',
+            icon: 'TXT',
         },
         {
-            label: "Server",
-            value: "server",
-            icon: <Icon svg={iconTypes.server} fill={color.grey} />
-        }
+            label: 'Server',
+            value: 'server',
+            icon: <Icon svg={iconTypes.server} fill={color.grey} />,
+        },
     ],
     // onOptionChange: onTestOptionChange,
-    label: "Label Text"
+    label: 'Label Text',
 };

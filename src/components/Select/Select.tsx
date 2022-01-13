@@ -13,7 +13,7 @@ const {
     Option,
     Options,
     PrefixIcon,
-    DropDownIcon
+    DropDownIcon,
 } = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
@@ -23,21 +23,15 @@ const Select: React.FC<SelectProps> = ({
     label,
     onOptionChange,
     placeholder = '',
-    prefix,
-    state = disabled ? "disabled" : undefined,
+    state = disabled ? 'disabled' : undefined,
     style,
-    width,
+    width = '200px',
     options = [],
-    defaultOptionIndex = 0
+    defaultOptionIndex,
 }: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOptionIndex, setSelectedOptionIndex] =
         useState(defaultOptionIndex);
-
-    // const valueChanged = (event: React.ChangeEvent<any>) => {
-    //     setCurrentValue(event.target.value);
-    //     onChange(event);
-    // };
 
     const toggling = (event: React.MouseEvent<HTMLDivElement>) => {
         setIsOpen(!isOpen);
@@ -58,9 +52,9 @@ const Select: React.FC<SelectProps> = ({
             setIsOpen(false);
         };
 
-        document.addEventListener("click", handleClickOutside);
+        document.addEventListener('click', handleClickOutside);
         return () => {
-            document.removeEventListener("click", handleClickOutside);
+            document.removeEventListener('click', handleClickOutside);
         };
     }, []);
 
@@ -79,30 +73,44 @@ const Select: React.FC<SelectProps> = ({
                 id={id}
                 placeholder={placeholder}
                 onClick={toggling}
-            // className={isOpen ? "actived" : ""}
+                // className={isOpen ? "actived" : ""}
             >
-                <PrefixIcon>{options[selectedOptionIndex]?.icon}</PrefixIcon>
-                {options[selectedOptionIndex]?.label}
+                {typeof selectedOptionIndex !== 'undefined' && (
+                    <>
+                        <PrefixIcon>
+                            {options[selectedOptionIndex]?.icon}
+                        </PrefixIcon>
+                        {options[selectedOptionIndex]?.label}
+                    </>
+                )}
 
-                <DropDownIcon><Icon svg={isOpen ? iconTypes.triangleUp : iconTypes.triangleDown} fill={color.grey} /></DropDownIcon>
-
+                <DropDownIcon>
+                    <Icon
+                        svg={
+                            isOpen
+                                ? iconTypes.triangleUp
+                                : iconTypes.triangleDown
+                        }
+                        fill={color.grey}
+                    />
+                </DropDownIcon>
             </SelectedItem>
-            {
-                label && (
-                    <LabelStyled
-                        data-testid="test-label"
-                        htmlFor={id}
-                        hasPrefix={typeof prefix !== 'undefined'}
-                    >
-                        {label}
-                    </LabelStyled>
-                )
-            }
-            {
-                isOpen && (
-                    <Options>
-                        {options.map((option, index) =>
-                            index !== selectedOptionIndex ? (
+            {label && (
+                <LabelStyled
+                    data-testid="test-label"
+                    htmlFor={id}
+                    hasSelectedIndex={
+                        typeof selectedOptionIndex !== 'undefined'
+                    }
+                >
+                    {label}
+                </LabelStyled>
+            )}
+            {isOpen && (
+                <Options>
+                    {options.map(
+                        (option, index) =>
+                            index !== selectedOptionIndex && (
                                 <Option
                                     onClick={onOptionClicked(index)}
                                     key={option?.label}
@@ -110,14 +118,13 @@ const Select: React.FC<SelectProps> = ({
                                     <PrefixIcon>{option?.icon}</PrefixIcon>
                                     {option?.label}
                                 </Option>
-                            ) : null
-                        )}
-                    </Options>
-                )
-            }
+                            ),
+                    )}
+                </Options>
+            )}
 
-            {/* {errorMessage && <ErrorLabel>{errorMessage}</ErrorLabel>} */}
-        </SelectWrapper >
+            {errorMessage && <ErrorLabel>{errorMessage}</ErrorLabel>}
+        </SelectWrapper>
     );
 };
 

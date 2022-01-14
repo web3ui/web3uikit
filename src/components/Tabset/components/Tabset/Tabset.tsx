@@ -1,25 +1,37 @@
 import React from "react";
-import { TabsProvider } from "../../app";
-import { TabPanel } from "../TabPanel";
+import { TabsetProvider } from '../../app';
+import { useTabset } from './useTabset';
 import { Tab } from "../Tab";
 import { TabList } from "../TabList";
-import { TabsContainer } from './Tabset.styles';
-import { TabPanels } from '../TabPanels';
-import type { TabsComposition, TabsProps } from './types';
+import { TabPanel } from "../TabPanel";
+import { TabsetContainer } from './Tabset.styles';
+import type { TabsetComponent } from './types';
 
-export const Tabset: React.FC<TabsProps> & TabsComposition = (props) => {
-  const { children, defaultIndex = 0 } = props;
+export const Tabset: TabsetComponent = ({
+  defaultIndex = 0,
+  variant = 'solid',
+  vertical = false,
+  children,
+}) => {
+  const {
+    maxIndex,
+    indexedChildren,
+  } = useTabset(children);
 
   return (
-    <TabsProvider initialActiveTab={defaultIndex}>
-      <TabsContainer data-testing="tabs-container">
-        {children}
-      </TabsContainer>
-    </TabsProvider>
+    <TabsetProvider
+      defaultIndex={defaultIndex}
+      variant={variant}
+      vertical={vertical}
+      maxIndex={maxIndex}
+    >
+      <TabsetContainer>
+        {indexedChildren}
+      </TabsetContainer>
+    </TabsetProvider>
   );
 };
 
 Tabset.Tab = Tab;
 Tabset.Panel = TabPanel;
 Tabset.TabList = TabList;
-Tabset.Panels = TabPanels;

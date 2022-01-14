@@ -1,21 +1,22 @@
 import React, { useRef, useEffect } from "react";
-import { useTab } from "../../app";
-import { StyledTab } from "./Tab.styles";
+import { useTab } from "./useTab";
+import { TabContainer } from "./Tab.styles";
 import { TabProps } from './types';
 
-export const Tab: React.FC<TabProps> = (props) => {
-  const {
+export const Tab: React.FC<TabProps> = ({
     index,
-    disable = false,
-    className = '',
+    disabled,
+    className,
     children
-  } = props;
+}) => {
 
   const ref = useRef<HTMLButtonElement>(null!);
 
   const {
     isActive,
     isFocused,
+    variant,
+    onMouseDown,
     ...attrs
   } = useTab(index!);
 
@@ -27,16 +28,22 @@ export const Tab: React.FC<TabProps> = (props) => {
     }
   }, [isFocused])
 
+  const mouseDownHandler = disabled 
+    ? undefined
+    : onMouseDown;
+
   return (
-    <StyledTab
+    <TabContainer
       className={className}
+      onMouseDown={mouseDownHandler}
       isActive={isActive}
-      disable={disable}
+      disabled={disabled}
       ref={ref}
+      variant={variant}
 
       {...attrs}
     >
       {children}
-    </StyledTab>
+    </TabContainer>
   );
 }

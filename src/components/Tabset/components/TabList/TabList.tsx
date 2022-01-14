@@ -1,26 +1,21 @@
-import React, { useMemo, useEffect } from "react";
-import { StyledTabList } from './TabList.styles';
-import { useTabList } from '../../app';
-import { setIndexFor } from '../../utils';
+import React from "react";
+import { TabListContainer } from './TabList.styles';
+import { useTabList } from "./useTabList";
 import type { TabListProps } from './types';
 
 export const TabList: React.FC<TabListProps> = (props) => {
     const { children } = props;
-    const { onKeyDown, setMaxNumber } = useTabList();
-
-    const indexedChildren = useMemo(() => setIndexFor(children), [children])
-
-    useEffect(() => {
-        setMaxNumber(React.Children.count(children));
-    }, [])
+    const { onKeyDown, variant, vertical } = useTabList();
 
     return (
-        <StyledTabList 
+        <TabListContainer 
             role="tablist"
             aria-orientation="horizontal"
             onKeyDown={onKeyDown}
+            vertical={vertical}
+            variant={variant}
         >
-            {indexedChildren}
-        </StyledTabList>
+            {children}
+        </TabListContainer>
     )
 }

@@ -1,14 +1,17 @@
-export type TabsContextValue = {
-  activePanel: number;
-  focusedTab: number;
-
-  maxNumber: number;
-
-  setActivePanel: (i: number) => void;
-  setFocusedTab: (i: number) => void;
-  setMaxNumber: (i: number) => void;
+export type TabsetContextValue = {
+  activeIndex: number;
+  focusedIndex: number;
+  maxIndex: number;
+  variant: string;
+  vertical: boolean;
+  
+  setActiveIndex: (index: number) => void;
+  setFocusedIndex: (index: number) => void;
 };
 
-export type TabsProviderProps = {
-  initialActiveTab: number;
+export type TabsetProviderProps = {
+  variant: string;
+  vertical: boolean;
+  maxIndex: number;
+  defaultIndex: number;
 };

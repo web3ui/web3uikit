@@ -1,2 +1,2 @@
-export { Tab } from './Tab';
-export type { TabProps } from './types';
+export * from './Tab';
+export * from './types';

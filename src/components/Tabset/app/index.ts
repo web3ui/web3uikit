@@ -1,3 +1,3 @@
-export { TabsProvider } from './TabsProvider';
-export type { TabsContextValue } from './types';
-export * from './hooks';
+export { TabsetProvider } from './TabsetProvider';
+export { useTabsetContext } from './tabsetContext';
+export type { TabsetContextValue } from './types';

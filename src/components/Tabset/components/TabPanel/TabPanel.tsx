@@ -1,6 +1,6 @@
 import React from "react";
-import { useTabPanel } from "../../app";
-import { PanelContainer } from './TabPanel.styles';
+import { useTabPanel } from "./useTabPanel";
+import { TabPanelContainer } from './TabPanel.styles';
 import { TabPanelProps } from './types';
 
 export const TabPanel: React.FC<TabPanelProps> = (props) => {
@@ -8,8 +8,8 @@ export const TabPanel: React.FC<TabPanelProps> = (props) => {
   const { isActive, ...attrs} = useTabPanel(index!);
 
   return !isActive ? null : (
-    <PanelContainer {...attrs}>
+    <TabPanelContainer {...attrs}>
       {children}
-    </PanelContainer>
+    </TabPanelContainer>
   )
 };

@@ -1,5 +1,10 @@
 export type TabProps = {
   index?: number;
   className?: string;
-  disable?: boolean;
+  disabled?: boolean;
 };
+
+export type TabContainerProps = {
+    isActive: boolean;
+    variant: string;
+}

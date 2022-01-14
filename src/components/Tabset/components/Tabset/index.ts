@@ -1,2 +1,2 @@
 export { Tabset } from './Tabset';
-export type { TabsProps } from './types';
+export type { TabsetProps, TabsetChildren } from './types';

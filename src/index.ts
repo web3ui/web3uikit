@@ -19,3 +19,4 @@ export * from './components/Radios';
 export * from './components/Tag';
 export * from './components/Tooltip';
 export * from './components/TextArea';
+export * from './components/Select';

@@ -9,7 +9,7 @@ export default {
     component: Tabset,
 } as ComponentMeta<TabsetType>;
 
-export const SolidButton = () => {
+export const SolidTabset = () => {
     return (
         <React.StrictMode>
             <Tabset>

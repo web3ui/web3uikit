@@ -8,7 +8,7 @@ const initialStyles = css`
     ${fonts.text}
 `;
 
-const marginTooltip = '40px';
+const marginTooltip = '10px';
 const arrowSizeTooltip = '6px';
 
 const container = css`
@@ -43,7 +43,8 @@ const defaultContainer = css`
 
 const top = css`
     background-color: ${color.blueDark2};
-    top: calc(${marginTooltip} * -1);
+    top: -${marginTooltip};
+    transform: translateY(-100%) translateX(-50%);
 
     &:before {
         border-top-color: ${color.blueDark2};
@@ -53,8 +54,7 @@ const top = css`
 
 const bottom = css`
     background-color: ${color.blueDark2};
-    bottom: calc(${marginTooltip} * -1);
-
+    margin-top: ${marginTooltip};
     &:before {
         bottom: 100%;
         border-bottom-color: ${color.blueDark2};
@@ -63,10 +63,9 @@ const bottom = css`
 
 const left = css`
     background-color: ${color.blueDark2};
-    left: auto;
-    right: ${marginTooltip};
+    left: -${marginTooltip};
     top: 50%;
-    transform: translateX(0) translateY(-50%);
+    transform: translateX(-100%) translateY(-50%);
 
     &:before {
         border-left-color: ${color.blueDark2};
@@ -79,9 +78,9 @@ const left = css`
 
 const right = css`
     background-color: ${color.blueDark2};
-    left: ${marginTooltip};
+    right: -${marginTooltip};
     top: 50%;
-    transform: translateX(0) translateY(-50%);
+    transform: translateX(100%) translateY(-50%);
 
     &:before {
         border-right-color: ${color.blueDark2};

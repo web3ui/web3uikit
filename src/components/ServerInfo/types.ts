@@ -6,17 +6,6 @@ export interface ServerInfoProps {
     id?: string;
 
     /**
-     * set if server can be revived
-     */
-    canRevive?: boolean;
-
-
-    /**
-     * set if server is sleeping
-     */
-    isSleeping?: boolean;
-
-    /**
      * set name of server
      */
     name: string;
@@ -26,6 +15,33 @@ export interface ServerInfoProps {
      */
     network: "Mainnet" | "Testnet" | "Local";
 
+    /**
+     * set functions of buttons if server is alive
+     */
+    isAlive: isAlive;
+
+    /**
+     * set wakeup type if server is sleeping
+     */
+    isSleeping: isSleeping;
+
+    /**
+     * set revive type if server is sleeping
+     */
+    canRevive: canRevive;
+
+    /**
+     * set version of server
+     */
+    version: string;
+
+    /**
+     * set an Array of <Widget /> children that represent informations
+     */
+    widgets: Array<React.ReactElement<typeof Widget>>
+}
+
+type isAlive = {
     /**
      * run function on view dApp click
      */
@@ -47,11 +63,6 @@ export interface ServerInfoProps {
     onRestart: () => void;
 
     /**
-     * revive function
-     */
-    onRevive: () => void;
-
-    /**
      * server update function
      */
     onUpdate: () => void;
@@ -60,19 +71,15 @@ export interface ServerInfoProps {
      * run function when Database button is clicked
      */
     onDatabase: () => void;
+}
 
-    /**
-     * run wake up function
-     */
+type isSleeping = {
     onWakeUp: () => void;
+}
 
+type canRevive = {
     /**
-     * set version of server
+     * revive function
      */
-    version?: string;
-
-    /**
-     * set an Array of <Widget /> children that represent informations
-     */
-    widgets: Array<React.ReactElement<typeof Widget>>
+    onRevive: () => void;
 }

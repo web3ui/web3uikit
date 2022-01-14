@@ -17,20 +17,13 @@ import {Button} from "../Button";
 
 const ServerInfo: React.FC<ServerInfoProps> = ({
     id,
-    isSleeping,
-    canRevive,
     name,
     network,
-    onDapp,
-    onDatabase,
-    onDelete,
-    onRestart,
-    onRevive,
-    onSettings,
-    onUpdate,
-    onWakeUp,
-    widgets,
     version,
+    canRevive,
+    isSleeping,
+    isAlive,
+    widgets
 }: ServerInfoProps) => {
     const [ isCollapsed, setCollapsed ] = useState<boolean>(false);
     return (
@@ -54,12 +47,12 @@ const ServerInfo: React.FC<ServerInfoProps> = ({
                 <Flex >
                     {(!isSleeping && !canRevive) &&
                         <>
-                            <Button onClick={onDapp} text={"View dApp"} theme="outline"/>
-                            <Button onClick={onSettings} text={"Settings"} theme="outline" />
+                            <Button onClick={isAlive.onDapp} text={"View dApp"} theme="outline"/>
+                            <Button onClick={isAlive.onSettings} text={"Settings"} theme="outline" />
                         </>
                     }
                     <Button
-                        onClick={isSleeping ? onWakeUp : canRevive ? onRevive : () => setCollapsed(!isCollapsed)}
+                        onClick={isSleeping ? isSleeping.onWakeUp : canRevive ? canRevive.onRevive : () => setCollapsed(!isCollapsed)}
                         icon={isSleeping ? iconTypes.reload : canRevive ? iconTypes.pulse : (isCollapsed ? iconTypes.chevron_up : iconTypes.chevron_down) }
                         iconLayout={(isSleeping || canRevive) ? "leading" : "icon-only"}
                         text={isSleeping ? "Wake up Server" : canRevive ? "Revive Server" : ``}
@@ -76,11 +69,11 @@ const ServerInfo: React.FC<ServerInfoProps> = ({
                     </Flex>
                     <ServerFooter>
                         <Flex>
-                            <Button onClick={onDelete} icon={iconTypes.bin} iconLayout="icon-only" theme="outline" />
-                            <Button onClick={onRestart} icon={iconTypes.reload} iconLayout="icon-only" theme="outline" />
-                            <Button onClick={onUpdate} icon={iconTypes.update} color="green" text="Update & Restart" iconLayout="trailing" theme="outline" />
+                            <Button onClick={isAlive.onDelete} icon={iconTypes.bin} iconLayout="icon-only" theme="outline" />
+                            <Button onClick={isAlive.onRestart} icon={iconTypes.reload} iconLayout="icon-only" theme="outline" />
+                            <Button onClick={isAlive.onUpdate} icon={iconTypes.update} color="green" text="Update & Restart" iconLayout="trailing" theme="outline" />
                         </Flex>
-                        <Button onClick={onDatabase} text="Database" iconLayout="leading" icon={iconTypes.chart} theme="outline" />
+                        <Button onClick={isAlive.onDatabase} text="Database" iconLayout="leading" icon={iconTypes.chart} theme="outline" />
                     </ServerFooter>
                 </ServerContainer>
             }

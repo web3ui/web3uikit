@@ -1,3 +1,4 @@
+import { Widget } from "../Widget";
 export interface ServerInfoProps {
     /**
      * set id of server info
@@ -9,10 +10,6 @@ export interface ServerInfoProps {
      */
     canRevive?: boolean;
 
-    /**
-     * set how much data is used by server in megabytes
-     */
-    dataUsed: string;
 
     /**
      * set if server is sleeping
@@ -28,11 +25,6 @@ export interface ServerInfoProps {
      * set network of server
      */
     network: "Mainnet" | "Testnet" | "Local";
-
-    /**
-     * set how much user the server has
-     */
-    numOfUser: string;
 
     /**
      * run function on view dApp click
@@ -78,4 +70,9 @@ export interface ServerInfoProps {
      * set version of server
      */
     version?: string;
+
+    /**
+     * set an Array of <Widget /> children that represent informations
+     */
+    widgets: Array<React.ReactElement<typeof Widget>>
 }

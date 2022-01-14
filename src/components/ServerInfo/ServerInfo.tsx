@@ -14,16 +14,13 @@ import {Tag} from "../Tag";
 import {Icon} from "../Icon";
 import {iconTypes} from "../Icon/collection";
 import {Button} from "../Button";
-import {Widget} from "../Widget";
 
 const ServerInfo: React.FC<ServerInfoProps> = ({
     id,
     isSleeping,
     canRevive,
-    dataUsed,
     name,
     network,
-    numOfUser,
     onDapp,
     onDatabase,
     onDelete,
@@ -32,6 +29,7 @@ const ServerInfo: React.FC<ServerInfoProps> = ({
     onSettings,
     onUpdate,
     onWakeUp,
+    widgets,
     version,
 }: ServerInfoProps) => {
     const [ isCollapsed, setCollapsed ] = useState<boolean>(false);
@@ -74,9 +72,7 @@ const ServerInfo: React.FC<ServerInfoProps> = ({
             { isCollapsed &&
                 <ServerContainer>
                     <Flex>
-                        <Widget description={String(network)} icon={iconTypes.network} title={"Environment"} />
-                        <Widget description={`${dataUsed} mb` || "0"} title={"Data used"} />
-                        <Widget description={numOfUser || "0"} title={"Number of users"} />
+                        {widgets}
                     </Flex>
                     <ServerFooter>
                         <Flex>

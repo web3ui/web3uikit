@@ -33,8 +33,8 @@ export const useTabList = () => {
             case "Home": return setFocusedIndex(0);
             case "End": return setFocusedIndex(maxIndex);
 
-            case "Enter": 
-            case "Spacebar": return setActiveIndex(focusedIndex);
+            case " ":
+            case "Enter": return setActiveIndex(focusedIndex);
         }
     }
 

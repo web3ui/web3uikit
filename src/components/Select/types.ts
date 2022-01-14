@@ -17,11 +17,6 @@ export interface SelectProps {
     onChange: (option: OptionProps) => void;
 
     /**
-     * please give a descriptive name to the select component, it help with accessibility
-     */
-    name?: string;
-
-    /**
      * the select component can use state to react to user interaction
      */
     state?: 'error' | 'confirmed' | 'disabled';

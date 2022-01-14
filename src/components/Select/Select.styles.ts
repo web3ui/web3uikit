@@ -55,7 +55,7 @@ export const SelectedItem = styled.div<SelectedItemProps>`
             case 'disabled':
                 return color.greyDisabled;
             default:
-                return color.blueSky;
+                return color.greyLight;
         }
     }};
 
@@ -64,13 +64,13 @@ export const SelectedItem = styled.div<SelectedItemProps>`
         `& * {fill: ${color.greyDisabled};} color: ${color.greyDisabled} !important;`};
 
     &:hover {
-        border-color: ${(p) => p.state !== 'disabled' && color.blue};
+        border-color: ${(p) => p.state !== 'disabled' && color.blueSky};
     }
 
     &:focus {
         border-color: ${color.blue};
 
-        + label {
+        & + label {
             color: ${color.blue};
         }
     }
@@ -79,7 +79,7 @@ export const SelectedItem = styled.div<SelectedItemProps>`
         ${(p) => p.state === 'error' && `border-color: ${color.red};`}
         ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
 
-        label {
+        & + label {
             ${(p) => !p?.state && `color: ${color.blue};`}
         }
     }

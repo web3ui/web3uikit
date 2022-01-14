@@ -60,15 +60,15 @@ const Select: React.FC<SelectProps> = ({
 
     return (
         <SelectWrapper
-            data-testid="test-div"
+            data-testid="test-wrapper"
             state={state}
             style={{ ...style, width }}
             aria-label="select"
+            id={id}
         >
             <SelectedItem
-                data-testid="test-input"
+                data-testid="test-selected"
                 state={state}
-                id={id}
                 onClick={toggling}
                 aria-label="option-selected"
             >
@@ -104,13 +104,14 @@ const Select: React.FC<SelectProps> = ({
                 </LabelStyled>
             )}
             {isOpen && (
-                <Options aria-label="select-options">
+                <Options aria-label="select-options" data-testid="test-options">
                     {options.map(
                         (option, index) =>
                             index !== selectedOptionIndex && (
                                 <Option
                                     onClick={onOptionClicked(index)}
                                     key={option?.label}
+                                    data-testid="test-option"
                                     aria-label="select-option"
                                 >
                                     <PrefixIcon>{option?.prefix}</PrefixIcon>

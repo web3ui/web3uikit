@@ -13,7 +13,7 @@ export type TabsetProps = {
   /**
    * Style variant
    */
-  variant?: TabsetStyleVariant;
+  variant?: TabsetVariant;
   /**
    * Vertical tablist orientation
    */
@@ -22,6 +22,15 @@ export type TabsetProps = {
    * List of disabled indexes
    */
   disabled?: number[];
+  /**
+   * 
+   */
+  size?: TabsetSize;
+  /**
+   * 
+   */
+  color?: TabsetColor;
+
   children: TabsetChildren;
 };
 
@@ -36,9 +45,16 @@ export type TabsetChildren = (
     React.ReactElement<TabPanelProps>
 )[];
 
-export type TabsetStyleVariant = 
+
+export type TabsetSize = 'medium' | 'small' | 'large';
+export type TabsetColor = 'red' | 'green' | 'blue' | 'yellow';
+export type TabsetVariant = 
   | 'unstyled'
   | 'outline'
   | 'solid'
   | 'pill'
   | 'light';
+
+export type TabsetContainerProps = {
+  vertical: boolean;
+}

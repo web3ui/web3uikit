@@ -1,3 +1,5 @@
+import type { TabsetColor, TabsetVariant, TabsetSize } from '../Tabset';
+
 export type TabProps = {
   index?: number;
   className?: string;
@@ -6,5 +8,8 @@ export type TabProps = {
 
 export type TabContainerProps = {
     isActive: boolean;
-    variant: string;
+    vertical: boolean;
+    variant: TabsetVariant;
+    size: TabsetSize;
+    color: TabsetColor;
 }

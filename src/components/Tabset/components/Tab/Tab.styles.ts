@@ -1,27 +1,29 @@
 import styled from "styled-components";
 import colors from "../../../../styles/colors";
+import fonts from "../../../../styles/fonts";
 import { resetButtonCSS } from '../../../../styles/reset';
-import { solidTab, outlineTab } from '../../styles';
+import { getVariant, getFontSize } from '../../styles';
 import type { TabContainerProps } from './types';
 
 export const TabContainer = styled.button<TabContainerProps>`
     ${resetButtonCSS}
     box-sizing: border-box;
 
-    margin: 0;
     padding: 0.5em 1em;
-
     background-color: transparent;
 
-    font-size: 1rem;
+    ${fonts.openSans}
+    ${fonts.semiBold}
+    ${(props) => getFontSize(props.size)}
 
-    ${(props) => {
-        switch (props.variant) {
-            case 'solid': return solidTab;
-            case 'outline': return outlineTab;
-            default: return '';
-        }
-    }}
+    transition: all 100ms ease-in;
+
+    ${(props) => getVariant(props.variant).tab}
+
+    &:disabled {
+        color: ${colors.greyLight};
+        cursor: not-allowed;
+    }
 
     :focus {
         outline: none;

@@ -2,6 +2,7 @@ import { useTabsetContext } from '../../app';
 
 export const useTabList = () => {
     let {
+        color,
         variant,
         vertical,
         maxIndex,
@@ -46,6 +47,7 @@ export const useTabList = () => {
         onKeyDown,
         variant,
         vertical,
+        color,
 
         role: "tablist",
         "aria-orientation": orientation,

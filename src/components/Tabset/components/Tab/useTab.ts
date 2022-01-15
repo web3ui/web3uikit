@@ -3,7 +3,10 @@ import { useTabsetContext } from '../../app';
 
 export const useTab = (index: number) => {
     const {
+        size,
+        color,
         variant,
+        vertical,
         activeIndex,
         focusedIndex,
         setActiveIndex,
@@ -28,7 +31,11 @@ export const useTab = (index: number) => {
     return {
         isActive,
         isFocused,
+
+        vertical,
         variant,
+        color,
+        size,
 
         onMouseDown,
         onFocus,

@@ -60,14 +60,16 @@ const Template: ComponentStory<TabsetType> = (props) => {
     )
 }
 
-export const SolidTabset = Template.bind({});
-SolidTabset.args = {
+export const SolidBlueTabset = Template.bind({});
+SolidBlueTabset.args = {
     variant: 'solid',
+    color: 'blue',
 }
 
-export const PillTabset = Template.bind({});
-PillTabset.args = {
+export const PillGreenTabset = Template.bind({});
+PillGreenTabset.args = {
     variant: 'pill',
+    color: 'green',
 }
 
 export const UnstyledTabset = Template.bind({});
@@ -83,6 +85,11 @@ OutlineTabset.args = {
 export const LightTabset = Template.bind({});
 LightTabset.args = {
     variant: 'light',
+}
+
+export const VerticalTabset = Template.bind({});
+LightTabset.args = {
+    vertical: true,
 }
 
 export const WithDisabledTabs = Template.bind({});

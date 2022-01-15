@@ -9,8 +9,10 @@ import type { TabsetComponent } from './types';
 
 export const Tabset: TabsetComponent = ({
   defaultIndex = 0,
-  variant = 'solid',
   vertical = false,
+  variant = 'solid',
+  color = 'blue',
+  size = 'medium',
   disabled = [],
   children,
 }) => {
@@ -25,8 +27,10 @@ export const Tabset: TabsetComponent = ({
       variant={variant}
       vertical={vertical}
       maxIndex={maxIndex}
+      color={color}
+      size={size}
     >
-      <TabsetContainer>
+      <TabsetContainer vertical={vertical}>
         {indexedChildren}
       </TabsetContainer>
     </TabsetProvider>

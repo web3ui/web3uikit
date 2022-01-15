@@ -13,9 +13,7 @@ export const Tab: React.FC<TabProps> = ({
   const ref = useRef<HTMLButtonElement>(null!);
 
   const {
-    isActive,
     isFocused,
-    variant,
     onMouseDown,
     ...attrs
   } = useTab(index!);
@@ -36,10 +34,8 @@ export const Tab: React.FC<TabProps> = ({
     <TabContainer
       className={className}
       onMouseDown={mouseDownHandler}
-      isActive={isActive}
       disabled={disabled}
       ref={ref}
-      variant={variant}
 
       {...attrs}
     >

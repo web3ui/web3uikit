@@ -9,7 +9,12 @@ const Tooltip: React.FC<TooltipProps> = ({
     children,
 }: TooltipProps) => {
     return (
-        <TooltipContainer id={id} position={position} data-tooltip={text}>
+        <TooltipContainer
+            id={id}
+            position={position}
+            data-tooltip={text}
+            data-testid={'tooltip-container-test-id'}
+        >
             <div data-testid={'tooltip-children-test-id'}>{children}</div>
         </TooltipContainer>
     );

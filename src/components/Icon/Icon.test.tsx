@@ -4,10 +4,10 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './Icon.stories';
 
 const { Example, Size16, Size32, Size64 } = composeStories(stories);
+export const iconTestId = 'test-icon';
 
 describe('Icon - Example', () => {
     let container: HTMLDivElement;
-    const testId = 'test-icon';
     const testTitle = 'mail icon';
     const testSize = Example?.args?.size;
 
@@ -21,27 +21,26 @@ describe('Icon - Example', () => {
         container.remove();
     });
     it('renders the component', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon).not.toBeNull();
     });
     it('renders correct SVG', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon?.textContent).toBe(testTitle);
     });
     xit('renders the correct size', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon?.clientHeight).toBe(testSize);
         expect(icon?.clientWidth).toBe(testSize);
     });
     xit('renders aria hidden attribute', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon?.ariaHidden).toBe('true');
     });
 });
 
 describe('Icon - Size16', () => {
     let container: HTMLDivElement;
-    const testId = 'test-icon';
     const testTitle = 'mail icon';
     const testSize = Size16?.args?.size;
 
@@ -55,27 +54,26 @@ describe('Icon - Size16', () => {
         container.remove();
     });
     it('renders the component', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon).not.toBeNull();
     });
     it('renders correct SVG', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon?.textContent).toBe(testTitle);
     });
     xit('renders the correct size', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon?.clientHeight).toBe(testSize);
         expect(icon?.clientWidth).toBe(testSize);
     });
     xit('renders aria hidden attribute', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon?.ariaHidden).toBe('true');
     });
 });
 
 describe('Icon - Size32', () => {
     let container: HTMLDivElement;
-    const testId = 'test-icon';
     const testTitle = 'mail icon';
     const testSize = Size32?.args?.size;
 
@@ -89,27 +87,26 @@ describe('Icon - Size32', () => {
         container.remove();
     });
     it('renders the component', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon).not.toBeNull();
     });
     it('renders correct SVG', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon?.textContent).toBe(testTitle);
     });
     xit('renders the correct size', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon?.clientHeight).toBe(testSize);
         expect(icon?.clientWidth).toBe(testSize);
     });
     xit('renders aria hidden attribute', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon?.ariaHidden).toBe('true');
     });
 });
 
 describe('Icon - Size64', () => {
     let container: HTMLDivElement;
-    const testId = 'test-icon';
     const testTitle = 'mail icon';
     const testSize = Size64?.args?.size;
 
@@ -123,20 +120,20 @@ describe('Icon - Size64', () => {
         container.remove();
     });
     it('renders the component', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon).not.toBeNull();
     });
     it('renders correct SVG', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon?.textContent).toBe(testTitle);
     });
     xit('renders the correct size', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon?.clientHeight).toBe(testSize);
         expect(icon?.clientWidth).toBe(testSize);
     });
     xit('renders aria hidden attribute', () => {
-        const icon = container.querySelector(`[data-testid="${testId}"]`);
+        const icon = container.querySelector(`[data-testid="${iconTestId}"]`);
         expect(icon?.ariaHidden).toBe('true');
     });
 });

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import colors from '../../../../styles/colors';
+import { outlineTabList, solidTabList } from '../../styles';
 import type { TabListContainerProps } from './types';
 
 export const TabListContainer = styled.div<TabListContainerProps>`
@@ -8,15 +9,11 @@ export const TabListContainer = styled.div<TabListContainerProps>`
 
     align-items: stretch;
 
-    border-bottom: ${(props) => {
+    ${(props) => {
         switch (props.variant) {
-            case 'solid': {
-                return '1px solid ' + colors.blueSkyDark;
-            }
-            case 'outline': {
-                return '1px solid ' + colors.greyLight;
-            }
-            default: return 'none';
+            case 'solid': return solidTabList;
+            case 'outline': return outlineTabList;
+            default: return '';
         }
     }};
 `;

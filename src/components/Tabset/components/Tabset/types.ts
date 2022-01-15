@@ -18,6 +18,10 @@ export type TabsetProps = {
    * Vertical tablist orientation
    */
   vertical?: boolean;
+  /**
+   * List of disabled indexes
+   */
+  disabled?: number[];
   children: TabsetChildren;
 };
 

@@ -28,6 +28,8 @@ export const outlineTab = css`
     }
 `;
 
+export const outlineTabList = css``;
+
 export const outlineTabPanel = css`
     border-left: 1px solid ${colors.greyLight};
     border-right: 1px solid ${colors.greyLight};

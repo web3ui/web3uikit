@@ -22,4 +22,7 @@ export const solidTab = css<TabContainerProps>`
         cursor: not-allowed;
     }
 `;
-export const solidTabList = css``;
+
+export const solidTabList = css`
+    border-bottom: 1px solid ${colors.blueSkyDark};
+`;

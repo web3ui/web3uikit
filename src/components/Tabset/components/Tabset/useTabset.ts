@@ -5,7 +5,7 @@ import type { TabListProps } from '../TabList';
 import type { TabPanelProps } from '../TabPanel';
 import type { TabsetChildren } from './types';
 
-export const useTabset = (children: TabsetChildren) => {
+export const useTabset = (children: TabsetChildren, disabled: number[]) => {
     const tabList = children.find<ReactElement<TabListProps>>(isTabList);
     if (tabList === undefined) {
         throw new Error('The Tabset must contains a TabList component');
@@ -26,9 +26,10 @@ export const useTabset = (children: TabsetChildren) => {
     for (let i = 0; i < tabs.length; i++) {
         const tab = tabs[i];
         const panel = panels[i];
-        const index = tab.props.disabled ? -1 : j++;
+        const isDisabled = tab.props.disabled || disabled.includes(i);
+        const index = isDisabled ? -1 : j++;
 
-        indexedTabs.push(cloneElement(tab, { index, key: "." + i }));
+        indexedTabs.push(cloneElement(tab, { index, key: "." + i, disabled: isDisabled }));
         indexedPanels.push(cloneElement(panel, { index, key: "." + i }));
     }
 

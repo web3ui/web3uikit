@@ -38,9 +38,16 @@ export const useTabList = () => {
         }
     }
 
+    const orientation: "vertical" | "horizontal" = vertical
+        ? "vertical"
+        : "horizontal";
+
     return {
         onKeyDown,
         variant,
         vertical,
+
+        role: "tablist",
+        "aria-orientation": orientation,
     }
 }

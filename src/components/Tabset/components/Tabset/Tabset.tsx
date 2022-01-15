@@ -11,12 +11,13 @@ export const Tabset: TabsetComponent = ({
   defaultIndex = 0,
   variant = 'solid',
   vertical = false,
+  disabled = [],
   children,
 }) => {
   const {
     maxIndex,
     indexedChildren,
-  } = useTabset(children);
+  } = useTabset(children, disabled);
 
   return (
     <TabsetProvider

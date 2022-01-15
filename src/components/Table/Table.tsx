@@ -19,25 +19,26 @@ const Table: React.FC<TableProps> = ({
     maxPages,
     noPagination,
 }) => {
-    const [pageNumber, setPageNumber] = useState(1);
+    const [pageNumber, setPageNumber] = useState(0);
 
     const computeCurrentData = (): string[] | React.ReactNode[] => {
         if (noPagination) {
             return data;
         }
-        const from = pageNumber * pageSize - 1;
+        console.log(data.length / pageSize);
+        const from = pageNumber * pageSize;
         const to = from + pageSize;
         return data?.slice(from, to);
     };
 
     const handlePrev = (): void => {
-        if (pageNumber != 1) {
+        if (pageNumber != 0) {
             setPageNumber(pageNumber - 1);
         }
     };
 
     const handleNext = (): void => {
-        if (pageSize * pageNumber + 1 <= data?.length) {
+        if (pageSize * pageNumber + 1 < data?.length) {
             setPageNumber(pageNumber + 1);
         }
     };
@@ -79,7 +80,7 @@ const Table: React.FC<TableProps> = ({
             <Pagination>
                 <div>
                     <PaginationText
-                        isActive={pageNumber != 1}
+                        isActive={pageNumber != 0}
                         onClick={handlePrev}
                     >
                         Prev
@@ -87,17 +88,17 @@ const Table: React.FC<TableProps> = ({
                     {paginate(data?.length, pageNumber, pageSize, maxPages).map(
                         (key) => (
                             <PaginationTag
-                                key={key}
-                                pageNumber={key}
+                                key={`pagination_${key}`}
+                                pageNumber={key - 1}
                                 currentPageNumber={pageNumber}
-                                onClick={() => setPageNumber(key)}
+                                onClick={() => setPageNumber(key - 1)}
                             >
                                 <span>{key}</span>
                             </PaginationTag>
                         ),
                     )}
                     <PaginationText
-                        isActive={pageSize * pageNumber + 1 <= data?.length}
+                        isActive={pageSize * pageNumber + 1 < data?.length}
                         onClick={handleNext}
                     >
                         Next

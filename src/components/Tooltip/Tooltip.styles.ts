@@ -1,104 +1,159 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
 import color from '../../styles/colors';
+import { TooltipProps } from './types';
+import { Position } from './types';
 
-const initialStyles = css`
-    ${resetCSS}
-    ${fonts.text}
-`;
-
-const marginTooltip = '40px';
-const arrowSizeTooltip = '6px';
+const borderRadius = '4px';
 
 const container = css`
     ${resetCSS}
-    align-items: center;
-    border-radius: 4px;
-    color: white;
-    display: flex;
-    justify-content: center;
-    left: 50%;
-    padding: 8px;
-    pointer-events: none;
     position: absolute;
-    transform: translateX(-50%);
-    white-space: nowrap;
-
-    &:before {
-        border: solid ${arrowSizeTooltip} transparent;
-        content: '';
-        height: 0;
-        left: 50%;
-        margin-left: calc(${arrowSizeTooltip} * -1);
-        position: absolute;
-        width: 0;
-    }
-`;
-
-const defaultContainer = css`
-    bottom: calc(100% + 5px);
-    background-color: ${color.blueDark2};
+    ${fonts.openSans}
+    font-size: 12px;
+    line-height: 16px;
+    font-style: normal;
+    --tooltip-text: 'hello';
 `;
 
 const top = css`
-    background-color: ${color.blueDark2};
-    top: calc(${marginTooltip} * -1);
+    &:before,
+    &:after {
+        --arrow-size: 6px;
+        position: absolute;
+        top: -0.25rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(var(--translate-y, 0));
+    }
 
     &:before {
+        --translate-y: calc(-100% - var(--arrow-size));
+        padding: 0.3rem;
+        width: max-content;
+        content: attr(data-tooltip);
+        color: white;
+        background-color: ${color.blueDark2};
+        border-radius: ${borderRadius};
+        text-align: center;
+    }
+
+    &:after,
+    &:hover {
+        --translate-y: calc(-1 * var(--arrow-size));
+        content: '';
+        border: var(--arrow-size) solid transparent;
         border-top-color: ${color.blueDark2};
-        top: 100%;
     }
 `;
 
 const bottom = css`
-    background-color: ${color.blueDark2};
-    bottom: calc(${marginTooltip} * -1);
+    &:before,
+    &:after {
+        --arrow-size: 6px;
+        position: absolute;
+        bottom: -0.25rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(var(--translate-y, 0));
+    }
 
     &:before {
-        bottom: 100%;
+        --translate-y: calc(100% + var(--arrow-size));
+        padding: 0.3rem;
+        width: max-content;
+        content: attr(data-tooltip);
+        color: white;
+        background-color: ${color.blueDark2};
+        border-radius: ${borderRadius};
+        text-align: center;
+    }
+
+    &:after,
+    &:hover {
+        --translate-y: calc(1 * var(--arrow-size));
+        content: '';
+        border: var(--arrow-size) solid transparent;
         border-bottom-color: ${color.blueDark2};
     }
 `;
 
 const left = css`
-    background-color: ${color.blueDark2};
-    left: auto;
-    right: ${marginTooltip};
-    top: 50%;
-    transform: translateX(0) translateY(-50%);
+    &:before,
+    &:after {
+        --arrow-size: 6px;
+        position: absolute;
+        left: -0.25rem;
+        top: 50%;
+        transform: translateX(var(--translate-x, 0)) translateY(-50%);
+    }
 
     &:before {
+        --translate-x: calc(-100% - var(--arrow-size));
+        content: attr(data-tooltip);
+        color: white;
+        width: max-content;
+        padding: 0.3rem;
+        border-radius: ${borderRadius};
+        background: ${color.blueDark2};
+        text-align: center;
+    }
+
+    &:after,
+    &:hover {
+        --translate-x: calc(-1 * var(--arrow-size));
+        content: '';
+        color: ${color.blueDark2};
+        border: var(--arrow-size) solid transparent;
         border-left-color: ${color.blueDark2};
-        left: auto;
-        right: calc(${arrowSizeTooltip} * -2);
-        top: 50%;
-        transform: translateX(0) translateY(-50%);
     }
 `;
 
 const right = css`
-    background-color: ${color.blueDark2};
-    left: ${marginTooltip};
-    top: 50%;
-    transform: translateX(0) translateY(-50%);
+    &:before,
+    &:after {
+        --arrow-size: 6px;
+        position: absolute;
+        right: -0.25rem;
+        top: 50%;
+        transform: translateX(var(--translate-x, 0)) translateY(-50%);
+    }
 
     &:before {
+        --translate-x: calc(100% + var(--arrow-size));
+        content: attr(data-tooltip);
+        color: white;
+        width: max-content;
+        padding: 0.3rem;
+        border-radius: ${borderRadius};
+        background: ${color.blueDark2};
+        text-align: center;
+    }
+
+    &:after,
+    &:hover {
+        --translate-x: calc(1 * var(--arrow-size));
+        content: '';
+        border: var(--arrow-size) solid transparent;
         border-right-color: ${color.blueDark2};
-        left: calc(${arrowSizeTooltip} * -1);
-        top: 50%;
-        transform: translateX(0) translateY(-50%);
     }
 `;
 
-export const tooltipStyles = {
-    initialStyles,
-    container,
-    defaultContainer,
-    marginTooltip,
-    arrowSizeTooltip,
-    top,
-    bottom,
-    left,
-    right,
+const getContainerStyleByPosition = (position: Position) => {
+    switch (position) {
+        case 'top':
+            return top;
+        case 'bottom':
+            return bottom;
+        case 'left':
+            return left;
+        case 'right':
+            return right;
+    }
 };
+
+export default styled.div<Pick<TooltipProps, 'position'>>`
+    ${container}
+    &:hover {
+        ${(p) => getContainerStyleByPosition(p.position)}
+    }
+`;

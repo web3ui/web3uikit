@@ -1,3 +1,5 @@
+export type Position = 'top' | 'bottom' | 'left' | 'right';
+
 export interface TooltipProps {
     /**
      * The tooltip ID will be generated if not assigned
@@ -12,7 +14,7 @@ export interface TooltipProps {
     /**
      * Set position of tooltip
      */
-    position?: 'top' | 'bottom' | 'left' | 'right';
+    position: Position;
 
     /**
      * Set children which should have a tooltip

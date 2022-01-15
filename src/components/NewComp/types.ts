@@ -1,7 +1,7 @@
 export const colorState = ['greenLight', 'redLight'] as const;
 export type TColorState = typeof colorState[number];
 
-// Note the string are very important
+// NOTE: the comment strings are very important
 // Storybook pulls them to make our docs
 
 export interface NewCompProps {

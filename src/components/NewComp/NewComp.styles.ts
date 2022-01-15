@@ -65,7 +65,7 @@ export const TextStyled = styled.p<TStyleProps>`
 `;
 
 // CSS ORDERING
-// 1 - Imported styled (font, colors, etc)
+// 1 - Imported styles (font, colors, etc)
 // 2 - Normal styles (margin, padding, etc)
 // 3 - Child elements (span, svg, etc)
 // 4 - Pseudo elements (before & after)

@@ -4,9 +4,9 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 // importing your new component
 import NewComp from './NewComp';
 
-// title puts it into a group in Storybook with its name
-// component is your new component
-// argTypes: onClick is a 'Storybook Event' for onCLick
+// title: group / name in Storybook
+// component: your new component
+// argTypes: onClick is a 'Storybook Event' to simulate clicks
 export default {
     title: 'Demo/NewComp',
     component: NewComp,

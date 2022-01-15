@@ -19,10 +19,12 @@ import { iconTestId } from '../Icon/Icon.test';
 const { Default, InitializeRed, UnderLinedText } = composeStories(stories);
 
 //setting my test IDs to match my tsx
-const testId = 'test-new-comp';
+export const testId = 'test-new-comp';
 const testTitle = 'test-title';
 const testHeading = 'test-heading';
 const testText = 'test-text';
+// NOTE: the main test ID is exported incase
+// it is needed for another components test
 
 ///////////////////////////////////////////////////////
 // examples of basic tests of props, values and styles

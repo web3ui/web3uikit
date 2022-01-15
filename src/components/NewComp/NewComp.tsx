@@ -12,7 +12,7 @@ import color from '../../styles/colors';
 // importing props from the components TypeScript interface
 import { NewCompProps } from './types';
 
-// importing CSS styles as styled components, sorted alphabetical
+// importing CSS styles as styled components, sorted alphabetically
 import {
     HeadingStyled,
     SectionStyled,
@@ -23,14 +23,14 @@ import {
 
 // Normal boilerplate React functional component
 const NewComp: React.FC<NewCompProps> = ({
-    // deconstructing props and setting any default values, sorted alphabetical
+    // deconstructing props and setting any default values, sorted alphabetically
     hasUnderline = false,
     onClick,
     state = 'greenLight',
     textOff,
     textOn,
 }) => {
-    // Standard use of useState to track any variables
+    // Standard use of useState to track internal state variables
     const [compState, setCompState] = useState(state);
     let [count, setCount] = useState(-1);
 
@@ -43,8 +43,9 @@ const NewComp: React.FC<NewCompProps> = ({
     const toggleState = (
         event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     ) => {
-        // toggle the components state & if the optional callback function if passed
+        // toggle the components state
         setCompState(compState === 'greenLight' ? 'redLight' : 'greenLight');
+        // if the optional callback function if passed, call it
         onClick && onClick(event);
     };
 

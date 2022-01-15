@@ -1,7 +1,7 @@
-import colors from '../../../styles/colors';
+import colors from '../../../../styles/colors';
 import { css } from 'styled-components';
-import type { TabContainerProps } from '../components';
-import { getLightColor } from '.';
+import type { TabContainerProps } from '../../components';
+import { getLightColor } from '../utils';
 
 const outlineBorder = `1px solid ${colors.greyLight}`
 

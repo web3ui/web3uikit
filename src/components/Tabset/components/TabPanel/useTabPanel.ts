@@ -1,7 +1,7 @@
 import { useTabsetContext } from '../../app';
 
 export const useTabPanel = (index: number) => {
-    const { activeIndex, variant } = useTabsetContext();
+    const { activeIndex, theme } = useTabsetContext();
 
     const isActive = activeIndex === index;
     const panelId = 'w-tabpanel-' + index;
@@ -9,7 +9,7 @@ export const useTabPanel = (index: number) => {
 
     return {
         isActive,
-        variant,
+        ...theme,
 
         id: panelId,
         role: "tabpanel",

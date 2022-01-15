@@ -1,12 +1,9 @@
-import { useCallback } from 'react';
 import { useTabsetContext } from '../../app';
+import { createId } from '../../helpers';
 
 export const useTab = (index: number) => {
     const {
-        size,
-        color,
-        variant,
-        vertical,
+        theme,
         activeIndex,
         focusedIndex,
         setActiveIndex,
@@ -16,26 +13,22 @@ export const useTab = (index: number) => {
     const isActive = activeIndex === index;
     const isFocused = focusedIndex === index;
 
-    const onMouseDown = useCallback(() => {
+    const onMouseDown = () => {
         setActiveIndex(index);
         setFocusedIndex(index);
-    }, [index])
+    }
 
     const onFocus = () => {
         setFocusedIndex(index);
     }
 
-    const panelId = 'w-tabpanel-' + index;
-    const tabId = 'w-tab-' + index;
+    const { tabId, tabPanelId } = createId(index);
 
     return {
         isActive,
         isFocused,
 
-        vertical,
-        variant,
-        color,
-        size,
+        ...theme,
 
         onMouseDown,
         onFocus,
@@ -44,6 +37,6 @@ export const useTab = (index: number) => {
         tabIndex: isActive ? 0 : -1,
         
         "aria-selected": isActive,
-        "aria-controls": panelId,
+        "aria-controls": tabPanelId,
     }
 }

@@ -6,19 +6,14 @@ import type { TabListProps } from './types';
 export const TabList: React.FC<TabListProps> = (props) => {
     const { children } = props;
     const {
-        variant,
-        vertical,
         onKeyDown,
-        ...attrs
+        ...rest
     } = useTabList();
 
     return (
         <TabListContainer 
             onKeyDown={onKeyDown}
-            vertical={vertical}
-            variant={variant}
-
-            {...attrs}
+            {...rest}
         >
             {children}
         </TabListContainer>

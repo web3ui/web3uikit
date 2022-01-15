@@ -1,23 +1,35 @@
-import type { TabsetColor, TabsetSize, TabsetVariant } from '../components';
-
 export type TabsetContextValue = {
+  theme: TabsetContextTheme;
+
+  maxIndex: number;
   activeIndex: number;
   focusedIndex: number;
-  maxIndex: number;
-  vertical: boolean;
-  variant: TabsetVariant;
-  color: TabsetColor;
-  size: TabsetSize;
-  
-  setActiveIndex: (index: number) => void;
-  setFocusedIndex: (index: number) => void;
+
+  setActiveIndex: SetIndexFunction;
+  setFocusedIndex: SetIndexFunction;
 };
 
 export type TabsetProviderProps = {
-  size: TabsetSize;
-  color: TabsetColor;
-  variant: TabsetVariant;
-  vertical: boolean;
-  maxIndex: number;
+  theme: TabsetContextTheme;
   defaultIndex: number;
+  maxIndex: number;
 };
+
+export type TabsetContextTheme = {
+  variant: TabsetVariant;
+  color: TabsetColor;
+  size: TabsetSize;
+  vertical: boolean;
+}
+
+export type SetIndexFunction = (index: number) => void;
+
+export type TabsetSize = 'medium' | 'small' | 'large';
+export type TabsetColor = 'red' | 'green' | 'blue' | 'yellow';
+export type TabsetVariant = 
+  | 'unstyled'
+  | 'outline'
+  | 'solid'
+  | 'pill'
+  | 'light';
+

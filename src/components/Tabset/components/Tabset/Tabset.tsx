@@ -1,5 +1,5 @@
 import React from "react";
-import { TabsetProvider } from '../../app';
+import { TabsetContextTheme, TabsetProvider } from '../../app';
 import { useTabset } from './useTabset';
 import { Tab } from "../Tab";
 import { TabList } from "../TabList";
@@ -8,12 +8,12 @@ import { TabsetContainer } from './Tabset.styles';
 import type { TabsetComponent } from './types';
 
 export const Tabset: TabsetComponent = ({
-  defaultIndex = 0,
-  vertical = false,
-  variant = 'solid',
-  color = 'blue',
   size = 'medium',
+  color = 'blue',
+  variant = 'solid',
+  vertical = false,
   disabled = [],
+  defaultIndex = 0,
   children,
 }) => {
   const {
@@ -21,14 +21,18 @@ export const Tabset: TabsetComponent = ({
     indexedChildren,
   } = useTabset(children, disabled);
 
+  const theme: TabsetContextTheme = {
+    size,
+    color,
+    variant,
+    vertical
+  }
+
   return (
     <TabsetProvider
-      defaultIndex={defaultIndex}
-      variant={variant}
-      vertical={vertical}
+      theme={theme}
       maxIndex={maxIndex}
-      color={color}
-      size={size}
+      defaultIndex={defaultIndex}
     >
       <TabsetContainer vertical={vertical}>
         {indexedChildren}

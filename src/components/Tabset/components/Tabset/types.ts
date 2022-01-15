@@ -2,6 +2,7 @@ import React from "react";
 import type { TabProps } from "../Tab";
 import type { TabListProps } from "../TabList";
 import type { TabPanelProps } from "../TabPanel";
+import type { TabsetVariant, TabsetSize, TabsetColor } from '../../app';
 
 export type TabsetComponent = React.VFC<TabsetProps> & TabsetComposition;
 
@@ -44,16 +45,6 @@ export type TabsetChildren = (
     React.ReactElement<TabListProps> |
     React.ReactElement<TabPanelProps>
 )[];
-
-
-export type TabsetSize = 'medium' | 'small' | 'large';
-export type TabsetColor = 'red' | 'green' | 'blue' | 'yellow';
-export type TabsetVariant = 
-  | 'unstyled'
-  | 'outline'
-  | 'solid'
-  | 'pill'
-  | 'light';
 
 export type TabsetContainerProps = {
   vertical: boolean;

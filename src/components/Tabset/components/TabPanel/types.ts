@@ -1,4 +1,4 @@
-import type { TabsetVariant } from '../Tabset';
+import type { TabsetVariant } from '../../app';
 
 export type TabPanelProps = {
   index?: number;

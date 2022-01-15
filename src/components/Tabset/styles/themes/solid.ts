@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
-import colors from '../../../styles/colors';
-import { getColor, getDarkColor } from './utils';
-import { TabContainerProps, TabListContainerProps } from '../components';
+import colors from '../../../../styles/colors';
+import { getColor, getDarkColor } from '../utils';
+import { TabContainerProps, TabListContainerProps } from '../../components';
 
 const tab = css<TabContainerProps>`
     z-index: ${(props) => props.isActive ? 1 : 0};

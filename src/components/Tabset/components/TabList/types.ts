@@ -1,12 +1,12 @@
 import type { TabProps } from '../Tab';
-import type { TabsetVariant, TabsetColor } from '../Tabset';
+import type { TabsetVariant, TabsetColor } from '../../app';
 
 export type TabListProps = {
     children: React.ReactElement<TabProps>[];
 }
 
 export type TabListContainerProps = {
-    variant: TabsetVariant;
     color: TabsetColor;
+    variant: TabsetVariant;
     vertical: boolean;
 }

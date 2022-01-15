@@ -1,11 +1,7 @@
 import colors from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
-import type { TabsetColor, TabsetSize, TabsetVariant } from '../components';
-import { solid } from './solid';
-import { pill } from './pill';
-import { outline } from './outline';
-import { light } from './themes/light';
-import { unstyled } from './unstyled';
+import * as themes from './themes';
+import type { TabsetColor, TabsetSize, TabsetVariant } from '../app';
 
 export const getColor = (c: TabsetColor) => {
     switch (c) {
@@ -44,10 +40,10 @@ export const getFontSize = (s: TabsetSize) => {
 
 export const getVariant = (v: TabsetVariant) => {
     switch (v) {
-        case 'light': return light;
-        case 'outline': return outline;
-        case 'pill': return pill;
-        case 'solid': return solid;
-        case 'unstyled': return unstyled;
+        case 'light': return themes.light;
+        case 'outline': return themes.outline;
+        case 'pill': return themes.pill;
+        case 'solid': return themes.solid;
+        case 'unstyled': return themes.unstyled;
     }
 }

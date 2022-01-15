@@ -62,38 +62,55 @@ const Template: ComponentStory<TabsetType> = (props) => {
 
 export const SolidBlueTabset = Template.bind({});
 SolidBlueTabset.args = {
+    defaultIndex: 1,
+    vertical: false,
     variant: 'solid',
     color: 'blue',
 }
 
 export const PillGreenTabset = Template.bind({});
 PillGreenTabset.args = {
+    defaultIndex: 3,
+    vertical: false,
     variant: 'pill',
     color: 'green',
 }
 
 export const UnstyledTabset = Template.bind({});
 UnstyledTabset.args = {
+    defaultIndex: 0,
+    vertical: false,
     variant: 'unstyled',
 }
 
 export const OutlineTabset = Template.bind({});
 OutlineTabset.args = {
+    defaultIndex: 0,
+    vertical: false,
     variant: 'outline',
+    color: 'blue',
 }
 
 export const LightTabset = Template.bind({});
 LightTabset.args = {
+    defaultIndex: 0,
+    vertical: false,
     variant: 'light',
+    color: 'blue',
 }
 
 export const VerticalTabset = Template.bind({});
-LightTabset.args = {
+VerticalTabset.args = {
+    defaultIndex: 0,
     vertical: true,
+    variant: 'pill',
+    color: 'blue',
 }
 
 export const WithDisabledTabs = Template.bind({});
 WithDisabledTabs.args = {
+    defaultIndex: 0,
+    vertical: false,
     variant: 'solid',
     disabled: [2, 4]
 }

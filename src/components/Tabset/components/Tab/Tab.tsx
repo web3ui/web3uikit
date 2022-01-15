@@ -15,7 +15,7 @@ export const Tab: React.FC<TabProps> = ({
   const {
     isFocused,
     onMouseDown,
-    ...attrs
+    ...rest
   } = useTab(index!);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ export const Tab: React.FC<TabProps> = ({
       disabled={disabled}
       ref={ref}
 
-      {...attrs}
+      {...rest}
     >
       {children}
     </TabContainer>

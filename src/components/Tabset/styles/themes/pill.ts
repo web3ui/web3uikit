@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
-import colors from '../../../styles/colors';
-import type { TabContainerProps } from '../components';
-import { getColor, getDarkColor, getLightColor } from './utils';
+import colors from '../../../../styles/colors';
+import type { TabContainerProps } from '../../components';
+import { getColor, getDarkColor, getLightColor } from '../utils';
 
 const tab = css<TabContainerProps>`
     background-color: ${(props) => props.isActive

@@ -2,9 +2,7 @@ import { useTabsetContext } from '../../app';
 
 export const useTabList = () => {
     let {
-        color,
-        variant,
-        vertical,
+        theme,
         maxIndex,
         activeIndex,
         focusedIndex,
@@ -39,15 +37,13 @@ export const useTabList = () => {
         }
     }
 
-    const orientation: "vertical" | "horizontal" = vertical
+    const orientation: "vertical" | "horizontal" = theme.vertical
         ? "vertical"
         : "horizontal";
 
     return {
         onKeyDown,
-        variant,
-        vertical,
-        color,
+        ...theme,
 
         role: "tablist",
         "aria-orientation": orientation,

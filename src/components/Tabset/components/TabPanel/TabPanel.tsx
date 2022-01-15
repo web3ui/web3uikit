@@ -5,10 +5,10 @@ import { TabPanelProps } from './types';
 
 export const TabPanel: React.FC<TabPanelProps> = (props) => {
   const { children, index } = props;
-  const { isActive, ...attrs} = useTabPanel(index!);
+  const { isActive, ...rest} = useTabPanel(index!);
 
   return !isActive ? null : (
-    <TabPanelContainer {...attrs}>
+    <TabPanelContainer {...rest}>
       {children}
     </TabPanelContainer>
   )

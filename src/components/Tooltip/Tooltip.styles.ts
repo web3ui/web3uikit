@@ -8,25 +8,23 @@ import { Position } from './types';
 const borderRadius = '4px';
 
 const container = css`
-    ${resetCSS}
-    position: absolute;
-    ${fonts.openSans}
-    font-size: 12px;
-    line-height: 16px;
-    font-style: normal;
     --tooltip-text: 'hello';
+    font-size: 12px;
+    font-style: normal;
+    ${fonts.openSans}
+    ${fonts.openSans}
+    line-height: 16px;
+    position: absolute;
+    ${resetCSS}
 `;
 
 const top = css`
-    &:before,
     &:after {
-        --arrow-size: 6px;
-        position: absolute;
-        top: -0.25rem;
-        left: 50%;
-        transform: translateX(-50%) translateY(var(--translate-y, 0));
+        --translate-y: calc(-1 * var(--arrow-size));
+        content: '';
+        border: var(--arrow-size) solid transparent;
+        border-top-color: ${color.blueDark2};
     }
-
     &:before {
         --translate-y: calc(-100% - var(--arrow-size));
         padding: 0.3rem;
@@ -37,24 +35,22 @@ const top = css`
         border-radius: ${borderRadius};
         text-align: center;
     }
-
-    &:after,
-    &:hover {
-        --translate-y: calc(-1 * var(--arrow-size));
-        content: '';
-        border: var(--arrow-size) solid transparent;
-        border-top-color: ${color.blueDark2};
-    }
-`;
-
-const bottom = css`
     &:before,
     &:after {
         --arrow-size: 6px;
         position: absolute;
-        bottom: -0.25rem;
+        top: -0.25rem;
         left: 50%;
         transform: translateX(-50%) translateY(var(--translate-y, 0));
+    }
+`;
+
+const bottom = css`
+    &:after {
+        --translate-y: calc(1 * var(--arrow-size));
+        content: '';
+        border: var(--arrow-size) solid transparent;
+        border-bottom-color: ${color.blueDark2};
     }
 
     &:before {
@@ -67,26 +63,24 @@ const bottom = css`
         border-radius: ${borderRadius};
         text-align: center;
     }
-
-    &:after,
-    &:hover {
-        --translate-y: calc(1 * var(--arrow-size));
-        content: '';
-        border: var(--arrow-size) solid transparent;
-        border-bottom-color: ${color.blueDark2};
-    }
-`;
-
-const left = css`
     &:before,
     &:after {
         --arrow-size: 6px;
         position: absolute;
-        left: -0.25rem;
-        top: 50%;
-        transform: translateX(var(--translate-x, 0)) translateY(-50%);
+        bottom: -0.25rem;
+        left: 50%;
+        transform: translateX(-50%) translateY(var(--translate-y, 0));
     }
+`;
 
+const left = css`
+    &:after {
+        --translate-x: calc(-1 * var(--arrow-size));
+        content: '';
+        color: ${color.blueDark2};
+        border: var(--arrow-size) solid transparent;
+        border-left-color: ${color.blueDark2};
+    }
     &:before {
         --translate-x: calc(-100% - var(--arrow-size));
         content: attr(data-tooltip);
@@ -97,27 +91,23 @@ const left = css`
         background: ${color.blueDark2};
         text-align: center;
     }
-
-    &:after,
-    &:hover {
-        --translate-x: calc(-1 * var(--arrow-size));
-        content: '';
-        color: ${color.blueDark2};
-        border: var(--arrow-size) solid transparent;
-        border-left-color: ${color.blueDark2};
-    }
-`;
-
-const right = css`
     &:before,
     &:after {
         --arrow-size: 6px;
         position: absolute;
-        right: -0.25rem;
+        left: -0.25rem;
         top: 50%;
         transform: translateX(var(--translate-x, 0)) translateY(-50%);
     }
+`;
 
+const right = css`
+    &:after {
+        --translate-x: calc(1 * var(--arrow-size));
+        content: '';
+        border: var(--arrow-size) solid transparent;
+        border-right-color: ${color.blueDark2};
+    }
     &:before {
         --translate-x: calc(100% + var(--arrow-size));
         content: attr(data-tooltip);
@@ -128,13 +118,13 @@ const right = css`
         background: ${color.blueDark2};
         text-align: center;
     }
-
-    &:after,
-    &:hover {
-        --translate-x: calc(1 * var(--arrow-size));
-        content: '';
-        border: var(--arrow-size) solid transparent;
-        border-right-color: ${color.blueDark2};
+    &:before,
+    &:after {
+        --arrow-size: 6px;
+        position: absolute;
+        right: -0.25rem;
+        top: 50%;
+        transform: translateX(var(--translate-x, 0)) translateY(-50%);
     }
 `;
 

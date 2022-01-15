@@ -1,6 +1,9 @@
 {
+    "prettier.configPath": ".prettierrc",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
-    "prettier.configPath": ".prettierrc",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
     "cSpell.words": ["testclass"]
 }

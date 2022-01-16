@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import colors from "../../../../styles/colors";
-import fonts from "../../../../styles/fonts";
+import styled from 'styled-components';
+import colors from '../../../../styles/colors';
+import fonts from '../../../../styles/fonts';
 import { resetButtonCSS } from '../../../../styles/reset';
 import { getVariant, getFontSize } from '../../styles';
 import type { TabContainerProps } from './types';

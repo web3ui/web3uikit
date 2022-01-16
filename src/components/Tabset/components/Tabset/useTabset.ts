@@ -18,7 +18,7 @@ export const useTabset = (children: TabsetChildren, disabled: number[]) => {
         throw new Error('The number of tabs and panels should be equal');
     }
 
-    let j = 0; 
+    let j = 0;
 
     const indexedTabs = [];
     const indexedPanels = [];
@@ -29,14 +29,20 @@ export const useTabset = (children: TabsetChildren, disabled: number[]) => {
         const isDisabled = tab.props.disabled || disabled.includes(i);
         const index = isDisabled ? -1 : j++;
 
-        indexedTabs.push(cloneElement(tab, { index, key: "." + i, disabled: isDisabled }));
-        indexedPanels.push(cloneElement(panel, { index, key: "." + i }));
+        indexedTabs.push(
+            cloneElement(tab, { index, key: '.' + i, disabled: isDisabled }),
+        );
+        indexedPanels.push(cloneElement(panel, { index, key: '.' + i }));
     }
 
-    const indexedTabList = cloneElement(tabList, { key: 'tabList' }, indexedTabs);
+    const indexedTabList = cloneElement(
+        tabList,
+        { key: 'tabList' },
+        indexedTabs,
+    );
 
     return {
         maxIndex: j - 1,
         indexedChildren: [indexedTabList, ...indexedPanels] as const,
-    }
-}
+    };
+};

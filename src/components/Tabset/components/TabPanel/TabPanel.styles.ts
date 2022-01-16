@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import colors from '../../../../styles/colors';
 import { getVariant } from '../../styles';
-import type { TabPanelContainerProps} from './types';
+import type { TabPanelContainerProps } from './types';
 
 export const TabPanelContainer = styled.div<TabPanelContainerProps>`
     position: relative;

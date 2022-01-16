@@ -5,5 +5,5 @@ export const createId = (index: number) => {
     return {
         tabId: TAB_ID_PREFIX + index,
         tabPanelId: TABPANEL_ID_PREFIX + index,
-    }
-}
+    };
+};

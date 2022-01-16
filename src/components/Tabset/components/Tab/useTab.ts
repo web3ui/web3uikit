@@ -16,11 +16,11 @@ export const useTab = (index: number) => {
     const onMouseDown = () => {
         setActiveIndex(index);
         setFocusedIndex(index);
-    }
+    };
 
     const onFocus = () => {
         setFocusedIndex(index);
-    }
+    };
 
     const { tabId, tabPanelId } = createId(index);
 
@@ -35,8 +35,8 @@ export const useTab = (index: number) => {
         id: tabId,
         role: 'tab',
         tabIndex: isActive ? 0 : -1,
-        
-        "aria-selected": isActive,
-        "aria-controls": tabPanelId,
-    }
-}
+
+        'aria-selected': isActive,
+        'aria-controls': tabPanelId,
+    };
+};

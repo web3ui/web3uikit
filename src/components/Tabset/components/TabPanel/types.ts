@@ -1,10 +1,11 @@
 import type { TabsetVariant } from '../../app';
 
 export type TabPanelProps = {
-  index?: number;
-  className?: string;
+    index?: number;
+    className?: string;
 };
 
 export type TabPanelContainerProps = {
-  variant: TabsetVariant;
-}
+    variant: TabsetVariant;
+    vertical: boolean;
+};

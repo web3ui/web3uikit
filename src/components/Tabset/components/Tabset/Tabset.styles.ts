@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import type { TabsetContainerProps } from './types';
 
 export const TabsetContainer = styled.div<TabsetContainerProps>`

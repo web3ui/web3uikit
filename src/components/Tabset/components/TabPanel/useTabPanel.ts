@@ -12,9 +12,8 @@ export const useTabPanel = (index: number) => {
         ...theme,
 
         id: panelId,
-        role: "tabpanel",
+        role: 'tabpanel',
         tabIndex: 0,
-        "aria-labelledby": tabId,
-    }
-}
-
+        'aria-labelledby': tabId,
+    };
+};

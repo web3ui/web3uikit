@@ -16,36 +16,39 @@ export const useTabList = () => {
         }
 
         switch (event.key) {
-            case "ArrowLeft":
-            case "ArrowUp": {
+            case 'ArrowLeft':
+            case 'ArrowUp': {
                 return focusedIndex <= 0
                     ? null
                     : setFocusedIndex(focusedIndex - 1);
-            };
-            case "ArrowRight":
-            case "ArrowDown": {
+            }
+            case 'ArrowRight':
+            case 'ArrowDown': {
                 return focusedIndex >= maxIndex
                     ? null
                     : setFocusedIndex(focusedIndex + 1);
-            };
+            }
 
-            case "Home": return setFocusedIndex(0);
-            case "End": return setFocusedIndex(maxIndex);
+            case 'Home':
+                return setFocusedIndex(0);
+            case 'End':
+                return setFocusedIndex(maxIndex);
 
-            case " ":
-            case "Enter": return setActiveIndex(focusedIndex);
+            case ' ':
+            case 'Enter':
+                return setActiveIndex(focusedIndex);
         }
-    }
+    };
 
-    const orientation: "vertical" | "horizontal" = theme.vertical
-        ? "vertical"
-        : "horizontal";
+    const orientation: 'vertical' | 'horizontal' = theme.vertical
+        ? 'vertical'
+        : 'horizontal';
 
     return {
         onKeyDown,
         ...theme,
 
-        role: "tablist",
-        "aria-orientation": orientation,
-    }
-}
+        role: 'tablist',
+        'aria-orientation': orientation,
+    };
+};

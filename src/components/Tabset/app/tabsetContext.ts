@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext } from 'react';
 import { TabsetContextValue } from './types';
 
 export const TabsetContext = createContext<TabsetContextValue | null>(null);
@@ -11,4 +11,4 @@ export const useTabsetContext = () => {
     }
 
     return context;
-}
+};

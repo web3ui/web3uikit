@@ -4,9 +4,9 @@ import colors from '../../../../styles/colors';
 import { TabContainerProps, TabListContainerProps } from '../../components';
 
 const tab = css<TabContainerProps>`
-    ${(props) => props.vertical
-        ? 'border-right'
-        : 'border-bottom'}: ${(props) =>
+    ${(props) => (props.vertical ? 'border-right' : 'border-bottom')}: ${(
+        props,
+    ) =>
         props.isActive
             ? `3px solid ${getColor(props.color)}`
             : '3px solid transparent'};
@@ -22,9 +22,10 @@ const tab = css<TabContainerProps>`
 `;
 
 const tabList = css<TabListContainerProps>`
-    ${(props) => props.vertical
-        ? `border-right: 1px solid ${colors.greyLight}`
-        : `border-bottom: 1px solid ${colors.greyLight}`};
+    ${(props) =>
+        props.vertical
+            ? `border-right: 1px solid ${colors.greyLight}`
+            : `border-bottom: 1px solid ${colors.greyLight}`};
 `;
 
 export const light = {

@@ -1,27 +1,30 @@
 import colors from '../../../../styles/colors';
 import { css } from 'styled-components';
-import type { TabContainerProps } from '../../components';
+import { TabContainerProps, TabListContainerProps, TabPanelContainerProps } from '../../components';
 import { getLightColor } from '../utils';
 
-const outlineBorder = `1px solid ${colors.greyLight}`
+const outlineBorder = `1px solid ${colors.greyLight}`;
 
 export const tab = css<TabContainerProps>`
-    margin-bottom: -1px;
+    ${(props) => props.vertical
+        ? `margin-right: -1px`
+        : `margin-bottom: -1px`};
 
     border: 1px solid ${colors.greyLight};
-    background-color: ${(props) => props.isActive 
-        ? colors.white
-        : getLightColor(props.color)};
+    background-color: ${(props) =>
+        props.isActive ? colors.white : getLightColor(props.color)};
 
     :active,
-    &[aria-selected="true"] {
+    &[aria-selected='true'] {
         z-index: 1;
-        border-bottom: 1px solid transparent;
+        ${(props) => props.vertical
+            ? 'border-right: 1px solid transparent'
+            : 'border-bottom: 1px solid transparent'};
     }
 
-    &:not([aria-selected="true"]):not(:hover):focus {
+    &:not([aria-selected='true']):not(:hover):focus {
         z-index: 2;
-        border-left: ${outlineBorder}
+        border-left: ${outlineBorder};
     }
 
     :first-child {
@@ -29,20 +32,32 @@ export const tab = css<TabContainerProps>`
     }
 
     :last-child {
-        border-top-right-radius: 4px;
+        ${(props) => props.vertical
+            ? 'border-bottom-left-radius: 4px'
+            : 'border-top-right-radius: 4px'};
     }
+
+    ${(props) => props.vertical && `
+        :not(:last-child) {
+            border-bottom: 1px solid transparent;
+        }
+    `}
 
     :not(:first-child) {
-        border-left: 1px solid transparent;
+        ${(props) => props.vertical
+            ? `border-left: 1px solid ${colors.greyLight}`
+            : 'border-left: 1px solid transparent'};
     }
 `;
 
-export const tabList = css`
-    border-bottom: ${outlineBorder};
+export const tabList = css<TabListContainerProps>`
+    border-bottom: ${(props) => props.vertical ? 'none' : outlineBorder};
 `;
 
-export const tabPanel = css`
-    border-left: ${outlineBorder};
+export const tabPanel = css<TabPanelContainerProps>`
+    ${(props) => props.vertical
+        ? `border-top: ${outlineBorder}`
+        : `border-left: ${outlineBorder}`};
     border-right: ${outlineBorder};
     border-bottom: ${outlineBorder};
 `;
@@ -51,4 +66,4 @@ export const outline = {
     tab,
     tabList,
     tabPanel,
-}
+};

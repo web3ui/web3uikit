@@ -4,10 +4,9 @@ import type { TabContainerProps } from '../../components';
 import { getColor, getDarkColor, getLightColor } from '../utils';
 
 const tab = css<TabContainerProps>`
-    background-color: ${(props) => props.isActive
-        ? getColor(props.color)
-        : 'transparent'};
-    color: ${(props) => props.isActive ? colors.white : colors.grey};
+    background-color: ${(props) =>
+        props.isActive ? getColor(props.color) : 'transparent'};
+    color: ${(props) => (props.isActive ? colors.white : colors.grey)};
 
     border-radius: 500px;
 
@@ -15,8 +14,8 @@ const tab = css<TabContainerProps>`
         background-color: ${(props) => getDarkColor(props.color)};
     }
 
-    &:not([aria-selected="true"]):not(:hover):focus,
-    &:not([aria-selected="true"]):not(:disabled):hover {
+    &:not([aria-selected='true']):not(:hover):focus,
+    &:not([aria-selected='true']):not(:disabled):hover {
         background-color: ${(props) => getLightColor(props.color)};
     }
 `;
@@ -29,4 +28,4 @@ export const pill = {
     tab,
     tabList,
     tabPanel: '',
-}
+};

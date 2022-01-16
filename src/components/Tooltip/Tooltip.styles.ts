@@ -7,8 +7,37 @@ import { Position } from './types';
 
 const borderRadius = '4px';
 
+const bottom = css<Pick<TooltipProps, 'maxWidth'>>`
+    &:after {
+        --translate-y: calc(1 * var(--arrow-size));
+        border: var(--arrow-size) solid transparent;
+        border-bottom-color: ${color.blueDark2};
+        content: '';
+    }
+
+    &:before {
+        --translate-y: calc(100% + var(--arrow-size));
+        background-color: ${color.blueDark2};
+        border-radius: ${borderRadius};
+        color: white;
+        content: attr(data-tooltip);
+        max-width: ${(p) => (p.maxWidth ? `${p.maxWidth}px` : '')};
+        padding: 0.3rem;
+        text-align: center;
+        width: max-content;
+        word-wrap: break-word;
+    }
+    &:before,
+    &:after {
+        --arrow-size: 6px;
+        bottom: -0.25rem;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%) translateY(var(--translate-y, 0));
+    }
+`;
+
 const container = css`
-    --tooltip-text: 'hello';
     font-size: 12px;
     font-style: normal;
     ${fonts.openSans}
@@ -18,105 +47,54 @@ const container = css`
     ${resetCSS}
 `;
 
-const top = css`
-    &:after {
-        --translate-y: calc(-1 * var(--arrow-size));
-        content: '';
-        border: var(--arrow-size) solid transparent;
-        border-top-color: ${color.blueDark2};
-    }
-    &:before {
-        --translate-y: calc(-100% - var(--arrow-size));
-        padding: 0.3rem;
-        width: max-content;
-        content: attr(data-tooltip);
-        color: white;
-        background-color: ${color.blueDark2};
-        border-radius: ${borderRadius};
-        text-align: center;
-    }
-    &:before,
-    &:after {
-        --arrow-size: 6px;
-        position: absolute;
-        top: -0.25rem;
-        left: 50%;
-        transform: translateX(-50%) translateY(var(--translate-y, 0));
-    }
-`;
-
-const bottom = css`
-    &:after {
-        --translate-y: calc(1 * var(--arrow-size));
-        content: '';
-        border: var(--arrow-size) solid transparent;
-        border-bottom-color: ${color.blueDark2};
-    }
-
-    &:before {
-        --translate-y: calc(100% + var(--arrow-size));
-        padding: 0.3rem;
-        width: max-content;
-        content: attr(data-tooltip);
-        color: white;
-        background-color: ${color.blueDark2};
-        border-radius: ${borderRadius};
-        text-align: center;
-    }
-    &:before,
-    &:after {
-        --arrow-size: 6px;
-        position: absolute;
-        bottom: -0.25rem;
-        left: 50%;
-        transform: translateX(-50%) translateY(var(--translate-y, 0));
-    }
-`;
-
-const left = css`
+const left = css<Pick<TooltipProps, 'maxWidth'>>`
     &:after {
         --translate-x: calc(-1 * var(--arrow-size));
-        content: '';
-        color: ${color.blueDark2};
         border: var(--arrow-size) solid transparent;
         border-left-color: ${color.blueDark2};
+        color: ${color.blueDark2};
+        content: '';
     }
     &:before {
         --translate-x: calc(-100% - var(--arrow-size));
-        content: attr(data-tooltip);
-        color: white;
-        width: max-content;
-        padding: 0.3rem;
-        border-radius: ${borderRadius};
         background: ${color.blueDark2};
+        border-radius: ${borderRadius};
+        color: white;
+        content: attr(data-tooltip);
+        max-width: ${(p) => (p.maxWidth ? `${p.maxWidth}px` : '')};
+        padding: 0.3rem;
         text-align: center;
+        width: max-content;
+        word-wrap: break-word;
     }
     &:before,
     &:after {
         --arrow-size: 6px;
-        position: absolute;
         left: -0.25rem;
+        position: absolute;
         top: 50%;
         transform: translateX(var(--translate-x, 0)) translateY(-50%);
     }
 `;
 
-const right = css`
+const right = css<Pick<TooltipProps, 'maxWidth'>>`
     &:after {
         --translate-x: calc(1 * var(--arrow-size));
-        content: '';
         border: var(--arrow-size) solid transparent;
         border-right-color: ${color.blueDark2};
+        content: '';
     }
     &:before {
         --translate-x: calc(100% + var(--arrow-size));
-        content: attr(data-tooltip);
-        color: white;
-        width: max-content;
-        padding: 0.3rem;
-        border-radius: ${borderRadius};
         background: ${color.blueDark2};
+        border-radius: ${borderRadius};
+        color: white;
+        content: attr(data-tooltip);
+        max-width: ${(p) => (p.maxWidth ? `${p.maxWidth}px` : '')};
+        padding: 0.3rem;
         text-align: center;
+        width: max-content;
+        word-wrap: break-word;
     }
     &:before,
     &:after {
@@ -125,6 +103,35 @@ const right = css`
         right: -0.25rem;
         top: 50%;
         transform: translateX(var(--translate-x, 0)) translateY(-50%);
+    }
+`;
+
+const top = css<Pick<TooltipProps, 'maxWidth'>>`
+    &:after {
+        --translate-y: calc(-1 * var(--arrow-size));
+        border: var(--arrow-size) solid transparent;
+        border-top-color: ${color.blueDark2};
+        content: '';
+    }
+    &:before {
+        --translate-y: calc(-100% - var(--arrow-size));
+        background-color: ${color.blueDark2};
+        border-radius: ${borderRadius};
+        color: white;
+        content: attr(data-tooltip);
+        max-width: ${(p) => (p.maxWidth ? `${p.maxWidth}px` : '')};
+        padding: 0.3rem;
+        text-align: center;
+        width: max-content;
+        word-wrap: break-word;
+    }
+    &:before,
+    &:after {
+        --arrow-size: 6px;
+        left: 50%;
+        position: absolute;
+        top: -0.25rem;
+        transform: translateX(-50%) translateY(var(--translate-y, 0));
     }
 `;
 
@@ -141,7 +148,7 @@ const getContainerStyleByPosition = (position: Position) => {
     }
 };
 
-export default styled.div<Pick<TooltipProps, 'position'>>`
+export default styled.div<Pick<TooltipProps, 'position' | 'maxWidth'>>`
     ${container}
     &:hover {
         ${(p) => getContainerStyleByPosition(p.position)}

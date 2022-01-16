@@ -7,6 +7,7 @@ const Tooltip: React.FC<TooltipProps> = ({
     position = 'bottom',
     text,
     children,
+    maxWidth,
 }: TooltipProps) => {
     return (
         <TooltipContainer
@@ -14,6 +15,7 @@ const Tooltip: React.FC<TooltipProps> = ({
             position={position}
             data-tooltip={text}
             data-testid={'tooltip-container-test-id'}
+            maxWidth={maxWidth}
         >
             <div data-testid={'tooltip-children-test-id'}>{children}</div>
         </TooltipContainer>

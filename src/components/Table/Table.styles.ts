@@ -20,10 +20,17 @@ export const NoData = styled.div`
     ${resetCSS}
     ${fonts.text}
     display: grid;
-    height: 150px;
-    align-items: center;
+    min-height: fit-content;
+    align-items: flex-start;
     justify-content: center;
     grid-column: 1 / -1;
+    & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
 `;
 
 export const Divider = styled.div`

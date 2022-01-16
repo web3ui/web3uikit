@@ -48,6 +48,26 @@ NoData.args = {
     maxPages,
 };
 
+export const NoDataCustomText = Template.bind({});
+NoDataCustomText.args = {
+    columnsConfig,
+    header,
+    data: [],
+    pageSize,
+    maxPages,
+    customNoDataText: 'This is Custom Text',
+};
+
+export const NoDataCustomComponent = Template.bind({});
+NoDataCustomComponent.args = {
+    columnsConfig,
+    header,
+    data: [],
+    pageSize,
+    maxPages,
+    customNoDataComponent: <p>P tag passed as custom component</p>,
+};
+
 export const FrozenPageTable = Template.bind({});
 
 FrozenPageTable.args = {

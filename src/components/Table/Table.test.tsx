@@ -9,6 +9,8 @@ const {
     NoData,
     FrozenPageTable,
     OutOfRangeFrozenTable,
+    NoDataCustomComponent,
+    NoDataCustomText,
 } = composeStories(stories);
 
 const testOnChangeEvent = jest.fn();
@@ -187,6 +189,87 @@ describe('Table - NoData', () => {
 
     it('Should Not Render Pagination', () => {
         render(<NoData />);
+        const prevElement = screen.queryAllByRole('pagination-prev');
+        const nextElement = screen.queryAllByRole('pagination-next');
+        const paginationTag = screen.queryAllByRole('pagination-item');
+        expect(prevElement).toEqual([]);
+        expect(nextElement).toEqual([]);
+        expect(paginationTag).toEqual([]);
+    });
+});
+
+describe('Table - NoDataCustomComponent', () => {
+    // Arguments
+    const header = DefaultTable?.args?.header;
+
+    it('renders the component', () => {
+        render(<NoDataCustomComponent />);
+        const element = screen.getByTestId('test-table-parent');
+        expect(element).not.toBeNull();
+    });
+
+    it('Defines proper sub headings', () => {
+        render(<NoDataCustomComponent />);
+        const element = screen.getAllByRole('table-header');
+        expect(element.length).toEqual(header?.length);
+    });
+
+    it('Should render no data', () => {
+        render(<NoDataCustomComponent />);
+        const element = screen.getAllByTestId('custom-no-data');
+        expect(element).toBeDefined();
+    });
+
+    it('Should not have any items', () => {
+        render(<NoDataCustomComponent />);
+        const element = screen.queryAllByRole('table-item');
+        expect(element.length).toEqual(0);
+    });
+
+    it('Should Not Render Pagination', () => {
+        render(<NoDataCustomComponent />);
+        const prevElement = screen.queryAllByRole('pagination-prev');
+        const nextElement = screen.queryAllByRole('pagination-next');
+        const paginationTag = screen.queryAllByRole('pagination-item');
+        expect(prevElement).toEqual([]);
+        expect(nextElement).toEqual([]);
+        expect(paginationTag).toEqual([]);
+    });
+});
+
+describe('Table - NoDataCustomText', () => {
+    // Arguments
+    const header = DefaultTable?.args?.header;
+    const text = DefaultTable?.args?.customNoDataText
+        ? DefaultTable?.args?.customNoDataText
+        : '';
+
+    it('renders the component', () => {
+        render(<NoDataCustomText />);
+        const element = screen.getByTestId('test-table-parent');
+        expect(element).not.toBeNull();
+    });
+
+    it('Defines proper sub headings', () => {
+        render(<NoDataCustomText />);
+        const element = screen.getAllByRole('table-header');
+        expect(element.length).toEqual(header?.length);
+    });
+
+    it('Should render no data', () => {
+        render(<NoDataCustomText />);
+        const element = screen.queryAllByText(text);
+        expect(element).toBeDefined();
+    });
+
+    it('Should not have any items', () => {
+        render(<NoDataCustomText />);
+        const element = screen.queryAllByRole('table-item');
+        expect(element.length).toEqual(0);
+    });
+
+    it('Should Not Render Pagination', () => {
+        render(<NoDataCustomText />);
         const prevElement = screen.queryAllByRole('pagination-prev');
         const nextElement = screen.queryAllByRole('pagination-next');
         const paginationTag = screen.queryAllByRole('pagination-item');

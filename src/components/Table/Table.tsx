@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { TableProps } from '.';
 import { paginate } from './Helper';
+import getModuleAnimation from '../Card/Animations/animations';
 import {
     Divider,
     PaginationTag,
@@ -20,6 +21,8 @@ const Table: React.FC<TableProps> = ({
     noPagination,
     customPageNumber,
     onPageNumberChanged,
+    customNoDataComponent,
+    customNoDataText = 'No Data',
 }) => {
     const [pageNum, setPageNum] = useState<number>(
         customPageNumber ? customPageNumber : 0,
@@ -77,9 +80,27 @@ const Table: React.FC<TableProps> = ({
         );
     };
 
+    const RenderNoData = (): JSX.Element => {
+        if (customNoDataComponent) {
+            return (
+                <React.Fragment data-testid="custom-no-data">
+                    {customNoDataComponent}
+                </React.Fragment>
+            );
+        }
+        return (
+            <NoData>
+                <div>
+                    {getModuleAnimation(undefined)}
+                    <p>{customNoDataText}</p>
+                </div>
+            </NoData>
+        );
+    };
+
     const RenderTable = (): JSX.Element => {
         if (computeCurrentData().length == 0) {
-            return <NoData>No Data</NoData>;
+            return <RenderNoData />;
         }
         return (
             <>

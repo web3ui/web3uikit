@@ -40,6 +40,16 @@ export interface TableProps {
     customPageNumber?: number;
 
     /**
+     * To Have a custom no data component render
+     */
+    customNoDataComponent?: React.ReactNode;
+
+    /**
+     * To replace no data text with a different text, but still keep image
+     */
+    customNoDataText?: string;
+
+    /**
      * A function that will be called if the page number is changed
      */
     onPageNumberChanged?(pageNum: number): void;

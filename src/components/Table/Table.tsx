@@ -21,7 +21,7 @@ const Table: React.FC<TableProps> = ({
     customPageNumber,
     onPageNumberChanged,
 }) => {
-    const [pageNum, setPageNum] = useState(
+    const [pageNum, setPageNum] = useState<number>(
         customPageNumber ? customPageNumber : 0,
     );
 

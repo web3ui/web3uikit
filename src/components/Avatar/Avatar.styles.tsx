@@ -17,7 +17,7 @@ const AvatarStyled = styled.div<IAvatarStyeldProps>`
     text-transform: uppercase;
     width: 40px;
     word-break: break-all;
-    border-radius: ${(props) => (props.rounded ? '20px' : '1px')}; ;
+    border-radius: ${(props) => (props.rounded ? '20px' : '0px')}; ;
 `;
 
 const DivTextStyled = styled.div`

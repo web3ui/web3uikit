@@ -1,38 +1,316 @@
+import * as React from 'react';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { fireEvent } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Table.stories';
+import { render, fireEvent, screen } from '@testing-library/react';
 
-const { DefaultTable, NoPagination, Scrolling, NoData } =
-    composeStories(stories);
+const {
+    DefaultTable,
+    NoPagination,
+    NoData,
+    FrozenPageTable,
+    OutOfRangeFrozenTable,
+} = composeStories(stories);
 
-let container: HTMLDivElement;
-const testTableParent = 'test-table-parent';
+const testOnChangeEvent = jest.fn();
 
-describe('Radios - RadioGroup', () => {
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<DefaultTable />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+describe('Table - DefaultTable', () => {
+    // Arguments
+    const header = DefaultTable?.args?.header;
+    const pageSize = DefaultTable?.args?.pageSize;
+    const maxPages = DefaultTable?.args?.maxPages;
 
     it('renders the component', () => {
-        const element: HTMLFieldSetElement | null = container.querySelector(
-            `[data-testid="${testTableParent}"]`,
-        );
+        render(<DefaultTable />);
+        const element = screen.getByTestId('test-table-parent');
         expect(element).not.toBeNull();
     });
 
-    it('renders the component', () => {
-        const element: HTMLFieldSetElement | null = container.querySelector(
-            `[data-testid="test-header" ]`,
+    it('Defines proper sub headings', () => {
+        render(<DefaultTable />);
+        const element = screen.getAllByRole('table-header');
+        expect(element.length).toEqual(header?.length);
+    });
+
+    it('Computes Correct Number of table items', () => {
+        render(<DefaultTable />);
+        const element = screen.getAllByRole('table-item');
+        expect(element.length).toEqual(pageSize * header?.length);
+    });
+
+    it('Computes Correct Number of table items', () => {
+        render(<DefaultTable />);
+        const element = screen.getAllByRole('table-item');
+        expect(element.length).toEqual(pageSize * header?.length);
+    });
+
+    it('Computes Correct Number of Pagination', () => {
+        render(<DefaultTable />);
+        const element = screen.getAllByRole('pagination-item');
+        expect(element.length).toBeLessThan(maxPages + 1);
+    });
+
+    it('Computes Correct Number of Pagination', () => {
+        render(<DefaultTable />);
+        const element = screen.getAllByRole('pagination-item');
+        expect(element.length).toBeLessThan(maxPages + 1);
+    });
+
+    it('Always one pagination visible', () => {
+        render(<DefaultTable />);
+        const element = screen.getByTestId('pagination_true');
+        expect(element).toBeDefined();
+    });
+
+    it('Should call back on page change', () => {
+        const { rerender } = render(
+            <DefaultTable onPageNumberChanged={testOnChangeEvent} />,
         );
-        expect(element).toHaveLength(5);
+        let element: HTMLElement = screen.getByTestId('pagination_true');
+        const next: HTMLElement = screen.getByTestId('pagination-next');
+        fireEvent.click(next);
+        rerender(<DefaultTable />);
+        expect(testOnChangeEvent).toBeCalled();
+    });
+
+    it('Should change pagination to next on Click', () => {
+        const { rerender } = render(<DefaultTable />);
+        let element: HTMLElement = screen.getByTestId('pagination_true');
+        const next: HTMLElement = screen.getByTestId('pagination-next');
+        const keys = Object.keys(element);
+        const firstPaginationKey: string = element[keys[0]].return.key;
+        fireEvent.click(next);
+        rerender(<DefaultTable />);
+        element = screen.getByTestId('pagination_true');
+        const Skeys = Object.keys(element);
+        const SeccondPaginationKey: string = element[Skeys[0]].return.key;
+        const getNumber = (state: string): number => {
+            return parseInt(state.charAt(state.length - 1));
+        };
+        expect(getNumber(firstPaginationKey) + 1).toEqual(
+            getNumber(SeccondPaginationKey),
+        );
+    });
+
+    it('Should Disable Previous on Render', () => {
+        const { rerender } = render(<DefaultTable />);
+        let element: HTMLElement = screen.getByTestId('pagination_true');
+        const next: HTMLElement = screen.getByTestId('pagination-prev');
+        const keys = Object.keys(element);
+        const firstPaginationKey: string = element[keys[0]].return.key;
+        fireEvent.click(next);
+        rerender(<DefaultTable />);
+        element = screen.getByTestId('pagination_true');
+        const Skeys = Object.keys(element);
+        const SeccondPaginationKey: string = element[Skeys[0]].return.key;
+        const getNumber = (state: string): number => {
+            return parseInt(state.charAt(state.length - 1));
+        };
+        expect(getNumber(firstPaginationKey)).toEqual(
+            getNumber(SeccondPaginationKey),
+        );
+    });
+
+    it('Should Naviagte to new page on Tag Click', () => {
+        const { rerender } = render(<DefaultTable />);
+        let element: HTMLElement = screen.getByTestId('pagination_true');
+        const findTag: HTMLElement =
+            screen.getAllByTestId('pagination_false')[0];
+        const currentPagination: string =
+            element[Object.keys(element)[0]].return.key;
+        fireEvent.click(findTag);
+        rerender(<DefaultTable />);
+        element = screen.getByTestId('pagination_true');
+        const newPagination: string =
+            element[Object.keys(element)[0]].return.key;
+        expect(newPagination).not.toEqual(currentPagination);
     });
 });
 
+describe('Table - NoPagination', () => {
+    // Arguments
+    const header = DefaultTable?.args?.header;
+    const data = DefaultTable?.args?.data;
+
+    it('renders the component', () => {
+        render(<NoPagination />);
+        const element = screen.getByTestId('test-table-parent');
+        expect(element).not.toBeNull();
+    });
+
+    it('Defines proper sub headings', () => {
+        render(<NoPagination />);
+        const element = screen.getAllByRole('table-header');
+        expect(element.length).toEqual(header?.length);
+    });
+
+    it('Computes Correct Number of table items', () => {
+        render(<NoPagination />);
+        const element = screen.getAllByRole('table-item');
+        expect(element.length).toEqual(data?.length * header?.length);
+    });
+
+    it('Should Not Render Pagination', () => {
+        render(<NoPagination />);
+        const prevElement = screen.queryAllByRole('pagination-prev');
+        const nextElement = screen.queryAllByRole('pagination-next');
+        const paginationTag = screen.queryAllByRole('pagination-item');
+        expect(prevElement).toEqual([]);
+        expect(nextElement).toEqual([]);
+        expect(paginationTag).toEqual([]);
+    });
+});
+
+describe('Table - NoData', () => {
+    // Arguments
+    const header = DefaultTable?.args?.header;
+
+    it('renders the component', () => {
+        render(<NoData />);
+        const element = screen.getByTestId('test-table-parent');
+        expect(element).not.toBeNull();
+    });
+
+    it('Defines proper sub headings', () => {
+        render(<NoData />);
+        const element = screen.getAllByRole('table-header');
+        expect(element.length).toEqual(header?.length);
+    });
+
+    it('Should render no data', () => {
+        render(<NoData />);
+        const element = screen.queryAllByText('No Data');
+        expect(element.length).toEqual(1);
+    });
+
+    it('Should not have any items', () => {
+        render(<NoData />);
+        const element = screen.queryAllByRole('table-item');
+        expect(element.length).toEqual(0);
+    });
+
+    it('Should Not Render Pagination', () => {
+        render(<NoData />);
+        const prevElement = screen.queryAllByRole('pagination-prev');
+        const nextElement = screen.queryAllByRole('pagination-next');
+        const paginationTag = screen.queryAllByRole('pagination-item');
+        expect(prevElement).toEqual([]);
+        expect(nextElement).toEqual([]);
+        expect(paginationTag).toEqual([]);
+    });
+});
+
+describe('Table - FrozenPage', () => {
+    // Arguments
+    const header = DefaultTable?.args?.header;
+    const pageSize = DefaultTable?.args?.pageSize;
+    const maxPages = DefaultTable?.args?.maxPages;
+
+    it('renders the component', () => {
+        render(<FrozenPageTable />);
+        const element = screen.getByTestId('test-table-parent');
+        expect(element).not.toBeNull();
+    });
+
+    it('Defines proper sub headings', () => {
+        render(<FrozenPageTable />);
+        const element = screen.getAllByRole('table-header');
+        expect(element.length).toEqual(header?.length);
+    });
+
+    it('Computes Correct Number of table items', () => {
+        render(<FrozenPageTable />);
+        const element = screen.getAllByRole('table-item');
+        expect(element.length).toEqual(pageSize * header?.length);
+    });
+
+    it('Computes Correct Number of Pagination', () => {
+        render(<FrozenPageTable />);
+        const element = screen.getAllByRole('pagination-item');
+        expect(element.length).toBeLessThan(maxPages + 1);
+    });
+
+    it('Should call back on page change', () => {
+        const { rerender } = render(
+            <DefaultTable onPageNumberChanged={testOnChangeEvent} />,
+        );
+        let element: HTMLElement = screen.getByTestId('pagination_true');
+        const next: HTMLElement = screen.getByTestId('pagination-next');
+        fireEvent.click(next);
+        rerender(<DefaultTable />);
+        expect(testOnChangeEvent).toBeCalled();
+    });
+
+    it('Should not change pagination to next on Click', () => {
+        const { rerender } = render(<FrozenPageTable />);
+        let element: HTMLElement = screen.getByTestId('pagination_true');
+        const next: HTMLElement = screen.getByTestId('pagination-next');
+        const keys = Object.keys(element);
+        const firstPaginationKey: string = element[keys[0]].return.key;
+        fireEvent.click(next);
+        rerender(<FrozenPageTable />);
+        element = screen.getByTestId('pagination_true');
+        const Skeys = Object.keys(element);
+        const SeccondPaginationKey: string = element[Skeys[0]].return.key;
+        const getNumber = (state: string): number => {
+            return parseInt(state.charAt(state.length - 1));
+        };
+        expect(getNumber(firstPaginationKey)).toEqual(
+            getNumber(SeccondPaginationKey),
+        );
+    });
+
+    it('Should not Naviagte to new page on Tag Click', () => {
+        const { rerender } = render(<FrozenPageTable />);
+        let element: HTMLElement = screen.getByTestId('pagination_true');
+        const findTag: HTMLElement =
+            screen.getAllByTestId('pagination_false')[0];
+        const currentPagination: string =
+            element[Object.keys(element)[0]].return.key;
+        fireEvent.click(findTag);
+        rerender(<FrozenPageTable />);
+        element = screen.getByTestId('pagination_true');
+        const newPagination: string =
+            element[Object.keys(element)[0]].return.key;
+        expect(newPagination).toEqual(currentPagination);
+    });
+});
+
+describe('Table - FrozenPageOutOfRange', () => {
+    //Arguments
+    const header = DefaultTable?.args?.header;
+
+    it('renders the component', () => {
+        render(<OutOfRangeFrozenTable />);
+        const element = screen.getByTestId('test-table-parent');
+        expect(element).not.toBeNull();
+    });
+
+    it('Defines proper sub headings', () => {
+        render(<OutOfRangeFrozenTable />);
+        const element = screen.getAllByRole('table-header');
+        expect(element.length).toEqual(header?.length);
+    });
+
+    it('Should render no data', () => {
+        render(<OutOfRangeFrozenTable />);
+        const element = screen.queryAllByText('No Data');
+        expect(element.length).toEqual(1);
+    });
+
+    it('Should not have any items', () => {
+        render(<OutOfRangeFrozenTable />);
+        const element = screen.queryAllByRole('table-item');
+        expect(element.length).toEqual(0);
+    });
+
+    it('Should Still Render Pagination', () => {
+        render(<OutOfRangeFrozenTable />);
+        const prevElement = screen.queryAllByTestId('pagination-prev');
+        const nextElement = screen.queryAllByTestId('pagination-next');
+        const paginationTag = screen.queryAllByRole('pagination-item');
+        expect(prevElement).not.toEqual([]);
+        expect(nextElement).not.toEqual([]);
+        expect(paginationTag).not.toEqual([]);
+    });
+});

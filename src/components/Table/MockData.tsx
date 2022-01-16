@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Avatar } from '../Avatar';
 import { Icon } from '../Icon';
 import { Tag } from '../Tag';

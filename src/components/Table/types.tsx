@@ -11,4 +11,8 @@ export interface TableProps {
     maxPages?: number;
 
     noPagination?: boolean;
+
+    customPageNumber?: number;
+
+    onPageNumberChanged?(pageNum: number): void;
 }

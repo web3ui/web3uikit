@@ -1,10 +1,11 @@
-import React from 'react';
+import * as React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Table from './Table';
 import { columnsConfig, header, data, pageSize, maxPages } from './MockData';
 export default {
     title: 'Ui/Table',
     component: Table,
+    argTypes: { onPageNumberChanged: { action: 'Page Number Changed' } },
 } as ComponentMeta<typeof Table>;
 
 const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
@@ -45,4 +46,25 @@ NoData.args = {
     data: [],
     pageSize,
     maxPages,
+};
+
+export const FrozenPageTable = Template.bind({});
+
+FrozenPageTable.args = {
+    columnsConfig,
+    header,
+    data: data,
+    pageSize,
+    maxPages,
+    customPageNumber: 1,
+};
+export const OutOfRangeFrozenTable = Template.bind({});
+
+OutOfRangeFrozenTable.args = {
+    columnsConfig,
+    header,
+    data: data,
+    pageSize,
+    maxPages,
+    customPageNumber: 6,
 };

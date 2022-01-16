@@ -83,9 +83,9 @@ const Table: React.FC<TableProps> = ({
         }
         return (
             <>
-                {computeCurrentData().map((row, rowKey) => (
+                {computeCurrentData().map((row: any, rowKey) => (
                     <React.Fragment key={`fragment_${rowKey}`}>
-                        {row.map((item, colKey) => (
+                        {row.map((item: string, colKey: number) => (
                             <div
                                 key={`tr_${rowKey}_${colKey}`}
                                 role="table-item"
@@ -118,8 +118,7 @@ const Table: React.FC<TableProps> = ({
                         (key) => (
                             <PaginationTag
                                 key={`pagination_${key}`}
-                                pageNumber={key - 1}
-                                currentPageNumber={pageNum}
+                                active={key - 1 == pageNum}
                                 onClick={() => handleSetPageNumber(key - 1)}
                                 role="pagination-item"
                                 data-testid={`pagination_${key - 1 == pageNum}`}

@@ -38,10 +38,6 @@ export function paginate(
         }
     }
 
-    // calculate start and end item indexes
-    let startIndex = (currentPage - 1) * pageSize;
-    let endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
-
     // create an array of pages to ng-repeat in the pager control
     let pages = Array.from(Array(endPage + 1 - startPage).keys()).map(
         (i) => startPage + i,

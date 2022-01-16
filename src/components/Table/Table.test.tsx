@@ -1,5 +1,4 @@
 import * as React from 'react';
-import React from 'react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Table.stories';
 import { render, fireEvent, screen } from '@testing-library/react';
@@ -16,9 +15,13 @@ const testOnChangeEvent = jest.fn();
 
 describe('Table - DefaultTable', () => {
     // Arguments
-    const header = DefaultTable?.args?.header;
-    const pageSize = DefaultTable?.args?.pageSize;
-    const maxPages = DefaultTable?.args?.maxPages;
+    const header = DefaultTable?.args?.header ? DefaultTable?.args?.header : [];
+    const pageSize = DefaultTable?.args?.pageSize
+        ? DefaultTable?.args?.pageSize
+        : 0;
+    const maxPages = DefaultTable?.args?.maxPages
+        ? DefaultTable?.args?.maxPages
+        : 0;
 
     it('renders the component', () => {
         render(<DefaultTable />);
@@ -38,18 +41,6 @@ describe('Table - DefaultTable', () => {
         expect(element.length).toEqual(pageSize * header?.length);
     });
 
-    it('Computes Correct Number of table items', () => {
-        render(<DefaultTable />);
-        const element = screen.getAllByRole('table-item');
-        expect(element.length).toEqual(pageSize * header?.length);
-    });
-
-    it('Computes Correct Number of Pagination', () => {
-        render(<DefaultTable />);
-        const element = screen.getAllByRole('pagination-item');
-        expect(element.length).toBeLessThan(maxPages + 1);
-    });
-
     it('Computes Correct Number of Pagination', () => {
         render(<DefaultTable />);
         const element = screen.getAllByRole('pagination-item');
@@ -66,7 +57,6 @@ describe('Table - DefaultTable', () => {
         const { rerender } = render(
             <DefaultTable onPageNumberChanged={testOnChangeEvent} />,
         );
-        let element: HTMLElement = screen.getByTestId('pagination_true');
         const next: HTMLElement = screen.getByTestId('pagination-next');
         fireEvent.click(next);
         rerender(<DefaultTable />);
@@ -75,15 +65,17 @@ describe('Table - DefaultTable', () => {
 
     it('Should change pagination to next on Click', () => {
         const { rerender } = render(<DefaultTable />);
-        let element: HTMLElement = screen.getByTestId('pagination_true');
+        let element: any = screen.getByTestId('pagination_true');
         const next: HTMLElement = screen.getByTestId('pagination-next');
-        const keys = Object.keys(element);
-        const firstPaginationKey: string = element[keys[0]].return.key;
+        const keys: string[] = [...Object.keys(element)];
+        const firstPaginationKey: string = `${element[keys[0]].return.key}`;
         fireEvent.click(next);
         rerender(<DefaultTable />);
         element = screen.getByTestId('pagination_true');
-        const Skeys = Object.keys(element);
-        const SeccondPaginationKey: string = element[Skeys[0]].return.key;
+        const Skeys: any = [...Object.keys(element)];
+        const SeccondPaginationKey: string = `${
+            (element[Skeys[0]] as any).return?.key
+        }`;
         const getNumber = (state: string): number => {
             return parseInt(state.charAt(state.length - 1));
         };
@@ -94,10 +86,14 @@ describe('Table - DefaultTable', () => {
 
     it('Should Disable Previous on Render', () => {
         const { rerender } = render(<DefaultTable />);
-        let element: HTMLElement = screen.getByTestId('pagination_true');
+        let element = screen.getByTestId('pagination_true')
+            ? screen.getByTestId('pagination_true')
+            : ({} as any);
         const next: HTMLElement = screen.getByTestId('pagination-prev');
-        const keys = Object.keys(element);
-        const firstPaginationKey: string = element[keys[0]].return.key;
+        const keys: string[] = [...Object.keys(element)];
+        const firstPaginationKey: string = `${
+            (element[keys[0]] as any).return.key
+        }`;
         fireEvent.click(next);
         rerender(<DefaultTable />);
         element = screen.getByTestId('pagination_true');
@@ -113,7 +109,7 @@ describe('Table - DefaultTable', () => {
 
     it('Should Naviagte to new page on Tag Click', () => {
         const { rerender } = render(<DefaultTable />);
-        let element: HTMLElement = screen.getByTestId('pagination_true');
+        let element = screen.getByTestId('pagination_true') as any;
         const findTag: HTMLElement =
             screen.getAllByTestId('pagination_false')[0];
         const currentPagination: string =
@@ -129,8 +125,8 @@ describe('Table - DefaultTable', () => {
 
 describe('Table - NoPagination', () => {
     // Arguments
-    const header = DefaultTable?.args?.header;
-    const data = DefaultTable?.args?.data;
+    const header = DefaultTable?.args?.header ? DefaultTable?.args?.header : [];
+    const data = DefaultTable?.args?.data ? DefaultTable?.args?.data : [];
 
     it('renders the component', () => {
         render(<NoPagination />);
@@ -202,9 +198,13 @@ describe('Table - NoData', () => {
 
 describe('Table - FrozenPage', () => {
     // Arguments
-    const header = DefaultTable?.args?.header;
-    const pageSize = DefaultTable?.args?.pageSize;
-    const maxPages = DefaultTable?.args?.maxPages;
+    const header = DefaultTable?.args?.header ? DefaultTable?.args?.header : [];
+    const pageSize = DefaultTable?.args?.pageSize
+        ? DefaultTable?.args?.pageSize
+        : 0;
+    const maxPages = DefaultTable?.args?.maxPages
+        ? DefaultTable?.args?.maxPages
+        : 0;
 
     it('renders the component', () => {
         render(<FrozenPageTable />);
@@ -234,7 +234,6 @@ describe('Table - FrozenPage', () => {
         const { rerender } = render(
             <DefaultTable onPageNumberChanged={testOnChangeEvent} />,
         );
-        let element: HTMLElement = screen.getByTestId('pagination_true');
         const next: HTMLElement = screen.getByTestId('pagination-next');
         fireEvent.click(next);
         rerender(<DefaultTable />);
@@ -243,7 +242,7 @@ describe('Table - FrozenPage', () => {
 
     it('Should not change pagination to next on Click', () => {
         const { rerender } = render(<FrozenPageTable />);
-        let element: HTMLElement = screen.getByTestId('pagination_true');
+        let element: any = screen.getByTestId('pagination_true');
         const next: HTMLElement = screen.getByTestId('pagination-next');
         const keys = Object.keys(element);
         const firstPaginationKey: string = element[keys[0]].return.key;
@@ -262,7 +261,7 @@ describe('Table - FrozenPage', () => {
 
     it('Should not Naviagte to new page on Tag Click', () => {
         const { rerender } = render(<FrozenPageTable />);
-        let element: HTMLElement = screen.getByTestId('pagination_true');
+        let element: any = screen.getByTestId('pagination_true');
         const findTag: HTMLElement =
             screen.getAllByTestId('pagination_false')[0];
         const currentPagination: string =

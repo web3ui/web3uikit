@@ -16,7 +16,7 @@ export interface TableProps {
      * The data, the table will present
      */
 
-    data: React.ReactNode[] | string[];
+    data: React.ReactNode[][] | string[][];
 
     /**
      * The number of rows per table page

@@ -51,15 +51,15 @@ export const Pagination = styled.div`
         align-items: center;
     }
 `;
-
-export const PaginationText = styled.div.attrs((props) => ({
-    active: props.isActive,
-}))`
-    cursor: ${(props) => (props.active ? 'pointer' : 'cursor')};
-    color: ${(props) => (props.active ? colors.blue : colors.greyLight)};
+interface PaginationTextProps {
+    isActive: boolean;
+}
+export const PaginationText = styled.div<PaginationTextProps>`
+    cursor: ${(props) => (props.isActive ? 'pointer' : 'cursor')};
+    color: ${(props) => (props.isActive ? colors.blue : colors.greyLight)};
 `;
 
-export const TableGrid = styled.div.attrs((props) => ({
+export const TableGrid = styled.div.attrs((props: any) => ({
     columns: props.columns,
 }))`
     ${resetCSS}
@@ -70,9 +70,10 @@ export const TableGrid = styled.div.attrs((props) => ({
     overflow-x: auto;
 `;
 
-export const PaginationTag = styled.div.attrs((props) => ({
-    active: props.pageNumber == props.currentPageNumber ? true : false,
-}))`
+interface PaginationTag {
+    active: boolean;
+}
+export const PaginationTag = styled.div<PaginationTag>`
     width: 32px;
     height: 32px;
     border: 2px solid transparent;

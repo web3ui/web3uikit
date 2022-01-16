@@ -4,7 +4,7 @@ import TooltipContainer from './Tooltip.styles';
 
 const Tooltip: React.FC<TooltipProps> = ({
     id = String(Date.now()),
-    position = 'top',
+    position = 'bottom',
     text,
     children,
 }: TooltipProps) => {

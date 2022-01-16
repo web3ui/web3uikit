@@ -5,13 +5,12 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './Tooltip.stories';
 import 'jest-styled-components';
 
+const defaultTooltipText = 'Tooltip text';
 const { Bottom, Top, Left, Right } = composeStories(stories);
 
-describe('Tooltip - Bottom - Visible - With Children', () => {
+describe('Tooltip - Bottom', () => {
     let container: HTMLDivElement;
-    let childrenId = 'tooltip-children-test-id';
-    let wrapperId = 'tooltip-wrapper-test-id';
-    let boxId = 'tooltip-box-test-id';
+    const childrenId = 'tooltip-children-test-id';
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -24,40 +23,26 @@ describe('Tooltip - Bottom - Visible - With Children', () => {
         container.remove();
     });
 
-    it('wrapper should  be visible', () => {
-        const element = container.querySelector(`[data-testid="${wrapperId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('child should be visible', () => {
+    it('should render the component', () => {
         const element = container.querySelector(
             `[data-testid="${childrenId}"]`,
         );
         expect(element).not.toBeNull();
     });
 
-    it('should not see text', () => {
-        const text = container.querySelector(
-            `[data-testid="${boxId}"]`,
-        )?.innerHTML;
-        expect(text).toBeUndefined();
-    });
-
-    it('should see text on hover', async () => {
+    it('should show text on hover', async () => {
         fireEvent.mouseOver(screen.getByTestId(childrenId));
 
-        await waitFor(() => screen.getByTestId(childrenId));
-        expect(
-            container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML,
-        ).toBe('Tooltip text');
+        const r = await waitFor(() =>
+            screen.getByTestId('tooltip-container-test-id'),
+        );
+        expect(r.getAttribute('data-tooltip')).toBe(defaultTooltipText);
     });
 });
 
-describe('Tooltip - Top - Visible - With Children', () => {
+describe('Tooltip - Top', () => {
     let container: HTMLDivElement;
-    let childrenId = 'tooltip-children-test-id';
-    let wrapperId = 'tooltip-wrapper-test-id';
-    let boxId = 'tooltip-box-test-id';
+    const childrenId = 'tooltip-children-test-id';
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -70,40 +55,26 @@ describe('Tooltip - Top - Visible - With Children', () => {
         container.remove();
     });
 
-    it('wrapper should  be visible', () => {
-        const element = container.querySelector(`[data-testid="${wrapperId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('child should be visible', () => {
+    it('should render the component', () => {
         const element = container.querySelector(
             `[data-testid="${childrenId}"]`,
         );
         expect(element).not.toBeNull();
     });
 
-    it('should not see text', () => {
-        const text = container.querySelector(
-            `[data-testid="${boxId}"]`,
-        )?.innerHTML;
-        expect(text).toBeUndefined();
-    });
-
-    it('should see text on hover', async () => {
+    it('should show text on hover', async () => {
         fireEvent.mouseOver(screen.getByTestId(childrenId));
 
-        await waitFor(() => screen.getByTestId(childrenId));
-        expect(
-            container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML,
-        ).toBe('Tooltip text');
+        const r = await waitFor(() =>
+            screen.getByTestId('tooltip-container-test-id'),
+        );
+        expect(r.getAttribute('data-tooltip')).toBe(defaultTooltipText);
     });
 });
 
-describe('Tooltip - Left - Visible - With Children', () => {
+describe('Tooltip - Left', () => {
     let container: HTMLDivElement;
-    let childrenId = 'tooltip-children-test-id';
-    let wrapperId = 'tooltip-wrapper-test-id';
-    let boxId = 'tooltip-box-test-id';
+    const childrenId = 'tooltip-children-test-id';
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -116,40 +87,58 @@ describe('Tooltip - Left - Visible - With Children', () => {
         container.remove();
     });
 
-    it('wrapper should  be visible', () => {
+    it('should render the component', () => {
         const element = container.querySelector(
             `[data-testid="${childrenId}"]`,
         );
         expect(element).not.toBeNull();
     });
 
-    it('child should be visible', () => {
-        const element = container.querySelector(`[data-testid="${wrapperId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('should not see text', () => {
-        const text = container.querySelector(
-            `[data-testid="${boxId}"]`,
-        )?.innerHTML;
-        expect(text).toBeUndefined();
-    });
-
-    it('should see text on hover', async () => {
+    it('should show text on hover', async () => {
         fireEvent.mouseOver(screen.getByTestId(childrenId));
 
-        await waitFor(() => screen.getByTestId(childrenId));
-        expect(
-            container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML,
-        ).toBe('Tooltip text');
+        const r = await waitFor(() =>
+            screen.getByTestId('tooltip-container-test-id'),
+        );
+        expect(r.getAttribute('data-tooltip')).toBe(defaultTooltipText);
     });
 });
 
-describe('Tooltip - Right - Visible - With Children', () => {
+describe('Tooltip - Top', () => {
     let container: HTMLDivElement;
-    let childrenId = 'tooltip-children-test-id';
-    let wrapperId = 'tooltip-wrapper-test-id';
-    let boxId = 'tooltip-box-test-id';
+    const childrenId = 'tooltip-children-test-id';
+
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<Top />, container);
+    });
+
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('should render the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${childrenId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+
+    it('should show text on hover', async () => {
+        fireEvent.mouseOver(screen.getByTestId(childrenId));
+
+        const r = await waitFor(() =>
+            screen.getByTestId('tooltip-container-test-id'),
+        );
+        expect(r.getAttribute('data-tooltip')).toBe(defaultTooltipText);
+    });
+});
+
+describe('Tooltip - Right', () => {
+    let container: HTMLDivElement;
+    const childrenId = 'tooltip-children-test-id';
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -162,30 +151,19 @@ describe('Tooltip - Right - Visible - With Children', () => {
         container.remove();
     });
 
-    it('wrapper should  be visible', () => {
+    it('should render the component', () => {
         const element = container.querySelector(
             `[data-testid="${childrenId}"]`,
         );
         expect(element).not.toBeNull();
     });
 
-    it('child should be visible', () => {
-        const element = container.querySelector(`[data-testid="${wrapperId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('should not see text', () => {
-        const text = container.querySelector(
-            `[data-testid="${boxId}"]`,
-        )?.innerHTML;
-        expect(text).toBeUndefined();
-    });
-
-    it('should see text on hover', async () => {
+    it('should show text on hover', async () => {
         fireEvent.mouseOver(screen.getByTestId(childrenId));
-        await waitFor(() => screen.getByTestId(childrenId));
-        expect(
-            container.querySelector(`[data-testid="${boxId}"]`)?.innerHTML,
-        ).toBe('Tooltip text');
+
+        const r = await waitFor(() =>
+            screen.getByTestId('tooltip-container-test-id'),
+        );
+        expect(r.getAttribute('data-tooltip')).toBe(defaultTooltipText);
     });
 });

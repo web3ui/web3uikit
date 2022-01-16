@@ -3,9 +3,18 @@ import { AvatarProps } from './types';
 import React from 'react';
 import guy from './images/guy';
 
-const Avatar: React.FC<AvatarProps> = ({ theme, image, text }: AvatarProps) => {
+const Avatar: React.FC<AvatarProps> = ({
+    theme,
+    image,
+    text,
+    rounded = false,
+}: AvatarProps) => {
     return (
-        <AvatarStyled data-testid="test-avatar">
+        <AvatarStyled
+            data-testid="test-avatar"
+            rounded={rounded}
+            role={`rounded_${rounded}`}
+        >
             {theme === 'image' ? (
                 image ? (
                     <ImgStyled src={image} data-testid="test-custom-image" />

@@ -27,7 +27,6 @@ export const NoData = styled.div`
 `;
 
 export const Divider = styled.div`
-    border-bottom: 0px solid transparent;
     padding-top: 1px;
     background: radial-gradient(
         106.45% 108.64% at 32.33% -4.84%,

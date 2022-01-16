@@ -3,7 +3,7 @@ export function paginate(
     currentPage: number = 1,
     pageSize: number = 10,
     maxPages: number = 10,
-) {
+): number[] {
     // calculate total pages
     let totalPages = Math.ceil(totalItems / pageSize);
 

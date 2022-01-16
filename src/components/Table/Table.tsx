@@ -82,11 +82,7 @@ const Table: React.FC<TableProps> = ({
 
     const RenderNoData = (): JSX.Element => {
         if (customNoDataComponent) {
-            return (
-                <React.Fragment data-testid="custom-no-data">
-                    {customNoDataComponent}
-                </React.Fragment>
-            );
+            return <>{customNoDataComponent}</>;
         }
         return (
             <NoData>

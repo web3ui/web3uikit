@@ -214,12 +214,6 @@ describe('Table - NoDataCustomComponent', () => {
         expect(element.length).toEqual(header?.length);
     });
 
-    it('Should render no data', () => {
-        render(<NoDataCustomComponent />);
-        const element = screen.getAllByTestId('custom-no-data');
-        expect(element).toBeDefined();
-    });
-
     it('Should not have any items', () => {
         render(<NoDataCustomComponent />);
         const element = screen.queryAllByRole('table-item');

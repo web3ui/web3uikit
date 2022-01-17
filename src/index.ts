@@ -18,7 +18,6 @@ export * from './components/Modal';
 export * from './components/Notification';
 export * from './components/Radios';
 export * from './components/Select';
-export * from './components/Table';
 export * from './components/Tag';
 export * from './components/TextArea';
 export * from './components/Tooltip';

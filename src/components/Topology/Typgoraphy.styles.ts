@@ -2,18 +2,13 @@ import styled from 'styled-components';
 import fonts from '../../styles/fonts';
 import { ITypographyFontStyle, ITypographyFontType } from './types';
 
-interface ITopology {
+interface ITopologyStyledProps {
     color: string;
-    fontType: ITypographyFontType;
     fontStyle: ITypographyFontStyle;
-}
-interface ITopology {
-    color: string;
     fontType: ITypographyFontType;
-    fontStyle: ITypographyFontStyle;
 }
 
-export const StyledBlock = styled.div<ITopology>`
+export const StyledBlock = styled.div<ITopologyStyledProps>`
     ${fonts.text}
     & > h1 {
         ${fonts.h1}
@@ -36,7 +31,7 @@ export const StyledBlock = styled.div<ITopology>`
 `;
 StyledBlock.displayName = 'Tooltip';
 
-export const Styledh1 = styled.h1<ITopology>`
+export const Styledh1 = styled.h1<ITopologyStyledProps>`
     ${fonts.text}
     ${fonts.h1}
     color: ${(props) => props.color};
@@ -44,7 +39,7 @@ export const Styledh1 = styled.h1<ITopology>`
     font-style: ${(props) => props.fontStyle};
 `;
 Styledh1.displayName = 'Typogography.h1';
-export const Styledh2 = styled.h2<ITopology>`
+export const Styledh2 = styled.h2<ITopologyStyledProps>`
     ${fonts.text}
     ${fonts.h2}
     color: ${(props) => props.color};
@@ -53,7 +48,7 @@ export const Styledh2 = styled.h2<ITopology>`
 `;
 Styledh2.displayName = 'Typogography.h2';
 
-export const Styledh3 = styled.h3<ITopology>`
+export const Styledh3 = styled.h3<ITopologyStyledProps>`
     ${fonts.text}
     ${fonts.h3}
     color: ${(props) => props.color};
@@ -62,7 +57,7 @@ export const Styledh3 = styled.h3<ITopology>`
 `;
 Styledh3.displayName = 'Typogography.h3';
 
-export const Styledh4 = styled.h4<ITopology>`
+export const Styledh4 = styled.h4<ITopologyStyledProps>`
     ${fonts.text}
     ${fonts.h4}
     color: ${(props) => props.color};
@@ -71,7 +66,7 @@ export const Styledh4 = styled.h4<ITopology>`
 `;
 Styledh4.displayName = 'Typogography.h4';
 
-export const Styledh5 = styled.h5<ITopology>`
+export const Styledh5 = styled.h5<ITopologyStyledProps>`
     ${fonts.text}
     ${fonts.h5}
     color: ${(props) => props.color};
@@ -80,7 +75,7 @@ export const Styledh5 = styled.h5<ITopology>`
 `;
 Styledh5.displayName = 'Typogography.h5';
 
-export const Styledtext = styled.p<ITopology>`
+export const Styledtext = styled.p<ITopologyStyledProps>`
     ${fonts.text}
     color: ${(props) => props.color};
     font-weight: ${(props) => props.fontType};

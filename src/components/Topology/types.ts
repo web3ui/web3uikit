@@ -1,10 +1,10 @@
-import { eColorTypes } from '../../utils/getColor';
+import { IColorTypes } from '../../utils/getColor';
 
 export interface TypographyProps {
     /**
      * The color type of the text
      */
-    type?: eColorTypes;
+    type?: IColorTypes;
 
     /**
      * The type of the text

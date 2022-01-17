@@ -1,120 +1,125 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Tooltip from './Typography';
+import Typography from './Typography';
 import { eColorTypes } from '../../utils/getColor';
 import { TypographyProps } from '.';
 import { eTextType } from './types';
 
 export default {
     title: 'UI/Topology',
-    component: Tooltip,
-} as ComponentMeta<typeof Tooltip>;
+    component: Typography,
+} as ComponentMeta<typeof Typography>;
 
-const Typogrophy: ComponentStory<typeof Tooltip> = (args: TypographyProps) => (
-    <div>
-        {/* <Tooltip.P {...args} /> */}
-        {args.children}
-    </div>
-);
+const TypogrophyTemplate: ComponentStory<typeof Typography> = (
+    args: TypographyProps,
+) => <div>{args.children}</div>;
 
-export const BaseFonts = Typogrophy.bind({});
+export const BaseFonts = TypogrophyTemplate.bind({});
 BaseFonts.args = {
     children: (
         <>
-            <Tooltip textType={eTextType.H1}>Header 1</Tooltip>
-            <Tooltip textType={eTextType.H2}>Header 2</Tooltip>
-            <Tooltip textType={eTextType.H3}>Header 3</Tooltip>
-            <Tooltip textType={eTextType.H4}>Header 4</Tooltip>
-            <Tooltip textType={eTextType.H5}>Header 5</Tooltip>
-            <Tooltip textType={eTextType.TEXT}>Text</Tooltip>
+            <Typography textType={eTextType.H1}>Header 1</Typography>
+            <Typography textType={eTextType.H2}>Header 2</Typography>
+            <Typography textType={eTextType.H3}>Header 3</Typography>
+            <Typography textType={eTextType.H4}>Header 4</Typography>
+            <Typography textType={eTextType.H5}>Header 5</Typography>
+            <Typography textType={eTextType.TEXT}>Text</Typography>
         </>
     ),
 };
 
-export const ColoredText = Typogrophy.bind({});
+export const ColoredText = TypogrophyTemplate.bind({});
 ColoredText.args = {
     children: (
         <>
-            <Tooltip textType={eTextType.H1} type={eColorTypes.SECONDARY}>
+            <Typography textType={eTextType.H1} type={eColorTypes.SECONDARY}>
                 Header 1
-            </Tooltip>
-            <Tooltip textType={eTextType.H2} type={eColorTypes.SUCCESSS}>
+            </Typography>
+            <Typography textType={eTextType.H2} type={eColorTypes.SUCCESSS}>
                 Header 2
-            </Tooltip>
-            <Tooltip textType={eTextType.H3} type={eColorTypes.WARNING}>
+            </Typography>
+            <Typography textType={eTextType.H3} type={eColorTypes.WARNING}>
                 Header 3
-            </Tooltip>
-            <Tooltip textType={eTextType.H4} type={eColorTypes.DANGER}>
+            </Typography>
+            <Typography textType={eTextType.H4} type={eColorTypes.DANGER}>
                 Header 4
-            </Tooltip>
-            <Tooltip textType={eTextType.H5} type={eColorTypes.GREY}>
+            </Typography>
+            <Typography textType={eTextType.H5} type={eColorTypes.GREY}>
                 Header 5
-            </Tooltip>
+            </Typography>
         </>
     ),
 };
 
-export const FontWeights = Typogrophy.bind({});
+export const FontWeights = TypogrophyTemplate.bind({});
 FontWeights.args = {
     children: (
         <>
-            <Tooltip textType={eTextType.TEXT} fontType={'bolder'}>
+            <Typography textType={eTextType.TEXT} fontType={'bolder'}>
                 Bolder
-            </Tooltip>
-            <Tooltip textType={eTextType.TEXT} fontType={'bold'}>
+            </Typography>
+            <Typography textType={eTextType.TEXT} fontType={'bold'}>
                 Bold
-            </Tooltip>
-            <Tooltip textType={eTextType.TEXT} fontType={'normal'}>
+            </Typography>
+            <Typography textType={eTextType.TEXT} fontType={'normal'}>
                 Normal
-            </Tooltip>
-            <Tooltip textType={eTextType.TEXT} fontType={'inherit'}>
+            </Typography>
+            <Typography textType={eTextType.TEXT} fontType={'inherit'}>
                 Inherit
-            </Tooltip>
-            <Tooltip textType={eTextType.TEXT} fontType={'initial'}>
+            </Typography>
+            <Typography textType={eTextType.TEXT} fontType={'initial'}>
                 Initial
-            </Tooltip>
-            <Tooltip textType={eTextType.TEXT} fontType={'lighter'}>
+            </Typography>
+            <Typography textType={eTextType.TEXT} fontType={'lighter'}>
                 Lighter
-            </Tooltip>
-            <Tooltip textType={eTextType.TEXT} fontType={200}>
+            </Typography>
+            <Typography textType={eTextType.TEXT} fontType={200}>
                 Number
-            </Tooltip>
+            </Typography>
         </>
     ),
 };
 
-export const FontStyles = Typogrophy.bind({});
+export const FontStyles = TypogrophyTemplate.bind({});
 FontStyles.args = {
     children: (
         <>
-            <Tooltip fontStyle={'normal'}>normal</Tooltip>
-            <Tooltip fontStyle={'italic'}>italic</Tooltip>
-            <Tooltip fontStyle={'oblique'}>oblique</Tooltip>
-            <Tooltip fontStyle={'initial'}>initial</Tooltip>
-            <Tooltip fontStyle={'inherit'}>inherit</Tooltip>
+            <Typography fontStyle={'normal'}>normal</Typography>
+            <Typography fontStyle={'italic'}>italic</Typography>
+            <Typography fontStyle={'oblique'}>oblique</Typography>
+            <Typography fontStyle={'initial'}>initial</Typography>
+            <Typography fontStyle={'inherit'}>inherit</Typography>
         </>
     ),
 };
 
-export const BlockText = Typogrophy.bind({});
+export const BlockText = TypogrophyTemplate.bind({});
 BlockText.args = {
     children: (
         <>
-            <Tooltip textType={eTextType.BLOCK}>
+            <Typography textType={eTextType.BLOCK}>
                 <h1>Introducing Block Text</h1>
                 <p>
-                    Every ordinary html text attribute is automatically styled
-                    to our default styles
+                    All ordinary html elements passed here will be given the
+                    default styles.
                 </p>
-                <Tooltip
+                <p>This is great if you have bulk text</p>
+                <Typography
                     textType={eTextType.H4}
                     fontStyle="italic"
                     type={eColorTypes.SECONDARY}
                 >
-                    Thesse can also be nested in Typography componets to create
-                    custom fonts and colors
-                </Tooltip>
-            </Tooltip>
+                    To add custom fonts, simply nest Typography components in
+                    each other
+                </Typography>
+                <h5
+                    style={{
+                        color: '#F1A90E',
+                    }}
+                >
+                    You can also add styles to your own html tags
+                </h5>
+            </Typography>
         </>
     ),
 };

@@ -4,6 +4,7 @@ import * as stories from './Typogrpahy.stories';
 import { render, screen } from '@testing-library/react';
 import color from '../../styles/colors';
 
+// Helper Function for parsing fibre nodes to Json
 const getCircularReplacer = () => {
     const seen = new WeakSet();
     return (key: string, value: any) => {
@@ -140,10 +141,7 @@ describe('Typography -- Block', () => {
     });
     it('Should Render Normal Html', () => {
         render(<BlockText />);
-        const elements = screen.getByText(
-            'Every ordinary html text attribute is automatically styled to our default styles',
-        );
-        console.log(elements);
+        const elements = screen.getByText('Introducing Block Text');
         expect(elements).toBeDefined();
     });
 });

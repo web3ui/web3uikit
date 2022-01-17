@@ -1,5 +1,5 @@
 import React from 'react';
-import { eColorTypes, getColor } from '../../utils/getColor';
+import { getColor, IColorTypes } from '../../utils/getColor';
 import {
     StyledBlock,
     Styledh1,
@@ -16,11 +16,12 @@ import {
     TypographyProps,
 } from './types';
 
+// Individual Compoonents
 const H1 = ({
     children,
-    type = eColorTypes.GREY,
-    fontType = 'normal',
     fontStyle = 'normal',
+    fontType = 'normal',
+    type = 'grey' as IColorTypes,
 }: TypographyProps) => {
     return (
         <Styledh1
@@ -35,9 +36,9 @@ const H1 = ({
 };
 const H2 = ({
     children,
-    type = eColorTypes.GREY,
-    fontType = 'normal',
     fontStyle = 'normal',
+    fontType = 'normal',
+    type = 'grey' as IColorTypes,
 }: TypographyProps) => {
     return (
         <Styledh2
@@ -52,9 +53,9 @@ const H2 = ({
 };
 const H3 = ({
     children,
-    type = eColorTypes.GREY,
-    fontType = 'normal',
     fontStyle = 'normal',
+    fontType = 'normal',
+    type = 'grey' as IColorTypes,
 }: TypographyProps) => {
     return (
         <Styledh3
@@ -69,9 +70,9 @@ const H3 = ({
 };
 const H4 = ({
     children,
-    type = eColorTypes.GREY,
-    fontType = 'normal',
     fontStyle = 'normal',
+    fontType = 'normal',
+    type = 'grey' as IColorTypes,
 }: TypographyProps) => {
     return (
         <Styledh4
@@ -86,9 +87,9 @@ const H4 = ({
 };
 const H5 = ({
     children,
-    type = eColorTypes.GREY,
-    fontType = 'normal',
     fontStyle = 'normal',
+    fontType = 'normal',
+    type = 'grey' as IColorTypes,
 }: TypographyProps) => {
     return (
         <Styledh5
@@ -103,9 +104,9 @@ const H5 = ({
 };
 const Text = ({
     children,
-    type = eColorTypes.GREY,
-    fontType = 'normal',
     fontStyle = 'normal',
+    fontType = 'normal',
+    type = 'grey' as IColorTypes,
 }: TypographyProps) => {
     return (
         <Styledtext
@@ -120,9 +121,9 @@ const Text = ({
 };
 const Block = ({
     children,
-    type = eColorTypes.GREY,
-    fontType = 'normal',
     fontStyle = 'normal',
+    fontType = 'normal',
+    type = 'grey' as IColorTypes,
 }: TypographyProps) => {
     return (
         <StyledBlock
@@ -136,7 +137,7 @@ const Block = ({
     );
 };
 
-export const Typography: React.FC<TypographyProps> = ({
+const Typography: React.FC<TypographyProps> = ({
     textType = 'text',
     ...props
 }) => {

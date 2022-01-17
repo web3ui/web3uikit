@@ -9,6 +9,8 @@ export enum eColorTypes {
     GREY = 'grey',
 }
 
+export type IColorTypes = eColorTypes;
+
 export const getColor = (colorType: eColorTypes) => {
     switch (colorType) {
         case eColorTypes.SECONDARY:

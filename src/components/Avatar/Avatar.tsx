@@ -4,16 +4,17 @@ import React from 'react';
 import guy from './images/guy';
 
 const Avatar: React.FC<AvatarProps> = ({
-    theme,
     image,
+    isRounded = false,
     text,
-    rounded = false,
+    theme,
 }: AvatarProps) => {
     return (
         <AvatarStyled
             data-testid="test-avatar"
-            rounded={rounded}
-            role={`rounded_${rounded}`}
+            rounded={isRounded}
+            data-isrounded={isRounded}
+            role={`Your Avatar`}
         >
             {theme === 'image' ? (
                 image ? (

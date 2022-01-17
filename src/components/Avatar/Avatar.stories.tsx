@@ -29,19 +29,19 @@ AvatarLetters.args = {
 export const RoundedAvatarImageDefault = Template.bind({});
 RoundedAvatarImageDefault.args = {
     theme: 'image',
-    rounded: true,
+    isRounded: true,
 };
 
 export const RoundedAvatarImageCustom = Template.bind({});
 RoundedAvatarImageCustom.args = {
     theme: 'image',
     image: 'https://academy.moralis.io/wp-content/uploads/2021/12/Illustration4_home.svg',
-    rounded: true,
+    isRounded: true,
 };
 
 export const RoundedAvatarLetters = Template.bind({});
 RoundedAvatarLetters.args = {
     theme: 'letters',
     text: 'DM',
-    rounded: true,
+    isRounded: true,
 };

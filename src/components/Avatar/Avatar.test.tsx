@@ -118,7 +118,7 @@ describe('Avatar - Letters Rounded', () => {
     });
 
     it('is rounded', () => {
-        const element = container.querySelector(`[role="rounded_true"]`);
+        const element = container.querySelector(`[data-isrounded="true"]`);
         expect(element).not.toBeNull();
     });
 
@@ -151,7 +151,7 @@ describe('Avatar - Default Guy Rounded ', () => {
     });
 
     it('is rounded', () => {
-        const element = container.querySelector(`[role="rounded_true"]`);
+        const element = container.querySelector(`[data-isrounded="true"]`);
         expect(element).not.toBeNull();
     });
 
@@ -185,7 +185,7 @@ describe('Avatar - Custom Image Rounded', () => {
     });
 
     it('is rounded', () => {
-        const element = container.querySelector(`[role="rounded_true"]`);
+        const element = container.querySelector(`[data-isrounded="true"]`);
         expect(element).not.toBeNull();
     });
 

@@ -1,29 +1,42 @@
 name: CI
 on: [push]
 jobs:
-  build:
-    name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+    build:
+        name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
 
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        node: ['14.x', '16.x']
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                node: ['14.x', '16.x']
+                os: [ubuntu-latest, windows-latest, macOS-latest]
 
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v2
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v2
 
-      - name: Use Node ${{ matrix.node }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node }}
+            - name: Use Node ${{ matrix.node }}
+              uses: actions/setup-node@v2
+              with:
+                  node-version: ${{ matrix.node }}
 
-      - name: Install
-        run: yarn install
+            - name: Install
+              run: yarn install
 
-      - name: Test
-        run: yarn test --ci --coverage --maxWorkers=2 --updateSnapshot
+            - name: Test
+              run: yarn test --ci --coverage --maxWorkers=2 --updateSnapshot
 
-      - name: Build
-        run: yarn build
+            - name: Build
+              run: yarn build
+
+            - name: Set NPM Auth Token
+              run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
+
+            - name: Publish
+              run: npm publish --tag ${{ github.event.release.target_commitish }}
+              env:
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+            - name: Push the version to GitHub
+              run: git push
+              env:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}

@@ -5,11 +5,28 @@ import { Icon } from '../Icon'
 import { iconTypes } from '../Icon/collection'
 import { Divider, NFTFooter, NFTImage, NFTInfo, NFTName, NFTType, NFTWrapper } from './NFT.styles';
 import { NFTProps } from './types';
+
+const printByTheme = (theme: "buyable" | "transferrable" | "read-only", token_address: string, description: string | undefined ) => {
+    switch (theme) {
+        case "buyable":
+            return (
+                <></>
+            )
+        case "read-only":
+            return (
+                <Tooltip text={`${token_address} ${description ? description : ''}`} position="bottom" children={[ <Icon svg={iconTypes.helpCircle} fill={colors.blue}/>]}/>
+            )
+        case "transferrable":
+            return <></>
+    }
+}
+
 const NFT: React.FC<NFTProps> = ({
     description,
     name,
     id,
     img_url,
+    theme,
     type,
     token_address,
     token_id
@@ -22,8 +39,8 @@ const NFT: React.FC<NFTProps> = ({
                 <NFTType>{type}</NFTType>
             </NFTInfo>
             <Divider />
-            <NFTFooter style={{display: 'flex', alignItems: 'center', flexDirection: 'row-reverse', padding: '10px 16px'}}>
-                <Tooltip text={`${token_address} ${description ? description : ''}`} position="bottom" children={[ <Icon svg={iconTypes.helpCircle} fill={colors.blue}/>]}/>
+            <NFTFooter>
+                { printByTheme(theme,token_address,description) }
             </NFTFooter>
         </NFTWrapper>
     )

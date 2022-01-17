@@ -20,3 +20,4 @@ export * from './components/Tag';
 export * from './components/Tooltip';
 export * from './components/TextArea';
 export * from './components/Select';
+export * from './components/Table';

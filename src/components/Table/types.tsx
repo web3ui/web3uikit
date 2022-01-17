@@ -10,13 +10,13 @@ export interface TableProps {
      * The header row of the table
      * For no header pass []
      */
-    header: React.ReactNode[] | string[];
+    header: (React.ReactNode | string)[];
 
     /**
      * The data, the table will present
      */
 
-    data: React.ReactNode[][] | string[][];
+    data: (React.ReactNode | string)[][];
 
     /**
      * The number of rows per table page

@@ -1,4 +1,5 @@
 // Components
+export * from './components/Avatar';
 export * from './components/BannerStrip';
 export * from './components/Breadcrumbs';
 export * from './components/Button';
@@ -11,9 +12,11 @@ export * from './components/Illustrations';
 export * from './components/Info';
 export * from './components/Input';
 export * from './components/LinkTo';
+export * from './components/Logo';
 export * from './components/Modal';
 export * from './components/Notification';
 export * from './components/Radios';
 export * from './components/Tag';
 export * from './components/Tooltip';
 export * from './components/TextArea';
+export * from './components/Select';

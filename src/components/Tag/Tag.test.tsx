@@ -10,7 +10,7 @@ const {
     ActiveStatus,
     Discount,
     Blue,
-    Gray,
+    Grey,
     Green,
     Pink,
     Purple,
@@ -228,16 +228,16 @@ describe('Tag - Green', () => {
     });
 });
 
-describe('Tag - Gray', () => {
+describe('Tag - Grey', () => {
     let container: HTMLDivElement;
     const testId = 'test-tag-id';
     const textId = 'test-tag-text';
-    const gray = 'Gray';
+    const grey = 'Grey';
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<Gray />, container);
+        ReactDOM.render(<Grey />, container);
     });
 
     afterEach(() => {
@@ -252,7 +252,7 @@ describe('Tag - Gray', () => {
 
     it('renders text correctly', () => {
         const element = container.querySelector(`[data-testid="${textId}"]`);
-        expect(element?.textContent).toBe(gray);
+        expect(element?.textContent).toBe(grey);
     });
 
     it('should render icon', () => {

@@ -9,20 +9,16 @@ import React from 'react';
 
 const {
     EmailInput,
-    EmailInputConfirmed,
-    EmailInputError,
     NumberInput,
-    NumberInputConfirmed,
-    NumberInputError,
     PasswordInput,
-    PasswordInputConfirmed,
-    PasswordInputError,
+    PrefixCopyableHidden,
     TelInput,
-    TelInputConfirmed,
-    TelInputError,
-    TextInput,
-    TextInputConfirmed,
-    TextInputError,
+    DefaultInput,
+    InputConfirmed,
+    InputError,
+    Validation,
+    ValidateNumberRange,
+    ValidateValueLength,
 } = composeStories(stories);
 
 let container: HTMLDivElement;
@@ -31,16 +27,23 @@ const testPlaceholder = '';
 const testInputId = 'test-input';
 const testLabelId = 'test-label';
 const testDivId = 'test-div';
+const testEvent = jest.fn();
 
 describe('Input - Text', () => {
-    const testLabel = TextInput?.args?.label;
-    const testName = TextInput?.args?.name;
-    const testType = TextInput?.args?.type;
+    const testLabel = DefaultInput?.args?.label;
+    const testName = DefaultInput?.args?.name;
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<TextInput />, container);
+        ReactDOM.render(
+            <DefaultInput
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -68,7 +71,7 @@ describe('Input - Text', () => {
             `[data-testid="${testInputId}"]`,
         );
         expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
+        input && expect(input.type).toBe('text');
     });
 
     it('renders input with the name passed', () => {
@@ -81,7 +84,7 @@ describe('Input - Text', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
@@ -113,7 +116,6 @@ describe('Input - Text', () => {
     });
 
     it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
@@ -122,19 +124,25 @@ describe('Input - Text', () => {
 
         expect(input).not.toBeNull();
         input && expect(input.value).toBe('foo');
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
 describe('Input - Text Error', () => {
-    const testLabel = TextInputError?.args?.label;
-    const testName = TextInputError?.args?.name;
-    const testType = TextInputError?.args?.type;
+    const testLabel = InputError?.args?.label;
+    const testName = InputError?.args?.name;
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<TextInputError />, container);
+        ReactDOM.render(
+            <InputError
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -162,7 +170,7 @@ describe('Input - Text Error', () => {
             `[data-testid="${testInputId}"]`,
         );
         expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
+        input && expect(input.type).toBe('text');
     });
 
     it('renders input with the name passed', () => {
@@ -175,7 +183,7 @@ describe('Input - Text Error', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.red);
@@ -207,7 +215,6 @@ describe('Input - Text Error', () => {
     });
 
     it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
@@ -216,19 +223,26 @@ describe('Input - Text Error', () => {
 
         expect(input).not.toBeNull();
         input && expect(input.value).toBe('foo');
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
 describe('Input - Text Confirmed', () => {
-    const testLabel = TextInputConfirmed?.args?.label;
-    const testName = TextInputConfirmed?.args?.name;
-    const testType = TextInputConfirmed?.args?.type;
+    const testLabel = InputConfirmed?.args?.label;
+    const testName = InputConfirmed?.args?.name;
+    const testType = InputConfirmed?.args?.type;
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<TextInputConfirmed />, container);
+        ReactDOM.render(
+            <InputConfirmed
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -256,7 +270,7 @@ describe('Input - Text Confirmed', () => {
             `[data-testid="${testInputId}"]`,
         );
         expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
+        input && expect(input.type).toBe('text');
     });
 
     it('renders input with the name passed', () => {
@@ -269,7 +283,7 @@ describe('Input - Text Confirmed', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.green);
@@ -301,7 +315,6 @@ describe('Input - Text Confirmed', () => {
     });
 
     it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
@@ -310,7 +323,7 @@ describe('Input - Text Confirmed', () => {
 
         expect(input).not.toBeNull();
         input && expect(input.value).toBe('foo');
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
@@ -322,7 +335,14 @@ describe('Input - Number', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<NumberInput />, container);
+        ReactDOM.render(
+            <NumberInput
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -363,7 +383,7 @@ describe('Input - Number', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
@@ -405,7 +425,6 @@ describe('Input - Number', () => {
     });
 
     it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
@@ -414,215 +433,7 @@ describe('Input - Number', () => {
 
         expect(input).not.toBeNull();
         input && expect(input.value).toBe('123');
-        expect(console.log).toHaveBeenCalledWith(input);
-    });
-});
-
-describe('Input - Number Error', () => {
-    const testLabel = NumberInputError?.args?.label;
-    const testName = NumberInputError?.args?.name;
-    const testType = NumberInputError?.args?.type;
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<NumberInputError />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders input with the value and placeholder passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe(testValue);
-        input && expect(input.placeholder).toBe(testPlaceholder);
-    });
-
-    it('renders the correct type of input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
-    });
-
-    it('renders input with the name passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.name).toBe(testName);
-    });
-
-    it('renders input correct colors', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.red);
-    });
-
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        expect(input).not.toBeNull();
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: '123' } });
-        input && expect(input.value).toBe('123');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('number input wont return letters', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-        input && expect(input.value).toBe('');
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: '123' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('123');
-        expect(console.log).toHaveBeenCalledWith(input);
-    });
-});
-
-describe('Input - Number Confirmed', () => {
-    const testLabel = NumberInputConfirmed?.args?.label;
-    const testName = NumberInputConfirmed?.args?.name;
-    const testType = NumberInputConfirmed?.args?.type;
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<NumberInputConfirmed />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders input with the value and placeholder passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe(testValue);
-        input && expect(input.placeholder).toBe(testPlaceholder);
-    });
-
-    it('renders the correct type of input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
-    });
-
-    it('renders input with the name passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.name).toBe(testName);
-    });
-
-    it('renders input correct colors', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.green);
-    });
-
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        expect(input).not.toBeNull();
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: '123' } });
-        input && expect(input.value).toBe('123');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('number input wont return letters', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-        input && expect(input.value).toBe('');
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: '123' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('123');
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
@@ -634,7 +445,14 @@ describe('Input - Password', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<PasswordInput />, container);
+        ReactDOM.render(
+            <PasswordInput
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -675,7 +493,7 @@ describe('Input - Password', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
@@ -707,7 +525,6 @@ describe('Input - Password', () => {
     });
 
     it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
@@ -716,195 +533,7 @@ describe('Input - Password', () => {
 
         expect(input).not.toBeNull();
         input && expect(input.value).toBe('foo');
-        expect(console.log).toHaveBeenCalledWith(input);
-    });
-});
-
-describe('Input - Password Error', () => {
-    const testLabel = PasswordInputError?.args?.label;
-    const testName = PasswordInputError?.args?.name;
-    const testType = PasswordInputError?.args?.type;
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PasswordInputError />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders input with the value and placeholder passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe(testValue);
-        input && expect(input.placeholder).toBe(testPlaceholder);
-    });
-
-    it('renders the correct type of input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
-    });
-
-    it('renders input with the name passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.name).toBe(testName);
-    });
-
-    it('renders input correct colors', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.red);
-    });
-
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        expect(input).not.toBeNull();
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-        input && expect(input.value).toBe('foo');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo');
-        expect(console.log).toHaveBeenCalledWith(input);
-    });
-});
-
-describe('Input - Password Confirmed', () => {
-    const testLabel = PasswordInputConfirmed?.args?.label;
-    const testName = PasswordInputConfirmed?.args?.name;
-    const testType = PasswordInputConfirmed?.args?.type;
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PasswordInputConfirmed />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders input with the value and placeholder passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe(testValue);
-        input && expect(input.placeholder).toBe(testPlaceholder);
-    });
-
-    it('renders the correct type of input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
-    });
-
-    it('renders input with the name passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.name).toBe(testName);
-    });
-
-    it('renders input correct colors', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.green);
-    });
-
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo');
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
@@ -916,7 +545,14 @@ describe('Input - Email', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<EmailInput />, container);
+        ReactDOM.render(
+            <EmailInput
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -957,7 +593,7 @@ describe('Input - Email', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
@@ -989,204 +625,15 @@ describe('Input - Email', () => {
     });
 
     it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
         input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo@bar.io' } });
+        input && fireEvent.change(input, { target: { value: 'foo' } });
 
         expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo@bar.io');
-        expect(console.log).toHaveBeenCalledWith(input);
-    });
-});
-
-describe('Input - Email Error', () => {
-    const testLabel = EmailInputError?.args?.label;
-    const testName = EmailInputError?.args?.name;
-    const testType = EmailInputError?.args?.type;
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<EmailInputError />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders input with the value and placeholder passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe(testValue);
-        input && expect(input.placeholder).toBe(testPlaceholder);
-    });
-
-    it('renders the correct type of input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
-    });
-
-    it('renders input with the name passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.name).toBe(testName);
-    });
-
-    it('renders input correct colors', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.red);
-    });
-
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        expect(input).not.toBeNull();
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo@bar.io' } });
-        input && expect(input.value).toBe('foo@bar.io');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo@bar.io' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo@bar.io');
-        expect(console.log).toHaveBeenCalledWith(input);
-    });
-});
-
-describe('Input - Email Confirmed', () => {
-    const testLabel = EmailInputConfirmed?.args?.label;
-    const testName = EmailInputConfirmed?.args?.name;
-    const testType = EmailInputConfirmed?.args?.type;
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<EmailInputConfirmed />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders input with the value and placeholder passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe(testValue);
-        input && expect(input.placeholder).toBe(testPlaceholder);
-    });
-
-    it('renders the correct type of input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
-    });
-
-    it('renders input with the name passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.name).toBe(testName);
-    });
-
-    it('renders input correct colors', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.green);
-    });
-
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo@bar.io' } });
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo@bar.io');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo@bar.io' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo@bar.io');
-        expect(console.log).toHaveBeenCalledWith(input);
+        input && expect(input.value).toBe('foo');
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
@@ -1198,7 +645,14 @@ describe('Input - Tel', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<TelInput />, container);
+        ReactDOM.render(
+            <TelInput
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -1239,7 +693,7 @@ describe('Input - Tel', () => {
 
     it('renders input correct colors', () => {
         const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
+            `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
         expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
@@ -1272,208 +726,161 @@ describe('Input - Tel', () => {
     });
 
     it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
         input?.focus();
-        input &&
-            fireEvent.change(input, { target: { value: '+447712345678' } });
+        input && fireEvent.change(input, { target: { value: '123' } });
 
         expect(input).not.toBeNull();
-        input && expect(input.value).toBe('+447712345678');
-        expect(console.log).toHaveBeenCalledWith(input);
+        input && expect(input.value).toBe('123');
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
-describe('Input - Tel Error', () => {
-    const testLabel = TelInputError?.args?.label;
-    const testName = TelInputError?.args?.name;
-    const testType = TelInputError?.args?.type;
-
+describe('PrefixCopyableHidden - Text', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<TelInputError />, container);
+        ReactDOM.render(<PrefixCopyableHidden />, container);
     });
     afterEach(() => {
         document.body.removeChild(container);
         container.remove();
     });
 
-    it('renders the component', () => {
+    it('renders the hidden value', () => {
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders input with the value and placeholder passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe(testValue);
-        input && expect(input.placeholder).toBe(testPlaceholder);
-    });
-
-    it('renders the correct type of input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
-    });
-
-    it('renders input with the name passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.name).toBe(testName);
-    });
-
-    it('renders input correct colors', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.red);
-    });
-
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        expect(input).not.toBeNull();
-        input?.focus();
-        input &&
-            fireEvent.change(input, { target: { value: '+447712345678' } });
-        input && expect(input.value).toBe('+447712345678');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input &&
-            fireEvent.change(input, { target: { value: '+447712345678' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('+447712345678');
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(input?.value).toBe('****');
     });
 });
 
-describe('Input - Tel Confirmed', () => {
-    const testLabel = TelInputConfirmed?.args?.label;
-    const testName = TelInputConfirmed?.args?.name;
-    const testType = TelInputConfirmed?.args?.type;
-
+describe('Validation - Required', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<TelInputConfirmed />, container);
+        ReactDOM.render(<Validation />, container);
     });
     afterEach(() => {
         document.body.removeChild(container);
         container.remove();
     });
 
-    it('renders the component', () => {
+    it('renders the required attribute', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input).toHaveAttribute('required');
+    });
+
+    it('validates a required input', async () => {
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
         expect(input).not.toBeNull();
-    });
 
-    it('renders input with the value and placeholder passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe(testValue);
-        input && expect(input.placeholder).toBe(testPlaceholder);
-    });
-
-    it('renders the correct type of input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
-    });
-
-    it('renders input with the name passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(input).not.toBeNull();
-        input && expect(input.name).toBe(testName);
-    });
-
-    it('renders input correct colors', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.green);
-    });
-
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        expect(input).not.toBeNull();
         input?.focus();
-        input &&
-            fireEvent.change(input, { target: { value: '+447712345678' } });
-        input && expect(input.value).toBe('+447712345678');
+        input && fireEvent.change(input, { target: { value: '' } });
+        input?.blur();
 
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
+        expect(input?.checkValidity()).toBeFalsy;
+    });
+});
+
+describe('Validation - Number Range', () => {
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<ValidateNumberRange />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
     });
 
-    it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
+    it('renders HTML validation attributes', () => {
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
-        input?.focus();
-        input &&
-            fireEvent.change(input, { target: { value: '+447712345678' } });
+        expect(input).toHaveAttribute('min');
+        expect(input).toHaveAttribute('max');
+    });
 
+    it('validates a the valid input', async () => {
+        const goodValue = Number(ValidateNumberRange?.args?.numberMax) - 1;
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
         expect(input).not.toBeNull();
-        input && expect(input.value).toBe('+447712345678');
-        expect(console.log).toHaveBeenCalledWith(input);
+
+        input?.focus();
+        input && fireEvent.change(input, { target: { value: `${goodValue}` } });
+        input?.blur();
+
+        expect(input?.checkValidity()).toBeTruthy;
+    });
+
+    it('validates a the non valid input', async () => {
+        const badValue = Number(ValidateNumberRange?.args?.numberMax) + 1;
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input).not.toBeNull();
+
+        input?.focus();
+        input && fireEvent.change(input, { target: { value: `${badValue}` } });
+        input?.blur();
+
+        expect(input?.checkValidity()).toBeFalsy;
+    });
+});
+
+describe('Validation - Character length Range', () => {
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<ValidateValueLength />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders HTML validation attributes', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input).toHaveAttribute('maxlength');
+        expect(input).toHaveAttribute('minlength');
+    });
+
+    it('validates a the valid input', async () => {
+        const goodValue = '123456789';
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input).not.toBeNull();
+
+        input?.focus();
+        input && fireEvent.change(input, { target: { value: `${goodValue}` } });
+        input?.blur();
+
+        expect(input?.checkValidity()).toBeTruthy;
+    });
+
+    it('validates a the non valid input', async () => {
+        const badValue = '123';
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input).not.toBeNull();
+
+        input?.focus();
+        input && fireEvent.change(input, { target: { value: `${badValue}` } });
+        input?.blur();
+
+        expect(input?.checkValidity()).toBeFalsy;
     });
 });

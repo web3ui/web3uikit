@@ -1,21 +1,28 @@
+export type Position = 'top' | 'bottom' | 'left' | 'right';
+
 export interface TooltipProps {
+    /**
+     * Set children which should have a tooltip
+     */
+    children: Array<React.ReactNode>;
+
     /**
      * The tooltip ID will be generated if not assigned
      */
     id?: string;
 
     /**
-     * Set text to show in tooltip
+     * Set the max width of the tooltip
      */
-    text: string;
+    maxWidth?: number;
 
     /**
      * Set position of tooltip
      */
-    position?: 'top' | 'bottom' | 'left' | 'right';
+    position: Position;
 
     /**
-     * Set children which should have a tooltip
+     * Set text to show in tooltip
      */
-    children: Array<React.ReactNode>;
+    text: string;
 }

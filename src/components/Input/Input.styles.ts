@@ -1,10 +1,10 @@
+import styled, { css } from 'styled-components';
 import resetCSS, { resetButtonCSS } from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
-import styled from 'styled-components';
 import { InputProps, LabelProps } from './types';
 
-export const InputWrapper = styled.div<Pick<InputProps, 'state'>>`
+export const DivWrapperStyled = styled.div<Pick<InputProps, 'state'>>`
     ${resetCSS}
     border-radius: 16px;
     border: 1px solid;
@@ -33,9 +33,15 @@ export const InputWrapper = styled.div<Pick<InputProps, 'state'>>`
 
     &:hover {
         border-color: ${(p) => p.state !== 'disabled' && color.blue};
+
+        strong {
+            overflow: visible;
+            text-overflow: unset;
+            white-space: wrap;
+        }
     }
 
-    &:hover > .input_prefix > svg {
+    &:hover > .input_prefixIcon > svg {
         fill: ${(p) => !p?.state && color.blue};
     }
 
@@ -101,6 +107,7 @@ export const InputStyled = styled.input`
     ${fonts.text}
     background-color: transparent;
     overflow: hidden;
+    transition: all 0.1s ease-out;
     width: 100%;
 
     &:focus,
@@ -124,7 +131,7 @@ export const InputStyled = styled.input`
     }
 `;
 
-const inputIconStyle = `
+const inputIconStyle = css`
     ${resetCSS}
     align-items: center;
     display: flex;
@@ -132,6 +139,7 @@ const inputIconStyle = `
     justify-content: center;
     max-width: 24px;
     width: 100%;
+
     & :first-child {
         fill: ${color.grey};
         transition: fill 0.2s ease-out;
@@ -140,16 +148,17 @@ const inputIconStyle = `
     }
 `;
 
-export const InputIcon = styled.div`
+export const DivStyled = styled.div`
     ${inputIconStyle}
     margin-right: 12px;
 `;
 
-export const CopyInputIcon = styled.button`
+export const ButtonStyled = styled.button`
     ${resetButtonCSS}
     ${inputIconStyle}
     position: relative;
     margin-left: 24px;
+
     &:hover > svg {
         fill: ${color.blue};
     }
@@ -168,31 +177,24 @@ export const VisibilityIcon = styled.button`
     ${inputIconStyle}
     position: relative;
     margin-left: 12px;
+
     &:hover > svg {
         fill: ${color.blue};
     }
 `;
 
-export const ErrorLabel = styled.label`
+export const StrongStyled = styled.strong`
     ${resetCSS}
     ${fonts.text}
     bottom: -23px;
     color: ${color.red};
     font-size: 12px;
     height: 24px;
+    left: 16px;
+    overflow: hidden;
     pointer-events: none;
     position: absolute;
-    left: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 26px);
 `;
-
-const InputStyles = {
-    CopyInputIcon,
-    ErrorLabel,
-    InputIcon,
-    InputStyled,
-    InputWrapper,
-    LabelStyled,
-    VisibilityIcon,
-};
-
-export default InputStyles;

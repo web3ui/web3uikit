@@ -43,7 +43,7 @@ const container = css`
     ${fonts.openSans}
     ${fonts.openSans}
     line-height: 16px;
-    position: absolute;
+    position: relative;
     ${resetCSS}
 `;
 

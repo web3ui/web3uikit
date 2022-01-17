@@ -16,6 +16,7 @@ Standard.args = {
     img_url: "https://lh3.googleusercontent.com/UoFV2HVC6fpBOC0ybX85Lus0DCunFPUENMjohCMoSSKEDbNCaYOtpCFKd4Bbbdf7P3aubU5ieEtAHYnesgadifOJUnQhxa6Nkhyz",
     token_id: "01",
     description: "",
+    theme: "read-only",
     type: "ERC721",
     name: "Bored Ape",
     token_address: "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"

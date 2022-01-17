@@ -20,6 +20,11 @@ export interface NFTProps {
     name: string;
 
     /**
+     * set theme of NFT
+     */
+    theme: "buyable" | "transferrable" | "read-only";
+
+    /**
      * set type of NFT
      */
     type: "ERC721" | "ERC1155";

@@ -5,12 +5,11 @@ import colors, { colorPercentage } from "../../styles/colors"
 export const Divider = styled.div`
   height: 1px;
   width: 100%;
-  background-color: ${colors.blue};
+  background-color: ${colorPercentage(colors.blue, 20)};
 `
 
 export const NFTWrapper = styled.div`
   background: white;
-  border: 1px solid ${colorPercentage(colors.blueDark, 5)};
   border-radius: 16px;
   min-width: 100px;
   min-height: 120px;
@@ -21,7 +20,7 @@ export const NFTFooter = styled.div`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  padding: 5px 10px;
+  padding: 10px 16px;
 `
 
 export const NFTInfo = styled.div`

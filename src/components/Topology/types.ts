@@ -1,19 +1,32 @@
-import { ReactNode } from 'react';
 import { eColorTypes } from '../../utils/getColor';
 
 export interface TypographyProps {
     /**
-     * The tooltip ID will be generated if not assigned
+     * The color type of the text
      */
     type?: eColorTypes;
 
-    textType: textType;
+    /**
+     * The type of the text
+     */
+    textType?: eTextType;
 
+    /**
+     * The font weight of the text,
+     * For more infromation visit
+     * https://www.w3schools.com/cssref/pr_font_weight.asp
+     */
     fontType?: ITypographyFontType;
 
+    /**
+     * Specifies the font style for a text.
+     */
     fontStyle?: ITypographyFontStyle;
 
-    children: ReactNode;
+    /**
+     * The text you want to render
+     */
+    children: React.ReactNode;
 }
 
 export type ITypographyFontType =
@@ -38,6 +51,6 @@ export enum eTextType {
     H3 = 'h3',
     H4 = 'h4',
     H5 = 'h5',
-    P = 'text',
+    TEXT = 'text',
     BLOCK = 'block',
 }

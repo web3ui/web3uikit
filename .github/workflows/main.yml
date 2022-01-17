@@ -27,16 +27,3 @@ jobs:
 
             - name: Build
               run: yarn build
-
-            - name: Set NPM Auth Token
-              run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
-
-            - name: Publish
-              run: npm publish --tag ${{ github.event.release.target_commitish }}
-              env:
-                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-            - name: Push the version to GitHub
-              run: git push
-              env:
-                  github-token: ${{ secrets.GITHUB_TOKEN }}

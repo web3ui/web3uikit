@@ -30,6 +30,9 @@
             "pre-commit": "tsdx lint"
         }
     },
+     "publishConfig": {
+        "tag": "latest"
+    },
     "prettier": {
         "printWidth": 80,
         "semi": true,

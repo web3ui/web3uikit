@@ -9,7 +9,7 @@ export interface TagProps {
     /**
      * The text to display in the tag
      */
-    text?: string;
+    text: string;
 
     /**
      * Set Theme of tag

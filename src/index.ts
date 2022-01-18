@@ -1,4 +1,5 @@
 // Components
+export * from './components/Accordion';
 export * from './components/Avatar';
 export * from './components/BannerStrip';
 export * from './components/Breadcrumbs';
@@ -16,8 +17,9 @@ export * from './components/Logo';
 export * from './components/Modal';
 export * from './components/Notification';
 export * from './components/Radios';
-export * from './components/Tag';
-export * from './components/Tooltip';
-export * from './components/TextArea';
 export * from './components/Select';
+export * from './components/Tag';
+export * from './components/TextArea';
 export * from './components/Table';
+export * from './components/Tooltip';
+

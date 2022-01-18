@@ -7,30 +7,46 @@ import {
     StyledTabContent,
     StyleTabBarParent,
 } from './NewComp.styles';
-import { ITabList } from './types';
+import { ITabList, ITab, TableStyles } from './types';
 
-const TabContenxt = React.createContext();
+interface IContext {
+    selectedKey: number;
+    setSelectedKey: any;
+    tabStyle: TableStyles;
+}
 
-const getTabs = (children) => {
-    const data = {};
-    React.Children.forEach(children.props.children, (element) => {
+interface IElement {
+    [key: string]: any;
+}
+
+const TabContenxt = React.createContext({
+    selectedKey: 0,
+    setSelectedKey: null,
+    tabStyle: 'bar',
+} as IContext);
+
+const getTabs = (children: JSX.Element) => {
+    const data: IElement = {};
+    React.Children.forEach(children, (element: IElement) => {
         if (element.type == Tab) {
             data[element.props.tabKey] = element.props.children;
             // data.push(element);
         }
     });
+
     return data;
 };
 
 function TabList({
-    children,
+    children = <></>,
     tabStyle = 'bar',
     defaultActiveKey = 1,
     isVertical = false,
     onChange,
 }: ITabList): JSX.Element {
-    const [tabs, setTabs] = useState([]);
-    const [tabChildren, setTabChildren] = useState(getTabs(children));
+    const [tabChildren, setTabChildren] = useState<any>(
+        getTabs(children as any),
+    );
     const [selectedKey, setSelectedKey] = useState(defaultActiveKey);
     useEffect(() => {
         if (onChange) {
@@ -40,6 +56,9 @@ function TabList({
     useEffect(() => {
         setSelectedKey(defaultActiveKey);
     }, [defaultActiveKey]);
+    useEffect(() => {
+        setTabChildren(getTabs(children as any));
+    }, [children]);
     return (
         <TabContenxt.Provider
             value={{
@@ -48,7 +67,10 @@ function TabList({
                 tabStyle,
             }}
         >
-            <StyleTabBarParent isVertical={isVertical}>
+            <StyleTabBarParent
+                isVertical={isVertical}
+                data-testid="tabs_list_parent"
+            >
                 <StyledTabBar
                     haveBackground={tabStyle == 'bulbUnion'}
                     isVertical={isVertical}
@@ -72,7 +94,6 @@ function Tab({
 }: ITab) {
     const { selectedKey, setSelectedKey, tabStyle } = useContext(TabContenxt);
     const handleTabClick = (key: number) => {
-        console.log(isDisabled);
         if (isDisabled) {
             return;
         }
@@ -82,6 +103,9 @@ function Tab({
         return (
             <BulbTab
                 role="tab-Item"
+                data-testid={`tab_item_${tabKey}_${
+                    activeState ? activeState : tabKey == selectedKey
+                }`}
                 key={tabKey}
                 isActive={activeState ? activeState : tabKey == selectedKey}
                 onClick={() => {
@@ -99,6 +123,9 @@ function Tab({
         return (
             <StyledTab
                 role="tab-Item"
+                data-testid={`tab_item_${tabKey}_${
+                    activeState ? activeState : tabKey == selectedKey
+                }`}
                 key={tabKey}
                 isActive={activeState ? activeState : tabKey == selectedKey}
                 onClick={() => {
@@ -107,7 +134,9 @@ function Tab({
                 lineHeight={lineHeight}
                 isDisabled={isDisabled}
             >
-                <span>{tabName}</span>
+                <span data-testid={`disabled_${isDisabled}_${tabKey}`}>
+                    {tabName}
+                </span>
             </StyledTab>
         );
     };

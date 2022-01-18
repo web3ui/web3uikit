@@ -44,7 +44,7 @@ export const StyledTabContent = styled.div<IStyledTabBarParent>`
 interface IStyledTab {
     isActive: boolean;
     lineHeight: number;
-    isDisabled: number;
+    isDisabled: boolean;
 }
 export const StyledTab = styled.div<IStyledTab>`
     transition-duration: 500ms;

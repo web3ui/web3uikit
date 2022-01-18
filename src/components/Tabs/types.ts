@@ -1,26 +1,18 @@
-import React from 'react';
-
-export const colorState = ['greenLight', 'redLight'] as const;
-export type TColorState = typeof colorState[number];
-
-// NOTE: the comment strings are very important
-// Storybook pulls them to make our docs
-
 export interface ITabList {
     defaultActiveKey?: number;
     isVertical?: boolean;
-    children?: React.ReactNode;
-    tabStyle?: TabeStyles;
+    children?: JSX.Element[] | JSX.Element;
+    tabStyle?: TableStyles;
     onChange?(selectedKey: number): void;
 }
 
 export interface ITab {
-    tabName: string | React.ReactNode;
+    tabName: string | JSX.Element;
     tabKey: number;
     activeState?: boolean;
-    children?: React.ReactNode;
+    children?: JSX.Element[] | JSX.Element;
     lineHeight?: number;
-    isDisabled: boolean;
+    isDisabled?: boolean;
 }
 
-export type TabeStyles = 'bulbUnion' | 'bulbSeperate' | 'bar';
+export type TableStyles = 'bulbUnion' | 'bulbSeperate' | 'bar';

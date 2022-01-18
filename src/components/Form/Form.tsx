@@ -7,27 +7,29 @@ import { Radios } from '../Radios';
 import { TextArea } from '../TextArea';
 import { TitleStyled, SubTitleStyled, FormStyled } from './Form.styles';
 
-// TO @bill
-// validation
-// test returned data
-// best way to show data in Storybook & for end user
-
-const Form: React.FC<FormProps> = ({
-    data,
-    id = String(Date.now()),
-    title,
-}) => {
+const Form: React.FC<FormProps> = ({ data, id, title, onSubmit }) => {
     const formSubmitted = (event: React.SyntheticEvent) => {
         event.preventDefault();
         event.stopPropagation();
-        console.log(data[5].selected);
 
-        const dataReturned = data.map((item) => ({
-            name: item.name,
-            value: item.selected || item.value,
-        }));
+        const form = event.target as typeof event.target & HTMLFormElement;
 
-        console.log(dataReturned);
+        console.log(form);
+
+        if (form.checkValidity()) {
+            console.log('form valid');
+            const dataReturned = data.map((item) => ({
+                inputName: item.name,
+                inputResult: item.selected || item.value,
+            }));
+            onSubmit &&
+                onSubmit({
+                    id: id,
+                    data: dataReturned,
+                });
+        } else {
+            form.reportValidity();
+        }
     };
 
     const optionAdded = (index: number, opt: string, isRadio: boolean) => {
@@ -66,6 +68,15 @@ const Form: React.FC<FormProps> = ({
             name={input.name}
             onChange={(e) => (data[index].value = e.target.value)}
             type={type}
+            validation={{
+                characterMaxLength: input.validation?.characterMaxLength,
+                characterMinLength: input.validation?.characterMinLength,
+                numberMax: input.validation?.numberMax,
+                numberMin: input.validation?.numberMin,
+                regExp: input.validation?.regExp,
+                regExpInvalidMessage: input.validation?.regExpInvalidMessage,
+                required: input.validation?.required,
+            }}
         />
     );
 
@@ -83,6 +94,7 @@ const Form: React.FC<FormProps> = ({
                     layout={layout}
                     name={input.name}
                     onChange={(e) => optionToggled(e, index, opt)}
+                    validation={{ required: input.validation?.required }}
                 />
             ))}
         </Fragment>
@@ -95,6 +107,7 @@ const Form: React.FC<FormProps> = ({
                 id={`${input.name}_${index}`}
                 items={input.options || []}
                 onChange={(e) => optionToggled(e, index, e.target.value)}
+                validation={{ required: input.validation?.required }}
             />
         </Fragment>
     );
@@ -107,6 +120,11 @@ const Form: React.FC<FormProps> = ({
                 name={input.name}
                 value={input.value}
                 onChange={(e) => (data[index].value = e.target.value)}
+                validation={{
+                    characterMaxLength: input.validation?.characterMaxLength,
+                    characterMinLength: input.validation?.characterMinLength,
+                    required: input.validation?.required,
+                }}
             />
         </Fragment>
     );

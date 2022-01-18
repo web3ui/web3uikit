@@ -1,3 +1,7 @@
+export type CheckboxValidate = {
+    required?: boolean;
+};
+
 export interface CheckboxProps {
     /**
      * The checkbox can be ticked by default
@@ -10,7 +14,7 @@ export interface CheckboxProps {
     disabled?: boolean;
 
     /**
-     * The ID will generated if not assigned
+     * you should assign an ID for your own validation
      */
     id?: string;
 
@@ -33,4 +37,9 @@ export interface CheckboxProps {
      * The normal onChange event
      */
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+    /**
+     * You can validate your checkbox and switches
+     */
+    validation?: CheckboxValidate;
 }

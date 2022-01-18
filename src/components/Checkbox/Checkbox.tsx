@@ -1,44 +1,24 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
 import { CheckboxProps } from '.';
-import {
-    boxCheckedStyles,
-    boxStyles,
-    inputStyles,
-    labelDisabled,
-    labelStyles,
-    switchOnStyles,
-    switchStyles,
-} from './Checkbox.styles';
-
-const StyledInput = styled.input<Pick<CheckboxProps, 'layout'>>`
-    ${inputStyles}
-`;
-
-const StyledLabel = styled.label<
-    Pick<CheckboxProps, 'layout' | 'checked' | 'disabled'>
->`
-    ${labelStyles}
-    ${(p) => p.disabled && labelDisabled}
-	${(p) => p.layout === 'box' && boxStyles}
-  ${(p) => p.layout === 'box' && p.checked && boxCheckedStyles}
-	${(p) => p.layout === 'switch' && switchStyles}
-  ${(p) => p.layout === 'switch' && p.checked && switchOnStyles}
-`;
+import { Icon } from '../Icon';
+import { iconTypes } from '../Icon/collection';
+import { StyledInput, StyledLabel } from './Checkbox.styles';
 
 const Checkbox: React.FC<CheckboxProps> = ({
     checked = false,
     disabled = false,
-    id = String(Date.now()),
+    id,
     label,
     layout = 'box',
     name,
     onChange,
+    validation,
 }) => {
     const [isChecked, setIsChecked] = useState(checked);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setIsChecked(Boolean(event.target.checked));
+        if (disabled) return;
         onChange(event);
     };
 
@@ -50,6 +30,9 @@ const Checkbox: React.FC<CheckboxProps> = ({
             disabled={disabled}
             layout={layout}
         >
+            <span className="after">
+                <Icon svg={iconTypes.check} fill="white" />
+            </span>
             <StyledInput
                 data-testid="test-checkbox-input"
                 disabled={disabled}
@@ -57,10 +40,11 @@ const Checkbox: React.FC<CheckboxProps> = ({
                 layout={layout}
                 name={name}
                 onChange={valueChanged}
+                required={validation?.required}
                 type="checkbox"
                 value={`${isChecked}`}
             />
-            {label}
+            <span data-testid="test-checkbox-text">{label}</span>
         </StyledLabel>
     );
 };

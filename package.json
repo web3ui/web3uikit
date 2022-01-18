@@ -21,14 +21,14 @@
         "analyze": "size-limit --why",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
-        "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx}\""
+        "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx,json}\""
     },
     "peerDependencies": {
         "react": ">=16"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "tsdx lint"
+            "pre-commit": "tsdx lint && npm prettier"
         }
     },
      "publishConfig": {

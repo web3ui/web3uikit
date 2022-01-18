@@ -230,7 +230,6 @@ describe('Input - Text Error', () => {
 describe('Input - Text Confirmed', () => {
     const testLabel = InputConfirmed?.args?.label;
     const testName = InputConfirmed?.args?.name;
-    const testType = InputConfirmed?.args?.type;
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -809,7 +808,8 @@ describe('Validation - Number Range', () => {
     });
 
     it('validates a the valid input', async () => {
-        const goodValue = Number(ValidateNumberRange?.args?.numberMax) - 1;
+        const goodValue =
+            Number(ValidateNumberRange?.args?.validation?.numberMax) - 1;
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
@@ -823,7 +823,8 @@ describe('Validation - Number Range', () => {
     });
 
     it('validates a the non valid input', async () => {
-        const badValue = Number(ValidateNumberRange?.args?.numberMax) + 1;
+        const badValue =
+            Number(ValidateNumberRange?.args?.validation?.numberMax) + 1;
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );

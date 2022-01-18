@@ -16,8 +16,6 @@ import type { InputProps } from './types';
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
     disabled = false,
-    characterMaxLength,
-    characterMinLength,
     errorMessage = 'Sorry this is not valid',
     hasCopyButton = false,
     id,
@@ -25,24 +23,16 @@ const Input: React.FC<InputProps> = ({
     isHidable = false,
     label,
     name,
-    numberMax,
-    numberMin,
     onChange,
     placeholder = '',
     prefixIcon,
-    regExp,
-    regExpInvalidMessage,
-    required = false,
     state = disabled ? 'disabled' : undefined,
     style,
     type = 'text',
+    validation,
     value = '',
     width = '320px',
 }: InputProps) => {
-    if (type !== 'number') {
-        numberMax = undefined;
-        numberMin = undefined;
-    }
     const [currentValue, setCurrentValue] = useState(value);
     const [currentState, setCurrentState] = useState(state);
     const [isCopied, setIsCopied] = useState(false);
@@ -69,12 +59,12 @@ const Input: React.FC<InputProps> = ({
 
     const hasValidation = () =>
         Boolean(
-            required ||
-                numberMax ||
-                numberMin ||
-                characterMaxLength ||
-                characterMinLength ||
-                regExp,
+            validation?.required ||
+                validation?.numberMax ||
+                validation?.numberMin ||
+                validation?.characterMaxLength ||
+                validation?.characterMinLength ||
+                validation?.regExp,
         );
 
     const validate = (event: React.FocusEvent<HTMLInputElement, Element>) => {
@@ -88,10 +78,12 @@ const Input: React.FC<InputProps> = ({
         }
 
         // check for the value passes the custom RegExp
-        if (regExp) {
-            var re = new RegExp(regExp);
+        if (validation?.regExp) {
+            var re = new RegExp(validation?.regExp);
             if (!re.test(event?.target.value)) {
-                setInvalidMessage(regExpInvalidMessage || errorMessage);
+                setInvalidMessage(
+                    validation?.regExpInvalidMessage || errorMessage,
+                );
                 setCurrentState('error');
                 return;
             }
@@ -123,10 +115,10 @@ const Input: React.FC<InputProps> = ({
                 data-testid="test-input"
                 disabled={currentState == 'disabled'}
                 id={id}
-                max={type === 'number' ? numberMax : undefined}
-                maxLength={characterMaxLength}
-                min={type === 'number' ? numberMin : undefined}
-                minLength={characterMinLength}
+                max={type === 'number' ? validation?.numberMax : undefined}
+                maxLength={validation?.characterMaxLength}
+                min={type === 'number' ? validation?.numberMin : undefined}
+                minLength={validation?.characterMinLength}
                 name={name}
                 onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
                     validate(event)
@@ -134,8 +126,9 @@ const Input: React.FC<InputProps> = ({
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                     valueChanged(event)
                 }
+                pattern={validation?.regExp}
                 placeholder={placeholder}
-                required={required}
+                required={validation?.required}
                 type={type}
                 value={
                     isInputHidden
@@ -150,7 +143,7 @@ const Input: React.FC<InputProps> = ({
                     hasPrefix={typeof prefixIcon !== 'undefined'}
                 >
                     {label}
-                    {required && '*'}
+                    {validation?.required && '*'}
                 </LabelStyled>
             )}
 

@@ -10,6 +10,7 @@ export const DivWrapperStyled = styled.div<Pick<InputProps, 'state'>>`
     border: 1px solid;
     display: flex;
     height: 56px;
+    max-width: 100%;
     padding: 14px 16px;
     position: relative;
     transition: all 0.2s linear;

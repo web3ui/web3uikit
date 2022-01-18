@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Input from '../../components/Input/Input';
 import { iconTypes } from '../Icon/collection';
+import { validateRegExp } from '../../utils/const';
 
 export default {
     title: 'Interaction/Input',
@@ -149,29 +150,35 @@ PrefixCopyableHidableDisabled.args = {
 export const Validation = Template.bind({});
 Validation.args = {
     label: 'This is required',
-    required: true,
+    validation: { required: true },
 };
 
 export const ValidateNumberRange = Template.bind({});
 ValidateNumberRange.args = {
     label: 'Enter a score between 1 & 5',
-    numberMin: 1,
-    numberMax: 5,
     type: 'number',
+    validation: {
+        numberMin: 1,
+        numberMax: 5,
+    },
 };
 
 export const ValidateValueLength = Template.bind({});
 ValidateValueLength.args = {
     label: 'Between 8 and 16 characters',
-    characterMaxLength: 16,
-    characterMinLength: 8,
     type: 'password',
+    validation: {
+        characterMaxLength: 16,
+        characterMinLength: 8,
+    },
 };
 
 export const ValidateRegExp = Template.bind({});
 ValidateRegExp.args = {
     label: 'Valid email only',
-    regExp: '^[^@s]+@[^@s]+.[^@s]+$',
-    regExpInvalidMessage: 'That is not a valid email address',
     type: 'email',
+    validation: {
+        regExp: validateRegExp.email,
+        regExpInvalidMessage: 'That is not a valid email address',
+    },
 };

@@ -15,6 +15,7 @@ const TextArea: React.FC<TextAreaProps> = ({
     onChange,
     placeholder,
     state,
+    validation,
     value = '',
 }: TextAreaProps) => {
     const [currentValue, setCurrentValue] = useState(value);
@@ -23,7 +24,7 @@ const TextArea: React.FC<TextAreaProps> = ({
 
     const valueChanged = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setCurrentValue(event.target.value);
-        onChange(event);
+        onChange && onChange(event);
     };
 
     useEffect(() => {
@@ -53,16 +54,19 @@ const TextArea: React.FC<TextAreaProps> = ({
             <TextAreaStyled
                 autoComplete={`${autoComplete}`}
                 data-testid="test-textarea"
+                disabled={state === 'disabled'}
                 id={id}
+                maxLength={validation?.characterMaxLength}
+                minLength={validation?.characterMinLength}
                 name={name}
                 onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
                     valueChanged(event)
                 }
                 placeholder={placeholder}
-                value={currentValue}
                 ref={textareaRef}
+                required={validation?.required}
                 rows={4}
-                disabled={state === 'disabled'}
+                value={currentValue}
             />
             {label && (
                 <LabelStyled data-testid="test-label" htmlFor={id}>

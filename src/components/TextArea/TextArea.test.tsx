@@ -15,6 +15,7 @@ const testPlaceholder = 'Type here field';
 const testTextAreaId = 'test-textarea';
 const testWrapperId = 'test-textarea-wrapper';
 const testLabelId = 'test-label';
+const testEvent = jest.fn();
 
 describe('TextArea - Default', () => {
     const testLabel = Default?.args?.label;
@@ -23,7 +24,14 @@ describe('TextArea - Default', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<Default />, container);
+        ReactDOM.render(
+            <Default
+                onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -88,7 +96,6 @@ describe('TextArea - Default', () => {
     });
 
     it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
         const textarea: HTMLTextAreaElement | null = container.querySelector(
             `[data-testid="${testTextAreaId}"]`,
         );
@@ -97,7 +104,7 @@ describe('TextArea - Default', () => {
 
         expect(textarea).not.toBeNull();
         textarea && expect(textarea.value).toBe('foo');
-        expect(console.log).toHaveBeenCalledWith(textarea);
+        expect(testEvent).toHaveBeenCalled();
     });
 });
 
@@ -173,7 +180,6 @@ describe('TextArea - Error', () => {
     });
 
     it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
         const textarea: HTMLTextAreaElement | null = container.querySelector(
             `[data-testid="${testTextAreaId}"]`,
         );
@@ -182,7 +188,7 @@ describe('TextArea - Error', () => {
 
         expect(textarea).not.toBeNull();
         textarea && expect(textarea.value).toBe('foo');
-        expect(console.log).toHaveBeenCalledWith(textarea);
+        expect(testEvent).toHaveBeenCalled();
     });
 });
 
@@ -258,7 +264,6 @@ describe('TextArea - Confirmed', () => {
     });
 
     it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
         const textarea: HTMLTextAreaElement | null = container.querySelector(
             `[data-testid="${testTextAreaId}"]`,
         );
@@ -267,7 +272,7 @@ describe('TextArea - Confirmed', () => {
 
         expect(textarea).not.toBeNull();
         textarea && expect(textarea.value).toBe('foo');
-        expect(console.log).toHaveBeenCalledWith(textarea);
+        expect(testEvent).toHaveBeenCalled();
     });
 });
 
@@ -344,7 +349,6 @@ describe('TextArea - Disabled', () => {
     });
 
     it('onChange event is returned, testEvent => event.target', () => {
-        console.log = jest.fn();
         const textarea: HTMLTextAreaElement | null = container.querySelector(
             `[data-testid="${testTextAreaId}"]`,
         );
@@ -353,6 +357,6 @@ describe('TextArea - Disabled', () => {
 
         expect(textarea).not.toBeNull();
         textarea && expect(textarea.value).toBe('foo');
-        expect(console.log).toHaveBeenCalledWith(textarea);
+        expect(testEvent).toHaveBeenCalled();
     });
 });

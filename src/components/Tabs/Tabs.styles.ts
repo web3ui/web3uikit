@@ -1,5 +1,4 @@
-// importing styled to make components and css to make themes
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import resetCSS from '../../styles/reset';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';

@@ -6,7 +6,7 @@ import {
     StyledTabBar,
     StyledTabContent,
     StyleTabBarParent,
-} from './NewComp.styles';
+} from './Tabs.styles';
 import { ITabList, ITab, TableStyles } from './types';
 
 // Helper Inteerfaces for typing

@@ -9,40 +9,39 @@ import {
 } from './NewComp.styles';
 import { ITabList, ITab, TableStyles } from './types';
 
+// Helper Inteerfaces for typing
 interface IContext {
     selectedKey: number;
     setSelectedKey: any;
     tabStyle: TableStyles;
 }
-
 interface IElement {
     [key: string]: any;
 }
-
+// Context for communinicting with tabs
 const TabContenxt = React.createContext({
     selectedKey: 0,
     setSelectedKey: null,
     tabStyle: 'bar',
 } as IContext);
 
+// Helper function for parsing tab components
 const getTabs = (children: JSX.Element) => {
     const data: IElement = {};
     React.Children.forEach(children, (element: IElement) => {
         if (element.type == Tab) {
             data[element.props.tabKey] = element.props.children;
-            // data.push(element);
         }
     });
-
     return data;
 };
 
 function TabList({
     children = <></>,
-    tabStyle = 'bar',
     defaultActiveKey = 1,
     isVertical = false,
     onChange,
+    tabStyle = 'bar',
 }: ITabList): JSX.Element {
     const [tabChildren, setTabChildren] = useState<any>(
         getTabs(children as any),
@@ -86,11 +85,11 @@ function TabList({
 }
 
 function Tab({
-    tabName,
-    tabKey,
     activeState,
-    lineHeight = 24,
     isDisabled = false,
+    lineHeight = 24,
+    tabKey,
+    tabName,
 }: ITab) {
     const { selectedKey, setSelectedKey, tabStyle } = useContext(TabContenxt);
     const handleTabClick = (key: number) => {

@@ -4,14 +4,24 @@ import resetCSS from '../../styles/reset';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 
-const transition = css`
-    transition-duration: 200ms;
-    transition-timing-function: ease-in-out;
-`;
-
+// Styling Interfaces
+interface IStyledTab {
+    isActive: boolean;
+    isDisabled: boolean;
+    lineHeight: number;
+}
 interface IStyledTabBarParent {
     isVertical: boolean;
 }
+interface IStyledTabBar {
+    haveBackground: boolean;
+    isVertical: boolean;
+}
+interface IStyledBulb extends IStyledTab {
+    hasMargin: boolean;
+}
+
+// Styles
 export const StyleTabBarParent = styled.div<IStyledTabBarParent>`
     ${resetCSS}
     ${fonts.text}
@@ -21,10 +31,6 @@ export const StyleTabBarParent = styled.div<IStyledTabBarParent>`
     ${(props) => !props.isVertical && 'flex-direction:column'}
 `;
 
-interface IStyledTabBar {
-    haveBackground: boolean;
-    isVertical: boolean;
-}
 export const StyledTabBar = styled.div<IStyledTabBar>`
     display: flex;
     ${(props) => props.isVertical && 'flex-direction: column;'}
@@ -41,11 +47,6 @@ export const StyledTabContent = styled.div<IStyledTabBarParent>`
     padding: ${(props) => (props.isVertical ? '0px 11px' : '11px 0px')};
 `;
 
-interface IStyledTab {
-    isActive: boolean;
-    lineHeight: number;
-    isDisabled: boolean;
-}
 export const StyledTab = styled.div<IStyledTab>`
     transition-duration: 500ms;
     transition-property: border;
@@ -65,12 +66,9 @@ export const StyledTab = styled.div<IStyledTab>`
     ${(props) => props.isDisabled && `color:${color.greyDisabled};`}
 `;
 
-interface IStyledBulb extends IStyledTab {
-    hasMargin: boolean;
-}
-
 export const BulbTab = styled.div<IStyledBulb>`
-    ${transition}
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
     font-size: 14px;
     border-radius: 16px;
     padding: 8px 16px 8px 16px;

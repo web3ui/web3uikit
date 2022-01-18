@@ -1,3 +1,7 @@
+export type RadiosValidate = {
+    required?: boolean;
+};
+
 export interface RadiosProps {
     /**
      * this collection of radio buttons needs an ID to group them
@@ -18,4 +22,9 @@ export interface RadiosProps {
      * standard onChange that returns the entire event, as normal you can access event.target
      */
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+    /**
+     * You can validate your radios
+     */
+    validation?: RadiosValidate;
 }

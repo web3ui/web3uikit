@@ -1,3 +1,5 @@
+import { iconTypes } from '../Icon/collection';
+
 export interface InputProps {
     /**
      * toggle browsers ability to auto complete the input
@@ -17,7 +19,7 @@ export interface InputProps {
     /**
      * standard onChange that returns the entire event, as normal you can access event.target
      */
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
     /**
      * a short piece of text to fill the input before the user interacts
@@ -25,9 +27,9 @@ export interface InputProps {
     placeholder?: string;
 
     /**
-     * Icon prefix for the input field
+     * Icon prefixIcon for the input field
      */
-    prefix?: React.ReactNode;
+    prefixIcon?: iconTypes;
 
     /**
      * types of input available
@@ -62,10 +64,10 @@ export interface InputProps {
     /**
      * shows the hide icon when is true
      */
-    hidable?: boolean;
+    isHidable?: boolean;
 
     /**
-     * imput width
+     * input width
      */
 
     width?: string;
@@ -78,12 +80,48 @@ export interface InputProps {
     /**
      * shows copy icon
      */
-    copyable?: boolean;
+    hasCopyButton?: boolean;
 
     /**
      * disables any interaction
      */
     disabled?: boolean;
+
+    /**
+     * add validation to your inputs
+     */
+    required?: boolean;
+
+    /**
+     * max length of characters that can be entered
+     */
+    characterMinLength?: number;
+
+    /**
+     * max length of characters that can be entered
+     */
+    characterMaxLength?: number;
+
+    /**
+     * min number validation is only for number inputs
+     */
+    numberMin?: number;
+
+    /**
+     * max number validation is only for number inputs
+     */
+    numberMax?: number;
+
+    /**
+     * a RegExp for this input passed as a string
+     * EG: [A-Za-z] to only allow letters
+     */
+    regExp?: string;
+
+    /**
+     * user feedback text if the RegExp fails to pass
+     */
+    regExpInvalidMessage?: string;
 }
 
 export interface LabelProps {

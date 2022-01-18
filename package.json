@@ -14,6 +14,7 @@
     "scripts": {
         "start": "tsdx watch",
         "build": "tsdx build",
+        "postbuild": "cp -R node_modules dist/node_modules",
         "test": "tsdx test",
         "lint": "eslint .",
         "size": "size-limit",

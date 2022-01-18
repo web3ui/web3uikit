@@ -7,8 +7,6 @@ This UI library will speed up your dapp development no matter which chain you bu
 
 Live StoryBook DEMO: https://web3ui.github.io/web3uikit/
 
-![web3uikit](https://user-images.githubusercontent.com/78314301/149937570-21084882-5ee5-4672-8ebc-c193d63d43c3.gif)
-
 # ⭐️ `Star us`
 If this ui-kit helps you build your dApps faster - please star this project, every star makes us very happy!
 

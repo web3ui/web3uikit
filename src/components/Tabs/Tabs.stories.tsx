@@ -6,6 +6,7 @@ import { iconTypes } from '../Icon/collection';
 import Button from '../Button/Button';
 import { columnsConfig, header, data, maxPages } from '../Table/MockData';
 import Table from '../Table/Table';
+
 export default {
     title: 'UI/Tabs',
     component: TabList,

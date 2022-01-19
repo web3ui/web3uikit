@@ -547,8 +547,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="111.936"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#3C88C4" />
-                    <stop offset="1" stop-color="#2D5382" />
+                    <stop stopColor="#3C88C4" />
+                    <stop offset="1" stopColor="#2D5382" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_10025_65883"
@@ -558,8 +558,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-2719.94"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#3C88C4" />
-                    <stop offset="1" stop-color="#2D5382" />
+                    <stop stopColor="#3C88C4" />
+                    <stop offset="1" stopColor="#2D5382" />
                 </linearGradient>
                 <linearGradient
                     id="paint2_linear_10025_65883"
@@ -569,8 +569,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="161.661"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint3_linear_10025_65883"
@@ -580,8 +580,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-2674.89"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint4_linear_10025_65883"
@@ -591,8 +591,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-1651.57"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint5_linear_10025_65883"
@@ -602,8 +602,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="203.867"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#297EA4" />
-                    <stop offset="1" stop-color="#25A6C4" />
+                    <stop stopColor="#297EA4" />
+                    <stop offset="1" stopColor="#25A6C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint6_linear_10025_65883"
@@ -613,8 +613,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="211.722"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint7_linear_10025_65883"
@@ -624,8 +624,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-8551.41"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint8_linear_10025_65883"
@@ -635,8 +635,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-8508.54"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint9_linear_10025_65883"
@@ -646,8 +646,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-8465.69"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint10_linear_10025_65883"
@@ -657,8 +657,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-8423.16"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint11_linear_10025_65883"
@@ -668,8 +668,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-8383.86"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint12_linear_10025_65883"
@@ -679,8 +679,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-8334.1"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint13_linear_10025_65883"
@@ -690,8 +690,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-8303.61"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint14_linear_10025_65883"
@@ -701,8 +701,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-8431.03"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint15_linear_10025_65883"
@@ -712,8 +712,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="132.572"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#B2F5F2" />
-                    <stop offset="1" stop-color="#F0FDFC" />
+                    <stop stopColor="#B2F5F2" />
+                    <stop offset="1" stopColor="#F0FDFC" />
                 </linearGradient>
                 <linearGradient
                     id="paint16_linear_10025_65883"
@@ -723,10 +723,10 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="192.442"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#5D1780" />
-                    <stop offset="0.25" stop-color="#6C2E93" />
-                    <stop offset="0.78" stop-color="#946AC3" />
-                    <stop offset="1" stop-color="#A584D8" />
+                    <stop stopColor="#5D1780" />
+                    <stop offset="0.25" stopColor="#6C2E93" />
+                    <stop offset="0.78" stopColor="#946AC3" />
+                    <stop offset="1" stopColor="#A584D8" />
                 </linearGradient>
                 <linearGradient
                     id="paint17_linear_10025_65883"
@@ -736,8 +736,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-4992.14"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint18_linear_10025_65883"
@@ -747,8 +747,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="287.292"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" stop-opacity="0" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint19_linear_10025_65883"
@@ -758,8 +758,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-751.983"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#297EA4" />
-                    <stop offset="1" stop-color="#25A6C4" />
+                    <stop stopColor="#297EA4" />
+                    <stop offset="1" stopColor="#25A6C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint20_linear_10025_65883"
@@ -769,9 +769,9 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="144.095"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="0.51" stop-color="#38AFDB" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="0.51" stopColor="#38AFDB" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint21_linear_10025_65883"
@@ -781,45 +781,17 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="236.144"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.04" stop-color="white" />
-                    <stop offset="0.62" stop-color="white" stop-opacity="0" />
-                    <stop
-                        offset="0.68"
-                        stop-color="white"
-                        stop-opacity="0.01"
-                    />
-                    <stop
-                        offset="0.73"
-                        stop-color="white"
-                        stop-opacity="0.05"
-                    />
-                    <stop
-                        offset="0.78"
-                        stop-color="white"
-                        stop-opacity="0.12"
-                    />
-                    <stop
-                        offset="0.82"
-                        stop-color="white"
-                        stop-opacity="0.21"
-                    />
-                    <stop
-                        offset="0.86"
-                        stop-color="white"
-                        stop-opacity="0.33"
-                    />
-                    <stop offset="0.9" stop-color="white" stop-opacity="0.48" />
-                    <stop
-                        offset="0.94"
-                        stop-color="white"
-                        stop-opacity="0.65"
-                    />
-                    <stop
-                        offset="0.98"
-                        stop-color="white"
-                        stop-opacity="0.85"
-                    />
-                    <stop offset="1" stop-color="white" />
+                    <stop offset="0.04" stopColor="white" />
+                    <stop offset="0.62" stopColor="white" stopOpacity="0" />
+                    <stop offset="0.68" stopColor="white" stopOpacity="0.01" />
+                    <stop offset="0.73" stopColor="white" stopOpacity="0.05" />
+                    <stop offset="0.78" stopColor="white" stopOpacity="0.12" />
+                    <stop offset="0.82" stopColor="white" stopOpacity="0.21" />
+                    <stop offset="0.86" stopColor="white" stopOpacity="0.33" />
+                    <stop offset="0.9" stopColor="white" stopOpacity="0.48" />
+                    <stop offset="0.94" stopColor="white" stopOpacity="0.65" />
+                    <stop offset="0.98" stopColor="white" stopOpacity="0.85" />
+                    <stop offset="1" stopColor="white" />
                 </linearGradient>
                 <linearGradient
                     id="paint22_linear_10025_65883"
@@ -829,8 +801,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="256.725"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint23_linear_10025_65883"
@@ -840,8 +812,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="7933.42"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint24_linear_10025_65883"
@@ -851,8 +823,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-362.696"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint25_linear_10025_65883"
@@ -862,8 +834,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-318.824"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint26_linear_10025_65883"
@@ -873,8 +845,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="-363.927"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint27_linear_10025_65883"
@@ -884,8 +856,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="116.231"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint28_linear_10025_65883"
@@ -895,8 +867,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="140.925"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint29_linear_10025_65883"
@@ -906,8 +878,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="170.687"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint30_linear_10025_65883"
@@ -917,8 +889,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="164.369"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint31_linear_10025_65883"
@@ -928,8 +900,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="250.492"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#E8B414" />
-                    <stop offset="1" stop-color="#D7830A" />
+                    <stop stopColor="#E8B414" />
+                    <stop offset="1" stopColor="#D7830A" />
                 </linearGradient>
                 <linearGradient
                     id="paint32_linear_10025_65883"
@@ -939,8 +911,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="209.938"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2A54D3" />
-                    <stop offset="1" stop-color="#43E8E1" />
+                    <stop stopColor="#2A54D3" />
+                    <stop offset="1" stopColor="#43E8E1" />
                 </linearGradient>
                 <linearGradient
                     id="paint33_linear_10025_65883"
@@ -950,8 +922,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="239.796"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#EDC418" />
-                    <stop offset="1" stop-color="#C95900" />
+                    <stop stopColor="#EDC418" />
+                    <stop offset="1" stopColor="#C95900" />
                 </linearGradient>
                 <linearGradient
                     id="paint34_linear_10025_65883"
@@ -961,9 +933,9 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="206.296"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#D7830A" />
-                    <stop offset="0.85" stop-color="#EABC16" />
-                    <stop offset="1" stop-color="white" />
+                    <stop stopColor="#D7830A" />
+                    <stop offset="0.85" stopColor="#EABC16" />
+                    <stop offset="1" stopColor="white" />
                 </linearGradient>
                 <linearGradient
                     id="paint35_linear_10025_65883"
@@ -973,9 +945,9 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="199.65"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="0.67" stop-color="white" />
-                    <stop offset="0.98" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="0.67" stopColor="white" />
+                    <stop offset="0.98" stopColor="white" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint36_linear_10025_65883"
@@ -985,8 +957,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="4154.09"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" stop-opacity="0" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint37_linear_10025_65883"
@@ -996,8 +968,8 @@ const pack = (width: Size = '300', height: Size = '398') => {
                     y2="239.054"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#B2F5F2" />
-                    <stop offset="1" stop-color="white" />
+                    <stop stopColor="#B2F5F2" />
+                    <stop offset="1" stopColor="white" />
                 </linearGradient>
             </defs>
         </svg>

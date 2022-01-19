@@ -148,10 +148,10 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
             <path
                 d="M221.166 121.322C221.166 121.322 235.68 135.219 250.602 122.549"
                 stroke="#2E7DAF"
-                stroke-width="3"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="3"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
             />
             <path
                 d="M285.967 259.674H192.138V275.205H285.967V259.674Z"
@@ -184,17 +184,17 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
             <path
                 d="M282 213.581H278C277.448 213.581 277 214.029 277 214.581V220.581C277 221.133 277.448 221.581 278 221.581H282C282.552 221.581 283 221.133 283 220.581V214.581C283 214.029 282.552 213.581 282 213.581Z"
                 fill="url(#paint22_linear_202_9308)"
-                fill-opacity="0.6"
+                fillOpacity="0.6"
             />
             <path
                 d="M289 213.581H285C284.448 213.581 284 214.029 284 214.581V220.581C284 221.133 284.448 221.581 285 221.581H289C289.552 221.581 290 221.133 290 220.581V214.581C290 214.029 289.552 213.581 289 213.581Z"
                 fill="url(#paint23_linear_202_9308)"
-                fill-opacity="0.6"
+                fillOpacity="0.6"
             />
             <path
                 d="M296 213.581H292C291.448 213.581 291 214.029 291 214.581V220.581C291 221.133 291.448 221.581 292 221.581H296C296.552 221.581 297 221.133 297 220.581V214.581C297 214.029 296.552 213.581 296 213.581Z"
                 fill="url(#paint24_linear_202_9308)"
-                fill-opacity="0.6"
+                fillOpacity="0.6"
             />
             <path
                 d="M392.47 194.279H359.762V297.072H392.47V194.279Z"
@@ -397,8 +397,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(116.081 148.041) rotate(86.1122) scale(86.7823 86.5379)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint1_radial_202_9308"
@@ -408,8 +408,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(343.129 67.5062) rotate(86.6736) scale(109.609 93.5934)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint2_radial_202_9308"
@@ -419,8 +419,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(210.761 154.049) rotate(83.6544) scale(107.91 174.736)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <linearGradient
                     id="paint3_linear_202_9308"
@@ -430,11 +430,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="152.427"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint4_linear_202_9308"
@@ -444,11 +444,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="69.8649"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <radialGradient
                     id="paint5_radial_202_9308"
@@ -458,8 +458,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(230.464 51.3225) rotate(84.3253) scale(29.5131 42.8073)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint6_radial_202_9308"
@@ -469,8 +469,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(309.608 109.077) rotate(68.8162) scale(4.4329 22.0175)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint7_radial_202_9308"
@@ -480,8 +480,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(296.009 100.813) rotate(85.9687) scale(19.6275 20.2897)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <linearGradient
                     id="paint8_linear_202_9308"
@@ -491,11 +491,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="108.296"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <radialGradient
                     id="paint9_radial_202_9308"
@@ -505,8 +505,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(217.254 67.7106) rotate(84.026) scale(82.8994 126.493)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint10_radial_202_9308"
@@ -516,8 +516,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(234.867 43.0691) rotate(-35.2077) scale(5.06019 35.1383)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint11_radial_202_9308"
@@ -527,8 +527,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(171.722 100.813) rotate(85.9687) scale(19.6275 20.2898)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint12_radial_202_9308"
@@ -538,8 +538,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(164.295 112.704) rotate(-111.184) scale(4.43289 22.0175)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <linearGradient
                     id="paint13_linear_202_9308"
@@ -549,11 +549,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="108.296"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint14_linear_202_9308"
@@ -563,11 +563,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="13.4733"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint15_linear_202_9308"
@@ -577,11 +577,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="90.8845"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint16_linear_202_9308"
@@ -591,11 +591,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="90.8845"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint17_linear_202_9308"
@@ -605,11 +605,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="220.587"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint18_linear_202_9308"
@@ -619,11 +619,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="220.587"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint19_linear_202_9308"
@@ -633,11 +633,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="220.587"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint20_linear_202_9308"
@@ -647,11 +647,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="220.587"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint21_linear_202_9308"
@@ -661,11 +661,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="220.587"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint22_linear_202_9308"
@@ -675,11 +675,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="220.587"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint23_linear_202_9308"
@@ -689,11 +689,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="220.587"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint24_linear_202_9308"
@@ -703,11 +703,11 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     y2="220.587"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <radialGradient
                     id="paint25_radial_202_9308"
@@ -717,8 +717,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(370.336 189.305) rotate(88.6715) scale(109.454 37.397)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint26_radial_202_9308"
@@ -728,8 +728,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(431.048 157.424) rotate(88.6715) scale(109.454 37.397)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint27_radial_202_9308"
@@ -739,8 +739,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(44.3587 204.844) rotate(82.6607) scale(38.2261 71.3929)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint28_radial_202_9308"
@@ -750,8 +750,8 @@ const comingSoon = (width: Size = '491', height: Size = '329') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(126.125 263.242) rotate(80.1872) scale(39.6057 98.0457)"
                 >
-                    <stop offset="0.00520833" stop-color="#ECF5FC" />
-                    <stop offset="1" stop-color="#CEE4F3" />
+                    <stop offset="0.00520833" stopColor="#ECF5FC" />
+                    <stop offset="1" stopColor="#CEE4F3" />
                 </radialGradient>
                 <clipPath id="clip0_202_9308">
                     <rect

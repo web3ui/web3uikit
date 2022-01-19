@@ -153,8 +153,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     d="M164.356 144.864C168.901 144.309 172.331 141.773 172.018 139.2C171.704 136.626 167.765 134.989 163.22 135.543C158.675 136.098 155.245 138.633 155.558 141.207C155.872 143.781 159.811 145.418 164.356 144.864Z"
                     fill="#F7F8FA"
                     stroke="white"
-                    stroke-width="0.58"
-                    stroke-miterlimit="10"
+                    strokeWidth="0.58"
+                    strokeMiterlimit="10"
                 />
                 <path
                     d="M201.992 114.758L162.439 91.9047C160.784 90.9543 161 89.2839 162.9 88.175L163.317 87.9446C164.297 87.3999 165.39 87.0916 166.509 87.0441C167.629 86.9966 168.744 87.2112 169.766 87.671L209.318 110.524C210.974 111.475 210.758 113.145 208.858 114.254L208.44 114.485C207.461 115.029 206.368 115.338 205.249 115.385C204.129 115.433 203.014 115.218 201.992 114.758Z"
@@ -230,8 +230,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="109.963"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#3C88C4" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_8801_37918"
@@ -241,8 +241,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="357.928"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#86D6F5" />
-                    <stop offset="1" stop-color="#86D6F5" stop-opacity="0" />
+                    <stop stopColor="#86D6F5" />
+                    <stop offset="1" stopColor="#86D6F5" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint2_linear_8801_37918"
@@ -252,8 +252,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="355.597"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#86D6F5" />
-                    <stop offset="1" stop-color="#86D6F5" stop-opacity="0" />
+                    <stop stopColor="#86D6F5" />
+                    <stop offset="1" stopColor="#86D6F5" stopOpacity="0" />
                 </linearGradient>
                 <radialGradient
                     id="paint3_radial_8801_37918"
@@ -263,8 +263,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(206.497 323.334) scale(180.233 180.322)"
                 >
-                    <stop stop-color="#490F66" />
-                    <stop offset="1" stop-color="#212C6B" />
+                    <stop stopColor="#490F66" />
+                    <stop offset="1" stopColor="#212C6B" />
                 </radialGradient>
                 <linearGradient
                     id="paint4_linear_8801_37918"
@@ -274,8 +274,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="272.126"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <radialGradient
                     id="paint5_radial_8801_37918"
@@ -285,9 +285,9 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(206.497 322.052) scale(180.233 180.322)"
                 >
-                    <stop stop-color="#304B7F" />
-                    <stop offset="0.48" stop-color="#42206D" />
-                    <stop offset="1" stop-color="#490F66" />
+                    <stop stopColor="#304B7F" />
+                    <stop offset="0.48" stopColor="#42206D" />
+                    <stop offset="1" stopColor="#490F66" />
                 </radialGradient>
                 <radialGradient
                     id="paint6_radial_8801_37918"
@@ -297,10 +297,10 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(163.678 250.122) scale(55.9036 55.9312)"
                 >
-                    <stop stop-color="#168B99" />
-                    <stop offset="0.46" stop-color="#304B7F" />
-                    <stop offset="0.82" stop-color="#42206D" />
-                    <stop offset="1" stop-color="#490F66" />
+                    <stop stopColor="#168B99" />
+                    <stop offset="0.46" stopColor="#304B7F" />
+                    <stop offset="0.82" stopColor="#42206D" />
+                    <stop offset="1" stopColor="#490F66" />
                 </radialGradient>
                 <radialGradient
                     id="paint7_radial_8801_37918"
@@ -310,9 +310,9 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(-52673.8 35701.5) scale(12818.2 7404.38)"
                 >
-                    <stop stop-color="#304B7F" />
-                    <stop offset="0.48" stop-color="#42206D" />
-                    <stop offset="1" stop-color="#490F66" />
+                    <stop stopColor="#304B7F" />
+                    <stop offset="0.48" stopColor="#42206D" />
+                    <stop offset="1" stopColor="#490F66" />
                 </radialGradient>
                 <linearGradient
                     id="paint8_linear_8801_37918"
@@ -322,8 +322,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="112.384"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <radialGradient
                     id="paint9_radial_8801_37918"
@@ -333,10 +333,10 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(-19323.5 13714) scale(2027.77 1171.15)"
                 >
-                    <stop stop-color="#168B99" />
-                    <stop offset="0.46" stop-color="#304B7F" />
-                    <stop offset="0.82" stop-color="#42206D" />
-                    <stop offset="1" stop-color="#490F66" />
+                    <stop stopColor="#168B99" />
+                    <stop offset="0.46" stopColor="#304B7F" />
+                    <stop offset="0.82" stopColor="#42206D" />
+                    <stop offset="1" stopColor="#490F66" />
                 </radialGradient>
                 <radialGradient
                     id="paint10_radial_8801_37918"
@@ -346,10 +346,10 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(-19912.5 13906.8) scale(2027.77 1170.66)"
                 >
-                    <stop stop-color="#168B99" />
-                    <stop offset="0.46" stop-color="#304B7F" />
-                    <stop offset="0.82" stop-color="#42206D" />
-                    <stop offset="1" stop-color="#490F66" />
+                    <stop stopColor="#168B99" />
+                    <stop offset="0.46" stopColor="#304B7F" />
+                    <stop offset="0.82" stopColor="#42206D" />
+                    <stop offset="1" stopColor="#490F66" />
                 </radialGradient>
                 <radialGradient
                     id="paint11_radial_8801_37918"
@@ -359,10 +359,10 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(-20490.3 14106.7) scale(2026.74 1170.77)"
                 >
-                    <stop stop-color="#168B99" />
-                    <stop offset="0.46" stop-color="#304B7F" />
-                    <stop offset="0.82" stop-color="#42206D" />
-                    <stop offset="1" stop-color="#490F66" />
+                    <stop stopColor="#168B99" />
+                    <stop offset="0.46" stopColor="#304B7F" />
+                    <stop offset="0.82" stopColor="#42206D" />
+                    <stop offset="1" stopColor="#490F66" />
                 </radialGradient>
                 <linearGradient
                     id="paint12_linear_8801_37918"
@@ -372,8 +372,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="213.646"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#FAF1C2" />
-                    <stop offset="1" stop-color="#F5E48C" />
+                    <stop stopColor="#FAF1C2" />
+                    <stop offset="1" stopColor="#F5E48C" />
                 </linearGradient>
                 <radialGradient
                     id="paint13_radial_8801_37918"
@@ -383,10 +383,10 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(-21678.2 14504.7) scale(2027.77 1170.81)"
                 >
-                    <stop stop-color="#168B99" />
-                    <stop offset="0.46" stop-color="#304B7F" />
-                    <stop offset="0.82" stop-color="#42206D" />
-                    <stop offset="1" stop-color="#490F66" />
+                    <stop stopColor="#168B99" />
+                    <stop offset="0.46" stopColor="#304B7F" />
+                    <stop offset="0.82" stopColor="#42206D" />
+                    <stop offset="1" stopColor="#490F66" />
                 </radialGradient>
                 <linearGradient
                     id="paint14_linear_8801_37918"
@@ -396,8 +396,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="4550.2"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#FAF1C2" />
-                    <stop offset="1" stop-color="#F5E48C" />
+                    <stop stopColor="#FAF1C2" />
+                    <stop offset="1" stopColor="#F5E48C" />
                 </linearGradient>
                 <radialGradient
                     id="paint15_radial_8801_37918"
@@ -407,10 +407,10 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(-15006.3 9421.46) scale(856.957 493.912)"
                 >
-                    <stop stop-color="#168B99" />
-                    <stop offset="0.46" stop-color="#304B7F" />
-                    <stop offset="0.82" stop-color="#42206D" />
-                    <stop offset="1" stop-color="#490F66" />
+                    <stop stopColor="#168B99" />
+                    <stop offset="0.46" stopColor="#304B7F" />
+                    <stop offset="0.82" stopColor="#42206D" />
+                    <stop offset="1" stopColor="#490F66" />
                 </radialGradient>
                 <linearGradient
                     id="paint16_linear_8801_37918"
@@ -420,8 +420,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="3987.83"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#FAF1C2" />
-                    <stop offset="1" stop-color="#F5E48C" />
+                    <stop stopColor="#FAF1C2" />
+                    <stop offset="1" stopColor="#F5E48C" />
                 </linearGradient>
                 <linearGradient
                     id="paint17_linear_8801_37918"
@@ -431,8 +431,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="4056.47"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#FAF1C2" />
-                    <stop offset="1" stop-color="#F5E48C" />
+                    <stop stopColor="#FAF1C2" />
+                    <stop offset="1" stopColor="#F5E48C" />
                 </linearGradient>
                 <radialGradient
                     id="paint18_radial_8801_37918"
@@ -442,10 +442,10 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(12716.8 6575.68) scale(5318.11 3072.3)"
                 >
-                    <stop stop-color="#168B99" />
-                    <stop offset="0.46" stop-color="#304B7F" />
-                    <stop offset="0.82" stop-color="#42206D" />
-                    <stop offset="1" stop-color="#490F66" />
+                    <stop stopColor="#168B99" />
+                    <stop offset="0.46" stopColor="#304B7F" />
+                    <stop offset="0.82" stopColor="#42206D" />
+                    <stop offset="1" stopColor="#490F66" />
                 </radialGradient>
                 <linearGradient
                     id="paint19_linear_8801_37918"
@@ -455,8 +455,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="134.675"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#3C88C4" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                 </linearGradient>
                 <radialGradient
                     id="paint20_radial_8801_37918"
@@ -466,9 +466,9 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(-52673.8 30095.9) scale(12818.2 7405.25)"
                 >
-                    <stop stop-color="#304B7F" />
-                    <stop offset="0.48" stop-color="#42206D" />
-                    <stop offset="1" stop-color="#490F66" />
+                    <stop stopColor="#304B7F" />
+                    <stop offset="0.48" stopColor="#42206D" />
+                    <stop offset="1" stopColor="#490F66" />
                 </radialGradient>
                 <linearGradient
                     id="paint21_linear_8801_37918"
@@ -478,8 +478,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="141.903"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#F7F8FA" />
-                    <stop offset="1" stop-color="#E5D4E7" />
+                    <stop stopColor="#F7F8FA" />
+                    <stop offset="1" stopColor="#E5D4E7" />
                 </linearGradient>
                 <linearGradient
                     id="paint22_linear_8801_37918"
@@ -489,8 +489,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="125.184"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#E66BAC" />
-                    <stop offset="1" stop-color="#E8006F" />
+                    <stop stopColor="#E66BAC" />
+                    <stop offset="1" stopColor="#E8006F" />
                 </linearGradient>
                 <linearGradient
                     id="paint23_linear_8801_37918"
@@ -500,8 +500,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="6397.2"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#E66BAC" />
-                    <stop offset="1" stop-color="#E8006F" />
+                    <stop stopColor="#E66BAC" />
+                    <stop offset="1" stopColor="#E8006F" />
                 </linearGradient>
                 <linearGradient
                     id="paint24_linear_8801_37918"
@@ -511,8 +511,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="2978.31"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#E66BAC" />
-                    <stop offset="1" stop-color="#E8006F" />
+                    <stop stopColor="#E66BAC" />
+                    <stop offset="1" stopColor="#E8006F" />
                 </linearGradient>
                 <linearGradient
                     id="paint25_linear_8801_37918"
@@ -522,8 +522,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="1943.48"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#E66BAC" />
-                    <stop offset="1" stop-color="#E8006F" />
+                    <stop stopColor="#E66BAC" />
+                    <stop offset="1" stopColor="#E8006F" />
                 </linearGradient>
                 <linearGradient
                     id="paint26_linear_8801_37918"
@@ -533,8 +533,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="2726.32"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#E66BAC" />
-                    <stop offset="1" stop-color="#E8006F" />
+                    <stop stopColor="#E66BAC" />
+                    <stop offset="1" stopColor="#E8006F" />
                 </linearGradient>
                 <linearGradient
                     id="paint27_linear_8801_37918"
@@ -544,8 +544,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="226.324"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#3C88C4" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint28_linear_8801_37918"
@@ -555,8 +555,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="253.886"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#3C88C4" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint29_linear_8801_37918"
@@ -566,8 +566,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="287.816"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#3C88C4" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint30_linear_8801_37918"
@@ -577,8 +577,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="253.053"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#3C88C4" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint31_linear_8801_37918"
@@ -588,8 +588,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="195.818"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#3C88C4" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint32_linear_8801_37918"
@@ -599,8 +599,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="222.905"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#3C88C4" stop-opacity="0" />
-                    <stop offset="1" stop-color="white" />
+                    <stop stopColor="#3C88C4" stopOpacity="0" />
+                    <stop offset="1" stopColor="white" />
                 </linearGradient>
                 <linearGradient
                     id="paint33_linear_8801_37918"
@@ -610,8 +610,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="-51.835"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#3C88C4" stop-opacity="0" />
-                    <stop offset="1" stop-color="white" />
+                    <stop stopColor="#3C88C4" stopOpacity="0" />
+                    <stop offset="1" stopColor="white" />
                 </linearGradient>
                 <linearGradient
                     id="paint34_linear_8801_37918"
@@ -621,8 +621,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="154.834"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#3C88C4" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint35_linear_8801_37918"
@@ -632,8 +632,8 @@ const servers = (width: Size = '323', height: Size = '398') => {
                     y2="185.678"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#3C88C4" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#3C88C4" stopOpacity="0" />
                 </linearGradient>
                 <clipPath id="clip0_8801_37918">
                     <rect

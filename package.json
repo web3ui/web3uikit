@@ -1,6 +1,6 @@
 {
     "name": "web3uikit",
-    "version": "0.1.10",
+    "version": "0.1.12",
     "repository": "https://github.com/web3ui/web3uikit",
     "homepage": "https://web3ui.github.io/web3uikit/",
     "main": "dist/index.js",
@@ -15,7 +15,6 @@
     "scripts": {
         "start": "tsdx watch",
         "build": "tsdx build",
-        "postbuild": "cp -R node_modules dist/node_modules",
         "test": "tsdx test",
         "lint": "eslint .",
         "size": "size-limit",
@@ -26,7 +25,9 @@
         "deploy:docs": "gh-pages -d storybook-static"
     },
     "peerDependencies": {
-        "react": ">=16"
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "styled-components": "^5.3.3",
     },
     "husky": {
         "hooks": {

@@ -35,3 +35,6 @@ jobs:
 
             - name: Deploy Storybook
               run: yarn deploy:docs
+              env:
+                  # The secret is passed automatically. Nothing to configure.
+                  github-token: ${{ secrets.GITHUB_TOKEN }}

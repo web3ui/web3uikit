@@ -19,7 +19,7 @@ import { iconTestId } from '../Icon/Icon.test';
 const { Default, InitializeRed, UnderLinedText } = composeStories(stories);
 
 //setting my test IDs to match my tsx
-export const testId = 'test-new-comp';
+export const testCompId = 'test-new-comp';
 const testTitle = 'test-title';
 const testHeading = 'test-heading';
 const testText = 'test-text';
@@ -47,7 +47,9 @@ describe('Default', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${testCompId}"]`,
+        );
         expect(element).not.toBeNull();
     });
     it('renders the Icon', () => {
@@ -126,7 +128,9 @@ describe('InitializeRed', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${testCompId}"]`,
+        );
         expect(element).not.toBeNull();
     });
     it('renders the Icon', () => {
@@ -205,7 +209,9 @@ describe('UnderLinedText', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${testCompId}"]`,
+        );
         expect(element).not.toBeNull();
     });
     it('renders the Icon', () => {

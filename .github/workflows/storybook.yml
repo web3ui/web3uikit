@@ -24,7 +24,7 @@ jobs:
             - name: Install Github Pages
               run: yarn add -D gh-pages
 
-            - run: git config --global user.name "GitHub StoryBook bot"
+            - run: git config --global user.name "GitHub CD bot"
             - run: git config --global user.email "dmitrii@moralis.io"
 
             - name: Test

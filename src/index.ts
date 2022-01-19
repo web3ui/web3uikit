@@ -21,5 +21,6 @@ export * from './components/Select';
 export * from './components/Tag';
 export * from './components/TextArea';
 export * from './components/Table';
+export * from './components/Tabs';
 export * from './components/Tooltip';
 

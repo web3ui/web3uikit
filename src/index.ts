@@ -7,6 +7,8 @@ export * from './components/Button';
 export * from './components/Card';
 export * from './components/Checkbox';
 export * from './components/CryptoCards';
+export * from './components/Dropdown';
+export * from './components/DropdownElement';
 export * from './components/Form';
 export * from './components/Icon';
 export * from './components/Illustrations';

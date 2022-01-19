@@ -32,7 +32,7 @@ const Card: React.FC<CardProps> = ({
                 setSelected(!isSelected);
                 toggleChecked(!showCheckedIcon);
             }}
-            selected={isSelected}
+            selected={isSelected && showCheckedIcon}
         >
             <CardHeader data-testid={'header-test-id'}>
                 {showCheckedIcon && (

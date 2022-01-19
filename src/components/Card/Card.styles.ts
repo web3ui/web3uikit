@@ -8,6 +8,7 @@ export const CardStyled = styled.div<Pick<CardProps, "selected">>`
   ${resetCSS}
   ${fonts.text}
   border: 2px solid transparent;
+  background-color: ${colors.white};
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
   display: grid;

@@ -1,3 +1,5 @@
+import { ValidateInput } from '../Input/types';
+
 export interface TextAreaProps {
     /**
      * toggle browsers ability to auto complete the input
@@ -22,7 +24,7 @@ export interface TextAreaProps {
     /**
      * standard onChange that returns the entire event, as normal you can access event.target
      */
-    onChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+    onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 
     /**
      * a short piece of text to fill the input before the user interacts
@@ -44,4 +46,9 @@ export interface TextAreaProps {
      */
     value?: string;
 
+    /**
+     * You can validate your textarea
+     * characterMaxLength, characterMinLength, numberMax, numberMin, regExp, regExpInvalidMessage & required
+     */
+    validation?: ValidateInput;
 }

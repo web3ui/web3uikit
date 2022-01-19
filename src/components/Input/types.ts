@@ -88,12 +88,27 @@ export interface InputProps {
     disabled?: boolean;
 
     /**
-     * add validation to your inputs
+     * You can validate your inputs
+     * required, characterMinLength, characterMaxLength, numberMin, numberMax, regExp , regExpInvalidMessage
+     */
+    validation?: ValidateInput;
+}
+
+export interface LabelProps {
+    /**
+     * true if the label is defined
+     */
+    hasPrefix: boolean;
+}
+
+export type ValidateInput = {
+    /**
+     * is the input required
      */
     required?: boolean;
 
     /**
-     * max length of characters that can be entered
+     * min length of characters that can be entered
      */
     characterMinLength?: number;
 
@@ -122,11 +137,4 @@ export interface InputProps {
      * user feedback text if the RegExp fails to pass
      */
     regExpInvalidMessage?: string;
-}
-
-export interface LabelProps {
-    /**
-     * true if the label is defined
-     */
-    hasPrefix: boolean;
-}
+};

@@ -5,11 +5,13 @@ import styled from 'styled-components';
 import { TextAreaProps } from './types';
 
 export const TextAreaWrapper = styled.div<Pick<TextAreaProps, 'state'>>`
-    position: relative;
-    display: inline-block;
+    ${resetCSS};
     border-radius: 16px;
     border: 1px solid ${color.greyLight};
+    display: inline-block;
+    max-width: 100%;
     padding: 12px;
+    position: relative;
     transition: all 0.1s linear;
 
     &:hover {
@@ -76,6 +78,7 @@ export const TextAreaStyled = styled.textarea`
     ${fonts.text}
     background-color: transparent;
     display: block;
+    max-width: 100%;
     min-height: 128px;
     width: 294px;
     overflow: hidden;

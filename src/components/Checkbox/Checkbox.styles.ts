@@ -1,18 +1,19 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import resetCSS from '../../styles/reset';
 import font from '../../styles/fonts';
 import color from '../../styles/colors';
-import tickSVG from './tick.svg';
+
+import { CheckboxProps } from './types';
 
 export const inputStyles = css`
-    ${resetCSS}
+    ${resetCSS};
     position: absolute;
     top: -30px;
 `;
 
 export const labelStyles = css`
-    ${resetCSS}
-    ${font.text}
+    ${resetCSS};
+    ${font.text};
     display: block;
     margin-bottom: 4px;
     overflow: hidden;
@@ -29,7 +30,7 @@ export const boxStyles = css`
     padding-left: 28px;
 
     &:before,
-    &:after {
+    .after {
         border-radius: 5px;
         content: '';
         display: block;
@@ -48,11 +49,12 @@ export const boxStyles = css`
         z-index: 0;
     }
 
-    &:after {
+    .after {
         align-items: center;
         display: flex;
         justify-content: center;
         left: 1px;
+        opacity: 0;
         top: 1px;
         z-index: 1;
     }
@@ -75,11 +77,8 @@ export const boxCheckedStyles = css`
         background-color: ${color.green};
         border-color: ${color.greenLight};
     }
-    &:after {
-        background-image: url(${tickSVG});
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 14px;
+    .after {
+        opacity: 1;
     }
 `;
 
@@ -137,4 +136,19 @@ export const switchOnStyles = css`
         border: 1px solid ${color.green};
         left: 18px;
     }
+`;
+
+export const StyledInput = styled.input<Pick<CheckboxProps, 'layout'>>`
+    ${inputStyles}
+`;
+
+export const StyledLabel = styled.label<
+    Pick<CheckboxProps, 'layout' | 'checked' | 'disabled'>
+>`
+    ${labelStyles}
+    ${(p) => p.disabled && labelDisabled}
+    ${(p) => p.layout === 'box' && boxStyles}
+    ${(p) => p.layout === 'box' && p.checked && boxCheckedStyles}
+    ${(p) => p.layout === 'switch' && switchStyles}
+    ${(p) => p.layout === 'switch' && p.checked && switchOnStyles}
 `;

@@ -5,10 +5,12 @@ import TextArea from './TextArea';
 export default {
     title: 'Interaction/TextArea',
     component: TextArea,
+    parameters: {
+        actions: {
+            handles: ['onChange', 'changed'],
+        },
+    },
 } as ComponentMeta<typeof TextArea>;
-
-const testEvent = (event: React.ChangeEvent<HTMLTextAreaElement>) =>
-    console.log(event.target);
 
 const Template: ComponentStory<typeof TextArea> = (args) => (
     <TextArea {...args} />
@@ -16,26 +18,21 @@ const Template: ComponentStory<typeof TextArea> = (args) => (
 
 export const Standard = Template.bind({});
 Standard.args = {
-    onChange: testEvent,
     label: 'Standard',
     name: 'Test TextArea Default',
     placeholder: 'Type here field',
-    state: undefined,
 };
 
 export const Default = Template.bind({});
 Default.args = {
-    onChange: testEvent,
     label: 'Label text',
     name: 'Test TextArea Default',
     placeholder: 'Type here field',
-    state: undefined,
     value: 'Test Value',
 };
 
 export const Error = Template.bind({});
 Error.args = {
-    onChange: testEvent,
     label: 'Error',
     name: 'Test TextArea error',
     placeholder: 'Type here field',
@@ -45,7 +42,6 @@ Error.args = {
 
 export const Disabled = Template.bind({});
 Disabled.args = {
-    onChange: testEvent,
     label: 'Label text',
     name: 'Test TextArea disabled',
     placeholder: 'Type here field',
@@ -55,7 +51,6 @@ Disabled.args = {
 
 export const Confirmed = Template.bind({});
 Confirmed.args = {
-    onChange: testEvent,
     label: 'Confirmed',
     name: 'Test TextArea confirmed',
     placeholder: 'Type here field',

@@ -1,8 +1,8 @@
-name: Updating the StoryBook Docs fronentend
+name: Updating the StoryBook Docs frontend
 on:
     push:
         branches:
-            - main
+            - master
 jobs:
     build:
         name: Build, lint, test on ubuntu-latest and deploy

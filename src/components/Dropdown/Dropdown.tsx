@@ -21,18 +21,22 @@ const Dropdown: React.FC<DropdownProps> = ({
         >
             <div data-testid={'dropdown-parent-test-id'}>{parent}</div>
 
-            {showDropdown && [
-                <DivArrowStyled position={position} move={move} />,
-                <DivDropdownElementStyled position={position}>
-                    {children.map((name) => {
-                        return (
-                            <div>
-                                <ElementDiv>{name}</ElementDiv>
-                            </div>
-                        );
-                    })}
-                </DivDropdownElementStyled>,
-            ]}
+            {showDropdown && (
+                <>
+                    <DivArrowStyled position={position} move={move} />,
+                    <DivDropdownElementStyled position={position}>
+                        {children.map((name) => {
+                            let key = 0;
+                            key++;
+                            return (
+                                <div key={key}>
+                                    <ElementDiv>{name}</ElementDiv>
+                                </div>
+                            );
+                        })}
+                    </DivDropdownElementStyled>
+                </>
+            )}
         </DivContainer>
     );
 };

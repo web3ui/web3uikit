@@ -32,6 +32,7 @@ DropdownSelection.args = {
     position: 'bottom',
     children: [
         <DropdownElement
+            key="0"
             height={50}
             width={260}
             text={'Testnet Server'}
@@ -43,6 +44,7 @@ DropdownSelection.args = {
             onClick={() => alert('Testnet Server')}
         />,
         <DropdownElement
+            key="1"
             height={50}
             width={260}
             text={'Mainnet Server'}
@@ -54,6 +56,7 @@ DropdownSelection.args = {
             onClick={() => alert('Mainnet Server')}
         />,
         <DropdownElement
+            key="2"
             height={50}
             width={260}
             text={'Local Devchain Server'}
@@ -66,7 +69,7 @@ DropdownSelection.args = {
         />,
     ],
     parent: (
-        <Icon key="10" svg={iconTypes.helpCircle} fill={color.grey} size={50} />
+        <Icon key="3" svg={iconTypes.helpCircle} fill={color.grey} size={50} />
     ),
 };
 
@@ -75,6 +78,7 @@ DropdownSelectionUser.args = {
     position: 'bottom',
     children: [
         <DropdownElement
+            key="4"
             height={50}
             width={260}
             text={'Account Settings'}
@@ -86,6 +90,7 @@ DropdownSelectionUser.args = {
             onClick={() => alert('Account Settings')}
         />,
         <DropdownElement
+            key="5"
             height={50}
             width={260}
             text={'Support Page'}
@@ -97,6 +102,7 @@ DropdownSelectionUser.args = {
             onClick={() => alert('Support Page')}
         />,
         <DropdownElement
+            key="6"
             height={50}
             width={260}
             text={'Logout'}
@@ -110,6 +116,6 @@ DropdownSelectionUser.args = {
         />,
     ],
     parent: (
-        <Icon key="11" svg={iconTypes.helpCircle} fill={color.grey} size={50} />
+        <Icon key="7" svg={iconTypes.helpCircle} fill={color.grey} size={50} />
     ),
 };

@@ -25,11 +25,9 @@ const Dropdown: React.FC<DropdownProps> = ({
                 <>
                     <DivArrowStyled position={position} move={move} />
                     <DivDropdownElementStyled position={position}>
-                        {children.map((name) => {
-                            let key = 0;
-                            key++;
+                        {children.map((name, index) => {
                             return (
-                                <div key={key}>
+                                <div key={`dropdown-element-${index}`}>
                                     <ElementDiv>{name}</ElementDiv>
                                 </div>
                             );

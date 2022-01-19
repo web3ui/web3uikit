@@ -6,14 +6,14 @@ import color from '../../styles/colors';
 import { CheckboxProps } from './types';
 
 export const inputStyles = css`
-    ${resetCSS}
+    ${resetCSS};
     position: absolute;
     top: -30px;
 `;
 
 export const labelStyles = css`
-    ${resetCSS}
-    ${font.text}
+    ${resetCSS};
+    ${font.text};
     display: block;
     margin-bottom: 4px;
     overflow: hidden;
@@ -147,8 +147,8 @@ export const StyledLabel = styled.label<
 >`
     ${labelStyles}
     ${(p) => p.disabled && labelDisabled}
-	${(p) => p.layout === 'box' && boxStyles}
+    ${(p) => p.layout === 'box' && boxStyles}
     ${(p) => p.layout === 'box' && p.checked && boxCheckedStyles}
-	${(p) => p.layout === 'switch' && switchStyles}
+    ${(p) => p.layout === 'switch' && switchStyles}
     ${(p) => p.layout === 'switch' && p.checked && switchOnStyles}
 `;

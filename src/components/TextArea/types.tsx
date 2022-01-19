@@ -48,7 +48,7 @@ export interface TextAreaProps {
 
     /**
      * You can validate your textarea
-     * required, characterMinLength, characterMaxLength, numberMin, numberMax, regExp , regExpInvalidMessage
+     * characterMaxLength, characterMinLength, numberMax, numberMin, regExp, regExpInvalidMessage & required
      */
     validation?: ValidateInput;
 }

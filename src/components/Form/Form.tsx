@@ -14,10 +14,7 @@ const Form: React.FC<FormProps> = ({ data, id, title, onSubmit }) => {
 
         const form = event.target as typeof event.target & HTMLFormElement;
 
-        console.log(form);
-
         if (form.checkValidity()) {
-            console.log('form valid');
             const dataReturned = data.map((item) => ({
                 inputName: item.name,
                 inputResult: item.selected || item.value,

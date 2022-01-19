@@ -1,4 +1,4 @@
-import { AvatarStyled, DivTextStyled, ImgStyled } from './Avatar.styles';
+import { DivStyled, H4Styled, ImgStyled } from './Avatar.styles';
 import { AvatarProps } from './types';
 import React from 'react';
 import guy from './images/guy';
@@ -10,7 +10,7 @@ const Avatar: React.FC<AvatarProps> = ({
     theme,
 }: AvatarProps) => {
     return (
-        <AvatarStyled
+        <DivStyled
             data-testid="test-avatar"
             rounded={isRounded}
             data-isrounded={isRounded}
@@ -23,13 +23,13 @@ const Avatar: React.FC<AvatarProps> = ({
                     guy()
                 )
             ) : (
-                <DivTextStyled data-testid="test-text">
+                <H4Styled data-testid="test-text">
                     {text && text.length > 1
                         ? (text = `${text[0]}${text[1]}`)
                         : text}
-                </DivTextStyled>
+                </H4Styled>
             )}
-        </AvatarStyled>
+        </DivStyled>
     );
 };
 

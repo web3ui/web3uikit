@@ -27,7 +27,7 @@ export interface DropdownElementProps {
     iconSize?: number;
 
     /**
-     * The tooltip ID will be generated if not assigned
+     * The dropdown id
      */
     id?: string;
 

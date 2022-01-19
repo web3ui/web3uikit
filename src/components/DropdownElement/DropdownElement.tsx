@@ -5,7 +5,7 @@ import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import React from 'react';
 
-const { DivContainerStyled, DivStyled, DivImageStyled, DivTextStyled } =
+const { DivContainerStyled, DivStyled, DivImageStyled, TextStyled } =
     DropdownElementStyles;
 
 const DropdownElement: React.FC<DropdownElementProps> = ({
@@ -14,7 +14,7 @@ const DropdownElement: React.FC<DropdownElementProps> = ({
     icon = iconTypes.check,
     iconColor = 'white',
     iconSize = 20,
-    id = String(Date.now()),
+    id,
     onClick,
     text = 'Text',
     textColor = 'white',
@@ -46,13 +46,13 @@ const DropdownElement: React.FC<DropdownElementProps> = ({
                 ) : (
                     ''
                 )}
-                <DivTextStyled
+                <TextStyled
                     data-testid={'dropdown-element-text-test-id'}
                     textColor={textColor}
                     textSize={textSize}
                 >
                     {text}
-                </DivTextStyled>
+                </TextStyled>
             </DivStyled>
         </DivContainerStyled>
     );

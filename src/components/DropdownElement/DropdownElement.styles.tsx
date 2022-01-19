@@ -26,7 +26,7 @@ const DivImageStyled = styled.div`
     padding-right: 8px;
 `;
 
-const DivTextStyled = styled.p<
+const TextStyled = styled.p<
     Pick<DropdownElementProps, 'textColor' | 'textSize'>
 >`
     align-items: center;
@@ -41,5 +41,5 @@ export const DropdownElementStyles = {
     DivContainerStyled,
     DivImageStyled,
     DivStyled,
-    DivTextStyled,
+    TextStyled,
 };

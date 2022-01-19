@@ -230,7 +230,6 @@ describe('Input - Text Error', () => {
 describe('Input - Text Confirmed', () => {
     const testLabel = InputConfirmed?.args?.label;
     const testName = InputConfirmed?.args?.name;
-    const testType = InputConfirmed?.args?.type;
 
     beforeEach(() => {
         container = document.createElement('div');

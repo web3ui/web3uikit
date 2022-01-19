@@ -46,7 +46,7 @@ const Table: React.FC<TableProps> = ({
         }
     };
 
-    const computeCurrentData = (): string[] | React.ReactNode[] => {
+    const computeCurrentData = (): (string | React.ReactNode)[][] => {
         if (noPagination) {
             return data;
         }
@@ -100,19 +100,26 @@ const Table: React.FC<TableProps> = ({
         }
         return (
             <>
-                {computeCurrentData().map((row: any, rowKey) => (
-                    <React.Fragment key={`fragment_${rowKey}`}>
-                        {row.map((item: string, colKey: number) => (
-                            <div
-                                key={`tr_${rowKey}_${colKey}`}
-                                role="table-item"
-                            >
-                                {item}
-                            </div>
-                        ))}
-                        <Divider key={`divider_${rowKey}`} />
-                    </React.Fragment>
-                ))}
+                {computeCurrentData().map(
+                    (row: (string | React.ReactNode)[], rowKey) => (
+                        <React.Fragment key={`fragment_${rowKey}`}>
+                            {row.map(
+                                (
+                                    item: string | React.ReactNode,
+                                    colKey: number,
+                                ) => (
+                                    <div
+                                        key={`tr_${rowKey}_${colKey}`}
+                                        role="table-item"
+                                    >
+                                        {item}
+                                    </div>
+                                ),
+                            )}
+                            <Divider key={`divider_${rowKey}`} />
+                        </React.Fragment>
+                    ),
+                )}
             </>
         );
     };

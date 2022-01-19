@@ -21,7 +21,8 @@
         "analyze": "size-limit --why",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
-        "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx,json}\""
+        "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx,json}\"",
+        "deploy:docs": "gh-pages -d build"
     },
     "peerDependencies": {
         "react": ">=16"

@@ -1,0 +1,34 @@
+name: Updating the StoryBook Docs fronentend
+on:
+    push:
+        branches:
+            - main
+jobs:
+    build:
+        name: Build, lint, test on ubuntu-latest and deploy
+
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v2
+
+            - name: Use Node ${{ matrix.node }}
+              uses: actions/setup-node@v2
+              with:
+                  node-version: ${{ matrix.node }}
+
+            - name: Install
+              run: yarn install
+
+            - name: Install Github Pages
+              run: yarn add -D gh-pages
+
+            - name: Test
+              run: yarn test --ci --coverage --maxWorkers=2 --updateSnapshot
+
+            - name: Build Storybook
+              run: yarn build-storybook
+
+            - name: Deploy Storybook
+              run: yarn deploy:docs

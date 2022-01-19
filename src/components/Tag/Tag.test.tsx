@@ -18,10 +18,11 @@ const {
     Yellow,
 } = composeStories(stories);
 
+export const tagTestId = 'test-tag-id';
+export const tagTestTextId = 'test-tag-text';
+let container: HTMLDivElement;
+
 describe('Tag - Regular', () => {
-    let container: HTMLDivElement;
-    const testId = 'test-tag-id';
-    const textId = 'test-tag-text';
     const regularText = 'Tag';
 
     beforeEach(() => {
@@ -36,27 +37,26 @@ describe('Tag - Regular', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
         expect(element).not.toBeNull();
     });
 
     it('renders text correctly', () => {
-        const element = container.querySelector(`[data-testid="${textId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${tagTestTextId}"]`,
+        );
         expect(element?.textContent).toBe(regularText);
     });
 
     it('should not render icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${tagTestId}"] > svg`,
         );
         expect(iconSVG).toBeNull();
     });
 });
 
 describe('Tag - Inactive Status', () => {
-    let container: HTMLDivElement;
-    const testId = 'test-tag-id';
-    const textId = 'test-tag-text';
     const inactiveText = 'Inactive Tag';
 
     beforeEach(() => {
@@ -71,27 +71,26 @@ describe('Tag - Inactive Status', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
         expect(element).not.toBeNull();
     });
 
     it('renders text correctly', () => {
-        const element = container.querySelector(`[data-testid="${textId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${tagTestTextId}"]`,
+        );
         expect(element?.textContent).toBe(inactiveText);
     });
 
     it('should not render icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${tagTestId}"] > svg`,
         );
         expect(iconSVG).toBeNull();
     });
 });
 
 describe('Tag - Active Status', () => {
-    let container: HTMLDivElement;
-    const testId = 'test-tag-id';
-    const textId = 'test-tag-text';
     const activeText = 'Active Tag';
 
     beforeEach(() => {
@@ -106,27 +105,26 @@ describe('Tag - Active Status', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
         expect(element).not.toBeNull();
     });
 
     it('renders text correctly', () => {
-        const element = container.querySelector(`[data-testid="${textId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${tagTestTextId}"]`,
+        );
         expect(element?.textContent).toBe(activeText);
     });
 
     it('should render icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${tagTestId}"] > svg`,
         );
         expect(iconSVG).not.toBeNull();
     });
 });
 
 describe('Tag - Discount', () => {
-    let container: HTMLDivElement;
-    const testId = 'test-tag-id';
-    const textId = 'test-tag-text';
     const discountText = '-35%';
 
     beforeEach(() => {
@@ -141,27 +139,26 @@ describe('Tag - Discount', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
         expect(element).not.toBeNull();
     });
 
     it('renders text correctly', () => {
-        const element = container.querySelector(`[data-testid="${textId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${tagTestTextId}"]`,
+        );
         expect(element?.textContent).toBe(discountText);
     });
 
     it('should render icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${tagTestId}"] > svg`,
         );
         expect(iconSVG).toBeNull();
     });
 });
 
 describe('Tag - Blue', () => {
-    let container: HTMLDivElement;
-    const testId = 'test-tag-id';
-    const textId = 'test-tag-text';
     const text = 'Blue';
 
     beforeEach(() => {
@@ -176,27 +173,26 @@ describe('Tag - Blue', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
         expect(element).not.toBeNull();
     });
 
     it('renders text correctly', () => {
-        const element = container.querySelector(`[data-testid="${textId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${tagTestTextId}"]`,
+        );
         expect(element?.textContent).toBe(text);
     });
 
     it('should render icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${tagTestId}"] > svg`,
         );
         expect(iconSVG).toBeNull();
     });
 });
 
 describe('Tag - Green', () => {
-    let container: HTMLDivElement;
-    const testId = 'test-tag-id';
-    const textId = 'test-tag-text';
     const green = 'Green';
 
     beforeEach(() => {
@@ -211,27 +207,26 @@ describe('Tag - Green', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
         expect(element).not.toBeNull();
     });
 
     it('renders text correctly', () => {
-        const element = container.querySelector(`[data-testid="${textId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${tagTestTextId}"]`,
+        );
         expect(element?.textContent).toBe(green);
     });
 
     it('should render icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${tagTestId}"] > svg`,
         );
         expect(iconSVG).toBeNull();
     });
 });
 
 describe('Tag - Grey', () => {
-    let container: HTMLDivElement;
-    const testId = 'test-tag-id';
-    const textId = 'test-tag-text';
     const grey = 'Grey';
 
     beforeEach(() => {
@@ -246,27 +241,26 @@ describe('Tag - Grey', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
         expect(element).not.toBeNull();
     });
 
     it('renders text correctly', () => {
-        const element = container.querySelector(`[data-testid="${textId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${tagTestTextId}"]`,
+        );
         expect(element?.textContent).toBe(grey);
     });
 
     it('should render icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${tagTestId}"] > svg`,
         );
         expect(iconSVG).toBeNull();
     });
 });
 
 describe('Tag - Red', () => {
-    let container: HTMLDivElement;
-    const testId = 'test-tag-id';
-    const textId = 'test-tag-text';
     const red = 'Red';
 
     beforeEach(() => {
@@ -281,27 +275,26 @@ describe('Tag - Red', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
         expect(element).not.toBeNull();
     });
 
     it('renders text correctly', () => {
-        const element = container.querySelector(`[data-testid="${textId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${tagTestTextId}"]`,
+        );
         expect(element?.textContent).toBe(red);
     });
 
     it('should render icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${tagTestId}"] > svg`,
         );
         expect(iconSVG).toBeNull();
     });
 });
 
 describe('Tag - Yellow', () => {
-    let container: HTMLDivElement;
-    const testId = 'test-tag-id';
-    const textId = 'test-tag-text';
     const yellow = 'Yellow';
 
     beforeEach(() => {
@@ -316,27 +309,26 @@ describe('Tag - Yellow', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
         expect(element).not.toBeNull();
     });
 
     it('renders text correctly', () => {
-        const element = container.querySelector(`[data-testid="${textId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${tagTestTextId}"]`,
+        );
         expect(element?.textContent).toBe(yellow);
     });
 
     it('should render icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${tagTestId}"] > svg`,
         );
         expect(iconSVG).toBeNull();
     });
 });
 
 describe('Tag - Purple', () => {
-    let container: HTMLDivElement;
-    const testId = 'test-tag-id';
-    const textId = 'test-tag-text';
     const purple = 'Purple';
 
     beforeEach(() => {
@@ -351,27 +343,26 @@ describe('Tag - Purple', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
         expect(element).not.toBeNull();
     });
 
     it('renders text correctly', () => {
-        const element = container.querySelector(`[data-testid="${textId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${tagTestTextId}"]`,
+        );
         expect(element?.textContent).toBe(purple);
     });
 
     it('should render icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${tagTestId}"] > svg`,
         );
         expect(iconSVG).toBeNull();
     });
 });
 
 describe('Tag - Pink', () => {
-    let container: HTMLDivElement;
-    const testId = 'test-tag-id';
-    const textId = 'test-tag-text';
     const pink = 'Pink';
 
     beforeEach(() => {
@@ -386,18 +377,20 @@ describe('Tag - Pink', () => {
     });
 
     it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
+        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
         expect(element).not.toBeNull();
     });
 
     it('renders text correctly', () => {
-        const element = container.querySelector(`[data-testid="${textId}"]`);
+        const element = container.querySelector(
+            `[data-testid="${tagTestTextId}"]`,
+        );
         expect(element?.textContent).toBe(pink);
     });
 
     it('should render icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${tagTestId}"] > svg`,
         );
         expect(iconSVG).toBeNull();
     });

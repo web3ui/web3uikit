@@ -2,6 +2,7 @@
     "name": "web3uikit",
     "version": "0.1.10",
     "repository": "https://github.com/web3ui/web3uikit",
+    "homepage": "https://web3ui.github.io/web3uikit/",
     "main": "dist/index.js",
     "typings": "dist/index.d.ts",
     "files": [
@@ -21,17 +22,18 @@
         "analyze": "size-limit --why",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
-        "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx}\""
+        "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx,json}\"",
+        "deploy:docs": "gh-pages -d storybook-static"
     },
     "peerDependencies": {
         "react": ">=16"
     },
     "husky": {
         "hooks": {
-            "pre-commit": "tsdx lint"
+            "pre-commit": "tsdx lint && npm prettier"
         }
     },
-     "publishConfig": {
+    "publishConfig": {
         "tag": "latest"
     },
     "prettier": {

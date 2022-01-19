@@ -23,7 +23,7 @@ const Dropdown: React.FC<DropdownProps> = ({
 
             {showDropdown && (
                 <>
-                    <DivArrowStyled position={position} move={move} />,
+                    <DivArrowStyled position={position} move={move} />
                     <DivDropdownElementStyled position={position}>
                         {children.map((name) => {
                             let key = 0;

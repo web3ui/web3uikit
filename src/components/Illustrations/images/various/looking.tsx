@@ -299,10 +299,10 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     <path
                         d="M167.291 71.9996C167.291 71.9996 166.06 43.279 186.675 24.4473"
                         stroke="#A4E4F3"
-                        stroke-width="4.4348"
-                        stroke-miterlimit="10"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="4.4348"
+                        strokeMiterlimit="10"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                     />
                 </g>
                 <path
@@ -365,8 +365,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(150.471 371.308) rotate(-4.33852) scale(46.36 44.7265)"
                 >
-                    <stop offset="0.00504299" stop-color="#A4E4F3" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.00504299" stopColor="#A4E4F3" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <linearGradient
                     id="paint1_linear_461_44785"
@@ -376,8 +376,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="245.008"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <linearGradient
                     id="paint2_linear_461_44785"
@@ -387,8 +387,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="257.966"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <radialGradient
                     id="paint3_radial_461_44785"
@@ -398,8 +398,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(275.815 258.765) rotate(-2.44098) scale(8.55423 8.2504)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint4_radial_461_44785"
@@ -409,8 +409,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(278.379 262.416) rotate(-2.44098) scale(7.94111 7.65906)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint5_radial_461_44785"
@@ -420,8 +420,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(281.215 262.608) rotate(-2.44098) scale(8.41615 8.11723)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint6_radial_461_44785"
@@ -431,8 +431,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(267.232 253.72) rotate(-2.44098) scale(8.24102 7.94833)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint7_radial_461_44785"
@@ -442,8 +442,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(164.044 271.736) rotate(-2.44098) scale(79.8375 77.0019)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint8_radial_461_44785"
@@ -453,8 +453,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(154.549 241.85) scale(42.283 40.7757)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#94BBD6" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#94BBD6" />
                 </radialGradient>
                 <radialGradient
                     id="paint9_radial_461_44785"
@@ -464,8 +464,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(231.989 231.611) scale(120.591 116.292)"
                 >
-                    <stop offset="0.323" stop-color="#F8F5FC" />
-                    <stop offset="1" stop-color="#9AD6EA" />
+                    <stop offset="0.323" stopColor="#F8F5FC" />
+                    <stop offset="1" stopColor="#9AD6EA" />
                 </radialGradient>
                 <linearGradient
                     id="paint10_linear_461_44785"
@@ -475,8 +475,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="265.033"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#7EB0D7" />
-                    <stop offset="1" stop-color="#B7D4E1" />
+                    <stop stopColor="#7EB0D7" />
+                    <stop offset="1" stopColor="#B7D4E1" />
                 </linearGradient>
                 <radialGradient
                     id="paint11_radial_461_44785"
@@ -486,8 +486,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(212.679 265.635) rotate(-2.44098) scale(17.1942 16.5835)"
                 >
-                    <stop offset="0.387" stop-color="#F1FAFF" />
-                    <stop offset="1" stop-color="#BFFDFF" />
+                    <stop offset="0.387" stopColor="#F1FAFF" />
+                    <stop offset="1" stopColor="#BFFDFF" />
                 </radialGradient>
                 <linearGradient
                     id="paint12_linear_461_44785"
@@ -497,8 +497,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="251.412"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#7EB0D7" />
-                    <stop offset="1" stop-color="#B7D4E1" />
+                    <stop stopColor="#7EB0D7" />
+                    <stop offset="1" stopColor="#B7D4E1" />
                 </linearGradient>
                 <radialGradient
                     id="paint13_radial_461_44785"
@@ -508,8 +508,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(246.528 251.992) rotate(-2.44098) scale(17.2007 16.5898)"
                 >
-                    <stop offset="0.387" stop-color="#F1FAFF" />
-                    <stop offset="1" stop-color="#BFFDFF" />
+                    <stop offset="0.387" stopColor="#F1FAFF" />
+                    <stop offset="1" stopColor="#BFFDFF" />
                 </radialGradient>
                 <linearGradient
                     id="paint14_linear_461_44785"
@@ -519,8 +519,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="304.097"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <linearGradient
                     id="paint15_linear_461_44785"
@@ -530,8 +530,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="311.334"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <linearGradient
                     id="paint16_linear_461_44785"
@@ -541,8 +541,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="317.699"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <linearGradient
                     id="paint17_linear_461_44785"
@@ -552,8 +552,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="327.946"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <radialGradient
                     id="paint18_radial_461_44785"
@@ -563,8 +563,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(150.163 279.311) rotate(-2.44098) scale(69.6104 67.138)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint19_radial_461_44785"
@@ -574,8 +574,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(177.168 275.142) rotate(-2.44098) scale(44.2158 42.6454)"
                 >
-                    <stop offset="0.323" stop-color="#F8F5FC" />
-                    <stop offset="1" stop-color="#9AD6EA" />
+                    <stop offset="0.323" stopColor="#F8F5FC" />
+                    <stop offset="1" stopColor="#9AD6EA" />
                 </radialGradient>
                 <linearGradient
                     id="paint20_linear_461_44785"
@@ -585,8 +585,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="354.513"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <radialGradient
                     id="paint21_radial_461_44785"
@@ -596,8 +596,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(158.242 353.816) rotate(-2.44098) scale(9.74068 9.39472)"
                 >
-                    <stop stop-color="#F8F5FC" />
-                    <stop offset="1" stop-color="#9AD6EA" />
+                    <stop stopColor="#F8F5FC" />
+                    <stop offset="1" stopColor="#9AD6EA" />
                 </radialGradient>
                 <radialGradient
                     id="paint22_radial_461_44785"
@@ -607,8 +607,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(143.395 336.907) rotate(-2.44098) scale(28.2424 27.2393)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <linearGradient
                     id="paint23_linear_461_44785"
@@ -618,8 +618,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="366.462"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#7EB0D7" />
-                    <stop offset="1" stop-color="#B7D4E1" />
+                    <stop stopColor="#7EB0D7" />
+                    <stop offset="1" stopColor="#B7D4E1" />
                 </linearGradient>
                 <radialGradient
                     id="paint24_radial_461_44785"
@@ -629,8 +629,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(124.36 279.08) rotate(-2.44098) scale(61.3809 59.2008)"
                 >
-                    <stop offset="0.323" stop-color="#F8F5FC" />
-                    <stop offset="1" stop-color="#9AD6EA" />
+                    <stop offset="0.323" stopColor="#F8F5FC" />
+                    <stop offset="1" stopColor="#9AD6EA" />
                 </radialGradient>
                 <linearGradient
                     id="paint25_linear_461_44785"
@@ -640,8 +640,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="247.054"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#F8F5FC" />
-                    <stop offset="1" stop-color="#9AD6EA" />
+                    <stop stopColor="#F8F5FC" />
+                    <stop offset="1" stopColor="#9AD6EA" />
                 </linearGradient>
                 <linearGradient
                     id="paint26_linear_461_44785"
@@ -651,8 +651,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="237.401"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#F8F5FC" />
-                    <stop offset="1" stop-color="#9AD6EA" />
+                    <stop stopColor="#F8F5FC" />
+                    <stop offset="1" stopColor="#9AD6EA" />
                 </linearGradient>
                 <linearGradient
                     id="paint27_linear_461_44785"
@@ -662,8 +662,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="238.79"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <linearGradient
                     id="paint28_linear_461_44785"
@@ -673,8 +673,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="267.45"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <linearGradient
                     id="paint29_linear_461_44785"
@@ -684,8 +684,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="305.365"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <linearGradient
                     id="paint30_linear_461_44785"
@@ -695,8 +695,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="300.682"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#7EB0D7" />
-                    <stop offset="1" stop-color="#B7D4E1" />
+                    <stop stopColor="#7EB0D7" />
+                    <stop offset="1" stopColor="#B7D4E1" />
                 </linearGradient>
                 <radialGradient
                     id="paint31_radial_461_44785"
@@ -706,8 +706,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(224.274 299.226) scale(5.94971 6.52369)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint32_radial_461_44785"
@@ -717,8 +717,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(230.352 287.197) rotate(-2.77498) scale(7.83028 8.5825)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint33_radial_461_44785"
@@ -728,8 +728,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(234.856 306.636) rotate(-2.775) scale(8.06377 8.8385)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint34_radial_461_44785"
@@ -739,8 +739,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(234.202 296.444) rotate(-2.77499) scale(8.32504 9.12481)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint35_radial_461_44785"
@@ -750,8 +750,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(185.31 340.709) rotate(-2.44098) scale(16.1551 15.5813)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <linearGradient
                     id="paint36_linear_461_44785"
@@ -761,8 +761,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="202.894"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <radialGradient
                     id="paint37_radial_461_44785"
@@ -772,8 +772,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(176.579 108.88) rotate(-2.44098) scale(101.314 101.791)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint38_radial_461_44785"
@@ -783,8 +783,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(201.907 139.704) rotate(-2.44098) scale(57.1513 57.4206)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint39_radial_461_44785"
@@ -794,8 +794,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(248.263 136.503) scale(88.8518 85.6843)"
                 >
-                    <stop offset="0.323" stop-color="#F8F5FC" />
-                    <stop offset="1" stop-color="#9AD6EA" />
+                    <stop offset="0.323" stopColor="#F8F5FC" />
+                    <stop offset="1" stopColor="#9AD6EA" />
                 </radialGradient>
                 <linearGradient
                     id="paint40_linear_461_44785"
@@ -805,8 +805,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="134.396"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <linearGradient
                     id="paint41_linear_461_44785"
@@ -816,8 +816,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="132.898"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1407" stop-color="#123161" />
-                    <stop offset="1" stop-color="#041836" />
+                    <stop offset="0.1407" stopColor="#123161" />
+                    <stop offset="1" stopColor="#041836" />
                 </linearGradient>
                 <linearGradient
                     id="paint42_linear_461_44785"
@@ -829,10 +829,10 @@ const looking = (width: Size = '323', height: Size = '391') => {
                 >
                     <stop
                         offset="0.0155217"
-                        stop-color="#123161"
-                        stop-opacity="0"
+                        stopColor="#123161"
+                        stopOpacity="0"
                     />
-                    <stop offset="1" stop-color="#051938" />
+                    <stop offset="1" stopColor="#051938" />
                 </linearGradient>
                 <linearGradient
                     id="paint43_linear_461_44785"
@@ -842,11 +842,11 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="125.272"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <radialGradient
                     id="paint44_radial_461_44785"
@@ -856,8 +856,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(177.307 114.328) rotate(8.54163) scale(22.3924 21.6529)"
                 >
-                    <stop stop-color="#D7FFFF" />
-                    <stop offset="1" stop-color="#2E7DAF" stop-opacity="0" />
+                    <stop stopColor="#D7FFFF" />
+                    <stop offset="1" stopColor="#2E7DAF" stopOpacity="0" />
                 </radialGradient>
                 <linearGradient
                     id="paint45_linear_461_44785"
@@ -867,8 +867,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="104.489"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#7EB0D7" />
-                    <stop offset="1" stop-color="#B7D4E1" />
+                    <stop stopColor="#7EB0D7" />
+                    <stop offset="1" stopColor="#B7D4E1" />
                 </linearGradient>
                 <linearGradient
                     id="paint46_linear_461_44785"
@@ -878,8 +878,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="97.3568"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#7EB0D7" />
-                    <stop offset="1" stop-color="#B7D4E1" />
+                    <stop stopColor="#7EB0D7" />
+                    <stop offset="1" stopColor="#B7D4E1" />
                 </linearGradient>
                 <linearGradient
                     id="paint47_linear_461_44785"
@@ -891,10 +891,10 @@ const looking = (width: Size = '323', height: Size = '391') => {
                 >
                     <stop
                         offset="0.0155217"
-                        stop-color="#123161"
-                        stop-opacity="0"
+                        stopColor="#123161"
+                        stopOpacity="0"
                     />
-                    <stop offset="1" stop-color="#051938" />
+                    <stop offset="1" stopColor="#051938" />
                 </linearGradient>
                 <linearGradient
                     id="paint48_linear_461_44785"
@@ -904,11 +904,11 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="170.023"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <linearGradient
                     id="paint49_linear_461_44785"
@@ -918,11 +918,11 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="23.8674"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#6BFFE8" />
-                    <stop offset="0.0474436" stop-color="#68F8E5" />
-                    <stop offset="0.5011" stop-color="#49B6C8" />
-                    <stop offset="0.8307" stop-color="#358DB6" />
-                    <stop offset="1" stop-color="#2E7DAF" />
+                    <stop stopColor="#6BFFE8" />
+                    <stop offset="0.0474436" stopColor="#68F8E5" />
+                    <stop offset="0.5011" stopColor="#49B6C8" />
+                    <stop offset="0.8307" stopColor="#358DB6" />
+                    <stop offset="1" stopColor="#2E7DAF" />
                 </linearGradient>
                 <radialGradient
                     id="paint50_radial_461_44785"
@@ -932,28 +932,28 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(185.214 18.8729) scale(5.05929 4.87894)"
                 >
-                    <stop stop-color="#D7FFFF" />
+                    <stop stopColor="#D7FFFF" />
                     <stop
                         offset="0.1145"
-                        stop-color="#CFF9FB"
-                        stop-opacity="0.8855"
+                        stopColor="#CFF9FB"
+                        stopOpacity="0.8855"
                     />
                     <stop
                         offset="0.2944"
-                        stop-color="#B8E7F0"
-                        stop-opacity="0.7056"
+                        stopColor="#B8E7F0"
+                        stopOpacity="0.7056"
                     />
                     <stop
                         offset="0.5171"
-                        stop-color="#94CBDF"
-                        stop-opacity="0.4829"
+                        stopColor="#94CBDF"
+                        stopOpacity="0.4829"
                     />
                     <stop
                         offset="0.7713"
-                        stop-color="#61A5C7"
-                        stop-opacity="0.2287"
+                        stopColor="#61A5C7"
+                        stopOpacity="0.2287"
                     />
-                    <stop offset="1" stop-color="#2E7DAF" stop-opacity="0" />
+                    <stop offset="1" stopColor="#2E7DAF" stopOpacity="0" />
                 </radialGradient>
                 <linearGradient
                     id="paint51_linear_461_44785"
@@ -963,8 +963,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="334.669"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#128EF9" />
-                    <stop offset="1" stop-color="#A9D4F3" />
+                    <stop stopColor="#128EF9" />
+                    <stop offset="1" stopColor="#A9D4F3" />
                 </linearGradient>
                 <linearGradient
                     id="paint52_linear_461_44785"
@@ -974,8 +974,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="336.327"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#128EF9" />
-                    <stop offset="1" stop-color="#A9D4F3" />
+                    <stop stopColor="#128EF9" />
+                    <stop offset="1" stopColor="#A9D4F3" />
                 </linearGradient>
                 <linearGradient
                     id="paint53_linear_461_44785"
@@ -985,8 +985,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     y2="243.724"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#FCDE00" />
-                    <stop offset="1" stop-color="#FDE1A9" />
+                    <stop stopColor="#FCDE00" />
+                    <stop offset="1" stopColor="#FDE1A9" />
                 </linearGradient>
                 <radialGradient
                     id="paint54_radial_461_44785"
@@ -996,8 +996,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(270.9 248.812) rotate(-168.237) scale(3.61946 5.09966)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint55_radial_461_44785"
@@ -1007,8 +1007,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(282.239 255.323) rotate(-168.238) scale(3.32991 4.6917)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <radialGradient
                     id="paint56_radial_461_44785"
@@ -1018,8 +1018,8 @@ const looking = (width: Size = '323', height: Size = '391') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(288.71 260.214) rotate(-168.237) scale(2.57527 3.62846)"
                 >
-                    <stop offset="0.387" stop-color="#D8E8F8" />
-                    <stop offset="1" stop-color="#A4E4F3" />
+                    <stop offset="0.387" stopColor="#D8E8F8" />
+                    <stop offset="1" stopColor="#A4E4F3" />
                 </radialGradient>
                 <clipPath id="clip0_461_44785">
                     <rect

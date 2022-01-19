@@ -234,8 +234,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="313.951"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_10025_65881"
@@ -245,8 +245,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="276.725"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint2_linear_10025_65881"
@@ -256,9 +256,9 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="309.767"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="0.34" stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="white" />
+                    <stop offset="0.34" stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint3_linear_10025_65881"
@@ -268,14 +268,14 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="148.188"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="0.29" stop-color="white" />
+                    <stop stopColor="white" />
+                    <stop offset="0.29" stopColor="white" />
                     <stop
                         offset="0.77"
-                        stop-color="#7FEFEA"
-                        stop-opacity="0.32"
+                        stopColor="#7FEFEA"
+                        stopOpacity="0.32"
                     />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint4_linear_10025_65881"
@@ -285,8 +285,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="161.865"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint5_linear_10025_65881"
@@ -296,9 +296,9 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="202.863"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="white" />
-                    <stop offset="0.5" stop-color="#AAF4F1" />
-                    <stop offset="1" stop-color="#42E8E0" />
+                    <stop offset="0.01" stopColor="white" />
+                    <stop offset="0.5" stopColor="#AAF4F1" />
+                    <stop offset="1" stopColor="#42E8E0" />
                 </linearGradient>
                 <linearGradient
                     id="paint6_linear_10025_65881"
@@ -308,8 +308,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="290.878"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint7_linear_10025_65881"
@@ -319,8 +319,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="291.393"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#29A2D9" stop-opacity="0" />
-                    <stop offset="1" stop-color="#3879B2" />
+                    <stop stopColor="#29A2D9" stopOpacity="0" />
+                    <stop offset="1" stopColor="#3879B2" />
                 </linearGradient>
                 <linearGradient
                     id="paint8_linear_10025_65881"
@@ -330,8 +330,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="4791.09"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint9_linear_10025_65881"
@@ -341,8 +341,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="4541.27"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint10_linear_10025_65881"
@@ -352,8 +352,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="3061.44"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint11_linear_10025_65881"
@@ -363,8 +363,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="270.572"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="white" />
-                    <stop offset="1" stop-color="#42E8E0" />
+                    <stop offset="0.01" stopColor="white" />
+                    <stop offset="1" stopColor="#42E8E0" />
                 </linearGradient>
                 <linearGradient
                     id="paint12_linear_10025_65881"
@@ -374,8 +374,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="1903.54"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="white" />
-                    <stop offset="1" stop-color="#42E8E0" />
+                    <stop offset="0.01" stopColor="white" />
+                    <stop offset="1" stopColor="#42E8E0" />
                 </linearGradient>
                 <linearGradient
                     id="paint13_linear_10025_65881"
@@ -385,8 +385,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="2770.61"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <radialGradient
                     id="paint14_radial_10025_65881"
@@ -396,8 +396,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(119.403 154.818) scale(102.818)"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient
                     id="paint15_radial_10025_65881"
@@ -407,44 +407,16 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(107.303 156.459) scale(46.3403)"
                 >
-                    <stop stop-color="white" />
-                    <stop
-                        offset="0.13"
-                        stop-color="white"
-                        stop-opacity="0.98"
-                    />
-                    <stop
-                        offset="0.26"
-                        stop-color="white"
-                        stop-opacity="0.94"
-                    />
-                    <stop
-                        offset="0.38"
-                        stop-color="white"
-                        stop-opacity="0.86"
-                    />
-                    <stop offset="0.5" stop-color="white" stop-opacity="0.75" />
-                    <stop
-                        offset="0.63"
-                        stop-color="white"
-                        stop-opacity="0.61"
-                    />
-                    <stop
-                        offset="0.75"
-                        stop-color="white"
-                        stop-opacity="0.44"
-                    />
-                    <stop
-                        offset="0.87"
-                        stop-color="white"
-                        stop-opacity="0.24"
-                    />
-                    <stop
-                        offset="0.99"
-                        stop-color="white"
-                        stop-opacity="0.01"
-                    />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="0.13" stopColor="white" stopOpacity="0.98" />
+                    <stop offset="0.26" stopColor="white" stopOpacity="0.94" />
+                    <stop offset="0.38" stopColor="white" stopOpacity="0.86" />
+                    <stop offset="0.5" stopColor="white" stopOpacity="0.75" />
+                    <stop offset="0.63" stopColor="white" stopOpacity="0.61" />
+                    <stop offset="0.75" stopColor="white" stopOpacity="0.44" />
+                    <stop offset="0.87" stopColor="white" stopOpacity="0.24" />
+                    <stop offset="0.99" stopColor="white" stopOpacity="0.01" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient
                     id="paint16_radial_10025_65881"
@@ -454,33 +426,13 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(74.0599 156.459) scale(46.3403)"
                 >
-                    <stop stop-color="white" />
-                    <stop
-                        offset="0.13"
-                        stop-color="white"
-                        stop-opacity="0.83"
-                    />
-                    <stop
-                        offset="0.37"
-                        stop-color="white"
-                        stop-opacity="0.54"
-                    />
-                    <stop
-                        offset="0.59"
-                        stop-color="white"
-                        stop-opacity="0.31"
-                    />
-                    <stop
-                        offset="0.77"
-                        stop-color="white"
-                        stop-opacity="0.14"
-                    />
-                    <stop
-                        offset="0.92"
-                        stop-color="white"
-                        stop-opacity="0.04"
-                    />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="0.13" stopColor="white" stopOpacity="0.83" />
+                    <stop offset="0.37" stopColor="white" stopOpacity="0.54" />
+                    <stop offset="0.59" stopColor="white" stopOpacity="0.31" />
+                    <stop offset="0.77" stopColor="white" stopOpacity="0.14" />
+                    <stop offset="0.92" stopColor="white" stopOpacity="0.04" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </radialGradient>
                 <linearGradient
                     id="paint17_linear_10025_65881"
@@ -490,9 +442,9 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="123.353"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.06" stop-color="#43E8E1" />
-                    <stop offset="0.64" stop-color="#3A8FA2" />
-                    <stop offset="1" stop-color="#387E97" />
+                    <stop offset="0.06" stopColor="#43E8E1" />
+                    <stop offset="0.64" stopColor="#3A8FA2" />
+                    <stop offset="1" stopColor="#387E97" />
                 </linearGradient>
                 <linearGradient
                     id="paint18_linear_10025_65881"
@@ -502,8 +454,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="90.9064"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#153A61" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#153A61" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint19_linear_10025_65881"
@@ -513,8 +465,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="-216.217"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint20_linear_10025_65881"
@@ -524,8 +476,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="268.205"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="white" />
-                    <stop offset="1" stop-color="#42E8E0" />
+                    <stop offset="0.01" stopColor="white" />
+                    <stop offset="1" stopColor="#42E8E0" />
                 </linearGradient>
                 <linearGradient
                     id="paint21_linear_10025_65881"
@@ -535,8 +487,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="73.0144"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint22_linear_10025_65881"
@@ -546,8 +498,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="102.212"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint23_linear_10025_65881"
@@ -557,8 +509,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="451.329"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="white" />
-                    <stop offset="1" stop-color="#42E8E0" />
+                    <stop offset="0.01" stopColor="white" />
+                    <stop offset="1" stopColor="#42E8E0" />
                 </linearGradient>
                 <linearGradient
                     id="paint24_linear_10025_65881"
@@ -568,13 +520,13 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="86.6586"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.64" stop-color="white" stop-opacity="0" />
+                    <stop offset="0.64" stopColor="white" stopOpacity="0" />
                     <stop
                         offset="0.76"
-                        stop-color="#CDD1EA"
-                        stop-opacity="0.32"
+                        stopColor="#CDD1EA"
+                        stopOpacity="0.32"
                     />
-                    <stop offset="1" stop-color="#616DBE" />
+                    <stop offset="1" stopColor="#616DBE" />
                 </linearGradient>
                 <radialGradient
                     id="paint25_radial_10025_65881"
@@ -584,8 +536,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(134.753 67.5805) rotate(2.86241) scale(184.948 184.487)"
                 >
-                    <stop stop-color="#B18654" />
-                    <stop offset="1" stop-color="#000505" />
+                    <stop stopColor="#B18654" />
+                    <stop offset="1" stopColor="#000505" />
                 </radialGradient>
                 <linearGradient
                     id="paint26_linear_10025_65881"
@@ -595,8 +547,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="90.0251"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#153A61" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#153A61" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint27_linear_10025_65881"
@@ -606,8 +558,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="2970.67"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint28_linear_10025_65881"
@@ -617,8 +569,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="248.496"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#AAF4F1" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#AAF4F1" />
                 </linearGradient>
                 <linearGradient
                     id="paint29_linear_10025_65881"
@@ -628,8 +580,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="3515.19"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#AAF4F1" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#AAF4F1" />
                 </linearGradient>
                 <linearGradient
                     id="paint30_linear_10025_65881"
@@ -639,8 +591,8 @@ const chest = (width: Size = '298', height: Size = '398') => {
                     y2="940.353"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </linearGradient>
             </defs>
         </svg>

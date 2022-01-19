@@ -849,8 +849,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="213.374"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#B2F5F2" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#B2F5F2" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_10025_65882"
@@ -860,8 +860,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="212.02"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint2_linear_10025_65882"
@@ -871,18 +871,18 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="109.207"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#D6FAF8" stop-opacity="0" />
+                    <stop stopColor="#D6FAF8" stopOpacity="0" />
                     <stop
                         offset="0.16"
-                        stop-color="#C1E9EF"
-                        stop-opacity="0.13"
+                        stopColor="#C1E9EF"
+                        stopOpacity="0.13"
                     />
                     <stop
                         offset="0.51"
-                        stop-color="#8CBED7"
-                        stop-opacity="0.47"
+                        stopColor="#8CBED7"
+                        stopOpacity="0.47"
                     />
-                    <stop offset="1" stop-color="#3879B2" />
+                    <stop offset="1" stopColor="#3879B2" />
                 </linearGradient>
                 <radialGradient
                     id="paint3_radial_10025_65882"
@@ -892,8 +892,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(138.392 214.244) rotate(-0.572939) scale(121.413 109.248)"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="white" stop-opacity="0" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="white" stopOpacity="0" />
                 </radialGradient>
                 <linearGradient
                     id="paint4_linear_10025_65882"
@@ -905,18 +905,18 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                 >
                     <stop
                         offset="0.01"
-                        stop-color="#BAE3EB"
-                        stop-opacity="0.18"
+                        stopColor="#BAE3EB"
+                        stopOpacity="0.18"
                     />
                     <stop
                         offset="0.36"
-                        stop-color="#A4D1E2"
-                        stop-opacity="0.32"
+                        stopColor="#A4D1E2"
+                        stopOpacity="0.32"
                     />
                     <stop
                         offset="0.99"
-                        stop-color="#80B4D2"
-                        stop-opacity="0.55"
+                        stopColor="#80B4D2"
+                        stopOpacity="0.55"
                     />
                 </linearGradient>
                 <linearGradient
@@ -927,10 +927,10 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="193.603"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#5D1780" />
-                    <stop offset="0.25" stop-color="#6C2E93" />
-                    <stop offset="0.78" stop-color="#946AC3" />
-                    <stop offset="1" stop-color="#A584D8" />
+                    <stop stopColor="#5D1780" />
+                    <stop offset="0.25" stopColor="#6C2E93" />
+                    <stop offset="0.78" stopColor="#946AC3" />
+                    <stop offset="1" stopColor="#A584D8" />
                 </linearGradient>
                 <linearGradient
                     id="paint6_linear_10025_65882"
@@ -940,10 +940,10 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="445.224"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#5D1780" />
-                    <stop offset="0.25" stop-color="#6C2E93" />
-                    <stop offset="0.78" stop-color="#946AC3" />
-                    <stop offset="1" stop-color="#A584D8" />
+                    <stop stopColor="#5D1780" />
+                    <stop offset="0.25" stopColor="#6C2E93" />
+                    <stop offset="0.78" stopColor="#946AC3" />
+                    <stop offset="1" stopColor="#A584D8" />
                 </linearGradient>
                 <linearGradient
                     id="paint7_linear_10025_65882"
@@ -953,9 +953,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="201.766"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#47B2C4" />
-                    <stop offset="0.41" stop-color="#5EC9D3" />
-                    <stop offset="0.75" stop-color="#73DFE2" />
+                    <stop stopColor="#47B2C4" />
+                    <stop offset="0.41" stopColor="#5EC9D3" />
+                    <stop offset="0.75" stopColor="#73DFE2" />
                 </linearGradient>
                 <linearGradient
                     id="paint8_linear_10025_65882"
@@ -965,8 +965,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="189.578"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.06" stop-color="#95D3E0" />
-                    <stop offset="0.41" stop-color="#B8F5F9" />
+                    <stop offset="0.06" stopColor="#95D3E0" />
+                    <stop offset="0.41" stopColor="#B8F5F9" />
                 </linearGradient>
                 <linearGradient
                     id="paint9_linear_10025_65882"
@@ -976,9 +976,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="194.873"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#00728B" />
-                    <stop offset="0.24" stop-color="#17879E" />
-                    <stop offset="0.66" stop-color="#47B2C4" />
+                    <stop stopColor="#00728B" />
+                    <stop offset="0.24" stopColor="#17879E" />
+                    <stop offset="0.66" stopColor="#47B2C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint10_linear_10025_65882"
@@ -988,9 +988,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="465.382"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#47B2C4" />
-                    <stop offset="0.41" stop-color="#5EC9D3" />
-                    <stop offset="0.75" stop-color="#73DFE2" />
+                    <stop stopColor="#47B2C4" />
+                    <stop offset="0.41" stopColor="#5EC9D3" />
+                    <stop offset="0.75" stopColor="#73DFE2" />
                 </linearGradient>
                 <linearGradient
                     id="paint11_linear_10025_65882"
@@ -1000,10 +1000,10 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="414.295"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#5D1780" />
-                    <stop offset="0.25" stop-color="#6C2E93" />
-                    <stop offset="0.78" stop-color="#946AC3" />
-                    <stop offset="1" stop-color="#A584D8" />
+                    <stop stopColor="#5D1780" />
+                    <stop offset="0.25" stopColor="#6C2E93" />
+                    <stop offset="0.78" stopColor="#946AC3" />
+                    <stop offset="1" stopColor="#A584D8" />
                 </linearGradient>
                 <linearGradient
                     id="paint12_linear_10025_65882"
@@ -1013,10 +1013,10 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="470.597"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#5D1780" />
-                    <stop offset="0.25" stop-color="#6C2E93" />
-                    <stop offset="0.78" stop-color="#946AC3" />
-                    <stop offset="1" stop-color="#A584D8" />
+                    <stop stopColor="#5D1780" />
+                    <stop offset="0.25" stopColor="#6C2E93" />
+                    <stop offset="0.78" stopColor="#946AC3" />
+                    <stop offset="1" stopColor="#A584D8" />
                 </linearGradient>
                 <linearGradient
                     id="paint13_linear_10025_65882"
@@ -1026,8 +1026,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="190.202"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.06" stop-color="#B8F5F9" />
-                    <stop offset="0.41" stop-color="#B8F5F9" />
+                    <stop offset="0.06" stopColor="#B8F5F9" />
+                    <stop offset="0.41" stopColor="#B8F5F9" />
                 </linearGradient>
                 <linearGradient
                     id="paint14_linear_10025_65882"
@@ -1037,10 +1037,10 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="7689.68"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#5D1780" />
-                    <stop offset="0.25" stop-color="#6C2E93" />
-                    <stop offset="0.78" stop-color="#946AC3" />
-                    <stop offset="1" stop-color="#A584D8" />
+                    <stop stopColor="#5D1780" />
+                    <stop offset="0.25" stopColor="#6C2E93" />
+                    <stop offset="0.78" stopColor="#946AC3" />
+                    <stop offset="1" stopColor="#A584D8" />
                 </linearGradient>
                 <linearGradient
                     id="paint15_linear_10025_65882"
@@ -1050,8 +1050,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="162.812"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.1" stop-color="#572C5F" />
-                    <stop offset="1" stop-color="#3E0F55" />
+                    <stop offset="0.1" stopColor="#572C5F" />
+                    <stop offset="1" stopColor="#3E0F55" />
                 </linearGradient>
                 <linearGradient
                     id="paint16_linear_10025_65882"
@@ -1063,18 +1063,18 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                 >
                     <stop
                         offset="0.01"
-                        stop-color="#BAE3EB"
-                        stop-opacity="0.18"
+                        stopColor="#BAE3EB"
+                        stopOpacity="0.18"
                     />
                     <stop
                         offset="0.36"
-                        stop-color="#A4D1E2"
-                        stop-opacity="0.32"
+                        stopColor="#A4D1E2"
+                        stopOpacity="0.32"
                     />
                     <stop
                         offset="0.99"
-                        stop-color="#80B4D2"
-                        stop-opacity="0.55"
+                        stopColor="#80B4D2"
+                        stopOpacity="0.55"
                     />
                 </linearGradient>
                 <radialGradient
@@ -1085,13 +1085,13 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(159.505 259.477) rotate(-4.51) scale(84.388 61.6033)"
                 >
-                    <stop stop-color="#3CD1A9" stop-opacity="0.6" />
+                    <stop stopColor="#3CD1A9" stopOpacity="0.6" />
                     <stop
                         offset="0.01"
-                        stop-color="#3ED1AA"
-                        stop-opacity="0.61"
+                        stopColor="#3ED1AA"
+                        stopOpacity="0.61"
                     />
-                    <stop offset="1" stop-color="#D4E8E6" />
+                    <stop offset="1" stopColor="#D4E8E6" />
                 </radialGradient>
                 <linearGradient
                     id="paint18_linear_10025_65882"
@@ -1101,8 +1101,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="94.2572"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="white" />
-                    <stop offset="1" stop-color="#42E8E0" />
+                    <stop offset="0.01" stopColor="white" />
+                    <stop offset="1" stopColor="#42E8E0" />
                 </linearGradient>
                 <linearGradient
                     id="paint19_linear_10025_65882"
@@ -1112,8 +1112,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="225.418"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint20_linear_10025_65882"
@@ -1123,8 +1123,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="236.537"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="white" />
-                    <stop offset="1" stop-color="#42E8E0" />
+                    <stop offset="0.01" stopColor="white" />
+                    <stop offset="1" stopColor="#42E8E0" />
                 </linearGradient>
                 <linearGradient
                     id="paint21_linear_10025_65882"
@@ -1134,8 +1134,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="97.4175"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#EAAFBD" />
-                    <stop offset="1" stop-color="#E03760" />
+                    <stop stopColor="#EAAFBD" />
+                    <stop offset="1" stopColor="#E03760" />
                 </linearGradient>
                 <linearGradient
                     id="paint22_linear_10025_65882"
@@ -1145,8 +1145,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="247.086"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint23_linear_10025_65882"
@@ -1156,8 +1156,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="243.235"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="white" />
-                    <stop offset="1" stop-color="#42E8E0" />
+                    <stop offset="0.01" stopColor="white" />
+                    <stop offset="1" stopColor="#42E8E0" />
                 </linearGradient>
                 <linearGradient
                     id="paint24_linear_10025_65882"
@@ -1167,8 +1167,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="659.814"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#EAAFBD" />
-                    <stop offset="1" stop-color="#ED1818" />
+                    <stop stopColor="#EAAFBD" />
+                    <stop offset="1" stopColor="#ED1818" />
                 </linearGradient>
                 <linearGradient
                     id="paint25_linear_10025_65882"
@@ -1178,8 +1178,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="271.167"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint26_linear_10025_65882"
@@ -1189,8 +1189,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="283.477"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="white" />
-                    <stop offset="1" stop-color="#42E8E0" />
+                    <stop offset="0.01" stopColor="white" />
+                    <stop offset="1" stopColor="#42E8E0" />
                 </linearGradient>
                 <linearGradient
                     id="paint27_linear_10025_65882"
@@ -1200,8 +1200,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="933.888"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint28_linear_10025_65882"
@@ -1211,8 +1211,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="127.986"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#29A2D9" stop-opacity="0" />
-                    <stop offset="1" stop-color="#3879B2" />
+                    <stop stopColor="#29A2D9" stopOpacity="0" />
+                    <stop offset="1" stopColor="#3879B2" />
                 </linearGradient>
                 <linearGradient
                     id="paint29_linear_10025_65882"
@@ -1222,8 +1222,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="695.393"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint30_linear_10025_65882"
@@ -1233,8 +1233,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="703.887"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="white" />
-                    <stop offset="1" stop-color="#42E8E0" />
+                    <stop offset="0.01" stopColor="white" />
+                    <stop offset="1" stopColor="#42E8E0" />
                 </linearGradient>
                 <linearGradient
                     id="paint31_linear_10025_65882"
@@ -1244,8 +1244,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="111.605"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.18" stop-color="#E05986" />
-                    <stop offset="0.56" stop-color="#E03760" />
+                    <stop offset="0.18" stopColor="#E05986" />
+                    <stop offset="0.56" stopColor="#E03760" />
                 </linearGradient>
                 <linearGradient
                     id="paint32_linear_10025_65882"
@@ -1255,8 +1255,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="718.643"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint33_linear_10025_65882"
@@ -1266,8 +1266,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="724.551"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="white" />
-                    <stop offset="1" stop-color="#42E8E0" />
+                    <stop offset="0.01" stopColor="white" />
+                    <stop offset="1" stopColor="#42E8E0" />
                 </linearGradient>
                 <linearGradient
                     id="paint34_linear_10025_65882"
@@ -1277,8 +1277,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="736.385"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.18" stop-color="#EF296B" />
-                    <stop offset="0.56" stop-color="#ED1818" />
+                    <stop offset="0.18" stopColor="#EF296B" />
+                    <stop offset="0.56" stopColor="#ED1818" />
                 </linearGradient>
                 <linearGradient
                     id="paint35_linear_10025_65882"
@@ -1288,8 +1288,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="740.117"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint36_linear_10025_65882"
@@ -1299,8 +1299,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="746.7"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="white" />
-                    <stop offset="1" stop-color="#42E8E0" />
+                    <stop offset="0.01" stopColor="white" />
+                    <stop offset="1" stopColor="#42E8E0" />
                 </linearGradient>
                 <linearGradient
                     id="paint37_linear_10025_65882"
@@ -1310,8 +1310,8 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     y2="1332.72"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#90CFEB" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="#90CFEB" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <radialGradient
                     id="paint38_radial_10025_65882"
@@ -1321,14 +1321,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(240.03 219.662) rotate(1.36393) scale(67.736 31.6774)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.833401" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.833401" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint39_radial_10025_65882"
@@ -1338,9 +1338,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(247.658 213.622) scale(93.3566 43.6163)"
                 >
-                    <stop stop-color="#BCDBD5" stop-opacity="0.8" />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#BDE9DC" />
+                    <stop stopColor="#BCDBD5" stopOpacity="0.8" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#BDE9DC" />
                 </radialGradient>
                 <radialGradient
                     id="paint40_radial_10025_65882"
@@ -1350,14 +1350,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(6604.02 2346.26) scale(2290.62 1123.84)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint41_radial_10025_65882"
@@ -1367,14 +1367,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(235.529 220.498) rotate(1.4231) scale(66.9333 32.659)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.833401" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.833401" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint42_radial_10025_65882"
@@ -1384,14 +1384,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(2758.17 2023.66) scale(231.795 231.005)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint43_radial_10025_65882"
@@ -1401,9 +1401,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(280.47 261.1) scale(27.755 27.4829)"
                 >
-                    <stop stop-color="#BCDBD5" stop-opacity="0.8" />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#BDE9DC" />
+                    <stop stopColor="#BCDBD5" stopOpacity="0.8" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#BDE9DC" />
                 </radialGradient>
                 <radialGradient
                     id="paint44_radial_10025_65882"
@@ -1413,14 +1413,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(2758.17 2023.66) scale(231.795 231.005)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint45_radial_10025_65882"
@@ -1430,9 +1430,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(280.47 261.1) scale(27.755 27.4829)"
                 >
-                    <stop stop-color="#BCDBD5" stop-opacity="0.8" />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#BDE9DC" />
+                    <stop stopColor="#BCDBD5" stopOpacity="0.8" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#BDE9DC" />
                 </radialGradient>
                 <radialGradient
                     id="paint46_radial_10025_65882"
@@ -1442,14 +1442,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(2591.27 2054.28) scale(280.168 298.864)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint47_radial_10025_65882"
@@ -1459,14 +1459,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(275.207 265.402) rotate(3.09178) scale(19.6047 20.7505)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.833401" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.833401" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint48_radial_10025_65882"
@@ -1476,14 +1476,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(1457.51 1303.19) scale(64.8943 64.1104)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint49_radial_10025_65882"
@@ -1493,9 +1493,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(256.011 280.829) scale(14.6547 14.3848)"
                 >
-                    <stop stop-color="#BCDBD5" stop-opacity="0.8" />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#BDE9DC" />
+                    <stop stopColor="#BCDBD5" stopOpacity="0.8" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#BDE9DC" />
                 </radialGradient>
                 <radialGradient
                     id="paint50_radial_10025_65882"
@@ -1505,14 +1505,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(1457.51 1303.19) scale(64.8943 64.1104)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint51_radial_10025_65882"
@@ -1522,9 +1522,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(256.011 280.829) scale(14.6547 14.3848)"
                 >
-                    <stop stop-color="#BCDBD5" stop-opacity="0.8" />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#BDE9DC" />
+                    <stop stopColor="#BCDBD5" stopOpacity="0.8" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#BDE9DC" />
                 </radialGradient>
                 <radialGradient
                     id="paint52_radial_10025_65882"
@@ -1534,14 +1534,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(1402.11 1343.27) scale(78.7295 83.5909)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint53_radial_10025_65882"
@@ -1551,14 +1551,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(253.422 283.079) rotate(3.07736) scale(10.4048 10.9618)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.833401" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.833401" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint54_radial_10025_65882"
@@ -1568,14 +1568,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(37.6049 167.52) scale(42.7906)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint55_radial_10025_65882"
@@ -1585,9 +1585,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(37.5659 167.707) scale(42.9326 42.8905)"
                 >
-                    <stop stop-color="#C1E8E0" stop-opacity="0.8" />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop stopColor="#C1E8E0" stopOpacity="0.8" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint56_radial_10025_65882"
@@ -1597,9 +1597,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(37.5659 167.707) scale(42.9326 42.8905)"
                 >
-                    <stop stop-color="#C1E8E0" stop-opacity="0.8" />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop stopColor="#C1E8E0" stopOpacity="0.8" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint57_radial_10025_65882"
@@ -1609,14 +1609,14 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(37.6049 167.52) scale(42.7906)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint58_radial_10025_65882"
@@ -1626,9 +1626,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(37.5659 167.707) scale(42.9326 42.8905)"
                 >
-                    <stop stop-color="#C1E8E0" stop-opacity="0.8" />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop stopColor="#C1E8E0" stopOpacity="0.8" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint59_radial_10025_65882"
@@ -1638,9 +1638,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(37.5659 167.707) scale(42.9326 42.8905)"
                 >
-                    <stop stop-color="#C1E8E0" stop-opacity="0.8" />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop stopColor="#C1E8E0" stopOpacity="0.8" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint60_radial_10025_65882"
@@ -1650,9 +1650,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(33.0263 168.257) scale(41.6671 43.7813)"
                 >
-                    <stop stop-color="#C1E8E0" stop-opacity="0.8" />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop stopColor="#C1E8E0" stopOpacity="0.8" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint61_radial_10025_65882"
@@ -1662,9 +1662,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(43.9911 225.016) scale(59.8487)"
                 >
-                    <stop stop-color="#C1E8E0" stop-opacity="0.8" />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop stopColor="#C1E8E0" stopOpacity="0.8" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint62_radial_10025_65882"
@@ -1674,9 +1674,9 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(37.5552 226.08) scale(58.1264 61.3334)"
                 >
-                    <stop stop-color="#C1E8E0" stop-opacity="0.8" />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop stopColor="#C1E8E0" stopOpacity="0.8" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
             </defs>
         </svg>

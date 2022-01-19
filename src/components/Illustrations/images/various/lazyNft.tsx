@@ -226,12 +226,12 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="93.1075"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#9EAAEA" />
-                    <stop offset="0.14" stop-color="#8192DF" />
-                    <stop offset="0.3" stop-color="#5066C9" />
-                    <stop offset="0.44" stop-color="#233EB4" />
-                    <stop offset="0.52" stop-color="#0D2AAC" />
-                    <stop offset="1" stop-color="#FF6CD0" />
+                    <stop stopColor="#9EAAEA" />
+                    <stop offset="0.14" stopColor="#8192DF" />
+                    <stop offset="0.3" stopColor="#5066C9" />
+                    <stop offset="0.44" stopColor="#233EB4" />
+                    <stop offset="0.52" stopColor="#0D2AAC" />
+                    <stop offset="1" stopColor="#FF6CD0" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_9907_50791"
@@ -241,8 +241,8 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="119.84"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2525C6" />
-                    <stop offset="1" stop-color="#4D91EE" />
+                    <stop stopColor="#2525C6" />
+                    <stop offset="1" stopColor="#4D91EE" />
                 </linearGradient>
                 <linearGradient
                     id="paint2_linear_9907_50791"
@@ -252,12 +252,12 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="100.667"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#9EAAEA" />
-                    <stop offset="0.14" stop-color="#8192DF" />
-                    <stop offset="0.3" stop-color="#5066C9" />
-                    <stop offset="0.44" stop-color="#233EB4" />
-                    <stop offset="0.52" stop-color="#0D2AAC" />
-                    <stop offset="1" stop-color="#FF6CD0" />
+                    <stop stopColor="#9EAAEA" />
+                    <stop offset="0.14" stopColor="#8192DF" />
+                    <stop offset="0.3" stopColor="#5066C9" />
+                    <stop offset="0.44" stopColor="#233EB4" />
+                    <stop offset="0.52" stopColor="#0D2AAC" />
+                    <stop offset="1" stopColor="#FF6CD0" />
                 </linearGradient>
                 <linearGradient
                     id="paint3_linear_9907_50791"
@@ -267,8 +267,8 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="116.752"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2525C6" />
-                    <stop offset="1" stop-color="#4D91EE" />
+                    <stop stopColor="#2525C6" />
+                    <stop offset="1" stopColor="#4D91EE" />
                 </linearGradient>
                 <radialGradient
                     id="paint4_radial_9907_50791"
@@ -278,12 +278,12 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(143.53 200.391) rotate(90) scale(86.8568 127.839)"
                 >
-                    <stop stop-color="#B2E5F5" />
-                    <stop offset="0.251083" stop-color="#A2D5FC" />
-                    <stop offset="0.56" stop-color="#66AFF9" />
-                    <stop offset="0.78" stop-color="#4593E3" />
-                    <stop offset="0.91" stop-color="#3389E2" />
-                    <stop offset="1" stop-color="#9CFFFC" />
+                    <stop stopColor="#B2E5F5" />
+                    <stop offset="0.251083" stopColor="#A2D5FC" />
+                    <stop offset="0.56" stopColor="#66AFF9" />
+                    <stop offset="0.78" stopColor="#4593E3" />
+                    <stop offset="0.91" stopColor="#3389E2" />
+                    <stop offset="1" stopColor="#9CFFFC" />
                 </radialGradient>
                 <radialGradient
                     id="paint5_radial_9907_50791"
@@ -293,23 +293,23 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(179.914 171.973) scale(17.7895 25.4391)"
                 >
-                    <stop stop-color="#65AEF8" stop-opacity="0.5" />
+                    <stop stopColor="#65AEF8" stopOpacity="0.5" />
                     <stop
                         offset="0.26"
-                        stop-color="#6BB2F9"
-                        stop-opacity="0.33"
+                        stopColor="#6BB2F9"
+                        stopOpacity="0.33"
                     />
                     <stop
                         offset="0.58"
-                        stop-color="#72B6F9"
-                        stop-opacity="0.15"
+                        stopColor="#72B6F9"
+                        stopOpacity="0.15"
                     />
                     <stop
                         offset="0.83"
-                        stop-color="#76B9FA"
-                        stop-opacity="0.04"
+                        stopColor="#76B9FA"
+                        stopOpacity="0.04"
                     />
-                    <stop offset="0.98" stop-color="#77BAFA" stop-opacity="0" />
+                    <stop offset="0.98" stopColor="#77BAFA" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient
                     id="paint6_radial_9907_50791"
@@ -319,23 +319,23 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(67244.9 -190.063) rotate(180) scale(263.285 331.217)"
                 >
-                    <stop stop-color="#65AEF8" stop-opacity="0.5" />
+                    <stop stopColor="#65AEF8" stopOpacity="0.5" />
                     <stop
                         offset="0.26"
-                        stop-color="#6BB2F9"
-                        stop-opacity="0.33"
+                        stopColor="#6BB2F9"
+                        stopOpacity="0.33"
                     />
                     <stop
                         offset="0.58"
-                        stop-color="#72B6F9"
-                        stop-opacity="0.15"
+                        stopColor="#72B6F9"
+                        stopOpacity="0.15"
                     />
                     <stop
                         offset="0.83"
-                        stop-color="#76B9FA"
-                        stop-opacity="0.04"
+                        stopColor="#76B9FA"
+                        stopOpacity="0.04"
                     />
-                    <stop offset="0.98" stop-color="#77BAFA" stop-opacity="0" />
+                    <stop offset="0.98" stopColor="#77BAFA" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient
                     id="paint7_radial_9907_50791"
@@ -345,8 +345,8 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(145.138 198.783) rotate(-63.4349) scale(10.7899 13.8604)"
                 >
-                    <stop offset="0.47" stop-color="#051140" />
-                    <stop offset="1" stop-color="#FF6CD0" />
+                    <stop offset="0.47" stopColor="#051140" />
+                    <stop offset="1" stopColor="#FF6CD0" />
                 </radialGradient>
                 <radialGradient
                     id="paint8_radial_9907_50791"
@@ -356,8 +356,8 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(148.903 127.368) scale(22.2289)"
                 >
-                    <stop stop-color="#2F42D0" />
-                    <stop offset="1" stop-color="#3684A6" stop-opacity="0" />
+                    <stop stopColor="#2F42D0" />
+                    <stop offset="1" stopColor="#3684A6" stopOpacity="0" />
                 </radialGradient>
                 <radialGradient
                     id="paint9_radial_9907_50791"
@@ -367,8 +367,8 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(141.343 129.33) scale(17.9826)"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#FFB9D7" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#FFB9D7" />
                 </radialGradient>
                 <radialGradient
                     id="paint10_radial_9907_50791"
@@ -378,8 +378,8 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(142.148 116.977) scale(17.2427)"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#FFC0E1" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#FFC0E1" />
                 </radialGradient>
                 <radialGradient
                     id="paint11_radial_9907_50791"
@@ -389,8 +389,8 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(141.408 103.981) scale(14.6691)"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#FFCCDC" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#FFCCDC" />
                 </radialGradient>
                 <radialGradient
                     id="paint12_radial_9907_50791"
@@ -400,8 +400,8 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(141.665 93.1078) scale(12.0956)"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#FFCCDE" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#FFCCDE" />
                 </radialGradient>
                 <radialGradient
                     id="paint13_radial_9907_50791"
@@ -411,8 +411,8 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(141.665 81.012) scale(9.52208)"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#FFCCD5" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#FFCCD5" />
                 </radialGradient>
                 <radialGradient
                     id="paint14_radial_9907_50791"
@@ -422,8 +422,8 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(141.279 70.75) scale(6.94854)"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#FFCCC8" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#FFCCC8" />
                 </radialGradient>
                 <radialGradient
                     id="paint15_radial_9907_50791"
@@ -433,33 +433,33 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(146.747 264.731) rotate(1.36393) scale(67.5744 17.8321)"
                 >
-                    <stop offset="0.32" stop-color="#9CFFFC" />
+                    <stop offset="0.32" stopColor="#9CFFFC" />
                     <stop
                         offset="0.33"
-                        stop-color="#9BFEFC"
-                        stop-opacity="0.98"
+                        stopColor="#9BFEFC"
+                        stopOpacity="0.98"
                     />
                     <stop
                         offset="0.52"
-                        stop-color="#88ECF9"
-                        stop-opacity="0.64"
+                        stopColor="#88ECF9"
+                        stopOpacity="0.64"
                     />
                     <stop
                         offset="0.69"
-                        stop-color="#78DEF7"
-                        stop-opacity="0.37"
+                        stopColor="#78DEF7"
+                        stopOpacity="0.37"
                     />
                     <stop
                         offset="0.84"
-                        stop-color="#6DD4F5"
-                        stop-opacity="0.17"
+                        stopColor="#6DD4F5"
+                        stopOpacity="0.17"
                     />
                     <stop
                         offset="0.94"
-                        stop-color="#67CDF4"
-                        stop-opacity="0.05"
+                        stopColor="#67CDF4"
+                        stopOpacity="0.05"
                     />
-                    <stop offset="1" stop-color="#64CBF4" stop-opacity="0" />
+                    <stop offset="1" stopColor="#64CBF4" stopOpacity="0" />
                 </radialGradient>
                 <linearGradient
                     id="paint16_linear_9907_50791"
@@ -469,14 +469,14 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="322.506"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#A7F9EF" />
-                    <stop offset="0.29" stop-color="#42E8E0" />
+                    <stop stopColor="#A7F9EF" />
+                    <stop offset="0.29" stopColor="#42E8E0" />
                     <stop
                         offset="0.82"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </linearGradient>
                 <radialGradient
                     id="paint17_radial_9907_50791"
@@ -486,13 +486,9 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(201.576 220.422) rotate(-30.1735) scale(8.12837)"
                 >
-                    <stop offset="0.01" stop-color="#CFF9FC" />
-                    <stop
-                        offset="0.41"
-                        stop-color="#96F2F1"
-                        stop-opacity="0.3"
-                    />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="0.01" stopColor="#CFF9FC" />
+                    <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </radialGradient>
                 <linearGradient
                     id="paint18_linear_9907_50791"
@@ -502,15 +498,15 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="260.934"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="#9CFFFC" />
-                    <stop offset="0.04" stop-color="#94F1F1" />
-                    <stop offset="0.19" stop-color="#72B6C2" />
-                    <stop offset="0.34" stop-color="#558499" />
-                    <stop offset="0.49" stop-color="#3D5A78" />
-                    <stop offset="0.63" stop-color="#2B3A5E" />
-                    <stop offset="0.76" stop-color="#1E244C" />
-                    <stop offset="0.89" stop-color="#161641" />
-                    <stop offset="1" stop-color="#13113D" />
+                    <stop offset="0.01" stopColor="#9CFFFC" />
+                    <stop offset="0.04" stopColor="#94F1F1" />
+                    <stop offset="0.19" stopColor="#72B6C2" />
+                    <stop offset="0.34" stopColor="#558499" />
+                    <stop offset="0.49" stopColor="#3D5A78" />
+                    <stop offset="0.63" stopColor="#2B3A5E" />
+                    <stop offset="0.76" stopColor="#1E244C" />
+                    <stop offset="0.89" stopColor="#161641" />
+                    <stop offset="1" stopColor="#13113D" />
                 </linearGradient>
                 <linearGradient
                     id="paint19_linear_9907_50791"
@@ -520,14 +516,14 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="239.059"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop offset="0.01" stop-color="#70E8FC" />
-                    <stop offset="0.15" stop-color="#5AB5CF" />
-                    <stop offset="0.3" stop-color="#4584A3" />
-                    <stop offset="0.46" stop-color="#335A7E" />
-                    <stop offset="0.6" stop-color="#253A62" />
-                    <stop offset="0.75" stop-color="#1B244D" />
-                    <stop offset="0.88" stop-color="#151641" />
-                    <stop offset="1" stop-color="#13113D" />
+                    <stop offset="0.01" stopColor="#70E8FC" />
+                    <stop offset="0.15" stopColor="#5AB5CF" />
+                    <stop offset="0.3" stopColor="#4584A3" />
+                    <stop offset="0.46" stopColor="#335A7E" />
+                    <stop offset="0.6" stopColor="#253A62" />
+                    <stop offset="0.75" stopColor="#1B244D" />
+                    <stop offset="0.88" stopColor="#151641" />
+                    <stop offset="1" stopColor="#13113D" />
                 </linearGradient>
                 <radialGradient
                     id="paint20_radial_9907_50791"
@@ -537,14 +533,14 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(142.785 279.036) rotate(-0.122938) scale(103.172 17.5392)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint21_radial_9907_50791"
@@ -554,14 +550,14 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(8344.74 681.871) scale(4307.51 125.243)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <radialGradient
                     id="paint22_radial_9907_50791"
@@ -571,14 +567,14 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(6199.18 629.158) rotate(0.122939) scale(2345.99 68.2668)"
                 >
-                    <stop stop-color="#42E8E0" stop-opacity="0" />
+                    <stop stopColor="#42E8E0" stopOpacity="0" />
                     <stop
                         offset="0.18"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="0.71" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#D7F9EF" />
+                    <stop offset="0.71" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#D7F9EF" />
                 </radialGradient>
                 <linearGradient
                     id="paint23_linear_9907_50791"
@@ -588,14 +584,14 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="260.033"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="0.44" stop-color="#42E8E0" />
+                    <stop stopColor="white" />
+                    <stop offset="0.44" stopColor="#42E8E0" />
                     <stop
                         offset="0.86"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint24_linear_9907_50791"
@@ -605,8 +601,8 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="338.183"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#2D5382" />
-                    <stop offset="1" stop-color="#3C88C4" />
+                    <stop stopColor="#2D5382" />
+                    <stop offset="1" stopColor="#3C88C4" />
                 </linearGradient>
                 <linearGradient
                     id="paint25_linear_9907_50791"
@@ -616,8 +612,8 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="386.924"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" />
-                    <stop offset="1" stop-color="#1D9DD7" />
+                    <stop stopColor="white" />
+                    <stop offset="1" stopColor="#1D9DD7" />
                 </linearGradient>
                 <linearGradient
                     id="paint26_linear_9907_50791"
@@ -627,14 +623,14 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="5283.09"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#A7F9EF" />
-                    <stop offset="0.29" stop-color="#42E8E0" />
+                    <stop stopColor="#A7F9EF" />
+                    <stop offset="0.29" stopColor="#42E8E0" />
                     <stop
                         offset="0.82"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </linearGradient>
                 <radialGradient
                     id="paint27_radial_9907_50791"
@@ -644,13 +640,9 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(-6501.92 -38840.3) scale(34.1841 33.7888)"
                 >
-                    <stop offset="0.01" stop-color="#CFF9FC" />
-                    <stop
-                        offset="0.41"
-                        stop-color="#96F2F1"
-                        stop-opacity="0.3"
-                    />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="0.01" stopColor="#CFF9FC" />
+                    <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </radialGradient>
                 <linearGradient
                     id="paint28_linear_9907_50791"
@@ -660,14 +652,14 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="2949.95"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#A7F9EF" />
-                    <stop offset="0.29" stop-color="#42E8E0" />
+                    <stop stopColor="#A7F9EF" />
+                    <stop offset="0.29" stopColor="#42E8E0" />
                     <stop
                         offset="0.82"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </linearGradient>
                 <radialGradient
                     id="paint29_radial_9907_50791"
@@ -677,13 +669,9 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(-3667.21 -26341.2) scale(16.7683 16.0761)"
                 >
-                    <stop offset="0.01" stop-color="#CFF9FC" />
-                    <stop
-                        offset="0.41"
-                        stop-color="#96F2F1"
-                        stop-opacity="0.3"
-                    />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="0.01" stopColor="#CFF9FC" />
+                    <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </radialGradient>
                 <linearGradient
                     id="paint30_linear_9907_50791"
@@ -693,14 +681,14 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="4260.6"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#A7F9EF" />
-                    <stop offset="0.29" stop-color="#42E8E0" />
+                    <stop stopColor="#A7F9EF" />
+                    <stop offset="0.29" stopColor="#42E8E0" />
                     <stop
                         offset="0.82"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </linearGradient>
                 <radialGradient
                     id="paint31_radial_9907_50791"
@@ -710,13 +698,9 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(-7175.46 -42851.2) scale(42.1246 41.5849)"
                 >
-                    <stop offset="0.01" stop-color="#CFF9FC" />
-                    <stop
-                        offset="0.41"
-                        stop-color="#96F2F1"
-                        stop-opacity="0.3"
-                    />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="0.01" stopColor="#CFF9FC" />
+                    <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </radialGradient>
                 <linearGradient
                     id="paint32_linear_9907_50791"
@@ -726,14 +710,14 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="3464.8"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#A7F9EF" />
-                    <stop offset="0.29" stop-color="#42E8E0" />
+                    <stop stopColor="#A7F9EF" />
+                    <stop offset="0.29" stopColor="#42E8E0" />
                     <stop
                         offset="0.82"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </linearGradient>
                 <radialGradient
                     id="paint33_radial_9907_50791"
@@ -743,13 +727,9 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(-6658.54 -38418) scale(34.0703 33.4995)"
                 >
-                    <stop offset="0.01" stop-color="#CFF9FC" />
-                    <stop
-                        offset="0.41"
-                        stop-color="#96F2F1"
-                        stop-opacity="0.3"
-                    />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="0.01" stopColor="#CFF9FC" />
+                    <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </radialGradient>
                 <linearGradient
                     id="paint34_linear_9907_50791"
@@ -759,14 +739,14 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="3968.01"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#A7F9EF" />
-                    <stop offset="0.29" stop-color="#42E8E0" />
+                    <stop stopColor="#A7F9EF" />
+                    <stop offset="0.29" stopColor="#42E8E0" />
                     <stop
                         offset="0.82"
-                        stop-color="#42E8E0"
-                        stop-opacity="0.25"
+                        stopColor="#42E8E0"
+                        stopOpacity="0.25"
                     />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </linearGradient>
                 <radialGradient
                     id="paint35_radial_9907_50791"
@@ -776,13 +756,9 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     gradientUnits="userSpaceOnUse"
                     gradientTransform="translate(-4187.68 -30752.9) scale(21.2319 20.8867)"
                 >
-                    <stop offset="0.01" stop-color="#CFF9FC" />
-                    <stop
-                        offset="0.41"
-                        stop-color="#96F2F1"
-                        stop-opacity="0.3"
-                    />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0" />
+                    <stop offset="0.01" stopColor="#CFF9FC" />
+                    <stop offset="0.41" stopColor="#96F2F1" stopOpacity="0.3" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0" />
                 </radialGradient>
                 <linearGradient
                     id="paint36_linear_9907_50791"
@@ -792,9 +768,9 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="142.777"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#A7F9EF" />
-                    <stop offset="0.29" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0.3" />
+                    <stop stopColor="#A7F9EF" />
+                    <stop offset="0.29" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0.3" />
                 </linearGradient>
                 <linearGradient
                     id="paint37_linear_9907_50791"
@@ -804,9 +780,9 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="488.756"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#A7F9EF" />
-                    <stop offset="0.29" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0.3" />
+                    <stop stopColor="#A7F9EF" />
+                    <stop offset="0.29" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0.3" />
                 </linearGradient>
                 <linearGradient
                     id="paint38_linear_9907_50791"
@@ -816,9 +792,9 @@ const lazyNft = (width: Size = '289', height: Size = '398') => {
                     y2="767.155"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#A7F9EF" />
-                    <stop offset="0.29" stop-color="#42E8E0" />
-                    <stop offset="1" stop-color="#42E8E0" stop-opacity="0.3" />
+                    <stop stopColor="#A7F9EF" />
+                    <stop offset="0.29" stopColor="#42E8E0" />
+                    <stop offset="1" stopColor="#42E8E0" stopOpacity="0.3" />
                 </linearGradient>
             </defs>
         </svg>

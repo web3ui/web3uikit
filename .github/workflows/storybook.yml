@@ -24,10 +24,6 @@ jobs:
             - name: Install Github Pages
               run: yarn add -D gh-pages
 
-            - run: git config --global user.name "GitHub CD bot"
-            - run: git config --global user.email "dmitrii@moralis.io"
-            - run: git config --global user.signingkey ${{ secrets.GITHUB_TOKEN }}
-
             - name: Test
               run: yarn test --ci --coverage --maxWorkers=2 --updateSnapshot
 

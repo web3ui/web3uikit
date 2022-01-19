@@ -269,9 +269,9 @@ Jump over to the Moralis Discord and checkout the new channel `web3uiKit` feel f
 
 # Onboarding Video
 
-All aboard! We didn't want to leave anyone behind so we made a video presentation. There is a ton of tips and help to get going in this video, please excuse the thumbnail of my face lol
+All aboard! We didn't want to leave anyone behind so we made a video presentation. There is a ton of tips and help to get going in this video.
 
-https://www.dropbox.com/s/fi39snnwu6trv4d/web3uiKit_onboarding.mp4?dl=0
+https://www.youtube.com/watch?v=bhOf56omPmA
 
 Timestamps:
 

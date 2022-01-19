@@ -5,7 +5,7 @@ import { Input } from '../Input';
 import { Checkbox } from '../Checkbox';
 import { Radios } from '../Radios';
 import { TextArea } from '../TextArea';
-import { TitleStyled, SubTitleStyled, FormStyled } from './Form.styles';
+import { H3Styled, H4Styled, FormStyled } from './Form.styles';
 
 const Form: React.FC<FormProps> = ({ data, id, title, onSubmit }) => {
     const formSubmitted = (event: React.SyntheticEvent) => {
@@ -83,7 +83,7 @@ const Form: React.FC<FormProps> = ({ data, id, title, onSubmit }) => {
         index: number,
     ) => (
         <Fragment key={`cb-group_${index}`}>
-            <SubTitleStyled>{input.value}</SubTitleStyled>
+            <H4Styled>{input.value}</H4Styled>
             {input.options?.map((opt, i) => (
                 <Checkbox
                     key={`cb_${index}-${i}`}
@@ -99,7 +99,7 @@ const Form: React.FC<FormProps> = ({ data, id, title, onSubmit }) => {
 
     const renderRadioGroup = (input: DataInput, index: number) => (
         <Fragment key={`${input.name}_${index}`}>
-            <SubTitleStyled>{input.value}</SubTitleStyled>
+            <H4Styled>{input.value}</H4Styled>
             <Radios
                 id={`${input.name}_${index}`}
                 items={input.options || []}
@@ -111,7 +111,7 @@ const Form: React.FC<FormProps> = ({ data, id, title, onSubmit }) => {
 
     const renderTextArea = (input: DataInput, index: number) => (
         <Fragment key={`${input.name}_${index}`}>
-            <SubTitleStyled>{input.value}</SubTitleStyled>
+            <H4Styled>{input.value}</H4Styled>
             <TextArea
                 id={`textarea_${index}`}
                 name={input.name}
@@ -154,7 +154,7 @@ const Form: React.FC<FormProps> = ({ data, id, title, onSubmit }) => {
     return (
         <FormStyled onSubmit={formSubmitted} id={id} data-testid="test-form">
             {title && (
-                <TitleStyled data-testid="test-form-title">{title}</TitleStyled>
+                <H3Styled data-testid="test-form-title">{title}</H3Styled>
             )}
 
             {data.map((input, i) => (

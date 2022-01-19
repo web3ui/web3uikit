@@ -1,8 +1,6 @@
-import { BreadcrumbsLi } from './Breadcrumbs';
+import { ListItemStyled } from './Breadcrumbs.styles';
 
-/**
- * Route
- */
+// Route
 export interface Route {
     icon?: React.ReactNode;
     path: string;
@@ -13,19 +11,23 @@ export interface BreadcrumbsProps {
     /**
      * The color of text
      */
-    color?: string;
+    theme?: string;
+
     /**
      * CSS style props
      */
     style?: React.CSSProperties;
+
     /**
      * Current location for displaying active breadcrumb
      */
     currentLocation?: string;
+
     /**
      * Routes
      */
     routes: Route[];
+
     /**
      * Separator for breadcrumbs
      */
@@ -36,6 +38,6 @@ export interface IBreadcrumbs extends React.FC<BreadcrumbsProps> {
     /**
      * The element of links list
      */
-    Item: typeof BreadcrumbsLi;
+    Item: typeof ListItemStyled;
     // Separator: typeof BreadcrumbSeparator;
 }

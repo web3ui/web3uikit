@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import React from 'react';
-import { CardStyled, CardHeader, CardFooter } from './Card.styles';
+import { DivStyled, HeaderStyled, FooterStyled } from './Card.styles';
 import { CardProps } from './types';
 import { iconTypes } from '../Icon/collection';
 import colors from '../../styles/colors';
@@ -25,16 +25,18 @@ const Card: React.FC<CardProps> = ({
     }, [selected]);
 
     return (
-        <CardStyled
-            id={id}
+        <DivStyled
+            aria-label={isSelected ? 'card not selected' : 'card selected'}
             data-testid={'card-test-id'}
+            id={id}
             onClick={() => {
                 setSelected(!isSelected);
                 toggleChecked(!showCheckedIcon);
             }}
+            role="button"
             selected={isSelected && showCheckedIcon}
         >
-            <CardHeader data-testid={'header-test-id'}>
+            <HeaderStyled data-testid={'header-test-id'}>
                 {showCheckedIcon && (
                     <Icon
                         data-testid={'check-test-id'}
@@ -57,15 +59,15 @@ const Card: React.FC<CardProps> = ({
                     ]}
                     text={tooltipText}
                 />
-            </CardHeader>
+            </HeaderStyled>
             <div>{children}</div>
-            <CardFooter>
+            <FooterStyled>
                 {title && <p data-testid={'title-test-id'}>{title}</p>}
                 {description && (
                     <span data-testid={'desc-test-id'}>{description}</span>
                 )}
-            </CardFooter>
-        </CardStyled>
+            </FooterStyled>
+        </DivStyled>
     );
 };
 export default Card;

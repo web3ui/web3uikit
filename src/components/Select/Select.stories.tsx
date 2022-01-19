@@ -33,8 +33,8 @@ const smallOptionsList = [
         prefix: 'TXT',
     },
     {
-        label: 'Server',
-        id: 'server',
+        label: 'dApp',
+        id: 'dapp',
         prefix: <Icon svg={iconTypes.server} fill={color.grey} />,
     },
 ];
@@ -56,8 +56,8 @@ const optionsList = [
         prefix: 'TXT',
     },
     {
-        label: 'Server',
-        id: 'server',
+        label: 'dApp',
+        id: 'dapp',
         prefix: <Icon svg={iconTypes.server} fill={color.grey} />,
     },
     {

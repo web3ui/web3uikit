@@ -1,7 +1,4 @@
 
-kbd {
-  padding: 20px 20px;
-}
 # Web3UIKit
 
 Beautiful and lightweight UI components for web3 developers. 

@@ -101,7 +101,7 @@ Try the `<Breadcrumbs />` component in the [interactive documentation](https://w
 
 ### `<Card />`
 
-![Card](https://user-images.githubusercontent.com/78314301/149967403-81b5883c-af56-4260-bd26-893720598cb4.gif)
+![Card](https://user-images.githubusercontent.com/78314301/150301096-bb5217e7-d88f-4744-8bcf-9a5af05e47de.gif)
 
 Try the `<Card />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-card--regular)
 

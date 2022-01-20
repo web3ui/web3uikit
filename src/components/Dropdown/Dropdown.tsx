@@ -14,7 +14,7 @@ const Dropdown: React.FC<DropdownProps> = ({
     parent,
     position,
 }) => {
-    const [showDropdown, setVisibility] = useState(true);
+    const [showDropdown, setVisibility] = useState(false);
     return (
         <DivStyledFlex
             id={id}

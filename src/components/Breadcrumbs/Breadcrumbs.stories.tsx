@@ -5,6 +5,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import { Breadcrumbs } from '.';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
     title: 'UI/Breadcrumbs',
@@ -12,7 +13,7 @@ export default {
 } as ComponentMeta<typeof Breadcrumbs>;
 
 const Template: ComponentStory<typeof Breadcrumbs> = (args) => (
-    <Breadcrumbs {...args} />
+    <Router>< Breadcrumbs {...args} /></Router>
 );
 
 export const One = Template.bind({});

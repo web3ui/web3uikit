@@ -7,7 +7,7 @@ export interface DropdownProps {
     children: Array<React.ReactNode>;
 
     /**
-     * The dropdown ID will be generated if not assigned
+     * The dropdown ID should be assigned
      */
     id?: string;
 
@@ -25,8 +25,4 @@ export interface DropdownProps {
      * Set position of tooltip
      */
     position: Position;
-    /**
-     * The width of the dropdown menu
-     */
-    width?: number;
 }

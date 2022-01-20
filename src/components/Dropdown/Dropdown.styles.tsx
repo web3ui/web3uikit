@@ -1,12 +1,24 @@
 import styled, { css } from 'styled-components';
 import color from '../../styles/colors';
 import { DropdownProps, Position } from './types';
+type TStyleProps = Pick<DropdownProps, 'position' | 'move'>;
 
 const arrowSize = '10px';
 
-const borderRadius = '20px';
+const getContainerStyleByPosition = (position: Position) => {
+    switch (position) {
+        case 'top':
+            return top;
+        case 'bottom':
+            return bottom;
+        case 'left':
+            return left;
+        case 'right':
+            return right;
+    }
+};
 
-const bottom = css<Pick<DropdownProps, 'move'>>`
+const bottom = css<TStyleProps>`
     background: ${color.blueDark};
     bottom: -0.25rem;
     left: 50%;
@@ -23,51 +35,7 @@ const bottom = css<Pick<DropdownProps, 'move'>>`
     }
 `;
 
-const DivArrowStyled = styled.div<Pick<DropdownProps, 'position' | 'move'>>`
-    ${(p) => (p.position ? getContainerStyleByPosition(p.position) : '')}
-`;
-
-const DivContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: max-content;
-`;
-
-const DivDropdownElementStyled = styled.div<Pick<DropdownProps, 'position'>>`
-    background: ${color.blueDark};
-    border-radius: ${borderRadius};
-    height: auto;
-    overflow: hidden;
-    position: absolute;
-    width: max-content;
-    ${(p) => getContainerStyleByPosition(p.position)}
-`;
-
-const ElementDiv = styled.div`
-    cursor: pointer;
-    height: auto;
-    width: 100%;
-    :hover {
-        background: ${color.blueDark2};
-    }
-`;
-
-const getContainerStyleByPosition = (position: Position) => {
-    switch (position) {
-        case 'top':
-            return top;
-        case 'bottom':
-            return bottom;
-        case 'left':
-            return left;
-        case 'right':
-            return right;
-    }
-};
-
-const left = css<Pick<DropdownProps, 'move'>>`
-    background: ${color.blueDark};
+const left = css<TStyleProps>`
     left: -0.5rem;
     position: absolute;
     top: 50%;
@@ -82,8 +50,7 @@ const left = css<Pick<DropdownProps, 'move'>>`
     }
 `;
 
-const right = css<Pick<DropdownProps, 'move'>>`
-    background: ${color.blueDark};
+const right = css<TStyleProps>`
     position: absolute;
     right: -0.5rem;
     top: 50%;
@@ -98,8 +65,7 @@ const right = css<Pick<DropdownProps, 'move'>>`
     }
 `;
 
-const top = css<Pick<DropdownProps, 'move'>>`
-    background: ${color.blueDark};
+const top = css<TStyleProps>`
     left: 50%;
     position: absolute;
     top: -0.5rem;
@@ -115,9 +81,33 @@ const top = css<Pick<DropdownProps, 'move'>>`
     }
 `;
 
-export const DropdownStyles = {
-    DivArrowStyled,
-    DivContainer,
-    DivDropdownElementStyled,
-    ElementDiv,
-};
+export const DivStyledArrow = styled.div<TStyleProps>`
+    ${(p) => (p.position ? getContainerStyleByPosition(p.position) : '')}
+`;
+
+export const DivStyledFlex = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: max-content;
+`;
+
+export const DivStyledDropdown = styled.div<TStyleProps>`
+    background: ${color.blueDark};
+    border-radius: 20px;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    width: max-content;
+    ${(p) => getContainerStyleByPosition(p.position)}
+`;
+
+export const DivStyledChild = styled.div`
+    cursor: pointer;
+    height: auto;
+    width: 100%;
+
+    :hover {
+        background: ${color.blueDark2};
+    }
+`;

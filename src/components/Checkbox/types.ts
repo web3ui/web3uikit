@@ -1,4 +1,4 @@
-export type CheckboxValidate = {
+export type ValidateCheckbox = {
     required?: boolean;
 };
 
@@ -41,5 +41,5 @@ export interface CheckboxProps {
     /**
      * You can validate your checkbox and switches
      */
-    validation?: CheckboxValidate;
+    validation?: ValidateCheckbox;
 }

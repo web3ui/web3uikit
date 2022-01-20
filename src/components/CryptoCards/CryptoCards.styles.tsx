@@ -6,39 +6,20 @@ import { getShade } from '../../styles/colors';
 
 const CryptoCardStyled = styled.div`
     ${resetCSS};
-    align-items: center;
     border: 1px solid ${getShade('light', 10)};
     border-radius: 16px;
     box-sizing: border-box;
     display: flex;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    left: 20px;
     overflow: hidden;
-    padding: 24px, 40px, 24px, 40px;
-    position: absolute;
-    top: 20px;
     width: 100%;
     max-width: 256px;
-
-    :after {
-        content: '';
-        display: block;
-        height: 100%;
-        left: 0;
-        pointer-events: none;
-        position: absolute;
-        top: 0;
-        transition: all 0.3s ease;
-        width: 100%;
-        z-index: 0;
-    }
+    transition: all 0.3s ease;
     :hover {
-        :after {
-            background: rgba(4, 24, 54, 0.2);
-        }
+        box-shadow: 0px 0px 400px 400px rgba(4, 24, 54, 0.2) inset;
     }
-
     background: ${(props) => props.color};
 `;
 

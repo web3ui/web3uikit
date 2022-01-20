@@ -18,7 +18,7 @@ const CryptoCardStyled = styled.div`
     max-width: 256px;
     transition: all 0.3s ease;
     :hover {
-        box-shadow: 0px 0px 400px 400px rgba(4, 24, 54, 0.1) inset;
+        box-shadow: 0px 0px 400px 400px rgba(4, 24, 54, 0.2) inset;
     }
     background: ${(props) => props.color};
 `;

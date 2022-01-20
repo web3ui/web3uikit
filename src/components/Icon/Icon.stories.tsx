@@ -504,6 +504,13 @@ Stars.args = {
     svg: iconTypes.stars,
 };
 
+export const Telegram = Template.bind({});
+Telegram.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.telegram,
+};
+
 export const Testnet = Template.bind({});
 Testnet.args = {
     fill: 'black',

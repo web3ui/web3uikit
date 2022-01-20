@@ -141,6 +141,8 @@ const Icon: React.FC<IconProps> = ({
                 return collection?.starIcon(fill, size, style);
             case 'stars':
                 return collection?.starsIcon(fill, size, style);
+            case 'telegram':
+                return collection?.telegramIcon(fill, size, style);
             case 'testnet':
                 return collection?.testnetIcon(fill, size, style);
             case 'triangle down':
@@ -148,7 +150,7 @@ const Icon: React.FC<IconProps> = ({
             case 'triangle up':
                 return collection?.triangleUpIcon(fill, size, style);
             case 'twitter':
-                return collection?.twitterIcon(fill, size, style);    
+                return collection?.twitterIcon(fill, size, style);
             case 'update':
                 return collection?.updateIcon(fill, size, style);
             case 'user':

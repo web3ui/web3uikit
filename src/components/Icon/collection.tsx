@@ -61,6 +61,7 @@ import searchIcon from './icons/search';
 import serverIcon from './icons/server';
 import starIcon from './icons/star';
 import starsIcon from './icons/stars';
+import telegramIcon from './icons/telegram';
 import testnetIcon from './icons/testnet';
 import triangleDownIcon from './icons/triangle-down';
 import triangleUpIcon from './icons/triangle-up';
@@ -136,6 +137,7 @@ export enum iconTypes {
     server = 'server',
     star = 'star',
     stars = 'stars',
+    telegram = 'telegram',
     testnet = 'testnet',
     triangleDown = 'triangle down',
     triangleUp = 'triangle up',
@@ -212,6 +214,7 @@ const collection = {
     serverIcon,
     starIcon,
     starsIcon,
+    telegramIcon
     testnetIcon,
     triangleDownIcon,
     triangleUpIcon,

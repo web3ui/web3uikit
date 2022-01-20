@@ -95,7 +95,7 @@ Try the `<BannerStrip />` component in the [interactive documentation](https://w
 
 ### `<Breadcrumbs />`
 
-![Breadcrumbs](https://user-images.githubusercontent.com/78314301/149967398-717e3c1e-03ea-4c7b-9765-675cb0e251c5.gif)
+![Breadcrumbs](https://user-images.githubusercontent.com/89942527/150335190-814ccd3f-b593-4a08-928f-e2ade7e74ba7.gif)
 
 Try the `<Breadcrumbs />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-breadcrumbs--one)
 

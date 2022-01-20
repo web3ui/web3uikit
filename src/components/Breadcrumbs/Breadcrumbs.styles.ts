@@ -3,9 +3,7 @@ import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 
-interface IBreadcrumbProps {
-    href?: string;
-}
+import { Link } from 'react-router-dom';
 
 const olStyle = css`
     ${resetCSS};
@@ -16,32 +14,6 @@ const olStyle = css`
 `;
 const navStyle = css`
     ${resetCSS};
-`;
-
-const liStyle = css`
-    ${resetCSS};
-    ${fonts.semiBold};
-    align-items: center;
-    background-color: ${color.white};
-    border-radius: 10px;
-    cursor: pointer;
-    display: flex;
-    margin-bottom: 5px;
-    padding: 3px;
-    transition: all 0.2s ease;
-    user-select: none;
-
-    svg:first-child {
-        margin-right: 5px;
-    }
-
-    &:last-child {
-        pointer-events: none;
-    }
-
-    &:hover {
-        color: ${color.blueDark};
-    }
 `;
 
 export const separatorStyle = css`
@@ -61,8 +33,29 @@ export const ListStyled = styled.ol`
     ${olStyle};
 `;
 
-export const ListItemStyled = styled.li<IBreadcrumbProps>`
-    ${liStyle};
+export const ListItemStyled = styled.li`
+    align-items: center;
+    display: flex;
+
+    svg:first-child {
+        margin-right: 5px;
+    }
+
+    &:last-child {
+        pointer-events: none;
+    }
+`;
+
+export const Breadcrumb = styled(Link)`
+    ${fonts.semiBold};
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    user-select: none;
+    &:hover {
+        color: ${color.blueDark};
+    }
 `;
 
 export const BreadcrumbsSeparator = styled.li`

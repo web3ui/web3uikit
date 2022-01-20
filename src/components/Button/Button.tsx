@@ -14,6 +14,7 @@ const Button: React.FC<ButtonProps> = ({
     text = 'click',
     theme,
     type = 'button',
+    buttonStyle = {}
 }: ButtonProps) => {
     return (
         <ButtonStyled
@@ -26,6 +27,7 @@ const Button: React.FC<ButtonProps> = ({
             size={size}
             theme={theme}
             type={type}
+            style={buttonStyle}
         >
             {icon && <Icon svg={icon} fill="inherit" size={20} />}
             <span>{text}</span>

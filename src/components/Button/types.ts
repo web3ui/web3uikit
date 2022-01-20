@@ -51,4 +51,10 @@ export interface ButtonProps {
      * set an icon position, or maybe show only the icon
      */
     iconLayout?: 'leading' | 'trailing' | 'icon-only';
+
+    /**
+     * Apply custom styles to button
+     * Will override all base styles
+     */
+    buttonStyle?: React.CSSProperties;
 }

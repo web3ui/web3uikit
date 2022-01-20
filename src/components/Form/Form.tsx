@@ -171,6 +171,10 @@ const Form: React.FC<FormProps> = ({ data, id, title, onSubmit }) => {
                 theme="primary"
                 type="submit"
                 onClick={(e) => e.preventDefault}
+                buttonStyle={{
+                    width: "100%",
+                    marginTop: "30px"
+                }}
             >
                 Submit
             </Button>

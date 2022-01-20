@@ -16,22 +16,10 @@ const CryptoCardStyled = styled.div`
     overflow: hidden;
     width: 100%;
     max-width: 256px;
-
-    :after {
-        content: '';
-        display: block;
-        height: 100%;
-        pointer-events: none;
-        transition: all 0.3s ease;
-        width: 100%;
-        z-index: 0;
-    }
+    transition: all 0.3s ease;
     :hover {
-        :after {
-            background: rgba(4, 24, 54, 0.2);
-        }
+        box-shadow: 0px 0px 400px 400px rgba(4, 24, 54, 0.1) inset;
     }
-
     background: ${(props) => props.color};
 `;
 

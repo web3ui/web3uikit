@@ -1,6 +1,6 @@
 {
     "name": "web3uikit",
-    "version": "0.1.11",
+    "version": "0.1.16",
     "repository": "https://github.com/web3ui/web3uikit",
     "homepage": "https://web3ui.github.io/web3uikit/",
     "main": "dist/index.js",
@@ -26,7 +26,9 @@
     },
     "peerDependencies": {
         "react": "^17.0.2",
-        "react-dom": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "dependencies": {
         "styled-components": "^5.3.3"
     },
     "husky": {

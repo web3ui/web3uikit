@@ -31,6 +31,7 @@ import externalLinkIcon from './icons/external-link';
 import eyeClosedIcon from './icons/eye-closed';
 import eyeIcon from './icons/eye';
 import fileIcon from './icons/file';
+import githubIcon from './icons/github';
 import gridIcon from './icons/grid';
 import helpCircleIcon from './icons/help-circle';
 import imageIcon from './icons/image';
@@ -107,6 +108,7 @@ export enum iconTypes {
     eye = 'eye',
     eyeClosed = 'eye closed',
     file = 'file',
+    github = 'github',
     grid = 'grid',
     helpCircle = 'help circle',
     image = 'image',
@@ -185,6 +187,7 @@ const collection = {
     eyeClosedIcon,
     eyeIcon,
     fileIcon,
+    githubIcon,
     gridIcon,
     helpCircleIcon,
     imageIcon,

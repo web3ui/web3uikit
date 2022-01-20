@@ -81,6 +81,8 @@ const Icon: React.FC<IconProps> = ({
                 return collection?.eyeClosedIcon(fill, size, style);
             case 'file':
                 return collection?.fileIcon(fill, size, style);
+            case 'github':
+                return collection?.githubIcon(fill, size, style);
             case 'grid':
                 return collection?.gridIcon(fill, size, style);
             case 'help circle':

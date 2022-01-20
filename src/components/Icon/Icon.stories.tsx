@@ -294,6 +294,13 @@ File.args = {
     svg: iconTypes.file,
 };
 
+export const Github = Template.bind({});
+Github.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.github,
+};
+
 export const Grid = Template.bind({});
 Grid.args = {
     fill: 'black',

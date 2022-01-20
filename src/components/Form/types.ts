@@ -17,6 +17,11 @@ export interface FormProps {
     id: string;
 
     /**
+     *Text, to show for the submit button
+     */
+    customSubmitText: string;
+
+    /**
      * when the form passes validation the data is returned
      * { id: string, data: [{inputName: string; inputResult: string[] | string;}]}
      */

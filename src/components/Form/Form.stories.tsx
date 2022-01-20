@@ -13,6 +13,7 @@ const Template: ComponentStory<typeof Form> = (args) => <Form {...args} />;
 export const DemoForm = Template.bind({});
 DemoForm.args = {
     title: 'Test form',
+
     data: [
         {
             name: 'first name',
@@ -82,6 +83,48 @@ DemoForm.args = {
             type: 'textarea',
             value: '',
             validation: { required: true },
+        },
+    ],
+};
+
+export const CustomSubmitText = Template.bind({});
+CustomSubmitText.args = {
+    title: 'Custom Form',
+    customSubmitText: '... Something cool',
+    data: [
+        {
+            name: 'first name',
+            type: 'text',
+            value: '',
+        },
+        {
+            name: 'your email',
+            type: 'email',
+            value: '',
+            validation: {
+                required: true,
+                regExp: validateRegExp.email,
+            },
+        },
+        {
+            name: 'your digits',
+            type: 'tel',
+            value: '',
+            validation: {
+                required: true,
+                regExp: validateRegExp.telephoneNumber,
+                regExpInvalidMessage: 'Who ya gonna call?',
+            },
+        },
+        {
+            name: 'your password',
+            type: 'password',
+            value: '',
+            validation: {
+                required: true,
+                characterMinLength: 6,
+                characterMaxLength: 20,
+            },
         },
     ],
 };

@@ -7,7 +7,13 @@ import { Radios } from '../Radios';
 import { TextArea } from '../TextArea';
 import { H3Styled, H4Styled, FormStyled } from './Form.styles';
 
-const Form: React.FC<FormProps> = ({ data, id, title, onSubmit }) => {
+const Form: React.FC<FormProps> = ({
+    data,
+    id,
+    title,
+    onSubmit,
+    customSubmitText = 'Submit',
+}) => {
     const formSubmitted = (event: React.SyntheticEvent) => {
         event.preventDefault();
         event.stopPropagation();
@@ -172,12 +178,11 @@ const Form: React.FC<FormProps> = ({ data, id, title, onSubmit }) => {
                 type="submit"
                 onClick={(e) => e.preventDefault}
                 buttonStyle={{
-                    width: "100%",
-                    marginTop: "30px"
+                    width: '100%',
+                    marginTop: '30px',
                 }}
-            >
-                Submit
-            </Button>
+                text={customSubmitText}
+            />
         </FormStyled>
     );
 };

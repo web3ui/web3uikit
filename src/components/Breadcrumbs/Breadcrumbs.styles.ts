@@ -26,7 +26,6 @@ const liStyle = css`
     border-radius: 10px;
     cursor: pointer;
     display: flex;
-    display: list-item;
     margin-bottom: 5px;
     padding: 3px;
     transition: all 0.2s ease;

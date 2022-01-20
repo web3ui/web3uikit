@@ -48,10 +48,10 @@ const App = () => (
 
 # 🧭 `Table of contents`
 
--   [`web3uikit`](#web3uikit)
+-   [`web3uikit`](#web3uikit-%EF%B8%8F)
 -   [🚀 Quick Start](#-quick-start)
-    -   [💿 Installation](#installation-)
-    -   [🧰 Usage](#avatar-)
+    -   [💿 Installation](#-installation)
+    -   [🧰 Usage](#-usage)
 -   [🧭 Table of contents](#-table-of-contents)
 -   [📖 UI Components](#-ui-components)
     -   [`<Avatar />`](#avatar-)
@@ -67,15 +67,15 @@ const App = () => (
     -   [`<Notification />`](#notification-)
     -   [`<Table />`](#table-)
     -   [`<Tag />`](#tag-)
--   [⚙️ Interaction Components](#-interaction-components-)
+-   [⚙️ Interaction Components](#%EF%B8%8F-interaction-components)
     -   [`<Button />`](#button-)
     -   [`<Checkbox />`](#checkbox-)
     -   [`<Form />`](#form-)
     -   [`<Input />`](#input-)
     -   [`<Radios />`](#radios-)
-    -   [`<Select />`](#radios-)
+    -   [`<Select />`](#select-)
     -   [`<TextArea />`](#textarea-)
--   [🎉 Popup](#-popup-)
+-   [🎉 Popup](#-popup)
     -   [`<Modal />`](#modal-)
     -   [`<Tooltip />`](#tooltip-)
 

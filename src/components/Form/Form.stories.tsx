@@ -14,7 +14,6 @@ export const DemoForm = Template.bind({});
 DemoForm.args = {
     title: 'Test form',
     buttonConfig: {
-        isFullWidth: true,
         onClick: (e) => e.preventDefault,
         theme: 'primary',
     },

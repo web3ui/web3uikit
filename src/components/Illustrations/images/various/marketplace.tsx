@@ -608,62 +608,62 @@ const marketplace = (width: Size = '292', height: Size = '398') => {
                 fill="url(#paint27_linear_10025_65882)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M236.129 145.851L232.163 145.593L252.929 123.601L254.058 127.309L236.129 145.851Z"
                 fill="#197DE3"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M35.494 144.658L40.2342 144.367L60.8394 117.99L58.034 111.315L35.494 144.658Z"
                 fill="url(#paint28_linear_10025_65882)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M70.965 124.762C64.0966 124.407 57.5507 117.571 56.3898 109.509L53.9069 92.2256L78.8331 94.0959L81.316 110.993C82.4769 118.958 77.8657 125.117 70.965 124.762Z"
                 fill="url(#paint29_linear_10025_65882)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M95.8911 126.149C88.9904 125.794 82.4767 119.054 81.3159 111.09L78.8007 94.0959L103.759 95.8372L106.21 112.476C107.403 120.344 102.759 126.407 95.8911 126.149Z"
                 fill="url(#paint30_linear_10025_65882)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M120.721 127.341C113.852 126.987 107.338 120.344 106.178 112.476L103.727 95.8369L128.653 97.546L131.104 113.959C132.297 121.731 127.686 127.728 120.721 127.341Z"
                 fill="url(#paint31_linear_10025_65882)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M145.711 128.664C142.009 128.149 138.58 126.43 135.951 123.773C133.323 121.115 131.642 117.667 131.168 113.959L128.718 97.5461L153.676 99.2552L156.094 115.378C157.223 123.117 152.58 129.018 145.711 128.664Z"
                 fill="url(#paint32_linear_10025_65882)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M170.605 129.954C166.952 129.445 163.565 127.754 160.962 125.14C158.36 122.525 156.684 119.131 156.191 115.475L153.773 99.3523L178.699 101.061L181.118 117.184C182.149 124.504 177.474 130.309 170.605 129.954Z"
                 fill="url(#paint33_linear_10025_65882)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M195.531 131.244C191.88 130.785 188.482 129.137 185.859 126.556C183.237 123.974 181.537 120.602 181.021 116.958L178.602 100.835L203.561 102.577L205.947 118.313C207.075 125.858 202.4 131.598 195.531 131.244Z"
                 fill="url(#paint34_linear_10025_65882)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M220.425 132.598C216.804 132.152 213.428 130.534 210.814 127.989C208.199 125.444 206.49 122.114 205.947 118.506L203.561 102.77L228.519 104.479L230.873 119.989C231.969 127.245 227.294 132.888 220.425 132.598Z"
                 fill="url(#paint35_linear_10025_65882)"
             />
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M245.319 133.823C241.722 133.407 238.361 131.822 235.751 129.311C233.142 126.801 231.428 123.503 230.873 119.925L228.519 104.415L253.445 106.124L255.799 121.44C256.175 122.977 256.182 124.581 255.819 126.121C255.456 127.661 254.734 129.093 253.712 130.3C252.69 131.508 251.397 132.457 249.938 133.069C248.48 133.681 246.897 133.939 245.319 133.823Z"
                 fill="url(#paint36_linear_10025_65882)"
             />

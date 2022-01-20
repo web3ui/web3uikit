@@ -17,7 +17,7 @@ export interface FormProps {
     id: string;
 
     /**
-     *Text, to show for the submit button
+     * The text that is to be shown in the submit button
      */
     customSubmitText: string;
 

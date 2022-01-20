@@ -13,7 +13,6 @@ const Template: ComponentStory<typeof Form> = (args) => <Form {...args} />;
 export const DemoForm = Template.bind({});
 DemoForm.args = {
     title: 'Test form',
-
     data: [
         {
             name: 'first name',

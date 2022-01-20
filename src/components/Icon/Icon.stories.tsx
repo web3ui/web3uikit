@@ -476,6 +476,14 @@ Pulse.args = {
     svg: iconTypes.pulse,
 };
 
+export const Reddit = Template.bind({});
+Reddit.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.reddit,
+};
+
+
 export const Reload = Template.bind({});
 Reload.args = {
     fill: 'black',

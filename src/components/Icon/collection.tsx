@@ -57,6 +57,7 @@ import pinIcon from './icons/pin';
 import plugIcon from './icons/plug';
 import plusIcon from './icons/plus';
 import pulseIcon from './icons/pulse';
+import redditIcon from './icons/reddit';
 import reloadIcon from './icons/reload';
 import searchIcon from './icons/search';
 import serverIcon from './icons/server';
@@ -134,6 +135,7 @@ export enum iconTypes {
     plug = 'plug',
     plus = 'plus',
     pulse = 'pulse',
+    reddit = 'reddit',
     reload = 'reload',
     search = 'search',
     server = 'server',
@@ -212,6 +214,7 @@ const collection = {
     plugIcon,
     plusIcon,
     pulseIcon,
+    redditIcon,
     reloadIcon,
     searchIcon,
     serverIcon,

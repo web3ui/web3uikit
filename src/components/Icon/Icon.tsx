@@ -133,6 +133,8 @@ const Icon: React.FC<IconProps> = ({
                 return collection?.plusIcon(fill, size, style);
             case 'pulse':
                 return collection?.pulseIcon(fill, size, style);
+            case 'reddit':
+                return collection?.redditIcon(fill, size, style);
             case 'reload':
                 return collection?.reloadIcon(fill, size, style);
             case 'search':

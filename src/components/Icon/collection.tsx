@@ -64,6 +64,7 @@ import starsIcon from './icons/stars';
 import testnetIcon from './icons/testnet';
 import triangleDownIcon from './icons/triangle-down';
 import triangleUpIcon from './icons/triangle-up';
+import twitterIcon from './icons/twitter';
 import updateIcon from './icons/update';
 import userIcon from './icons/user';
 import windowsIcon from './icons/windows';
@@ -138,6 +139,7 @@ export enum iconTypes {
     testnet = 'testnet',
     triangleDown = 'triangle down',
     triangleUp = 'triangle up',
+    twitter = 'twitter',
     update = 'update',
     user = 'user',
     windows = 'windows',
@@ -213,6 +215,7 @@ const collection = {
     testnetIcon,
     triangleDownIcon,
     triangleUpIcon,
+    twitterIcon,
     updateIcon,
     userIcon,
     windowsIcon,

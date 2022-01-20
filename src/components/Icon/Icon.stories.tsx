@@ -525,6 +525,13 @@ TriangleUp.args = {
     svg: iconTypes.triangleUp,
 };
 
+export const Twitter = Template.bind({});
+Twitter.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.twitter,
+};
+
 export const Update = Template.bind({});
 Update.args = {
     fill: 'black',

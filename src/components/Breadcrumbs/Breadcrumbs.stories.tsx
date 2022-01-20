@@ -36,7 +36,7 @@ Two.args = {
             icon: <Icon svg={iconTypes.server} size={20} fill="currentColor" />,
         },
         {
-            breadcrumb: 'Server Details',
+            breadcrumb: 'Details',
             path: '2',
         },
     ],
@@ -52,7 +52,7 @@ Three.args = {
             icon: <Icon svg={iconTypes.server} size={20} fill="currentColor" />,
         },
         {
-            breadcrumb: 'Server Details',
+            breadcrumb: 'Details',
             path: 'server',
         },
         {
@@ -72,15 +72,15 @@ Four.args = {
             icon: <Icon svg={iconTypes.server} size={20} fill="currentColor" />,
         },
         {
-            breadcrumb: 'Server Details',
+            breadcrumb: 'Details',
             path: '2',
         },
         {
-            breadcrumb: 'Server Details',
+            breadcrumb: 'Advanced',
             path: '3',
         },
         {
-            breadcrumb: 'Advanced',
+            breadcrumb: 'More Details',
             path: '4',
         },
     ],

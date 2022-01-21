@@ -1,7 +1,8 @@
 // https://storybook.js.org/addons/storybook-dark-mode
-import { themes } from '@storybook/theming'; // Importd theming addon.
+import { themes } from '@storybook/theming'; // Imports Storybooks theming addon.
 import { create } from '@storybook/theming'; // Imports addon to create custom themes (i.e. moralislightTheme).
 
+// Custom light theme properties.
 const moralislightTheme = create({
     base: 'light',
     appBg: '#F2F6FF',
@@ -12,8 +13,9 @@ const moralislightTheme = create({
     iFrame: '#F2F6FF',
     brandImage:
         'https://moralis.io/wp-content/uploads/2021/06/Powered-by-Moralis-Badge-Black.svg', // **Moralis Team**
-}); // Rename, edit or remove these objects completely for different results.
+}); // Remove this const completely for default colors.
 
+// Custom dark theme properties.
 const moralisdarkTheme = create({
     base: 'dark',
     appBg: '#041836',
@@ -24,7 +26,7 @@ const moralisdarkTheme = create({
     iFrame: '#041836',
     brandImage:
         'https://moralis.io/wp-content/uploads/2021/06/Powered-by-Moralis-Badge-Glass.svg', // **Moralis Team** This image can be uploaded to this repository and mapped locally.
-}); // Rename, edit or remove these objects completely for different results.
+}); // Remove this const completely for default colors.
 
 // https://storybook.js.org/docs/react/writing-stories/parameters#global-parameters
 export const parameters = {
@@ -74,10 +76,9 @@ export const parameters = {
         // Override the default dark and light theme
         dark: moralisdarkTheme, // Defaults to 'themes.dark', will need to remove 'const moralisdarkTheme' from preview.js
         light: moralislightTheme, // Defaults to 'themes.normal', will need to remove 'const moralislightTheme' from preview.js
-        Current: 'light', //Apply a dark and light class name to the manager. This allows you to easily write dark mode aware theme overrides for the storybook UI.
-        darkClass: 'lights-out',
-        lightClass: 'lights-on',
-        //Apply the darkClass and lightClass classes to the preview iframe
-        stylePreview: true,
+        Current: 'light', // Set default theme when page loads.
+        darkClass: 'lights-out', 
+        lightClass: 'lights-on', //Apply a dark and light class name to the manager. This allows you to easily write dark mode aware theme overrides for the storybook UI.
+        stylePreview: true, //Apply the darkClass and lightClass classes to the preview iframe
     },
 };

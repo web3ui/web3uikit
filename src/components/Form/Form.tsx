@@ -8,11 +8,11 @@ import { TextArea } from '../TextArea';
 import { H3Styled, H4Styled, FormStyled } from './Form.styles';
 
 const Form: React.FC<FormProps> = ({
+    buttonConfig,
     data,
     id,
-    title,
     onSubmit,
-    customSubmitText = 'Submit',
+    title,
 }) => {
     const formSubmitted = (event: React.SyntheticEvent) => {
         event.preventDefault();
@@ -174,15 +174,20 @@ const Form: React.FC<FormProps> = ({
             ))}
 
             <Button
-                theme="primary"
+                color={buttonConfig?.color}
+                disabled={buttonConfig?.disabled}
+                icon={buttonConfig?.icon}
+                iconLayout={buttonConfig?.iconLayout}
+                id={`form-${id}-submit`}
+                isFullWidth={buttonConfig?.isFullWidth}
+                onClick={buttonConfig.onClick}
+                size={buttonConfig?.size}
+                text={buttonConfig?.text}
+                theme={buttonConfig?.theme}
                 type="submit"
-                onClick={(e) => e.preventDefault}
-                buttonStyle={{
-                    width: '100%',
-                    marginTop: '30px',
-                }}
-                text={customSubmitText}
-            />
+            >
+                Submit
+            </Button>
         </FormStyled>
     );
 };

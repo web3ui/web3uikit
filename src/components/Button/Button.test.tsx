@@ -21,7 +21,6 @@ const {
     ColoredGreen,
     ColoredYellow,
     ColoredBlue,
-    CustomStyle
 } = composeStories(stories);
 
 let container: HTMLDivElement;
@@ -513,32 +512,5 @@ describe('Button - ColoredYellow', () => {
         );
         element && fireEvent.click(element);
         expect(testClickEvent).toHaveBeenCalled();
-    });
-});
-
-describe('Button - Primary with custom styling', () => {
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<CustomStyle />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders PrimaryLarge button with correct styles', () => {
-        const element = container.querySelector(
-            `[data-testid="${buttonTestId}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.white);
-        const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
-        expect(bgColorHex).toBe(color.green);
-        expect(styles?.borderWidth).toBe('2px');
-        expect(styles?.fontSize).toBe('14px');
-        expect(styles?.width).toBe('100%');
     });
 });

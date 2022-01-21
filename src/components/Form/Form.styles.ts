@@ -21,13 +21,14 @@ export const H4Styled = styled.h4`
 export const FormStyled = styled.form`
     ${resetCSS};
     background-color: ${color.white};
-    padding: 6px;
+    border-radius: 16px;
+    padding: 16px;
 
     div + div {
         margin-top: 30px;
     }
 
     button {
-        margin-top: 12px;
+        margin-top: 32px;
     }
 `;

@@ -13,7 +13,7 @@ const {
     Options,
     PrefixIcon,
     SelectedItem,
-    SelectWrapper,
+    DivStyledWrapper,
 } = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
@@ -59,12 +59,12 @@ const Select: React.FC<SelectProps> = ({
     }, []);
 
     return (
-        <SelectWrapper
+        <DivStyledWrapper
+            aria-label="select"
             data-testid="test-wrapper"
+            id={id}
             state={state}
             style={{ ...style, width }}
-            aria-label="select"
-            id={id}
         >
             <SelectedItem
                 data-testid="test-selected"
@@ -123,7 +123,7 @@ const Select: React.FC<SelectProps> = ({
             )}
 
             {errorMessage && <ErrorLabel>{errorMessage}</ErrorLabel>}
-        </SelectWrapper>
+        </DivStyledWrapper>
     );
 };
 

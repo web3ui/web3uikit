@@ -1,4 +1,5 @@
 import { ValidateInput } from '../Input/types';
+import { ButtonProps } from '../Button';
 
 export interface FormProps {
     /**
@@ -17,9 +18,9 @@ export interface FormProps {
     id: string;
 
     /**
-     * The text that is to be shown in the submit button
+     * Pass all the props a button could use
      */
-    customSubmitText: string;
+    buttonConfig: ButtonProps;
 
     /**
      * when the form passes validation the data is returned

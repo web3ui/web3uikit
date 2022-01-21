@@ -53,8 +53,7 @@ export interface ButtonProps {
     iconLayout?: 'leading' | 'trailing' | 'icon-only';
 
     /**
-     * Apply custom styles to button
-     * Will override all base styles
+     * set the button to be 100% width
      */
-    buttonStyle?: React.CSSProperties;
+    isFullWidth?: boolean;
 }

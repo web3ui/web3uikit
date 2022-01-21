@@ -401,14 +401,3 @@ Translucent.args = {
     iconLayout: 'leading',
     size: 'large',
 };
-
-export const CustomStyle = Template.bind({});
-CustomStyle.args = {
-    id: 'test-button-primary-style',
-    text: 'Button With Custom Styling',
-    theme: 'primary',
-    type: 'button',
-    buttonStyle: {
-        width: "100%",
-    }
-};

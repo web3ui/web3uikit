@@ -5,19 +5,35 @@ import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import colors from '../../styles/colors';
 import { Input } from '../Input';
+import { useArgs } from '@storybook/addons';
 
 export default {
     title: 'Popup/Modal',
     component: Modal,
 } as ComponentMeta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
+const Template: ComponentStory<typeof Modal> = (args) => {
+    const [{}, updateArgs] = useArgs();
+
+    return (
+        <Modal
+            {...args}
+            onCancel={() => {
+                console.log('canceled');
+                updateArgs({ isVisible: false });
+            }}
+            onOk={() => {
+                console.log('pressed ok');
+                updateArgs({ isVisible: false });
+            }}
+        />
+    );
+};
 
 export const Regular = Template.bind({});
 Regular.args = {
     id: 'regular',
     title: 'Confirm',
-    isVisible: true,
     children: [
         <div
             key={'0'}

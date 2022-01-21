@@ -1,20 +1,44 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import { composeStories } from '@storybook/testing-react';
-import * as stories from './Modal.stories';
-const { Regular } = composeStories(stories);
+import Modal from './Modal';
+import { Icon } from '../Icon';
+import { iconTypes } from '../Icon/collection';
+import color from '../../styles/colors';
 
 describe('Modal - Regular', () => {
     let container: HTMLDivElement;
-    let modalTestId = 'modal-test-id';
-    let headerTestId = 'modal-header-test-id';
-    let contentTestId = 'modal-content-test-id';
-    let footerTestId = 'modal-footer-test-id';
+    const modalTestId = 'modal-test-id';
+    const headerTestId = 'modal-header-test-id';
+    const contentTestId = 'modal-content-test-id';
+    const footerTestId = 'modal-footer-test-id';
 
     beforeEach(() => {
+        const args = {
+            id: 'regular',
+            title: 'Confirm',
+            children: [
+                <div
+                    key={'0'}
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        flexDirection: 'column',
+                    }}
+                >
+                    <Icon
+                        svg={iconTypes.cloud}
+                        size={64}
+                        fill={color.blueDark2}
+                    />
+                    <p>Proceed uploading?</p>
+                </div>,
+            ],
+            isVisible: true,
+        };
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<Regular />, container);
+        ReactDOM.render(<Modal {...args} />, container);
     });
 
     afterEach(() => {

@@ -220,7 +220,7 @@ const collection = {
     serverIcon,
     starIcon,
     starsIcon,
-    telegramIcon
+    telegramIcon,
     testnetIcon,
     triangleDownIcon,
     triangleUpIcon,

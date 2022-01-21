@@ -8,7 +8,8 @@ const Button: React.FC<ButtonProps> = ({
     disabled = false,
     icon,
     iconLayout = 'leading',
-    id = String(Date.now()),
+    id,
+    isFullWidth = false,
     onClick,
     size = 'regular',
     text = 'click',
@@ -22,6 +23,7 @@ const Button: React.FC<ButtonProps> = ({
             disabled={disabled}
             iconLayout={iconLayout}
             id={id}
+            isFullWidth={isFullWidth}
             onClick={onClick}
             size={size}
             theme={theme}

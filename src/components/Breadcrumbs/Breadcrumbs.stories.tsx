@@ -5,6 +5,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import { Breadcrumbs } from '.';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
     title: 'UI/Breadcrumbs',
@@ -12,7 +13,7 @@ export default {
 } as ComponentMeta<typeof Breadcrumbs>;
 
 const Template: ComponentStory<typeof Breadcrumbs> = (args) => (
-    <Breadcrumbs {...args} />
+    <Router>< Breadcrumbs {...args} /></Router>
 );
 
 export const One = Template.bind({});
@@ -36,7 +37,7 @@ Two.args = {
             icon: <Icon svg={iconTypes.server} size={20} fill="currentColor" />,
         },
         {
-            breadcrumb: 'Server Details',
+            breadcrumb: 'Details',
             path: '2',
         },
     ],
@@ -52,7 +53,7 @@ Three.args = {
             icon: <Icon svg={iconTypes.server} size={20} fill="currentColor" />,
         },
         {
-            breadcrumb: 'Server Details',
+            breadcrumb: 'Details',
             path: 'server',
         },
         {
@@ -72,15 +73,15 @@ Four.args = {
             icon: <Icon svg={iconTypes.server} size={20} fill="currentColor" />,
         },
         {
-            breadcrumb: 'Server Details',
+            breadcrumb: 'Details',
             path: '2',
         },
         {
-            breadcrumb: 'Server Details',
+            breadcrumb: 'Advanced',
             path: '3',
         },
         {
-            breadcrumb: 'Advanced',
+            breadcrumb: 'More Details',
             path: '4',
         },
     ],

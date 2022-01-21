@@ -28,7 +28,9 @@ export const redColor = css`
 // CSS Props should be sorted alphabetically
 ////////////////////
 export const SectionStyled = styled.section`
-    border: 2px solid ${color.greyLight};
+    background-color: ${color.white};
+    border-bottom: 5px solid ${color.green};
+    border-top: 5px solid ${color.yellow};
     padding: 12px 24px;
 `;
 

@@ -1,4 +1,5 @@
 import { ValidateInput } from '../Input/types';
+import { ButtonProps } from '../Button';
 
 export interface FormProps {
     /**
@@ -15,6 +16,11 @@ export interface FormProps {
      * Every form should have a unique ID
      */
     id: string;
+
+    /**
+     * Pass all the props a button could use
+     */
+    buttonConfig: ButtonProps;
 
     /**
      * when the form passes validation the data is returned

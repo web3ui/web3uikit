@@ -17,13 +17,16 @@ import {
 } from './styles/coloredThemes';
 import {
     iconLeading,
-    iconTrailing,
     iconOnly,
-    smallIconResize,
+    iconTrailing,
     largeIconResize,
+    smallIconResize,
 } from './styles/iconStyles';
 
-type TStyleProps = Pick<ButtonProps, 'theme' | 'iconLayout' | 'size' | 'color'>;
+type TStyleProps = Pick<
+    ButtonProps,
+    'theme' | 'iconLayout' | 'size' | 'color' | 'isFullWidth'
+>;
 
 const getThemeStyles = (theme: string) => {
     switch (theme) {
@@ -89,6 +92,7 @@ const iconOnlyBorderFix = (theme: string) => {
 export const ButtonStyled = styled.button<TStyleProps>`
     ${initialStyles}
 
+    ${(p) => p.isFullWidth && 'width: 100%;'}
     ${(p) => p.theme && getThemeStyles(p.theme)}
     ${(p) => p.color && p.theme === 'colored' && getColored(p.color)}
     ${(p) => p.size && getSizeStyles(p.size)}

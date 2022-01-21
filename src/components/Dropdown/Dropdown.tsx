@@ -1,20 +1,22 @@
 import { DropdownProps } from './types';
 import React, { useState } from 'react';
-import { DropdownStyles } from './Dropdown.styles';
-
-const { DivArrowStyled, DivContainer, DivDropdownElementStyled, ElementDiv } =
-    DropdownStyles;
+import {
+    DivStyledArrow,
+    DivStyledFlex,
+    DivStyledDropdown,
+    DivStyledChild,
+} from './Dropdown.styles';
 
 const Dropdown: React.FC<DropdownProps> = ({
     children,
-    id = String(Date.now()),
+    id,
     move,
     parent,
     position,
 }) => {
     const [showDropdown, setVisibility] = useState(false);
     return (
-        <DivContainer
+        <DivStyledFlex
             id={id}
             onMouseEnter={() => setVisibility(true)}
             onMouseLeave={() => setVisibility(false)}
@@ -23,19 +25,19 @@ const Dropdown: React.FC<DropdownProps> = ({
 
             {showDropdown && (
                 <>
-                    <DivArrowStyled position={position} move={move} />
-                    <DivDropdownElementStyled position={position}>
-                        {children.map((name, index) => {
+                    <DivStyledArrow position={position} move={move} />
+                    <DivStyledDropdown position={position}>
+                        {children.map((child, index) => {
                             return (
                                 <div key={`dropdown-element-${index}`}>
-                                    <ElementDiv>{name}</ElementDiv>
+                                    <DivStyledChild>{child}</DivStyledChild>
                                 </div>
                             );
                         })}
-                    </DivDropdownElementStyled>
+                    </DivStyledDropdown>
                 </>
             )}
-        </DivContainer>
+        </DivStyledFlex>
     );
 };
 

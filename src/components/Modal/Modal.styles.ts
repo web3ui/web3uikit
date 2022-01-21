@@ -3,8 +3,7 @@ import { ModalProps } from './types';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 
-const ModalStyled = styled.div<Pick<ModalProps, 'isVisible'>>`
-    ${(p) => (p.isVisible ? 'display: grid;' : 'display: none;')};
+const ModalStyled = styled.div`
     ${fonts.text};
     background-color: ${colors.white};
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
@@ -43,11 +42,23 @@ const ModalFooter = styled.div`
     padding: 15px 32px 20px;
 `;
 
+const ModalWrapperStyled = styled.div<Pick<ModalProps, 'isVisible'>>`
+    ${(p) => (p.isVisible ? 'display: grid;' : 'display: none;')};
+    background: rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 5;
+`;
+
 const ModalStyles = {
     ModalContent,
     ModalFooter,
     ModalHeader,
     ModalStyled,
+    ModalWrapperStyled,
 };
 
 export default ModalStyles;

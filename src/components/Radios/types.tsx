@@ -1,4 +1,4 @@
-export type RadiosValidate = {
+export type ValidateRadios = {
     required?: boolean;
 };
 
@@ -26,5 +26,5 @@ export interface RadiosProps {
     /**
      * You can validate your radios
      */
-    validation?: RadiosValidate;
+    validation?: ValidateRadios;
 }

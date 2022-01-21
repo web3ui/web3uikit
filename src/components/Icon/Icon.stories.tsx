@@ -294,6 +294,13 @@ File.args = {
     svg: iconTypes.file,
 };
 
+export const Github = Template.bind({});
+Github.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.github,
+};
+
 export const Grid = Template.bind({});
 Grid.args = {
     fill: 'black',
@@ -469,6 +476,14 @@ Pulse.args = {
     svg: iconTypes.pulse,
 };
 
+export const Reddit = Template.bind({});
+Reddit.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.reddit,
+};
+
+
 export const Reload = Template.bind({});
 Reload.args = {
     fill: 'black',
@@ -504,6 +519,13 @@ Stars.args = {
     svg: iconTypes.stars,
 };
 
+export const Telegram = Template.bind({});
+Telegram.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.telegram,
+};
+
 export const Testnet = Template.bind({});
 Testnet.args = {
     fill: 'black',
@@ -523,6 +545,13 @@ TriangleUp.args = {
     fill: 'black',
     size: 32,
     svg: iconTypes.triangleUp,
+};
+
+export const Twitter = Template.bind({});
+Twitter.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.twitter,
 };
 
 export const Update = Template.bind({});

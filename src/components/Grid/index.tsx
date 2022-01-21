@@ -1,2 +1,2 @@
-export { default as Table } from './Table';
-export type { TableProps } from './types';
+export { default as Table } from './Grid';
+export type { IGridProps } from './types';

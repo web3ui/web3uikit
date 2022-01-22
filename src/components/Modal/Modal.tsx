@@ -13,15 +13,19 @@ const {
 } = ModalStyles;
 
 const Modal: React.FC<ModalProps> = ({
-    id = String(Date.now()),
-    children,
-    isOkDisabled,
-    isCancelDisabled,
-    isVisible = true,
     cancelText = 'Cancel',
+    children,
+    containerStyle,
+    footerStyle,
+    headerStyle,
+    id = String(Date.now()),
+    isCancelDisabled,
+    isOkDisabled,
+    isVisible = true,
     okText = 'Ok',
     onCancel,
     onOk,
+    style,
     title,
 }: ModalProps) => {
     const [visible, setVisibility] = useState(isVisible);
@@ -36,8 +40,8 @@ const Modal: React.FC<ModalProps> = ({
             isVisible={visible}
             data-testid="modal-test-id"
         >
-            <ModalStyled>
-                <ModalHeader data-testid={'modal-header-test-id'}>
+            <ModalStyled style={style}>
+                <ModalHeader data-testid={'modal-header-test-id'} style={headerStyle} >
                     <h3>{title}</h3>
                     <Button
                         data-testid={'modal-close-test-id'}
@@ -51,11 +55,12 @@ const Modal: React.FC<ModalProps> = ({
                 <ModalContent
                     id={'content'}
                     data-testid={'modal-content-test-id'}
+                    style={containerStyle}
                 >
                     {children}
                 </ModalContent>
 
-                <ModalFooter data-testid={'modal-footer-test-id'}>
+                <ModalFooter data-testid={'modal-footer-test-id'} style={footerStyle} >
                     <Button
                         data-testid={'modal-cancel-button-test-id'}
                         disabled={isCancelDisabled}

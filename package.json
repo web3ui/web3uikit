@@ -92,6 +92,6 @@
         "typescript": "^4.5.4"
     },
     "dependencies": {
-        "web3uikit": "^0.1.16"
+        "web3uikit": "^0.1.19"
     }
 }

@@ -48,4 +48,17 @@ export interface ModalProps {
      * set title of modal
      */
     title?: string;
+    
+     /**
+     * CSS element style props
+     */
+    style?: React.CSSProperties;
+    /**
+     * CSS header style props
+     */
+    headerStyle?: React.CSSProperties;
+    /**
+     * CSS container style props
+     */
+    containerStyle?: React.CSSProperties;
 }

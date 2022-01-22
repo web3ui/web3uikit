@@ -53,12 +53,19 @@ export interface ModalProps {
      * CSS element style props
      */
     style?: React.CSSProperties;
+    
     /**
      * CSS header style props
      */
     headerStyle?: React.CSSProperties;
+    
     /**
      * CSS container style props
      */
     containerStyle?: React.CSSProperties;
+    
+    /**
+     * CSS container style props
+     */
+    footerStyle?: React.CSSProperties;
 }

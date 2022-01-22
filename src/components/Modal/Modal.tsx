@@ -4,14 +4,20 @@ import Button from '../Button/Button';
 import ModalStyles from './Modal.styles';
 import { iconTypes } from '../Icon/collection';
 
-const { ModalHeader, ModalStyled, ModalFooter, ModalContent } = ModalStyles;
+const {
+    ModalHeader,
+    ModalStyled,
+    ModalFooter,
+    ModalContent,
+    ModalWrapperStyled,
+} = ModalStyles;
 
 const Modal: React.FC<ModalProps> = ({
     id = String(Date.now()),
     children,
     isOkDisabled,
     isCancelDisabled,
-    isVisible,
+    isVisible = true,
     cancelText = 'Cancel',
     okText = 'Ok',
     onCancel,
@@ -25,51 +31,60 @@ const Modal: React.FC<ModalProps> = ({
     }, [isVisible]);
 
     return (
-        <ModalStyled id={id} isVisible={visible} data-testid="modal-test-id">
-            <ModalHeader data-testid={'modal-header-test-id'}>
-                <h3>{title}</h3>
-                <Button
-                    data-testid={'modal-close-test-id'}
-                    icon={iconTypes.x}
-                    iconLayout={'icon-only'}
-                    onClick={() => setVisibility(false)}
-                    theme={'outline'}
-                />
-            </ModalHeader>
+        <ModalWrapperStyled
+            id={id}
+            isVisible={visible}
+            data-testid="modal-test-id"
+        >
+            <ModalStyled>
+                <ModalHeader data-testid={'modal-header-test-id'}>
+                    <h3>{title}</h3>
+                    <Button
+                        data-testid={'modal-close-test-id'}
+                        icon={iconTypes.x}
+                        iconLayout={'icon-only'}
+                        onClick={() => setVisibility(false)}
+                        theme={'outline'}
+                    />
+                </ModalHeader>
 
-            <ModalContent id={'content'} data-testid={'modal-content-test-id'}>
-                {children}
-            </ModalContent>
+                <ModalContent
+                    id={'content'}
+                    data-testid={'modal-content-test-id'}
+                >
+                    {children}
+                </ModalContent>
 
-            <ModalFooter data-testid={'modal-footer-test-id'}>
-                <Button
-                    data-testid={'modal-cancel-button-test-id'}
-                    disabled={isCancelDisabled}
-                    text={cancelText}
-                    onClick={
-                        onCancel
-                            ? onCancel
-                            : () => {
-                                  setVisibility(false);
-                              }
-                    }
-                    theme={'outline'}
-                />
-                <Button
-                    data-testid={'modal-ok-button-test-id'}
-                    onClick={
-                        onOk
-                            ? onOk
-                            : () => {
-                                  console.log('ok triggered');
-                              }
-                    }
-                    disabled={isOkDisabled}
-                    text={okText}
-                    theme={'primary'}
-                />
-            </ModalFooter>
-        </ModalStyled>
+                <ModalFooter data-testid={'modal-footer-test-id'}>
+                    <Button
+                        data-testid={'modal-cancel-button-test-id'}
+                        disabled={isCancelDisabled}
+                        text={cancelText}
+                        onClick={
+                            onCancel
+                                ? onCancel
+                                : () => {
+                                      setVisibility(false);
+                                  }
+                        }
+                        theme={'outline'}
+                    />
+                    <Button
+                        data-testid={'modal-ok-button-test-id'}
+                        onClick={
+                            onOk
+                                ? onOk
+                                : () => {
+                                      console.log('ok triggered');
+                                  }
+                        }
+                        disabled={isOkDisabled}
+                        text={okText}
+                        theme={'primary'}
+                    />
+                </ModalFooter>
+            </ModalStyled>
+        </ModalWrapperStyled>
     );
 };
 

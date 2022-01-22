@@ -51,4 +51,9 @@ export interface ButtonProps {
      * set an icon position, or maybe show only the icon
      */
     iconLayout?: 'leading' | 'trailing' | 'icon-only';
+
+    /**
+     * set the button to be 100% width
+     */
+    isFullWidth?: boolean;
 }

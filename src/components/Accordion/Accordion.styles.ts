@@ -25,6 +25,7 @@ export const getThemeColor = (theme: string) => {
 };
 
 export const SectionStyled = styled.section<TStyleProps>`
+    background-color: ${color.white};
     border: 1px solid ${(p) => getThemeColor(p.theme)};
     border-radius: 20px;
     opacity: 0%;

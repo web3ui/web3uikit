@@ -27,7 +27,7 @@ export interface ModalProps {
     /**
      * set if modal is visible
      */
-    isVisible: boolean;
+    isVisible?: boolean;
 
     /**
      * Run function on 'Cancel'

@@ -15,14 +15,14 @@ export * from './components/Illustrations';
 export * from './components/Info';
 export * from './components/Input';
 export * from './components/LinkTo';
+export * from './components/Loading';
 export * from './components/Logo';
 export * from './components/Modal';
 export * from './components/Notification';
 export * from './components/Radios';
 export * from './components/Select';
-export * from './components/Tag';
-export * from './components/TextArea';
 export * from './components/Table';
 export * from './components/Tabs';
+export * from './components/Tag';
+export * from './components/TextArea';
 export * from './components/Tooltip';
-

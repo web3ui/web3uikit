@@ -4,8 +4,8 @@ import color from '../../styles/colors';
 import styled, { css } from 'styled-components';
 import { SelectProps, LabelProps, SelectedItemProps } from './types';
 
-export const SelectWrapper = styled.div<Pick<SelectProps, 'state'>>`
-    ${resetCSS}
+export const DivStyledWrapper = styled.div<Pick<SelectProps, 'state'>>`
+    ${resetCSS};
     display: inline-block;
     position: relative;
 `;
@@ -36,7 +36,7 @@ export const SelectStyled = styled.div`
 export const SelectedItem = styled.div<SelectedItemProps>`
     ${resetCSS}
     ${fonts.text}
-    background-color: transparent;
+    background-color: ${color.white};
     border-radius: 16px;
     border: 2px solid;
     cursor: pointer;
@@ -209,7 +209,7 @@ const SelectStyles = {
     PrefixIcon,
     SelectedItem,
     SelectStyled,
-    SelectWrapper,
+    DivStyledWrapper,
 };
 
 export default SelectStyles;

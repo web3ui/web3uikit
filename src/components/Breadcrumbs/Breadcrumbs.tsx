@@ -3,6 +3,7 @@ import color from '../../styles/colors';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import {
+    Breadcrumb,
     BreadcrumbsSeparator,
     ListItemStyled,
     ListStyled,
@@ -32,8 +33,10 @@ function renderList(
                     i == 0 ? 'breadcrumb-test-id' : `breadcrumb-test-id-${i}`
                 }
             >
-                {route?.icon}
-                {route.breadcrumb}
+                <Breadcrumb to={route.path}>
+                    {route?.icon}
+                    {route.breadcrumb}
+                </Breadcrumb>
             </ListItemStyled>
         );
         const routesWithSeparator = getNumberOfRoutesToRender(

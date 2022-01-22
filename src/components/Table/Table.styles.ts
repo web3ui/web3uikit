@@ -14,6 +14,7 @@ export const TableParent = styled.div`
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     display: flex;
     flex-direction: column;
+    background-color: white;
 `;
 
 export const NoData = styled.div`

@@ -12,7 +12,9 @@ import {
     getThemeColor,
 } from './Accordion.styles';
 
-const Accordion: React.FC<AccordionProps> = ({
+import { ColorsProps } from '../../interface/colors';
+
+const Accordion: React.FC<AccordionProps & ColorsProps> = ({
     children,
     hasLockIcon,
     id,
@@ -28,6 +30,11 @@ const Accordion: React.FC<AccordionProps> = ({
     const [heightWhenOpen, setHeightWhenOpen] = useState('');
     const formattedID = id.replace(/\s/g, '-');
     const divElement = useRef<HTMLDivElement>(null);
+
+    let color: ColorsProps = {
+        blue: '#2E7DAF',
+        red: '#EB5757',
+    };
 
     useEffect(() => {
         setHeightWhenOpen(`${divElement.current?.clientHeight}px`);
@@ -95,6 +102,7 @@ const Accordion: React.FC<AccordionProps> = ({
             >
                 {children}
             </DivStyledContent>
+            <div style={{ color: color.red }}>testing here..</div>
         </SectionStyled>
     );
 };

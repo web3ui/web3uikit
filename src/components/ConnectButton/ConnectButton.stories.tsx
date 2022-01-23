@@ -11,9 +11,4 @@ const Template: ComponentStory<typeof ConnectButton> = (args) => (
     <ConnectButton {...args} />
 );
 
-export const Box = Template.bind({});
-// Box.args = {
-//     label: 'Can I tick it?',
-//     name: 'Test checkbox input',
-//     id: 'test-checkbox',
-// };
+export const Default = Template.bind({});

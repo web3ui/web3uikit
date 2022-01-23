@@ -11,33 +11,32 @@ const flexBox = css`
 
 const WrapperStyled = styled.div`
     ${flexBox}
-    margin: 0px 16px;
     height: 40px;
+    margin: 0px 16px;
     white-space: nowrap;
 `;
 
 const AccountInfoStyled = styled.div`
     ${flexBox}
-    /* width: 100%; */
-    flex-wrap: wrap;
-    width: max-content;
-    justify-content: space-between;
-    flex-direction: row;
-    padding: 3px;
-    border-radius: 16px;
     background-color: ${color.blueLight};
-    user-select: none;
+    border-radius: 16px;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: 100%;
+    justify-content: space-between;
+    padding: 3px;
+    user-select: none;
+    width: max-content;
 `;
 
 const ConnectButtonStyled = styled.button`
     ${resetButtonCSS};
     ${fonts.semiBold}
     background-color: ${color.blueLight};
-    height: 100%;
     border-radius: 16px;
-    padding: 4px 16px;
     border: 2px solid transparent;
+    height: 100%;
+    padding: 4px 16px;
     transition: all 0.1s ease-out;
 
     &:hover {
@@ -47,14 +46,14 @@ const ConnectButtonStyled = styled.button`
 
 const AddressStyled = styled.div`
     ${flexBox}
-    padding: 2px 8px;
     background: ${color.white};
     border-radius: 12px;
     border: 1px solid transparent;
-    transition: all 0.1s ease-out;
-    line-height: 25px;
-    height: 100%;
     cursor: pointer;
+    height: 100%;
+    line-height: 25px;
+    padding: 2px 8px;
+    transition: all 0.1s ease-out;
 
     &:hover {
         border-color: ${color.paleBlue2};
@@ -73,13 +72,12 @@ const BalanceBlockStyled = styled.div`
 `;
 
 export const ConnectButtonStyles = {
-    WrapperStyled,
-    TextStyled,
-    ConnectButtonStyled,
-    AddressStyled,
     AccountInfoStyled,
+    AddressStyled,
     BalanceBlockStyled,
-    // DisconnectedStyled,
+    ConnectButtonStyled,
+    TextStyled,
+    WrapperStyled,
 };
 
 export default ConnectButtonStyles;

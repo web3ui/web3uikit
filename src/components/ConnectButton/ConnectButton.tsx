@@ -1,10 +1,10 @@
-// import { getEllipsisTxt } from 'helpers';
+import Moralis from 'moralis/types';
 import React from 'react';
 import { useMoralis } from 'react-moralis';
-// import { NativeBalance } from '../NativeBalance';
+import { getEllipsisTxt } from '../../web3utils';
+import { Blockie } from '../Blockie';
+import { NativeBalance } from '../NativeBalance';
 import ConnectButtonStyles from './ConnectButton.styles';
-// import Blockie from 'components/Blockie';
-// import { Modal } from 'web3uikit';
 
 const {
     WrapperStyled,
@@ -16,12 +16,32 @@ const {
 } = ConnectButtonStyles;
 
 const ConnectButton: React.FC = () => {
-    const { authenticate, account, isAuthenticated } = useMoralis();
+    const { authenticate, account, isAuthenticated, logout, deactivateWeb3 } =
+        useMoralis();
+
+    function connectWallet(connectorId: Moralis.Web3ProviderType) {
+        // to avoid problems in Next.JS apps because of localStorage
+        if (typeof window == 'undefined') return;
+
+        authenticate({
+            provider: connectorId,
+            onSuccess: () =>
+                window.localStorage.setItem('connectorId', connectorId),
+        });
+    }
+
+    function disconnectWallet() {
+        // to avoid problems in Next.JS apps because of localStorage
+        if (typeof window == 'undefined') return;
+
+        logout();
+        deactivateWeb3();
+    }
 
     if (!account || !isAuthenticated) {
         return (
             <WrapperStyled>
-                <ConnectButtonStyled onClick={() => authenticate()}>
+                <ConnectButtonStyled onClick={() => connectWallet('metamask')}>
                     <TextStyled>Connect Wallet</TextStyled>
                 </ConnectButtonStyled>
             </WrapperStyled>
@@ -32,20 +52,15 @@ const ConnectButton: React.FC = () => {
         <WrapperStyled>
             <AccountInfoStyled>
                 <BalanceBlockStyled>
-                    {/* <NativeBalance style={{ margin: '0 8px 0 12px' }} /> */}
+                    <NativeBalance style={{ margin: '0 8px 0 12px' }} />
                 </BalanceBlockStyled>
-                <AddressStyled>
+                <AddressStyled onClick={() => disconnectWallet()}>
                     <TextStyled style={{ marginRight: '8px' }}>
-                        {account}
-                        {/* {account && getEllipsisTxt(account)} */}
+                        {account && getEllipsisTxt(account)}
                     </TextStyled>
-                    {/* <Blockie scale={2.5} /> */}
+                    <Blockie scale={2.5} />
                 </AddressStyled>
             </AccountInfoStyled>
-            {/* <Modal isVisible={true}>
-                <p>x</p>
-                <p>x</p>
-            </Modal> */}
         </WrapperStyled>
     );
 };

@@ -3,8 +3,8 @@ import resetCSS from '../../styles/reset';
 
 const BlockieStyled = styled.div`
     ${resetCSS}
-    display: inline-flex;
     border-radius: 50%;
+    display: inline-flex;
     overflow: hidden;
 `;
 

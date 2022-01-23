@@ -48,29 +48,32 @@ export const parameters = {
 
 export const decorators = [
     (Story) => {
-        const App = () => {
+        const Web3Initialize = () => {
             const {
                 enableWeb3,
                 isAuthenticated,
                 isWeb3Enabled,
                 isWeb3EnableLoading,
+                isInitialized,
             } = useMoralis();
 
             useEffect(() => {
+                if (!isInitialized) return;
                 const connectorId = window.localStorage.getItem('connectorId');
                 if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading)
                     enableWeb3({ provider: connectorId });
                 // eslint-disable-next-line react-hooks/exhaustive-deps
-            }, [isAuthenticated, isWeb3Enabled]);
+            }, [isAuthenticated, isWeb3Enabled, isInitialized]);
 
-            return <Story />;
+            return null;
         };
         return (
             <MoralisProvider
                 appId="5mGWm5hWRK9zVPoQjBdg8qDYxlQIQ7AVT2DbFuw8"
                 serverUrl="https://doqmequbk5km.usemoralis.com:2053/server"
             >
-                <App />
+                <Story />
+                <Web3Initialize />
             </MoralisProvider>
         );
     },

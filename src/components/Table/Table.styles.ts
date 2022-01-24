@@ -65,7 +65,7 @@ export const TableGrid = styled.div.attrs((props: any) => ({
 }))`
     ${resetCSS}
     ${fonts.text}
-    padding: 12px 0px;
+    padding-bottom: 11px;
     border-radius: 10px;
     border: 2px solid transparent;
     border-radius: 20px;
@@ -87,7 +87,7 @@ export const TableGrid = styled.div.attrs((props: any) => ({
         padding-right: 22px;
     }
     & > div.table_header {
-        margin-bottom: -8px;
+        margin-bottom: -11px;
     }
 `;
 

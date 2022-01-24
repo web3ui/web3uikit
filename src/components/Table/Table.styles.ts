@@ -5,16 +5,8 @@ import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
 
 export const TableParent = styled.div`
-    padding: 22px;
-    border-radius: 10px;
-    border: 2px solid transparent;
-    border-radius: 20px;
-    overflow-x: auto;
-    overflow-y: auto;
-    box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     display: flex;
     flex-direction: column;
-    background-color: white;
 `;
 
 export const NoData = styled.div`
@@ -50,7 +42,8 @@ export const Pagination = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 11px 0px;
+    background-color: transparent;
+    padding: 12px 0px;
     > div {
         display: flex;
         flex-direction: row;
@@ -72,10 +65,30 @@ export const TableGrid = styled.div.attrs((props: any) => ({
 }))`
     ${resetCSS}
     ${fonts.text}
+    padding: 12px 0px;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    overflow-x: auto;
+    overflow-y: auto;
+    box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
+    background-color: white;
     display: grid;
     grid-template-columns: ${(props) => props.columns};
     row-gap: 22px;
+    column-gap: 11px;
     overflow-x: auto;
+    & > .firstCol {
+        /* border: 2px dashed red; */
+        padding-left: 22px;
+    }
+    & > .lastCol {
+        /* border: 2px dashed red; */
+        padding-right: 22px;
+    }
+    & > div.table_header {
+        margin-bottom: -8px;
+    }
 `;
 
 interface PaginationTag {

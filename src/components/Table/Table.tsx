@@ -71,7 +71,11 @@ const Table: React.FC<TableProps> = ({
         return (
             <>
                 {header.map((col, key) => (
-                    <div key={`header_${key}`} role="table-header">
+                    <div
+                        key={`header_${key}`}
+                        role="table-header"
+                        className="table_header"
+                    >
                         {col}
                     </div>
                 ))}
@@ -101,22 +105,31 @@ const Table: React.FC<TableProps> = ({
         return (
             <>
                 {computeCurrentData().map(
-                    (row: (string | React.ReactNode)[], rowKey) => (
+                    (row: (string | React.ReactNode)[], rowKey, arr) => (
                         <React.Fragment key={`fragment_${rowKey}`}>
                             {row.map(
                                 (
                                     item: string | React.ReactNode,
                                     colKey: number,
+                                    rowData,
                                 ) => (
                                     <div
                                         key={`tr_${rowKey}_${colKey}`}
                                         role="table-item"
+                                        className={`${
+                                            colKey == 0 && 'firstCol'
+                                        } ${
+                                            colKey == rowData.length - 1 &&
+                                            'lastCol'
+                                        }`}
                                     >
                                         {item}
                                     </div>
                                 ),
                             )}
-                            <Divider key={`divider_${rowKey}`} />
+                            {rowKey != arr.length - 1 && (
+                                <Divider key={`divider_${rowKey}`} />
+                            )}
                         </React.Fragment>
                     ),
                 )}

@@ -31,6 +31,7 @@ import externalLinkIcon from './icons/external-link';
 import eyeClosedIcon from './icons/eye-closed';
 import eyeIcon from './icons/eye';
 import fileIcon from './icons/file';
+import githubIcon from './icons/github';
 import gridIcon from './icons/grid';
 import helpCircleIcon from './icons/help-circle';
 import imageIcon from './icons/image';
@@ -56,14 +57,17 @@ import pinIcon from './icons/pin';
 import plugIcon from './icons/plug';
 import plusIcon from './icons/plus';
 import pulseIcon from './icons/pulse';
+import redditIcon from './icons/reddit';
 import reloadIcon from './icons/reload';
 import searchIcon from './icons/search';
 import serverIcon from './icons/server';
 import starIcon from './icons/star';
 import starsIcon from './icons/stars';
+import telegramIcon from './icons/telegram';
 import testnetIcon from './icons/testnet';
 import triangleDownIcon from './icons/triangle-down';
 import triangleUpIcon from './icons/triangle-up';
+import twitterIcon from './icons/twitter';
 import updateIcon from './icons/update';
 import userIcon from './icons/user';
 import windowsIcon from './icons/windows';
@@ -105,6 +109,7 @@ export enum iconTypes {
     eye = 'eye',
     eyeClosed = 'eye closed',
     file = 'file',
+    github = 'github',
     grid = 'grid',
     helpCircle = 'help circle',
     image = 'image',
@@ -130,14 +135,17 @@ export enum iconTypes {
     plug = 'plug',
     plus = 'plus',
     pulse = 'pulse',
+    reddit = 'reddit',
     reload = 'reload',
     search = 'search',
     server = 'server',
     star = 'star',
     stars = 'stars',
+    telegram = 'telegram',
     testnet = 'testnet',
     triangleDown = 'triangle down',
     triangleUp = 'triangle up',
+    twitter = 'twitter',
     update = 'update',
     user = 'user',
     windows = 'windows',
@@ -181,6 +189,7 @@ const collection = {
     eyeClosedIcon,
     eyeIcon,
     fileIcon,
+    githubIcon,
     gridIcon,
     helpCircleIcon,
     imageIcon,
@@ -205,14 +214,17 @@ const collection = {
     plugIcon,
     plusIcon,
     pulseIcon,
+    redditIcon,
     reloadIcon,
     searchIcon,
     serverIcon,
     starIcon,
     starsIcon,
+    telegramIcon,
     testnetIcon,
     triangleDownIcon,
     triangleUpIcon,
+    twitterIcon,
     updateIcon,
     userIcon,
     windowsIcon,

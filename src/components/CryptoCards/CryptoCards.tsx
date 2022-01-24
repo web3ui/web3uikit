@@ -7,46 +7,50 @@ import React from 'react';
 
 const {
     CryptoCardStyled,
-    DivButtonStyled,
-    DivImageStyled,
-    DivInfoStyled,
-    DivLogoStyled,
-    DivNetworkInfoStyled,
-    PChainNameStyled,
-    PNetworkStyled,
+    DivStyledButton,
+    DivStyledImage,
+    DivStyledInfo,
+    DivStyledLogo,
+    DivStyledNetworkInfo,
+    TextStyledChain,
+    TestStyledNetwork,
 } = CryptoCardStyles;
 
 const CryptoCards: React.FC<CryptoCardProps> = ({
-    onClick,
-    chain,
-    chainType,
-    settingsIcon,
     bgColor,
     btnText,
+    chain,
+    chainType,
+    onClick,
+    settingsIcon,
 }: CryptoCardProps) => {
     return (
         <CryptoCardStyled color={bgColor} data-testid={'test-crypto-card'}>
-            <DivInfoStyled>
-                <DivImageStyled>
-                    <DivLogoStyled>
+            <DivStyledInfo>
+                <DivStyledImage>
+                    <DivStyledLogo>
                         {<Illustration logo={chain}></Illustration>}
-                    </DivLogoStyled>
-                </DivImageStyled>
-                <DivNetworkInfoStyled>
-                    <PChainNameStyled data-testid={'test-chain-name'}>
+                    </DivStyledLogo>
+                </DivStyledImage>
+
+                <DivStyledNetworkInfo>
+                    <TextStyledChain data-testid={'test-chain-name'}>
                         {`${chain.charAt(0).toUpperCase()}${chain.slice(1)}`}
-                    </PChainNameStyled>
-                    <PNetworkStyled>{chainType || 'Network'}</PNetworkStyled>
-                </DivNetworkInfoStyled>
-            </DivInfoStyled>
-            <DivButtonStyled>
+                    </TextStyledChain>
+                    <TestStyledNetwork>
+                        {chainType || 'Network'}
+                    </TestStyledNetwork>
+                </DivStyledNetworkInfo>
+            </DivStyledInfo>
+
+            <DivStyledButton>
                 <Button
                     onClick={onClick}
                     theme="translucent"
                     text={btnText}
                     icon={settingsIcon || iconTypes.cog}
                 />
-            </DivButtonStyled>
+            </DivStyledButton>
         </CryptoCardStyled>
     );
 };

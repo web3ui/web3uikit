@@ -1,3 +1,6 @@
+import { ValidateInput } from '../Input/types';
+import { ButtonProps } from '../Button';
+
 export interface FormProps {
     /**
      * A title for the form hat will render an H3
@@ -10,10 +13,45 @@ export interface FormProps {
     data: DataInput[];
 
     /**
-     * The ID will generated if not assigned
+     * Every form should have a unique ID
      */
-    id?: string;
+    id: string;
+
+    /**
+     * Pass all the props a button could use
+     */
+    buttonConfig: ButtonProps;
+
+    /**
+     * when the form passes validation the data is returned
+     * { id: string, data: [{inputName: string; inputResult: string[] | string;}]}
+     */
+    onSubmit?: (data: FormDataReturned) => FormDataReturned;
 }
+
+export type FormDataReturned = {
+    /**
+     * The forms unique ID
+     */
+    id: string;
+
+    /**
+     * The data collected from the form
+     */
+    data: InputDataReturned[];
+};
+
+export type InputDataReturned = {
+    /**
+     * The name of the input
+     */
+    inputName: string;
+
+    /**
+     * The data collected from the input
+     */
+    inputResult: string[] | string;
+};
 
 export type DataInput = {
     /**
@@ -49,4 +87,14 @@ export type DataInput = {
      * If you radios you will need to pass an array to return your options
      */
     selected?: string[];
+
+    /**
+     * You can validate your inputs
+     */
+    validation?: ValidateInput;
+
+    /**
+     * You can set an input width
+     */
+    inputWidth?: string;
 };

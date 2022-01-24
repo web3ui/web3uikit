@@ -1,145 +1,184 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Input from '../../components/Input/Input';
+import { iconTypes } from '../Icon/collection';
+import { validateRegExp } from '../../utils/const';
 
 export default {
     title: 'Interaction/Input',
     component: Input,
+    parameters: {
+        actions: {
+            handles: ['onChange', 'changed'],
+        },
+    },
 } as ComponentMeta<typeof Input>;
-
-const testEvent = (event: React.ChangeEvent<HTMLInputElement>) =>
-    console.log(event.target);
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const TextInput = Template.bind({});
-TextInput.args = {
-    onChange: testEvent,
-    type: 'text',
-    label: 'add text',
+export const DefaultInput = Template.bind({});
+DefaultInput.args = {
+    label: 'Label text',
     name: 'Test text Input',
-    state: undefined,
 };
 
-export const TextInputError = Template.bind({});
-TextInputError.args = {
-    onChange: testEvent,
-    type: 'text',
-    label: 'something went wrong',
+export const InputError = Template.bind({});
+InputError.args = {
+    label: 'Label text',
     name: 'Test text Input error',
     state: 'error',
+    errorMessage: 'Your name must contain your name',
 };
 
-export const TextInputConfirmed = Template.bind({});
-TextInputConfirmed.args = {
-    onChange: testEvent,
-    type: 'text',
+export const InputConfirmed = Template.bind({});
+InputConfirmed.args = {
     label: 'ok, nice',
     name: 'Test text Input confirmed',
     state: 'confirmed',
 };
 
+export const InputPrefix = Template.bind({});
+InputPrefix.args = {
+    label: 'Label text',
+    name: 'Test text Input',
+    prefixIcon: iconTypes.server,
+};
+
 export const EmailInput = Template.bind({});
 EmailInput.args = {
-    onChange: testEvent,
     type: 'email',
-    label: 'add email',
+    label: 'Your email',
     name: 'Test email Input',
-    state: undefined,
-};
-
-export const EmailInputError = Template.bind({});
-EmailInputError.args = {
-    onChange: testEvent,
-    type: 'email',
-    label: 'something went wrong',
-    name: 'Test email Input error',
-    state: 'error',
-};
-
-export const EmailInputConfirmed = Template.bind({});
-EmailInputConfirmed.args = {
-    onChange: testEvent,
-    type: 'email',
-    label: 'ok, nice',
-    name: 'Test email Input confirmed',
-    state: 'confirmed',
 };
 
 export const NumberInput = Template.bind({});
 NumberInput.args = {
-    onChange: testEvent,
     type: 'number',
     label: 'how many?',
     name: 'Test number Input',
 };
 
-export const NumberInputConfirmed = Template.bind({});
-NumberInputConfirmed.args = {
-    onChange: testEvent,
-    type: 'number',
-    label: 'a good amount',
-    name: 'Test number Input confirmed',
-    state: 'confirmed',
-};
-
-export const NumberInputError = Template.bind({});
-NumberInputError.args = {
-    onChange: testEvent,
-    type: 'number',
-    label: 'maybe too many?',
-    name: 'Test number Input error',
-    state: 'error',
-};
-
 export const TelInput = Template.bind({});
 TelInput.args = {
-    onChange: testEvent,
     type: 'tel',
     label: 'whats your number?',
     name: 'Test tel Input',
 };
 
-export const TelInputConfirmed = Template.bind({});
-TelInputConfirmed.args = {
-    onChange: testEvent,
-    type: 'tel',
-    label: 'I like those digits',
-    name: 'Test tel Input confirmed',
-    state: 'confirmed',
-};
-
-export const TelInputError = Template.bind({});
-TelInputError.args = {
-    onChange: testEvent,
-    type: 'tel',
-    label: "This telephone number doesn't add up",
-    name: 'Test tel Input error',
-    state: 'error',
-};
-
 export const PasswordInput = Template.bind({});
 PasswordInput.args = {
-    onChange: testEvent,
     type: 'password',
     label: 'enter a password',
     name: 'Test Password Input',
 };
 
-export const PasswordInputConfirmed = Template.bind({});
-PasswordInputConfirmed.args = {
-    onChange: testEvent,
-    type: 'password',
-    label: 'good password',
-    name: 'Test Password Input confirmed',
-    state: 'confirmed',
+export const PrefixCopyableHidableActive = Template.bind({});
+PrefixCopyableHidableActive.args = {
+    hasCopyButton: true,
+    isHidable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    prefixIcon: iconTypes.server,
+    type: 'text',
 };
 
-export const PasswordInputError = Template.bind({});
-PasswordInputError.args = {
-    onChange: testEvent,
+export const PrefixCopyableHidden = Template.bind({});
+PrefixCopyableHidden.args = {
+    hasCopyButton: true,
+    isHidable: true,
+    inputHidden: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    prefixIcon: iconTypes.server,
+    type: 'text',
+    value: 'Test',
+};
+
+export const PrefixCopyable = Template.bind({});
+PrefixCopyable.args = {
+    hasCopyButton: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    prefixIcon: iconTypes.server,
+    type: 'text',
+};
+
+export const PrefixHidable = Template.bind({});
+PrefixHidable.args = {
+    isHidable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    prefixIcon: iconTypes.server,
+    type: 'text',
+};
+
+export const Prefix = Template.bind({});
+Prefix.args = {
+    label: 'Label text',
+    name: 'Test text Input',
+    prefixIcon: iconTypes.server,
+    type: 'text',
+};
+
+export const Copyable = Template.bind({});
+Copyable.args = {
+    hasCopyButton: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    type: 'text',
+};
+
+export const Hidable = Template.bind({});
+Hidable.args = {
+    isHidable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    type: 'text',
+};
+
+export const PrefixCopyableHidableDisabled = Template.bind({});
+PrefixCopyableHidableDisabled.args = {
+    hasCopyButton: true,
+    isHidable: true,
+    label: 'Label text',
+    name: 'Test text Input',
+    prefixIcon: iconTypes.server,
+    state: 'disabled',
+    type: 'text',
+};
+
+export const Validation = Template.bind({});
+Validation.args = {
+    label: 'This is required',
+    validation: { required: true },
+};
+
+export const ValidateNumberRange = Template.bind({});
+ValidateNumberRange.args = {
+    label: 'Enter a score between 1 & 5',
+    type: 'number',
+    validation: {
+        numberMin: 1,
+        numberMax: 5,
+    },
+};
+
+export const ValidateValueLength = Template.bind({});
+ValidateValueLength.args = {
+    label: 'Between 8 and 16 characters',
     type: 'password',
-    label: 'bad password',
-    name: 'Test Password Input error',
-    state: 'error',
+    validation: {
+        characterMaxLength: 16,
+        characterMinLength: 8,
+    },
+};
+
+export const ValidateRegExp = Template.bind({});
+ValidateRegExp.args = {
+    label: 'Valid email only',
+    type: 'email',
+    validation: {
+        regExp: validateRegExp.email,
+        regExpInvalidMessage: 'That is not a valid email address',
+    },
 };

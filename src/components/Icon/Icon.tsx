@@ -81,6 +81,8 @@ const Icon: React.FC<IconProps> = ({
                 return collection?.eyeClosedIcon(fill, size, style);
             case 'file':
                 return collection?.fileIcon(fill, size, style);
+            case 'github':
+                return collection?.githubIcon(fill, size, style);
             case 'grid':
                 return collection?.gridIcon(fill, size, style);
             case 'help circle':
@@ -131,6 +133,8 @@ const Icon: React.FC<IconProps> = ({
                 return collection?.plusIcon(fill, size, style);
             case 'pulse':
                 return collection?.pulseIcon(fill, size, style);
+            case 'reddit':
+                return collection?.redditIcon(fill, size, style);
             case 'reload':
                 return collection?.reloadIcon(fill, size, style);
             case 'search':
@@ -141,12 +145,16 @@ const Icon: React.FC<IconProps> = ({
                 return collection?.starIcon(fill, size, style);
             case 'stars':
                 return collection?.starsIcon(fill, size, style);
+            case 'telegram':
+                return collection?.telegramIcon(fill, size, style);
             case 'testnet':
                 return collection?.testnetIcon(fill, size, style);
             case 'triangle down':
                 return collection?.triangleDownIcon(fill, size, style);
             case 'triangle up':
                 return collection?.triangleUpIcon(fill, size, style);
+            case 'twitter':
+                return collection?.twitterIcon(fill, size, style);
             case 'update':
                 return collection?.updateIcon(fill, size, style);
             case 'user':

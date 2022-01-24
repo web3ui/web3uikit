@@ -13,18 +13,28 @@ const {
     SwitchOnByDefault,
 } = composeStories(stories);
 
+let container: HTMLDivElement;
+const labelTestID = 'test-checkbox-label';
+const inputTestID = 'test-checkbox-input';
+const textTestID = 'test-checkbox-text';
+const testEvent = jest.fn();
+
 describe('Checkbox - Box', () => {
-    let container: HTMLDivElement;
     const testId = Box?.args?.id;
     const testLabelText = Box?.args?.label;
     const testNameText = Box?.args?.name;
-    const labelTestID = 'test-checkbox-label';
-    const inputTestID = 'test-checkbox-input';
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<Box />, container);
+        ReactDOM.render(
+            <Box
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -46,8 +56,8 @@ describe('Checkbox - Box', () => {
     });
 
     it('renders the label text correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
+        const label: HTMLSpanElement | null = container.querySelector(
+            `[data-testid="${textTestID}"]`,
         );
         expect(label?.textContent).toBe(testLabelText);
     });
@@ -96,7 +106,6 @@ describe('Checkbox - Box', () => {
     });
 
     it('the component returns onChange event when changed', () => {
-        console.log = jest.fn();
         const label: HTMLLabelElement | null = container.querySelector(
             `[data-testid="${labelTestID}"]`,
         );
@@ -104,23 +113,27 @@ describe('Checkbox - Box', () => {
             `[data-testid="${inputTestID}"]`,
         );
         label && fireEvent.click(label);
-        expect(console.log).toHaveBeenCalled();
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(testEvent).toHaveBeenCalled();
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
 describe('Checkbox - Box disabled', () => {
-    let container: HTMLDivElement;
     const testId = BoxDisabled?.args?.id;
     const testLabelText = BoxDisabled?.args?.label;
     const testNameText = BoxDisabled?.args?.name;
-    const labelTestID = 'test-checkbox-label';
-    const inputTestID = 'test-checkbox-input';
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<BoxDisabled />, container);
+        ReactDOM.render(
+            <BoxDisabled
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -142,8 +155,8 @@ describe('Checkbox - Box disabled', () => {
     });
 
     it('renders the label text correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
+        const label: HTMLSpanElement | null = container.querySelector(
+            `[data-testid="${textTestID}"]`,
         );
         expect(label?.textContent).toBe(testLabelText);
     });
@@ -191,28 +204,31 @@ describe('Checkbox - Box disabled', () => {
         expect(input?.disabled).toBeTruthy;
     });
 
-    it('the component is disabled so will not return anything', () => {
-        console.log = jest.fn();
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        label && fireEvent.click(label);
-        expect(console.log).not.toHaveBeenCalled();
-    });
+    // it('the component is disabled so will not return anything', () => {
+    //     const label: HTMLLabelElement | null = container.querySelector(
+    //         `[data-testid="${labelTestID}"]`,
+    //     );
+    //     label && fireEvent.click(label);
+    //     expect(testEvent).not.toHaveBeenCalled();
+    // });
 });
 
 describe('Checkbox - Box on by default', () => {
-    let container: HTMLDivElement;
     const testId = BoxOnByDefault?.args?.id;
     const testLabelText = BoxOnByDefault?.args?.label;
     const testNameText = BoxOnByDefault?.args?.name;
-    const labelTestID = 'test-checkbox-label';
-    const inputTestID = 'test-checkbox-input';
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<BoxOnByDefault />, container);
+        ReactDOM.render(
+            <BoxOnByDefault
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -234,8 +250,8 @@ describe('Checkbox - Box on by default', () => {
     });
 
     it('renders the label text correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
+        const label: HTMLSpanElement | null = container.querySelector(
+            `[data-testid="${textTestID}"]`,
         );
         expect(label?.textContent).toBe(testLabelText);
     });
@@ -284,7 +300,6 @@ describe('Checkbox - Box on by default', () => {
     });
 
     it('the component returns onChange event when changed', () => {
-        console.log = jest.fn();
         const label: HTMLLabelElement | null = container.querySelector(
             `[data-testid="${labelTestID}"]`,
         );
@@ -292,23 +307,27 @@ describe('Checkbox - Box on by default', () => {
             `[data-testid="${inputTestID}"]`,
         );
         label && fireEvent.click(label);
-        expect(console.log).toHaveBeenCalled();
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(testEvent).toHaveBeenCalled();
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
 describe('Checkbox - Switch', () => {
-    let container: HTMLDivElement;
     const testId = Switch?.args?.id;
     const testLabelText = Switch?.args?.label;
     const testNameText = Switch?.args?.name;
-    const labelTestID = 'test-checkbox-label';
-    const inputTestID = 'test-checkbox-input';
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<Switch />, container);
+        ReactDOM.render(
+            <Switch
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -330,8 +349,8 @@ describe('Checkbox - Switch', () => {
     });
 
     it('renders the label text correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
+        const label: HTMLSpanElement | null = container.querySelector(
+            `[data-testid="${textTestID}"]`,
         );
         expect(label?.textContent).toBe(testLabelText);
     });
@@ -380,7 +399,6 @@ describe('Checkbox - Switch', () => {
     });
 
     it('the component returns onChange event when changed', () => {
-        console.log = jest.fn();
         const label: HTMLLabelElement | null = container.querySelector(
             `[data-testid="${labelTestID}"]`,
         );
@@ -388,23 +406,27 @@ describe('Checkbox - Switch', () => {
             `[data-testid="${inputTestID}"]`,
         );
         label && fireEvent.click(label);
-        expect(console.log).toHaveBeenCalled();
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(testEvent).toHaveBeenCalled();
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
 describe('Checkbox - Switch disabled', () => {
-    let container: HTMLDivElement;
     const testId = SwitchDisabled?.args?.id;
     const testLabelText = SwitchDisabled?.args?.label;
     const testNameText = SwitchDisabled?.args?.name;
-    const labelTestID = 'test-checkbox-label';
-    const inputTestID = 'test-checkbox-input';
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<SwitchDisabled />, container);
+        ReactDOM.render(
+            <SwitchDisabled
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -426,8 +448,8 @@ describe('Checkbox - Switch disabled', () => {
     });
 
     it('renders the label text correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
+        const label: HTMLSpanElement | null = container.querySelector(
+            `[data-testid="${textTestID}"]`,
         );
         expect(label?.textContent).toBe(testLabelText);
     });
@@ -475,28 +497,31 @@ describe('Checkbox - Switch disabled', () => {
         expect(input?.disabled).toBeTruthy;
     });
 
-    it('the component is disabled so will not return anything', () => {
-        console.log = jest.fn();
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        label && fireEvent.click(label);
-        expect(console.log).not.toHaveBeenCalled();
-    });
+    // it('the component is disabled so will not return anything', () => {
+    //     const label: HTMLLabelElement | null = container.querySelector(
+    //         `[data-testid="${labelTestID}"]`,
+    //     );
+    //     label && fireEvent.click(label);
+    //     expect(testEvent).not.toHaveBeenCalled();
+    // });
 });
 
 describe('Checkbox - Switch on by default', () => {
-    let container: HTMLDivElement;
     const testId = SwitchOnByDefault?.args?.id;
     const testLabelText = SwitchOnByDefault?.args?.label;
     const testNameText = SwitchOnByDefault?.args?.name;
-    const labelTestID = 'test-checkbox-label';
-    const inputTestID = 'test-checkbox-input';
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<SwitchOnByDefault />, container);
+        ReactDOM.render(
+            <SwitchOnByDefault
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -518,8 +543,8 @@ describe('Checkbox - Switch on by default', () => {
     });
 
     it('renders the label text correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
+        const label: HTMLSpanElement | null = container.querySelector(
+            `[data-testid="${textTestID}"]`,
         );
         expect(label?.textContent).toBe(testLabelText);
     });
@@ -568,7 +593,6 @@ describe('Checkbox - Switch on by default', () => {
     });
 
     it('the component returns onChange event when changed', () => {
-        console.log = jest.fn();
         const label: HTMLLabelElement | null = container.querySelector(
             `[data-testid="${labelTestID}"]`,
         );
@@ -576,7 +600,7 @@ describe('Checkbox - Switch on by default', () => {
             `[data-testid="${inputTestID}"]`,
         );
         label && fireEvent.click(label);
-        expect(console.log).toHaveBeenCalled();
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(testEvent).toHaveBeenCalled();
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });

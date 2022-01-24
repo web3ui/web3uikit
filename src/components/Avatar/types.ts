@@ -9,6 +9,11 @@ export interface AvatarProps {
     theme: Theme;
 
     /**
+     * Is Avatar Rounded
+     */
+    isRounded?: boolean;
+
+    /**
      * The initial letters if Theme is `letters`
      */
     text?: string;

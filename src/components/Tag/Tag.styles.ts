@@ -6,6 +6,7 @@ import resetCSS from '../../styles/reset';
 const initialStyles = css`
     ${resetCSS}
     ${fonts.text}
+    ${fonts.textBold700};
     align-items: center;
     border-radius: 20px;
     font-size: 14px;
@@ -13,7 +14,7 @@ const initialStyles = css`
     overflow: hidden;
     padding: 2px 20px;
     text-align: center;
-    width: fit-content;
+    width: 100%;
 `;
 
 const regular = css`
@@ -23,7 +24,6 @@ const regular = css`
 const activeStatus = css`
     background: ${color.greenForestLight};
     color: ${color.green};
-
     svg {
         padding-right: 5px;
     }
@@ -51,14 +51,29 @@ const coloredGreen = css`
     color: ${color.green};
 `;
 
+const coloredGreenDark = css`
+    background: ${color.greenForestDark};
+    color: ${color.white};
+`;
+
 const coloredRed = css`
     background: ${color.redLight};
     color: ${color.red};
 `;
 
-const coloredGray = css`
+const coloredRedDark = css`
+    background: ${color.redDark};
+    color: ${color.white};
+`;
+
+const coloredGrey = css`
     background: ${color.blueSkyLight};
     color: ${color.blueDark};
+`;
+
+const coloredGrayDark = css`
+    background: ${color.grey};
+    color: ${color.white};
 `;
 
 const coloredYellow = css`
@@ -66,9 +81,19 @@ const coloredYellow = css`
     color: ${color.yellow};
 `;
 
+const coloredYellowDark = css`
+    background: ${color.yellowDark};
+    color: ${color.white};
+`;
+
 const coloredBlue = css`
     background: ${color.blueCloud};
     color: ${color.blueSkyDark};
+`;
+
+const coloredBlueDark = css`
+    background: ${color.blueCloudDark};
+    color: ${color.white};
 `;
 
 const coloredPurple = css`
@@ -76,20 +101,37 @@ const coloredPurple = css`
     color: ${color.purple};
 `;
 
+const coloredPurpleDark = css`
+    background: ${color.purpleDark};
+    color: ${color.white};
+`;
+
 const coloredPink = css`
     background: ${color.pinkLight};
     color: ${color.pink};
 `;
 
+const coloredPinkDark = css`
+    background: ${color.pinkDark};
+    color: ${color.white};
+`;
+
 export const tagStyles = {
     activeStatus,
     coloredBlue,
-    coloredGray,
+    coloredBlueDark,
+    coloredGrey,
+    coloredGrayDark,
     coloredGreen,
+    coloredGreenDark,
     coloredPink,
+    coloredPinkDark,
     coloredPurple,
+    coloredPurpleDark,
     coloredRed,
+    coloredRedDark,
     coloredYellow,
+    coloredYellowDark,
     discount,
     inactiveStatus,
     initialStyles,

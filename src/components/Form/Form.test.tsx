@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Form.stories';
-// import { fireEvent } from "@testing-library/react";
 
 const { DemoForm } = composeStories(stories);
 let container: HTMLDivElement;

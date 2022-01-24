@@ -19,7 +19,13 @@ const RadioButtonStyled = styled.input`
     ${inputStyles}
 `;
 
-const Radios: React.FC<RadiosProps> = ({ id, items, onChange, title }) => {
+const Radios: React.FC<RadiosProps> = ({
+    id,
+    items,
+    onChange,
+    validation,
+    title,
+}) => {
     const formattedID = id.replace(/\s/g, '-');
 
     return (
@@ -35,6 +41,7 @@ const Radios: React.FC<RadiosProps> = ({ id, items, onChange, title }) => {
                         id={`${formattedID}_${i}`}
                         name={`${formattedID}_group`}
                         onChange={onChange}
+                        required={validation?.required}
                         type="radio"
                         value={value}
                     />

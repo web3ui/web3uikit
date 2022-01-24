@@ -12,7 +12,7 @@ type TStyleProps = Pick<LinkToProps, 'iconLayout'>;
 export const LinkStyled = styled.a`
     ${resetCSS}
     ${fonts.text}
-  align-items: center;
+    align-items: center;
     color: ${color.blue};
     display: inline-block;
     width: fit-content;
@@ -35,8 +35,3 @@ export const FlexSpanStyled = styled.span<TStyleProps>`
             p.iconLayout === 'leading' ? '0 4px 0 0' : '0 0 0 4px'};
     }
 `;
-
-export const LinkToStyles = {
-    LinkStyled,
-    FlexSpanStyled,
-};

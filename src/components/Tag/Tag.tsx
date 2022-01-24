@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { tagStyles } from './Tag.styles';
 import { TagProps } from '.';
+import type { Tone } from './types';
 
-const getTheme = (theme: string, active: boolean | undefined) => {
+const getTheme = (theme: string, active?: boolean) => {
     switch (theme) {
         case 'status':
             return active ? tagStyles.activeStatus : tagStyles.inactiveStatus;
@@ -14,29 +15,45 @@ const getTheme = (theme: string, active: boolean | undefined) => {
     }
 };
 
-const getColors = (color: string | undefined) => {
+const getColors = (color?: string, tone?: Tone) => {
     switch (color) {
         case 'green':
-            return tagStyles.coloredGreen;
+            return tone === 'light'
+                ? tagStyles.coloredGreen
+                : tagStyles.coloredGreenDark;
         case 'red':
-            return tagStyles.coloredRed;
+            return tone === 'light'
+                ? tagStyles.coloredRed
+                : tagStyles.coloredRedDark;
         case 'yellow':
-            return tagStyles.coloredYellow;
+            return tone === 'light'
+                ? tagStyles.coloredYellow
+                : tagStyles.coloredYellowDark;
         case 'blue':
-            return tagStyles.coloredBlue;
+            return tone === 'light'
+                ? tagStyles.coloredBlue
+                : tagStyles.coloredBlueDark;
         case 'purple':
-            return tagStyles.coloredPurple;
+            return tone === 'light'
+                ? tagStyles.coloredPurple
+                : tagStyles.coloredPurpleDark;
         case 'pink':
-            return tagStyles.coloredPink;
+            return tone === 'light'
+                ? tagStyles.coloredPink
+                : tagStyles.coloredPinkDark;
+        case 'grey':
+            return tone === 'light'
+                ? tagStyles.coloredGrey
+                : tagStyles.coloredGrayDark;
         default:
-            return tagStyles.coloredGray;
+            return tagStyles.coloredGrey;
     }
 };
 
-const TagStyled = styled.div<Pick<TagProps, 'active'>>`
+const TagStyled = styled.div<Pick<TagProps, 'active' | 'tone'>>`
     ${tagStyles.initialStyles}
     ${(p) => getTheme(p.theme, p.active)}
-  ${(p) => p.theme !== 'status' && p.color && getColors(p.color)}
+    ${(p) => p.theme !== 'status' && p.color && getColors(p.color, p.tone)}
 `;
 
 const Tag: React.FC<TagProps> = ({
@@ -45,6 +62,7 @@ const Tag: React.FC<TagProps> = ({
     color,
     active = false,
     theme = 'regular',
+    tone = 'light',
 }: TagProps) => {
     return (
         <TagStyled
@@ -53,6 +71,7 @@ const Tag: React.FC<TagProps> = ({
             theme={theme}
             color={color}
             active={active}
+            tone={tone}
         >
             {theme === 'status' && active && (
                 <svg

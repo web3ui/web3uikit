@@ -5,29 +5,34 @@ import { Input } from '../Input';
 import { Checkbox } from '../Checkbox';
 import { Radios } from '../Radios';
 import { TextArea } from '../TextArea';
-import { TitleStyled, SubTitleStyled, FormStyled } from './Form.styles';
-
-// TO @bill
-// validation
-// test returned data
-// best way to show data in Storybook & for end user
+import { H3Styled, H4Styled, FormStyled } from './Form.styles';
 
 const Form: React.FC<FormProps> = ({
+    buttonConfig,
     data,
-    id = String(Date.now()),
+    id,
+    onSubmit,
     title,
 }) => {
     const formSubmitted = (event: React.SyntheticEvent) => {
         event.preventDefault();
         event.stopPropagation();
-        console.log(data[5].selected);
 
-        const dataReturned = data.map((item) => ({
-            name: item.name,
-            value: item.selected || item.value,
-        }));
+        const form = event.target as typeof event.target & HTMLFormElement;
 
-        console.log(dataReturned);
+        if (form.checkValidity()) {
+            const dataReturned = data.map((item) => ({
+                inputName: item.name,
+                inputResult: item.selected || item.value,
+            }));
+            onSubmit &&
+                onSubmit({
+                    id: id,
+                    data: dataReturned,
+                });
+        } else {
+            form.reportValidity();
+        }
     };
 
     const optionAdded = (index: number, opt: string, isRadio: boolean) => {
@@ -66,6 +71,16 @@ const Form: React.FC<FormProps> = ({
             name={input.name}
             onChange={(e) => (data[index].value = e.target.value)}
             type={type}
+            width={input.inputWidth}
+            validation={{
+                characterMaxLength: input.validation?.characterMaxLength,
+                characterMinLength: input.validation?.characterMinLength,
+                numberMax: input.validation?.numberMax,
+                numberMin: input.validation?.numberMin,
+                regExp: input.validation?.regExp,
+                regExpInvalidMessage: input.validation?.regExpInvalidMessage,
+                required: input.validation?.required,
+            }}
         />
     );
 
@@ -75,7 +90,7 @@ const Form: React.FC<FormProps> = ({
         index: number,
     ) => (
         <Fragment key={`cb-group_${index}`}>
-            <SubTitleStyled>{input.value}</SubTitleStyled>
+            <H4Styled>{input.value}</H4Styled>
             {input.options?.map((opt, i) => (
                 <Checkbox
                     key={`cb_${index}-${i}`}
@@ -83,6 +98,7 @@ const Form: React.FC<FormProps> = ({
                     layout={layout}
                     name={input.name}
                     onChange={(e) => optionToggled(e, index, opt)}
+                    validation={{ required: input.validation?.required }}
                 />
             ))}
         </Fragment>
@@ -90,23 +106,30 @@ const Form: React.FC<FormProps> = ({
 
     const renderRadioGroup = (input: DataInput, index: number) => (
         <Fragment key={`${input.name}_${index}`}>
-            <SubTitleStyled>{input.value}</SubTitleStyled>
+            <H4Styled>{input.value}</H4Styled>
             <Radios
                 id={`${input.name}_${index}`}
                 items={input.options || []}
                 onChange={(e) => optionToggled(e, index, e.target.value)}
+                validation={{ required: input.validation?.required }}
             />
         </Fragment>
     );
 
     const renderTextArea = (input: DataInput, index: number) => (
         <Fragment key={`${input.name}_${index}`}>
-            <SubTitleStyled>{input.value}</SubTitleStyled>
+            <H4Styled>{input.value}</H4Styled>
             <TextArea
                 id={`textarea_${index}`}
                 name={input.name}
-                value={input.value}
                 onChange={(e) => (data[index].value = e.target.value)}
+                value={input.value}
+                width={input.inputWidth}
+                validation={{
+                    characterMaxLength: input.validation?.characterMaxLength,
+                    characterMinLength: input.validation?.characterMinLength,
+                    required: input.validation?.required,
+                }}
             />
         </Fragment>
     );
@@ -139,7 +162,7 @@ const Form: React.FC<FormProps> = ({
     return (
         <FormStyled onSubmit={formSubmitted} id={id} data-testid="test-form">
             {title && (
-                <TitleStyled data-testid="test-form-title">{title}</TitleStyled>
+                <H3Styled data-testid="test-form-title">{title}</H3Styled>
             )}
 
             {data.map((input, i) => (
@@ -153,9 +176,17 @@ const Form: React.FC<FormProps> = ({
             ))}
 
             <Button
-                theme="primary"
+                color={buttonConfig?.color}
+                disabled={buttonConfig?.disabled}
+                icon={buttonConfig?.icon}
+                iconLayout={buttonConfig?.iconLayout}
+                id={`form-${id}-submit`}
+                isFullWidth={buttonConfig?.isFullWidth}
+                onClick={buttonConfig?.onClick}
+                size={buttonConfig?.size}
+                text={buttonConfig?.text}
+                theme={buttonConfig?.theme}
                 type="submit"
-                onClick={(e) => e.preventDefault}
             >
                 Submit
             </Button>

@@ -1,28 +1,41 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 
-export const olStyle = css`
-    ${resetCSS}
+import { Link } from 'react-router-dom';
+
+const olStyle = css`
+    ${resetCSS};
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     list-style: none;
 `;
-export const navStyle = css`
-    ${resetCSS}
+const navStyle = css`
+    ${resetCSS};
 `;
 
-export const liStyle = css`
-    ${resetCSS}
-    ${fonts.semiBold}
-  display: list-item;
-    user-select: none;
+export const separatorStyle = css`
+    ${resetCSS};
+    color: ${color.greyIcons};
     display: flex;
+    margin: 0 2px;
+    user-select: none;
+`;
+
+export const NavStyled = styled.nav`
+    ${navStyle};
+    color: ${(p) => p?.color || color.grey};
+`;
+
+export const ListStyled = styled.ol`
+    ${olStyle};
+`;
+
+export const ListItemStyled = styled.li`
     align-items: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    display: flex;
 
     svg:first-child {
         margin-right: 5px;
@@ -31,16 +44,20 @@ export const liStyle = css`
     &:last-child {
         pointer-events: none;
     }
+`;
 
+export const Breadcrumb = styled(Link)`
+    ${fonts.semiBold};
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    user-select: none;
     &:hover {
         color: ${color.blueDark};
     }
 `;
 
-export const separatorStyle = css`
-    ${resetCSS}
-    display: flex;
-    user-select: none;
-    color: ${color.greyIcons};
-    margin: 0 2px;
+export const BreadcrumbsSeparator = styled.li`
+    ${separatorStyle};
 `;

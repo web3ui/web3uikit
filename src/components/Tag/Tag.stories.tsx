@@ -44,10 +44,10 @@ Red.args = {
     color: 'red',
 };
 
-export const Gray = Template.bind({});
-Gray.args = {
-    text: 'Gray',
-    color: 'gray',
+export const Grey = Template.bind({});
+Grey.args = {
+    text: 'Grey',
+    color: 'grey',
 };
 
 export const Yellow = Template.bind({});

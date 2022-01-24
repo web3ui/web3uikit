@@ -12,6 +12,7 @@ const testFieldsetId = 'test-fieldset';
 const testLegendId = 'test-legend';
 const testLabelId = 'test-label';
 const testInputId = 'test-input';
+const testEvent = jest.fn();
 
 describe('Radios - RadioGroup', () => {
     const testTitle = RadioGroup?.args?.title;
@@ -21,7 +22,14 @@ describe('Radios - RadioGroup', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<RadioGroup />, container);
+        ReactDOM.render(
+            <RadioGroup
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -86,7 +94,6 @@ describe('Radios - RadioGroup', () => {
     });
 
     it('When the label is clicked the checked input is returned', () => {
-        console.log = jest.fn();
         const element: HTMLLabelElement | null = container.querySelector(
             `[data-testid="${testLabelId}-0"]`,
         );
@@ -96,7 +103,7 @@ describe('Radios - RadioGroup', () => {
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}-0"]`,
         );
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
@@ -109,7 +116,14 @@ describe('Radios - RadioGroupWithoutTitle', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<RadioGroupWithoutTitle />, container);
+        ReactDOM.render(
+            <RadioGroupWithoutTitle
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -173,7 +187,6 @@ describe('Radios - RadioGroupWithoutTitle', () => {
     });
 
     it('When the label is clicked the checked input is returned', () => {
-        console.log = jest.fn();
         const element: HTMLLabelElement | null = container.querySelector(
             `[data-testid="${testLabelId}-0"]`,
         );
@@ -183,7 +196,7 @@ describe('Radios - RadioGroupWithoutTitle', () => {
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}-0"]`,
         );
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
@@ -197,7 +210,14 @@ describe('Radios - RadiosWithLongText', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<RadiosWithLongText />, container);
+        ReactDOM.render(
+            <RadiosWithLongText
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -262,7 +282,6 @@ describe('Radios - RadiosWithLongText', () => {
     });
 
     it('When the label is clicked the checked input is returned', () => {
-        console.log = jest.fn();
         const element: HTMLLabelElement | null = container.querySelector(
             `[data-testid="${testLabelId}-0"]`,
         );
@@ -272,6 +291,6 @@ describe('Radios - RadiosWithLongText', () => {
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}-0"]`,
         );
-        expect(console.log).toHaveBeenCalledWith(input);
+        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });

@@ -4,13 +4,19 @@ import color from '../../styles/colors';
 import styled from 'styled-components';
 import { TextAreaProps } from './types';
 
-export const TextAreaWrapper = styled.div<Pick<TextAreaProps, 'state'>>`
-    position: relative;
-    display: inline-block;
+type TStyleProps = Pick<TextAreaProps, 'state' | 'width'>;
+
+export const TextAreaWrapper = styled.div<TStyleProps>`
+    ${resetCSS};
+    background-color: ${color.white};
     border-radius: 16px;
     border: 1px solid ${color.greyLight};
+    display: inline-block;
+    max-width: 100%;
     padding: 12px;
+    position: relative;
     transition: all 0.1s linear;
+    width: ${(p) => (p.width ? p.width : '294px')};
 
     &:hover {
         border-color: ${(p) =>
@@ -71,15 +77,16 @@ export const LabelStyled = styled.label`
     transition: all 0.1s ease-out;
 `;
 
-export const TextAreaStyled = styled.textarea`
+export const TextAreaStyled = styled.textarea<TStyleProps>`
     ${resetCSS}
     ${fonts.text}
     background-color: transparent;
     display: block;
+    max-width: 100%;
     min-height: 128px;
-    width: 294px;
     overflow: hidden;
     padding: 2px;
+    width: 100%;
 
     ::-webkit-resizer {
         visibility: hidden;

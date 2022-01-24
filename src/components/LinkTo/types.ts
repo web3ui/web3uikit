@@ -1,6 +1,9 @@
 export const layoutState = ['leading', 'trailing'] as const;
 export type TLayoutState = typeof layoutState[number];
 
+export const typeState = ['email', 'external'] as const;
+export type TTypeState = typeof typeState[number];
+
 export interface LinkToProps {
     /**
      * what is the address you are linking to
@@ -15,7 +18,7 @@ export interface LinkToProps {
     /**
      * set to an email link or a link to another website
      */
-    type: 'email' | 'external';
+    type: TTypeState;
 
     /**
      * set the position of the icon, or icon only

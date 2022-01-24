@@ -1,4 +1,4 @@
-import ReactDOM, { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import React from 'react';
 import { fireEvent, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';

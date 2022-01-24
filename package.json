@@ -1,85 +1,98 @@
 {
-	"name": "web3uikit",
-	"version": "0.1.2",
-	"repository": "https://github.com/web3ui/web3uikit",
-	"main": "dist/index.js",
-	"typings": "dist/index.d.ts",
-	"files": [
-		"dist",
-		"src"
-	],
-	"engines": {
-		"node": ">=10"
-	},
-	"scripts": {
-		"start": "tsdx watch",
-		"build": "tsdx build",
-		"test": "tsdx test",
-		"lint": "tsdx lint",
-		"prepare": "tsdx build",
-		"size": "size-limit",
-		"analyze": "size-limit --why",
-		"storybook": "start-storybook -p 6006",
-		"build-storybook": "build-storybook",
-		"prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx}\""
-	},
-	"peerDependencies": {
-		"react": ">=16"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "tsdx lint"
-		}
-	},
-	"prettier": {
-		"printWidth": 80,
-		"semi": true,
-		"singleQuote": true,
-		"trailingComma": "es5"
-	},
-	"module": "dist/web3uikit.esm.js",
-	"size-limit": [
-		{
-			"path": "dist/web3uikit.cjs.production.min.js"
-		},
-		{
-			"path": "dist/web3uikit.esm.js"
-		}
-	],
-	"devDependencies": {
-		"@babel/core": "^7.16.5",
-		"@size-limit/preset-small-lib": "^7.0.5",
-		"@storybook/addon-actions": "^6.4.9",
-		"@storybook/addon-essentials": "^6.4.9",
-		"@storybook/addon-info": "^5.3.21",
-		"@storybook/addon-links": "^6.4.9",
-		"@storybook/addons": "^6.4.9",
-		"@storybook/react": "^6.4.9",
-		"@storybook/testing-react": "^1.2.2",
-		"@testing-library/jest-dom": "^5.16.1",
-		"@testing-library/react": "^12.1.2",
-		"@types/react": "^17.0.38",
-		"@types/react-dom": "^17.0.11",
-		"@types/react-test-renderer": "^17.0.1",
-		"@types/styled-components": "^5.1.19",
-		"babel-loader": "^8.2.3",
-		"cssjson": "^2.1.3",
-		"eslint": "^7.32.0",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-react": "^7.26.1",
-		"eslint-plugin-unused-imports": "^2.0.0",
-		"husky": "^7.0.4",
-		"jest-styled-components": "^7.0.8",
-		"jest-svg-transformer": "^1.0.0",
-		"react": "^17.0.2",
-		"react-dom": "^17.0.2",
-		"react-is": "^17.0.2",
-		"react-test-renderer": "^17.0.2",
-		"rollup-plugin-inline-svg": "^2.0.0",
-		"size-limit": "^7.0.5",
-		"styled-components": "^5.3.3",
-		"tsdx": "^0.14.1",
-		"tslib": "^2.3.1",
-		"typescript": "^4.5.4"
-	}
+    "name": "web3uikit",
+    "version": "0.1.26",
+    "repository": "https://github.com/web3ui/web3uikit",
+    "homepage": "https://web3ui.github.io/web3uikit/",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "engines": {
+        "node": ">=10"
+    },
+    "scripts": {
+        "start": "tsdx watch",
+        "build": "tsdx build",
+        "test": "tsdx test",
+        "lint": "eslint .",
+        "size": "size-limit",
+        "analyze": "size-limit --why",
+        "storybook": "start-storybook -p 6006",
+        "build-storybook": "build-storybook",
+        "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx,json}\"",
+        "deploy:docs": "gh-pages -d storybook-static"
+    },
+    "peerDependencies": {
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2"
+    },
+    "dependencies": {
+        "moralis": "^1.1.0",
+        "react-blockies": "^1.4.1",
+        "react-moralis": "^1.1.0",
+        "styled-components": "^5.3.3"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "tsdx lint && npm prettier"
+        }
+    },
+    "publishConfig": {
+        "tag": "latest"
+    },
+    "prettier": {
+        "printWidth": 80,
+        "semi": true,
+        "singleQuote": true,
+        "trailingComma": "es5"
+    },
+    "module": "dist/web3uikit.esm.js",
+    "size-limit": [
+        {
+            "path": "dist/web3uikit.cjs.production.min.js"
+        },
+        {
+            "path": "dist/web3uikit.esm.js"
+        }
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.16.5",
+        "@size-limit/preset-small-lib": "^7.0.5",
+        "@storybook/addon-actions": "^6.4.9",
+        "@storybook/addon-essentials": "^6.4.9",
+        "@storybook/addon-info": "^5.3.21",
+        "@storybook/addon-links": "^6.4.9",
+        "@storybook/addons": "^6.4.9",
+        "@storybook/react": "^6.4.9",
+        "@storybook/testing-react": "^1.2.2",
+        "@testing-library/jest-dom": "^5.16.1",
+        "@testing-library/react": "^12.1.2",
+        "@types/blockies": "^0.0.2",
+        "@types/react": "^17.0.38",
+        "@types/react-blockies": "^1.4.1",
+        "@types/react-dom": "^17.0.11",
+        "@types/react-test-renderer": "^17.0.1",
+        "@types/styled-components": "^5.1.19",
+        "@typescript-eslint/eslint-plugin": "^5.9.0",
+        "@typescript-eslint/parser": "^5.9.0",
+        "babel-loader": "^8.2.3",
+        "cssjson": "^2.1.3",
+        "eslint": "^8.6.0",
+        "eslint-config-google": "^0.14.0",
+        "husky": "^7.0.4",
+        "jest-styled-components": "^7.0.8",
+        "jest-svg-transformer": "^1.0.0",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-is": "^17.0.2",
+        "react-test-renderer": "^17.0.2",
+        "rollup-plugin-inline-svg": "^2.0.0",
+        "size-limit": "^7.0.5",
+        "styled-components": "^5.3.3",
+        "tsdx": "^0.14.1",
+        "tslib": "^2.3.1",
+        "typescript": "^4.5.4"
+    }
 }

@@ -6,6 +6,7 @@ import resetCSS from '../../styles/reset';
 const initialStyles = css`
     ${resetCSS}
     ${fonts.text}
+    ${fonts.textBold700};
     align-items: center;
     border-radius: 20px;
     font-size: 14px;
@@ -13,7 +14,7 @@ const initialStyles = css`
     overflow: hidden;
     padding: 2px 20px;
     text-align: center;
-    width: fit-content;
+    width: 100%;
 `;
 
 const regular = css`

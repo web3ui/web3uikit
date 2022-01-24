@@ -92,4 +92,9 @@ export type DataInput = {
      * You can validate your inputs
      */
     validation?: ValidateInput;
+
+    /**
+     * You can set an input width
+     */
+    inputWidth?: string;
 };

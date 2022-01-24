@@ -69,7 +69,6 @@ export interface InputProps {
     /**
      * input width
      */
-
     width?: string;
 
     /**

@@ -20,11 +20,13 @@ const RadioButtonStyled = styled.input`
 `;
 
 const Radios: React.FC<RadiosProps> = ({
+    checked,
     id,
     items,
     onChange,
-    validation,
+    setWhichIsChecked = 0,
     title,
+    validation,
 }) => {
     const formattedID = id.replace(/\s/g, '-');
 
@@ -37,6 +39,7 @@ const Radios: React.FC<RadiosProps> = ({
             {items.map((value, i) => (
                 <Fragment key={`${formattedID}_${i}`}>
                     <RadioButtonStyled
+                        checked={i === setWhichIsChecked && checked}
                         data-testid={`test-input-${i}`}
                         id={`${formattedID}_${i}`}
                         name={`${formattedID}_group`}

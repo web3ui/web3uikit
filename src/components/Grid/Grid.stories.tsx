@@ -20,7 +20,7 @@ GridComponent.args = {
     colGap: 15,
     xs: 15,
     sm: 20,
-    md: 25,
+    md: 30,
     lg: 30,
     children: (
         <>
@@ -30,9 +30,9 @@ GridComponent.args = {
                 alignSelf="center"
                 breakpointsConfig={{
                     xs: 10,
-                    sm: 20,
-                    md: 20,
-                    lg: 30,
+                    sm: 10,
+                    md: 15,
+                    lg: 15,
                 }}
             >
                 <div
@@ -53,9 +53,9 @@ GridComponent.args = {
                 alignSelf="center"
                 breakpointsConfig={{
                     xs: 5,
-                    sm: 20,
-                    md: 20,
-                    lg: 30,
+                    sm: 10,
+                    md: 15,
+                    lg: 15,
                 }}
             >
                 <div

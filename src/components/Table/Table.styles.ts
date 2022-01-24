@@ -5,7 +5,7 @@ import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
 
 export const TableParent = styled.div`
-    padding: 11px;
+    padding: 11px 22px;
     border-radius: 10px;
     border: 2px solid transparent;
     border-radius: 20px;
@@ -74,8 +74,8 @@ export const TableGrid = styled.div.attrs((props: any) => ({
     ${fonts.text}
     display: grid;
     grid-template-columns: ${(props) => props.columns};
-    row-gap: 12px;
-    column-gap: 12px;
+    row-gap: 11px;
+    column-gap: 11px;
     overflow-x: auto;
 `;
 

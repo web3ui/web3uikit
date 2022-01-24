@@ -71,6 +71,7 @@ const Form: React.FC<FormProps> = ({
             name={input.name}
             onChange={(e) => (data[index].value = e.target.value)}
             type={type}
+            width={input.inputWidth}
             validation={{
                 characterMaxLength: input.validation?.characterMaxLength,
                 characterMinLength: input.validation?.characterMinLength,
@@ -121,8 +122,9 @@ const Form: React.FC<FormProps> = ({
             <TextArea
                 id={`textarea_${index}`}
                 name={input.name}
-                value={input.value}
                 onChange={(e) => (data[index].value = e.target.value)}
+                value={input.value}
+                width={input.inputWidth}
                 validation={{
                     characterMaxLength: input.validation?.characterMaxLength,
                     characterMinLength: input.validation?.characterMinLength,
@@ -180,7 +182,7 @@ const Form: React.FC<FormProps> = ({
                 iconLayout={buttonConfig?.iconLayout}
                 id={`form-${id}-submit`}
                 isFullWidth={buttonConfig?.isFullWidth}
-                onClick={buttonConfig.onClick}
+                onClick={buttonConfig?.onClick}
                 size={buttonConfig?.size}
                 text={buttonConfig?.text}
                 theme={buttonConfig?.theme}

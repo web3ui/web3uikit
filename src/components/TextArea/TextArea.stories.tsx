@@ -57,3 +57,11 @@ Confirmed.args = {
     state: 'confirmed',
     value: 'Test Value',
 };
+
+export const CustomWidth = Template.bind({});
+CustomWidth.args = {
+    label: 'Standard',
+    name: 'Test TextArea Default',
+    placeholder: 'Type here field',
+    width: '100%',
+};

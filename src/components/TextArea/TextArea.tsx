@@ -17,6 +17,7 @@ const TextArea: React.FC<TextAreaProps> = ({
     state,
     validation,
     value = '',
+    width,
 }: TextAreaProps) => {
     const [currentValue, setCurrentValue] = useState(value);
 
@@ -37,9 +38,10 @@ const TextArea: React.FC<TextAreaProps> = ({
 
     return (
         <TextAreaWrapper
-            state={state}
             className={currentValue.length > 0 ? 'filled' : 'empty'}
             data-testid="test-textarea-wrapper"
+            state={state}
+            width={width}
         >
             <Icon
                 svg={iconTypes.expand}

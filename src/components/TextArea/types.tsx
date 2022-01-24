@@ -47,6 +47,11 @@ export interface TextAreaProps {
     value?: string;
 
     /**
+     * you can pass a CSS value for the components width
+     */
+    width?: string;
+
+    /**
      * You can validate your textarea
      * characterMaxLength, characterMinLength, numberMax, numberMin, regExp, regExpInvalidMessage & required
      */

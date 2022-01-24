@@ -1,50 +1,67 @@
-import {CreditCardProps} from "./types";
-import React, {useState} from "react";
-import {CreditCardStyled, LastDigitsStyled, RemoveIcon, TextStyled} from "./CreditCard.styles";
-import {Radios} from "../Radios";
-import {Icon} from "../Icon";
-import colors from "../../styles/colors";
-import {iconTypes} from "../Icon/collection";
-import mastercard from "./Icons/mastercard";
-import visa from "./Icons/visa";
+import React, { useState } from 'react';
+import { Radios } from '../Radios';
+import { Icon } from '../Icon';
+import { iconTypes } from '../Icon/collection';
+import mastercard from './Icons/mastercard';
+import visa from './Icons/visa';
+import colors from '../../styles/colors';
+import { CreditCardProps } from './types';
+import {
+    DivStyledCreditCard,
+    DivStyledFlex,
+    DivStyledFlexText,
+    DivStyledRemove,
+    PStyledDigits,
+    PStyledText,
+} from './CreditCard.styles';
 
-const getBrand = (brand: "mastercard" | "visa") => {
+const getBrand = (brand: 'mastercard' | 'visa') => {
     switch (brand) {
-        case "mastercard":
+        case 'mastercard':
             return mastercard();
-        case "visa":
+        case 'visa':
             return visa();
     }
-}
+};
 
 const CreditCard: React.FC<CreditCardProps> = ({
-    id,
     expiresAt,
+    id,
     isExpired,
     lastDigits,
-    onRemove,
     name,
+    onRemove,
     type,
 }: CreditCardProps) => {
-    const [pressed, setPressed] = useState<boolean>(false)
+    const [pressed, setPressed] = useState<boolean>(false);
+
     return (
-        <CreditCardStyled isExpired={isExpired} onClick={() => setPressed(!pressed)} pressed={pressed}>
-            <div style={{display: "flex", justifyContent: "space-between", alignItems: "center"}}>
-                <Radios id={id || "radio-credit-card"} items={[""]} onChange={() => {}} />
-                <RemoveIcon onClick={onRemove}>
-                    <Icon size={20} svg={iconTypes.bin} fill={colors.red}/>
-                </RemoveIcon>
-            </div>
-            <LastDigitsStyled>{`•••• ${lastDigits}`}</LastDigitsStyled>
-            <div style={{display: 'flex', justifyContent: "space-between", alignItems: "center"}}>
-                <div style={{display: "flex", gap: "15px", color: "white"}}>
-                    <TextStyled>{name}</TextStyled>
-                    <TextStyled>{`${expiresAt.month} / ${expiresAt.year}`}</TextStyled>
-                </div>
+        <DivStyledCreditCard
+            isExpired={isExpired}
+            onClick={() => setPressed(!pressed)}
+            pressed={pressed}
+        >
+            <DivStyledFlex>
+                <Radios
+                    checked={pressed}
+                    id={id || 'radio-credit-card'}
+                    items={['']}
+                    onChange={() => setPressed(!pressed)}
+                />
+                <DivStyledRemove onClick={onRemove}>
+                    <Icon size={20} svg={iconTypes.bin} fill={colors.red} />
+                </DivStyledRemove>
+            </DivStyledFlex>
+            <PStyledDigits>{`•••• ${lastDigits}`}</PStyledDigits>
+            <DivStyledFlex>
+                <DivStyledFlexText>
+                    <PStyledText>{name}</PStyledText>
+                    <PStyledText>{`${expiresAt.month} / ${expiresAt.year}`}</PStyledText>
+                </DivStyledFlexText>
                 {getBrand(type)}
-            </div>
-        </CreditCardStyled>
-    )
-}
+            </DivStyledFlex>
+        </DivStyledCreditCard>
+    );
+};
 
 export default CreditCard;

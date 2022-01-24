@@ -17,7 +17,7 @@ const TextArea: React.FC<TextAreaProps> = ({
     state,
     validation,
     value = '',
-    width,
+    width = '300px',
 }: TextAreaProps) => {
     const [currentValue, setCurrentValue] = useState(value);
 

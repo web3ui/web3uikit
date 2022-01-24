@@ -26,3 +26,8 @@ export * from './components/Tabs';
 export * from './components/Tag';
 export * from './components/TextArea';
 export * from './components/Tooltip';
+export * from './components/NativeBalance';
+export * from './components/Blockie';
+export * from './components/ConnectButton';
+
+export * from './web3utils';

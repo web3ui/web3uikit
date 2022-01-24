@@ -1,6 +1,6 @@
 {
     "name": "web3uikit",
-    "version": "0.1.22",
+    "version": "0.1.23",
     "repository": "https://github.com/web3ui/web3uikit",
     "homepage": "https://web3ui.github.io/web3uikit/",
     "main": "dist/index.js",
@@ -29,6 +29,9 @@
         "react-dom": "^17.0.2"
     },
     "dependencies": {
+        "moralis": "^1.1.0",
+        "react-blockies": "^1.4.1",
+        "react-moralis": "^1.1.0",
         "styled-components": "^5.3.3"
     },
     "husky": {
@@ -66,7 +69,9 @@
         "@storybook/testing-react": "^1.2.2",
         "@testing-library/jest-dom": "^5.16.1",
         "@testing-library/react": "^12.1.2",
+        "@types/blockies": "^0.0.2",
         "@types/react": "^17.0.38",
+        "@types/react-blockies": "^1.4.1",
         "@types/react-dom": "^17.0.11",
         "@types/react-test-renderer": "^17.0.1",
         "@types/styled-components": "^5.1.19",

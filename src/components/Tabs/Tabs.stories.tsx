@@ -1,11 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import TabList from './Tabs';
+import TabList from './TabsList';
 import Icon from '../Icon/Icon';
 import { iconTypes } from '../Icon/collection';
 import Button from '../Button/Button';
-import { columnsConfig, header, data, maxPages } from '../Table/MockData';
-import Table from '../Table/Table';
+import { Tab } from '.';
 
 export default {
     title: 'UI/Tabs',
@@ -19,7 +18,7 @@ TabBar.args = {
     defaultActiveKey: 1,
     children: (
         <TabList tabStyle="bar" isVertical={false} defaultActiveKey={1}>
-            <TabList.Tab
+            <Tab
                 tabName={
                     <div
                         style={{
@@ -36,17 +35,9 @@ TabBar.args = {
                 }
                 tabKey={1}
             >
-                <Table
-                    {...{
-                        columnsConfig,
-                        header,
-                        data: data.slice(0, 5),
-                        pageSize: 3,
-                        maxPages,
-                    }}
-                />
-            </TabList.Tab>
-            <TabList.Tab
+                <p>Looks like you have no friends :)</p>
+            </Tab>
+            <Tab
                 tabName={
                     <div
                         style={{
@@ -63,16 +54,14 @@ TabBar.args = {
                 }
                 tabKey={2}
             >
-                <div>
-                    <Button
-                        icon={'plus' as iconTypes}
-                        text="Add New Alert"
-                        theme="primary"
-                        type="button"
-                        onClick={() => {}}
-                    />
-                </div>
-            </TabList.Tab>
+                <Button
+                    icon={'plus' as iconTypes}
+                    text="Add New Alert"
+                    theme="primary"
+                    type="button"
+                    onClick={() => {}}
+                />
+            </Tab>
         </TabList>
     ),
 };

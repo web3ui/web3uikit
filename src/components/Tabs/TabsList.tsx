@@ -84,7 +84,7 @@ function TabList({
     );
 }
 
-function Tab({
+export function Tab({
     activeState,
     isDisabled = false,
     lineHeight = 24,

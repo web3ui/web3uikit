@@ -29,8 +29,7 @@ const Select: React.FC<SelectProps> = ({
     width = '200px',
 }: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedOptionIndex, setSelectedOptionIndex] =
-        useState(defaultOptionIndex);
+    const [selectedOptionIndex, setSelectedOptionIndex] = useState('0');
 
     const toggling = (event: React.MouseEvent<HTMLDivElement>) => {
         if (disabled) return;

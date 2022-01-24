@@ -5,11 +5,11 @@ export interface IGridProps {
     justifyItems?: alignStyles;
     colGap?: number;
     rowGap?: number;
+    children?: JSX.Element;
     xs?: number;
-    s?: number;
+    sm?: number;
     md?: number;
     lg?: number;
-    children?: JSX.Element;
 }
 
 export interface IColProps {
@@ -18,4 +18,13 @@ export interface IColProps {
     startCol?: number;
     span?: number;
     children?: JSX.Element;
+    isFullWidth?: boolean;
+    breakpointsConfig: IColBreakpointsConfig;
+}
+
+export interface IColBreakpointsConfig {
+    xs?: number;
+    sm?: number;
+    md?: number;
+    lg?: number;
 }

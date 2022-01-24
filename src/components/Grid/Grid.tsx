@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { createContext, useContext } from 'react';
 import { IGridProps } from '.';
-import { GridDiv, ColDiv } from './Grid.styles';
+import { ColDiv, RowDiv } from './Grid.styles';
 import { CryptoCards } from '../CryptoCards';
 import { IColProps } from './types';
+
+const Context = createContext({
+    lg: 0,
+    md: 0,
+    sm: 0,
+    xs: 0,
+    rowGap: 15,
+    colGap: 15,
+});
 
 function Col({
     children,
@@ -10,15 +19,27 @@ function Col({
     justifySelf,
     startCol,
     span,
+    isFullWidth,
+    breakpointsConfig,
 }: IColProps): JSX.Element {
+    const prov = useContext(Context);
+    console.log(prov);
     return (
         <ColDiv
             alignSelf={alignSelf}
             justifySelf={justifySelf}
             startCol={startCol}
+            isFullWidth={isFullWidth}
             span={span}
+            lg={prov.lg}
+            md={prov.md}
+            sm={prov.sm}
+            xs={prov.xs}
+            rowGap={prov.rowGap}
+            colGap={prov.colGap}
+            breakpointsConfig={breakpointsConfig}
         >
-            <p>Col</p>
+            {JSON.stringify(prov)}
             {children}
         </ColDiv>
     );
@@ -29,25 +50,23 @@ function Grid({
     justifyItems = 'start',
     colGap = 15,
     rowGap = 15,
-    xs = 4,
-    s = 6,
-    md = 8,
-    lg = 10,
     children,
+    xs = 12,
+    md = 18,
+    sm = 14,
+    lg = 24,
 }: IGridProps): JSX.Element {
     return (
-        <GridDiv
-            alignItems={alignItems}
-            justifyItems={justifyItems}
-            colGap={colGap}
-            rowGap={rowGap}
-            xs={xs}
-            s={s}
-            md={md}
-            lg={lg}
-        >
-            {children}
-        </GridDiv>
+        <Context.Provider value={{ xs, md, sm, lg, rowGap, colGap }}>
+            <RowDiv
+                alignItems={alignItems}
+                justifyItems={justifyItems}
+                colGap={colGap}
+                rowGap={rowGap}
+            >
+                {children}
+            </RowDiv>
+        </Context.Provider>
     );
 }
 

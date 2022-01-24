@@ -1,58 +1,120 @@
 import styled from 'styled-components';
 import { IGridProps } from '.';
-import fonts from '../../styles/fonts';
-import resetCSS from '../../styles/reset';
-import { IColProps } from './types';
+import { IColBreakpointsConfig, IColProps } from './types';
 
-export const GridDiv = styled.div<IGridProps>`
-    ${resetCSS}
-    ${fonts.text}
-    display: grid;
-    align-items: ${(props) => (props.alignItems ? props.alignItems : 'start')};
-    justify-items: ${(props) =>
-        props.justifyItems ? props.justifyItems : 'end'};
-    row-gap: ${(props) => (props.rowGap ? `${props.rowGap}px` : '15px')};
-    column-gap: ${(props) => (props.rowGap ? `${props.rowGap}px` : '15px')};
-
-    // Query for extra small screens
-    @media (max-width: 767px) {
-        grid-template-columns: repeat(
-            ${(props) => (props.xs ? props.xs : 4)},
-            1fr
-        );
-    }
-
-    // Query for small screens
-    @media (max-width: 991px) and (min-width: 768px) {
-        grid-template-columns: repeat(
-            ${(props) => (props.s ? props.s : 6)},
-            1fr
-        );
-    }
-
-    // Query for medium screens
-    @media (max-width: 1199px) and (min-width: 992px) {
-        grid-template-columns: repeat(
-            ${(props) => (props.md ? props.md : 8)},
-            1fr
-        );
-    }
-
-    // Query for large screens
-    @media (min-width: 1200px) {
-        grid-template-columns: repeat(
-            ${(props) => (props.lg ? props.lg : 10)},
-            1fr
-        );
-    }
+export const RowDiv = styled.div<IGridProps>`
+    display: flex;
+    flex-wrap: wrap;
+    gap: ${(props) =>
+        props.rowGap ? `${props.rowGap}px ${props.colGap}px` : '15px 15px'};
 `;
 
+const getConfig = (
+    breakPointConfig: object,
+    toGet: string,
+    span: number,
+    props?: any,
+): number => {
+    if (Object.keys(breakPointConfig).includes(toGet)) {
+        console.log('in keys', breakPointConfig[toGet], toGet, props);
+        return breakPointConfig[toGet] as number;
+    }
+    return span;
+};
+
 export const ColDiv = styled.div<IColProps>`
-    display: flex;
-    flex-direction: column;
-    align-items: ${(props) => (props.alignSelf ? props.alignSelf : 'stretch')};
-    justify-items: ${(props) =>
-        props.justifySelf ? props.justifySelf : 'stretch'};
-    grid-column-start: ${(props) => (props.startCol ? props.startCol : 'auto')};
-    grid-column-end: ${(props) => (props.span ? `span ${props.span}` : 'auto')};
+    color: white;
+
+    // Small devices (landscape phones, 576px and up)
+    @media (max-width: 576px) {
+        flex: ${(props) =>
+            props.span
+                ? `${
+                      Math.round(100 / (props.xs ? props.xs : 0)) *
+                      getConfig(
+                          props.breakpointsConfig,
+                          'xs',
+                          props.span,
+                          props,
+                      )
+                  }%`
+                : '100%'};
+
+        max-width: ${(props) =>
+            props.span
+                ? `calc(${
+                      Math.round(
+                          (100 / (props.xs ? props.xs : 0)) *
+                              getConfig(
+                                  props.breakpointsConfig,
+                                  'xs',
+                                  props.span,
+                                  props,
+                              ),
+                      ) - 1
+                  }% - ${props.colGap}px)`
+                : '100%'};
+        background-color: blue;
+    }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) and (max-width: 992px) {
+        flex: ${(props) =>
+            props.span
+                ? `${
+                      Math.round(100 / (props.sm ? props.sm : 0)) *
+                      getConfig(props.breakpointsConfig, 'sm', props.span)
+                  }%`
+                : '100%'};
+
+        max-width: ${(props) =>
+            props.span
+                ? `${
+                      Math.round(100 / (props.sm ? props.sm : 0)) *
+                      getConfig(props.breakpointsConfig, 'sm', props.span)
+                  }%`
+                : '100%'};
+        background-color: black;
+    }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) and (max-width: 1199px) {
+        flex: ${(props) =>
+            props.span
+                ? `${
+                      Math.round(100 / (props.md ? props.md : 0)) *
+                      getConfig(props.breakpointsConfig, 'md', props.span)
+                  }%`
+                : '100%'};
+
+        max-width: ${(props) =>
+            props.span
+                ? `${
+                      Math.round(100 / (props.md ? props.md : 0)) *
+                      getConfig(props.breakpointsConfig, 'md', props.span)
+                  }%`
+                : '100%'};
+        background-color: grey;
+    }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) {
+        flex: ${(props) =>
+            props.span
+                ? `${
+                      Math.round(100 / (props.lg ? props.lg : 0)) *
+                      getConfig(props.breakpointsConfig, 'lg', props.span)
+                  }%`
+                : '100%'};
+
+        max-width: ${(props) =>
+            props.span
+                ? `${
+                      Math.round(100 / (props.lg ? props.lg : 0)) *
+                      getConfig(props.breakpointsConfig, 'lg', props.span)
+                  }%`
+                : '100%'};
+        background-color: pink;
+    }
+    ${(props) => props.isFullWidth && `width: 100%;`}
 `;

@@ -1,7 +1,6 @@
 import React, { createContext, useContext } from 'react';
 import { IGridProps } from '.';
 import { ColDiv, RowDiv } from './Grid.styles';
-import { CryptoCards } from '../CryptoCards';
 import { IColProps } from './types';
 
 const Context = createContext({
@@ -13,9 +12,9 @@ const Context = createContext({
     colGap: 15,
 });
 
-function Col({
+export function Col({
     children,
-    span,
+    span = 0,
     isFullWidth = false,
     breakpointsConfig = {},
     order = 0,

@@ -26,7 +26,7 @@ export interface IGridProps {
     /**
      * Children of the grid Ideally Col elements
      */
-    children?: JSX.Element;
+    children?: JSX.Element[] | JSX.Element;
     /**
      * Amount of grid breakpoints for xs
      */
@@ -49,7 +49,7 @@ export interface IColProps {
     /**
      * To Specify how many breakpoints Col will span
      */
-    span: number;
+    span?: number;
     /**
      * Elements to Render
      */
@@ -61,7 +61,7 @@ export interface IColProps {
     /**
      * To Specify the amount of colunms, the Col will take per each screen size
      */
-    breakpointsConfig: IColBreakpointsConfig;
+    breakpointsConfig?: IColBreakpointsConfig;
     /**
      * To overwrite the order of which the columns render
      */

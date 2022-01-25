@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { IGridProps } from '.';
 import fonts from '../../styles/fonts';
-import { IColBreakpointsConfig, IColProps } from './types';
+import { IColBreakpointsConfig } from './types';
 
 export const RowDiv = styled.div<IGridProps>`
     ${fonts.text}
@@ -17,13 +17,25 @@ const getConfig = (
     breakPointConfig: object,
     toGet: string,
     span: number,
-    props?: any,
 ): number => {
     if (Object.keys(breakPointConfig).includes(toGet)) {
-        return breakPointConfig[toGet] as number;
+        return (breakPointConfig as any)[toGet] as number;
     }
     return span;
 };
+
+interface IColProps {
+    isFullWidth: boolean;
+    order: number;
+    span: number;
+    xs: number;
+    lg: number;
+    md: number;
+    sm: number;
+    rowGap: number;
+    colGap: number;
+    breakpointsConfig: IColBreakpointsConfig;
+}
 
 export const ColDiv = styled.div<Required<IColProps>>`
     color: white;
@@ -35,12 +47,7 @@ export const ColDiv = styled.div<Required<IColProps>>`
             props.span
                 ? `${
                       (100 / (props.xs ? props.xs : 0)) *
-                      getConfig(
-                          props.breakpointsConfig,
-                          'xs',
-                          props.span,
-                          props,
-                      )
+                      getConfig(props.breakpointsConfig, 'xs', props.span)
                   }%`
                 : '100%'};
 
@@ -48,12 +55,7 @@ export const ColDiv = styled.div<Required<IColProps>>`
             props.span
                 ? `calc(${
                       (100 / (props.xs ? props.xs : 0)) *
-                      getConfig(
-                          props.breakpointsConfig,
-                          'xs',
-                          props.span,
-                          props,
-                      )
+                      getConfig(props.breakpointsConfig, 'xs', props.span)
                   }% - ${props.colGap}px)`
                 : '100%'};
         ${(props) => props.isFullWidth && `max-width: 100%; flex: 100%;`}

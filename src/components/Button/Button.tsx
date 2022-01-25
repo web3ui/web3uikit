@@ -10,7 +10,7 @@ const Button: React.FC<ButtonProps> = ({
     iconLayout = 'leading',
     id,
     isFullWidth = false,
-    onClick,
+    onClick = (e) => e.preventDefault(),
     size = 'regular',
     text = 'click',
     theme,

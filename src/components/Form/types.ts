@@ -20,7 +20,7 @@ export interface FormProps {
     /**
      * Pass all the props a button could use
      */
-    buttonConfig: ButtonProps;
+    buttonConfig?: ButtonProps;
 
     /**
      * when the form passes validation the data is returned

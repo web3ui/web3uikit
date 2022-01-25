@@ -18,7 +18,7 @@ export interface LinkToProps {
     /**
      * set to an email link or a link to another website
      */
-    type: TTypeState;
+    type?: TTypeState;
 
     /**
      * set the position of the icon, or icon only

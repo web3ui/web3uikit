@@ -43,6 +43,7 @@ import lockClosedIcon from './icons/lock-closed';
 import lockOpenIcon from './icons/lock-open';
 import logOutIcon from './icons/log-out';
 import mailIcon from './icons/mail';
+import mastercardIcon from './icons/mastercard';
 import maximizeIcon from './icons/maximize';
 import messageCircleIcon from './icons/message-circle';
 import minimizeIcon from './icons/minimize';
@@ -70,6 +71,7 @@ import triangleUpIcon from './icons/triangle-up';
 import twitterIcon from './icons/twitter';
 import updateIcon from './icons/update';
 import userIcon from './icons/user';
+import visaIcon from './icons/visa';
 import windowsIcon from './icons/windows';
 import xCircleIcon from './icons/x-circle';
 import xIcon from './icons/x';
@@ -121,6 +123,7 @@ export enum iconTypes {
     lockOpen = 'lock open',
     logOut = 'log out',
     mail = 'mail',
+    mastercard = 'mastercard',
     maximize = 'maximize',
     messageCircle = 'message circle',
     minimize = 'minimize',
@@ -148,6 +151,7 @@ export enum iconTypes {
     twitter = 'twitter',
     update = 'update',
     user = 'user',
+    visa = 'visa',
     windows = 'windows',
     xCircle = 'x circle',
     x = 'x',
@@ -156,7 +160,6 @@ export enum iconTypes {
 
 const collection = {
     arrowCircleDownIcon,
-    mailIcon,
     arrowCircleLeftIcon,
     arrowCircleRightIcon,
     bellIcon,
@@ -200,6 +203,8 @@ const collection = {
     lockClosedIcon,
     lockOpenIcon,
     logOutIcon,
+    mailIcon,
+    mastercardIcon,
     maximizeIcon,
     messageCircleIcon,
     minimizeIcon,
@@ -227,6 +232,7 @@ const collection = {
     twitterIcon,
     updateIcon,
     userIcon,
+    visaIcon,
     windowsIcon,
     xCircleIcon,
     xIcon,

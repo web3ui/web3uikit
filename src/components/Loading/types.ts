@@ -12,5 +12,5 @@ export interface ILoadingProps {
     text?: string;
 
     // To place text component in column format or row format
-    layout: 'column' | 'row';
+    layout?: 'column' | 'row';
 }

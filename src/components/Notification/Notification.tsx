@@ -18,6 +18,7 @@ const Notification: React.FC<NotificationProps> = ({
     title = 'New Message',
     isVisible = false,
     isPositionRelative = false,
+    positionRelativeConfig = {},
 }: NotificationProps) => {
     const [visible, setVisible] = useState(isVisible);
 
@@ -32,6 +33,7 @@ const Notification: React.FC<NotificationProps> = ({
                 data-testid={'test-notification-id'}
                 isVisible={visible}
                 isPositionRelative={isPositionRelative}
+                positionRelativeConfig={positionRelativeConfig}
             >
                 <Icon
                     fill={`${color.white}`}

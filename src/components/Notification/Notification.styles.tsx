@@ -3,6 +3,7 @@ import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
 import styled, { keyframes } from 'styled-components';
+import { IPositionRelativeConfig } from './types';
 
 const initialStyles = css`
     ${resetCSS}
@@ -53,11 +54,30 @@ export const moveOpen = keyframes`
 interface INotificationStyled {
     isVisible: boolean;
     isPositionRelative: boolean;
+    positionRelativeConfig: IPositionRelativeConfig;
 }
 
 export const NotificationStyled = styled.div<INotificationStyled>`
     ${initialStyles}
-    ${(props) => props.isPositionRelative && 'position: absolute;'}
+    ${(props) =>
+        props.isPositionRelative &&
+        `position: absolute; top:${
+            props.positionRelativeConfig.top
+                ? props.positionRelativeConfig.top
+                : '0px'
+        }; left:${
+            props.positionRelativeConfig.left
+                ? props.positionRelativeConfig.left
+                : '0px'
+        }; height: ${
+            props.positionRelativeConfig.height
+                ? props.positionRelativeConfig.height
+                : 'fit-content'
+        }; width: ${
+            props.positionRelativeConfig.width
+                ? props.positionRelativeConfig.width
+                : 'fit-content'
+        };`}
     animation:${moveOpen} 4s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;

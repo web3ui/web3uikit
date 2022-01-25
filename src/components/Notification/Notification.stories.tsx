@@ -45,3 +45,17 @@ PositionRelative.args = {
     title: 'New Notification',
     isPositionRelative: true,
 };
+
+export const PositionRelativeCustomBreakPoints = Template.bind({});
+PositionRelativeCustomBreakPoints.args = {
+    id: 'test-Notification',
+    message: 'Somebody messaged you',
+    isVisible: true,
+    title: 'New Notification',
+    isPositionRelative: true,
+    positionRelativeConfig: {
+        top: '30px',
+        left: '30px',
+        width: '100%',
+    },
+};

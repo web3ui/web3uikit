@@ -4,8 +4,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { composeStories } from '@storybook/testing-react';
 
-const { Regular, Standard, CustomIcon, Inactive, PositionRelative } =
-    composeStories(stories);
+const {
+    Regular,
+    Standard,
+    CustomIcon,
+    Inactive,
+    PositionRelative,
+    PositionRelativeCustomBreakPoints,
+} = composeStories(stories);
 
 describe('Notification - Standard - Active - Regular Text - Regular Icon', () => {
     let container: HTMLDivElement;
@@ -188,11 +194,11 @@ describe('Notification - Inactive', () => {
 
 describe('Notification - Standard - Active - Regular Text - Regular Icon - Relative', () => {
     let container: HTMLDivElement;
-    const message = Standard.args?.message;
+    const message = PositionRelative.args?.message;
     const messageId = 'test-notification-message';
     const testId = 'test-notification-id';
     const closeId = 'test-notification-x';
-    const title = 'New Message';
+    const title = 'New Notification';
     const titleId = 'test-notification-title';
 
     beforeEach(() => {
@@ -240,5 +246,32 @@ describe('Notification - Standard - Active - Regular Text - Regular Icon - Relat
             `[data-testid="${closeId}"] > svg`,
         );
         expect(iconSVG).not.toBeNull();
+    });
+});
+
+describe('Notification - Standard - Active - Regular Text - Regular Icon - Relative - Config', () => {
+    let container: HTMLDivElement;
+    const styling =
+        PositionRelativeCustomBreakPoints.args?.positionRelativeConfig;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<PositionRelativeCustomBreakPoints />, container);
+    });
+
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('should not render custom styles', () => {
+        const element = container.querySelector(
+            `[data-testid="test-notification-id"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        expect(styles?.top).toEqual(styling?.top);
+        expect(styles?.left).toEqual(styling?.left);
+        expect(styles?.width).toEqual(styling?.width);
     });
 });

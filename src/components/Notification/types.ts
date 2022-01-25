@@ -28,7 +28,19 @@ export interface NotificationProps {
     isVisible?: boolean;
 
     /**
-     * set if position absolute
+     * set if position relative to container
      */
     isPositionRelative?: boolean;
+
+    /**
+     * If isPositionRelative relative is true use this to fine tune exact positioning
+     */
+    positionRelativeConfig?: IPositionRelativeConfig;
+}
+
+export interface IPositionRelativeConfig {
+    top?: string;
+    left?: string;
+    width?: string;
+    height?: string;
 }

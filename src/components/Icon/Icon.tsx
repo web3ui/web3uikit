@@ -105,8 +105,6 @@ const Icon: React.FC<IconProps> = ({
                 return collection?.logOutIcon(fill, size, style);
             case 'mail':
                 return collection?.mailIcon(fill, size, style);
-            case 'mastercard':
-                return collection?.mastercardIcon(fill, size, style);
             case 'maximize':
                 return collection?.maximizeIcon(fill, size, style);
             case 'message circle':
@@ -161,8 +159,6 @@ const Icon: React.FC<IconProps> = ({
                 return collection?.updateIcon(fill, size, style);
             case 'user':
                 return collection?.userIcon(fill, size, style);
-            case 'visa':
-                return collection?.visaIcon(fill, size, style);
             case 'windows':
                 return collection?.windowsIcon(fill, size, style);
             case 'x circle':

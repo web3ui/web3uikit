@@ -1,5 +1,5 @@
 import Moralis from 'moralis/types';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useMoralis } from 'react-moralis';
 import { getEllipsisTxt } from '../../web3utils';
 import { Blockie } from '../Blockie';
@@ -16,8 +16,26 @@ const {
 } = ConnectButtonStyles;
 
 const ConnectButton: React.FC = () => {
-    const { authenticate, account, isAuthenticated, logout, deactivateWeb3 } =
-        useMoralis();
+    const {
+        authenticate,
+        account,
+        isAuthenticated,
+        logout,
+        deactivateWeb3,
+        enableWeb3,
+        isWeb3Enabled,
+        isInitialized,
+        isWeb3EnableLoading,
+    } = useMoralis();
+
+    useEffect(() => {
+        if (!isInitialized) return;
+        const connectorId = window.localStorage.getItem('connectorId');
+        if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) {
+            // @ts-ignore
+            enableWeb3({ provider: connectorId });
+        }
+    }, [isAuthenticated, isWeb3Enabled, isInitialized]);
 
     function connectWallet(connectorId: Moralis.Web3ProviderType) {
         // to avoid problems in Next.JS apps because of localStorage

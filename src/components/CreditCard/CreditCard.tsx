@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Radios } from '../Radios';
 import { Icon } from '../Icon';
+import { Logo } from '../Logo';
 import { iconTypes } from '../Icon/collection';
 import colors from '../../styles/colors';
 import { CreditCardProps } from './types';
@@ -45,15 +46,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
                     <PStyledText>{name}</PStyledText>
                     <PStyledText>{`${expiresAt.month} / ${expiresAt.year}`}</PStyledText>
                 </DivStyledFlexText>
-                <Icon
-                    size={32}
-                    svg={
-                        type === 'mastercard'
-                            ? iconTypes.mastercard
-                            : iconTypes.visa
-                    }
-                    fill={colors.white}
-                />
+                <Logo size="small" theme={type} />
             </DivStyledFlex>
         </DivStyledCreditCard>
     );

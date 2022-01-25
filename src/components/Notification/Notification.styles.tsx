@@ -64,20 +64,33 @@ export const NotificationStyled = styled.div<INotificationStyled>`
         `position: absolute; top:${
             props.positionRelativeConfig.top
                 ? props.positionRelativeConfig.top
-                : '0px'
+                : ''
         }; left:${
             props.positionRelativeConfig.left
                 ? props.positionRelativeConfig.left
-                : '0px'
+                : ''
         }; height: ${
             props.positionRelativeConfig.height
                 ? props.positionRelativeConfig.height
                 : 'fit-content'
-        }; width: ${
+        }; 
+        bottom:${
+            props.positionRelativeConfig.bottom
+                ? props.positionRelativeConfig.bottom
+                : ''
+        }; 
+        right: ${
+            props.positionRelativeConfig.right
+                ? props.positionRelativeConfig.right
+                : ''
+        }; 
+        width: ${
             props.positionRelativeConfig.width
                 ? props.positionRelativeConfig.width
                 : 'fit-content'
-        };`}
+        };
+        
+        `}
     animation:${moveOpen} 4s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;

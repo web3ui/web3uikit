@@ -33,6 +33,11 @@ export interface NotificationProps {
     isPositionRelative?: boolean;
 
     /**
+     * If isPositionRelative relative is true use this to position element
+     */
+    position?: IPosition;
+
+    /**
      * If isPositionRelative relative is true use this to fine tune exact positioning
      */
     positionRelativeConfig?: IPositionRelativeConfig;
@@ -40,7 +45,11 @@ export interface NotificationProps {
 
 export interface IPositionRelativeConfig {
     top?: string;
+    bottom?: string;
     left?: string;
+    right?: string;
     width?: string;
     height?: string;
 }
+
+export type IPosition = 'topR' | 'topL' | 'bottomR' | 'bottomL';

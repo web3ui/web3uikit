@@ -59,3 +59,23 @@ PositionRelativeCustomBreakPoints.args = {
         width: '100%',
     },
 };
+
+export const RelativePositioningTopLeft = Template.bind({});
+RelativePositioningTopLeft.args = {
+    id: 'test-Notification',
+    message: 'Somebody messaged you',
+    isVisible: true,
+    title: 'New Notification',
+    isPositionRelative: true,
+    position: 'topL',
+};
+
+export const RelativePositioningBottomRight = Template.bind({});
+RelativePositioningBottomRight.args = {
+    id: 'test-Notification',
+    message: 'Somebody messaged you',
+    isVisible: true,
+    title: 'New Notification',
+    isPositionRelative: true,
+    position: 'bottomR',
+};

@@ -3,7 +3,6 @@ import * as stories from './Notification.stories';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { composeStories } from '@storybook/testing-react';
-
 const {
     Regular,
     Standard,
@@ -11,6 +10,8 @@ const {
     Inactive,
     PositionRelative,
     PositionRelativeCustomBreakPoints,
+    RelativePositioningTopLeft,
+    RelativePositioningBottomRight,
 } = composeStories(stories);
 
 describe('Notification - Standard - Active - Regular Text - Regular Icon', () => {
@@ -251,8 +252,6 @@ describe('Notification - Standard - Active - Regular Text - Regular Icon - Relat
 
 describe('Notification - Standard - Active - Regular Text - Regular Icon - Relative - Config', () => {
     let container: HTMLDivElement;
-    const styling =
-        PositionRelativeCustomBreakPoints.args?.positionRelativeConfig;
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -265,13 +264,53 @@ describe('Notification - Standard - Active - Regular Text - Regular Icon - Relat
         container.remove();
     });
 
-    it('should not render custom styles', () => {
+    it('should render custom style comp', () => {
         const element = container.querySelector(
             `[data-testid="test-notification-id"]`,
         );
-        const styles = element && getComputedStyle(element);
-        expect(styles?.top).toEqual(styling?.top);
-        expect(styles?.left).toEqual(styling?.left);
-        expect(styles?.width).toEqual(styling?.width);
+        expect(element).toBeDefined();
+    });
+});
+
+describe('Notification - Standard - Active - Regular Text - Regular Icon - Relative - Top-Left', () => {
+    let container: HTMLDivElement;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<RelativePositioningTopLeft />, container);
+    });
+
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('should render custom style comp', () => {
+        const element = container.querySelector(
+            `[data-testid="test-notification-id"]`,
+        );
+        expect(element).toBeDefined();
+    });
+});
+describe('Notification - Standard - Active - Regular Text - Regular Icon - Relative - Bottom - Right', () => {
+    let container: HTMLDivElement;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<RelativePositioningBottomRight />, container);
+    });
+
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('should render custom style comp', () => {
+        const element = container.querySelector(
+            `[data-testid="test-notification-id"]`,
+        );
+        expect(element).toBeDefined();
     });
 });

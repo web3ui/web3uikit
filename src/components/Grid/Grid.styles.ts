@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 import { IGridProps } from '.';
+import fonts from '../../styles/fonts';
 import { IColBreakpointsConfig, IColProps } from './types';
 
 export const RowDiv = styled.div<IGridProps>`
+    ${fonts.text}
     display: flex;
     flex-wrap: wrap;
     gap: ${(props) =>
         props.rowGap ? `${props.rowGap}px ${props.colGap}px` : '15px 15px'};
+    align-items: ${(props) => props.alignItems && props.alignItems};
+    justify-content: ${(props) => props.justifyItems && props.justifyItems};
 `;
 
 const getConfig = (
@@ -16,103 +20,104 @@ const getConfig = (
     props?: any,
 ): number => {
     if (Object.keys(breakPointConfig).includes(toGet)) {
-        console.log('in keys', breakPointConfig[toGet], toGet, props);
         return breakPointConfig[toGet] as number;
     }
     return span;
 };
 
-export const ColDiv = styled.div<IColProps>`
+export const ColDiv = styled.div<Required<IColProps>>`
     color: white;
-
-    // Small devices (landscape phones, 576px and up)
-    @media (max-width: 767px) {
+    order: ${(props) => props.order};
+    ${fonts.text}
+    // xSmall devices (landscape phones, 576px and up)
+        @media (max-width: 767px) {
         flex: ${(props) =>
             props.span
-                ? `${Math.round(
+                ? `${
                       (100 / (props.xs ? props.xs : 0)) *
-                          getConfig(
-                              props.breakpointsConfig,
-                              'xs',
-                              props.span,
-                              props,
-                          ),
-                  )}%`
+                      getConfig(
+                          props.breakpointsConfig,
+                          'xs',
+                          props.span,
+                          props,
+                      )
+                  }%`
                 : '100%'};
 
         max-width: ${(props) =>
             props.span
-                ? `calc(${Math.round(
+                ? `calc(${
                       (100 / (props.xs ? props.xs : 0)) *
-                          getConfig(
-                              props.breakpointsConfig,
-                              'xs',
-                              props.span,
-                              props,
-                          ),
-                  )}% - ${props.colGap}px)`
+                      getConfig(
+                          props.breakpointsConfig,
+                          'xs',
+                          props.span,
+                          props,
+                      )
+                  }% - ${props.colGap}px)`
                 : '100%'};
-        background-color: blue;
+        ${(props) => props.isFullWidth && `max-width: 100%; flex: 100%;`}
     }
 
-    // Medium devices (tablets, 768px and up)
+    // sm devices (tablets, 768px and up)
     @media (min-width: 768px) and (max-width: 991px) {
+        color: black;
         flex: ${(props) =>
             props.span
-                ? `${Math.round(
+                ? `${
                       (100 / (props.sm ? props.sm : 0)) *
-                          getConfig(props.breakpointsConfig, 'sm', props.span),
-                  )}%`
+                      getConfig(props.breakpointsConfig, 'sm', props.span)
+                  }%`
                 : '100%'};
 
         max-width: ${(props) =>
             props.span
-                ? `calc(${Math.round(
+                ? `calc(${
                       (100 / (props.sm ? props.sm : 0)) *
-                          getConfig(props.breakpointsConfig, 'sm', props.span),
-                  )}% - ${props.colGap}px)`
+                      getConfig(props.breakpointsConfig, 'sm', props.span)
+                  }% - ${props.colGap}px)`
                 : '100%'};
-        background-color: black;
+        ${(props) => props.isFullWidth && `max-width: 100%; flex: 100%;`}
     }
 
-    // Large devices (desktops, 992px and up)
+    // Meduim(desktops, 992px and up)
     @media (min-width: 992px) and (max-width: 1199px) {
         flex: ${(props) =>
             props.span
-                ? `${Math.round(
+                ? `${
                       getConfig(props.breakpointsConfig, 'md', props.span) *
-                          (100 / (props.md ? props.md : 0)),
-                  )}%`
+                      (100 / (props.md ? props.md : 0))
+                  }%`
                 : '100%'};
 
         max-width: ${(props) =>
             props.span
-                ? `calc(${Math.round(
+                ? `calc(${
                       (100 / (props.md ? props.md : 0)) *
-                          getConfig(props.breakpointsConfig, 'md', props.span),
-                  )}% - ${props.colGap}px)`
+                      getConfig(props.breakpointsConfig, 'md', props.span)
+                  }% - ${props.colGap}px)`
                 : '100%'};
-        background-color: grey;
+        ${(props) => props.isFullWidth && `max-width: 100%; flex: 100%;`}
     }
 
-    // Extra large devices (large desktops, 1200px and up)
+    // large devices (large desktops, 1200px and up)
     @media (min-width: 1200px) {
         flex: ${(props) =>
             props.span
-                ? `${Math.round(
+                ? `${
                       (100 / (props.lg ? props.lg : 0)) *
-                          getConfig(props.breakpointsConfig, 'lg', props.span),
-                  )}%`
-                : '100%'};
+                      getConfig(props.breakpointsConfig, 'lg', props.span)
+                  }%`
+                : '90%'};
 
         max-width: ${(props) =>
             props.span
-                ? `calc(${Math.round(
-                      (100 * (props.lg ? props.lg : 0)) /
-                          getConfig(props.breakpointsConfig, 'lg', props.span),
-                  )}% - ${props.colGap}px)`
-                : '100%'};
-        background-color: pink;
+                ? `calc(${
+                      (100 / (props.lg ? props.lg : 0)) *
+                      getConfig(props.breakpointsConfig, 'lg', props.span)
+                  }% - ${props.colGap}px )`
+                : '90%'};
+
+        ${(props) => props.isFullWidth && `max-width: 100%; flex: 100%;`}
     }
-    ${(props) => props.isFullWidth && `width: 100%;`}
 `;

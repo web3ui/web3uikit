@@ -15,21 +15,17 @@ const Context = createContext({
 
 function Col({
     children,
-    alignSelf,
-    justifySelf,
-    startCol,
     span,
-    isFullWidth,
-    breakpointsConfig,
+    isFullWidth = false,
+    breakpointsConfig = {},
+    order = 0,
 }: IColProps): JSX.Element {
     const prov = useContext(Context);
     console.log(prov);
     return (
         <ColDiv
-            alignSelf={alignSelf}
-            justifySelf={justifySelf}
-            startCol={startCol}
             isFullWidth={isFullWidth}
+            order={order}
             span={span}
             lg={prov.lg}
             md={prov.md}
@@ -39,7 +35,6 @@ function Col({
             colGap={prov.colGap}
             breakpointsConfig={breakpointsConfig}
         >
-            {JSON.stringify(prov)}
             {children}
         </ColDiv>
     );
@@ -47,13 +42,13 @@ function Col({
 
 function Grid({
     alignItems = 'start',
-    justifyItems = 'start',
+    justifyItems = 'flex-start',
     colGap = 15,
     rowGap = 15,
     children,
-    xs = 12,
-    md = 18,
-    sm = 14,
+    xs = 8,
+    sm = 16,
+    md = 24,
     lg = 24,
 }: IGridProps): JSX.Element {
     return (

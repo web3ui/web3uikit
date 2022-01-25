@@ -14,6 +14,7 @@ const Modal: React.FC<ModalProps> = ({
     cancelText = 'Cancel',
     children,
     hasCancel = true,
+    hasFooter = true,
     id = String(Date.now()),
     isCancelDisabled,
     isOkDisabled,
@@ -51,39 +52,41 @@ const Modal: React.FC<ModalProps> = ({
                 {children}
             </ModalContent>
 
-            <ModalFooter
-                data-testid={'modal-footer-test-id'}
-                hasCancel={hasCancel}
-            >
-                {hasCancel && (
+            {hasFooter && (
+                <ModalFooter
+                    data-testid={'modal-footer-test-id'}
+                    hasCancel={hasCancel}
+                >
+                    {hasCancel && (
+                        <Button
+                            data-testid={'modal-cancel-button-test-id'}
+                            disabled={isCancelDisabled}
+                            text={cancelText}
+                            onClick={
+                                onCancel
+                                    ? onCancel
+                                    : () => {
+                                          console.log('cancel triggered');
+                                      }
+                            }
+                            theme={'outline'}
+                        />
+                    )}
                     <Button
-                        data-testid={'modal-cancel-button-test-id'}
-                        disabled={isCancelDisabled}
-                        text={cancelText}
+                        data-testid={'modal-ok-button-test-id'}
                         onClick={
-                            onCancel
-                                ? onCancel
+                            onOk
+                                ? onOk
                                 : () => {
-                                      console.log('cancel triggered');
+                                      console.log('ok triggered');
                                   }
                         }
-                        theme={'outline'}
+                        disabled={isOkDisabled}
+                        text={okText}
+                        theme={'primary'}
                     />
-                )}
-                <Button
-                    data-testid={'modal-ok-button-test-id'}
-                    onClick={
-                        onOk
-                            ? onOk
-                            : () => {
-                                  console.log('ok triggered');
-                              }
-                    }
-                    disabled={isOkDisabled}
-                    text={okText}
-                    theme={'primary'}
-                />
-            </ModalFooter>
+                </ModalFooter>
+            )}
         </ModalStyled>
     </ModalWrapperStyled>
 );

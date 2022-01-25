@@ -15,6 +15,11 @@ export interface ModalProps {
     hasCancel?: boolean;
 
     /**
+     * should the modal have a footer
+     */
+    hasFooter?: boolean;
+
+    /**
      * set text of 'Cancel' button
      */
     cancelText?: string;

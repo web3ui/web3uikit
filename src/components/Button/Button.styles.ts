@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import type { ButtonProps } from './types';
 
-import { initialStyles } from './styles/inititalStyles';
+import { initialStyles, isLoadingMode } from './styles/inititalStyles';
 import {
     primary,
     regular,
@@ -25,7 +25,7 @@ import {
 
 type TStyleProps = Pick<
     ButtonProps,
-    'theme' | 'iconLayout' | 'size' | 'color' | 'isFullWidth'
+    'theme' | 'iconLayout' | 'size' | 'color' | 'isFullWidth' | 'isLoading'
 >;
 
 const getThemeStyles = (theme: string) => {
@@ -103,4 +103,6 @@ export const ButtonStyled = styled.button<TStyleProps>`
     ${(p) =>
         p.iconLayout === 'icon-only' && p.size === 'large' && largeIconResize()}
     ${(p) => p.iconLayout === 'icon-only' && iconOnlyBorderFix(p.theme)}
+
+    ${(p) => p.isLoading && isLoadingMode}
 `;

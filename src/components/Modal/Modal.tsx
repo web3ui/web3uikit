@@ -1,38 +1,49 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { ModalProps } from './types';
 import Button from '../Button/Button';
-import ModalStyles from './Modal.styles';
 import { iconTypes } from '../Icon/collection';
-
-const { ModalHeader, ModalStyled, ModalFooter, ModalContent } = ModalStyles;
+import {
+    ModalHeader,
+    ModalStyled,
+    ModalFooter,
+    ModalContent,
+    ModalWrapperStyled,
+} from './Modal.styles';
 
 const Modal: React.FC<ModalProps> = ({
-    id = String(Date.now()),
-    children,
-    isOkDisabled,
-    isCancelDisabled,
-    isVisible,
     cancelText = 'Cancel',
+    children,
+    hasCancel = true,
+    hasFooter = true,
+    id = String(Date.now()),
+    isCancelDisabled,
+    isOkDisabled,
+    isVisible = true,
     okText = 'Ok',
     onCancel,
+    onCloseButtonPressed,
     onOk,
     title,
-}: ModalProps) => {
-    const [visible, setVisibility] = useState(isVisible);
-
-    useEffect(() => {
-        setVisibility(isVisible);
-    }, [isVisible]);
-
-    return (
-        <ModalStyled id={id} isVisible={visible} data-testid="modal-test-id">
+}: ModalProps) => (
+    <ModalWrapperStyled
+        id={id}
+        isVisible={isVisible}
+        data-testid="modal-test-id"
+    >
+        <ModalStyled>
             <ModalHeader data-testid={'modal-header-test-id'}>
                 <h3>{title}</h3>
                 <Button
                     data-testid={'modal-close-test-id'}
                     icon={iconTypes.x}
                     iconLayout={'icon-only'}
-                    onClick={() => setVisibility(false)}
+                    onClick={
+                        onCloseButtonPressed
+                            ? onCloseButtonPressed
+                            : () => {
+                                  console.log('close triggered');
+                              }
+                    }
                     theme={'outline'}
                 />
             </ModalHeader>
@@ -41,36 +52,43 @@ const Modal: React.FC<ModalProps> = ({
                 {children}
             </ModalContent>
 
-            <ModalFooter data-testid={'modal-footer-test-id'}>
-                <Button
-                    data-testid={'modal-cancel-button-test-id'}
-                    disabled={isCancelDisabled}
-                    text={cancelText}
-                    onClick={
-                        onCancel
-                            ? onCancel
-                            : () => {
-                                  setVisibility(false);
-                              }
-                    }
-                    theme={'outline'}
-                />
-                <Button
-                    data-testid={'modal-ok-button-test-id'}
-                    onClick={
-                        onOk
-                            ? onOk
-                            : () => {
-                                  console.log('ok triggered');
-                              }
-                    }
-                    disabled={isOkDisabled}
-                    text={okText}
-                    theme={'primary'}
-                />
-            </ModalFooter>
+            {hasFooter && (
+                <ModalFooter
+                    data-testid={'modal-footer-test-id'}
+                    hasCancel={hasCancel}
+                >
+                    {hasCancel && (
+                        <Button
+                            data-testid={'modal-cancel-button-test-id'}
+                            disabled={isCancelDisabled}
+                            text={cancelText}
+                            onClick={
+                                onCancel
+                                    ? onCancel
+                                    : () => {
+                                          console.log('cancel triggered');
+                                      }
+                            }
+                            theme={'outline'}
+                        />
+                    )}
+                    <Button
+                        data-testid={'modal-ok-button-test-id'}
+                        onClick={
+                            onOk
+                                ? onOk
+                                : () => {
+                                      console.log('ok triggered');
+                                  }
+                        }
+                        disabled={isOkDisabled}
+                        text={okText}
+                        theme={'primary'}
+                    />
+                </ModalFooter>
+            )}
         </ModalStyled>
-    );
-};
+    </ModalWrapperStyled>
+);
 
 export default Modal;

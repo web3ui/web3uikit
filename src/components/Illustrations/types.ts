@@ -21,8 +21,8 @@ export const logoState = [
     'marketplace',
 ] as const;
 export type Logo = typeof logoState[number];
-
 export type Size = number | string;
+
 export interface IllustrationProps {
     id?: string;
 

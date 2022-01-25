@@ -22,11 +22,13 @@ DemoForm.args = {
             name: 'first name',
             type: 'text',
             value: '',
+            inputWidth: '100%',
         },
         {
             name: 'your email',
             type: 'email',
             value: '',
+            inputWidth: '100%',
             validation: {
                 required: true,
                 regExp: validateRegExp.email,
@@ -85,6 +87,7 @@ DemoForm.args = {
             name: 'Any more comments?',
             type: 'textarea',
             value: '',
+            inputWidth: '100%',
             validation: { required: true },
         },
     ],

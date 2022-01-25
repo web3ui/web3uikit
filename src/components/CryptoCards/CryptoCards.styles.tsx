@@ -4,28 +4,47 @@ import color from '../../styles/colors';
 import resetCSS from '../../styles/reset';
 import { getShade } from '../../styles/colors';
 
-const CryptoCardStyled = styled.div`
+export const DivStyledCryptoCard = styled.div`
     ${resetCSS};
-    border: 1px solid ${getShade('light', 10)};
+    align-items: center;
+    background: ${(props) => props.color};
     border-radius: 16px;
+    border: 1px solid ${getShade('light', 10)};
     box-sizing: border-box;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    overflow: hidden;
-    width: 100%;
+    left: 20px;
     max-width: 256px;
-    transition: all 0.3s ease;
+    overflow: hidden;
+    padding: 24px, 40px, 24px, 40px;
+    position: relative;
+    top: 20px;
+    width: 100%;
+
+    :after {
+        content: '';
+        display: block;
+        height: 100%;
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        transition: all 0.3s ease;
+        width: 100%;
+        z-index: 0;
+    }
+
     :hover {
         box-shadow: 0px 0px 400px 400px rgba(4, 24, 54, 0.2) inset;
     }
     background: ${(props) => props.color};
 `;
 
-const DivStyledImage = styled.div`
-    flex: none;
+export const DivStyledImage = styled.div`
     flex-grow: 0;
+    flex: none;
     height: 160px;
     left: 21px;
     order: 0;
@@ -34,7 +53,7 @@ const DivStyledImage = styled.div`
     width: 120px;
 `;
 
-const DivStyledInfo = styled.div`
+export const DivStyledInfo = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -50,7 +69,7 @@ const DivStyledInfo = styled.div`
     width: 162px;
 `;
 
-const DivStyledLogo = styled.div`
+export const DivStyledLogo = styled.div`
     border-radius: 0px;
     height: 136px;
     left: 19px;
@@ -58,7 +77,7 @@ const DivStyledLogo = styled.div`
     width: 82px;
 `;
 
-const DivStyledNetworkInfo = styled.div`
+export const DivStyledNetworkInfo = styled.div`
     bottom: 0%;
     color: ${color.white};
     flex-grow: 0;
@@ -74,7 +93,7 @@ const DivStyledNetworkInfo = styled.div`
     width: 100%;
 `;
 
-const DivStyledButton = styled.div`
+export const DivStyledButton = styled.div`
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -90,7 +109,7 @@ const DivStyledButton = styled.div`
     width: 187px;
 `;
 
-const TextStyledChain = styled.p`
+export const PStyledChainName = styled.p`
     ${fonts.montserrat};
     ${fonts.textBold500};
     font-size: 32px;
@@ -100,25 +119,13 @@ const TextStyledChain = styled.p`
     word-break: break-all;
 `;
 
-const TestStyledNetwork = styled.p`
+export const PStyledNetwork = styled.p`
     ${fonts.openSans};
     ${fonts.textBold700};
+    font-size: 20px;
     height: 36px;
     line-height: 36px;
     margin: 0;
     overflow: hidden;
     word-break: break-all;
 `;
-
-const CryptoCardStyles = {
-    CryptoCardStyled,
-    DivStyledButton,
-    DivStyledImage,
-    DivStyledInfo,
-    DivStyledLogo,
-    DivStyledNetworkInfo,
-    TextStyledChain,
-    TestStyledNetwork,
-};
-
-export default CryptoCardStyles;

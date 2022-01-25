@@ -1,20 +1,18 @@
+import React from 'react';
 import { Button } from '../Button';
-import { CryptoCardProps } from './types';
 import { iconTypes } from '../Icon/collection';
 import Illustration from '../Illustrations/Illustration';
-import CryptoCardStyles from './CryptoCards.styles';
-import React from 'react';
-
-const {
-    CryptoCardStyled,
+import { CryptoCardProps } from './types';
+import {
+    DivStyledCryptoCard,
     DivStyledButton,
     DivStyledImage,
     DivStyledInfo,
     DivStyledLogo,
     DivStyledNetworkInfo,
-    TextStyledChain,
-    TestStyledNetwork,
-} = CryptoCardStyles;
+    PStyledChainName,
+    PStyledNetwork,
+} from './CryptoCards.styles';
 
 const CryptoCards: React.FC<CryptoCardProps> = ({
     bgColor,
@@ -25,33 +23,29 @@ const CryptoCards: React.FC<CryptoCardProps> = ({
     settingsIcon,
 }: CryptoCardProps) => {
     return (
-        <CryptoCardStyled color={bgColor} data-testid={'test-crypto-card'}>
+        <DivStyledCryptoCard color={bgColor} data-testid={'test-crypto-card'}>
             <DivStyledInfo>
                 <DivStyledImage>
                     <DivStyledLogo>
                         {<Illustration logo={chain}></Illustration>}
                     </DivStyledLogo>
                 </DivStyledImage>
-
                 <DivStyledNetworkInfo>
-                    <TextStyledChain data-testid={'test-chain-name'}>
+                    <PStyledChainName data-testid={'test-chain-name'}>
                         {`${chain.charAt(0).toUpperCase()}${chain.slice(1)}`}
-                    </TextStyledChain>
-                    <TestStyledNetwork>
-                        {chainType || 'Network'}
-                    </TestStyledNetwork>
+                    </PStyledChainName>
+                    <PStyledNetwork>{chainType || 'Network'}</PStyledNetwork>
                 </DivStyledNetworkInfo>
             </DivStyledInfo>
-
             <DivStyledButton>
                 <Button
-                    onClick={onClick}
-                    theme="translucent"
-                    text={btnText}
                     icon={settingsIcon || iconTypes.cog}
+                    onClick={onClick}
+                    text={btnText}
+                    theme="translucent"
                 />
             </DivStyledButton>
-        </CryptoCardStyled>
+        </DivStyledCryptoCard>
     );
 };
 

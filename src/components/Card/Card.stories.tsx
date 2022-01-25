@@ -67,7 +67,7 @@ export const Pack = Template.bind({});
 Pack.args = {
     tooltipText: 'Coming soon',
     children: [<div key={'0'}>{getModuleAnimation('Pack')}</div>],
-    title: 'NFT Collection',
+    title: 'Lootbox',
 };
 
 export const NftCollection = Template.bind({});

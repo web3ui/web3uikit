@@ -6,6 +6,7 @@ import { iconTypes } from '../Icon/collection';
 export default {
     title: 'UI/Crypto Cards',
     component: CryptoCards,
+    argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof CryptoCards>;
 
 const Template: ComponentStory<typeof CryptoCards> = (args) => (
@@ -14,7 +15,6 @@ const Template: ComponentStory<typeof CryptoCards> = (args) => (
 
 export const Ethereum = Template.bind({});
 Ethereum.args = {
-    onClick: () => alert('Clicked'),
     chain: 'ethereum',
     chainType: 'Network',
     settingsIcon: iconTypes.cog,
@@ -25,7 +25,6 @@ Ethereum.args = {
 
 export const Binance = Template.bind({});
 Binance.args = {
-    onClick: () => alert('Clicked'),
     chain: 'binance',
     chainType: 'Network',
     settingsIcon: iconTypes.cog,
@@ -36,7 +35,6 @@ Binance.args = {
 
 export const Polygon = Template.bind({});
 Polygon.args = {
-    onClick: () => alert('Clicked'),
     chain: 'polygon',
     chainType: 'Network',
     settingsIcon: iconTypes.cog,
@@ -47,7 +45,6 @@ Polygon.args = {
 
 export const Avalanche = Template.bind({});
 Avalanche.args = {
-    onClick: () => alert('Clicked'),
     chain: 'avalanche',
     chainType: 'Network',
     settingsIcon: iconTypes.cog,
@@ -58,7 +55,6 @@ Avalanche.args = {
 
 export const Fantom = Template.bind({});
 Fantom.args = {
-    onClick: () => alert('Clicked'),
     chain: 'fantom',
     chainType: 'Network',
     settingsIcon: iconTypes.cog,
@@ -69,7 +65,6 @@ Fantom.args = {
 
 export const Arbitrum = Template.bind({});
 Arbitrum.args = {
-    onClick: () => alert('Clicked'),
     chain: 'arbitrum',
     chainType: 'Network',
     settingsIcon: iconTypes.cog,

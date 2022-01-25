@@ -9,7 +9,7 @@ export interface ButtonProps {
     /**
      * the function to be called on click
      */
-    onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 
     /**
      * set the button to be interactive, or not
@@ -56,4 +56,9 @@ export interface ButtonProps {
      * set the button to be 100% width
      */
     isFullWidth?: boolean;
+
+    /**
+     * this is mostly like disabled mode except it gives the user a good visual indicator that something is loading
+     */
+    isLoading?: boolean;
 }

@@ -20,7 +20,7 @@ export interface FormProps {
     /**
      * Pass all the props a button could use
      */
-    buttonConfig: ButtonProps;
+    buttonConfig?: ButtonProps;
 
     /**
      * when the form passes validation the data is returned
@@ -92,4 +92,9 @@ export type DataInput = {
      * You can validate your inputs
      */
     validation?: ValidateInput;
+
+    /**
+     * You can set an input width
+     */
+    inputWidth?: string;
 };

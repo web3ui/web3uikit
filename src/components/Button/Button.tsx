@@ -1,7 +1,8 @@
 import React from 'react';
-import { ButtonStyled } from './Button.styles';
 import Icon from '../../components/Icon/Icon';
-import { ButtonProps } from '.';
+import { Loading } from '../Loading';
+import { ButtonStyled } from './Button.styles';
+import { ButtonProps } from './types';
 
 const Button: React.FC<ButtonProps> = ({
     color,
@@ -10,7 +11,8 @@ const Button: React.FC<ButtonProps> = ({
     iconLayout = 'leading',
     id,
     isFullWidth = false,
-    onClick,
+    isLoading = false,
+    onClick = (e) => e.preventDefault(),
     size = 'regular',
     text = 'click',
     theme,
@@ -20,17 +22,21 @@ const Button: React.FC<ButtonProps> = ({
         <ButtonStyled
             color={color}
             data-testid="test-button"
-            disabled={disabled}
+            disabled={disabled || isLoading}
             iconLayout={iconLayout}
             id={id}
             isFullWidth={isFullWidth}
+            isLoading={isLoading}
             onClick={onClick}
             size={size}
             theme={theme}
             type={type}
         >
+            {isLoading && (
+                <Loading size={12} ringColor="#ffffff" ballColor="#ffffff" />
+            )}
             {icon && <Icon svg={icon} fill="inherit" size={20} />}
-            <span>{text}</span>
+            <span>{isLoading ? 'loading' : text}</span>
         </ButtonStyled>
     );
 };

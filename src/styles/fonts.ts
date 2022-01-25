@@ -9,7 +9,7 @@ const heading = css`
     font-size: 36px;
     font-style: normal;
     font-weight: 600;
-    letter-spacing: 0px;
+    letter-spacing: 0;
 `;
 
 const h1 = css`
@@ -40,7 +40,7 @@ const h5 = css`
 `;
 
 const ibm = css`
-    font-family: IBM Plex Mono;
+    font-family: IBM Plex Mono, sans-serif;
     font-size: 16px;
     font-style: normal;
 `;
@@ -53,7 +53,7 @@ const text = css`
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    letter-spacing: 0em;
+    letter-spacing: 0;
     line-height: 24px;
 `;
 
@@ -72,12 +72,12 @@ const textBold700 = css`
 const textSmall = css`
     font-size: 14px;
     font-weight: 400;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     line-height: 24px;
 `;
 
 const semiBold = css`
-    ${text}
+    ${text};
     font-weight: 600;
 `;
 

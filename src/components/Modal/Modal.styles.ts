@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import { ModalProps } from './types';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
+import { ModalProps } from './types';
 
-const ModalStyled = styled.div<Pick<ModalProps, 'isVisible'>>`
-    ${(p) => (p.isVisible ? 'display: grid;' : 'display: none;')};
+type TStyleProps = Pick<ModalProps, 'isVisible' | 'hasCancel'>;
+
+export const ModalStyled = styled.div`
     ${fonts.text};
     background-color: ${colors.white};
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
@@ -16,7 +17,7 @@ const ModalStyled = styled.div<Pick<ModalProps, 'isVisible'>>`
     width: 80%;
 `;
 
-const ModalHeader = styled.div`
+export const ModalHeader = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,22 +33,24 @@ const ModalHeader = styled.div`
     }
 `;
 
-const ModalContent = styled.div`
+export const ModalContent = styled.div`
     padding: 5px 32px 15px;
 `;
 
-const ModalFooter = styled.div`
-    display: flex;
-    justify-content: space-between;
+export const ModalFooter = styled.div<TStyleProps>`
     border-top: 1px solid ${colors.paleBlue2};
+    display: flex;
     padding: 15px 32px 20px;
+    justify-content: ${(p) => (p.hasCancel ? 'space-between' : 'flex-end')};
 `;
 
-const ModalStyles = {
-    ModalContent,
-    ModalFooter,
-    ModalHeader,
-    ModalStyled,
-};
-
-export default ModalStyles;
+export const ModalWrapperStyled = styled.div<TStyleProps>`
+    ${(p) => (p.isVisible ? 'display: grid;' : 'display: none;')};
+    background: rgba(0, 0, 0, 0.3);
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 5;
+`;

@@ -1,7 +1,6 @@
 import React, { createContext, useContext } from 'react';
-import { IGridProps } from '.';
-import { ColDiv, RowDiv } from './Grid.styles';
-import { IColProps } from './types';
+import { ColDiv, RowDiv } from './Row.styles';
+import { IColProps, IRowProps } from './types';
 
 const Context = createContext({
     lg: 0,
@@ -20,7 +19,6 @@ export function Col({
     order = 0,
 }: IColProps): JSX.Element {
     const prov = useContext(Context);
-    console.log(prov);
     return (
         <ColDiv
             isFullWidth={isFullWidth}
@@ -33,13 +31,14 @@ export function Col({
             rowGap={prov.rowGap}
             colGap={prov.colGap}
             breakpointsConfig={breakpointsConfig}
+            role="col"
         >
             {children}
         </ColDiv>
     );
 }
 
-function Grid({
+function Row({
     alignItems = 'start',
     justifyItems = 'flex-start',
     colGap = 15,
@@ -49,7 +48,7 @@ function Grid({
     sm = 16,
     md = 24,
     lg = 24,
-}: IGridProps): JSX.Element {
+}: IRowProps): JSX.Element {
     return (
         <Context.Provider value={{ xs, md, sm, lg, rowGap, colGap }}>
             <RowDiv
@@ -57,6 +56,7 @@ function Grid({
                 justifyItems={justifyItems}
                 colGap={colGap}
                 rowGap={rowGap}
+                data-testid="row"
             >
                 {children}
             </RowDiv>
@@ -64,6 +64,6 @@ function Grid({
     );
 }
 
-Grid.Col = Col;
+Row.Col = Col;
 
-export default Grid;
+export default Row;

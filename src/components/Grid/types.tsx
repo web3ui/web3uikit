@@ -6,7 +6,7 @@ type justifyStyles =
     | 'space-between'
     | 'space-around'
     | 'space-evenly';
-export interface IGridProps {
+export interface IRowProps {
     /**
      * To Align items veritcaly
      */

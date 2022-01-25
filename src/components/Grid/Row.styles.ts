@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { IGridProps } from '.';
+import { IRowProps } from '.';
 import fonts from '../../styles/fonts';
 import { IColBreakpointsConfig } from './types';
 
-export const RowDiv = styled.div<IGridProps>`
+export const RowDiv = styled.div<IRowProps>`
     ${fonts.text}
     display: flex;
     flex-wrap: wrap;

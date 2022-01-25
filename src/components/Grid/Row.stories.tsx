@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Grid from './Grid';
+import Row, { Col } from './Row';
 export default {
-    title: 'Ui/Grid',
-    component: Grid,
-} as ComponentMeta<typeof Grid>;
+    title: 'Ui/Row',
+    component: Row,
+    subcomponents: { Col },
+} as ComponentMeta<typeof Row>;
 
-const Template: ComponentStory<typeof Grid> = (args) => (
-    <Grid {...args}>{args.children}</Grid>
+const Template: ComponentStory<typeof Row> = (args) => (
+    <Row {...args}>{args.children}</Row>
 );
 
 const basicColStyling = {
@@ -29,9 +30,9 @@ const basicStylingSecondShade = {
     justifyContent: 'center',
 };
 
-export const GridComponent = Template.bind({});
+export const RowComponent = Template.bind({});
 
-GridComponent.args = {
+RowComponent.args = {
     alignItems: 'center',
     justifyItems: 'center',
     xs: 8,
@@ -40,7 +41,7 @@ GridComponent.args = {
     lg: 24,
     children: (
         <>
-            <Grid.Col
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 8,
@@ -50,8 +51,8 @@ GridComponent.args = {
                 }}
             >
                 <div style={basicColStyling}>Col 24</div>
-            </Grid.Col>
-            <Grid.Col
+            </Row.Col>
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 4,
@@ -60,9 +61,9 @@ GridComponent.args = {
                     lg: 12,
                 }}
             >
-                <div style={basicColStyling}>Grid Col 12</div>
-            </Grid.Col>
-            <Grid.Col
+                <div style={basicColStyling}>Row Col 12</div>
+            </Row.Col>
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 4,
@@ -72,10 +73,10 @@ GridComponent.args = {
                 }}
             >
                 <div style={{ ...basicColStyling, backgroundColor: '#0092ff' }}>
-                    Grid Col 12
+                    Row Col 12
                 </div>
-            </Grid.Col>
-            <Grid.Col
+            </Row.Col>
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 2,
@@ -84,9 +85,9 @@ GridComponent.args = {
                     lg: 8,
                 }}
             >
-                <div style={basicColStyling}>Grid Col 8</div>
-            </Grid.Col>
-            <Grid.Col
+                <div style={basicColStyling}>Row Col 8</div>
+            </Row.Col>
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 2,
@@ -96,10 +97,10 @@ GridComponent.args = {
                 }}
             >
                 <div style={{ ...basicColStyling, backgroundColor: '#0092ff' }}>
-                    Grid Col 8
+                    Row Col 8
                 </div>
-            </Grid.Col>
-            <Grid.Col
+            </Row.Col>
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 2,
@@ -108,9 +109,9 @@ GridComponent.args = {
                     lg: 8,
                 }}
             >
-                <div style={basicColStyling}>Grid Col 8</div>
-            </Grid.Col>
-            <Grid.Col
+                <div style={basicColStyling}>Row Col 8</div>
+            </Row.Col>
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 2,
@@ -120,10 +121,10 @@ GridComponent.args = {
                 }}
             >
                 <div style={{ ...basicColStyling, backgroundColor: '#0092ff' }}>
-                    Grid Col 6
+                    Row Col 6
                 </div>
-            </Grid.Col>
-            <Grid.Col
+            </Row.Col>
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 2,
@@ -132,9 +133,9 @@ GridComponent.args = {
                     lg: 6,
                 }}
             >
-                <div style={{ ...basicColStyling }}>Grid Col 6</div>
-            </Grid.Col>
-            <Grid.Col
+                <div style={{ ...basicColStyling }}>Row Col 6</div>
+            </Row.Col>
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 2,
@@ -144,10 +145,10 @@ GridComponent.args = {
                 }}
             >
                 <div style={{ ...basicColStyling, backgroundColor: '#0092ff' }}>
-                    Grid Col 6
+                    Row Col 6
                 </div>
-            </Grid.Col>
-            <Grid.Col
+            </Row.Col>
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 2,
@@ -156,8 +157,8 @@ GridComponent.args = {
                     lg: 6,
                 }}
             >
-                <div style={{ ...basicColStyling }}>Grid Col 6</div>
-            </Grid.Col>
+                <div style={{ ...basicColStyling }}>Row Col 6</div>
+            </Row.Col>
         </>
     ),
 };
@@ -173,7 +174,7 @@ CustomBreakpoints.args = {
     lg: 24,
     children: (
         <>
-            <Grid.Col
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 8,
@@ -183,8 +184,8 @@ CustomBreakpoints.args = {
                 }}
             >
                 <div style={basicColStyling}>Col 24</div>
-            </Grid.Col>
-            <Grid.Col
+            </Row.Col>
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 8,
@@ -193,9 +194,9 @@ CustomBreakpoints.args = {
                     lg: 6,
                 }}
             >
-                <div style={basicStylingSecondShade}>Grid Col 12</div>
-            </Grid.Col>
-            <Grid.Col
+                <div style={basicStylingSecondShade}>Row Col 12</div>
+            </Row.Col>
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 8,
@@ -205,8 +206,8 @@ CustomBreakpoints.args = {
                 }}
             >
                 <div style={basicColStyling}>Col 24</div>
-            </Grid.Col>
-            <Grid.Col
+            </Row.Col>
+            <Row.Col
                 span={12}
                 breakpointsConfig={{
                     xs: 8,
@@ -215,8 +216,8 @@ CustomBreakpoints.args = {
                     lg: 6,
                 }}
             >
-                <div style={basicStylingSecondShade}>Grid Col 12</div>
-            </Grid.Col>
+                <div style={basicStylingSecondShade}>Row Col 12</div>
+            </Row.Col>
         </>
     ),
 };
@@ -227,89 +228,89 @@ JustifyContent.args = {
     children: (
         <>
             <h4>Flex Start</h4>
-            <Grid.Col isFullWidth={true}>
-                <Grid justifyItems="flex-start">
-                    <Grid.Col span={6}>
+            <Row.Col isFullWidth={true}>
+                <Row justifyItems="flex-start">
+                    <Row.Col span={6}>
                         <div style={basicColStyling}>Flex Start</div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={basicStylingSecondShade}>Flex Start</div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={basicColStyling}>Flex Start</div>
-                    </Grid.Col>
-                </Grid>
-            </Grid.Col>
+                    </Row.Col>
+                </Row>
+            </Row.Col>
             <h4>Flex End</h4>
-            <Grid.Col isFullWidth={true}>
-                <Grid justifyItems="flex-end">
-                    <Grid.Col span={6}>
+            <Row.Col isFullWidth={true}>
+                <Row justifyItems="flex-end">
+                    <Row.Col span={6}>
                         <div style={basicColStyling}>Flex End</div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={basicStylingSecondShade}>Flex End</div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={basicColStyling}>Flex End</div>
-                    </Grid.Col>
-                </Grid>
-            </Grid.Col>
+                    </Row.Col>
+                </Row>
+            </Row.Col>
             <h4>Center</h4>
-            <Grid.Col span={24}>
-                <Grid justifyItems="center">
-                    <Grid.Col span={6}>
+            <Row.Col span={24}>
+                <Row justifyItems="center">
+                    <Row.Col span={6}>
                         <div style={basicColStyling}>Center</div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={basicStylingSecondShade}>Center</div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={basicColStyling}>Center</div>
-                    </Grid.Col>
-                </Grid>
-            </Grid.Col>
+                    </Row.Col>
+                </Row>
+            </Row.Col>
             <h4>Space Evenly</h4>
-            <Grid.Col isFullWidth={true}>
-                <Grid justifyItems="space-evenly">
-                    <Grid.Col span={6}>
+            <Row.Col isFullWidth={true}>
+                <Row justifyItems="space-evenly">
+                    <Row.Col span={6}>
                         <div style={basicColStyling}>Space Evenly</div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={basicStylingSecondShade}>Space Evenly</div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={basicColStyling}>Space Evenly</div>
-                    </Grid.Col>
-                </Grid>
-            </Grid.Col>
+                    </Row.Col>
+                </Row>
+            </Row.Col>
             <h4>Space Between</h4>
-            <Grid.Col isFullWidth={true}>
-                <Grid justifyItems="space-between">
-                    <Grid.Col span={6}>
+            <Row.Col isFullWidth={true}>
+                <Row justifyItems="space-between">
+                    <Row.Col span={6}>
                         <div style={basicColStyling}>Space Between</div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={basicStylingSecondShade}>Space Between</div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={basicColStyling}>Space Between</div>
-                    </Grid.Col>
-                </Grid>
-            </Grid.Col>
+                    </Row.Col>
+                </Row>
+            </Row.Col>
             <h4>Space Around</h4>
-            <Grid.Col isFullWidth={true}>
-                <Grid justifyItems="space-around">
-                    <Grid.Col span={6}>
+            <Row.Col isFullWidth={true}>
+                <Row justifyItems="space-around">
+                    <Row.Col span={6}>
                         <div style={basicColStyling}>Space Arround</div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={basicStylingSecondShade}>Space Arround</div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={basicColStyling}>Space Arround</div>
-                    </Grid.Col>
-                </Grid>
-            </Grid.Col>
+                    </Row.Col>
+                </Row>
+            </Row.Col>
         </>
     ),
 };
@@ -320,14 +321,14 @@ AlignStyles.args = {
     children: (
         <>
             <h4>Align Start</h4>
-            <Grid.Col isFullWidth={true}>
-                <Grid alignItems="start">
-                    <Grid.Col span={6}>
+            <Row.Col isFullWidth={true}>
+                <Row alignItems="start">
+                    <Row.Col span={6}>
                         <div style={{ ...basicColStyling, height: '100px' }}>
                             Align Start
                         </div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div
                             style={{
                                 ...basicStylingSecondShade,
@@ -336,23 +337,23 @@ AlignStyles.args = {
                         >
                             Align Start
                         </div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={{ ...basicColStyling, height: '75px' }}>
                             Align Start
                         </div>
-                    </Grid.Col>
-                </Grid>
-            </Grid.Col>
+                    </Row.Col>
+                </Row>
+            </Row.Col>
             <h4>Align End</h4>
-            <Grid.Col isFullWidth={true}>
-                <Grid alignItems="end">
-                    <Grid.Col span={6}>
+            <Row.Col isFullWidth={true}>
+                <Row alignItems="end">
+                    <Row.Col span={6}>
                         <div style={{ ...basicColStyling, height: '100px' }}>
                             Align End
                         </div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div
                             style={{
                                 ...basicStylingSecondShade,
@@ -361,23 +362,23 @@ AlignStyles.args = {
                         >
                             Align End
                         </div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={{ ...basicColStyling, height: '75px' }}>
                             Align End
                         </div>
-                    </Grid.Col>
-                </Grid>
-            </Grid.Col>
+                    </Row.Col>
+                </Row>
+            </Row.Col>
             <h4>Align Center</h4>
-            <Grid.Col isFullWidth={true}>
-                <Grid alignItems="center">
-                    <Grid.Col span={6}>
+            <Row.Col isFullWidth={true}>
+                <Row alignItems="center">
+                    <Row.Col span={6}>
                         <div style={{ ...basicColStyling, height: '100px' }}>
                             Align Center
                         </div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div
                             style={{
                                 ...basicStylingSecondShade,
@@ -386,23 +387,23 @@ AlignStyles.args = {
                         >
                             Align Center
                         </div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={{ ...basicColStyling, height: '75px' }}>
                             Align Center
                         </div>
-                    </Grid.Col>
-                </Grid>
-            </Grid.Col>
+                    </Row.Col>
+                </Row>
+            </Row.Col>
             <h4>Align Baseline</h4>
-            <Grid.Col isFullWidth={true}>
-                <Grid alignItems="baseline">
-                    <Grid.Col span={6}>
+            <Row.Col isFullWidth={true}>
+                <Row alignItems="baseline">
+                    <Row.Col span={6}>
                         <div style={{ ...basicColStyling, height: '100px' }}>
                             Align Baseline
                         </div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div
                             style={{
                                 ...basicStylingSecondShade,
@@ -411,14 +412,14 @@ AlignStyles.args = {
                         >
                             Align Baseline
                         </div>
-                    </Grid.Col>
-                    <Grid.Col span={6}>
+                    </Row.Col>
+                    <Row.Col span={6}>
                         <div style={{ ...basicColStyling, height: '75px' }}>
                             Align Baseline
                         </div>
-                    </Grid.Col>
-                </Grid>
-            </Grid.Col>
+                    </Row.Col>
+                </Row>
+            </Row.Col>
         </>
     ),
 };
@@ -428,18 +429,18 @@ export const OrderedColumns = Template.bind({});
 OrderedColumns.args = {
     children: (
         <>
-            <Grid.Col span={6} order={5}>
+            <Row.Col span={6} order={5}>
                 <div style={basicColStyling}>Position 1, Order 5 </div>
-            </Grid.Col>
-            <Grid.Col span={6} order={3}>
+            </Row.Col>
+            <Row.Col span={6} order={3}>
                 <div style={basicStylingSecondShade}>Position 2, Order 3 </div>
-            </Grid.Col>
-            <Grid.Col span={6} order={2}>
+            </Row.Col>
+            <Row.Col span={6} order={2}>
                 <div style={basicColStyling}>Position 3, Order 2 </div>
-            </Grid.Col>
-            <Grid.Col span={6} order={1}>
+            </Row.Col>
+            <Row.Col span={6} order={1}>
                 <div style={basicStylingSecondShade}>Position 4, Order 1 </div>
-            </Grid.Col>
+            </Row.Col>
         </>
     ),
 };

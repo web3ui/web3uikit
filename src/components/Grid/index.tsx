@@ -1,2 +1,2 @@
-export { default as Table } from './Grid';
-export type { IGridProps } from './types';
+export { default as Table } from './Row';
+export type { IRowProps } from './types';

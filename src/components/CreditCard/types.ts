@@ -11,12 +11,12 @@ export interface CreditCardProps {
         /**
          * 01 -> Jan, 02 -> Feb, ..., 12 -> Dec
          */
-        month: string,
+        month: string;
         /**
          * 22 -> 2022 , 23 -> 2023 ..., 40 -> 2040
          */
         year: string;
-    }
+    };
 
     /**
      * set if credit-card is expired
@@ -46,5 +46,5 @@ export interface CreditCardProps {
     /**
      * set type
      */
-    type: "mastercard" | "visa"
+    type: 'mastercard' | 'visa';
 }

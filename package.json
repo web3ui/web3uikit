@@ -39,9 +39,6 @@
             "pre-commit": "tsdx lint && npm prettier"
         }
     },
-    "publishConfig": {
-        "tag": "latest"
-    },
     "prettier": {
         "printWidth": 80,
         "semi": true,

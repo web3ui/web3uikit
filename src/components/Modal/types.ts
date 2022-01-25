@@ -10,6 +10,11 @@ export interface ModalProps {
     children: Array<React.ReactNode>;
 
     /**
+     * should the modal have a cancel button
+     */
+    hasCancel?: boolean;
+
+    /**
      * set text of 'Cancel' button
      */
     cancelText?: string;
@@ -38,6 +43,13 @@ export interface ModalProps {
      * Run function on 'Ok'
      */
     onOk?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+
+    /**
+     * Run function on 'X', you should prob use this event to set isVisible to false or ideally remove Modal from the render
+     */
+    onCloseButtonPressed?: (
+        event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    ) => void;
 
     /*
      *  set text of 'Ok' button

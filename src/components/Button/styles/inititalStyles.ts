@@ -60,3 +60,9 @@ export const initialStyles = css`
         pointer-events: none;
     }
 `;
+
+export const isLoadingMode = css`
+    span {
+        margin-left: 12px;
+    }
+`;

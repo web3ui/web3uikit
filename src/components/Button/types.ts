@@ -9,7 +9,7 @@ export interface ButtonProps {
     /**
      * the function to be called on click
      */
-    onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 
     /**
      * set the button to be interactive, or not

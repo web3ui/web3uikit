@@ -8,7 +8,7 @@ export interface CardProps {
     /**
      * set the content of the card
      */
-    children: Array<React.ReactNode>;
+    children: JSX.Element[] | JSX.Element;
 
     /**
      * set the description of the card

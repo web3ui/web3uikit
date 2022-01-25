@@ -8,7 +8,7 @@ import { LinkStyled, FlexSpanStyled } from './LinkTo.styles';
 const LinkTo: React.FC<LinkToProps> = ({
     address,
     text,
-    type,
+    type = 'external',
     iconLayout = 'leading',
 }) => (
     <LinkStyled

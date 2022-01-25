@@ -26,4 +26,9 @@ export interface NotificationProps {
      * set if notification is visable
      */
     isVisible?: boolean;
+
+    /**
+     * set if position absolute
+     */
+    isPositionRelative?: boolean;
 }

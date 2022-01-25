@@ -36,3 +36,12 @@ CustomIcon.args = {
     title: 'New Event Sync',
     isVisible: true,
 };
+
+export const PositionRelative = Template.bind({});
+PositionRelative.args = {
+    id: 'test-Notification',
+    message: 'Somebody messaged you',
+    isVisible: true,
+    title: 'New Notification',
+    isPositionRelative: true,
+};

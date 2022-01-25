@@ -12,13 +12,18 @@ const Loading: React.FC<ILoadingProps> = ({
     layout = 'column',
 }) => {
     return (
-        <StyledSpinnerParentDiv color={ringColor} layout={layout}>
+        <StyledSpinnerParentDiv
+            aria-label="loading spinner"
+            color={ringColor}
+            layout={layout}
+            role="image"
+        >
             <StyledSpinnerDiv
-                role={'spinner'}
-                data-testid={size}
-                size={size}
-                ringColor={hexToRgb(ringColor)}
                 ballColor={hexToRgb(ballColor)}
+                data-testid={size}
+                ringColor={hexToRgb(ringColor)}
+                role={'spinner'}
+                size={size}
             />
             {text != '' && <h4>{text}</h4>}
         </StyledSpinnerParentDiv>

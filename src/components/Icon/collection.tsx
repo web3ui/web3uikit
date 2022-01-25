@@ -156,7 +156,6 @@ export enum iconTypes {
 
 const collection = {
     arrowCircleDownIcon,
-    mailIcon,
     arrowCircleLeftIcon,
     arrowCircleRightIcon,
     bellIcon,
@@ -200,6 +199,7 @@ const collection = {
     lockClosedIcon,
     lockOpenIcon,
     logOutIcon,
+    mailIcon,
     maximizeIcon,
     messageCircleIcon,
     minimizeIcon,

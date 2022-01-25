@@ -63,6 +63,8 @@ export const DivStyled = styled.div`
         ${resetCSS}
         ${fonts.text}
         margin: 0 6px;
+        min-width: 100px;
+        text-align: right;
     }
 
     svg {

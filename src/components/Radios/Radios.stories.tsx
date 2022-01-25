@@ -37,3 +37,20 @@ RadiosWithLongText.args = {
     ],
     title: 'What is your favorite bitCoin quote of 2021?',
 };
+
+export const RadiosSetDefault = Template.bind({});
+RadiosSetDefault.args = {
+    id: 'radios',
+    items: ['Charmander', 'Squirtle', 'Bulbasaur', 'Pikachu'],
+    title: "Who's that Pokemon?",
+    checked: true,
+};
+
+export const RadiosSetParticular = Template.bind({});
+RadiosSetParticular.args = {
+    id: 'radios',
+    items: ['Charmander', 'Squirtle', 'Bulbasaur', 'Pikachu'],
+    title: "Who's that Pokemon?",
+    checked: true,
+    setWhichIsChecked: 2,
+};

@@ -1,5 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { ILoadingProps } from './types';
+import fonts from '../../styles/fonts';
 
 const rotate = keyframes`
     0%{
@@ -10,7 +11,24 @@ const rotate = keyframes`
     }
 `;
 
-export const StyledSpinnerDiv = styled.div<ILoadingProps>`
+interface IStyledSpinnerParentDiv {
+    color: string;
+    layout: 'column' | 'row';
+}
+
+export const StyledSpinnerParentDiv = styled.div<IStyledSpinnerParentDiv>`
+    ${fonts.text}
+    display: flex;
+    flex-direction: ${(props) => props.layout};
+    justify-content: center;
+    align-items: center;
+    > h4 {
+        margin: 4px;
+        font-weight: 400;
+        color: ${(props) => props.color};
+    }
+`;
+export const StyledSpinnerDiv = styled.div<Partial<ILoadingProps>>`
     width: ${(props) => props.size}px;
     height: ${(props) => props.size}px;
     border: 3px solid

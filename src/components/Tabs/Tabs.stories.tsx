@@ -9,6 +9,7 @@ import { Tab } from '.';
 export default {
     title: 'UI/Tabs',
     component: TabList,
+    subcomponents: { Tab },
 } as ComponentMeta<typeof TabList>;
 
 const Template: ComponentStory<typeof TabList> = (args) => <>{args.children}</>;

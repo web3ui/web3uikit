@@ -20,6 +20,17 @@ CustomSizeSpinner.args = {
     size: 90,
 };
 
+export const CustomTextSpinner = Template.bind({});
+CustomTextSpinner.args = {
+    text: 'Loading...',
+};
+
+export const CustomTextSpinnerRowFormat = Template.bind({});
+CustomTextSpinnerRowFormat.args = {
+    text: 'Loading...',
+    layout: 'row',
+};
+
 export const CustomRingColors = Template.bind({});
 CustomRingColors.args = {
     ringColor: color.green,

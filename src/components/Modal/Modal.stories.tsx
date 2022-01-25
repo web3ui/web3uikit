@@ -26,6 +26,10 @@ const Template: ComponentStory<typeof Modal> = (args) => {
                 console.log('pressed ok');
                 updateArgs({ isVisible: false });
             }}
+            onCloseButtonPressed={() => {
+                console.log('pressed close');
+                updateArgs({ isVisible: false });
+            }}
         />
     );
 };
@@ -34,6 +38,7 @@ export const Regular = Template.bind({});
 Regular.args = {
     id: 'regular',
     title: 'Confirm',
+    isVisible: true,
     children: [
         <div
             key={'0'}

@@ -181,6 +181,7 @@ const Form: React.FC<FormProps> = ({
                 icon={buttonConfig?.icon}
                 iconLayout={buttonConfig?.iconLayout}
                 id={`form-${id}-submit`}
+                isLoading={buttonConfig?.isLoading}
                 isFullWidth={buttonConfig?.isFullWidth}
                 onClick={buttonConfig?.onClick}
                 size={buttonConfig?.size}

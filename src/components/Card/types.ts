@@ -30,7 +30,7 @@ export interface CardProps {
     tooltipText: string;
 
     /**
-     * Is disabled
+     * Set the state disabled state of the cart
      */
     isDisabled?: boolean;
 }

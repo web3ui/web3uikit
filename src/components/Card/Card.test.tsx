@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Card.stories';
 
-const { Regular, IsDisabled } = composeStories(stories);
+const { Regular, Disabled } = composeStories(stories);
 
 describe('Card - Regular', () => {
     const cardId = 'card-test-id';
@@ -97,15 +97,15 @@ describe('Card - Disabled', () => {
     const cardId = 'card-test-id';
     let container: HTMLDivElement;
     const descriptionId = 'desc-test-id';
-    const desc = IsDisabled?.args?.description;
+    const desc = Disabled?.args?.description;
     const headerId = 'header-test-id';
-    const text = IsDisabled?.args?.title;
+    const text = Disabled?.args?.title;
     const titleId = 'title-test-id';
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<IsDisabled />, container);
+        ReactDOM.render(<Disabled />, container);
     });
 
     afterEach(() => {

@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Radios } from '../Radios';
-import { Icon } from '../Icon';
 import { Logo } from '../Logo';
-import { iconTypes } from '../Icon/collection';
-import colors from '../../styles/colors';
 import { CreditCardProps } from './types';
 import {
     DivStyledCreditCard,

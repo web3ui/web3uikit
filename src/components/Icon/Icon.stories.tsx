@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Icon from './Icon';
@@ -483,7 +484,6 @@ Reddit.args = {
     svg: iconTypes.reddit,
 };
 
-
 export const Reload = Template.bind({});
 Reload.args = {
     fill: 'black',
@@ -573,6 +573,108 @@ Windows.args = {
     fill: 'black',
     size: 32,
     svg: iconTypes.windows,
+};
+
+export const Btc = Template.bind({});
+Btc.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.btc,
+};
+
+export const Bnb = Template.bind({});
+Bnb.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.bnb,
+};
+
+export const Oneinch = Template.bind({});
+Oneinch.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.oneinch,
+};
+
+export const Shib = Template.bind({});
+Shib.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.shib,
+};
+
+export const Doge = Template.bind({});
+Doge.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.doge,
+};
+
+export const Eth = Template.bind({});
+Eth.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.eth,
+};
+
+export const Fil = Template.bind({});
+Fil.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.fil,
+};
+
+export const Matic = Template.bind({});
+Matic.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.matic,
+};
+
+export const Avax = Template.bind({});
+Avax.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.avax,
+};
+
+export const Uni = Template.bind({});
+Uni.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.uni,
+};
+
+export const Chainlink = Template.bind({});
+Chainlink.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.chainlink,
+};
+export const Xrp = Template.bind({});
+Xrp.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.xrp,
+};
+export const Ada = Template.bind({});
+Ada.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.ada,
+};
+export const Usdt = Template.bind({});
+Usdt.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.usdt,
+};
+
+export const Usdc = Template.bind({});
+Usdc.args = {
+    fill: 'black',
+    size: 32,
+    svg: iconTypes.usdc,
 };
 
 export const XIcon = Template.bind({});

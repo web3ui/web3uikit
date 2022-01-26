@@ -78,8 +78,8 @@ NftCollection.args = {
     description: 'Create and publish your own NFT Collection',
 };
 
-export const IsDisabled = Template.bind({});
-IsDisabled.args = {
+export const Disabled = Template.bind({});
+Disabled.args = {
     tooltipText: 'Create your very own NFT Collection',
     children: [<div key={'0'}>{getModuleAnimation('Lazy NFT')}</div>],
     title: 'NFT Collection',

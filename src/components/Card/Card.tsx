@@ -49,20 +49,22 @@ const Card: React.FC<CardProps> = ({
                         svg={iconTypes.checkmark}
                     />
                 )}
-                <Tooltip
-                    data-testid={'tooltip-test-id'}
-                    position={'bottom'}
-                    children={[
-                        <Icon
-                            key="ttip-card"
-                            data-testid={'help-test-id'}
-                            fill={colors.blue}
-                            size={22}
-                            svg={iconTypes.helpCircle}
-                        />,
-                    ]}
-                    text={tooltipText}
-                />
+                {!isDisabled && (
+                    <Tooltip
+                        data-testid={'tooltip-test-id'}
+                        position={'bottom'}
+                        children={[
+                            <Icon
+                                key="ttip-card"
+                                data-testid={'help-test-id'}
+                                fill={colors.blue}
+                                size={22}
+                                svg={iconTypes.helpCircle}
+                            />,
+                        ]}
+                        text={tooltipText}
+                    />
+                )}
             </HeaderStyled>
             <div>{children}</div>
             <FooterStyled>

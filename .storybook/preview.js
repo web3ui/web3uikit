@@ -69,8 +69,8 @@ export const decorators = [
         };
         return (
             <MoralisProvider
-                appId="5mGWm5hWRK9zVPoQjBdg8qDYxlQIQ7AVT2DbFuw8"
-                serverUrl="https://doqmequbk5km.usemoralis.com:2053/server"
+                appId="8kf0j6lAWSWo2zg3kVZeC2jIbRDxjJy48sg5kkie"
+                serverUrl="https://gdwzurfueolf.usemoralis.com:2053/server"
             >
                 <Story />
                 <Web3Initialize />

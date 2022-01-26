@@ -14,7 +14,7 @@ const hoverNotSelected = css`
     }
 `;
 
-export const DivStyled = styled.div<Pick<CardProps, 'selected'>>`
+export const DivStyled = styled.div<Pick<CardProps, 'selected' | 'isDisabled'>>`
     ${resetCSS};
     ${fonts.text};
     border: 2px solid transparent;
@@ -26,7 +26,8 @@ export const DivStyled = styled.div<Pick<CardProps, 'selected'>>`
     padding: 15px;
     position: relative;
     width: 100%;
-    ${(p) => (p.selected ? selected : hoverNotSelected)}
+    ${(p) => p.isDisabled && `opacity:70%;`}
+    ${(p) => (p.selected ? selected : !p.isDisabled && hoverNotSelected)}
 `;
 
 export const HeaderStyled = styled.header`
@@ -50,5 +51,10 @@ export const FooterStyled = styled.footer`
     & > p {
         ${fonts.textBold}
         margin: 0;
+    }
+    & > span {
+        color: #68738d;
+        font-size: 12px;
+        ${fonts.text}
     }
 `;

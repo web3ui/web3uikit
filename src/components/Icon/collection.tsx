@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
 import arrowCircleDownIcon from './icons/arrow-circle-down';
 import arrowCircleLeftIcon from './icons/arrow-circle-left';
 import arrowCircleRightIcon from './icons/arrow-circle-right';
@@ -71,6 +73,21 @@ import twitterIcon from './icons/twitter';
 import updateIcon from './icons/update';
 import userIcon from './icons/user';
 import windowsIcon from './icons/windows';
+import btcIcon from './icons/btc';
+import bnbIcon from './icons/bnb';
+import oneinchIcon from './icons/oneinch';
+import shibIcon from './icons/shib';
+import dogeIcon from './icons/doge';
+import ethIcon from './icons/eth';
+import filIcon from './icons/fil';
+import maticIcon from './icons/matic';
+import avaxIcon from './icons/avax';
+import uniIcon from './icons/uni';
+import chainlinkIcon from './icons/chainlink';
+import xrpIcon from './icons/xrp';
+import adaIcon from './icons/ada';
+import usdtIcon from './icons/usdt';
+import usdcIcon from './icons/usdc';
 import xCircleIcon from './icons/x-circle';
 import xIcon from './icons/x';
 import youtubeIcon from './icons/youtube';
@@ -149,6 +166,21 @@ export enum iconTypes {
     update = 'update',
     user = 'user',
     windows = 'windows',
+    btc = 'btc',
+    bnb = 'bnb',
+    oneinch = 'oneinch',
+    shib = 'shib',
+    doge = 'doge',
+    eth = 'eth',
+    fil = 'fil',
+    matic = 'matic',
+    avax = 'avax',
+    uni = 'uni',
+    chainlink = 'chainlink',
+    xrp = 'xrp',
+    ada = 'ada',
+    usdt = 'usdt',
+    usdc = 'usdc',
     xCircle = 'x circle',
     x = 'x',
     youtube = 'youtube',
@@ -228,6 +260,21 @@ const collection = {
     updateIcon,
     userIcon,
     windowsIcon,
+    btcIcon,
+    bnbIcon,
+    oneinchIcon,
+    shibIcon,
+    dogeIcon,
+    ethIcon,
+    filIcon,
+    maticIcon,
+    avaxIcon,
+    uniIcon,
+    chainlinkIcon,
+    xrpIcon,
+    adaIcon,
+    usdtIcon,
+    usdcIcon,
     xCircleIcon,
     xIcon,
     youtubeIcon,

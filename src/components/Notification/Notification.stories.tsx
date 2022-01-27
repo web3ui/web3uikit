@@ -36,3 +36,46 @@ CustomIcon.args = {
     title: 'New Event Sync',
     isVisible: true,
 };
+
+export const PositionRelative = Template.bind({});
+PositionRelative.args = {
+    id: 'test-Notification',
+    message: 'Somebody messaged you',
+    isVisible: true,
+    title: 'New Notification',
+    isPositionRelative: true,
+};
+
+export const PositionRelativeCustomBreakPoints = Template.bind({});
+PositionRelativeCustomBreakPoints.args = {
+    id: 'test-Notification',
+    message: 'Somebody messaged you',
+    isVisible: true,
+    title: 'New Notification',
+    isPositionRelative: true,
+    positionRelativeConfig: {
+        top: '30px',
+        left: '30px',
+        width: '100%',
+    },
+};
+
+export const RelativePositioningTopLeft = Template.bind({});
+RelativePositioningTopLeft.args = {
+    id: 'test-Notification',
+    message: 'Somebody messaged you',
+    isVisible: true,
+    title: 'New Notification',
+    isPositionRelative: true,
+    position: 'topL',
+};
+
+export const RelativePositioningBottomRight = Template.bind({});
+RelativePositioningBottomRight.args = {
+    id: 'test-Notification',
+    message: 'Somebody messaged you',
+    isVisible: true,
+    title: 'New Notification',
+    isPositionRelative: true,
+    position: 'bottomR',
+};

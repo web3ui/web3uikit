@@ -2,6 +2,8 @@ import { css } from 'styled-components';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
+import styled, { keyframes } from 'styled-components';
+import { IPositionRelativeConfig } from './types';
 
 const initialStyles = css`
     ${resetCSS}
@@ -39,10 +41,80 @@ const flex = css`
     justify-content: space-between;
 `;
 
-export const notificationStyles = {
-    box,
-    flex,
-    initialStyles,
-    message,
-    title,
-};
+export const moveOpen = keyframes`
+   from {
+       transform: translate(0,-100px);
+    }
+  10% {transform: translate(0,20px);}
+  12% {transform: translate(0,22px);}
+  16% {transform: translate(0,20px);}
+  to {transform: translate(0,20px);}
+`;
+
+interface INotificationStyled {
+    isVisible: boolean;
+    isPositionRelative: boolean;
+    positionRelativeConfig: IPositionRelativeConfig;
+}
+
+export const NotificationStyled = styled.div<INotificationStyled>`
+    ${initialStyles}
+    ${(props) =>
+        props.isPositionRelative &&
+        `position: absolute; top:${
+            props.positionRelativeConfig.top
+                ? props.positionRelativeConfig.top
+                : ''
+        }; left:${
+            props.positionRelativeConfig.left
+                ? props.positionRelativeConfig.left
+                : ''
+        }; height: ${
+            props.positionRelativeConfig.height
+                ? props.positionRelativeConfig.height
+                : 'fit-content'
+        }; 
+        bottom:${
+            props.positionRelativeConfig.bottom
+                ? props.positionRelativeConfig.bottom
+                : ''
+        }; 
+        right: ${
+            props.positionRelativeConfig.right
+                ? props.positionRelativeConfig.right
+                : ''
+        }; 
+        width: ${
+            props.positionRelativeConfig.width
+                ? props.positionRelativeConfig.width
+                : 'fit-content'
+        };
+        
+        `}
+    animation:${moveOpen} 4s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    ${(props) =>
+        !props.isVisible &&
+        `
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s 0.5s, opacity 0.5s ease-out;
+        `}
+`;
+
+export const BoxStyled = styled.div`
+    ${box}
+`;
+
+export const SpanStyled = styled.span`
+    ${message}
+`;
+
+export const ParagraphStyled = styled.p`
+    ${title}
+`;
+
+export const FlexStyled = styled.div`
+    ${flex}
+`;

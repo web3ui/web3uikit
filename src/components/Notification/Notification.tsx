@@ -1,30 +1,15 @@
 import { NotificationProps } from './types';
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
-import { notificationStyles } from './Notification.styles';
+import {
+    BoxStyled,
+    FlexStyled,
+    NotificationStyled,
+    ParagraphStyled,
+    SpanStyled,
+} from './Notification.styles';
 import color from '../../styles/colors';
-
-const NotificationStyled = styled.div`
-    ${notificationStyles.initialStyles}
-`;
-
-const BoxStyled = styled.div`
-    ${notificationStyles.box}
-`;
-
-const SpanStyled = styled.span`
-    ${notificationStyles.message}
-`;
-
-const ParagraphStyled = styled.p`
-    ${notificationStyles.title}
-`;
-
-const FlexStyled = styled.div`
-    ${notificationStyles.flex}
-`;
 
 const Notification: React.FC<NotificationProps> = ({
     id = String(Date.now()),
@@ -32,19 +17,62 @@ const Notification: React.FC<NotificationProps> = ({
     message,
     title = 'New Message',
     isVisible = false,
+    isPositionRelative = false,
+    positionRelativeConfig = {},
+    position,
 }: NotificationProps) => {
     const [visible, setVisible] = useState(isVisible);
-
+    const [positionRelativeConfigState, setPositionRelativeConfigState] =
+        useState({});
     useEffect(() => {
         setVisible(isVisible);
     }, [isVisible]);
 
+    useEffect(() => {
+        if (isPositionRelative) {
+            switch (position) {
+                case 'topL':
+                    setPositionRelativeConfigState({
+                        ...positionRelativeConfig,
+                        top: '0px',
+                        left: '0px',
+                    });
+                    break;
+                case 'topR':
+                    console.log('in');
+                    setPositionRelativeConfigState({
+                        ...positionRelativeConfig,
+                        top: '0px',
+                        right: '0px',
+                    });
+                    break;
+                case 'bottomL':
+                    setPositionRelativeConfigState({
+                        ...positionRelativeConfig,
+                        bottom: '0px',
+                        left: '0px',
+                    });
+                    break;
+                case 'bottomR':
+                    setPositionRelativeConfigState({
+                        ...positionRelativeConfig,
+                        bottom: '0px',
+                        right: '0px',
+                    });
+                    break;
+            }
+        }
+    }, [position]);
+
     return (
         <>
-            {visible && (
+            {positionRelativeConfigState && (
                 <NotificationStyled
                     id={id}
                     data-testid={'test-notification-id'}
+                    isVisible={visible}
+                    isPositionRelative={isPositionRelative}
+                    positionRelativeConfig={positionRelativeConfigState}
                 >
                     <Icon
                         fill={`${color.white}`}

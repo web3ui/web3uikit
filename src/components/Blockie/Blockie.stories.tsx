@@ -1,12 +1,13 @@
-// importing boilerplate stuff for Storybook
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Blockie from './Blockie';
 import { BlockieProps } from './types';
+import { moralisContext } from '../../../.storybook/decorators';
 
 export default {
     title: 'Web3/Blockie',
     component: Blockie,
+    decorators: [moralisContext],
 } as ComponentMeta<typeof Blockie>;
 
 const Template: ComponentStory<typeof Blockie> = (args: BlockieProps) => (

@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Blockie from './Blockie';
 import { BlockieProps } from './types';
-import { moralisContext } from '../../../.storybook/decorators';
+import { moralisContext } from '../../decorators';
 
 export default {
     title: 'Web3/Blockie',

@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import NativeBalance from './NativeBalance';
 import { NativeBalanceProps } from './types';
-import { moralisContext } from '../../../.storybook/decorators';
+import { moralisContext } from '../../decorators';
 
 export default {
     title: 'Web3/NativeBalance',

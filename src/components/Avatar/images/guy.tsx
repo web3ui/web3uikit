@@ -1,12 +1,12 @@
 import React from 'react';
 
-const guy = () => {
+const renderAvatarSVG = () => {
     return (
         <svg
-            width="40"
+            fill="none"
             height="40"
             viewBox="0 0 40 40"
-            fill="none"
+            width="40"
             xmlns="http://www.w3.org/2000/svg"
         >
             <g clipPath="url(#clip0_10877_58906)">
@@ -226,4 +226,4 @@ const guy = () => {
     );
 };
 
-export default guy;
+export default renderAvatarSVG;

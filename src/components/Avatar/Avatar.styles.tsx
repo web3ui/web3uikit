@@ -1,12 +1,20 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 import resetCSS from '../../styles/reset';
+import { AvatarProps } from './types';
 
-interface IAvatarStyeldProps {
-    rounded: boolean;
-}
-const DivStyled = styled.div<IAvatarStyeldProps>`
+type TStyleProps = Pick<AvatarProps, 'image' | 'isRounded' | 'theme'>;
+
+export const roundedEdgeValue = '20px';
+
+const customBackgroundImage = css<TStyleProps>`
+    background-position: center;
+    background-size: cover;
+    background-image: url(${(p) => p.image});
+`;
+
+const DivStyled = styled.div<TStyleProps>`
     background: radial-gradient(
         106.45% 108.64% at 32.33% -4.84%,
         #ecf5fc 0.52%,
@@ -18,7 +26,13 @@ const DivStyled = styled.div<IAvatarStyeldProps>`
     text-transform: uppercase;
     width: 40px;
     word-break: break-all;
-    border-radius: ${(props) => (props.rounded ? '20px' : '0px')}; ;
+
+    span {
+        display: none;
+    }
+
+    border-radius: ${(p) => (p.isRounded ? roundedEdgeValue : '0px')};
+    ${(p) => p.theme === 'image' && p.image && customBackgroundImage}
 `;
 
 const H4Styled = styled.h4`
@@ -32,9 +46,4 @@ const H4Styled = styled.h4`
     text-align: center;
 `;
 
-const ImgStyled = styled.img`
-    height: 40px;
-    width: 40px;
-`;
-
-export { DivStyled, H4Styled, ImgStyled };
+export { DivStyled, H4Styled };

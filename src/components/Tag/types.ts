@@ -2,32 +2,32 @@ export type Tone = 'dark' | 'light';
 
 export interface TagProps {
     /**
-     * The tag ID will be generated if not assigned
+     * you can set an ID
      */
     id?: string;
 
     /**
-     * The text to display in the tag
+     * text to display to the users, should be some sort of status
      */
     text: string;
 
     /**
-     * Set Theme of tag
+     * set layout of the element
      */
     theme?: 'regular' | 'status' | 'discount';
 
     /**
-     * Set if tag is active. Must set theme to 'status' before
+     * if theme = 'status', active can be set true, to show a tick icon
      */
     active?: boolean;
 
     /**
-     * Choose a color for the tag
+     * choose a color for the tag
      */
     color?: 'green' | 'red' | 'grey' | 'yellow' | 'blue' | 'purple' | 'pink';
 
     /**
-     * Choose a tone for the selected color
+     * choose a tone for the selected color
      */
     tone?: Tone;
 }

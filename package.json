@@ -38,11 +38,6 @@
         "react-moralis": "^1.1.0",
         "styled-components": "^5.3.3"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run format"
-        }
-    },
     "prettier": {
         "printWidth": 80,
         "semi": true,

@@ -20,56 +20,105 @@ Discount.args = {
 
 export const ActiveStatus = Template.bind({});
 ActiveStatus.args = {
+    active: true,
     text: 'Active Tag',
     theme: 'status',
-    active: true,
 };
 
 export const InactiveStatus = Template.bind({});
 InactiveStatus.args = {
+    active: false,
     text: 'Inactive Tag',
     theme: 'status',
-    active: false,
 };
 
 export const Green = Template.bind({});
 Green.args = {
-    text: 'Green',
     color: 'green',
+    text: 'Green',
+};
+
+export const GreenDark = Template.bind({});
+GreenDark.args = {
+    color: 'green',
+    text: 'Green',
+    tone: 'dark',
 };
 
 export const Red = Template.bind({});
 Red.args = {
-    text: 'Red',
     color: 'red',
+    text: 'Red',
+};
+
+export const RedDark = Template.bind({});
+RedDark.args = {
+    color: 'red',
+    text: 'Red',
+    tone: 'dark',
 };
 
 export const Grey = Template.bind({});
 Grey.args = {
-    text: 'Grey',
     color: 'grey',
+    text: 'Grey',
+};
+
+export const GreyDark = Template.bind({});
+GreyDark.args = {
+    color: 'grey',
+    text: 'Grey',
+    tone: 'dark',
 };
 
 export const Yellow = Template.bind({});
 Yellow.args = {
-    text: 'Yellow',
     color: 'yellow',
+    text: 'Yellow',
+};
+
+export const YellowDark = Template.bind({});
+YellowDark.args = {
+    color: 'yellow',
+    text: 'Yellow',
+    tone: 'dark',
 };
 
 export const Blue = Template.bind({});
 Blue.args = {
-    text: 'Blue',
     color: 'blue',
+    text: 'Blue',
+};
+
+export const BlueDark = Template.bind({});
+BlueDark.args = {
+    color: 'blue',
+    text: 'Blue',
+    tone: 'dark',
 };
 
 export const Purple = Template.bind({});
 Purple.args = {
-    text: 'Purple',
     color: 'purple',
+    text: 'Purple',
+};
+
+export const PurpleDark = Template.bind({});
+PurpleDark.args = {
+    color: 'purple',
+    text: 'Purple',
+    tone: 'dark',
 };
 
 export const Pink = Template.bind({});
 Pink.args = {
-    text: 'Pink',
     color: 'pink',
+    text: 'Pink',
+};
+
+export const PinkDark = Template.bind({});
+PinkDark.args = {
+    color: 'pink',
+    text: 'Pink',
+    tone: 'dark',
 };

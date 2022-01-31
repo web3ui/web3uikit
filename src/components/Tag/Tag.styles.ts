@@ -1,129 +1,19 @@
-import { css } from 'styled-components';
-import color from '../../styles/colors';
-import fonts from '../../styles/fonts';
-import resetCSS from '../../styles/reset';
-
-const initialStyles = css`
-    ${resetCSS}
-    ${fonts.text}
-    ${fonts.textBold700};
-    align-items: center;
-    border-radius: 20px;
-    font-size: 14px;
-    justify-content: center;
-    overflow: hidden;
-    padding: 2px 20px;
-    text-align: center;
-    width: 100%;
-`;
-
-const regular = css`
-    background: ${color.blueLight};
-`;
-
-const activeStatus = css`
-    background: ${color.greenForestLight};
-    color: ${color.green};
-    svg {
-        padding-right: 5px;
-    }
-`;
-
-const inactiveStatus = css`
-    background: ${color.blueLight};
-`;
-
-const discount = css`
-    align-items: center;
-    background: ${color.green};
-    border-radius: 30px;
-    color: ${color.white};
-    display: flex;
-    font-size: 12px;
-    height: 32px;
-    justify-content: center;
-    padding: 0px 4px;
-    width: 32px;
-`;
-
-const coloredGreen = css`
-    background: ${color.greenForestLight};
-    color: ${color.green};
-`;
-
-const coloredGreenDark = css`
-    background: ${color.greenForestDark};
-    color: ${color.white};
-`;
-
-const coloredRed = css`
-    background: ${color.redLight};
-    color: ${color.red};
-`;
-
-const coloredRedDark = css`
-    background: ${color.redDark};
-    color: ${color.white};
-`;
-
-const coloredGrey = css`
-    background: ${color.blueSkyLight};
-    color: ${color.blueDark};
-`;
-
-const coloredGrayDark = css`
-    background: ${color.grey};
-    color: ${color.white};
-`;
-
-const coloredYellow = css`
-    background: ${color.yellowLight};
-    color: ${color.yellow};
-`;
-
-const coloredYellowDark = css`
-    background: ${color.yellowDark};
-    color: ${color.white};
-`;
-
-const coloredBlue = css`
-    background: ${color.blueCloud};
-    color: ${color.blueSkyDark};
-`;
-
-const coloredBlueDark = css`
-    background: ${color.blueCloudDark};
-    color: ${color.white};
-`;
-
-const coloredPurple = css`
-    background: ${color.purpleLight};
-    color: ${color.purple};
-`;
-
-const coloredPurpleDark = css`
-    background: ${color.purpleDark};
-    color: ${color.white};
-`;
-
-const coloredPink = css`
-    background: ${color.pinkLight};
-    color: ${color.pink};
-`;
-
-const coloredPinkDark = css`
-    background: ${color.pinkDark};
-    color: ${color.white};
-`;
-
-export const tagStyles = {
+import styled from 'styled-components';
+import type { TagProps, Tone } from './types';
+import {
     activeStatus,
+    discount,
+    inactiveStatus,
+    initialStyles,
+    regular,
+} from './styles/themes';
+import {
     coloredBlue,
     coloredBlueDark,
-    coloredGrey,
     coloredGrayDark,
     coloredGreen,
     coloredGreenDark,
+    coloredGrey,
     coloredPink,
     coloredPinkDark,
     coloredPurple,
@@ -132,8 +22,44 @@ export const tagStyles = {
     coloredRedDark,
     coloredYellow,
     coloredYellowDark,
-    discount,
-    inactiveStatus,
-    initialStyles,
-    regular,
+} from './styles/colors';
+
+type TStyleProps = Pick<TagProps, 'active' | 'theme' | 'tone'>;
+
+const getTheme = (theme: string, active?: boolean) => {
+    switch (theme) {
+        case 'status':
+            return active ? activeStatus : inactiveStatus;
+        case 'discount':
+            return discount;
+        default:
+            return regular;
+    }
 };
+
+const getColors = (color?: string, tone?: Tone) => {
+    switch (color) {
+        case 'green':
+            return tone === 'light' ? coloredGreen : coloredGreenDark;
+        case 'red':
+            return tone === 'light' ? coloredRed : coloredRedDark;
+        case 'yellow':
+            return tone === 'light' ? coloredYellow : coloredYellowDark;
+        case 'blue':
+            return tone === 'light' ? coloredBlue : coloredBlueDark;
+        case 'purple':
+            return tone === 'light' ? coloredPurple : coloredPurpleDark;
+        case 'pink':
+            return tone === 'light' ? coloredPink : coloredPinkDark;
+        case 'grey':
+            return tone === 'light' ? coloredGrey : coloredGrayDark;
+        default:
+            return coloredGrey;
+    }
+};
+
+export const TagStyled = styled.div<TStyleProps>`
+    ${initialStyles}
+    ${(p) => getTheme(p.theme, p.active)}
+    ${(p) => p.theme !== 'status' && p.color && getColors(p.color, p.tone)}
+`;

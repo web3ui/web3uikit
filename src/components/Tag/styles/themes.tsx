@@ -45,6 +45,6 @@ export const discount = css`
     font-size: 12px;
     height: 32px;
     justify-content: center;
-    padding: 0px 4px;
+    padding: 0 4px;
     width: 32px;
 `;

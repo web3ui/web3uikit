@@ -5,7 +5,7 @@
 NAME=$(uname -s)
 
 if [[ $NAME =~ ^MINGW* ]] || [[ $NAME =~ ^CYGWIN* ]]; then
-    npm run format
+    npm.cmd run format
 else 
     npm run format
 fi

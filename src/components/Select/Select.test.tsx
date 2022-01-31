@@ -45,7 +45,7 @@ describe('Default', () => {
             `[data-testid="${testSelectedId}"]`,
         );
         expect(selected).not.toBeNull();
-        selected && expect(selected.textContent).toContain("triangleDown icon");
+        selected && expect(selected.textContent).toContain('triangleDown icon');
     });
 
     it('renders select correct colors', () => {
@@ -87,7 +87,7 @@ describe('NoDefaultIndexOption', () => {
             `[data-testid="${testSelectedId}"]`,
         );
         expect(selected).not.toBeNull();
-        selected && expect(selected.textContent).toContain("triangleDown icon");
+        selected && expect(selected.textContent).toContain('triangleDown icon');
     });
 
     it('renders select correct colors', () => {
@@ -130,7 +130,8 @@ describe('Error', () => {
             `[data-testid="${testSelectedId}"]`,
         );
         expect(selected).not.toBeNull();
-        selected && expect(selected.textContent).toContain(testOptions?.[0]?.["label"]);
+        selected &&
+            expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
     });
 
     it('renders select correct colors', () => {
@@ -173,7 +174,8 @@ describe('ErrorWithMessage', () => {
             `[data-testid="${testSelectedId}"]`,
         );
         expect(selected).not.toBeNull();
-        selected && expect(selected.textContent).toContain(testOptions?.[0]?.["label"]);
+        selected &&
+            expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
     });
 
     it('renders select correct colors', () => {
@@ -216,7 +218,8 @@ describe('Confirmed', () => {
             `[data-testid="${testSelectedId}"]`,
         );
         expect(selected).not.toBeNull();
-        selected && expect(selected.textContent).toContain(testOptions?.[0]?.["label"]);
+        selected &&
+            expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
     });
 
     it('renders select correct colors', () => {
@@ -259,7 +262,8 @@ describe('Disabled', () => {
             `[data-testid="${testSelectedId}"]`,
         );
         expect(selected).not.toBeNull();
-        selected && expect(selected.textContent).toContain(testOptions?.[0]?.["label"]);
+        selected &&
+            expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
     });
 
     it('renders select correct colors', () => {

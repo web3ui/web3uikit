@@ -13,7 +13,9 @@ export default {
 } as ComponentMeta<typeof Breadcrumbs>;
 
 const Template: ComponentStory<typeof Breadcrumbs> = (args) => (
-    <Router>< Breadcrumbs {...args} /></Router>
+    <Router>
+        <Breadcrumbs {...args} />
+    </Router>
 );
 
 export const One = Template.bind({});

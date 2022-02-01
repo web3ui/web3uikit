@@ -15,7 +15,7 @@ const Tag: React.FC<TagProps> = ({
     return (
         <TagStyled
             active={active}
-            aria-role="status"
+            role="status"
             color={color}
             data-testid="test-tag-id"
             id={id}

@@ -3,7 +3,7 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './Loading.stories';
 import { render, screen } from '@testing-library/react';
 
-const { Loader, LoaderWithText, LoaderWithCustomColor } =
+const { Loader, LoaderWithText, LoaderWithCustomColor, LoaderWithCustomSize } =
     composeStories(stories);
 
 describe('Spinner - DefaultSpinner', () => {
@@ -32,6 +32,14 @@ describe('Spinner - Customized Spinner Text', () => {
 describe('Spinner - Customized colors spinner', () => {
     it('Should render', () => {
         render(<LoaderWithCustomColor />);
+        const element = screen.getAllByRole('spinner');
+        expect(element).toBeDefined();
+    });
+});
+
+describe('Spinner - LoaderWithCustomSize', () => {
+    it('Should render', () => {
+        render(<LoaderWithCustomSize />);
         const element = screen.getAllByRole('spinner');
         expect(element).toBeDefined();
     });

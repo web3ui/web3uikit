@@ -1,6 +1,6 @@
 import React from 'react';
 import color from '../../styles/colors';
-import { SpinnerDiv, SpinnerParent } from './Loading.styles';
+import { StyledSpinnerDiv, StyledSpinnerParent } from './Loading.styles';
 import { ILoadingProps } from './types';
 
 const Loading: React.FC<ILoadingProps> = ({
@@ -10,18 +10,15 @@ const Loading: React.FC<ILoadingProps> = ({
     direction = 'bottom',
 }) => {
     return (
-        <SpinnerParent
+        <StyledSpinnerParent
             direction={direction}
             spinnerColor={spinnerColor}
             size={size}
+            role="spinner"
         >
-            <SpinnerDiv
-                spinnerColor={spinnerColor}
-                size={size}
-                role="spinner"
-            />
+            <StyledSpinnerDiv spinnerColor={spinnerColor} size={size} />
             {text != '' && <span>{text}</span>}
-        </SpinnerParent>
+        </StyledSpinnerParent>
     );
 };
 

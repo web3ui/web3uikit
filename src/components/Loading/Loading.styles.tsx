@@ -11,7 +11,7 @@ const rotate = keyframes`
     }
 `;
 
-export const SpinnerParent = styled.div<
+export const StyledSpinnerParent = styled.div<
     Pick<ILoadingProps, 'direction' | 'spinnerColor' | 'size'>
 >`
     ${fonts.text}
@@ -31,7 +31,7 @@ export const SpinnerParent = styled.div<
     }
 `;
 
-export const SpinnerDiv = styled.div<
+export const StyledSpinnerDiv = styled.div<
     Pick<ILoadingProps, 'spinnerColor' | 'size'>
 >`
     width: ${(props) => `${props.size}px`};

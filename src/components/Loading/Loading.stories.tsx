@@ -32,3 +32,9 @@ LoaderWithCustomColor.args = {
     text: 'Loading....',
     spinnerColor: '#2E7DAF',
 };
+
+export const LoaderWithCustomSize = Template.bind({});
+LoaderWithCustomSize.args = {
+    size: 40,
+    spinnerColor: '#2E7DAF',
+};

@@ -3,61 +3,27 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './Loading.stories';
 import { render, screen } from '@testing-library/react';
 
-const {
-    Spinner,
-    CustomSizeSpinner,
-    CustomRingColors,
-    CustomTextSpinner,
-    CustomTextSpinnerRowFormat,
-} = composeStories(stories);
+const { Loader, LoaderWithText, LoaderWithCustomColor } =
+    composeStories(stories);
 
 describe('Spinner - DefaultSpinner', () => {
     it('Should render', () => {
-        render(<Spinner />);
+        render(<Loader />);
         const element = screen.getAllByRole('spinner');
-        expect(element).toBeDefined();
-    });
-});
-
-describe('Spinner - Customized spinner', () => {
-    const size = CustomSizeSpinner?.args?.size;
-    it('Should render', () => {
-        render(<CustomSizeSpinner />);
-        const element = screen.getAllByRole('spinner');
-        expect(element).toBeDefined();
-    });
-    it('Should render different size', () => {
-        render(<CustomSizeSpinner />);
-        const element = screen.getByTestId(`${size}`);
         expect(element).toBeDefined();
     });
 });
 
 describe('Spinner - Customized Spinner Text', () => {
-    const text = CustomTextSpinner?.args?.text;
+    const text = LoaderWithText?.args?.text;
     it('Should render', () => {
-        render(<CustomTextSpinner />);
+        render(<LoaderWithText />);
         const element = screen.getAllByRole('spinner');
         expect(element).toBeDefined();
     });
 
     it('Should render different text', () => {
-        render(<CustomTextSpinner />);
-        const element = screen.getByText(`${text}`);
-        expect(element).toBeDefined();
-    });
-});
-
-describe('Spinner - Customized Spinner Text Row', () => {
-    const text = CustomTextSpinnerRowFormat?.args?.text;
-    it('Should render', () => {
-        render(<CustomTextSpinnerRowFormat />);
-        const element = screen.getAllByRole('spinner');
-        expect(element).toBeDefined();
-    });
-
-    it('Should render different text', () => {
-        render(<CustomTextSpinnerRowFormat />);
+        render(<LoaderWithText />);
         const element = screen.getByText(`${text}`);
         expect(element).toBeDefined();
     });
@@ -65,7 +31,7 @@ describe('Spinner - Customized Spinner Text Row', () => {
 
 describe('Spinner - Customized colors spinner', () => {
     it('Should render', () => {
-        render(<CustomRingColors />);
+        render(<LoaderWithCustomColor />);
         const element = screen.getAllByRole('spinner');
         expect(element).toBeDefined();
     });

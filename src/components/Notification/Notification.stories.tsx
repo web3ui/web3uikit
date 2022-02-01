@@ -2,6 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import Notification from '../../components/Notification/Notification';
 import { iconTypes } from '../Icon/collection';
+import { ToastProvider, useNotification } from './Toaster';
 
 export default {
     title: 'UI/Notification',
@@ -11,6 +12,19 @@ export default {
 const Template: ComponentStory<typeof Notification> = (args) => (
     <Notification {...args} />
 );
+
+const Template2: ComponentStory<typeof Notification> = () => {
+    const context = useNotification();
+    console.log('context', context);
+    return (
+        <>
+            {/* <button onClick={() => dispatch({ type: 'add' })}>dispatch</button> */}
+            <ToastProvider />
+        </>
+    );
+};
+
+export const Regular2 = Template2.bind({});
 
 export const Regular = Template.bind({});
 Regular.args = {
@@ -43,7 +57,6 @@ PositionRelative.args = {
     message: 'Somebody messaged you',
     isVisible: true,
     title: 'New Notification',
-    isPositionRelative: true,
 };
 
 export const PositionRelativeCustomBreakPoints = Template.bind({});
@@ -52,12 +65,6 @@ PositionRelativeCustomBreakPoints.args = {
     message: 'Somebody messaged you',
     isVisible: true,
     title: 'New Notification',
-    isPositionRelative: true,
-    positionRelativeConfig: {
-        top: '30px',
-        left: '30px',
-        width: '100%',
-    },
 };
 
 export const RelativePositioningTopLeft = Template.bind({});
@@ -66,8 +73,6 @@ RelativePositioningTopLeft.args = {
     message: 'Somebody messaged you',
     isVisible: true,
     title: 'New Notification',
-    isPositionRelative: true,
-    position: 'topL',
 };
 
 export const RelativePositioningBottomRight = Template.bind({});
@@ -76,6 +81,4 @@ RelativePositioningBottomRight.args = {
     message: 'Somebody messaged you',
     isVisible: true,
     title: 'New Notification',
-    isPositionRelative: true,
-    position: 'bottomR',
 };

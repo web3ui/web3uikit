@@ -1,6 +1,6 @@
 import { iconTypes } from '../../components/Icon/collection';
 
-export interface NotificationProps {
+export interface NotificationProps extends INotificationStyled {
     /**
      * The notification ID will generated if not assigned
      */
@@ -21,35 +21,20 @@ export interface NotificationProps {
      * import { iconTypes } from "../../components/Icon/collection"
      */
     icon?: iconTypes;
+}
+
+export interface INotificationStyled {
+    /**
+     * type
+     */
+    type: type;
 
     /**
      * set if notification is visable
      */
     isVisible?: boolean;
-
-    /**
-     * set if position relative to container
-     */
-    isPositionRelative?: boolean;
-
-    /**
-     * If isPositionRelative relative is true use this to position element
-     */
-    position?: IPosition;
-
-    /**
-     * If isPositionRelative relative is true use this to fine tune exact positioning
-     */
-    positionRelativeConfig?: IPositionRelativeConfig;
-}
-
-export interface IPositionRelativeConfig {
-    top?: string;
-    bottom?: string;
-    left?: string;
-    right?: string;
-    width?: string;
-    height?: string;
 }
 
 export type IPosition = 'topR' | 'topL' | 'bottomR' | 'bottomL';
+
+export type type = 'error' | 'info' | 'success' | 'warning';

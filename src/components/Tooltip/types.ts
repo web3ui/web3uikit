@@ -4,7 +4,7 @@ export interface TooltipProps {
     /**
      * Set children which should have a tooltip
      */
-    children: Array<React.ReactNode>;
+    children: Array<React.ReactNode> | React.ReactNode;
 
     /**
      * The tooltip ID will be generated if not assigned
@@ -24,5 +24,5 @@ export interface TooltipProps {
     /**
      * Set text to show in tooltip
      */
-    text: string;
+    text?: string;
 }

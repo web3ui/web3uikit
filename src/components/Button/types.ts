@@ -61,4 +61,9 @@ export interface ButtonProps {
      * this is mostly like disabled mode except it gives the user a good visual indicator that something is loading
      */
     isLoading?: boolean;
+
+    /**
+     * loading text
+     */
+    loadingText?: string;
 }

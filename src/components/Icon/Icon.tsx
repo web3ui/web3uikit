@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import { IconProps } from '.';
 import collection from './collection';
@@ -161,6 +162,36 @@ const Icon: React.FC<IconProps> = ({
                 return collection?.userIcon(fill, size, style);
             case 'windows':
                 return collection?.windowsIcon(fill, size, style);
+            case 'btc':
+                return collection?.btcIcon(fill, size, style);
+            case 'bnb':
+                return collection?.bnbIcon(fill, size, style);
+            case 'oneinch':
+                return collection?.oneinchIcon(fill, size, style);
+            case 'shib':
+                return collection?.shibIcon(fill, size, style);
+            case 'doge':
+                return collection?.dogeIcon(fill, size, style);
+            case 'eth':
+                return collection?.ethIcon(fill, size, style);
+            case 'fil':
+                return collection?.filIcon(fill, size, style);
+            case 'matic':
+                return collection?.maticIcon(fill, size, style);
+            case 'avax':
+                return collection?.avaxIcon(fill, size, style);
+            case 'uni':
+                return collection?.uniIcon(fill, size, style);
+            case 'chainlink':
+                return collection?.chainlinkIcon(fill, size, style);
+            case 'xrp':
+                return collection?.xrpIcon(fill, size, style);
+            case 'ada':
+                return collection?.adaIcon(fill, size, style);
+            case 'usdc':
+                return collection?.usdcIcon(fill, size, style);
+            case 'usdt':
+                return collection?.usdtIcon(fill, size, style);
             case 'x circle':
                 return collection?.xCircleIcon(fill, size, style);
             case 'x':

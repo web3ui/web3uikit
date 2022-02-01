@@ -1,6 +1,6 @@
 {
     "name": "web3uikit",
-    "version": "0.1.29",
+    "version": "0.1.34",
     "repository": "https://github.com/web3ui/web3uikit",
     "homepage": "https://web3ui.github.io/web3uikit/",
     "main": "dist/index.js",
@@ -13,16 +13,20 @@
         "node": ">=10"
     },
     "scripts": {
-        "start": "tsdx watch",
-        "build": "tsdx build",
-        "test": "tsdx test",
-        "lint": "eslint .",
-        "size": "size-limit",
         "analyze": "size-limit --why",
-        "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
-        "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx,json}\"",
-        "deploy:docs": "gh-pages -d storybook-static"
+        "build": "tsdx build",
+        "deploy:docs": "gh-pages -d storybook-static",
+        "format": "npm run lint:fix && npm run prettier:fix",
+        "lint:check": "eslint .",
+        "lint:fix": "eslint --fix",
+        "prepare": "husky install",
+        "prettier:check": "prettier --check .",
+        "prettier:fix": "prettier --write \"**/*.{ts,tsx,json,html}\" .prettierrc --config ./.prettierrc",
+        "size": "size-limit",
+        "start": "tsdx watch",
+        "storybook": "start-storybook -p 6006",
+        "test": "tsdx test"
     },
     "peerDependencies": {
         "react": "^17.0.2",
@@ -33,11 +37,6 @@
         "react-blockies": "^1.4.1",
         "react-moralis": "^1.1.0",
         "styled-components": "^5.3.3"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "tsdx lint && npm prettier"
-        }
     },
     "prettier": {
         "printWidth": 80,

@@ -1,5 +1,4 @@
 export interface CardProps {
-
     /**
      * set the ID of Card
      */
@@ -29,4 +28,9 @@ export interface CardProps {
      * set text inside tooltip
      */
     tooltipText: string;
+
+    /**
+     * Set the state disabled state of the cart
+     */
+    isDisabled?: boolean;
 }

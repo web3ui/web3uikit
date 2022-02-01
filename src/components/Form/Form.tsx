@@ -175,19 +175,7 @@ const Form: React.FC<FormProps> = ({
                 </div>
             ))}
 
-            <Button
-                color={buttonConfig?.color}
-                disabled={buttonConfig?.disabled}
-                icon={buttonConfig?.icon}
-                iconLayout={buttonConfig?.iconLayout}
-                id={`form-${id}-submit`}
-                isFullWidth={buttonConfig?.isFullWidth}
-                onClick={buttonConfig?.onClick}
-                size={buttonConfig?.size}
-                text={buttonConfig?.text}
-                theme={buttonConfig?.theme}
-                type="submit"
-            >
+            <Button {...buttonConfig} id={`form-${id}-submit`} type="submit">
                 Submit
             </Button>
         </FormStyled>

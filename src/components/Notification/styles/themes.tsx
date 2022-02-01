@@ -35,7 +35,7 @@ const warning = css`
     }
 `;
 
-const getNotificationTheme = (type: type) => {
+export const getNotificationTheme = (type: type) => {
     switch (type) {
         case 'error':
             return error;

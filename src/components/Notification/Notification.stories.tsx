@@ -1,8 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import Notification from '../../components/Notification/Notification';
 import { iconTypes } from '../Icon/collection';
-import { ToastProvider, useNotification } from './Toaster';
+import Notification, { notify } from './Notification';
 
 export default {
     title: 'UI/Notification',
@@ -12,19 +11,21 @@ export default {
 const Template: ComponentStory<typeof Notification> = (args) => (
     <Notification {...args} />
 );
-
-const Template2: ComponentStory<typeof Notification> = () => {
-    const context = useNotification();
-    console.log('context', context);
+const Template2: ComponentStory<typeof Notification> = (args) => {
     return (
         <>
-            {/* <button onClick={() => dispatch({ type: 'add' })}>dispatch</button> */}
-            <ToastProvider />
+            <button onClick={notify}>Notify</button>
         </>
     );
 };
 
-export const Regular2 = Template2.bind({});
+export const HookDemo = Template2.bind({});
+Template2.args = {
+    id: 'test-Notification',
+    message: 'Somebody messaged you',
+    isVisible: true,
+    title: 'New Notification',
+};
 
 export const Regular = Template.bind({});
 Regular.args = {

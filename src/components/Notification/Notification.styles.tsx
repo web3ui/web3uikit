@@ -3,7 +3,7 @@ import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
 import styled, { keyframes } from 'styled-components';
-import { INotificationStyled } from './types';
+import type { INotificationStyled } from './types';
 import getNotificationTheme from './styles/themes';
 
 const moveOpen = keyframes`
@@ -16,6 +16,32 @@ const moveOpen = keyframes`
   to {transform: translate(0,20px);}
 `;
 
+// const getNotificationPosition = (position: IPosition) => {
+//     switch (position) {
+//         case 'bottomL':
+//             return css`
+//                 left: 0;
+//                 bottom: 0;
+//             `;
+//         case 'bottomR':
+//             return css`
+//                 right: 0;
+//                 bottom: 0;
+//             `;
+//         case 'topL':
+//             return css`
+//                 left: 0;
+//                 top: 0;
+//             `;
+//         case 'topR':
+//         default:
+//             return css`
+//                 right: 0;
+//                 top: 0;
+//             `;
+//     }
+// };
+// ${({ position }) => getNotificationPosition(position)}
 const NotificationStyled = styled.div<INotificationStyled>`
     ${resetCSS}
     ${fonts.text}
@@ -23,12 +49,12 @@ const NotificationStyled = styled.div<INotificationStyled>`
     border-radius: 20px;
     color: ${color.white};
     display: flex;
-    left: 18px;
-    margin-bottom: 18px;
+    /* left: 18px; */
+    margin: 18px;
     max-width: 320px;
     padding: 16px 48px 16px 16px;
     /* position: fixed; */
-    right: 18px;
+    /* right: 0; */
 
     animation: ${moveOpen} 4s;
     animation-iteration-count: 1;

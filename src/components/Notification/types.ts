@@ -33,6 +33,11 @@ export interface INotificationStyled {
      * set if notification is visable
      */
     isVisible?: boolean;
+
+    /**
+     * position  of element
+     */
+    position?: IPosition;
 }
 
 export type IPosition = 'topR' | 'topL' | 'bottomR' | 'bottomL';

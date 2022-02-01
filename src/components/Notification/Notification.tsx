@@ -4,6 +4,63 @@ import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import NotificationStyles from './Notification.styles';
 import color from '../../styles/colors';
+import ReactDOM from 'react-dom';
+// import { useNotification } from './NotificationManager';
+
+export const notify = (properties: any, callback: any) => {
+    console.log('Hi');
+    const { getContainer, ...props } = properties || {};
+    const div = document.createElement('div');
+    div.setAttribute('id', 'notify-portal');
+    // div.style.position = 'absolute';
+    if (getContainer) {
+        const root = getContainer();
+        root.appendChild(div);
+    } else {
+        document.body.appendChild(div);
+    }
+    let called = false;
+
+    function ref(notification: Notification) {
+        if (called) {
+            return;
+        }
+        called = true;
+        callback({
+            //   notice(noticeProps) {
+            //     notification.add(noticeProps);
+            //   },
+            //   removeNotice(key) {
+            //     notification.remove(key);
+            //   },
+            component: notification,
+            destroy() {
+                ReactDOM.unmountComponentAtNode(div);
+                if (div.parentNode) {
+                    div.parentNode.removeChild(div);
+                }
+            },
+
+            // Hooks
+            //   useNotification() {
+            //     return useNotification(notification);
+            //   },
+        });
+    }
+
+    ReactDOM.render(
+        [
+            <Notification
+                message="Somebody messaged you"
+                isVisible={true}
+                title="New Notification"
+                {...props}
+                forwardRef={ref}
+            />,
+        ],
+        div,
+    );
+};
 
 const {
     TextContentStyled,
@@ -21,6 +78,7 @@ const Notification: React.FC<NotificationProps> = ({
     title = 'New Message',
     isVisible = false,
     type = 'info',
+    position,
 }: NotificationProps) => {
     const [visible, setVisible] = useState(isVisible);
     useEffect(() => {
@@ -28,38 +86,36 @@ const Notification: React.FC<NotificationProps> = ({
     }, [isVisible]);
 
     // useEffect(() => {
-    //     if (isPositionRelative) {
-    //         switch (position) {
-    //             case 'topL':
-    //                 setPositionRelativeConfigState({
-    //                     ...positionRelativeConfig,
-    //                     top: '0px',
-    //                     left: '0px',
-    //                 });
-    //                 break;
-    //             case 'topR':
-    //                 console.log('in');
-    //                 setPositionRelativeConfigState({
-    //                     ...positionRelativeConfig,
-    //                     top: '0px',
-    //                     right: '0px',
-    //                 });
-    //                 break;
-    //             case 'bottomL':
-    //                 setPositionRelativeConfigState({
-    //                     ...positionRelativeConfig,
-    //                     bottom: '0px',
-    //                     left: '0px',
-    //                 });
-    //                 break;
-    //             case 'bottomR':
-    //                 setPositionRelativeConfigState({
-    //                     ...positionRelativeConfig,
-    //                     bottom: '0px',
-    //                     right: '0px',
-    //                 });
-    //                 break;
-    //         }
+    //     switch (position) {
+    //         case 'topL':
+    //             setPositionRelativeConfigState({
+    //                 ...positionRelativeConfig,
+    //                 top: '0px',
+    //                 left: '0px',
+    //             });
+    //             break;
+    //         case 'topR':
+    //             console.log('in');
+    //             setPositionRelativeConfigState({
+    //                 ...positionRelativeConfig,
+    //                 top: '0px',
+    //                 right: '0px',
+    //             });
+    //             break;
+    //         case 'bottomL':
+    //             setPositionRelativeConfigState({
+    //                 ...positionRelativeConfig,
+    //                 bottom: '0px',
+    //                 left: '0px',
+    //             });
+    //             break;
+    //         case 'bottomR':
+    //             setPositionRelativeConfigState({
+    //                 ...positionRelativeConfig,
+    //                 bottom: '0px',
+    //                 right: '0px',
+    //             });
+    //             break;
     //     }
     // }, [position]);
 
@@ -69,6 +125,7 @@ const Notification: React.FC<NotificationProps> = ({
             data-testid={'test-notification-id'}
             isVisible={visible}
             type={type}
+            position={position}
         >
             <IconWrapperStyled>
                 <Icon size={30} svg={icon || iconTypes.copy} />

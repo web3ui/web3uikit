@@ -17,7 +17,7 @@ const Loading: React.FC<ILoadingProps> = ({
             role="spinner"
         >
             <StyledSpinnerDiv spinnerColor={spinnerColor} size={size} />
-            {text != '' && <span>{text}</span>}
+            {<span>{text}</span>}
         </StyledSpinnerParent>
     );
 };

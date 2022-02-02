@@ -52,7 +52,7 @@ function renderList(
                 >
                     {separator ?? (
                         <Icon
-                            svg={iconTypes.chevron_right}
+                            svg={iconTypes.chevronRight}
                             fill="currentColor"
                             size={24}
                         />

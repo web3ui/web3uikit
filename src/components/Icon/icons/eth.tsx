@@ -20,7 +20,7 @@ const ethIcon = (fill: string, size: number, style?: React.CSSProperties) => (
                     transform="translate(-371.776)"
                     // fill={fill || '#343434'}
                     fill={fill}
-                    fill-opacity="0.8"
+                    fillOpacity="0.8"
                 />
                 <path
                     id="Path_1706"
@@ -28,7 +28,7 @@ const ethIcon = (fill: string, size: number, style?: React.CSSProperties) => (
                     d="M12.006,0,0,19.921l12.006,7.1V0Z"
                     // fill={fill || '#8c8c8c'}
                     fill={fill}
-                    fill-opacity="0.4"
+                    fillOpacity="0.4"
                 />
                 <path
                     id="Path_1707"
@@ -37,7 +37,7 @@ const ethIcon = (fill: string, size: number, style?: React.CSSProperties) => (
                     transform="translate(-375.401 -702.709)"
                     // fill={fill || '#3c3c3b'}
                     fill={fill}
-                    fill-opacity="0.8"
+                    fillOpacity="0.8"
                 />
                 <path
                     id="Path_1708"
@@ -46,7 +46,7 @@ const ethIcon = (fill: string, size: number, style?: React.CSSProperties) => (
                     transform="translate(0 -702.709)"
                     // fill={fill || '#8c8c8c'}
                     fill={fill}
-                    fill-opacity="0.4"
+                    fillOpacity="0.4"
                 />
                 <path
                     id="Path_1709"
@@ -55,7 +55,7 @@ const ethIcon = (fill: string, size: number, style?: React.CSSProperties) => (
                     transform="translate(-380.083 -457.875)"
                     // fill={fill || '#141414'}
                     fill={fill}
-                    fill-opacity="0.8"
+                    fillOpacity="0.8"
                 />
                 <path
                     id="Path_1710"
@@ -64,7 +64,7 @@ const ethIcon = (fill: string, size: number, style?: React.CSSProperties) => (
                     transform="translate(0 -457.875)"
                     // fill={fill || '#393939'}
                     fill={fill}
-                    fill-opacity="0.4"
+                    fillOpacity="0.4"
                 />
             </g>
         </g>

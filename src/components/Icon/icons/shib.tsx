@@ -93,7 +93,7 @@ const shibIcon = (fill: string, size: number, style?: React.CSSProperties) => (
                         d="M1406.36,274.06c-.293-.038-1.679-.045-3.249,2.9l-.008,0a7.008,7.008,0,0,0-1.1-.74c2.482-2.854,4.019-3.012,4.019-3.012A1.993,1.993,0,0,1,1406.36,274.06Z"
                         transform="translate(-1402 -273.2)"
                         fill={fill || '#ff9300'}
-                        fill-opacity="0.3"
+                        fillOpacity="0.3"
                     />
                 </g>
                 <path
@@ -101,14 +101,14 @@ const shibIcon = (fill: string, size: number, style?: React.CSSProperties) => (
                     d="M1433.842,301.43a8.913,8.913,0,0,0-2.242-2.625c1.57-2.941,2.952-2.933,3.248-2.9h0C1435.2,297.918,1433.842,301.43,1433.842,301.43Z"
                     transform="translate(-1430.488 -295.049)"
                     fill={fill || '#ff8300'}
-                    fill-opacity="0.2"
+                    fillOpacity="0.2"
                 />
                 <path
                     id="Path_8587"
                     d="M1518.156,296.111l-.056-.011Z"
                     transform="translate(-1513.74 -295.24)"
                     fill={fill || '#ff8300'}
-                    fill-opacity="0.2"
+                    fillOpacity="0.2"
                 />
             </g>
         </g>
@@ -132,7 +132,7 @@ const shibIcon = (fill: string, size: number, style?: React.CSSProperties) => (
                         d="M1030.514,276.212a7.349,7.349,0,0,0-1.142.74.013.013,0,0,1-.007,0c-1.626-2.944-3.057-2.933-3.365-2.9a1.936,1.936,0,0,1,.349-.86S1027.945,273.358,1030.514,276.212Z"
                         transform="translate(-1026 -273.2)"
                         fill={fill || '#ff9300'}
-                        fill-opacity="0.3"
+                        fillOpacity="0.3"
                     />
                 </g>
                 <path
@@ -140,14 +140,14 @@ const shibIcon = (fill: string, size: number, style?: React.CSSProperties) => (
                     d="M1027.948,298.8a9,9,0,0,0-2.321,2.625s-1.4-3.511-1.044-5.521h0C1024.887,295.871,1026.322,295.864,1027.948,298.8Z"
                     transform="translate(-1024.523 -295.049)"
                     fill={fill || '#ff8300'}
-                    fill-opacity="0.2"
+                    fillOpacity="0.2"
                 />
                 <path
                     id="Path_8592"
                     d="M1024.56,296.1l-.06.011Z"
                     transform="translate(-1024.5 -295.24)"
                     fill={fill || '#ff8300'}
-                    fill-opacity="0.2"
+                    fillOpacity="0.2"
                 />
             </g>
         </g>

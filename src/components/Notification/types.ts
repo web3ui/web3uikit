@@ -1,4 +1,4 @@
-import { iconTypes } from '../../components/Icon/collection';
+import { TIconType } from '../../components/Icon/collection';
 
 export interface NotificationProps {
     /**
@@ -20,7 +20,7 @@ export interface NotificationProps {
      * set an icon to show inside the notification
      * import { iconTypes } from "../../components/Icon/collection"
      */
-    icon?: iconTypes;
+    icon?: TIconType;
 
     /**
      * set if notification is visable

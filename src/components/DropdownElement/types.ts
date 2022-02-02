@@ -1,4 +1,4 @@
-import { iconTypes } from '../Icon/collection';
+import { TIconType } from '../Icon/collection';
 
 export interface DropdownElementProps {
     /**
@@ -14,7 +14,7 @@ export interface DropdownElementProps {
     /**
      * The icon next to the text
      */
-    icon?: iconTypes;
+    icon?: TIconType;
 
     /**
      * The color of the icon

@@ -19,9 +19,9 @@ jobs:
                   node-version: ${{ matrix.node }}
                   
             - name: check vars
-              run: echo "$REACT_APP_MORALIS_APP_ID"
+              run: echo "$MORALIS_APP_ID" ${{ secrets.MORALIS_APP_ID }}
               env:
-                REACT_APP_MORALIS_APP_ID: ${{ secrets.MORALIS_APP_ID }}
+                MORALIS_APP_ID: ${{ secrets.MORALIS_APP_ID }}
 
             - name: Install
               run: yarn install

@@ -21,7 +21,7 @@ jobs:
             - name: check vars
               run: echo "$MORALIS_APP_ID" ${{ secrets.MORALIS_APP_ID }}
               env:
-                MORALIS_APP_ID: ${{ secrets.MORALIS_APP_ID }}
+                MORALIS_APP_ID: xxxxxxxxxxx
 
             - name: Install
               run: yarn install
@@ -35,8 +35,8 @@ jobs:
             - name: Build Storybook
               run: yarn build-storybook
               env:
-                REACT_APP_MORALIS_APP_ID: ${{ secrets.MORALIS_APP_ID }}
-                REACT_APP_MORALIS_SERVER_URL: ${{ secrets.MORALIS_SERVER_URL }}
+                REACT_APP_MORALIS_APP_ID: xxxx
+                REACT_APP_MORALIS_SERVER_URL: yyyy
 
             - name: Deploy
               uses: peaceiris/actions-gh-pages@v3

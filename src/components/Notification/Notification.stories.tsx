@@ -11,7 +11,7 @@ export default {
 const Template: ComponentStory<typeof Notification> = (args) => (
     <Notification {...args} />
 );
-const Template2: ComponentStory<typeof Notification> = (args) => {
+const Template2: ComponentStory<typeof Notification> = () => {
     return (
         <>
             <button onClick={notify}>Notify</button>

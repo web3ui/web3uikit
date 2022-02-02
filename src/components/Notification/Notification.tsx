@@ -5,60 +5,29 @@ import { iconTypes } from '../Icon/collection';
 import NotificationStyles from './Notification.styles';
 import color from '../../styles/colors';
 import ReactDOM from 'react-dom';
-// import { useNotification } from './NotificationManager';
 
-export const notify = (properties: any, callback: any) => {
+export const notify = () => {
     console.log('Hi');
-    const { getContainer, ...props } = properties || {};
     const div = document.createElement('div');
     div.setAttribute('id', 'notify-portal');
-    // div.style.position = 'absolute';
-    if (getContainer) {
-        const root = getContainer();
-        root.appendChild(div);
+
+    let portalContainer = document.querySelector('#notify-portal');
+    const root = document.querySelector('#root');
+    if (!portalContainer) {
+        root?.appendChild(div);
+        portalContainer = document.querySelector('#notify-portal');
     } else {
-        document.body.appendChild(div);
-    }
-    let called = false;
-
-    function ref(notification: Notification) {
-        if (called) {
-            return;
-        }
-        called = true;
-        callback({
-            //   notice(noticeProps) {
-            //     notification.add(noticeProps);
-            //   },
-            //   removeNotice(key) {
-            //     notification.remove(key);
-            //   },
-            component: notification,
-            destroy() {
-                ReactDOM.unmountComponentAtNode(div);
-                if (div.parentNode) {
-                    div.parentNode.removeChild(div);
-                }
-            },
-
-            // Hooks
-            //   useNotification() {
-            //     return useNotification(notification);
-            //   },
-        });
+        ReactDOM.unmountComponentAtNode(portalContainer);
     }
 
     ReactDOM.render(
-        [
-            <Notification
-                message="Somebody messaged you"
-                isVisible={true}
-                title="New Notification"
-                {...props}
-                forwardRef={ref}
-            />,
-        ],
-        div,
+        <Notification
+            message="Somebody messaged you"
+            isVisible={true}
+            title="New Notification"
+            type="error"
+        />,
+        portalContainer,
     );
 };
 

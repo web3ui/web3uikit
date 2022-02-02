@@ -8,12 +8,10 @@ import getNotificationTheme from './styles/themes';
 
 const moveOpen = keyframes`
    from {
-       transform: translate(0,-100px);
+       transform: translateX(-100%);
     }
-  10% {transform: translate(0,20px);}
-  12% {transform: translate(0,22px);}
-  16% {transform: translate(0,20px);}
-  to {transform: translate(0,20px);}
+  70% {transform: translateX(10px);}
+  to {transform: translateX(0);}
 `;
 
 // const getNotificationPosition = (position: IPosition) => {
@@ -56,7 +54,7 @@ const NotificationStyled = styled.div<INotificationStyled>`
     /* position: fixed; */
     /* right: 0; */
 
-    animation: ${moveOpen} 4s;
+    animation: ${moveOpen} 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     ${(props) =>

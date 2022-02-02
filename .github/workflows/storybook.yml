@@ -17,6 +17,11 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   node-version: ${{ matrix.node }}
+                  
+            - name: check vars
+              run: echo "$REACT_APP_MORALIS_APP_ID"
+              env:
+                REACT_APP_MORALIS_APP_ID: ${{ secrets.MORALIS_APP_ID }}
 
             - name: Install
               run: yarn install

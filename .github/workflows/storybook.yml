@@ -33,11 +33,14 @@ jobs:
             - name: Test
               run: yarn test --ci --coverage --maxWorkers=2 --updateSnapshot
 
+            - name: Check MORALIS_APP_ID
+              run: echo "MORALIS_APP_ID=${{ secrets.MORALIS_APP_ID }}"
+
             - name: Build Storybook
               run: yarn build-storybook
               env:
-                REACT_APP_MORALIS_APP_ID: xxxx
-                REACT_APP_MORALIS_SERVER_URL: yyyy
+                  STORYBOOK_MORALIS_APP_ID: 8kf0j6lAWSWo2zg3kVZeC2jIbRDxjJy48sg5kkie
+                  STORYBOOK_MORALIS_SERVER_URL: https://gdwzurfueolf.usemoralis.com:2053/server
 
             - name: Deploy
               uses: peaceiris/actions-gh-pages@v3

@@ -27,11 +27,13 @@ export const moralisContext: DecoratorFn = (Story) => {
 
         return null;
     };
-    const MORALIS_APP_ID = process.env.REACT_APP_MORALIS_APP_ID;
-    const MORALIS_SERVER_URL = process.env.REACT_APP_MORALIS_SERVER_URL;
-    console.log('process.env.REACT_APP_MORALIS_SERVER_URL: ', process.env.REACT_APP_MORALIS_SERVER_URL);
-    console.log('process.env.REACT_APP_MORALIS_APP_ID: ', process.env.REACT_APP_MORALIS_APP_ID);
-    console.log('process.env.MORALIS_APP_ID: ', process.env.MORALIS_APP_ID);
+    const MORALIS_APP_ID = process.env.STORYBOOK_MORALIS_APP_ID;
+    const MORALIS_SERVER_URL = process.env.STORYBOOK_MORALIS_SERVER_URL;
+    console.log('MORALIS_APP_ID', MORALIS_APP_ID);
+    console.log(
+        'process.env.STORYBOOK_MORALIS_APP_ID',
+        process.env.STORYBOOK_MORALIS_APP_ID,
+    );
     return (
         <>
             {MORALIS_APP_ID && MORALIS_SERVER_URL ? (
@@ -58,9 +60,9 @@ export const moralisContext: DecoratorFn = (Story) => {
                         </a>
                         <br />
                         Example: <br />
-                        REACT_APP_MORALIS_APPLICATION_ID = xxxxxxxxxxxx
+                        STORYBOOK_MORALIS_APPLICATION_ID = xxxxxxxxxxxx
                         <br />
-                        REACT_APP_MORALIS_SERVER_URL =
+                        STORYBOOK_MORALIS_SERVER_URL =
                         https://xxxxxx.grandmoralis.com:2053/server
                     </p>
                     <p>After adding .env run yarn start again</p>

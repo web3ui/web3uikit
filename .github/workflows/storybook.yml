@@ -30,8 +30,8 @@ jobs:
             - name: Build Storybook
               run: yarn build-storybook
               env:
-                MORALIS_APP_ID: ${{ secrets.MORALIS_APP_ID }}
-                MORALIS_SERVER_URL: ${{ secrets.MORALIS_SERVER_URL }}
+                REACT_APP_MORALIS_APP_ID: ${{ secrets.MORALIS_APP_ID }}
+                REACT_APP_MORALIS_APP_ID: ${{ secrets.MORALIS_SERVER_URL }}
 
             - name: Deploy
               uses: peaceiris/actions-gh-pages@v3

@@ -29,6 +29,7 @@ export const moralisContext: DecoratorFn = (Story) => {
     };
     const MORALIS_APP_ID = process.env.REACT_APP_MORALIS_APP_ID;
     const MORALIS_SERVER_URL = process.env.REACT_APP_MORALIS_SERVER_URL;
+    console.log(MORALIS_SERVER_URL);
     return (
         <>
             {MORALIS_APP_ID && MORALIS_SERVER_URL ? (

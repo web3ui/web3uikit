@@ -34,6 +34,11 @@ const capitilize = (str: string) => {
 const stories = storiesOf('UI/Icon', module).addParameters({
     component: Icon,
     controls: { hideNoControlsWarning: true },
+    docs: {
+        source: {
+            type: 'dynamic',
+        },
+    },
 });
 
 ['16', '32', '64'].forEach((_size) => {

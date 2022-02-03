@@ -1,35 +1,56 @@
-import React from 'react'
-import { Illustration } from "../../Illustrations"
+import React from 'react';
+import { Illustration } from '../../Illustrations';
 
-const getModuleAnimation = (module: "Token" | "NFT Marketplace" | "NFT Collection" | "Bundle" | "Lazy NFT" | "Pack" | undefined) => {
+const getModuleAnimation = (
+    module:
+        | 'Token'
+        | 'NFT Marketplace'
+        | 'NFT Collection'
+        | 'Bundle'
+        | 'Lazy NFT'
+        | 'Pack'
+        | undefined,
+) => {
     switch (module) {
-        case "Token":
+        case 'Token':
             return (
-                <Illustration logo={"token"} width={"100%"} height={"180px"} />
+                <Illustration logo={'token'} width={'100%'} height={'180px'} />
             );
-        case "NFT Marketplace":
+        case 'NFT Marketplace':
             return (
-                <Illustration logo={"marketplace"} width={"100%"} height={"180px"} />
+                <Illustration
+                    logo={'marketplace'}
+                    width={'100%'}
+                    height={'180px'}
+                />
             );
-        case "NFT Collection":
+        case 'NFT Collection':
             return (
-                <Illustration logo={"chest"} width={"100%"} height={"180px"} />
+                <Illustration logo={'chest'} width={'100%'} height={'180px'} />
             );
-        case "Bundle":
+        case 'Bundle':
             return (
-                <Illustration logo={"bundle"} width={"100%"} height={"180px"} />
+                <Illustration logo={'bundle'} width={'100%'} height={'180px'} />
             );
-        case "Lazy NFT":
+        case 'Lazy NFT':
             return (
-                <Illustration logo={"lazyNft"} width={"100%"} height={"180px"} />
+                <Illustration
+                    logo={'lazyNft'}
+                    width={'100%'}
+                    height={'180px'}
+                />
             );
-        case "Pack":
+        case 'Pack':
             return (
-                <Illustration logo={"pack"} width={"100%"} height={"180px"} />
+                <Illustration logo={'pack'} width={'100%'} height={'180px'} />
             );
         default:
             return (
-                <Illustration logo={"servers"} width={"100%"} height={"180px"} />
+                <Illustration
+                    logo={'servers'}
+                    width={'100%'}
+                    height={'180px'}
+                />
             );
     }
 };

@@ -1,4 +1,4 @@
-import { iconTypes } from '../Icon/collection';
+import { TIconType } from '../Icon/collection';
 
 export interface InputProps {
     /**
@@ -29,7 +29,7 @@ export interface InputProps {
     /**
      * Icon prefixIcon for the input field
      */
-    prefixIcon?: iconTypes;
+    prefixIcon?: TIconType;
 
     /**
      * types of input available

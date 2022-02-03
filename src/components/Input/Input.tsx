@@ -79,7 +79,7 @@ const Input: React.FC<InputProps> = ({
 
         // check for the value passes the custom RegExp
         if (validation?.regExp) {
-            var re = new RegExp(validation?.regExp);
+            const re = new RegExp(validation?.regExp);
             if (!re.test(event?.target.value)) {
                 setInvalidMessage(
                     validation?.regExpInvalidMessage || errorMessage,

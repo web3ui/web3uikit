@@ -1,4 +1,4 @@
-import { iconTypes } from '../Icon/collection';
+import { TIconType } from '../Icon/collection';
 
 export interface CryptoCardProps {
     /**
@@ -30,7 +30,7 @@ export interface CryptoCardProps {
     /**
      * The type of settings icon
      */
-    settingsIcon?: iconTypes;
+    settingsIcon?: TIconType;
 
     /**
      * The text shown in the button

@@ -1,4 +1,4 @@
-import { iconTypes } from './collection';
+import type { TIconType } from './collection';
 
 export interface IconProps {
     /**
@@ -15,7 +15,7 @@ export interface IconProps {
      * pick the icon SVG you would like to render.
      * import { iconTypes } from "../../components/Icon/collection"
      */
-    svg: iconTypes;
+    svg: TIconType;
 
     /**
      * CSS style props

@@ -1,3 +1,4 @@
+/* eslint-disable new-cap */
 import ReactDOM from 'react-dom';
 import { fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
@@ -6,6 +7,7 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './Input.stories';
 import color from '../../styles/colors';
 import React from 'react';
+import RGBToHex from '../../utils/RGBToHex';
 
 const {
     EmailInput,
@@ -87,7 +89,9 @@ describe('Input - Text', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
+        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(
+            color.greyLight,
+        );
     });
 
     it('renders label text', () => {
@@ -186,7 +190,7 @@ describe('Input - Text Error', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.red);
+        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(color.red);
     });
 
     it('renders label text', () => {
@@ -285,7 +289,7 @@ describe('Input - Text Confirmed', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.green);
+        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(color.green);
     });
 
     it('renders label text', () => {
@@ -385,7 +389,9 @@ describe('Input - Number', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
+        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(
+            color.greyLight,
+        );
     });
 
     it('renders label text', () => {
@@ -495,7 +501,9 @@ describe('Input - Password', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
+        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(
+            color.greyLight,
+        );
     });
 
     it('renders label text', () => {
@@ -595,7 +603,9 @@ describe('Input - Email', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
+        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(
+            color.greyLight,
+        );
     });
 
     it('renders label text', () => {
@@ -695,7 +705,9 @@ describe('Input - Tel', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
+        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(
+            color.greyLight,
+        );
     });
 
     it('renders label text', () => {

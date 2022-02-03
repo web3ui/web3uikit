@@ -26,13 +26,13 @@ const Input: React.FC<InputProps> = ({
     onChange,
     placeholder = '',
     prefixIcon,
+    size = 'regular',
     state = disabled ? 'disabled' : undefined,
     style,
     type = 'text',
     validation,
     value = '',
     width = '320px',
-    size = 'regular',
 }: InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
     const [currentState, setCurrentState] = useState(state);

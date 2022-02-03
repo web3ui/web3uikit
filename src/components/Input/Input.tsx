@@ -33,6 +33,7 @@ const Input: React.FC<InputProps> = ({
     validation,
     value = '',
     width = '320px',
+    labelBgColor,
 }: InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
     const [currentState, setCurrentState] = useState(state);
@@ -144,6 +145,7 @@ const Input: React.FC<InputProps> = ({
                     data-testid="test-label"
                     htmlFor={id}
                     hasPrefix={typeof prefixIcon !== 'undefined'}
+                    labelBgColor={labelBgColor}
                 >
                     {label}
                     {validation?.required && '*'}

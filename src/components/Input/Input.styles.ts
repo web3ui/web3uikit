@@ -109,7 +109,7 @@ export const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
 export const LabelStyled = styled.label<LabelProps>`
     ${resetCSS}
     ${fonts.text}
-    background-color: ${color.white};
+    background-color: ${({ labelBgColor }) => labelBgColor || color.white};
     height: 24px;
     left: ${({ hasPrefix }) => (hasPrefix ? '48px' : '16px')};
     pointer-events: none;

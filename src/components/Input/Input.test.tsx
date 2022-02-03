@@ -7,7 +7,7 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './Input.stories';
 import color from '../../styles/colors';
 import React from 'react';
-import RGBToHex from '../../utils/RGBToHex';
+import RGBToHex from '../../utils/rgbToHex';
 
 const {
     EmailInput,

@@ -32,6 +32,7 @@ const Input: React.FC<InputProps> = ({
     validation,
     value = '',
     width = '320px',
+    size = 'regular',
 }: InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
     const [currentState, setCurrentState] = useState(state);
@@ -40,6 +41,7 @@ const Input: React.FC<InputProps> = ({
     const [invalidMessage, setInvalidMessage] = useState(errorMessage);
 
     useEffect(() => setIsInputHidden(inputHidden), [inputHidden]);
+    useEffect(() => setCurrentState(state), [state]);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
@@ -79,7 +81,7 @@ const Input: React.FC<InputProps> = ({
 
         // check for the value passes the custom RegExp
         if (validation?.regExp) {
-            var re = new RegExp(validation?.regExp);
+            const re = new RegExp(validation?.regExp);
             if (!re.test(event?.target.value)) {
                 setInvalidMessage(
                     validation?.regExpInvalidMessage || errorMessage,
@@ -104,6 +106,7 @@ const Input: React.FC<InputProps> = ({
             }`}
             data-testid="test-div"
             style={{ ...style, width }}
+            size={size}
         >
             {prefixIcon && (
                 <DivStyled className="input_prefixIcon">

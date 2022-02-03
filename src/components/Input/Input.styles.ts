@@ -4,16 +4,15 @@ import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 import { InputProps, LabelProps } from './types';
 
-export const DivWrapperStyled = styled.div<Pick<InputProps, 'state'>>`
+export const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
     ${resetCSS}
     border-radius: 16px;
     border: 1px solid;
     display: flex;
-    height: 56px;
     max-width: 100%;
-    padding: 14px 16px;
     position: relative;
     transition: all 0.2s linear;
+    min-width: fit-content;
 
     border-color: ${({ state }) => {
         switch (state) {
@@ -46,10 +45,12 @@ export const DivWrapperStyled = styled.div<Pick<InputProps, 'state'>>`
         fill: ${(p) => !p?.state && color.blue};
     }
 
-    &:focus {
-        border-color: ${color.blue};
+    &:focus-within {
+        border-width: 0px;
+        outline: ${color.blue} solid 2px;
+        /* border-color: ; */
 
-        + label {
+        label {
             color: ${color.blue};
         }
     }
@@ -63,7 +64,7 @@ export const DivWrapperStyled = styled.div<Pick<InputProps, 'state'>>`
         }
     }
 
-    &:focus {
+    &:focus-within {
         ${(p) => p.state === 'error' && `border-color: ${color.red};`}
         ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
         & + label {
@@ -88,19 +89,52 @@ export const DivWrapperStyled = styled.div<Pick<InputProps, 'state'>>`
             }};
         }
     }
+
+    ${({ size }) => {
+        switch (size) {
+            case 'large':
+                return css`
+                    height: 56px;
+                    padding: 14px 16px;
+                    & > label {
+                        top: 15px;
+                    }
+                `;
+            case 'regular':
+            default:
+                return css`
+                    height: 40px;
+                    padding: 8px 16px;
+                    & > label {
+                        top: 8px;
+                    }
+                `;
+        }
+    }}
 `;
 
 export const LabelStyled = styled.label<LabelProps>`
     ${resetCSS}
     ${fonts.text}
-    background-color: ${color.white};
     height: 24px;
     left: ${({ hasPrefix }) => (hasPrefix ? '48px' : '16px')};
-    padding: 0 4px;
     pointer-events: none;
     position: absolute;
-    top: 15px;
+    z-index: 1;
+    background-color: ${color.white};
+    /* top: 15px; */
     transition: all 0.1s ease-out;
+    /* z-index: 3; */
+    /* &: before {
+        content: '';
+        height: 2px;
+        width: 100%;
+        left: 0;
+        top: 10px;
+        background-color: ${color.white};
+        position: absolute;
+        z-index: -1;
+    } */
 `;
 
 export const InputStyled = styled.input`
@@ -140,6 +174,7 @@ const inputIconStyle = css`
     justify-content: center;
     max-width: 24px;
     width: 100%;
+    /* margin: 0 12px; */
 
     & :first-child {
         fill: ${color.grey};

@@ -91,6 +91,11 @@ export interface InputProps {
      * required, characterMinLength, characterMaxLength, numberMin, numberMax, regExp , regExpInvalidMessage
      */
     validation?: ValidateInput;
+
+    /**
+     * size of input
+     */
+    size?: 'regular' | 'large';
 }
 
 export interface LabelProps {

@@ -8,6 +8,6 @@ export interface ILoadingProps {
     // To load text with spinner
     text?: string;
 
-    // Wherte to place loaded text
+    // Where to place loaded text
     direction?: 'bottom' | 'right';
 }

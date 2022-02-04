@@ -4,22 +4,22 @@ export type Theme = 'image' | 'letters';
 
 export interface AvatarProps {
     /**
-     * The avatar theme (initial letters or image)
+     * The layout for the user
      */
     theme: Theme;
 
     /**
-     * Is Avatar Rounded
+     * you can set rounded edge to display the avatar in a circle
      */
     isRounded?: boolean;
 
     /**
-     * The initial letters if Theme is `letters`
+     * pass two letters, like the users initials, BG for example
      */
     text?: string;
 
     /**
-     * The image to use
+     * pass a valid url for an image
      */
     image?: string;
 }

@@ -1,5 +1,4 @@
 import Metamask from './WalletIcons/Metamask.svg';
-// import Coin98 from './WalletIcons/Coin98.png';
 import WalletConnect from './WalletIcons/wallet-connect.svg';
 import MathWallet from './WalletIcons/MathWallet.svg';
 import TokenPocket from './WalletIcons/TokenPocket.svg';
@@ -49,12 +48,6 @@ const connectors = [
         connectorId: 'metamask',
         priority: 999,
     },
-    // {
-    //     title: 'Coin98',
-    //     icon: Coin98,
-    //     connectorId: 'metamask',
-    //     priority: 999,
-    // },
 ];
 
 export default connectors;

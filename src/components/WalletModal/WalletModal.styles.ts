@@ -8,58 +8,77 @@ const WrapperStyled = styled.div`
     display: flex;
     height: 100vh;
     justify-content: center;
-    left: 50%;
-    margin-left: -50vw;
+    left: 0;
     pointer-events: auto;
     position: fixed;
-    top: 0px;
-    transition: opacity 0.1s ease-in-out 0s;
+    top: 0;
     width: 100vw;
     z-index: 10;
 `;
 
 const ModalStyled = styled.div`
-    /* display: flex;
-    flex-direction: column; */
     background-color: ${color.white};
     border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(48, 71, 105, 0.1);
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    max-height: 98%;
     max-width: 568px;
     width: 100%;
-    margin: 10px;
-    /* min-width: fit-content; */
 `;
 
-const TitleStyled = styled.h3`
+const TitleStyled = styled.span`
     ${fonts.semiBold};
     color: ${color.blue};
     font-size: 22px;
 `;
 
 const HeaderStyled = styled.div`
-    padding: 0 24px;
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding: 20px;
+    padding-bottom: 12px;
 `;
 
 const GridStyled = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(252px, 1fr));
-    /* gap: 5px; */
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    overflow-y: auto;
     width: 100%;
-    overflow: hidden;
-    /* min-width: fit-content; */
+
+    &::-webkit-scrollbar {
+        background: none;
+        height: 0;
+        width: 14px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-clip: padding-box;
+        background-color: ${color.greyIcons};
+        border-radius: 30px;
+        border: 3px solid transparent;
+    }
+    &::-webkit-scrollbar-button {
+        height: 5px;
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
 `;
 
 const WalletCardStyled = styled.div`
     align-items: center;
     border-radius: 20px;
-
+    cursor: pointer;
     display: flex;
-    padding: 24px 80px;
     flex-direction: column;
     justify-content: center;
-    cursor: pointer;
+    padding: 24px;
+
+    @media (max-width: 400px) {
+        padding: 8px;
+    }
 
     &:hover {
         background-color: ${color.blueLight};
@@ -71,15 +90,15 @@ const WalletCardStyled = styled.div`
 `;
 
 const GridItemStyled = styled.div`
-    border: 1px solid rgba(195, 195, 195, 0.14);
+    border: 1px solid rgba(195, 195, 195, 0.13);
     padding: 4px;
-    /* width: 100%; */
 `;
 
 const WalletLogo = styled.img`
-    height: 50px;
     align-self: center;
+    height: 40px;
     margin-bottom: 8px;
+    pointer-events: none;
 `;
 
 const WalletNameStyled = styled.span`
@@ -89,13 +108,13 @@ const WalletNameStyled = styled.span`
 `;
 
 export default {
-    WrapperStyled,
-    WalletCardStyled,
     GridItemStyled,
-    WalletLogo,
-    HeaderStyled,
-    WalletNameStyled,
     GridStyled,
+    HeaderStyled,
     ModalStyled,
     TitleStyled,
+    WalletCardStyled,
+    WalletLogo,
+    WalletNameStyled,
+    WrapperStyled,
 };

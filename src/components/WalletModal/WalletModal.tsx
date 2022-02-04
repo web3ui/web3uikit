@@ -1,79 +1,67 @@
-import React, { FC } from 'react';
+import Moralis from 'moralis/types';
+import React, { FC, useEffect, useState } from 'react';
+import { useMoralis } from 'react-moralis';
 import { Button } from '../Button';
-import { Icon, iconTypes } from '../Icon';
+import { iconTypes } from '../Icon';
 import connectors from './config';
+import { WalletModalProps } from './types';
 import WalletModalStyles from './WalletModal.styles';
 
 const {
-    WrapperStyled,
-    WalletCardStyled,
     GridItemStyled,
-    WalletLogo,
-    WalletNameStyled,
-    HeaderStyled,
     GridStyled,
+    HeaderStyled,
     ModalStyled,
     TitleStyled,
+    WalletCardStyled,
+    WalletLogo,
+    WalletNameStyled,
+    WrapperStyled,
 } = WalletModalStyles;
 
-const styles = {
-    account: {
-        height: '42px',
-        padding: '0 15px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: 'fit-content',
-        borderRadius: '12px',
-        backgroundColor: 'rgb(244, 244, 244)',
-        cursor: 'pointer',
-    },
-    text: {
-        color: '#21BF96',
-    },
-    connector: {
-        alignItems: 'center',
-        display: 'flex',
-        flexDirection: 'column',
-        height: 'auto',
-        justifyContent: 'center',
-        marginLeft: 'auto',
-        marginRight: 'auto',
-        padding: '20px 5px',
-        cursor: 'pointer',
-    },
-};
+const WalletModal: FC<WalletModalProps> = ({ isOpened = true }) => {
+    const { authenticate } = useMoralis();
+    const [isOpenedState, setIsOpenedState] = useState(isOpened);
 
-const WalletModal: FC = () => {
+    useEffect(() => setIsOpenedState(isOpened), [isOpened]);
+
+    function connectWallet(connectorId: Moralis.Web3ProviderType) {
+        // to avoid problems in Next.JS apps because of localStorage
+        if (typeof window == 'undefined') return;
+
+        authenticate({
+            provider: connectorId,
+            onSuccess: () => {
+                window.localStorage.setItem('connectorId', connectorId);
+                setIsOpenedState(false);
+            },
+        });
+    }
+
+    if (!isOpenedState) return null;
+
     return (
         <WrapperStyled>
             <ModalStyled>
                 <HeaderStyled>
                     <TitleStyled>Connect Wallet</TitleStyled>
-                    <Button>
-                        <Icon svg={iconTypes.x} />
-                    </Button>
+                    <Button
+                        icon={iconTypes.x}
+                        iconLayout="icon-only"
+                        theme="outline"
+                        onClick={() => setIsOpenedState(!isOpenedState)}
+                    />
                 </HeaderStyled>
                 <GridStyled>
                     {connectors.map(({ title, icon, connectorId }, key) => (
-                        <GridItemStyled>
+                        <GridItemStyled key={key}>
                             <WalletCardStyled
-                                // style={styles.connector}
-                                key={key}
-                                // onClick={async () => {
-                                //     try {
-                                //         await authenticate({ provider: connectorId });
-                                //         window.localStorage.setItem(
-                                //             'connectorId',
-                                //             connectorId,
-                                //         );
-                                //         setIsAuthModalVisible(false);
-                                //     } catch (e) {
-                                //         console.error(e);
-                                //     }
-                                // }}
+                                onClick={() =>
+                                    connectWallet(
+                                        connectorId as Moralis.Web3ProviderType,
+                                    )
+                                }
                             >
-                                {/* <img src={icon} alt={title} style={styles.icon} /> */}
                                 <WalletLogo src={icon} alt={title} />
                                 <WalletNameStyled>{title}</WalletNameStyled>
                             </WalletCardStyled>

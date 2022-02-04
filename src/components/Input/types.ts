@@ -91,6 +91,16 @@ export interface InputProps {
      * required, characterMinLength, characterMaxLength, numberMin, numberMax, regExp , regExpInvalidMessage
      */
     validation?: ValidateInput;
+
+    /**
+     * size of input
+     */
+    size?: 'regular' | 'large';
+
+    /**
+     * color of label background
+     */
+    labelBgColor?: string;
 }
 
 export interface LabelProps {
@@ -98,6 +108,11 @@ export interface LabelProps {
      * true if the label is defined
      */
     hasPrefix: boolean;
+
+    /**
+     * color of label background
+     */
+    labelBgColor?: string;
 }
 
 export type ValidateInput = {

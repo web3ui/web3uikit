@@ -26,12 +26,14 @@ const Input: React.FC<InputProps> = ({
     onChange,
     placeholder = '',
     prefixIcon,
+    size = 'regular',
     state = disabled ? 'disabled' : undefined,
     style,
     type = 'text',
     validation,
     value = '',
     width = '320px',
+    labelBgColor,
 }: InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
     const [currentState, setCurrentState] = useState(state);
@@ -40,6 +42,7 @@ const Input: React.FC<InputProps> = ({
     const [invalidMessage, setInvalidMessage] = useState(errorMessage);
 
     useEffect(() => setIsInputHidden(inputHidden), [inputHidden]);
+    useEffect(() => setCurrentState(state), [state]);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
@@ -104,6 +107,7 @@ const Input: React.FC<InputProps> = ({
             }`}
             data-testid="test-div"
             style={{ ...style, width }}
+            size={size}
         >
             {prefixIcon && (
                 <DivStyled className="input_prefixIcon">
@@ -141,6 +145,7 @@ const Input: React.FC<InputProps> = ({
                     data-testid="test-label"
                     htmlFor={id}
                     hasPrefix={typeof prefixIcon !== 'undefined'}
+                    labelBgColor={labelBgColor}
                 >
                     {label}
                     {validation?.required && '*'}

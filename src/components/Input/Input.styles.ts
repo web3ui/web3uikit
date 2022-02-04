@@ -37,7 +37,7 @@ export const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
         strong {
             overflow: visible;
             text-overflow: unset;
-            white-space: wrap;
+            white-space: pre-wrap;
         }
     }
 

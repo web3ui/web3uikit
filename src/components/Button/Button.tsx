@@ -33,9 +33,7 @@ const Button: React.FC<ButtonProps> = ({
             theme={theme}
             type={type}
         >
-            {isLoading && (
-                <Loading size={12} ringColor="#ffffff" ballColor="#ffffff" />
-            )}
+            {isLoading && <Loading size={15} />}
             {icon && <Icon svg={icon} fill="inherit" size={20} />}
             <span>{isLoading ? loadingText : text}</span>
         </ButtonStyled>

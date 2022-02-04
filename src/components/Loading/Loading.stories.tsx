@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import color from '../../styles/colors';
 import Loading from './Loading';
 
 export default {
@@ -9,30 +8,33 @@ export default {
 } as ComponentMeta<typeof Loading>;
 
 const Template: ComponentStory<typeof Loading> = (args) => (
-    <Loading {...args} />
+    <div
+        style={{
+            backgroundColor: '#ECECFE',
+            padding: '20px',
+            borderRadius: '8px',
+        }}
+    >
+        <Loading {...args} />
+    </div>
 );
 
-export const Spinner = Template.bind({});
-Spinner.args = {};
+export const Loader = Template.bind({});
+Loader.args = {};
 
-export const CustomSizeSpinner = Template.bind({});
-CustomSizeSpinner.args = {
-    size: 90,
+export const LoaderWithText = Template.bind({});
+LoaderWithText.args = {
+    text: 'Loading....',
 };
 
-export const CustomTextSpinner = Template.bind({});
-CustomTextSpinner.args = {
-    text: 'Loading...',
+export const LoaderWithCustomColor = Template.bind({});
+LoaderWithCustomColor.args = {
+    text: 'Loading....',
+    spinnerColor: '#2E7DAF',
 };
 
-export const CustomTextSpinnerRowFormat = Template.bind({});
-CustomTextSpinnerRowFormat.args = {
-    text: 'Loading...',
-    layout: 'row',
-};
-
-export const CustomRingColors = Template.bind({});
-CustomRingColors.args = {
-    ringColor: color.green,
-    ballColor: color.yellowDark,
+export const LoaderWithCustomSize = Template.bind({});
+LoaderWithCustomSize.args = {
+    size: 40,
+    spinnerColor: '#2E7DAF',
 };

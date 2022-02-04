@@ -29,5 +29,6 @@ export * from './components/Tooltip';
 export * from './components/NativeBalance';
 export * from './components/Blockie';
 export * from './components/ConnectButton';
+export * from './components/WalletModal';
 
 export * from './web3utils';

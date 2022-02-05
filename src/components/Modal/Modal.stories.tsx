@@ -1,5 +1,5 @@
 import React from 'react';
-import { ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Modal from './Modal';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon';
@@ -7,6 +7,11 @@ import colors from '../../styles/colors';
 import { Input } from '../Input';
 import { useArgs } from '@storybook/addons';
 import {Button} from '../Button';
+
+export default {
+    title: 'Popup/Modal',
+    component: Modal,
+} as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => {
     const [{}, updateArgs] = useArgs();

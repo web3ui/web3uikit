@@ -1,6 +1,6 @@
 import { TIconType } from '../../components/Icon/collection';
 
-export interface NotificationProps {
+export interface NotificationProps extends INotificationStyled {
     /**
      * The notification ID will generated if not assigned
      */
@@ -14,7 +14,7 @@ export interface NotificationProps {
     /**
      * The message to display in notification
      */
-    message: string;
+    message?: string;
 
     /**
      * set an icon to show inside the notification
@@ -23,33 +23,45 @@ export interface NotificationProps {
     icon?: TIconType;
 
     /**
-     * set if notification is visable
+     * used for dispatching state to context
      */
-    isVisible?: boolean;
 
-    /**
-     * set if position relative to container
-     */
-    isPositionRelative?: boolean;
-
-    /**
-     * If isPositionRelative relative is true use this to position element
-     */
-    position?: IPosition;
-
-    /**
-     * If isPositionRelative relative is true use this to fine tune exact positioning
-     */
-    positionRelativeConfig?: IPositionRelativeConfig;
+    dispatch: (value: NotificationActionType) => void;
 }
 
-export interface IPositionRelativeConfig {
-    top?: string;
-    bottom?: string;
-    left?: string;
-    right?: string;
-    width?: string;
-    height?: string;
+export interface INotificationStyled {
+    /**
+     * type
+     */
+    type: notifyType;
+
+    /**
+     * starts close animation when true
+     */
+    isClosing?: boolean;
+}
+
+export interface INotificationContainer {
+    /**
+     * position  of element
+     */
+    position: IPosition;
 }
 
 export type IPosition = 'topR' | 'topL' | 'bottomR' | 'bottomL';
+
+export type notifyType = 'error' | 'info' | 'success' | 'warning';
+
+export type NotificationActionType = {
+    type: 'add_notification' | 'remove_notification';
+    payload: PayloadType;
+    id?: string;
+};
+
+export type PayloadType = {
+    id: string;
+    type: notifyType;
+    message?: string;
+    title?: string;
+    icon?: TIconType;
+};

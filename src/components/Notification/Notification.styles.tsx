@@ -3,118 +3,129 @@ import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
 import styled, { keyframes } from 'styled-components';
-import { IPositionRelativeConfig } from './types';
+import { INotificationContainer, INotificationStyled } from './types';
+import {
+    getNotificationColor,
+    getNotificationPosition,
+    getNotificationTheme,
+} from './themes/themes';
 
-const initialStyles = css`
-    ${resetCSS}
-    ${fonts.text}
-    align-items: center;
-    background: #112f5c;
-    border-radius: 20px;
-    color: white;
-    display: flex;
-    height: 5%;
-    max-width: 25%;
-    min-width: 270px;
-    padding: 16px;
+const moveFromLeft = keyframes` 
+    0% {
+        left: 150%;
+    }
+
+    100% {
+        left: 0;
+    }
 `;
 
-const box = css`
-    display: grid;
+const moveToRight = keyframes` 
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 150%;
+    }
+`;
+
+const NotificationContainerStyled = styled.div<INotificationContainer>`
+    position: fixed;
+
+    ${(p) => getNotificationPosition(p.position)}
+`;
+
+const IconWrapperStyled = styled.div`
+    ${resetCSS}
+    align-items: center;
+    border-radius: 100%;
+    display: flex;
+    height: 24px;
+    justify-content: center;
+    width: 24px;
+`;
+
+const TextContentStyled = styled.div`
+    display: flex;
     margin-left: 10px;
     width: 100%;
+    flex-wrap: wrap;
 `;
 
-const message = css`
+const SpanStyled = styled.span`
     ${fonts.ibm}
-    ${fonts.textSmall}
     color: ${color.grey};
+    display: inline-block;
+    word-break: break-word;
 `;
 
-const title = css`
-    ${fonts.textBold}
+const TitleStyled = styled.h5`
+    ${fonts.h5};
+    display: inline-block;
+    font-weight: 700;
+    line-height: 24px;
     margin: 0;
+    word-break: break-word;
 `;
 
-const flex = css`
-    display: flex;
-    justify-content: space-between;
+const CloseWrapperStyled = styled.div`
+    ${resetCSS}
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+    top: 16px;
 `;
 
-export const moveOpen = keyframes`
-   from {
-       transform: translate(0,-100px);
-    }
-  10% {transform: translate(0,20px);}
-  12% {transform: translate(0,22px);}
-  16% {transform: translate(0,20px);}
-  to {transform: translate(0,20px);}
+const BarStyled = styled.div`
+    background-color: rgba(158, 204, 234, 0.3);
+    bottom: 0;
+    height: 6px;
+    left: 0;
+    position: absolute;
 `;
 
-interface INotificationStyled {
-    isVisible: boolean;
-    isPositionRelative: boolean;
-    positionRelativeConfig: IPositionRelativeConfig;
-}
-
-export const NotificationStyled = styled.div<INotificationStyled>`
-    ${initialStyles}
-    ${(props) =>
-        props.isPositionRelative &&
-        `position: absolute; top:${
-            props.positionRelativeConfig.top
-                ? props.positionRelativeConfig.top
-                : ''
-        }; left:${
-            props.positionRelativeConfig.left
-                ? props.positionRelativeConfig.left
-                : ''
-        }; height: ${
-            props.positionRelativeConfig.height
-                ? props.positionRelativeConfig.height
-                : 'fit-content'
-        }; 
-        bottom:${
-            props.positionRelativeConfig.bottom
-                ? props.positionRelativeConfig.bottom
-                : ''
-        }; 
-        right: ${
-            props.positionRelativeConfig.right
-                ? props.positionRelativeConfig.right
-                : ''
-        }; 
-        width: ${
-            props.positionRelativeConfig.width
-                ? props.positionRelativeConfig.width
-                : 'fit-content'
-        };
-        
-        `}
-    animation:${moveOpen} 4s;
-    animation-iteration-count: 1;
+const NotificationStyled = styled.div<INotificationStyled>`
+    ${resetCSS}
+    ${fonts.text}
     animation-fill-mode: forwards;
-    ${(props) =>
-        !props.isVisible &&
-        `
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0s 0.5s, opacity 0.5s ease-out;
-        `}
+    background-color: ${color.white};
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(48, 71, 105, 0.1);
+    color: ${color.grey};
+    display: flex;
+    margin: 18px;
+    padding: 16px 48px 16px 16px;
+    position: relative;
+    width: 320px;
+    overflow: hidden;
+
+    ${(p) =>
+        p.isClosing
+            ? css`
+                  animation: ${moveToRight} 1s;
+              `
+            : css`
+                  animation: ${moveFromLeft} 1s;
+              `}
+
+    & > ${IconWrapperStyled} {
+        ${(p) => getNotificationTheme(p.type)}
+    }
+    & > ${TextContentStyled} > ${TitleStyled} {
+        color: ${(p) => getNotificationColor(p.type)};
+    }
 `;
 
-export const BoxStyled = styled.div`
-    ${box}
-`;
+const NotificationStyles = {
+    CloseWrapperStyled,
+    IconWrapperStyled,
+    NotificationStyled,
+    SpanStyled,
+    TextContentStyled,
+    TitleStyled,
+    NotificationContainerStyled,
+    BarStyled,
+};
 
-export const SpanStyled = styled.span`
-    ${message}
-`;
-
-export const ParagraphStyled = styled.p`
-    ${title}
-`;
-
-export const FlexStyled = styled.div`
-    ${flex}
-`;
+export default NotificationStyles;

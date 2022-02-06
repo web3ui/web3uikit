@@ -1,5 +1,5 @@
 import Moralis from 'moralis/types';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC } from 'react';
 import { useMoralis } from 'react-moralis';
 import { Button } from '../Button';
 import { iconTypes } from '../Icon';
@@ -19,11 +19,11 @@ const {
     WrapperStyled,
 } = WalletModalStyles;
 
-const WalletModal: FC<WalletModalProps> = ({ isOpened = true }) => {
+const WalletModal: FC<WalletModalProps> = ({
+    isOpened = true,
+    setIsOpened,
+}) => {
     const { authenticate } = useMoralis();
-    const [isOpenedState, setIsOpenedState] = useState(isOpened);
-
-    useEffect(() => setIsOpenedState(isOpened), [isOpened]);
 
     function connectWallet(connectorId: Moralis.Web3ProviderType) {
         // to avoid problems in Next.JS apps because of localStorage
@@ -33,12 +33,12 @@ const WalletModal: FC<WalletModalProps> = ({ isOpened = true }) => {
             provider: connectorId,
             onSuccess: () => {
                 window.localStorage.setItem('connectorId', connectorId);
-                setIsOpenedState(false);
+                setIsOpened(false);
             },
         });
     }
 
-    if (!isOpenedState) return null;
+    if (!isOpened) return null;
 
     return (
         <WrapperStyled>
@@ -49,7 +49,7 @@ const WalletModal: FC<WalletModalProps> = ({ isOpened = true }) => {
                         icon={iconTypes.x}
                         iconLayout="icon-only"
                         theme="outline"
-                        onClick={() => setIsOpenedState(!isOpenedState)}
+                        onClick={() => setIsOpened(!isOpened)}
                     />
                 </HeaderStyled>
                 <GridStyled>

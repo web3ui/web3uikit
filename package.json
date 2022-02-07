@@ -36,6 +36,7 @@
         "moralis": "^1.1.0",
         "react-blockies": "^1.4.1",
         "react-moralis": "^1.1.0",
+        "react-router-dom": "^6.2.1",
         "styled-components": "^5.3.3"
     },
     "prettier": {

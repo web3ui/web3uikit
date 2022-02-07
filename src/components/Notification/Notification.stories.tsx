@@ -3,6 +3,7 @@ import React from 'react';
 import Notification from '../../components/Notification/Notification';
 import { iconTypes, TIconType } from '../Icon/collection';
 import NotificationProvider, { useNotification } from './NotificationProvider';
+import { IPosition, notifyType } from './types';
 
 export default {
     title: 'UI/Notification',
@@ -16,15 +17,24 @@ export default {
     ],
 } as ComponentMeta<typeof Notification>;
 
-const Template: ComponentStory<typeof Notification> = (args) => {
+const Template: ComponentStory<typeof Notification> = (args) => (
+    <Notification {...args} />
+);
+
+const HookTemplate: ComponentStory<typeof Notification> = () => {
     const dispatch = useNotification();
 
-    const handleNewNotification = (type: string, icon?: TIconType) => {
+    const handleNewNotification = (
+        type: notifyType,
+        icon?: TIconType,
+        position?: IPosition,
+    ) => {
         dispatch({
             type,
             message: 'Somebody messaged you',
             title: 'New Notification',
             icon,
+            position: position || 'topR',
         });
     };
 
@@ -40,12 +50,37 @@ const Template: ComponentStory<typeof Notification> = (args) => {
             <button onClick={() => handleNewNotification('warning')}>
                 Warning
             </button>
-            <button onClick={() => handleNewNotification('', iconTypes.bell)}>
+            <button
+                onClick={() => handleNewNotification('info', iconTypes.bell)}
+            >
                 Custom Icon
+            </button>
+            <button
+                onClick={() =>
+                    handleNewNotification('success', undefined, 'bottomL')
+                }
+            >
+                bottomL
+            </button>
+            <button
+                onClick={() =>
+                    handleNewNotification('success', undefined, 'bottomR')
+                }
+            >
+                bottomR
+            </button>
+            <button
+                onClick={() =>
+                    handleNewNotification('success', undefined, 'topL')
+                }
+            >
+                topL
             </button>
         </>
     );
 };
+
+export const hookDemo = HookTemplate.bind({});
 
 export const Regular = Template.bind({});
 Regular.args = {
@@ -53,9 +88,6 @@ Regular.args = {
     message: 'Somebody messaged you',
     title: 'New Notification',
 };
-
-export const Inactive = Template.bind({});
-Inactive.args = {};
 
 export const Standard = Template.bind({});
 Standard.args = {

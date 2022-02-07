@@ -6,22 +6,23 @@ import NotificationStyles from './Notification.styles';
 import color from '../../styles/colors';
 
 const {
-    TextContentStyled,
-    CloseWrapperStyled,
-    NotificationStyled,
-    TitleStyled,
-    SpanStyled,
-    IconWrapperStyled,
     BarStyled,
+    CloseWrapperStyled,
+    IconWrapperStyled,
+    NotificationStyled,
+    SpanStyled,
+    TextContentStyled,
+    TitleStyled,
 } = NotificationStyles;
 
 const Notification: React.FC<NotificationProps> = ({
-    id,
+    dispatch,
     icon,
+    id,
     message,
     title = 'New Message',
     type = 'info',
-    dispatch,
+    position = 'topL',
 }: NotificationProps) => {
     const [isClosing, setIsClosing] = useState(false);
     const [intervalId, setIntervalId] = useState<NodeJS.Timeout>();
@@ -30,16 +31,17 @@ const Notification: React.FC<NotificationProps> = ({
     const notificationWidth = 320;
 
     const startTimer = () => {
-        const id = setInterval(() => {
+        if (isClosing) return;
+        const idInt = setInterval(() => {
             setBarWidth((prev) => {
                 if (prev < notificationWidth) return prev + 1;
 
-                clearInterval(id);
+                clearInterval(idInt);
                 return prev;
             });
         }, 20);
 
-        setIntervalId(id);
+        setIntervalId(idInt);
     };
 
     const pauseTimer = () => {
@@ -47,8 +49,9 @@ const Notification: React.FC<NotificationProps> = ({
     };
 
     useEffect(() => {
+        if (isClosing) return;
         if (barWidth === notificationWidth) closeNotification();
-    }, [barWidth]);
+    }, [barWidth, isClosing]);
 
     useEffect(() => startTimer(), []);
 
@@ -56,16 +59,12 @@ const Notification: React.FC<NotificationProps> = ({
         pauseTimer();
         setIsClosing(true);
         setTimeout(() => {
+            // @ts-ignore
             dispatch({
                 type: 'remove_notification',
                 id,
-                payload: {
-                    type: 'error',
-                    message: undefined,
-                    title: undefined,
-                },
             });
-        }, 300);
+        }, 400);
     };
 
     const getIcon = (): TIconType => {
@@ -85,6 +84,7 @@ const Notification: React.FC<NotificationProps> = ({
             onMouseEnter={pauseTimer}
             onMouseLeave={startTimer}
             type={type}
+            position={position}
         >
             <IconWrapperStyled>
                 <Icon size={24} svg={getIcon()} />

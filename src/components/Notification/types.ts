@@ -4,7 +4,7 @@ export interface NotificationProps extends INotificationStyled {
     /**
      * The notification ID will generated if not assigned
      */
-    id?: string;
+    id: string;
 
     /**
      * The title to display in notification
@@ -29,7 +29,7 @@ export interface NotificationProps extends INotificationStyled {
     dispatch: (value: NotificationActionType) => void;
 }
 
-export interface INotificationStyled {
+export interface INotificationStyled extends INotificationContainer {
     /**
      * type
      */
@@ -55,13 +55,21 @@ export type notifyType = 'error' | 'info' | 'success' | 'warning';
 export type NotificationActionType = {
     type: 'add_notification' | 'remove_notification';
     payload: PayloadType;
-    id?: string;
+    id: string;
 };
 
 export type PayloadType = {
-    id: string;
+    id?: string;
     type: notifyType;
     message?: string;
     title?: string;
     icon?: TIconType;
+    position: IPosition;
 };
+
+export interface IToasts {
+    topR: PayloadType[];
+    topL: PayloadType[];
+    bottomR: PayloadType[];
+    bottomL: PayloadType[];
+}

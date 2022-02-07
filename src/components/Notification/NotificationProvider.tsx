@@ -1,7 +1,12 @@
-import React, { FC, useContext, useReducer } from 'react';
+import React, { FC, useContext, useMemo, useReducer } from 'react';
 import NotificationContext from './context';
 import Notification from './Notification';
-import { NotificationActionType, PayloadType } from './types';
+import {
+    IPosition,
+    IToasts,
+    NotificationActionType,
+    PayloadType,
+} from './types';
 import NotificationStyles from './Notification.styles';
 
 const { NotificationContainerStyled } = NotificationStyles;
@@ -13,7 +18,8 @@ function reducer(state: PayloadType[], action: NotificationActionType) {
         case 'add_notification':
             return [...state, { ...action.payload }];
         case 'remove_notification':
-            return state.filter(({ id }) => id !== action.id);
+            console.log('action', action, 'state', state);
+            return state.filter((toast) => toast.id !== action.id);
         default:
             return state;
     }
@@ -21,22 +27,40 @@ function reducer(state: PayloadType[], action: NotificationActionType) {
 
 const NotificationProvider: FC = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-    console.log('state', state);
 
-    return (
-        <NotificationContext.Provider value={dispatch}>
-            <NotificationContainerStyled position="topR">
-                {state.map((toast: PayloadType, key: number) => {
-                    console.log('toast', toast);
-                    return (
+    const toasts = useMemo(() => {
+        const toaster: IToasts = {
+            topR: [],
+            topL: [],
+            bottomR: [],
+            bottomL: [],
+        };
+        state.forEach((toast: PayloadType) =>
+            toaster[toast.position].push(toast),
+        );
+
+        return (Object.keys(toaster) as IPosition[]).map((pos) => {
+            return (
+                <NotificationContainerStyled
+                    position={pos}
+                    key={`container-${pos}`}
+                >
+                    {toaster?.[pos]?.map((toast: PayloadType) => (
                         <Notification
-                            key={`toast-${key}`}
+                            key={toast.id}
+                            id={toast.id || String(Date.now())}
                             dispatch={dispatch}
                             {...toast}
                         />
-                    );
-                })}
-            </NotificationContainerStyled>
+                    ))}
+                </NotificationContainerStyled>
+            );
+        });
+    }, [state]);
+
+    return (
+        <NotificationContext.Provider value={dispatch}>
+            {toasts}
             {props.children}
         </NotificationContext.Provider>
     );
@@ -45,14 +69,19 @@ const NotificationProvider: FC = (props) => {
 export const useNotification = () => {
     const dispatch = useContext(NotificationContext);
 
-    console.log('dispatch');
+    if (dispatch === undefined) {
+        throw new Error(
+            'useNotification hook must be used within a NotificationProvider',
+        );
+    }
 
     return (props: PayloadType) => {
+        // @ts-ignore
         dispatch({
             type: 'add_notification',
             payload: {
-                ...props,
                 id: String(Date.now()),
+                ...props,
             },
         });
     };

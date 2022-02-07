@@ -1,34 +1,14 @@
-import { css } from 'styled-components';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { INotificationContainer, INotificationStyled } from './types';
 import {
+    getNotificationAnimation,
     getNotificationColor,
     getNotificationPosition,
     getNotificationTheme,
 } from './themes/themes';
-
-const moveFromLeft = keyframes` 
-    0% {
-        left: 150%;
-    }
-
-    100% {
-        left: 0;
-    }
-`;
-
-const moveToRight = keyframes` 
-    0% {
-        left: 0;
-    }
-
-    100% {
-        left: 150%;
-    }
-`;
 
 const NotificationContainerStyled = styled.div<INotificationContainer>`
     position: fixed;
@@ -100,14 +80,7 @@ const NotificationStyled = styled.div<INotificationStyled>`
     width: 320px;
     overflow: hidden;
 
-    ${(p) =>
-        p.isClosing
-            ? css`
-                  animation: ${moveToRight} 1s;
-              `
-            : css`
-                  animation: ${moveFromLeft} 1s;
-              `}
+    ${(p) => getNotificationAnimation(p.position, p.isClosing)}
 
     & > ${IconWrapperStyled} {
         ${(p) => getNotificationTheme(p.type)}

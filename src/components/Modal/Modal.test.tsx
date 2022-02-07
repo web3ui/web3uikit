@@ -2,8 +2,9 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import Modal from './Modal';
 import { Icon } from '../Icon';
-import { iconTypes } from '../Icon/collection';
+import { iconTypes } from '../Icon';
 import color from '../../styles/colors';
+import {ModalProps} from './types';
 
 describe('Modal - Regular', () => {
     let container: HTMLDivElement;
@@ -13,7 +14,7 @@ describe('Modal - Regular', () => {
     const footerTestId = 'modal-footer-test-id';
 
     beforeEach(() => {
-        const args = {
+        const args: ModalProps = {
             id: 'regular',
             title: 'Confirm',
             children: [

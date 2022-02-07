@@ -1,4 +1,11 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
+. "$(dirname "$0")/common.sh"
 
-npm run format
+NAME=$(uname -s)
+
+if [[ $NAME =~ ^MINGW* ]] || [[ $NAME =~ ^CYGWIN* ]]; then
+    npm.cmd run format
+else 
+    npm run format
+fi

@@ -15,8 +15,9 @@ export const moralisContext: DecoratorFn = (Story) => {
         useEffect(() => {
             if (!isInitialized) return;
             const connectorId = window.localStorage.getItem('connectorId');
-            if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading)
+            if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) {
                 enableWeb3({ provider: connectorId as any });
+            }
         }, [
             isAuthenticated,
             isWeb3Enabled,
@@ -26,8 +27,13 @@ export const moralisContext: DecoratorFn = (Story) => {
 
         return null;
     };
-    const MORALIS_APP_ID = process.env.MORALIS_APP_ID;
-    const MORALIS_SERVER_URL = process.env.MORALIS_SERVER_URL;
+    const MORALIS_APP_ID = process.env.STORYBOOK_MORALIS_APP_ID;
+    const MORALIS_SERVER_URL = process.env.STORYBOOK_MORALIS_SERVER_URL;
+    console.log('MORALIS_APP_ID', MORALIS_APP_ID);
+    console.log(
+        'process.env.STORYBOOK_MORALIS_APP_ID',
+        process.env.STORYBOOK_MORALIS_APP_ID,
+    );
     return (
         <>
             {MORALIS_APP_ID && MORALIS_SERVER_URL ? (
@@ -54,9 +60,9 @@ export const moralisContext: DecoratorFn = (Story) => {
                         </a>
                         <br />
                         Example: <br />
-                        REACT_APP_MORALIS_APPLICATION_ID = xxxxxxxxxxxx
+                        STORYBOOK_MORALIS_APPLICATION_ID = xxxxxxxxxxxx
                         <br />
-                        REACT_APP_MORALIS_SERVER_URL =
+                        STORYBOOK_MORALIS_SERVER_URL =
                         https://xxxxxx.grandmoralis.com:2053/server
                     </p>
                     <p>After adding .env run yarn start again</p>

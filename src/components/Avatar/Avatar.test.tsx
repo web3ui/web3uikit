@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Avatar.stories';
+import { roundedEdgeValue } from './Avatar.styles';
 
 const {
     AvatarImageDefault,
@@ -13,11 +14,10 @@ const {
 } = composeStories(stories);
 
 let container: HTMLDivElement;
+const testTextId = 'test-text';
+export const testAvatarId = 'test-avatar';
 
 describe('Avatar - Letters', () => {
-    const testAvatarId = 'test-avatar';
-    const testTextId = 'test-text';
-
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -35,6 +35,14 @@ describe('Avatar - Letters', () => {
         expect(element).not.toBeNull();
     });
 
+    it('is not rounded', () => {
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        expect(styles?.borderRadius).toBe('0px');
+    });
+
     it('renders the text', () => {
         const element = container.querySelector(
             `[data-testid="${testTextId}"]`,
@@ -44,8 +52,6 @@ describe('Avatar - Letters', () => {
 });
 
 describe('Avatar - Default Guy', () => {
-    const testAvatarId = 'test-avatar';
-
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -63,6 +69,14 @@ describe('Avatar - Default Guy', () => {
         expect(element).not.toBeNull();
     });
 
+    it('is not rounded', () => {
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        expect(styles?.borderRadius).toBe('0px');
+    });
+
     it('uses the default image', () => {
         const element = container.querySelector(
             `[data-testid="${testAvatarId}"]`,
@@ -72,9 +86,6 @@ describe('Avatar - Default Guy', () => {
 });
 
 describe('Avatar - Custom Image', () => {
-    const testAvatarId = 'test-avatar';
-    const testImageId = 'test-custom-image';
-
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -92,20 +103,26 @@ describe('Avatar - Custom Image', () => {
         expect(element).not.toBeNull();
     });
 
+    it('is not rounded', () => {
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        expect(styles?.borderRadius).toBe('0px');
+    });
+
     it('renders the custom image', () => {
         const element = container.querySelector(
-            `[data-testid="${testImageId}"]`,
+            `[data-testid="${testAvatarId}"]`,
         );
-        expect(element?.getAttribute('src')).toEqual(
-            'https://academy.moralis.io/wp-content/uploads/2021/12/Illustration4_home.svg',
+        const styles = element && getComputedStyle(element);
+        expect(styles?.backgroundImage).toBe(
+            'url(https://academy.moralis.io/wp-content/uploads/2021/12/Illustration4_home.svg)',
         );
     });
 });
 
 describe('Avatar - Letters Rounded', () => {
-    const testAvatarId = 'test-avatar';
-    const testTextId = 'test-text';
-
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -118,8 +135,11 @@ describe('Avatar - Letters Rounded', () => {
     });
 
     it('is rounded', () => {
-        const element = container.querySelector(`[data-isrounded="true"]`);
-        expect(element).not.toBeNull();
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        expect(styles?.borderRadius).toBe(roundedEdgeValue);
     });
 
     it('renders the component', () => {
@@ -138,8 +158,6 @@ describe('Avatar - Letters Rounded', () => {
 });
 
 describe('Avatar - Default Guy Rounded ', () => {
-    const testAvatarId = 'test-avatar';
-
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -151,8 +169,11 @@ describe('Avatar - Default Guy Rounded ', () => {
     });
 
     it('is rounded', () => {
-        const element = container.querySelector(`[data-isrounded="true"]`);
-        expect(element).not.toBeNull();
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        expect(styles?.borderRadius).toBe(roundedEdgeValue);
     });
 
     it('renders the component', () => {
@@ -171,9 +192,6 @@ describe('Avatar - Default Guy Rounded ', () => {
 });
 
 describe('Avatar - Custom Image Rounded', () => {
-    const testAvatarId = 'test-avatar';
-    const testImageId = 'test-custom-image';
-
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -185,8 +203,11 @@ describe('Avatar - Custom Image Rounded', () => {
     });
 
     it('is rounded', () => {
-        const element = container.querySelector(`[data-isrounded="true"]`);
-        expect(element).not.toBeNull();
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        expect(styles?.borderRadius).toBe(roundedEdgeValue);
     });
 
     it('renders the component', () => {
@@ -198,10 +219,11 @@ describe('Avatar - Custom Image Rounded', () => {
 
     it('renders the custom image', () => {
         const element = container.querySelector(
-            `[data-testid="${testImageId}"]`,
+            `[data-testid="${testAvatarId}"]`,
         );
-        expect(element?.getAttribute('src')).toEqual(
-            'https://academy.moralis.io/wp-content/uploads/2021/12/Illustration4_home.svg',
+        const styles = element && getComputedStyle(element);
+        expect(styles?.backgroundImage).toBe(
+            'url(https://academy.moralis.io/wp-content/uploads/2021/12/Illustration4_home.svg)',
         );
     });
 });

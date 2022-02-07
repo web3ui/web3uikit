@@ -7,7 +7,7 @@ export interface ModalProps {
     /**
      * set content of modal
      */
-    children: Array<React.ReactNode>;
+    children: JSX.Element | JSX.Element[];
 
     /**
      * should the modal have a cancel button

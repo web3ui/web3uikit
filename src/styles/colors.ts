@@ -6,6 +6,7 @@ const color = {
     blueDark: '#041836',
     blueDark2: '#112F5C',
     blueLight: '#F2F6FF',
+    blueLight2: '#E5EDFF',
     blueSky: '#9ECCEA',
     blueSkyDark: '#51A5DA',
     blueSkyLight: '#E8EAED',
@@ -42,9 +43,9 @@ export const getShade = (shade: 'light' | 'dark', percent: number) =>
   )`;
 
 export const colorPercentage = (color: string, percentage: string | number) => {
-    let r = parseInt(color.slice(1, 3), 16);
-    let g = parseInt(color.slice(3, 5), 16);
-    let b = parseInt(color.slice(5, 7), 16);
+    const r = parseInt(color.slice(1, 3), 16);
+    const g = parseInt(color.slice(3, 5), 16);
+    const b = parseInt(color.slice(5, 7), 16);
 
     return `rgba(${r},${g},${b},${Number(percentage) / 100})`;
 };

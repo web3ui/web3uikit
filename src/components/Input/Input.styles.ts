@@ -4,18 +4,17 @@ import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 import { InputProps, LabelProps } from './types';
 
-export const DivWrapperStyled = styled.div<Pick<InputProps, 'state'>>`
+export const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
     ${resetCSS}
     border-radius: 16px;
-    border: 1px solid;
     display: flex;
-    height: 56px;
     max-width: 100%;
-    padding: 14px 16px;
+    min-width: fit-content;
+    outline: 1px solid;
     position: relative;
-    transition: all 0.2s linear;
+    transition: all 0.1s linear;
 
-    border-color: ${({ state }) => {
+    outline-color: ${({ state }) => {
         switch (state) {
             case 'error':
                 return color.red;
@@ -33,43 +32,17 @@ export const DivWrapperStyled = styled.div<Pick<InputProps, 'state'>>`
     }
 
     &:hover {
-        border-color: ${(p) => p.state !== 'disabled' && color.blue};
+        outline-color: ${(p) => p.state !== 'disabled' && color.blue};
 
         strong {
             overflow: visible;
             text-overflow: unset;
-            white-space: wrap;
+            white-space: pre-wrap;
         }
     }
 
     &:hover > .input_prefixIcon > svg {
         fill: ${(p) => !p?.state && color.blue};
-    }
-
-    &:focus {
-        border-color: ${color.blue};
-
-        + label {
-            color: ${color.blue};
-        }
-    }
-
-    &:hover {
-        ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-        ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-
-        label {
-            ${(p) => !p?.state && `color: ${color.blue};`}
-        }
-    }
-
-    &:focus {
-        ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-        ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
-        & + label {
-            ${(p) => p.state === 'error' && `color: ${color.red};`}
-            ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
-        }
     }
 
     input {
@@ -88,19 +61,61 @@ export const DivWrapperStyled = styled.div<Pick<InputProps, 'state'>>`
             }};
         }
     }
+
+    &:hover {
+        ${(p) => p.state === 'error' && `outline-color: ${color.red};`}
+        ${(p) => p.state === 'confirmed' && `outline-color: ${color.green};`}
+
+        label {
+            ${(p) => !p?.state && `color: ${color.blue};`}
+        }
+    }
+
+    &:focus-within {
+        outline: 2px solid ${color.blue};
+
+        label {
+            font-weight: 600;
+            ${(p) => !p?.state && `color: ${color.blue};`}
+        }
+
+        ${(p) => p.state === 'error' && `outline-color: ${color.red};`}
+        ${(p) => p.state === 'confirmed' && `outline-color: ${color.green};`}
+    }
+
+    ${({ size }) => {
+        switch (size) {
+            case 'large':
+                return css`
+                    height: 56px;
+                    padding: 14px 16px;
+                    & > label {
+                        top: 15px;
+                    }
+                `;
+            case 'regular':
+            default:
+                return css`
+                    height: 40px;
+                    padding: 8px 16px;
+                    & > label {
+                        top: 8px;
+                    }
+                `;
+        }
+    }}
 `;
 
 export const LabelStyled = styled.label<LabelProps>`
     ${resetCSS}
     ${fonts.text}
-    background-color: ${color.white};
+    background-color: ${({ labelBgColor }) => labelBgColor || color.white};
     height: 24px;
     left: ${({ hasPrefix }) => (hasPrefix ? '48px' : '16px')};
-    padding: 0 4px;
     pointer-events: none;
     position: absolute;
-    top: 15px;
     transition: all 0.1s ease-out;
+    z-index: 1;
 `;
 
 export const InputStyled = styled.input`
@@ -118,7 +133,7 @@ export const InputStyled = styled.input`
             height: 18px;
             line-height: 1;
             padding: 2px 4px;
-            top: -12px;
+            top: -13px;
             left: 12px;
         }
     }
@@ -129,6 +144,11 @@ export const InputStyled = styled.input`
             visibility: visible;
             color: ${color.grey};
         }
+    }
+
+    &:-webkit-autofill,
+    :-webkit-autofill:focus {
+        transition: background-color 600000s 0s, color 600000s 0s;
     }
 `;
 

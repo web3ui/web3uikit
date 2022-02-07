@@ -1,4 +1,4 @@
-import { iconTypes } from '../../components/Icon/collection';
+import { TIconType } from '../../components/Icon/collection';
 
 export interface ButtonProps {
     /**
@@ -45,7 +45,7 @@ export interface ButtonProps {
      * set an icon to show inside the button
      * import { iconTypes } from "../../components/Icon/collection"
      */
-    icon?: iconTypes;
+    icon?: TIconType;
 
     /**
      * set an icon position, or maybe show only the icon

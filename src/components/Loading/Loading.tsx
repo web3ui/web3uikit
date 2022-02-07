@@ -1,32 +1,24 @@
 import React from 'react';
 import color from '../../styles/colors';
-import hexToRgb from '../../utils/HexToRgb';
-import { StyledSpinnerDiv, StyledSpinnerParentDiv } from './Loading.styles';
+import { StyledSpinnerDiv, StyledSpinnerParent } from './Loading.styles';
 import { ILoadingProps } from './types';
 
 const Loading: React.FC<ILoadingProps> = ({
-    size = 50,
-    ringColor = color.blue,
-    ballColor = color.blue,
+    size = 20,
+    spinnerColor = color.white,
     text = '',
-    layout = 'column',
+    direction = 'bottom',
 }) => {
     return (
-        <StyledSpinnerParentDiv
-            aria-label="loading spinner"
-            color={ringColor}
-            layout={layout}
-            role="image"
+        <StyledSpinnerParent
+            direction={direction}
+            spinnerColor={spinnerColor}
+            size={size}
+            role="spinner"
         >
-            <StyledSpinnerDiv
-                ballColor={hexToRgb(ballColor)}
-                data-testid={size}
-                ringColor={hexToRgb(ringColor)}
-                role={'spinner'}
-                size={size}
-            />
-            {text != '' && <h4>{text}</h4>}
-        </StyledSpinnerParentDiv>
+            <StyledSpinnerDiv spinnerColor={spinnerColor} size={size} />
+            {<span>{text}</span>}
+        </StyledSpinnerParent>
     );
 };
 

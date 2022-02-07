@@ -20,6 +20,7 @@ const Modal: React.FC<ModalProps> = ({
     isOkDisabled,
     isVisible = true,
     okText = 'Ok',
+    okButtonColor,
     onCancel,
     onCloseButtonPressed,
     onOk,
@@ -73,17 +74,18 @@ const Modal: React.FC<ModalProps> = ({
                         />
                     )}
                     <Button
+                        color={okButtonColor}
                         data-testid={'modal-ok-button-test-id'}
+                        disabled={isOkDisabled}
                         onClick={
                             onOk
                                 ? onOk
                                 : () => {
-                                      console.log('ok triggered');
-                                  }
+                                    console.log('ok triggered');
+                                }
                         }
-                        disabled={isOkDisabled}
                         text={okText}
-                        theme={'primary'}
+                        theme={okButtonColor ? 'colored' : 'primary'}
                     />
                 </ModalFooter>
             )}

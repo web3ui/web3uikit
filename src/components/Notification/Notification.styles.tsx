@@ -12,6 +12,7 @@ import {
 
 const NotificationContainerStyled = styled.div<INotificationContainer>`
     position: fixed;
+    z-index: 30;
 
     ${(p) => getNotificationPosition(p.position)}
 `;

@@ -20,6 +20,8 @@ function reducer(state: PayloadType[], action: NotificationActionType) {
         case 'remove_notification':
             console.log('action', action, 'state', state);
             return state.filter((toast) => toast.id !== action.id);
+        case 'clear_notifications':
+            return [];
         default:
             return state;
     }

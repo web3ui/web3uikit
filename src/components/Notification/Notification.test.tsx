@@ -12,6 +12,7 @@ describe('Notification - Standard - Active - Regular Text - Regular Icon', () =>
     const testId = 'test-notification-id';
     const closeId = 'test-notification-x';
     const title = 'New Message';
+    const iconId = 'test-notification-icon-wrapper';
     const titleId = 'test-notification-title';
 
     beforeEach(() => {
@@ -42,7 +43,7 @@ describe('Notification - Standard - Active - Regular Text - Regular Icon', () =>
 
     it('should render left icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${iconId}"] > svg`,
         );
         expect(iconSVG).not.toBeNull();
     });
@@ -70,6 +71,7 @@ describe('Notification - Regular - Active - Custom Text - Regular Icon', () => {
     const closeId = 'test-notification-x';
     const title = Regular?.args?.title;
     const message = Regular?.args?.message;
+    const iconId = 'test-notification-icon-wrapper';
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -99,7 +101,7 @@ describe('Notification - Regular - Active - Custom Text - Regular Icon', () => {
 
     it('should render left icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${iconId}"] > svg`,
         );
         expect(iconSVG).not.toBeNull();
     });
@@ -118,6 +120,7 @@ describe('Notification - Active - Custom Text - Custom Icon', () => {
     const messageId = 'test-notification-message';
     const titleId = 'test-notification-title';
     const closeId = 'test-notification-x';
+    const iconId = 'test-notification-icon-wrapper';
     const title = CustomIcon?.args?.title;
     const message = CustomIcon?.args?.message;
 
@@ -149,7 +152,7 @@ describe('Notification - Active - Custom Text - Custom Icon', () => {
 
     it('should render left icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${testId}"] > svg`,
+            `[data-testid="${iconId}"] > svg`,
         );
         expect(iconSVG).not.toBeNull();
     });

@@ -147,6 +147,16 @@ Try the `<Logo />` component in the [interactive documentation](https://web3ui.g
 
 ![Notification](https://user-images.githubusercontent.com/78314301/149967505-e1427edd-986a-4362-8b76-ad15f8510289.gif)
 
+Requires the application to be within a `<NotificationProvider>`
+
+Example:
+
+```jsx
+<NotificationProvider>
+    <App />
+<NotificationProvider>
+```
+
 Try the `<Notification />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-notification--regular)
 
 ### `<Table />`

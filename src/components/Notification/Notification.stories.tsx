@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import Notification from '../../components/Notification/Notification';
+import { Button } from '../Button';
 import { iconTypes, TIconType } from '../Icon/collection';
 import NotificationProvider, { useNotification } from './NotificationProvider';
 import { IPosition, notifyType } from './types';
@@ -40,42 +41,82 @@ const HookTemplate: ComponentStory<typeof Notification> = () => {
 
     return (
         <>
-            <button onClick={() => handleNewNotification('error')}>
-                Error
-            </button>
-            <button onClick={() => handleNewNotification('info')}>Info</button>
-            <button onClick={() => handleNewNotification('success')}>
-                Success
-            </button>
-            <button onClick={() => handleNewNotification('warning')}>
-                Warning
-            </button>
-            <button
-                onClick={() => handleNewNotification('info', iconTypes.bell)}
+            <h3>Types:</h3>
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: '10px',
+                    maxWidth: '700px',
+                }}
             >
-                Custom Icon
-            </button>
-            <button
-                onClick={() =>
-                    handleNewNotification('success', undefined, 'bottomL')
-                }
+                <Button
+                    text="Error"
+                    onClick={() => handleNewNotification('error')}
+                    theme="colored"
+                    color="red"
+                    isFullWidth={true}
+                />
+                <Button
+                    text="Info"
+                    onClick={() => handleNewNotification('info')}
+                    isFullWidth={true}
+                />
+                <Button
+                    text="Success"
+                    onClick={() => handleNewNotification('success')}
+                    isFullWidth={true}
+                    theme="primary"
+                />
+                <Button
+                    text="Warning"
+                    onClick={() => handleNewNotification('warning')}
+                    isFullWidth={true}
+                    theme="colored"
+                    color="yellow"
+                />
+                <Button
+                    text="Custom Icon"
+                    onClick={() =>
+                        handleNewNotification('info', iconTypes.bell)
+                    }
+                    isFullWidth={true}
+                />
+            </div>
+            <h3>Position:</h3>
+            <div
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: '10px',
+                    maxWidth: '700px',
+                }}
             >
-                bottomL
-            </button>
-            <button
-                onClick={() =>
-                    handleNewNotification('success', undefined, 'bottomR')
-                }
-            >
-                bottomR
-            </button>
-            <button
-                onClick={() =>
-                    handleNewNotification('success', undefined, 'topL')
-                }
-            >
-                topL
-            </button>
+                <Button
+                    text="bottomL"
+                    onClick={() =>
+                        handleNewNotification('success', undefined, 'bottomL')
+                    }
+                    isFullWidth={true}
+                    theme="primary"
+                />
+                <Button
+                    text="bottomR"
+                    onClick={() =>
+                        handleNewNotification('success', undefined, 'bottomR')
+                    }
+                    isFullWidth={true}
+                    theme="primary"
+                />
+                <Button
+                    text="topL"
+                    onClick={() =>
+                        handleNewNotification('success', undefined, 'topL')
+                    }
+                    isFullWidth={true}
+                    theme="primary"
+                />
+            </div>
         </>
     );
 };

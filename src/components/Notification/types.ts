@@ -53,7 +53,7 @@ export type IPosition = 'topR' | 'topL' | 'bottomR' | 'bottomL';
 export type notifyType = 'error' | 'info' | 'success' | 'warning';
 
 export type NotificationActionType = {
-    type: 'add_notification' | 'remove_notification';
+    type: 'add_notification' | 'remove_notification' | 'clear_notifications';
     payload: PayloadType;
     id: string;
 };

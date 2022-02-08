@@ -86,14 +86,17 @@ const Notification: React.FC<NotificationProps> = ({
             type={type}
             position={position}
         >
-            <IconWrapperStyled>
+            <IconWrapperStyled data-testid={'test-notification-icon-wrapper'}>
                 <Icon size={24} svg={getIcon()} />
             </IconWrapperStyled>
             <TextContentStyled>
                 <TitleStyled data-testid={'test-notification-title'}>
                     {title}
                 </TitleStyled>
-                <CloseWrapperStyled onClick={closeNotification}>
+                <CloseWrapperStyled
+                    onClick={closeNotification}
+                    data-testid={'test-notification-x'}
+                >
                     <Icon size={24} svg={iconTypes.x} fill={color.greyIcons} />
                 </CloseWrapperStyled>
                 <SpanStyled data-testid={'test-notification-message'}>

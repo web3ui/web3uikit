@@ -145,7 +145,37 @@ Try the `<Logo />` component in the [interactive documentation](https://web3ui.g
 
 ### `<Notification />`
 
-![Notification](https://user-images.githubusercontent.com/78314301/149967505-e1427edd-986a-4362-8b76-ad15f8510289.gif)
+![NotificationHook](https://user-images.githubusercontent.com/78314301/152943290-3e302d97-6c01-4273-9b3a-f7cb5beff77d.gif)
+
+To call the `Notification` component use the `useNotification()` hook. Example:
+
+```jsx
+const App  = () => {
+    const dispatch = useNotification();
+
+    const handleNewNotification = () => {
+        dispatch({
+            type: 'info',
+            message: 'Somebody messaged you',
+            title: 'New Notification',
+            icon,
+            position: position || 'topR',
+        });
+    };
+
+    return (
+        <>
+                <Button
+                    text="Error"
+                    onClick={handleNewNotification}
+                    theme="colored"
+                    color="red"
+                    isFullWidth={true}
+                />
+        </>
+    );
+};
+```
 
 Requires the application to be within a `<NotificationProvider>`
 

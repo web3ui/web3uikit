@@ -1,109 +1,110 @@
 import { NotificationProps } from './types';
 import React, { useEffect, useState } from 'react';
 import { Icon } from '../Icon';
-import { iconTypes } from '../Icon/collection';
-import {
-    BoxStyled,
-    FlexStyled,
-    NotificationStyled,
-    ParagraphStyled,
-    SpanStyled,
-} from './Notification.styles';
+import { iconTypes, TIconType } from '../Icon/collection';
+import NotificationStyles from './Notification.styles';
 import color from '../../styles/colors';
 
+const {
+    BarStyled,
+    CloseWrapperStyled,
+    IconWrapperStyled,
+    NotificationStyled,
+    SpanStyled,
+    TextContentStyled,
+    TitleStyled,
+} = NotificationStyles;
+
 const Notification: React.FC<NotificationProps> = ({
-    id = String(Date.now()),
+    dispatch,
     icon,
+    id,
     message,
     title = 'New Message',
-    isVisible = false,
-    isPositionRelative = false,
-    positionRelativeConfig = {},
-    position,
+    type = 'info',
+    position = 'topL',
 }: NotificationProps) => {
-    const [visible, setVisible] = useState(isVisible);
-    const [positionRelativeConfigState, setPositionRelativeConfigState] =
-        useState({});
-    useEffect(() => {
-        setVisible(isVisible);
-    }, [isVisible]);
+    const [isClosing, setIsClosing] = useState(false);
+    const [intervalId, setIntervalId] = useState<NodeJS.Timeout>();
+    const [barWidth, setBarWidth] = useState(0);
+
+    const notificationWidth = 320;
+
+    const startTimer = () => {
+        if (isClosing) return;
+        const idInt = setInterval(() => {
+            setBarWidth((prev) => {
+                if (prev < notificationWidth) return prev + 1;
+
+                clearInterval(idInt);
+                return prev;
+            });
+        }, 20);
+
+        setIntervalId(idInt);
+    };
+
+    const pauseTimer = () => {
+        clearInterval(intervalId as NodeJS.Timeout);
+    };
 
     useEffect(() => {
-        if (isPositionRelative) {
-            switch (position) {
-                case 'topL':
-                    setPositionRelativeConfigState({
-                        ...positionRelativeConfig,
-                        top: '0px',
-                        left: '0px',
-                    });
-                    break;
-                case 'topR':
-                    console.log('in');
-                    setPositionRelativeConfigState({
-                        ...positionRelativeConfig,
-                        top: '0px',
-                        right: '0px',
-                    });
-                    break;
-                case 'bottomL':
-                    setPositionRelativeConfigState({
-                        ...positionRelativeConfig,
-                        bottom: '0px',
-                        left: '0px',
-                    });
-                    break;
-                case 'bottomR':
-                    setPositionRelativeConfigState({
-                        ...positionRelativeConfig,
-                        bottom: '0px',
-                        right: '0px',
-                    });
-                    break;
-            }
+        if (isClosing) return;
+        if (barWidth === notificationWidth) closeNotification();
+    }, [barWidth, isClosing]);
+
+    useEffect(() => startTimer(), []);
+
+    const closeNotification = () => {
+        pauseTimer();
+        setIsClosing(true);
+        setTimeout(() => {
+            // @ts-ignore
+            dispatch({
+                type: 'remove_notification',
+                id,
+            });
+        }, 400);
+    };
+
+    const getIcon = (): TIconType => {
+        if (icon) return icon;
+        if (type === 'error' || type === 'warning') {
+            return iconTypes.exclamation;
         }
-    }, [position]);
+        if (type === 'info') return iconTypes.info;
+        return iconTypes.checkmark;
+    };
 
     return (
-        <>
-            {positionRelativeConfigState && (
-                <NotificationStyled
-                    id={id}
-                    data-testid={'test-notification-id'}
-                    isVisible={visible}
-                    isPositionRelative={isPositionRelative}
-                    positionRelativeConfig={positionRelativeConfigState}
+        <NotificationStyled
+            data-testid={'test-notification-id'}
+            id={id}
+            isClosing={isClosing}
+            onMouseEnter={pauseTimer}
+            onMouseLeave={startTimer}
+            type={type}
+            position={position}
+        >
+            <IconWrapperStyled data-testid={'test-notification-icon-wrapper'}>
+                <Icon size={24} svg={getIcon()} />
+            </IconWrapperStyled>
+            <TextContentStyled>
+                <TitleStyled data-testid={'test-notification-title'}>
+                    {title}
+                </TitleStyled>
+                <CloseWrapperStyled
+                    onClick={closeNotification}
+                    data-testid={'test-notification-x'}
                 >
-                    <Icon
-                        fill={`${color.white}`}
-                        size={20}
-                        svg={icon || iconTypes.bell}
-                    />
-                    <BoxStyled>
-                        <FlexStyled>
-                            <ParagraphStyled
-                                data-testid={'test-notification-title'}
-                            >
-                                {title}
-                            </ParagraphStyled>
-                            <div
-                                data-testid={'test-notification-x'}
-                                onClick={() => setVisible(false)}
-                            >
-                                <Icon
-                                    fill={`${color.white}`}
-                                    size={20}
-                                    svg={iconTypes.x}
-                                />
-                            </div>
-                        </FlexStyled>
-                        <SpanStyled data-testid={'test-notification-message'}>
-                            {message}
-                        </SpanStyled>
-                    </BoxStyled>
-                </NotificationStyled>
-            )}
-        </>
+                    <Icon size={24} svg={iconTypes.x} fill={color.greyIcons} />
+                </CloseWrapperStyled>
+                <SpanStyled data-testid={'test-notification-message'}>
+                    {message}
+                </SpanStyled>
+            </TextContentStyled>
+            <BarStyled style={{ width: barWidth }} />
+        </NotificationStyled>
     );
 };
 

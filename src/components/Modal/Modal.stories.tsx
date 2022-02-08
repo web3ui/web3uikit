@@ -146,3 +146,40 @@ NoFooter.args = {
         </div>,
     ],
 };
+
+export const NoCancel = Template.bind({});
+NoCancel.args = {
+    title: 'Recover Password',
+    okText: 'Send E-Mail',
+    hasCancel: false,
+    children: [
+        <p
+            style={{
+                fontWeight: 600,
+                marginRight: '1em',
+                textAlign: 'center',
+            }}
+        >
+            Send instruction to reset password
+        </p>,
+    ],
+};
+
+export const CustomOkColor = Template.bind({});
+CustomOkColor.args = {
+    title: 'Delete Account',
+    okText: 'Yes! I am 100% sure!',
+    okButtonColor: 'red',
+    hasCancel: false,
+    children: [
+        <p
+            style={{
+                fontWeight: 600,
+                marginRight: '1em',
+                textAlign: 'center',
+            }}
+        >
+            Are you sure you want to delete your account?
+        </p>,
+    ],
+};

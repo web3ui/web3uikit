@@ -10,12 +10,11 @@ type TStyleProps = Pick<
 >;
 
 export const SectionStyled = styled.section`
-    display: block;
-    position: relative;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    height: 100%;
     justify-content: space-between;
+    position: relative;
 `;
 
 export const OrderedListStyled = styled.ol`
@@ -34,8 +33,8 @@ export const ListItemStyled = styled.li<TStyleProps>`
     ${resetCSS};
     ${fonts.text};
     align-items: center;
-    border: 2px solid ${color.green};
     border-radius: 50%;
+    border: 2px solid ${color.green};
     color: ${color.white};
     display: flex;
     font-size: 24px;

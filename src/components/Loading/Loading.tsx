@@ -11,10 +11,11 @@ const Loading: React.FC<ILoadingProps> = ({
 }) => {
     return (
         <StyledSpinnerParent
+            data-testid="test-loading"
             direction={direction}
-            spinnerColor={spinnerColor}
-            size={size}
             role="spinner"
+            size={size}
+            spinnerColor={spinnerColor}
         >
             <StyledSpinnerDiv spinnerColor={spinnerColor} size={size} />
             {<span>{text}</span>}

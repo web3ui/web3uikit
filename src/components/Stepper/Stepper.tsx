@@ -41,6 +41,10 @@ const Stepper: React.FC<StepperProps> = ({
     }, []);
 
     useEffect(() => {
+        setActiveStep(step);
+    }, [step]);
+
+    useEffect(() => {
         if (activeStep === Number(stepData.length + 1)) {
             onComplete && onComplete();
             return;

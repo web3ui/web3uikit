@@ -56,6 +56,11 @@ export interface ModalProps {
         event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     ) => void;
 
+    /**
+     * set color of Ok/Confirm button
+     */
+    okButtonColor?: 'blue' | 'green' | 'yellow' | 'red';
+
     /*
      *  set text of 'Ok' button
      */

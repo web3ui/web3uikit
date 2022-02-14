@@ -1,9 +1,9 @@
-import Metamask from './WalletIcons/Metamask.svg';
-import WalletConnect from './WalletIcons/wallet-connect.svg';
-import MathWallet from './WalletIcons/MathWallet.svg';
-import TokenPocket from './WalletIcons/TokenPocket.svg';
-import SafePal from './WalletIcons/SafePal.svg';
-import TrustWallet from './WalletIcons/TWT.svg';
+import WalletConnect from './WalletIcons/WC';
+import MathWallet from './WalletIcons/MathWallet';
+import TokenPocket from './WalletIcons/TokenPocket';
+import SafePal from './WalletIcons/SafePal';
+import TrustWallet from './WalletIcons/TWT';
+import Metamask from './WalletIcons/Metamask';
 
 /**
  * We have here connectorId : 'metamask' but actually it's 'injected' type

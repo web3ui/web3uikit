@@ -4,13 +4,13 @@ import color from '../../styles/colors';
 import styled, { css } from 'styled-components';
 import { SelectProps, LabelProps, SelectedItemProps } from './types';
 
-export const DivStyledWrapper = styled.div<Pick<SelectProps, 'state'>>`
+const DivStyledWrapper = styled.div<Pick<SelectProps, 'state'>>`
     ${resetCSS};
     display: inline-block;
     position: relative;
 `;
 
-export const LabelStyled = styled.label<LabelProps>`
+const LabelStyled = styled.label<LabelProps>`
     ${resetCSS}
     ${fonts.text}
     background-color: ${color.white};
@@ -23,17 +23,17 @@ export const LabelStyled = styled.label<LabelProps>`
     padding: 0 4px;
     transition: all 0.1s ease-out;
     ${({ hasSelectedIndex }) =>
-        hasSelectedIndex ? `top: -12px; font-size: 14px;` : `top: 20px;`};
+        hasSelectedIndex ? 'top: -12px; font-size: 14px;' : 'top: 20px;'};
 `;
 
-export const SelectStyled = styled.div`
+const SelectStyled = styled.div`
     ${resetCSS}
     ${fonts.text}
     background-color: transparent;
     overflow: hidden;
 `;
 
-export const SelectedItem = styled.div<SelectedItemProps>`
+const SelectedItem = styled.div<SelectedItemProps>`
     ${resetCSS}
     ${fonts.text}
     background-color: ${color.white};
@@ -119,7 +119,7 @@ const iconStyle = css`
     width: 100%;
 `;
 
-export const PrefixIcon = styled.div`
+const PrefixIcon = styled.div`
     ${resetCSS}
     ${iconStyle}
     margin-right: 8px;
@@ -129,13 +129,13 @@ export const PrefixIcon = styled.div`
     }
 `;
 
-export const DropDownIcon = styled.div`
+const DropDownIcon = styled.div`
     ${iconStyle}
     position: absolute;
     right: 16px;
 `;
 
-export const ErrorLabel = styled.label`
+const ErrorLabel = styled.label`
     ${resetCSS}
     ${fonts.text}
     bottom: -23px;
@@ -147,7 +147,7 @@ export const ErrorLabel = styled.label`
     position: absolute;
 `;
 
-export const Options = styled.div`
+const Options = styled.div`
     ${resetCSS}
     ${fonts.text}
     background-color: ${color.blueLight};
@@ -181,7 +181,7 @@ export const Options = styled.div`
     }
 `;
 
-export const Option = styled.div`
+const Option = styled.div`
     ${resetCSS}
     align-items: center;
     cursor: pointer;
@@ -200,16 +200,23 @@ export const Option = styled.div`
     }
 `;
 
+const NoDataTextStyled = styled.p`
+    text-align: center;
+    margin-top: -12px;
+    margin-bottom: 5px;
+`;
+
 const SelectStyles = {
+    DivStyledWrapper,
     DropDownIcon,
     ErrorLabel,
     LabelStyled,
+    NoDataTextStyled,
     Option,
     Options,
     PrefixIcon,
     SelectedItem,
     SelectStyled,
-    DivStyledWrapper,
 };
 
 export default SelectStyles;

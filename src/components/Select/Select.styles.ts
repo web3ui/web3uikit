@@ -17,7 +17,6 @@ const LabelStyled = styled.label<LabelProps>`
     height: 24px;
     left: 12px;
     line-height: 1;
-    padding: 2px 4px;
     pointer-events: none;
     position: absolute;
     padding: 0 4px;
@@ -130,7 +129,7 @@ const PrefixIcon = styled.div`
 `;
 
 const DropDownIcon = styled.div`
-    ${iconStyle}
+    ${iconStyle};
     position: absolute;
     right: 16px;
 `;
@@ -182,7 +181,7 @@ const Options = styled.div`
 `;
 
 const Option = styled.div`
-    ${resetCSS}
+    ${resetCSS};
     align-items: center;
     cursor: pointer;
     display: flex;

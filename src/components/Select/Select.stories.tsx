@@ -1,8 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Select from './Select';
-import { Icon } from '../Icon';
-import { iconTypes } from '../Icon/collection';
+import { Icon, iconTypes } from '../Icon';
 import color from '../../styles/colors';
 
 export default {

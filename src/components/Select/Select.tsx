@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import color from '../../styles/colors';
 import { Icon } from '../Icon';
-import { iconTypes } from '../Icon/collection';
+import { iconTypes } from '../Icon';
 import { Illustration } from '../Illustrations';
 import SelectStyles from './Select.styles';
 import type { SelectProps } from './types';

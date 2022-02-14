@@ -138,3 +138,11 @@ Disabled.args = {
     disabled: true,
     defaultOptionIndex: 0,
 };
+
+export const Nodata = Template.bind({});
+Nodata.args = {
+    // options: [],
+    onChange: onTestOptionChange,
+    label: 'Label Text',
+    defaultOptionIndex: 0,
+};

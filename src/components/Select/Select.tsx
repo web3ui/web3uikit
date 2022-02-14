@@ -2,18 +2,20 @@ import React, { useState, useEffect } from 'react';
 import color from '../../styles/colors';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
+import { Illustration } from '../Illustrations';
 import SelectStyles from './Select.styles';
 import type { SelectProps } from './types';
 
 const {
+    DivStyledWrapper,
     DropDownIcon,
     ErrorLabel,
     LabelStyled,
+    NoDataTextStyled,
     Option,
     Options,
     PrefixIcon,
     SelectedItem,
-    DivStyledWrapper,
 } = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
@@ -27,6 +29,7 @@ const Select: React.FC<SelectProps> = ({
     state = disabled ? 'disabled' : undefined,
     style,
     width = '200px',
+    customNoDataText = 'No Data',
 }: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOptionIndex, setSelectedOptionIndex] =
@@ -105,19 +108,34 @@ const Select: React.FC<SelectProps> = ({
             )}
             {isOpen && (
                 <Options aria-label="select-options" data-testid="test-options">
-                    {options.map(
-                        (option, index) =>
-                            index !== selectedOptionIndex && (
-                                <Option
-                                    onClick={onOptionClicked(index)}
-                                    key={option?.label}
-                                    data-testid="test-option"
-                                    aria-label="select-option"
-                                >
-                                    <PrefixIcon>{option?.prefix}</PrefixIcon>
-                                    {option?.label}
-                                </Option>
-                            ),
+                    {options?.length ? (
+                        options.map(
+                            (option, index) =>
+                                index !== selectedOptionIndex && (
+                                    <Option
+                                        onClick={onOptionClicked(index)}
+                                        key={option?.label}
+                                        data-testid="test-option"
+                                        aria-label="select-option"
+                                    >
+                                        <PrefixIcon>
+                                            {option?.prefix}
+                                        </PrefixIcon>
+                                        {option?.label}
+                                    </Option>
+                                ),
+                        )
+                    ) : (
+                        <>
+                            <Illustration
+                                logo="servers"
+                                width="100%"
+                                height="60px"
+                            />
+                            <NoDataTextStyled>
+                                {customNoDataText}
+                            </NoDataTextStyled>
+                        </>
                     )}
                 </Options>
             )}

@@ -94,9 +94,10 @@ const GridItemStyled = styled.div`
     padding: 4px;
 `;
 
-const WalletLogo = styled.img`
+const WalletLogo = styled.div`
     align-self: center;
     height: 40px;
+    width: fit-content;
     margin-bottom: 8px;
     pointer-events: none;
 `;

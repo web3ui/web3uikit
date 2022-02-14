@@ -62,7 +62,7 @@ const WalletModal: FC<WalletModalProps> = ({
                                     )
                                 }
                             >
-                                <WalletLogo src={icon} alt={title} />
+                                <WalletLogo>{icon()}</WalletLogo>
                                 <WalletNameStyled>{title}</WalletNameStyled>
                             </WalletCardStyled>
                         </GridItemStyled>

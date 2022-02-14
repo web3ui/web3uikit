@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import { default as MoralisType } from 'moralis/types';
+import React, { useEffect, useMemo, useState } from 'react';
 import { useMoralis } from 'react-moralis';
 import { getEllipsisTxt } from '../../web3utils';
 import { Blockie } from '../Blockie';
 import { NativeBalance } from '../NativeBalance';
 import { WalletModal } from '../WalletModal';
 import ConnectButtonStyles from './ConnectButton.styles';
+import { ConnectButtonProps } from './types';
 
 const {
     WrapperStyled,
@@ -15,7 +17,11 @@ const {
     BalanceBlockStyled,
 } = ConnectButtonStyles;
 
-const ConnectButton: React.FC = () => {
+type web3StatusType = 'disconnected' | 'pending' | 'only_web3';
+
+const ConnectButton: React.FC<ConnectButtonProps> = ({
+    moralisAuth = true,
+}) => {
     const {
         account,
         isAuthenticated,
@@ -25,28 +31,70 @@ const ConnectButton: React.FC = () => {
         isWeb3Enabled,
         isInitialized,
         isWeb3EnableLoading,
+        isAuthenticating,
+        authenticate,
+        Moralis,
     } = useMoralis();
 
     const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
+    const [web3Status, setWeb3Status] =
+        useState<web3StatusType>('disconnected');
+
+    const connectorId = useMemo(() => {
+        // to avoid problems in Next.JS apps because of window object
+        if (typeof window == 'undefined') return;
+
+        return window.localStorage.getItem(
+            'connectorId',
+        ) as MoralisType.Web3ProviderType;
+    }, [window.localStorage]);
+    console.log('account', account, isWeb3Enabled);
+    useEffect(() => {
+        if (
+            !isWeb3Enabled &&
+            !isWeb3EnableLoading &&
+            connectorId &&
+            web3Status === 'disconnected'
+        ) {
+            // @ts-ignore
+            setWeb3Status('pending');
+            enableWeb3({
+                provider: connectorId,
+                onSuccess: () => setWeb3Status('only_web3'),
+            });
+        }
+    }, [isWeb3Enabled, isWeb3EnableLoading, connectorId]);
 
     useEffect(() => {
-        if (!isInitialized) return;
-        const connectorId = window.localStorage.getItem('connectorId');
-        if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) {
-            // @ts-ignore
-            enableWeb3({ provider: connectorId });
+        if (
+            isInitialized &&
+            !isAuthenticated &&
+            !isAuthenticating &&
+            isWeb3Enabled &&
+            moralisAuth &&
+            web3Status === 'only_web3'
+        ) {
+            authenticate({ provider: connectorId });
         }
-    }, [isAuthenticated, isWeb3Enabled, isInitialized]);
+    }, [isAuthenticated, isInitialized, isWeb3Enabled, isAuthenticating]);
 
-    function disconnectWallet() {
+    useEffect(() => {
+        Moralis.onAccountChanged((account) => {
+            if (!account) disconnectWallet();
+        });
+    }, []);
+
+    async function disconnectWallet() {
         // to avoid problems in Next.JS apps because of localStorage
         if (typeof window == 'undefined') return;
 
+        window.localStorage.removeItem('connectorId');
         logout();
         deactivateWeb3();
+        setWeb3Status('disconnected');
     }
 
-    if (!account || !isAuthenticated) {
+    if (!account) {
         return (
             <WrapperStyled>
                 <ConnectButtonStyled

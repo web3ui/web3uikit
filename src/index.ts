@@ -8,6 +8,7 @@ export * from './components/Button';
 export * from './components/Card';
 export * from './components/Checkbox';
 export * from './components/ConnectButton';
+export * from './components/CreditCard';
 export * from './components/CryptoCards';
 export * from './components/Dropdown';
 export * from './components/DropdownElement';

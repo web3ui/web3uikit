@@ -26,5 +26,6 @@ module.exports = {
         'no-tabs': ['error', { allowIndentationTabs: true }],
         'indent': 'off',
         'quotes': ['error', 'single', { avoidEscape: true }],
+        'linebreak-style': 0,
     },
 };

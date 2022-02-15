@@ -86,7 +86,7 @@ const App = () => (
 
 ### `<ConnectButton />`
 
-![ConnectBtnNew](https://user-images.githubusercontent.com/78314301/154007701-e40a08c7-4670-49c1-ae77-b86210a129e6.gif)
+![ConnectBtnNew](https://user-images.githubusercontent.com/78314301/154008380-9f49c070-7886-4b76-ad83-4222b2a78c99.gif)
 
 The <ConnectButton /> component allows you to make web3 authenticating users in case your server is initialized. When the server is not initialized, or for example, you have <MoralisProvider initializeOnMount={false} > and you don't want to connect your Moralis server to the frontend the smart component will call enableWeb3()
 

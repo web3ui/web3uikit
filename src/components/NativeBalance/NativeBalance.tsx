@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNativeBalance } from 'react-moralis';
+import React, { useEffect } from 'react';
+import { useNativeBalance, useMoralis } from 'react-moralis';
 import NativeBalanceStyles from './NativeBalance.styles';
 import { NativeBalanceProps } from './types';
 
@@ -10,9 +10,17 @@ const NativeBalance: React.FC<NativeBalanceProps> = ({
     options,
     style,
 }) => {
-    const { data: balance } = useNativeBalance(params, options);
+    const { account, chainId } = useMoralis();
+    const { data: balance, getBalances } = useNativeBalance(params, {
+        autoFetch: false,
+        ...options,
+    });
 
-    if (!balance?.formatted) return null;
+    useEffect(() => {
+        if (account && chainId) getBalances();
+    }, [account, chainId]);
+
+    if (!balance?.formatted || !account) return null;
 
     return <BalanceStyled style={style}>{balance.formatted}</BalanceStyled>;
 };

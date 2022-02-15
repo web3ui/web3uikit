@@ -1,8 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Select from './Select';
-import { Icon } from '../Icon';
-import { iconTypes } from '../Icon/collection';
+import { Icon, iconTypes } from '../Icon';
 import color from '../../styles/colors';
 
 export default {
@@ -136,5 +135,13 @@ Disabled.args = {
     onChange: onTestOptionChange,
     label: 'Label Text',
     disabled: true,
+    defaultOptionIndex: 0,
+};
+
+export const Nodata = Template.bind({});
+Nodata.args = {
+    // options: [],
+    onChange: onTestOptionChange,
+    label: 'Label Text',
     defaultOptionIndex: 0,
 };

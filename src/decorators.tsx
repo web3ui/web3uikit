@@ -12,7 +12,7 @@ export const moralisContext: DecoratorFn = (Story) => {
                 <MoralisProvider
                     appId={MORALIS_APP_ID}
                     serverUrl={MORALIS_SERVER_URL}
-                    initializeOnMount={false}
+                    initializeOnMount={true}
                 >
                     <Story />
                 </MoralisProvider>

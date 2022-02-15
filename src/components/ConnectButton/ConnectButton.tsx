@@ -48,7 +48,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
             'connectorId',
         ) as MoralisType.Web3ProviderType;
     }, [window.localStorage]);
-    console.log('account', account, isWeb3Enabled);
+
     useEffect(() => {
         if (
             !isWeb3Enabled &&
@@ -63,7 +63,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
                 onSuccess: () => setWeb3Status('only_web3'),
             });
         }
-    }, [isWeb3Enabled, isWeb3EnableLoading, connectorId]);
+    }, [isWeb3Enabled, isWeb3EnableLoading, connectorId, web3Status]);
 
     useEffect(() => {
         if (
@@ -79,8 +79,8 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
     }, [isAuthenticated, isInitialized, isWeb3Enabled, isAuthenticating]);
 
     useEffect(() => {
-        Moralis.onAccountChanged((account) => {
-            if (!account) disconnectWallet();
+        Moralis.onAccountChanged((address) => {
+            if (!address) disconnectWallet();
         });
     }, []);
 
@@ -89,12 +89,13 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         if (typeof window == 'undefined') return;
 
         window.localStorage.removeItem('connectorId');
-        logout();
-        deactivateWeb3();
         setWeb3Status('disconnected');
+
+        deactivateWeb3();
+        if (isInitialized) logout();
     }
 
-    if (!account) {
+    if (!account || (isInitialized && !isAuthenticated)) {
         return (
             <WrapperStyled>
                 <ConnectButtonStyled

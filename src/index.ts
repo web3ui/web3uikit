@@ -10,6 +10,7 @@ export * from './components/Checkbox';
 export * from './components/ConnectButton';
 export * from './components/CreditCard';
 export * from './components/CryptoCards';
+export * from './components/DatePicker';
 export * from './components/Dropdown';
 export * from './components/DropdownElement';
 export * from './components/Form';

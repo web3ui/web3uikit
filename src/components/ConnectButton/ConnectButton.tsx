@@ -53,7 +53,6 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
             connectorId &&
             web3Status === 'disconnected'
         ) {
-            console.log('here');
             // @ts-ignore
             setWeb3Status('pending');
             enableWeb3({

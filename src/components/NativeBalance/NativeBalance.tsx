@@ -17,7 +17,7 @@ const NativeBalance: React.FC<NativeBalanceProps> = ({
     });
 
     useEffect(() => {
-        account && getBalances();
+        if (account && chainId) getBalances();
     }, [account, chainId]);
 
     if (!balance?.formatted || !account) return null;

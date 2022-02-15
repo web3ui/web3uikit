@@ -10,7 +10,15 @@ export default {
 } as ComponentMeta<typeof ConnectButton>;
 
 const Template: ComponentStory<typeof ConnectButton> = (args) => (
-    <ConnectButton {...args} />
+    <div
+        style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+        }}
+    >
+        <ConnectButton {...args} />
+    </div>
 );
 
 export const Default = Template.bind({});

@@ -1,5 +1,5 @@
 import { default as MoralisType } from 'moralis/types';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMoralis } from 'react-moralis';
 import { getEllipsisTxt } from '../../web3utils';
 import { Blockie } from '../Blockie';
@@ -40,22 +40,20 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
     const [web3Status, setWeb3Status] =
         useState<web3StatusType>('disconnected');
 
-    const connectorId = useMemo(() => {
+    useEffect(() => {
         // to avoid problems in Next.JS apps because of window object
         if (typeof window == 'undefined') return;
 
-        return window.localStorage.getItem(
+        const connectorId = window.localStorage.getItem(
             'connectorId',
         ) as MoralisType.Web3ProviderType;
-    }, [window.localStorage]);
-
-    useEffect(() => {
         if (
             !isWeb3Enabled &&
             !isWeb3EnableLoading &&
             connectorId &&
             web3Status === 'disconnected'
         ) {
+            console.log('here');
             // @ts-ignore
             setWeb3Status('pending');
             enableWeb3({
@@ -63,9 +61,15 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
                 onSuccess: () => setWeb3Status('only_web3'),
             });
         }
-    }, [isWeb3Enabled, isWeb3EnableLoading, connectorId, web3Status]);
+    }, [isWeb3Enabled, isWeb3EnableLoading, web3Status]);
 
     useEffect(() => {
+        // to avoid problems in Next.JS apps because of window object
+        if (typeof window == 'undefined') return;
+
+        const connectorId = window.localStorage.getItem(
+            'connectorId',
+        ) as MoralisType.Web3ProviderType;
         if (
             isInitialized &&
             !isAuthenticated &&

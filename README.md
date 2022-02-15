@@ -53,6 +53,8 @@ const App = () => (
     -   [💿 Installation](#-installation)
     -   [🧰 Usage](#-usage)
 -   [🧭 Table of contents](#-table-of-contents)
+-   [⛓ Web3 Components](#-web3-components)
+    -   [`<ConnectButton />`](#connectbutton-)
 -   [📖 UI Components](#-ui-components)
     -   [`<Avatar />`](#avatar-)
     -   [`<BannerStrip />`](#bannerstrip-)
@@ -78,6 +80,22 @@ const App = () => (
 -   [🎉 Popup](#-popup)
     -   [`<Modal />`](#modal-)
     -   [`<Tooltip />`](#tooltip-)
+
+
+# ⛓ `Web3 Components`
+
+### `<ConnectButton />`
+
+![ConnectBtnNew](https://user-images.githubusercontent.com/78314301/154008380-9f49c070-7886-4b76-ad83-4222b2a78c99.gif)
+
+The `<ConnectButton />` component allows you to make [web3 authenticating](https://github.com/MoralisWeb3/react-moralis#authenticate-web3) users in case your server is initialized. When the server is not initialized, or for example, you have `<MoralisProvider initializeOnMount={false} >` and you don't want to connect your Moralis server to the frontend the smart component will call [enableWeb3()](https://github.com/MoralisWeb3/react-moralis#enable-web3-via-metamask)
+
+If you want to use this component with the connected server but without adding a user to Moralis Database you can add the `moralisAuth` prop <ConnectButton moralisAuth={false} />
+
+The ConnectButton component automatically adds to the local storage info about the connector user used and will automatically call enableWeb3() after rereshing the page. So if user was connected once it will automatically initialize web3 connection(No need anymore to add UseEffect hook for enableWeb3() after refrshing the page)
+
+Try the `<ConnectButton />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/web3-connectbutton--default)
+
 
 # 📖 `UI Components`
 

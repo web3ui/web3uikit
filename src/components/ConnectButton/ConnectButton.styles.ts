@@ -10,14 +10,14 @@ const flexBox = css`
 `;
 
 const WrapperStyled = styled.div`
-    ${flexBox}
+    ${flexBox};
     height: 40px;
-    margin: 0px 16px;
+    margin: 0 16px;
     white-space: nowrap;
 `;
 
 const AccountInfoStyled = styled.div`
-    ${flexBox}
+    ${flexBox};
     background-color: ${color.blueLight};
     border-radius: 16px;
     flex-direction: row;
@@ -45,7 +45,7 @@ const ConnectButtonStyled = styled.button`
 `;
 
 const AddressStyled = styled.div`
-    ${flexBox}
+    ${flexBox};
     background: ${color.white};
     border-radius: 12px;
     border: 1px solid transparent;

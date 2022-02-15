@@ -11,6 +11,7 @@ const {
     Switch,
     SwitchDisabled,
     SwitchOnByDefault,
+    SwitchingText,
 } = composeStories(stories);
 
 let container: HTMLDivElement;
@@ -602,5 +603,123 @@ describe('Checkbox - Switch on by default', () => {
         label && fireEvent.click(label);
         expect(testEvent).toHaveBeenCalled();
         expect(testEvent).toHaveBeenCalledWith(input);
+    });
+});
+
+describe('Checkbox - SwitchingText', () => {
+    const testId = SwitchingText?.args?.id;
+    const testLabelText = SwitchingText?.args?.label;
+    const testNameText = SwitchingText?.args?.name;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(
+            <SwitchingText
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            container,
+        );
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const label: HTMLLabelElement | null = container.querySelector(
+            `[data-testid="${labelTestID}"]`,
+        );
+        expect(label).not.toBeNull();
+    });
+
+    it('renders the component mode correctly', () => {
+        const label: HTMLLabelElement | null = container.querySelector(
+            `[data-testid="${labelTestID}"]`,
+        );
+        expect(label?.dataset?.layout).toBe('switch');
+    });
+
+    it('renders the label text correctly', () => {
+        const label: HTMLSpanElement | null = container.querySelector(
+            `[data-testid="${textTestID}"]`,
+        );
+        expect(label?.textContent).toBe(testLabelText);
+    });
+
+    it('renders the an input child', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${labelTestID}"]  > input`,
+        );
+        expect(input).not.toBeNull();
+    });
+
+    it('renders the input', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${inputTestID}"]`,
+        );
+        expect(input).not.toBeNull();
+    });
+
+    it('renders the input ID that is passed', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${inputTestID}"]`,
+        );
+        expect(input?.id).toBe(testId);
+    });
+
+    it('renders the input name that is passed', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${inputTestID}"]`,
+        );
+        expect(input?.name).toBe(testNameText);
+    });
+
+    it('renders the input checked or unchecked with the boolean passed', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${inputTestID}"]`,
+        );
+        expect(input?.value).toBeFalsy;
+        expect(input?.checked).toBeFalsy;
+    });
+
+    it('renders the disabled attribute to the input', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${inputTestID}"]`,
+        );
+        expect(input?.disabled).toBeFalsy;
+    });
+
+    it('the component returns onChange event when changed', () => {
+        const label: HTMLLabelElement | null = container.querySelector(
+            `[data-testid="${labelTestID}"]`,
+        );
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${inputTestID}"]`,
+        );
+        label && fireEvent.click(label);
+        expect(testEvent).toHaveBeenCalled();
+        expect(testEvent).toHaveBeenCalledWith(input);
+    });
+
+    it('renders the labelWhenChecked text correctly', () => {
+        const text: HTMLSpanElement | null = container.querySelector(
+            `[data-testid="${textTestID}"]`,
+        );
+        expect(text?.textContent).toBe(testLabelText);
+
+        const label: HTMLLabelElement | null = container.querySelector(
+            `[data-testid="${labelTestID}"]`,
+        );
+        label && fireEvent.click(label);
+
+        const textUpdated: HTMLSpanElement | null = container.querySelector(
+            `[data-testid="${textTestID}"]`,
+        );
+        expect(textUpdated?.textContent).toBe(
+            SwitchingText.args?.labelWhenChecked,
+        );
     });
 });

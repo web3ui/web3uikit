@@ -9808,10 +9808,10 @@ mkdirp@^1.0.3, mkdirp@^1.0.4:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha512-vVqVZQyf3WLx2Shd0qJ9xuvqgAyKPLAiqITEtqW0oIUjzo3PePDd6fW9iFz30ef7Ysp/oiWqbhszeGWW2T6Gzw==
 
-moralis@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/moralis/-/moralis-1.1.0.tgz#aed5c01b00ac1860236c5237d0a6a54986708eec"
-  integrity sha512-NJSJ/gCgY4AI3BZ7YHvKC/xe8BcKpevwgHgux9UWMv7tZNhTPju+7vIdTIoPJQgcWUlmHFPZ1v70a0dGttF8pA==
+moralis@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/moralis/-/moralis-1.3.2.tgz#8752c84db73fbfe4196da658d560a5f6e1343be4"
+  integrity sha512-FMF8neKaNPtGP0XZSHYutZJdlYBl8NwSH9oXF4VFMb5jDzLbUdAIh/7uXwXoEoV2pm73DQPazPUV/ts0W3fXpw==
   dependencies:
     "@babel/runtime" "7.16.7"
     "@babel/runtime-corejs3" "7.16.8"
@@ -11183,10 +11183,10 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-moralis@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/react-moralis/-/react-moralis-1.1.0.tgz#c5b98ed32044796406d1ed8ee7f8c819177da1f7"
-  integrity sha512-hsjYguLCtDqI5MvbazO1bv7/GUPjIlT60l9/aymdqr+7ht9yxTZWOqe4FnrBf2XsamFWt/x4Vsg3mhzKnAzL/g==
+react-moralis@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/react-moralis/-/react-moralis-1.3.1.tgz#dd47db5acfacc4868ccaa93e9a39c1253e320c53"
+  integrity sha512-ckPw71e5wKuVYiR0Ju2kEw2IJAVM8orQIAdNEKaKDkxzvpwtQc5XpGqRBYUHHyH6esCScGMbCxpbMqlzmNYrkw==
   dependencies:
     fast-deep-equal "^3.1.3"
     immer "^9.0.7"

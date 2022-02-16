@@ -24,6 +24,11 @@ export interface CheckboxProps {
     label: string;
 
     /**
+     * A label to show the boxes meaning
+     */
+    labelWhenChecked?: string;
+
+    /**
      * How the user will see the checkbox element
      */
     layout?: 'box' | 'switch';

@@ -9,6 +9,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     disabled = false,
     id,
     label,
+    labelWhenChecked,
     layout = 'box',
     name,
     onChange,
@@ -44,7 +45,9 @@ const Checkbox: React.FC<CheckboxProps> = ({
                 type="checkbox"
                 value={`${isChecked}`}
             />
-            <span data-testid="test-checkbox-text">{label}</span>
+            <span data-testid="test-checkbox-text">
+                {isChecked ? labelWhenChecked || label : label}
+            </span>
         </StyledLabel>
     );
 };

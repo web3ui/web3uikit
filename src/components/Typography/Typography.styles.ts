@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import color from '../../styles/colors';
 import type { TypographyProps, variantType, weightType } from './types';
-// import '../../styles/fonts/fonts.css';
+import './fonts/fonts.css';
 
 const openSans = css`
     @import url('//fonts.googleapis.com/css?family=Open+Sans');
@@ -41,7 +41,7 @@ const text = css`
     color: ${color.grey};
     fill: ${color.grey};
     font-style: normal;
-    letter-spacing: 0em;
+    letter-spacing: 0;
 `;
 
 const heading = css`
@@ -50,14 +50,14 @@ const heading = css`
     color: ${color.blueDark};
     fill: ${color.blueDark};
     font-style: normal;
-    letter-spacing: 0px;
+    letter-spacing: 0;
 `;
 
 const h1 = css`
     ${heading}
     font-weight: 600;
     font-size: 36px;
-    line-height: 40px;
+    line-height: 40;
     letter-spacing: -0.75px;
 `;
 
@@ -77,7 +77,7 @@ const h3 = css`
 
 const h4 = css`
     ${heading}
-    font-size: 20px;
+    font-size: 20;
     font-weight: 400;
     line-height: 28px;
 `;
@@ -129,7 +129,8 @@ const italicFont = css`
 `;
 
 const ibm = css`
-    font-family: IBM Plex Mono;
+    @import url('//fonts.googleapis.com/css?family=IBM+Plex+Mono');
+    font-family: 'IBM Plex Mono', monospace;
 `;
 
 export const getFontStyle = (variant: variantType) => {

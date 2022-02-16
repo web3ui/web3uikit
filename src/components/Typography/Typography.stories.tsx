@@ -58,7 +58,7 @@ const Demo: ComponentStory<typeof Typography> = () => {
             </Typography>
             <br />
             <Typography variant="caption12" weight="regular" monospace>
-                Caption 12
+                Caption 12 monospace
             </Typography>
             <br />
         </div>

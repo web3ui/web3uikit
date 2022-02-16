@@ -31,9 +31,12 @@ const Checkbox: React.FC<CheckboxProps> = ({
             disabled={disabled}
             layout={layout}
         >
-            <span className="after">
-                <Icon svg={iconTypes.check} fill="white" />
-            </span>
+            {layout === 'box' && (
+                <span className="after">
+                    <Icon svg={iconTypes.check} fill="white" />
+                </span>
+            )}
+
             <StyledInput
                 data-testid="test-checkbox-input"
                 disabled={disabled}

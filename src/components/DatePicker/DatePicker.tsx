@@ -29,7 +29,11 @@ const DatePicker: React.FC<DatePickerProps> = ({
 
     const dateChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrent(event?.target?.value);
-        onChange && onChange(event);
+        onChange &&
+            onChange({
+                date: event?.target?.valueAsDate,
+                event: event,
+            });
     };
 
     const hasValidation = () =>

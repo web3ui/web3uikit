@@ -36,7 +36,7 @@ export const getCSSWeight = (weight: weightType) => {
 };
 
 const text = css`
-    ${openSans}
+    ${openSans};
     -webkit-font-smoothing: antialiased;
     color: ${color.grey};
     fill: ${color.grey};
@@ -54,7 +54,7 @@ const heading = css`
 `;
 
 const h1 = css`
-    ${heading}
+    ${heading};
     font-weight: 600;
     font-size: 36px;
     line-height: 40;
@@ -62,28 +62,28 @@ const h1 = css`
 `;
 
 const h2 = css`
-    ${heading}
+    ${heading};
     font-size: 32px;
     font-weight: 400;
     line-height: 36px;
 `;
 
 const h3 = css`
-    ${heading}
+    ${heading};
     font-size: 24px;
     font-weight: 400;
     line-height: 32px;
 `;
 
 const h4 = css`
-    ${heading}
+    ${heading};
     font-size: 20;
     font-weight: 400;
     line-height: 28px;
 `;
 
 const subtitle1 = css`
-    ${heading}
+    ${heading};
     font-weight: 600;
     color: ${color.blueDark};
     fill: ${color.blueDark};
@@ -92,7 +92,7 @@ const subtitle1 = css`
 `;
 
 const subtitle2 = css`
-    ${heading}
+    ${heading};
     font-weight: 600;
     color: ${color.blueDark};
     fill: ${color.blueDark};
@@ -101,25 +101,25 @@ const subtitle2 = css`
 `;
 
 const caption14 = css`
-    ${text}
+    ${text};
     font-size: 14px;
     line-height: 24px;
 `;
 
 const caption12 = css`
-    ${text}
+    ${text};
     font-size: 12px;
     line-height: 24px;
 `;
 
 const body18 = css`
-    ${text}
+    ${text};
     font-size: 18px;
     line-height: 24px;
 `;
 
 const body16 = css`
-    ${text}
+    ${text};
     font-size: 16px;
     line-height: 24px;
 `;

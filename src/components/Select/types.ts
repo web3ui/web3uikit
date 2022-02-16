@@ -27,6 +27,11 @@ export interface SelectProps {
     style?: React.CSSProperties;
 
     /**
+     * Component that you want to prefix before the selected options
+     */
+    prefixText?: string;
+
+    /**
      * select component width
      */
 

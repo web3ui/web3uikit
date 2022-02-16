@@ -33,5 +33,6 @@ export * from './components/Tag';
 export * from './components/TextArea';
 export * from './components/Tooltip';
 export * from './components/WalletModal';
+export * from './components/Typography';
 
 export * from './web3utils';

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { TypographyProps, variantType } from './types';
 import { getTypographyStyle } from './Typography.styles';
+import FontStyles from './fonts/FontStyles';
 
 const getTag = (variant: variantType) => {
     switch (variant) {

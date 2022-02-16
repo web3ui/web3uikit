@@ -4,7 +4,7 @@ import Modal from './Modal';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon';
 import color from '../../styles/colors';
-import {ModalProps} from './types';
+import { ModalProps } from './types';
 
 describe('Modal - Regular', () => {
     let container: HTMLDivElement;

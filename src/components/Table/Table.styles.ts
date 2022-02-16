@@ -69,15 +69,15 @@ export const TableGrid = styled.div.attrs((props: any) => ({
     border-radius: 10px;
     border: 2px solid transparent;
     border-radius: 20px;
-    overflow-x: auto;
-    overflow-y: auto;
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     background-color: white;
     display: grid;
     grid-template-columns: ${(props) => props.columns};
     row-gap: 22px;
     column-gap: 11px;
-    overflow-x: auto;
+    overflow: none;
+    min-height: fit-content;
+    min-width: fit-content;
     & > .firstCol {
         /* border: 2px dashed red; */
         padding-left: 22px;

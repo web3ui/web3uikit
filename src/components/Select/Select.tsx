@@ -15,6 +15,7 @@ const {
     Option,
     Options,
     PrefixIcon,
+    PrefixSpan,
     SelectedItem,
 } = SelectStyles;
 
@@ -28,6 +29,7 @@ const Select: React.FC<SelectProps> = ({
     options = [],
     state = disabled ? 'disabled' : undefined,
     style,
+    prefixText,
     width = '200px',
     customNoDataText = 'No Data',
 }: SelectProps) => {
@@ -77,9 +79,13 @@ const Select: React.FC<SelectProps> = ({
             >
                 {typeof selectedOptionIndex !== 'undefined' && (
                     <>
-                        <PrefixIcon>
-                            {options[selectedOptionIndex]?.prefix}
-                        </PrefixIcon>
+                        {prefixText && <PrefixSpan>{prefixText}</PrefixSpan>}
+                        {options[selectedOptionIndex]?.prefix && (
+                            <PrefixIcon>
+                                {options[selectedOptionIndex]?.prefix}
+                            </PrefixIcon>
+                        )}
+
                         {options[selectedOptionIndex]?.label}
                     </>
                 )}

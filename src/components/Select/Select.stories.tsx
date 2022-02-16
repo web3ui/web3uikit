@@ -129,6 +129,23 @@ Confirmed.args = {
     defaultOptionIndex: 0,
 };
 
+export const PrefixText = Template.bind({});
+PrefixText.args = {
+    options: [
+        {
+            label: 'All',
+            id: 'All',
+        },
+        {
+            label: 'Active',
+            id: 'Active',
+        },
+    ],
+    onChange: onTestOptionChange,
+    prefixText: 'Server:',
+    defaultOptionIndex: 0,
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
     options: optionsList,

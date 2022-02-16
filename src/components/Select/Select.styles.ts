@@ -25,6 +25,10 @@ const LabelStyled = styled.label<LabelProps>`
         hasSelectedIndex ? 'top: -12px; font-size: 14px;' : 'top: 20px;'};
 `;
 
+const PrefixSpan = styled.span`
+    margin-right: px;
+`;
+
 const SelectStyled = styled.div`
     ${resetCSS}
     ${fonts.text}
@@ -214,6 +218,7 @@ const SelectStyles = {
     Option,
     Options,
     PrefixIcon,
+    PrefixSpan,
     SelectedItem,
     SelectStyled,
 };

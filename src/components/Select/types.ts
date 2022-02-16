@@ -27,6 +27,11 @@ export interface SelectProps {
     style?: React.CSSProperties;
 
     /**
+     * String that you want to display before the selected option
+     */
+    prefixText?: string;
+
+    /**
      * select component width
      */
 

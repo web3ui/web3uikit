@@ -49,7 +49,7 @@ export interface InputProps {
     /**
      * the input can use state to react to user interaction
      */
-    state?: 'error' | 'confirmed' | 'disabled';
+    state?: 'initial' | 'error' | 'confirmed' | 'disabled';
 
     /**
      * css style prop

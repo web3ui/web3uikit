@@ -70,7 +70,7 @@ const Input: React.FC<InputProps> = ({
                 validation?.regExp,
         );
 
-    const validate = (event: React.FocusEvent<HTMLInputElement, Element>) => {
+    const validate = (event: React.FocusEvent<HTMLInputElement>) => {
         if (!hasValidation()) return;
 
         // check for HTML validation
@@ -95,7 +95,7 @@ const Input: React.FC<InputProps> = ({
         // finally if all pass but the Input is in error state
         if (currentState === 'error') {
             setCurrentState('confirmed');
-            setTimeout(() => setCurrentState(undefined), 3000);
+            setTimeout(() => setCurrentState('initial'), 3000);
         }
     };
 

@@ -12,6 +12,12 @@
     "engines": {
         "node": ">=10"
     },
+    "browser": {
+        "http": false,
+        "https": false,
+        "os": false,
+        "stream": false
+    },
     "scripts": {
         "analyze": "size-limit --why",
         "build-storybook": "build-storybook",

@@ -58,7 +58,7 @@ export interface DatePickerProps {
     /**
      * the input can use state to react to user interaction
      */
-    state?: 'error' | 'confirmed' | 'disabled';
+    state?: 'initial' | 'error' | 'confirmed' | 'disabled';
 
     /**
      * The change from date to month picker

@@ -40,7 +40,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
                 validation?.required,
         );
 
-    const validate = (event: React.FocusEvent<HTMLInputElement, Element>) => {
+    const validate = (event: React.FocusEvent<HTMLInputElement>) => {
         if (!hasValidation()) return;
 
         // check for HTML validation
@@ -53,7 +53,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
         // if all pass but the Input is in error state
         if (currentState === 'error') {
             setCurrentState('confirmed');
-            setTimeout(() => setCurrentState(undefined), 3000);
+            setTimeout(() => setCurrentState('initial'), 3000);
         }
     };
 

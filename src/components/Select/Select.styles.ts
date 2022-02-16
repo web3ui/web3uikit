@@ -26,7 +26,7 @@ const LabelStyled = styled.label<LabelProps>`
 `;
 
 const PrefixSpan = styled.span`
-    margin-right: 4px;
+    margin-right: px;
 `;
 
 const SelectStyled = styled.div`
@@ -214,11 +214,11 @@ const SelectStyles = {
     DropDownIcon,
     ErrorLabel,
     LabelStyled,
-    PrefixSpan,
     NoDataTextStyled,
     Option,
     Options,
     PrefixIcon,
+    PrefixSpan,
     SelectedItem,
     SelectStyled,
 };

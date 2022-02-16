@@ -51,9 +51,12 @@ export interface DatePickerProps {
     name?: string;
 
     /**
-     * The normal onChange event
+     * The onChange returns data with its event and date
      */
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (data: {
+        event: React.ChangeEvent<HTMLInputElement>;
+        date: Date | null;
+    }) => void;
 
     /**
      * the input can use state to react to user interaction

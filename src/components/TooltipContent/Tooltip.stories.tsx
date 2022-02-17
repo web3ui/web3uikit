@@ -6,7 +6,7 @@ import { iconTypes } from '../Icon/collection';
 import color from '../../styles/colors';
 
 export default {
-    title: 'Popup/Tooltip',
+    title: 'Popup/TooltipC',
     component: Tooltip,
 } as ComponentMeta<typeof Tooltip>;
 
@@ -24,10 +24,22 @@ const Template: ComponentStory<typeof Tooltip> = (args) => (
     </div>
 );
 
+const TooltipText = () => {
+    return (
+        <span
+            style={{
+                width: '100px',
+            }}
+        >
+            This is tooltip text
+        </span>
+    );
+};
+
 export const Top = Template.bind({});
 Top.args = {
     position: 'top',
-    text: 'Tooltip text',
+    content: <TooltipText />,
     children: [
         <Icon key="4" svg={iconTypes.helpCircle} fill={color.grey} size={50} />,
     ],
@@ -36,7 +48,7 @@ Top.args = {
 export const Bottom = Template.bind({});
 Bottom.args = {
     position: 'bottom',
-    text: 'Tooltip text',
+    content: <TooltipText />,
     children: [
         <Icon key="4" svg={iconTypes.helpCircle} fill={color.grey} size={50} />,
     ],
@@ -45,7 +57,7 @@ Bottom.args = {
 export const Left = Template.bind({});
 Left.args = {
     position: 'left',
-    text: 'animal<br><img src=&quot;https://placeimg.com/100/100/animals&quot;>',
+    content: <TooltipText />,
     children: [
         <Icon key="4" svg={iconTypes.helpCircle} fill={color.grey} size={50} />,
     ],
@@ -54,7 +66,7 @@ Left.args = {
 export const Right = Template.bind({});
 Right.args = {
     position: 'right',
-    text: 'Tooltip text',
+    content: <TooltipText />,
     children: [
         <Icon key="4" svg={iconTypes.helpCircle} fill={color.grey} size={50} />,
     ],

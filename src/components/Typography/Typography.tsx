@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import color from '../../styles/colors';
-import { Icon, iconTypes } from '../Icon';
+import { CopyButton } from '../CopyButton';
 import { TypographyProps, variantType } from './types';
-import { CopyIconStyled, getTypographyStyle } from './Typography.styles';
+import { getTypographyStyle } from './Typography.styles';
 
 const getTag = (variant: variantType) => {
     switch (variant) {
@@ -36,33 +35,12 @@ const DynamicText = ({
     ...otherProps
 }: TypographyProps) => {
     const Tag = getTag(variant);
-    const [isCopied, setIsCopied] = useState(false);
-
-    const copyToClipboard = (): void => {
-        if (typeof navigator == 'undefined') return;
-        navigator.clipboard.writeText(`${children}`);
-        setIsCopied(true);
-    };
-
-    const renderCopyIcon = () =>
-        copyable && (
-            <CopyIconStyled
-                className="input_copy"
-                onClick={() => copyToClipboard()}
-            >
-                {isCopied ? (
-                    <Icon svg={iconTypes.check} fill={color.green} />
-                ) : (
-                    <Icon svg={iconTypes.copy} />
-                )}
-            </CopyIconStyled>
-        );
 
     return (
         // @ts-ignore
         <Tag {...otherProps}>
             {children}
-            {renderCopyIcon()}
+            {copyable && <CopyButton text={children} />}
         </Tag>
     );
 };

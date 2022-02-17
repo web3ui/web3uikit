@@ -22,7 +22,7 @@ export interface TooltipProps {
     position: Position;
 
     /**
-     * Set text to show in tooltip
+     * Set element/text that will be shown within the tooltip
      */
     content?: JSX.Element | string;
 }

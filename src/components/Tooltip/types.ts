@@ -24,5 +24,5 @@ export interface TooltipProps {
     /**
      * Set text to show in tooltip
      */
-    text?: string;
+    content?: JSX.Element;
 }

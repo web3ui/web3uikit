@@ -1,156 +1,158 @@
 import styled, { css } from 'styled-components';
-import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
+import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 import { TooltipProps } from './types';
 import { Position } from './types';
 
-const borderRadius = '4px';
-
-const bottom = css<Pick<TooltipProps, 'maxWidth'>>`
-    &:after {
-        --translate-y: calc(1 * var(--arrow-size));
-        border: var(--arrow-size) solid transparent;
-        border-bottom-color: ${color.blueDark2};
-        content: '';
-    }
-
-    &:before {
-        --translate-y: calc(100% + var(--arrow-size));
-        background-color: ${color.blueDark2};
-        border-radius: ${borderRadius};
-        color: white;
-        content: attr(data-tooltip);
-        max-width: ${(p) => (p.maxWidth ? `${p.maxWidth}px` : '')};
-        padding: 0.3rem;
-        text-align: center;
-        width: max-content;
-        word-wrap: break-word;
-    }
-    &:before,
-    &:after {
-        --arrow-size: 6px;
-        bottom: -0.25rem;
-        left: 50%;
-        position: absolute;
-        transform: translateX(-50%) translateY(var(--translate-y, 0));
-    }
-`;
-
-const container = css`
-    font-size: 12px;
-    font-style: normal;
+export const StyledTooltipParentDiv = styled.div`
     ${fonts.openSans}
-    ${fonts.openSans}
-    line-height: 16px;
-    position: relative;
     ${resetCSS}
-`;
-
-const left = css<Pick<TooltipProps, 'maxWidth'>>`
-    &:after {
-        --translate-x: calc(-1 * var(--arrow-size));
-        border: var(--arrow-size) solid transparent;
-        border-left-color: ${color.blueDark2};
-        color: ${color.blueDark2};
-        content: '';
-    }
-    &:before {
-        --translate-x: calc(-100% - var(--arrow-size));
-        background: ${color.blueDark2};
-        border-radius: ${borderRadius};
-        color: white;
-        content: attr(data-tooltip);
-        max-width: ${(p) => (p.maxWidth ? `${p.maxWidth}px` : '')};
-        padding: 0.3rem;
-        text-align: center;
-        width: max-content;
-        word-wrap: break-word;
-    }
-    &:before,
-    &:after {
-        --arrow-size: 6px;
-        left: -0.25rem;
-        position: absolute;
-        top: 50%;
-        transform: translateX(var(--translate-x, 0)) translateY(-50%);
+    color: #252525;
+    position: relative;
+    &:hover > div {
+        opacity: 1;
+        transition: 0.5s;
+        transition-delay: 0.1s;
     }
 `;
 
-const right = css<Pick<TooltipProps, 'maxWidth'>>`
-    &:after {
-        --translate-x: calc(1 * var(--arrow-size));
-        border: var(--arrow-size) solid transparent;
-        border-right-color: ${color.blueDark2};
-        content: '';
-    }
-    &:before {
-        --translate-x: calc(100% + var(--arrow-size));
-        background: ${color.blueDark2};
-        border-radius: ${borderRadius};
-        color: white;
-        content: attr(data-tooltip);
-        max-width: ${(p) => (p.maxWidth ? `${p.maxWidth}px` : '')};
-        padding: 0.3rem;
-        text-align: center;
-        width: max-content;
-        word-wrap: break-word;
-    }
-    &:before,
-    &:after {
-        --arrow-size: 6px;
-        position: absolute;
-        right: -0.25rem;
-        top: 50%;
-        transform: translateX(var(--translate-x, 0)) translateY(-50%);
-    }
+interface IStyledHoverSpan {
+    height: number;
+    popoverHeight: number;
+    popoverWidth: number;
+    position: Position;
+    width: number;
+}
+
+// Left Position comps
+const leftPositionPopover = css<IStyledHoverSpan>`
+    right: ${(props) => props.width && `calc(${props.width}px + 10px)`};
+    top: 0px;
+    ${(props) => {
+        return `transform: translateY(-${
+            (props.popoverHeight - props.height) / 2
+        }px)`;
+    }}
 `;
 
-const top = css<Pick<TooltipProps, 'maxWidth'>>`
-    &:after {
-        --translate-y: calc(-1 * var(--arrow-size));
-        border: var(--arrow-size) solid transparent;
-        border-top-color: ${color.blueDark2};
-        content: '';
-    }
-    &:before {
-        --translate-y: calc(-100% - var(--arrow-size));
-        background-color: ${color.blueDark2};
-        border-radius: ${borderRadius};
-        color: white;
-        content: attr(data-tooltip);
-        max-width: ${(p) => (p.maxWidth ? `${p.maxWidth}px` : '')};
-        padding: 0.3rem;
-        text-align: center;
-        width: max-content;
-        word-wrap: break-word;
-    }
-    &:before,
-    &:after {
-        --arrow-size: 6px;
-        left: 50%;
-        position: absolute;
-        top: -0.25rem;
-        transform: translateX(-50%) translateY(var(--translate-y, 0));
-    }
+const leftPositionTriangle = css`
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid ${color.blueDark2};
+    border-top: 10px solid transparent;
+    height: 0;
+    position: absolute;
+    right: -10px;
+    top: calc(50% - 10px);
+    width: 0;
 `;
 
-const getContainerStyleByPosition = (position: Position) => {
+// Right position comps
+const rightPositionPopover = css<IStyledHoverSpan>`
+    left: ${(props) => props.width && `calc(${props.width}px + 10px)`};
+    top: 0px;
+    ${(props) => {
+        return `transform: translateY(-${
+            (props.popoverHeight - props.height) / 2
+        }px)`;
+    }}}
+`;
+
+const rightPositionTriangle = css`
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid ${color.blueDark2};
+    border-top: 10px solid transparent;
+    height: 0;
+    left: -10px;
+    position: absolute;
+    top: calc(50% - 10px);
+    width: 0;
+`;
+
+//Top Position Comps
+const topPositionPopover = css<IStyledHoverSpan>`
+    bottom: ${(props) => props.height && `calc(${props.height}px + 10px)`};
+    left: 50%;
+    transform: translateX(-50%);
+`;
+
+const topPositionTriangle = css`
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid ${color.blueDark2};
+    height: 0;
+    left: calc(50% - 10px);
+    position: absolute;
+    top: 100%;
+    width: 0;
+`;
+
+//bottom Position Comps
+const bottomPositionPopover = css<IStyledHoverSpan>`
+    left: 50%;
+    top: ${(props) => props.height && `calc(${props.height}px + 10px)`};
+    transform: translateX(-50%);
+`;
+
+const bottomPositionTriangle = css`
+    border-bottom: 10px solid ${color.blueDark2};
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    height: 0;
+    left: calc(50% - 10px);
+    position: absolute;
+    top: -10px;
+    width: 0;
+`;
+
+const getTriangleComp = (position: Position) => {
     switch (position) {
         case 'top':
-            return top;
+            return topPositionTriangle;
         case 'bottom':
-            return bottom;
+            return bottomPositionTriangle;
         case 'left':
-            return left;
+            return leftPositionTriangle;
         case 'right':
-            return right;
+            return rightPositionTriangle;
     }
 };
 
-export default styled.div<Pick<TooltipProps, 'position' | 'maxWidth'>>`
-    ${container}
-    &:hover {
-        ${(p) => getContainerStyleByPosition(p.position)}
+const getPopoverComp = (position: Position) => {
+    switch (position) {
+        case 'top':
+            return topPositionPopover;
+        case 'bottom':
+            return bottomPositionPopover;
+        case 'left':
+            return leftPositionPopover;
+        case 'right':
+            return rightPositionPopover;
     }
+};
+
+export const StyledHoverSpan = styled.div<IStyledHoverSpan>`
+    opacity: 0;
+    position: absolute;
+    z-index: 1;
+    ${(props) => getPopoverComp(props.position)}
+`;
+
+export const StyledTooltipTextDiv = styled.div<Pick<TooltipProps, 'maxWidth'>>`
+    background-color: ${color.blueDark2};
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: ${(props) => props.maxWidth && `${props.maxWidth}px`};
+    min-width: fit-content;
+    padding: 10px;
+    transition: 0.5ms;
+`;
+
+export const StyledPopoverArrow = styled.div<Pick<TooltipProps, 'position'>>`
+    ${(props) => {
+        return getTriangleComp(props.position);
+    }}
 `;

@@ -151,7 +151,7 @@ export const StyledTooltipTextDiv = styled.div<Pick<TooltipProps, 'maxWidth'>>`
     transition: 0.5ms;
 `;
 
-export const StyledPopoverArrow = styled.div<Pick<TooltipProps, 'position'>>`
+export const StyledPopoverArrowDiv = styled.div<Pick<TooltipProps, 'position'>>`
     ${(props) => {
         return getTriangleComp(props.position);
     }}

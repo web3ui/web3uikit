@@ -5,7 +5,6 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './Tooltip.stories';
 import 'jest-styled-components';
 
-const defaultTooltipText = 'Tooltip text';
 const { Bottom, Top, Left, Right } = composeStories(stories);
 
 describe('Tooltip - Bottom', () => {

@@ -3,7 +3,7 @@ import { TooltipProps } from './types';
 import {
     StyledHoverSpan,
     StyledTooltipParentDiv,
-    StyledPopoverArrow,
+    StyledPopoverArrowDiv,
     StyledTooltipTextDiv,
 } from './Tooltip.styles';
 
@@ -55,7 +55,7 @@ const Tooltip: React.FC<TooltipProps> = ({
                 <StyledTooltipTextDiv maxWidth={maxWidth}>
                     {content}
                 </StyledTooltipTextDiv>
-                <StyledPopoverArrow position={position} />
+                <StyledPopoverArrowDiv position={position} />
             </StyledHoverSpan>
         </StyledTooltipParentDiv>
     );

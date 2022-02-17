@@ -7,11 +7,6 @@ export interface TooltipProps {
     children: Array<React.ReactNode> | React.ReactNode;
 
     /**
-     * The tooltip ID will be generated if not assigned
-     */
-    id?: string;
-
-    /**
      * Set the max width of the tooltip
      */
     maxWidth?: number;

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { TooltipProps } from './types';
 import {
-    StyledHoverSpan,
+    StyledHoverDiv,
     StyledTooltipParentDiv,
     StyledPopoverArrowDiv,
     StyledTooltipTextDiv,
@@ -42,8 +42,8 @@ const Tooltip: React.FC<TooltipProps> = ({
             ref={parretnRef}
             data-testid={'tooltip-container-test-id'}
         >
-            <span> {children}</span>
-            <StyledHoverSpan
+            <span>{children}</span>
+            <StyledHoverDiv
                 ref={popoverRef}
                 popoverWidth={popverWidth}
                 popoverHeight={popoverHeight}
@@ -56,7 +56,7 @@ const Tooltip: React.FC<TooltipProps> = ({
                     {content}
                 </StyledTooltipTextDiv>
                 <StyledPopoverArrowDiv position={position} />
-            </StyledHoverSpan>
+            </StyledHoverDiv>
         </StyledTooltipParentDiv>
     );
 };

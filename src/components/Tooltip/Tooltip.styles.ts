@@ -131,7 +131,7 @@ const getPopoverComp = (position: Position) => {
     }
 };
 
-export const StyledHoverSpan = styled.div<IStyledHoverSpan>`
+export const StyledHoverDiv = styled.div<IStyledHoverSpan>`
     opacity: 0;
     position: absolute;
     z-index: 1;

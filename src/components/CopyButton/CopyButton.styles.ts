@@ -4,16 +4,15 @@ import { resetButtonCSS } from '../../styles/reset';
 
 export const CopyIconStyled = styled.button`
     ${resetButtonCSS}
-    align-items: center;
-    display: inline-flex;
+    display: inline-block;
     margin-left: 0.1em;
-    position: absolute;
+    height: 1em;
 
     & :first-child {
-        height: 1em;
+        fill: ${color.grey};
+        height: 100%;
         transition: fill 0.2s ease-out;
-        fill: ${color.blueSkyDark};
-        width: 1em;
+        width: 100%;
     }
 
     &:hover > svg {

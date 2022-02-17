@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import color from '../../styles/colors';
+import { CopyButton } from '../CopyButton';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import {
-    ButtonStyled,
+    CopyContainerStyled,
     DivStyled,
     DivWrapperStyled,
     InputStyled,
@@ -37,7 +37,6 @@ const Input: React.FC<InputProps> = ({
 }: InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
     const [currentState, setCurrentState] = useState(state);
-    const [isCopied, setIsCopied] = useState(false);
     const [isInputHidden, setIsInputHidden] = useState(inputHidden);
     const [invalidMessage, setInvalidMessage] = useState(errorMessage);
 
@@ -47,12 +46,6 @@ const Input: React.FC<InputProps> = ({
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
         onChange && onChange(event);
-    };
-
-    const copyToClipboard = (): void => {
-        if (currentState === 'disabled') return;
-        navigator.clipboard.writeText(currentValue);
-        setIsCopied(true);
     };
 
     const toggleHideInput = (): void => {
@@ -172,16 +165,9 @@ const Input: React.FC<InputProps> = ({
             )}
 
             {hasCopyButton && (
-                <ButtonStyled
-                    className="input_copy"
-                    onClick={() => copyToClipboard()}
-                >
-                    {isCopied ? (
-                        <Icon svg={iconTypes.check} fill={color.green} />
-                    ) : (
-                        <Icon svg={iconTypes.copy} />
-                    )}
-                </ButtonStyled>
+                <CopyContainerStyled>
+                    <CopyButton text={currentValue} />
+                </CopyContainerStyled>
             )}
         </DivWrapperStyled>
     );

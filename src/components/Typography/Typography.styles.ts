@@ -1,7 +1,8 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import color from '../../styles/colors';
 import type { TypographyProps, variantType, weightType } from './types';
 import './fonts/fonts.css';
+import { resetButtonCSS } from '../../styles/reset';
 
 const openSans = css`
     @import url('//fonts.googleapis.com/css?family=Open+Sans');
@@ -57,7 +58,7 @@ const h1 = css`
     ${heading};
     font-weight: 600;
     font-size: 36px;
-    line-height: 40;
+    line-height: 40px;
     letter-spacing: -0.75px;
 `;
 
@@ -77,7 +78,7 @@ const h3 = css`
 
 const h4 = css`
     ${heading};
-    font-size: 20;
+    font-size: 20px;
     font-weight: 400;
     line-height: 28px;
 `;
@@ -109,7 +110,7 @@ const caption14 = css`
 const caption12 = css`
     ${text};
     font-size: 12px;
-    line-height: 24px;
+    line-height: 1.5;
 `;
 
 const body18 = css`
@@ -159,6 +160,25 @@ export const getFontStyle = (variant: variantType) => {
             return body16;
     }
 };
+
+export const CopyIconStyled = styled.button`
+    ${resetButtonCSS}
+    align-items: center;
+    display: inline-flex;
+    margin-left: 0.1em;
+    position: absolute;
+
+    & :first-child {
+        height: 1em;
+        transition: fill 0.2s ease-out;
+        fill: ${color.blueSkyDark};
+        width: 1em;
+    }
+
+    &:hover > svg {
+        fill: ${color.blue};
+    }
+`;
 
 export const getTypographyStyle = (p: TypographyProps) => css`
     ${getFontStyle(p.variant || 'body16')};

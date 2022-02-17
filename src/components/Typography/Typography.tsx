@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import color from '../../styles/colors';
+import { Icon, iconTypes } from '../Icon';
 import { TypographyProps, variantType } from './types';
-import { getTypographyStyle } from './Typography.styles';
+import { CopyIconStyled, getTypographyStyle } from './Typography.styles';
 
 const getTag = (variant: variantType) => {
     switch (variant) {
@@ -29,15 +31,45 @@ const DynamicText = ({
     variant = 'body16',
     italic,
     monospace,
+    copyable,
+    children,
     ...otherProps
 }: TypographyProps) => {
     const Tag = getTag(variant);
-    // @ts-ignore
-    return <Tag {...otherProps} />;
+    const [isCopied, setIsCopied] = useState(false);
+
+    const copyToClipboard = (): void => {
+        if (typeof navigator == 'undefined') return;
+        navigator.clipboard.writeText(`${children}`);
+        setIsCopied(true);
+    };
+
+    const renderCopyIcon = () =>
+        copyable && (
+            <CopyIconStyled
+                className="input_copy"
+                onClick={() => copyToClipboard()}
+            >
+                {isCopied ? (
+                    <Icon svg={iconTypes.check} fill={color.green} />
+                ) : (
+                    <Icon svg={iconTypes.copy} />
+                )}
+            </CopyIconStyled>
+        );
+
+    return (
+        // @ts-ignore
+        <Tag {...otherProps}>
+            {children}
+            {renderCopyIcon()}
+        </Tag>
+    );
 };
 
 const Typography = styled(DynamicText)`
     ${(p) => getTypographyStyle(p)};
+    position: relative;
 `;
 
 export default Typography;

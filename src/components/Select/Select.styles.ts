@@ -4,17 +4,19 @@ import color from '../../styles/colors';
 import styled, { css } from 'styled-components';
 import { SelectProps, LabelProps, SelectedItemProps } from './types';
 
-const DivStyledWrapper = styled.div<Pick<SelectProps, 'state'>>`
+const DivStyledWrapper = styled.div<Pick<SelectProps, 'width'>>`
     ${resetCSS};
     display: inline-block;
     position: relative;
+    width: ${(p) => p.width || 'max-content'};
+    min-width: 100px;
 `;
 
 const LabelStyled = styled.label<LabelProps>`
     ${resetCSS}
     ${fonts.text}
     background-color: ${color.white};
-    height: 24px;
+    height: 22px;
     left: 12px;
     line-height: 1;
     pointer-events: none;
@@ -46,7 +48,6 @@ const SelectedItem = styled.div<SelectedItemProps>`
     display: flex;
     height: 56px;
     overflow: hidden;
-    padding: 14px 50px 14px 16px;
     transition: all 0.1s linear;
 
     border-color: ${({ state }) => {
@@ -110,15 +111,39 @@ const SelectedItem = styled.div<SelectedItemProps>`
             }
         }};
     }
+
+    ${({ size }) => {
+        switch (size) {
+            case 'large':
+                return css`
+                    height: 56px;
+                    padding: 14px 16px;
+                    & > label {
+                        top: 15px;
+                    }
+                `;
+            case 'regular':
+            default:
+                return css`
+                    height: 40px;
+                    padding: 6px 8px;
+                    & > label {
+                        top: 8px;
+                    }
+                `;
+        }
+    }}
+
+    padding-right: 32px;
 `;
 
 const iconStyle = css`
     align-items: center;
     display: flex;
-    height: 100%;
     justify-content: center;
     max-height: 24px;
     max-width: 24px;
+    height: 100%;
     width: 100%;
 `;
 
@@ -135,7 +160,7 @@ const PrefixIcon = styled.div`
 const DropDownIcon = styled.div`
     ${iconStyle};
     position: absolute;
-    right: 16px;
+    right: 8px;
 `;
 
 const ErrorLabel = styled.label`
@@ -158,12 +183,13 @@ const Options = styled.div`
     border: 2px solid ${color.blueSky};
     left: 0;
     margin-top: 10px;
+    max-height: 265px;
+    min-width: max-content;
+    overflow: auto;
     position: absolute;
     top: 100%;
     width: 100%;
     z-index: 10;
-    max-height: 265px;
-    overflow: auto;
 
     &::-webkit-scrollbar {
         background: none;
@@ -184,12 +210,12 @@ const Options = styled.div`
     }
 `;
 
-const Option = styled.div`
+const Option = styled.div<Pick<SelectProps, 'size'>>`
     ${resetCSS};
     align-items: center;
     cursor: pointer;
     display: flex;
-    padding: 13px 20px;
+    padding: ${(p) => (p.size === 'large' ? '13px 20px' : '10px')};
     &:hover {
         background-color: rgba(128, 128, 128, 0.1);
     }

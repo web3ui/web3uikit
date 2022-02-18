@@ -20,7 +20,7 @@ const {
 } = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
-    defaultOptionIndex,
+    defaultOptionIndex = 0,
     disabled = false,
     errorMessage = '',
     id = String(Date.now()),
@@ -28,9 +28,9 @@ const Select: React.FC<SelectProps> = ({
     onChange,
     options = [],
     state = disabled ? 'disabled' : undefined,
-    style,
+    size = 'regular',
     prefixText,
-    width = '200px',
+    width,
     customNoDataText = 'No Data',
 }: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -68,14 +68,14 @@ const Select: React.FC<SelectProps> = ({
             aria-label="select"
             data-testid="test-wrapper"
             id={id}
-            state={state}
-            style={{ ...style, width }}
+            width={width}
         >
             <SelectedItem
                 data-testid="test-selected"
                 state={state}
                 onClick={toggling}
                 aria-label="option-selected"
+                size={size}
             >
                 {typeof selectedOptionIndex !== 'undefined' && (
                     <>
@@ -123,6 +123,7 @@ const Select: React.FC<SelectProps> = ({
                                         key={option?.label}
                                         data-testid="test-option"
                                         aria-label="select-option"
+                                        size={size}
                                     >
                                         <PrefixIcon>
                                             {option?.prefix}

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface SelectProps {
+export interface SelectProps extends SelectedItemProps {
     /**
      * it is best to set a unique ID for each select component to verify change events
      */
@@ -15,11 +15,6 @@ export interface SelectProps {
      * standard onChange that returns the entire event, as normal you can access event.target
      */
     onChange: (option: OptionProps) => void;
-
-    /**
-     * the select component can use state to react to user interaction
-     */
-    state?: 'error' | 'confirmed' | 'disabled';
 
     /**
      * css style prop
@@ -90,7 +85,12 @@ export interface LabelProps {
 
 export interface SelectedItemProps {
     /**
-     * duplicate of state
+     * the select component can use state to react to user interaction
      */
     state?: 'error' | 'confirmed' | 'disabled';
+
+    /**
+     * size of the components
+     */
+    size?: 'large' | 'regular';
 }

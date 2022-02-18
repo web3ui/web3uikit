@@ -6,6 +6,7 @@ export * from './components/Blockie';
 export * from './components/Breadcrumbs';
 export * from './components/Button';
 export * from './components/Card';
+export * from './components/ChainSelector';
 export * from './components/Checkbox';
 export * from './components/ConnectButton';
 export * from './components/CreditCard';

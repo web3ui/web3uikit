@@ -6,7 +6,7 @@ export const moralisContext: DecoratorFn = (Story) => {
     const MORALIS_APP_ID = process.env.STORYBOOK_MORALIS_APP_ID;
     const MORALIS_SERVER_URL = process.env.STORYBOOK_MORALIS_SERVER_URL;
 
-    const Web3InitializeOnlyForDemo = () => {
+    const Web3Initialize = () => {
         const {
             enableWeb3,
             isAuthenticated,
@@ -38,11 +38,8 @@ export const moralisContext: DecoratorFn = (Story) => {
                     appId={MORALIS_APP_ID}
                     serverUrl={MORALIS_SERVER_URL}
                 >
-                    {
-                        // eslint-disable-next-line new-cap
-                        Story()
-                    }
-                    <Web3InitializeOnlyForDemo />
+                    <Story />
+                    <Web3Initialize />
                 </MoralisProvider>
             ) : (
                 <>

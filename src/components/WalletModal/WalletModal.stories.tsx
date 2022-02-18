@@ -8,6 +8,13 @@ export default {
     title: '1.Web3/WalletModal',
     component: WalletModal,
     decorators: [moralisContext],
+    parameters: {
+        docs: {
+            source: {
+                excludeDecorators: true,
+            },
+        },
+    },
 } as ComponentMeta<typeof WalletModal>;
 
 const Template: ComponentStory<typeof WalletModal> = (args) => {

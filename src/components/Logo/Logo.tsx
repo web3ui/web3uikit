@@ -4,14 +4,14 @@ import { getMoralisLogo } from './images/moralisLogoIcon';
 import { getMoralisDefault } from './images/moralisLogoDefault';
 import { getVisaLogo } from './images/visaLogo';
 import { getMastercardLogo } from './images/mastercardLogo';
-import {getAmexLogo} from './images/amexLogo';
-import {getDinersLogo} from './images/dinersLogo';
+import { getAmexLogo } from './images/amexLogo';
+import { getDinersLogo } from './images/dinersLogo';
 
 const Logo: React.FC<LogoProps> = ({ theme, color, size }: LogoProps) => {
     switch (theme) {
         case 'amex':
             return (
-                <div data-testid="test-logo-default">
+                <div data-testid="test-logo-amex">
                     {getAmexLogo(size || 'regular')}
                 </div>
             );
@@ -23,7 +23,7 @@ const Logo: React.FC<LogoProps> = ({ theme, color, size }: LogoProps) => {
             );
         case 'diners':
             return (
-                <div data-testid="test-logo-default">
+                <div data-testid="test-logo-diners">
                     {getDinersLogo(size || 'regular')}
                 </div>
             );

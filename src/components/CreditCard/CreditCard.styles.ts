@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
 import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
-import colors, {colorPercentage, gradientColors} from '../../styles/colors';
-import { creditCardBrands, CreditCardProps} from './types';
+import colors, { colorPercentage, gradientColors } from '../../styles/colors';
+import { creditCardBrands, CreditCardProps } from './types';
 
 type TStyleProps = Pick<CreditCardProps, 'isExpired' | 'pressed' | 'brand'>;
 
@@ -22,7 +22,7 @@ const getBgGradient = (brand: creditCardBrands) => {
 export const DivStyledCreditCard = styled.div<TStyleProps>`
     ${resetCSS};
     ${fonts.text};
-    background: ${({brand}) => getBgGradient(brand)};
+    background: ${({ brand }) => getBgGradient(brand)};
     border: 2px solid ${colorPercentage(colors.white, 40)};
     border-radius: 16px;
     display: grid;
@@ -35,7 +35,8 @@ export const DivStyledCreditCard = styled.div<TStyleProps>`
         height: 10px;
     }
 
-    ${({isExpired, pressed}) => (isExpired ? expiredStyles : pressed ? pressedStyles : '')}
+    ${({ isExpired, pressed }) =>
+        isExpired ? expiredStyles : pressed ? pressedStyles : ''}
 `;
 
 export const DivStyledFlex = styled.div`

@@ -14,7 +14,7 @@ const dinersLogoRegular = () => {
             viewBox="0 0 34 23"
             fill="none"
         >
-            <circle cx="11.2087" cy="11.2088" r="10.8352" fill="white"/>
+            <circle cx="11.2087" cy="11.2088" r="10.8352" fill="white" />
             <path
                 fillRule="evenodd"
                 clipRule="evenodd"
@@ -33,8 +33,20 @@ const dinersLogoRegular = () => {
 
 const dinersLogoSmall = () => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 26 18" fill="none">
-            <ellipse cx="8.71954" cy="9.15665" rx="8.0086" ry="8.12637" fill="white"/>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="18"
+            viewBox="0 0 26 18"
+            fill="none"
+        >
+            <ellipse
+                cx="8.71954"
+                cy="9.15665"
+                rx="8.0086"
+                ry="8.12637"
+                fill="white"
+            />
             <path
                 fillRule="evenodd"
                 clipRule="evenodd"

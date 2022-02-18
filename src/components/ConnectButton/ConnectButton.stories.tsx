@@ -7,6 +7,13 @@ export default {
     title: '1.Web3/ConnectButton',
     component: ConnectButton,
     decorators: [moralisContext],
+    parameters: {
+        docs: {
+            source: {
+                excludeDecorators: true,
+            },
+        },
+    },
 } as ComponentMeta<typeof ConnectButton>;
 
 const Template: ComponentStory<typeof ConnectButton> = (args) => (

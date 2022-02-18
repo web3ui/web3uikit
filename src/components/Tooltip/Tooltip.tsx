@@ -20,10 +20,6 @@ const Tooltip: React.FC<TooltipProps> = ({
     const [popverWidth, setPopoverWidth] = useState(0);
     const [popoverHeight, setPopoverHeight] = useState(0);
     useEffect(() => {
-        console.log(
-            'width',
-            parretnRef.current ? (parretnRef.current as any).offsetWidth : 0,
-        );
         setWidth(
             parretnRef.current ? (parretnRef.current as any).offsetWidth : 0,
         );

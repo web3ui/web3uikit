@@ -7,11 +7,6 @@ export interface TooltipProps {
     children: Array<React.ReactNode> | React.ReactNode;
 
     /**
-     * Set the max width of the tooltip
-     */
-    maxWidth?: number;
-
-    /**
      * Set position of tooltip
      */
     position: Position;
@@ -19,5 +14,10 @@ export interface TooltipProps {
     /**
      * Set element/text that will be shown within the tooltip
      */
-    content?: JSX.Element | string;
+    content: JSX.Element | string;
+
+    /**
+     * Set the max width of the tooltip
+     */
+    maxWidth?: number;
 }

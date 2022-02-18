@@ -10,7 +10,7 @@ export const StyledTooltipParentDiv = styled.div`
     ${resetCSS}
     color: #252525;
     position: relative;
-    &:hover > div {
+    &:hover > div:nth-child(2) {
         opacity: 1;
         transition: 0.5s;
         transition-delay: 0.1s;

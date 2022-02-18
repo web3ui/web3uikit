@@ -75,3 +75,10 @@ export const Text = Template.bind({});
 Text.args = {
     children: 'Demo Text',
 };
+
+export const Copyable = Template.bind({});
+Copyable.args = {
+    children: 'Copyable Text 222',
+    copyable: true,
+    variant: 'h1',
+};

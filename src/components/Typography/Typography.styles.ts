@@ -57,7 +57,7 @@ const h1 = css`
     ${heading};
     font-weight: 600;
     font-size: 36px;
-    line-height: 40;
+    line-height: 40px;
     letter-spacing: -0.75px;
 `;
 
@@ -77,7 +77,7 @@ const h3 = css`
 
 const h4 = css`
     ${heading};
-    font-size: 20;
+    font-size: 20px;
     font-weight: 400;
     line-height: 28px;
 `;
@@ -109,7 +109,7 @@ const caption14 = css`
 const caption12 = css`
     ${text};
     font-size: 12px;
-    line-height: 24px;
+    line-height: 1.5;
 `;
 
 const body18 = css`

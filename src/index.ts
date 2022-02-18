@@ -8,6 +8,7 @@ export * from './components/Button';
 export * from './components/Card';
 export * from './components/Checkbox';
 export * from './components/ConnectButton';
+export * from './components/CopyButton';
 export * from './components/CreditCard';
 export * from './components/CryptoCards';
 export * from './components/DatePicker';
@@ -33,7 +34,7 @@ export * from './components/Tabs';
 export * from './components/Tag';
 export * from './components/TextArea';
 export * from './components/Tooltip';
-export * from './components/WalletModal';
 export * from './components/Typography';
+export * from './components/WalletModal';
 
 export * from './web3utils';

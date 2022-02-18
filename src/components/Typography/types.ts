@@ -31,6 +31,11 @@ export interface TypographyProps {
      * Children text
      */
     children?: string | number;
+
+    /**
+     * Copies text to clipboard
+     */
+    copyable?: boolean;
 }
 
 export type variantType =

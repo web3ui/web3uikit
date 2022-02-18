@@ -10,11 +10,8 @@ export default {
     title: '5.Popup/Notification',
     component: Notification,
     decorators: [
-        (Story) => (
-            <NotificationProvider>
-                <Story />
-            </NotificationProvider>
-        ),
+        // eslint-disable-next-line new-cap
+        (Story) => <NotificationProvider>{Story()}</NotificationProvider>,
     ],
 } as ComponentMeta<typeof Notification>;
 

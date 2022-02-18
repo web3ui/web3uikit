@@ -3,7 +3,7 @@ import CreditCard from './CreditCard';
 import React from 'react';
 
 export default {
-    title: 'UI/CreditCard',
+    title: '4.UI/CreditCard',
     component: CreditCard,
 } as ComponentMeta<typeof CreditCard>;
 

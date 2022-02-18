@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Table from './Table';
 import { columnsConfig, header, data, pageSize, maxPages } from './MockData';
 export default {
-    title: 'Ui/Table',
+    title: '3.Layout/Table',
     component: Table,
     argTypes: { onPageNumberChanged: { action: 'Page Number Changed' } },
 } as ComponentMeta<typeof Table>;

@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Radios from './Radios';
 
 export default {
-    title: 'Interaction/Radios',
+    title: '2.Forms/Radios',
     component: Radios,
     parameters: {
         actions: {

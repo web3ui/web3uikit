@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import DatePicker from './DatePicker';
 
 export default {
-    title: 'Interaction/DatePicker',
+    title: '2.Forms/DatePicker',
     component: DatePicker,
     argTypes: { onChange: { action: 'changed' } },
 } as ComponentMeta<typeof DatePicker>;

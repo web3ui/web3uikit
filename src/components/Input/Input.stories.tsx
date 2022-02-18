@@ -5,7 +5,7 @@ import { iconTypes } from '../Icon/collection';
 import { validateRegExp } from '../../utils/const';
 
 export default {
-    title: 'Interaction/Input',
+    title: '2.Forms/Input',
     component: Input,
     parameters: {
         actions: {

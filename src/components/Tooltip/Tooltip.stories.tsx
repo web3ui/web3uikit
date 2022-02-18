@@ -6,7 +6,7 @@ import { iconTypes } from '../Icon/collection';
 import color from '../../styles/colors';
 
 export default {
-    title: 'Popup/Tooltip',
+    title: '5.Popup/Tooltip',
     component: Tooltip,
 } as ComponentMeta<typeof Tooltip>;
 

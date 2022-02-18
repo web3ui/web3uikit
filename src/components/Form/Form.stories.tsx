@@ -4,7 +4,7 @@ import Form from './Form';
 import { validateRegExp } from '../../utils/const';
 
 export default {
-    title: 'Interaction/Form',
+    title: '2.Forms/Form',
     component: Form,
 } as ComponentMeta<typeof Form>;
 

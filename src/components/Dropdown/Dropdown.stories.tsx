@@ -8,7 +8,7 @@ import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 
 export default {
-    title: 'UI/Dropdown',
+    title: '4.UI/Dropdown',
     component: Dropdown,
     argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof Dropdown>;

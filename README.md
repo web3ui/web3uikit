@@ -1,4 +1,4 @@
-# Web3UIKit 🔮
+# Web3UIKit
 
 Beautiful and lightweight UI components for web3 developers.
 This UI library will speed up your dapp development no matter which chain you build on.
@@ -81,7 +81,6 @@ const App = () => (
     -   [`<Modal />`](#modal-)
     -   [`<Tooltip />`](#tooltip-)
 
-
 # ⛓ `Web3 Components`
 
 ### `<ConnectButton />`
@@ -95,7 +94,6 @@ If you want to use this component with the connected server but without adding a
 The ConnectButton component automatically adds to the local storage info about the connector user used and will automatically call enableWeb3() after rereshing the page. So if user was connected once it will automatically initialize web3 connection(No need anymore to add UseEffect hook for enableWeb3() after refrshing the page)
 
 Try the `<ConnectButton />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/web3-connectbutton--default)
-
 
 # 📖 `UI Components`
 
@@ -168,7 +166,7 @@ Try the `<Logo />` component in the [interactive documentation](https://web3ui.g
 To call the `Notification` component use the `useNotification()` hook. Example:
 
 ```jsx
-const App  = () => {
+const App = () => {
     const dispatch = useNotification();
 
     const handleNewNotification = () => {
@@ -183,13 +181,13 @@ const App  = () => {
 
     return (
         <>
-                <Button
-                    text="Error"
-                    onClick={handleNewNotification}
-                    theme="colored"
-                    color="red"
-                    isFullWidth={true}
-                />
+            <Button
+                text="Error"
+                onClick={handleNewNotification}
+                theme="colored"
+                color="red"
+                isFullWidth={true}
+            />
         </>
     );
 };

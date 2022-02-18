@@ -8,7 +8,7 @@ import NewComp from './NewComp';
 // component: your new component
 // argTypes: onClick is a 'Storybook Event' to simulate clicks
 export default {
-    title: 'Demo/NewComp',
+    title: '7.Demo/NewComp',
     component: NewComp,
     argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof NewComp>;

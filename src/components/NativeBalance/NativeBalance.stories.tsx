@@ -5,7 +5,7 @@ import { NativeBalanceProps } from './types';
 import { moralisContext } from '../../decorators';
 
 export default {
-    title: 'Web3/NativeBalance',
+    title: '1.Web3/NativeBalance',
     component: NativeBalance,
     decorators: [moralisContext],
 } as ComponentMeta<typeof NativeBalance>;

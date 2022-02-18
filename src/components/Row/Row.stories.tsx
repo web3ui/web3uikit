@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Row, { Col } from './Row';
 export default {
-    title: 'Ui/Row',
+    title: '3.Layout/Row',
     component: Row,
     subcomponents: { Col },
 } as ComponentMeta<typeof Row>;

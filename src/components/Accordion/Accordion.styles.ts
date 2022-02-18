@@ -69,6 +69,7 @@ export const DivStyled = styled.div`
 
     svg {
         margin: 0 6px;
+        min-width: 18px;
     }
 
     div {

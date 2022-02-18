@@ -9,7 +9,7 @@ import { useArgs } from '@storybook/addons';
 import { Button } from '../Button';
 
 export default {
-    title: 'Popup/Modal',
+    title: '5.Popup/Modal',
     component: Modal,
 } as ComponentMeta<typeof Modal>;
 

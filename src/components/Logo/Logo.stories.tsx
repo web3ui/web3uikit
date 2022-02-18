@@ -56,3 +56,27 @@ MastercardSmall.args = {
     theme: 'mastercard',
     size: 'small',
 };
+
+export const AmexRegular = Template.bind({});
+AmexRegular.args = {
+    theme: 'amex',
+    size: 'regular',
+};
+
+export const AmexSmall = Template.bind({});
+AmexSmall.args = {
+    theme: 'mastercard',
+    size: 'small',
+};
+
+export const DinersRegular = Template.bind({});
+DinersRegular.args = {
+    theme: 'diners',
+    size: 'regular',
+};
+
+export const DinersSmall = Template.bind({});
+DinersSmall.args = {
+    theme: 'mastercard',
+    size: 'small',
+};

@@ -7,7 +7,7 @@ import Button from '../Button/Button';
 import { Tab } from '.';
 
 export default {
-    title: 'UI/Tabs',
+    title: '3.Layout/Tabs',
     component: TabList,
     subcomponents: { Tab },
 } as ComponentMeta<typeof TabList>;

@@ -3,7 +3,7 @@ import React from 'react';
 import Avatar from '../Avatar/Avatar';
 
 export default {
-    title: 'UI/Avatar',
+    title: '6.Graphic/Avatar',
     component: Avatar,
 } as ComponentMeta<typeof Avatar>;
 
@@ -17,7 +17,7 @@ AvatarImageDefault.args = {
 export const AvatarImageCustom = Template.bind({});
 AvatarImageCustom.args = {
     theme: 'image',
-    image: 'https://academy.moralis.io/wp-content/uploads/2021/12/Illustration4_home.svg',
+    image: 'https://nftcoders.com/avatar/avatar-cool.svg',
 };
 
 export const AvatarLetters = Template.bind({});

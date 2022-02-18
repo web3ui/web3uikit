@@ -4,7 +4,7 @@ import ConnectButton from './ConnectButton';
 import { moralisContext } from '../../decorators';
 
 export default {
-    title: 'Web3/ConnectButton',
+    title: '1.Web3/ConnectButton',
     component: ConnectButton,
     decorators: [moralisContext],
 } as ComponentMeta<typeof ConnectButton>;

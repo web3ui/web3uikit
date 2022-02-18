@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import Illustration from './Illustration';
 
 export default {
-    title: 'UI/Illustration',
+    title: '6.Graphic/Illustration',
     component: Illustration,
 } as ComponentMeta<typeof Illustration>;
 

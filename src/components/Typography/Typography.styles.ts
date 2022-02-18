@@ -57,7 +57,7 @@ const h1 = css`
     ${heading};
     font-weight: 600;
     font-size: 36px;
-    line-height: 40;
+    line-height: 40px;
     letter-spacing: -0.75px;
 `;
 

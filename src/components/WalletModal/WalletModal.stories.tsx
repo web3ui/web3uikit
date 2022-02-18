@@ -5,7 +5,7 @@ import { moralisContext } from '../../decorators';
 import { useArgs } from '@storybook/addons';
 
 export default {
-    title: 'Web3/WalletModal',
+    title: '1.Web3/WalletModal',
     component: WalletModal,
     decorators: [moralisContext],
 } as ComponentMeta<typeof WalletModal>;

@@ -8,7 +8,7 @@ const hasPositionAbsoluteFix = {
 };
 
 export default {
-    title: 'UI/BannerStrip',
+    title: '5.Popup/BannerStrip',
     component: BannerStrip,
     decorators: [
         (storyFn) => <div style={hasPositionAbsoluteFix}>{storyFn()}</div>,

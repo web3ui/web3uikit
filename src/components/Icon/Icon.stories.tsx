@@ -31,7 +31,7 @@ const capitilize = (str: string) => {
 /**
  * stories
  */
-const stories = storiesOf('UI/Icon', module).addParameters({
+const stories = storiesOf('6.Graphic/Icon', module).addParameters({
     component: Icon,
     controls: { hideNoControlsWarning: true },
     docs: {

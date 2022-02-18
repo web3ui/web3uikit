@@ -5,7 +5,7 @@ import { Icon, iconTypes } from '../Icon';
 import color from '../../styles/colors';
 
 export default {
-    title: 'Interaction/Select',
+    title: '2.Forms/Select',
     component: Select,
 } as ComponentMeta<typeof Select>;
 

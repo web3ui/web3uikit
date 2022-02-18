@@ -8,7 +8,7 @@ import { Breadcrumbs } from '.';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 export default {
-    title: 'UI/Breadcrumbs',
+    title: '4.UI/Breadcrumbs',
     component: Breadcrumbs,
 } as ComponentMeta<typeof Breadcrumbs>;
 

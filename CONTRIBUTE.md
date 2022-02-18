@@ -1,4 +1,4 @@
-# Web3UIKit 🧙‍♂️
+# Web3UIKit
 
 The web3uiKit is aimed at helping developers build web3 dApps fast, delivering a quality DX to our developers plus an inclusive and reliable UX to your end users.
 Thank you for taking an interest in contributing to what we aim to be the industry standard in web3 UI/UX kits... we need your help.
@@ -7,11 +7,11 @@ Thank you for taking an interest in contributing to what we aim to be the indust
 
 # Our core goals for this kit 📈
 
-- a fast and reliable kit that is easy to use for devs (**top DX**)
-- a friendly user experience that has great accessibility (**topUX**)
-- strict typed components to kill those bugs before they happen
-- building a community of front end mages who are passion about web3
-- finding our next FrontEnd master to join our expanding international team (that could be you)
+-   a fast and reliable kit that is easy to use for devs (**top DX**)
+-   a friendly user experience that has great accessibility (**topUX**)
+-   strict typed components to kill those bugs before they happen
+-   building a community of front end mages who are passion about web3
+-   finding our next FrontEnd master to join our expanding international team (that could be you)
 
 &nbsp;
 
@@ -19,13 +19,13 @@ Thank you for taking an interest in contributing to what we aim to be the indust
 
 We have made a battle tested front end web3 stack for the roaring 20s
 
-- React JS: Industry standard, no need to say more
-- Typescript: strongly typed props and data means no bugs
-- Styled Components: Encapsulated CSS with all the power of SCSS & JS
-- Storybook: lets us build quickly in isolation and test props on the fly
-- RTL: React Test Library makes testing easy
-- Prettier makes our code look nice and helps with Pull Requests
-- Yarn is used to get reliable package management on Mac, PC & Lynx
+-   React JS: Industry standard, no need to say more
+-   Typescript: strongly typed props and data means no bugs
+-   Styled Components: Encapsulated CSS with all the power of SCSS & JS
+-   Storybook: lets us build quickly in isolation and test props on the fly
+-   RTL: React Test Library makes testing easy
+-   Prettier makes our code look nice and helps with Pull Requests
+-   Yarn is used to get reliable package management on Mac, PC & Lynx
 
 &nbsp;
 
@@ -33,13 +33,13 @@ We have made a battle tested front end web3 stack for the roaring 20s
 
 You want to get started? Follow these 3 simple steps
 
-- Clone the web3uiKit repo https://github.com/web3ui/web3uikit
-- Open a terminal window and `cd` to the project folder
-- Run `yarn` you may need to install Yarn globally first
-- Make a new branch, see BRANCH NAMING
-- Run `yarn storybook` and there you go, ready to code?
-- Not sure where to start, lets look at `NewComp` we made it specially for you
-- Still stuck? Checkout the onboarding video (bottom of this page)
+-   Clone the web3uiKit repo https://github.com/web3ui/web3uikit
+-   Open a terminal window and `cd` to the project folder
+-   Run `yarn` you may need to install Yarn globally first
+-   Make a new branch, see BRANCH NAMING
+-   Run `yarn storybook` and there you go, ready to code?
+-   Not sure where to start, lets look at `NewComp` we made it specially for you
+-   Still stuck? Checkout the onboarding video (bottom of this page)
 
 &nbsp;
 
@@ -94,14 +94,14 @@ You will see lots of comments in here to help you understand our structure, but 
 
 Naming a styled element:
 
-- `export const DivStyled = styled.div`
-- `export const SectionStyled = styled.section`
-- `export const H1Styled = styled.h1`
+-   `export const DivStyled = styled.div`
+-   `export const SectionStyled = styled.section`
+-   `export const H1Styled = styled.h1`
 
 See the pattern?
 
-- `native element name` => so next dev can understand the markup
-- `Styled` => so next dev can see its a Styled Component
+-   `native element name` => so next dev can understand the markup
+-   `Styled` => so next dev can see its a Styled Component
 
 &nbsp;
 
@@ -109,16 +109,16 @@ See the pattern?
 
 **A:** You can add an optional 3rd identifier of your choosing that helps make sense to the next dev
 
-- `export const DivStyledWrap = styled.div` or
-- `export const DivStyledContent = styled.div` or
-- `export const DivStyledFlex = styled.div`
+-   `export const DivStyledWrap = styled.div` or
+-   `export const DivStyledContent = styled.div` or
+-   `export const DivStyledFlex = styled.div`
 
 &nbsp;
 
 BAD EXAMPLES:
 
-- `export const Wrapper = styled.div`
-- `export const Title = styled.h2`
+-   `export const Wrapper = styled.div`
+-   `export const Title = styled.h2`
 
 **Q:** Why is that bad?
 
@@ -171,10 +171,10 @@ Rule of thumb, if there is a prop or state change there should be a story, if th
 
 You will see lots of comments in here because we want to try and keep to the same layout to keep things easy for the next dev and for our pull request process.
 
-- We import our Styled Component tags from the styles file, that is why naming the markup well is very important.
-- We never recreate the wheel, in other words please use elements that we already have. We do not add new HTML for button and new SVG for icon, we already have those battle tested components. If a feature is lacking in `<Input />` for example, open a pull request to ad the feature you need please.
-- Please follow the import order below
-- Please follow this guide for the component internal structure below
+-   We import our Styled Component tags from the styles file, that is why naming the markup well is very important.
+-   We never recreate the wheel, in other words please use elements that we already have. We do not add new HTML for button and new SVG for icon, we already have those battle tested components. If a feature is lacking in `<Input />` for example, open a pull request to ad the feature you need please.
+-   Please follow the import order below
+-   Please follow this guide for the component internal structure below
 
 ### Import order
 
@@ -200,10 +200,10 @@ You will see lots of comments in here because we want to try and keep to the sam
 
 If you are new to TypeScript, fear not! Most of the features we use in this kit are pretty simple to understand, also there is an intro video by myself you can checkout. Don't stress this is a good way to learn and we are here to help. But here are some standards to follow.
 
-- Use optional properties, we don't want the next dev to need to add 15 props to render a button, that would not be top DX
-- Good use of non optional props... "what is a notification component without text?" Please do use non optional props. It stops the next dev making mistakes by missing props they will need.
-- Passing render options rather than passing CSS, we want to take away the stress of HTML and CSS (more below in questions)
-- Look at `<Input />` its cool because it exports its validation interface to `<Form />` to make sure its strictly typed when called in. Could you make use of this principle in your component?
+-   Use optional properties, we don't want the next dev to need to add 15 props to render a button, that would not be top DX
+-   Good use of non optional props... "what is a notification component without text?" Please do use non optional props. It stops the next dev making mistakes by missing props they will need.
+-   Passing render options rather than passing CSS, we want to take away the stress of HTML and CSS (more below in questions)
+-   Look at `<Input />` its cool because it exports its validation interface to `<Form />` to make sure its strictly typed when called in. Could you make use of this principle in your component?
 
 **Q:** Why not pass CSS
 
@@ -225,15 +225,15 @@ For your pull request please follow this guide
 
 `pull request type + component name + task`
 
-- so if i add a new `<KungFooBar />` component my branch is `feat-kungfoobar-addedComp`
-- or if i added validation to the `<Form />` my branch is `feat-form-validation`
+-   so if i add a new `<KungFooBar />` component my branch is `feat-kungfoobar-addedComp`
+-   or if i added validation to the `<Form />` my branch is `feat-form-validation`
 
 **Pull request types:**
 
-- feat = new feature
-- fix = bug fix
-- docs = added or changed documentation
-- chore = some mindless work, like reformatting
+-   feat = new feature
+-   fix = bug fix
+-   docs = added or changed documentation
+-   chore = some mindless work, like reformatting
 
 So if i fix the validation to the `<Form />` my branch is `fix-form-validation`... you get it, right? 😅
 
@@ -263,10 +263,10 @@ Don't forget we can approve and merge your code but you need to add your compone
 
 You will need
 
-- vscode-styled-components by Julien Poissonnier
-- Prettier by Haixin Chen
-- Sort Lines by Daniel Imms
-- Code Spell Checker by Street Side Software
+-   vscode-styled-components by Julien Poissonnier
+-   Prettier by Haixin Chen
+-   Sort Lines by Daniel Imms
+-   Code Spell Checker by Street Side Software
 
 &nbsp;
 
@@ -290,11 +290,11 @@ https://www.youtube.com/watch?v=bhOf56omPmA
 
 Timestamps:
 
-- 0:00 Intro
-- 2:35 The repo
-- 6:55 Setup
-- 17:11 Storybook JS
-- 27:58 React Typescript
-- 42:04 Styled Components
-- 55:38 Testing
-- 72:07 Pull Request
+-   0:00 Intro
+-   2:35 The repo
+-   6:55 Setup
+-   17:11 Storybook JS
+-   27:58 React Typescript
+-   42:04 Styled Components
+-   55:38 Testing
+-   72:07 Pull Request

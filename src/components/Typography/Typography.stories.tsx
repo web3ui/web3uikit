@@ -4,7 +4,7 @@ import React from 'react';
 import color from '../../styles/colors';
 
 export default {
-    title: 'UI/Typography',
+    title: '4.UI/Typography',
     component: Typography,
 } as ComponentMeta<typeof Typography>;
 

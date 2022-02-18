@@ -5,7 +5,7 @@ import DropdownElement from '../DropdownElement/DropdownElement';
 import { iconTypes } from '../Icon/collection';
 
 export default {
-    title: 'UI/Dropdown Element',
+    title: '4.UI/Dropdown Element',
     component: DropdownElement,
     argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof DropdownElement>;

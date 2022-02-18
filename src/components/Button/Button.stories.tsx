@@ -4,7 +4,7 @@ import Button from '../../components/Button/Button';
 import { iconTypes } from '../Icon/collection';
 
 export default {
-    title: 'Interaction/Button',
+    title: '2.Forms/Button',
     component: Button,
     argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof Button>;

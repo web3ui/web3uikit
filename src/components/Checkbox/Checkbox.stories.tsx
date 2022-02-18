@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Checkbox from './Checkbox';
 
 export default {
-    title: 'Interaction/Checkbox & Switch',
+    title: '2.Forms/Checkbox & Switch',
     component: Checkbox,
     parameters: {
         actions: {

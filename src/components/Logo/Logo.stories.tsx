@@ -3,7 +3,7 @@ import React from 'react';
 import Logo from '../Logo/Logo';
 
 export default {
-    title: 'UI/Logo',
+    title: '6.Graphic/Logo',
     component: Logo,
 } as ComponentMeta<typeof Logo>;
 

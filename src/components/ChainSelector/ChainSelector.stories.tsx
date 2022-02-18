@@ -1,10 +1,12 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ChainSelector from './ChainSelector';
+import { moralisContext } from '../../decorators';
 
 export default {
     title: 'Web3/ChainSelector',
     component: ChainSelector,
+    decorators: [moralisContext],
 } as ComponentMeta<typeof ChainSelector>;
 
 const Template: ComponentStory<typeof ChainSelector> = (args) => (

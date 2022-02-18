@@ -38,7 +38,7 @@ const Tooltip: React.FC<TooltipProps> = ({
             ref={parretnRef}
             data-testid={'tooltip-container-test-id'}
         >
-            <span>{children}</span>
+            <div>{children}</div>
             <StyledHoverDiv
                 ref={popoverRef}
                 popoverWidth={popverWidth}

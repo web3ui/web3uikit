@@ -1,0 +1,31 @@
+export interface HeroProps {
+    /**
+     * the URL of a background image is needed
+     */
+    backgroundURL: string;
+
+    /**
+     * every hero needs to make a statement
+     */
+    title: string;
+
+    /**
+     * Batman needs a Robin
+     */
+    subTitle?: string;
+
+    /**
+     * each accordion needs a content
+     */
+    children?: JSX.Element | JSX.Element[];
+
+    /**
+     * pass a color HEX or the test will be white
+     */
+    textColor?: string;
+
+    /**
+     * you can set an exact height for the hero, vh unit is advised for nice responsive results
+     */
+    height?: string;
+}

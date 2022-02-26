@@ -33,6 +33,7 @@
         "react-dom": "^17.0.2"
     },
     "dependencies": {
+        "@storybook/theming": "^6.4.19",
         "moralis": "^1.1.0",
         "react-blockies": "^1.4.1",
         "react-moralis": "^1.1.0",
@@ -64,7 +65,7 @@
         "@storybook/addon-essentials": "^6.4.9",
         "@storybook/addon-info": "^5.3.21",
         "@storybook/addon-links": "^6.4.9",
-        "@storybook/addons": "^6.4.9",
+        "@storybook/addons": "^6.4.19",
         "@storybook/react": "^6.4.9",
         "@storybook/testing-react": "^1.2.2",
         "@testing-library/jest-dom": "^5.16.1",

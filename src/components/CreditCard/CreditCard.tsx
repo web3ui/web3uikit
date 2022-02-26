@@ -18,7 +18,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
     lastDigits,
     name,
     onRemove,
-    type,
+    brand,
 }: CreditCardProps) => {
     const [pressed, setPressed] = useState<boolean>(false);
 
@@ -26,6 +26,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
         <DivStyledCreditCard
             isExpired={isExpired}
             onClick={() => setPressed(!pressed)}
+            brand={brand}
             pressed={pressed}
         >
             <DivStyledFlex>
@@ -35,7 +36,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
                     items={['']}
                     onChange={() => setPressed(!pressed)}
                 />
-                <DivStyledRemove onClick={onRemove}></DivStyledRemove>
+                <DivStyledRemove onClick={onRemove} />
             </DivStyledFlex>
             <PStyledDigits>{`•••• ${lastDigits}`}</PStyledDigits>
             <DivStyledFlex>
@@ -43,7 +44,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
                     <PStyledText>{name}</PStyledText>
                     <PStyledText>{`${expiresAt.month} / ${expiresAt.year}`}</PStyledText>
                 </DivStyledFlexText>
-                <Logo size="small" theme={type} />
+                <Logo size="small" theme={brand} />
             </DivStyledFlex>
         </DivStyledCreditCard>
     );

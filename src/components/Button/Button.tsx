@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({
     isFullWidth = false,
     isLoading = false,
     loadingText = 'Loading...',
-    onClick = (e) => e.preventDefault(),
+    onClick = (e) => e.preventDefault,
     size = 'regular',
     text = 'click',
     theme,

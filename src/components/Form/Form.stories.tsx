@@ -92,3 +92,31 @@ DemoForm.args = {
         },
     ],
 };
+
+export const LoginForm = Template.bind({});
+LoginForm.args = {
+    title: 'Login',
+    buttonConfig: {
+        theme: 'primary',
+        text: 'Login',
+    },
+    data: [
+        {
+            name: 'Email',
+            type: 'email',
+            value: '',
+            validation: {
+                required: true,
+            },
+        },
+        {
+            name: 'Password',
+            type: 'password',
+            value: '',
+            validation: {
+                required: true,
+            },
+        },
+    ],
+    onSubmit: (e) => console.log(e),
+};

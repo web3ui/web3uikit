@@ -5,7 +5,7 @@ export interface CreditCardProps {
     id?: string;
 
     /**
-     * set date of expiration MM/YY
+     * set date of expiration { month: 'MM', year: 'YY' }  MM/YY
      */
     expiresAt: {
         /**
@@ -46,5 +46,7 @@ export interface CreditCardProps {
     /**
      * set type
      */
-    type: 'mastercard' | 'visa';
+    brand: creditCardBrands;
 }
+
+export type creditCardBrands = 'mastercard' | 'visa' | 'amex' | 'diners';

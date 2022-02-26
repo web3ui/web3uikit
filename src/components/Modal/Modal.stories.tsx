@@ -6,10 +6,10 @@ import { iconTypes } from '../Icon';
 import colors from '../../styles/colors';
 import { Input } from '../Input';
 import { useArgs } from '@storybook/addons';
-import {Button} from '../Button';
+import { Button } from '../Button';
 
 export default {
-    title: 'Popup/Modal',
+    title: '5.Popup/Modal',
     component: Modal,
 } as ComponentMeta<typeof Modal>;
 
@@ -128,21 +128,21 @@ NoFooter.args = {
                 width: '100%',
             }}
         >
-           <div
-               style={{
-                   display: 'flex',
-               }}
-           >
-               <p
-                   style={{
-                       fontWeight: 600,
-                       marginRight: '1em',
-                   }}
-               >
-                   Send instruction to reset password
-               </p>
-               <Button text='Send E-Mail'/>
-           </div>
+            <div
+                style={{
+                    display: 'flex',
+                }}
+            >
+                <p
+                    style={{
+                        fontWeight: 600,
+                        marginRight: '1em',
+                    }}
+                >
+                    Send instruction to reset password
+                </p>
+                <Button text="Send E-Mail" />
+            </div>
         </div>,
     ],
 };

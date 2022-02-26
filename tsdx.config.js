@@ -1,4 +1,5 @@
 const inlineSvg = require('rollup-plugin-inline-svg');
+const postcss = require('rollup-plugin-postcss');
 
 module.exports = {
     rollup(config, options) {
@@ -26,6 +27,12 @@ module.exports = {
                 // Warns to console about attributes from inside the <svg>.
                 // default: []
                 warnTagAttrs: [],
+            }),
+        );
+        config.plugins.push(
+            postcss({
+                inject: true, //  true
+                extract: !!options.writeMeta,
             }),
         );
         return config;

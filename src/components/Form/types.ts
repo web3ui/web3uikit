@@ -26,7 +26,7 @@ export interface FormProps {
      * when the form passes validation the data is returned
      * { id: string, data: [{inputName: string; inputResult: string[] | string;}]}
      */
-    onSubmit?: (data: FormDataReturned) => FormDataReturned;
+    onSubmit?: (data: FormDataReturned) => void;
 }
 
 export type FormDataReturned = {

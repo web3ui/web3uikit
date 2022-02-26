@@ -3,7 +3,7 @@ import React from 'react';
 import Loading from './Loading';
 
 export default {
-    title: 'UI/Loading',
+    title: '6.Graphic/Loading',
     component: Loading,
 } as ComponentMeta<typeof Loading>;
 

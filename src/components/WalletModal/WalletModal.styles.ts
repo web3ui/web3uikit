@@ -19,7 +19,7 @@ const WrapperStyled = styled.div`
 const ModalStyled = styled.div`
     background-color: ${color.white};
     border-radius: 20px;
-    box-shadow: 0px 4px 10px rgba(48, 71, 105, 0.1);
+    box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     display: flex;
     flex-direction: column;
     margin: 10px;
@@ -38,8 +38,7 @@ const HeaderStyled = styled.div`
     align-items: center;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    padding-bottom: 12px;
+    padding: 20px 20px 12px;
 `;
 
 const GridStyled = styled.div`
@@ -94,9 +93,10 @@ const GridItemStyled = styled.div`
     padding: 4px;
 `;
 
-const WalletLogo = styled.img`
+const WalletLogo = styled.div`
     align-self: center;
     height: 40px;
+    width: fit-content;
     margin-bottom: 8px;
     pointer-events: none;
 `;

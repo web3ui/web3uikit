@@ -3,7 +3,7 @@ import React from 'react';
 import Logo from '../Logo/Logo';
 
 export default {
-    title: 'UI/Logo',
+    title: '6.Graphic/Logo',
     component: Logo,
 } as ComponentMeta<typeof Logo>;
 
@@ -53,6 +53,30 @@ MastercardRegular.args = {
 
 export const MastercardSmall = Template.bind({});
 MastercardSmall.args = {
+    theme: 'mastercard',
+    size: 'small',
+};
+
+export const AmexRegular = Template.bind({});
+AmexRegular.args = {
+    theme: 'amex',
+    size: 'regular',
+};
+
+export const AmexSmall = Template.bind({});
+AmexSmall.args = {
+    theme: 'mastercard',
+    size: 'small',
+};
+
+export const DinersRegular = Template.bind({});
+DinersRegular.args = {
+    theme: 'diners',
+    size: 'regular',
+};
+
+export const DinersSmall = Template.bind({});
+DinersSmall.args = {
     theme: 'mastercard',
     size: 'small',
 };

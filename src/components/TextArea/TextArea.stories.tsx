@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import TextArea from './TextArea';
 
 export default {
-    title: 'Interaction/TextArea',
+    title: '2.Forms/TextArea',
     component: TextArea,
     parameters: {
         actions: {

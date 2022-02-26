@@ -51,7 +51,6 @@ const Card: React.FC<CardProps> = ({
                 )}
                 {!isDisabled && (
                     <Tooltip
-                        data-testid={'tooltip-test-id'}
                         position={'bottom'}
                         children={[
                             <Icon
@@ -62,7 +61,7 @@ const Card: React.FC<CardProps> = ({
                                 svg={iconTypes.helpCircle}
                             />,
                         ]}
-                        text={tooltipText}
+                        content={tooltipText}
                     />
                 )}
             </HeaderStyled>

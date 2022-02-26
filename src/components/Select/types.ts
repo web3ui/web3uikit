@@ -27,6 +27,11 @@ export interface SelectProps {
     style?: React.CSSProperties;
 
     /**
+     * String that you want to display before the selected option
+     */
+    prefixText?: string;
+
+    /**
      * select component width
      */
 
@@ -51,6 +56,11 @@ export interface SelectProps {
      * index of selected option by default
      */
     defaultOptionIndex?: number | undefined;
+
+    /**
+     * To replace no data text with a different text, but still keep image
+     */
+    customNoDataText?: string;
 }
 
 export interface OptionProps {

@@ -1,12 +1,11 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Select from './Select';
-import { Icon } from '../Icon';
-import { iconTypes } from '../Icon/collection';
+import { Icon, iconTypes } from '../Icon';
 import color from '../../styles/colors';
 
 export default {
-    title: 'Interaction/Select',
+    title: '2.Forms/Select',
     component: Select,
 } as ComponentMeta<typeof Select>;
 
@@ -130,11 +129,36 @@ Confirmed.args = {
     defaultOptionIndex: 0,
 };
 
+export const PrefixText = Template.bind({});
+PrefixText.args = {
+    options: [
+        {
+            label: 'All',
+            id: 'All',
+        },
+        {
+            label: 'Active',
+            id: 'Active',
+        },
+    ],
+    onChange: onTestOptionChange,
+    prefixText: 'Server:',
+    defaultOptionIndex: 0,
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
     options: optionsList,
     onChange: onTestOptionChange,
     label: 'Label Text',
     disabled: true,
+    defaultOptionIndex: 0,
+};
+
+export const Nodata = Template.bind({});
+Nodata.args = {
+    // options: [],
+    onChange: onTestOptionChange,
+    label: 'Label Text',
     defaultOptionIndex: 0,
 };

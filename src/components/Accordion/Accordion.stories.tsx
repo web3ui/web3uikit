@@ -4,7 +4,7 @@ import Accordion from './Accordion';
 import { NewComp } from '../NewComp';
 
 export default {
-    title: 'UI/Accordion',
+    title: '3.Layout/Accordion',
     component: Accordion,
 } as ComponentMeta<typeof Accordion>;
 

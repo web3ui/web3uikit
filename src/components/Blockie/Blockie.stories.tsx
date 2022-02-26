@@ -5,9 +5,16 @@ import { BlockieProps } from './types';
 import { moralisContext } from '../../decorators';
 
 export default {
-    title: 'Web3/Blockie',
+    title: '1.Web3/Blockie',
     component: Blockie,
     decorators: [moralisContext],
+    parameters: {
+        docs: {
+            source: {
+                excludeDecorators: true,
+            },
+        },
+    },
 } as ComponentMeta<typeof Blockie>;
 
 const Template: ComponentStory<typeof Blockie> = (args: BlockieProps) => (

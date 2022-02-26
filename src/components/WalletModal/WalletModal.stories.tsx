@@ -5,9 +5,16 @@ import { moralisContext } from '../../decorators';
 import { useArgs } from '@storybook/addons';
 
 export default {
-    title: 'Web3/WalletModal',
+    title: '1.Web3/WalletModal',
     component: WalletModal,
     decorators: [moralisContext],
+    parameters: {
+        docs: {
+            source: {
+                excludeDecorators: true,
+            },
+        },
+    },
 } as ComponentMeta<typeof WalletModal>;
 
 const Template: ComponentStory<typeof WalletModal> = (args) => {

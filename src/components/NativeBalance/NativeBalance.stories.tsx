@@ -5,9 +5,16 @@ import { NativeBalanceProps } from './types';
 import { moralisContext } from '../../decorators';
 
 export default {
-    title: 'Web3/NativeBalance',
+    title: '1.Web3/NativeBalance',
     component: NativeBalance,
     decorators: [moralisContext],
+    parameters: {
+        docs: {
+            source: {
+                excludeDecorators: true,
+            },
+        },
+    },
 } as ComponentMeta<typeof NativeBalance>;
 
 const Template: ComponentStory<typeof NativeBalance> = (

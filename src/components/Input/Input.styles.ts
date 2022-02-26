@@ -174,15 +174,19 @@ export const DivStyled = styled.div`
     margin-right: 12px;
 `;
 
-export const ButtonStyled = styled.button`
-    ${resetButtonCSS}
-    ${inputIconStyle}
-    position: relative;
+export const CopyContainerStyled = styled.div`
+    height: 100%;
+    justify-content: center;
     margin-left: 24px;
+    max-width: 24px;
+    position: relative;
+    width: 100%;
 
-    &:hover > svg {
-        fill: ${color.blue};
+    & :first-child {
+        width: 100%;
+        height: 100%;
     }
+
     &:before {
         border-left: 1px solid ${color.paleBlue2};
         content: '';

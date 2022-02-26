@@ -117,7 +117,7 @@ describe('Avatar - Custom Image', () => {
         );
         const styles = element && getComputedStyle(element);
         expect(styles?.backgroundImage).toBe(
-            'url(https://academy.moralis.io/wp-content/uploads/2021/12/Illustration4_home.svg)',
+            'url(https://nftcoders.com/avatar/avatar-cool.svg)',
         );
     });
 });

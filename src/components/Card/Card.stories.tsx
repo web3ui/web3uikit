@@ -4,7 +4,7 @@ import React from 'react';
 import getModuleAnimation from './Animations/animations';
 
 export default {
-    title: 'UI/Card',
+    title: '4.UI/Card',
     component: Card,
 } as ComponentMeta<typeof Card>;
 

@@ -3,7 +3,7 @@ import Information from './Information';
 import React from 'react';
 
 export default {
-    title: 'UI/Information',
+    title: '4.UI/Information',
     component: Information,
 } as ComponentMeta<typeof Information>;
 

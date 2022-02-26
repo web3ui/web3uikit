@@ -10,7 +10,7 @@ const parentWrapper = {
 };
 
 export default {
-    title: 'ui/Stepper',
+    title: '3.Layout/Stepper',
     component: Stepper,
     argTypes: { onComplete: { action: 'completed' } },
     decorators: [(storyFn) => <div style={parentWrapper}>{storyFn()}</div>],

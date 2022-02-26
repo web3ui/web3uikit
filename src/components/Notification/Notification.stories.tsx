@@ -7,7 +7,7 @@ import NotificationProvider, { useNotification } from './NotificationProvider';
 import { IPosition, notifyType } from './types';
 
 export default {
-    title: 'UI/Notification',
+    title: '5.Popup/Notification',
     component: Notification,
     decorators: [
         (Story) => (

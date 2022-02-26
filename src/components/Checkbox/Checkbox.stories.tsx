@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Checkbox from './Checkbox';
 
 export default {
-    title: 'Interaction/Checkbox & Switch',
+    title: '2.Forms/Checkbox & Switch',
     component: Checkbox,
     parameters: {
         actions: {
@@ -60,6 +60,15 @@ export const SwitchDisabled = Template.bind({});
 SwitchDisabled.args = {
     disabled: true,
     label: 'No switching for you',
+    name: 'Test switch input',
+    id: 'test-switch',
+    layout: 'switch',
+};
+
+export const SwitchingText = Template.bind({});
+SwitchingText.args = {
+    label: 'Opt in here',
+    labelWhenChecked: 'Ok you are in',
     name: 'Test switch input',
     id: 'test-switch',
     layout: 'switch',

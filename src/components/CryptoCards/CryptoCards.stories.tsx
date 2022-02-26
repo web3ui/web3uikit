@@ -4,7 +4,7 @@ import CryptoCards from '../CryptoCards/CryptoCards';
 import { iconTypes } from '../Icon/collection';
 
 export default {
-    title: 'UI/Crypto Cards',
+    title: '4.UI/Crypto Cards',
     component: CryptoCards,
     argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof CryptoCards>;

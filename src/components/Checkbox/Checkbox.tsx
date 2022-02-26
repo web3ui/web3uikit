@@ -9,6 +9,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     disabled = false,
     id,
     label,
+    labelWhenChecked,
     layout = 'box',
     name,
     onChange,
@@ -30,9 +31,12 @@ const Checkbox: React.FC<CheckboxProps> = ({
             disabled={disabled}
             layout={layout}
         >
-            <span className="after">
-                <Icon svg={iconTypes.check} fill="white" />
-            </span>
+            {layout === 'box' && (
+                <span className="after">
+                    <Icon svg={iconTypes.check} fill="white" />
+                </span>
+            )}
+
             <StyledInput
                 data-testid="test-checkbox-input"
                 disabled={disabled}
@@ -44,7 +48,9 @@ const Checkbox: React.FC<CheckboxProps> = ({
                 type="checkbox"
                 value={`${isChecked}`}
             />
-            <span data-testid="test-checkbox-text">{label}</span>
+            <span data-testid="test-checkbox-text">
+                {isChecked ? labelWhenChecked || label : label}
+            </span>
         </StyledLabel>
     );
 };

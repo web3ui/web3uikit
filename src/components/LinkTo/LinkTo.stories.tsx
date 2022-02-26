@@ -4,7 +4,7 @@ import LinkTo from './LinkTo';
 import color from '../../styles/colors';
 
 export default {
-    title: 'UI/LinkTo',
+    title: '4.UI/LinkTo',
     component: LinkTo,
 } as ComponentMeta<typeof LinkTo>;
 

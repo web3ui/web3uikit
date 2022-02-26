@@ -4,7 +4,7 @@ import Form from './Form';
 import { validateRegExp } from '../../utils/const';
 
 export default {
-    title: 'Interaction/Form',
+    title: '2.Forms/Form',
     component: Form,
 } as ComponentMeta<typeof Form>;
 
@@ -91,4 +91,32 @@ DemoForm.args = {
             validation: { required: true },
         },
     ],
+};
+
+export const LoginForm = Template.bind({});
+LoginForm.args = {
+    title: 'Login',
+    buttonConfig: {
+        theme: 'primary',
+        text: 'Login',
+    },
+    data: [
+        {
+            name: 'Email',
+            type: 'email',
+            value: '',
+            validation: {
+                required: true,
+            },
+        },
+        {
+            name: 'Password',
+            type: 'password',
+            value: '',
+            validation: {
+                required: true,
+            },
+        },
+    ],
+    onSubmit: (e) => console.log(e),
 };

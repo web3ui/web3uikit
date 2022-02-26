@@ -1,19 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import color from '../../styles/colors';
 import { Icon } from '../Icon';
-import { iconTypes } from '../Icon/collection';
+import { iconTypes } from '../Icon';
+import { Illustration } from '../Illustrations';
 import SelectStyles from './Select.styles';
 import type { SelectProps } from './types';
 
 const {
+    DivStyledWrapper,
     DropDownIcon,
     ErrorLabel,
     LabelStyled,
+    NoDataTextStyled,
     Option,
     Options,
     PrefixIcon,
+    PrefixSpan,
     SelectedItem,
-    DivStyledWrapper,
 } = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
@@ -26,7 +29,9 @@ const Select: React.FC<SelectProps> = ({
     options = [],
     state = disabled ? 'disabled' : undefined,
     style,
+    prefixText,
     width = '200px',
+    customNoDataText = 'No Data',
 }: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOptionIndex, setSelectedOptionIndex] =
@@ -74,9 +79,13 @@ const Select: React.FC<SelectProps> = ({
             >
                 {typeof selectedOptionIndex !== 'undefined' && (
                     <>
-                        <PrefixIcon>
-                            {options[selectedOptionIndex]?.prefix}
-                        </PrefixIcon>
+                        {prefixText && <PrefixSpan>{prefixText}</PrefixSpan>}
+                        {options[selectedOptionIndex]?.prefix && (
+                            <PrefixIcon>
+                                {options[selectedOptionIndex]?.prefix}
+                            </PrefixIcon>
+                        )}
+
                         {options[selectedOptionIndex]?.label}
                     </>
                 )}
@@ -105,19 +114,34 @@ const Select: React.FC<SelectProps> = ({
             )}
             {isOpen && (
                 <Options aria-label="select-options" data-testid="test-options">
-                    {options.map(
-                        (option, index) =>
-                            index !== selectedOptionIndex && (
-                                <Option
-                                    onClick={onOptionClicked(index)}
-                                    key={option?.label}
-                                    data-testid="test-option"
-                                    aria-label="select-option"
-                                >
-                                    <PrefixIcon>{option?.prefix}</PrefixIcon>
-                                    {option?.label}
-                                </Option>
-                            ),
+                    {options?.length ? (
+                        options.map(
+                            (option, index) =>
+                                index !== selectedOptionIndex && (
+                                    <Option
+                                        onClick={onOptionClicked(index)}
+                                        key={option?.label}
+                                        data-testid="test-option"
+                                        aria-label="select-option"
+                                    >
+                                        <PrefixIcon>
+                                            {option?.prefix}
+                                        </PrefixIcon>
+                                        {option?.label}
+                                    </Option>
+                                ),
+                        )
+                    ) : (
+                        <>
+                            <Illustration
+                                logo="servers"
+                                width="100%"
+                                height="60px"
+                            />
+                            <NoDataTextStyled>
+                                {customNoDataText}
+                            </NoDataTextStyled>
+                        </>
                     )}
                 </Options>
             )}

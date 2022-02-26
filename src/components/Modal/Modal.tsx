@@ -81,8 +81,8 @@ const Modal: React.FC<ModalProps> = ({
                             onOk
                                 ? onOk
                                 : () => {
-                                    console.log('ok triggered');
-                                }
+                                      console.log('ok triggered');
+                                  }
                         }
                         text={okText}
                         theme={okButtonColor ? 'colored' : 'primary'}

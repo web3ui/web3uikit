@@ -12,6 +12,11 @@ export interface SelectProps {
     label?: string;
 
     /**
+     * Id of the Option that you want the Select to have. Use to control the value of the option
+     */
+    value?: string;
+
+    /**
      * standard onChange that returns the entire event, as normal you can access event.target
      */
     onChange: (option: OptionProps) => void;

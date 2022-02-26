@@ -169,5 +169,4 @@ ControlledValue.args = {
     onChange: onTestOptionChange,
     label: 'Label Text',
     value: 'txt',
-    defaultOptionIndex: 0,
 };

@@ -16,7 +16,8 @@
         "http": false,
         "https": false,
         "os": false,
-        "stream": false
+        "stream": false,
+        "crypto": false
     },
     "scripts": {
         "analyze": "size-limit --why",

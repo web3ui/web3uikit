@@ -22,6 +22,7 @@ const {
 const Select: React.FC<SelectProps> = ({
     defaultOptionIndex,
     disabled = false,
+    value,
     errorMessage = '',
     id = String(Date.now()),
     label,
@@ -62,6 +63,16 @@ const Select: React.FC<SelectProps> = ({
             document.removeEventListener('click', handleClickOutside);
         };
     }, []);
+    useEffect(() => {
+        if (value) {
+            const valueOptionItem = options.find(
+                (optionItem) => optionItem.id == value,
+            );
+            setSelectedOptionIndex(
+                valueOptionItem ? options.indexOf(valueOptionItem) : 0,
+            );
+        }
+    }, [selectedOptionIndex, value]);
 
     return (
         <DivStyledWrapper

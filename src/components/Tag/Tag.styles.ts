@@ -24,7 +24,7 @@ import {
     coloredYellowDark,
 } from './styles/colors';
 
-type TStyleProps = Pick<TagProps, 'active' | 'theme' | 'tone'>;
+type TStyleProps = Pick<TagProps, 'active' | 'theme' | 'tone' | 'width'>;
 
 const getTheme = (theme: string, active?: boolean) => {
     switch (theme) {
@@ -60,6 +60,8 @@ const getColors = (color?: string, tone?: Tone) => {
 
 export const TagStyled = styled.div<TStyleProps>`
     ${initialStyles}
-    ${(p) => getTheme(p.theme, p.active)}
-    ${(p) => p.theme !== 'status' && p.color && getColors(p.color, p.tone)}
+    ${({ active, theme }) => getTheme(theme, active)}
+    ${({ color, theme, tone }) =>
+        theme !== 'status' && color && getColors(color, tone)}
+    width: ${({ width }) => width};
 `;

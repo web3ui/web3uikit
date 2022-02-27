@@ -162,3 +162,11 @@ Nodata.args = {
     label: 'Label Text',
     defaultOptionIndex: 0,
 };
+
+export const ControlledValue = Template.bind({});
+ControlledValue.args = {
+    options: smallOptionsList,
+    onChange: onTestOptionChange,
+    label: 'Label Text',
+    value: 'txt',
+};

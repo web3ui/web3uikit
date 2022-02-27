@@ -11,6 +11,7 @@ const Tag: React.FC<TagProps> = ({
     text = 'Tag',
     theme = 'regular',
     tone = 'light',
+    width = 'fit-content',
 }: TagProps) => {
     return (
         <TagStyled
@@ -21,6 +22,7 @@ const Tag: React.FC<TagProps> = ({
             id={id}
             theme={theme}
             tone={tone}
+            width={width}
         >
             {theme === 'status' && active && (
                 <Icon fill="inherit" size={16} svg={iconTypes.checkmark} />

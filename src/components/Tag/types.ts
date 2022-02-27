@@ -30,4 +30,9 @@ export interface TagProps {
      * choose a tone for the selected color
      */
     tone?: Tone;
+
+    /**
+     * set width of tag
+     */
+    width?: string;
 }

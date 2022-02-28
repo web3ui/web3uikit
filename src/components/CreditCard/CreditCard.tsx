@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Radios } from '../Radios';
 import { Logo } from '../Logo';
 import { CreditCardProps } from './types';
@@ -6,10 +6,11 @@ import {
     DivStyledCreditCard,
     DivStyledFlex,
     DivStyledFlexText,
-    DivStyledRemove,
     PStyledDigits,
     PStyledText,
 } from './CreditCard.styles';
+import { Icon, iconTypes } from '../Icon';
+import colors from '../../styles/colors';
 
 const CreditCard: React.FC<CreditCardProps> = ({
     expiresAt,
@@ -17,15 +18,15 @@ const CreditCard: React.FC<CreditCardProps> = ({
     isExpired,
     lastDigits,
     name,
+    onPressed,
     onRemove,
+    pressed,
     brand,
 }: CreditCardProps) => {
-    const [pressed, setPressed] = useState<boolean>(false);
-
     return (
         <DivStyledCreditCard
             isExpired={isExpired}
-            onClick={() => setPressed(!pressed)}
+            onClick={onPressed}
             brand={brand}
             pressed={pressed}
         >
@@ -34,9 +35,13 @@ const CreditCard: React.FC<CreditCardProps> = ({
                     checked={pressed}
                     id={id || 'radio-credit-card'}
                     items={['']}
-                    onChange={() => setPressed(!pressed)}
+                    onChange={() => {}}
                 />
-                <DivStyledRemove onClick={onRemove} />
+                <Icon
+                    svg={iconTypes.bin}
+                    fill={colors.red}
+                    onClick={onRemove}
+                />
             </DivStyledFlex>
             <PStyledDigits>{`•••• ${lastDigits}`}</PStyledDigits>
             <DivStyledFlex>

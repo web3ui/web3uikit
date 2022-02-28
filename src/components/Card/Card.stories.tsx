@@ -2,6 +2,9 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Card from './Card';
 import React from 'react';
 import getModuleAnimation from './Animations/animations';
+import { Icon, iconTypes } from '../Icon';
+import colors from '../../styles/colors';
+import { Button } from '../Button';
 
 export default {
     title: '4.UI/Card',
@@ -93,4 +96,71 @@ ComingSoon.args = {
     title: 'NFT Collection',
     description: 'Coming Soon',
     isDisabled: true,
+};
+
+export const ProPlan = Template.bind({});
+ProPlan.args = {
+    children: [
+        <div key={'0'}>
+            <p>Pro Plan</p>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+                <span style={{ fontWeight: 600, color: colors.black }}>
+                    $18
+                </span>
+                <span>per month</span>
+            </div>
+            <span>Everything in Starter, plus</span>
+            <div
+                style={{
+                    display: 'flex',
+                    fontSize: '12px',
+                    color: colors.grey,
+                }}
+            >
+                <Icon svg={iconTypes.checkmark} fill="green" />
+                Servers never Sleep
+            </div>
+            <div
+                style={{
+                    display: 'flex',
+                    fontSize: '12px',
+                    color: colors.grey,
+                }}
+            >
+                <Icon svg={iconTypes.checkmark} fill="green" />
+                More requests
+            </div>
+            <div
+                style={{
+                    display: 'flex',
+                    fontSize: '12px',
+                    color: colors.grey,
+                }}
+            >
+                <Icon svg={iconTypes.checkmark} fill="green" />
+                Higher limits
+            </div>
+            <div
+                style={{
+                    display: 'flex',
+                    fontSize: '12px',
+                    color: colors.grey,
+                }}
+            >
+                <Icon svg={iconTypes.checkmark} fill="green" />
+                Request auto scaling
+            </div>
+            <div
+                style={{
+                    display: 'flex',
+                    fontSize: '12px',
+                    color: colors.grey,
+                }}
+            >
+                <Icon svg={iconTypes.checkmark} fill="green" />
+                Email support
+            </div>
+            <Button text="Upgrade" theme="primary" isFullWidth />
+        </div>,
+    ],
 };

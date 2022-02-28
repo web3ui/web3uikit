@@ -154,7 +154,7 @@ describe('Button - Primary with icon', () => {
     });
     it('renders icon correctly', () => {
         const iconElement = container.querySelector(
-            `[data-testid="${buttonTestId}"] > svg`,
+            `[data-testid="${buttonTestId}"] > div > svg`,
         );
         expect(iconElement).not.toBeNull();
     });

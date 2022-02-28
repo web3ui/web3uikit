@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
 import arrowCircleDownIcon from './icons/arrow-circle-down';
 import arrowCircleLeftIcon from './icons/arrow-circle-left';
 import arrowCircleRightIcon from './icons/arrow-circle-right';

@@ -118,7 +118,7 @@ describe('Tag - Active Status', () => {
 
     it('should render icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${tagTestId}"] > svg`,
+            `[data-testid="${tagTestId}"] > div > svg`,
         );
         expect(iconSVG).not.toBeNull();
     });

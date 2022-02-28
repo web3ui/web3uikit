@@ -34,6 +34,11 @@ export interface CreditCardProps {
     name: string;
 
     /**
+     * run function when creditcard is clicked
+     */
+    onPressed?: () => void;
+
+    /**
      * run function when remove icon is clicked
      */
     onRemove?: () => void;

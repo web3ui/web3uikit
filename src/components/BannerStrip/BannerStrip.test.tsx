@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './BannerStrip.stories';
 import 'jest-styled-components';
 import color from '../../styles/colors';
-import RGBToHex from '../../utils/rgbToHex';
+import rgbToHex from '../../utils/rgbToHex';
 
 const { Standard, StandardWithButton, Warning, Error, Success } =
     composeStories(stories);
@@ -42,7 +42,7 @@ describe('Banner Strip - Standard', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.blue);
     });
 });
@@ -93,7 +93,7 @@ describe('Banner Strip - Warning', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.yellow);
     });
 });
@@ -120,7 +120,7 @@ describe('Banner Strip - Error', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.red);
     });
 });
@@ -147,7 +147,7 @@ describe('Banner Strip - Success', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.green);
     });
 });

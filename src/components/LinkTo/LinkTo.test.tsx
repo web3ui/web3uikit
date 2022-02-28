@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './LinkTo.stories';
 import 'jest-styled-components';
 import color from '../../styles/colors';
-import RGBToHex from '../../utils/rgbToHex';
+import rgbToHex from '../../utils/rgbToHex';
 
 const {
     ExternalLink,
@@ -66,7 +66,7 @@ describe('LinkTo - External', () => {
             `[data-testid="${testId}"]`,
         );
         const styles = element && getComputedStyle(element);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.blue);
     });
 
@@ -133,7 +133,7 @@ describe('LinkTo - External Icon After', () => {
             `[data-testid="${testId}"]`,
         );
         const styles = element && getComputedStyle(element);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.blue);
     });
     it('renders correct color for link', () => {
@@ -141,7 +141,7 @@ describe('LinkTo - External Icon After', () => {
             `[data-testid="${testId}"]`,
         );
         const styles = element && getComputedStyle(element);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.blue);
     });
     it('renders inline so it can be mid text', () => {
@@ -206,7 +206,7 @@ describe('LinkTo - Email', () => {
             `[data-testid="${testId}"]`,
         );
         const styles = element && getComputedStyle(element);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.blue);
     });
     it('renders inline so it can be mid text', () => {
@@ -272,7 +272,7 @@ describe('LinkTo - External Icon After', () => {
             `[data-testid="${testId}"]`,
         );
         const styles = element && getComputedStyle(element);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.blue);
     });
     it('renders inline so it can be mid text', () => {
@@ -337,7 +337,7 @@ describe('LinkTo - No text set for link', () => {
             `[data-testid="${testId}"]`,
         );
         const styles = element && getComputedStyle(element);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.blue);
     });
     it('renders inline so it can be mid text', () => {

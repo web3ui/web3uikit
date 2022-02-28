@@ -4,7 +4,7 @@ import { fireEvent } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Button.stories';
 import color from '../../styles/colors';
-import RGBToHex from '../../utils/rgbToHex';
+import rgbToHex from '../../utils/rgbToHex';
 
 const {
     Primary,
@@ -59,9 +59,9 @@ describe('Button - Primary', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.green);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.white);
     });
 
@@ -90,10 +90,10 @@ describe('Button - Primary Large', () => {
             `[data-testid="${buttonTestId}"]`,
         );
         const styles = element && getComputedStyle(element);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.white);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.green);
         expect(styles?.borderWidth).toBe('4px');
         expect(styles?.fontSize).toBe('16px');
@@ -117,10 +117,10 @@ describe('Button - Primary Small', () => {
             `[data-testid="${buttonTestId}"]`,
         );
         const styles = element && getComputedStyle(element);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.white);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.green);
         expect(styles?.fontSize).toBe('13px');
         expect(styles?.padding).toBe('2px 12px');
@@ -275,9 +275,9 @@ describe('Button - Secondary', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.blueLight);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.blue);
     });
 
@@ -321,9 +321,9 @@ describe('Button - Outline', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.white);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.blue);
     });
     it('returns the normal onClick event', () => {
@@ -366,9 +366,9 @@ describe('Button - ColoredRed', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.red);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.red);
     });
     it('returns the normal onClick event', () => {
@@ -411,9 +411,9 @@ describe('Button - ColoredBlue', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.blue);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.blue);
     });
     it('returns the normal onClick event', () => {
@@ -456,9 +456,9 @@ describe('Button - ColoredGreen', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.green);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.green);
     });
     it('returns the normal onClick event', () => {
@@ -501,9 +501,9 @@ describe('Button - ColoredYellow', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.yellow);
-        const colorHex = styles && RGBToHex(styles.color).toUpperCase();
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.yellow);
     });
     it('returns the normal onClick event', () => {

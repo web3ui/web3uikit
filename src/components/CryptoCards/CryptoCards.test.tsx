@@ -3,7 +3,7 @@ import React from 'react';
 import { fireEvent, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './CryptoCards.stories';
-import RGBToHex from '../../utils/rgbToHex';
+import rgbToHex from '../../utils/rgbToHex';
 import color from '../../styles/colors';
 import 'jest-styled-components';
 import '@testing-library/jest-dom/extend-expect';
@@ -51,7 +51,7 @@ describe('Ethereum', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.black);
     });
 
@@ -106,7 +106,7 @@ describe('Binance', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.black);
     });
 
@@ -161,7 +161,7 @@ describe('Polygon', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.black);
     });
 
@@ -216,7 +216,7 @@ describe('Avalanche', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.black);
     });
 
@@ -271,7 +271,7 @@ describe('Fantom', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.black);
     });
 
@@ -326,7 +326,7 @@ describe('Arbitrum', () => {
         );
         const styles = element && getComputedStyle(element);
         const bgColorHex =
-            styles && RGBToHex(styles.backgroundColor).toUpperCase();
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.black);
     });
 

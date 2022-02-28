@@ -26,7 +26,7 @@ export const DivStyled = styled.div<Pick<CardProps, 'selected' | 'isDisabled'>>`
     padding: 15px;
     position: relative;
     width: 100%;
-    ${(p) => p.isDisabled && `opacity:70%;`}
+    ${(p) => p.isDisabled && 'opacity:70%;'}
     ${(p) => (p.selected ? selected : !p.isDisabled && hoverNotSelected)}
 `;
 

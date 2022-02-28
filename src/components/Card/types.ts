@@ -27,7 +27,7 @@ export interface CardProps {
     /**
      * set text inside tooltip
      */
-    tooltipText: string;
+    tooltipText?: string;
 
     /**
      * Set the state disabled state of the cart

@@ -48,7 +48,6 @@ export const DivStyledFlex = styled.div`
 export const DivStyledFlexText = styled.div`
     color: white;
     display: flex;
-    gap: 15px;
 `;
 
 export const DivStyledRemove = styled.div`
@@ -73,7 +72,7 @@ export const PStyledText = styled.p`
     color: ${colors.white};
     font-size: 12px;
     line-height: 16px;
-    margin: 0;
+    margin: 0 0 0 5px;
 `;
 
 const expiredStyles = css`

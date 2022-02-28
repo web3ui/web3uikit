@@ -5,6 +5,7 @@ import type { IconProps } from './types';
 
 const Icon: React.FC<IconProps> = ({
     fill = 'inherit',
+    onClick = () => {},
     size = 18,
     svg,
     style,
@@ -20,7 +21,7 @@ const Icon: React.FC<IconProps> = ({
         return collection[key](fill, size, style);
     };
 
-    return getIcon(fill, size, svg, style);
+    return <div onClick={onClick}>{getIcon(fill, size, svg, style)}</div>;
 };
 
 export default Icon;

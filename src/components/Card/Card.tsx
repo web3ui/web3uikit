@@ -49,7 +49,7 @@ const Card: React.FC<CardProps> = ({
                         svg={iconTypes.checkmark}
                     />
                 )}
-                {!isDisabled && (
+                {!isDisabled && tooltipText && (
                     <Tooltip
                         position={'bottom'}
                         children={[
@@ -66,12 +66,14 @@ const Card: React.FC<CardProps> = ({
                 )}
             </HeaderStyled>
             <div>{children}</div>
-            <FooterStyled>
-                {title && <p data-testid={'title-test-id'}>{title}</p>}
-                {description && (
-                    <span data-testid={'desc-test-id'}>{description}</span>
-                )}
-            </FooterStyled>
+            {(title || description) && (
+                <FooterStyled>
+                    {title && <p data-testid={'title-test-id'}>{title}</p>}
+                    {description && (
+                        <span data-testid={'desc-test-id'}>{description}</span>
+                    )}
+                </FooterStyled>
+            )}
         </DivStyled>
     );
 };

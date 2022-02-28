@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { Radios } from '../Radios';
 import { Logo } from '../Logo';
 import { CreditCardProps } from './types';
@@ -11,36 +11,51 @@ import {
 } from './CreditCard.styles';
 import { Icon, iconTypes } from '../Icon';
 import colors from '../../styles/colors';
+import { Tooltip } from '../Tooltip';
 
-const CreditCard: React.FC<CreditCardProps> = ({
+const CreditCard: FC<CreditCardProps> = ({
     expiresAt,
     id,
     isExpired,
     lastDigits,
     name,
-    onPressed,
-    onRemove,
-    pressed,
+    onPressed = () => {},
+    onRemove = () => {},
+    pressed = false,
     brand,
 }: CreditCardProps) => {
+    const [seleteced, setSelected] = useState<boolean>(pressed);
+    useEffect(() => {
+        setSelected(pressed);
+    }, [pressed]);
     return (
         <DivStyledCreditCard
             isExpired={isExpired}
-            onClick={onPressed}
             brand={brand}
-            pressed={pressed}
+            pressed={seleteced}
         >
             <DivStyledFlex>
                 <Radios
-                    checked={pressed}
+                    checked={seleteced}
                     id={id || 'radio-credit-card'}
                     items={['']}
-                    onChange={() => {}}
+                    onChange={() => {
+                        if (!seleteced && !isExpired) {
+                            onPressed();
+                            setSelected(true);
+                        }
+                    }}
                 />
-                <Icon
-                    svg={iconTypes.bin}
-                    fill={colors.red}
-                    onClick={onRemove}
+                <Tooltip
+                    position="bottom"
+                    children={
+                        <Icon
+                            svg={iconTypes.bin}
+                            fill={colors.red}
+                            onClick={onRemove}
+                        />
+                    }
+                    content="Remove"
                 />
             </DivStyledFlex>
             <PStyledDigits>{`•••• ${lastDigits}`}</PStyledDigits>

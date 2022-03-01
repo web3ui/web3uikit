@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import collection, { TIconType } from './collection';
-import { StyledSpan } from './Icon.styles';
+import { StyledIconDiv } from './Icon.styles';
 import type { IconProps } from './types';
 
 const Icon: React.FC<IconProps> = ({
@@ -23,9 +23,9 @@ const Icon: React.FC<IconProps> = ({
     };
 
     return (
-        <StyledSpan onClick={onClick}>
+        <StyledIconDiv onClick={onClick}>
             {getIcon(fill, size, svg, style)}
-        </StyledSpan>
+        </StyledIconDiv>
     );
 };
 

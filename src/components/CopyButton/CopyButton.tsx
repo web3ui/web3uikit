@@ -4,19 +4,22 @@ import { Icon, iconTypes } from '../Icon';
 import { CopyIconStyled } from './CopyButton.styles';
 import { CopyButtonProps } from './types';
 
-const CopyButton: FC<CopyButtonProps> = ({ text }) => {
+const CopyButton: FC<CopyButtonProps> = ({ text, onCopy = () => {} }) => {
     const [isCopied, setIsCopied] = useState(false);
 
     const copyToClipboard = (): void => {
         if (typeof navigator == 'undefined') return;
-        navigator.clipboard.writeText(`${text}`);
+        if (text) navigator.clipboard.writeText(`${text}`);
         setIsCopied(true);
     };
 
     return (
         <CopyIconStyled
             className="input_copy"
-            onClick={() => copyToClipboard()}
+            onClick={(e) => {
+                onCopy(e);
+                copyToClipboard();
+            }}
         >
             {isCopied ? (
                 <Icon svg={iconTypes.check} fill={color.green} />

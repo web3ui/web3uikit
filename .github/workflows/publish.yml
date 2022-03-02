@@ -30,7 +30,7 @@ jobs:
             - run: npm test
             - run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
 
-            - name: publish to NPM alpha version
+            - name: publish to NPM as latest version
               if: '!github.event.release.prerelease'
               run: npm publish --tag latest
               env:

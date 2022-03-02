@@ -81,4 +81,7 @@ Copyable.args = {
     children: 'Copyable Text 222',
     copyable: true,
     variant: 'h1',
+    onCopy: () => {
+        alert('Copied, "Copyable Text 222"');
+    },
 };

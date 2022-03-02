@@ -29,12 +29,14 @@ const DivImageStyled = styled.div`
 const TextStyled = styled.p<
     Pick<DropdownElementProps, 'textColor' | 'textSize'>
 >`
-    align-items: center;
-    color: ${(p) => (p.textColor ? p.textColor : colors.white)};
-    display: flex;
-    font-size: ${(p) => (p.textSize ? `${p.textSize}px` : '')};
-    ${fonts.openSans};
-    ${fonts.textBold};
+    && {
+        align-items: center;
+        color: ${(p) => (p.textColor ? p.textColor : colors.white)};
+        display: flex;
+        font-size: ${(p) => (p.textSize ? `${p.textSize}px` : '')};
+        ${fonts.openSans};
+        ${fonts.textBold};
+    }
 `;
 
 export const DropdownElementStyles = {

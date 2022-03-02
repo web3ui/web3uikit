@@ -99,6 +99,7 @@ export const DivStyledDropdown = styled.div<TStyleProps>`
     overflow: hidden;
     position: absolute;
     width: max-content;
+    z-index: 999;
     ${(p) => getContainerStyleByPosition(p.position)}
 `;
 

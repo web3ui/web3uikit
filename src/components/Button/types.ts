@@ -1,4 +1,5 @@
 import { TIconType } from '../../components/Icon/collection';
+import { ILoadingProps } from '../Loading';
 
 export interface ButtonProps {
     /**
@@ -63,7 +64,12 @@ export interface ButtonProps {
     isLoading?: boolean;
 
     /**
-     * loading text
+     * Text to display when button is in loading state
      */
     loadingText?: string;
+
+    /**
+     * Loading Props, the props to send to the loading component
+     */
+    loadingProps?: ILoadingProps;
 }

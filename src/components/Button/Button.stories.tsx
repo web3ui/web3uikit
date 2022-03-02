@@ -401,3 +401,24 @@ Translucent.args = {
     iconLayout: 'leading',
     size: 'large',
 };
+
+export const LoadingButton = Template.bind({});
+LoadingButton.args = {
+    id: 'test-button-loading',
+    text: 'Loading Button',
+    theme: 'primary',
+    type: 'button',
+    isLoading: true,
+};
+
+export const LoadingButtonCustomProps = Template.bind({});
+LoadingButtonCustomProps.args = {
+    id: 'test-button-loading',
+    text: 'Loading Button',
+    theme: 'primary',
+    type: 'button',
+    isLoading: true,
+    loadingProps: {
+        size: 30,
+    },
+};

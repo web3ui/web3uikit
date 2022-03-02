@@ -18,6 +18,7 @@ const Button: React.FC<ButtonProps> = ({
     text = 'click',
     theme,
     type = 'button',
+    loadingProps,
 }: ButtonProps) => {
     return (
         <ButtonStyled
@@ -33,7 +34,7 @@ const Button: React.FC<ButtonProps> = ({
             theme={theme}
             type={type}
         >
-            {isLoading && <Loading size={15} />}
+            {isLoading && <Loading size={15} {...loadingProps} />}
             {icon && <Icon svg={icon} fill="inherit" size={20} />}
             <span>{isLoading ? loadingText : text}</span>
         </ButtonStyled>

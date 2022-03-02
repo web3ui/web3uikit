@@ -24,12 +24,7 @@ export interface RadiosProps {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
     /**
-     * you can have a radio checked by default, it always checks the first (position 0) unless you pass a valid array position to setWhichIsChecked
-     */
-    checked?: boolean;
-
-    /**
-     * if checked is set to true but you don't want to check the first radio, you can pass an array position number here. Note this should not be greater or less than the array.length
+     * set default checked radio. Specifiy as number which stands for position in array.
      */
     setWhichIsChecked?: number;
 

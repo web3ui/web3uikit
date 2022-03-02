@@ -43,7 +43,6 @@ RadiosSetDefault.args = {
     id: 'radios',
     items: ['Charmander', 'Squirtle', 'Bulbasaur', 'Pikachu'],
     title: "Who's that Pokemon?",
-    checked: true,
 };
 
 export const RadiosSetParticular = Template.bind({});
@@ -51,6 +50,5 @@ RadiosSetParticular.args = {
     id: 'radios',
     items: ['Charmander', 'Squirtle', 'Bulbasaur', 'Pikachu'],
     title: "Who's that Pokemon?",
-    checked: true,
     setWhichIsChecked: 2,
 };

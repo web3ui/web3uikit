@@ -21,6 +21,8 @@ const {
     ColoredGreen,
     ColoredYellow,
     ColoredBlue,
+    LoadingButton,
+    LoadingButtonCustomProps,
 } = composeStories(stories);
 
 let container: HTMLDivElement;
@@ -505,6 +507,126 @@ describe('Button - ColoredYellow', () => {
         expect(bgColorHex).toBe(color.yellow);
         const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.yellow);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - Outline', () => {
+    const testText = ColoredYellow?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<ColoredYellow />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Yellow button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.yellow);
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.yellow);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - Loading', () => {
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<LoadingButton />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+
+    it('renders button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.green);
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.white);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - Loading', () => {
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<LoadingButtonCustomProps />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders  button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.green);
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.white);
     });
     it('returns the normal onClick event', () => {
         const element = container.querySelector(

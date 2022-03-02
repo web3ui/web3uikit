@@ -2,10 +2,18 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Typography from './Typography';
 import React from 'react';
 import color from '../../styles/colors';
+import { NotificationProvider, useNotification } from '../Notification';
 
 export default {
     title: '4.UI/Typography',
     component: Typography,
+    decorators: [
+        (Story) => (
+            <NotificationProvider>
+                <Story />
+            </NotificationProvider>
+        ),
+    ],
 } as ComponentMeta<typeof Typography>;
 
 const Demo: ComponentStory<typeof Typography> = () => {
@@ -66,7 +74,21 @@ const Demo: ComponentStory<typeof Typography> = () => {
 };
 
 const Template: ComponentStory<typeof Typography> = (args) => {
-    return <Typography {...args} />;
+    const notify = useNotification();
+
+    return (
+        <Typography
+            {...args}
+            onCopy={() => {
+                notify({
+                    type: 'success',
+                    message: 'Copied to clipboard',
+                    title: 'New Notification',
+                    position: 'topR',
+                });
+            }}
+        />
+    );
 };
 
 export const Regular = Demo.bind({});
@@ -81,7 +103,4 @@ Copyable.args = {
     children: 'Copyable Text 222',
     copyable: true,
     variant: 'h1',
-    onCopy: () => {
-        alert('Copied, "Copyable Text 222"');
-    },
 };

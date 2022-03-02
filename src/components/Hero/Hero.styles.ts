@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import { HeroProps } from './types';
 
 // styles
-type TStyleProps = Pick<HeroProps, 'height' | 'textColor'>;
+type TStyleProps = Pick<HeroProps, 'height' | 'backgroundColor' | 'textColor'>;
 
 export const SectionStyled = styled.section<TStyleProps>`
     align-items: center;
-    background-color: #444444;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,6 +15,7 @@ export const SectionStyled = styled.section<TStyleProps>`
     justify-content: center;
     width: 100%;
 
+    background-color: ${(p) => p.backgroundColor};
     height: ${(p) => p.height};
 
     h1 {

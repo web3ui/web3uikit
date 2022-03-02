@@ -20,7 +20,12 @@ export interface HeroProps {
     children?: JSX.Element | JSX.Element[];
 
     /**
-     * pass a color HEX or the test will be white
+     * pass a color HEX or the background will be dark grey
+     */
+    backgroundColor?: string;
+
+    /**
+     * pass a color HEX or the text will be light grey
      */
     textColor?: string;
 

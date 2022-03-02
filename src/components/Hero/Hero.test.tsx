@@ -2,9 +2,12 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import Hero from './Hero';
 import { Button } from '../Button';
+import color from '../../styles/colors';
+import RGBToHex from '../../utils/rgbToHex';
 
 const testTitle = 'never test a Hero';
-const testBgURL = 'moralis.io/img/cool.jpg';
+const testBgURL =
+    'https://moralis.io/wp-content/uploads/2021/07/hero_new_img.svg';
 const testSubTitle = 'sub titles add context';
 const testHeight = '400px';
 const testChildren = <Button text="click me" />;
@@ -21,14 +24,21 @@ describe('Hero - Demo', () => {
         const title = screen.getByTestId('test-hero_title');
         expect(title).not.toBeNull();
         expect(title.textContent).toBe(testTitle);
+
+        const styles = title && getComputedStyle(title);
+        const colorAsHex = RGBToHex(styles?.color);
+        expect(colorAsHex).toBe(color.greyDark.toLocaleLowerCase());
     });
 
-    it('renders the background image', () => {
+    it('renders the background image and color', () => {
         render(<Hero title={testTitle} backgroundURL={testBgURL} />);
         const element = screen.getByTestId('test-hero');
         expect(element).not.toBeNull();
         const styles = element && getComputedStyle(element);
         expect(styles?.backgroundImage).toBe(`url(${testBgURL})`);
+
+        const colorAsHex = RGBToHex(styles?.backgroundColor);
+        expect(colorAsHex).toBe(color.greyLight.toLocaleLowerCase());
     });
 });
 

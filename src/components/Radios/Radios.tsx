@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Fragment } from 'react';
 import styled from 'styled-components';
 import styles from './Radios.styles';
@@ -24,12 +24,14 @@ const Radios: React.FC<RadiosProps> = ({
     id,
     items,
     onChange,
-    setWhichIsChecked = 0,
     title,
     validation,
+    setWhichIsChecked,
 }) => {
     const formattedID = id.replace(/\s/g, '-');
-
+    const [whichIsChecked, setChecked] = useState<number>(
+        setWhichIsChecked || items.length,
+    );
     return (
         <FieldsetStyled id={`${formattedID}`} data-testid="test-fieldset">
             {title && (
@@ -39,11 +41,14 @@ const Radios: React.FC<RadiosProps> = ({
             {items.map((value, i) => (
                 <Fragment key={`${formattedID}_${i}`}>
                     <RadioButtonStyled
-                        checked={i === setWhichIsChecked && checked}
+                        checked={i === whichIsChecked && checked}
                         data-testid={`test-input-${i}`}
                         id={`${formattedID}_${i}`}
                         name={`${formattedID}_group`}
-                        onChange={onChange}
+                        onChange={(e) => {
+                            onChange(e);
+                            setChecked(i);
+                        }}
                         required={validation?.required}
                         type="radio"
                         value={value}

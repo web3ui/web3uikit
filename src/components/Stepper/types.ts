@@ -34,7 +34,7 @@ export interface StepperProps {
     /**
      * when the process is complete this event will fire
      */
-    onComplete?: () => null;
+    onComplete?: () => void;
 
     /**
      * Pass the step the user should start on

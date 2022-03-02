@@ -24,7 +24,7 @@ const Stepper: React.FC<StepperProps> = ({
     helperContent,
     completeTitle = 'all done, nice!',
     completeMessage = 'You should tell the user what to do next, or use the onComplete function to programmatically fire an event',
-    onComplete,
+    onComplete = () => null,
 }) => {
     const [activeStep, setActiveStep] = useState(step);
     const myStepRef = useRef(activeStep);
@@ -40,13 +40,6 @@ const Stepper: React.FC<StepperProps> = ({
         };
     }, []);
 
-    useEffect(() => {
-        if (activeStep === Number(stepData.length + 1)) {
-            onComplete && onComplete();
-            return;
-        }
-    }, [activeStep]);
-
     const setStep = (data: number) => {
         myStepRef.current = data;
         setActiveStep(data);
@@ -58,6 +51,10 @@ const Stepper: React.FC<StepperProps> = ({
     };
 
     const nextStep = () => {
+        if (activeStep === stepData.length + 1) {
+            onComplete();
+            return;
+        }
         setStep(myStepRef.current + 1);
     };
 

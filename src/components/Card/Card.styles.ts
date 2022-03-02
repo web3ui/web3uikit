@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { CardProps } from './types';
+import { AbsoluteIconStyledProps, CardProps } from './types';
 import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import colors from '../../styles/colors';
@@ -14,7 +14,9 @@ const hoverNotSelected = css`
     }
 `;
 
-export const DivStyled = styled.div<Pick<CardProps, 'selected' | 'isDisabled'>>`
+export const DivStyled = styled.div<
+    Pick<CardProps, 'selected' | 'isDisabled' | 'cursorType'>
+>`
     ${resetCSS};
     ${fonts.text};
     border: 2px solid transparent;
@@ -25,23 +27,22 @@ export const DivStyled = styled.div<Pick<CardProps, 'selected' | 'isDisabled'>>`
     min-height: fit-content;
     padding: 15px;
     position: relative;
+    transition: all 0.2s ease;
     width: 100%;
     ${(p) => p.isDisabled && 'opacity:70%;'}
+    ${(p) => p.cursorType === 'pointer' && 'cursor: pointer;'}
     ${(p) => (p.selected ? selected : !p.isDisabled && hoverNotSelected)}
 `;
 
-export const HeaderStyled = styled.header`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    height: 24px;
+export const AbsoluteIconStyled = styled.div<AbsoluteIconStyledProps>`
+    position: absolute;
+    top: 0;
+    ${(p) => (p.position === 'topL' ? 'left: 0;' : 'right: 0;')}
+`;
 
-    & > div {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
+export const HeaderStyled = styled.header`
+    padding: 11px;
+    position: relative;
 `;
 
 export const FooterStyled = styled.footer`
@@ -58,3 +59,12 @@ export const FooterStyled = styled.footer`
         ${fonts.text}
     }
 `;
+
+const CardStyles = {
+    AbsoluteIconStyled,
+    DivStyled,
+    FooterStyled,
+    HeaderStyled,
+};
+
+export default CardStyles;

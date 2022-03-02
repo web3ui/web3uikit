@@ -82,6 +82,7 @@ const top = css<TStyleProps>`
 `;
 
 export const DivStyledArrow = styled.div<TStyleProps>`
+    z-index: 999;
     ${(p) => (p.position ? getContainerStyleByPosition(p.position) : '')}
 `;
 
@@ -99,6 +100,7 @@ export const DivStyledDropdown = styled.div<TStyleProps>`
     overflow: hidden;
     position: absolute;
     width: max-content;
+    z-index: 999;
     ${(p) => getContainerStyleByPosition(p.position)}
 `;
 

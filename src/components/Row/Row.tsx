@@ -48,6 +48,7 @@ function Row({
     sm = 16,
     md = 24,
     lg = 24,
+    width,
 }: IRowProps): JSX.Element {
     return (
         <Context.Provider value={{ xs, md, sm, lg, rowGap, colGap }}>
@@ -57,6 +58,7 @@ function Row({
                 colGap={colGap}
                 rowGap={rowGap}
                 data-testid="row"
+                width={width}
             >
                 {children}
             </RowDiv>

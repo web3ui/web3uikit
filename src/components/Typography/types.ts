@@ -38,6 +38,11 @@ export interface TypographyProps {
     copyable?: boolean;
 
     /**
+     * To control the size of copy icon's
+     */
+    iconSize?: number;
+
+    /**
      * On Clipboard copy if typography type is copyable
      */
     onCopy?: (e?: React.BaseSyntheticEvent) => void;

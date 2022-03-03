@@ -37,8 +37,8 @@ const DivStyled = styled.div<
 
 const AbsoluteIconStyled = styled.div<AbsoluteIconStyledProps>`
     position: absolute;
-    top: 9px;
-    ${(p) => (p.position === 'topL' ? 'left: 9px;' : 'right: 9px;')}
+    top: -2px;
+    ${(p) => (p.position === 'topL' ? 'left: -2px;' : 'right: -2px;')}
 `;
 
 const FooterStyled = styled.footer`
@@ -56,10 +56,15 @@ const FooterStyled = styled.footer`
     }
 `;
 
+const HeaderStyled = styled.div`
+    position: relative;
+`;
+
 const CardStyles = {
     AbsoluteIconStyled,
     DivStyled,
     FooterStyled,
+    HeaderStyled,
 };
 
 export default CardStyles;

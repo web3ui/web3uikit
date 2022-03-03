@@ -44,7 +44,6 @@ const Card: React.FC<CardProps> = ({
             isDisabled={isDisabled}
             cursorType={cursorType}
         >
-            {/* <HeaderStyled data-testid={'header-test-id'}> */}
             {showCheckedIcon && (
                 <AbsoluteIconStyled position="topL">
                     <Icon
@@ -72,7 +71,6 @@ const Card: React.FC<CardProps> = ({
                     />
                 </AbsoluteIconStyled>
             )}
-            {/* </HeaderStyled> */}
             <div>{children}</div>
             {(title || description) && (
                 <FooterStyled>

@@ -35,7 +35,11 @@ const testHelpContent = () => (
 );
 
 export const Demo = Template.bind({});
-Demo.args = { step: 1, stepData: testStepData };
+Demo.args = {
+    step: 1,
+    stepData: testStepData,
+    onComplete: () => alert('done'),
+};
 
 export const PreLoadStep0 = Template.bind({});
 PreLoadStep0.args = { stepData: testStepData };

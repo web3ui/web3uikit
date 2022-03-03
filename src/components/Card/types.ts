@@ -33,4 +33,13 @@ export interface CardProps {
      * Set the state disabled state of the cart
      */
     isDisabled?: boolean;
+
+    /**
+     * Style of the cursor
+     */
+    cursorType?: 'pointer' | 'default';
+}
+
+export interface AbsoluteIconStyledProps {
+    position: 'topR' | 'topL';
 }

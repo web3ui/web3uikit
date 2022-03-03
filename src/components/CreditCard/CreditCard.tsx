@@ -36,7 +36,7 @@ const CreditCard: FC<CreditCardProps> = ({
         >
             <DivStyledFlex>
                 <Radios
-                    checked={seleteced}
+                    setWhichIsChecked={0}
                     id={id || 'radio-credit-card'}
                     items={['']}
                     onChange={() => {

@@ -37,8 +37,8 @@ export const DivStyled = styled.div<
 
 export const AbsoluteIconStyled = styled.div<AbsoluteIconStyledProps>`
     position: absolute;
-    top: 0;
-    ${(p) => (p.position === 'topL' ? 'left: 0;' : 'right: 0;')}
+    top: -2px;
+    ${(p) => (p.position === 'topL' ? 'left: -2px;' : 'right: -2px;')}
 `;
 
 export const HeaderStyled = styled.header`

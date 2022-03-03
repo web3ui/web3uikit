@@ -80,6 +80,7 @@ const NotificationStyled = styled.div<INotificationStyled>`
     position: relative;
     width: 320px;
     overflow: hidden;
+    z-index: 999;
 
     ${(p) => getNotificationAnimation(p.position, p.isClosing)}
 

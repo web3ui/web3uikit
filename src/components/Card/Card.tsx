@@ -7,8 +7,7 @@ import { Icon } from '../Icon';
 import { Tooltip } from '../Tooltip';
 import CardStyles from './Card.styles';
 
-const { AbsoluteIconStyled, DivStyled, FooterStyled, HeaderStyled } =
-    CardStyles;
+const { AbsoluteIconStyled, DivStyled, FooterStyled } = CardStyles;
 
 const Card: React.FC<CardProps> = ({
     id,
@@ -45,35 +44,35 @@ const Card: React.FC<CardProps> = ({
             isDisabled={isDisabled}
             cursorType={cursorType}
         >
-            <HeaderStyled data-testid={'header-test-id'}>
-                {showCheckedIcon && (
-                    <AbsoluteIconStyled position="topL">
-                        <Icon
-                            data-testid={'check-test-id'}
-                            fill={colors.green}
-                            size={24}
-                            svg={iconTypes.checkmark}
-                        />
-                    </AbsoluteIconStyled>
-                )}
-                {!isDisabled && tooltipText && (
-                    <AbsoluteIconStyled position="topR">
-                        <Tooltip
-                            position={'bottom'}
-                            children={[
-                                <Icon
-                                    key="ttip-card"
-                                    data-testid={'help-test-id'}
-                                    fill={colors.blue}
-                                    size={22}
-                                    svg={iconTypes.helpCircle}
-                                />,
-                            ]}
-                            content={tooltipText}
-                        />
-                    </AbsoluteIconStyled>
-                )}
-            </HeaderStyled>
+            {/* <HeaderStyled data-testid={'header-test-id'}> */}
+            {showCheckedIcon && (
+                <AbsoluteIconStyled position="topL">
+                    <Icon
+                        data-testid={'check-test-id'}
+                        fill={colors.green}
+                        size={24}
+                        svg={iconTypes.checkmark}
+                    />
+                </AbsoluteIconStyled>
+            )}
+            {!isDisabled && tooltipText && (
+                <AbsoluteIconStyled position="topR">
+                    <Tooltip
+                        position={'bottom'}
+                        children={[
+                            <Icon
+                                key="ttip-card"
+                                data-testid={'help-test-id'}
+                                fill={colors.blue}
+                                size={22}
+                                svg={iconTypes.helpCircle}
+                            />,
+                        ]}
+                        content={tooltipText}
+                    />
+                </AbsoluteIconStyled>
+            )}
+            {/* </HeaderStyled> */}
             <div>{children}</div>
             {(title || description) && (
                 <FooterStyled>

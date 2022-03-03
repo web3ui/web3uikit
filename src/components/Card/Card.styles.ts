@@ -4,7 +4,7 @@ import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import colors from '../../styles/colors';
 
-export const DivStyled = styled.div<
+const DivStyled = styled.div<
     Pick<CardProps, 'selected' | 'isDisabled' | 'cursorType'>
 >`
     ${resetCSS};
@@ -14,7 +14,7 @@ export const DivStyled = styled.div<
     border-radius: 20px;
     display: grid;
     min-height: fit-content;
-    padding: 15px;
+    padding: 11px;
     position: relative;
     transition: all 0.2s ease;
     width: 100%;
@@ -35,18 +35,13 @@ export const DivStyled = styled.div<
     ${(p) => p.selected && `outline-color: ${colors.green};`}
 `;
 
-export const AbsoluteIconStyled = styled.div<AbsoluteIconStyledProps>`
+const AbsoluteIconStyled = styled.div<AbsoluteIconStyledProps>`
     position: absolute;
-    top: -2px;
-    ${(p) => (p.position === 'topL' ? 'left: -2px;' : 'right: -2px;')}
+    top: 9px;
+    ${(p) => (p.position === 'topL' ? 'left: 9px;' : 'right: 9px;')}
 `;
 
-export const HeaderStyled = styled.header`
-    padding: 11px;
-    position: relative;
-`;
-
-export const FooterStyled = styled.footer`
+const FooterStyled = styled.footer`
     color: ${colors.blue};
     display: grid;
     text-align: center;
@@ -65,7 +60,6 @@ const CardStyles = {
     AbsoluteIconStyled,
     DivStyled,
     FooterStyled,
-    HeaderStyled,
 };
 
 export default CardStyles;

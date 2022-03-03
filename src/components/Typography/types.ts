@@ -36,6 +36,11 @@ export interface TypographyProps {
      * Copies text to clipboard
      */
     copyable?: boolean;
+
+    /**
+     * On Clipboard copy if typography type is copyable
+     */
+    onCopy?: (e?: React.BaseSyntheticEvent) => void;
 }
 
 export type variantType =

@@ -32,6 +32,7 @@ const DynamicText = ({
     monospace,
     copyable,
     children,
+    onCopy = () => {},
     ...otherProps
 }: TypographyProps) => {
     const Tag = getTag(variant);
@@ -40,7 +41,7 @@ const DynamicText = ({
         // @ts-ignore
         <Tag {...otherProps}>
             {children}
-            {copyable && <CopyButton text={children} />}
+            {copyable && <CopyButton text={children} onCopy={onCopy} />}
         </Tag>
     );
 };

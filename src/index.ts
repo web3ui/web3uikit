@@ -11,6 +11,7 @@ export * from './components/ConnectButton';
 export * from './components/CopyButton';
 export * from './components/CreditCard';
 export * from './components/CryptoCards';
+export * from './components/CryptoLogos';
 export * from './components/DatePicker';
 export * from './components/Dropdown';
 export * from './components/DropdownElement';

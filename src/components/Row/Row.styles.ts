@@ -7,6 +7,7 @@ export const RowDiv = styled.div<IRowProps>`
     ${fonts.text}
     display: flex;
     flex-wrap: wrap;
+    width: ${(props) => `${props.width && `${props.width}px`} `};
     gap: ${(props) =>
         props.rowGap ? `${props.rowGap}px ${props.colGap}px` : '15px 15px'};
     align-items: ${(props) => props.alignItems && props.alignItems};

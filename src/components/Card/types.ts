@@ -17,7 +17,7 @@ export interface CardProps {
     /**
      * set if card is selected
      */
-    selected?: boolean;
+    isSelected?: boolean;
 
     /**
      * set title of card
@@ -38,6 +38,12 @@ export interface CardProps {
      * Style of the cursor
      */
     cursorType?: 'pointer' | 'default';
+
+    /**
+     * Sets isSelected state
+     */
+
+    setIsSelected?: (value: boolean) => void;
 }
 
 export interface AbsoluteIconStyledProps {

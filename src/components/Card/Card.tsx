@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import React from 'react';
 import { CardProps } from './types';
 import { iconTypes } from '../Icon/collection';
@@ -15,38 +14,28 @@ const Card: React.FC<CardProps> = ({
     children,
     cursorType = 'pointer',
     description,
-    selected,
+    isSelected,
     title,
     tooltipText,
     isDisabled = false,
+    setIsSelected,
 }: CardProps) => {
-    const [isSelected, setSelected] = useState<boolean | undefined>(selected);
-    const [showCheckedIcon, toggleChecked] =
-        useState<boolean | undefined>(false);
-
-    useEffect(() => {
-        toggleChecked(selected);
-    }, [selected]);
-
     return (
         <DivStyled
             aria-label={isSelected ? 'card not selected' : 'card selected'}
             data-testid={'card-test-id'}
             id={id}
             onClick={() => {
-                if (isDisabled) {
-                    return;
-                }
-                setSelected(!isSelected);
-                toggleChecked(!showCheckedIcon);
+                if (isDisabled || !setIsSelected) return;
+                setIsSelected(!isSelected);
             }}
             role="button"
-            selected={isSelected && showCheckedIcon}
+            isSelected={isSelected}
             isDisabled={isDisabled}
             cursorType={cursorType}
         >
             <HeaderStyled data-testid={'header-test-id'}>
-                {showCheckedIcon && (
+                {isSelected && (
                     <AbsoluteIconStyled position="topL">
                         <Icon
                             data-testid={'check-test-id'}

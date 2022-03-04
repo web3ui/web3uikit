@@ -4,8 +4,8 @@ import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import colors from '../../styles/colors';
 
-export const DivStyled = styled.div<
-    Pick<CardProps, 'selected' | 'isDisabled' | 'cursorType'>
+const DivStyled = styled.div<
+    Pick<CardProps, 'isSelected' | 'isDisabled' | 'cursorType'>
 >`
     ${resetCSS};
     ${fonts.text};
@@ -14,7 +14,7 @@ export const DivStyled = styled.div<
     border-radius: 20px;
     display: grid;
     min-height: fit-content;
-    padding: 15px;
+    padding: 11px;
     position: relative;
     transition: all 0.2s ease;
     width: 100%;
@@ -32,21 +32,16 @@ export const DivStyled = styled.div<
         );
     }`}
     ${(p) => p.cursorType === 'pointer' && 'cursor: pointer;'}
-    ${(p) => p.selected && `outline-color: ${colors.green};`}
+    ${(p) => p.isSelected && `outline-color: ${colors.green};`}
 `;
 
-export const AbsoluteIconStyled = styled.div<AbsoluteIconStyledProps>`
+const AbsoluteIconStyled = styled.div<AbsoluteIconStyledProps>`
     position: absolute;
-    top: 0;
-    ${(p) => (p.position === 'topL' ? 'left: 0;' : 'right: 0;')}
+    top: -2px;
+    ${(p) => (p.position === 'topL' ? 'left: -2px;' : 'right: -2px;')}
 `;
 
-export const HeaderStyled = styled.header`
-    padding: 11px;
-    position: relative;
-`;
-
-export const FooterStyled = styled.footer`
+const FooterStyled = styled.footer`
     color: ${colors.blue};
     display: grid;
     text-align: center;
@@ -59,6 +54,10 @@ export const FooterStyled = styled.footer`
         font-size: 12px;
         ${fonts.text}
     }
+`;
+
+const HeaderStyled = styled.div`
+    position: relative;
 `;
 
 const CardStyles = {

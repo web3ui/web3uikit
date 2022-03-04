@@ -5,6 +5,8 @@ import colors from '../../styles/colors';
 import { Icon } from '../Icon';
 import { Tooltip } from '../Tooltip';
 import CardStyles from './Card.styles';
+import { Typography } from '../Typography';
+import color from '../../styles/colors';
 
 const { AbsoluteIconStyled, DivStyled, FooterStyled, HeaderStyled } =
     CardStyles;
@@ -66,9 +68,23 @@ const Card: React.FC<CardProps> = ({
             <div>{children}</div>
             {(title || description) && (
                 <FooterStyled>
-                    {title && <p data-testid={'title-test-id'}>{title}</p>}
+                    {title && (
+                        <Typography
+                            variant="subtitle2"
+                            data-testid={'title-test-id'}
+                            color={color.blue}
+                        >
+                            {title}
+                        </Typography>
+                    )}
                     {description && (
-                        <span data-testid={'desc-test-id'}>{description}</span>
+                        <Typography
+                            variant="caption14"
+                            data-testid={'desc-test-id'}
+                            color={color.blue}
+                        >
+                            {description}
+                        </Typography>
                     )}
                 </FooterStyled>
             )}

@@ -42,18 +42,8 @@ const AbsoluteIconStyled = styled.div<AbsoluteIconStyledProps>`
 `;
 
 const FooterStyled = styled.footer`
-    color: ${colors.blue};
     display: grid;
     text-align: center;
-    & > p {
-        ${fonts.textBold}
-        margin: 0;
-    }
-    & > span {
-        color: #68738d;
-        font-size: 12px;
-        ${fonts.text}
-    }
 `;
 
 const HeaderStyled = styled.div`

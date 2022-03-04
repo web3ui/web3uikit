@@ -5,7 +5,7 @@ import fonts from '../../styles/fonts';
 import colors from '../../styles/colors';
 
 const DivStyled = styled.div<
-    Pick<CardProps, 'selected' | 'isDisabled' | 'cursorType'>
+    Pick<CardProps, 'isSelected' | 'isDisabled' | 'cursorType'>
 >`
     ${resetCSS};
     ${fonts.text};
@@ -32,7 +32,7 @@ const DivStyled = styled.div<
         );
     }`}
     ${(p) => p.cursorType === 'pointer' && 'cursor: pointer;'}
-    ${(p) => p.selected && `outline-color: ${colors.green};`}
+    ${(p) => p.isSelected && `outline-color: ${colors.green};`}
 `;
 
 const AbsoluteIconStyled = styled.div<AbsoluteIconStyledProps>`

@@ -32,7 +32,7 @@ const DynamicText = ({
     monospace,
     copyable,
     children,
-    iconSize = 22,
+    iconSize,
     onCopy = () => {},
     ...otherProps
 }: TypographyProps) => {

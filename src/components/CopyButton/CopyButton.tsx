@@ -20,6 +20,7 @@ const CopyButton: FC<CopyButtonProps> = ({
     return (
         <CopyIconStyled
             className="input_copy"
+            iconSize={iconSize}
             onClick={(e) => {
                 onCopy(e);
                 copyToClipboard();
@@ -32,7 +33,7 @@ const CopyButton: FC<CopyButtonProps> = ({
                     fill={color.green}
                 />
             ) : (
-                <Icon svg={iconTypes.copy} />
+                <Icon size={iconSize} svg={iconTypes.copy} />
             )}
         </CopyIconStyled>
     );

@@ -20,7 +20,6 @@ export default {
 const Template: ComponentStory<typeof Card> = (args) => {
     // const [{ isSelected }, updateArgs] = useArgs();
     const [isSelected, setIsSelected] = useState(false);
-    console.log('wwww', window);
     return (
         <div style={{ width: '250px' }}>
             <Card

@@ -49,6 +49,7 @@ const DynamicText = ({
 const Typography = styled(DynamicText)`
     ${(p) => getTypographyStyle(p)};
     position: relative;
+    margin: 0;
 `;
 
 export default Typography;

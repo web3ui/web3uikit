@@ -764,7 +764,7 @@ describe('PrefixCopyableHidden - Text', () => {
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
-        expect(input?.value).toBe('****');
+        expect(input?.type).toBe('password');
     });
 });
 

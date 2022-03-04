@@ -38,6 +38,7 @@ Regular.args = {
     children: [<div key={'0'}>{getModuleAnimation(undefined)}</div>],
     title: 'dApp',
     description: 'Click to create a dApp',
+    onClick: () => console.log('clicked'),
 };
 
 export const RegularSelected = Template.bind({});

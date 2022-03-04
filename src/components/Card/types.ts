@@ -44,6 +44,11 @@ export interface CardProps {
      */
 
     setIsSelected?: (value: boolean) => void;
+
+    /**
+     * Runs a function when clicked
+     */
+    onClick?: () => void;
 }
 
 export interface AbsoluteIconStyledProps {

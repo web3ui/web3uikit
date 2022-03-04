@@ -21,6 +21,7 @@ const Card: React.FC<CardProps> = ({
     tooltipText,
     isDisabled = false,
     setIsSelected,
+    onClick,
 }: CardProps) => {
     return (
         <DivStyled
@@ -28,7 +29,9 @@ const Card: React.FC<CardProps> = ({
             data-testid={'card-test-id'}
             id={id}
             onClick={() => {
-                if (isDisabled || !setIsSelected) return;
+                if (isDisabled) return;
+                onClick && onClick();
+                if (!setIsSelected) return;
                 setIsSelected(!isSelected);
             }}
             role="button"

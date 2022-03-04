@@ -23,6 +23,7 @@ const Template: ComponentStory<typeof CopyButton> = () => {
             <Typography>With Love from Developers</Typography>
             <CopyButton
                 text="With Love from Developers"
+                revertIn={6500}
                 onCopy={() =>
                     notify({
                         type: 'success',

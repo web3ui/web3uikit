@@ -4,6 +4,7 @@ import bannerStripStyles from './BannerStrip.styles';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { BannerStripProps } from '.';
+import { Button } from '../Button';
 
 const getBackgroundColor = (type: string) => {
     switch (type) {
@@ -18,31 +19,23 @@ const getBackgroundColor = (type: string) => {
     }
 };
 
-const Section = styled.section<Pick<BannerStripProps, 'type'>>`
+const Section = styled.section<Pick<BannerStripProps, 'type' | 'height'>>`
     ${fonts.text}
     ${bannerStripStyles.section}
-  background-color: ${(p) => p.type && getBackgroundColor(p.type)};
-`;
-
-const Button = styled.button`
-    ${fonts.textBold}
-    ${bannerStripStyles.button}
+    background-color: ${(p) => p.type && getBackgroundColor(p.type)};
+    height: ${({ height }) => height};
 `;
 
 const BannerStrip: React.FC<BannerStripProps> = ({
-    buttonClickEvent,
+    buttonConfig,
     buttonDisplayed = false,
-    buttonText = 'ok',
+    height = 'auto',
     text,
     type = 'standard',
 }) => (
-    <Section type={type} data-testid="banner-strip">
+    <Section type={type} height={height} data-testid="banner-strip">
         <strong>{text}</strong>
-        {buttonDisplayed && (
-            <Button onClick={() => buttonClickEvent && buttonClickEvent()}>
-                {buttonText}
-            </Button>
-        )}
+        {buttonDisplayed && <Button {...buttonConfig} />}
     </Section>
 );
 

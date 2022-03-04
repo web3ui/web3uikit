@@ -32,8 +32,10 @@ StandardWithButton.args = {
     text: 'Hey this is a notification you should check out',
     type: 'standard',
     buttonDisplayed: true,
-    buttonText: 'click me',
-    buttonClickEvent: testFunction,
+    buttonConfig: {
+        text: 'Click me',
+        onClick: testFunction,
+    },
 };
 
 export const Warning = Template.bind({});

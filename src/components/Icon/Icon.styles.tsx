@@ -6,4 +6,6 @@ export const StyledIconDiv = styled.div`
     justify-content: center;
     align-items: center;
     line-height: 0px;
+    max-width: fit-content;
+    max-height: fit-content;
 `;

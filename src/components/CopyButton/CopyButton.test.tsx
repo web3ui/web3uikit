@@ -1,4 +1,10 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import {
+    render,
+    screen,
+    fireEvent,
+    act,
+    waitFor,
+} from '@testing-library/react';
 import React from 'react';
 import CopyButton from './CopyButton';
 import { iconTypes } from '../Icon';
@@ -21,11 +27,16 @@ test('Should render the component', () => {
     expect(element.textContent).toBe(`${iconTypes.copy} icon`);
 });
 
-test('Should render the component after clicking the button', () => {
-    render(<CopyButton text={'With Love from Developers'} />);
+test('Should render the component after clicking the button', async () => {
+    act(() => {
+        render(<CopyButton text={'With Love from Developers'} />);
+    });
     const element = screen.getByTestId(copyIconTestId);
-    element && fireEvent.click(element);
-
-    // Verify that the `icon check` is visible
-    expect(element.textContent).toBe(`${iconTypes.check} icon`);
+    act(() => {
+        element && fireEvent.click(element);
+    });
+    await waitFor(() => {
+        // Verify that the `icon check` is visible
+        expect(element.textContent).toBe(`${iconTypes.check} icon`);
+    });
 });

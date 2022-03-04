@@ -1,10 +1,16 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Card from './Card';
-import React from 'react';
+import React, { useState } from 'react';
 import getModuleAnimation from './Animations/animations';
 import { Icon, iconTypes } from '../Icon';
 import colors from '../../styles/colors';
 import { Button } from '../Button';
+// import { useArgs } from '@storybook/addons';
+
+/**
+ * To-do:
+ * find correct way of using useArgs with react testing
+ */
 
 export default {
     title: '4.UI/Card',
@@ -12,9 +18,16 @@ export default {
 } as ComponentMeta<typeof Card>;
 
 const Template: ComponentStory<typeof Card> = (args) => {
+    // const [{ isSelected }, updateArgs] = useArgs();
+    const [isSelected, setIsSelected] = useState(false);
     return (
         <div style={{ width: '250px' }}>
-            <Card key={'0'} {...args} />
+            <Card
+                isSelected={isSelected}
+                {...args}
+                setIsSelected={setIsSelected}
+                // setIsSelected={() => updateArgs({ isSelected: !isSelected })}
+            />
         </div>
     );
 };
@@ -32,7 +45,7 @@ RegularSelected.args = {
     tooltipText: 'Lorem Ipsum Dole met sai souni lokomit anici trenicid',
     children: [<div key={'0'}>{getModuleAnimation(undefined)}</div>],
     title: 'dApp',
-    selected: true,
+    isSelected: true,
     description: 'Click to create a dApp',
 };
 

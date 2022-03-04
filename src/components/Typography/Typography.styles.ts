@@ -1,7 +1,6 @@
 import { css } from 'styled-components';
 import color from '../../styles/colors';
 import type { TypographyProps, variantType, weightType } from './types';
-import './fonts/fonts.css';
 
 const openSans = css`
     @import url('//fonts.googleapis.com/css?family=Open+Sans');

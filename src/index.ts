@@ -13,7 +13,7 @@ export * from './components/CreditCard';
 export * from './components/CryptoCards';
 export * from './components/CryptoLogos';
 export * from './components/DatePicker';
-export * from './components/Dropdown';
+export * from './components/HoverDropdown';
 export * from './components/DropdownElement';
 export * from './components/Form';
 export * from './components/Icon';

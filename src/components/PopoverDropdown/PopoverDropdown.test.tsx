@@ -5,7 +5,7 @@ import { fireEvent, waitFor, screen } from '@testing-library/react';
 import * as stories from './PopoverDropdown.stories';
 import 'jest-styled-components';
 
-const { DropdownSelection } = composeStories(stories);
+const { PopoverSelection } = composeStories(stories);
 
 describe('Default', () => {
     let container: HTMLDivElement;
@@ -15,7 +15,7 @@ describe('Default', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<DropdownSelection position={'bottom'} />, container);
+        ReactDOM.render(<PopoverSelection position={'bottom'} />, container);
     });
 
     afterEach(() => {

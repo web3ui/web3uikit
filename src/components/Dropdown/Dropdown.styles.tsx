@@ -21,7 +21,7 @@ interface IStyledSelectedDiv {
     width: string;
 }
 
-export const StyledSelectedDiv = styled.div<IStyledSelectedDiv>`
+export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
     width: ${(props) => props.width};
     height: 40px;
     min-width: fit-content;
@@ -59,7 +59,7 @@ export const StyledSelectedDiv = styled.div<IStyledSelectedDiv>`
 `};
 `;
 
-export const StyledOptionsContainer = styled.div<Pick<IDropdown, 'width'>>`
+export const DivStyledOptionsContainer = styled.div<Pick<IDropdown, 'width'>>`
     transition: all 0.3s ease;
     position: absolute;
     top: 56px;
@@ -73,7 +73,7 @@ export const StyledOptionsContainer = styled.div<Pick<IDropdown, 'width'>>`
     z-index: 999;
 `;
 
-export const StyledOptionItemDiv = styled.div`
+export const DivStyledOptionItem = styled.div`
     transition: all 0.3s ease;
     padding: 6px 16px 6px 16px;
     cursor: pointer;
@@ -85,7 +85,7 @@ export const StyledOptionItemDiv = styled.div`
     }
 `;
 
-export const StyledNoData = styled.div`
+export const DivStyledNoData = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -30,7 +30,7 @@ export interface TypographyProps {
     /**
      * Children text
      */
-    children?: string | number;
+    children?: React.ReactNode;
 
     /**
      * Copies text to clipboard

@@ -26,11 +26,20 @@ export const useCopyToClipboard = (): [CopiedValue, CopyFn] => {
     return [copiedText, copy];
 };
 
-const CopyButton: FC<CopyButtonProps> = ({ text, onCopy = () => {} }) => {
-    const [value, copy] = useCopyToClipboard();
+const CopyButton: FC<CopyButtonProps> = ({
+    text,
+    onCopy = () => {},
+    revertIn = 3000,
+}) => {
+    const [, copy] = useCopyToClipboard();
+    const [value, set] = useState(false);
 
     const copyToClipboard = (): void => {
         copy(`${text}`);
+        set(true);
+        setTimeout(() => {
+            set(false);
+        }, revertIn);
     };
 
     return (

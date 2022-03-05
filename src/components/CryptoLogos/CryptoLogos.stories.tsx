@@ -3,7 +3,7 @@ import React from 'react';
 import CryptoLogos from '../CryptoLogos/CryptoLogos';
 
 export default {
-    title: '4.UI/Crypto Logos',
+    title: '6.Graphic/Crypto Logos',
     component: CryptoLogos,
     argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof CryptoLogos>;

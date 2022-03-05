@@ -1,6 +1,6 @@
 import { TIconType } from '../Icon/collection';
 
-export interface DropdownElementProps {
+export interface PopoverElementProps {
     /**
      * The background color
      */
@@ -57,4 +57,4 @@ export interface DropdownElementProps {
     width?: number;
 }
 
-export default DropdownElementProps;
+export default PopoverElementProps;

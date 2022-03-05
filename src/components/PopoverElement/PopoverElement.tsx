@@ -1,14 +1,14 @@
 import colors from '../../styles/colors';
-import { DropdownElementProps } from './types';
-import { DropdownElementStyles } from './DropdownElement.styles';
+import { PopoverElementProps } from './types';
+import { PopoverElementStyles } from './PopoverElement.styles';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import React from 'react';
 
 const { DivContainerStyled, DivStyled, DivImageStyled, TextStyled } =
-    DropdownElementStyles;
+    PopoverElementStyles;
 
-const DropdownElement: React.FC<DropdownElementProps> = ({
+const PopoverElement: React.FC<PopoverElementProps> = ({
     backgroundColor = colors.blueDark,
     height,
     icon = iconTypes.check,
@@ -20,7 +20,7 @@ const DropdownElement: React.FC<DropdownElementProps> = ({
     textColor = 'white',
     textSize = 14,
     width,
-}: DropdownElementProps) => {
+}: PopoverElementProps) => {
     return (
         <DivContainerStyled
             backgroundColor={backgroundColor}
@@ -58,4 +58,4 @@ const DropdownElement: React.FC<DropdownElementProps> = ({
     );
 };
 
-export default DropdownElement;
+export default PopoverElement;

@@ -1,121 +1,107 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import color from '../../styles/colors';
-import colors from '../../styles/colors';
-import Dropdown from '../Dropdown/Dropdown';
-import DropdownElement from '../DropdownElement/DropdownElement';
-import { Icon } from '../Icon';
-import { iconTypes } from '../Icon/collection';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Dropdown from './Dropdown';
+
+const parentWrapper = {
+    height: '1px',
+    minHeight: '400px',
+};
 
 export default {
-    title: '4.UI/Dropdown',
+    title: '5.Popup/Dropdown',
     component: Dropdown,
-    argTypes: { onClick: { action: 'clicked' } },
+    argTypes: { onComplete: { action: 'completed' } },
+    decorators: [(storyFn) => <div style={parentWrapper}>{storyFn()}</div>],
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = (args) => (
-    <div
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            margin: 0,
-            minHeight: '100vh',
-        }}
-    >
+    <div>
         <Dropdown {...args} />
     </div>
 );
 
-export const DropdownSelection = Template.bind({});
-DropdownSelection.args = {
-    position: 'bottom',
-    children: [
-        <DropdownElement
-            key="0"
-            height={50}
-            width={260}
-            text={'Testnet Server'}
-            textSize={20}
-            icon={iconTypes.testnet}
-            iconSize={30}
-            backgroundColor={'transparent'}
-            textColor={colors.white}
-            onClick={() => alert('Testnet Server')}
-        />,
-        <DropdownElement
-            key="1"
-            height={50}
-            width={260}
-            text={'Mainnet Server'}
-            textSize={20}
-            iconSize={30}
-            icon={iconTypes.network}
-            backgroundColor={'transparent'}
-            textColor={colors.white}
-            onClick={() => alert('Mainnet Server')}
-        />,
-        <DropdownElement
-            key="2"
-            height={50}
-            width={260}
-            text={'Local Devchain Server'}
-            textSize={20}
-            iconSize={30}
-            backgroundColor={'transparent'}
-            icon={iconTypes.server}
-            textColor={colors.white}
-            onClick={() => alert('Local Devchain Server')}
-        />,
+export const Default = Template.bind({});
+
+Default.args = {
+    options: [
+        {
+            label: 'Api Key',
+            id: 'Api Key',
+        },
+        {
+            label: 'Testnet',
+            id: 'Testnet',
+        },
+        {
+            label: 'Mainent',
+            id: 'Mainent',
+        },
     ],
-    parent: (
-        <Icon key="3" svg={iconTypes.helpCircle} fill={color.grey} size={50} />
-    ),
+    label: 'Server: ',
+    icon: 'download',
+    isDisabled: false,
 };
 
-export const DropdownSelectionUser = Template.bind({});
-DropdownSelectionUser.args = {
-    position: 'bottom',
-    children: [
-        <DropdownElement
-            key="4"
-            height={50}
-            width={260}
-            text={'Account Settings'}
-            textSize={20}
-            icon={iconTypes.cog}
-            iconSize={30}
-            backgroundColor={'transparent'}
-            textColor={colors.white}
-            onClick={() => alert('Account Settings')}
-        />,
-        <DropdownElement
-            key="5"
-            height={50}
-            width={260}
-            text={'Support Page'}
-            textSize={20}
-            iconSize={30}
-            icon={iconTypes.lifeRing}
-            backgroundColor={'transparent'}
-            textColor={colors.white}
-            onClick={() => alert('Support Page')}
-        />,
-        <DropdownElement
-            key="6"
-            height={50}
-            width={260}
-            text={'Logout'}
-            textSize={20}
-            iconSize={30}
-            backgroundColor={'transparent'}
-            iconColor={colors.red}
-            icon={iconTypes.logOut}
-            textColor={colors.red}
-            onClick={() => alert('Logout')}
-        />,
+export const ControlledState = Template.bind({});
+
+ControlledState.args = {
+    options: [
+        {
+            label: 'Api Key',
+            id: 'Api Key',
+        },
+        {
+            label: 'Testnet',
+            id: 'Testnet',
+        },
+        {
+            label: 'Mainent',
+            id: 'Mainent',
+        },
     ],
-    parent: (
-        <Icon key="7" svg={iconTypes.helpCircle} fill={color.grey} size={50} />
-    ),
+    label: 'Server: ',
+    icon: 'download',
+    selectedState: 0,
+};
+
+export const NonFixedLabel = Template.bind({});
+
+NonFixedLabel.args = {
+    options: [
+        {
+            label: 'Api Key',
+            id: 'Api Key',
+        },
+        {
+            label: 'Testnet',
+            id: 'Testnet',
+        },
+        {
+            label: 'Mainent',
+            id: 'Mainent',
+        },
+    ],
+    label: 'Server: ',
+    isLabelFixed: false,
+    icon: 'download',
+};
+
+export const Iconless = Template.bind({});
+
+Iconless.args = {
+    options: [
+        {
+            label: 'Api Key',
+            id: 'Api Key',
+        },
+        {
+            label: 'Testnet',
+            id: 'Testnet',
+        },
+        {
+            label: 'Mainent',
+            id: 'Mainent',
+        },
+    ],
+    label: 'Server: ',
 };

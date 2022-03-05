@@ -1,115 +1,94 @@
-import styled, { css } from 'styled-components';
-import color from '../../styles/colors';
-import { DropdownProps, Position } from './types';
-type TStyleProps = Pick<DropdownProps, 'position' | 'move'>;
+import styled from 'styled-components';
+import fonts from '../../styles/fonts';
+import resetCSS from '../../styles/reset';
+import { IDropdown } from './types';
 
-const arrowSize = '10px';
-
-const getContainerStyleByPosition = (position: Position) => {
-    switch (position) {
-        case 'top':
-            return top;
-        case 'bottom':
-            return bottom;
-        case 'left':
-            return left;
-        case 'right':
-            return right;
-    }
-};
-
-const bottom = css<TStyleProps>`
-    background: ${color.blueDark};
-    bottom: -0.25rem;
-    left: 50%;
-    position: absolute;
-    transform: translateX(-50%) translateY(100%);
-    &:after {
-        position: absolute;
-        content: '';
-        bottom: 100%;
-        transform: translateX(${(p) => (p.move ? `${p.move}%` : '-50%')})
-            translateY(0%);
-        border: ${arrowSize} solid transparent;
-        border-bottom-color: ${color.blueDark};
-    }
-`;
-
-const left = css<TStyleProps>`
-    left: -0.5rem;
-    position: absolute;
-    top: 50%;
-    transform: translateX(-100%) translateY(-50%);
-    &:after {
-        position: absolute;
-        content: '';
-        left: 100%;
-        transform: translateY(${(p) => (p.move ? `${p.move}%` : '-50%')});
-        border: ${arrowSize} solid transparent;
-        border-left-color: ${color.blueDark};
-    }
-`;
-
-const right = css<TStyleProps>`
-    position: absolute;
-    right: -0.5rem;
-    top: 50%;
-    transform: translateX(100%) translateY(-50%);
-    &:after {
-        position: absolute;
-        content: '';
-        right: 100%;
-        transform: translateY(${(p) => (p.move ? `${p.move}%` : '-50%')});
-        border: ${arrowSize} solid transparent;
-        border-right-color: ${color.blueDark};
-    }
-`;
-
-const top = css<TStyleProps>`
-    left: 50%;
-    position: absolute;
-    top: -0.5rem;
-    transform: translateX(-50%) translateY(-100%);
-    &:after {
-        position: absolute;
-        content: '';
-        bottom: 0;
-        transform: translateX(${(p) => (p.move ? `${p.move}%` : '-50%')})
-            translateY(100%);
-        border: ${arrowSize} solid transparent;
-        border-top-color: ${color.blueDark};
-    }
-`;
-
-export const DivStyledArrow = styled.div<TStyleProps>`
-    z-index: 999;
-    ${(p) => (p.position ? getContainerStyleByPosition(p.position) : '')}
-`;
-
-export const DivStyledFlex = styled.div`
+export const StyledSelectParentDiv = styled.div<
+    Pick<IDropdown, 'width' | 'isDisabled'>
+>`
+    ${resetCSS}
+    ${fonts.text}
     display: flex;
     flex-direction: column;
+    row-gap: 16px;
+    height: fit-content;
     position: relative;
-    width: max-content;
+    ${(props) => props.isDisabled && 'opacity: 50%;'}
 `;
 
-export const DivStyledDropdown = styled.div<TStyleProps>`
-    background: ${color.blueDark};
-    border-radius: 20px;
-    height: auto;
-    overflow: hidden;
-    position: absolute;
-    width: max-content;
-    z-index: 999;
-    ${(p) => getContainerStyleByPosition(p.position)}
-`;
+interface IStyledSelectedDiv {
+    isOpen: boolean;
+    width: string;
+}
 
-export const DivStyledChild = styled.div`
+export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
+    width: ${(props) => props.width};
+    height: 40px;
+    min-width: fit-content;
+    min-height: fit-content;
+    border-radius: 16px;
+    border: 1px solid #c5cdd9;
     cursor: pointer;
-    height: auto;
-    width: 100%;
-
-    :hover {
-        background: ${color.blueDark2};
+    transition: all 0.3s ease;
+    outline: 0px solid transparent;
+    & > div {
+        transition: all 0.3s ease;
+        color: inherit;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        grid-gap: 8px;
+        & :nth-child(2) {
+            margin-right: auto;
+        }
+        & :nth-child(3) {
+            margin-left: auto;
+        }
     }
+    &:hover {
+        border-color: #9eccea;
+        color: #2e7daf;
+    }
+    &:focus {
+        border: 2px solid #9eccea;
+        color: #2e7daf;
+    }
+    ${(props) =>
+        props.isOpen &&
+        `outline: 4px solid rgba(158, 204, 234, 0.3); border: 1px solid #2e7daf;
+`};
+`;
+
+export const DivStyledOptionsContainer = styled.div<Pick<IDropdown, 'width'>>`
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 56px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f2f6ff;
+    width: ${(props) => props.width};
+    padding: 8px 0px 8px 0px;
+    border-radius: 16px;
+    border: 2px solid #9eccea;
+    z-index: 999;
+`;
+
+export const DivStyledOptionItem = styled.div`
+    transition: all 0.3s ease;
+    padding: 6px 16px 6px 16px;
+    cursor: pointer;
+    color: #041836;
+    display: flex;
+    grid-gap: 8px;
+    &:hover {
+        opacity: 0.5;
+    }
+`;
+
+export const DivStyledNoData = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0px;
 `;

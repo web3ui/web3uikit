@@ -1,42 +1,92 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
-import { fireEvent, waitFor, screen } from '@testing-library/react';
 import * as stories from './Dropdown.stories';
-import 'jest-styled-components';
+const { Default, ControlledState, NonFixedLabel, Iconless } =
+    composeStories(stories);
 
-const { DropdownSelection } = composeStories(stories);
-
-describe('Default', () => {
-    let container: HTMLDivElement;
-    const dropdownParentId = 'dropdown-parent-test-id';
-    const dropdownElementId = 'element-test-id';
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<DropdownSelection position={'bottom'} />, container);
+describe('default', () => {
+    it('renders', () => {
+        render(<Default />);
+        const element = screen.getByTestId('popoverSelect');
+        expect(element).toBeDefined();
     });
 
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+    it('renders label', () => {
+        render(<Default />);
+        const label = Default.args?.label?.trim();
+        const element = screen.getAllByText(`${label}`);
+        expect(element).toBeDefined();
     });
 
-    it('should render the parent', () => {
-        const element = container.querySelector(
-            `[data-testid="${dropdownParentId}"]`,
-        );
-        expect(element).not.toBeNull();
+    it('toggles select', () => {
+        const { rerender } = render(<Default />);
+        const element = screen.getByTestId(`popoverSelect`);
+        fireEvent.click(element);
+        rerender(<Default />);
+        const RenderOptions = screen.getByTestId('popoverSelect');
+        expect(RenderOptions).toBeDefined();
+    });
+});
+
+describe('Controlled State', () => {
+    it('renders', () => {
+        render(<ControlledState />);
+        const element = screen.getByTestId('popoverSelect');
+        expect(element).toBeDefined();
+    });
+    it('toggles select', () => {
+        const { rerender } = render(<ControlledState />);
+        const element = screen.getByTestId(`popoverSelect`);
+        fireEvent.click(element);
+        rerender(<ControlledState />);
+        const RenderOptions = screen.getByTestId('popoverSelect');
+        expect(RenderOptions).toBeDefined();
+    });
+});
+
+describe('NonFixedLabel', () => {
+    it('renders', () => {
+        render(<NonFixedLabel />);
+        const element = screen.getByTestId('popoverSelect');
+        expect(element).toBeDefined();
     });
 
-    it('should display the menu on hover', async () => {
-        fireEvent.mouseOver(screen.getByTestId(dropdownParentId));
+    it('renders label', () => {
+        render(<NonFixedLabel />);
+        const element = screen.getAllByText(`Server:`);
+        expect(element).toBeDefined();
+    });
 
-        await waitFor(() => screen.getByTestId(dropdownParentId));
-        expect(
-            container.querySelector(`[data-testid="${dropdownElementId}"]`)
-                ?.innerHTML,
-        ).not.toBeNull();
+    it('toggles select', () => {
+        const { rerender } = render(<NonFixedLabel />);
+        const element = screen.getByTestId(`popoverSelect`);
+        fireEvent.click(element);
+        rerender(<NonFixedLabel />);
+        const RenderOptions = screen.getByTestId('popoverSelect');
+        expect(RenderOptions).toBeDefined();
+    });
+});
+
+describe('IconLess', () => {
+    it('renders', () => {
+        render(<Iconless />);
+        const element = screen.getByTestId('popoverSelect');
+        expect(element).toBeDefined();
+    });
+
+    it('renders label', () => {
+        render(<Iconless />);
+        const element = screen.getAllByText(`Server:`);
+        expect(element).toBeDefined();
+    });
+
+    it('toggles select', () => {
+        const { rerender } = render(<Iconless />);
+        const element = screen.getByTestId(`popoverSelect`);
+        fireEvent.click(element);
+        rerender(<Iconless />);
+        const RenderOptions = screen.getByTestId('popoverSelect');
+        expect(RenderOptions).toBeDefined();
     });
 });

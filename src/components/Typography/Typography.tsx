@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { CopyButton } from '../CopyButton';
+import FontStyles from './fonts/Fonts';
 import { TypographyProps, variantType } from './types';
 import { getTypographyStyle } from './Typography.styles';
 
@@ -33,16 +34,18 @@ const DynamicText = ({
     copyable,
     children,
     onCopy = () => {},
-    ...otherProps
 }: TypographyProps) => {
     const Tag = getTag(variant);
 
     return (
         // @ts-ignore
-        <Tag {...otherProps}>
-            {children}
-            {copyable && <CopyButton text={children} onCopy={onCopy} />}
-        </Tag>
+        <>
+            <FontStyles />
+            <Tag>
+                {children}
+                {copyable && <CopyButton text={children} onCopy={onCopy} />}
+            </Tag>
+        </>
     );
 };
 

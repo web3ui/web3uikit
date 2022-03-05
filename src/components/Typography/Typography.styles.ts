@@ -1,3 +1,4 @@
+import { styled } from '@storybook/theming';
 import { css } from 'styled-components';
 import color from '../../styles/colors';
 import type { TypographyProps, variantType, weightType } from './types';
@@ -45,7 +46,6 @@ const text = css`
 
 const heading = css`
     -webkit-font-smoothing: antialiased;
-    font-family: 'Argentum Sans';
     color: ${color.blueDark};
     fill: ${color.blueDark};
     font-style: normal;
@@ -125,6 +125,7 @@ const body16 = css`
 
 const italicFont = css`
     font-style: italic;
+    font-family: 'ArgentumSansThinItalic';
 `;
 
 const ibm = css`
@@ -158,6 +159,68 @@ export const getFontStyle = (variant: variantType) => {
             return body16;
     }
 };
+
+export const TypographyCss = css`
+    @font-face {
+        font-family: Argentum Sans;
+        src: url('./fonts/ArgentumSans-Black.woff') format('woff');
+        font-weight: 800;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: Argentum Sans;
+        src: url('./fonts/ArgentumSans-Bold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: Argentum Sans;
+        src: url('./fonts/ArgentumSans-Light.woff') format('woff');
+        font-weight: 200;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: Argentum Sans;
+        src: url('./fonts/ArgentumSans-LightItalic.woff') format('woff');
+        font-weight: 200;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: Argentum Sans;
+        src: url('./fonts/ArgentumSans-Medium.woff') format('woff');
+        font-weight: 500;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: Argentum Sans;
+        src: url('./fonts/ArgentumSans-MediumItalic.woff') format('woff');
+        font-weight: 500;
+        font-style: italic;
+    }
+    @font-face {
+        font-family: Argentum Sans;
+        src: url('./fonts/ArgentumSans-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: Argentum Sans;
+        src: url('./fonts/ArgentumSans-SemiBold.woff') format('woff');
+        font-weight: 600;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: Argentum Sans;
+        src: url('./fonts/ArgentumSans-SemiBoldItalic.woff') format('woff');
+        font-weight: 600;
+        font-style: italic;
+    }
+`;
+
+export const SpanTypographyWrapper = styled.span`
+    @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100;200;300;400;600;700&display=swap');
+    font-family: 'Smooch Sans', sans-serif;
+`;
 
 export const getTypographyStyle = (p: TypographyProps) => css`
     ${getFontStyle(p.variant || 'body16')};

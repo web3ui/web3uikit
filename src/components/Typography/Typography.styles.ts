@@ -160,68 +160,12 @@ export const getFontStyle = (variant: variantType) => {
     }
 };
 
-export const TypographyCss = css`
-    @font-face {
-        font-family: Argentum Sans;
-        src: url('./fonts/ArgentumSans-Black.woff') format('woff');
-        font-weight: 800;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: Argentum Sans;
-        src: url('./fonts/ArgentumSans-Bold.woff') format('woff');
-        font-weight: 700;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: Argentum Sans;
-        src: url('./fonts/ArgentumSans-Light.woff') format('woff');
-        font-weight: 200;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: Argentum Sans;
-        src: url('./fonts/ArgentumSans-LightItalic.woff') format('woff');
-        font-weight: 200;
-        font-style: italic;
-    }
-    @font-face {
-        font-family: Argentum Sans;
-        src: url('./fonts/ArgentumSans-Medium.woff') format('woff');
-        font-weight: 500;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: Argentum Sans;
-        src: url('./fonts/ArgentumSans-MediumItalic.woff') format('woff');
-        font-weight: 500;
-        font-style: italic;
-    }
-    @font-face {
-        font-family: Argentum Sans;
-        src: url('./fonts/ArgentumSans-Regular.woff') format('woff');
-        font-weight: 400;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: Argentum Sans;
-        src: url('./fonts/ArgentumSans-SemiBold.woff') format('woff');
-        font-weight: 600;
-        font-style: normal;
-    }
-    @font-face {
-        font-family: Argentum Sans;
-        src: url('./fonts/ArgentumSans-SemiBoldItalic.woff') format('woff');
-        font-weight: 600;
-        font-style: italic;
-    }
-`;
-
 export const SpanTypographyWrapper = styled.span`
     @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100;200;300;400;600;700&display=swap');
     font-family: 'Smooch Sans', sans-serif, system, -apple-system,
         '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI',
         'Helvetica Neue', 'Lucida Grande', sans-serif;
+    font-display: 'block';
 `;
 
 export const getTypographyStyle = (p: TypographyProps) => css`

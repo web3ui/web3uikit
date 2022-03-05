@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-    StyledNoData,
-    StyledOptionItemDiv,
-    StyledOptionsContainer,
-    StyledSelectedDiv,
+    DivStyledNoData,
+    DivStyledOptionItem,
+    DivStyledOptionsContainer,
+    DivStyledSelected,
     StyledSelectParentDiv,
 } from './Dropdown.styles';
 import { useState, useEffect } from 'react';
@@ -50,20 +50,20 @@ const Dropdown: React.FC<IDropdown> = ({
             (options.length == 1 && selectedIndex != null && hideSelected)
         ) {
             return (
-                <StyledOptionsContainer width={width}>
-                    <StyledNoData>
+                <DivStyledOptionsContainer width={width}>
+                    <DivStyledNoData>
                         <Illustration
                             logo="looking"
                             width={'100%'}
                             height={'100px'}
                         />
                         <span>No Data</span>
-                    </StyledNoData>
-                </StyledOptionsContainer>
+                    </DivStyledNoData>
+                </DivStyledOptionsContainer>
             );
         }
         return (
-            <StyledOptionsContainer
+            <DivStyledOptionsContainer
                 data-testid="optionsContainer"
                 width={width}
             >
@@ -74,7 +74,7 @@ const Dropdown: React.FC<IDropdown> = ({
                             !hideSelected,
                     )
                     .map((option) => (
-                        <StyledOptionItemDiv
+                        <DivStyledOptionItem
                             onClick={() => {
                                 handleSelectOptionClick(option);
                             }}
@@ -82,9 +82,9 @@ const Dropdown: React.FC<IDropdown> = ({
                         >
                             {option?.prefix}
                             {option.label}
-                        </StyledOptionItemDiv>
+                        </DivStyledOptionItem>
                     ))}
-            </StyledOptionsContainer>
+            </DivStyledOptionsContainer>
         );
     };
 
@@ -94,7 +94,7 @@ const Dropdown: React.FC<IDropdown> = ({
             data-testid="popoverSelect"
             isDisabled={isDisabled}
         >
-            <StyledSelectedDiv
+            <DivStyledSelected
                 width={width}
                 onClick={() => {
                     if (!isDisabled) {
@@ -129,7 +129,7 @@ const Dropdown: React.FC<IDropdown> = ({
                         }}
                     />
                 </div>
-            </StyledSelectedDiv>
+            </DivStyledSelected>
             {isOpen && <RenderOptions />}
         </StyledSelectParentDiv>
     );

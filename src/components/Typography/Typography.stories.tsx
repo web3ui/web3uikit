@@ -103,5 +103,5 @@ export const Copyable = Template.bind({});
 Copyable.args = {
     children: 'Copyable Text 222',
     copyable: true,
-    variant: 'h1',
+    variant: 'body18',
 };

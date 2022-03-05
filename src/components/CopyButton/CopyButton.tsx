@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import color from '../../styles/colors';
 import { Icon, iconTypes } from '../Icon';
-import { CopyIconStyled } from './CopyButton.styles';
+import { ButtonStyled } from './CopyButton.styles';
 import { CopiedValue, CopyButtonProps, CopyFn } from './types';
 
 export const useCopyToClipboard = (): [CopiedValue, CopyFn] => {
@@ -28,6 +28,7 @@ export const useCopyToClipboard = (): [CopiedValue, CopyFn] => {
 
 const CopyButton: FC<CopyButtonProps> = ({
     text,
+    iconSize,
     onCopy = () => {},
     revertIn = 3000,
 }) => {
@@ -43,20 +44,21 @@ const CopyButton: FC<CopyButtonProps> = ({
     };
 
     return (
-        <CopyIconStyled
-            data-testid="copy-icon"
+        <ButtonStyled
             className="input_copy"
+            data-testid="copy-icon"
+            iconSize={iconSize}
             onClick={(e) => {
                 onCopy(e);
                 copyToClipboard();
             }}
         >
-            {value ? (
-                <Icon svg={iconTypes.check} fill={color.green} />
-            ) : (
-                <Icon svg={iconTypes.copy} />
-            )}
-        </CopyIconStyled>
+            <Icon
+                fill={value ? color.green : color.blue}
+                size={iconSize}
+                svg={value ? iconTypes.check : iconTypes.copy}
+            />
+        </ButtonStyled>
     );
 };
 

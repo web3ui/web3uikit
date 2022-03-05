@@ -219,7 +219,9 @@ export const TypographyCss = css`
 
 export const SpanTypographyWrapper = styled.span`
     @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100;200;300;400;600;700&display=swap');
-    font-family: 'Smooch Sans', sans-serif;
+    font-family: 'Smooch Sans', sans-serif, system, -apple-system,
+        '.SFNSText-Regular', 'San Francisco', 'Roboto', 'Segoe UI',
+        'Helvetica Neue', 'Lucida Grande', sans-serif;
 `;
 
 export const getTypographyStyle = (p: TypographyProps) => css`

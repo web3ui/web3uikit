@@ -8,7 +8,7 @@ const parentWrapper = {
 };
 
 export default {
-    title: '4.Ui/Dropdown',
+    title: '5.Popup/Dropdown',
     component: Dropdown,
     argTypes: { onComplete: { action: 'completed' } },
     decorators: [(storyFn) => <div style={parentWrapper}>{storyFn()}</div>],

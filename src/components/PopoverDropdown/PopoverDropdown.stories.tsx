@@ -3,14 +3,14 @@ import React from 'react';
 import color from '../../styles/colors';
 import colors from '../../styles/colors';
 import PopoverDropdown from './PopoverDropdown';
-import DropdownElement from '../DropdownElement/DropdownElement';
+import PopoverElement from '../PopoverElement/PopoverElement';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 
 export default {
-    title: '4.UI/PopoverDropdown',
+    title: '5.Popup/Popover Dropdown',
     component: PopoverDropdown,
-    subcomponents: { DropdownElement },
+    subcomponents: { PopoverElement },
     argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof PopoverDropdown>;
 
@@ -28,11 +28,11 @@ const Template: ComponentStory<typeof PopoverDropdown> = (args) => (
     </div>
 );
 
-export const DropdownSelection = Template.bind({});
-DropdownSelection.args = {
+export const PopoverSelection = Template.bind({});
+PopoverSelection.args = {
     position: 'bottom',
     children: [
-        <DropdownElement
+        <PopoverElement
             key="0"
             height={50}
             width={260}
@@ -44,7 +44,7 @@ DropdownSelection.args = {
             textColor={colors.white}
             onClick={() => alert('Testnet Server')}
         />,
-        <DropdownElement
+        <PopoverElement
             key="1"
             height={50}
             width={260}
@@ -56,7 +56,7 @@ DropdownSelection.args = {
             textColor={colors.white}
             onClick={() => alert('Mainnet Server')}
         />,
-        <DropdownElement
+        <PopoverElement
             key="2"
             height={50}
             width={260}
@@ -74,11 +74,11 @@ DropdownSelection.args = {
     ),
 };
 
-export const DropdownSelectionUser = Template.bind({});
-DropdownSelectionUser.args = {
+export const PopoverSelectionUser = Template.bind({});
+PopoverSelectionUser.args = {
     position: 'bottom',
     children: [
-        <DropdownElement
+        <PopoverElement
             key="4"
             height={50}
             width={260}
@@ -90,7 +90,7 @@ DropdownSelectionUser.args = {
             textColor={colors.white}
             onClick={() => alert('Account Settings')}
         />,
-        <DropdownElement
+        <PopoverElement
             key="5"
             height={50}
             width={260}
@@ -102,7 +102,7 @@ DropdownSelectionUser.args = {
             textColor={colors.white}
             onClick={() => alert('Support Page')}
         />,
-        <DropdownElement
+        <PopoverElement
             key="6"
             height={50}
             width={260}

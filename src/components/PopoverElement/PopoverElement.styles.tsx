@@ -37,7 +37,7 @@ const TextStyled = styled.p<
     ${fonts.textBold};
 `;
 
-export const DropdownElementStyles = {
+export const PopoverElementStyles = {
     DivContainerStyled,
     DivImageStyled,
     DivStyled,

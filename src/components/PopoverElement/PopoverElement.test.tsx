@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { fireEvent } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
-import * as stories from './DropdownElement.stories';
+import * as stories from './PopoverElement.stories';
 import 'jest-styled-components';
 
 const { Default } = composeStories(stories);

@@ -15,7 +15,7 @@ export * from './components/CryptoLogos';
 export * from './components/DatePicker';
 export * from './components/Dropdown';
 export * from './components/PopoverDropdown';
-export * from './components/DropdownElement';
+export * from './components/PopoverElement';
 export * from './components/Form';
 export * from './components/Icon';
 export * from './components/Illustrations';

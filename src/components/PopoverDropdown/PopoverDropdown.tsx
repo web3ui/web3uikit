@@ -7,7 +7,7 @@ import {
     DivStyledChild,
 } from './PopoverDropdown.styles';
 
-const Dropdown: React.FC<PopoverDropdownProps> = ({
+const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
     children,
     id,
     move,
@@ -41,4 +41,4 @@ const Dropdown: React.FC<PopoverDropdownProps> = ({
     );
 };
 
-export default Dropdown;
+export default PopoverDropdown;

@@ -3,6 +3,7 @@ import Typography from './Typography';
 import React from 'react';
 import color from '../../styles/colors';
 import { NotificationProvider, useNotification } from '../Notification';
+import './fonts/fonts.css';
 
 export default {
     title: '4.UI/Typography',

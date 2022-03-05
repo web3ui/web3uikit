@@ -1,2 +1,2 @@
-export { default as CopyButton } from './CopyButton';
+export { default as CopyButton, useCopyToClipboard } from './CopyButton';
 export type { CopyButtonProps } from './types';

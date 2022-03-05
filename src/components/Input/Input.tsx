@@ -126,12 +126,8 @@ const Input: React.FC<InputProps> = ({
                 pattern={validation?.regExp}
                 placeholder={placeholder}
                 required={validation?.required}
-                type={type}
-                value={
-                    isInputHidden
-                        ? currentValue.replace(/./g, '*')
-                        : currentValue
-                }
+                type={isInputHidden ? 'password' : type}
+                value={currentValue}
             />
             {label && (
                 <LabelStyled

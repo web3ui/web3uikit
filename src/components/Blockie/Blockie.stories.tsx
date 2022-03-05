@@ -21,9 +21,9 @@ const Template: ComponentStory<typeof Blockie> = (args: BlockieProps) => (
     <Blockie {...args} />
 );
 
-export const Connected = Template.bind({});
-
 export const CustomSeed = Template.bind({});
 CustomSeed.args = {
     seed: '0x0000000000000000000000000000000000000000',
 };
+
+export const Connected = Template.bind({});

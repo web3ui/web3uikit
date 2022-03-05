@@ -16,6 +16,10 @@ export interface IRowProps {
      */
     justifyItems?: justifyStyles;
     /**
+     * Width Of Row by default 100% of parent container size
+     */
+    width?: number;
+    /**
      * To specify the gap between each row element
      */
     colGap?: number;

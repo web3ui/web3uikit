@@ -8,9 +8,17 @@ import { Input } from '../Input';
 import { useArgs } from '@storybook/addons';
 import { Button } from '../Button';
 
+const hasPositionAbsoluteFix = {
+    transform: 'scale(1)',
+    height: '90vh',
+};
+
 export default {
     title: '5.Popup/Modal',
     component: Modal,
+    decorators: [
+        (storyFn) => <div style={hasPositionAbsoluteFix}>{storyFn()}</div>,
+    ],
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => {
@@ -186,7 +194,7 @@ CustomOkColor.args = {
 
 export const MaxHeight = Template.bind({});
 MaxHeight.args = {
-    id: 'regular',
+    id: 'height',
     title: 'If the modal wont fix in view it becomes scrollable',
     isVisible: true,
     children: [
@@ -212,4 +220,15 @@ MaxHeight.args = {
             <p>Moralis web3uiKit will be PAMP!</p>
         </div>,
     ],
+};
+
+export const CustomWidth = Template.bind({});
+CustomWidth.args = {
+    id: 'width',
+    title: 'You can pass any valid CSS value as width',
+    isVisible: true,
+    children: [
+        <p>this Modal is 300px width (and will scale down with screen size)</p>,
+    ],
+    width: '300px',
 };

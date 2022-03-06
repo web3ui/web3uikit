@@ -32,6 +32,7 @@ export const HeaderStyled = styled.header`
 
     h3 {
         color: ${colors.blue};
+        padding-right: 8px;
     }
 
     button {

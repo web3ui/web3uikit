@@ -25,7 +25,7 @@ const Modal: React.FC<ModalProps> = ({
     onCloseButtonPressed,
     onOk,
     title,
-    width = '80%',
+    width = '70vw',
 }: ModalProps) => (
     <DivStyled id={id} isVisible={isVisible} data-testid="modal-test-id">
         <DivStyledWrap width={width}>

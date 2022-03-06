@@ -70,4 +70,9 @@ export interface ModalProps {
      * set title of modal
      */
     title?: string;
+
+    /**
+     * set a custom width for modal with any CSS value. EG: 70%, 60vw, 400px
+     */
+    width?: string;
 }

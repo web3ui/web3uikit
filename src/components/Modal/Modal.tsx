@@ -3,11 +3,11 @@ import { ModalProps } from './types';
 import Button from '../Button/Button';
 import { iconTypes } from '../Icon/collection';
 import {
-    ModalHeader,
-    ModalStyled,
-    ModalFooter,
-    ModalContent,
-    ModalWrapperStyled,
+    HeaderStyled,
+    DivStyledWrap,
+    FooterStyled,
+    DivStyledContent,
+    DivStyled,
 } from './Modal.styles';
 
 const Modal: React.FC<ModalProps> = ({
@@ -25,14 +25,11 @@ const Modal: React.FC<ModalProps> = ({
     onCloseButtonPressed,
     onOk,
     title,
+    width = '70vw',
 }: ModalProps) => (
-    <ModalWrapperStyled
-        id={id}
-        isVisible={isVisible}
-        data-testid="modal-test-id"
-    >
-        <ModalStyled>
-            <ModalHeader data-testid={'modal-header-test-id'}>
+    <DivStyled id={id} isVisible={isVisible} data-testid="modal-test-id">
+        <DivStyledWrap width={width}>
+            <HeaderStyled data-testid={'modal-header-test-id'}>
                 <h3>{title}</h3>
                 <Button
                     data-testid={'modal-close-test-id'}
@@ -47,14 +44,17 @@ const Modal: React.FC<ModalProps> = ({
                     }
                     theme={'outline'}
                 />
-            </ModalHeader>
+            </HeaderStyled>
 
-            <ModalContent id={'content'} data-testid={'modal-content-test-id'}>
+            <DivStyledContent
+                id={'content'}
+                data-testid={'modal-content-test-id'}
+            >
                 {children}
-            </ModalContent>
+            </DivStyledContent>
 
             {hasFooter && (
-                <ModalFooter
+                <FooterStyled
                     data-testid={'modal-footer-test-id'}
                     hasCancel={hasCancel}
                 >
@@ -87,10 +87,10 @@ const Modal: React.FC<ModalProps> = ({
                         text={okText}
                         theme={okButtonColor ? 'colored' : 'primary'}
                     />
-                </ModalFooter>
+                </FooterStyled>
             )}
-        </ModalStyled>
-    </ModalWrapperStyled>
+        </DivStyledWrap>
+    </DivStyled>
 );
 
 export default Modal;

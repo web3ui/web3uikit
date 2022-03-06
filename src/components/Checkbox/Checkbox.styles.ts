@@ -14,6 +14,7 @@ export const inputStyles = css`
 export const labelStyles = css`
     ${resetCSS};
     ${font.text};
+    cursor: pointer;
     display: block;
     margin-bottom: 4px;
     overflow: hidden;

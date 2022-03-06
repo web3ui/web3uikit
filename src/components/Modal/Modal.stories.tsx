@@ -183,3 +183,33 @@ CustomOkColor.args = {
         </p>,
     ],
 };
+
+export const MaxHeight = Template.bind({});
+MaxHeight.args = {
+    id: 'regular',
+    title: 'If the modal wont fix in view it becomes scrollable',
+    isVisible: true,
+    children: [
+        <div
+            key={'0'}
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+            }}
+        >
+            <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+        </div>,
+    ],
+};

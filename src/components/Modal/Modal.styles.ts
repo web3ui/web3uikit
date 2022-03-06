@@ -3,21 +3,23 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { ModalProps } from './types';
 
-type TStyleProps = Pick<ModalProps, 'isVisible' | 'hasCancel'>;
+type TStyleProps = Pick<ModalProps, 'isVisible' | 'hasCancel' | 'width'>;
 
-export const ModalStyled = styled.div`
+export const DivStyledWrap = styled.div<TStyleProps>`
     ${fonts.text};
     background-color: ${colors.white};
-    box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
+    left: 50%;
+    max-height: 96vh;
+    overflow: auto;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: ${(p) => p.width};
 `;
 
-export const ModalHeader = styled.div`
+export const HeaderStyled = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,20 +33,24 @@ export const ModalHeader = styled.div`
     h3 {
         color: ${colors.blue};
     }
+
+    button {
+        min-width: 30px;
+    }
 `;
 
-export const ModalContent = styled.div`
+export const DivStyledContent = styled.div`
     padding: 5px 32px 15px;
 `;
 
-export const ModalFooter = styled.div<TStyleProps>`
+export const FooterStyled = styled.footer<TStyleProps>`
     border-top: 1px solid ${colors.paleBlue2};
     display: flex;
     padding: 15px 32px 20px;
     justify-content: ${(p) => (p.hasCancel ? 'space-between' : 'flex-end')};
 `;
 
-export const ModalWrapperStyled = styled.div<TStyleProps>`
+export const DivStyled = styled.div<TStyleProps>`
     ${(p) => (p.isVisible ? 'display: grid;' : 'display: none;')};
     background: rgba(0, 0, 0, 0.3);
     bottom: 0;

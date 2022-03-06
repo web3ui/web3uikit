@@ -15,6 +15,8 @@ export const ButtonStyled = styled.button<Pick<CopyButtonProps, 'iconSize'>>`
         height: 100%;
         transition: fill 0.2s ease-out;
         width: 100%;
+        max-width: fit-content;
+        min-width: fit-content;
     }
 
     &:hover > svg {

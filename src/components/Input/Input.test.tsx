@@ -445,7 +445,6 @@ describe('Input - Number', () => {
 describe('Input - Password', () => {
     const testLabel = PasswordInput?.args?.label;
     const testName = PasswordInput?.args?.name;
-    const testType = PasswordInput?.args?.type;
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -485,7 +484,7 @@ describe('Input - Password', () => {
             `[data-testid="${testInputId}"]`,
         );
         expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
+        input && expect(input.type).toBe('text');
     });
 
     it('renders input with the name passed', () => {
@@ -764,7 +763,7 @@ describe('PrefixCopyableHidden - Text', () => {
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
-        expect(input?.type).toBe('password');
+        expect(input?.type).toBe('text');
     });
 });
 

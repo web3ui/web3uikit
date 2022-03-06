@@ -20,7 +20,6 @@ const Input: React.FC<InputProps> = ({
     hasCopyButton = false,
     id,
     inputHidden = false,
-    isHidable = false,
     label,
     name,
     onChange,
@@ -37,15 +36,21 @@ const Input: React.FC<InputProps> = ({
 }: InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
     const [currentState, setCurrentState] = useState(state);
+    const [mainType, setMainType] = useState(type);
     const [isInputHidden, setIsInputHidden] = useState(inputHidden);
     const [invalidMessage, setInvalidMessage] = useState(errorMessage);
 
     useEffect(() => setIsInputHidden(inputHidden), [inputHidden]);
     useEffect(() => setCurrentState(state), [state]);
+    useEffect(() => setMainType(type), [type]);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
         onChange && onChange(event);
+    };
+
+    const canToggleHideInput = (): boolean => {
+        return mainType === 'password';
     };
 
     const toggleHideInput = (): void => {
@@ -126,7 +131,13 @@ const Input: React.FC<InputProps> = ({
                 pattern={validation?.regExp}
                 placeholder={placeholder}
                 required={validation?.required}
-                type={isInputHidden ? 'password' : type}
+                type={
+                    mainType !== 'password'
+                        ? type
+                        : isInputHidden
+                        ? 'password'
+                        : 'text'
+                }
                 value={currentValue}
             />
             {label && (
@@ -147,7 +158,7 @@ const Input: React.FC<InputProps> = ({
                 </StrongStyled>
             )}
 
-            {isHidable && (
+            {canToggleHideInput() && (
                 <VisibilityIcon
                     className="input_visibility"
                     onClick={() => toggleHideInput()}

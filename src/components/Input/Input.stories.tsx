@@ -75,7 +75,6 @@ PasswordInput.args = {
 export const PrefixCopyableHidableActive = Template.bind({});
 PrefixCopyableHidableActive.args = {
     hasCopyButton: true,
-    isHidable: true,
     label: 'Label text',
     name: 'Test text Input',
     prefixIcon: iconTypes.server,
@@ -85,7 +84,6 @@ PrefixCopyableHidableActive.args = {
 export const PrefixCopyableHidden = Template.bind({});
 PrefixCopyableHidden.args = {
     hasCopyButton: true,
-    isHidable: true,
     inputHidden: true,
     label: 'Label text',
     name: 'Test text Input',
@@ -105,7 +103,6 @@ PrefixCopyable.args = {
 
 export const PrefixHidable = Template.bind({});
 PrefixHidable.args = {
-    isHidable: true,
     label: 'Label text',
     name: 'Test text Input',
     prefixIcon: iconTypes.server,
@@ -130,7 +127,6 @@ Copyable.args = {
 
 export const Hidable = Template.bind({});
 Hidable.args = {
-    isHidable: true,
     label: 'Label text',
     name: 'Test text Input',
     type: 'text',
@@ -139,7 +135,6 @@ Hidable.args = {
 export const PrefixCopyableHidableDisabled = Template.bind({});
 PrefixCopyableHidableDisabled.args = {
     hasCopyButton: true,
-    isHidable: true,
     label: 'Label text',
     name: 'Test text Input',
     prefixIcon: iconTypes.server,

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CheckboxProps } from '.';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
@@ -22,6 +22,8 @@ const Checkbox: React.FC<CheckboxProps> = ({
         if (disabled) return;
         onChange(event);
     };
+
+    useEffect(() => setIsChecked(checked), [checked]);
 
     return (
         <StyledLabel

@@ -45,6 +45,12 @@ Normal.args = {
     text: 'New',
 };
 
+export const Danger = Template.bind({});
+Danger.args = {
+    text: 'New',
+    state: 'danger',
+};
+
 export const Success = Template.bind({});
 Success.args = {
     text: 'New',
@@ -55,10 +61,4 @@ export const Warning = Template.bind({});
 Warning.args = {
     text: 'New',
     state: 'warning',
-};
-
-export const Danger = Template.bind({});
-Danger.args = {
-    text: 'New',
-    state: 'danger',
 };

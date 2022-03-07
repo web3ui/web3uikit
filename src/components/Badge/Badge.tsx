@@ -1,20 +1,19 @@
 import React from 'react';
-import { Typography } from '../Typography';
-import { DivStyled } from './Badge.styles';
 import { BadgeProps } from './types';
+import { DivStyled } from './Badge.styles';
+import { Typography } from '../Typography';
 
 const Badge: React.FC<BadgeProps> = ({
-    text,
     state = 'normal',
+    text,
     textVariant = 'body16',
-    ...otherProps
 }) => {
     return (
-        <DivStyled state={state} data-testid="test-badge-id" {...otherProps}>
+        <DivStyled data-testid="test-badge-id" state={state}>
             <Typography
-                variant={textVariant}
                 color="white"
                 data-testid="test-badge-text"
+                variant={textVariant}
                 weight="bold"
             >
                 {text}

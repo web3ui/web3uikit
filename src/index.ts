@@ -1,6 +1,7 @@
 // Components
 export * from './components/Accordion';
 export * from './components/Avatar';
+export * from './components/Badge';
 export * from './components/BannerStrip';
 export * from './components/Blockie';
 export * from './components/Breadcrumbs';

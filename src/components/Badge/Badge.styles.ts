@@ -1,19 +1,19 @@
-import styled from 'styled-components';
-import resetCSS from '../../styles/reset';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
+import resetCSS from '../../styles/reset';
+import styled from 'styled-components';
 import type { BadgeProps, colorState } from './types';
 
 type TStyleProps = Pick<BadgeProps, 'state'>;
 
 const getBackgroundColor = (type: colorState) => {
     switch (type) {
+        case 'danger':
+            return color.red;
         case 'success':
             return color.green;
         case 'warning':
             return color.yellow;
-        case 'danger':
-            return color.red;
         default:
             return color.blue;
     }

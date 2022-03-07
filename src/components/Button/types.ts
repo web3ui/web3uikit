@@ -72,4 +72,9 @@ export interface ButtonProps {
      * Loading Props, the props to send to the loading component
      */
     loadingProps?: ILoadingProps;
+
+    /**
+     * Border radius prop, allows a button to have a custom border radius
+     */
+    radius?: number;
 }

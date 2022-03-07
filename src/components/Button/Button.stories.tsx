@@ -422,3 +422,14 @@ LoadingButtonCustomProps.args = {
         size: 30,
     },
 };
+
+export const PrimaryWithIconOnlyRound = Template.bind({});
+PrimaryWithIconOnlyRound.args = {
+    icon: iconTypes.plus,
+    iconLayout: 'icon-only',
+    id: 'test-button-primary-icon-only',
+    theme: 'colored',
+    color: 'red',
+    type: 'button',
+    radius: 20,
+};

@@ -232,3 +232,21 @@ CustomWidth.args = {
     ],
     width: '300px',
 };
+
+export const CustomFooter = Template.bind({});
+CustomFooter.args = {
+    title: 'This is a custom Footer Modal',
+    children: [
+        <p
+            style={{
+                fontWeight: 600,
+                marginRight: '1em',
+                textAlign: 'center',
+            }}
+        >
+            Modal Body!
+        </p>,
+    ],
+    hasCancel: false,
+    customFooter: <p id="Custom-Footer">Custom Footer Here</p>,
+};

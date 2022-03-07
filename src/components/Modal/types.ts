@@ -75,4 +75,9 @@ export interface ModalProps {
      * set a custom width for modal with any CSS value. EG: 70%, 60vw, 400px
      */
     width?: string;
+
+    /**
+     * To Have a custom footer
+     */
+    customFooter?: JSX.Element;
 }

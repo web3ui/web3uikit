@@ -25,7 +25,13 @@ import {
 
 type TStyleProps = Pick<
     ButtonProps,
-    'theme' | 'iconLayout' | 'size' | 'color' | 'isFullWidth' | 'isLoading'
+    | 'theme'
+    | 'iconLayout'
+    | 'size'
+    | 'color'
+    | 'isFullWidth'
+    | 'isLoading'
+    | 'radius'
 >;
 
 const getThemeStyles = (theme: string) => {
@@ -105,4 +111,6 @@ export const ButtonStyled = styled.button<TStyleProps>`
     ${(p) => p.iconLayout === 'icon-only' && iconOnlyBorderFix(p.theme)}
 
     ${(p) => p.isLoading && isLoadingMode}
+
+    ${(p) => p.radius && `border-radius: ${p.radius}px`}
 `;

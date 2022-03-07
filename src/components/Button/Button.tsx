@@ -19,6 +19,7 @@ const Button: React.FC<ButtonProps> = ({
     theme,
     type = 'button',
     loadingProps,
+    radius,
 }: ButtonProps) => {
     return (
         <ButtonStyled
@@ -33,6 +34,7 @@ const Button: React.FC<ButtonProps> = ({
             size={size}
             theme={theme}
             type={type}
+            radius={radius}
         >
             {isLoading && <Loading size={15} {...loadingProps} />}
             {icon && <Icon svg={icon} fill="inherit" size={20} />}

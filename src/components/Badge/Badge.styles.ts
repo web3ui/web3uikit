@@ -22,13 +22,13 @@ const getBackgroundColor = (type: colorState) => {
 export const DivStyled = styled.div<TStyleProps>`
     ${resetCSS}
     ${fonts.text}
-    width: min-content;
-    height: min-content;
-    padding: 4px 10px;
-    border-radius: 6px;
-    overflow: hidden;
-    display: flex;
     align-items: center;
+    border-radius: 6px;
+    display: flex;
+    height: min-content;
     justify-content: center;
+    overflow: hidden;
+    padding: 4px 10px;
+    width: min-content;
     background-color: ${({ state = 'normal' }) => getBackgroundColor(state)};
 `;

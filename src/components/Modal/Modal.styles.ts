@@ -61,3 +61,9 @@ export const DivStyled = styled.div<TStyleProps>`
     top: 0;
     z-index: 5;
 `;
+
+export const CustomFooterStyled = styled.footer`
+    border-top: 1px solid ${colors.paleBlue2};
+    display: flex;
+    padding: 15px 32px 20px;
+`;

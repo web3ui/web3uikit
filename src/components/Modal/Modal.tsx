@@ -8,6 +8,7 @@ import {
     FooterStyled,
     DivStyledContent,
     DivStyled,
+    CustomFooterStyled,
 } from './Modal.styles';
 
 const Modal: React.FC<ModalProps> = ({
@@ -26,6 +27,7 @@ const Modal: React.FC<ModalProps> = ({
     onOk,
     title,
     width = '70vw',
+    customFooter,
 }: ModalProps) => (
     <DivStyled id={id} isVisible={isVisible} data-testid="modal-test-id">
         <DivStyledWrap width={width}>
@@ -53,7 +55,7 @@ const Modal: React.FC<ModalProps> = ({
                 {children}
             </DivStyledContent>
 
-            {hasFooter && (
+            {hasFooter && !customFooter && (
                 <FooterStyled
                     data-testid={'modal-footer-test-id'}
                     hasCancel={hasCancel}
@@ -88,6 +90,10 @@ const Modal: React.FC<ModalProps> = ({
                         theme={okButtonColor ? 'colored' : 'primary'}
                     />
                 </FooterStyled>
+            )}
+
+            {customFooter && (
+                <CustomFooterStyled>{customFooter}</CustomFooterStyled>
             )}
         </DivStyledWrap>
     </DivStyled>

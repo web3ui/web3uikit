@@ -51,7 +51,7 @@ export interface StepperProps {
     /**
      * header width
      */
-    headerWidth?: number;
+    headerWidth?: string;
 }
 
 /**

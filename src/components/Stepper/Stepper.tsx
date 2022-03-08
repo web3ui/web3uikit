@@ -26,7 +26,7 @@ const Stepper: React.FC<StepperProps> = ({
     completeTitle = 'all done, nice!',
     completeMessage = 'You should tell the user what to do next, or use the onComplete function to programmatically fire an event',
     onComplete = () => null,
-    headerWidth = 100,
+    headerWidth,
 }) => {
     const [activeStep, setActiveStep] = useState(step);
     const myStepRef = useRef(activeStep);

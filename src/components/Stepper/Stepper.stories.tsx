@@ -63,5 +63,5 @@ SmallerStepperCount.args = {
     step: 1,
     stepData: noNavTestStepData,
     hasNavButtons: false,
-    headerWidth: 40,
+    headerWidth: '40',
 };

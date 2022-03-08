@@ -123,6 +123,6 @@ export const DivStyledHelper = styled.div`
 `;
 
 export const HeaderStyled = styled.header<THeaderStyleProps>`
-    ${(p) => p.headerWidth && `width: ${p.headerWidth}%`};
-    align-self: 'center';
+    ${(p) => p.headerWidth && `max-width: ${p.headerWidth}px`};
+    width: 100%;
 `;

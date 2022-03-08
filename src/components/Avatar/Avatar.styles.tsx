@@ -34,6 +34,10 @@ const DivStyled = styled.div<TStyleProps>`
     text-transform: uppercase;
     width: 40px;
     word-break: break-all;
+    display: flex;
+    flex-direction: 'column';
+    align-items: center;
+    justify-content: center;
 
     span {
         display: none;
@@ -56,9 +60,6 @@ const H4Styled = styled.h4<Pick<AvatarProps, 'textColor'>>`
     ${fonts.textBold700};
     ${resetCSS};
     color: ${(props) => props.color};
-    left: calc(50% - 28px / 2);
-    padding-top: calc(50% - 28px / 2);
-    text-align: center;
 `;
 
 export { DivStyled, H4Styled };

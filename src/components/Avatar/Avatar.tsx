@@ -14,19 +14,16 @@ const Avatar: React.FC<AvatarProps> = ({
     borderRadius,
 }: AvatarProps) => {
     const [bgColor, setBgColor] = useState<string>();
-    useEffect(() => {
+    const getRandomColor = (): string => {
         if (avatarBackground) {
-            setBgColor(avatarBackground);
-            return;
+            return avatarBackground;
         }
         if (theme == 'image' || image) {
-            setBgColor('transparent');
+            return 'transparent';
         }
         const colorArr: string[] = Object.values(color);
-        const randomColor =
-            colorArr[Math.floor(Math.random() * colorArr.length)];
-        setBgColor(randomColor);
-    }, [avatarBackground]);
+        return colorArr[Math.floor(Math.random() * colorArr.length)];
+    };
 
     return (
         <DivStyled
@@ -36,7 +33,7 @@ const Avatar: React.FC<AvatarProps> = ({
             isRounded={isRounded}
             role={theme === 'image' ? 'img' : 'generic'}
             theme={theme}
-            avatarBackground={bgColor}
+            avatarBackground={getRandomColor()}
             textColor={textColor}
             borderRadius={borderRadius}
         >

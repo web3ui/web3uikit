@@ -176,8 +176,6 @@ const Form: React.FC<FormProps> = ({
                 return renderInput(input, 'email', index);
             case 'number':
                 return renderInput(input, 'number', index);
-            case 'date':
-                return renderDatePicker(input, 'date', index);
             case 'box':
                 return renderCheckbox(input, 'box', index);
             case 'switch':
@@ -186,6 +184,8 @@ const Form: React.FC<FormProps> = ({
                 return renderRadioGroup(input, index);
             case 'textarea':
                 return renderTextArea(input, index);
+            case 'date':
+                return renderDatePicker(input, 'date', index);
             default:
                 return;
         }

@@ -23,7 +23,7 @@ const Form: React.FC<FormProps> = ({
         if (form.checkValidity()) {
             const dataReturned = data.map((item) => ({
                 inputName: item.name,
-                inputResult: item.selected || item.value,
+                inputResult: item.selectedCard || item.selected || item.value,
             }));
             onSubmit &&
                 onSubmit({
@@ -35,28 +35,43 @@ const Form: React.FC<FormProps> = ({
         }
     };
 
-    const optionAdded = (index: number, opt: string, isRadio: boolean) => {
-        if (!data[index].selected || isRadio) {
-            data[index].selected = [opt];
+    const optionAdded = (
+        elementIndex: number,
+        opt: string | number,
+        isRadio: boolean,
+    ) => {
+        if (isRadio) {
+            // @ts-ignore:next-line
+            const selectRadioValue = data[elementIndex].options[Number(opt)];
+            if (typeof selectRadioValue === 'string') {
+                data[elementIndex].selected = [selectRadioValue];
+            } else {
+                data[elementIndex].selectedCard = selectRadioValue;
+            }
+            return;
+        }
+
+        if (!data[elementIndex].selected) {
+            data[elementIndex].selected = [String(opt)];
         } else {
-            data[index]?.selected?.push(opt);
+            data[elementIndex]?.selected?.push(String(opt));
         }
     };
 
     const optionToggled = (
         event: React.ChangeEvent<HTMLInputElement>,
-        index: number,
+        elementIndex: number,
         opt: string,
     ) => {
         const isRadio = Boolean(event.target.type === 'radio');
 
         if (event.target.checked) {
-            optionAdded(index, opt, isRadio);
+            optionAdded(elementIndex, opt, isRadio);
         } else {
-            const filtered = data[index]?.selected?.filter(
+            const filtered = data[elementIndex]?.selected?.filter(
                 (item) => item !== opt,
             );
-            data[index].selected = filtered;
+            data[elementIndex].selected = filtered;
         }
     };
 
@@ -94,10 +109,10 @@ const Form: React.FC<FormProps> = ({
             {input.options?.map((opt, i) => (
                 <Checkbox
                     key={`cb_${index}-${i}`}
-                    label={opt}
+                    label={String(opt)}
                     layout={layout}
                     name={input.name}
-                    onChange={(e) => optionToggled(e, index, opt)}
+                    onChange={(e) => optionToggled(e, index, String(opt))}
                     validation={{ required: input.validation?.required }}
                 />
             ))}
@@ -167,8 +182,9 @@ const Form: React.FC<FormProps> = ({
 
             {data.map((input, i) => (
                 <div
-                    data-testid={`form-ele-${i}`}
+                    className="form-item"
                     data-testclass="form-ele"
+                    data-testid={`form-ele-${i}`}
                     key={`form-ele-${i}`}
                 >
                     {renderInputType(input, i)}

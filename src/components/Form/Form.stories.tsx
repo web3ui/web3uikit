@@ -17,6 +17,7 @@ DemoForm.args = {
         onClick: (e) => e.preventDefault,
         theme: 'primary',
     },
+    onSubmit: (e) => console.log(e),
     data: [
         {
             name: 'first name',
@@ -40,8 +41,6 @@ DemoForm.args = {
             value: '',
             validation: {
                 required: true,
-                regExp: validateRegExp.telephoneNumber,
-                regExpInvalidMessage: 'Who ya gonna call?',
             },
         },
         {
@@ -119,4 +118,72 @@ LoginForm.args = {
         },
     ],
     onSubmit: (e) => console.log(e),
+};
+
+export const CreditCardForm = Template.bind({});
+CreditCardForm.args = {
+    title: 'Credit Card Form',
+    id: 'cc-form',
+    buttonConfig: {
+        onClick: (e) => e.preventDefault,
+        theme: 'primary',
+    },
+    onSubmit: (e) => console.log(e),
+    data: [
+        {
+            name: 'creditCards',
+            type: 'radios',
+            value: 'Pick a card',
+            options: [
+                {
+                    id: 'marty-mc-fly-visa-id',
+                    fingerprint: 'foo-bar-visa',
+                    isExpired: false,
+                    name: 'Marty McFly',
+                    brand: 'visa',
+                    lastDigits: '1177',
+                    expiresAt: {
+                        month: '04',
+                        year: '22',
+                    },
+                },
+                {
+                    id: 'marty-mc-fly-master-id',
+                    fingerprint: 'foo-bar-master',
+                    isExpired: false,
+                    name: 'Marty McFly',
+                    brand: 'mastercard',
+                    lastDigits: '1177',
+                    expiresAt: {
+                        month: '11',
+                        year: '24',
+                    },
+                },
+                {
+                    id: 'marty-mc-fly-amex-id',
+                    fingerprint: 'foo-bar-amex',
+                    isExpired: false,
+                    name: 'Marty McFly',
+                    brand: 'amex',
+                    lastDigits: '1177',
+                    expiresAt: {
+                        month: '11',
+                        year: '24',
+                    },
+                },
+                {
+                    id: 'marty-mc-fly-diners-id',
+                    fingerprint: 'foo-bar-diners',
+                    isExpired: false,
+                    name: 'Marty McFly',
+                    brand: 'diners',
+                    lastDigits: '1177',
+                    expiresAt: {
+                        month: '11',
+                        year: '24',
+                    },
+                },
+            ],
+        },
+    ],
 };

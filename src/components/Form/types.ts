@@ -1,4 +1,5 @@
 import { ValidateInput } from '../Input/types';
+import { CreditCardProps } from '../CreditCard';
 import { ButtonProps } from '../Button';
 
 export interface FormProps {
@@ -50,7 +51,7 @@ export type InputDataReturned = {
     /**
      * The data collected from the input
      */
-    inputResult: string[] | string;
+    inputResult: CreditCardProps | string[] | string;
 };
 
 export type DataInput = {
@@ -81,12 +82,17 @@ export type DataInput = {
     /**
      * If you want radios you will need to pass an array of options here
      */
-    options?: string[];
+    options?: string[] | CreditCardProps[];
 
     /**
      * If you radios you will need to pass an array to return your options
      */
     selected?: string[];
+
+    /**
+     * If you pass CreditCardProps for data, expect CreditCardProps returned
+     */
+    selectedCard?: CreditCardProps;
 
     /**
      * You can validate your inputs

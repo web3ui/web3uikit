@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';

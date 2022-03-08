@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Fragment } from 'react';
 import { RadiosProps } from './';
 import { CreditCard, CreditCardProps } from '../CreditCard';
 import {

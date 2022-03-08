@@ -26,7 +26,6 @@ const Avatar: React.FC<AvatarProps> = ({
         const randomColor =
             colorArr[Math.floor(Math.random() * colorArr.length)];
         setBgColor(randomColor);
-        console.log(randomColor);
     }, [avatarBackground]);
 
     return (

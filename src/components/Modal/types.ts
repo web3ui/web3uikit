@@ -69,7 +69,7 @@ export interface ModalProps {
     /**
      * set title of modal
      */
-    title?: string;
+    title?: string | JSX.Element;
 
     /**
      * set a custom width for modal with any CSS value. EG: 70%, 60vw, 400px

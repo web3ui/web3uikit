@@ -42,4 +42,14 @@ export interface IDropdown {
      * Callback for on change
      */
     onChange(selectedOption: OptionProps): void;
+
+    /**
+     * if true will render border outline
+     */
+    hasOutline?: boolean;
+
+    /**
+     * index of selected option by default
+     */
+    defaultOptionIndex?: number;
 }

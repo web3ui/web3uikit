@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import fonts from '../../styles/fonts';
+import styled, { css } from 'styled-components';
+import color from '../../styles/colors';
 import resetCSS from '../../styles/reset';
 import { IDropdown } from './types';
 
@@ -7,18 +7,19 @@ export const StyledSelectParentDiv = styled.div<
     Pick<IDropdown, 'width' | 'isDisabled'>
 >`
     ${resetCSS}
-    ${fonts.text}
     display: flex;
+    fill: ${color.grey};
     flex-direction: column;
-    row-gap: 16px;
     height: fit-content;
     position: relative;
+    row-gap: 16px;
     ${(props) => props.isDisabled && 'opacity: 50%;'}
 `;
 
 interface IStyledSelectedDiv {
     isOpen: boolean;
     width: string;
+    hasOutline: boolean;
 }
 
 export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
@@ -27,10 +28,11 @@ export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
     min-width: fit-content;
     min-height: fit-content;
     border-radius: 16px;
-    border: 1px solid #c5cdd9;
+    border: 1px solid ${(p) => (p.hasOutline ? color.greyLight : 'transparent')};
     cursor: pointer;
     transition: all 0.3s ease;
     outline: 0px solid transparent;
+    color: ${color.blue};
     & > div {
         transition: all 0.3s ease;
         color: inherit;
@@ -46,17 +48,18 @@ export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
         }
     }
     &:hover {
-        border-color: #9eccea;
-        color: #2e7daf;
+        border-color: ${(p) => (p.hasOutline ? color.blueSky : 'transparent')};
     }
     &:focus {
-        border: 2px solid #9eccea;
-        color: #2e7daf;
+        border: 2px solid ${color.blueSky};
     }
     ${(props) =>
         props.isOpen &&
-        `outline: 4px solid rgba(158, 204, 234, 0.3); border: 1px solid #2e7daf;
-`};
+        css`
+            ${props.hasOutline &&
+            'outline: 4px solid rgba(158, 204, 234, 0.3)'};
+            border-color: ${props.hasOutline ? color.blue : 'transparent'};
+        `};
 `;
 
 export const DivStyledOptionsContainer = styled.div<Pick<IDropdown, 'width'>>`
@@ -67,9 +70,9 @@ export const DivStyledOptionsContainer = styled.div<Pick<IDropdown, 'width'>>`
     flex-direction: column;
     background-color: #f2f6ff;
     width: ${(props) => props.width};
-    padding: 8px 0px 8px 0px;
+    padding: 8px;
     border-radius: 16px;
-    border: 2px solid #9eccea;
+    border: 2px solid ${color.blueSky};
     z-index: 999;
 `;
 
@@ -81,7 +84,8 @@ export const DivStyledOptionItem = styled.div`
     display: flex;
     grid-gap: 8px;
     &:hover {
-        opacity: 0.5;
+        background-color: #ebeff9;
+        border-radius: 8px;
     }
 `;
 

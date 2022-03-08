@@ -1,5 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
-import { Radios } from '../Radios';
+import React from 'react';
 import { Logo } from '../Logo';
 import { CreditCardProps } from './types';
 import {
@@ -13,46 +12,29 @@ import { Icon, iconTypes } from '../Icon';
 import colors from '../../styles/colors';
 import { Tooltip } from '../Tooltip';
 
-const CreditCard: FC<CreditCardProps> = ({
+const CreditCard: React.FC<CreditCardProps> = ({
     expiresAt,
-    id,
     isExpired,
     lastDigits,
     name,
-    onPressed = () => {},
-    onRemove = () => {},
-    pressed = false,
+    onRemove,
     brand,
+    pressed,
 }: CreditCardProps) => {
-    const [seleteced, setSelected] = useState<boolean>(pressed);
-    useEffect(() => {
-        setSelected(pressed);
-    }, [pressed]);
     return (
         <DivStyledCreditCard
-            isExpired={isExpired}
             brand={brand}
-            pressed={seleteced}
+            isExpired={isExpired}
+            pressed={pressed}
         >
             <DivStyledFlex>
-                <Radios
-                    setWhichIsChecked={0}
-                    id={id || 'radio-credit-card'}
-                    items={['']}
-                    onChange={() => {
-                        if (!seleteced && !isExpired) {
-                            onPressed();
-                            setSelected(true);
-                        }
-                    }}
-                />
                 <Tooltip
                     position="bottom"
                     children={
                         <Icon
-                            svg={iconTypes.bin}
                             fill={colors.red}
-                            onClick={onRemove}
+                            onClick={() => onRemove && onRemove()}
+                            svg={iconTypes.bin}
                         />
                     }
                     content="Remove"

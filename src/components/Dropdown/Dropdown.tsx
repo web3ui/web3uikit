@@ -114,9 +114,13 @@ const Dropdown: React.FC<IDropdown> = ({
                                 }}
                             />
                         )}
+                        {typeof selectedIndex == 'number' &&
+                            options[selectedIndex]?.prefix &&
+                            options[selectedIndex]?.prefix}
                     </span>
                     <span>
-                        {(isLabelFixed || !selectedIndex) && label}
+                        {(isLabelFixed || typeof selectedIndex != 'number') &&
+                            label}
                         {typeof selectedIndex === 'number' &&
                             showSelected &&
                             options[selectedIndex]?.label}

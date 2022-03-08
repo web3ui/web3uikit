@@ -5,20 +5,20 @@ import { AvatarProps } from './types';
 
 type TStyleProps = Pick<
     AvatarProps,
+    | 'avatarBackground'
+    | 'borderRadius'
     | 'image'
     | 'isRounded'
-    | 'theme'
-    | 'borderRadius'
     | 'textColor'
-    | 'avatarBackground'
+    | 'theme'
 >;
 
 export const roundedEdgeValue = '50%';
 
 const customBackgroundImage = css<TStyleProps>`
+    background-image: url(${(p) => p.image});
     background-position: center;
     background-size: cover;
-    background-image: url(${(p) => p.image});
 `;
 
 const DivStyled = styled.div<TStyleProps>`
@@ -27,13 +27,13 @@ const DivStyled = styled.div<TStyleProps>`
         #ecf5fc 0.52%,
         #cee4f3 100%
     );
+    color: ${(props) => props.textColor};
     height: 40px;
-    width: 40px;
     overflow: hidden;
     position: static;
     text-transform: uppercase;
+    width: 40px;
     word-break: break-all;
-    color: ${(props) => props.textColor};
 
     span {
         display: none;
@@ -51,14 +51,14 @@ const DivStyled = styled.div<TStyleProps>`
 `;
 
 const H4Styled = styled.h4<Pick<AvatarProps, 'textColor'>>`
-    ${resetCSS};
-    ${fonts.openSans};
     ${fonts.h4};
+    ${fonts.openSans};
     ${fonts.textBold700};
+    ${resetCSS};
+    color: ${(props) => props.color};
     left: calc(50% - 28px / 2);
     padding-top: calc(50% - 28px / 2);
     text-align: center;
-    color: ${(props) => props.color};
 `;
 
 export { DivStyled, H4Styled };

@@ -47,4 +47,9 @@ export interface IDropdown {
      * if true will render border outline
      */
     hasOutline?: boolean;
+
+    /**
+     * index of selected option by default
+     */
+    defaultOptionIndex?: number;
 }

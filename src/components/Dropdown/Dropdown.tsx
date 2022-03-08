@@ -14,20 +14,22 @@ import { OptionProps } from '../Select';
 import { Typography } from '../Typography';
 
 const Dropdown: React.FC<IDropdown> = ({
-    options,
-    label,
-    isLabelFixed = true,
-    showSelected = true,
+    defaultOptionIndex,
+    hasOutline = true,
     hideSelected = true,
-    selectedState,
-    width = '250px',
     icon,
     isDisabled = false,
-    hasOutline = true,
+    isLabelFixed = true,
+    label,
     onChange,
+    options,
+    selectedState,
+    showSelected = true,
+    width = '250px',
 }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
+    const [selectedIndex, setSelectedIndex] =
+        useState<number | undefined>(defaultOptionIndex);
     useEffect(() => {
         if (isDisabled) {
             setIsOpen(false);

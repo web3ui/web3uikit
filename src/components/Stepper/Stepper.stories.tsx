@@ -58,10 +58,18 @@ StepsWithoutNav.args = {
     hasNavButtons: false,
 };
 
+export const CustomComplete = Template.bind({});
+CustomComplete.args = {
+    step: 5,
+    stepData: testStepData,
+    completeTitle: 'Custom Complete Title',
+    completeMessage: 'and you can customize this message too',
+};
+
 export const SmallerStepperCount = Template.bind({});
 SmallerStepperCount.args = {
     step: 1,
     stepData: noNavTestStepData,
     hasNavButtons: false,
-    headerWidth: '40',
+    headerWidth: 400,
 };

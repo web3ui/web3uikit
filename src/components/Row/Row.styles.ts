@@ -10,6 +10,7 @@ export const RowDiv = styled.div<IRowProps>`
     width: ${(props) => `${props.width && `${props.width}px`} `};
     gap: ${(props) =>
         props.rowGap ? `${props.rowGap}px ${props.colGap}px` : '15px 15px'};
+    margin-left: ${(props) => props.colGap && `${props.colGap / 2}px`};
     align-items: ${(props) => props.alignItems && props.alignItems};
     justify-content: ${(props) => props.justifyItems && props.justifyItems};
 `;

@@ -22,4 +22,19 @@ export interface AvatarProps {
      * pass a valid url for an image
      */
     image?: string;
+
+    /**
+     * Avatar Background, if not specified we will generate random color
+     */
+    avatarBackground?: string;
+
+    /**
+     * Text Color of avatar
+     */
+    textColor?: string;
+
+    /**
+     * Border Radius of avatar
+     */
+    borderRadius?: number;
 }

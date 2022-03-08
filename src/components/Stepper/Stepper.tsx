@@ -12,6 +12,7 @@ import {
     OrderedListStyled,
     SectionStyled,
     SpanStyled,
+    HeaderStyled,
 } from './Stepper.styles';
 import { H2Styled } from '../../styles/StyledElements';
 import color from '../../styles/colors';
@@ -25,6 +26,7 @@ const Stepper: React.FC<StepperProps> = ({
     completeTitle = 'all done, nice!',
     completeMessage = 'You should tell the user what to do next, or use the onComplete function to programmatically fire an event',
     onComplete = () => null,
+    headerWidth,
 }) => {
     const [activeStep, setActiveStep] = useState(step);
     const myStepRef = useRef(activeStep);
@@ -123,7 +125,12 @@ const Stepper: React.FC<StepperProps> = ({
 
     return (
         <SectionStyled data-testid="test-stepper">
-            <header>{renderStepperNumbers()}</header>
+            <HeaderStyled
+                headerWidth={headerWidth}
+                style={{ alignSelf: 'center' }}
+            >
+                {renderStepperNumbers()}
+            </HeaderStyled>
 
             {activeStep === 0 ? renderPreloader() : renderContent()}
 

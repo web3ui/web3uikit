@@ -2,12 +2,14 @@ import styled from 'styled-components';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
-import { StepNumberProps } from './types';
+import { StepNumberProps, StepperProps } from './types';
 
 type TStyleProps = Pick<
     StepNumberProps,
     'activeStep' | 'thisStep' | 'stepTotal'
 >;
+
+type THeaderStyleProps = Pick<StepperProps, 'headerWidth'>;
 
 export const SectionStyled = styled.section`
     display: flex;
@@ -118,4 +120,9 @@ export const DivStyledHelper = styled.div`
     button {
         margin: 0 auto;
     }
+`;
+
+export const HeaderStyled = styled.header<THeaderStyleProps>`
+    ${(p) => p.headerWidth && `max-width: ${p.headerWidth}px`};
+    width: 100%;
 `;

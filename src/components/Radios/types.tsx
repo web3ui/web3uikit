@@ -1,5 +1,11 @@
+import { CreditCardProps } from '../CreditCard';
+
 export type ValidateRadios = {
     required?: boolean;
+};
+
+export type TRadioLayouts = {
+    isCreditCardMode?: boolean;
 };
 
 export interface RadiosProps {
@@ -11,7 +17,7 @@ export interface RadiosProps {
     /**
      * you must supply radio button items, each of these should be a string
      */
-    items: string[];
+    items: string[] | CreditCardProps[];
 
     /**
      * you can supply a title for the radio group, it will return a HTML legend tag stayed as an H3
@@ -24,7 +30,12 @@ export interface RadiosProps {
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
     /**
-     * set default checked radio. Specifiy as number which stands for position in array.
+     * if using CreditCardProps to power your checkboxes you can use this event to catch the onRemove event
+     */
+    onCreditCardRemoved?: (arrayIndex: number) => void;
+
+    /**
+     * set default checked radio. Pass the array position number. EG: 0 is first.
      */
     setWhichIsChecked?: number;
 

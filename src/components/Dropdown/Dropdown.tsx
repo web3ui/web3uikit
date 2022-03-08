@@ -11,6 +11,7 @@ import { IDropdown } from './types';
 import { Illustration } from '../Illustrations';
 import { Icon } from '../Icon';
 import { OptionProps } from '../Select';
+import { Typography } from '../Typography';
 
 const Dropdown: React.FC<IDropdown> = ({
     options,
@@ -22,6 +23,7 @@ const Dropdown: React.FC<IDropdown> = ({
     width = '250px',
     icon,
     isDisabled = false,
+    hasOutline = true,
     onChange,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -57,7 +59,9 @@ const Dropdown: React.FC<IDropdown> = ({
                             width={'100%'}
                             height={'100px'}
                         />
-                        <span>No Data</span>
+                        <Typography variant="caption14" weight="600">
+                            No Data
+                        </Typography>
                     </DivStyledNoData>
                 </DivStyledOptionsContainer>
             );
@@ -81,7 +85,13 @@ const Dropdown: React.FC<IDropdown> = ({
                             key={option.id}
                         >
                             {option?.prefix}
-                            {option.label}
+                            <Typography
+                                variant="caption14"
+                                weight="600"
+                                color="#041836"
+                            >
+                                {option.label}
+                            </Typography>
                         </DivStyledOptionItem>
                     ))}
             </DivStyledOptionsContainer>
@@ -102,6 +112,7 @@ const Dropdown: React.FC<IDropdown> = ({
                     }
                 }}
                 isOpen={!!isOpen}
+                hasOutline={hasOutline}
             >
                 <div>
                     <span>
@@ -118,16 +129,16 @@ const Dropdown: React.FC<IDropdown> = ({
                             options[selectedIndex]?.prefix &&
                             options[selectedIndex]?.prefix}
                     </span>
-                    <span>
+                    <Typography variant="caption14" weight="600">
                         {(isLabelFixed || typeof selectedIndex != 'number') &&
                             label}
                         {typeof selectedIndex === 'number' &&
                             showSelected &&
                             options[selectedIndex]?.label}
-                    </span>
+                    </Typography>
                     <Icon
                         size={24}
-                        svg={isOpen ? 'triangleUp' : 'triangleDown'}
+                        svg={isOpen ? 'chevronUp' : 'chevronDown'}
                         style={{
                             fill: 'currentColor',
                         }}

@@ -27,7 +27,7 @@ const Dropdown: React.FC<IDropdown> = ({
     onChange,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
     useEffect(() => {
         if (isDisabled) {
             setIsOpen(false);

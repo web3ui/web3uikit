@@ -32,7 +32,7 @@ const Modal: React.FC<ModalProps> = ({
     <DivStyled id={id} isVisible={isVisible} data-testid="modal-test-id">
         <DivStyledWrap width={width}>
             <HeaderStyled data-testid={'modal-header-test-id'}>
-                <h3>{title}</h3>
+                {typeof title == 'string' ? <h3>{title}</h3> : title}
                 <Button
                     data-testid={'modal-close-test-id'}
                     icon={iconTypes.x}

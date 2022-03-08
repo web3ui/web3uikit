@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
-import { FormProps, DataInput } from './types';
 import { Button } from '../Button';
-import { Input } from '../Input';
 import { Checkbox } from '../Checkbox';
+import { DatePicker } from '../DatePicker';
+import { Input } from '../Input';
 import { Radios } from '../Radios';
 import { TextArea } from '../TextArea';
 import { H3Styled, H4Styled, FormStyled } from './Form.styles';
+import { FormProps, DataInput } from './types';
 
 const Form: React.FC<FormProps> = ({
     buttonConfig,
@@ -75,6 +76,19 @@ const Form: React.FC<FormProps> = ({
         }
     };
 
+    const renderDatePicker = (
+        input: DataInput,
+        type: 'date',
+        index: number,
+    ) => (
+        <DatePicker
+            id={`${type}_${index}`}
+            label={input.name}
+            onChange={(e) => (data[index].selected = [String(e.date)])}
+            validation={{ required: input.validation?.required }}
+        />
+    );
+
     const renderInput = (
         input: DataInput,
         type: 'text' | 'number' | 'tel' | 'email' | 'password',
@@ -82,6 +96,7 @@ const Form: React.FC<FormProps> = ({
     ) => (
         <Input
             key={`input_${index}`}
+            id={`input_${index}`}
             label={input.name}
             name={input.name}
             onChange={(e) => (data[index].value = e.target.value)}
@@ -161,6 +176,8 @@ const Form: React.FC<FormProps> = ({
                 return renderInput(input, 'email', index);
             case 'number':
                 return renderInput(input, 'number', index);
+            case 'date':
+                return renderDatePicker(input, 'date', index);
             case 'box':
                 return renderCheckbox(input, 'box', index);
             case 'switch':

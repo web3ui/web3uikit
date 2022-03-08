@@ -65,6 +65,7 @@ export type DataInput = {
      */
     type:
         | 'box'
+        | 'date'
         | 'email'
         | 'number'
         | 'password'

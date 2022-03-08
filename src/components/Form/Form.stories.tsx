@@ -187,3 +187,26 @@ CreditCardForm.args = {
         },
     ],
 };
+
+export const BirthdayForm = Template.bind({});
+BirthdayForm.args = {
+    title: 'Test form',
+    buttonConfig: {
+        onClick: (e) => e.preventDefault,
+        theme: 'primary',
+    },
+    onSubmit: (e) => console.log(e),
+    data: [
+        {
+            name: 'first name',
+            type: 'text',
+            value: '',
+            inputWidth: '100%',
+        },
+        {
+            name: 'please enter your birthday',
+            type: 'date',
+            value: '',
+        },
+    ],
+};

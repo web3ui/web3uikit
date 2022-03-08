@@ -47,6 +47,11 @@ export interface StepperProps {
      * the Stepper needs data
      */
     stepData: Step[];
+
+    /**
+     * header width
+     */
+    headerWidth?: number;
 }
 
 /**

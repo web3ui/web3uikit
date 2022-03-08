@@ -57,3 +57,11 @@ StepsWithoutNav.args = {
     stepData: noNavTestStepData,
     hasNavButtons: false,
 };
+
+export const SmallerStepperCount = Template.bind({});
+SmallerStepperCount.args = {
+    step: 1,
+    stepData: noNavTestStepData,
+    hasNavButtons: false,
+    headerWidth: 40,
+};

@@ -105,3 +105,53 @@ Iconless.args = {
     ],
     label: 'Server: ',
 };
+
+export const DropdownWithPrefixItems = Template.bind({});
+
+DropdownWithPrefixItems.args = {
+    options: [
+        {
+            label: 'Api Key',
+            id: 'Api Key',
+            prefix: (
+                <div
+                    style={{
+                        backgroundColor: 'blue',
+                        width: '20px',
+                        height: '20px',
+                        borderRadius: '20px',
+                    }}
+                />
+            ),
+        },
+        {
+            label: 'Testnet',
+            id: 'Testnet',
+            prefix: (
+                <div
+                    style={{
+                        backgroundColor: 'blue',
+                        width: '20px',
+                        height: '20px',
+                        borderRadius: '20px',
+                    }}
+                />
+            ),
+        },
+        {
+            label: 'Mainent',
+            id: 'Mainent',
+            prefix: (
+                <div
+                    style={{
+                        backgroundColor: 'blue',
+                        width: '20px',
+                        height: '20px',
+                        borderRadius: '20px',
+                    }}
+                />
+            ),
+        },
+    ],
+    label: 'Server: ',
+};

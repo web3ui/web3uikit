@@ -15,6 +15,12 @@ const section = css`
     width: 100vw;
     z-index: 10001;
 
+    button {
+        padding: 0 8px;
+        margin: 2px 6px;
+        border: 0;
+    }
+
     strong {
         margin: 0 8px;
         padding: 2px 8px;
@@ -22,20 +28,7 @@ const section = css`
     }
 `;
 
-const button = css`
-    background-color: inherit;
-    border-radius: 25px;
-    border: 2px solid ${color.white};
-    color: ${color.white};
-    font-size: 14px;
-    font-weight: 600;
-    margin: 0 12px;
-    padding: 2px 8px;
-    white-space: nowrap;
-`;
-
 const bannerStripStyles = {
-    button,
     section,
 };
 

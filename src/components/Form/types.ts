@@ -25,6 +25,11 @@ export interface FormProps {
     buttonConfig?: ButtonProps;
 
     /**
+     * Custom form footer, expects a submit button as part of the elements
+     */
+    customFooter?: JSX.Element;
+
+    /**
      * when the form passes validation the data is returned
      * { id: string, data: [{inputName: string; inputResult: string[] | string;}]}
      */

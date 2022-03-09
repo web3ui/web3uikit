@@ -28,7 +28,8 @@ export const FormStyled = styled.form`
         margin-top: 30px;
     }
 
-    button[type='submit'] {
+    > button[type='submit'],
+    .customFooter {
         margin-top: 32px;
     }
 `;

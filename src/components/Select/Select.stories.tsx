@@ -170,3 +170,12 @@ ControlledValue.args = {
     label: 'Label Text',
     value: 'txt',
 };
+
+export const HTML5Select = Template.bind({});
+HTML5Select.args = {
+    options: smallOptionsList,
+    onChange: onTestOptionChange,
+    label: 'Good old HTML5 Select',
+    value: 'txt',
+    traditionalHTML5: true,
+};

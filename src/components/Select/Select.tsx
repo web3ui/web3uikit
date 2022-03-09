@@ -1,3 +1,4 @@
+import { render } from '@testing-library/react';
 import React, { useState, useEffect } from 'react';
 import color from '../../styles/colors';
 import { Icon } from '../Icon';
@@ -20,19 +21,20 @@ const {
 } = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
+    customNoDataText = 'No Data',
     defaultOptionIndex,
     disabled = false,
-    value,
     errorMessage = '',
     id = String(Date.now()),
     label,
     onChange,
     options = [],
+    prefixText,
     state = disabled ? 'disabled' : undefined,
     style,
-    prefixText,
+    traditionalHTML5 = false,
+    value,
     width = '200px',
-    customNoDataText = 'No Data',
 }: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOptionIndex, setSelectedOptionIndex] =
@@ -74,7 +76,7 @@ const Select: React.FC<SelectProps> = ({
         }
     }, [selectedOptionIndex, value]);
 
-    return (
+    const renderFancySelectMode = () => (
         <DivStyledWrapper
             aria-label="select"
             data-testid="test-wrapper"
@@ -160,6 +162,33 @@ const Select: React.FC<SelectProps> = ({
             {errorMessage && <ErrorLabel>{errorMessage}</ErrorLabel>}
         </DivStyledWrapper>
     );
+
+    const renderTraditionalSelect = () => (
+        <div>
+            <label htmlFor={id}>{label}</label>
+            <select
+                id={id}
+                onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
+                    console.log(event.target.value)
+                }
+                style={{ ...style, width }}
+            >
+                <option disabled selected>
+                    Please choose
+                </option>
+                {options.map(
+                    (option, index) =>
+                        index !== selectedOptionIndex && (
+                            <option key={option?.label}>{option?.label}</option>
+                        ),
+                )}
+            </select>
+        </div>
+    );
+
+    return traditionalHTML5
+        ? renderTraditionalSelect()
+        : renderFancySelectMode();
 };
 
 export default Select;

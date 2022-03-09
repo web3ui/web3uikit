@@ -66,6 +66,11 @@ export interface SelectProps {
      * To replace no data text with a different text, but still keep image
      */
     customNoDataText?: string;
+
+    /**
+     * you just want to kick it old school with a fully device & browser safe HTML5 select, we got you
+     */
+    traditionalHTML5?: boolean;
 }
 
 export interface OptionProps {

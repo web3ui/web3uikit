@@ -22,7 +22,7 @@ const LabelStyled = styled.label<LabelProps>`
     padding: 0 4px;
     transition: all 0.1s ease-out;
     ${({ hasSelectedIndex }) =>
-        hasSelectedIndex ? 'top: -12px; font-size: 14px;' : 'top: 20px;'};
+        hasSelectedIndex ? 'top: -9px; font-size: 14px;' : 'top: 20px;'};
 `;
 
 const PrefixSpan = styled.span`

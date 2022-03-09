@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Form from './Form';
 import { validateRegExp } from '../../utils/const';
+import { Button } from '../Button';
 
 export default {
     title: '2.Forms/Form',
@@ -15,7 +16,7 @@ DemoForm.args = {
     title: 'Test form',
     buttonConfig: {
         onClick: (e) => e.preventDefault,
-        theme: 'primary',
+        theme: 'secondary',
     },
     onSubmit: (e) => console.log(e),
     data: [
@@ -218,6 +219,51 @@ SelectForm.args = {
         onClick: (e) => e.preventDefault,
         theme: 'primary',
     },
+    onSubmit: (e) => console.log(e),
+    data: [
+        {
+            name: 'Best pie',
+            type: 'select',
+            value: '',
+            selectOptions: [
+                { id: 'apple', label: 'Apple Pie' },
+                { id: 'black', label: 'Blackberry Pie' },
+                { id: 'pump', label: 'Pumpkin Pie' },
+            ],
+        },
+        {
+            name: 'Best Zelda',
+            type: 'select',
+            value: '',
+            selectOptions: [
+                { id: 'oot', label: 'Ocarina of Time' },
+                { id: 'ww', label: 'Wind Waker' },
+                { id: 'botw', label: 'Breath of the Wild' },
+            ],
+        },
+    ],
+};
+
+export const CustomFooter = Template.bind({});
+CustomFooter.args = {
+    title: 'Custom Footer',
+    customFooter: (
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Button
+                icon={'arrowCircleLeft'}
+                text={'Cancel Install'}
+                theme={'secondary'}
+                size="regular"
+            />
+            <Button
+                icon={'arrowCircleRight'}
+                text={'Confirm'}
+                theme={'primary'}
+                type="submit"
+                size="regular"
+            />
+        </div>
+    ),
     onSubmit: (e) => console.log(e),
     data: [
         {

@@ -16,6 +16,7 @@ const Form: React.FC<FormProps> = ({
     id,
     onSubmit,
     title,
+    customFooter,
 }) => {
     const formSubmitted = (event: React.SyntheticEvent) => {
         event.preventDefault();
@@ -232,9 +233,13 @@ const Form: React.FC<FormProps> = ({
                 </div>
             ))}
 
-            <Button {...buttonConfig} id="form-submit" type="submit">
-                Submit
-            </Button>
+            {customFooter ? (
+                <div className="customFooter">{customFooter}</div>
+            ) : (
+                <Button {...buttonConfig} id="form-submit" type="submit">
+                    Submit
+                </Button>
+            )}
         </FormStyled>
     );
 };

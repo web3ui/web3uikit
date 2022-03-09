@@ -15,7 +15,7 @@ export interface HeroProps {
     subTitle?: string;
 
     /**
-     * each accordion needs a content
+     * a Hero element can take any content (like a call to action button)
      */
     children?: JSX.Element | JSX.Element[];
 

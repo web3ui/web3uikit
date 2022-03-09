@@ -6,6 +6,7 @@ type TStyleProps = Pick<HeroProps, 'height' | 'backgroundColor'>;
 
 export const SectionStyled = styled.section<TStyleProps>`
     align-items: center;
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

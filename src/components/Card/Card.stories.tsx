@@ -5,7 +5,6 @@ import getModuleAnimation from './Animations/animations';
 import { Icon, iconTypes } from '../Icon';
 import colors from '../../styles/colors';
 import { Button } from '../Button';
-// import { useArgs } from '@storybook/addons';
 
 /**
  * To-do:
@@ -18,7 +17,6 @@ export default {
 } as ComponentMeta<typeof Card>;
 
 const Template: ComponentStory<typeof Card> = (args) => {
-    // const [{ isSelected }, updateArgs] = useArgs();
     const [isSelected, setIsSelected] = useState(false);
     return (
         <div style={{ width: '250px' }}>
@@ -26,7 +24,6 @@ const Template: ComponentStory<typeof Card> = (args) => {
                 isSelected={isSelected}
                 {...args}
                 setIsSelected={setIsSelected}
-                // setIsSelected={() => updateArgs({ isSelected: !isSelected })}
             />
         </div>
     );

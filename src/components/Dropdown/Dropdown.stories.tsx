@@ -1,6 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Dropdown from './Dropdown';
+import { Icon } from '../Icon';
+import color from '../../styles/colors';
 
 const parentWrapper = {
     height: '1px',
@@ -154,4 +156,25 @@ DropdownWithPrefixItems.args = {
         },
     ],
     label: 'Server: ',
+};
+
+export const LabelLess = Template.bind({});
+
+LabelLess.args = {
+    options: [
+        {
+            label: 'Api Key',
+            id: 'Api Key',
+            prefix: <Icon svg="cog" fill={color.blue} />,
+        },
+        {
+            label: 'Testnet',
+            id: 'Testnet',
+            prefix: <Icon svg="server" fill={color.blue} />,
+        },
+    ],
+    label: 'Server: ',
+    isLabelVisible: false,
+    width: 'fit-content',
+    defaultOptionIndex: 0,
 };

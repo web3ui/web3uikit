@@ -12,6 +12,7 @@ const {
     RoundedAvatarImageDefault,
     RoundedAvatarLetters,
     CustomBackgroundAndBorderRadius,
+    CustomSizeAndFontSize,
 } = composeStories(stories);
 
 let container: HTMLDivElement;
@@ -255,5 +256,42 @@ describe('Avatar - CustomBackgroundAndBorderRadius', () => {
             `[data-testid="${testAvatarId}"]`,
         );
         expect(element).not.toBeNull();
+    });
+});
+
+describe('Avatar - CustomSizeAndFontSize', () => {
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<CustomSizeAndFontSize />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+
+    it('has custom font size', () => {
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        expect(styles?.fontSize).toBe(
+            `${CustomSizeAndFontSize?.args?.fontSize}px`,
+        );
+    });
+
+    it('has custom size', () => {
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        expect(styles?.width).toBe(`${CustomSizeAndFontSize?.args?.size}px`);
     });
 });

@@ -53,3 +53,13 @@ CustomBackgroundAndBorderRadius.args = {
     borderRadius: 10,
     avatarBackground: '#ff0000',
 };
+
+export const CustomSizeAndFontSize = Template.bind({});
+CustomSizeAndFontSize.args = {
+    theme: 'letters',
+    text: 'RA',
+    isRounded: true,
+    avatarBackground: '#ff0000',
+    size: 80,
+    fontSize: 25,
+};

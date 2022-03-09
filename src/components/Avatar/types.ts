@@ -37,4 +37,14 @@ export interface AvatarProps {
      * Border Radius of avatar
      */
     borderRadius?: number;
+
+    /**
+     * Font size of text within the avatar
+     */
+    fontSize?: number;
+
+    /**
+     * Size of the avatar
+     */
+    size?: number;
 }

@@ -11,6 +11,8 @@ type TStyleProps = Pick<
     | 'isRounded'
     | 'textColor'
     | 'theme'
+    | 'size'
+    | 'fontSize'
 >;
 
 export const roundedEdgeValue = '50%';
@@ -28,16 +30,17 @@ const DivStyled = styled.div<TStyleProps>`
         #cee4f3 100%
     );
     color: ${(props) => props.textColor};
-    height: 40px;
+    height: ${(props) => props.size}px;
     overflow: hidden;
     position: static;
     text-transform: uppercase;
-    width: 40px;
+    width: ${(props) => props.size}px;
     word-break: break-all;
     display: flex;
     flex-direction: 'column';
     align-items: center;
     justify-content: center;
+    font-size: ${(props) => props.fontSize}px;
 
     span {
         display: none;
@@ -60,6 +63,7 @@ const H4Styled = styled.h4<Pick<AvatarProps, 'textColor'>>`
     ${fonts.textBold700};
     ${resetCSS};
     color: ${(props) => props.color};
+    font-size: inherit;
 `;
 
 export { DivStyled, H4Styled };

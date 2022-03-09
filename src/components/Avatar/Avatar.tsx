@@ -1,19 +1,20 @@
 import { DivStyled, H4Styled } from './Avatar.styles';
 import { AvatarProps } from './types';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import renderAvatarSVG from './images/guy';
 import color from '../../styles/colors';
 
 const Avatar: React.FC<AvatarProps> = ({
+    avatarBackground,
+    borderRadius,
+    fontSize = 15,
     image,
     isRounded = false,
+    size = 40,
     text,
+    textColor = color.white,
     theme,
-    avatarBackground,
-    textColor = '#fff',
-    borderRadius,
 }: AvatarProps) => {
-    const [bgColor, setBgColor] = useState<string>();
     const getRandomColor = (): string => {
         if (avatarBackground) {
             return avatarBackground;
@@ -28,14 +29,16 @@ const Avatar: React.FC<AvatarProps> = ({
     return (
         <DivStyled
             aria-label="users avatar"
+            avatarBackground={getRandomColor()}
+            borderRadius={borderRadius}
             data-testid="test-avatar"
+            fontSize={fontSize}
             image={image}
             isRounded={isRounded}
             role={theme === 'image' ? 'img' : 'generic'}
-            theme={theme}
-            avatarBackground={getRandomColor()}
+            size={size}
             textColor={textColor}
-            borderRadius={borderRadius}
+            theme={theme}
         >
             {theme === 'image' ? (
                 !image && renderAvatarSVG()

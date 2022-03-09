@@ -20,6 +20,7 @@ const Dropdown: React.FC<IDropdown> = ({
     icon,
     isDisabled = false,
     isLabelFixed = true,
+    isLabelVisible = true,
     label,
     onChange,
     options,
@@ -87,13 +88,15 @@ const Dropdown: React.FC<IDropdown> = ({
                             key={option.id}
                         >
                             {option?.prefix}
-                            <Typography
-                                variant="caption14"
-                                weight="600"
-                                color="#041836"
-                            >
-                                {option.label}
-                            </Typography>
+                            {isLabelVisible && (
+                                <Typography
+                                    variant="caption14"
+                                    weight="600"
+                                    color="#041836"
+                                >
+                                    {option.label}
+                                </Typography>
+                            )}
                         </DivStyledOptionItem>
                     ))}
             </DivStyledOptionsContainer>
@@ -131,13 +134,16 @@ const Dropdown: React.FC<IDropdown> = ({
                             options[selectedIndex]?.prefix &&
                             options[selectedIndex]?.prefix}
                     </span>
-                    <Typography variant="caption14" weight="600">
-                        {(isLabelFixed || typeof selectedIndex != 'number') &&
-                            label}
-                        {typeof selectedIndex === 'number' &&
-                            showSelected &&
-                            options[selectedIndex]?.label}
-                    </Typography>
+                    {isLabelVisible && (
+                        <Typography variant="caption14" weight="600">
+                            {(isLabelFixed ||
+                                typeof selectedIndex != 'number') &&
+                                label}
+                            {typeof selectedIndex === 'number' &&
+                                showSelected &&
+                                options[selectedIndex]?.label}
+                        </Typography>
+                    )}
                     <Icon
                         size={24}
                         svg={isOpen ? 'chevronUp' : 'chevronDown'}

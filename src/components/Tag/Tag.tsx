@@ -7,6 +7,7 @@ import { TagProps } from './types';
 const Tag: React.FC<TagProps> = ({
     active = false,
     color,
+    fontSize,
     id,
     text = 'Tag',
     theme = 'regular',
@@ -16,10 +17,11 @@ const Tag: React.FC<TagProps> = ({
     return (
         <TagStyled
             active={active}
-            role="status"
             color={color}
             data-testid="test-tag-id"
+            fontSize={fontSize}
             id={id}
+            role="status"
             theme={theme}
             tone={tone}
             width={width}

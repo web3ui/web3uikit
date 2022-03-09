@@ -20,7 +20,7 @@ jobs:
                   node-version: ${{ matrix.node }}
 
             - name: Install
-              run: yarn install
+              run: yarn install --network-timeout 1000000
 
             - name: Test
               run: yarn test --ci --coverage --maxWorkers=2 --updateSnapshot

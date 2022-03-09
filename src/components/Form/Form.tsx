@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
+import { CreditCardProps } from '../CreditCard';
 import { DatePicker } from '../DatePicker';
 import { Input } from '../Input';
 import { Radios } from '../Radios';
@@ -121,16 +122,18 @@ const Form: React.FC<FormProps> = ({
     ) => (
         <Fragment key={`cb-group_${index}`}>
             <H4Styled>{input.value}</H4Styled>
-            {input?.options?.map((opt, i) => (
-                <Checkbox
-                    key={`cb_${index}-${i}`}
-                    label={String(opt)}
-                    layout={layout}
-                    name={input.name}
-                    onChange={(e) => optionToggled(e, index, String(opt))}
-                    validation={{ required: input.validation?.required }}
-                />
-            ))}
+            {(input.options || ([] as Array<CreditCardProps | string>)).map(
+                (opt, i) => (
+                    <Checkbox
+                        key={`cb_${index}-${i}`}
+                        label={String(opt)}
+                        layout={layout}
+                        name={input.name}
+                        onChange={(e) => optionToggled(e, index, String(opt))}
+                        validation={{ required: input.validation?.required }}
+                    />
+                ),
+            )}
         </Fragment>
     );
 

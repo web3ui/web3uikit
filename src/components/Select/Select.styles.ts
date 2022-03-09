@@ -29,13 +29,6 @@ const PrefixSpan = styled.span`
     margin-right: px;
 `;
 
-const SelectStyled = styled.div`
-    ${resetCSS}
-    ${fonts.text}
-    background-color: transparent;
-    overflow: hidden;
-`;
-
 const SelectedItem = styled.div<SelectedItemProps>`
     ${resetCSS}
     ${fonts.text}
@@ -207,6 +200,27 @@ const NoDataTextStyled = styled.p`
     text-align: center;
     margin-top: -12px;
     margin-bottom: 5px;
+`;
+
+export const SelectStyled = styled.select`
+    ${resetCSS}
+    ${fonts.text}
+    background-color: transparent;
+    overflow: hidden;
+    transition: all 0.1s ease-out;
+    width: 100%;
+
+    &:focus,
+    .input_filled & {
+        + label {
+            font-size: 14px;
+            height: 18px;
+            line-height: 1;
+            padding: 2px 4px;
+            top: -13px;
+            left: 12px;
+        }
+    }
 `;
 
 const SelectStyles = {

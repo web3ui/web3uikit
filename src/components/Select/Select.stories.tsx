@@ -157,7 +157,6 @@ Disabled.args = {
 
 export const Nodata = Template.bind({});
 Nodata.args = {
-    // options: [],
     onChange: onTestOptionChange,
     label: 'Label Text',
     defaultOptionIndex: 0,
@@ -173,9 +172,10 @@ ControlledValue.args = {
 
 export const HTML5Select = Template.bind({});
 HTML5Select.args = {
+    label: 'Good old HTML5',
+    onChangeTraditional: onTestOptionChange,
     options: smallOptionsList,
-    onChange: onTestOptionChange,
-    label: 'Good old HTML5 Select',
-    value: 'txt',
     traditionalHTML5: true,
+    validation: { required: true },
+    value: 'txt',
 };

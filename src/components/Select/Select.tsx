@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import React, { useState, useEffect } from 'react';
 import color from '../../styles/colors';
 import { Icon } from '../Icon';
@@ -6,6 +5,10 @@ import { iconTypes } from '../Icon';
 import { Illustration } from '../Illustrations';
 import SelectStyles from './Select.styles';
 import type { SelectProps } from './types';
+import {
+    DivWrapperStyled,
+    LabelStyled as LabelStyledTrad,
+} from '../Input/Input.styles';
 
 const {
     DivStyledWrapper,
@@ -18,6 +21,7 @@ const {
     PrefixIcon,
     PrefixSpan,
     SelectedItem,
+    SelectStyled,
 } = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
@@ -28,11 +32,13 @@ const Select: React.FC<SelectProps> = ({
     id = String(Date.now()),
     label,
     onChange,
+    onChangeTraditional,
     options = [],
     prefixText,
     state = disabled ? 'disabled' : undefined,
     style,
     traditionalHTML5 = false,
+    validation,
     value,
     width = '200px',
 }: SelectProps) => {
@@ -164,26 +170,31 @@ const Select: React.FC<SelectProps> = ({
     );
 
     const renderTraditionalSelect = () => (
-        <div>
-            <label htmlFor={id}>{label}</label>
-            <select
+        <DivWrapperStyled className="input_filled" style={{ ...style, width }}>
+            <SelectStyled
+                defaultValue="Please choose"
                 id={id}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
-                    console.log(event.target.value)
+                    onChangeTraditional && onChangeTraditional(event)
                 }
-                style={{ ...style, width }}
+                required={validation?.required}
             >
-                <option disabled selected>
-                    Please choose
-                </option>
+                <option disabled>Please choose</option>
                 {options.map(
                     (option, index) =>
                         index !== selectedOptionIndex && (
-                            <option key={option?.label}>{option?.label}</option>
+                            <option key={option?.id} id={String(option?.id)}>
+                                {option?.label}
+                            </option>
                         ),
                 )}
-            </select>
-        </div>
+            </SelectStyled>
+            {label && (
+                <LabelStyledTrad hasPrefix={false} htmlFor={id}>
+                    {label}
+                </LabelStyledTrad>
+            )}
+        </DivWrapperStyled>
     );
 
     return traditionalHTML5

@@ -121,7 +121,7 @@ const Form: React.FC<FormProps> = ({
     ) => (
         <Fragment key={`cb-group_${index}`}>
             <H4Styled>{input.value}</H4Styled>
-            {input.options?.map((opt, i) => (
+            {input?.options?.map((opt, i) => (
                 <Checkbox
                     key={`cb_${index}-${i}`}
                     label={String(opt)}

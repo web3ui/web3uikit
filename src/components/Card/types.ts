@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 export interface CardProps {
     /**
      * set the ID of Card
@@ -12,7 +13,7 @@ export interface CardProps {
     /**
      * set the description of the card
      */
-    description?: string;
+    description?: string | ReactNode;
 
     /**
      * set if card is selected
@@ -22,7 +23,7 @@ export interface CardProps {
     /**
      * set title of card
      */
-    title?: string;
+    title?: string | ReactNode;
 
     /**
      * set text inside tooltip

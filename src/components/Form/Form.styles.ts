@@ -28,7 +28,7 @@ export const FormStyled = styled.form`
         margin-top: 30px;
     }
 
-    button {
+    button[type='submit'] {
         margin-top: 32px;
     }
 `;

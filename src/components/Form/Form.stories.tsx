@@ -210,3 +210,35 @@ BirthdayForm.args = {
         },
     ],
 };
+
+export const SelectForm = Template.bind({});
+SelectForm.args = {
+    title: 'Select thing',
+    buttonConfig: {
+        onClick: (e) => e.preventDefault,
+        theme: 'primary',
+    },
+    onSubmit: (e) => console.log(e),
+    data: [
+        {
+            name: 'Best pie',
+            type: 'select',
+            value: '',
+            selectOptions: [
+                { id: 'apple', label: 'Apple Pie' },
+                { id: 'black', label: 'Blackberry Pie' },
+                { id: 'pump', label: 'Pumpkin Pie' },
+            ],
+        },
+        {
+            name: 'Best Zelda',
+            type: 'select',
+            value: '',
+            selectOptions: [
+                { id: 'oot', label: 'Ocarina of Time' },
+                { id: 'ww', label: 'Wind Waker' },
+                { id: 'botw', label: 'Breath of the Wild' },
+            ],
+        },
+    ],
+};

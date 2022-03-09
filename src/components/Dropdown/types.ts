@@ -52,4 +52,9 @@ export interface IDropdown {
      * index of selected option by default
      */
     defaultOptionIndex?: number;
+
+    /**
+     * if true will render label
+     */
+    isLabelVisible?: boolean;
 }

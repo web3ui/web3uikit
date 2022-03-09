@@ -11,7 +11,7 @@ export const DivStyledWrap = styled.div<TStyleProps>`
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     left: 50%;
-    max-height: 80vh;
+    max-height: 100%;
     overflow: auto;
     position: absolute;
     top: 50%;

@@ -16,7 +16,7 @@ DemoForm.args = {
     title: 'Test form',
     buttonConfig: {
         onClick: (e) => e.preventDefault,
-        theme: 'secondary',
+        theme: 'primary',
     },
     onSubmit: (e) => console.log(e),
     data: [

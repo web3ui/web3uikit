@@ -20,8 +20,8 @@ const getBackgroundColor = (type: string) => {
 };
 
 const Section = styled.section<Pick<BannerStripProps, 'type' | 'height'>>`
-    ${fonts.text}
-    ${bannerStripStyles.section}
+    ${fonts.text};
+    ${bannerStripStyles.section};
     background-color: ${(p) => p.type && getBackgroundColor(p.type)};
     height: ${({ height }) => height};
 `;

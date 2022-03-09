@@ -24,6 +24,7 @@ const Skeleton: React.FC<SkeletonProps> = ({
     return (
         <DivStyled
             borderRadius={borderRadius}
+            data-testid="test-skeleton-id"
             height={height}
             theme={theme}
             width={width}

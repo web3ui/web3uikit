@@ -7,7 +7,7 @@ type TStyleProps = Pick<SkeletonProps, 'borderRadius' | 'height' | 'width'>;
 
 //Keep background style above background-image property for animations
 const DivStyled = styled.div<TStyleProps>`
-    ${resetCSS}
+    ${resetCSS};
     animation: progress 1.5s linear infinite;
     background: ${color.greyDisabled} no-repeat;
     background-image: ${gradientColors.lightGrey};
@@ -18,6 +18,9 @@ const DivStyled = styled.div<TStyleProps>`
     outline: none;
     overflow: hidden;
     position: relative;
+    border-radius: ${({ borderRadius }) => borderRadius};
+    height: ${({ height }) => height};
+    width: ${({ width }) => width};
     &:after,
     &:before {
         box-sizing: border-box;
@@ -30,9 +33,6 @@ const DivStyled = styled.div<TStyleProps>`
             background-position: calc(300px + 100%) 0;
         }
     }
-    border-radius: ${({ borderRadius }) => borderRadius};
-    height: ${({ height }) => height};
-    width: ${({ width }) => width};
 `;
 
 export { DivStyled };

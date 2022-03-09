@@ -1,5 +1,15 @@
 export interface CreditCardProps {
     /**
+     * set the unique fingerprint for each
+     */
+    fingerprint: string;
+
+    /**
+     * set credit card issuer
+     */
+    brand: creditCardBrands;
+
+    /**
      * set the id of credit-card
      */
     id?: string;
@@ -34,11 +44,6 @@ export interface CreditCardProps {
     name: string;
 
     /**
-     * run function when creditcard is clicked
-     */
-    onPressed?: () => void;
-
-    /**
      * run function when remove icon is clicked
      */
     onRemove?: () => void;
@@ -47,11 +52,6 @@ export interface CreditCardProps {
      * set pressed
      */
     pressed?: boolean;
-
-    /**
-     * set type
-     */
-    brand: creditCardBrands;
 }
 
 export type creditCardBrands = 'mastercard' | 'visa' | 'amex' | 'diners';

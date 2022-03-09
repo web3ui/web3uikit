@@ -31,23 +31,31 @@ export const DivStyledCreditCard = styled.div<TStyleProps>`
     height: 154px;
     width: 277px;
 
-    label {
-        height: 10px;
-    }
-
     ${({ isExpired, pressed }) =>
         isExpired ? expiredStyles : pressed ? pressedStyles : ''}
 `;
 
+export const DivStyledFlexEnd = styled.div`
+    align-items: center;
+    display: flex;
+    justify-content: flex-end;
+`;
+
 export const DivStyledFlex = styled.div`
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    width: 100%;
+
+    svg {
+        cursor: pointer;
+    }
 `;
 
 export const DivStyledFlexText = styled.div`
     color: white;
     display: flex;
+    margin-right: 8px;
 `;
 
 export const DivStyledRemove = styled.div`

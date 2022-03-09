@@ -68,7 +68,7 @@ describe('Radios - RadioGroup', () => {
         const elements = container.querySelectorAll('input');
         testItems &&
             elements.forEach((input: HTMLInputElement, i) =>
-                expect(input?.value).toBe(testItems[i]),
+                expect(input?.value).toBe(String(i)),
             );
     });
 
@@ -161,7 +161,7 @@ describe('Radios - RadioGroupWithoutTitle', () => {
         const elements = container.querySelectorAll('input');
         testItems &&
             elements.forEach((input: HTMLInputElement, i) =>
-                expect(input?.value).toBe(testItems[i]),
+                expect(input?.value).toBe(String(i)),
             );
     });
 
@@ -256,7 +256,7 @@ describe('Radios - RadiosWithLongText', () => {
         const elements = container.querySelectorAll('input');
         testItems &&
             elements.forEach((input: HTMLInputElement, i) =>
-                expect(input?.value).toBe(testItems[i]),
+                expect(input?.value).toBe(String(i)),
             );
     });
 

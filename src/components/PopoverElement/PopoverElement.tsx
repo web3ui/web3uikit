@@ -1,7 +1,6 @@
 import { PopoverElementProps } from './types';
 import { PopoverElementStyles } from './PopoverElement.styles';
-import { Icon } from '../Icon';
-import { iconTypes } from '../Icon';
+import { Icon, iconTypes } from '../Icon';
 import React from 'react';
 
 const { DivContainerStyled, DivStyled, DivImageStyled, TextStyled } =

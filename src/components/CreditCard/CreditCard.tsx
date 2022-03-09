@@ -4,6 +4,7 @@ import { CreditCardProps } from './types';
 import {
     DivStyledCreditCard,
     DivStyledFlex,
+    DivStyledFlexEnd,
     DivStyledFlexText,
     PStyledDigits,
     PStyledText,
@@ -27,7 +28,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
             isExpired={isExpired}
             pressed={pressed}
         >
-            <DivStyledFlex>
+            <DivStyledFlexEnd>
                 <Tooltip
                     position="bottom"
                     children={
@@ -39,7 +40,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
                     }
                     content="Remove"
                 />
-            </DivStyledFlex>
+            </DivStyledFlexEnd>
             <PStyledDigits>{`•••• ${lastDigits}`}</PStyledDigits>
             <DivStyledFlex>
                 <DivStyledFlexText>

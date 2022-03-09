@@ -35,10 +35,17 @@ export const DivStyledCreditCard = styled.div<TStyleProps>`
         isExpired ? expiredStyles : pressed ? pressedStyles : ''}
 `;
 
-export const DivStyledFlex = styled.div`
+export const DivStyledFlexEnd = styled.div`
     align-items: center;
     display: flex;
     justify-content: flex-end;
+`;
+
+export const DivStyledFlex = styled.div`
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 
     svg {
         cursor: pointer;

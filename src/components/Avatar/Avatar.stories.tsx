@@ -53,3 +53,10 @@ CustomBackgroundAndBorderRadius.args = {
     borderRadius: 10,
     avatarBackground: '#ff0000',
 };
+export const RandomBackgroundColor = Template.bind({});
+RandomBackgroundColor.args = {
+    theme: 'letters',
+    text: 'CS',
+    borderRadius: 10,
+};
+

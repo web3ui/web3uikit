@@ -1,6 +1,6 @@
 import { DivStyled, H4Styled } from './Avatar.styles';
 import { AvatarProps } from './types';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import renderAvatarSVG from './images/guy';
 import color from '../../styles/colors';
 
@@ -13,7 +13,6 @@ const Avatar: React.FC<AvatarProps> = ({
     textColor = '#fff',
     borderRadius,
 }: AvatarProps) => {
-    const [bgColor, setBgColor] = useState<string>();
     const getRandomColor = (): string => {
         if (avatarBackground) {
             return avatarBackground;
@@ -42,7 +41,7 @@ const Avatar: React.FC<AvatarProps> = ({
             ) : (
                 <H4Styled data-testid="test-text" textColor={textColor}>
                     {text && text.length > 1
-                        ? (text = `${text[0]}${text[1]}`)
+                        ? (`${text[0]}${text[1]}`)
                         : text}
                 </H4Styled>
             )}

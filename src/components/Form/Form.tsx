@@ -1,4 +1,3 @@
-import { validateOptions } from '@storybook/store';
 import React, { Fragment } from 'react';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';

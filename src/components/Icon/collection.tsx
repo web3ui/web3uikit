@@ -85,11 +85,15 @@ import uniIcon from './icons/uni';
 import chainlinkIcon from './icons/chainlink';
 import xrpIcon from './icons/xrp';
 import adaIcon from './icons/ada';
+import dappsIcon from './icons/dapps';
+import speedyNodeIcon from './icons/speedyNode';
 import usdtIcon from './icons/usdt';
 import usdcIcon from './icons/usdc';
 import xCircleIcon from './icons/x-circle';
 import xIcon from './icons/x';
 import youtubeIcon from './icons/youtube';
+import web3apiIcon from './icons/web3api';
+import atomicApiIcon from './icons/atomicApi';
 
 export type TIconType = keyof typeof iconTypes;
 
@@ -98,6 +102,7 @@ export const iconTypes = {
     arrowCircleDown: 'arrowCircleDown',
     arrowCircleLeft: 'arrowCircleLeft',
     arrowCircleRight: 'arrowCircleRight',
+    atomicApi: 'atomicApi',
     avax: 'avax',
     bell: 'bell',
     bin: 'bin',
@@ -122,6 +127,7 @@ export const iconTypes = {
     copy: 'copy',
     creditCard: 'credit card',
     cube: 'cube',
+    dapps: 'dapps',
     discord: 'discord',
     doge: 'doge',
     download: 'download',
@@ -169,6 +175,7 @@ export const iconTypes = {
     search: 'search',
     server: 'server',
     shib: 'shib',
+    speedyNode: 'speedyNode',
     star: 'star',
     stars: 'stars',
     telegram: 'telegram',
@@ -181,6 +188,7 @@ export const iconTypes = {
     usdc: 'usdc',
     usdt: 'usdt',
     user: 'user',
+    web3api: 'web3api',
     windows: 'windows',
     x: 'x',
     xCircle: 'xCircle',
@@ -193,6 +201,7 @@ const collection = {
     arrowCircleDownIcon,
     arrowCircleLeftIcon,
     arrowCircleRightIcon,
+    atomicApiIcon,
     avaxIcon,
     bellIcon,
     binIcon,
@@ -217,6 +226,7 @@ const collection = {
     copyIcon,
     creditCardIcon,
     cubeIcon,
+    dappsIcon,
     discordIcon,
     dogeIcon,
     downloadCloudIcon,
@@ -264,6 +274,7 @@ const collection = {
     searchIcon,
     serverIcon,
     shibIcon,
+    speedyNodeIcon,
     starIcon,
     starsIcon,
     telegramIcon,
@@ -276,6 +287,7 @@ const collection = {
     usdcIcon,
     usdtIcon,
     userIcon,
+    web3apiIcon,
     windowsIcon,
     xCircleIcon,
     xIcon,

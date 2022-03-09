@@ -5,6 +5,7 @@ import { CreditCardProps } from '../CreditCard';
 import { DatePicker } from '../DatePicker';
 import { Input } from '../Input';
 import { Radios } from '../Radios';
+import { Select } from '../Select';
 import { TextArea } from '../TextArea';
 import { H3Styled, H4Styled, FormStyled } from './Form.styles';
 import { FormProps, DataInput } from './types';
@@ -167,6 +168,24 @@ const Form: React.FC<FormProps> = ({
         </Fragment>
     );
 
+    const renderSelect = (input: DataInput, type: string, index: number) => {
+        return (
+            <Select
+                id={`${input.name}_${index}`}
+                label={input.name}
+                onChangeTraditional={(e) =>
+                    (data[index].value = e.target.value)
+                }
+                options={input.selectOptions}
+                traditionalHTML5={type === 'traditional'}
+                validation={{
+                    required: Boolean(input.validation?.required),
+                }}
+                width={input.inputWidth}
+            />
+        );
+    };
+
     const renderInputType = (input: DataInput, index: number) => {
         switch (input.type) {
             case 'text':
@@ -185,6 +204,8 @@ const Form: React.FC<FormProps> = ({
                 return renderCheckbox(input, 'switch', index);
             case 'radios':
                 return renderRadioGroup(input, index);
+            case 'select':
+                return renderSelect(input, 'traditional', index);
             case 'textarea':
                 return renderTextArea(input, index);
             case 'date':
@@ -211,7 +232,7 @@ const Form: React.FC<FormProps> = ({
                 </div>
             ))}
 
-            <Button {...buttonConfig} id={`form-${id}-submit`} type="submit">
+            <Button {...buttonConfig} id="form-submit" type="submit">
                 Submit
             </Button>
         </FormStyled>

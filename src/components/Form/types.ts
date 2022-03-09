@@ -1,6 +1,7 @@
 import { ValidateInput } from '../Input/types';
 import { CreditCardProps } from '../CreditCard';
 import { ButtonProps } from '../Button';
+import { OptionProps } from '../Select';
 
 export interface FormProps {
     /**
@@ -70,6 +71,7 @@ export type DataInput = {
         | 'number'
         | 'password'
         | 'radios'
+        | 'select'
         | 'switch'
         | 'tel'
         | 'text'
@@ -84,6 +86,11 @@ export type DataInput = {
      * If you want radios you will need to pass an array of options here
      */
     options?: string[] | CreditCardProps[];
+
+    /**
+     * If you want radios you will need to pass an array of options here
+     */
+    selectOptions?: OptionProps[];
 
     /**
      * If you radios you will need to pass an array to return your options

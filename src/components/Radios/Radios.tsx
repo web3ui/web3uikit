@@ -48,32 +48,34 @@ const Radios: React.FC<RadiosProps> = ({
                 <LegendStyled data-testid="test-legend">{title}</LegendStyled>
             )}
 
-            {items.map((item: CreditCardProps | string, i: number) => (
-                <DivStyled key={`${formattedID}_${i}`}>
-                    <RadioButtonStyled
-                        checked={i === whichIsChecked}
-                        data-testid={`test-input-${i}`}
-                        id={`${formattedID}_${i}`}
-                        name={`${formattedID}_group`}
-                        onChange={(e) => {
-                            onChange(e);
-                            setChecked(i);
-                        }}
-                        required={validation?.required}
-                        type="radio"
-                        value={i}
-                    />
-                    <LabelStyled
-                        data-testid={`test-label-${i}`}
-                        htmlFor={`${formattedID}_${i}`}
-                        isCreditCardMode={isCreditCards}
-                    >
-                        {typeof item === 'string'
-                            ? item
-                            : renderCreditCard(item, i)}
-                    </LabelStyled>
-                </DivStyled>
-            ))}
+            {(items as Array<CreditCardProps | string>).map(
+                (item: CreditCardProps | string, i: number) => (
+                    <DivStyled key={`${formattedID}_${i}`}>
+                        <RadioButtonStyled
+                            checked={i === whichIsChecked}
+                            data-testid={`test-input-${i}`}
+                            id={`${formattedID}_${i}`}
+                            name={`${formattedID}_group`}
+                            onChange={(e) => {
+                                onChange(e);
+                                setChecked(i);
+                            }}
+                            required={validation?.required}
+                            type="radio"
+                            value={i}
+                        />
+                        <LabelStyled
+                            data-testid={`test-label-${i}`}
+                            htmlFor={`${formattedID}_${i}`}
+                            isCreditCardMode={isCreditCards}
+                        >
+                            {typeof item === 'string'
+                                ? item
+                                : renderCreditCard(item, i)}
+                        </LabelStyled>
+                    </DivStyled>
+                ),
+            )}
         </FieldsetStyled>
     );
 };

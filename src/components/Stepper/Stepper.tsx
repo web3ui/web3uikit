@@ -70,7 +70,7 @@ const Stepper: React.FC<StepperProps> = ({
 
     const renderPreloader = () => (
         <DivStyled>
-            <H2Styled data-testid="test-stepper_title">
+            <H2Styled id="stepper-load-title" data-testid="test-stepper_title">
                 Just one sec...
             </H2Styled>
             <Loading size={20} spinnerColor={color.green} />
@@ -78,8 +78,8 @@ const Stepper: React.FC<StepperProps> = ({
     );
 
     const renderContent = () => (
-        <DivStyled>
-            <H2Styled data-testid="test-stepper_title">
+        <DivStyled id={`step-${activeStep}`}>
+            <H2Styled id="stepper-title" data-testid="test-stepper_title">
                 {activeStep <= stepData.length
                     ? stepData[Number(activeStep - 1)].title || ''
                     : completeTitle}
@@ -87,6 +87,7 @@ const Stepper: React.FC<StepperProps> = ({
             <DivStyledContent
                 onClick={handleContentClick}
                 data-testid="test-stepper_content"
+                id="stepper-content"
             >
                 {activeStep <= stepData.length
                     ? stepData[Number(activeStep - 1)].content

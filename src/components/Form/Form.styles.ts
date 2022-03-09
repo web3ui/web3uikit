@@ -7,7 +7,7 @@ export const H3Styled = styled.h3`
     ${resetCSS};
     ${fonts.heading};
     ${fonts.h3};
-    margin-bottom: 8px;
+    margin-bottom: 18px;
 `;
 
 export const H4Styled = styled.h4`
@@ -24,7 +24,7 @@ export const FormStyled = styled.form`
     border-radius: 16px;
     padding: 16px;
 
-    div + div {
+    .form-item + .form-item {
         margin-top: 30px;
     }
 

@@ -1,10 +1,13 @@
-import { css } from 'styled-components';
+import styled from 'styled-components';
 import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
+import { TRadioLayouts } from './types';
 
-const fieldsetStyles = css`
-    ${resetCSS}
+type TStyleProps = Pick<TRadioLayouts, 'isCreditCardMode'>;
+
+export const FieldsetStyled = styled.fieldset`
+    ${resetCSS};
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -12,8 +15,8 @@ const fieldsetStyles = css`
     overflow: hidden;
 `;
 
-const legendStyles = css`
-    ${resetCSS}
+export const LegendStyled = styled.legend`
+    ${resetCSS};
     ${fonts.heading}
     ${fonts.h3}
     color: ${color.grey};
@@ -21,8 +24,12 @@ const legendStyles = css`
     margin-bottom: 4px;
 `;
 
-const labelStyles = css`
-    ${resetCSS}
+export const DivStyled = styled.div`
+    position: relative;
+`;
+
+export const LabelStyled = styled.label<TStyleProps>`
+    ${resetCSS};
     ${fonts.heading}
     ${fonts.text}
     align-content: center;
@@ -30,8 +37,9 @@ const labelStyles = css`
     display: flex;
     line-height: 20px;
     margin-bottom: 12px;
-    padding-left: 28px;
+    padding-left: ${(p) => (p.isCreditCardMode ? '0' : '28px')};
     position: relative;
+    width: fit-content;
 
     &:before {
         background-color: ${color.blueLight};
@@ -40,9 +48,9 @@ const labelStyles = css`
         content: '';
         display: block;
         height: 18px;
-        left: 0;
+        left: ${(p) => (p.isCreditCardMode ? '20px' : '0')};
         position: absolute;
-        top: 0;
+        top: ${(p) => (p.isCreditCardMode ? '20px' : '0')};
         transition: all 0.1s ease-out;
         width: 18px;
     }
@@ -53,10 +61,10 @@ const labelStyles = css`
         content: '';
         display: block;
         height: 8px;
-        left: 6px;
+        left: ${(p) => (p.isCreditCardMode ? '26px' : '6px')};
         opacity: 0;
         position: absolute;
-        top: 6px;
+        top: ${(p) => (p.isCreditCardMode ? '26px' : '6px')};
         transition: all 0.2s ease-out;
         width: 8px;
     }
@@ -74,7 +82,7 @@ const labelStyles = css`
     }
 `;
 
-const inputStyles = css`
+export const RadioButtonStyled = styled.input`
     position: absolute;
     left: -100px;
 
@@ -90,12 +98,3 @@ const inputStyles = css`
         }
     }
 `;
-
-const styles = {
-    fieldsetStyles,
-    inputStyles,
-    labelStyles,
-    legendStyles,
-};
-
-export default styles;

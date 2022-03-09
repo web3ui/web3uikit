@@ -14,6 +14,7 @@ const Template: ComponentStory<typeof CreditCard> = (args) => {
 export const Visa = Template.bind({});
 Visa.args = {
     id: 'marty-mc-fly-cc-id',
+    fingerprint: 'foo-bar-visa',
     isExpired: false,
     name: 'Marty McFly',
     brand: 'visa',
@@ -27,6 +28,7 @@ Visa.args = {
 export const VisaExpired = Template.bind({});
 VisaExpired.args = {
     id: 'marty-mc-fly-cc-id',
+    fingerprint: 'foo-bar-visa',
     isExpired: true,
     name: 'Marty McFly',
     brand: 'visa',
@@ -40,6 +42,7 @@ VisaExpired.args = {
 export const MasterCard = Template.bind({});
 MasterCard.args = {
     id: 'marty-mc-fly-cc-id',
+    fingerprint: 'foo-bar-master',
     isExpired: false,
     name: 'Marty McFly',
     brand: 'mastercard',
@@ -53,6 +56,7 @@ MasterCard.args = {
 export const MasterCardExpired = Template.bind({});
 MasterCardExpired.args = {
     id: 'marty-mc-fly-cc-id',
+    fingerprint: 'foo-bar-master',
     isExpired: true,
     name: 'Marty McFly',
     brand: 'mastercard',
@@ -66,6 +70,7 @@ MasterCardExpired.args = {
 export const Amex = Template.bind({});
 Amex.args = {
     id: 'marty-mc-fly-cc-id',
+    fingerprint: 'foo-bar-amex',
     isExpired: false,
     name: 'Marty McFly',
     brand: 'amex',
@@ -79,6 +84,7 @@ Amex.args = {
 export const AmexExpired = Template.bind({});
 AmexExpired.args = {
     id: 'marty-mc-fly-cc-id',
+    fingerprint: 'foo-bar-amex',
     isExpired: true,
     name: 'Marty McFly',
     brand: 'amex',
@@ -92,6 +98,7 @@ AmexExpired.args = {
 export const Diners = Template.bind({});
 Diners.args = {
     id: 'marty-mc-fly-cc-id',
+    fingerprint: 'foo-bar-diners',
     isExpired: false,
     name: 'Marty McFly',
     brand: 'diners',
@@ -105,6 +112,7 @@ Diners.args = {
 export const DinersExpired = Template.bind({});
 DinersExpired.args = {
     id: 'marty-mc-fly-cc-id',
+    fingerprint: 'foo-bar-diners',
     isExpired: true,
     name: 'Marty McFly',
     brand: 'diners',

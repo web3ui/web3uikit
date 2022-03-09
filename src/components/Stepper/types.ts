@@ -49,9 +49,9 @@ export interface StepperProps {
     stepData: Step[];
 
     /**
-     * header width
+     * header width pass an amount of pixels for responsive max width
      */
-    headerWidth?: string;
+    headerWidth?: number;
 }
 
 /**

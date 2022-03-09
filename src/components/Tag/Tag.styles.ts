@@ -69,11 +69,9 @@ export const TagStyled = styled.div<TStyleProps>`
     width: ${({ width }) => width};
 
     ${({ width, theme }) =>
-        theme === 'discount' && Boolean(width) && `height: ${width}`};
-    ${({ width, theme }) =>
-        theme === 'discount' && Boolean(width) && `width: ${width}`};
-    ${({ width, theme }) =>
-        theme === 'discount' && Boolean(width) && 'border-radius: 50%;'};
+        theme === 'discount' &&
+        Boolean(width) &&
+        `height: ${width}; width: ${width}; border-radius: 50%;`};
 
     ${({ fontSize }) => Boolean(fontSize) && `font-size: ${fontSize}`};
 `;

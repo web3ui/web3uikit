@@ -9,7 +9,7 @@ type TStyleProps = Pick<SkeletonProps, 'borderRadius' | 'height' | 'width'>;
 const DivStyled = styled.div<TStyleProps>`
     ${resetCSS};
     animation: progress 1.5s linear infinite;
-    background: ${color.greyDisabled} no-repeat;
+    background: ${color.white} no-repeat;
     background-image: ${gradientColors.lightGrey};
     background-size: 200px 100%;
     box-sizing: border-box;

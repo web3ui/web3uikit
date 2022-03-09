@@ -63,3 +63,10 @@ CustomSizeAndFontSize.args = {
     size: 80,
     fontSize: 25,
 };
+
+export const RandomBackgroundColor = Template.bind({});
+RandomBackgroundColor.args = {
+    theme: 'letters',
+    text: 'CS',
+    borderRadius: 10,
+};

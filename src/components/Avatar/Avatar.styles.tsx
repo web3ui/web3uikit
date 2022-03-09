@@ -37,7 +37,7 @@ const DivStyled = styled.div<TStyleProps>`
     width: ${(props) => props.size}px;
     word-break: break-all;
     display: flex;
-    flex-direction: 'column';
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: ${(props) => props.fontSize}px;

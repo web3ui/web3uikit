@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { HeroProps } from './types';
 
 // styles
-type TStyleProps = Pick<HeroProps, 'height' | 'backgroundColor' | 'textColor'>;
+type TStyleProps = Pick<HeroProps, 'height' | 'backgroundColor'>;
 
 export const SectionStyled = styled.section<TStyleProps>`
     align-items: center;
@@ -22,15 +22,12 @@ export const SectionStyled = styled.section<TStyleProps>`
         margin: 0 auto;
         max-width: 90%;
         text-align: center;
-
-        color: ${(p) => p.textColor};
     }
 
     p {
         margin: 20px auto;
         max-width: 90%;
         text-align: center;
-        color: ${(p) => p.textColor};
     }
 `;
 

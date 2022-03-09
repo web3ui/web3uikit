@@ -1,5 +1,5 @@
 import React from 'react';
-import { H1Styled, PStyled } from '../../styles/StyledElements';
+import { Typography } from '../Typography';
 import color from '../../styles/colors';
 import { SectionStyled, DivStyled } from './Hero.styles';
 import { HeroProps } from './types';
@@ -19,13 +19,23 @@ const Hero: React.FC<HeroProps> = ({
             data-testid="test-hero"
             height={height}
             style={{ backgroundImage: `url(${backgroundURL})` }}
-            textColor={textColor}
         >
-            <H1Styled data-testid="test-hero_title">{title}</H1Styled>
+            <Typography
+                color={textColor}
+                data-testid="test-hero_title"
+                variant="h1"
+            >
+                {title}
+            </Typography>
             {subTitle && (
-                <PStyled data-testid="test-hero_text">
+                <Typography
+                    color={textColor}
+                    data-testid="test-hero_text"
+                    variant="body16"
+                    weight="regular"
+                >
                     <strong>{subTitle}</strong>
-                </PStyled>
+                </Typography>
             )}
 
             {children && (

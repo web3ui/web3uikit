@@ -35,4 +35,9 @@ export interface TagProps {
      * set width of tag
      */
     width?: string;
+
+    /**
+     * font size, pass a valid CSS font size, like 20px or 1.1rem, or even 3vw.
+     */
+    fontSize?: string;
 }

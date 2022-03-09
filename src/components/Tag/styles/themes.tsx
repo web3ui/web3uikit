@@ -2,6 +2,9 @@ import { css } from 'styled-components';
 import color from '../../../styles/colors';
 import fonts from '../../../styles/fonts';
 import resetCSS from '../../../styles/reset';
+import { TagProps } from '../types';
+
+type TStyleProps = Pick<TagProps, 'width'>;
 
 export const initialStyles = css`
     ${resetCSS}
@@ -36,7 +39,7 @@ export const inactiveStatus = css`
     background: ${color.blueLight};
 `;
 
-export const discount = css`
+export const discount = css<TStyleProps>`
     align-items: center;
     background: ${color.green};
     border-radius: 30px;

@@ -36,6 +36,6 @@ describe('Skeleton - Image', () => {
         const styles = element && getComputedStyle(element);
         const backgroundColorHex =
             styles && rgbToHex(styles.backgroundColor).toUpperCase();
-        expect(backgroundColorHex).toBe(color.greyDisabled);
+        expect(backgroundColorHex).toBe(color.white);
     });
 });

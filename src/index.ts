@@ -31,6 +31,7 @@ export * from './components/Notification';
 export * from './components/Radios';
 export * from './components/Row';
 export * from './components/Select';
+export * from './components/Skeleton';
 export * from './components/Stepper';
 export * from './components/Table';
 export * from './components/Tabs';

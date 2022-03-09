@@ -5,6 +5,10 @@ import { iconTypes } from '../Icon';
 import { Illustration } from '../Illustrations';
 import SelectStyles from './Select.styles';
 import type { SelectProps } from './types';
+import {
+    DivWrapperStyled,
+    LabelStyled as LabelStyledTrad,
+} from '../Input/Input.styles';
 
 const {
     DivStyledWrapper,
@@ -17,21 +21,26 @@ const {
     PrefixIcon,
     PrefixSpan,
     SelectedItem,
+    SelectStyled,
 } = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
+    customNoDataText = 'No Data',
     defaultOptionIndex,
     disabled = false,
     errorMessage = '',
     id = String(Date.now()),
     label,
     onChange,
+    onChangeTraditional,
     options = [],
+    prefixText,
     state = disabled ? 'disabled' : undefined,
     style,
-    prefixText,
+    traditionalHTML5 = false,
+    validation,
+    value,
     width = '200px',
-    customNoDataText = 'No Data',
 }: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOptionIndex, setSelectedOptionIndex] =
@@ -62,8 +71,18 @@ const Select: React.FC<SelectProps> = ({
             document.removeEventListener('click', handleClickOutside);
         };
     }, []);
+    useEffect(() => {
+        if (value) {
+            const valueOptionItem = options.find(
+                (optionItem) => optionItem.id == value,
+            );
+            setSelectedOptionIndex(
+                valueOptionItem ? options.indexOf(valueOptionItem) : 0,
+            );
+        }
+    }, [selectedOptionIndex, value]);
 
-    return (
+    const renderFancySelectMode = () => (
         <DivStyledWrapper
             aria-label="select"
             data-testid="test-wrapper"
@@ -149,6 +168,38 @@ const Select: React.FC<SelectProps> = ({
             {errorMessage && <ErrorLabel>{errorMessage}</ErrorLabel>}
         </DivStyledWrapper>
     );
+
+    const renderTraditionalSelect = () => (
+        <DivWrapperStyled className="input_filled" style={{ ...style, width }}>
+            <SelectStyled
+                defaultValue="Please choose"
+                id={id}
+                onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
+                    onChangeTraditional && onChangeTraditional(event)
+                }
+                required={validation?.required}
+            >
+                <option disabled>Please choose</option>
+                {options.map(
+                    (option, index) =>
+                        index !== selectedOptionIndex && (
+                            <option key={option?.id} id={String(option?.id)}>
+                                {option?.label}
+                            </option>
+                        ),
+                )}
+            </SelectStyled>
+            {label && (
+                <LabelStyledTrad hasPrefix={false} htmlFor={id}>
+                    {label}
+                </LabelStyledTrad>
+            )}
+        </DivWrapperStyled>
+    );
+
+    return traditionalHTML5
+        ? renderTraditionalSelect()
+        : renderFancySelectMode();
 };
 
 export default Select;

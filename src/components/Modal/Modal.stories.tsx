@@ -8,9 +8,17 @@ import { Input } from '../Input';
 import { useArgs } from '@storybook/addons';
 import { Button } from '../Button';
 
+const hasPositionAbsoluteFix = {
+    transform: 'scale(1)',
+    height: '90vh',
+};
+
 export default {
     title: '5.Popup/Modal',
     component: Modal,
+    decorators: [
+        (storyFn) => <div style={hasPositionAbsoluteFix}>{storyFn()}</div>,
+    ],
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => {
@@ -181,5 +189,126 @@ CustomOkColor.args = {
         >
             Are you sure you want to delete your account?
         </p>,
+    ],
+};
+
+export const MaxHeight = Template.bind({});
+MaxHeight.args = {
+    id: 'height',
+    title: 'If the modal wont fix in view it becomes scrollable',
+    isVisible: true,
+    children: [
+        <div
+            key={'0'}
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+            }}
+        >
+            <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+            <p>Moralis web3uiKit will be PAMP!</p>
+        </div>,
+    ],
+};
+
+export const CustomWidth = Template.bind({});
+CustomWidth.args = {
+    id: 'width',
+    title: 'You can pass any valid CSS value as width',
+    isVisible: true,
+    children: [
+        <p>this Modal is 300px width (and will scale down with screen size)</p>,
+    ],
+    width: '300px',
+};
+
+export const CustomFooter = Template.bind({});
+CustomFooter.args = {
+    title: 'This is a custom Footer Modal',
+    children: [
+        <p
+            style={{
+                fontWeight: 600,
+                marginRight: '1em',
+                textAlign: 'center',
+            }}
+        >
+            Modal Body!
+        </p>,
+    ],
+    hasCancel: false,
+    customFooter: <p id="Custom-Footer">Custom Footer Here</p>,
+};
+
+export const CustomCloseButton = Template.bind({});
+CustomCloseButton.args = {
+    id: 'regular',
+    title: 'Confirm',
+    isVisible: true,
+    closeButton: (
+        <Button
+            id="test-button-secondary-icon"
+            text="Custom close button"
+            theme="secondary"
+            type="button"
+        />
+    ),
+    children: [
+        <div
+            key={'0'}
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+            }}
+        >
+            <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
+            <p>Proceed uploading?</p>
+        </div>,
+    ],
+};
+
+export const CustomCloseRoundButton = Template.bind({});
+CustomCloseRoundButton.args = {
+    id: 'regular',
+    title: 'Confirm',
+    isVisible: true,
+    closeButton: (
+        <Button
+            icon="arrowCircleRight"
+            iconLayout="icon-only"
+            id="test-button-primary-icon-only"
+            onClick={() => {}}
+            text="Primary icon only"
+            theme="primary"
+            type="button"
+            radius={40}
+        />
+    ),
+    children: [
+        <div
+            key={'0'}
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+            }}
+        >
+            <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
+            <p>Proceed uploading?</p>
+        </div>,
     ],
 };

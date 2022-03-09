@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styled from 'styled-components';
 import { CopyButton } from '../CopyButton';
 import { TypographyProps, variantType } from './types';
@@ -26,21 +26,29 @@ const getTag = (variant: variantType) => {
     }
 };
 
-const DynamicText = ({
+const DynamicText: FC<TypographyProps> = ({
     variant = 'body16',
     italic,
     monospace,
     copyable,
     children,
+    iconSize,
+    onCopy = () => {},
     ...otherProps
-}: TypographyProps) => {
+}) => {
     const Tag = getTag(variant);
 
     return (
         // @ts-ignore
         <Tag {...otherProps}>
             {children}
-            {copyable && <CopyButton text={children} />}
+            {copyable && (
+                <CopyButton
+                    iconSize={iconSize}
+                    text={`${children}`}
+                    onCopy={onCopy}
+                />
+            )}
         </Tag>
     );
 };
@@ -48,6 +56,7 @@ const DynamicText = ({
 const Typography = styled(DynamicText)`
     ${(p) => getTypographyStyle(p)};
     position: relative;
+    margin: 0;
 `;
 
 export default Typography;

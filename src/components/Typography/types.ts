@@ -30,12 +30,22 @@ export interface TypographyProps {
     /**
      * Children text
      */
-    children?: string | number;
+    children?: React.ReactNode;
 
     /**
      * Copies text to clipboard
      */
     copyable?: boolean;
+
+    /**
+     * To control the size of copy icon's
+     */
+    iconSize?: number;
+
+    /**
+     * On Clipboard copy if typography type is copyable
+     */
+    onCopy?: (e?: React.BaseSyntheticEvent) => void;
 }
 
 export type variantType =

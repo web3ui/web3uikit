@@ -401,3 +401,35 @@ Translucent.args = {
     iconLayout: 'leading',
     size: 'large',
 };
+
+export const LoadingButton = Template.bind({});
+LoadingButton.args = {
+    id: 'test-button-loading',
+    text: 'Loading Button',
+    theme: 'primary',
+    type: 'button',
+    isLoading: true,
+};
+
+export const LoadingButtonCustomProps = Template.bind({});
+LoadingButtonCustomProps.args = {
+    id: 'test-button-loading',
+    text: 'Loading Button',
+    theme: 'primary',
+    type: 'button',
+    isLoading: true,
+    loadingProps: {
+        size: 30,
+    },
+};
+
+export const PrimaryWithIconOnlyRound = Template.bind({});
+PrimaryWithIconOnlyRound.args = {
+    icon: iconTypes.plus,
+    iconLayout: 'icon-only',
+    id: 'test-button-primary-icon-only',
+    theme: 'colored',
+    color: 'red',
+    type: 'button',
+    radius: 20,
+};

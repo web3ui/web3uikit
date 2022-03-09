@@ -34,7 +34,7 @@ export interface StepperProps {
     /**
      * when the process is complete this event will fire
      */
-    onComplete?: () => null;
+    onComplete?: () => void;
 
     /**
      * Pass the step the user should start on
@@ -47,6 +47,11 @@ export interface StepperProps {
      * the Stepper needs data
      */
     stepData: Step[];
+
+    /**
+     * header width pass an amount of pixels for responsive max width
+     */
+    headerWidth?: number;
 }
 
 /**

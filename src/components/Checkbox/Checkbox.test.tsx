@@ -718,8 +718,6 @@ describe('Checkbox - SwitchingText', () => {
         const textUpdated: HTMLSpanElement | null = container.querySelector(
             `[data-testid="${textTestID}"]`,
         );
-        expect(textUpdated?.textContent).toBe(
-            SwitchingText.args?.labelWhenChecked,
-        );
+        expect(textUpdated?.textContent).toBe(testLabelText);
     });
 });

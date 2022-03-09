@@ -1,10 +1,35 @@
-import React from 'react';
-import { MoralisProvider } from 'react-moralis';
+import React, { useEffect } from 'react';
+import { MoralisProvider, useMoralis } from 'react-moralis';
 import { DecoratorFn } from '@storybook/react';
 
 export const moralisContext: DecoratorFn = (Story) => {
     const MORALIS_APP_ID = process.env.STORYBOOK_MORALIS_APP_ID;
     const MORALIS_SERVER_URL = process.env.STORYBOOK_MORALIS_SERVER_URL;
+
+    const Web3Initialize = () => {
+        const {
+            enableWeb3,
+            isAuthenticated,
+            isWeb3Enabled,
+            isWeb3EnableLoading,
+            isInitialized,
+        } = useMoralis();
+
+        useEffect(() => {
+            if (!isInitialized) return;
+            const connectorId = window.localStorage.getItem('connectorId');
+            if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) {
+                enableWeb3({ provider: connectorId as any });
+            }
+        }, [
+            isAuthenticated,
+            isWeb3Enabled,
+            isInitialized,
+            isWeb3EnableLoading,
+        ]);
+
+        return null;
+    };
 
     return (
         <>
@@ -12,9 +37,9 @@ export const moralisContext: DecoratorFn = (Story) => {
                 <MoralisProvider
                     appId={MORALIS_APP_ID}
                     serverUrl={MORALIS_SERVER_URL}
-                    initializeOnMount={false}
                 >
                     <Story />
+                    <Web3Initialize />
                 </MoralisProvider>
             ) : (
                 <>

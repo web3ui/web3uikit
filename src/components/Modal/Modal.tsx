@@ -3,11 +3,13 @@ import { ModalProps } from './types';
 import Button from '../Button/Button';
 import { iconTypes } from '../Icon/collection';
 import {
-    ModalHeader,
-    ModalStyled,
-    ModalFooter,
-    ModalContent,
-    ModalWrapperStyled,
+    HeaderStyled,
+    DivStyledWrap,
+    FooterStyled,
+    DivStyledContent,
+    DivStyled,
+    CustomFooterStyled,
+    CustomButtonStyle,
 } from './Modal.styles';
 
 const Modal: React.FC<ModalProps> = ({
@@ -25,36 +27,52 @@ const Modal: React.FC<ModalProps> = ({
     onCloseButtonPressed,
     onOk,
     title,
+    width = '70vw',
+    customFooter,
+    closeButton,
 }: ModalProps) => (
-    <ModalWrapperStyled
-        id={id}
-        isVisible={isVisible}
-        data-testid="modal-test-id"
-    >
-        <ModalStyled>
-            <ModalHeader data-testid={'modal-header-test-id'}>
-                <h3>{title}</h3>
-                <Button
-                    data-testid={'modal-close-test-id'}
-                    icon={iconTypes.x}
-                    iconLayout={'icon-only'}
-                    onClick={
-                        onCloseButtonPressed
-                            ? onCloseButtonPressed
-                            : () => {
-                                  console.log('close triggered');
-                              }
-                    }
-                    theme={'outline'}
-                />
-            </ModalHeader>
+    <DivStyled id={id} isVisible={isVisible} data-testid="modal-test-id">
+        <DivStyledWrap width={width}>
+            <HeaderStyled data-testid={'modal-header-test-id'}>
+                {typeof title == 'string' ? <h3>{title}</h3> : title}
+                {closeButton ? (
+                    <CustomButtonStyle
+                        onClick={
+                            onCloseButtonPressed
+                                ? onCloseButtonPressed
+                                : () => {
+                                      console.log('close triggered');
+                                  }
+                        }
+                    >
+                        {closeButton}
+                    </CustomButtonStyle>
+                ) : (
+                    <Button
+                        data-testid={'modal-close-test-id'}
+                        icon={iconTypes.x}
+                        iconLayout={'icon-only'}
+                        onClick={
+                            onCloseButtonPressed
+                                ? onCloseButtonPressed
+                                : () => {
+                                      console.log('close triggered');
+                                  }
+                        }
+                        theme={'outline'}
+                    />
+                )}
+            </HeaderStyled>
 
-            <ModalContent id={'content'} data-testid={'modal-content-test-id'}>
+            <DivStyledContent
+                id={'content'}
+                data-testid={'modal-content-test-id'}
+            >
                 {children}
-            </ModalContent>
+            </DivStyledContent>
 
-            {hasFooter && (
-                <ModalFooter
+            {hasFooter && !customFooter && (
+                <FooterStyled
                     data-testid={'modal-footer-test-id'}
                     hasCancel={hasCancel}
                 >
@@ -87,10 +105,14 @@ const Modal: React.FC<ModalProps> = ({
                         text={okText}
                         theme={okButtonColor ? 'colored' : 'primary'}
                     />
-                </ModalFooter>
+                </FooterStyled>
             )}
-        </ModalStyled>
-    </ModalWrapperStyled>
+
+            {customFooter && (
+                <CustomFooterStyled>{customFooter}</CustomFooterStyled>
+            )}
+        </DivStyledWrap>
+    </DivStyled>
 );
 
 export default Modal;

@@ -6,7 +6,7 @@ import { ILoadingProps } from './types';
 const Loading: React.FC<ILoadingProps> = ({
     size = 20,
     spinnerColor = color.white,
-    text = '',
+    text,
     direction = 'bottom',
 }) => {
     return (
@@ -18,7 +18,7 @@ const Loading: React.FC<ILoadingProps> = ({
             spinnerColor={spinnerColor}
         >
             <StyledSpinnerDiv spinnerColor={spinnerColor} size={size} />
-            {<span>{text}</span>}
+            {text && <span>{text}</span>}
         </StyledSpinnerParent>
     );
 };

@@ -1,10 +1,12 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import collection, { TIconType } from './collection';
+import { StyledIconDiv } from './Icon.styles';
 import type { IconProps } from './types';
 
 const Icon: React.FC<IconProps> = ({
     fill = 'inherit',
+    onClick = () => {},
     size = 18,
     svg,
     style,
@@ -20,7 +22,11 @@ const Icon: React.FC<IconProps> = ({
         return collection[key](fill, size, style);
     };
 
-    return getIcon(fill, size, svg, style);
+    return (
+        <StyledIconDiv onClick={onClick}>
+            {getIcon(fill, size, svg, style)}
+        </StyledIconDiv>
+    );
 };
 
 export default Icon;

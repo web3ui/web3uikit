@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react';
-import { FormProps, DataInput } from './types';
 import { Button } from '../Button';
-import { Input } from '../Input';
 import { Checkbox } from '../Checkbox';
+import { CreditCardProps } from '../CreditCard';
+import { DatePicker } from '../DatePicker';
+import { Input } from '../Input';
 import { Radios } from '../Radios';
+import { Select } from '../Select';
 import { TextArea } from '../TextArea';
 import { H3Styled, H4Styled, FormStyled } from './Form.styles';
+import { FormProps, DataInput } from './types';
 
 const Form: React.FC<FormProps> = ({
     buttonConfig,
@@ -23,7 +26,7 @@ const Form: React.FC<FormProps> = ({
         if (form.checkValidity()) {
             const dataReturned = data.map((item) => ({
                 inputName: item.name,
-                inputResult: item.selected || item.value,
+                inputResult: item.selectedCard || item.selected || item.value,
             }));
             onSubmit &&
                 onSubmit({
@@ -35,30 +38,58 @@ const Form: React.FC<FormProps> = ({
         }
     };
 
-    const optionAdded = (index: number, opt: string, isRadio: boolean) => {
-        if (!data[index].selected || isRadio) {
-            data[index].selected = [opt];
+    const optionAdded = (
+        elementIndex: number,
+        opt: string | number,
+        isRadio: boolean,
+    ) => {
+        if (isRadio) {
+            // @ts-ignore:next-line
+            const selectRadioValue = data[elementIndex].options[Number(opt)];
+            if (typeof selectRadioValue === 'string') {
+                data[elementIndex].selected = [selectRadioValue];
+            } else {
+                data[elementIndex].selectedCard = selectRadioValue;
+            }
+            return;
+        }
+
+        if (!data[elementIndex].selected) {
+            data[elementIndex].selected = [String(opt)];
         } else {
-            data[index]?.selected?.push(opt);
+            data[elementIndex]?.selected?.push(String(opt));
         }
     };
 
     const optionToggled = (
         event: React.ChangeEvent<HTMLInputElement>,
-        index: number,
+        elementIndex: number,
         opt: string,
     ) => {
         const isRadio = Boolean(event.target.type === 'radio');
 
         if (event.target.checked) {
-            optionAdded(index, opt, isRadio);
+            optionAdded(elementIndex, opt, isRadio);
         } else {
-            const filtered = data[index]?.selected?.filter(
+            const filtered = data[elementIndex]?.selected?.filter(
                 (item) => item !== opt,
             );
-            data[index].selected = filtered;
+            data[elementIndex].selected = filtered;
         }
     };
+
+    const renderDatePicker = (
+        input: DataInput,
+        type: 'date',
+        index: number,
+    ) => (
+        <DatePicker
+            id={`${type}_${index}`}
+            label={input.name}
+            onChange={(e) => (data[index].selected = [String(e.date)])}
+            validation={{ required: input.validation?.required }}
+        />
+    );
 
     const renderInput = (
         input: DataInput,
@@ -67,6 +98,7 @@ const Form: React.FC<FormProps> = ({
     ) => (
         <Input
             key={`input_${index}`}
+            id={`input_${index}`}
             label={input.name}
             name={input.name}
             onChange={(e) => (data[index].value = e.target.value)}
@@ -91,16 +123,18 @@ const Form: React.FC<FormProps> = ({
     ) => (
         <Fragment key={`cb-group_${index}`}>
             <H4Styled>{input.value}</H4Styled>
-            {input.options?.map((opt, i) => (
-                <Checkbox
-                    key={`cb_${index}-${i}`}
-                    label={opt}
-                    layout={layout}
-                    name={input.name}
-                    onChange={(e) => optionToggled(e, index, opt)}
-                    validation={{ required: input.validation?.required }}
-                />
-            ))}
+            {(input.options || ([] as Array<CreditCardProps | string>)).map(
+                (opt, i) => (
+                    <Checkbox
+                        key={`cb_${index}-${i}`}
+                        label={String(opt)}
+                        layout={layout}
+                        name={input.name}
+                        onChange={(e) => optionToggled(e, index, String(opt))}
+                        validation={{ required: input.validation?.required }}
+                    />
+                ),
+            )}
         </Fragment>
     );
 
@@ -134,6 +168,24 @@ const Form: React.FC<FormProps> = ({
         </Fragment>
     );
 
+    const renderSelect = (input: DataInput, type: string, index: number) => {
+        return (
+            <Select
+                id={`${input.name}_${index}`}
+                label={input.name}
+                onChangeTraditional={(e) =>
+                    (data[index].value = e.target.value)
+                }
+                options={input.selectOptions}
+                traditionalHTML5={type === 'traditional'}
+                validation={{
+                    required: Boolean(input.validation?.required),
+                }}
+                width={input.inputWidth}
+            />
+        );
+    };
+
     const renderInputType = (input: DataInput, index: number) => {
         switch (input.type) {
             case 'text':
@@ -152,8 +204,12 @@ const Form: React.FC<FormProps> = ({
                 return renderCheckbox(input, 'switch', index);
             case 'radios':
                 return renderRadioGroup(input, index);
+            case 'select':
+                return renderSelect(input, 'traditional', index);
             case 'textarea':
                 return renderTextArea(input, index);
+            case 'date':
+                return renderDatePicker(input, 'date', index);
             default:
                 return;
         }
@@ -167,15 +223,16 @@ const Form: React.FC<FormProps> = ({
 
             {data.map((input, i) => (
                 <div
-                    data-testid={`form-ele-${i}`}
+                    className="form-item"
                     data-testclass="form-ele"
+                    data-testid={`form-ele-${i}`}
                     key={`form-ele-${i}`}
                 >
                     {renderInputType(input, i)}
                 </div>
             ))}
 
-            <Button {...buttonConfig} id={`form-${id}-submit`} type="submit">
+            <Button {...buttonConfig} id="form-submit" type="submit">
                 Submit
             </Button>
         </FormStyled>

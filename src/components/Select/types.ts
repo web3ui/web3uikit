@@ -12,9 +12,19 @@ export interface SelectProps {
     label?: string;
 
     /**
-     * standard onChange that returns the entire event, as normal you can access event.target
+     * Id of the Option that you want the Select to have. Use to control the value of the option
      */
-    onChange: (option: OptionProps) => void;
+    value?: string;
+
+    /**
+     * onChange that returns OptionProps typed data if not using traditional HTML5 mode
+     */
+    onChange?: (option: OptionProps) => void;
+
+    /**
+     * traditional onChange that returns the entire event, as normal you can access event.target
+     */
+    onChangeTraditional?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 
     /**
      * the select component can use state to react to user interaction
@@ -61,6 +71,16 @@ export interface SelectProps {
      * To replace no data text with a different text, but still keep image
      */
     customNoDataText?: string;
+
+    /**
+     * you just want to kick it old school with a fully device & browser safe HTML5 select, we got you
+     */
+    traditionalHTML5?: boolean;
+
+    /**
+     * You can validate your inputs
+     */
+    validation?: { required: boolean };
 }
 
 export interface OptionProps {

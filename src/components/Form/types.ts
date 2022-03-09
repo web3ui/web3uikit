@@ -1,5 +1,7 @@
 import { ValidateInput } from '../Input/types';
+import { CreditCardProps } from '../CreditCard';
 import { ButtonProps } from '../Button';
+import { OptionProps } from '../Select';
 
 export interface FormProps {
     /**
@@ -26,7 +28,7 @@ export interface FormProps {
      * when the form passes validation the data is returned
      * { id: string, data: [{inputName: string; inputResult: string[] | string;}]}
      */
-    onSubmit?: (data: FormDataReturned) => FormDataReturned;
+    onSubmit?: (data: FormDataReturned) => void;
 }
 
 export type FormDataReturned = {
@@ -50,7 +52,7 @@ export type InputDataReturned = {
     /**
      * The data collected from the input
      */
-    inputResult: string[] | string;
+    inputResult: CreditCardProps | string[] | string;
 };
 
 export type DataInput = {
@@ -64,10 +66,12 @@ export type DataInput = {
      */
     type:
         | 'box'
+        | 'date'
         | 'email'
         | 'number'
         | 'password'
         | 'radios'
+        | 'select'
         | 'switch'
         | 'tel'
         | 'text'
@@ -81,12 +85,22 @@ export type DataInput = {
     /**
      * If you want radios you will need to pass an array of options here
      */
-    options?: string[];
+    options?: string[] | CreditCardProps[];
+
+    /**
+     * If you want radios you will need to pass an array of options here
+     */
+    selectOptions?: OptionProps[];
 
     /**
      * If you radios you will need to pass an array to return your options
      */
     selected?: string[];
+
+    /**
+     * If you pass CreditCardProps for data, expect CreditCardProps returned
+     */
+    selectedCard?: CreditCardProps;
 
     /**
      * You can validate your inputs

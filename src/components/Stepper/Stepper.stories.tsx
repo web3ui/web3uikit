@@ -35,7 +35,11 @@ const testHelpContent = () => (
 );
 
 export const Demo = Template.bind({});
-Demo.args = { step: 1, stepData: testStepData };
+Demo.args = {
+    step: 1,
+    stepData: testStepData,
+    onComplete: () => alert('done'),
+};
 
 export const PreLoadStep0 = Template.bind({});
 PreLoadStep0.args = { stepData: testStepData };
@@ -52,4 +56,20 @@ StepsWithoutNav.args = {
     step: 1,
     stepData: noNavTestStepData,
     hasNavButtons: false,
+};
+
+export const CustomComplete = Template.bind({});
+CustomComplete.args = {
+    step: 5,
+    stepData: testStepData,
+    completeTitle: 'Custom Complete Title',
+    completeMessage: 'and you can customize this message too',
+};
+
+export const SmallerStepperCount = Template.bind({});
+SmallerStepperCount.args = {
+    step: 1,
+    stepData: noNavTestStepData,
+    hasNavButtons: false,
+    headerWidth: 400,
 };

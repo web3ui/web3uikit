@@ -12,6 +12,7 @@ import {
     OrderedListStyled,
     SectionStyled,
     SpanStyled,
+    HeaderStyled,
 } from './Stepper.styles';
 import { H2Styled } from '../../styles/StyledElements';
 import color from '../../styles/colors';
@@ -24,7 +25,8 @@ const Stepper: React.FC<StepperProps> = ({
     helperContent,
     completeTitle = 'all done, nice!',
     completeMessage = 'You should tell the user what to do next, or use the onComplete function to programmatically fire an event',
-    onComplete,
+    onComplete = () => null,
+    headerWidth,
 }) => {
     const [activeStep, setActiveStep] = useState(step);
     const myStepRef = useRef(activeStep);
@@ -40,13 +42,6 @@ const Stepper: React.FC<StepperProps> = ({
         };
     }, []);
 
-    useEffect(() => {
-        if (activeStep === Number(stepData.length + 1)) {
-            onComplete && onComplete();
-            return;
-        }
-    }, [activeStep]);
-
     const setStep = (data: number) => {
         myStepRef.current = data;
         setActiveStep(data);
@@ -58,6 +53,10 @@ const Stepper: React.FC<StepperProps> = ({
     };
 
     const nextStep = () => {
+        if (activeStep === stepData.length + 1) {
+            onComplete();
+            return;
+        }
         setStep(myStepRef.current + 1);
     };
 
@@ -71,7 +70,7 @@ const Stepper: React.FC<StepperProps> = ({
 
     const renderPreloader = () => (
         <DivStyled>
-            <H2Styled data-testid="test-stepper_title">
+            <H2Styled id="stepper-load-title" data-testid="test-stepper_title">
                 Just one sec...
             </H2Styled>
             <Loading size={20} spinnerColor={color.green} />
@@ -79,8 +78,8 @@ const Stepper: React.FC<StepperProps> = ({
     );
 
     const renderContent = () => (
-        <DivStyled>
-            <H2Styled data-testid="test-stepper_title">
+        <DivStyled id={`step-${activeStep}`}>
+            <H2Styled id="stepper-title" data-testid="test-stepper_title">
                 {activeStep <= stepData.length
                     ? stepData[Number(activeStep - 1)].title || ''
                     : completeTitle}
@@ -88,6 +87,7 @@ const Stepper: React.FC<StepperProps> = ({
             <DivStyledContent
                 onClick={handleContentClick}
                 data-testid="test-stepper_content"
+                id="stepper-content"
             >
                 {activeStep <= stepData.length
                     ? stepData[Number(activeStep - 1)].content
@@ -126,7 +126,12 @@ const Stepper: React.FC<StepperProps> = ({
 
     return (
         <SectionStyled data-testid="test-stepper">
-            <header>{renderStepperNumbers()}</header>
+            <HeaderStyled
+                headerWidth={headerWidth}
+                style={{ alignSelf: 'center' }}
+            >
+                {renderStepperNumbers()}
+            </HeaderStyled>
 
             {activeStep === 0 ? renderPreloader() : renderContent()}
 

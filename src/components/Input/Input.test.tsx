@@ -7,7 +7,7 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './Input.stories';
 import color from '../../styles/colors';
 import React from 'react';
-import RGBToHex from '../../utils/rgbToHex';
+import rgbToHex from '../../utils/rgbToHex';
 
 const {
     EmailInput,
@@ -89,7 +89,7 @@ describe('Input - Text', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(
             color.greyLight,
         );
     });
@@ -190,7 +190,7 @@ describe('Input - Text Error', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(color.red);
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(color.red);
     });
 
     it('renders label text', () => {
@@ -289,7 +289,7 @@ describe('Input - Text Confirmed', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(color.green);
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(color.green);
     });
 
     it('renders label text', () => {
@@ -389,7 +389,7 @@ describe('Input - Number', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(
             color.greyLight,
         );
     });
@@ -445,7 +445,6 @@ describe('Input - Number', () => {
 describe('Input - Password', () => {
     const testLabel = PasswordInput?.args?.label;
     const testName = PasswordInput?.args?.name;
-    const testType = PasswordInput?.args?.type;
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -485,7 +484,7 @@ describe('Input - Password', () => {
             `[data-testid="${testInputId}"]`,
         );
         expect(input).not.toBeNull();
-        input && expect(input.type).toBe(testType);
+        input && expect(input.type).toBe('text');
     });
 
     it('renders input with the name passed', () => {
@@ -501,7 +500,7 @@ describe('Input - Password', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(
             color.greyLight,
         );
     });
@@ -603,7 +602,7 @@ describe('Input - Email', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(
             color.greyLight,
         );
     });
@@ -705,7 +704,7 @@ describe('Input - Tel', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(RGBToHex(styles?.outlineColor).toUpperCase()).toBe(
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(
             color.greyLight,
         );
     });
@@ -764,7 +763,7 @@ describe('PrefixCopyableHidden - Text', () => {
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
         );
-        expect(input?.value).toBe('****');
+        expect(input?.type).toBe('text');
     });
 });
 

@@ -91,6 +91,11 @@ const montserrat = css`
     font-family: 'Montserrat', sans-serif;
 `;
 
+const creepster = css`
+    @import url('//fonts.googleapis.com/css2?family=Creepster&display=swap');
+    font-family: 'Creepster', cursive;
+`;
+
 const fonts = {
     h1,
     h2,
@@ -107,6 +112,7 @@ const fonts = {
     textBold500,
     openSans,
     montserrat,
+    creepster,
 };
 
 export default fonts;

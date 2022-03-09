@@ -1,4 +1,4 @@
-const RGBToHex = (rgb: string | undefined) => {
+const rgbToHex = (rgb: string | undefined) => {
     if (typeof rgb == 'undefined') throw new Error();
     // Choose correct separator
     const sep = rgb.indexOf(',') > -1 ? ',' : ' ';
@@ -16,4 +16,4 @@ const RGBToHex = (rgb: string | undefined) => {
     return '#' + r + g + b;
 };
 
-export default RGBToHex;
+export default rgbToHex;

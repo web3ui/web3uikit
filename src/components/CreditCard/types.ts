@@ -1,11 +1,21 @@
 export interface CreditCardProps {
     /**
+     * set the unique fingerprint for each
+     */
+    fingerprint: string;
+
+    /**
+     * set credit card issuer
+     */
+    brand: creditCardBrands;
+
+    /**
      * set the id of credit-card
      */
     id?: string;
 
     /**
-     * set date of expiration MM/YY
+     * set date of expiration { month: 'MM', year: 'YY' }  MM/YY
      */
     expiresAt: {
         /**
@@ -42,9 +52,6 @@ export interface CreditCardProps {
      * set pressed
      */
     pressed?: boolean;
-
-    /**
-     * set type
-     */
-    type: 'mastercard' | 'visa';
 }
+
+export type creditCardBrands = 'mastercard' | 'visa' | 'amex' | 'diners';

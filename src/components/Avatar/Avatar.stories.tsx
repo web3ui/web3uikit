@@ -45,3 +45,28 @@ RoundedAvatarLetters.args = {
     text: 'DM',
     isRounded: true,
 };
+
+export const CustomBackgroundAndBorderRadius = Template.bind({});
+CustomBackgroundAndBorderRadius.args = {
+    theme: 'letters',
+    text: 'RA',
+    borderRadius: 10,
+    avatarBackground: '#ff0000',
+};
+
+export const CustomSizeAndFontSize = Template.bind({});
+CustomSizeAndFontSize.args = {
+    theme: 'letters',
+    text: 'RA',
+    isRounded: true,
+    avatarBackground: '#ff0000',
+    size: 80,
+    fontSize: 25,
+};
+
+export const RandomBackgroundColor = Template.bind({});
+RandomBackgroundColor.args = {
+    theme: 'letters',
+    text: 'CS',
+    borderRadius: 10,
+};

@@ -16,6 +16,8 @@ import pack from './images/various/pack';
 import marketplace from './images/various/marketplace';
 import chest from './images/various/chest';
 import bundle from './images/various/bundle';
+import styled from 'styled-components';
+import resetCSS from '../../styles/reset';
 
 const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     switch (logo) {
@@ -56,13 +58,24 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     }
 };
 
+const StyledIllustration = styled.div`
+    ${resetCSS}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
 const Illustration: React.FC<IllustrationProps> = ({
     id = String(Date.now()),
     logo,
     width,
     height,
 }: IllustrationProps) => {
-    return <div id={id}>{getLogo(logo, width, height)}</div>;
+    return (
+        <StyledIllustration id={id}>
+            {getLogo(logo, width, height)}
+        </StyledIllustration>
+    );
 };
 
 export default Illustration;

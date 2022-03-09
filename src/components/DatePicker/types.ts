@@ -55,7 +55,7 @@ export interface DatePickerProps {
      */
     onChange?: (data: {
         event: React.ChangeEvent<HTMLInputElement>;
-        date: Date | null;
+        date: Date;
     }) => void;
 
     /**

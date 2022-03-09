@@ -11,6 +11,8 @@ const {
     RoundedAvatarImageCustom,
     RoundedAvatarImageDefault,
     RoundedAvatarLetters,
+    CustomBackgroundAndBorderRadius,
+    CustomSizeAndFontSize,
 } = composeStories(stories);
 
 let container: HTMLDivElement;
@@ -225,5 +227,71 @@ describe('Avatar - Custom Image Rounded', () => {
         expect(styles?.backgroundImage).toBe(
             'url(https://academy.moralis.io/wp-content/uploads/2021/12/Illustration4_home.svg)',
         );
+    });
+});
+
+describe('Avatar - CustomBackgroundAndBorderRadius', () => {
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<CustomBackgroundAndBorderRadius />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('has custom border radius', () => {
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        expect(styles?.borderRadius).toBe(
+            `${CustomBackgroundAndBorderRadius?.args?.borderRadius}px`,
+        );
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+});
+
+describe('Avatar - CustomSizeAndFontSize', () => {
+    beforeEach(() => {
+        container = document.createElement('div');
+        document.body.appendChild(container);
+        ReactDOM.render(<CustomSizeAndFontSize />, container);
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+
+    it('has custom font size', () => {
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        expect(styles?.fontSize).toBe(
+            `${CustomSizeAndFontSize?.args?.fontSize}px`,
+        );
+    });
+
+    it('has custom size', () => {
+        const element = container.querySelector(
+            `[data-testid="${testAvatarId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        expect(styles?.width).toBe(`${CustomSizeAndFontSize?.args?.size}px`);
     });
 });

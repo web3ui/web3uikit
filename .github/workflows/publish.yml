@@ -23,14 +23,14 @@ jobs:
             - run: git config --global user.name "GitHub CD bot"
             - run: git config --global user.email "dmitrii@moralis.io"
             # upgrade npm version in package.json to the tag used in the release.
-            - run: npm version ${{ github.event.release.tag_name }} --no-git-tag-version
+            - run: npm version ${{ github.event.release.tag_name }}
             # build the project
             - run: npm run build
             # run tests just in case
             - run: npm test
             - run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
 
-            - name: publish to NPM alpha version
+            - name: publish to NPM as latest version
               if: '!github.event.release.prerelease'
               run: npm publish --tag latest
               env:

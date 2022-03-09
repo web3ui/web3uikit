@@ -1,3 +1,6 @@
+import React from 'react';
+import type { ButtonProps } from '../Button';
+
 export interface ModalProps {
     /**
      * The ID of the modal will be generated automatically if not set
@@ -69,5 +72,20 @@ export interface ModalProps {
     /**
      * set title of modal
      */
-    title?: string;
+    title?: string | JSX.Element;
+
+    /**
+     * set a custom width for modal with any CSS value. EG: 70%, 60vw, 400px
+     */
+    width?: string;
+
+    /**
+     * To Have a custom footer
+     */
+    customFooter?: JSX.Element;
+
+    /**
+     * To have a custom close button
+     */
+    closeButton?: ButtonProps;
 }

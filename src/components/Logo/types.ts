@@ -1,4 +1,10 @@
-export type Theme = 'icon' | 'default' | 'visa' | 'mastercard';
+export type Theme =
+    | 'icon'
+    | 'default'
+    | 'visa'
+    | 'mastercard'
+    | 'amex'
+    | 'diners';
 export type Color = 'black' | 'white';
 export type Size = 'small' | 'regular';
 

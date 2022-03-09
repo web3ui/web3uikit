@@ -1,28 +1,55 @@
-export type Position = 'top' | 'bottom' | 'left' | 'right';
+import { TIconType } from '../Icon/collection';
+import { OptionProps } from '../Select';
 
-export interface DropdownProps {
+export interface IDropdown {
     /**
-     * Set children which should have a tooltip
+     * Option items for the picker
      */
-    children: Array<React.ReactNode>;
+    options: OptionProps[];
+    /**
+     * Picker Label
+     */
+    label?: string;
+    /**
+     * To remove the label if an option is picked
+     */
+    isLabelFixed?: boolean;
+    /**
+     * To show the current selected value in the main select
+     */
+    showSelected?: boolean;
+    /**
+     * To hide the currently selected option from the option menu
+     */
+    hideSelected?: boolean;
+    /**
+     * To control the value of the selected item of the select
+     */
+    selectedState?: number;
+    /**
+     * Name of the prefix Icon
+     */
+    icon?: TIconType;
+    /**
+     * Name of the prefix Icon
+     */
+    isDisabled?: boolean;
+    /**
+     * Width of the picker
+     */
+    width?: string;
+    /**
+     * Callback for on change
+     */
+    onChange(selectedOption: OptionProps): void;
 
     /**
-     * The dropdown ID should be assigned
+     * if true will render border outline
      */
-    id?: string;
+    hasOutline?: boolean;
 
     /**
-     * Moves the arrow +/- up/down/left/right (use responsibly, arrow can move the the X / Y axis indefinitely)
+     * index of selected option by default
      */
-    move?: number;
-
-    /**
-     * The parent element that triggers the dropdown selection
-     */
-    parent: React.ReactNode;
-
-    /**
-     * Set position of tooltip
-     */
-    position: Position;
+    defaultOptionIndex?: number;
 }

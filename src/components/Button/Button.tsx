@@ -13,11 +13,13 @@ const Button: React.FC<ButtonProps> = ({
     isFullWidth = false,
     isLoading = false,
     loadingText = 'Loading...',
-    onClick = (e) => e.preventDefault(),
+    onClick = (e) => e.preventDefault,
     size = 'regular',
     text = 'click',
     theme,
     type = 'button',
+    loadingProps,
+    radius,
 }: ButtonProps) => {
     return (
         <ButtonStyled
@@ -32,8 +34,9 @@ const Button: React.FC<ButtonProps> = ({
             size={size}
             theme={theme}
             type={type}
+            radius={radius}
         >
-            {isLoading && <Loading size={15} />}
+            {isLoading && <Loading size={15} {...loadingProps} />}
             {icon && <Icon svg={icon} fill="inherit" size={20} />}
             <span>{isLoading ? loadingText : text}</span>
         </ButtonStyled>

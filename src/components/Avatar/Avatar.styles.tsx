@@ -1,17 +1,26 @@
 import styled, { css } from 'styled-components';
 import fonts from '../../styles/fonts';
-import color from '../../styles/colors';
 import resetCSS from '../../styles/reset';
 import { AvatarProps } from './types';
 
-type TStyleProps = Pick<AvatarProps, 'image' | 'isRounded' | 'theme'>;
+type TStyleProps = Pick<
+    AvatarProps,
+    | 'avatarBackground'
+    | 'borderRadius'
+    | 'image'
+    | 'isRounded'
+    | 'textColor'
+    | 'theme'
+    | 'size'
+    | 'fontSize'
+>;
 
-export const roundedEdgeValue = '20px';
+export const roundedEdgeValue = '50%';
 
 const customBackgroundImage = css<TStyleProps>`
+    background-image: url(${(p) => p.image});
     background-position: center;
     background-size: cover;
-    background-image: url(${(p) => p.image});
 `;
 
 const DivStyled = styled.div<TStyleProps>`
@@ -20,30 +29,41 @@ const DivStyled = styled.div<TStyleProps>`
         #ecf5fc 0.52%,
         #cee4f3 100%
     );
-    height: 40px;
+    color: ${(props) => props.textColor};
+    height: ${(props) => props.size}px;
     overflow: hidden;
     position: static;
     text-transform: uppercase;
-    width: 40px;
+    width: ${(props) => props.size}px;
     word-break: break-all;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: ${(props) => props.fontSize}px;
 
     span {
         display: none;
     }
-
-    border-radius: ${(p) => (p.isRounded ? roundedEdgeValue : '0px')};
+    border-radius: ${(p) =>
+        `${
+            p.isRounded
+                ? roundedEdgeValue
+                : p.borderRadius
+                ? `${p.borderRadius}px`
+                : `${0}px`
+        }`};
+    background: ${(p) => p.avatarBackground};
     ${(p) => p.theme === 'image' && p.image && customBackgroundImage}
 `;
 
-const H4Styled = styled.h4`
-    ${resetCSS};
-    ${fonts.openSans};
+const H4Styled = styled.h4<Pick<AvatarProps, 'textColor'>>`
     ${fonts.h4};
+    ${fonts.openSans};
     ${fonts.textBold700};
-    color: ${color.blue};
-    left: calc(50% - 28px / 2);
-    padding-top: calc(50% - 28px / 2);
-    text-align: center;
+    ${resetCSS};
+    color: ${(props) => props.color};
+    font-size: inherit;
 `;
 
 export { DivStyled, H4Styled };

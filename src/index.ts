@@ -1,6 +1,7 @@
 // Components
 export * from './components/Accordion';
 export * from './components/Avatar';
+export * from './components/Badge';
 export * from './components/BannerStrip';
 export * from './components/Blockie';
 export * from './components/Breadcrumbs';
@@ -11,9 +12,11 @@ export * from './components/ConnectButton';
 export * from './components/CopyButton';
 export * from './components/CreditCard';
 export * from './components/CryptoCards';
+export * from './components/CryptoLogos';
 export * from './components/DatePicker';
 export * from './components/Dropdown';
-export * from './components/DropdownElement';
+export * from './components/PopoverDropdown';
+export * from './components/PopoverElement';
 export * from './components/Form';
 export * from './components/Icon';
 export * from './components/Illustrations';
@@ -28,6 +31,7 @@ export * from './components/Notification';
 export * from './components/Radios';
 export * from './components/Row';
 export * from './components/Select';
+export * from './components/Skeleton';
 export * from './components/Stepper';
 export * from './components/Table';
 export * from './components/Tabs';

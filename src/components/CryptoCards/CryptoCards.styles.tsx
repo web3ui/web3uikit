@@ -72,9 +72,6 @@ export const DivStyledInfo = styled.div`
 export const DivStyledLogo = styled.div`
     border-radius: 0px;
     height: 136px;
-    left: 19px;
-    top: 12px;
-    width: 82px;
 `;
 
 export const DivStyledNetworkInfo = styled.div`

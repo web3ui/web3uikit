@@ -250,3 +250,65 @@ CustomFooter.args = {
     hasCancel: false,
     customFooter: <p id="Custom-Footer">Custom Footer Here</p>,
 };
+
+export const CustomCloseButton = Template.bind({});
+CustomCloseButton.args = {
+    id: 'regular',
+    title: 'Confirm',
+    isVisible: true,
+    closeButton: (
+        <Button
+            id="test-button-secondary-icon"
+            text="Custom close button"
+            theme="secondary"
+            type="button"
+        />
+    ),
+    children: [
+        <div
+            key={'0'}
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+            }}
+        >
+            <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
+            <p>Proceed uploading?</p>
+        </div>,
+    ],
+};
+
+export const CustomCloseRoundButton = Template.bind({});
+CustomCloseRoundButton.args = {
+    id: 'regular',
+    title: 'Confirm',
+    isVisible: true,
+    closeButton: (
+        <Button
+            icon="arrowCircleRight"
+            iconLayout="icon-only"
+            id="test-button-primary-icon-only"
+            onClick={() => {}}
+            text="Primary icon only"
+            theme="primary"
+            type="button"
+            radius={40}
+        />
+    ),
+    children: [
+        <div
+            key={'0'}
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+            }}
+        >
+            <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
+            <p>Proceed uploading?</p>
+        </div>,
+    ],
+};

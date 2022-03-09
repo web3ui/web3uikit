@@ -9,6 +9,7 @@ import {
     DivStyledContent,
     DivStyled,
     CustomFooterStyled,
+    CustomButtonStyle,
 } from './Modal.styles';
 
 const Modal: React.FC<ModalProps> = ({
@@ -28,24 +29,39 @@ const Modal: React.FC<ModalProps> = ({
     title,
     width = '70vw',
     customFooter,
+    closeButton,
 }: ModalProps) => (
     <DivStyled id={id} isVisible={isVisible} data-testid="modal-test-id">
         <DivStyledWrap width={width}>
             <HeaderStyled data-testid={'modal-header-test-id'}>
                 {typeof title == 'string' ? <h3>{title}</h3> : title}
-                <Button
-                    data-testid={'modal-close-test-id'}
-                    icon={iconTypes.x}
-                    iconLayout={'icon-only'}
-                    onClick={
-                        onCloseButtonPressed
-                            ? onCloseButtonPressed
-                            : () => {
-                                  console.log('close triggered');
-                              }
-                    }
-                    theme={'outline'}
-                />
+                {closeButton ? (
+                    <CustomButtonStyle
+                        onClick={
+                            onCloseButtonPressed
+                                ? onCloseButtonPressed
+                                : () => {
+                                      console.log('close triggered');
+                                  }
+                        }
+                    >
+                        {closeButton}
+                    </CustomButtonStyle>
+                ) : (
+                    <Button
+                        data-testid={'modal-close-test-id'}
+                        icon={iconTypes.x}
+                        iconLayout={'icon-only'}
+                        onClick={
+                            onCloseButtonPressed
+                                ? onCloseButtonPressed
+                                : () => {
+                                      console.log('close triggered');
+                                  }
+                        }
+                        theme={'outline'}
+                    />
+                )}
             </HeaderStyled>
 
             <DivStyledContent

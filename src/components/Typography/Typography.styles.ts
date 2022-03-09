@@ -109,7 +109,7 @@ const text = css`
 `;
 
 const heading = css`
-    ${argentumSans}
+    ${argentumSans};
     -webkit-font-smoothing: antialiased;
     font-family: 'Argentum Sans';
     color: ${color.blueDark};

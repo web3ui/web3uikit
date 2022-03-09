@@ -67,3 +67,13 @@ export const CustomFooterStyled = styled.footer`
     display: flex;
     padding: 15px 32px 20px;
 `;
+
+export const CustomButtonStyle = styled.button`
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+`;

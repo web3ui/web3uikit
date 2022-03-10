@@ -101,7 +101,7 @@ const Input: React.FC<InputProps> = ({
         <DivWrapperStyled
             state={currentState}
             className={`input input_${
-                currentValue.length > 0 ? 'filled' : 'empty'
+                currentValue && currentValue?.length > 0 ? 'filled' : 'empty'
             }`}
             data-testid="test-div"
             style={{ ...style, width }}

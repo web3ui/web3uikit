@@ -58,11 +58,15 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     }
 };
 
-const StyledIllustration = styled.div`
+const StyledIllustration = styled.div<
+    Pick<IllustrationProps, 'width' | 'height'>
+>`
     ${resetCSS}
     display: flex;
     justify-content: center;
     align-items: center;
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};
 `;
 
 const Illustration: React.FC<IllustrationProps> = ({
@@ -72,7 +76,7 @@ const Illustration: React.FC<IllustrationProps> = ({
     height,
 }: IllustrationProps) => {
     return (
-        <StyledIllustration id={id}>
+        <StyledIllustration width={width} height={height} id={id}>
             {getLogo(logo, width, height)}
         </StyledIllustration>
     );

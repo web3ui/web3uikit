@@ -6,4 +6,5 @@ export const StyledIconDiv = styled.div`
     flex-direction: column;
     justify-content: center;
     line-height: 0px;
+    pointer-events: none;
 `;

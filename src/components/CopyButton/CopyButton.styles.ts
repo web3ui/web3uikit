@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 import color from '../../styles/colors';
 import { resetButtonCSS } from '../../styles/reset';
+import { CopyButtonProps } from './types';
 
-export const ButtonStyled = styled.button`
+type TCopyButtonProps = Pick<CopyButtonProps, 'iconSize'>;
+
+export const ButtonStyled = styled.button<TCopyButtonProps>`
     ${resetButtonCSS};
     display: inline-block;
     height: 1em;

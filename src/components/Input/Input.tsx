@@ -40,7 +40,7 @@ const Input: React.FC<InputProps> = ({
     const [isInputHidden, setIsInputHidden] = useState(inputHidden);
     const [invalidMessage, setInvalidMessage] = useState(errorMessage);
 
-    useEffect(() => setIsInputHidden(inputHidden), [inputHidden]);
+    useEffect(() => setIsInputHidden(type === 'password'), [inputHidden]);
     useEffect(() => setCurrentState(state), [state]);
     useEffect(() => setMainType(type), [type]);
 

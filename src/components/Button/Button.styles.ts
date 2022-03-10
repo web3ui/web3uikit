@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import type { ButtonProps } from './types';
-
-import { initialStyles, isLoadingMode } from './styles/inititalStyles';
+import {
+    hoverEffect,
+    initialStyles,
+    isLoadingMode,
+    transparent,
+} from './styles/inititalStyles';
 import {
     primary,
     regular,
@@ -32,6 +36,7 @@ type TStyleProps = Pick<
     | 'isFullWidth'
     | 'isLoading'
     | 'radius'
+    | 'isTransparent'
 >;
 
 const getThemeStyles = (theme: string) => {
@@ -113,4 +118,6 @@ export const ButtonStyled = styled.button<TStyleProps>`
     ${(p) => p.isLoading && isLoadingMode}
 
     ${(p) => p.radius && `border-radius: ${p.radius}px`}
+
+    ${(p) => (p.isTransparent ? transparent : hoverEffect)}
 `;

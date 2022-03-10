@@ -37,6 +37,7 @@ type TStyleProps = Pick<
     | 'isLoading'
     | 'radius'
     | 'isTransparent'
+    | 'iconColor'
 >;
 
 const getThemeStyles = (theme: string) => {
@@ -100,6 +101,15 @@ const iconOnlyBorderFix = (theme: string) => {
     }
 };
 
+const getIconColor = (color: string) => {
+    return `
+    svg 
+        {
+            fill: ${color};
+        }
+    `;
+};
+
 export const ButtonStyled = styled.button<TStyleProps>`
     ${initialStyles}
 
@@ -120,4 +130,6 @@ export const ButtonStyled = styled.button<TStyleProps>`
     ${(p) => p.radius && `border-radius: ${p.radius}px`}
 
     ${(p) => (p.isTransparent ? transparent : hoverEffect)}
+
+    ${(p) => p.iconColor && getIconColor(p.iconColor)}
 `;

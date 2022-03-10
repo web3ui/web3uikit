@@ -19,10 +19,12 @@ export const DivStyledWrap = styled.div<TStyleProps>`
     width: ${(p) => p.width};
 `;
 
-export const HeaderStyled = styled.header`
+export const HeaderStyled = styled.header<{
+    title: any;
+}>`
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: ${(p) => (p.title ? 'space-between' : 'flex-end')};
     padding: 24px 32px 10px;
 
     div {

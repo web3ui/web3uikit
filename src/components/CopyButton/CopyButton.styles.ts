@@ -1,22 +1,21 @@
 import styled from 'styled-components';
-import { CopyButtonProps } from '.';
 import color from '../../styles/colors';
 import { resetButtonCSS } from '../../styles/reset';
+import { CopyButtonProps } from './types';
 
-export const ButtonStyled = styled.button<Pick<CopyButtonProps, 'iconSize'>>`
-    ${resetButtonCSS}
+type TCopyButtonProps = Pick<CopyButtonProps, 'iconSize'>;
+
+export const ButtonStyled = styled.button<TCopyButtonProps>`
+    ${resetButtonCSS};
     display: inline-block;
-    margin-left: 0.1em;
     height: 1em;
-    ${(props) => props.iconSize && `min-height: ${props.iconSize}px;`}
+    margin-left: 0.1em;
 
     &:first-child {
         fill: ${color.grey};
         height: 100%;
         transition: fill 0.2s ease-out;
         width: 100%;
-        max-width: fit-content;
-        min-width: fit-content;
     }
 
     &:hover > svg {

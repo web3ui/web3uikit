@@ -40,7 +40,7 @@ const Input: React.FC<InputProps> = ({
     const [isInputHidden, setIsInputHidden] = useState(inputHidden);
     const [invalidMessage, setInvalidMessage] = useState(errorMessage);
 
-    useEffect(() => setIsInputHidden(inputHidden), [inputHidden]);
+    useEffect(() => setIsInputHidden(type === 'password'), [inputHidden]);
     useEffect(() => setCurrentState(state), [state]);
     useEffect(() => setMainType(type), [type]);
 
@@ -101,7 +101,7 @@ const Input: React.FC<InputProps> = ({
         <DivWrapperStyled
             state={currentState}
             className={`input input_${
-                currentValue.length > 0 ? 'filled' : 'empty'
+                currentValue && currentValue?.length > 0 ? 'filled' : 'empty'
             }`}
             data-testid="test-div"
             style={{ ...style, width }}

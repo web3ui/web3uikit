@@ -312,3 +312,23 @@ CustomCloseRoundButton.args = {
         </div>,
     ],
 };
+
+export const NoTitle = Template.bind({});
+NoTitle.args = {
+    id: 'regular',
+    isVisible: true,
+    children: [
+        <div
+            key={'0'}
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'column',
+            }}
+        >
+            <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
+            <p>Proceed uploading?</p>
+        </div>,
+    ],
+};

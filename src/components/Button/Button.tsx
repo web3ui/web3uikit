@@ -20,9 +20,11 @@ const Button: React.FC<ButtonProps> = ({
     type = 'button',
     loadingProps,
     radius,
+    isTransparent = false,
 }: ButtonProps) => {
     return (
         <ButtonStyled
+            isTransparent={isTransparent}
             color={color}
             data-testid="test-button"
             disabled={disabled || isLoading}

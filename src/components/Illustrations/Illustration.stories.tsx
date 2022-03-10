@@ -90,3 +90,10 @@ export const Bundle = Template.bind({});
 Bundle.args = {
     logo: 'bundle',
 };
+
+export const CustomSizing = Template.bind({});
+CustomSizing.args = {
+    logo: 'comingSoon',
+    width: '150px',
+    height: '150px',
+};

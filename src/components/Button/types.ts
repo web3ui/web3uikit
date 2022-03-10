@@ -77,4 +77,9 @@ export interface ButtonProps {
      * Border radius prop, allows a button to have a custom border radius
      */
     radius?: number;
+
+    /**
+     * The background color is set to `transparent` and the hover effect is disabled
+     */
+    isTransparent?: boolean;
 }

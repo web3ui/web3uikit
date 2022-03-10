@@ -8,4 +8,5 @@ export const StyledIconDiv = styled.div`
     line-height: 0px;
     max-width: fit-content;
     max-height: fit-content;
+    pointer-events: none;
 `;

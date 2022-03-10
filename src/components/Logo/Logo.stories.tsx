@@ -21,6 +21,12 @@ LogoIconBlack.args = {
     color: 'black',
 };
 
+export const LogoIconBlue = Template.bind({});
+LogoIconBlue.args = {
+    theme: 'icon',
+    color: 'blue',
+};
+
 export const LogoDefaultWhite = Template.bind({});
 LogoDefaultWhite.args = {
     theme: 'default',
@@ -31,6 +37,12 @@ export const LogoDefaultBlack = Template.bind({});
 LogoDefaultBlack.args = {
     theme: 'default',
     color: 'black',
+};
+
+export const LogoDefaultBlue = Template.bind({});
+LogoDefaultBlue.args = {
+    theme: 'default',
+    color: 'blue',
 };
 
 export const VisaRegular = Template.bind({});

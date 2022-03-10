@@ -62,7 +62,11 @@ export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
         `};
 `;
 
-export const DivStyledOptionsContainer = styled.div<Pick<IDropdown, 'width'>>`
+interface IDivStyledOptionsContainer extends Pick<IDropdown, 'width'> {
+    isOpen: boolean;
+}
+
+export const DivStyledOptionsContainer = styled.div<IDivStyledOptionsContainer>`
     background-color: #f2f6ff;
     border-radius: 16px;
     border: 2px solid ${color.blueSky};
@@ -74,6 +78,7 @@ export const DivStyledOptionsContainer = styled.div<Pick<IDropdown, 'width'>>`
     transition: all 0.3s ease;
     width: ${(props) => props.width};
     z-index: 999;
+    display: ${(props) => (!props.isOpen ? `none` : 'block')};
 `;
 
 export const DivStyledOptionItem = styled.div`

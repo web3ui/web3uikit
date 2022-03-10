@@ -4,6 +4,8 @@ import React from 'react';
 import renderAvatarSVG from './images/guy';
 import color from '../../styles/colors';
 
+const avatarColors = ['#FEB7B7', '#E1B5F6', '#A7D6F9', '#AADCD6', '#F0DC7D'];
+
 const Avatar: React.FC<AvatarProps> = ({
     avatarBackground,
     borderRadius,
@@ -14,6 +16,7 @@ const Avatar: React.FC<AvatarProps> = ({
     text,
     textColor = color.white,
     theme,
+    avatarKey = 1,
 }: AvatarProps) => {
     const getRandomColor = (): string => {
         if (avatarBackground) {
@@ -22,8 +25,11 @@ const Avatar: React.FC<AvatarProps> = ({
         if (theme == 'image' || image) {
             return 'transparent';
         }
-        const colorArr: string[] = Object.values(color);
-        return colorArr[Math.floor(Math.random() * colorArr.length)];
+        const pos =
+            avatarKey < avatarColors.length
+                ? avatarKey % avatarColors.length
+                : avatarColors.length % avatarKey;
+        return avatarColors[pos - 1];
     };
 
     return (
@@ -44,9 +50,7 @@ const Avatar: React.FC<AvatarProps> = ({
                 !image && renderAvatarSVG()
             ) : (
                 <H4Styled data-testid="test-text" textColor={textColor}>
-                    {text && text.length > 1
-                        ? (`${text[0]}${text[1]}`)
-                        : text}
+                    {text && text.length > 1 ? `${text[0]}${text[1]}` : text}
                 </H4Styled>
             )}
         </DivStyled>

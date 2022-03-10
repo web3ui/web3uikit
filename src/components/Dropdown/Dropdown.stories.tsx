@@ -121,6 +121,7 @@ DropdownWithPrefixItems.args = {
                     borderRadius={7.5}
                     text={'Hi'}
                     theme="letters"
+                    avatarKey={1}
                     size={24}
                     fontSize={8}
                 />
@@ -135,6 +136,7 @@ DropdownWithPrefixItems.args = {
                     text={'Hi'}
                     theme="letters"
                     size={24}
+                    avatarKey={2}
                     fontSize={8}
                 />
             ),
@@ -148,6 +150,7 @@ DropdownWithPrefixItems.args = {
                     text={'Hi'}
                     theme="letters"
                     size={24}
+                    avatarKey={3}
                     fontSize={8}
                 />
             ),

@@ -54,6 +54,11 @@ export interface ButtonProps {
     iconLayout?: 'leading' | 'trailing' | 'icon-only';
 
     /**
+     * set the icon color
+     */
+    iconColor?: string;
+
+    /**
      * set the button to be 100% width
      */
     isFullWidth?: boolean;

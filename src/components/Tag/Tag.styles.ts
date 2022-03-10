@@ -24,7 +24,10 @@ import {
     coloredYellowDark,
 } from './styles/colors';
 
-type TStyleProps = Pick<TagProps, 'active' | 'theme' | 'tone' | 'width'>;
+type TStyleProps = Pick<
+    TagProps,
+    'active' | 'fontSize' | 'theme' | 'tone' | 'width'
+>;
 
 const getTheme = (theme: string, active?: boolean) => {
     switch (theme) {
@@ -64,4 +67,11 @@ export const TagStyled = styled.div<TStyleProps>`
     ${({ color, theme, tone }) =>
         theme !== 'status' && color && getColors(color, tone)}
     width: ${({ width }) => width};
+
+    ${({ width, theme }) =>
+        theme === 'discount' &&
+        Boolean(width) &&
+        `height: ${width}; width: ${width}; border-radius: 50%;`};
+
+    ${({ fontSize }) => Boolean(fontSize) && `font-size: ${fontSize}`};
 `;

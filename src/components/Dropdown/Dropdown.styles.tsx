@@ -37,9 +37,9 @@ export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
         transition: all 0.3s ease;
         color: inherit;
         padding: 8px;
+        padding-right: 2px;
         display: flex;
         align-items: center;
-        grid-gap: 8px;
         & :nth-child(2) {
             margin-right: auto;
         }

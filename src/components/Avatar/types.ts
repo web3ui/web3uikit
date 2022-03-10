@@ -24,9 +24,14 @@ export interface AvatarProps {
     image?: string;
 
     /**
-     * Avatar Background, if not specified we will generate random color
+     * Avatar Background, if not specified we will generate a color depending on the avatarKey
      */
     avatarBackground?: string;
+
+    /**
+     * avatarKey, computes background color off the key passed in here. Note AvatarBackground will overide this prop
+     */
+    avatarKey?: number;
 
     /**
      * Text Color of avatar

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {
     DivStyledNoData,
     DivStyledOptionItem,
@@ -49,13 +49,13 @@ const Dropdown: React.FC<IDropdown> = ({
         onChange(selectedOption);
     };
 
-    const RenderOptions = () => {
+    const RenderOptions = useCallback(() => {
         if (
             options.length == 0 ||
             (options.length == 1 && selectedIndex != null && hideSelected)
         ) {
             return (
-                <DivStyledOptionsContainer width={width}>
+                <DivStyledOptionsContainer width={width} isOpen={isOpen}>
                     <DivStyledNoData>
                         <Illustration
                             logo="looking"
@@ -71,6 +71,7 @@ const Dropdown: React.FC<IDropdown> = ({
         }
         return (
             <DivStyledOptionsContainer
+                isOpen={isOpen}
                 data-testid="optionsContainer"
                 width={width}
             >
@@ -101,7 +102,7 @@ const Dropdown: React.FC<IDropdown> = ({
                     ))}
             </DivStyledOptionsContainer>
         );
-    };
+    }, [isOpen]);
 
     return (
         <StyledSelectParentDiv
@@ -153,7 +154,7 @@ const Dropdown: React.FC<IDropdown> = ({
                     />
                 </div>
             </DivStyledSelected>
-            {isOpen && <RenderOptions />}
+            <RenderOptions />
         </StyledSelectParentDiv>
     );
 };

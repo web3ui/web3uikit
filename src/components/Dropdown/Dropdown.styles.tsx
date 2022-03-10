@@ -23,23 +23,23 @@ interface IStyledSelectedDiv {
 }
 
 export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
-    width: ${(props) => props.width};
-    height: 40px;
-    min-width: fit-content;
-    min-height: fit-content;
     border-radius: 16px;
     border: 1px solid ${(p) => (p.hasOutline ? color.greyLight : 'transparent')};
-    cursor: pointer;
-    transition: all 0.3s ease;
-    outline: 0px solid transparent;
     color: ${color.blue};
+    cursor: pointer;
+    height: 40px;
+    min-height: fit-content;
+    min-width: fit-content;
+    outline: 0px solid transparent;
+    transition: all 0.3s ease;
+    width: ${(props) => props.width};
     & > div {
-        transition: all 0.3s ease;
-        color: inherit;
-        padding: 8px;
-        padding-right: 2px;
-        display: flex;
         align-items: center;
+        color: inherit;
+        display: flex;
+        gap: 2px;
+        padding: 8px;
+        transition: all 0.3s ease;
         & :nth-child(2) {
             margin-right: auto;
         }
@@ -62,27 +62,32 @@ export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
         `};
 `;
 
-export const DivStyledOptionsContainer = styled.div<Pick<IDropdown, 'width'>>`
-    transition: all 0.3s ease;
-    position: absolute;
-    top: 56px;
-    display: flex;
-    flex-direction: column;
+interface IDivStyledOptionsContainer extends Pick<IDropdown, 'width'> {
+    isOpen: boolean;
+}
+
+export const DivStyledOptionsContainer = styled.div<IDivStyledOptionsContainer>`
     background-color: #f2f6ff;
-    width: ${(props) => props.width};
-    padding: 8px;
     border-radius: 16px;
     border: 2px solid ${color.blueSky};
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    position: absolute;
+    top: 56px;
+    transition: all 0.3s ease;
+    width: ${(props) => props.width};
     z-index: 999;
+    display: ${(props) => (!props.isOpen ? `none` : 'block')};
 `;
 
 export const DivStyledOptionItem = styled.div`
-    transition: all 0.3s ease;
-    padding: 6px 16px 6px 16px;
-    cursor: pointer;
     color: #041836;
+    cursor: pointer;
     display: flex;
     grid-gap: 8px;
+    padding: 6px 16px 6px 16px;
+    transition: all 0.3s ease;
     &:hover {
         background-color: #ebeff9;
         border-radius: 8px;
@@ -90,9 +95,9 @@ export const DivStyledOptionItem = styled.div`
 `;
 
 export const DivStyledNoData = styled.div`
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     padding: 5px 0px;
 `;

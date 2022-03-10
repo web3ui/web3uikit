@@ -33,7 +33,7 @@ const Modal: React.FC<ModalProps> = ({
 }: ModalProps) => (
     <DivStyled id={id} isVisible={isVisible} data-testid="modal-test-id">
         <DivStyledWrap width={width}>
-            <HeaderStyled data-testid={'modal-header-test-id'}>
+            <HeaderStyled data-testid={'modal-header-test-id'} title={title}>
                 {typeof title == 'string' ? <h3>{title}</h3> : title}
                 {closeButton ? (
                     <CustomButtonStyle

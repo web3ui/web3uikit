@@ -12,6 +12,7 @@ import {
     VisibilityIcon,
 } from './Input.styles';
 import type { InputProps } from './types';
+import Blockies from 'react-blockies';
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
@@ -65,10 +66,20 @@ const Input: React.FC<InputProps> = ({
                 validation?.numberMin ||
                 validation?.characterMaxLength ||
                 validation?.characterMinLength ||
-                validation?.regExp,
+                validation?.regExp ||
+                type === 'address',
         );
 
     const validate = (event: React.FocusEvent<HTMLInputElement>) => {
+        if (type === 'address') {
+            const rule = /^0x[a-fA-F0-9]{40}$/g;
+            if (!rule.test(event?.target.value)) {
+                setInvalidMessage('Value must be a valid address');
+                setCurrentState('error');
+                return;
+            }
+        }
+
         if (!hasValidation()) return;
 
         // check for HTML validation
@@ -92,6 +103,7 @@ const Input: React.FC<InputProps> = ({
 
         // finally if all pass but the Input is in error state
         if (currentState === 'error') {
+            console.log('setting state to confirmed 2');
             setCurrentState('confirmed');
             setTimeout(() => setCurrentState('initial'), 3000);
         }
@@ -107,9 +119,14 @@ const Input: React.FC<InputProps> = ({
             style={{ ...style, width }}
             size={size}
         >
-            {prefixIcon && (
+            {type !== 'address' && prefixIcon && (
                 <DivStyled className="input_prefixIcon">
                     <Icon svg={prefixIcon} />
+                </DivStyled>
+            )}
+            {type === 'address' && (
+                <DivStyled className="input_prefixIcon">
+                    <Blockies seed={currentValue} size={8} scale={3} />
                 </DivStyled>
             )}
             <InputStyled

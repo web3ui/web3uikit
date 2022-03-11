@@ -34,7 +34,7 @@ export interface InputProps {
     /**
      * types of input available
      */
-    type?: 'text' | 'number' | 'email' | 'tel' | 'password';
+    type?: 'text' | 'number' | 'email' | 'tel' | 'password' | 'address';
 
     /**
      * you can pass a default value so the input is pre-filled

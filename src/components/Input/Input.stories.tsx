@@ -177,3 +177,8 @@ ValidateRegExp.args = {
         regExpInvalidMessage: 'That is not a valid email address',
     },
 };
+
+export const Address = Template.bind({});
+Address.args = {
+    type: 'address',
+};

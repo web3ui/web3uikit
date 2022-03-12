@@ -21,6 +21,7 @@ const {
 
 const WalletModal: FC<WalletModalProps> = ({
     isOpened = true,
+    moralisAuth,
     setIsOpened,
 }) => {
     const { authenticate, isInitialized, enableWeb3 } = useMoralis();
@@ -35,7 +36,9 @@ const WalletModal: FC<WalletModalProps> = ({
                 setIsOpened(false);
             },
         };
-        isInitialized ? authenticate(connectProps) : enableWeb3(connectProps);
+        isInitialized && moralisAuth
+            ? authenticate(connectProps)
+            : enableWeb3(connectProps);
     }
 
     if (!isOpened) return null;

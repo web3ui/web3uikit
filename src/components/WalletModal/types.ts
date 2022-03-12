@@ -1,4 +1,5 @@
-export interface WalletModalProps {
+import { ConnectButtonProps } from '../ConnectButton/types';
+export interface WalletModalProps extends ConnectButtonProps {
     /**
      * Modal is open if true
      */

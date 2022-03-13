@@ -118,11 +118,9 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
     return (
         <WrapperStyled>
             <AccountInfoStyled>
-                {moralisAuth && (
-                    <BalanceBlockStyled>
-                        <NativeBalance style={{ margin: '0 8px 0 12px' }} />
-                    </BalanceBlockStyled>
-                )}
+                <BalanceBlockStyled>
+                    <NativeBalance style={{ margin: '0 8px 0 12px' }} />
+                </BalanceBlockStyled>
                 <AddressStyled onClick={() => disconnectWallet()}>
                     <TextStyled style={{ marginRight: '8px' }}>
                         {account && getEllipsisTxt(account)}

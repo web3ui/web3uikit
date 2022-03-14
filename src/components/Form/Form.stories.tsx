@@ -105,6 +105,7 @@ LoginForm.args = {
             name: 'Email',
             type: 'email',
             value: '',
+            key: 'ii',
             validation: {
                 required: true,
             },

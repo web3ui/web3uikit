@@ -58,6 +58,10 @@ export type InputDataReturned = {
      * The data collected from the input
      */
     inputResult: CreditCardProps | string[] | string;
+    /**
+     * If user passed in a unique key
+     */
+    key?: string;
 };
 
 export type DataInput = {
@@ -91,6 +95,11 @@ export type DataInput = {
      * If you want radios you will need to pass an array of options here
      */
     options?: string[] | CreditCardProps[];
+
+    /**
+     * If you want to pass some id/key to the input different from input name
+     */
+    key?: string;
 
     /**
      * If you want radios you will need to pass an array of options here

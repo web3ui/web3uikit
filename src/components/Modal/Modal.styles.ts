@@ -17,6 +17,18 @@ export const DivStyledWrap = styled.div<TStyleProps>`
     top: 50%;
     transform: translate(-50%, -50%);
     width: ${(p) => p.width};
+
+    /* Hide scrollbar */
+    /* Most browsers */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* IE and Edge */
+    -ms-overflow-style: none;
 `;
 
 export const HeaderStyled = styled.header<{

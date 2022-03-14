@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import color from '../../styles/colors';
 import { PopoverDropdownProps, Position } from './types';
-type TStyleProps = Pick<PopoverDropdownProps, 'position' | 'move'>;
+type TStyleProps = Pick<PopoverDropdownProps, 'position' | 'move' | 'moveBody'>;
 
 const arrowSize = '10px';
 
@@ -23,7 +23,8 @@ const bottom = css<TStyleProps>`
     bottom: -0.25rem;
     left: 50%;
     position: absolute;
-    transform: translateX(-50%) translateY(100%);
+    transform: translateX(${(p) => (p.moveBody ? `${p.moveBody}%` : '-50%')})
+        translateY(100%);
     &:after {
         position: absolute;
         content: '';
@@ -39,7 +40,8 @@ const left = css<TStyleProps>`
     left: -0.5rem;
     position: absolute;
     top: 50%;
-    transform: translateX(-100%) translateY(-50%);
+    transform: translateX(-100%)
+        translateY(${(p) => (p.moveBody ? `${p.moveBody}%` : '-50%')});
     &:after {
         position: absolute;
         content: '';
@@ -54,7 +56,8 @@ const right = css<TStyleProps>`
     position: absolute;
     right: -0.5rem;
     top: 50%;
-    transform: translateX(100%) translateY(-50%);
+    transform: translateX(100%)
+        translateY(${(p) => (p.moveBody ? `${p.moveBody}%` : '-50%')});
     &:after {
         position: absolute;
         content: '';
@@ -69,7 +72,8 @@ const top = css<TStyleProps>`
     left: 50%;
     position: absolute;
     top: -0.5rem;
-    transform: translateX(-50%) translateY(-100%);
+    transform: translateX(${(p) => (p.moveBody ? `${p.moveBody}%` : '-50%')})
+        translateY(-100%);
     &:after {
         position: absolute;
         content: '';

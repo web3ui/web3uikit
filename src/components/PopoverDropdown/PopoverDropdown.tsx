@@ -13,6 +13,7 @@ const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
     move,
     parent,
     position,
+    moveBody,
 }) => {
     const [showDropdown, setVisibility] = useState(false);
     return (
@@ -25,7 +26,11 @@ const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
 
             {showDropdown && (
                 <>
-                    <DivStyledArrow position={position} move={move} />
+                    <DivStyledArrow
+                        position={position}
+                        move={move}
+                        moveBody={moveBody}
+                    />
                     <DivStyledDropdown position={position}>
                         {children.map((child, index) => {
                             return (

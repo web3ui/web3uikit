@@ -58,6 +58,10 @@ export type InputDataReturned = {
      * The data collected from the input
      */
     inputResult: CreditCardProps | string[] | string;
+    /**
+     * If a key was passed as a prop, it will be accessible here
+     */
+    key?: string;
 };
 
 export type DataInput = {
@@ -91,6 +95,11 @@ export type DataInput = {
      * If you want radios you will need to pass an array of options here
      */
     options?: string[] | CreditCardProps[];
+
+    /**
+     * To Bind Some unique key/id to each input input element
+     */
+    key?: string;
 
     /**
      * If you want radios you will need to pass an array of options here

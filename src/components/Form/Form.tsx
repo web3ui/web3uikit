@@ -28,6 +28,7 @@ const Form: React.FC<FormProps> = ({
             const dataReturned = data.map((item) => ({
                 inputName: item.name,
                 inputResult: item.selectedCard || item.selected || item.value,
+                key: item.key,
             }));
             onSubmit &&
                 onSubmit({

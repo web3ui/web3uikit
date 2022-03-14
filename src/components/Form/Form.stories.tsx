@@ -105,6 +105,7 @@ LoginForm.args = {
             name: 'Email',
             type: 'email',
             value: '',
+            key: 'LOGIN_EMAIL',
             validation: {
                 required: true,
             },
@@ -112,6 +113,7 @@ LoginForm.args = {
         {
             name: 'Password',
             type: 'password',
+            key: 'LOGIN_PASSWORD',
             value: '',
             validation: {
                 required: true,

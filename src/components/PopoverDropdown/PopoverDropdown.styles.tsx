@@ -23,14 +23,12 @@ const bottom = css<TStyleProps>`
     bottom: -0.25rem;
     left: 50%;
     position: absolute;
-    transform: translateX(${(p) => (p.moveBody ? `${p.moveBody}%` : '-50%')})
-        translateY(100%);
+    transform: translateX(${(p) => `${p.moveBody}%`}) translateY(100%);
     &:after {
         position: absolute;
         content: '';
         bottom: 100%;
-        transform: translateX(${(p) => (p.move ? `${p.move}%` : '-50%')})
-            translateY(0%);
+        transform: translateX(${(p) => `${p.move}%`}) translateY(0%);
         border: ${arrowSize} solid transparent;
         border-bottom-color: ${color.blueDark};
     }
@@ -40,13 +38,12 @@ const left = css<TStyleProps>`
     left: -0.5rem;
     position: absolute;
     top: 50%;
-    transform: translateX(-100%)
-        translateY(${(p) => (p.moveBody ? `${p.moveBody}%` : '-50%')});
+    transform: translateX(-100%) translateY(${(p) => `${p.moveBody}%`});
     &:after {
         position: absolute;
         content: '';
         left: 100%;
-        transform: translateY(${(p) => (p.move ? `${p.move}%` : '-50%')});
+        transform: translateY(${(p) => `${p.move}%`});
         border: ${arrowSize} solid transparent;
         border-left-color: ${color.blueDark};
     }
@@ -56,13 +53,12 @@ const right = css<TStyleProps>`
     position: absolute;
     right: -0.5rem;
     top: 50%;
-    transform: translateX(100%)
-        translateY(${(p) => (p.moveBody ? `${p.moveBody}%` : '-50%')});
+    transform: translateX(100%) translateY(${(p) => `${p.moveBody}%`});
     &:after {
         position: absolute;
         content: '';
         right: 100%;
-        transform: translateY(${(p) => (p.move ? `${p.move}%` : '-50%')});
+        transform: translateY(${(p) => `${p.move}%`});
         border: ${arrowSize} solid transparent;
         border-right-color: ${color.blueDark};
     }
@@ -72,14 +68,12 @@ const top = css<TStyleProps>`
     left: 50%;
     position: absolute;
     top: -0.5rem;
-    transform: translateX(${(p) => (p.moveBody ? `${p.moveBody}%` : '-50%')})
-        translateY(-100%);
+    transform: translateX(${(p) => `${p.moveBody}%`}) translateY(-100%);
     &:after {
         position: absolute;
         content: '';
         bottom: 0;
-        transform: translateX(${(p) => (p.move ? `${p.move}%` : '-50%')})
-            translateY(100%);
+        transform: translateX(${(p) => `${p.move}%`}) translateY(100%);
         border: ${arrowSize} solid transparent;
         border-top-color: ${color.blueDark};
     }

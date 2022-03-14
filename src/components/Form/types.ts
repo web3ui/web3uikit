@@ -59,7 +59,7 @@ export type InputDataReturned = {
      */
     inputResult: CreditCardProps | string[] | string;
     /**
-     * If user passed in a unique key
+     * If a key was passed as a prop, it will be accessible here
      */
     key?: string;
 };
@@ -97,7 +97,7 @@ export type DataInput = {
     options?: string[] | CreditCardProps[];
 
     /**
-     * If you want to pass some id/key to the input different from input name
+     * To Bind Some unique key/id to each input input element
      */
     key?: string;
 

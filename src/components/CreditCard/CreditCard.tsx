@@ -9,9 +9,9 @@ import {
     PStyledDigits,
     PStyledText,
 } from './CreditCard.styles';
-import { Icon, iconTypes } from '../Icon';
-import colors from '../../styles/colors';
+import { iconTypes } from '../Icon';
 import { Tooltip } from '../Tooltip';
+import { Button } from '../Button';
 
 const CreditCard: React.FC<CreditCardProps> = ({
     expiresAt,
@@ -32,10 +32,14 @@ const CreditCard: React.FC<CreditCardProps> = ({
                 <Tooltip
                     position="bottom"
                     children={
-                        <Icon
-                            fill={colors.red}
+                        <Button
                             onClick={() => onRemove && onRemove()}
-                            svg={iconTypes.bin}
+                            isTransparent={true}
+                            theme={'secondary'}
+                            icon={iconTypes.bin}
+                            iconLayout={'icon-only'}
+                            size={'small'}
+                            iconColor={'red'}
                         />
                     }
                     content="Remove"

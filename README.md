@@ -93,7 +93,7 @@ If you want to use this component with the connected server but without adding a
 
 The ConnectButton component automatically adds to the local storage info about the connector user used and will automatically call enableWeb3() after rereshing the page. So if user was connected once it will automatically initialize web3 connection(No need anymore to add UseEffect hook for enableWeb3() after refrshing the page)
 
-Try the `<ConnectButton />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/web3-connectbutton--default)
+Try the `<ConnectButton />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/1-web3-connectbutton--default)
 
 # 📖 `UI Components`
 

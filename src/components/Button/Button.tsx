@@ -20,9 +20,12 @@ const Button: React.FC<ButtonProps> = ({
     type = 'button',
     loadingProps,
     radius,
+    isTransparent = false,
+    iconColor,
 }: ButtonProps) => {
     return (
         <ButtonStyled
+            isTransparent={isTransparent}
             color={color}
             data-testid="test-button"
             disabled={disabled || isLoading}
@@ -35,6 +38,7 @@ const Button: React.FC<ButtonProps> = ({
             theme={theme}
             type={type}
             radius={radius}
+            iconColor={iconColor}
         >
             {isLoading && <Loading size={15} {...loadingProps} />}
             {icon && <Icon svg={icon} fill="inherit" size={20} />}

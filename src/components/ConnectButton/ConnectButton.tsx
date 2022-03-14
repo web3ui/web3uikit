@@ -98,7 +98,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         if (isInitialized) logout();
     }
 
-    if (!account || (isInitialized && !isAuthenticated)) {
+    if (!account || (moralisAuth && isInitialized && !isAuthenticated)) {
         return (
             <WrapperStyled>
                 <ConnectButtonStyled
@@ -107,8 +107,9 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
                     <TextStyled>Connect Wallet</TextStyled>
                 </ConnectButtonStyled>
                 <WalletModal
-                    setIsOpened={setIsConnectModalOpen}
                     isOpened={isConnectModalOpen}
+                    moralisAuth={moralisAuth}
+                    setIsOpened={setIsConnectModalOpen}
                 />
             </WrapperStyled>
         );

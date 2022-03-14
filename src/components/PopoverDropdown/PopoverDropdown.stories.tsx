@@ -74,6 +74,54 @@ PopoverSelection.args = {
     ),
 };
 
+export const PopoverCustomPosition = Template.bind({});
+PopoverCustomPosition.args = {
+    position: 'bottom',
+    moveBody: -80,
+    move: -80,
+    children: [
+        <PopoverElement
+            key="0"
+            height={50}
+            width={260}
+            text={'Testnet Server'}
+            textSize={20}
+            icon={iconTypes.testnet}
+            iconSize={30}
+            backgroundColor={'transparent'}
+            textColor={colors.white}
+            onClick={() => alert('Testnet Server')}
+        />,
+        <PopoverElement
+            key="1"
+            height={50}
+            width={260}
+            text={'Mainnet Server'}
+            textSize={20}
+            iconSize={30}
+            icon={iconTypes.network}
+            backgroundColor={'transparent'}
+            textColor={colors.white}
+            onClick={() => alert('Mainnet Server')}
+        />,
+        <PopoverElement
+            key="2"
+            height={50}
+            width={260}
+            text={'Local Devchain Server'}
+            textSize={20}
+            iconSize={30}
+            backgroundColor={'transparent'}
+            icon={iconTypes.server}
+            textColor={colors.white}
+            onClick={() => alert('Local Devchain Server')}
+        />,
+    ],
+    parent: (
+        <Icon key="3" svg={iconTypes.helpCircle} fill={color.grey} size={50} />
+    ),
+};
+
 export const PopoverSelectionUser = Template.bind({});
 PopoverSelectionUser.args = {
     position: 'bottom',

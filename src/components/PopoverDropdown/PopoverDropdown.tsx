@@ -10,9 +10,10 @@ import {
 const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
     children,
     id,
-    move,
+    move = -50,
     parent,
     position,
+    moveBody = -50,
 }) => {
     const [showDropdown, setVisibility] = useState(false);
     return (
@@ -25,8 +26,16 @@ const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
 
             {showDropdown && (
                 <>
-                    <DivStyledArrow position={position} move={move} />
-                    <DivStyledDropdown position={position}>
+                    <DivStyledArrow
+                        position={position}
+                        move={move}
+                        moveBody={moveBody}
+                    />
+                    <DivStyledDropdown
+                        position={position}
+                        moveBody={moveBody}
+                        move={move}
+                    >
                         {children.map((child, index) => {
                             return (
                                 <div key={`dropdown-element-${index}`}>

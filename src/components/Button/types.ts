@@ -54,6 +54,11 @@ export interface ButtonProps {
     iconLayout?: 'leading' | 'trailing' | 'icon-only';
 
     /**
+     * set the icon color
+     */
+    iconColor?: string;
+
+    /**
      * set the button to be 100% width
      */
     isFullWidth?: boolean;
@@ -77,4 +82,9 @@ export interface ButtonProps {
      * Border radius prop, allows a button to have a custom border radius
      */
     radius?: number;
+
+    /**
+     * The background color is set to `transparent` and the hover effect is disabled
+     */
+    isTransparent?: boolean;
 }

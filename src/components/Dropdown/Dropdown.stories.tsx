@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Dropdown from './Dropdown';
 import { Icon } from '../Icon';
 import color from '../../styles/colors';
+import { Avatar } from '../Avatar';
 
 const parentWrapper = {
     height: '1px',
@@ -116,13 +117,13 @@ DropdownWithPrefixItems.args = {
             label: 'Api Key',
             id: 'Api Key',
             prefix: (
-                <div
-                    style={{
-                        backgroundColor: 'blue',
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '20px',
-                    }}
+                <Avatar
+                    borderRadius={7.5}
+                    text={'Hi'}
+                    theme="letters"
+                    avatarKey={1}
+                    size={24}
+                    fontSize={8}
                 />
             ),
         },
@@ -130,13 +131,13 @@ DropdownWithPrefixItems.args = {
             label: 'Testnet',
             id: 'Testnet',
             prefix: (
-                <div
-                    style={{
-                        backgroundColor: 'blue',
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '20px',
-                    }}
+                <Avatar
+                    borderRadius={7.5}
+                    text={'Hi'}
+                    theme="letters"
+                    size={24}
+                    avatarKey={2}
+                    fontSize={8}
                 />
             ),
         },
@@ -144,18 +145,17 @@ DropdownWithPrefixItems.args = {
             label: 'Mainent',
             id: 'Mainent',
             prefix: (
-                <div
-                    style={{
-                        backgroundColor: 'blue',
-                        width: '20px',
-                        height: '20px',
-                        borderRadius: '20px',
-                    }}
+                <Avatar
+                    borderRadius={7.5}
+                    text={'Hi'}
+                    theme="letters"
+                    size={24}
+                    avatarKey={3}
+                    fontSize={8}
                 />
             ),
         },
     ],
-    label: 'Server: ',
 };
 
 export const LabelLess = Template.bind({});

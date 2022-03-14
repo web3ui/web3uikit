@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import type { ButtonProps } from './types';
-
-import { initialStyles, isLoadingMode } from './styles/inititalStyles';
+import {
+    hoverEffect,
+    initialStyles,
+    isLoadingMode,
+    transparent,
+} from './styles/inititalStyles';
 import {
     primary,
     regular,
@@ -32,6 +36,8 @@ type TStyleProps = Pick<
     | 'isFullWidth'
     | 'isLoading'
     | 'radius'
+    | 'isTransparent'
+    | 'iconColor'
 >;
 
 const getThemeStyles = (theme: string) => {
@@ -95,6 +101,15 @@ const iconOnlyBorderFix = (theme: string) => {
     }
 };
 
+const getIconColor = (color: string) => {
+    return `
+    svg 
+        {
+            fill: ${color};
+        }
+    `;
+};
+
 export const ButtonStyled = styled.button<TStyleProps>`
     ${initialStyles}
 
@@ -113,4 +128,8 @@ export const ButtonStyled = styled.button<TStyleProps>`
     ${(p) => p.isLoading && isLoadingMode}
 
     ${(p) => p.radius && `border-radius: ${p.radius}px`}
+
+    ${(p) => (p.isTransparent ? transparent : hoverEffect)}
+
+    ${(p) => p.iconColor && getIconColor(p.iconColor)}
 `;

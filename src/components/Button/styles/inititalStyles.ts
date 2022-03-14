@@ -45,12 +45,6 @@ export const initialStyles = css`
         z-index: 0;
     }
 
-    :hover {
-        :after {
-            background-color: ${getShade('dark', 10)};
-        }
-    }
-
     :active {
         border-color: ${color.blue};
     }
@@ -65,4 +59,16 @@ export const isLoadingMode = css`
     span {
         margin-left: 12px;
     }
+`;
+
+export const hoverEffect = css`
+    :hover {
+        :after {
+            background-color: ${getShade('dark', 10)};
+        }
+    }
+`;
+
+export const transparent = css`
+    background-color: transparent;
 `;

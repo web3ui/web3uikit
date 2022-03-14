@@ -31,6 +31,13 @@ export interface IllustrationProps {
      */
     logo: Chain | Logo;
 
+    /**
+     * Height of Illustration
+     */
     width?: Size;
+
+    /**
+     * Width of illustration
+     */
     height?: Size;
 }

@@ -7,11 +7,6 @@ export interface IconProps {
     fill?: string;
 
     /**
-     * Run function if Icon is clikec
-     */
-    onClick?: () => void;
-
-    /**
      * set a pixel size, SVGs render as a square icons
      */
     size?: number;

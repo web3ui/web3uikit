@@ -17,6 +17,11 @@ export interface PopoverDropdownProps {
     move?: number;
 
     /**
+     * Moves the body +/- up/down/left/right (use responsibly, arrow can move the the X / Y axis indefinitely)
+     */
+    moveBody?: number;
+
+    /**
      * The parent element that triggers the dropdown selection
      */
     parent: React.ReactNode;

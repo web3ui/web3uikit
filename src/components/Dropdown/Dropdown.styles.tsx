@@ -42,6 +42,7 @@ export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
         transition: all 0.3s ease;
         & :nth-child(2) {
             margin-right: auto;
+            white-space: nowrap;
         }
         & :nth-child(3) {
             margin-left: auto;

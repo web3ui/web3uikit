@@ -73,13 +73,14 @@ export const DivStyledOptionsContainer = styled.div<IDivStyledOptionsContainer>`
     border: 2px solid ${color.blueSky};
     display: flex;
     flex-direction: column;
-    padding: 8px;
+    margin-top: -8px;
+    overflow: hidden;
     position: absolute;
     top: 56px;
     transition: all 0.3s ease;
     width: ${(props) => props.width};
     z-index: 999;
-    display: ${(props) => (!props.isOpen ? `none` : 'block')};
+    display: ${(props) => (!props.isOpen ? 'none' : 'block')};
 `;
 
 export const DivStyledOptionItem = styled.div`
@@ -91,7 +92,6 @@ export const DivStyledOptionItem = styled.div`
     transition: all 0.3s ease;
     &:hover {
         background-color: #ebeff9;
-        border-radius: 8px;
     }
 `;
 

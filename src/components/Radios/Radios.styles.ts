@@ -3,6 +3,7 @@ import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 import { TRadioLayouts } from './types';
+import { RadiosProps } from '.';
 
 type TStyleProps = Pick<TRadioLayouts, 'isCreditCardMode'>;
 
@@ -24,8 +25,9 @@ export const LegendStyled = styled.legend`
     margin-bottom: 4px;
 `;
 
-export const DivStyled = styled.div`
+export const DivStyled = styled.div<Pick<RadiosProps, 'disabled'>>`
     position: relative;
+    opacity: ${(props) => props.disabled && 0.5};
 `;
 
 export const LabelStyled = styled.label<TStyleProps>`

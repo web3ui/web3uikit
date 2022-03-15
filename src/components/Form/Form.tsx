@@ -152,6 +152,7 @@ const Form: React.FC<FormProps> = ({
                 items={input.options || []}
                 onChange={(e) => optionToggled(e, index, e.target.value)}
                 validation={{ required: input.validation?.required }}
+                disabled={isDisabled}
             />
         </Fragment>
     );
@@ -165,6 +166,7 @@ const Form: React.FC<FormProps> = ({
                 onChange={(e) => (data[index].value = e.target.value)}
                 value={input.value}
                 width={input.inputWidth}
+                state={isDisabled ? 'disabled' : undefined}
                 validation={{
                     characterMaxLength: input.validation?.characterMaxLength,
                     characterMinLength: input.validation?.characterMinLength,
@@ -242,7 +244,12 @@ const Form: React.FC<FormProps> = ({
             {customFooter ? (
                 <div className="customFooter">{customFooter}</div>
             ) : (
-                <Button {...buttonConfig} id="form-submit" type="submit">
+                <Button
+                    {...buttonConfig}
+                    id="form-submit"
+                    type="submit"
+                    disabled={isDisabled}
+                >
                     Submit
                 </Button>
             )}

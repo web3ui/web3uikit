@@ -12,11 +12,22 @@ export const DivStyledWrap = styled.div<TStyleProps>`
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     left: 50%;
     max-height: 100%;
-    overflow: auto;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     width: ${(p) => p.width};
+
+    /* Hide scrollbar */
+    /* Most browsers */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* IE and Edge */
+    -ms-overflow-style: none;
 `;
 
 export const HeaderStyled = styled.header<{

@@ -7,6 +7,7 @@ import colors from '../../styles/colors';
 import { Input } from '../Input';
 import { useArgs } from '@storybook/addons';
 import { Button } from '../Button';
+import Dropdown from '../Dropdown/Dropdown';
 
 const hasPositionAbsoluteFix = {
     transform: 'scale(1)',
@@ -330,5 +331,56 @@ NoTitle.args = {
             <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
             <p>Proceed uploading?</p>
         </div>,
+    ],
+};
+
+export const WithDropdown = Template.bind({});
+WithDropdown.args = {
+    id: 'regular',
+    isVisible: true,
+    hasFooter: false,
+    children: [
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+            efficitur id leo sed auctor. Cras mollis, nisi ut venenatis aliquet,
+            purus nisl finibus ipsum, eget condimentum dolor lacus vel risus.
+            Curabitur ullamcorper lorem porttitor nisl auctor, in rutrum mauris
+            luctus. Fusce vel mi ut sapien porttitor pulvinar.
+        </p>,
+        <Dropdown
+            onChange={() => {}}
+            label="Select Region: "
+            width="100%"
+            options={[
+                {
+                    id: 'New York',
+                    label: 'New York',
+                },
+                {
+                    id: 'Toronto',
+                    label: 'Toronto',
+                },
+                {
+                    id: 'London',
+                    label: 'London',
+                },
+                {
+                    id: 'Amsterdam',
+                    label: 'Amsterdam',
+                },
+                {
+                    id: 'Frankfurt',
+                    label: 'Frankfurt',
+                },
+                {
+                    id: 'Bangalore',
+                    label: 'Bangalore',
+                },
+                {
+                    id: 'Singapore',
+                    label: 'Singapore',
+                },
+            ]}
+        />,
     ],
 };

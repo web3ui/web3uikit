@@ -83,6 +83,10 @@ export const DivStyledOptionsContainer = styled.div<IDivStyledOptionsContainer>`
     display: ${(props) => (!props.isOpen ? 'none' : 'block')};
 `;
 
+export const DivInnerStyledOptionsContainer = styled.div`
+    padding: 8px;
+`;
+
 export const DivStyledOptionItem = styled.div`
     color: #041836;
     cursor: pointer;
@@ -91,6 +95,7 @@ export const DivStyledOptionItem = styled.div`
     padding: 6px 16px 6px 16px;
     transition: all 0.3s ease;
     &:hover {
+        border-radius: 8px;
         background-color: #ebeff9;
     }
 `;

@@ -30,6 +30,11 @@ export interface FormProps {
     customFooter?: JSX.Element;
 
     /**
+     * Is Form Disabled, disables all input in from
+     */
+    isDisabled?: boolean;
+
+    /**
      * when the form passes validation the data is returned
      * { id: string, data: [{inputName: string; inputResult: string[] | string;}]}
      */

@@ -290,3 +290,36 @@ CustomFooter.args = {
         },
     ],
 };
+
+export const DisabledFrom = Template.bind({});
+DisabledFrom.args = {
+    title: 'This is a disabled Form',
+    buttonConfig: {
+        theme: 'primary',
+        isLoading: true,
+        loadingText: 'Logging In',
+        text: 'Login',
+    },
+    isDisabled: true,
+    data: [
+        {
+            name: 'Email',
+            type: 'email',
+            value: '',
+            key: 'LOGIN_EMAIL',
+            validation: {
+                required: true,
+            },
+        },
+        {
+            name: 'Password',
+            type: 'password',
+            key: 'LOGIN_PASSWORD',
+            value: '',
+            validation: {
+                required: true,
+            },
+        },
+    ],
+    onSubmit: (e) => console.log(e),
+};

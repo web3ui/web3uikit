@@ -17,6 +17,7 @@ const Form: React.FC<FormProps> = ({
     onSubmit,
     title,
     customFooter,
+    isDisabled = false,
 }) => {
     const formSubmitted = (event: React.SyntheticEvent) => {
         event.preventDefault();
@@ -90,6 +91,7 @@ const Form: React.FC<FormProps> = ({
             label={input.name}
             onChange={(e) => (data[index].selected = [String(e.date)])}
             validation={{ required: input.validation?.required }}
+            disabled={isDisabled}
         />
     );
 
@@ -106,6 +108,7 @@ const Form: React.FC<FormProps> = ({
             onChange={(e) => (data[index].value = e.target.value)}
             type={type}
             width={input.inputWidth}
+            disabled={isDisabled}
             validation={{
                 characterMaxLength: input.validation?.characterMaxLength,
                 characterMinLength: input.validation?.characterMinLength,
@@ -134,6 +137,7 @@ const Form: React.FC<FormProps> = ({
                         name={input.name}
                         onChange={(e) => optionToggled(e, index, String(opt))}
                         validation={{ required: input.validation?.required }}
+                        disabled={isDisabled}
                     />
                 ),
             )}
@@ -148,6 +152,7 @@ const Form: React.FC<FormProps> = ({
                 items={input.options || []}
                 onChange={(e) => optionToggled(e, index, e.target.value)}
                 validation={{ required: input.validation?.required }}
+                disabled={isDisabled}
             />
         </Fragment>
     );
@@ -161,6 +166,7 @@ const Form: React.FC<FormProps> = ({
                 onChange={(e) => (data[index].value = e.target.value)}
                 value={input.value}
                 width={input.inputWidth}
+                state={isDisabled ? 'disabled' : undefined}
                 validation={{
                     characterMaxLength: input.validation?.characterMaxLength,
                     characterMinLength: input.validation?.characterMinLength,
@@ -184,6 +190,7 @@ const Form: React.FC<FormProps> = ({
                     required: Boolean(input.validation?.required),
                 }}
                 width={input.inputWidth}
+                disabled={isDisabled}
             />
         );
     };
@@ -237,7 +244,12 @@ const Form: React.FC<FormProps> = ({
             {customFooter ? (
                 <div className="customFooter">{customFooter}</div>
             ) : (
-                <Button {...buttonConfig} id="form-submit" type="submit">
+                <Button
+                    {...buttonConfig}
+                    id="form-submit"
+                    type="submit"
+                    disabled={isDisabled}
+                >
                     Submit
                 </Button>
             )}

@@ -17,6 +17,7 @@ const Form: React.FC<FormProps> = ({
     onSubmit,
     title,
     customFooter,
+    isDisabled = false,
 }) => {
     const formSubmitted = (event: React.SyntheticEvent) => {
         event.preventDefault();
@@ -90,6 +91,7 @@ const Form: React.FC<FormProps> = ({
             label={input.name}
             onChange={(e) => (data[index].selected = [String(e.date)])}
             validation={{ required: input.validation?.required }}
+            disabled={isDisabled}
         />
     );
 
@@ -106,6 +108,7 @@ const Form: React.FC<FormProps> = ({
             onChange={(e) => (data[index].value = e.target.value)}
             type={type}
             width={input.inputWidth}
+            disabled={isDisabled}
             validation={{
                 characterMaxLength: input.validation?.characterMaxLength,
                 characterMinLength: input.validation?.characterMinLength,
@@ -134,6 +137,7 @@ const Form: React.FC<FormProps> = ({
                         name={input.name}
                         onChange={(e) => optionToggled(e, index, String(opt))}
                         validation={{ required: input.validation?.required }}
+                        disabled={isDisabled}
                     />
                 ),
             )}
@@ -184,6 +188,7 @@ const Form: React.FC<FormProps> = ({
                     required: Boolean(input.validation?.required),
                 }}
                 width={input.inputWidth}
+                disabled={isDisabled}
             />
         );
     };

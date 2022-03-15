@@ -74,6 +74,8 @@ export const DivStyledOptionsContainer = styled.div<IDivStyledOptionsContainer>`
     border: 2px solid ${color.blueSky};
     display: flex;
     flex-direction: column;
+    margin-top: -8px;
+    overflow: hidden;
     position: absolute;
     top: 56px;
     transition: all 0.3s ease;
@@ -91,7 +93,6 @@ export const DivStyledOptionItem = styled.div`
     transition: all 0.3s ease;
     &:hover {
         background-color: #ebeff9;
-        border-radius: 8px;
     }
 `;
 

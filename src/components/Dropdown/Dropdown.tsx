@@ -60,9 +60,9 @@ const Dropdown: React.FC<IDropdown> = ({
                         <Illustration
                             logo="looking"
                             width={'100%'}
-                            height={'100px'}
+                            height={width}
                         />
-                        <Typography variant="caption14" weight="600">
+                        <Typography variant="caption14" weight="400">
                             No Data
                         </Typography>
                     </DivStyledNoData>
@@ -92,7 +92,7 @@ const Dropdown: React.FC<IDropdown> = ({
                             {isLabelVisible && (
                                 <Typography
                                     variant="caption14"
-                                    weight="600"
+                                    weight="400"
                                     color="#041836"
                                 >
                                     {option.label}
@@ -136,7 +136,7 @@ const Dropdown: React.FC<IDropdown> = ({
                             options[selectedIndex]?.prefix}
                     </span>
                     {isLabelVisible && (
-                        <Typography variant="caption14" weight="600">
+                        <Typography variant="caption14" weight="400">
                             {(isLabelFixed ||
                                 typeof selectedIndex != 'number') &&
                                 label}
@@ -154,6 +154,7 @@ const Dropdown: React.FC<IDropdown> = ({
                     />
                 </div>
             </DivStyledSelected>
+
             <RenderOptions />
         </StyledSelectParentDiv>
     );

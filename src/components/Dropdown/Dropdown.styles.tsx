@@ -14,7 +14,6 @@ export const StyledSelectParentDiv = styled.div<
     position: relative;
     row-gap: 16px;
     ${(props) => props.isDisabled && 'opacity: 50%;'}
-    width: ${(props) => props.width};
 `;
 
 interface IStyledSelectedDiv {

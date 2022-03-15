@@ -18,7 +18,7 @@ export default {
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = (args) => (
-    <div style={{ marginLeft: 50 }}>
+    <div>
         <Dropdown {...args} />
     </div>
 );

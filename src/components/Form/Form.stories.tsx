@@ -272,6 +272,7 @@ CustomFooter.args = {
             name: 'Best pie',
             type: 'select',
             value: '',
+            key: 'hiii',
             selectOptions: [
                 { id: 'apple', label: 'Apple Pie' },
                 { id: 'black', label: 'Blackberry Pie' },
@@ -282,6 +283,7 @@ CustomFooter.args = {
             name: 'Best Zelda',
             type: 'select',
             value: '',
+            key: 'hiii',
             selectOptions: [
                 { id: 'oot', label: 'Ocarina of Time' },
                 { id: 'ww', label: 'Wind Waker' },

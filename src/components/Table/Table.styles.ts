@@ -107,3 +107,14 @@ export const PaginationTag = styled.div<PaginationTag>`
     background-color: ${(props) => !props.active && '#EBEFF9'};
     cursor: ${(props) => !props.active && 'pointer'};
 `;
+
+export const DivSpinnerLoaderParent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / -1;
+    & > h3 {
+        margin-top: 29px;
+    }
+`;

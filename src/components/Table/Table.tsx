@@ -10,7 +10,10 @@ import {
     Pagination,
     PaginationText,
     NoData,
+    DivSpinnerLoaderParent,
 } from './Table.styles';
+import Loading from '../Loading/Loading';
+import { Typography } from '../Typography';
 
 const Table: React.FC<TableProps> = ({
     columnsConfig,
@@ -23,6 +26,8 @@ const Table: React.FC<TableProps> = ({
     onPageNumberChanged,
     customNoDataComponent,
     customNoDataText = 'No Data',
+    isLoading = false,
+    customLoadingContent,
 }) => {
     const [pageNum, setPageNum] = useState<number>(
         customPageNumber ? customPageNumber : 0,
@@ -178,11 +183,31 @@ const Table: React.FC<TableProps> = ({
         );
     };
 
+    const Loader = () => (
+        <DivSpinnerLoaderParent>
+            {customLoadingContent ? (
+                customLoadingContent
+            ) : (
+                <>
+                    <Loading
+                        spinnerType={'wave'}
+                        spinnerColor={'#B0B5BF'}
+                        size={6}
+                    />
+
+                    <Typography weight="400" variant="h3" color={'#B0B5BF'}>
+                        Loading Content
+                    </Typography>
+                </>
+            )}
+        </DivSpinnerLoaderParent>
+    );
+
     return (
         <TableParent data-testid="test-table-parent">
             <TableGrid columns={columnsConfig}>
                 <RenderTableHeader />
-                <RenderTable />
+                {isLoading ? <Loader /> : <RenderTable />}
             </TableGrid>
             <RenderPagination />
         </TableParent>

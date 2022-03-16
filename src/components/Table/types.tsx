@@ -24,6 +24,17 @@ export interface TableProps {
     pageSize: number;
 
     /**
+     *  Is loading
+     */
+
+    isLoading?: boolean;
+
+    /**
+     *  What you want to show if table is in loading state
+     */
+    customLoadingContent?: JSX.Element;
+
+    /**
      * Max number of pagination tags that can be shown
      */
     maxPages?: number;

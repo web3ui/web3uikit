@@ -2,6 +2,8 @@ import * as React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Table from './Table';
 import { columnsConfig, header, data, pageSize, maxPages } from './MockData';
+import { Loading } from '../Loading';
+import color from '../../styles/colors';
 export default {
     title: '3.Layout/Table',
     component: Table,
@@ -87,4 +89,31 @@ OutOfRangeFrozenTable.args = {
     pageSize,
     maxPages,
     customPageNumber: 6,
+};
+
+export const LoadingTable = Template.bind({});
+
+LoadingTable.args = {
+    columnsConfig,
+    header,
+    data: data,
+    pageSize,
+    maxPages,
+    isLoading: true,
+};
+
+export const CustomLoader = Template.bind({});
+
+CustomLoader.args = {
+    columnsConfig,
+    header,
+    data: data,
+    pageSize,
+    maxPages,
+    isLoading: true,
+    customLoadingContent: (
+        <div>
+            <Loading size={30} text="Fetching..." spinnerColor={color.blue} />
+        </div>
+    ),
 };

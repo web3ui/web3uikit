@@ -24,12 +24,12 @@ export interface TableProps {
     pageSize: number;
 
     /**
-     * To align the content within the cells
+     * To align the content within each table cell
      */
     alignCellItems?: 'center' | 'start' | 'end';
 
     /**
-     * To Justify the cell items
+     * To Justify the content withing each table cell
      */
     justifyCellItems?: 'center' | 'start' | 'end';
 

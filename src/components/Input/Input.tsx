@@ -162,6 +162,7 @@ const Input: React.FC<InputProps> = ({
                 <VisibilityIcon
                     className="input_visibility"
                     onClick={() => toggleHideInput()}
+                    type="button"
                 >
                     {isInputHidden ? (
                         <Icon svg={iconTypes.eyeClosed} />

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { TableProps } from '.';
 import color from '../../styles/colors';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
@@ -60,6 +61,14 @@ export const PaginationText = styled.div<PaginationTextProps>`
     color: ${(props) => (props.isActive ? colors.blue : colors.greyLight)};
 `;
 
+export const DivTableCell = styled.div<
+    Pick<TableProps, 'alignCellItems' | 'justifyCellItems'>
+>`
+    align-items: ${(props) => props.alignCellItems};
+    justify-content: ${(props) => props.justifyCellItems};
+    display: flex;
+`;
+
 export const TableGrid = styled.div.attrs((props: any) => ({
     columns: props.columns,
 }))`
@@ -114,7 +123,7 @@ export const DivSpinnerLoaderParent = styled.div`
     align-items: center;
     justify-content: center;
     grid-column: 1 / -1;
-    & > h3 {
-        margin-top: 29px;
+    & > span {
+        margin-top: 12px;
     }
 `;

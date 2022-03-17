@@ -24,6 +24,16 @@ export interface TableProps {
     pageSize: number;
 
     /**
+     * To align the content within the cells
+     */
+    alignCellItems?: 'center' | 'start' | 'end';
+
+    /**
+     * To Justify the cell items
+     */
+    justifyCellItems?: 'center' | 'start' | 'end';
+
+    /**
      *  Is loading
      */
 

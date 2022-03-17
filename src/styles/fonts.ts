@@ -81,6 +81,11 @@ const semiBold = css`
     font-weight: 600;
 `;
 
+const argentumSans = css`
+    @import url('//db.onlinewebfonts.com/c/203f1615b37d6fb2fcd85695bc4c4b00?family=Argentum+Sans');
+    font-family: 'Argentum Sans', sans-serif;
+`;
+
 const openSans = css`
     @import url('//fonts.googleapis.com/css?family=Open+Sans');
     font-family: 'Open Sans', sans-serif;
@@ -112,6 +117,7 @@ const fonts = {
     textBold500,
     openSans,
     montserrat,
+    argentumSans,
     creepster,
 };
 

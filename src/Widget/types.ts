@@ -1,16 +1,16 @@
 export interface IWidgetProps {
     /**
-     * children
-     */
-    children?: JSX.Element | JSX.Element[];
-
-    /**
      * title
      */
-    topic: string;
+    title: string;
 
     /**
      * information
      */
     info: string;
+
+    /**
+     * children
+     */
+    children?: JSX.Element | JSX.Element[];
 }

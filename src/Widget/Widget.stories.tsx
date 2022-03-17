@@ -13,16 +13,16 @@ const Template: ComponentStory<typeof Widget> = (args) => <Widget {...args} />;
 const Row: ComponentStory<typeof Widget> = () => (
     <div style={{ display: 'grid', gap: '20px', padding: '40px' }}>
         <div style={{ display: 'flex', gap: '20px' }}>
-            <Widget info="Mainnet" topic="ENVIRONMENT" />
-            <Widget info="233,182" topic="NUMBER OF USERS">
+            <Widget info="Mainnet" title="ENVIRONMENT" />
+            <Widget info="233,182" title="NUMBER OF USERS">
                 <div>CHART COMING SOON</div>
             </Widget>
         </div>
         <div style={{ display: 'flex', gap: '20px' }}>
-            <Widget info="72%" topic="CPU" />
-            <Widget info="0 Bytes" topic="NETWORK" />
-            <Widget info="24%" topic="RAM" />
-            <Widget info="24%" topic="DISK" />
+            <Widget info="72%" title="CPU" />
+            <Widget info="0 Bytes" title="NETWORK" />
+            <Widget info="24%" title="RAM" />
+            <Widget info="24%" title="DISK" />
         </div>
     </div>
 );
@@ -30,7 +30,7 @@ const Row: ComponentStory<typeof Widget> = () => (
 export const Demo = Template.bind({});
 Demo.args = {
     info: 'Mainnet',
-    topic: 'ENVIRONMENT',
+    title: 'ENVIRONMENT',
 };
 
 export const Multiple = Row.bind({});

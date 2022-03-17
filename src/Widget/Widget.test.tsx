@@ -6,9 +6,9 @@ import 'jest-styled-components';
 
 const { Demo } = composeStories(stories);
 
-describe('Tooltip - Bottom', () => {
+describe('Widget - Demo', () => {
     let container: HTMLDivElement;
-    const topicId = 'widget-topic';
+    const titleId = 'widget-title';
     const infoId = 'widget-info';
 
     beforeEach(() => {
@@ -22,18 +22,18 @@ describe('Tooltip - Bottom', () => {
         container.remove();
     });
 
-    it('should render the topic', () => {
-        const element = container.querySelector(`[data-testid="${topicId}"]`);
-        expect(element).not.toBeNull();
+    it('should render the title', () => {
+        const element = container.querySelector(`[data-testid="${titleId}"]`);
+        expect(element).toBeDefined();
     });
 
     it('should render informartion', () => {
         const element = container.querySelector(`[data-testid="${infoId}"]`);
-        expect(element).not.toBeNull();
+        expect(element).toBeDefined();
     });
 
-    it('should render correct topic', async () => {
-        const element = container.querySelector(`[data-testid="${topicId}"]`);
+    it('should render correct title', async () => {
+        const element = container.querySelector(`[data-testid="${titleId}"]`);
         expect(element?.innerHTML).toBe('ENVIRONMENT');
     });
 

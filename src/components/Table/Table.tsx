@@ -202,7 +202,7 @@ const Table: React.FC<TableProps> = ({
                         size={6}
                     />
 
-                    <Typography weight="400" variant="body16" color={'#B0B5BF'}>
+                    <Typography weight="400" variant="h3" color={'#B0B5BF'}>
                         Loading Content
                     </Typography>
                 </>

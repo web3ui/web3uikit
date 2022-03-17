@@ -41,5 +41,6 @@ export * from './components/TextArea';
 export * from './components/Tooltip';
 export * from './components/Typography';
 export * from './components/WalletModal';
+export * from './components/Widget';
 
 export * from './web3utils';

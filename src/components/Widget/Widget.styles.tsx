@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import colors from '../styles/colors';
-import fonts from '../styles/fonts';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 
 const WidgetStyled = styled.div`
     border: 1px solid ${colors.paleBlue2};

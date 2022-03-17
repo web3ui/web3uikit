@@ -13,7 +13,7 @@ const Widget: React.FC<IWidgetProps> = ({ children, info, title }) => {
                 >
                     {title}
                 </Typography>
-                <Typography data-testid="widget-info" variant="h4" weight="600">
+                <Typography data-testid="widget-info" variant="h3" weight="400">
                     {info}
                 </Typography>
             </div>

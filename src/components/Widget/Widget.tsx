@@ -1,5 +1,6 @@
 import { IWidgetProps } from './types';
 import WidgetStyles from './Widget.styles';
+import colors from '../../styles/colors';
 import React from 'react';
 import { Typography } from '../Typography';
 const Widget: React.FC<IWidgetProps> = ({ children, info, title }) => {
@@ -13,7 +14,12 @@ const Widget: React.FC<IWidgetProps> = ({ children, info, title }) => {
                 >
                     {title}
                 </Typography>
-                <Typography data-testid="widget-info" variant="h3" weight="400">
+                <Typography
+                    data-testid="widget-info"
+                    variant="h3"
+                    weight="400"
+                    color={colors.blueDark}
+                >
                     {info}
                 </Typography>
             </div>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { TableProps } from '.';
 import color from '../../styles/colors';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
@@ -58,6 +59,14 @@ interface PaginationTextProps {
 export const PaginationText = styled.div<PaginationTextProps>`
     cursor: ${(props) => (props.isActive ? 'pointer' : 'cursor')};
     color: ${(props) => (props.isActive ? colors.blue : colors.greyLight)};
+`;
+
+export const DivTableCell = styled.div<
+    Pick<TableProps, 'alignCellItems' | 'justifyCellItems'>
+>`
+    align-items: ${(props) => props.alignCellItems};
+    justify-content: ${(props) => props.justifyCellItems};
+    display: flex;
 `;
 
 export const TableGrid = styled.div.attrs((props: any) => ({

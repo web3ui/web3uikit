@@ -11,6 +11,7 @@ import {
     PaginationText,
     NoData,
     DivSpinnerLoaderParent,
+    DivTableCell,
 } from './Table.styles';
 import Loading from '../Loading/Loading';
 import { Typography } from '../Typography';
@@ -28,6 +29,8 @@ const Table: React.FC<TableProps> = ({
     customNoDataText = 'No Data',
     isLoading = false,
     customLoadingContent,
+    alignCellItems = 'start',
+    justifyCellItems = 'start',
 }) => {
     const [pageNum, setPageNum] = useState<number>(
         customPageNumber ? customPageNumber : 0,
@@ -76,13 +79,15 @@ const Table: React.FC<TableProps> = ({
         return (
             <>
                 {header.map((col, key) => (
-                    <div
+                    <DivTableCell
                         key={`header_${key}`}
                         role="table-header"
                         className="table_header"
+                        alignCellItems={alignCellItems}
+                        justifyCellItems={justifyCellItems}
                     >
                         {col}
-                    </div>
+                    </DivTableCell>
                 ))}
                 <Divider />
             </>
@@ -118,7 +123,7 @@ const Table: React.FC<TableProps> = ({
                                     colKey: number,
                                     rowData,
                                 ) => (
-                                    <div
+                                    <DivTableCell
                                         key={`tr_${rowKey}_${colKey}`}
                                         role="table-item"
                                         className={`${
@@ -127,9 +132,11 @@ const Table: React.FC<TableProps> = ({
                                             colKey == rowData.length - 1 &&
                                             'lastCol'
                                         }`}
+                                        alignCellItems={alignCellItems}
+                                        justifyCellItems={justifyCellItems}
                                     >
                                         {item}
-                                    </div>
+                                    </DivTableCell>
                                 ),
                             )}
                             {rowKey != arr.length - 1 && (

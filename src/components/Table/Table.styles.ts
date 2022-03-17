@@ -123,7 +123,7 @@ export const DivSpinnerLoaderParent = styled.div`
     align-items: center;
     justify-content: center;
     grid-column: 1 / -1;
-    & > span {
-        margin-top: 12px;
+    & > h3 {
+        margin-top: 29px;
     }
 `;

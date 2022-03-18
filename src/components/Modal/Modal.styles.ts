@@ -8,18 +8,15 @@ type TStyleProps = Pick<
     'isVisible' | 'hasCancel' | 'width' | 'canOverflow'
 >;
 
-const overflow = (v: boolean) => {
-    console.log(v);
-    return v
-        ? ''
-        : `
-                overflow: auto;
-                ::-webkit-scrollbar {
-                    display: none;
-                }
-                scrollbar-width: none;
-                -ms-overflow-style: none;
-            `;
+const overflow = (): string => {
+    return `
+            overflow: auto;
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        `;
 };
 export const DivStyledWrap = styled.div<TStyleProps>`
     ${fonts.text};
@@ -32,7 +29,7 @@ export const DivStyledWrap = styled.div<TStyleProps>`
     top: 50%;
     transform: translate(-50%, -50%);
     width: ${(p) => p.width};
-    ${(p) => (p.canOverflow !== undefined ? overflow(p.canOverflow) : '')}
+    ${(p) => p.canOverflow === false && overflow()}
 `;
 
 export const HeaderStyled = styled.header<{

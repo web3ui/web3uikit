@@ -6,11 +6,11 @@ import { ICredentialsProps } from './types';
 const CredentialsStyled = styled.div<Pick<ICredentialsProps, 'width'>>`
     background: ${color.blueLight};
     border-radius: 16px;
-    padding: 16px;
-    padding: 16px;
     display: flex;
-    position: relative;
     flex-direction: column;
+    padding: 16px;
+    padding: 16px;
+    position: relative;
     width: ${(p) => p.width};
 `;
 

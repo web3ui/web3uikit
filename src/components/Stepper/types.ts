@@ -14,7 +14,7 @@ export interface StepperProps {
     /**
      * pass a custom message for when the user finishes
      */
-    completeMessage?: string;
+    completeMessage?: string | React.ReactNode;
 
     /**
      * pass a custom title for when the user finishes

@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Stepper } from '.';
 import { Button } from '../Button';
 import { testStepData, noNavTestStepData } from './testStepData';
+import { Avatar } from '../Avatar';
 
 const parentWrapper = {
     height: '1px',
@@ -58,12 +59,20 @@ StepsWithoutNav.args = {
     hasNavButtons: false,
 };
 
-export const CustomComplete = Template.bind({});
-CustomComplete.args = {
+export const CustomCompleteString = Template.bind({});
+CustomCompleteString.args = {
     step: 5,
     stepData: testStepData,
     completeTitle: 'Custom Complete Title',
     completeMessage: 'and you can customize this message too',
+};
+
+export const CustomCompleteDom = Template.bind({});
+CustomCompleteDom.args = {
+    step: 5,
+    stepData: testStepData,
+    completeTitle: 'Custom Complete Title',
+    completeMessage: <Avatar theme={'image'} />,
 };
 
 export const SmallerStepperCount = Template.bind({});

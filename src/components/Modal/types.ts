@@ -88,4 +88,9 @@ export interface ModalProps {
      * To have a custom close button. The button id must be set to `close`.
      */
     closeButton?: ButtonProps;
+
+    /**
+     * Whether the content of the modal can overflow.
+     */
+    canOverflow?: boolean;
 }

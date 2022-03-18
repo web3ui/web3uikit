@@ -3,8 +3,24 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { ModalProps } from './types';
 
-type TStyleProps = Pick<ModalProps, 'isVisible' | 'hasCancel' | 'width'>;
+type TStyleProps = Pick<
+    ModalProps,
+    'isVisible' | 'hasCancel' | 'width' | 'canOverflow'
+>;
 
+const overflow = (v: boolean) => {
+    console.log(v);
+    return v
+        ? ''
+        : `
+                overflow: auto;
+                ::-webkit-scrollbar {
+                    display: none;
+                }
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            `;
+};
 export const DivStyledWrap = styled.div<TStyleProps>`
     ${fonts.text};
     background-color: ${colors.white};
@@ -16,18 +32,7 @@ export const DivStyledWrap = styled.div<TStyleProps>`
     top: 50%;
     transform: translate(-50%, -50%);
     width: ${(p) => p.width};
-
-    /* Hide scrollbar */
-    /* Most browsers */
-    ::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* Firefox */
-    scrollbar-width: none;
-
-    /* IE and Edge */
-    -ms-overflow-style: none;
+    ${(p) => (p.canOverflow !== undefined ? overflow(p.canOverflow) : '')}
 `;
 
 export const HeaderStyled = styled.header<{

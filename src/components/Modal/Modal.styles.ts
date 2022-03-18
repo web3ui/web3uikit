@@ -81,7 +81,7 @@ export const CustomFooterStyled = styled.footer`
     padding: 15px 32px 20px;
 `;
 
-export const CustomButtonStyle = styled.button`
+export const CustomButtonStyle = styled.div`
     background: none;
     color: inherit;
     border: none;

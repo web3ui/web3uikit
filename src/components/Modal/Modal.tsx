@@ -70,9 +70,7 @@ const Modal: React.FC<ModalProps> = ({
                             onClick={
                                 onCloseButtonPressed
                                     ? toggleVisibility
-                                    : () => {
-                                          console.log('close triggered');
-                                      }
+                                    : () => {}
                             }
                             theme={'outline'}
                         />
@@ -96,13 +94,7 @@ const Modal: React.FC<ModalProps> = ({
                                 data-testid={'modal-cancel-button-test-id'}
                                 disabled={isCancelDisabled}
                                 text={cancelText}
-                                onClick={
-                                    onCancel
-                                        ? onCancel
-                                        : () => {
-                                              console.log('cancel triggered');
-                                          }
-                                }
+                                onClick={onCancel ? onCancel : () => {}}
                                 theme={'outline'}
                             />
                         )}
@@ -110,13 +102,7 @@ const Modal: React.FC<ModalProps> = ({
                             color={okButtonColor}
                             data-testid={'modal-ok-button-test-id'}
                             disabled={isOkDisabled}
-                            onClick={
-                                onOk
-                                    ? onOk
-                                    : () => {
-                                          console.log('ok triggered');
-                                      }
-                            }
+                            onClick={onOk ? onOk : () => {}}
                             text={okText}
                             theme={okButtonColor ? 'colored' : 'primary'}
                         />

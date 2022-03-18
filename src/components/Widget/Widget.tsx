@@ -9,6 +9,7 @@ const Widget: React.FC<IWidgetProps> = ({ children, info, title }) => {
             <div>
                 <Typography
                     data-testid="widget-title"
+                    color={colors.blueDark}
                     variant="caption12"
                     weight="400"
                 >

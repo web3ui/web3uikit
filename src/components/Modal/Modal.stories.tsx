@@ -259,7 +259,7 @@ CustomCloseButton.args = {
     isVisible: true,
     closeButton: (
         <Button
-            id="test-button-secondary-icon"
+            id="close"
             text="Custom close button"
             theme="secondary"
             type="button"
@@ -290,7 +290,7 @@ CustomCloseRoundButton.args = {
         <Button
             icon="arrowCircleRight"
             iconLayout="icon-only"
-            id="test-button-primary-icon-only"
+            id="close"
             onClick={() => {}}
             text="Primary icon only"
             theme="primary"

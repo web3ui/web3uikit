@@ -19,8 +19,8 @@ export default {
 const Template: ComponentStory<typeof CopyButton> = () => {
     const notify = useNotification();
     return (
-        <>
-            <Typography>With Love from Developers</Typography>
+        <div>
+            <Typography variant="body18">With Love from Developers</Typography>
             <CopyButton
                 text="With Love from Developers"
                 revertIn={6500}
@@ -33,7 +33,7 @@ const Template: ComponentStory<typeof CopyButton> = () => {
                     })
                 }
             />
-        </>
+        </div>
     );
 };
 

@@ -3,8 +3,14 @@ import React from 'react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Logo.stories';
 
-const { LogoIconWhite, LogoDefaultWhite, VisaRegular, MastercardRegular, AmexRegular, DinersRegular } =
-    composeStories(stories);
+const {
+    LogoIconWhite,
+    LogoDefaultWhite,
+    VisaRegular,
+    MastercardRegular,
+    AmexRegular,
+    DinersRegular,
+} = composeStories(stories);
 
 let container: HTMLDivElement;
 
@@ -109,4 +115,3 @@ describe('Logo - Diners Club', () => {
         expect(element).not.toBeNull();
     });
 });
-

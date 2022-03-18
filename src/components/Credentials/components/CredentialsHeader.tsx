@@ -13,23 +13,31 @@ const HeaderStyled = styled.div`
 `;
 
 const CredentialsHeader: FC<ICredentialsHeaderProps> = ({
-    headerText,
+    title,
     icon,
     iconColor = color.grey,
     iconSize = 24,
 }) => {
-    if (!headerText && !icon) return null;
+    if (!title && !icon) return null;
 
     return (
         <HeaderStyled>
-            {icon && <Icon svg={icon} fill={`${iconColor}`} size={iconSize} />}
-            {headerText && (
+            {icon && (
+                <Icon
+                    svg={icon}
+                    fill={`${iconColor}`}
+                    size={iconSize}
+                    data-testid="cred-test-header-icon"
+                />
+            )}
+            {title && (
                 <Typography
                     variant="body16"
                     weight="600"
                     color={color.blueDark}
+                    data-testid="cred-test-header-text"
                 >
-                    {headerText}
+                    {title}
                 </Typography>
             )}
         </HeaderStyled>

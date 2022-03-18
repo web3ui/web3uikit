@@ -13,7 +13,7 @@ const { CredentialsStyled, DividerStyled, PreformattedStyled, ToolsStyled } =
 const Credentials: FC<ICredentialsProps> = ({
     hasCopyButton = true,
     hasHideButton = true,
-    headerText,
+    title,
     icon,
     iconColor,
     iconSize,
@@ -27,15 +27,19 @@ const Credentials: FC<ICredentialsProps> = ({
     useEffect(() => setIsValueHidden(isHidden), [isHidden]);
 
     return (
-        <CredentialsStyled width={width}>
+        <CredentialsStyled width={width} data-testid="test-credentials">
             <CredentialsHeader
-                headerText={headerText}
+                title={title}
                 icon={icon}
                 iconColor={iconColor}
                 iconSize={iconSize}
             />
             <PreformattedStyled>
-                <Typography monospace color={color.grey}>
+                <Typography
+                    monospace
+                    color={color.grey}
+                    data-testid="cred-test-text"
+                >
                     {isValueHidden ? hiddenText : text}
                 </Typography>
                 <ToolsStyled>

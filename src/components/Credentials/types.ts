@@ -39,7 +39,7 @@ export interface ICredentialsHeaderProps {
     /**
      * header text
      */
-    headerText?: string | typeof Typography;
+    title?: string | typeof Typography;
 
     /**
      * header Icon

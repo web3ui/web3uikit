@@ -11,23 +11,23 @@ const Template: ComponentStory<typeof Credentials> = (args) => (
     <Credentials {...args} />
 );
 
-export const WithHeaderAndIcon = Template.bind({});
-WithHeaderAndIcon.args = {
+export const WithTitleAndIcon = Template.bind({});
+WithTitleAndIcon.args = {
     icon: 'windows',
-    headerText: 'CLI API Key:',
+    title: 'CLI API Key:',
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
 };
 
-export const WithHeader = Template.bind({});
-WithHeader.args = {
-    headerText: 'CLI API Key:',
+export const WithTitle = Template.bind({});
+WithTitle.args = {
+    title: 'CLI API Key:',
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
 };
 
 export const WithCustomWidth = Template.bind({});
 WithCustomWidth.args = {
     icon: 'windows',
-    headerText: 'CLI API Key:',
+    title: 'CLI API Key:',
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
     width: '700px',
 };

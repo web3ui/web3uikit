@@ -19,7 +19,7 @@ export default {
 const Template: ComponentStory<typeof CopyButton> = () => {
     const notify = useNotification();
     return (
-        <>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
             <Typography>With Love from Developers</Typography>
             <CopyButton
                 text="With Love from Developers"
@@ -33,7 +33,7 @@ const Template: ComponentStory<typeof CopyButton> = () => {
                     })
                 }
             />
-        </>
+        </div>
     );
 };
 

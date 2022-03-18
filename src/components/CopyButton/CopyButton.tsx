@@ -28,7 +28,7 @@ export const useCopyToClipboard = (): [CopiedValue, CopyFn] => {
 
 const CopyButton: FC<CopyButtonProps> = ({
     text,
-    iconSize,
+    iconSize = 24,
     onCopy = () => {},
     revertIn = 3000,
 }) => {

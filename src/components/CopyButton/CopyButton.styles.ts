@@ -8,8 +8,6 @@ type TCopyButtonProps = Pick<CopyButtonProps, 'iconSize'>;
 export const ButtonStyled = styled.button<TCopyButtonProps>`
     ${resetButtonCSS};
     display: inline-block;
-    height: 1em;
-    margin-left: 0.1em;
 
     &:first-child {
         fill: ${color.grey};

@@ -85,7 +85,7 @@ export interface ModalProps {
     customFooter?: JSX.Element;
 
     /**
-     * To have a custom close button
+     * To have a custom close button. The button id must be set to `close`.
      */
     closeButton?: ButtonProps;
 }

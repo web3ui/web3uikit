@@ -24,6 +24,27 @@ export interface TableProps {
     pageSize: number;
 
     /**
+     * To align the content within each table cell
+     */
+    alignCellItems?: 'center' | 'start' | 'end';
+
+    /**
+     * To Justify the content withing each table cell
+     */
+    justifyCellItems?: 'center' | 'start' | 'end';
+
+    /**
+     *  Is loading
+     */
+
+    isLoading?: boolean;
+
+    /**
+     *  What you want to show if table is in loading state
+     */
+    customLoadingContent?: JSX.Element;
+
+    /**
      * Max number of pagination tags that can be shown
      */
     maxPages?: number;

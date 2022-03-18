@@ -78,9 +78,8 @@ export const DivStyled = styled.div`
 export const DivStyledContent = styled.div`
     ${resetCSS};
     ${fonts.text};
-    display: block;
+    display: inline-block;
     margin: 20px 20px 32px;
-
     p,
     i {
         ${resetCSS};
@@ -88,7 +87,7 @@ export const DivStyledContent = styled.div`
     }
 
     :hover {
-        display: block;
+        display: inline-block;
         height: auto;
     }
 `;

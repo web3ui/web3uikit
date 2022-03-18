@@ -3,8 +3,21 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import { ModalProps } from './types';
 
-type TStyleProps = Pick<ModalProps, 'isVisible' | 'hasCancel' | 'width'>;
+type TStyleProps = Pick<
+    ModalProps,
+    'isVisible' | 'hasCancel' | 'width' | 'canOverflow'
+>;
 
+const overflow = (): string => {
+    return `
+            overflow: auto;
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        `;
+};
 export const DivStyledWrap = styled.div<TStyleProps>`
     ${fonts.text};
     background-color: ${colors.white};
@@ -12,11 +25,11 @@ export const DivStyledWrap = styled.div<TStyleProps>`
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     left: 50%;
     max-height: 100%;
-    overflow: auto;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
     width: ${(p) => p.width};
+    ${(p) => !p.canOverflow && overflow()}
 `;
 
 export const HeaderStyled = styled.header<{
@@ -70,7 +83,7 @@ export const CustomFooterStyled = styled.footer`
     padding: 15px 32px 20px;
 `;
 
-export const CustomButtonStyle = styled.button`
+export const CustomButtonStyle = styled.div`
     background: none;
     color: inherit;
     border: none;

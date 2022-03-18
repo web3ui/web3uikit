@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
 import {
+    DivInnerStyledOptionsContainer,
     DivStyledNoData,
     DivStyledOptionItem,
     DivStyledOptionsContainer,
@@ -56,16 +57,18 @@ const Dropdown: React.FC<IDropdown> = ({
         ) {
             return (
                 <DivStyledOptionsContainer width={width} isOpen={isOpen}>
-                    <DivStyledNoData>
-                        <Illustration
-                            logo="looking"
-                            width={'100%'}
-                            height={'100px'}
-                        />
-                        <Typography variant="caption14" weight="600">
-                            No Data
-                        </Typography>
-                    </DivStyledNoData>
+                    <DivInnerStyledOptionsContainer>
+                        <DivStyledNoData>
+                            <Illustration
+                                logo="looking"
+                                width={'100%'}
+                                height={'100px'}
+                            />
+                            <Typography variant="caption14" weight="400">
+                                No Data
+                            </Typography>
+                        </DivStyledNoData>
+                    </DivInnerStyledOptionsContainer>
                 </DivStyledOptionsContainer>
             );
         }
@@ -75,31 +78,33 @@ const Dropdown: React.FC<IDropdown> = ({
                 data-testid="optionsContainer"
                 width={width}
             >
-                {options
-                    .filter(
-                        (optionItem) =>
-                            options.indexOf(optionItem) != selectedIndex ||
-                            !hideSelected,
-                    )
-                    .map((option) => (
-                        <DivStyledOptionItem
-                            onClick={() => {
-                                handleSelectOptionClick(option);
-                            }}
-                            key={option.id}
-                        >
-                            {option?.prefix}
-                            {isLabelVisible && (
-                                <Typography
-                                    variant="caption14"
-                                    weight="600"
-                                    color="#041836"
-                                >
-                                    {option.label}
-                                </Typography>
-                            )}
-                        </DivStyledOptionItem>
-                    ))}
+                <DivInnerStyledOptionsContainer>
+                    {options
+                        .filter(
+                            (optionItem) =>
+                                options.indexOf(optionItem) != selectedIndex ||
+                                !hideSelected,
+                        )
+                        .map((option) => (
+                            <DivStyledOptionItem
+                                onClick={() => {
+                                    handleSelectOptionClick(option);
+                                }}
+                                key={option.id}
+                            >
+                                {option?.prefix}
+                                {isLabelVisible && (
+                                    <Typography
+                                        variant="caption14"
+                                        weight="400"
+                                        color="#041836"
+                                    >
+                                        {option.label}
+                                    </Typography>
+                                )}
+                            </DivStyledOptionItem>
+                        ))}
+                </DivInnerStyledOptionsContainer>
             </DivStyledOptionsContainer>
         );
     }, [isOpen]);
@@ -136,7 +141,7 @@ const Dropdown: React.FC<IDropdown> = ({
                             options[selectedIndex]?.prefix}
                     </span>
                     {isLabelVisible && (
-                        <Typography variant="caption14" weight="600">
+                        <Typography variant="caption14" weight="400">
                             {(isLabelFixed ||
                                 typeof selectedIndex != 'number') &&
                                 label}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ModalProps } from './types';
 import Button from '../Button/Button';
 import { iconTypes } from '../Icon/collection';
@@ -9,7 +9,6 @@ import {
     DivStyledContent,
     DivStyled,
     CustomFooterStyled,
-    CustomButtonStyle,
 } from './Modal.styles';
 
 const Modal: React.FC<ModalProps> = ({
@@ -30,89 +29,93 @@ const Modal: React.FC<ModalProps> = ({
     width = '70vw',
     customFooter,
     closeButton,
-}: ModalProps) => (
-    <DivStyled id={id} isVisible={isVisible} data-testid="modal-test-id">
-        <DivStyledWrap width={width}>
-            <HeaderStyled data-testid={'modal-header-test-id'} title={title}>
-                {typeof title == 'string' ? <h3>{title}</h3> : title}
-                {closeButton ? (
-                    <CustomButtonStyle
-                        onClick={
-                            onCloseButtonPressed
-                                ? onCloseButtonPressed
-                                : () => {
-                                      console.log('close triggered');
-                                  }
-                        }
-                    >
-                        {closeButton}
-                    </CustomButtonStyle>
-                ) : (
-                    <Button
-                        data-testid={'modal-close-test-id'}
-                        icon={iconTypes.x}
-                        iconLayout={'icon-only'}
-                        onClick={
-                            onCloseButtonPressed
-                                ? onCloseButtonPressed
-                                : () => {
-                                      console.log('close triggered');
-                                  }
-                        }
-                        theme={'outline'}
-                    />
-                )}
-            </HeaderStyled>
+    canOverflow = false,
+}: ModalProps) => {
+    const [visible, setVisible] = useState(isVisible);
 
-            <DivStyledContent
-                id={'content'}
-                data-testid={'modal-content-test-id'}
-            >
-                {children}
-            </DivStyledContent>
+    useEffect(() => {
+        document.addEventListener('click', (e: any) => {
+            handleContentClick(e);
+        });
+        return () => {
+            document.removeEventListener('click', (e: any) => {
+                handleContentClick(e);
+            });
+        };
+    }, []);
 
-            {hasFooter && !customFooter && (
-                <FooterStyled
-                    data-testid={'modal-footer-test-id'}
-                    hasCancel={hasCancel}
+    const handleContentClick = (event: React.MouseEvent<HTMLElement>) => {
+        const target = event.target as Element;
+        if (target.id === 'close') toggleVisibility();
+    };
+
+    const toggleVisibility = () => {
+        setVisible(!visible);
+    };
+
+    return (
+        <DivStyled id={id} isVisible={visible} data-testid="modal-test-id">
+            <DivStyledWrap width={width} canOverflow={canOverflow}>
+                <HeaderStyled
+                    data-testid={'modal-header-test-id'}
+                    title={title}
                 >
-                    {hasCancel && (
+                    {typeof title == 'string' ? <h3>{title}</h3> : title}
+                    {closeButton ? (
+                        closeButton
+                    ) : (
                         <Button
-                            data-testid={'modal-cancel-button-test-id'}
-                            disabled={isCancelDisabled}
-                            text={cancelText}
+                            data-testid={'modal-close-test-id'}
+                            icon={iconTypes.x}
+                            iconLayout={'icon-only'}
                             onClick={
-                                onCancel
-                                    ? onCancel
-                                    : () => {
-                                          console.log('cancel triggered');
-                                      }
+                                onCloseButtonPressed
+                                    ? toggleVisibility
+                                    : () => {}
                             }
                             theme={'outline'}
                         />
                     )}
-                    <Button
-                        color={okButtonColor}
-                        data-testid={'modal-ok-button-test-id'}
-                        disabled={isOkDisabled}
-                        onClick={
-                            onOk
-                                ? onOk
-                                : () => {
-                                      console.log('ok triggered');
-                                  }
-                        }
-                        text={okText}
-                        theme={okButtonColor ? 'colored' : 'primary'}
-                    />
-                </FooterStyled>
-            )}
+                </HeaderStyled>
 
-            {customFooter && (
-                <CustomFooterStyled>{customFooter}</CustomFooterStyled>
-            )}
-        </DivStyledWrap>
-    </DivStyled>
-);
+                <DivStyledContent
+                    id={'content'}
+                    data-testid={'modal-content-test-id'}
+                >
+                    {children}
+                </DivStyledContent>
+
+                {hasFooter && !customFooter && (
+                    <FooterStyled
+                        data-testid={'modal-footer-test-id'}
+                        hasCancel={hasCancel}
+                    >
+                        {hasCancel && (
+                            <Button
+                                data-testid={'modal-cancel-button-test-id'}
+                                disabled={isCancelDisabled}
+                                text={cancelText}
+                                onClick={onCancel ? onCancel : () => {}}
+                                theme={'outline'}
+                            />
+                        )}
+                        <Button
+                            color={okButtonColor}
+                            data-testid={'modal-ok-button-test-id'}
+                            disabled={isOkDisabled}
+                            onClick={onOk ? onOk : () => {}}
+                            text={okText}
+                            theme={okButtonColor ? 'colored' : 'primary'}
+                        />
+                    </FooterStyled>
+                )}
+
+                {customFooter && (
+                    <CustomFooterStyled>{customFooter}</CustomFooterStyled>
+                )}
+            </DivStyledWrap>
+        </DivStyled>
+    );
+};
 
 export default Modal;

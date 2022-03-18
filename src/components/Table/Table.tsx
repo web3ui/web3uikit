@@ -10,7 +10,11 @@ import {
     Pagination,
     PaginationText,
     NoData,
+    DivSpinnerLoaderParent,
+    DivTableCell,
 } from './Table.styles';
+import Loading from '../Loading/Loading';
+import { Typography } from '../Typography';
 
 const Table: React.FC<TableProps> = ({
     columnsConfig,
@@ -23,6 +27,10 @@ const Table: React.FC<TableProps> = ({
     onPageNumberChanged,
     customNoDataComponent,
     customNoDataText = 'No Data',
+    isLoading = false,
+    customLoadingContent,
+    alignCellItems = 'start',
+    justifyCellItems = 'start',
 }) => {
     const [pageNum, setPageNum] = useState<number>(
         customPageNumber ? customPageNumber : 0,
@@ -71,13 +79,15 @@ const Table: React.FC<TableProps> = ({
         return (
             <>
                 {header.map((col, key) => (
-                    <div
+                    <DivTableCell
                         key={`header_${key}`}
                         role="table-header"
                         className="table_header"
+                        alignCellItems={alignCellItems}
+                        justifyCellItems={justifyCellItems}
                     >
                         {col}
-                    </div>
+                    </DivTableCell>
                 ))}
                 <Divider />
             </>
@@ -113,7 +123,7 @@ const Table: React.FC<TableProps> = ({
                                     colKey: number,
                                     rowData,
                                 ) => (
-                                    <div
+                                    <DivTableCell
                                         key={`tr_${rowKey}_${colKey}`}
                                         role="table-item"
                                         className={`${
@@ -122,9 +132,11 @@ const Table: React.FC<TableProps> = ({
                                             colKey == rowData.length - 1 &&
                                             'lastCol'
                                         }`}
+                                        alignCellItems={alignCellItems}
+                                        justifyCellItems={justifyCellItems}
                                     >
                                         {item}
-                                    </div>
+                                    </DivTableCell>
                                 ),
                             )}
                             {rowKey != arr.length - 1 && (
@@ -178,11 +190,31 @@ const Table: React.FC<TableProps> = ({
         );
     };
 
+    const Loader = () => (
+        <DivSpinnerLoaderParent>
+            {customLoadingContent ? (
+                customLoadingContent
+            ) : (
+                <>
+                    <Loading
+                        spinnerType={'wave'}
+                        spinnerColor={'#B0B5BF'}
+                        size={6}
+                    />
+
+                    <Typography weight="400" variant="h3" color={'#B0B5BF'}>
+                        Loading Content
+                    </Typography>
+                </>
+            )}
+        </DivSpinnerLoaderParent>
+    );
+
     return (
         <TableParent data-testid="test-table-parent">
             <TableGrid columns={columnsConfig}>
                 <RenderTableHeader />
-                <RenderTable />
+                {isLoading ? <Loader /> : <RenderTable />}
             </TableGrid>
             <RenderPagination />
         </TableParent>

@@ -12,7 +12,7 @@ const rotate = keyframes`
 `;
 
 export const StyledSpinnerParent = styled.div<
-    Pick<ILoadingProps, 'direction' | 'spinnerColor' | 'size'>
+    Pick<ILoadingProps, 'direction' | 'spinnerColor' | 'size' | 'fontSize'>
 >`
     ${fonts.text}
     display: flex;
@@ -25,7 +25,10 @@ export const StyledSpinnerParent = styled.div<
     & > span {
         color: ${(props) => props.spinnerColor};
         font-weight: 500;
-        font-size: ${(props) => `${(props.size as number) / 2}px`};
+        font-size: ${(props) =>
+            `${
+                props.fontSize ? props.fontSize : props.size && props.size / 2
+            }px`};
         line-height: 5px;
         margin: 8px;
     }
@@ -42,4 +45,25 @@ export const StyledSpinnerDiv = styled.div<
     border-right: transparent;
     border-radius: 50%;
     animation: 1s ${rotate} infinite;
+`;
+
+export const DivStyledWaveLoader = styled.div<
+    Pick<ILoadingProps, 'size' | 'spinnerColor'>
+>`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 8px;
+    & > span {
+        width: ${(props) => props.size && props.size / 2}px;
+        height: ${(props) => props.size && props.size / 2}px;
+        transition: all 1000ms;
+        background-color: ${(props) =>
+            props.spinnerColor && props.spinnerColor};
+        border-radius: 50%;
+    }
+    & > .active {
+        width: ${(props) => props.size && props.size}px;
+        height: ${(props) => props.size && props.size}px;
+    }
 `;

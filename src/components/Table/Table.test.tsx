@@ -11,6 +11,7 @@ const {
     OutOfRangeFrozenTable,
     NoDataCustomComponent,
     NoDataCustomText,
+    LoadingTable,
 } = composeStories(stories);
 
 const testOnChangeEvent = jest.fn();
@@ -388,5 +389,13 @@ describe('Table - FrozenPageOutOfRange', () => {
         expect(prevElement).not.toEqual([]);
         expect(nextElement).not.toEqual([]);
         expect(paginationTag).not.toEqual([]);
+    });
+});
+
+describe('Table- Table Loader', () => {
+    it('Should Render Loader', () => {
+        render(<LoadingTable />);
+        const element = screen.getByRole('spinner');
+        expect(element).toBeDefined();
     });
 });

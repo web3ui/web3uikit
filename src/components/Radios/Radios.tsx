@@ -17,6 +17,7 @@ const Radios: React.FC<RadiosProps> = ({
     title,
     validation,
     setWhichIsChecked,
+    disabled = false,
 }) => {
     const formattedID = id.replace(/\s/g, '-');
     const isCreditCards = Boolean(typeof items[0] === 'object');
@@ -50,13 +51,16 @@ const Radios: React.FC<RadiosProps> = ({
 
             {(items as Array<CreditCardProps | string>).map(
                 (item: CreditCardProps | string, i: number) => (
-                    <DivStyled key={`${formattedID}_${i}`}>
+                    <DivStyled key={`${formattedID}_${i}`} disabled={disabled}>
                         <RadioButtonStyled
                             checked={i === whichIsChecked}
                             data-testid={`test-input-${i}`}
                             id={`${formattedID}_${i}`}
                             name={`${formattedID}_group`}
                             onChange={(e) => {
+                                if (disabled) {
+                                    return;
+                                }
                                 onChange(e);
                                 setChecked(i);
                             }}

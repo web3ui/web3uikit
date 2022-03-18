@@ -94,6 +94,8 @@ import xIcon from './icons/x';
 import youtubeIcon from './icons/youtube';
 import web3apiIcon from './icons/web3api';
 import atomicApiIcon from './icons/atomicApi';
+import metamaskIcon from './icons/metamask';
+import metamaskLinedIcon from './icons/metamaskLined';
 
 export type TIconType = keyof typeof iconTypes;
 
@@ -156,6 +158,8 @@ export const iconTypes = {
     mail: 'mail',
     matic: 'matic',
     maximize: 'maximize',
+    metamask: 'metamask',
+    metamaskLined: 'metamaskLined',
     messageCircle: 'messageCircle',
     minimize: 'minimize',
     minus: 'minus',
@@ -256,6 +260,8 @@ const collection = {
     maticIcon,
     maximizeIcon,
     messageCircleIcon,
+    metamaskIcon,
+    metamaskLinedIcon,
     minimizeIcon,
     minusIcon,
     monitorIcon,

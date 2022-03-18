@@ -24,6 +24,12 @@ type chain =
     | 'rinkeby'
     | 'ropsten';
 
+export type NFTCardProp = {
+    metadata?: string;
+    tokenAddress: string;
+    tokenUri: string;
+};
+
 export interface NFTCollectionProps {
     /**
      * Wallet address of the owner
@@ -33,7 +39,20 @@ export interface NFTCollectionProps {
      * Chain Id on which NFT is owned
      */
     chainId: chain;
+    /**
+     * Limit
+     */
+    limit?: number;
+    /**
+     * Offset
+     */
+    offset?: number;
 }
+
+export type NFTType = {
+    image: string;
+    name: string;
+};
 
 export type ResultType = {
     amount?: string | undefined;
@@ -48,13 +67,4 @@ export type ResultType = {
     token_address: string;
     token_id: string;
     token_uri?: string | undefined;
-}[];
-
-export type NFTCardProp = {
-    token_uri: string;
-};
-
-export type NFTType = {
-    image: string;
-    name: string;
 };

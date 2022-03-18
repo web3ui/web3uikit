@@ -29,7 +29,7 @@ export const DivStyledWrap = styled.div<TStyleProps>`
     top: 50%;
     transform: translate(-50%, -50%);
     width: ${(p) => p.width};
-    ${(p) => p.canOverflow === false && overflow()}
+    ${(p) => !p.canOverflow && overflow()}
 `;
 
 export const HeaderStyled = styled.header<{

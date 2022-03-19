@@ -27,6 +27,7 @@ type chain =
 export type NFTCardProp = {
     metadata?: string;
     tokenAddress: string;
+    tokenId: string;
     tokenUri: string;
 };
 

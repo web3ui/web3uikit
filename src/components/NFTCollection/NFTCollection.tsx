@@ -26,6 +26,7 @@ const NFTCollection: React.FC<NFTCollectionProps> = ({
                 offset,
                 limit,
             });
+            console.log(result);
             if (result) {
                 setNfts(result);
                 setIsLoading(false);
@@ -43,11 +44,13 @@ const NFTCollection: React.FC<NFTCollectionProps> = ({
                 {!isLoading ? (
                     nfts.length > 0 ? (
                         nfts.map(
-                            (item) =>
+                            (item, index) =>
                                 item.token_uri && (
                                     <NFTCard
+                                        key={item.block_number + index}
                                         metadata={item.metadata}
                                         tokenAddress={item.token_address}
+                                        tokenId={item.token_id}
                                         tokenUri={item.token_uri}
                                     />
                                 ),

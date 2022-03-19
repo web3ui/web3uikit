@@ -13,8 +13,9 @@ import { Skeleton } from '../Skeleton';
 import { Typography } from '../Typography';
 import { getEllipsisTxt } from '../../web3utils';
 import color from '../../styles/colors';
-import { Tooltip } from '../Tooltip';
 import { Icon, iconTypes } from '../Icon';
+import { PopoverDropdown } from '../PopoverDropdown';
+import { PopoverElement } from '../PopoverElement';
 
 // to fix ipfs links - add here if any more cases found
 const fixUrl = (imgLink: string) => {
@@ -42,6 +43,7 @@ const fromMetadata = (metadata: string | undefined) => {
 const NFTCard: React.FC<NFTCardProp> = ({
     metadata,
     tokenAddress,
+    tokenId,
     tokenUri,
 }) => {
     const [nft, setNft] = useState<NFTType>({} as NFTType);
@@ -54,32 +56,33 @@ const NFTCard: React.FC<NFTCardProp> = ({
             if (res.status != 200) {
                 const { name, image } = fromMetadata(metadata);
                 //if no image in metadata set error to true to not display this NFT
-                if (!name || !image) setIsError(true);
-                return { name, image };
+                if (!image) setIsError(true);
+                console.log('error', image);
+                return { name, image: fixUrl(image) };
             } else {
                 const data = await res.json();
                 let ipfsLink = fixUrl(data.image);
+                // console.log('data', data.image, ipfsLink);
+                if (!data.image) setIsError(true);
                 return {
                     name: data.name,
                     image: ipfsLink ? ipfsLink : data.image,
                 };
             }
         } catch (error) {
-            //If there is any error in fetching image try from metadata
-            const { name, image } = fromMetadata(metadata);
-            if (!name || !image) setIsError(true);
-            return { name, image };
+            setIsError(true);
+            return { name: null, image: null };
         }
     };
 
     useEffect(() => {
         if (tokenUri) {
             const res = fetchData(tokenUri);
-            res.then((data) => setNft(data)).catch(() => setIsError(true));
+            res.then((data) => setNft(data));
         }
     }, [tokenUri]);
 
-    return nft.name ? (
+    return nft.image ? (
         <Row.Col
             breakpointsConfig={{
                 xs: 24,
@@ -110,21 +113,28 @@ const NFTCard: React.FC<NFTCardProp> = ({
                     <Illustration logo="lazyNft" width="100%" height="200px" />
                 )}
                 <DivStyledCardContent>
-                    <Typography variant="caption14">
-                        {getEllipsisTxt(tokenAddress, 4)}
-                    </Typography>
+                    <a
+                        href={`https://blockscan.com/address/${tokenAddress}`}
+                        target="_blank"
+                        referrerPolicy="no-referrer"
+                    >
+                        <Typography variant="caption14">
+                            <span>{getEllipsisTxt(tokenAddress, 4)}</span>
+                        </Typography>
+                    </a>
                     <Typography variant="caption14">ETH</Typography>
                 </DivStyledCardContent>
                 <DivStyledCardContent>
-                    <Typography variant="body16">{nft.name}</Typography>
+                    <Typography variant="body16">
+                        {nft.name && nft.name !== '' ? nft.name : '#' + tokenId}
+                    </Typography>
                     <Typography variant="body16">NA</Typography>
                 </DivStyledCardContent>
                 <DivStyledCardFooter>
                     <div style={{ marginLeft: 'auto' }}>
-                        <Tooltip
+                        <PopoverDropdown
                             position="bottom"
-                            content={'this is content'}
-                            children={
+                            parent={
                                 <Icon
                                     key="4"
                                     svg={iconTypes.info}
@@ -132,6 +142,40 @@ const NFTCard: React.FC<NFTCardProp> = ({
                                     size={20}
                                 />
                             }
+                            children={[
+                                <a
+                                    href={`http://opensea.io/assets/${tokenAddress}/${tokenId}`}
+                                    target="_blank"
+                                    referrerPolicy="no-referrer"
+                                >
+                                    <PopoverElement
+                                        key="0"
+                                        height={30}
+                                        width={150}
+                                        text={'Buy on OpenSea'}
+                                        icon={iconTypes.link}
+                                        textSize={10}
+                                        backgroundColor={'transparent'}
+                                        textColor={color.white}
+                                    />
+                                </a>,
+                                <a
+                                    href={`https://blockscan.com/address/${tokenAddress}`}
+                                    target="_blank"
+                                    referrerPolicy="no-referrer"
+                                >
+                                    <PopoverElement
+                                        key="1"
+                                        height={30}
+                                        width={150}
+                                        text={'Watch on BlockScan'}
+                                        icon={iconTypes.link}
+                                        textSize={10}
+                                        backgroundColor={'transparent'}
+                                        textColor={color.white}
+                                    />
+                                </a>,
+                            ]}
                         />
                     </div>
                 </DivStyledCardFooter>
@@ -148,7 +192,7 @@ const NFTCard: React.FC<NFTCardProp> = ({
             span={24}
         >
             <Card>
-                <Skeleton theme="image" width="80%" height="200px" />
+                <Skeleton theme="image" width="100%" height="200px" />
                 <Skeleton theme="text" height="50px" />
             </Card>
         </Row.Col>

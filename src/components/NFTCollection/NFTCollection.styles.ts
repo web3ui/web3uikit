@@ -28,6 +28,12 @@ const DivStyledCardContent = styled.div`
     justify-content: space-between;
     margin: 4px 0;
     padding: 0px 10px;
+    a {
+        text-decoration: none;
+    }
+    a:hover > span {
+        color: ${color.blue};
+    }
 `;
 
 const DivStyledCardFooter = styled.div`

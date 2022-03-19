@@ -3,6 +3,7 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 
 const WidgetStyled = styled.div`
+    background-color: ${colors.white};
     border: 1px solid ${colors.paleBlue2};
     border-radius: 20px;
     display: flex;

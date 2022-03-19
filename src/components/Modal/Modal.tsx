@@ -14,6 +14,7 @@ import {
 const Modal: React.FC<ModalProps> = ({
     cancelText = 'Cancel',
     children,
+    fixedMode = false,
     hasCancel = true,
     hasFooter = true,
     id = String(Date.now()),
@@ -59,6 +60,7 @@ const Modal: React.FC<ModalProps> = ({
                 <HeaderStyled
                     data-testid={'modal-header-test-id'}
                     title={title}
+                    fixedMode={fixedMode}
                 >
                     {typeof title == 'string' ? <h3>{title}</h3> : title}
                     {closeButton ? (
@@ -89,6 +91,7 @@ const Modal: React.FC<ModalProps> = ({
                     <FooterStyled
                         data-testid={'modal-footer-test-id'}
                         hasCancel={hasCancel}
+                        fixedMode={fixedMode}
                     >
                         {hasCancel && (
                             <Button
@@ -111,7 +114,9 @@ const Modal: React.FC<ModalProps> = ({
                 )}
 
                 {customFooter && (
-                    <CustomFooterStyled>{customFooter}</CustomFooterStyled>
+                    <CustomFooterStyled fixedMode={fixedMode}>
+                        {customFooter}
+                    </CustomFooterStyled>
                 )}
             </DivStyledWrap>
         </DivStyled>

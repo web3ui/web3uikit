@@ -5,7 +5,7 @@ import { ModalProps } from './types';
 
 type TStyleProps = Pick<
     ModalProps,
-    'isVisible' | 'hasCancel' | 'width' | 'canOverflow'
+    'isVisible' | 'hasCancel' | 'width' | 'canOverflow' | 'fixedMode'
 >;
 
 const overflow = (): string => {
@@ -34,12 +34,13 @@ export const DivStyledWrap = styled.div<TStyleProps>`
 
 export const HeaderStyled = styled.header<{
     title: any;
+    fixedMode: boolean;
 }>`
+    ${(p) => p.fixedMode && 'position: sticky;top: 0;background-color: white;'}
     display: flex;
     align-items: center;
-    justify-content: ${(p) => (p.title ? 'space-between' : 'flex-end')};
     padding: 24px 32px 10px;
-
+    justify-content: ${(p) => (p.title ? 'space-between' : 'flex-end')};
     div {
         border-color: ${colors.blue};
         border-radius: 15px;
@@ -60,6 +61,8 @@ export const DivStyledContent = styled.div`
 `;
 
 export const FooterStyled = styled.footer<TStyleProps>`
+    ${(p) =>
+        p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
     border-top: 1px solid ${colors.paleBlue2};
     display: flex;
     padding: 15px 32px 20px;
@@ -77,7 +80,9 @@ export const DivStyled = styled.div<TStyleProps>`
     z-index: 5;
 `;
 
-export const CustomFooterStyled = styled.footer`
+export const CustomFooterStyled = styled.footer<TStyleProps>`
+    ${(p) =>
+        p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
     border-top: 1px solid ${colors.paleBlue2};
     display: flex;
     padding: 15px 32px 20px;

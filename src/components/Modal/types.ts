@@ -28,6 +28,11 @@ export interface ModalProps {
     cancelText?: string;
 
     /**
+     * set to true to fix header and footer
+     */
+    fixedMode?: boolean;
+
+    /**
      * set if 'Cancel' button is disabled
      */
     isCancelDisabled?: boolean;

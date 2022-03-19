@@ -8,14 +8,11 @@ type TCopyButtonProps = Pick<CopyButtonProps, 'iconSize'>;
 export const ButtonStyled = styled.button<TCopyButtonProps>`
     ${resetButtonCSS};
     display: inline-block;
-    height: 1em;
-    margin-left: 0.1em;
+    vertical-align: sub;
 
     &:first-child {
         fill: ${color.grey};
-        height: 100%;
         transition: fill 0.2s ease-out;
-        width: 100%;
     }
 
     &:hover > svg {

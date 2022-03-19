@@ -8,6 +8,7 @@ export const initialStyles = css`
     ${resetCSS}
     ${fonts.text}
     align-items: center;
+    background-origin: border-box;
     border-radius: 12px;
     border: 2px solid transparent;
     cursor: pointer;
@@ -58,14 +59,6 @@ export const initialStyles = css`
 export const isLoadingMode = css`
     span {
         margin-left: 12px;
-    }
-`;
-
-export const hoverEffect = css`
-    :hover {
-        :after {
-            background-color: ${getShade('dark', 10)};
-        }
     }
 `;
 

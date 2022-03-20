@@ -28,8 +28,8 @@ export interface NFTCollectionProps {
 }
 
 export type NFTType = {
-    image: string;
-    name: string;
+    image: string | null;
+    name: string | null;
 };
 
 export type ResultType = {

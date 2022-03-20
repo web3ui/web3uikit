@@ -68,7 +68,7 @@ const NFTCard: React.FC<NFTCardProp> = ({
                 const data = await res.json();
                 let ipfsLink = fixUrl(data.image);
                 return {
-                    name: data.name && shortenName(data.name, 50),
+                    name: data?.name ? shortenName(data.name, 50) : data?.name,
                     image: ipfsLink ? ipfsLink : data.image,
                 };
             }
@@ -137,7 +137,9 @@ const NFTCard: React.FC<NFTCardProp> = ({
                         {nft.name && nft.name !== '' ? (
                             nft.name
                         ) : (
-                            <span>{'#' + shortenName(tokenId, 10)}</span>
+                            <span id="name">
+                                {'#' + shortenName(tokenId, 10)}
+                            </span>
                         )}
                     </Typography>
                     <Typography variant="body16">NA</Typography>

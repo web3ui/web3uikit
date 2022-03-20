@@ -37,12 +37,11 @@ const Modal: React.FC<ModalProps> = ({
         document.addEventListener('click', (e: any) => {
             handleContentClick(e);
         });
-        return () => {
-            document.removeEventListener('click', (e: any) => {
-                handleContentClick(e);
-            });
-        };
     }, []);
+
+    useEffect(() => {
+        setVisible(isVisible);
+    }, [isVisible]);
 
     const handleContentClick = (event: React.MouseEvent<HTMLElement>) => {
         const target = event.target as Element;
@@ -65,6 +64,10 @@ const Modal: React.FC<ModalProps> = ({
                         closeButton
                     ) : (
                         <Button
+                            iconColor={'#68738D'}
+                            theme={'secondary'}
+                            radius={40}
+                            id={'close'}
                             data-testid={'modal-close-test-id'}
                             icon={iconTypes.x}
                             iconLayout={'icon-only'}
@@ -73,7 +76,6 @@ const Modal: React.FC<ModalProps> = ({
                                     ? toggleVisibility
                                     : () => {}
                             }
-                            theme={'outline'}
                         />
                     )}
                 </HeaderStyled>

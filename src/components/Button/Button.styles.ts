@@ -127,7 +127,7 @@ export const ButtonStyled = styled.button<TStyleProps>`
 
     ${(p) => p.isLoading && isLoadingMode}
 
-    ${(p) => p.radius && `border-radius: ${p.radius}px`}
+    ${(p) => p.radius && `border-radius: ${p.radius}px;`}
 
     ${(p) => (p.isTransparent ? transparent : hoverEffect)}
 

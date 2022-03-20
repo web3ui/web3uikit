@@ -9,7 +9,7 @@ import { useMoralis } from 'react-moralis';
 
 const NFTCollection: React.FC<NFTCollectionProps> = ({
     address,
-    chainId,
+    chain,
     limit = 20,
     offset = 0,
 }) => {
@@ -22,11 +22,10 @@ const NFTCollection: React.FC<NFTCollectionProps> = ({
             setIsLoading(true);
             const { result } = await Moralis.Web3API.account.getNFTs({
                 address,
-                chain: chainId,
+                chain,
                 offset,
                 limit,
             });
-            console.log(result);
             if (result) {
                 setNfts(result);
                 setIsLoading(false);
@@ -36,7 +35,7 @@ const NFTCollection: React.FC<NFTCollectionProps> = ({
 
     useEffect(() => {
         fetchNFTS();
-    }, [isInitialized, address, chainId]);
+    }, [isInitialized, address, chain]);
 
     return (
         <Row justifyItems="flex-start" alignItems="stretch" rowGap={40}>
@@ -47,6 +46,7 @@ const NFTCollection: React.FC<NFTCollectionProps> = ({
                             (item, index) =>
                                 item.token_uri && (
                                     <NFTCard
+                                        chain={chain}
                                         key={item.block_number + index}
                                         metadata={item.metadata}
                                         tokenAddress={item.token_address}

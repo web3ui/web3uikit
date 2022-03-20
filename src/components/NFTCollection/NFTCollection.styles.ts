@@ -34,6 +34,9 @@ const DivStyledCardContent = styled.div`
     a:hover > span {
         color: ${color.blue};
     }
+    span {
+        word-break: break-all;
+    }
 `;
 
 const DivStyledCardFooter = styled.div`

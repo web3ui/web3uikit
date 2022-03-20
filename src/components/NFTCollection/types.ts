@@ -1,30 +1,7 @@
-type chain =
-    | '0x1'
-    | '0x13881'
-    | '0x2a'
-    | '0x3'
-    | '0x38'
-    | '0x4'
-    | '0x5'
-    | '0x61'
-    | '0x89'
-    | '0xa869'
-    | '0xa86a'
-    | '0xfa'
-    | 'avalanche testnet'
-    | 'avalanche'
-    | 'bsc testnet'
-    | 'bsc'
-    | 'eth'
-    | 'fantom'
-    | 'goerli'
-    | 'kovan'
-    | 'mumbai'
-    | 'polygon'
-    | 'rinkeby'
-    | 'ropsten';
+import { Chain } from '../../web3utils';
 
 export type NFTCardProp = {
+    chain: Chain;
     metadata?: string;
     tokenAddress: string;
     tokenId: string;
@@ -39,7 +16,7 @@ export interface NFTCollectionProps {
     /**
      * Chain Id on which NFT is owned
      */
-    chainId: chain;
+    chain: Chain;
     /**
      * Limit
      */

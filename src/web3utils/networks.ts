@@ -93,3 +93,58 @@ export const getExplorer = (chain: string) =>
 
 export const getWrappedNative = (chain: string) =>
     networkConfigs[chain]?.wrapped || null;
+
+type EthChain = 'eth' | '0x1';
+type RopstenChain = 'ropsten' | '0x3';
+type RinkebyChain = 'rinkeby' | '0x4';
+type GoerliChain = 'goerli' | '0x5';
+type KovanChain = 'kovan' | '0x2a';
+type BscChain = 'bsc' | '0x38';
+type BscTestChain = 'bsc testnet' | '0x61';
+type PolygonChain = 'polygon' | '0x89';
+type MumbaiChain = 'mumbai' | '0x13881';
+type FantomChain = 'fantom' | '0xfa';
+type AvalancheChain = 'avalanche' | '0xa86a';
+type AvalancheTestChain = 'avalanche testnet' | '0xa869';
+
+export type Chain =
+    | EthChain
+    | RopstenChain
+    | RinkebyChain
+    | GoerliChain
+    | KovanChain
+    | BscChain
+    | BscTestChain
+    | PolygonChain
+    | MumbaiChain
+    | FantomChain
+    | AvalancheChain
+    | AvalancheTestChain;
+
+const chainToHex = {
+    'eth': '0x1',
+    'ropsten': '0x3',
+    'rinkeby': '0x4',
+    'goerli': '0x5',
+    'kovan': '0x2a',
+    'bsc': '0x38',
+    'bsc testnet': '0x61',
+    'polygon': '0x89',
+    'mumbai': '0x13881',
+    'fantom': '0xfa',
+    'avalanche': '0xa86a',
+    'avalanche testnet': '0xa869',
+    '0x1': '0x1',
+    '0x3': '0x3',
+    '0x4': '0x4',
+    '0x5': '0x5',
+    '0x2a': '0x2a',
+    '0x38': '0x38',
+    '0x61': '0x61',
+    '0x89': '0x89',
+    '0x13881': '0x13881',
+    '0xfa': '0xfa',
+    '0xa86a': '0xa86a',
+    '0xa869': '0xa869',
+};
+export const getChainHex = (chain: Chain) => chainToHex[chain];

@@ -97,7 +97,7 @@ describe('Button - Primary Large', () => {
         const bgColorHex =
             styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.green);
-        expect(styles?.borderWidth).toBe('4px');
+        expect(styles?.borderWidth).toBe('2px');
         expect(styles?.fontSize).toBe('16px');
         expect(styles?.padding).toBe('4px 20px');
     });
@@ -124,8 +124,8 @@ describe('Button - Primary Small', () => {
         const bgColorHex =
             styles && rgbToHex(styles.backgroundColor).toUpperCase();
         expect(bgColorHex).toBe(color.green);
-        expect(styles?.fontSize).toBe('13px');
-        expect(styles?.padding).toBe('2px 12px');
+        expect(styles?.fontSize).toBe('14px');
+        expect(styles?.padding).toBe('0px 16px');
     });
 });
 

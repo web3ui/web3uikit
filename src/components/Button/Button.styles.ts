@@ -1,15 +1,12 @@
 import styled from 'styled-components';
 import type { ButtonProps } from './types';
+import { initialStyles, isLoadingMode } from './styles/inititalStyles';
 import {
-    hoverEffect,
-    initialStyles,
-    isLoadingMode,
-    transparent,
-} from './styles/inititalStyles';
-import {
+    outlineLarge,
+    outlineRegular,
+    outlineSmall,
     primary,
-    regular,
-    outline,
+    secondary,
     translucent,
 } from './styles/standardThemes';
 import { sizeSmall, sizeRegular, sizeLarge } from './styles/sizeStyles';
@@ -40,16 +37,25 @@ type TStyleProps = Pick<
     | 'iconColor'
 >;
 
-const getThemeStyles = (theme: string) => {
+const getThemeStyles = (theme: string, size: string) => {
     switch (theme) {
         case 'primary':
             return primary;
         case 'outline':
-            return outline;
+            switch (size) {
+                case 'large':
+                    return outlineLarge;
+                case 'small':
+                    return outlineSmall;
+                case 'regular':
+                default:
+                    return outlineRegular;
+            }
         case 'translucent':
             return translucent;
+        case 'secondary':
         default:
-            return regular;
+            return secondary;
     }
 };
 
@@ -86,7 +92,7 @@ const getColored = (color: string) => {
         case 'yellow':
             return coloredYellow;
         default:
-            return regular;
+            return secondary;
     }
 };
 
@@ -114,7 +120,7 @@ export const ButtonStyled = styled.button<TStyleProps>`
     ${initialStyles}
 
     ${(p) => p.isFullWidth && 'width: 100%;'}
-    ${(p) => p.theme && getThemeStyles(p.theme)}
+    ${(p) => p.theme && p.size && getThemeStyles(p.theme, p.size)}
     ${(p) => p.color && p.theme === 'colored' && getColored(p.color)}
     ${(p) => p.size && getSizeStyles(p.size)}
     ${(p) => p.iconLayout && getIconLayoutStyles(p.iconLayout)}
@@ -128,8 +134,6 @@ export const ButtonStyled = styled.button<TStyleProps>`
     ${(p) => p.isLoading && isLoadingMode}
 
     ${(p) => p.radius && `border-radius: ${p.radius}px`}
-
-    ${(p) => (p.isTransparent ? transparent : hoverEffect)}
 
     ${(p) => p.iconColor && getIconColor(p.iconColor)}
 `;

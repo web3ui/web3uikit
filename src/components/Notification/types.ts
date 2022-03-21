@@ -70,6 +70,7 @@ export type PayloadType = {
     title?: string;
     icon?: TIconType;
     position: IPosition;
+    iconColor?: string;
 };
 
 export interface IToasts {

@@ -18,6 +18,7 @@ const {
 const Notification: React.FC<NotificationProps> = ({
     dispatch,
     icon,
+    iconColor,
     id,
     message,
     title = 'New Message',
@@ -76,6 +77,11 @@ const Notification: React.FC<NotificationProps> = ({
         return iconTypes.checkmark;
     };
 
+    const getIconColor = (): string => {
+        if (iconColor) return iconColor;
+        return color.grey;
+    };
+
     return (
         <NotificationStyled
             data-testid={'test-notification-id'}
@@ -87,7 +93,7 @@ const Notification: React.FC<NotificationProps> = ({
             position={position}
         >
             <IconWrapperStyled data-testid={'test-notification-icon-wrapper'}>
-                <Icon size={24} svg={getIcon()} />
+                <Icon size={24} svg={getIcon()} fill={getIconColor()} />
             </IconWrapperStyled>
             <TextContentStyled>
                 <TitleStyled data-testid={'test-notification-title'}>

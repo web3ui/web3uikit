@@ -23,6 +23,11 @@ export interface NotificationProps extends INotificationStyled {
     icon?: TIconType;
 
     /**
+     * set color of the icon
+     */
+    iconColor?: string;
+
+    /**
      * used for dispatching state to context
      */
 

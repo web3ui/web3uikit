@@ -15,6 +15,11 @@ export default {
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
+const FilledTemplate: ComponentStory<typeof Input> = (args) => (
+    <div className="input_filled">
+        <Input {...args} />
+    </div>
+);
 
 export const DefaultInput = Template.bind({});
 DefaultInput.args = {
@@ -176,4 +181,18 @@ ValidateRegExp.args = {
         regExp: validateRegExp.email,
         regExpInvalidMessage: 'That is not a valid email address',
     },
+};
+
+export const InputFilled = Template.bind({});
+InputFilled.args = {
+    label: 'Filled',
+    name: 'Test text Input',
+    value: 'This has a default value',
+};
+
+export const InputFilledHack = FilledTemplate.bind({});
+InputFilledHack.args = {
+    label: 'Filled hack just in case',
+    name: 'Test text Input',
+    placeholder: 'Yeah, you can use placeholder now',
 };

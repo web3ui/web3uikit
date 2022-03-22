@@ -137,7 +137,7 @@ You will see a clear example of CSS sorting in action in the `styles.tsx`
 5. Modifier styles (hover, active etc)
 6. State changed styles `${(p) => (p.prop ? green : red)};`
 
-Note: each should be sorted alphabetically as best as possible. We use a VSCode plugin called SortLines by Daniel Imms
+Note: each should be sorted alphabetically as best as possible. We use a VSCode plugin called [SortLines](https://marketplace.visualstudio.com/items?itemName=Tyriar.sort-lines) by Daniel Imms
 
 **Q:** Why such strict ordering?
 

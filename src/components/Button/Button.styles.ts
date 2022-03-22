@@ -1,6 +1,11 @@
 import styled from 'styled-components';
 import type { ButtonProps } from './types';
-import { initialStyles, isLoadingMode } from './styles/inititalStyles';
+import {
+    initialStyles,
+    isLoadingMode,
+    transparent,
+    hoverEffect,
+} from './styles/inititalStyles';
 import {
     outlineLarge,
     outlineRegular,
@@ -136,4 +141,6 @@ export const ButtonStyled = styled.button<TStyleProps>`
     ${(p) => p.radius && `border-radius: ${p.radius}px;`}
 
     ${(p) => p.iconColor && getIconColor(p.iconColor)}
+
+    ${(p) => (p.isTransparent ? transparent : hoverEffect)}
 `;

@@ -14,6 +14,7 @@ import {
 const Modal: React.FC<ModalProps> = ({
     cancelText = 'Cancel',
     children,
+    headerHasBottomBorder = false,
     fixedMode = false,
     hasCancel = true,
     hasFooter = true,
@@ -60,6 +61,7 @@ const Modal: React.FC<ModalProps> = ({
                     data-testid={'modal-header-test-id'}
                     title={title}
                     fixedMode={fixedMode}
+                    headerHasBottomBorder={headerHasBottomBorder}
                 >
                     {typeof title == 'string' ? <h3>{title}</h3> : title}
                     {closeButton ? (

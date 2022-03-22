@@ -28,6 +28,11 @@ export interface ModalProps {
     cancelText?: string;
 
     /**
+     * should the header component have a bottom border
+     */
+    headerHasBottomBorder?: boolean;
+
+    /**
      * set to true to fix header and footer
      */
     fixedMode?: boolean;

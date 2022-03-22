@@ -15,6 +15,7 @@ export const LinkStyled = styled.a`
     align-items: center;
     color: ${color.blue};
     display: inline-block;
+    font-weight: 600;
     width: fit-content;
 
     &:hover {

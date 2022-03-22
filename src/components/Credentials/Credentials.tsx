@@ -37,7 +37,7 @@ const Credentials: FC<ICredentialsProps> = ({
             <PreformattedStyled>
                 <Typography
                     monospace
-                    color={color.grey}
+                    color={color.blueDark}
                     data-testid="cred-test-text"
                 >
                     {isValueHidden ? hiddenText : text}

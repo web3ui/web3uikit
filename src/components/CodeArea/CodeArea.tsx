@@ -1,67 +1,71 @@
-import React, { FC, useEffect, useMemo, useState } from 'react';
-import { Typography } from '../Typography';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import CodeAreaStyles from './CodeArea.styles';
 import color from '../../styles/colors';
 import { ICodeAreaProps } from './types';
-import CodeAreaHeader from './components/CodeAreaHeader';
-import { HideButton } from '../HideButton';
-import { CopyButton } from '../CopyButton';
+import { Icon } from '../Icon';
+import LineNumbers from './LineNumbers';
 
 const {
-    CodeAreaStyled,
-    DividerStyled,
-    PreformattedStyled,
-    ToolsStyled,
-    SideStyled,
+    ContentStyled,
+    HeaderStyled,
     TextAreaStyled,
-    StyledUl,
+    WidthWrapperStyled,
     WrapperStyled,
 } = CodeAreaStyles;
 
 const CodeArea: FC<ICodeAreaProps> = ({
-    hasCopyButton = true,
-    hasHideButton = true,
-    title,
-    icon,
-    iconColor,
-    iconSize,
-    isHidden = false,
     text,
-    width = 'auto',
-    hiddenText = '•••••••••••••••••••••••••••••••',
+    maxWidth = '100%',
+    onChange,
+    headerComponent,
 }) => {
-    const [isValueHidden, setIsValueHidden] = useState(isHidden);
+    const [currentValue, setCurrentValue] = useState(text);
 
-    useEffect(() => setIsValueHidden(isHidden), [isHidden]);
+    const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
-    const rowNumbers = useMemo(() => {
-        const rowsAmount = text.split(/\r\n|\r|\n/).length;
-        const numberComps = [];
-        for (let i = 1; i < rowsAmount + 1; i++) {
-            numberComps.push(
-                <li>
-                    <Typography
-                        variant="caption14"
-                        monospace
-                        color={color.grey}
-                        italic
-                    >
-                        {i}
-                    </Typography>
-                </li>,
-            );
+    const valueChanged = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setCurrentValue(event.target.value);
+        onChange && onChange(event);
+    };
+
+    useEffect(() => {
+        if (textareaRef && textareaRef.current) {
+            textareaRef.current.style.height = '0px';
+            textareaRef.current.style.minHeight = '0px';
+            const scrollHeight = textareaRef.current.scrollHeight;
+            textareaRef.current.style.height = scrollHeight + 'px';
+            textareaRef.current.style.minHeight = scrollHeight + 'px';
         }
-        return numberComps;
-    }, [text]);
+    }, [currentValue]);
 
     return (
-        // <WrapperStyled>
-        //     <SideStyled>
-        //         <StyledUl>{rowNumbers}</StyledUl>
-        //     </SideStyled>
-        //     <TextAreaStyled id="lined" rows={10} cols={60} />
-        // </WrapperStyled>
-        <TextAreaStyled rows={10} cols={40}></TextAreaStyled>
+        <WidthWrapperStyled maxWidth={maxWidth}>
+            <WrapperStyled>
+                {headerComponent && (
+                    <HeaderStyled>{headerComponent}</HeaderStyled>
+                )}
+                <ContentStyled>
+                    <LineNumbers currentValue={currentValue} />
+                    <TextAreaStyled
+                        ref={textareaRef}
+                        onChange={(
+                            event: React.ChangeEvent<HTMLTextAreaElement>,
+                        ) => valueChanged(event)}
+                        value={currentValue}
+                    />
+                </ContentStyled>
+                <Icon
+                    svg="expand"
+                    style={{
+                        position: 'absolute',
+                        bottom: '8px',
+                        right: '8px',
+                        zIndex: '1',
+                    }}
+                    fill={color.blue}
+                />
+            </WrapperStyled>
+        </WidthWrapperStyled>
     );
 };
 

@@ -1,58 +1,29 @@
-import color from '../../styles/colors';
-import { TIconType } from '../Icon/collection';
-import { Typography } from '../Typography';
-
-export interface ICodeAreaProps extends ICodeAreaHeaderProps {
-    /**
-     * if true displays Copy Button
-     */
-    hasCopyButton?: boolean;
-
-    /**
-     * if true displays Hide Button
-     */
-    hasHideButton?: boolean;
-
-    /**
-     * replaced text in case if value is hidden
-     * default is "•••••••••••••••••••••••••••••••"
-     */
-    hiddenText?: string;
-
-    /**
-     * is hidden state
-     */
-    isHidden?: boolean;
-
-    /**
-     * displayable text
-     */
-    text: string;
-
+export interface ICodeAreaProps {
     /**
      * width of component
-     * default is "auto"
+     * default is "100%"
      */
-    width?: string;
+    maxWidth?: string;
+
+    /**
+     * standard onChange that returns the entire event, as normal you can access event.target
+     */
+    onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+
+    /**
+     * Custom JSX component inside header
+     */
+    headerComponent?: React.ReactNode;
+
+    /**
+     * please add the text you want to show in the codearea
+     */
+    text: string;
 }
-export interface ICodeAreaHeaderProps {
-    /**
-     * header text
-     */
-    title?: string | typeof Typography;
 
+export interface ILineNumbersProps {
     /**
-     * header Icon
+     * current value
      */
-    icon?: TIconType;
-
-    /**
-     * header Icon color
-     */
-    iconColor?: string | typeof color;
-
-    /**
-     * header Icon size
-     */
-    iconSize?: number;
+    currentValue: string;
 }

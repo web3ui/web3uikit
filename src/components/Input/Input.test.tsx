@@ -1,6 +1,6 @@
 /* eslint-disable new-cap */
 import ReactDOM from 'react-dom';
-import { fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import { composeStories } from '@storybook/testing-react';
@@ -8,6 +8,7 @@ import * as stories from './Input.stories';
 import color from '../../styles/colors';
 import React from 'react';
 import rgbToHex from '../../utils/rgbToHex';
+import Input from './Input';
 
 const {
     EmailInput,
@@ -30,6 +31,37 @@ const testInputId = 'test-input';
 const testLabelId = 'test-label';
 const testDivId = 'test-div';
 const testEvent = jest.fn();
+
+test("should conditionally render 'empty / filled' className", () => {
+    render(<Input />);
+    const div: HTMLDivElement = screen.getByTestId(testDivId);
+    const input: HTMLInputElement = screen.getByTestId(testInputId);
+
+    expect(div.classList.contains('filled')).toBeFalsy;
+    expect(div.classList.contains('empty')).toBeTruthy;
+
+    input.focus();
+    fireEvent.change(input, { target: { value: 'foo' } });
+
+    expect(input.value).toBe('foo');
+    expect(div.classList.contains('filled')).toBeTruthy;
+    expect(div.classList.contains('empty')).toBeFalsy;
+});
+
+test('onChange event is returned, testEvent => event.target', () => {
+    render(<Input onChange={(e) => testEvent(e.target)} />);
+    const div: HTMLDivElement = screen.getByTestId(testDivId);
+    const input: HTMLInputElement = screen.getByTestId(testInputId);
+
+    expect(div.classList.contains('filled')).toBeFalsy;
+    expect(div.classList.contains('empty')).toBeTruthy;
+
+    input.focus();
+    fireEvent.change(input, { target: { value: 'foo' } });
+
+    expect(input.value).toBe('foo');
+    expect(testEvent).toHaveBeenCalledWith(input);
+});
 
 describe('Input - Text', () => {
     const testLabel = DefaultInput?.args?.label;
@@ -99,37 +131,6 @@ describe('Input - Text', () => {
         expect(label).not.toBeNull();
         expect(label?.textContent).toBe(testLabel);
     });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        expect(input).not.toBeNull();
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-        input && expect(input.value).toBe('foo');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo');
-        expect(testEvent).toHaveBeenCalledWith(input);
-    });
 });
 
 describe('Input - Text Error', () => {
@@ -198,37 +199,6 @@ describe('Input - Text Error', () => {
         expect(label).not.toBeNull();
         expect(label?.textContent).toBe(testLabel);
     });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        expect(input).not.toBeNull();
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-        input && expect(input.value).toBe('foo');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo');
-        expect(testEvent).toHaveBeenCalledWith(input);
-    });
 });
 
 describe('Input - Text Confirmed', () => {
@@ -296,37 +266,6 @@ describe('Input - Text Confirmed', () => {
         const label = container.querySelector(`[data-testid="${testLabelId}"]`);
         expect(label).not.toBeNull();
         expect(label?.textContent).toBe(testLabel);
-    });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo');
-        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
@@ -400,25 +339,6 @@ describe('Input - Number', () => {
         expect(label?.textContent).toBe(testLabel);
     });
 
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        expect(input).not.toBeNull();
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: '123' } });
-        input && expect(input.value).toBe('123');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
     it('number input wont return letters', () => {
         const input: HTMLInputElement | null = container.querySelector(
             `[data-testid="${testInputId}"]`,
@@ -427,18 +347,6 @@ describe('Input - Number', () => {
         input?.focus();
         input && fireEvent.change(input, { target: { value: 'foo' } });
         input && expect(input.value).toBe('');
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: '123' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('123');
-        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
@@ -509,37 +417,6 @@ describe('Input - Password', () => {
         const label = container.querySelector(`[data-testid="${testLabelId}"]`);
         expect(label).not.toBeNull();
         expect(label?.textContent).toBe(testLabel);
-    });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        expect(input).not.toBeNull();
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-        input && expect(input.value).toBe('foo');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo');
-        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 
@@ -612,37 +489,6 @@ describe('Input - Email', () => {
         expect(label).not.toBeNull();
         expect(label?.textContent).toBe(testLabel);
     });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        expect(input).not.toBeNull();
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo@bar.io' } });
-        input && expect(input.value).toBe('foo@bar.io');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: 'foo' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('foo');
-        expect(testEvent).toHaveBeenCalledWith(input);
-    });
 });
 
 describe('Input - Tel', () => {
@@ -713,38 +559,6 @@ describe('Input - Tel', () => {
         const label = container.querySelector(`[data-testid="${testLabelId}"]`);
         expect(label).not.toBeNull();
         expect(label?.textContent).toBe(testLabel);
-    });
-
-    it("should conditionally render 'empty / filled' className", () => {
-        const div: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testDivId}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        expect(div?.classList.contains('filled')).toBeFalsy;
-        expect(div?.classList.contains('empty')).toBeTruthy;
-
-        expect(input).not.toBeNull();
-        input?.focus();
-        input &&
-            fireEvent.change(input, { target: { value: '+447712345678' } });
-        input && expect(input.value).toBe('+447712345678');
-
-        expect(div?.classList.contains('filled')).toBeTruthy;
-        expect(div?.classList.contains('empty')).toBeFalsy;
-    });
-
-    it('onChange event is returned, testEvent => event.target', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}"]`,
-        );
-        input?.focus();
-        input && fireEvent.change(input, { target: { value: '123' } });
-
-        expect(input).not.toBeNull();
-        input && expect(input.value).toBe('123');
-        expect(testEvent).toHaveBeenCalledWith(input);
     });
 });
 

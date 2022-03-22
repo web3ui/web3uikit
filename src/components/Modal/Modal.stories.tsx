@@ -65,6 +65,26 @@ Regular.args = {
     ],
 };
 
+export const BorderedHeader = Template.bind({});
+BorderedHeader.args = {
+    id: 'regular',
+    title: 'Bordered Header',
+    isVisible: true,
+    headerHasBottomBorder: true,
+    children: [
+        <div
+            key={'0'}
+            style={{
+                display: 'grid',
+                placeItems: 'center',
+            }}
+        >
+            <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
+            <p>This is a demo on how to use <em>headerHasBottomBorder</em> props?</p>
+        </div>,
+    ],
+};
+
 export const ButtonsDisabled = Template.bind({});
 ButtonsDisabled.args = {
     id: 'disabled',

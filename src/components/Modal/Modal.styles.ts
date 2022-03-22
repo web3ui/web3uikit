@@ -35,12 +35,15 @@ export const DivStyledWrap = styled.div<TStyleProps>`
 export const HeaderStyled = styled.header<{
     title: any;
     fixedMode: boolean;
+    headerHasBottomBorder: boolean;
 }>`
     ${(p) => p.fixedMode && 'position: sticky;top: 0;background-color: white;'}
-    display: flex;
     align-items: center;
-    padding: 24px 32px 10px;
+    display: flex;
+    padding: 28px 32px 24px;
     justify-content: ${(p) => (p.title ? 'space-between' : 'flex-end')};
+    border-bottom: ${(p) => (p.headerHasBottomBorder ? `1px solid ${colors.paleBlue2}` : undefined)};
+    
     div {
         border-color: ${colors.blue};
         border-radius: 15px;
@@ -49,6 +52,8 @@ export const HeaderStyled = styled.header<{
     h3 {
         color: ${colors.blue};
         padding-right: 8px;
+        margin-block-start: 0;
+        margin-block-end: 0;
     }
 
     button {

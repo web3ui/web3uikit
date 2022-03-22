@@ -433,3 +433,15 @@ PrimaryWithIconOnlyRound.args = {
     type: 'button',
     radius: 20,
 };
+
+export const TransparentButton = Template.bind({});
+TransparentButton.args = {
+    icon: iconTypes.plus,
+    iconLayout: 'icon-only',
+    id: 'test-button-primary-icon-only',
+    theme: 'secondary',
+    color: 'red',
+    type: 'button',
+    radius: 20,
+    isTransparent: true,
+};

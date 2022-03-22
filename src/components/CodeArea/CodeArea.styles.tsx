@@ -56,7 +56,8 @@ const WidthWrapperStyled = styled.div<Pick<ICodeAreaProps, 'maxWidth'>>`
 `;
 
 const HeaderStyled = styled.div`
-    padding: 16px 8px 16px 16px;
+    padding: 8px 16px;
+    border-bottom: 1px solid ${color.paleBlue2};
 `;
 
 const CodeAreaStyles = {

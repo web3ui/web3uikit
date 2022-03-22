@@ -1,6 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import { CodeArea } from '.';
+import { Button } from '../Button';
+import { Typography } from '../Typography';
 
 export default {
     title: '2.Forms/CodeArea',
@@ -26,4 +28,21 @@ MultipleLines.args = {
 export const OneLine = Template.bind({});
 OneLine.args = {
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
+};
+
+export const WithHeader = Template.bind({});
+WithHeader.args = {
+    text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
+    headerComponent: (
+        <div
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+            }}
+        >
+            <Typography>Header</Typography>
+            <Button text="Discard" />
+        </div>
+    ),
 };

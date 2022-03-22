@@ -21,6 +21,8 @@ const CodeArea: FC<ICodeAreaProps> = ({
 }) => {
     const [currentValue, setCurrentValue] = useState(text);
 
+    useEffect(() => setCurrentValue(text), [text]);
+
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
     const valueChanged = (event: React.ChangeEvent<HTMLTextAreaElement>) => {

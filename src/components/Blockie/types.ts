@@ -1,5 +1,5 @@
 export interface BlockieProps {
-    seed?: string;
+    seed: string;
     size?: number | undefined;
     scale?: number | undefined;
     color?: string | undefined;

@@ -125,7 +125,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
                     <TextStyled style={{ marginRight: '8px' }}>
                         {account && getEllipsisTxt(account)}
                     </TextStyled>
-                    <Blockie scale={2.5} />
+                    <Blockie scale={2.5} seed={account} />
                 </AddressStyled>
             </AccountInfoStyled>
         </WrapperStyled>

@@ -46,9 +46,8 @@ const ibm = css`
 `;
 
 const ibmMono = css`
-    font-family: IBM Plex Mono, sans-serif;
+    font-family: IBM Plex Mono, monospace;
     font-size: 14px;
-    font-style: normal;
 `;
 
 const text = css`

@@ -2,38 +2,39 @@ import styled from 'styled-components';
 import { HeroProps } from './types';
 
 // styles
-type TStyleProps = Pick<HeroProps, 'height' | 'backgroundColor'>;
+type TStyleProps = Pick<HeroProps, 'height' | 'backgroundColor' | 'rounded' | 'align'>;
+
+enum Position {
+    'left' = 'flex-start',
+    'right' = 'flex-end',
+    'center' = 'center',
+}
 
 export const SectionStyled = styled.section<TStyleProps>`
-    align-items: center;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex-direction: column;
-    height: 80vh;
     justify-content: center;
     width: 100%;
 
+    align-items: ${({ align = 'center' }) => Position?.[align] || Position.center};
+    border-radius: ${(p) => p.rounded || '0px'};
     background-color: ${(p) => p.backgroundColor};
-    height: ${(p) => p.height};
+    height: ${(p) => p.height || '80vh'};
+    max-height: ${(p) => p.height || '80vh'};
 
     h1 {
-        margin: 0 auto;
-        max-width: 90%;
-        text-align: center;
+        padding: 0px 40px;
     }
 
-    p {
-        margin: 20px auto;
-        max-width: 90%;
-        text-align: center;
+    > span {
+        padding: 20px 40px 0px;
     }
 `;
 
 export const DivStyled = styled.div`
-    margin: 20px auto;
-    max-width: 90%;
-    width: fit-content;
+    padding: 20px 40px 0px;
 `;

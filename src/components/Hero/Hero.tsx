@@ -5,10 +5,12 @@ import { SectionStyled, DivStyled } from './Hero.styles';
 import { HeroProps } from './types';
 
 const Hero: React.FC<HeroProps> = ({
+    align = 'center',
     backgroundColor = `${color.greyLight}`,
     backgroundURL,
     children,
     height = '80vh',
+    rounded,
     subTitle,
     textColor = `${color.greyDark}`,
     title,
@@ -18,6 +20,8 @@ const Hero: React.FC<HeroProps> = ({
             backgroundColor={backgroundColor}
             data-testid="test-hero"
             height={height}
+            rounded={rounded}
+            align={align}
             style={{ backgroundImage: `url(${backgroundURL})` }}
         >
             <Typography

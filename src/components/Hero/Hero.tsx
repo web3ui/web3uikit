@@ -5,15 +5,15 @@ import { SectionStyled, DivStyled } from './Hero.styles';
 import { HeroProps } from './types';
 
 const Hero: React.FC<HeroProps> = ({
+    align = 'center',
     backgroundColor = `${color.greyLight}`,
     backgroundURL,
     children,
     height = '80vh',
+    rounded,
     subTitle,
     textColor = `${color.greyDark}`,
     title,
-    rounded,
-    align = 'center',
 }) => {
     return (
         <SectionStyled

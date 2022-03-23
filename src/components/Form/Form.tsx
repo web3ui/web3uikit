@@ -103,6 +103,7 @@ const Form: React.FC<FormProps> = ({
         <Input
             key={`input_${index}`}
             id={`input_${index}`}
+            value={input.value}
             label={input.name}
             name={input.name}
             onChange={(e) => (data[index].value = e.target.value)}

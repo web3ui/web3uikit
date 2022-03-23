@@ -1,22 +1,21 @@
 import styled from 'styled-components';
 import color from '../../styles/colors';
+import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
 import { ICodeAreaProps } from './types';
 
 const TextAreaStyled = styled.textarea`
     ${resetCSS};
+    ${fonts.ibmMono};
+    ${fonts.textSmall}
     background: ${color.blueLight};
     overflow-x: auto;
     padding: 16px 8px;
     position: relative;
     width: 100vw;
 
-    color: #041836;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
+    color: ${color.blueDark};
     font-style: italic;
-    font-weight: 400;
-    line-height: 24px;
     overflow-y: hidden;
     white-space: nowrap;
 
@@ -30,7 +29,7 @@ const ContentStyled = styled.div`
 `;
 
 const SideStyled = styled.div`
-    background: #e6edff;
+    background: ${color.blueLight2};
     overflow: hidden;
     padding: 16px 8px 0px 23px;
 `;

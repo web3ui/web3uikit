@@ -45,6 +45,12 @@ const ibm = css`
     font-style: normal;
 `;
 
+const ibmMono = css`
+    font-family: IBM Plex Mono, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+`;
+
 const text = css`
     -webkit-font-smoothing: antialiased;
     color: ${color.grey};
@@ -109,6 +115,7 @@ const fonts = {
     h5,
     heading,
     ibm,
+    ibmMono,
     text,
     textBold,
     textBold700,

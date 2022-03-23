@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Hero from './Hero';
 import { Button } from '../Button';
+import { iconTypes } from '../Icon/collection';
 
 export default {
     title: '4.UI/Hero',
@@ -40,4 +41,16 @@ CustomHeight.args = {
     backgroundURL:
         'https://moralis.io/wp-content/uploads/2021/06/blue-blob-background-2.svg',
     height: '200px',
+};
+
+export const DappHero = Template.bind({});
+DappHero.args = {
+    title: 'My First Dapp’s Database',
+    backgroundURL:
+        'https://moralis.io/wp-content/uploads/2021/06/blue-blob-background-2.svg',
+    height: '176px',
+    rounded: '20px',
+    align: 'left',
+    textColor: '#fff',
+    children: <Button text="Access Database" icon={iconTypes.arrowCircleRight} theme="primary" />,
 };

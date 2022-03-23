@@ -12,12 +12,16 @@ const Hero: React.FC<HeroProps> = ({
     subTitle,
     textColor = `${color.greyDark}`,
     title,
+    rounded,
+    align = 'center',
 }) => {
     return (
         <SectionStyled
             backgroundColor={backgroundColor}
             data-testid="test-hero"
             height={height}
+            rounded={rounded}
+            align={align}
             style={{ backgroundImage: `url(${backgroundURL})` }}
         >
             <Typography

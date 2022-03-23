@@ -15,6 +15,18 @@ export interface HeroProps {
     subTitle?: string;
 
     /**
+     * this is a string to set the border radius of the hero container eg: '0px', '20px', '10rem' etc 
+     * the default is undefined
+     */
+    rounded?: string | undefined;
+
+    /**
+     * this is used to set the position for the content of the hero
+     * the default is center
+     */
+    align?: 'left' | 'right' | 'center';
+
+    /**
      * a Hero element can take any content (like a call to action button)
      */
     children?: JSX.Element | JSX.Element[];

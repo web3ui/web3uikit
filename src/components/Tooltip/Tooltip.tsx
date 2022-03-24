@@ -11,6 +11,7 @@ const Tooltip: React.FC<TooltipProps> = ({
     position = 'bottom',
     content,
     children,
+    minWidth,
     maxWidth,
 }: TooltipProps) => {
     const parretnRef = useRef(null);
@@ -45,10 +46,11 @@ const Tooltip: React.FC<TooltipProps> = ({
                 popoverHeight={popoverHeight}
                 height={height}
                 width={width}
+                minWidth={minWidth as number}
                 position={position}
                 data-testid={'tooltip-children-test-id'}
             >
-                <StyledTooltipTextDiv maxWidth={maxWidth}>
+                <StyledTooltipTextDiv maxWidth={maxWidth} minWidth={minWidth}>
                     {content}
                 </StyledTooltipTextDiv>
                 <StyledPopoverArrowDiv position={position} />

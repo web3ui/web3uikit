@@ -41,6 +41,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 
             <StyledInput
                 data-testid="test-checkbox-input"
+                defaultChecked={isChecked}
                 disabled={disabled}
                 id={id}
                 layout={layout}

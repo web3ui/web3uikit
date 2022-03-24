@@ -8,6 +8,7 @@ export * from './components/Breadcrumbs';
 export * from './components/Button';
 export * from './components/Card';
 export * from './components/Checkbox';
+export * from './components/CodeArea';
 export * from './components/ConnectButton';
 export * from './components/CopyButton';
 export * from './components/Credentials';

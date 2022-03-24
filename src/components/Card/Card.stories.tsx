@@ -31,7 +31,11 @@ const Template: ComponentStory<typeof Card> = (args) => {
 
 export const Regular = Template.bind({});
 Regular.args = {
-    tooltipText: 'Lorem Ipsum Dole met sai souni lokomit anici trenicid',
+    tooltipText: (
+        <span style={{ width: 200 }}>
+            'Lorem Ipsum Dole met sai souni lokomit anici trenicid'
+        </span>
+    ),
     children: [<div key={'0'}>{getModuleAnimation(undefined)}</div>],
     title: 'dApp',
     description: 'Click to create a dApp',

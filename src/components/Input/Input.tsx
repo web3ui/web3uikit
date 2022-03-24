@@ -17,7 +17,7 @@ const Input: React.FC<InputProps> = ({
     autoComplete = true,
     autoFocus = false,
     disabled = false,
-    errorMessage = 'Sorry this is not valid',
+    errorMessage = 'Sorry, this is not valid',
     hasCopyButton = false,
     id,
     inputHidden = false,

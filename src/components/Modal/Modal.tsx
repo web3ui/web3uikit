@@ -77,8 +77,8 @@ const Modal: React.FC<ModalProps> = ({
                             iconLayout={'icon-only'}
                             onClick={
                                 onCloseButtonPressed
-                                    ? toggleVisibility
-                                    : () => {}
+                                    ? onCloseButtonPressed
+                                    : toggleVisibility
                             }
                         />
                     )}

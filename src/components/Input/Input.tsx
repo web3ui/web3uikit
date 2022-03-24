@@ -15,6 +15,7 @@ import type { InputProps } from './types';
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
+    autoFocus = false,
     disabled = false,
     errorMessage = 'Sorry this is not valid',
     hasCopyButton = false,
@@ -114,6 +115,7 @@ const Input: React.FC<InputProps> = ({
             )}
             <InputStyled
                 autoComplete={`${autoComplete}`}
+                autoFocus={autoFocus}
                 data-testid="test-input"
                 disabled={currentState == 'disabled'}
                 id={id}

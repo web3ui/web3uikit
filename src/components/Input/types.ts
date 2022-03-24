@@ -7,6 +7,11 @@ export interface InputProps {
     autoComplete?: boolean;
 
     /**
+     * Will automatically focus input on render
+     */
+    autoFocus?: boolean;
+
+    /**
      * it is best to set a unique ID for each input to verify change events
      */
     id?: string;

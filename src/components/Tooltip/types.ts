@@ -20,4 +20,9 @@ export interface TooltipProps {
      * Set the max width of the tooltip
      */
     maxWidth?: number;
+
+    /**
+     * Set the min width of the tooltip
+     */
+    minWidth?: number;
 }

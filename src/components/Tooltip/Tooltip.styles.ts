@@ -23,6 +23,7 @@ interface IStyledHoverSpan {
     popoverWidth: number;
     position: Position;
     width: number;
+    minWidth: number;
 }
 
 // Left Position comps
@@ -69,7 +70,7 @@ const rightPositionTriangle = css`
     width: 0;
 `;
 
-//Top Position Comps
+// Top Position Comps
 const topPositionPopover = css<IStyledHoverSpan>`
     bottom: ${(props) => props.height && `calc(${props.height}px + 10px)`};
     left: 50%;
@@ -87,7 +88,7 @@ const topPositionTriangle = css`
     width: 0;
 `;
 
-//bottom Position Comps
+// bottom Position Comps
 const bottomPositionPopover = css<IStyledHoverSpan>`
     left: 50%;
     top: ${(props) => props.height && `calc(${props.height}px + 10px)`};
@@ -135,10 +136,13 @@ export const StyledHoverDiv = styled.div<IStyledHoverSpan>`
     opacity: 0;
     position: absolute;
     z-index: 1;
+    min-width: ${(props) => props.minWidth}px;
     ${(props) => getPopoverComp(props.position)}
 `;
 
-export const StyledTooltipTextDiv = styled.div<Pick<TooltipProps, 'maxWidth'>>`
+export const StyledTooltipTextDiv = styled.div<
+    Pick<TooltipProps, 'maxWidth' | 'minWidth'>
+>`
     background-color: ${color.blueDark2};
     border-radius: 5px;
     color: white;

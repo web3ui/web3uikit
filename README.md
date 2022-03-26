@@ -1,4 +1,6 @@
-# Web3UIKit
+<img src="https://user-images.githubusercontent.com/13779759/160237628-381adb19-d439-4df6-98af-c3cb67ba5b5c.svg" width="500px" alt="web3uiKit logo" />
+
+# Web3UIKit!
 
 Beautiful and lightweight UI components for web3 developers.
 This UI library will speed up your dapp development no matter which chain you build on.

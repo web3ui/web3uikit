@@ -1,4 +1,4 @@
-[web3uiKit-logo](https://user-images.githubusercontent.com/13779759/160237628-381adb19-d439-4df6-98af-c3cb67ba5b5c.svg)
+![web3uiKit-logo](https://user-images.githubusercontent.com/13779759/160237628-381adb19-d439-4df6-98af-c3cb67ba5b5c.svg)
 
 # Web3UIKit!
 

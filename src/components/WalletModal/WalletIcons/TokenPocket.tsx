@@ -2,139 +2,28 @@ import React from 'react';
 
 const TokenPocket = () => {
     return (
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            version="1.1"
-            viewBox="0 0 264.583 264.583"
-        >
-            <defs>
-                <clipPath id="clipPath6239" clipPathUnits="userSpaceOnUse">
-                    <path d="M356.518 984h-15.491a.597.597 0 01-.598-.596v-37.57c0-.33.268-.596.598-.596h10.758c.33 0 .598.267.598.596v9.542h4.135c7.922 0 14.344 6.407 14.344 14.312 0 7.904-6.422 14.312-14.344 14.312"></path>
-                </clipPath>
-                <clipPath id="clipPath6245" clipPathUnits="userSpaceOnUse">
-                    <path d="M0 0h1225v4536H0z"></path>
-                </clipPath>
-                <clipPath id="clipPath6177" clipPathUnits="userSpaceOnUse">
-                    <path d="M0 0h1225v4536H0z"></path>
-                </clipPath>
-                <clipPath id="clipPath6183" clipPathUnits="userSpaceOnUse">
-                    <path d="M326 941h20v39h-20z"></path>
-                </clipPath>
-                <clipPath id="clipPath6187" clipPathUnits="userSpaceOnUse">
-                    <path d="M326 979.831h19.164v-38.79H326z"></path>
-                </clipPath>
-                <clipPath id="clipPath6191" clipPathUnits="userSpaceOnUse">
-                    <path d="M325 940h21v40h-21z"></path>
-                </clipPath>
-                <clipPath id="clipPath6195" clipPathUnits="userSpaceOnUse">
-                    <path d="M326 941h20v39h-20z"></path>
-                </clipPath>
-                <clipPath id="clipPath6199" clipPathUnits="userSpaceOnUse">
-                    <path d="M345.164 970.517h-1.305v9.314h-17.26c-.33 0-.6-.267-.6-.597v-13.13c0-.329.27-.596.6-.596h6.588v-23.871c0-.33.268-.597.598-.597h10.78c.33 0 .599.267.599.597z"></path>
-                </clipPath>
-                <clipPath id="clipPath6203" clipPathUnits="userSpaceOnUse">
-                    <path d="M325 941h21v39h-21z"></path>
-                </clipPath>
-                <clipPath id="clipPath6143" clipPathUnits="userSpaceOnUse">
-                    <path d="M345.87 999c19.811 0 35.871-16.06 35.871-35.87 0-19.811-16.06-35.871-35.87-35.871-19.811 0-35.871 16.06-35.871 35.87C310 982.94 326.06 999 345.87 999z"></path>
-                </clipPath>
-                <linearGradient
-                    id="linearGradient6157"
-                    x1="0"
-                    x2="0"
-                    y1="0"
-                    y2="1024"
-                    gradientTransform="matrix(1 0 0 -1 310 999)"
-                    gradientUnits="userSpaceOnUse"
-                >
-                    <stop offset="0" stopColor="#2bafff" stopOpacity="1"></stop>
-                    <stop offset="1" stopColor="#2761e7" stopOpacity="1"></stop>
-                </linearGradient>
-                <linearGradient
-                    id="linearGradient6167"
-                    x1="71.741"
-                    x2="1.074"
-                    y1="0"
-                    y2="71.741"
-                    gradientTransform="matrix(1 0 0 -1 310 999)"
-                    gradientUnits="userSpaceOnUse"
-                    spreadMethod="pad"
-                >
-                    <stop offset="0" stopColor="#2bafff" stopOpacity="1"></stop>
-                    <stop offset="1" stopColor="#2761e7" stopOpacity="1"></stop>
-                </linearGradient>
-            </defs>
-            <g transform="translate(43.648 39.113) matrix(3.68804 0 0 -3.68804 -1186.94 3645.235)">
-                <g>
-                    <g clipPath="url(#clipPath6143)">
-                        <g>
-                            <g>
-                                <path
-                                    fill="url(#linearGradient6157)"
-                                    stroke="none"
-                                    d="M0 0h1225v4536H0z"
-                                ></path>
-                            </g>
-                            <g>
-                                <path
-                                    fill="url(#linearGradient6167)"
-                                    stroke="none"
-                                    d="M0 0h1225v4536H0z"
-                                ></path>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-                <g>
-                    <g clipPath="url(#clipPath6177)">
-                        <g>
-                            <g clipPath="url(#clipPath6183)" opacity="0.6">
-                                <g>
-                                    <g clipPath="url(#clipPath6187)">
-                                        <g clipPath="url(#clipPath6191)">
-                                            <g>
-                                                <g clipPath="url(#clipPath6195)">
-                                                    <g>
-                                                        <g clipPath="url(#clipPath6199)">
-                                                            <g clipPath="url(#clipPath6203)">
-                                                                <path
-                                                                    d="M321 936.04h29.164v48.791H321z"
-                                                                    style={{
-                                                                        fillRule:
-                                                                            'nonzero',
-                                                                    }}
-                                                                    fill="#fff"
-                                                                    fillOpacity="1"
-                                                                    stroke="none"
-                                                                ></path>
-                                                            </g>
-                                                        </g>
-                                                    </g>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </g>
-                                </g>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-                <g>
-                    <g clipPath="url(#clipPath6239)">
-                        <g clipPath="url(#clipPath6245)">
-                            <path
-                                d="M335.43 940.238h40.432V989h-40.433z"
-                                style={{ fillRule: 'nonzero' }}
-                                fill="#fff"
-                                fillOpacity="1"
-                                stroke="none"
-                            ></path>
-                        </g>
-                    </g>
+        <svg width="40" height="40" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g mask="url(#mask0_408_225)">
+                <path d="M1041.52 0H-27V1024H1041.52V0Z" fill="#2980FE"/>
+                <g clipPath="url(#clip0_408_225)">
+                    <path d="M406.796 438.643H406.927C406.796 437.857 406.796 436.94 406.796 436.154V438.643Z" fill="#29AEFF"/>
+                    <path d="M667.602 463.533H523.249V724.076C523.249 736.389 533.204 746.345 545.517 746.345H645.333C657.647 746.345 667.602 736.389 667.602 724.076V463.533Z" fill="white"/>
+                    <path d="M453.563 277H448.716H190.269C177.955 277 168 286.955 168 299.269V389.653C168 401.967 177.955 411.922 190.269 411.922H250.918H275.021V438.644V724.731C275.021 737.045 284.976 747 297.289 747H392.128C404.441 747 414.396 737.045 414.396 724.731V438.644V436.156V411.922H438.499H448.323H453.17C490.372 411.922 520.631 381.663 520.631 344.461C521.024 307.259 490.765 277 453.563 277Z" fill="white"/>
+                    <path d="M667.735 463.533V645.35C672.713 646.529 677.821 647.446 683.061 648.232C690.397 649.28 697.994 649.935 705.592 650.066C705.985 650.066 706.378 650.066 706.902 650.066V505.45C685.026 504.009 667.735 485.801 667.735 463.533Z" fill="url(#paint0_linear_408_225)"/>
+                    <path d="M709.781 277C606.822 277 523.249 360.573 523.249 463.533C523.249 552.084 584.946 626.225 667.733 645.35V463.533C667.733 440.347 686.596 421.484 709.781 421.484C732.967 421.484 751.83 440.347 751.83 463.533C751.83 483.051 738.6 499.425 720.523 504.14C717.117 505.057 713.449 505.581 709.781 505.581V650.066C713.449 650.066 716.986 649.935 720.523 649.804C818.505 644.171 896.314 562.956 896.314 463.533C896.445 360.573 812.872 277 709.781 277Z" fill="white"/>
+                    <path d="M709.78 650.066V505.581C708.733 505.581 707.816 505.581 706.768 505.45V650.066C707.816 650.066 708.864 650.066 709.78 650.066Z" fill="white"/>
                 </g>
             </g>
+            <defs>
+                <linearGradient id="paint0_linear_408_225" x1="709.844" y1="556.827" x2="667.753" y2="556.827" gradientUnits="userSpaceOnUse">
+                    <stop stopColor="white"/>
+                    <stop offset="0.9667" stopColor="white" stopOpacity="0.3233"/>
+                    <stop offset="1" stopColor="white" stopOpacity="0.3"/>
+                </linearGradient>
+                <clipPath id="clip0_408_225">
+                    <rect width="728.448" height="470" fill="white" transform="translate(168 277)"/>
+                </clipPath>
+            </defs>
         </svg>
     );
 };

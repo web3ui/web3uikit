@@ -29,6 +29,7 @@ export * from './components/Loading';
 export * from './components/Logo';
 export * from './components/Modal';
 export * from './components/NativeBalance';
+export * from './components/NFTCollection';
 export * from './components/Notification';
 export * from './components/PopoverDropdown';
 export * from './components/PopoverElement';

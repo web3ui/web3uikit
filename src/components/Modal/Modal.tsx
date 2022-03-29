@@ -36,19 +36,18 @@ const Modal: React.FC<ModalProps> = ({
     const [visible, setVisible] = useState(isVisible);
 
     useEffect(() => {
-        document.addEventListener('click', (e: any) => {
-            handleContentClick(e);
-        });
+        document.addEventListener('click', handleContentClick);
+        return () => document.removeEventListener('click', handleContentClick);
     }, []);
+
+    const handleContentClick = (event: any) => {
+        const target = event.target as Element;
+        if (target.id === 'close') toggleVisibility();
+    };
 
     useEffect(() => {
         setVisible(isVisible);
     }, [isVisible]);
-
-    const handleContentClick = (event: React.MouseEvent<HTMLElement>) => {
-        const target = event.target as Element;
-        if (target.id === 'close') toggleVisibility();
-    };
 
     const toggleVisibility = () => {
         setVisible(!visible);

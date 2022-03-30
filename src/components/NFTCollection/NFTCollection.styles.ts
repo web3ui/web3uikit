@@ -20,6 +20,7 @@ const DivStyledCardContainer = styled.div`
         width: 80%;
     }
 `;
+DivStyledCardContainer.displayName = 'NftCollectionCard';
 
 const DivStyledCardContent = styled.div`
     align-items: center;
@@ -48,21 +49,28 @@ const DivStyledCardFooter = styled.div`
     padding: 10px;
 `;
 
-const ImageStyled = styled.img`
+const SpanStyled = styled.span`
     ${resetCSS};
     background-color: ${color.greyDisabled};
+    background-size: cover;
+    background-position: center;
     border-radius: 20px 20px 0 0;
-    height: 200px;
-    width: 100%;
-    @media only screen and (max-width: 600px) {
-        height: 250px;
-    }
+    height: 300px;
+    max-width: 100%;
 `;
+SpanStyled.displayName = 'SpanStyled';
+
+const SectionStyled = styled.section`
+    ${resetCSS};
+    display: block;
+`;
+SectionStyled.displayName = 'NftCollection';
 
 export {
     DivStyled,
     DivStyledCardContainer,
     DivStyledCardContent,
     DivStyledCardFooter,
-    ImageStyled,
+    SectionStyled,
+    SpanStyled,
 };

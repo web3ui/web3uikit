@@ -4,7 +4,7 @@ import {
     DivStyledCardContainer,
     DivStyledCardContent,
     DivStyledCardFooter,
-    ImageStyled,
+    SpanStyled,
 } from './NFTCollection.styles';
 import { Illustration } from '../Illustrations';
 import { NFTCardProp, NFTType } from './types';
@@ -88,7 +88,7 @@ const NFTCard: React.FC<NFTCardProp> = ({
         }
     }, [tokenUri]);
 
-    return !isLoading ? (
+    const renderReady = () => (
         <Row.Col
             breakpointsConfig={{
                 xs: 24,
@@ -110,9 +110,11 @@ const NFTCard: React.FC<NFTCardProp> = ({
                             onError={() => setIsError(true)}
                         ></video>
                     ) : (
-                        <ImageStyled
-                            src={nft.image}
+                        <SpanStyled
+                            aria-label={`NFT image of ${nft.name}`}
                             onError={() => setIsError(true)}
+                            role="image"
+                            style={{ backgroundImage: `url(${nft.image})` }}
                         />
                     )
                 ) : (
@@ -133,7 +135,7 @@ const NFTCard: React.FC<NFTCardProp> = ({
                     <Typography variant="caption14">ETH</Typography>
                 </DivStyledCardContent>
                 <DivStyledCardContent>
-                    <Typography variant="body16">
+                    <Typography variant="body16" weight="bold">
                         {nft.name && nft.name !== '' ? (
                             nft.name
                         ) : (
@@ -197,7 +199,9 @@ const NFTCard: React.FC<NFTCardProp> = ({
                 </DivStyledCardFooter>
             </DivStyledCardContainer>
         </Row.Col>
-    ) : (
+    );
+
+    const renderLoading = () => (
         <Row.Col
             breakpointsConfig={{
                 xs: 24,
@@ -213,6 +217,8 @@ const NFTCard: React.FC<NFTCardProp> = ({
             </Card>
         </Row.Col>
     );
+
+    return !isLoading ? renderReady() : renderLoading();
 };
 
 export default NFTCard;

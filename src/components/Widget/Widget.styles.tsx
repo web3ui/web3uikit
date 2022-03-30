@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
+import resetCSS from '../../styles/reset';
 
 const WidgetStyled = styled.div`
+    ${resetCSS};
     background-color: ${colors.white};
     border: 1px solid ${colors.paleBlue2};
     border-radius: 20px;

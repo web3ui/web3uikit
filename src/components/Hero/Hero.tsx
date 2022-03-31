@@ -10,19 +10,22 @@ const Hero: React.FC<HeroProps> = ({
     backgroundURL,
     children,
     height = '80vh',
+    linearGradient,
     rounded,
     subTitle,
     textColor = `${color.greyDark}`,
     title,
+    image,
 }) => {
     return (
         <SectionStyled
             backgroundColor={backgroundColor}
+            linearGradient={linearGradient}
+            backgroundURL={backgroundURL}
             data-testid="test-hero"
             height={height}
             rounded={rounded}
             align={align}
-            style={{ backgroundImage: `url(${backgroundURL})` }}
         >
             <Typography
                 color={textColor}
@@ -41,6 +44,8 @@ const Hero: React.FC<HeroProps> = ({
                     <strong>{subTitle}</strong>
                 </Typography>
             )}
+
+            {image}
 
             {children && (
                 <DivStyled data-testid="test-hero_child">{children}</DivStyled>

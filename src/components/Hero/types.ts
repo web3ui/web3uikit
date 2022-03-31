@@ -1,3 +1,10 @@
+import { CSSProperties } from 'styled-components';
+
+type customImageProps = {
+    url: string,
+    styles?: CSSProperties,
+}
+
 export interface HeroProps {
     /**
      * this is used to set the position for the content of the hero
@@ -23,7 +30,17 @@ export interface HeroProps {
     /**
      * you can set an exact height for the hero, vh unit is advised for nice responsive results
      */
+    customImage?: customImageProps;
+
+    /**
+     * you can set an exact height for the hero, vh unit is advised for nice responsive results
+     */
     height?: string;
+
+    /**
+    * It's a prop that is used to set the linear gradient for the background.
+    */
+    linearGradient?: string;
 
     /**
      * this is a string to set the border radius of the hero container eg: '0px', '20px', '10rem' etc

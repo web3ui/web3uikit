@@ -66,6 +66,6 @@ GradientHero.args = {
     image:
         <img
             style={{ width: '126.85px', height: '176.61px', position: 'absolute', right: '84px', top: '22px' }}
-            src="https://images.pexels.com/photos/9226520/pexels-photo-9226520.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            src="https://images.pexels.com/photos/9901406/pexels-photo-9901406.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
         />,
 };

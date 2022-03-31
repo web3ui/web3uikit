@@ -9,13 +9,13 @@ const Hero: React.FC<HeroProps> = ({
     backgroundColor = `${color.greyLight}`,
     backgroundURL,
     children,
+    customImage = null,
     height = '80vh',
     linearGradient,
     rounded,
     subTitle,
     textColor = `${color.greyDark}`,
     title,
-    image,
 }) => {
     return (
         <SectionStyled
@@ -45,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({
                 </Typography>
             )}
 
-            {image}
+            {customImage?.url && <img src={customImage.url} alt='Hero-image' style={customImage?.styles} />}
 
             {children && (
                 <DivStyled data-testid="test-hero_child">{children}</DivStyled>

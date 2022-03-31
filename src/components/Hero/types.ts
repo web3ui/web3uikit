@@ -1,4 +1,9 @@
-import React from "react";
+import { CSSProperties } from 'styled-components';
+
+type customImageProps = {
+    url: string,
+    styles?: CSSProperties,
+}
 
 export interface HeroProps {
     /**
@@ -25,12 +30,12 @@ export interface HeroProps {
     /**
      * you can set an exact height for the hero, vh unit is advised for nice responsive results
      */
-    height?: string;
+    customImage?: customImageProps;
 
     /**
      * you can set an exact height for the hero, vh unit is advised for nice responsive results
      */
-    image?: JSX.IntrinsicElements['img'];
+    height?: string;
 
     /**
     * It's a prop that is used to set the linear gradient for the background.

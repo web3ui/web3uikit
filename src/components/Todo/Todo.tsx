@@ -17,9 +17,7 @@ const Todo: React.FC<TodoProps> = ({ todos = [], pattern, fullWidth = false }) =
     const [lists, setLists] = useState<TodoState[]>([]);
 
     useEffect(() => {
-        console.log('todos', todos);
         if (Array.isArray(todos) && todos?.length > 0) {
-            console.log('ghe> okay');
             setLists([...todos]);
         }
     }, [todos]);

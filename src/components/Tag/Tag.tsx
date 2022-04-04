@@ -1,14 +1,17 @@
 import React from 'react';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
-import { TagStyled } from './Tag.styles';
+import { TagStyled, SpanStyled } from './Tag.styles';
 import { TagProps } from './types';
+import colors from '../../styles/colors';
 
 const Tag: React.FC<TagProps> = ({
     active = false,
     color,
     fontSize,
     id,
+    hasCancel = false,
+    onCancelClick,
     text = 'Tag',
     theme = 'regular',
     tone = 'light',
@@ -30,6 +33,11 @@ const Tag: React.FC<TagProps> = ({
                 <Icon fill="inherit" size={16} svg={iconTypes.checkmark} />
             )}
             <strong data-testid="test-tag-text">{text}</strong>
+            {hasCancel && (
+                <SpanStyled onClick={onCancelClick}>
+                    <Icon fill={colors.blue} size={16} svg="x" style={{ marginLeft: '8px' }} />
+                </SpanStyled>
+            )}
         </TagStyled>
     );
 };

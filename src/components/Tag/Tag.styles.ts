@@ -1,12 +1,4 @@
 import styled from 'styled-components';
-import type { TagProps, Tone } from './types';
-import {
-    activeStatus,
-    discount,
-    inactiveStatus,
-    initialStyles,
-    regular,
-} from './styles/themes';
 import {
     coloredBlue,
     coloredBlueDark,
@@ -22,7 +14,16 @@ import {
     coloredRedDark,
     coloredYellow,
     coloredYellowDark,
+    coloredBlueLight,
 } from './styles/colors';
+import {
+    activeStatus,
+    discount,
+    inactiveStatus,
+    initialStyles,
+    regular,
+} from './styles/themes';
+import type { TagProps, Tone } from './types';
 
 type TStyleProps = Pick<
     TagProps,
@@ -50,6 +51,8 @@ const getColors = (color?: string, tone?: Tone) => {
             return tone === 'light' ? coloredYellow : coloredYellowDark;
         case 'blue':
             return tone === 'light' ? coloredBlue : coloredBlueDark;
+        case 'blueLight':
+            return coloredBlueLight;
         case 'purple':
             return tone === 'light' ? coloredPurple : coloredPurpleDark;
         case 'pink':
@@ -60,6 +63,11 @@ const getColors = (color?: string, tone?: Tone) => {
             return coloredGrey;
     }
 };
+
+export const SpanStyled = styled.div<TStyleProps>`
+    cursor: pointer;
+    margin-left: 16px;
+`;
 
 export const TagStyled = styled.div<TStyleProps>`
     ${initialStyles}

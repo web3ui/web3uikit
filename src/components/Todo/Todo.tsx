@@ -18,10 +18,10 @@ const Todo: React.FC<TodoProps> = ({ todos = [], pattern, fullWidth = false }) =
 
     useEffect(() => {
         console.log('todos', todos);
-        // if (Array.isArray(todos) && todos?.length > 0) {
-        //     console.log('ghe> okay');
-        //     setLists([...todos]);
-        // }
+        if (Array.isArray(todos) && todos?.length > 0) {
+            console.log('ghe> okay');
+            setLists([...todos]);
+        }
     }, [todos]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,18 +33,12 @@ const Todo: React.FC<TodoProps> = ({ todos = [], pattern, fullWidth = false }) =
     };
 
     const addTodo = () => {
-        let check = true;
-        if (pattern) {
-            check = new RegExp(pattern).test(inputValue);
-        }
-        if (check) {
-            const todo = {
-                id: Date.now(),
-                text: inputValue,
-            };
-            setLists((prevTodo) => [...prevTodo, todo]);
-            setInputValue('');
-        }
+        const todo = {
+            id: Date.now(),
+            text: inputValue,
+        };
+        setLists((prevTodo) => [...prevTodo, todo]);
+        setInputValue('');
     };
 
     return (
@@ -53,7 +47,9 @@ const Todo: React.FC<TodoProps> = ({ todos = [], pattern, fullWidth = false }) =
                 <Input
                     label="Enter IP"
                     size="large"
-                    // value={inputValue}
+                    validation={{
+                        regExp: pattern,
+                    }}
                     onChange={handleInputChange}
                 />
                 <Button

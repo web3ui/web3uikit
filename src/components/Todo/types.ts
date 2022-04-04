@@ -16,8 +16,7 @@ export interface TodoProps {
     /**
      * a list which will be rendered initially
     */
-    todos?: [];
-    // todos?: Array<TodoState>;
+    todos?: Array<TodoState>;
 }
 
 export interface TodoState {

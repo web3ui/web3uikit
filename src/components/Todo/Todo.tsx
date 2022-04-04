@@ -47,30 +47,30 @@ const Todo: React.FC<TodoProps> = ({
             <DivStyled>
                 <Input
                     label={label}
+                    onChange={handleInputChange}
                     size="large"
                     validation={{
                         regExp: pattern,
                     }}
-                    onChange={handleInputChange}
                 />
                 <Button
-                    theme="primary"
+                    disabled={!inputValue}
+                    icon="plus"
+                    onClick={addTodo}
                     size="large"
                     text={buttonText}
-                    icon="plus"
-                    disabled={!inputValue}
-                    onClick={addTodo}
+                    theme="primary"
                 />
             </DivStyled>
 
             <DivStyledContent fullWidth={fullWidth} data-testid="test-todo_content">
                 {lists.map(({ id, text }) => (
                     <Tag
-                        key={id}
                         color="blueLight"
-                        text={text}
-                        onCancelClick={() => onCancelClick(id)}
                         hasCancel
+                        key={id}
+                        onCancelClick={() => onCancelClick(id)}
+                        text={text}
                     />
                 ))}
             </DivStyledContent>

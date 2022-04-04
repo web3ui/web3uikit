@@ -42,6 +42,7 @@ export * from './components/Table';
 export * from './components/Tabs';
 export * from './components/Tag';
 export * from './components/TextArea';
+export * from './components/Todo';
 export * from './components/Tooltip';
 export * from './components/Typography';
 export * from './components/WalletModal';

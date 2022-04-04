@@ -1,45 +1,29 @@
-// importing boilerplate stuff
+import { composeStories } from '@storybook/testing-react';
+import { screen } from '@testing-library/react';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { composeStories } from '@storybook/testing-react';
 import * as stories from './Todo.stories';
 
-// importing fire event from RTL to mock a click event
-import { fireEvent } from '@testing-library/react';
+const {
+    DefaultTodo, WithInitialTodos, FullWidthTodos
+} = composeStories(stories);
 
-// importing color and a testing tool to convert RGB to HEX
-import color from '../../styles/colors';
-import rgbToHex from '../../utils/rgbToHex';
+const todoTestId = 'test-todo';
+const todoLabelId = 'test-label';
+const todoButtonId = 'test-button';
+const todoContentId = 'test-todo_content';
 
-// importing testID from button and icon
-import { buttonTestId } from '../Button/Button.test';
-import { iconTestId } from '../Icon/Icon.test';
+let container: HTMLDivElement;
 
-// importing my stories to test
-const { Default, InitializeRed, UnderLinedText } = composeStories(stories);
-
-// setting my test IDs to match my tsx
 export const testCompId = 'test-new-comp';
-const testTitle = 'test-title';
-const testHeading = 'test-heading';
-const testText = 'test-text';
-// NOTE: the main test ID is exported incase
-// it is needed for another components test
 
-// /////////////////////////////////////////////////////
-// examples of basic tests of props, values and styles
-// /////////////////////////////////////////////////////
-
-// Test Story 1: Default
-describe('Default', () => {
-    let container: HTMLDivElement;
-    const testTextOn = Default?.args?.textOn;
-    const testTextOff = Default?.args?.textOff;
+describe('Todos - Default', () => {
+    const labelText = DefaultTodo.args?.label;
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<Default />, container);
+        ReactDOM.render(<DefaultTodo label={labelText} />, container);
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -48,79 +32,35 @@ describe('Default', () => {
 
     it('renders the component', () => {
         const element = container.querySelector(
-            `[data-testid="${testCompId}"]`,
+            `[data-testid="${todoTestId}"]`,
         );
         expect(element).not.toBeNull();
     });
-    it('renders the Icon', () => {
-        const element = container.querySelector(
-            `[data-testid="${iconTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-    it('renders the Title with correct text', () => {
-        const element = container.querySelector(`[data-testid="${testTitle}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe('The Demo Component');
-    });
-    it('renders the Heading with textOn by default', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe(testTextOn);
-    });
-    it('renders the Heading with correct styles', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.green);
-    });
-    it('renders the correct default Text', () => {
-        const element = container.querySelector(`[data-testid="${testText}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe('Clicked: -1 times');
-    });
-    it('renders the Text without underline', () => {
-        const element = container.querySelector(`[data-testid="${testText}"]`);
-        expect(element).not.toBeNull();
-        const styles = element && getComputedStyle(element);
-        expect(styles?.textDecoration).toBe('none');
-    });
-    it('changes UI onClick of the button', () => {
-        const buttonEle = container.querySelector(
-            `[data-testid="${buttonTestId}"]`,
-        );
-        buttonEle && fireEvent.click(buttonEle);
 
-        const textEle = container.querySelector(`[data-testid="${testText}"]`);
-        expect(textEle).not.toBeNull();
-        expect(textEle?.textContent).toBe('Clicked: 1 times');
-
-        const headingEle = container.querySelector(
-            `[data-testid="${testHeading}"]`,
+    it('renders label text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${todoLabelId}"]`,
         );
-        expect(headingEle).not.toBeNull();
-        expect(headingEle?.textContent).toBe(testTextOff);
-
-        const styles = headingEle && getComputedStyle(headingEle);
-        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.red);
+        expect(element?.textContent).toBe(labelText);
     });
 });
 
-// Test Story 2: InitializeRed
-describe('InitializeRed', () => {
-    let container: HTMLDivElement;
-    const testTextOn = InitializeRed?.args?.textOn;
-    const testTextOff = InitializeRed?.args?.textOff;
+describe('Todos - WithInitialTodos', () => {
+    const labelText = WithInitialTodos.args?.label;
+    const todos = WithInitialTodos.args?.todos;
+    const buttonText = WithInitialTodos.args?.buttonText;
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<InitializeRed />, container);
+        ReactDOM.render(
+            <WithInitialTodos
+                label={labelText}
+                todos={todos}
+                buttonText={buttonText}
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -129,79 +69,50 @@ describe('InitializeRed', () => {
 
     it('renders the component', () => {
         const element = container.querySelector(
-            `[data-testid="${testCompId}"]`,
+            `[data-testid="${todoTestId}"]`,
         );
         expect(element).not.toBeNull();
     });
-    it('renders the Icon', () => {
-        const element = container.querySelector(
-            `[data-testid="${iconTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-    it('renders the Title with correct text', () => {
-        const element = container.querySelector(`[data-testid="${testTitle}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe('The Demo Component');
-    });
-    it('renders the Heading with textOff by default', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe(testTextOff);
-    });
-    it('renders the Heading with correct styles', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.red);
-    });
-    it('renders the correct default Text', () => {
-        const element = container.querySelector(`[data-testid="${testText}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe('Clicked: -1 times');
-    });
-    it('renders the Text without underline', () => {
-        const element = container.querySelector(`[data-testid="${testText}"]`);
-        expect(element).not.toBeNull();
-        const styles = element && getComputedStyle(element);
-        expect(styles?.textDecoration).toBe('none');
-    });
-    it('changes UI onClick of the button', () => {
-        const buttonEle = container.querySelector(
-            `[data-testid="${buttonTestId}"]`,
-        );
-        buttonEle && fireEvent.click(buttonEle);
 
-        const textEle = container.querySelector(`[data-testid="${testText}"]`);
-        expect(textEle).not.toBeNull();
-        expect(textEle?.textContent).toBe('Clicked: 1 times');
-
-        const headingEle = container.querySelector(
-            `[data-testid="${testHeading}"]`,
+    it('renders label text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${todoLabelId}"]`,
         );
-        expect(headingEle).not.toBeNull();
-        expect(headingEle?.textContent).toBe(testTextOn);
+        expect(element?.textContent).toBe(labelText);
+    });
 
-        const styles = headingEle && getComputedStyle(headingEle);
-        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.green);
+    it('renders button text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${todoButtonId}"]`,
+        );
+        expect(element?.textContent).toContain(buttonText);
+    });
+
+    it('renders passed todos data correctly', async () => {
+        const elements = await screen.findAllByTestId('test-tag-id');
+
+        expect(elements.length).toBe(todos?.length);
     });
 });
 
-// Test Story 3: UnderLinedText
-describe('UnderLinedText', () => {
-    let container: HTMLDivElement;
-    const testTextOn = UnderLinedText?.args?.textOn;
-    const testTextOff = UnderLinedText?.args?.textOff;
+describe('Todos - FullWidthTodos', () => {
+    const labelText = FullWidthTodos.args?.label;
+    const todos = FullWidthTodos.args?.todos;
+    const buttonText = FullWidthTodos.args?.buttonText;
+    const fullWidth = FullWidthTodos.args?.fullWidth;
 
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<UnderLinedText />, container);
+        ReactDOM.render(
+            <FullWidthTodos
+                todos={todos}
+                label={labelText}
+                fullWidth={fullWidth}
+                buttonText={buttonText}
+            />,
+            container,
+        );
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -210,65 +121,38 @@ describe('UnderLinedText', () => {
 
     it('renders the component', () => {
         const element = container.querySelector(
-            `[data-testid="${testCompId}"]`,
+            `[data-testid="${todoTestId}"]`,
         );
         expect(element).not.toBeNull();
     });
-    it('renders the Icon', () => {
-        const element = container.querySelector(
-            `[data-testid="${iconTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-    it('renders the Title with correct text', () => {
-        const element = container.querySelector(`[data-testid="${testTitle}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe('The Demo Component');
-    });
-    it('renders the Heading with textOn by default', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe(testTextOn);
-    });
-    it('renders the Heading with correct styles', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.green);
-    });
-    it('renders the correct default Text', () => {
-        const element = container.querySelector(`[data-testid="${testText}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe('Clicked: -1 times');
-    });
-    it('renders the Text with underline', () => {
-        const element = container.querySelector(`[data-testid="${testText}"]`);
-        expect(element).not.toBeNull();
-        const styles = element && getComputedStyle(element);
-        expect(styles?.textDecoration).toBe('underline');
-    });
-    it('changes UI onClick of the button', () => {
-        const buttonEle = container.querySelector(
-            `[data-testid="${buttonTestId}"]`,
-        );
-        buttonEle && fireEvent.click(buttonEle);
 
-        const textEle = container.querySelector(`[data-testid="${testText}"]`);
-        expect(textEle).not.toBeNull();
-        expect(textEle?.textContent).toBe('Clicked: 1 times');
-
-        const headingEle = container.querySelector(
-            `[data-testid="${testHeading}"]`,
+    it('renders label text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${todoLabelId}"]`,
         );
-        expect(headingEle).not.toBeNull();
-        expect(headingEle?.textContent).toBe(testTextOff);
+        expect(element?.textContent).toBe(labelText);
+    });
 
-        const styles = headingEle && getComputedStyle(headingEle);
-        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.red);
+    it('renders button text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${todoButtonId}"]`,
+        );
+        expect(element?.textContent).toContain(buttonText);
+    });
+
+    it('renders passed todos data correctly', async () => {
+        const elements = await screen.findAllByTestId('test-tag-id');
+
+        expect(elements.length).toBe(todos?.length);
+    });
+
+    it('renders todos content with full width', async () => {
+        const todoContent = screen.getByTestId(todoContentId);
+
+        const styles = todoContent && (getComputedStyle(todoContent) as any);
+        const flexDirection = styles?._values?.['flex-direction'];
+
+        expect(flexDirection).toBe('column');
     });
 });
+

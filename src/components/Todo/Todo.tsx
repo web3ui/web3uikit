@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useEffect, useState } from 'react';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Tag } from '../Tag';
-
-import {
-    DivStyled,
-    DivStyledContent,
-    SectionStyled,
-} from './Todo.styles';
-
+import { DivStyled, DivStyledContent, SectionStyled } from './Todo.styles';
 import { TodoProps, TodoState } from './types';
 
-const Todo: React.FC<TodoProps> = ({ todos = [], pattern, fullWidth = false }) => {
+const Todo: React.FC<TodoProps> = ({
+    buttonText = 'Add',
+    fullWidth = false,
+    label,
+    onAdd,
+    pattern,
+    todos = [],
+}) => {
     const [inputValue, setInputValue] = useState<string>('');
     const [lists, setLists] = useState<TodoState[]>([]);
 
@@ -31,19 +31,22 @@ const Todo: React.FC<TodoProps> = ({ todos = [], pattern, fullWidth = false }) =
     };
 
     const addTodo = () => {
-        const todo = {
-            id: Date.now(),
-            text: inputValue,
-        };
-        setLists((prevTodo) => [...prevTodo, todo]);
-        setInputValue('');
+        const check = onAdd?.() || true;
+        if (check) {
+            const todo = {
+                id: Date.now(),
+                text: inputValue,
+            };
+            setLists((prevTodo) => [...prevTodo, todo]);
+            setInputValue('');
+        }
     };
 
     return (
-        <SectionStyled data-testid="todo-comp">
+        <SectionStyled data-testid="test-todo">
             <DivStyled>
                 <Input
-                    label="Enter IP"
+                    label={label}
                     size="large"
                     validation={{
                         regExp: pattern,
@@ -53,20 +56,20 @@ const Todo: React.FC<TodoProps> = ({ todos = [], pattern, fullWidth = false }) =
                 <Button
                     theme="primary"
                     size="large"
-                    text="Add"
+                    text={buttonText}
                     icon="plus"
                     disabled={!inputValue}
                     onClick={addTodo}
                 />
             </DivStyled>
 
-            <DivStyledContent fullWidth={fullWidth}>
-                {lists.map(({id, text}) => (
+            <DivStyledContent fullWidth={fullWidth} data-testid="test-todo_content">
+                {lists.map(({ id, text }) => (
                     <Tag
                         key={id}
                         color="blueLight"
                         text={text}
-                        onCancelClick={()=>onCancelClick(id)}
+                        onCancelClick={() => onCancelClick(id)}
                         hasCancel
                     />
                 ))}

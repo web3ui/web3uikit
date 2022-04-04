@@ -12,6 +12,7 @@ export const initialStyles = css`
     ${fonts.textBold700};
     align-items: center;
     border-radius: 20px;
+    display: flex;
     font-size: 14px;
     justify-content: center;
     overflow: hidden;

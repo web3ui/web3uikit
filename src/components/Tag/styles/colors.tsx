@@ -70,3 +70,8 @@ export const coloredPinkDark = css`
     background: ${color.pinkDark};
     color: ${color.white};
 `;
+
+export const coloredBlueLight = css`
+    background: ${color.blueLight3};
+    color: ${color.blue};
+`;

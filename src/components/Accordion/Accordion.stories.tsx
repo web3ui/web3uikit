@@ -51,7 +51,7 @@ export const HasIcon = Template.bind({});
 HasIcon.args = {
     children: [<NewComp key={'unique-id'} textOn="hello" textOff="bye!" />],
     id: 'accordion',
-    tagText: 'Tag!',
+    hasLockIcon: true,
     title: 'Accordion Title',
 };
 
@@ -63,24 +63,8 @@ Expanded.args = {
     title: 'Expanded by default',
 };
 
-export const ThemeRed = Template.bind({});
-ThemeRed.args = {
-    children: [<NewComp key={'unique-id'} textOn="hello" textOff="bye!" />],
-    id: 'accordion',
-    theme: 'red',
-    title: 'Theme is red',
-};
-
-export const ThemeYellow = Template.bind({});
-ThemeYellow.args = {
-    children: [<NewComp key={'unique-id'} textOn="hello" textOff="bye!" />],
-    id: 'accordion',
-    theme: 'yellow',
-    title: 'Theme is yellow',
-};
-
-export const ThemeGreen = Template.bind({});
-ThemeGreen.args = {
+export const ThemeColor = Template.bind({});
+ThemeColor.args = {
     children: [<NewComp key={'unique-id'} textOn="hello" textOff="bye!" />],
     id: 'accordion',
     theme: 'green',

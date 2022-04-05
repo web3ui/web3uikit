@@ -1,276 +1,169 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
-import { fireEvent } from '@testing-library/react';
 import * as stories from './Accordion.stories';
-import { getThemeColor } from './Accordion.styles';
-import color from '../../styles/colors';
-import { iconTestId } from '../Icon/Icon.test';
 import { tagTestId } from '../Tag/Tag.test';
+import { iconTestId } from '../Icon/Icon.test';
+import color from '../../styles/colors';
 
-const { FullDemo, Default, Expanded, ThemeRed, ThemeYellow, ThemeGreen } =
+const { Default, FullDemo, HasIcon, HasSubtitle, HasTag, ThemeColor } =
     composeStories(stories);
 
 const testId = 'test-accordion';
 const testTitle = 'test-accordion-title';
 const testSubtitle = 'test-accordion-subtitle';
 const testHeader = 'test-accordion-header';
-let container: HTMLDivElement;
 
-describe('Accordion - Full Demo', () => {
+test('Renders Default', () => {
+    const titleText = Default?.args?.title;
+
+    render(<Default />);
+    const element = screen.getByTestId(testId);
+    expect(element).not.toBeNull();
+    expect(element.id).toBe('accordion');
+
+    const title = screen.getByTestId(testTitle);
+    expect(title).not.toBeNull();
+    expect(title.textContent).toBe(titleText);
+
+    const subTitle = screen.queryByTestId(testSubtitle);
+    expect(subTitle).toBeNull();
+
+    const tag = screen.queryByTestId(tagTestId);
+    expect(tag).toBeNull();
+
+    const iconArray = screen.getAllByTestId(iconTestId);
+    expect(iconArray[0]).not.toBeNull();
+    expect(iconArray[0].textContent).toBe('plus icon');
+    expect(iconArray[1].textContent).not.toBe('lock closed icon');
+});
+
+test('Renders FullDemo', () => {
     const titleText = FullDemo?.args?.title;
     const subtitleText = FullDemo?.args?.subTitle;
     const tagText = FullDemo?.args?.tagText;
+
+    render(<FullDemo />);
+    const element = screen.getByTestId(testId);
+    expect(element).not.toBeNull();
+    expect(element.id).toBe('accordion');
+
+    const title = screen.getByTestId(testTitle);
+    expect(title).not.toBeNull();
+    expect(title.textContent).toBe(titleText);
+
+    const subTitle = screen.getByTestId(testSubtitle);
+    expect(subTitle).not.toBeNull();
+    expect(subTitle.textContent).toBe(subtitleText);
+
+    const tag = screen.getByTestId(tagTestId);
+    expect(tag).not.toBeNull();
+    expect(tag.textContent).toBe(tagText);
+
+    const iconArray = screen.getAllByTestId(iconTestId);
+    expect(iconArray[0]).not.toBeNull();
+    expect(iconArray[0].textContent).toBe('plus icon');
+    expect(iconArray[1]).not.toBeNull();
+    expect(iconArray[1].textContent).toBe('lock closed icon');
+});
+
+test('Component is interactive', () => {
     const isExpanded = FullDemo?.args?.isExpanded;
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<FullDemo />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component with its ID', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.id).toBe('accordion');
-    });
-    it('renders the title', () => {
-        const element = container.querySelector(`[data-testid="${testTitle}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe(titleText);
-    });
-    it('renders the subtitle', () => {
-        const element = container.querySelector(
-            `[data-testid="${testSubtitle}"]`,
-        );
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe(subtitleText);
-    });
-    it('renders the tag with the correct text', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe(tagText);
-    });
-    it('renders the lock icon, as well as the plus icon by default', () => {
-        const iconArray = container.querySelectorAll(
-            `[data-testid="${iconTestId}"]`,
-        );
-        expect(iconArray[0]).not.toBeNull();
-        expect(iconArray[0].textContent).toBe('plus icon');
-        expect(iconArray[1]).not.toBeNull();
-        expect(iconArray[1].textContent).toBe('lock closed icon');
-    });
-    it('renders theme blue with blue border', () => {
-        const element: HTMLElement | null = container.querySelector(
-            `[data-testid="${testId}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        expect(styles?.border).toBe(`1px solid ${color.blue}`.toLowerCase());
-    });
-    it('renders the component closed by default', () => {
-        const headerElement = container.querySelector(
-            `[data-testid="${testHeader}"]`,
-        );
-        expect(headerElement).not.toBeNull();
-        expect(headerElement?.getAttribute('aria-expanded')).toBe(
-            `${isExpanded}`,
-        );
-    });
-    it('will open when the header is clicked', () => {
-        const headerElement = container.querySelector(
-            `[data-testid="${testHeader}"]`,
-        );
-        expect(headerElement).not.toBeNull();
-        headerElement && fireEvent.click(headerElement);
-        expect(headerElement?.getAttribute('aria-expanded')).toBe(
-            `${!isExpanded}`,
-        );
-    });
+    render(<Default />);
+    const headerElement = screen.getByTestId(testHeader);
+    expect(headerElement).not.toBeNull();
+    expect(headerElement.getAttribute('aria-expanded')).toBe(`${isExpanded}`);
+    fireEvent.click(headerElement);
+    expect(headerElement?.getAttribute('aria-expanded')).toBe(`${!isExpanded}`);
 });
 
-describe('Accordion - Default', () => {
-    const titleText = Default?.args?.title;
-    const isExpanded = Default?.args?.isExpanded;
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Default />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component with its ID', () => {
-        const element = container.querySelector(`[data-testid="${testId}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.id).toBe('accordion');
-    });
-    it('renders the title', () => {
-        const element = container.querySelector(`[data-testid="${testTitle}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe(titleText);
-    });
-    it('renders no subtitle', () => {
-        const element = container.querySelector(
-            `[data-testid="${testSubtitle}"]`,
-        );
-        expect(element).toBeNull();
-    });
-    it('renders no tag', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
-        expect(element).toBeNull();
-    });
-    it('renders the plus icon only by default', () => {
-        const element = container.querySelector(
-            `[data-testid="${testSubtitle}"]`,
-        );
-        const iconArray = element?.querySelectorAll(
-            `[data-testid="${iconTestId}"]`,
-        );
-        expect(iconArray).not.toBeNull();
-        iconArray && expect(iconArray[0]).not.toBeNull();
-        iconArray && expect(iconArray[0].textContent).toBe('plus icon');
-        iconArray && expect(iconArray[1]).toBeNull();
-    });
-    it('renders default with blue border', () => {
-        const element: HTMLElement | null = container.querySelector(
-            `[data-testid="${testId}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        expect(styles?.border).toBe(`1px solid ${color.blue}`.toLowerCase());
-    });
-    it('renders the component closed by default', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeader}"]`,
-        );
-        expect(element).not.toBeNull();
-        expect(element?.getAttribute('aria-expanded')).toBe(
-            `${Boolean(isExpanded)}`,
-        );
-    });
-    it('will close when the header is clicked', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeader}"]`,
-        );
-        expect(element).not.toBeNull();
-        element && fireEvent.click(element);
-        expect(element?.getAttribute('aria-expanded')).toBe(
-            `${!Boolean(isExpanded)}`,
-        );
-    });
+test('Renders colors', () => {
+    render(<Default />);
+    const element = screen.getByTestId(testId);
+    const styles = element && getComputedStyle(element);
+    expect(styles.border).toBe(`1px solid ${color.blue}`.toLowerCase());
 });
 
-describe('Accordion - Expanded', () => {
-    const isExpanded = Expanded?.args?.isExpanded;
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Expanded />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component open by default', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeader}"]`,
-        );
-        expect(element).not.toBeNull();
-        expect(element?.getAttribute('aria-expanded')).toBe(
-            `${Boolean(isExpanded)}`,
-        );
-    });
-    it('will close when the header is clicked', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeader}"]`,
-        );
-        expect(element).not.toBeNull();
-        element && fireEvent.click(element);
-        expect(element?.getAttribute('aria-expanded')).toBe(
-            `${!Boolean(isExpanded)}`,
-        );
-    });
+test('Renders theme colors', () => {
+    render(<ThemeColor />);
+    const element = screen.getByTestId(testId);
+    const styles = element && getComputedStyle(element);
+    expect(styles.border).toBe(`1px solid ${color.green}`.toLowerCase());
 });
 
-describe('Accordion - ThemeRed', () => {
-    const theme = ThemeRed.args?.theme;
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ThemeRed />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+test('Renders HasSubtitle', () => {
+    const titleText = HasSubtitle?.args?.title;
+    const subtitleText = FullDemo?.args?.subTitle;
 
-    it('return the correct theme color from styles', () => {
-        expect(theme).not.toBeNull();
-        theme && expect(getThemeColor(theme)).toBe(color.red);
-    });
-    it('renders theme red with red border', () => {
-        const element: HTMLElement | null = container.querySelector(
-            `[data-testid="${testId}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        expect(styles?.border).toBe(`1px solid ${color.red}`.toLowerCase());
-    });
+    render(<HasSubtitle />);
+    const element = screen.getByTestId(testId);
+    expect(element).not.toBeNull();
+    expect(element.id).toBe('accordion');
+
+    const title = screen.getByTestId(testTitle);
+    expect(title).not.toBeNull();
+    expect(title.textContent).toBe(titleText);
+
+    const subTitle = screen.getByTestId(testSubtitle);
+    expect(subTitle).not.toBeNull();
+    expect(subTitle.textContent).toBe(subtitleText);
+
+    const tag = screen.queryByTestId(tagTestId);
+    expect(tag).toBeNull();
+
+    const iconArray = screen.getAllByTestId(iconTestId);
+    expect(iconArray[0]).not.toBeNull();
+    expect(iconArray[0].textContent).toBe('plus icon');
+    expect(iconArray[1].textContent).not.toBe('lock closed icon');
 });
 
-describe('Accordion - ThemeYellow', () => {
-    const theme = ThemeYellow.args?.theme;
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ThemeYellow />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+test('Renders HasTag', () => {
+    const titleText = HasTag?.args?.title;
+    const tagText = FullDemo?.args?.tagText;
 
-    it('return the correct theme color from styles', () => {
-        expect(theme).not.toBeNull();
-        theme && expect(getThemeColor(theme)).toBe(color.yellow);
-    });
-    it('renders theme yellow with yellow border', () => {
-        const element: HTMLElement | null = container.querySelector(
-            `[data-testid="${testId}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        expect(styles?.border).toBe(`1px solid ${color.yellow}`.toLowerCase());
-    });
+    render(<HasTag />);
+    const element = screen.getByTestId(testId);
+    expect(element).not.toBeNull();
+    expect(element.id).toBe('accordion');
+
+    const title = screen.getByTestId(testTitle);
+    expect(title).not.toBeNull();
+    expect(title.textContent).toBe(titleText);
+
+    const subTitle = screen.queryByTestId(testSubtitle);
+    expect(subTitle).toBeNull();
+
+    const tag = screen.getByTestId(tagTestId);
+    expect(tag).not.toBeNull();
+    expect(tag.textContent).toBe(tagText);
+
+    const iconArray = screen.getAllByTestId(iconTestId);
+    expect(iconArray[0]).not.toBeNull();
+    expect(iconArray[0].textContent).toBe('plus icon');
+    expect(iconArray[1].textContent).not.toBe('lock closed icon');
 });
 
-describe('Accordion - ThemeGreen', () => {
-    const theme = ThemeGreen.args?.theme;
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ThemeGreen />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+test('Renders HasIcon', () => {
+    const titleText = HasIcon?.args?.title;
 
-    it('return the correct theme color from styles', () => {
-        expect(theme).not.toBeNull();
-        theme && expect(getThemeColor(theme)).toBe(color.green);
-    });
-    it('renders theme green with green border', () => {
-        const element: HTMLElement | null = container.querySelector(
-            `[data-testid="${testId}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        expect(styles?.border).toBe(`1px solid ${color.green}`.toLowerCase());
-    });
+    render(<HasIcon />);
+    const element = screen.getByTestId(testId);
+    expect(element).not.toBeNull();
+    expect(element.id).toBe('accordion');
+
+    const title = screen.getByTestId(testTitle);
+    expect(title).not.toBeNull();
+    expect(title.textContent).toBe(titleText);
+
+    const subTitle = screen.queryByTestId(testSubtitle);
+    expect(subTitle).toBeNull();
+
+    const tag = screen.queryByTestId(tagTestId);
+    expect(tag).toBeNull();
+
+    const iconArray = screen.getAllByTestId(iconTestId);
+    expect(iconArray[0]).not.toBeNull();
+    expect(iconArray[0].textContent).toBe('plus icon');
+    expect(iconArray[1]).not.toBeNull();
+    expect(iconArray[1].textContent).toBe('lock closed icon');
 });

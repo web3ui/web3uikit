@@ -80,7 +80,10 @@ BorderedHeader.args = {
             }}
         >
             <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
-            <p>This is a demo on how to use <em>headerHasBottomBorder</em> props?</p>
+            <p>
+                This is a demo on how to use <em>headerHasBottomBorder</em>{' '}
+                props?
+            </p>
         </div>,
     ],
 };

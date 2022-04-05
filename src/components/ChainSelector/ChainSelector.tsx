@@ -5,28 +5,42 @@ import { Typography } from '../Typography';
 import ChainSelectStyles, { getChainLogoName } from './ChainSelector.styles';
 import { FC } from 'react';
 import color from '../../styles/colors';
-import { chainIdType, ChainSelectorProps } from './types';
+import { chainIdType, IChainSelectorProps, OptionType } from './types';
 import React from 'react';
 
 const { GridStyled, CardContentStyled, GridElementStyled } = ChainSelectStyles;
 
-const ChainSelector: FC<ChainSelectorProps> = ({
-    multiple,
+const ChainSelector: FC<IChainSelectorProps> = ({
+    IsMultipleAllowed,
     providers,
     values,
     setValue,
+    isCompatibilityChecked,
 }) => {
+    const checkIncompatibleChains = (providerOption: OptionType) => {
+        if (!isCompatibilityChecked) return;
+        return !!providers
+            .filter(
+                (o) =>
+                    values.map((x) => x.chainId).includes(o.chainId) &&
+                    o.chainId !== providerOption.chainId,
+            )
+            .some((c) => c.chain === providerOption.chain);
+    };
+
     const toggleEvm = (chain: string) => {
         if (values.map((x) => x.chainId).includes(chain)) {
             const newArray = values.filter((e) => e.chainId !== chain);
             setValue(newArray);
         } else {
-            const newArray = [...values];
-            newArray.push({
-                chainId: chain,
-                maxRecordsPerCategory: 50,
-                userSync: true,
-            });
+            const newArray = [
+                ...values,
+                {
+                    chainId: chain,
+                    maxRecordsPerCategory: 50,
+                    userSync: true,
+                },
+            ];
             setValue(newArray);
         }
     };
@@ -60,6 +74,7 @@ const ChainSelector: FC<ChainSelectorProps> = ({
                                 isSelected={values
                                     .map((x) => x.chainId)
                                     .includes(option.chainId)}
+                                isDisabled={checkIncompatibleChains(option)}
                             >
                                 <CardContentStyled>
                                     <CryptoLogos
@@ -71,7 +86,7 @@ const ChainSelector: FC<ChainSelectorProps> = ({
                             </Card>
                         </GridElementStyled>
                     ))}
-                    {multiple && (
+                    {IsMultipleAllowed && (
                         <GridElementStyled>
                             <Card onClick={selectAll}>
                                 <CardContentStyled>

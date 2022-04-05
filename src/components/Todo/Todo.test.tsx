@@ -4,9 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as stories from './Todo.stories';
 
-const {
-    DefaultTodo, WithInitialTodos, FullWidthTodos
-} = composeStories(stories);
+const { DefaultTodo, WithInitialTodos, FullWidthTodos } =
+    composeStories(stories);
 
 const todoTestId = 'test-todo';
 const todoLabelId = 'test-label';
@@ -155,4 +154,3 @@ describe('Todos - FullWidthTodos', () => {
         expect(flexDirection).toBe('column');
     });
 });
-

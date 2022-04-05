@@ -1,8 +1,9 @@
-export interface ChainSelectorProps {
-    multiple: boolean;
+export interface IChainSelectorProps {
+    IsMultipleAllowed: boolean;
     providers: OptionType[];
     setValue: (value: DappConfig[]) => void;
     values: DappConfig[];
+    isCompatibilityChecked?: boolean;
 }
 
 export type OptionType = {

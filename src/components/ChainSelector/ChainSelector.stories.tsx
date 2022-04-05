@@ -42,7 +42,13 @@ const providers = [
 
 export const EthMainnetSelected = Template.bind({});
 EthMainnetSelected.args = {
-    multiple: true,
+    IsMultipleAllowed: true,
     providers,
-    setValue: console.log,
+};
+
+export const WithCompatibilityCheck = Template.bind({});
+WithCompatibilityCheck.args = {
+    IsMultipleAllowed: true,
+    providers,
+    isCompatibilityChecked: true,
 };

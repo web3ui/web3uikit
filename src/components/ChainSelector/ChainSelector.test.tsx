@@ -11,7 +11,7 @@ const providers = [
 test('renders sucessful', async () => {
     render(
         <ChainSelector
-            multiple={true}
+            IsMultipleAllowed={true}
             providers={providers}
             values={[
                 {
@@ -28,7 +28,7 @@ test('renders sucessful', async () => {
 test('renders all the cards', async () => {
     const { getByText } = render(
         <ChainSelector
-            multiple={true}
+            IsMultipleAllowed={true}
             providers={providers}
             values={[
                 {

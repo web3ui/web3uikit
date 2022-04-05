@@ -10,9 +10,9 @@ export const DivStyled = styled.section`
 `;
 
 export const DivStyledContent = styled.section<TStyleProps>`
-    display: flex; 
-    flex-direction: ${({ fullWidth }) => fullWidth ? 'column' : 'row'};
-    flex-wrap: wrap; 
+    display: flex;
+    flex-direction: ${({ fullWidth }) => (fullWidth ? 'column' : 'row')};
+    flex-wrap: wrap;
     gap: 16px;
 `;
 

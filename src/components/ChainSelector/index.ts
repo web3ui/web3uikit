@@ -1,2 +1,2 @@
 export { default as ChainSelect } from './ChainSelector';
-export type { ChainSelectorProps } from './types';
+export type { IChainSelectorProps } from './types';

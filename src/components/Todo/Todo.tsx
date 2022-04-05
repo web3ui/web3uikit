@@ -39,15 +39,15 @@ const Todo: React.FC<TodoProps> = ({
             };
             setLists((prevTodo) => [...prevTodo, todo]);
             setInputValue('');
+            (document.getElementById('todo-input') as HTMLInputElement).value = 'some';
         }
     };
-
-    console.log('inputValue => ', inputValue);
 
     return (
         <SectionStyled data-testid="test-todo">
             <DivStyled>
                 <Input
+                    id="todo-input"
                     label={label}
                     value={inputValue}
                     onChange={handleInputChange}

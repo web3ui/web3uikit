@@ -42,11 +42,14 @@ const Todo: React.FC<TodoProps> = ({
         }
     };
 
+    console.log('inputValue => ', inputValue);
+
     return (
         <SectionStyled data-testid="test-todo">
             <DivStyled>
                 <Input
                     label={label}
+                    value={inputValue}
                     onChange={handleInputChange}
                     size="large"
                     validation={{
@@ -63,7 +66,10 @@ const Todo: React.FC<TodoProps> = ({
                 />
             </DivStyled>
 
-            <DivStyledContent fullWidth={fullWidth} data-testid="test-todo_content">
+            <DivStyledContent
+                fullWidth={fullWidth}
+                data-testid="test-todo_content"
+            >
                 {lists.map(({ id, text }) => (
                     <Tag
                         color="blueLight"

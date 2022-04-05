@@ -1,15 +1,21 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import React from 'react';
+import React, { useState } from 'react';
 import ChainSelector from './ChainSelector';
+import { DappConfig } from './types';
 
 export default {
     title: '4.UI/ChainSelect',
     component: ChainSelector,
 } as ComponentMeta<typeof ChainSelector>;
 
-const Template: ComponentStory<typeof ChainSelector> = (args) => (
-    <ChainSelector {...args} />
-);
+const Template: ComponentStory<typeof ChainSelector> = (args) => {
+    const [values, setValue] = useState<DappConfig[]>([
+        {
+            chainId: '0x1',
+        },
+    ]);
+    return <ChainSelector {...{ ...args, setValue, values }} />;
+};
 
 const providers = [
     { name: 'Mainnet', network: 'mainnet', chainId: '0x1', chain: 'Eth' },
@@ -38,10 +44,5 @@ export const EthMainnetSelected = Template.bind({});
 EthMainnetSelected.args = {
     multiple: true,
     providers,
-    values: [
-        {
-            chainId: '0x1',
-        },
-    ],
     setValue: console.log,
 };

@@ -3,6 +3,11 @@ export interface IChainSelectorProps {
     providers: OptionType[];
     setValue: (value: DappConfig[]) => void;
     values: DappConfig[];
+
+    /**
+     * prevents the use of networks
+     * with the same name
+     */
     isCompatibilityChecked?: boolean;
 }
 

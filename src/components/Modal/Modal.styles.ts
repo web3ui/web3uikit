@@ -42,8 +42,9 @@ export const HeaderStyled = styled.header<{
     display: flex;
     padding: 28px 32px 24px;
     justify-content: ${(p) => (p.title ? 'space-between' : 'flex-end')};
-    border-bottom: ${(p) => (p.headerHasBottomBorder ? `1px solid ${colors.paleBlue2}` : undefined)};
-    
+    border-bottom: ${(p) =>
+        p.headerHasBottomBorder ? `1px solid ${colors.paleBlue2}` : undefined};
+
     div {
         border-color: ${colors.blue};
         border-radius: 15px;

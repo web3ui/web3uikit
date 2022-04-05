@@ -63,7 +63,10 @@ const Todo: React.FC<TodoProps> = ({
                 />
             </DivStyled>
 
-            <DivStyledContent fullWidth={fullWidth} data-testid="test-todo_content">
+            <DivStyledContent
+                fullWidth={fullWidth}
+                data-testid="test-todo_content"
+            >
                 {lists.map(({ id, text }) => (
                     <Tag
                         color="blueLight"

@@ -9,7 +9,7 @@ export interface TodoProps {
 
     /**
      * an optional button text
-    */
+     */
     buttonText?: string;
 
     /**

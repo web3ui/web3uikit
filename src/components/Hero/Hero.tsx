@@ -45,7 +45,13 @@ const Hero: React.FC<HeroProps> = ({
                 </Typography>
             )}
 
-            {customImage?.url && <img src={customImage.url} alt='Hero-image' style={customImage?.styles} />}
+            {customImage?.url && (
+                <img
+                    src={customImage.url}
+                    alt="Hero-image"
+                    style={customImage?.styles}
+                />
+            )}
 
             {children && (
                 <DivStyled data-testid="test-hero_child">{children}</DivStyled>

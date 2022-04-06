@@ -59,6 +59,7 @@ const App = () => (
     -   [`<ConnectButton />`](#connectbutton-)
 -   [📖 UI Components](#-ui-components)
     -   [`<Avatar />`](#avatar-)
+    -   [`<Badge />`](#badge-)
     -   [`<BannerStrip />`](#bannerstrip-)
     -   [`<Breadcrumbs />`](#breadcrumbs-)
     -   [`<Card />`](#card-)
@@ -112,6 +113,12 @@ Try the `<Accordion />` component in the [interactive documentation](https://web
 ![avatar](https://user-images.githubusercontent.com/78314301/149967253-4e209eb2-6d0f-4222-96bc-7e74c4cc6dfd.gif)
 
 Try the `<Avatar />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/6-graphic-avatar)
+
+### `<Badge />`
+
+![badge](https://user-images.githubusercontent.com/35369843/162045684-fbcfe50f-79b3-452b-86a4-d546d19a3d43.png)
+
+Try the `<Badge />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/4-ui-badge--all)
 
 ### `<BannerStrip />`
 

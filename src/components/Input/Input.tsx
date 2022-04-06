@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, MutableRefObject } from 'react';
+import Blockies from 'react-blockies';
 import { CopyButton } from '../CopyButton';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
-import { Blockie } from '../Blockie';
 import {
     BlockieWrapperStyled,
     CopyContainerStyled,
@@ -143,18 +143,23 @@ const Input: React.FC<InputProps> = ({
 
             {isWalletAddress && (
                 <>
-                    <BlockieWrapperStyled>
-                        <Blockie seed={currentValue} />
+                    <BlockieWrapperStyled data-testid="test-blockie">
+                        <Blockies
+                            size={6}
+                            seed={currentValue?.toLowerCase()}
+                            className="blockie"
+                        />
                     </BlockieWrapperStyled>
-                    <InputEllipsisStyled
-                        data-testid="test-ellipsis-input"
-                        style={{ display: isEditMode ? 'none' : 'block' }}
-                        onClick={() => {
-                            setIsEditMode(true);
-                        }}
-                    >
-                        {getEllipsisTxt(currentValue)}
-                    </InputEllipsisStyled>
+                    {!isEditMode && (
+                        <InputEllipsisStyled
+                            data-testid="test-ellipsis-input"
+                            onClick={() => {
+                                setIsEditMode(true);
+                            }}
+                        >
+                            {getEllipsisTxt(currentValue)}
+                        </InputEllipsisStyled>
+                    )}
                 </>
             )}
 

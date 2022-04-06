@@ -1,6 +1,6 @@
 {
     "name": "web3uikit",
-    "version": "0.1.113",
+    "version": "0.1.115",
     "repository": "https://github.com/web3ui/web3uikit",
     "homepage": "https://web3ui.github.io/web3uikit/",
     "main": "dist/index.js",

@@ -20,7 +20,7 @@ const {
 type web3StatusType = 'disconnected' | 'pending' | 'only_web3';
 
 const ConnectButton: React.FC<ConnectButtonProps> = ({
-    chainId,
+    chainId = undefined,
     moralisAuth = true,
     signingMessage = undefined,
 }) => {

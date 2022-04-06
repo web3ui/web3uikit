@@ -21,6 +21,7 @@ type web3StatusType = 'disconnected' | 'pending' | 'only_web3';
 
 const ConnectButton: React.FC<ConnectButtonProps> = ({
     moralisAuth = true,
+    signingMessage = undefined,
 }) => {
     const {
         account,
@@ -77,7 +78,12 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
             moralisAuth &&
             web3Status === 'only_web3'
         ) {
-            authenticate({ provider: connectorId });
+            const data = {
+                provider: connectorId,
+                signingMessage,
+            };
+
+            authenticate(JSON.parse(JSON.stringify(data)));
         }
     }, [isAuthenticated, isInitialized, isWeb3Enabled, isAuthenticating]);
 

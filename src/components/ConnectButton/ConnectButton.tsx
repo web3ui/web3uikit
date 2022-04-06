@@ -46,19 +46,20 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         // to avoid problems in Next.JS apps because of window object
         if (typeof window == 'undefined') return;
 
-        const connectorId = window.localStorage.getItem(
-            'connectorId',
+        const provider = window.localStorage.getItem(
+            'provider',
         ) as MoralisType.Web3ProviderType;
         if (
             !isWeb3Enabled &&
             !isWeb3EnableLoading &&
-            connectorId &&
+            provider &&
             web3Status === 'disconnected'
         ) {
             // @ts-ignore
             setWeb3Status('pending');
             enableWeb3({
-                provider: connectorId,
+                provider,
+                chainId,
                 onSuccess: () => setWeb3Status('only_web3'),
             });
         }
@@ -68,8 +69,8 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         // to avoid problems in Next.JS apps because of window object
         if (typeof window == 'undefined') return;
 
-        const connectorId = window.localStorage.getItem(
-            'connectorId',
+        const provider = window.localStorage.getItem(
+            'provider',
         ) as MoralisType.Web3ProviderType;
         if (
             isInitialized &&
@@ -79,7 +80,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
             moralisAuth &&
             web3Status === 'only_web3'
         ) {
-            authenticate({ provider: connectorId });
+            authenticate({ provider, chainId, signingMessage });
         }
     }, [isAuthenticated, isInitialized, isWeb3Enabled, isAuthenticating]);
 
@@ -93,7 +94,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         // to avoid problems in Next.JS apps because of localStorage
         if (typeof window == 'undefined') return;
 
-        window.localStorage.removeItem('connectorId');
+        window.localStorage.removeItem('provider');
         setWeb3Status('disconnected');
 
         deactivateWeb3();

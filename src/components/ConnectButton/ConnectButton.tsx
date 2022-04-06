@@ -20,9 +20,9 @@ const {
 type web3StatusType = 'disconnected' | 'pending' | 'only_web3';
 
 const ConnectButton: React.FC<ConnectButtonProps> = ({
-    chainId = undefined,
+    chainId,
     moralisAuth = true,
-    signingMessage = undefined,
+    signingMessage = 'Moralis Authentication',
 }) => {
     const {
         account,
@@ -115,6 +115,8 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
                     <TextStyled>Connect Wallet</TextStyled>
                 </ConnectButtonStyled>
                 <WalletModal
+                    chainId={chainId}
+                    signingMessage={signingMessage}
                     isOpened={isConnectModalOpen}
                     moralisAuth={moralisAuth}
                     setIsOpened={setIsConnectModalOpen}

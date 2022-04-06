@@ -20,9 +20,11 @@ const {
 } = WalletModalStyles;
 
 const WalletModal: FC<WalletModalProps> = ({
+    chainId,
     isOpened = true,
     moralisAuth,
     setIsOpened,
+    signingMessage = 'Moralis Authentication',
 }) => {
     const { authenticate, isInitialized, enableWeb3 } = useMoralis();
 
@@ -31,13 +33,14 @@ const WalletModal: FC<WalletModalProps> = ({
         if (typeof window == 'undefined') return;
         const connectProps = {
             provider: connectorId,
+            signingMessage,
             onSuccess: () => {
                 window.localStorage.setItem('connectorId', connectorId);
                 setIsOpened(false);
             },
         };
         isInitialized && moralisAuth
-            ? authenticate(connectProps)
+            ? authenticate({ ...connectProps, chainId })
             : enableWeb3(connectProps);
     }
 

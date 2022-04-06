@@ -30,6 +30,11 @@ export interface ICredentialsProps extends ICredentialsHeaderProps {
     text: string;
 
     /**
+     * color of the text
+     */
+    textColor?: string | typeof color;
+
+    /**
      * width of component
      * default is "auto"
      */
@@ -40,6 +45,11 @@ export interface ICredentialsHeaderProps {
      * header text
      */
     title?: string | typeof Typography;
+
+    /**
+     * color of the title
+     */
+    titleColor?: string | typeof color;
 
     /**
      * header Icon

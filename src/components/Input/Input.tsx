@@ -1,17 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, MutableRefObject } from 'react';
 import { CopyButton } from '../CopyButton';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
+import { Blockie } from '../Blockie';
 import {
+    BlockieWrapperStyled,
     CopyContainerStyled,
     DivStyled,
     DivWrapperStyled,
+    InputEllipsisStyled,
     InputStyled,
     LabelStyled,
     StrongStyled,
     VisibilityIcon,
 } from './Input.styles';
 import type { InputProps } from './types';
+import { getEllipsisTxt } from '../../web3utils';
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
@@ -34,16 +38,27 @@ const Input: React.FC<InputProps> = ({
     value = '',
     width = '320px',
     labelBgColor,
+    isWalletAddress,
 }: InputProps) => {
+    const inputEl = useRef<HTMLInputElement>(
+        null,
+    ) as MutableRefObject<HTMLInputElement>;
+
     const [currentValue, setCurrentValue] = useState(value);
     const [currentState, setCurrentState] = useState(state);
     const [mainType, setMainType] = useState(type);
     const [isInputHidden, setIsInputHidden] = useState(inputHidden);
     const [invalidMessage, setInvalidMessage] = useState(errorMessage);
+    const [isEditMode, setIsEditMode] = useState(true);
 
     useEffect(() => setIsInputHidden(type === 'password'), [inputHidden]);
     useEffect(() => setCurrentState(state), [state]);
     useEffect(() => setMainType(type), [type]);
+    useEffect(() => {
+        if (isEditMode) inputEl.current.focus();
+    }, [inputEl, isEditMode]);
+
+    const isFilled = currentValue && currentValue?.length > 0;
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
@@ -97,23 +112,54 @@ const Input: React.FC<InputProps> = ({
             setTimeout(() => setCurrentState('initial'), 3000);
         }
     };
-
+    const handleOnBlur = (event: React.FocusEvent<HTMLInputElement>): void => {
+        // Quit edit mode to preview ellipsis address
+        if (isWalletAddress && isFilled) {
+            setIsEditMode(false);
+        }
+        validate(event);
+    };
+    const getInputType = (): string => {
+        if (isWalletAddress) return 'text';
+        return mainType !== 'password'
+            ? type
+            : isInputHidden
+            ? 'password'
+            : 'text';
+    };
     return (
         <DivWrapperStyled
             state={currentState}
-            className={`input input_${
-                currentValue && currentValue?.length > 0 ? 'filled' : 'empty'
-            }`}
+            className={`input input_${isFilled ? 'filled' : 'empty'}`}
             data-testid="test-div"
             style={{ ...style, width }}
             size={size}
         >
-            {prefixIcon && (
+            {!isWalletAddress && prefixIcon && (
                 <DivStyled className="input_prefixIcon">
                     <Icon svg={prefixIcon} />
                 </DivStyled>
             )}
+
+            {isWalletAddress && (
+                <>
+                    <BlockieWrapperStyled>
+                        <Blockie seed={currentValue} />
+                    </BlockieWrapperStyled>
+                    <InputEllipsisStyled
+                        data-testid="test-ellipsis-input"
+                        style={{ display: isEditMode ? 'none' : 'block' }}
+                        onClick={() => {
+                            setIsEditMode(true);
+                        }}
+                    >
+                        {getEllipsisTxt(currentValue)}
+                    </InputEllipsisStyled>
+                </>
+            )}
+
             <InputStyled
+                ref={inputEl}
                 autoComplete={`${autoComplete}`}
                 autoFocus={autoFocus}
                 data-testid="test-input"
@@ -124,29 +170,26 @@ const Input: React.FC<InputProps> = ({
                 min={type === 'number' ? validation?.numberMin : undefined}
                 minLength={validation?.characterMinLength}
                 name={name}
-                onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
-                    validate(event)
-                }
+                onBlur={handleOnBlur}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                     valueChanged(event)
                 }
                 pattern={validation?.regExp}
                 placeholder={placeholder}
                 required={validation?.required}
-                type={
-                    mainType !== 'password'
-                        ? type
-                        : isInputHidden
-                        ? 'password'
-                        : 'text'
-                }
+                type={getInputType()}
                 value={currentValue}
+                hidden={isWalletAddress && !isEditMode}
             />
             {label && (
                 <LabelStyled
                     data-testid="test-label"
                     htmlFor={id}
-                    hasPrefix={typeof prefixIcon !== 'undefined'}
+                    hasPrefix={
+                        isWalletAddress
+                            ? true
+                            : typeof prefixIcon !== 'undefined'
+                    }
                     labelBgColor={labelBgColor}
                 >
                     {label}

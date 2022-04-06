@@ -101,6 +101,11 @@ export interface InputProps {
      * color of label background
      */
     labelBgColor?: string;
+
+    /**
+     * Add blockie and ellipsis to the input
+     */
+    isWalletAddress?: boolean;
 }
 
 export interface LabelProps {

@@ -99,6 +99,14 @@ Try the `<ConnectButton />` component in the [interactive documentation](https:/
 
 # 📖 `UI Components`
 
+### `<Accordion />`
+
+The accordion component is a nice user interface element that can allow you to show and hide text or other components, so you do not overwhelm your user with too much awesome content
+
+![accordion](https://user-images.githubusercontent.com/13779759/161834402-ba7a847f-dcf1-48d5-a42d-f934117886dd.png)
+
+Try the `<Accordion />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/3-layout-accordion)
+
 ### `<Avatar />`
 
 ![avatar](https://user-images.githubusercontent.com/78314301/149967253-4e209eb2-6d0f-4222-96bc-7e74c4cc6dfd.gif)

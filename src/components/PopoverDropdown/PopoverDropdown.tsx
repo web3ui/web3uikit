@@ -21,8 +21,8 @@ const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
         <DivStyledFlex
             id={id}
             onMouseEnter={() => setVisibility(true)}
-            onMouseUp={() => setVisibility(false)}
-            // onMouseLeave={() => setVisibility(false)}
+            onMouseUp={() => setVisibility(true)}
+            onMouseLeave={() => setVisibility(true)}
         >
             <div data-testid={'dropdown-parent-test-id'}>{parent}</div>
 

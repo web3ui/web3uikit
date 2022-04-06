@@ -89,6 +89,9 @@ export const DivStyledFlex = styled.div`
     flex-direction: column;
     position: relative;
     width: max-content;
+    marginBottom: -10px;
+    padding-bottom: 10px;
+    border: 1px solid red;
 `;
 
 export const DivStyledDropdown = styled.div<TStyleProps>`

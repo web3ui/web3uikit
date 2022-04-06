@@ -79,13 +79,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
             moralisAuth &&
             web3Status === 'only_web3'
         ) {
-            const data = {
-                provider: connectorId,
-                signingMessage,
-                chainId,
-            };
-
-            authenticate(JSON.parse(JSON.stringify(data)));
+            authenticate({ provider: connectorId });
         }
     }, [isAuthenticated, isInitialized, isWeb3Enabled, isAuthenticating]);
 

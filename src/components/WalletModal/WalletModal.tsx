@@ -20,24 +20,27 @@ const {
 } = WalletModalStyles;
 
 const WalletModal: FC<WalletModalProps> = ({
+    chainId,
     isOpened = true,
     moralisAuth,
     setIsOpened,
+    signingMessage = 'Moralis Authentication',
 }) => {
     const { authenticate, isInitialized, enableWeb3 } = useMoralis();
 
-    function connectWallet(connectorId: Moralis.Web3ProviderType) {
+    function connectWallet(provider: Moralis.Web3ProviderType) {
         // to avoid problems in Next.JS apps because of localStorage
         if (typeof window == 'undefined') return;
         const connectProps = {
-            provider: connectorId,
+            provider,
+            chainId,
             onSuccess: () => {
-                window.localStorage.setItem('connectorId', connectorId);
+                window.localStorage.setItem('provider', provider);
                 setIsOpened(false);
             },
         };
         isInitialized && moralisAuth
-            ? authenticate(connectProps)
+            ? authenticate({ ...connectProps, signingMessage })
             : enableWeb3(connectProps);
     }
 
@@ -56,12 +59,12 @@ const WalletModal: FC<WalletModalProps> = ({
                     />
                 </HeaderStyled>
                 <GridStyled>
-                    {connectors.map(({ title, icon, connectorId }, key) => (
+                    {connectors.map(({ title, icon, provider }, key) => (
                         <GridItemStyled key={key}>
                             <WalletCardStyled
                                 onClick={() =>
                                     connectWallet(
-                                        connectorId as Moralis.Web3ProviderType,
+                                        provider as Moralis.Web3ProviderType,
                                     )
                                 }
                             >

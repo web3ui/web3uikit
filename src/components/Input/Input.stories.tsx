@@ -77,13 +77,6 @@ PasswordInput.args = {
     name: 'Test Password Input',
 };
 
-export const WalletInput = Template.bind({});
-WalletInput.args = {
-    label: 'Address',
-    name: 'Test address',
-    isWalletAddress: true,
-};
-
 export const PrefixCopyableHidableActive = Template.bind({});
 PrefixCopyableHidableActive.args = {
     hasCopyButton: true,

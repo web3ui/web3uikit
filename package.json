@@ -92,7 +92,6 @@
         "eslint": "^8.6.0",
         "eslint-config-google": "^0.14.0",
         "husky": "^7.0.4",
-        "jest-canvas-mock": "^2.3.1",
         "jest-styled-components": "^7.0.8",
         "jest-svg-transformer": "^1.0.0",
         "postcss": "^8.4.6",

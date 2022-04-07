@@ -174,21 +174,6 @@ export const DivStyled = styled.div`
     margin-right: 12px;
 `;
 
-export const BlockieWrapperStyled = styled.div`
-    width: 24px;
-    height: 24px;
-    display: flex;
-    margin-right: 12px;
-    & .blockie {
-        border-radius: 50%;
-    }
-`;
-
-export const InputEllipsisStyled = styled.div`
-    ${fonts.text}
-    width: 100%;
-`;
-
 export const CopyContainerStyled = styled.div`
     height: 100%;
     justify-content: center;

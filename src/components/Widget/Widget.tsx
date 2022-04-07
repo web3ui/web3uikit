@@ -8,7 +8,7 @@ const { DivStyled } = styles;
 
 const Widget: React.FC<IWidgetProps> = ({ children, info, title }) => {
     return (
-        <DivStyled data-testid="widget-content">
+        <DivStyled data-testid="widget-container">
             <div>
                 <Typography
                     data-testid="widget-title"

@@ -179,6 +179,9 @@ export const DivStyledBlockie = styled.div`
     height: 24px;
     display: flex;
     margin-right: 12px;
+    & .blockie {
+        border-radius: 50%;
+    }
 `;
 
 export const DivStyledEllipsis = styled.div`

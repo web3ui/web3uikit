@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, MutableRefObject } from 'react';
-import { Blockie } from '../Blockie';
+import Blockies from 'react-blockies';
 import {
     DivStyledBlockie,
     DivWrapperStyled,
@@ -86,8 +86,12 @@ const WalletInput: React.FC<WalletInputProps> = ({
             style={{ ...style, width }}
             size={size}
         >
-            <DivStyledBlockie>
-                <Blockie seed={currentValue} />
+            <DivStyledBlockie data-testid="test-blockie">
+                <Blockies
+                    size={6}
+                    seed={currentValue?.toLowerCase()}
+                    className="blockie"
+                />
             </DivStyledBlockie>
 
             <DivStyledEllipsis

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Input from '../../components/Input/Input';
+import WalletInputComponent from '../../components/Input/WalletInput';
 import { iconTypes } from '../Icon/collection';
 import { validateRegExp } from '../../utils/const';
 
@@ -19,6 +20,9 @@ const FilledTemplate: ComponentStory<typeof Input> = (args) => (
     <div className="input_filled">
         <Input {...args} />
     </div>
+);
+const WalletTemplate: ComponentStory<typeof Input> = (args) => (
+    <WalletInputComponent {...args} />
 );
 
 export const DefaultInput = Template.bind({});
@@ -75,6 +79,12 @@ PasswordInput.args = {
     type: 'password',
     label: 'enter a password',
     name: 'Test Password Input',
+};
+
+export const WalletInput = WalletTemplate.bind({});
+WalletInput.args = {
+    label: 'Address',
+    name: 'Test address',
 };
 
 export const PrefixCopyableHidableActive = Template.bind({});

@@ -115,6 +115,84 @@ export interface LabelProps {
     labelBgColor?: string;
 }
 
+export interface WalletInputProps {
+    /**
+     * Will automatically focus input on render
+     */
+    autoFocus?: boolean;
+
+    /**
+     * it is best to set a unique ID for each input to verify change events
+     */
+    id?: string;
+
+    /**
+     * please set a label, it really helps with accessibility
+     */
+    label?: string;
+
+    /**
+     * standard onChange that returns the entire event, as normal you can access event.target
+     */
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+    /**
+     * a short piece of text to fill the input before the user interacts
+     */
+    placeholder?: string;
+
+    /**
+     * you can pass a default value so the input is pre-filled
+     */
+    value?: string;
+
+    /**
+     * please give a descriptive name to the input, it help with accessibility
+     */
+    name?: string;
+
+    /**
+     * the input can use state to react to user interaction
+     */
+    state?: 'initial' | 'error' | 'confirmed' | 'disabled';
+
+    /**
+     * css style prop
+     */
+    style?: React.CSSProperties;
+
+    /**
+     * input width
+     */
+    width?: string;
+
+    /**
+     * error message
+     */
+    errorMessage?: string;
+
+    /**
+     * disables any interaction
+     */
+    disabled?: boolean;
+
+    /**
+     * You can validate your address inputs
+     * required, characterMinLength, characterMaxLength, numberMin, numberMax, regExp , regExpInvalidMessage
+     */
+    validation?: ValidateInput;
+
+    /**
+     * size of input
+     */
+    size?: 'regular' | 'large';
+
+    /**
+     * color of label background
+     */
+    labelBgColor?: string;
+}
+
 export type ValidateInput = {
     /**
      * is the input required

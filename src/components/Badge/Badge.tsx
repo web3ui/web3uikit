@@ -1,7 +1,9 @@
 import React from 'react';
 import { BadgeProps } from './types';
-import { DivStyled } from './Badge.styles';
+import styles from './Badge.styles';
 import { Typography } from '../Typography';
+
+const { DivStyled } = styles;
 
 const Badge: React.FC<BadgeProps> = ({
     state = 'normal',

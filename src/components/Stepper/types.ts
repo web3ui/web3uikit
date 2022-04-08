@@ -2,12 +2,12 @@ export type Step = {
     /**
      * pass any content to the step
      */
-    content: React.ReactNode;
+    content: React.ReactNode | string;
 
     /**
      * give the step a title
      */
-    title?: string;
+    title?: React.ReactNode | string;
 };
 
 export interface StepperProps {

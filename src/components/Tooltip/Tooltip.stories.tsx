@@ -24,17 +24,11 @@ const Template: ComponentStory<typeof Tooltip> = (args) => (
     </div>
 );
 
-const TooltipText = () => {
-    return (
-        <span
-            style={{
-                width: '100px',
-            }}
-        >
-            This is tooltip text
-        </span>
-    );
-};
+const TooltipText = () => (
+    <span>
+        This is tooltip text
+    </span>
+);
 
 export const Top = Template.bind({});
 Top.args = {

@@ -18,9 +18,9 @@ export interface TodoProps {
     fullWidth?: boolean;
 
     /**
-     * an optional function which will be called before adding items to the list
+     * when the user changes the array by adding or removing items
      */
-    onAdd?: () => boolean;
+    onChange?: (updateList: string[]) => void;
 
     /**
      * an optional regular expression to match the input text
@@ -30,10 +30,5 @@ export interface TodoProps {
     /**
      * a list which will be rendered initially
      */
-    todos?: Array<TodoState>;
-}
-
-export interface TodoState {
-    id: number;
-    text: string;
+    todos?: string[];
 }

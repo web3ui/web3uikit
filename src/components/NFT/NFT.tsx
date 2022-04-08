@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     useMoralis,
     useMoralisWeb3Api,
     useMoralisWeb3ApiCall,
 } from 'react-moralis';
 import styled from 'styled-components';
+import colors from '../../styles/colors';
+import { Button } from '../Button';
 import { Illustration } from '../Illustrations';
+import { Information } from '../Info';
 import { Loading } from '../Loading';
+import { Modal } from '../Modal';
 import { INFTProps } from './types';
 
 const baseUrl = 'https://ipfs.io/ipfs/';
@@ -19,6 +23,7 @@ const NFT: React.FC<INFTProps> = ({
     fetchMetadata,
     metadata,
 }) => {
+    const [showTraits, setShowModal] = useState(false);
     const { isInitialized } = useMoralis();
     const Web3API = useMoralisWeb3Api();
     const { data, error, isLoading } = useMoralisWeb3ApiCall(
@@ -63,9 +68,11 @@ const NFT: React.FC<INFTProps> = ({
     }
 
     const DivStyled = styled.div`
+        background-color: white;
+        border-radius: 16px;
         display: grid;
+        overflow: hidden;
         place-items: center;
-        padding: 16px;
         width: 256px;
         #information {
             padding: 8px 16px 16px;
@@ -75,15 +82,16 @@ const NFT: React.FC<INFTProps> = ({
     const image = (animation?: string, image?: string): React.ReactElement => {
         let url: string = '';
 
-        fetch(
-            'https://ipfs.io/ipfs/QmYkFZw1EYP4zF5Ri57dezAtws3KeQfm8Jcxy2nyJ66Jz3',
-        )
-            .then(console.log)
-            .catch(console.log);
-
         if (animation?.includes('.mp4') || image?.includes('.mp4')) {
             return (
-                <video height={'210px'} controls autoPlay loop>
+                <video
+                    height={'210px'}
+                    width={'100%'}
+                    controls
+                    autoPlay
+                    loop
+                    muted
+                >
                     <source src={animation || image} type="video/mp4" />
                 </video>
             );
@@ -97,7 +105,7 @@ const NFT: React.FC<INFTProps> = ({
                 url = `${baseUrl}${animation.split('/ipfs/')[1]}`;
             }
             console.log('animation', url);
-            return <img src={url} height="210px" />;
+            return <img src={url} height="210px" width={'256px'} />;
         }
         if (image) {
             url = image;
@@ -108,59 +116,80 @@ const NFT: React.FC<INFTProps> = ({
                 url = `${baseUrl}${image.split('/ipfs/')[1]}`;
             }
             console.log(url);
-            return <img src={url} height="210px" />;
+            return <img src={url} height="210px" width={'256px'} />;
         }
         return <Illustration logo="lazyNft" height="210px" width={'100%'} />;
     };
 
-    return (
-        <DivStyled>
-            <div>
-                {image(
-                    metadata?.animation_url,
-                    metadata?.image || metadata?.image_url,
-                )}
-            </div>
-            <div id="information">
-                <span>{metadata?.description}</span>
-                <span>{name}</span>
+    const TraitModal = () => {
+        return (
+            <Modal
+                isVisible
+                hasFooter={false}
+                headerHasBottomBorder={false}
+                onCloseButtonPressed={() => setShowModal(false)}
+            >
                 <div>
                     {metadata?.attributes && (
-                        <ul>
+                        <div>
                             {metadata.attributes.map((attribute, index) => {
                                 const entries = Object.entries(attribute);
                                 return (
-                                    <li key={`attr-${index}`}>
-                                        {`${entries[0][1]}: ${entries[1][1]}`}
-                                    </li>
+                                    <>
+                                        <Information
+                                            topic={entries[0][1]}
+                                            information={entries[1][1]}
+                                            key={`attr-${index}`}
+                                        />
+                                    </>
                                 );
                             })}
-                            ;
-                        </ul>
+                        </div>
                     )}
                 </div>
+                <div>
+                    {metadata?.traits && (
+                        <div>
+                            {metadata.traits.map((traits, index) => {
+                                const entries = Object.entries(traits);
+                                return (
+                                    <div>
+                                        <Information
+                                            topic={entries[0][1]}
+                                            information={entries[1][1]}
+                                            key={`attr-${index}`}
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    )}
+                </div>
+            </Modal>
+        );
+    };
+
+    return (
+        <DivStyled id="nft">
+            {image(
+                metadata?.animation_url,
+                metadata?.image || metadata?.image_url,
+            )}
+            <div id="information">
+                <span>{name}</span>
+                {(metadata?.traits || metadata?.attributes) && (
+                    <Button
+                        icon="info"
+                        isTransparent
+                        iconColor={colors.grey}
+                        iconLayout="icon-only"
+                        onClick={() => setShowModal(true)}
+                    />
+                )}
+                {showTraits && <TraitModal />}
             </div>
         </DivStyled>
     );
 };
-/**
- * <span>{metadata?.description}</span>
-            <span>{name}</span>
-            <div>
-                {metadata?.attributes && (
-                    <ul>
-                        {metadata.attributes.map((attribute, index) => {
-                            const entries = Object.entries(attribute);
-                            return (
-                                <li key={`attr-${index}`}>
-                                    {`${entries[0][1]}: ${entries[1][1]}`}
-                                </li>
-                            );
-                        })}
-                        ;
-                    </ul>
-                )}
-            </div>
- */
 
 export default NFT;

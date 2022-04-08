@@ -35,7 +35,8 @@ export interface INFTProps {
 export type TNFTMetadata = {
     animation_url?: string;
     attributes?: { [key: string]: string }[];
+    description?: string;
     image?: string;
     image_url?: string;
-    description?: string;
+    traits?: { [key: string]: string }[];
 };

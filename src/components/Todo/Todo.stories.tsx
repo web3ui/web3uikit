@@ -25,6 +25,7 @@ WithInitialTodos.args = {
         { id: 2, text: '192.168. 1.1' },
         { id: 3, text: '192.168. 1.1' },
     ] as TodoState[],
+    getTodos: (x: Array<TodoState>) => console.log(x),
 };
 
 export const FullWidthTodos = Template.bind({});

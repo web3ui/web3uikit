@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Tag } from '../Tag';
 import { DivStyled, DivStyledContent, SectionStyled } from './Todo.styles';
 import { TodoProps, TodoState } from './types';
 
-const Todo: React.FC<TodoProps> = ({
+const Todo: React.FC<TodoProps> = memo(({
     buttonText = 'Add',
     fullWidth = false,
+    getTodos,
     label,
     onAdd,
     pattern,
@@ -20,7 +21,16 @@ const Todo: React.FC<TodoProps> = ({
         if (Array.isArray(todos) && todos?.length > 0) {
             setLists([...todos]);
         }
+        if (getTodos) {
+            getTodos(lists);
+        }
     }, [todos]);
+
+    useEffect(() => {
+        if (getTodos) {
+          return getTodos(lists);
+        }
+    }, [lists]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
@@ -79,6 +89,6 @@ const Todo: React.FC<TodoProps> = ({
             </DivStyledContent>
         </SectionStyled>
     );
-};
+});
 
 export default Todo;

@@ -20,6 +20,11 @@ export interface TodoProps {
     /**
      * an optional function which will be called before adding items to the list
      */
+    getTodos?: (list: Array<TodoState>) => void;
+
+    /**
+     * an optional function which will be called before adding items to the list
+     */
     onAdd?: () => boolean;
 
     /**

@@ -23,6 +23,6 @@ const Template: ComponentStory<typeof NFTCollection> = (
 
 export const Default = Template.bind({});
 Default.args = {
-    chain: 'eth',
-    address: '0x951Eb8643E48A3B6d6d6AA7706B643AEE9B42f52',
+    chain: 'polygon',
+    address: '0xfAD8c4D1b26f280Ca7a3F3f05e0fBa1954E69c93',
 };

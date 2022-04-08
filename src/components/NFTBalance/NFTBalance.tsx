@@ -1,4 +1,4 @@
-import { Chain, getEllipsisTxt } from '../../web3utils';
+import { getEllipsisTxt } from '../../web3utils';
 import React, { useState } from 'react';
 import {
     useMoralis,
@@ -6,17 +6,14 @@ import {
     useMoralisWeb3ApiCall,
 } from 'react-moralis';
 import { Loading } from '../Loading';
-import NFT from '../NFT/NFT';
-import styled from 'styled-components';
+import { NFT } from '../NFT';
+import styles from './NFTBalance.styles';
 import { Button } from '../Button';
 import { Typography } from '../Typography';
+import { INFTBalance } from './types';
+const { DivStyled, DivFlexStyled } = styles;
 
-export interface INFTBalance {
-    chain: Chain;
-    address: string;
-}
-
-export const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
+const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
     const { isInitialized } = useMoralis();
     const [limit, setLimit] = useState(5);
     const Web3Api = useMoralisWeb3Api();
@@ -41,7 +38,7 @@ export const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
     if (error) {
         return (
             <div data-testid="nft-balance-error">
-                Could'nt get Nft Balance for {address}
+                Couldn't get Nft Balance for {address}
                 {error.message}
             </div>
         );
@@ -62,14 +59,8 @@ export const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
         return <div data-testid="nft-balance-no-result">No result</div>;
     }
 
-    const DivStyled = styled.div`
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-    `;
-
     return (
-        <div style={{ display: 'grid', gap: '64px' }}>
+        <DivStyled gap={64}>
             <Typography variant="h1">
                 {data.result.length > 0
                     ? `${getEllipsisTxt(address)} has ${
@@ -77,8 +68,8 @@ export const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
                       } NFT${data.result.length === 1 ? null : 's'}`
                     : `${getEllipsisTxt(address)} has no NFT's`}
             </Typography>
-            <div style={{ display: 'grid', gap: '50px' }}>
-                <DivStyled>
+            <DivStyled gap={64}>
+                <DivFlexStyled>
                     {data.result
                         .slice(0, limit)
                         .map(
@@ -105,7 +96,7 @@ export const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
                                 );
                             },
                         )}
-                </DivStyled>
+                </DivFlexStyled>
                 {data.result.length > limit && (
                     <Button
                         text="Show more"
@@ -116,7 +107,9 @@ export const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
                         size="large"
                     />
                 )}
-            </div>
-        </div>
+            </DivStyled>
+        </DivStyled>
     );
 };
+
+export default NFTBalance;

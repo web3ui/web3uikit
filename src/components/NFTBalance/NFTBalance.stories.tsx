@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { NFTBalance } from './NFTBalance';
+import NFTBalance from './NFTBalance';
 import { moralisContext } from '../../decorators';
 
 export default {

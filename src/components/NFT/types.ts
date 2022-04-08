@@ -24,7 +24,7 @@ export interface INFTProps {
     /**
      * Set name of NFT
      */
-    name: string;
+    name?: string;
 
     /**
      * set metadata of NFT
@@ -38,5 +38,6 @@ export type TNFTMetadata = {
     description?: string;
     image?: string;
     image_url?: string;
+    name?: string;
     traits?: { [key: string]: string }[];
 };

@@ -4,18 +4,15 @@ import {
     useMoralisWeb3Api,
     useMoralisWeb3ApiCall,
 } from 'react-moralis';
-import styled from 'styled-components';
+import styles from './NFT.styles';
 import colors from '../../styles/colors';
 import { Button } from '../Button';
-import { Illustration } from '../Illustrations';
-import { Information } from '../Info';
 import { Loading } from '../Loading';
-import { Modal } from '../Modal';
-import { Typography } from '../Typography';
+import NFTModal from './NFT.modal';
 import { INFTProps } from './types';
-
-const baseUrl = 'https://ipfs.io/ipfs/';
-
+import NFTUtils from './NFT.utils';
+const { DivStyled } = styles;
+const { image } = NFTUtils;
 const NFT: React.FC<INFTProps> = ({
     address,
     chain,
@@ -24,7 +21,6 @@ const NFT: React.FC<INFTProps> = ({
     fetchMetadata,
     metadata,
 }) => {
-    const [showTraits, setShowModal] = useState(false);
     const { isInitialized } = useMoralis();
     const Web3API = useMoralisWeb3Api();
     const { data, error, isLoading } = useMoralisWeb3ApiCall(
@@ -38,6 +34,7 @@ const NFT: React.FC<INFTProps> = ({
             autoFetch: isInitialized && fetchMetadata,
         },
     );
+    const [showTraits, setShowModal] = useState(false);
 
     if (!isInitialized) {
         return (
@@ -68,105 +65,6 @@ const NFT: React.FC<INFTProps> = ({
         return <div>{JSON.stringify(data, null, 5)}</div>;
     }
 
-    const DivStyled = styled.div`
-        background-color: white;
-        border-radius: 16px;
-        display: grid;
-        overflow: hidden;
-        place-items: center;
-        width: 256px;
-        #information {
-            padding: 8px 16px 16px;
-        }
-    `;
-
-    const image = (animation?: string, image?: string): React.ReactElement => {
-        let url: string = '';
-
-        if (animation?.includes('.mp4') || image?.includes('.mp4')) {
-            return (
-                <video
-                    height={'210px'}
-                    width={'100%'}
-                    controls
-                    autoPlay
-                    loop
-                    muted
-                >
-                    <source src={animation || image} type="video/mp4" />
-                </video>
-            );
-        }
-        if (animation) {
-            url = animation;
-            if (animation.startsWith('ipfs://')) {
-                url = `${baseUrl}${animation.split('//')[1].split('/')[0]}`;
-            }
-            if (animation.includes('/ipfs/')) {
-                url = `${baseUrl}${animation.split('/ipfs/')[1]}`;
-            }
-            return <img src={url} height="210px" width={'256px'} />;
-        }
-        if (image) {
-            url = image;
-            if (image.startsWith('ipfs://')) {
-                url = `${baseUrl}${image.split('//')[1].split('/')[0]}`;
-            }
-            if (image.includes('/ipfs/')) {
-                url = `${baseUrl}${image.split('/ipfs/')[1]}`;
-            }
-            console.log(url);
-            return <img src={url} height="210px" width={'256px'} />;
-        }
-        return <Illustration logo="lazyNft" height="210px" width={'100%'} />;
-    };
-
-    const traitModal = (attributes?: { [key: string]: string }[]) => {
-        return (
-            <Modal
-                isVisible
-                hasFooter={false}
-                headerHasBottomBorder={false}
-                title={'Information'}
-                onCloseButtonPressed={() => setShowModal(false)}
-            >
-                <div>
-                    <Typography variant="h3">Traits</Typography>
-                    <div
-                        style={{
-                            display: 'flex',
-                            gap: '15px',
-                            flexWrap: 'wrap',
-                            padding: '64px',
-                        }}
-                    >
-                        {attributes && attributes.length > 0 ? (
-                            attributes.map((attribute, index) => {
-                                const entries = Object.entries(attribute);
-                                return (
-                                    <div
-                                        style={{
-                                            width: '240px',
-                                            maxWidth: '300px',
-                                        }}
-                                    >
-                                        <Information
-                                            topic={entries[0][1]}
-                                            information={entries[1][1]}
-                                            key={`attr-${index}`}
-                                        />
-                                    </div>
-                                );
-                            })
-                        ) : (
-                            <Typography>No attributes found</Typography>
-                        )}
-                    </div>
-                </div>
-            </Modal>
-        );
-    };
-
     return (
         <DivStyled id="nft">
             {image(
@@ -174,7 +72,7 @@ const NFT: React.FC<INFTProps> = ({
                 metadata?.image || metadata?.image_url,
             )}
             <div id="information">
-                <span>{name}</span>
+                <span>{metadata?.name || name}</span>
                 <Button
                     icon="info"
                     isTransparent
@@ -182,8 +80,12 @@ const NFT: React.FC<INFTProps> = ({
                     iconLayout="icon-only"
                     onClick={() => setShowModal(true)}
                 />
-                {showTraits &&
-                    traitModal(metadata?.traits || metadata?.attributes)}
+                {showTraits && (
+                    <NFTModal
+                        attributes={metadata?.traits || metadata?.attributes}
+                        setShowModal={setShowModal}
+                    />
+                )}
             </div>
         </DivStyled>
     );

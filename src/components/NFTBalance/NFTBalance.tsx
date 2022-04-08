@@ -77,7 +77,7 @@ export const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
                       } NFT${data.result.length === 1 ? null : 's'}`
                     : `${getEllipsisTxt(address)} has no NFT's`}
             </Typography>
-            <div style={{ display: 'grid', placeContent: 'center' }}>
+            <div style={{ display: 'grid', gap: '50px' }}>
                 <DivStyled>
                     {data.result
                         .slice(0, limit)
@@ -111,7 +111,7 @@ export const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
                         text="Show more"
                         icon="chevronDown"
                         iconLayout="trailing"
-                        theme="secondary"
+                        theme="translucent"
                         onClick={() => setLimit(limit + 5)}
                         size="large"
                     />

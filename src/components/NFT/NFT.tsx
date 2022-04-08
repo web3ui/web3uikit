@@ -11,6 +11,7 @@ import { Illustration } from '../Illustrations';
 import { Information } from '../Info';
 import { Loading } from '../Loading';
 import { Modal } from '../Modal';
+import { Typography } from '../Typography';
 import { INFTProps } from './types';
 
 const baseUrl = 'https://ipfs.io/ipfs/';
@@ -104,7 +105,6 @@ const NFT: React.FC<INFTProps> = ({
             if (animation.includes('/ipfs/')) {
                 url = `${baseUrl}${animation.split('/ipfs/')[1]}`;
             }
-            console.log('animation', url);
             return <img src={url} height="210px" width={'256px'} />;
         }
         if (image) {
@@ -121,39 +121,35 @@ const NFT: React.FC<INFTProps> = ({
         return <Illustration logo="lazyNft" height="210px" width={'100%'} />;
     };
 
-    const TraitModal = () => {
+    const traitModal = (attributes?: { [key: string]: string }[]) => {
         return (
             <Modal
                 isVisible
                 hasFooter={false}
                 headerHasBottomBorder={false}
+                title={'Information'}
                 onCloseButtonPressed={() => setShowModal(false)}
             >
                 <div>
-                    {metadata?.attributes && (
-                        <div>
-                            {metadata.attributes.map((attribute, index) => {
+                    <Typography variant="h3">Traits</Typography>
+                    <div
+                        style={{
+                            display: 'flex',
+                            gap: '15px',
+                            flexWrap: 'wrap',
+                            padding: '64px',
+                        }}
+                    >
+                        {attributes && attributes.length > 0 ? (
+                            attributes.map((attribute, index) => {
                                 const entries = Object.entries(attribute);
                                 return (
-                                    <>
-                                        <Information
-                                            topic={entries[0][1]}
-                                            information={entries[1][1]}
-                                            key={`attr-${index}`}
-                                        />
-                                    </>
-                                );
-                            })}
-                        </div>
-                    )}
-                </div>
-                <div>
-                    {metadata?.traits && (
-                        <div>
-                            {metadata.traits.map((traits, index) => {
-                                const entries = Object.entries(traits);
-                                return (
-                                    <div>
+                                    <div
+                                        style={{
+                                            width: '240px',
+                                            maxWidth: '300px',
+                                        }}
+                                    >
                                         <Information
                                             topic={entries[0][1]}
                                             information={entries[1][1]}
@@ -161,9 +157,11 @@ const NFT: React.FC<INFTProps> = ({
                                         />
                                     </div>
                                 );
-                            })}
-                        </div>
-                    )}
+                            })
+                        ) : (
+                            <Typography>No attributes found</Typography>
+                        )}
+                    </div>
                 </div>
             </Modal>
         );
@@ -177,16 +175,15 @@ const NFT: React.FC<INFTProps> = ({
             )}
             <div id="information">
                 <span>{name}</span>
-                {(metadata?.traits || metadata?.attributes) && (
-                    <Button
-                        icon="info"
-                        isTransparent
-                        iconColor={colors.grey}
-                        iconLayout="icon-only"
-                        onClick={() => setShowModal(true)}
-                    />
-                )}
-                {showTraits && <TraitModal />}
+                <Button
+                    icon="info"
+                    isTransparent
+                    iconColor={colors.grey}
+                    iconLayout="icon-only"
+                    onClick={() => setShowModal(true)}
+                />
+                {showTraits &&
+                    traitModal(metadata?.traits || metadata?.attributes)}
             </div>
         </DivStyled>
     );

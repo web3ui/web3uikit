@@ -5,34 +5,34 @@ import {
     useMoralisWeb3Api,
     useMoralisWeb3ApiCall,
 } from 'react-moralis';
-import { Loading } from '../Loading';
 import { NFT } from '../NFT';
 import styles from './NFTBalance.styles';
 import { Button } from '../Button';
 import { Typography } from '../Typography';
 import { INFTBalance } from './types';
+import { Skeleton } from '../Skeleton';
 const { DivStyled, DivFlexStyled } = styles;
 
 const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
-    const { isInitialized } = useMoralis();
+    const { isInitialized, isInitializing } = useMoralis();
     const [limit, setLimit] = useState(5);
     const Web3Api = useMoralisWeb3Api();
 
-    const { data, error, isLoading } = useMoralisWeb3ApiCall(
+    const { data, error, isLoading, isFetching } = useMoralisWeb3ApiCall(
         Web3Api.account.getNFTs,
         {
             address,
             chain,
         },
-        { autoFetch: true },
+        { autoFetch: /^0x[a-fA-F0-9]{40}$/.test(address) },
     );
 
-    if (!isInitialized) {
-        return (
-            <div data-testid="no-moralis-instance">
-                Moralis is not initialized
-            </div>
-        );
+    if (!isInitialized && !isInitializing) {
+        return <div data-testid="no-moralis-instance" />;
+    }
+
+    if (!/^0x[a-fA-F0-9]{40}$/.test(address)) {
+        return <div data-testid="no-valid-address">Not a valid address</div>;
     }
 
     if (error) {
@@ -43,11 +43,12 @@ const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
             </div>
         );
     }
-    if (isLoading) {
+    if (isLoading || isFetching) {
         return (
-            <div data-testid="nft-balance-loading">
-                <Loading />
-            </div>
+            <DivStyled gap={8} data-testid="nft-balance-loading">
+                <Skeleton width="80%" height="60px" theme="text" />
+                <Skeleton width="40%" height="30px" theme="subtitle" />
+            </DivStyled>
         );
     }
 
@@ -61,13 +62,16 @@ const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
 
     return (
         <DivStyled gap={64}>
-            <Typography variant="h1">
-                {data.result.length > 0
-                    ? `${getEllipsisTxt(address)} has ${
-                          data.result.length
-                      } NFT${data.result.length === 1 ? null : 's'}`
-                    : `${getEllipsisTxt(address)} has no NFT's`}
-            </Typography>
+            <DivStyled gap={8}>
+                <Typography variant="h1">{getEllipsisTxt(address)}</Typography>
+                <Typography>
+                    {data.result.length > 0
+                        ? `Found ${data.result.length} NFT${
+                              data.result.length === 1 ? null : 's'
+                          }`
+                        : 'No NFTs'}
+                </Typography>
+            </DivStyled>
             <DivStyled gap={64}>
                 <DivFlexStyled>
                     {data.result
@@ -89,6 +93,7 @@ const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
                                         chain={chain}
                                         name={name}
                                         address={tokenAddress}
+                                        fetchMetadata={false}
                                         metadata={JSON.parse(
                                             metadata as string,
                                         )}

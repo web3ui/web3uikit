@@ -32,12 +32,17 @@ export interface INFTProps {
     metadata?: TNFTMetadata | undefined;
 }
 
+/**
+ * NFT-Metadata-Standard: https://docs.opensea.io/docs/metadata-standards
+ */
 export type TNFTMetadata = {
     animation_url?: string;
     attributes?: { [key: string]: string }[];
+    background_color?: string;
     description?: string;
     image?: string;
     image_url?: string;
     name?: string;
     traits?: { [key: string]: string }[];
+    youtube_url?: string;
 };

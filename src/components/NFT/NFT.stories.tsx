@@ -9,11 +9,16 @@ export default {
     decorators: [moralisContext],
 } as ComponentMeta<typeof NFT>;
 
-const Template: ComponentStory<typeof NFT> = (args) => <NFT {...args} />;
+const Template: ComponentStory<typeof NFT> = (args) => (
+    <div style={{ backgroundColor: '#f2f6ff', padding: '64px' }}>
+        <NFT {...args} />
+    </div>
+);
 
-export const Default = Template.bind({});
-Default.args = {
-    chain: 'polygon',
-    address: '0x2953399124f0cbb46d2cbacd8a89cf0599974963',
+export const CryptoPunk01 = Template.bind({});
+CryptoPunk01.args = {
+    chain: 'eth',
+    address: '0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB',
     tokenId: 1,
+    fetchMetadata: true,
 };

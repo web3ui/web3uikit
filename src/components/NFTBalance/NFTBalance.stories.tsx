@@ -10,7 +10,9 @@ export default {
 } as ComponentMeta<typeof NFTBalance>;
 
 const Template: ComponentStory<typeof NFTBalance> = (args) => (
-    <NFTBalance {...args} />
+    <div style={{ backgroundColor: '#f2f6ff', padding: '64px' }}>
+        <NFTBalance {...args} />
+    </div>
 );
 
 export const Default = Template.bind({});

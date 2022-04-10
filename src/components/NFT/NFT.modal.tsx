@@ -2,18 +2,21 @@ import React from 'react';
 import { Information } from '../Info';
 import { Modal } from '../Modal';
 import { Typography } from '../Typography';
-
+import styles from './NFT.styles';
+const { DivModalStyled } = styles;
 interface INFTModal {
     /**
      * attributes / traits metadata
      */
-    attributes?: { [key: string]: string }[];
+    attributes?: ListOfObject | string[];
 
     /**
      * toggle modal visibility
      */
     setShowModal: (e: boolean) => void;
 }
+
+type ListOfObject = { [key: string]: string }[];
 
 const NFTModal: React.FC<INFTModal> = ({ attributes, setShowModal }) => {
     return (
@@ -26,14 +29,7 @@ const NFTModal: React.FC<INFTModal> = ({ attributes, setShowModal }) => {
         >
             <div>
                 <Typography variant="h3">Traits</Typography>
-                <div
-                    style={{
-                        display: 'flex',
-                        gap: '15px',
-                        flexWrap: 'wrap',
-                        padding: '64px',
-                    }}
-                >
+                <DivModalStyled>
                     {attributes && attributes.length > 0 ? (
                         attributes.map((attribute, index) => {
                             const entries = Object.entries(attribute);
@@ -45,8 +41,16 @@ const NFTModal: React.FC<INFTModal> = ({ attributes, setShowModal }) => {
                                     }}
                                 >
                                     <Information
-                                        topic={entries[0][1]}
-                                        information={entries[1][1]}
+                                        topic={
+                                            typeof attribute !== 'string'
+                                                ? entries[0][1]
+                                                : `#${index}`
+                                        }
+                                        information={
+                                            typeof attribute !== 'string'
+                                                ? entries[0][1]
+                                                : String(attribute)
+                                        }
                                         key={`attr-${index}`}
                                     />
                                 </div>
@@ -55,7 +59,7 @@ const NFTModal: React.FC<INFTModal> = ({ attributes, setShowModal }) => {
                     ) : (
                         <Typography>No attributes found</Typography>
                     )}
-                </div>
+                </DivModalStyled>
             </div>
         </Modal>
     );

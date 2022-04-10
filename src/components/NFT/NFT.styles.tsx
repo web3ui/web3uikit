@@ -12,6 +12,14 @@ const DivStyled = styled.div`
     }
 `;
 
+const DivModalStyled = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 16px;
+`;
+
 export default {
     DivStyled,
+    DivModalStyled,
 };

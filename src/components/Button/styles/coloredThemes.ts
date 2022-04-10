@@ -26,6 +26,10 @@ export const coloredRed = css`
     border-color: ${color.red};
     color: ${color.red};
 
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.redDark};
+    }
+
     svg {
         fill: ${color.red};
     }
@@ -36,6 +40,10 @@ export const coloredGreen = css`
     background-color: ${color.green};
     border-color: ${color.green};
     color: ${color.green};
+
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.greenDark};
+    }
 
     svg {
         fill: ${color.green};
@@ -48,6 +56,10 @@ export const coloredBlue = css`
     border-color: ${color.blue};
     color: ${color.blue};
 
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.blueDark};
+    }
+
     svg {
         fill: ${color.blue};
     }
@@ -58,6 +70,10 @@ export const coloredYellow = css`
     background-color: ${color.yellow};
     border-color: ${color.yellow};
     color: ${color.yellow};
+
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.yellowDark};
+    }
 
     svg {
         fill: ${color.yellow};

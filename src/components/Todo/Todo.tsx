@@ -18,7 +18,6 @@ const Todo: React.FC<TodoProps> = ({
     const [inputValue, setInputValue] = useState<string>('');
     const [lists, setLists] = useState<string[]>(todos);
 
-    useEffect(() => onChange && onChange(lists), [lists]);
     useEffect(() => setLists(todos), [todos]);
 
     const removeTodo = (id: number) => {
@@ -28,6 +27,7 @@ const Todo: React.FC<TodoProps> = ({
 
     const addTodo = () => {
         setLists((prevTodo) => [...prevTodo, inputValue]);
+        if (onChange) onChange(lists);
         setInputValue('');
         const input: HTMLInputElement | null = document.querySelector(
             '[data-testid="test-input"]',

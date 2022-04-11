@@ -44,6 +44,7 @@ const Input: React.FC<InputProps> = ({
     useEffect(() => setIsInputHidden(type === 'password'), [inputHidden]);
     useEffect(() => setCurrentState(state), [state]);
     useEffect(() => setMainType(type), [type]);
+    useEffect(() => setCurrentValue(currentValue), [value]);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);

@@ -2,9 +2,14 @@ import { TIconType } from '../Icon/collection';
 
 export interface CryptoCardProps {
     /**
-     * A function that will be called if the button is clicked
+     * The background color of the crypto card
      */
-    onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+    bgColor: string;
+
+    /**
+     * The text shown in the button
+     */
+    btnText?: string;
 
     /**
      * The name of the blockchain
@@ -20,20 +25,16 @@ export interface CryptoCardProps {
     /**
      * The type of the chain / a subtitle below the chain name
      */
-    chainType: string;
 
+    chainType: string;
     /**
-     * The background color of the crypto card
+     * A function that will be called if the button is clicked
      */
-    bgColor: string;
+
+    onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 
     /**
      * The type of settings icon
      */
     settingsIcon?: TIconType;
-
-    /**
-     * The text shown in the button
-     */
-    btnText?: string;
 }

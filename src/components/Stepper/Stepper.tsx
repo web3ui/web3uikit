@@ -4,7 +4,6 @@ import { Icon } from '../Icon';
 import { Loading } from '../Loading';
 import {
     DivStyled,
-    DivStyledContent,
     DivStyledHelper,
     FooterStyled,
     ListItemStyled,

@@ -19,6 +19,7 @@ const Todo: React.FC<TodoProps> = ({
     const [lists, setLists] = useState<string[]>(todos);
 
     useEffect(() => onChange && onChange(lists), [lists]);
+    useEffect(() => setLists(todos), [todos]);
 
     const removeTodo = (id: number) => {
         const updatedList = lists.filter((item) => item !== lists[id]);

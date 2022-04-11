@@ -35,10 +35,17 @@ const NFT: React.FC<INFTProps> = ({
             token_id: String(tokenId),
         },
         {
-            autoFetch: isInitialized && fetchMetadata,
+            autoFetch:
+                isInitialized &&
+                fetchMetadata &&
+                /^0x[a-fA-F0-9]{40}$/.test(address),
         },
     );
     const [showTraits, setShowModal] = useState(false);
+
+    if (!/^0x[a-fA-F0-9]{40}$/.test(address)) {
+        return <div data-testid="no-valid-address">No valid address</div>;
+    }
 
     if (!fetchMetadata) {
         return <FetchedNFT metadata={metadata} name={name} />;
@@ -46,13 +53,6 @@ const NFT: React.FC<INFTProps> = ({
 
     if (!isInitialized && !isInitializing) {
         return <div data-testid="no-moralis-instance" />;
-    }
-
-    if (error) {
-        <div data-testid="nft-metadata-error">
-            Could not fetch metadata
-            {error.message}
-        </div>;
     }
 
     if (!data) {
@@ -74,18 +74,23 @@ const NFT: React.FC<INFTProps> = ({
     }
 
     if (!data?.metadata) {
-        return (
-            <DivStyled id="nft">
-                <Skeleton theme="text" width="100%" height="200px" />
-                <div id="information">
-                    <Tooltip
-                        children={<Icon svg="info" fill={colors.yellowDark} />}
-                        content={'There is no metadata'}
-                        position={'bottom'}
-                    />
-                </div>
-            </DivStyled>
-        );
+        if (!error) {
+            return (
+                <DivStyled id="nft">
+                    <Skeleton theme="text" width="100%" height="200px" />
+                    <div id="information">
+                        <Tooltip
+                            children={
+                                <Icon svg="info" fill={colors.yellowDark} />
+                            }
+                            content={'There is no metadata'}
+                            position={'top'}
+                        />
+                    </div>
+                </DivStyled>
+            );
+        }
+        return <div data-testid="nft-metadata-error">{error.message}</div>;
     }
 
     return (

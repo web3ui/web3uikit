@@ -14,7 +14,7 @@ export interface INFTProps {
     /**
      * Token Id of NFT;
      */
-    tokenId: string | number;
+    tokenId: string;
 
     /**
      * set if metadata should be fetched

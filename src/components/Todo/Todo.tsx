@@ -23,6 +23,7 @@ const Todo: React.FC<TodoProps> = ({
     const removeTodo = (id: number) => {
         const updatedList = lists.filter((item) => item !== lists[id]);
         setLists([...updatedList]);
+        if (onChange) onChange(lists);
     };
 
     const addTodo = () => {

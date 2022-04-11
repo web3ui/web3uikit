@@ -44,18 +44,6 @@ describe('Demo', () => {
         expect(title?.textContent).toBe(testStepData[0].title);
     });
 
-    it('renders the correct content', () => {
-        const content: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${stepperTestContent}"]`,
-        );
-        expect(content).not.toBeNull();
-
-        const jsxToHtml = ReactDOMServer.renderToStaticMarkup(
-            testStepData[0].content,
-        );
-        expect(content?.innerHTML).toBe(jsxToHtml);
-    });
-
     it('next & prev nav cycles the content', () => {
         const buttons = container.querySelectorAll(
             `[data-testid="${stepperTestNav}"] > button`,
@@ -146,7 +134,7 @@ describe('PreLoadStep0', () => {
 
     it('renders the loading spinner', () => {
         const loadingSpinner: HTMLDivElement | null = container.querySelector(
-            `[data-testid="test-loading"]`,
+            '[data-testid="test-loading"]',
         );
         expect(loadingSpinner).not.toBeNull();
     });

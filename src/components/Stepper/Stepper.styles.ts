@@ -75,23 +75,6 @@ export const DivStyled = styled.div`
     }
 `;
 
-export const DivStyledContent = styled.div`
-    ${resetCSS};
-    ${fonts.text};
-    display: inline-block;
-    margin: 20px 20px 32px;
-    p,
-    i {
-        ${resetCSS};
-        ${fonts.text};
-    }
-
-    :hover {
-        display: inline-block;
-        height: auto;
-    }
-`;
-
 export const NavStyled = styled.nav`
     display: flex;
     justify-content: center;

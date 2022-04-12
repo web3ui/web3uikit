@@ -22,6 +22,7 @@ import {
     inactiveStatus,
     initialStyles,
     regular,
+    boarder,
 } from './styles/themes';
 import type { TagProps, Tone } from './types';
 
@@ -36,6 +37,8 @@ const getTheme = (theme: string, active?: boolean) => {
             return active ? activeStatus : inactiveStatus;
         case 'discount':
             return discount;
+        case 'boarder':
+            return boarder;
         default:
             return regular;
     }
@@ -66,7 +69,7 @@ const getColors = (color?: string, tone?: Tone) => {
 
 export const SpanStyled = styled.div<TStyleProps>`
     cursor: pointer;
-    margin-left: 16px;
+    margin-left: 8px;
 `;
 
 export const TagStyled = styled.div<TStyleProps>`

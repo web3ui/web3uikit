@@ -16,7 +16,7 @@ const navStyle = css`
     ${resetCSS};
 `;
 
-export const separatorStyle = css`
+const separatorStyle = css`
     ${resetCSS};
     color: ${color.greyIcons};
     display: flex;
@@ -24,12 +24,12 @@ export const separatorStyle = css`
     user-select: none;
 `;
 
-export const NavStyled = styled.nav`
+const NavStyled = styled.nav`
     ${navStyle};
     color: ${(p) => p?.color || color.grey};
 `;
 
-export const ListStyled = styled.ol`
+const ListStyled = styled.ol`
     ${olStyle};
 `;
 
@@ -46,7 +46,7 @@ export const ListItemStyled = styled.li`
     }
 `;
 
-export const Breadcrumb = styled(Link)`
+const Breadcrumb = styled(Link)`
     ${fonts.semiBold};
     align-items: center;
     display: flex;
@@ -58,6 +58,14 @@ export const Breadcrumb = styled(Link)`
     }
 `;
 
-export const BreadcrumbsSeparator = styled.li`
+const BreadcrumbsSeparator = styled.li`
     ${separatorStyle};
 `;
+
+export default {
+    Breadcrumb,
+    BreadcrumbsSeparator,
+    ListItemStyled,
+    ListStyled,
+    NavStyled,
+};

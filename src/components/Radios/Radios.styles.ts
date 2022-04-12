@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import resetCSS from '../../styles/reset';
-import fonts from '../../styles/fonts';
-import color from '../../styles/colors';
-import { TRadioLayouts } from './types';
 import { RadiosProps } from '.';
+import color from '../../styles/colors';
+import fonts from '../../styles/fonts';
+import resetCSS from '../../styles/reset';
+import { TRadioLayouts } from './types';
 
 type TStyleProps = Pick<TRadioLayouts, 'isCreditCardMode'>;
 

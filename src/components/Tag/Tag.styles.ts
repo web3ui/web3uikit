@@ -84,5 +84,8 @@ export const TagStyled = styled.div<TStyleProps>`
         Boolean(width) &&
         `height: ${width}; width: ${width}; border-radius: 50%;`};
 
+    ${({ theme, tone }) =>
+        theme === 'boarder' && tone === 'dark' && 'border: 0px;'};
+
     ${({ fontSize }) => Boolean(fontSize) && `font-size: ${fontSize}`};
 `;

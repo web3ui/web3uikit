@@ -24,7 +24,15 @@ export interface TagProps {
     /**
      * choose a color for the tag
      */
-    color?: 'green' | 'red' | 'grey' | 'yellow' | 'blue' | 'blueLight' | 'purple' | 'pink';
+    color?:
+        | 'green'
+        | 'red'
+        | 'grey'
+        | 'yellow'
+        | 'blue'
+        | 'blueLight'
+        | 'purple'
+        | 'pink';
 
     /**
      * choose a tone for the selected color

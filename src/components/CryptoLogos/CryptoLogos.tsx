@@ -1,7 +1,9 @@
 import React from 'react';
 import Illustration from '../Illustrations/Illustration';
 import { CryptoLogoProps } from './types';
-import { DivStyledCryptoLogo } from './CryptoLogos.styles';
+import styles from './CryptoLogos.styles';
+
+const { DivStyledCryptoLogo } = styles;
 
 const CryptoLogos: React.FC<CryptoLogoProps> = ({
     chain,

@@ -60,11 +60,14 @@ const App = () => (
 - [⛓ `Web3 Components`](#-web3-components)
     - [`<ConnectButton />`](#connectbutton-)
 - [📖 `UI Components`](#-ui-components)
+    - [`<Accordion />`](#accordion-)
     - [`<Avatar />`](#avatar-)
+    - [`<Badge />`](#badge-)
     - [`<BannerStrip />`](#bannerstrip-)
     - [`<Breadcrumbs />`](#breadcrumbs-)
     - [`<Card />`](#card-)
     - [`<CryptoCards />`](#cryptocards-)
+    - [`<CryptoLogos />`](#cryptologos-)
     - [`<Icon />`](#icon-)
     - [`<Illustration />`](#illustration-)
     - [`<Information />`](#information-)
@@ -74,6 +77,7 @@ const App = () => (
     - [`<Table />`](#table-)
     - [`<Tag />`](#tag-)
     - [`<Todo />`](#todo-)
+    - [`<Widget />`](#widget-)
 - [⚙️ `Interaction Components`](#️-interaction-components)
     - [`<Button />`](#button-)
     - [`<Checkbox />`](#checkbox-)
@@ -102,11 +106,25 @@ Try the `<ConnectButton />` component in the [interactive documentation](https:/
 
 # 📖 `UI Components`
 
+### `<Accordion />`
+
+The accordion component is a nice user interface element that can allow you to show and hide text or other components, so you do not overwhelm your user with too much awesome content
+
+![accordion](https://user-images.githubusercontent.com/13779759/161834402-ba7a847f-dcf1-48d5-a42d-f934117886dd.png)
+
+Try the `<Accordion />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/3-layout-accordion)
+
 ### `<Avatar />`
 
 ![avatar](https://user-images.githubusercontent.com/78314301/149967253-4e209eb2-6d0f-4222-96bc-7e74c4cc6dfd.gif)
 
 Try the `<Avatar />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/6-graphic-avatar)
+
+### `<Badge />`
+
+![badge](https://user-images.githubusercontent.com/35369843/162045684-fbcfe50f-79b3-452b-86a4-d546d19a3d43.png)
+
+Try the `<Badge />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/4-ui-badge--all)
 
 ### `<BannerStrip />`
 
@@ -131,6 +149,12 @@ Try the `<Card />` component in the [interactive documentation](https://web3ui.g
 ![CryptoCards](https://user-images.githubusercontent.com/78314301/149967411-e26f6584-1b38-4467-9a80-8b05831ffbaf.gif)
 
 Try the `<CryptoCards />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-crypto-cards)
+
+### `<CryptoLogos />`
+
+![CryptoLogos](https://user-images.githubusercontent.com/35369843/162805867-b7bf12a9-fc4f-4098-927b-497252fe46fc.gif)
+
+Try the `<CryptoLogos />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/6-graphic-crypto-logos--ethereum)
 
 ### `<Icon />`
 
@@ -227,6 +251,11 @@ Try the `<Tag />` component in the [interactive documentation](https://web3ui.gi
 ![Todo](https://user-images.githubusercontent.com/16763860/161817468-2eedf624-145c-40bb-afcf-67d8d946b1c7.gif)
 
 Try the `<Todo />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-todo)
+### `<Widget />`
+
+![Widget](https://user-images.githubusercontent.com/16763860/162152763-bf3179d5-6fd7-458f-abb9-d8db42db41b7.gif)
+
+Try the `<Widget />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-widget)
 
 # ⚙️ `Interaction Components`
 

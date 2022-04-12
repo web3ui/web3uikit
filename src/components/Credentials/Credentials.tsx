@@ -14,11 +14,13 @@ const Credentials: FC<ICredentialsProps> = ({
     hasCopyButton = true,
     hasHideButton = true,
     title,
+    titleColor,
     icon,
     iconColor,
     iconSize,
     isHidden = false,
     text,
+    textColor = color.blueDark,
     width = 'auto',
     hiddenText = '•••••••••••••••••••••••••••••••',
 }) => {
@@ -30,6 +32,7 @@ const Credentials: FC<ICredentialsProps> = ({
         <CredentialsStyled width={width} data-testid="test-credentials">
             <CredentialsHeader
                 title={title}
+                titleColor={titleColor}
                 icon={icon}
                 iconColor={iconColor}
                 iconSize={iconSize}
@@ -37,7 +40,7 @@ const Credentials: FC<ICredentialsProps> = ({
             <PreformattedStyled>
                 <Typography
                     monospace
-                    color={color.blueDark}
+                    color={textColor}
                     data-testid="cred-test-text"
                 >
                     {isValueHidden ? hiddenText : text}

@@ -1,46 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Tag } from '../Tag';
-import { DivStyled, DivStyledContent, SectionStyled } from './Todo.styles';
-import { TodoProps, TodoState } from './types';
+import styles from './Todo.styles';
+import { TodoProps } from './types';
+
+const { DivStyled, DivStyledContent, SectionStyled } = styles;
 
 const Todo: React.FC<TodoProps> = ({
     buttonText = 'Add',
     fullWidth = false,
     label,
-    onAdd,
+    onChange,
     pattern,
     todos = [],
 }) => {
+    const key = useMemo(() => Math.random(), []);
     const [inputValue, setInputValue] = useState<string>('');
-    const [lists, setLists] = useState<TodoState[]>([]);
+    const [lists, setLists] = useState<string[]>(todos);
 
-    useEffect(() => {
-        if (Array.isArray(todos) && todos?.length > 0) {
-            setLists([...todos]);
-        }
-    }, [todos]);
+    useEffect(() => onChange && onChange(lists), [lists]);
+    useEffect(() => setLists(todos), [todos]);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setInputValue(e.target.value);
-    };
-
-    const onCancelClick = (id: number) => {
-        setLists(lists.filter((todo: TodoState) => todo.id !== id));
+    const removeTodo = (id: number) => {
+        const updatedList = lists.filter((item) => item !== lists[id]);
+        setLists([...updatedList]);
     };
 
     const addTodo = () => {
-        const check = onAdd?.() || true;
-        if (check) {
-            const todo = {
-                id: Date.now(),
-                text: inputValue,
-            };
-            setLists((prevTodo) => [...prevTodo, todo]);
-            setInputValue('');
-            (document.getElementById('todo-input') as HTMLInputElement).value = 'some';
-        }
+        setLists((prevTodo) => [...prevTodo, inputValue]);
+        setInputValue('');
+        const input: HTMLInputElement | null = document.querySelector(
+            `input[key="${key}"]`,
+        );
+
+        input?.focus();
     };
 
     return (
@@ -49,12 +43,13 @@ const Todo: React.FC<TodoProps> = ({
                 <Input
                     id="todo-input"
                     label={label}
-                    value={inputValue}
-                    onChange={handleInputChange}
+                    onChange={(e) => setInputValue(e.target.value)}
                     size="large"
                     validation={{
                         regExp: pattern,
                     }}
+                    key={key}
+                    value={inputValue}
                 />
                 <Button
                     disabled={!inputValue}
@@ -67,16 +62,16 @@ const Todo: React.FC<TodoProps> = ({
             </DivStyled>
 
             <DivStyledContent
-                fullWidth={fullWidth}
                 data-testid="test-todo_content"
+                fullWidth={fullWidth}
             >
-                {lists.map(({ id, text }) => (
+                {lists.map((todo, i) => (
                     <Tag
                         color="blueLight"
                         hasCancel
-                        key={id}
-                        onCancelClick={() => onCancelClick(id)}
-                        text={text}
+                        key={i}
+                        onCancelClick={() => removeTodo(i)}
+                        text={todo}
                     />
                 ))}
             </DivStyledContent>

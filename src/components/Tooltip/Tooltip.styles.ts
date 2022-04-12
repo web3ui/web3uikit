@@ -1,21 +1,8 @@
 import styled, { css } from 'styled-components';
-import resetCSS from '../../styles/reset';
-import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
-import { TooltipProps } from './types';
-import { Position } from './types';
-
-export const StyledTooltipParentDiv = styled.div`
-    ${fonts.openSans}
-    ${resetCSS}
-    color: #252525;
-    position: relative;
-    &:hover > div:nth-child(2) {
-        opacity: 1;
-        transition: 0.5s;
-        transition-delay: 0.1s;
-    }
-`;
+import fonts from '../../styles/fonts';
+import resetCSS from '../../styles/reset';
+import { Position, TooltipProps } from './types';
 
 interface IStyledHoverSpan {
     height: number;
@@ -106,41 +93,41 @@ const bottomPositionTriangle = css`
     width: 0;
 `;
 
-const getTriangleComp = (position: Position) => {
-    switch (position) {
-        case 'top':
-            return topPositionTriangle;
-        case 'bottom':
-            return bottomPositionTriangle;
-        case 'left':
-            return leftPositionTriangle;
-        case 'right':
-            return rightPositionTriangle;
-    }
+const getTriangleComp = {
+    top: topPositionTriangle,
+    bottom: bottomPositionTriangle,
+    left: leftPositionTriangle,
+    right: rightPositionTriangle,
 };
 
-const getPopoverComp = (position: Position) => {
-    switch (position) {
-        case 'top':
-            return topPositionPopover;
-        case 'bottom':
-            return bottomPositionPopover;
-        case 'left':
-            return leftPositionPopover;
-        case 'right':
-            return rightPositionPopover;
-    }
+const getPopoverComp = {
+    top: topPositionPopover,
+    bottom: bottomPositionPopover,
+    left: leftPositionPopover,
+    right: rightPositionPopover,
 };
 
-export const StyledHoverDiv = styled.div<IStyledHoverSpan>`
+const DivStyledTooltipParent = styled.div`
+    ${fonts.openSans}
+    ${resetCSS}
+    color: #252525;
+    position: relative;
+    &:hover > div:nth-child(2) {
+        opacity: 1;
+        transition: 0.5s;
+        transition-delay: 0.1s;
+    }
+`;
+
+const DivStyled = styled.div<IStyledHoverSpan>`
     opacity: 0;
     position: absolute;
     z-index: 1;
     min-width: ${(props) => props.minWidth}px;
-    ${(props) => getPopoverComp(props.position)}
+    ${({ position }) => getPopoverComp[position]};
 `;
 
-export const StyledTooltipTextDiv = styled.div<
+const DivStyledTooltipText = styled.div<
     Pick<TooltipProps, 'maxWidth' | 'minWidth'>
 >`
     background-color: ${color.blueDark2};
@@ -155,8 +142,15 @@ export const StyledTooltipTextDiv = styled.div<
     transition: 0.5ms;
 `;
 
-export const StyledPopoverArrowDiv = styled.div<Pick<TooltipProps, 'position'>>`
-    ${(props) => {
-        return getTriangleComp(props.position);
-    }}
+export const DivStyledArrow = styled.div<
+    Pick<TooltipProps, 'position'>
+>`
+    ${({ position }) => getTriangleComp[position]}
 `;
+
+export default {
+    DivStyled,
+    DivStyledArrow,
+    DivStyledTooltipParent,
+    DivStyledTooltipText,
+};

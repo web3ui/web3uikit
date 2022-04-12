@@ -1,8 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Checkbox.stories';
-import { fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 
 const {
     Box,
@@ -14,710 +13,211 @@ const {
     SwitchingText,
 } = composeStories(stories);
 
-let container: HTMLDivElement;
 const labelTestID = 'test-checkbox-label';
 const inputTestID = 'test-checkbox-input';
 const textTestID = 'test-checkbox-text';
 const testEvent = jest.fn();
 
-describe('Checkbox - Box', () => {
+test('Renders Checkbox - Box', () => {
+    render(
+        <Box
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                testEvent(event.target)
+            }
+        />,
+    );
     const testId = Box?.args?.id;
     const testLabelText = Box?.args?.label;
     const testNameText = Box?.args?.name;
+    const labelElement = screen.getByTestId(labelTestID);
+    expect(labelElement).not.toBeNull();
+    expect(labelElement.dataset?.layout).toBe('box');
+    expect(screen.getByTestId(textTestID).textContent).toBe(testLabelText);
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
-            <Box
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
-            />,
-            container,
-        );
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label).not.toBeNull();
-    });
-
-    it('renders the component mode correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label?.dataset?.layout).toBe('box');
-    });
-
-    it('renders the label text correctly', () => {
-        const label: HTMLSpanElement | null = container.querySelector(
-            `[data-testid="${textTestID}"]`,
-        );
-        expect(label?.textContent).toBe(testLabelText);
-    });
-
-    it('renders the an input child', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]  > input`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input ID that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.id).toBe(testId);
-    });
-
-    it('renders the input name that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.name).toBe(testNameText);
-    });
-
-    it('renders the input checked or unchecked with the boolean passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.value).toBeFalsy;
-        expect(input?.checked).toBeFalsy;
-    });
-
-    it('renders the disabled attribute to the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.disabled).toBeFalsy;
-    });
-
-    it('the component returns onChange event when changed', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        label && fireEvent.click(label);
-        expect(testEvent).toHaveBeenCalled();
-        expect(testEvent).toHaveBeenCalledWith(input);
-    });
+    const inputElement = screen.getByTestId(inputTestID);
+    expect(inputElement).not.toBeNull();
+    expect(inputElement.id).toBe(testId);
+    expect(inputElement.getAttribute('name')).toBe(testNameText);
+    expect(inputElement.getAttribute('value')).toBe('false');
+    expect(inputElement.getAttribute('disabled')).toBeNull();
+    fireEvent.click(labelElement);
+    expect(testEvent).toHaveBeenCalled();
+    expect(testEvent).toHaveBeenCalledWith(inputElement);
 });
 
-describe('Checkbox - Box disabled', () => {
+test('Renders Checkbox - Box Disabled', () => {
+    render(
+        <BoxDisabled
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                testEvent(event.target)
+            }
+        />,
+    );
     const testId = BoxDisabled?.args?.id;
     const testLabelText = BoxDisabled?.args?.label;
     const testNameText = BoxDisabled?.args?.name;
+    const labelElement = screen.getByTestId(labelTestID);
+    expect(labelElement).not.toBeNull();
+    expect(labelElement.dataset?.layout).toBe('box');
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
-            <BoxDisabled
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
-            />,
-            container,
-        );
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label).not.toBeNull();
-    });
-
-    it('renders the component mode correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label?.dataset?.layout).toBe('box');
-    });
-
-    it('renders the label text correctly', () => {
-        const label: HTMLSpanElement | null = container.querySelector(
-            `[data-testid="${textTestID}"]`,
-        );
-        expect(label?.textContent).toBe(testLabelText);
-    });
-
-    it('renders the an input child', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]  > input`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input ID that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.id).toBe(testId);
-    });
-
-    it('renders the input name that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.name).toBe(testNameText);
-    });
-
-    it('renders the input checked or unchecked with the boolean passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.value).toBeFalsy;
-        expect(input?.checked).toBeFalsy;
-    });
-
-    it('renders the disabled attribute to the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.disabled).toBeTruthy;
-    });
-
-    // it('the component is disabled so will not return anything', () => {
-    //     const label: HTMLLabelElement | null = container.querySelector(
-    //         `[data-testid="${labelTestID}"]`,
-    //     );
-    //     label && fireEvent.click(label);
-    //     expect(testEvent).not.toHaveBeenCalled();
-    // });
+    expect(screen.getByTestId(textTestID).textContent).toBe(testLabelText);
+    const inputElement = screen.getByTestId(inputTestID);
+    expect(inputElement).not.toBeNull();
+    expect(inputElement.id).toBe(testId);
+    expect(inputElement.parentNode?.nodeName).toBe('LABEL');
+    expect(inputElement.getAttribute('name')).toBe(testNameText);
+    expect(inputElement.getAttribute('value')).toBe('false');
+    expect(inputElement.getAttribute('disabled')).toBe('');
+    fireEvent.click(labelElement);
+    expect(testEvent).toHaveBeenCalled();
 });
 
-describe('Checkbox - Box on by default', () => {
+test('Renders Checkbox - Box On by Default', () => {
+    render(
+        <BoxOnByDefault
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                testEvent(event.target)
+            }
+        />,
+    );
     const testId = BoxOnByDefault?.args?.id;
     const testLabelText = BoxOnByDefault?.args?.label;
     const testNameText = BoxOnByDefault?.args?.name;
+    const labelElement = screen.getByTestId(labelTestID);
+    expect(labelElement).not.toBeNull();
+    expect(labelElement.dataset?.layout).toBe('box');
+    expect(screen.getByTestId(textTestID).textContent).toBe(testLabelText);
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
-            <BoxOnByDefault
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
-            />,
-            container,
-        );
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label).not.toBeNull();
-    });
-
-    it('renders the component mode correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label?.dataset?.layout).toBe('box');
-    });
-
-    it('renders the label text correctly', () => {
-        const label: HTMLSpanElement | null = container.querySelector(
-            `[data-testid="${textTestID}"]`,
-        );
-        expect(label?.textContent).toBe(testLabelText);
-    });
-
-    it('renders the an input child', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]  > input`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input ID that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.id).toBe(testId);
-    });
-
-    it('renders the input name that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.name).toBe(testNameText);
-    });
-
-    it('renders the input checked or unchecked with the boolean passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.value).toBeTruthy;
-        expect(input?.checked).toBeTruthy;
-    });
-
-    it('renders the disabled attribute to the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.disabled).toBeFalsy;
-    });
-
-    it('the component returns onChange event when changed', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        label && fireEvent.click(label);
-        expect(testEvent).toHaveBeenCalled();
-        expect(testEvent).toHaveBeenCalledWith(input);
-    });
+    const inputElement = screen.getByTestId(inputTestID);
+    expect(inputElement).not.toBeNull();
+    expect(inputElement.id).toBe(testId);
+    expect(inputElement.parentNode?.nodeName).toBe('LABEL');
+    expect(inputElement.getAttribute('name')).toBe(testNameText);
+    expect(inputElement.getAttribute('value')).toBe('true');
+    expect(inputElement.getAttribute('checked')).toBe('');
+    expect(inputElement.getAttribute('disabled')).toBeNull();
+    fireEvent.click(labelElement);
+    expect(testEvent).toHaveBeenCalled();
+    expect(testEvent).toHaveBeenCalledWith(inputElement);
 });
 
-describe('Checkbox - Switch', () => {
+test('Renders Checkbox - Switch', () => {
+    render(
+        <Switch
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                testEvent(event.target)
+            }
+        />,
+    );
     const testId = Switch?.args?.id;
     const testLabelText = Switch?.args?.label;
     const testNameText = Switch?.args?.name;
+    const labelElement = screen.getByTestId(labelTestID);
+    expect(labelElement).not.toBeNull();
+    expect(labelElement.dataset?.layout).toBe('switch');
+    expect(screen.getByTestId(textTestID).textContent).toBe(testLabelText);
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
-            <Switch
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
-            />,
-            container,
-        );
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label).not.toBeNull();
-    });
-
-    it('renders the component mode correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label?.dataset?.layout).toBe('switch');
-    });
-
-    it('renders the label text correctly', () => {
-        const label: HTMLSpanElement | null = container.querySelector(
-            `[data-testid="${textTestID}"]`,
-        );
-        expect(label?.textContent).toBe(testLabelText);
-    });
-
-    it('renders the an input child', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]  > input`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input ID that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.id).toBe(testId);
-    });
-
-    it('renders the input name that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.name).toBe(testNameText);
-    });
-
-    it('renders the input checked or unchecked with the boolean passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.value).toBeFalsy;
-        expect(input?.checked).toBeFalsy;
-    });
-
-    it('renders the disabled attribute to the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.disabled).toBeFalsy;
-    });
-
-    it('the component returns onChange event when changed', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        label && fireEvent.click(label);
-        expect(testEvent).toHaveBeenCalled();
-        expect(testEvent).toHaveBeenCalledWith(input);
-    });
+    const inputElement = screen.getByTestId(inputTestID);
+    expect(inputElement).not.toBeNull();
+    expect(inputElement.id).toBe(testId);
+    expect(inputElement.parentNode?.nodeName).toBe('LABEL');
+    expect(inputElement.getAttribute('name')).toBe(testNameText);
+    expect(inputElement.getAttribute('value')).toBe('false');
+    expect(inputElement.getAttribute('checked')).toBeNull();
+    expect(inputElement.getAttribute('disabled')).toBeNull();
+    fireEvent.click(labelElement);
+    expect(testEvent).toHaveBeenCalled();
+    expect(testEvent).toHaveBeenCalledWith(inputElement);
 });
 
-describe('Checkbox - Switch disabled', () => {
+test('Renders Checkbox - Switch Disabled', () => {
+    render(
+        <SwitchDisabled
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                testEvent(event.target)
+            }
+        />,
+    );
     const testId = SwitchDisabled?.args?.id;
     const testLabelText = SwitchDisabled?.args?.label;
     const testNameText = SwitchDisabled?.args?.name;
+    const labelElement = screen.getByTestId(labelTestID);
+    expect(labelElement).not.toBeNull();
+    expect(labelElement.dataset?.layout).toBe('switch');
+    expect(screen.getByTestId(textTestID).textContent).toBe(testLabelText);
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
-            <SwitchDisabled
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
-            />,
-            container,
-        );
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label).not.toBeNull();
-    });
-
-    it('renders the component mode correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label?.dataset?.layout).toBe('switch');
-    });
-
-    it('renders the label text correctly', () => {
-        const label: HTMLSpanElement | null = container.querySelector(
-            `[data-testid="${textTestID}"]`,
-        );
-        expect(label?.textContent).toBe(testLabelText);
-    });
-
-    it('renders the an input child', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]  > input`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input ID that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.id).toBe(testId);
-    });
-
-    it('renders the input name that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.name).toBe(testNameText);
-    });
-
-    it('renders the input checked or unchecked with the boolean passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.value).toBeFalsy;
-        expect(input?.checked).toBeFalsy;
-    });
-
-    it('renders the disabled attribute to the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.disabled).toBeTruthy;
-    });
-
-    // it('the component is disabled so will not return anything', () => {
-    //     const label: HTMLLabelElement | null = container.querySelector(
-    //         `[data-testid="${labelTestID}"]`,
-    //     );
-    //     label && fireEvent.click(label);
-    //     expect(testEvent).not.toHaveBeenCalled();
-    // });
+    const inputElement = screen.getByTestId(inputTestID);
+    expect(inputElement).not.toBeNull();
+    expect(inputElement.id).toBe(testId);
+    expect(inputElement.parentNode?.nodeName).toBe('LABEL');
+    expect(inputElement.getAttribute('name')).toBe(testNameText);
+    expect(inputElement.getAttribute('value')).toBe('false');
+    expect(inputElement.getAttribute('checked')).toBeNull();
+    expect(inputElement.getAttribute('disabled')).toBe('');
+    fireEvent.click(labelElement);
+    expect(testEvent).toHaveBeenCalled();
 });
 
-describe('Checkbox - Switch on by default', () => {
+test('Renders Checkbox - Switch On By Default', () => {
+    render(
+        <SwitchOnByDefault
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                testEvent(event.target)
+            }
+        />,
+    );
     const testId = SwitchOnByDefault?.args?.id;
     const testLabelText = SwitchOnByDefault?.args?.label;
     const testNameText = SwitchOnByDefault?.args?.name;
+    const labelElement = screen.getByTestId(labelTestID);
+    expect(labelElement).not.toBeNull();
+    expect(labelElement.dataset?.layout).toBe('switch');
+    expect(screen.getByTestId(textTestID).textContent).toBe(testLabelText);
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
-            <SwitchOnByDefault
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
-            />,
-            container,
-        );
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label).not.toBeNull();
-    });
-
-    it('renders the component mode correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label?.dataset?.layout).toBe('switch');
-    });
-
-    it('renders the label text correctly', () => {
-        const label: HTMLSpanElement | null = container.querySelector(
-            `[data-testid="${textTestID}"]`,
-        );
-        expect(label?.textContent).toBe(testLabelText);
-    });
-
-    it('renders the an input child', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]  > input`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input ID that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.id).toBe(testId);
-    });
-
-    it('renders the input name that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.name).toBe(testNameText);
-    });
-
-    it('renders the input checked or unchecked with the boolean passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.value).toBeTruthy;
-        expect(input?.checked).toBeTruthy;
-    });
-
-    it('renders the disabled attribute to the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.disabled).toBeFalsy;
-    });
-
-    it('the component returns onChange event when changed', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        label && fireEvent.click(label);
-        expect(testEvent).toHaveBeenCalled();
-        expect(testEvent).toHaveBeenCalledWith(input);
-    });
+    const inputElement = screen.getByTestId(inputTestID);
+    expect(inputElement).not.toBeNull();
+    expect(inputElement.id).toBe(testId);
+    expect(inputElement.parentNode?.nodeName).toBe('LABEL');
+    expect(inputElement.getAttribute('name')).toBe(testNameText);
+    expect(inputElement.getAttribute('value')).toBe('true');
+    expect(inputElement.getAttribute('checked')).toBe('');
+    expect(inputElement.getAttribute('disabled')).toBeNull();
+    fireEvent.click(labelElement);
+    expect(testEvent).toHaveBeenCalled();
+    expect(testEvent).toHaveBeenCalledWith(inputElement);
 });
 
-describe('Checkbox - SwitchingText', () => {
+test('Renders Checkbox - Switching Text', () => {
+    render(
+        <SwitchingText
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                testEvent(event.target)
+            }
+        />,
+    );
     const testId = SwitchingText?.args?.id;
     const testLabelText = SwitchingText?.args?.label;
     const testNameText = SwitchingText?.args?.name;
+    const labelElement = screen.getByTestId(labelTestID);
+    expect(labelElement).not.toBeNull();
+    expect(labelElement.dataset?.layout).toBe('switch');
+    expect(screen.getByTestId(textTestID).textContent).toBe(testLabelText);
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
-            <SwitchingText
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
-            />,
-            container,
-        );
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label).not.toBeNull();
-    });
-
-    it('renders the component mode correctly', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        expect(label?.dataset?.layout).toBe('switch');
-    });
-
-    it('renders the label text correctly', () => {
-        const label: HTMLSpanElement | null = container.querySelector(
-            `[data-testid="${textTestID}"]`,
-        );
-        expect(label?.textContent).toBe(testLabelText);
-    });
-
-    it('renders the an input child', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]  > input`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input).not.toBeNull();
-    });
-
-    it('renders the input ID that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.id).toBe(testId);
-    });
-
-    it('renders the input name that is passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.name).toBe(testNameText);
-    });
-
-    it('renders the input checked or unchecked with the boolean passed', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.value).toBeFalsy;
-        expect(input?.checked).toBeFalsy;
-    });
-
-    it('renders the disabled attribute to the input', () => {
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        expect(input?.disabled).toBeFalsy;
-    });
-
-    it('the component returns onChange event when changed', () => {
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${inputTestID}"]`,
-        );
-        label && fireEvent.click(label);
-        expect(testEvent).toHaveBeenCalled();
-        expect(testEvent).toHaveBeenCalledWith(input);
-    });
-
-    it('renders the labelWhenChecked text correctly', () => {
-        const text: HTMLSpanElement | null = container.querySelector(
-            `[data-testid="${textTestID}"]`,
-        );
-        expect(text?.textContent).toBe(testLabelText);
-
-        const label: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${labelTestID}"]`,
-        );
-        label && fireEvent.click(label);
-
-        const textUpdated: HTMLSpanElement | null = container.querySelector(
-            `[data-testid="${textTestID}"]`,
-        );
-        expect(textUpdated?.textContent).toBe(testLabelText);
-    });
+    const inputElement = screen.getByTestId(inputTestID);
+    expect(inputElement).not.toBeNull();
+    expect(inputElement.id).toBe(testId);
+    expect(inputElement.parentNode?.nodeName).toBe('LABEL');
+    expect(inputElement.getAttribute('name')).toBe(testNameText);
+    expect(inputElement.getAttribute('value')).toBe('false');
+    expect(inputElement.getAttribute('checked')).toBeNull();
+    expect(inputElement.getAttribute('disabled')).toBeNull();
+    // Label text changes on this click
+    fireEvent.click(labelElement);
+    expect(testEvent).toHaveBeenCalled();
+    expect(testEvent).toHaveBeenCalledWith(inputElement);
+    const textElement = screen.getByTestId(textTestID);
+    expect(textElement.textContent).not.toBe(testLabelText);
+    // Label text changes back to original on this click
+    fireEvent.click(labelElement);
+    expect(textElement.textContent).toBe(testLabelText);
 });

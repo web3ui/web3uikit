@@ -4,12 +4,12 @@ import { HeroProps } from './types';
 // styles
 type TStyleProps = Pick<
     HeroProps,
-    'align' |
-    'backgroundColor' |
-    'backgroundURL' |
-    'height' | 
-    'linearGradient' |
-    'rounded'
+    | 'align'
+    | 'backgroundColor'
+    | 'backgroundURL'
+    | 'height'
+    | 'linearGradient'
+    | 'rounded'
 >;
 
 enum Position {
@@ -30,10 +30,14 @@ export const SectionStyled = styled.section<TStyleProps>`
     position: relative;
     width: 100%;
 
-    align-items: ${({ align = 'center' }) => Position?.[align] || Position.center};
+    align-items: ${({ align = 'center' }) =>
+        Position?.[align] || Position.center};
     border-radius: ${(p) => p.rounded || '0px'};
     background-color: ${(p) => p.backgroundColor};
-    background-image: ${({ backgroundURL, linearGradient = '' }) => backgroundURL ? `${linearGradient && linearGradient + ', '} url(${backgroundURL})` : linearGradient };
+    background-image: ${({ backgroundURL, linearGradient = '' }) =>
+        backgroundURL
+            ? `${linearGradient && linearGradient + ', '} url(${backgroundURL})`
+            : linearGradient};
     height: ${({ height }) => height || '80vh'};
     max-height: ${({ height }) => height || '80vh'};
 

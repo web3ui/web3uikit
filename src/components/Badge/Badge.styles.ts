@@ -19,7 +19,7 @@ const getBackgroundColor = (type: colorState) => {
     }
 };
 
-export const DivStyled = styled.div<TStyleProps>`
+const DivStyled = styled.div<TStyleProps>`
     ${resetCSS}
     ${fonts.text}
     align-items: center;
@@ -32,3 +32,5 @@ export const DivStyled = styled.div<TStyleProps>`
     width: min-content;
     background-color: ${({ state = 'normal' }) => getBackgroundColor(state)};
 `;
+
+export default { DivStyled };

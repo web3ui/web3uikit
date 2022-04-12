@@ -1,11 +1,14 @@
-import { IWidgetProps } from './types';
-import WidgetStyles from './Widget.styles';
-import colors from '../../styles/colors';
 import React from 'react';
+import colors from '../../styles/colors';
 import { Typography } from '../Typography';
+import { IWidgetProps } from './types';
+import styles from './Widget.styles';
+
+const { DivStyled } = styles;
+
 const Widget: React.FC<IWidgetProps> = ({ children, info, title }) => {
     return (
-        <WidgetStyles.WidgetStyled>
+        <DivStyled data-testid="widget-container">
             <div>
                 <Typography
                     data-testid="widget-title"
@@ -24,8 +27,9 @@ const Widget: React.FC<IWidgetProps> = ({ children, info, title }) => {
                     {info}
                 </Typography>
             </div>
+
             {children}
-        </WidgetStyles.WidgetStyled>
+        </DivStyled>
     );
 };
 

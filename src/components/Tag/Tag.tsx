@@ -35,7 +35,12 @@ const Tag: React.FC<TagProps> = ({
             <strong data-testid="test-tag-text">{text}</strong>
             {hasCancel && (
                 <SpanStyled onClick={onCancelClick}>
-                    <Icon fill={colors.blue} size={16} svg="x" style={{ marginLeft: '8px' }} />
+                    <Icon
+                        fill={colors.blue}
+                        size={16}
+                        svg="x"
+                        style={{ marginLeft: '8px' }}
+                    />
                 </SpanStyled>
             )}
         </TagStyled>

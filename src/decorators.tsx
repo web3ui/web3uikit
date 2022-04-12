@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { MoralisProvider, useMoralis } from 'react-moralis';
 import { DecoratorFn } from '@storybook/react';
+import { default as MoralisType } from 'moralis/types';
 
 export const moralisContext: DecoratorFn = (Story) => {
     const MORALIS_APP_ID = process.env.STORYBOOK_MORALIS_APP_ID;
@@ -17,9 +18,11 @@ export const moralisContext: DecoratorFn = (Story) => {
 
         useEffect(() => {
             if (!isInitialized) return;
-            const connectorId = window.localStorage.getItem('connectorId');
+            const provider = window.localStorage.getItem(
+                'provider',
+            ) as MoralisType.Web3ProviderType;
             if (isAuthenticated && !isWeb3Enabled && !isWeb3EnableLoading) {
-                enableWeb3({ provider: connectorId as any });
+                enableWeb3({ provider });
             }
         }, [
             isAuthenticated,

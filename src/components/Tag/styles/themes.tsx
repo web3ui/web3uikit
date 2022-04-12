@@ -53,7 +53,7 @@ export const discount = css<TStyleProps>`
     width: 32px;
 `;
 
-export const boarder = css<TStyleProps>`
+export const chips = css<TStyleProps>`
     align-items: center;
     background: ${color.green};
     border-left: 5px solid;

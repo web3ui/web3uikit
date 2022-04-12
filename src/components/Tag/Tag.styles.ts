@@ -18,11 +18,11 @@ import {
 } from './styles/colors';
 import {
     activeStatus,
+    chips,
     discount,
     inactiveStatus,
     initialStyles,
     regular,
-    boarder,
 } from './styles/themes';
 import type { TagProps, Tone } from './types';
 
@@ -37,8 +37,8 @@ const getTheme = (theme: string, active?: boolean) => {
             return active ? activeStatus : inactiveStatus;
         case 'discount':
             return discount;
-        case 'boarder':
-            return boarder;
+        case 'chips':
+            return chips;
         default:
             return regular;
     }
@@ -85,7 +85,7 @@ export const TagStyled = styled.div<TStyleProps>`
         `height: ${width}; width: ${width}; border-radius: 50%;`};
 
     ${({ theme, tone }) =>
-        theme === 'boarder' && tone === 'dark' && 'border: 0px;'};
+        theme === 'chips' && tone === 'dark' && 'border: 0px;'};
 
     ${({ fontSize }) => Boolean(fontSize) && `font-size: ${fontSize}`};
 `;

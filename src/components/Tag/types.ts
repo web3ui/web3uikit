@@ -14,7 +14,7 @@ export interface TagProps {
     /**
      * set layout of the element
      */
-    theme?: 'regular' | 'status' | 'discount' | 'boarder';
+    theme?: 'regular' | 'status' | 'discount' | 'chips';
 
     /**
      * if theme = 'status', active can be set true, to show a tick icon

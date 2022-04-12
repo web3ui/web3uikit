@@ -1,14 +1,14 @@
 import { CreditCardProps } from '../CreditCard';
 
-export type ValidateRadios = {
+type ValidateRadios = {
     required?: boolean;
 };
 
-export type TRadioLayouts = {
+type TRadioLayouts = {
     isCreditCardMode?: boolean;
 };
 
-export interface RadiosProps {
+interface RadiosProps {
     /**
      * this collection of radio buttons needs an ID to group them
      */
@@ -49,3 +49,9 @@ export interface RadiosProps {
      */
     onCreditCardRemoved?: (arrayIndex: number) => void;
 }
+
+export {
+    ValidateRadios,
+    TRadioLayouts,
+    RadiosProps,
+};

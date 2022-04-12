@@ -12,7 +12,7 @@ const navId = 'breadcrumbs-nav-test-id';
 const separatorId = 'breadcrumbs-separator-test-id';
 const breadcrumbId = 'breadcrumb-test-id';
 
-xtest('Renders - Breadcrumbs One', async () => {
+test('Renders - Breadcrumbs One', () => {
     render(<One />);
     expect(screen.getByTestId(navId)).not.toBeNull();
     expect(screen.queryByTestId(separatorId)).toBeNull();
@@ -20,14 +20,18 @@ xtest('Renders - Breadcrumbs One', async () => {
         screen.queryByTestId(breadcrumbId)?.querySelector('svg'),
     ).toBeDefined();
     expect(screen.queryByTestId(olId)).not.toBeNull();
+});
+
+xtest('Renders - Breadcrumbs One: Hover Test', async () => {
+    render(<One />);
     // TODO: Hover/MouseOver Event does not work as expected so it passes. Need to Fix
     const breadcrumbElement = screen.getByTestId(breadcrumbId);
     fireEvent.mouseOver(breadcrumbElement);
     await waitFor(() => breadcrumbElement);
-    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.red}`);
+    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.grey}`);
 });
 
-xtest('Renders - Breadcrumbs Two', async () => {
+test('Renders - Breadcrumbs Two', async () => {
     render(<Two />);
     expect(screen.getByTestId(navId)).not.toBeNull();
     expect(screen.queryByTestId(separatorId)).not.toBeNull();
@@ -35,6 +39,10 @@ xtest('Renders - Breadcrumbs Two', async () => {
         screen.queryByTestId(breadcrumbId)?.querySelector('svg'),
     ).toBeDefined();
     expect(screen.queryByTestId(olId)).not.toBeNull();
+});
+
+xtest('Renders - Breadcrumbs Two: Hover Test', async () => {
+    render(<Two />);
     // TODO: Hover Event does not work as expected so it passes. Need to Fix
     const breadcrumbElement = screen.getByTestId(breadcrumbId);
     fireEvent.mouseOver(breadcrumbElement);
@@ -46,7 +54,7 @@ xtest('Renders - Breadcrumbs Two', async () => {
     expect(breadcrumbElement).toHaveStyleRule(`background: ${color.grey}`);
 });
 
-xtest('Renders - Breadcrumbs Three', async () => {
+test('Renders - Breadcrumbs Three', () => {
     render(<Three />);
     expect(screen.getByTestId(navId)).not.toBeNull();
     expect(screen.queryAllByTestId(separatorId).length).toBeGreaterThanOrEqual(
@@ -56,6 +64,10 @@ xtest('Renders - Breadcrumbs Three', async () => {
         screen.queryByTestId(breadcrumbId)?.querySelector('svg'),
     ).toBeDefined();
     expect(screen.queryByTestId(olId)).not.toBeNull();
+});
+
+xtest('Renders - Breadcrumbs Three: Hover Test', async () => {
+    render(<Three />);
     // TODO: Hover Event does not work as expected so it passes. Need to Fix
     const breadcrumbElement = screen.getByTestId(breadcrumbId);
     fireEvent.mouseOver(breadcrumbElement);
@@ -72,7 +84,7 @@ xtest('Renders - Breadcrumbs Three', async () => {
     expect(breadcrumbElement).toHaveStyleRule(`background: ${color.grey}`);
 });
 
-xtest('Renders - Breadcrumbs Four', async () => {
+test('Renders - Breadcrumbs Four', () => {
     render(<Four />);
     expect(screen.getByTestId(navId)).not.toBeNull();
     expect(screen.queryAllByTestId(separatorId).length).toBeGreaterThanOrEqual(
@@ -82,6 +94,10 @@ xtest('Renders - Breadcrumbs Four', async () => {
         screen.queryByTestId(breadcrumbId)?.querySelector('svg'),
     ).toBeDefined();
     expect(screen.queryByTestId(olId)).not.toBeNull();
+});
+
+xtest('Renders - Breadcrumbs Four: Hover Test', async () => {
+    render(<Four />);
     // TODO: Hover Event does not work as expected so it passes. Need to Fix
     const breadcrumbElement = screen.getByTestId(breadcrumbId);
     fireEvent.mouseOver(breadcrumbElement);

@@ -17,6 +17,9 @@ const ChainSelector: FC<IChainSelectorProps> = ({
     setValue,
     isCompatibilityChecked,
 }) => {
+    const isAllSelected = !!providers
+        .map((o) => o.chainId)
+        .every((elem) => values.map((o) => o.chainId).includes(elem));
     const checkIncompatibleChains = (providerOption: OptionType) => {
         if (!isCompatibilityChecked) return;
         return !!providers
@@ -45,18 +48,23 @@ const ChainSelector: FC<IChainSelectorProps> = ({
         }
     };
 
-    const selectAll = () => {
-        const newArray: { chainId: string; maxRecordsPerCategory: number }[] =
-            [];
-        const addedChains: (string | undefined)[] = [];
-        providers.forEach((provider) => {
-            addedChains.push(provider.chain);
-            newArray.push({
-                chainId: provider.chainId,
-                maxRecordsPerCategory: 50,
+    const handleBatchSelect = () => {
+        if (isAllSelected) setValue([]);
+        else {
+            const newArray: {
+                chainId: string;
+                maxRecordsPerCategory: number;
+            }[] = [];
+            const addedChains: (string | undefined)[] = [];
+            providers.forEach((provider) => {
+                addedChains.push(provider.chain);
+                newArray.push({
+                    chainId: provider.chainId,
+                    maxRecordsPerCategory: 50,
+                });
             });
-        });
-        setValue(newArray);
+            setValue(newArray);
+        }
     };
 
     return (
@@ -88,13 +96,15 @@ const ChainSelector: FC<IChainSelectorProps> = ({
                     ))}
                     {IsMultipleAllowed && (
                         <GridElementStyled>
-                            <Card onClick={selectAll}>
+                            <Card onClick={handleBatchSelect}>
                                 <CardContentStyled>
                                     <Typography
                                         variant="subtitle2"
                                         color={color.blue}
                                     >
-                                        Select all
+                                        {isAllSelected
+                                            ? 'Deselect all'
+                                            : 'Select all'}
                                     </Typography>
                                 </CardContentStyled>
                             </Card>

@@ -42,3 +42,8 @@ test('renders all the cards', async () => {
     expect(getByText('Ropsten')).toBeDefined();
     expect(getByText('Goerli')).toBeDefined();
 });
+
+xtest('Batch select/deselect is working', () => {
+    // TODO: test select/deselect toggle
+    // TODO: test select/deselect all cards
+});

@@ -1,8 +1,10 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import collection, { TIconType } from './collection';
-import { StyledIconDiv } from './Icon.styles';
+import styles from './Icon.styles';
 import type { IconProps } from './types';
+
+const { StyledIconDiv } = styles;
 
 const Icon: React.FC<IconProps> = ({
     fill = 'inherit',

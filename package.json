@@ -40,7 +40,7 @@
         "react-dom": "^17.0.2"
     },
     "dependencies": {
-        "@storybook/theming": "^6.4.19",
+        "@storybook/theming": "^6.4.21",
         "@walletconnect/web3-provider": "^1.7.1",
         "@web3auth/web3auth": "^0.3.2",
         "moralis": "^1.3.2",
@@ -70,13 +70,13 @@
     "devDependencies": {
         "@babel/core": "^7.16.5",
         "@size-limit/preset-small-lib": "^7.0.5",
-        "@storybook/addon-actions": "^6.4.9",
-        "@storybook/addon-essentials": "^6.4.9",
+        "@storybook/addon-actions": "^6.4.21",
+        "@storybook/addon-essentials": "^6.4.21",
         "@storybook/addon-info": "^5.3.21",
-        "@storybook/addon-links": "^6.4.9",
-        "@storybook/addons": "^6.4.19",
-        "@storybook/react": "^6.4.9",
-        "@storybook/testing-react": "^1.2.2",
+        "@storybook/addon-links": "^6.4.21",
+        "@storybook/addons": "^6.4.21",
+        "@storybook/react": "^6.4.21",
+        "@storybook/testing-react": "^1.2.4",
         "@testing-library/jest-dom": "^5.16.1",
         "@testing-library/react": "^12.1.2",
         "@types/blockies": "^0.0.2",

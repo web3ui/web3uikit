@@ -46,8 +46,8 @@ const TextArea: React.FC<TextAreaProps> = ({
             <Icon
                 svg={iconTypes.expand}
                 style={{
-                    position: 'absolute',
                     bottom: '10px',
+                    position: 'absolute',
                     right: '10px',
                     zIndex: '-1',
                 }}

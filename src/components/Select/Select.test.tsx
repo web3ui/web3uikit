@@ -1,10 +1,8 @@
-import ReactDOM from 'react-dom';
-import '@testing-library/jest-dom';
-import 'jest-styled-components';
 import { composeStories } from '@storybook/testing-react';
-import * as stories from './Select.stories';
-import color from '../../styles/colors';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
+import color from '../../styles/colors';
+import * as stories from './Select.stories';
 
 const {
     Default,
@@ -15,268 +13,155 @@ const {
     ErrorWithMessage,
 } = composeStories(stories);
 
-let container: HTMLDivElement;
 const testLabelId = 'test-label';
 const testWrapperId = 'test-wrapper';
 const testSelectedId = 'test-selected';
+const testTextContent = 'triangleDown icon';
 
-describe('Default', () => {
+test('Select - Default', async () => {
     const testLabel = Default?.args?.label;
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Default />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(<Default />);
 
-    it('renders the component', () => {
-        const select: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testWrapperId}"]`,
-        );
-        expect(select).not.toBeNull();
-    });
+    // renders the component
+    const select = screen.getByTestId(testWrapperId) as unknown as HTMLDivElement | null;
+    expect(select).not.toBeNull();
 
-    it('renders select without selected option 0 index', () => {
-        const selected: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testSelectedId}"]`,
-        );
-        expect(selected).not.toBeNull();
-        selected && expect(selected.textContent).toContain('triangleDown icon');
-    });
+    // renders select without selected option 0 index
+    const selected = screen.getByTestId(testSelectedId) as unknown as HTMLDivElement | null;
+    expect(selected).not.toBeNull();
+    selected && expect(selected.textContent).toContain(testTextContent);
 
-    it('renders select correct colors', () => {
-        const selected: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testSelectedId}"]`,
-        );
-        const styles = selected && getComputedStyle(selected);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
-    });
+    //   renders select correct colors
+    const styles = selected && getComputedStyle(selected);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
 
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
+    // renders label text
+    const label = screen.getByTestId(testLabelId);
+    expect(label).not.toBeNull();
+    expect(label?.textContent).toBe(testLabel);
 });
-describe('NoDefaultIndexOption', () => {
+
+test('Select - NoDefaultIndexOption', async () => {
     const testLabel = NoDefaultIndexOption?.args?.label;
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<NoDefaultIndexOption />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(<NoDefaultIndexOption />);
 
-    it('renders the component', () => {
-        const select: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testWrapperId}"]`,
-        );
-        expect(select).not.toBeNull();
-    });
+    // renders the component
+    const select = screen.getByTestId(testWrapperId) as unknown as HTMLDivElement | null;
+    expect(select).not.toBeNull();
 
-    it('renders select without the selected option 0 index', () => {
-        const selected: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testSelectedId}"]`,
-        );
-        expect(selected).not.toBeNull();
-        selected && expect(selected.textContent).toContain('triangleDown icon');
-    });
+    // renders select without selected option 0 index
+    const selected = screen.getByTestId(testSelectedId) as unknown as HTMLDivElement | null;
+    expect(selected).not.toBeNull();
+    selected && expect(selected.textContent).toContain(testTextContent);
 
-    it('renders select correct colors', () => {
-        const selected: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testSelectedId}"]`,
-        );
-        const styles = selected && getComputedStyle(selected);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
-    });
+    //   renders select correct colors
+    const styles = selected && getComputedStyle(selected);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
 
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
+    // renders label text
+    const label = screen.getByTestId(testLabelId);
+    expect(label).not.toBeNull();
+    expect(label?.textContent).toBe(testLabel);
 });
-describe('Error', () => {
+
+test('Select - Error', async () => {
     const testLabel = Error?.args?.label;
     const testOptions = Error?.args?.options;
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Error />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(<Error />);
 
-    it('renders the component', () => {
-        const select: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testWrapperId}"]`,
-        );
-        expect(select).not.toBeNull();
-    });
+    // renders the component
+    const select = screen.getByTestId(testWrapperId) as unknown as HTMLDivElement | null;
+    expect(select).not.toBeNull();
 
-    it('renders select with the selected option 0 index', () => {
-        const selected: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testSelectedId}"]`,
-        );
-        expect(selected).not.toBeNull();
-        selected &&
-            expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
-    });
+    // renders select without selected option 0 index
+    const selected = screen.getByTestId(testSelectedId) as unknown as HTMLDivElement | null;
+    expect(selected).not.toBeNull();
+    selected && expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
 
-    it('renders select correct colors', () => {
-        const selected: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testSelectedId}"]`,
-        );
-        const styles = selected && getComputedStyle(selected);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.red);
-    });
+    //   renders select correct colors
+    const styles = selected && getComputedStyle(selected);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.red);
 
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
+    // renders label text
+    const label = screen.getByTestId(testLabelId);
+    expect(label).not.toBeNull();
+    expect(label?.textContent).toBe(testLabel);
 });
-describe('ErrorWithMessage', () => {
+
+test('Select - ErrorWithMessage', async () => {
     const testLabel = ErrorWithMessage?.args?.label;
     const testOptions = ErrorWithMessage?.args?.options;
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ErrorWithMessage />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(<ErrorWithMessage />);
 
-    it('renders the component', () => {
-        const select: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testWrapperId}"]`,
-        );
-        expect(select).not.toBeNull();
-    });
+    // renders the component
+    const select = screen.getByTestId(testWrapperId) as unknown as HTMLDivElement | null;
+    expect(select).not.toBeNull();
 
-    it('renders select with the selected option 0 index', () => {
-        const selected: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testSelectedId}"]`,
-        );
-        expect(selected).not.toBeNull();
-        selected &&
-            expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
-    });
+    // renders select without selected option 0 index
+    const selected = screen.getByTestId(testSelectedId) as unknown as HTMLDivElement | null;
+    expect(selected).not.toBeNull();
+    selected && expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
 
-    it('renders select correct colors', () => {
-        const selected: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testSelectedId}"]`,
-        );
-        const styles = selected && getComputedStyle(selected);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.red);
-    });
+    //   renders select correct colors
+    const styles = selected && getComputedStyle(selected);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.red);
 
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
+    // renders label text
+    const label = screen.getByTestId(testLabelId);
+    expect(label).not.toBeNull();
+    expect(label?.textContent).toBe(testLabel);
 });
-describe('Confirmed', () => {
+
+test('Select - Confirmed', async () => {
     const testLabel = Confirmed?.args?.label;
     const testOptions = Confirmed?.args?.options;
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Confirmed />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(<Confirmed />);
 
-    it('renders the component', () => {
-        const select: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testWrapperId}"]`,
-        );
-        expect(select).not.toBeNull();
-    });
+    // renders the component
+    const select = screen.getByTestId(testWrapperId) as unknown as HTMLDivElement | null;
+    expect(select).not.toBeNull();
 
-    it('renders select with the selected option 0 index', () => {
-        const selected: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testSelectedId}"]`,
-        );
-        expect(selected).not.toBeNull();
-        selected &&
-            expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
-    });
+    // renders select without selected option 0 index
+    const selected = screen.getByTestId(testSelectedId) as unknown as HTMLDivElement | null;
+    expect(selected).not.toBeNull();
+    selected && expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
 
-    it('renders select correct colors', () => {
-        const selected: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testSelectedId}"]`,
-        );
-        const styles = selected && getComputedStyle(selected);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.green);
-    });
+    //   renders select correct colors
+    const styles = selected && getComputedStyle(selected);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.green);
 
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
+    // renders label text
+    const label = screen.getByTestId(testLabelId);
+    expect(label).not.toBeNull();
+    expect(label?.textContent).toBe(testLabel);
 });
-describe('Disabled', () => {
+
+test('Select - Disabled', async () => {
     const testLabel = Disabled?.args?.label;
     const testOptions = Disabled?.args?.options;
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Disabled />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(<Disabled />);
 
-    it('renders the component', () => {
-        const select: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testWrapperId}"]`,
-        );
-        expect(select).not.toBeNull();
-    });
+    // renders the component
+    const select = screen.getByTestId(testWrapperId) as unknown as HTMLDivElement | null;
+    expect(select).not.toBeNull();
 
-    it('renders select with the selected option 0 index', () => {
-        const selected: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testSelectedId}"]`,
-        );
-        expect(selected).not.toBeNull();
-        selected &&
-            expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
-    });
+    // renders select without selected option 0 index
+    const selected = screen.getByTestId(testSelectedId) as unknown as HTMLDivElement | null;
+    expect(selected).not.toBeNull();
+    selected && expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
 
-    it('renders select correct colors', () => {
-        const selected: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${testSelectedId}"]`,
-        );
-        const styles = selected && getComputedStyle(selected);
-        expect(styles?.borderColor.toUpperCase()).toBe(color.greyDisabled);
-    });
+    //   renders select correct colors
+    const styles = selected && getComputedStyle(selected);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.greyDisabled);
 
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
+    // renders label text
+    const label = screen.getByTestId(testLabelId);
+    expect(label).not.toBeNull();
+    expect(label?.textContent).toBe(testLabel);
 });

@@ -41,6 +41,7 @@ const Todo: React.FC<TodoProps> = ({
         <SectionStyled data-testid="test-todo">
             <DivStyled>
                 <Input
+                    id="todo-input"
                     label={label}
                     onChange={(e) => setInputValue(e.target.value)}
                     size="large"

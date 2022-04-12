@@ -12,7 +12,7 @@ const navId = 'breadcrumbs-nav-test-id';
 const separatorId = 'breadcrumbs-separator-test-id';
 const breadcrumbId = 'breadcrumb-test-id';
 
-test('Renders - Breadcrumbs One', async () => {
+xtest('Renders - Breadcrumbs One', async () => {
     render(<One />);
     expect(screen.getByTestId(navId)).not.toBeNull();
     expect(screen.queryByTestId(separatorId)).toBeNull();
@@ -27,7 +27,7 @@ test('Renders - Breadcrumbs One', async () => {
     expect(breadcrumbElement).toHaveStyleRule(`background: ${color.red}`);
 });
 
-test('Renders - Breadcrumbs Two', async () => {
+xtest('Renders - Breadcrumbs Two', async () => {
     render(<Two />);
     expect(screen.getByTestId(navId)).not.toBeNull();
     expect(screen.queryByTestId(separatorId)).not.toBeNull();
@@ -46,7 +46,7 @@ test('Renders - Breadcrumbs Two', async () => {
     expect(breadcrumbElement).toHaveStyleRule(`background: ${color.grey}`);
 });
 
-test('Renders - Breadcrumbs Three', async () => {
+xtest('Renders - Breadcrumbs Three', async () => {
     render(<Three />);
     expect(screen.getByTestId(navId)).not.toBeNull();
     expect(screen.queryAllByTestId(separatorId).length).toBeGreaterThanOrEqual(
@@ -72,7 +72,7 @@ test('Renders - Breadcrumbs Three', async () => {
     expect(breadcrumbElement).toHaveStyleRule(`background: ${color.grey}`);
 });
 
-test('Renders - Breadcrumbs Four', async () => {
+xtest('Renders - Breadcrumbs Four', async () => {
     render(<Four />);
     expect(screen.getByTestId(navId)).not.toBeNull();
     expect(screen.queryAllByTestId(separatorId).length).toBeGreaterThanOrEqual(

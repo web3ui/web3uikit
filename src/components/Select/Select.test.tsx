@@ -24,11 +24,11 @@ test('Select - Default', async () => {
     render(<Default />);
 
     // renders the component
-    const select: HTMLDivElement | null = screen.getByTestId(testWrapperId);
+    const select = screen.getByTestId(testWrapperId) as unknown as HTMLDivElement | null;
     expect(select).not.toBeNull();
 
     // renders select without selected option 0 index
-    const selected: HTMLDivElement | null = screen.getByTestId(testSelectedId);
+    const selected = screen.getByTestId(testSelectedId) as unknown as HTMLDivElement | null;
     expect(selected).not.toBeNull();
     selected && expect(selected.textContent).toContain(testTextContent);
 
@@ -48,11 +48,11 @@ test('Select - NoDefaultIndexOption', async () => {
     render(<NoDefaultIndexOption />);
 
     // renders the component
-    const select: HTMLDivElement | null = screen.getByTestId(testWrapperId);
+    const select = screen.getByTestId(testWrapperId) as unknown as HTMLDivElement | null;
     expect(select).not.toBeNull();
 
     // renders select without selected option 0 index
-    const selected: HTMLDivElement | null = screen.getByTestId(testSelectedId);
+    const selected = screen.getByTestId(testSelectedId) as unknown as HTMLDivElement | null;
     expect(selected).not.toBeNull();
     selected && expect(selected.textContent).toContain(testTextContent);
 
@@ -73,11 +73,11 @@ test('Select - Error', async () => {
     render(<Error />);
 
     // renders the component
-    const select: HTMLDivElement | null = screen.getByTestId(testWrapperId);
+    const select = screen.getByTestId(testWrapperId) as unknown as HTMLDivElement | null;
     expect(select).not.toBeNull();
 
     // renders select without selected option 0 index
-    const selected: HTMLDivElement | null = screen.getByTestId(testSelectedId);
+    const selected = screen.getByTestId(testSelectedId) as unknown as HTMLDivElement | null;
     expect(selected).not.toBeNull();
     selected && expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
 
@@ -98,11 +98,11 @@ test('Select - ErrorWithMessage', async () => {
     render(<ErrorWithMessage />);
 
     // renders the component
-    const select: HTMLDivElement | null = screen.getByTestId(testWrapperId);
+    const select = screen.getByTestId(testWrapperId) as unknown as HTMLDivElement | null;
     expect(select).not.toBeNull();
 
     // renders select without selected option 0 index
-    const selected: HTMLDivElement | null = screen.getByTestId(testSelectedId);
+    const selected = screen.getByTestId(testSelectedId) as unknown as HTMLDivElement | null;
     expect(selected).not.toBeNull();
     selected && expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
 
@@ -123,11 +123,11 @@ test('Select - Confirmed', async () => {
     render(<Confirmed />);
 
     // renders the component
-    const select: HTMLDivElement | null = screen.getByTestId(testWrapperId);
+    const select = screen.getByTestId(testWrapperId) as unknown as HTMLDivElement | null;
     expect(select).not.toBeNull();
 
     // renders select without selected option 0 index
-    const selected: HTMLDivElement | null = screen.getByTestId(testSelectedId);
+    const selected = screen.getByTestId(testSelectedId) as unknown as HTMLDivElement | null;
     expect(selected).not.toBeNull();
     selected && expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
 
@@ -148,11 +148,11 @@ test('Select - Disabled', async () => {
     render(<Disabled />);
 
     // renders the component
-    const select: HTMLDivElement | null = screen.getByTestId(testWrapperId);
+    const select = screen.getByTestId(testWrapperId) as unknown as HTMLDivElement | null;
     expect(select).not.toBeNull();
 
     // renders select without selected option 0 index
-    const selected: HTMLDivElement | null = screen.getByTestId(testSelectedId);
+    const selected = screen.getByTestId(testSelectedId) as unknown as HTMLDivElement | null;
     expect(selected).not.toBeNull();
     selected && expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
 

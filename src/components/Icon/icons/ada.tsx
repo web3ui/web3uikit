@@ -3,6 +3,8 @@ import React from 'react';
 
 const adaIcon = (fill: string, size: number, style?: React.CSSProperties) => (
     <svg
+        aria-hidden="true"
+        data-testid="test-icon"
         id="Layer_2_1_"
         xmlns="http://www.w3.org/2000/svg"
         width={size}

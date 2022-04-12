@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledIconDiv = styled.div`
+const StyledIconDiv = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -8,3 +8,5 @@ export const StyledIconDiv = styled.div`
     line-height: 0px;
     pointer-events: none;
 `;
+
+export default { StyledIconDiv };

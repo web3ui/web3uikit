@@ -3,6 +3,8 @@ import React from 'react';
 
 const usdcIcon = (fill: string, size: number, style?: React.CSSProperties) => (
     <svg
+        aria-hidden="true"
+        data-testid="test-icon"
         id="usdc"
         xmlns="http://www.w3.org/2000/svg"
         width={size}

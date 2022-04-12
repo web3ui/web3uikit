@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import color from '../../styles/colors';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
-import TextAreaStyles from './TextArea.styles';
+import styles from './TextArea.styles';
 import { TextAreaProps } from './types';
 
-const { TextAreaStyled, LabelStyled, TextAreaWrapper } = TextAreaStyles;
+const { TextAreaStyled, LabelStyled, TextAreaWrapper } = styles;
 
 const TextArea: React.FC<TextAreaProps> = ({
     autoComplete = true,

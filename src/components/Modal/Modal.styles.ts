@@ -18,7 +18,8 @@ const overflow = (): string => {
             -ms-overflow-style: none;
         `;
 };
-export const DivStyledWrap = styled.div<TStyleProps>`
+
+const DivStyledWrap = styled.div<TStyleProps>`
     ${fonts.text};
     background-color: ${colors.white};
     border-radius: 20px;
@@ -33,7 +34,7 @@ export const DivStyledWrap = styled.div<TStyleProps>`
     ${(p) => !p.canOverflow && overflow()}
 `;
 
-export const HeaderStyled = styled.header<{
+const HeaderStyled = styled.header<{
     title: any;
     fixedMode: boolean;
     headerHasBottomBorder: boolean;
@@ -63,11 +64,11 @@ export const HeaderStyled = styled.header<{
     }
 `;
 
-export const DivStyledContent = styled.div`
+const DivStyledContent = styled.div`
     padding: 5px 32px 15px;
 `;
 
-export const FooterStyled = styled.footer<TStyleProps>`
+const FooterStyled = styled.footer<TStyleProps>`
     ${(p) =>
         p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
     border-top: 1px solid ${colors.paleBlue2};
@@ -81,7 +82,7 @@ export const FooterStyled = styled.footer<TStyleProps>`
     }
 `;
 
-export const DivStyled = styled.div<TStyleProps>`
+const DivStyled = styled.div<TStyleProps>`
     ${(p) => (p.isVisible ? 'display: grid;' : 'display: none;')};
     background: rgba(0, 0, 0, 0.3);
     bottom: 0;
@@ -92,7 +93,7 @@ export const DivStyled = styled.div<TStyleProps>`
     z-index: 5;
 `;
 
-export const CustomFooterStyled = styled.footer<TStyleProps>`
+const CustomFooterStyled = styled.footer<TStyleProps>`
     ${(p) =>
         p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
     border-top: 1px solid ${colors.paleBlue2};
@@ -100,7 +101,7 @@ export const CustomFooterStyled = styled.footer<TStyleProps>`
     padding: 15px 32px 20px;
 `;
 
-export const CustomButtonStyle = styled.div`
+const CustomButtonStyle = styled.div`
     background: none;
     color: inherit;
     border: none;
@@ -109,3 +110,13 @@ export const CustomButtonStyle = styled.div`
     cursor: pointer;
     outline: inherit;
 `;
+
+export default {
+    CustomButtonStyle,
+    CustomFooterStyled,
+    DivStyled,
+    DivStyledContent,
+    DivStyledWrap,
+    FooterStyled,
+    HeaderStyled,
+};

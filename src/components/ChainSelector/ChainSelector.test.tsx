@@ -43,4 +43,7 @@ test('renders all the cards', async () => {
     expect(getByText('Goerli')).toBeDefined();
 });
 
-// TODO: Use userEvent testing after React18 upgrade
+xtest('Batch select/deselect is working', () => {
+    // TODO: test select/deselect toggle
+    // TODO: test select/deselect all cards
+});

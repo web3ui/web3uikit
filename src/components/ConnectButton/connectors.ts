@@ -8,31 +8,31 @@ export const connectors = [
     {
         title: 'Metamask',
         icon: Metamask,
-        connectorId: 'injected',
+        provider: 'injected',
         priority: 1,
     },
     {
         title: 'WalletConnect',
         icon: WalletConnect,
-        connectorId: 'walletconnect',
+        provider: 'walletconnect',
         priority: 2,
     },
     {
         title: 'MathWallet',
         icon: MathWallet,
-        connectorId: 'injected',
+        provider: 'injected',
         priority: 999,
     },
     {
         title: 'TokenPocket',
         icon: TokenPocket,
-        connectorId: 'injected',
+        provider: 'injected',
         priority: 999,
     },
     {
         title: 'SafePal',
         icon: SafePal,
-        connectorId: 'injected',
+        provider: 'injected',
         priority: 999,
     },
 ];

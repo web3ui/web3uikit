@@ -50,11 +50,4 @@ const HeaderStyled = styled.div`
     position: relative;
 `;
 
-const CardStyles = {
-    AbsoluteIconStyled,
-    DivStyled,
-    FooterStyled,
-    HeaderStyled,
-};
-
-export default CardStyles;
+export default { AbsoluteIconStyled, DivStyled, FooterStyled, HeaderStyled };

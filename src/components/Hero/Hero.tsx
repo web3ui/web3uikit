@@ -7,7 +7,7 @@ import { HeroProps } from './types';
 const Hero: React.FC<HeroProps> = ({
     align = 'center',
     backgroundColor = `${color.greyLight}`,
-    backgroundURL,
+    backgroundURL = '',
     children,
     customImage = null,
     height = '80vh',

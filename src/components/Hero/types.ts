@@ -15,7 +15,7 @@ export interface HeroProps {
     /**
      * the URL of a background image is needed
      */
-    backgroundURL: string;
+    backgroundURL?: string;
 
     /**
      * pass a color HEX or the background will be dark grey

@@ -48,6 +48,8 @@ export const Regular = Template.bind({});
 Regular.args = {
     id: 'regular',
     title: 'Confirm',
+    okText: 'this is very big, far too big',
+    cancelText: 'oh so is this, much too big lads',
     isVisible: true,
     children: [
         <div
@@ -252,9 +254,9 @@ CustomWidth.args = {
     title: 'You can pass any valid CSS value as width',
     isVisible: true,
     children: [
-        <p>this Modal is 300px width (and will scale down with screen size)</p>,
+        <p>this Modal is 900px width (and will scale down with screen size)</p>,
     ],
-    width: '300px',
+    width: '900px',
 };
 
 export const CustomFooter = Template.bind({});

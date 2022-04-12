@@ -6,7 +6,7 @@ import TrustWallet from './WalletIcons/TWT';
 import Metamask from './WalletIcons/Metamask';
 
 /**
- * We have here connectorId : 'metamask' but actually it's 'injected' type
+ * We have here provider : 'metamask' but actually it's 'injected' type
  * Currently there is no type 'injected' in react-moralis
  * so it's temporary
  */
@@ -15,37 +15,37 @@ const connectors = [
     {
         title: 'Metamask',
         icon: Metamask,
-        connectorId: 'metamask',
+        provider: 'metamask',
         priority: 1,
     },
     {
         title: 'WalletConnect',
         icon: WalletConnect,
-        connectorId: 'walletconnect',
+        provider: 'walletconnect',
         priority: 2,
     },
     {
         title: 'Trust Wallet',
         icon: TrustWallet,
-        connectorId: 'metamask',
+        provider: 'metamask',
         priority: 3,
     },
     {
         title: 'MathWallet',
         icon: MathWallet,
-        connectorId: 'metamask',
+        provider: 'metamask',
         priority: 999,
     },
     {
         title: 'TokenPocket',
         icon: TokenPocket,
-        connectorId: 'metamask',
+        provider: 'metamask',
         priority: 999,
     },
     {
         title: 'SafePal',
         icon: SafePal,
-        connectorId: 'metamask',
+        provider: 'metamask',
         priority: 999,
     },
 ];

@@ -74,6 +74,7 @@ const Radios: React.FC<RadiosProps> = ({
                             data-testid={`test-label-${i}`}
                             htmlFor={`${formattedID}_${i}`}
                             isCreditCardMode={isCreditCards}
+                            role="label"
                         >
                             {typeof item === 'string'
                                 ? item

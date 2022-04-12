@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Tag } from '../Tag';
@@ -15,10 +15,12 @@ const Todo: React.FC<TodoProps> = ({
     pattern,
     todos = [],
 }) => {
+    const key = useMemo(() => Math.random(), []);
     const [inputValue, setInputValue] = useState<string>('');
     const [lists, setLists] = useState<string[]>(todos);
 
     useEffect(() => onChange && onChange(lists), [lists]);
+    useEffect(() => setLists(todos), [todos]);
 
     const removeTodo = (id: number) => {
         const updatedList = lists.filter((item) => item !== lists[id]);
@@ -29,8 +31,9 @@ const Todo: React.FC<TodoProps> = ({
         setLists((prevTodo) => [...prevTodo, inputValue]);
         setInputValue('');
         const input: HTMLInputElement | null = document.querySelector(
-            '[data-testid="test-input"]',
+            `input[key="${key}"]`,
         );
+
         input?.focus();
     };
 
@@ -38,12 +41,14 @@ const Todo: React.FC<TodoProps> = ({
         <SectionStyled data-testid="test-todo">
             <DivStyled>
                 <Input
+                    id="todo-input"
                     label={label}
                     onChange={(e) => setInputValue(e.target.value)}
                     size="large"
                     validation={{
                         regExp: pattern,
                     }}
+                    key={key}
                     value={inputValue}
                 />
                 <Button

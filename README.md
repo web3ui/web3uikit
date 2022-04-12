@@ -67,6 +67,7 @@ const App = () => (
     -   [`<Breadcrumbs />`](#breadcrumbs-)
     -   [`<Card />`](#card-)
     -   [`<CryptoCards />`](#cryptocards-)
+    -   [`<CryptoLogos />`](#cryptologos-)
     -   [`<Icon />`](#icon-)
     -   [`<Illustration />`](#illustration-)
     -   [`<Information />`](#information-)
@@ -75,6 +76,7 @@ const App = () => (
     -   [`<Notification />`](#notification-)
     -   [`<Table />`](#table-)
     -   [`<Tag />`](#tag-)
+    -   [`<Todo />`](#todo-)
     -   [`<Widget />`](#widget-)
 -   [⚙️ `Interaction Components`](#️-interaction-components)
     -   [`<Button />`](#button-)
@@ -148,6 +150,12 @@ Try the `<Card />` component in the [interactive documentation](https://web3ui.g
 ![CryptoCards](https://user-images.githubusercontent.com/78314301/149967411-e26f6584-1b38-4467-9a80-8b05831ffbaf.gif)
 
 Try the `<CryptoCards />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-crypto-cards)
+
+### `<CryptoLogos />`
+
+![CryptoLogos](https://user-images.githubusercontent.com/35369843/162805867-b7bf12a9-fc4f-4098-927b-497252fe46fc.gif)
+
+Try the `<CryptoLogos />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/6-graphic-crypto-logos--ethereum)
 
 ### `<Icon />`
 
@@ -238,6 +246,12 @@ Try the `<Table />` component in the [interactive documentation](https://web3ui.
 ![Tag](https://user-images.githubusercontent.com/78314301/149967535-9f1ea1cb-d86d-4fdd-86c3-410e0ba3698e.gif)
 
 Try the `<Tag />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-tag)
+
+### `<Todo />`
+
+![Todo](https://user-images.githubusercontent.com/16763860/161817468-2eedf624-145c-40bb-afcf-67d8d946b1c7.gif)
+
+Try the `<Todo />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-todo)
 
 ### `<Widget />`
 

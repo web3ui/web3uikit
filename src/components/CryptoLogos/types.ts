@@ -1,5 +1,10 @@
 export interface CryptoLogoProps {
     /**
+     * The background color of the crypto logo
+     */
+    bgColor?: string;
+
+    /**
      * The name of the blockchain
      */
     chain: chainType;
@@ -8,11 +13,6 @@ export interface CryptoLogoProps {
      * The size of the component
      */
     size?: sizeType;
-
-    /**
-     * The background color of the crypto logo
-     */
-    bgColor?: string;
 }
 
 export type chainType =

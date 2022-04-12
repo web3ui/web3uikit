@@ -6,7 +6,7 @@ import { TagProps } from '../types';
 
 type TStyleProps = Pick<TagProps, 'width'>;
 
-export const initialStyles = css`
+const initialStyles = css`
     ${resetCSS}
     ${fonts.text}
     ${fonts.textBold700};
@@ -21,11 +21,11 @@ export const initialStyles = css`
     width: 100%;
 `;
 
-export const regular = css`
+const regular = css`
     background: ${color.blueLight};
 `;
 
-export const activeStatus = css`
+const activeStatus = css`
     background: ${color.greenForestLight};
     color: ${color.green};
     display: flex;
@@ -36,11 +36,11 @@ export const activeStatus = css`
     }
 `;
 
-export const inactiveStatus = css`
+const inactiveStatus = css`
     background: ${color.blueLight};
 `;
 
-export const discount = css<TStyleProps>`
+const discount = css<TStyleProps>`
     align-items: center;
     background: ${color.green};
     border-radius: 30px;
@@ -52,3 +52,11 @@ export const discount = css<TStyleProps>`
     padding: 0 4px;
     width: 32px;
 `;
+
+export default {
+    activeStatus,
+    discount,
+    inactiveStatus,
+    initialStyles,
+    regular,
+};

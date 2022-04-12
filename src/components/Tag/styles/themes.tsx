@@ -56,7 +56,7 @@ export const discount = css<TStyleProps>`
 export const boarder = css<TStyleProps>`
     align-items: center;
     background: ${color.green};
-    border-left: 5px solid;
+    border-left: 4px solid;
     border-radius: 5px;
     color: ${color.white};
     display: flex;

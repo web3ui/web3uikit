@@ -42,3 +42,5 @@ test('renders all the cards', async () => {
     expect(getByText('Ropsten')).toBeDefined();
     expect(getByText('Goerli')).toBeDefined();
 });
+
+// TODO: Use userEvent testing after React18 upgrade

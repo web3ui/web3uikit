@@ -1,8 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import { composeStories } from '@storybook/testing-react';
+import { render, screen } from '@testing-library/react';
+import React from 'react';
 import * as stories from './Tag.stories';
-import 'jest-styled-components';
 
 const {
     Regular,
@@ -20,378 +19,86 @@ const {
 
 export const tagTestId = 'test-tag-id';
 export const tagTestTextId = 'test-tag-text';
-let container: HTMLDivElement;
 
-describe('Tag - Regular', () => {
-    const regularText = 'Tag';
+type TestStoryProps = {
+    name: string;
+    Component: any;
+    expectedText: string;
+};
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Regular />, container);
-    });
+function testStory({ name, Component, expectedText }: TestStoryProps) {
+    return test(name, async () => {
+        render(<Component />);
 
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
+        // renders the component
+        const element = screen.getByTestId(tagTestId);
         expect(element).not.toBeNull();
+
+        // renders text correctly
+        const labelText = screen.getByTestId(tagTestTextId);
+        expect(labelText?.textContent).toBe(expectedText);
     });
+}
 
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${tagTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(regularText);
-    });
+const data = [
+    {
+        name: 'Tag - Regular',
+        Component: Regular,
+        expectedText: 'Tag',
+    },
+    {
+        name: 'Tag - Inactive Status',
+        Component: InactiveStatus,
+        expectedText: 'Inactive Tag',
+    },
+    {
+        name: 'Tag - Active Status',
+        Component: ActiveStatus,
+        expectedText: 'Active Tag',
+    },
+    {
+        name: 'Tag - Discount',
+        Component: Discount,
+        expectedText: '-35%',
+    },
+    {
+        name: 'Tag - Blue',
+        Component: Blue,
+        expectedText: 'Blue',
+    },
+    {
+        name: 'Tag - Green',
+        Component: Green,
+        expectedText: 'Green',
+    },
+    {
+        name: 'Tag - Grey',
+        Component: Grey,
+        expectedText: 'Grey',
+    },
+    {
+        name: 'Tag - Red',
+        Component: Red,
+        expectedText: 'Red',
+    },
+    {
+        name: 'Tag - Yellow',
+        Component: Yellow,
+        expectedText: 'Yellow',
+    },
+    {
+        name: 'Tag - Purple',
+        Component: Purple,
+        expectedText: 'Purple',
+    },
+    {
+        name: 'Tag - Pink',
+        Component: Pink,
+        expectedText: 'Pink',
+    },
+];
 
-    it('should not render icon', () => {
-        const iconSVG = container.querySelector(
-            `[data-testid="${tagTestId}"] > svg`,
-        );
-        expect(iconSVG).toBeNull();
-    });
-});
-
-describe('Tag - Inactive Status', () => {
-    const inactiveText = 'Inactive Tag';
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<InactiveStatus />, container);
-    });
-
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${tagTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(inactiveText);
-    });
-
-    it('should not render icon', () => {
-        const iconSVG = container.querySelector(
-            `[data-testid="${tagTestId}"] > svg`,
-        );
-        expect(iconSVG).toBeNull();
-    });
-});
-
-describe('Tag - Active Status', () => {
-    const activeText = 'Active Tag';
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ActiveStatus />, container);
-    });
-
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${tagTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(activeText);
-    });
-
-    it('should render icon', () => {
-        const iconSVG = container.querySelector(
-            `[data-testid="${tagTestId}"] > div > svg`,
-        );
-        expect(iconSVG).not.toBeNull();
-    });
-});
-
-describe('Tag - Discount', () => {
-    const discountText = '-35%';
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Discount />, container);
-    });
-
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${tagTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(discountText);
-    });
-
-    it('should render icon', () => {
-        const iconSVG = container.querySelector(
-            `[data-testid="${tagTestId}"] > svg`,
-        );
-        expect(iconSVG).toBeNull();
-    });
-});
-
-describe('Tag - Blue', () => {
-    const text = 'Blue';
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Blue />, container);
-    });
-
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${tagTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(text);
-    });
-
-    it('should render icon', () => {
-        const iconSVG = container.querySelector(
-            `[data-testid="${tagTestId}"] > svg`,
-        );
-        expect(iconSVG).toBeNull();
-    });
-});
-
-describe('Tag - Green', () => {
-    const green = 'Green';
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Green />, container);
-    });
-
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${tagTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(green);
-    });
-
-    it('should render icon', () => {
-        const iconSVG = container.querySelector(
-            `[data-testid="${tagTestId}"] > svg`,
-        );
-        expect(iconSVG).toBeNull();
-    });
-});
-
-describe('Tag - Grey', () => {
-    const grey = 'Grey';
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Grey />, container);
-    });
-
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${tagTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(grey);
-    });
-
-    it('should render icon', () => {
-        const iconSVG = container.querySelector(
-            `[data-testid="${tagTestId}"] > svg`,
-        );
-        expect(iconSVG).toBeNull();
-    });
-});
-
-describe('Tag - Red', () => {
-    const red = 'Red';
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Red />, container);
-    });
-
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${tagTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(red);
-    });
-
-    it('should render icon', () => {
-        const iconSVG = container.querySelector(
-            `[data-testid="${tagTestId}"] > svg`,
-        );
-        expect(iconSVG).toBeNull();
-    });
-});
-
-describe('Tag - Yellow', () => {
-    const yellow = 'Yellow';
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Yellow />, container);
-    });
-
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${tagTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(yellow);
-    });
-
-    it('should render icon', () => {
-        const iconSVG = container.querySelector(
-            `[data-testid="${tagTestId}"] > svg`,
-        );
-        expect(iconSVG).toBeNull();
-    });
-});
-
-describe('Tag - Purple', () => {
-    const purple = 'Purple';
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Purple />, container);
-    });
-
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${tagTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(purple);
-    });
-
-    it('should render icon', () => {
-        const iconSVG = container.querySelector(
-            `[data-testid="${tagTestId}"] > svg`,
-        );
-        expect(iconSVG).toBeNull();
-    });
-});
-
-describe('Tag - Pink', () => {
-    const pink = 'Pink';
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Pink />, container);
-    });
-
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const element = container.querySelector(`[data-testid="${tagTestId}"]`);
-        expect(element).not.toBeNull();
-    });
-
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${tagTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(pink);
-    });
-
-    it('should render icon', () => {
-        const iconSVG = container.querySelector(
-            `[data-testid="${tagTestId}"] > svg`,
-        );
-        expect(iconSVG).toBeNull();
-    });
-});
+for (let index = 0; index < data.length; index++) {
+    const element = data[index];
+    testStory({ ...element });
+}

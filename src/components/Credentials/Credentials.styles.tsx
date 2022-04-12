@@ -42,11 +42,9 @@ const DividerStyled = styled.div`
     }
 `;
 
-const CredentialsStyles = {
+export default {
     CredentialsStyled,
     DividerStyled,
     PreformattedStyled,
     ToolsStyled,
 };
-
-export default CredentialsStyles;

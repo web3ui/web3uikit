@@ -1,5 +1,18 @@
 import styled from 'styled-components';
-import {
+import colorStyles from './styles/colors';
+import themeStyles from './styles/themes';
+import type { TagProps, Tone } from './types';
+
+const {
+    activeStatus,
+    discount,
+    inactiveStatus,
+    initialStyles,
+    regular,
+    chips,
+} =themeStyles;
+
+const {
     coloredBlue,
     coloredBlueDark,
     coloredGrayDark,
@@ -15,16 +28,7 @@ import {
     coloredYellow,
     coloredYellowDark,
     coloredBlueLight,
-} from './styles/colors';
-import {
-    activeStatus,
-    chips,
-    discount,
-    inactiveStatus,
-    initialStyles,
-    regular,
-} from './styles/themes';
-import type { TagProps, Tone } from './types';
+} = colorStyles;
 
 type TStyleProps = Pick<
     TagProps,
@@ -67,12 +71,12 @@ const getColors = (color?: string, tone?: Tone) => {
     }
 };
 
-export const SpanStyled = styled.div<TStyleProps>`
+const SpanStyled = styled.div<TStyleProps>`
     cursor: pointer;
     margin-left: 8px;
 `;
 
-export const TagStyled = styled.div<TStyleProps>`
+const TagStyled = styled.div<TStyleProps>`
     ${initialStyles}
     ${({ active, theme }) => getTheme(theme, active)}
     ${({ color, theme, tone }) =>
@@ -89,3 +93,8 @@ export const TagStyled = styled.div<TStyleProps>`
 
     ${({ fontSize }) => Boolean(fontSize) && `font-size: ${fontSize}`};
 `;
+
+export default {
+    SpanStyled,
+    TagStyled,
+};

@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import resetCSS from '../../styles/reset';
-import fonts from '../../styles/fonts';
-import color from '../../styles/colors';
-import { TRadioLayouts } from './types';
 import { RadiosProps } from '.';
+import color from '../../styles/colors';
+import fonts from '../../styles/fonts';
+import resetCSS from '../../styles/reset';
+import { TRadioLayouts } from './types';
 
 type TStyleProps = Pick<TRadioLayouts, 'isCreditCardMode'>;
 
-export const FieldsetStyled = styled.fieldset`
+const FieldsetStyled = styled.fieldset`
     ${resetCSS};
     display: flex;
     flex-wrap: wrap;
@@ -16,7 +16,7 @@ export const FieldsetStyled = styled.fieldset`
     overflow: hidden;
 `;
 
-export const LegendStyled = styled.legend`
+const LegendStyled = styled.legend`
     ${resetCSS};
     ${fonts.heading}
     ${fonts.h3}
@@ -25,12 +25,12 @@ export const LegendStyled = styled.legend`
     margin-bottom: 4px;
 `;
 
-export const DivStyled = styled.div<Pick<RadiosProps, 'disabled'>>`
+const DivStyled = styled.div<Pick<RadiosProps, 'disabled'>>`
     position: relative;
     opacity: ${(props) => props.disabled && 0.5};
 `;
 
-export const LabelStyled = styled.label<TStyleProps>`
+const LabelStyled = styled.label<TStyleProps>`
     ${resetCSS};
     ${fonts.heading}
     ${fonts.text}
@@ -84,7 +84,7 @@ export const LabelStyled = styled.label<TStyleProps>`
     }
 `;
 
-export const RadioButtonStyled = styled.input`
+const RadioButtonStyled = styled.input`
     position: absolute;
     left: -100px;
 
@@ -100,3 +100,11 @@ export const RadioButtonStyled = styled.input`
         }
     }
 `;
+
+export default {
+    DivStyled,
+    FieldsetStyled,
+    LabelStyled,
+    LegendStyled,
+    RadioButtonStyled,
+};

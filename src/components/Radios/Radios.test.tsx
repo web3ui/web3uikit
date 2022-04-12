@@ -1,298 +1,274 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { fireEvent } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
+import { fireEvent, render, screen } from '@testing-library/react';
+import React from 'react';
 import * as stories from './Radios.stories';
 
-const { RadioGroup, RadioGroupWithoutTitle, RadiosWithLongText } =
-    composeStories(stories);
+const {
+    RadioGroup,
+    RadioGroupWithoutTitle,
+    RadiosSetParticular,
+    RadiosWithLongText,
+} = composeStories(stories);
 
-let container: HTMLDivElement;
 const testFieldsetId = 'test-fieldset';
 const testLegendId = 'test-legend';
-const testLabelId = 'test-label';
-const testInputId = 'test-input';
 const testEvent = jest.fn();
 
-describe('Radios - RadioGroup', () => {
+test('Radios - RadioGroup', async () => {
     const testTitle = RadioGroup?.args?.title;
     const testId = RadioGroup?.args?.id;
     const testItems = RadioGroup?.args?.items && [...RadioGroup.args.items];
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
-            <RadioGroup
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
-            />,
-            container,
+    render(
+        <RadioGroup
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                testEvent(event.target)
+            }
+        />,
+    );
+
+    // renders the component
+    const element = screen.getByTestId(
+        testFieldsetId,
+    ) as unknown as HTMLFieldSetElement | null;
+    expect(element).not.toBeNull();
+
+    // renders a formatted ID
+    const formattedID = testId && testId.replace(/\s/g, '-');
+    expect(element?.id).toBe(formattedID);
+
+    // renders the title
+    const title = screen.getByTestId(
+        testLegendId,
+    ) as unknown as HTMLLegendElement | null;
+    expect(title?.textContent).toBe(testTitle);
+
+    // renders the correct amount of radio inputs
+    const inputs = screen.getAllByRole(
+        'radio',
+    ) as unknown as HTMLInputElement[];
+    expect(inputs.length).toBe(testItems?.length);
+
+    // renders the each input correctly
+    testItems &&
+        inputs.forEach((input: HTMLInputElement, i) =>
+            expect(input?.value).toBe(String(i)),
         );
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
 
-    it('renders the component', () => {
-        const element: HTMLFieldSetElement | null = container.querySelector(
-            `[data-testid="${testFieldsetId}"]`,
+    // renders the correct label for each input
+    const labels = screen.getAllByRole(
+        'label',
+    ) as unknown as HTMLLabelElement[];
+    testItems &&
+        labels.forEach((label: HTMLLabelElement, i) =>
+            expect(label?.textContent).toBe(testItems[i]),
         );
-        expect(element).not.toBeNull();
-    });
 
-    it('renders a formatted ID', () => {
-        const element: HTMLFieldSetElement | null = container.querySelector(
-            `[data-testid="${testFieldsetId}"]`,
-        );
-        const formattedID = testId && testId.replace(/\s/g, '-');
-        expect(element?.id).toBe(formattedID);
-    });
+    // When the label is clicked the input is checked to render new styles
+    const label: HTMLLabelElement | null = labels[0];
+    expect(label).not.toBeNull();
+    label && fireEvent.click(label);
 
-    it('renders the title', () => {
-        const element: HTMLLegendElement | null = container.querySelector(
-            `[data-testid="${testLegendId}"]`,
-        );
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe(testTitle);
-    });
+    const input: HTMLInputElement | null = inputs[0];
+    expect(input?.checked).toBeTruthy();
 
-    it('renders the correct amount of radio inputs', () => {
-        const elements = container.querySelectorAll('input');
-        expect(elements.length).toBe(testItems?.length);
-    });
-
-    it('renders the each input correctly', () => {
-        const elements = container.querySelectorAll('input');
-        testItems &&
-            elements.forEach((input: HTMLInputElement, i) =>
-                expect(input?.value).toBe(String(i)),
-            );
-    });
-
-    it('renders the correct label for each input', () => {
-        const elements = container.querySelectorAll('label');
-        testItems &&
-            elements.forEach((label: HTMLLabelElement, i) =>
-                expect(label?.textContent).toBe(testItems[i]),
-            );
-    });
-
-    it('When the label is clicked the input is checked to render new styles', () => {
-        const element: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${testLabelId}-0"]`,
-        );
-        expect(element).not.toBeNull();
-        element && fireEvent.click(element);
-
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}-0"]`,
-        );
-        expect(input?.checked).toBeTruthy();
-    });
-
-    it('When the label is clicked the checked input is returned', () => {
-        const element: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${testLabelId}-0"]`,
-        );
-        expect(element).not.toBeNull();
-        element && fireEvent.click(element);
-
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}-0"]`,
-        );
-        expect(testEvent).toHaveBeenCalledWith(input);
-    });
+    // When the label is clicked the checked input is returned
+    expect(testEvent).toHaveBeenCalledWith(input);
 });
 
-describe('Radios - RadioGroupWithoutTitle', () => {
+test('Radios - RadioGroupWithoutTitle', async () => {
     const testId = RadioGroupWithoutTitle?.args?.id;
     const testItems = RadioGroupWithoutTitle?.args?.items && [
         ...RadioGroupWithoutTitle.args.items,
     ];
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
-            <RadioGroupWithoutTitle
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
-            />,
-            container,
+    render(
+        <RadioGroupWithoutTitle
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                testEvent(event.target)
+            }
+        />,
+    );
+
+    // renders the component
+    const element = screen.getByTestId(
+        testFieldsetId,
+    ) as unknown as HTMLFieldSetElement | null;
+    expect(element).not.toBeNull();
+
+    // renders a formatted ID
+    const formattedID = testId && testId.replace(/\s/g, '-');
+    expect(element?.id).toBe(formattedID);
+
+    // renders no title
+    const title = (await screen.queryByText(
+        testLegendId,
+    )) as unknown as HTMLLegendElement | null;
+    expect(title).toBeNull();
+
+    // renders the correct amount of radio inputs
+    const inputs = screen.getAllByRole(
+        'radio',
+    ) as unknown as HTMLInputElement[];
+    expect(inputs.length).toBe(testItems?.length);
+
+    // renders the each input correctly
+    testItems &&
+        inputs.forEach((input: HTMLInputElement, i) =>
+            expect(input?.value).toBe(String(i)),
         );
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
 
-    it('renders the component', () => {
-        const element: HTMLFieldSetElement | null = container.querySelector(
-            `[data-testid="${testFieldsetId}"]`,
+    // renders the correct label for each input
+    const labels = screen.getAllByRole(
+        'label',
+    ) as unknown as HTMLLabelElement[];
+    testItems &&
+        labels.forEach((label: HTMLLabelElement, i) =>
+            expect(label?.textContent).toBe(testItems[i]),
         );
-        expect(element).not.toBeNull();
-    });
 
-    it('renders a formatted ID', () => {
-        const element: HTMLFieldSetElement | null = container.querySelector(
-            `[data-testid="${testFieldsetId}"]`,
-        );
-        const formattedID = testId && testId.replace(/\s/g, '-');
-        expect(element?.id).toBe(formattedID);
-    });
+    // When the label is clicked the input is checked to render new styles
+    const label: HTMLLabelElement | null = labels[0];
+    expect(label).not.toBeNull();
+    label && fireEvent.click(label);
 
-    it('renders no title', () => {
-        const element: HTMLLegendElement | null = container.querySelector(
-            `[data-testid="${testLegendId}"]`,
-        );
-        expect(element).toBeNull();
-    });
+    const input: HTMLInputElement | null = inputs[0];
+    expect(input?.checked).toBeTruthy();
 
-    it('renders the correct amount of radio inputs', () => {
-        const elements = container.querySelectorAll('input');
-        expect(elements.length).toBe(testItems?.length);
-    });
-
-    it('renders the each input correctly', () => {
-        const elements = container.querySelectorAll('input');
-        testItems &&
-            elements.forEach((input: HTMLInputElement, i) =>
-                expect(input?.value).toBe(String(i)),
-            );
-    });
-
-    it('renders the correct label for each input', () => {
-        const elements = container.querySelectorAll('label');
-        testItems &&
-            elements.forEach((label: HTMLLabelElement, i) =>
-                expect(label?.textContent).toBe(testItems[i]),
-            );
-    });
-
-    it('When the label is clicked the input is checked to render new styles', () => {
-        const element: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${testLabelId}-0"]`,
-        );
-        expect(element).not.toBeNull();
-        element && fireEvent.click(element);
-
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}-0"]`,
-        );
-        expect(input?.checked).toBeTruthy();
-    });
-
-    it('When the label is clicked the checked input is returned', () => {
-        const element: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${testLabelId}-0"]`,
-        );
-        expect(element).not.toBeNull();
-        element && fireEvent.click(element);
-
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}-0"]`,
-        );
-        expect(testEvent).toHaveBeenCalledWith(input);
-    });
+    // When the label is clicked the checked input is returned
+    expect(testEvent).toHaveBeenCalledWith(input);
 });
 
-describe('Radios - RadiosWithLongText', () => {
+test('Radios - RadiosWithLongText', async () => {
     const testTitle = RadiosWithLongText?.args?.title;
     const testId = RadiosWithLongText?.args?.id;
     const testItems = RadiosWithLongText?.args?.items && [
         ...RadiosWithLongText.args.items,
     ];
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
-            <RadiosWithLongText
-                onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
-            />,
-            container,
+    render(
+        <RadiosWithLongText
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                testEvent(event.target)
+            }
+        />,
+    );
+
+    // renders the component
+    const element = screen.getByTestId(
+        testFieldsetId,
+    ) as unknown as HTMLFieldSetElement | null;
+    expect(element).not.toBeNull();
+
+    // renders a formatted ID
+    const formattedID = testId && testId.replace(/\s/g, '-');
+    expect(element?.id).toBe(formattedID);
+
+    // renders the title
+    const title = screen.getByTestId(
+        testLegendId,
+    ) as unknown as HTMLLegendElement | null;
+    expect(title?.textContent).toBe(testTitle);
+
+    // renders the correct amount of radio inputs
+    const inputs = screen.getAllByRole(
+        'radio',
+    ) as unknown as HTMLInputElement[];
+    expect(inputs.length).toBe(testItems?.length);
+
+    // renders the each input correctly
+    testItems &&
+        inputs.forEach((input: HTMLInputElement, i) =>
+            expect(input?.value).toBe(String(i)),
         );
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
 
-    it('renders the component', () => {
-        const element: HTMLFieldSetElement | null = container.querySelector(
-            `[data-testid="${testFieldsetId}"]`,
+    // renders the correct label for each input
+    const labels = screen.getAllByRole(
+        'label',
+    ) as unknown as HTMLLabelElement[];
+    testItems &&
+        labels.forEach((label: HTMLLabelElement, i) =>
+            expect(label?.textContent).toBe(testItems[i]),
         );
-        expect(element).not.toBeNull();
-    });
 
-    it('renders a formatted ID', () => {
-        const element: HTMLFieldSetElement | null = container.querySelector(
-            `[data-testid="${testFieldsetId}"]`,
-        );
-        const formattedID = testId && testId.replace(/\s/g, '-');
-        expect(element?.id).toBe(formattedID);
-    });
+    // When the label is clicked the input is checked to render new styles
+    const label: HTMLLabelElement | null = labels[0];
+    expect(label).not.toBeNull();
+    label && fireEvent.click(label);
 
-    it('renders the title', () => {
-        const element: HTMLLegendElement | null = container.querySelector(
-            `[data-testid="${testLegendId}"]`,
-        );
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe(testTitle);
-    });
+    const input: HTMLInputElement | null = inputs[0];
+    expect(input?.checked).toBeTruthy();
 
-    it('renders the correct amount of radio inputs', () => {
-        const elements = container.querySelectorAll('input');
-        expect(elements.length).toBe(testItems?.length);
-    });
-
-    it('renders the each input correctly', () => {
-        const elements = container.querySelectorAll('input');
-        testItems &&
-            elements.forEach((input: HTMLInputElement, i) =>
-                expect(input?.value).toBe(String(i)),
-            );
-    });
-
-    it('renders the correct label for each input', () => {
-        const elements = container.querySelectorAll('label');
-        testItems &&
-            elements.forEach((label: HTMLLabelElement, i) =>
-                expect(label?.textContent).toBe(testItems[i]),
-            );
-    });
-
-    it('When the label is clicked the input is checked to render new styles', () => {
-        const element: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${testLabelId}-0"]`,
-        );
-        expect(element).not.toBeNull();
-        element && fireEvent.click(element);
-
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}-0"]`,
-        );
-        expect(input?.checked).toBeTruthy();
-    });
-
-    it('When the label is clicked the checked input is returned', () => {
-        const element: HTMLLabelElement | null = container.querySelector(
-            `[data-testid="${testLabelId}-0"]`,
-        );
-        expect(element).not.toBeNull();
-        element && fireEvent.click(element);
-
-        const input: HTMLInputElement | null = container.querySelector(
-            `[data-testid="${testInputId}-0"]`,
-        );
-        expect(testEvent).toHaveBeenCalledWith(input);
-    });
+    // When the label is clicked the checked input is returned
+    expect(testEvent).toHaveBeenCalledWith(input);
 });
 
-// TODO @bill add tests for SetDefault and SetParticular
+test('Radios - RadiosSetParticular', async () => {
+    const testTitle = RadiosSetParticular?.args?.title;
+    const testId = RadiosSetParticular?.args?.id;
+    const testIsChecked = RadiosSetParticular?.args?.setWhichIsChecked;
+    const testItems = RadiosSetParticular?.args?.items && [
+        ...RadiosSetParticular.args.items,
+    ];
+
+    render(
+        <RadiosSetParticular
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                testEvent(event.target)
+            }
+        />,
+    );
+
+    // renders the component
+    const element = screen.getByTestId(
+        testFieldsetId,
+    ) as unknown as HTMLFieldSetElement | null;
+    expect(element).not.toBeNull();
+
+    // renders a formatted ID
+    const formattedID = testId && testId.replace(/\s/g, '-');
+    expect(element?.id).toBe(formattedID);
+
+    // renders the title
+    const title = screen.getByTestId(
+        testLegendId,
+    ) as unknown as HTMLLegendElement | null;
+    expect(title?.textContent).toBe(testTitle);
+
+    // renders the correct amount of radio inputs
+    const inputs = screen.getAllByRole(
+        'radio',
+    ) as unknown as HTMLInputElement[];
+    expect(inputs.length).toBe(testItems?.length);
+
+    // renders the each input correctly
+    testItems &&
+        inputs.forEach((input: HTMLInputElement, i) =>
+            expect(input?.value).toBe(String(i)),
+        );
+
+    // renders the correct label for each input
+    const labels = screen.getAllByRole(
+        'label',
+    ) as unknown as HTMLLabelElement[];
+    testItems &&
+        labels.forEach((label: HTMLLabelElement, i) =>
+            expect(label?.textContent).toBe(testItems[i]),
+        );
+
+    // check if the default checked input is the one set
+    const defaultChecked =
+        testIsChecked && (inputs[testIsChecked] as unknown as HTMLInputElement);
+    defaultChecked && expect(defaultChecked.checked).toBeTruthy();
+
+    // When the label is clicked the input is checked to render new styles
+    const label: HTMLLabelElement | null = labels[0];
+    expect(label).not.toBeNull();
+    label && fireEvent.click(label);
+
+    const input: HTMLInputElement | null = inputs[0];
+    expect(input?.checked).toBeTruthy();
+
+    // When the label is clicked the checked input is returned
+    expect(testEvent).toHaveBeenCalledWith(input);
+});

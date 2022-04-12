@@ -53,8 +53,23 @@ const discount = css<TStyleProps>`
     width: 32px;
 `;
 
+const chips = css<TStyleProps>`
+    align-items: center;
+    background: ${color.green};
+    border-left: 5px solid;
+    border-radius: 5px;
+    color: ${color.white};
+    display: flex;
+    font-size: 12px;
+    height: 32px;
+    justify-content: center;
+    padding: 6px 12px;
+    width: 32px;
+`;
+
 export default {
     activeStatus,
+    chips,
     discount,
     inactiveStatus,
     initialStyles,

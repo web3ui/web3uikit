@@ -45,7 +45,6 @@ const Tag: React.FC<TagProps> = ({
                         fill={colors.blue}
                         size={16}
                         svg="x"
-                        style={{ marginLeft: '8px' }}
                     />
                 </SpanStyled>
             )}

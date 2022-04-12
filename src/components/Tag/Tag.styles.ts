@@ -9,7 +9,8 @@ const {
     inactiveStatus,
     initialStyles,
     regular,
-} = themeStyles;
+    chips,
+} =themeStyles;
 
 const {
     coloredBlue,
@@ -40,6 +41,8 @@ const getTheme = (theme: string, active?: boolean) => {
             return active ? activeStatus : inactiveStatus;
         case 'discount':
             return discount;
+        case 'chips':
+            return chips;
         default:
             return regular;
     }
@@ -70,7 +73,7 @@ const getColors = (color?: string, tone?: Tone) => {
 
 const SpanStyled = styled.div<TStyleProps>`
     cursor: pointer;
-    margin-left: 16px;
+    margin-left: 8px;
 `;
 
 const TagStyled = styled.div<TStyleProps>`
@@ -84,6 +87,9 @@ const TagStyled = styled.div<TStyleProps>`
         theme === 'discount' &&
         Boolean(width) &&
         `height: ${width}; width: ${width}; border-radius: 50%;`};
+
+    ${({ theme, tone }) =>
+        theme === 'chips' && tone === 'dark' && 'border: 0px;'};
 
     ${({ fontSize }) => Boolean(fontSize) && `font-size: ${fontSize}`};
 `;

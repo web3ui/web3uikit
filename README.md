@@ -185,6 +185,8 @@ Try the `<LinkTo />` component in the [interactive documentation](https://web3ui
 
 ### `<Logo />`
 
+Logo component is a simple logo component having moralis or other icons that can be used in any layout.
+
 ![Logo](https://user-images.githubusercontent.com/78314301/149967496-33652586-57ff-4d64-a88f-9e93305085ae.gif)
 
 Try the `<Logo />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/6-graphic-logo)

@@ -1,10 +1,10 @@
 import React from 'react';
 import { composeStories } from '@storybook/testing-react';
-import * as stories from './Logo.stories';
 import {
     render,
     screen,
 } from '@testing-library/react';
+import * as stories from './Logo.stories';
 
 const {
     AmexRegular,

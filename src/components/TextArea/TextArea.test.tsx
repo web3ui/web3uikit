@@ -1,7 +1,6 @@
 import { composeStories } from '@storybook/testing-react';
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
-import 'jest-styled-components';
 import React from 'react';
 import color from '../../styles/colors';
 import * as stories from './TextArea.stories';
@@ -29,8 +28,9 @@ test('TextArea - Default', async () => {
     );
 
     // renders the component
-    const textarea: HTMLTextAreaElement | null =
-        screen.getByTestId(testTextAreaId);
+    const textarea = screen.getByTestId(
+        testTextAreaId,
+    ) as unknown as HTMLTextAreaElement | null;
     expect(textarea).not.toBeNull();
 
     // renders textarea with the value and placeholder passed
@@ -41,8 +41,9 @@ test('TextArea - Default', async () => {
     textarea && expect(textarea.name).toBe(testName);
 
     // renders wrapper correct border color
-    const textareaWrapper: HTMLDivElement | null =
-        screen.getByTestId(testWrapperId);
+    const textareaWrapper = screen.getByTestId(
+        testWrapperId,
+    ) as unknown as HTMLDivElement | null;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
     expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
 
@@ -52,17 +53,15 @@ test('TextArea - Default', async () => {
     expect(label?.textContent).toBe(testLabel);
 
     // should conditionally render 'empty / filled' className
-    const div: HTMLDivElement | null = screen.getByTestId(testWrapperId);
-
-    expect(div?.classList.contains('filled')).toBeFalsy;
-    expect(div?.classList.contains('empty')).toBeTruthy;
+    expect(textareaWrapper?.classList.contains('filled')).toBeFalsy;
+    expect(textareaWrapper?.classList.contains('empty')).toBeTruthy;
 
     textarea?.focus();
     textarea && fireEvent.change(textarea, { target: { value: 'foo' } });
     textarea && expect(textarea.value).toBe('foo');
 
-    expect(div?.classList.contains('filled')).toBeTruthy;
-    expect(div?.classList.contains('empty')).toBeFalsy;
+    expect(textareaWrapper?.classList.contains('filled')).toBeTruthy;
+    expect(textareaWrapper?.classList.contains('empty')).toBeFalsy;
 
     // onChange event is returned, testEvent
     expect(testEvent).toHaveBeenCalled();
@@ -75,8 +74,9 @@ test('TextArea - Error', async () => {
     render(<Error />);
 
     // renders the component
-    const textarea: HTMLTextAreaElement | null =
-        screen.getByTestId(testTextAreaId);
+    const textarea = screen.getByTestId(
+        testTextAreaId,
+    ) as unknown as HTMLTextAreaElement | null;
     expect(textarea).not.toBeNull();
 
     // renders textarea with the value and placeholder passed
@@ -87,8 +87,9 @@ test('TextArea - Error', async () => {
     textarea && expect(textarea.name).toBe(testName);
 
     // renders wrapper correct border color
-    const textareaWrapper: HTMLDivElement | null =
-        screen.getByTestId(testWrapperId);
+    const textareaWrapper = screen.getByTestId(
+        testWrapperId,
+    ) as unknown as HTMLDivElement | null;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
     expect(styles?.borderColor.toUpperCase()).toBe(color.red);
 
@@ -98,17 +99,15 @@ test('TextArea - Error', async () => {
     expect(label?.textContent).toBe(testLabel);
 
     // should conditionally render 'empty / filled' className
-    const div: HTMLDivElement | null = screen.getByTestId(testWrapperId);
-
-    expect(div?.classList.contains('filled')).toBeFalsy;
-    expect(div?.classList.contains('empty')).toBeTruthy;
+    expect(textareaWrapper?.classList.contains('filled')).toBeFalsy;
+    expect(textareaWrapper?.classList.contains('empty')).toBeTruthy;
 
     textarea?.focus();
     textarea && fireEvent.change(textarea, { target: { value: 'foo' } });
     textarea && expect(textarea.value).toBe('foo');
 
-    expect(div?.classList.contains('filled')).toBeTruthy;
-    expect(div?.classList.contains('empty')).toBeFalsy;
+    expect(textareaWrapper?.classList.contains('filled')).toBeTruthy;
+    expect(textareaWrapper?.classList.contains('empty')).toBeFalsy;
 
     // onChange event is returned, testEvent
     expect(testEvent).toHaveBeenCalled();
@@ -121,8 +120,9 @@ test('TextArea - Confirmed', async () => {
     render(<Confirmed />);
 
     // renders the component
-    const textarea: HTMLTextAreaElement | null =
-        screen.getByTestId(testTextAreaId);
+    const textarea = screen.getByTestId(
+        testTextAreaId,
+    ) as unknown as HTMLTextAreaElement | null;
     expect(textarea).not.toBeNull();
 
     // renders textarea with the value and placeholder passed
@@ -133,8 +133,9 @@ test('TextArea - Confirmed', async () => {
     textarea && expect(textarea.name).toBe(testName);
 
     // renders wrapper correct border color
-    const textareaWrapper: HTMLDivElement | null =
-        screen.getByTestId(testWrapperId);
+    const textareaWrapper = screen.getByTestId(
+        testWrapperId,
+    ) as unknown as HTMLDivElement | null;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
     expect(styles?.borderColor.toUpperCase()).toBe(color.green);
 
@@ -144,17 +145,15 @@ test('TextArea - Confirmed', async () => {
     expect(label?.textContent).toBe(testLabel);
 
     // should conditionally render 'empty / filled' className
-    const div: HTMLDivElement | null = screen.getByTestId(testWrapperId);
-
-    expect(div?.classList.contains('filled')).toBeFalsy;
-    expect(div?.classList.contains('empty')).toBeTruthy;
+    expect(textareaWrapper?.classList.contains('filled')).toBeFalsy;
+    expect(textareaWrapper?.classList.contains('empty')).toBeTruthy;
 
     textarea?.focus();
     textarea && fireEvent.change(textarea, { target: { value: 'foo' } });
     textarea && expect(textarea.value).toBe('foo');
 
-    expect(div?.classList.contains('filled')).toBeTruthy;
-    expect(div?.classList.contains('empty')).toBeFalsy;
+    expect(textareaWrapper?.classList.contains('filled')).toBeTruthy;
+    expect(textareaWrapper?.classList.contains('empty')).toBeFalsy;
 
     // onChange event is returned, testEvent
     expect(testEvent).toHaveBeenCalled();
@@ -167,8 +166,9 @@ test('TextArea - Disabled', async () => {
     render(<Disabled />);
 
     // renders the component
-    const textarea: HTMLTextAreaElement | null =
-        screen.getByTestId(testTextAreaId);
+    const textarea = screen.getByTestId(
+        testTextAreaId,
+    ) as unknown as HTMLTextAreaElement | null;
     expect(textarea).not.toBeNull();
 
     // renders textarea with the value and placeholder passed
@@ -179,8 +179,9 @@ test('TextArea - Disabled', async () => {
     textarea && expect(textarea.name).toBe(testName);
 
     // renders wrapper correct border color
-    const textareaWrapper: HTMLDivElement | null =
-        screen.getByTestId(testWrapperId);
+    const textareaWrapper = screen.getByTestId(
+        testWrapperId,
+    ) as unknown as HTMLDivElement | null;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
     expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
 
@@ -190,17 +191,15 @@ test('TextArea - Disabled', async () => {
     expect(label?.textContent).toBe(testLabel);
 
     // should conditionally render 'empty / filled' className
-    const div: HTMLDivElement | null = screen.getByTestId(testWrapperId);
-
-    expect(div?.classList.contains('filled')).toBeFalsy;
-    expect(div?.classList.contains('empty')).toBeTruthy;
+    expect(textareaWrapper?.classList.contains('filled')).toBeFalsy;
+    expect(textareaWrapper?.classList.contains('empty')).toBeTruthy;
 
     textarea?.focus();
     textarea && fireEvent.change(textarea, { target: { value: 'foo' } });
     textarea && expect(textarea.value).toBe('foo');
 
-    expect(div?.classList.contains('filled')).toBeTruthy;
-    expect(div?.classList.contains('empty')).toBeFalsy;
+    expect(textareaWrapper?.classList.contains('filled')).toBeTruthy;
+    expect(textareaWrapper?.classList.contains('empty')).toBeFalsy;
 
     // onChange event is returned, testEvent
     expect(testEvent).toHaveBeenCalled();
@@ -220,8 +219,9 @@ test('TextArea - CustomWidth', async () => {
     );
 
     // renders the component
-    const textarea: HTMLTextAreaElement | null =
-        screen.getByTestId(testTextAreaId);
+    const textarea = screen.getByTestId(
+        testTextAreaId,
+    ) as unknown as HTMLTextAreaElement | null;
     expect(textarea).not.toBeNull();
 
     // renders textarea with the value and placeholder passed
@@ -232,8 +232,9 @@ test('TextArea - CustomWidth', async () => {
     textarea && expect(textarea.name).toBe(testName);
 
     // renders wrapper correct border color
-    const textareaWrapper: HTMLDivElement | null =
-        screen.getByTestId(testWrapperId);
+    const textareaWrapper = screen.getByTestId(
+        testWrapperId,
+    ) as unknown as HTMLDivElement | null;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
     expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
 
@@ -243,17 +244,15 @@ test('TextArea - CustomWidth', async () => {
     expect(label?.textContent).toBe(testLabel);
 
     // should conditionally render 'empty / filled' className
-    const div: HTMLDivElement | null = screen.getByTestId(testWrapperId);
-
-    expect(div?.classList.contains('filled')).toBeFalsy;
-    expect(div?.classList.contains('empty')).toBeTruthy;
+    expect(textareaWrapper?.classList.contains('filled')).toBeFalsy;
+    expect(textareaWrapper?.classList.contains('empty')).toBeTruthy;
 
     textarea?.focus();
     textarea && fireEvent.change(textarea, { target: { value: 'foo' } });
     textarea && expect(textarea.value).toBe('foo');
 
-    expect(div?.classList.contains('filled')).toBeTruthy;
-    expect(div?.classList.contains('empty')).toBeFalsy;
+    expect(textareaWrapper?.classList.contains('filled')).toBeTruthy;
+    expect(textareaWrapper?.classList.contains('empty')).toBeFalsy;
 
     // onChange event is returned, testEvent
     expect(testEvent).toHaveBeenCalled();

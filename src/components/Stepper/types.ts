@@ -7,7 +7,7 @@ export type Step = {
     /**
      * give the step a title
      */
-    title?: React.ReactNode | string;
+    title?: string;
 };
 
 export interface StepperProps {

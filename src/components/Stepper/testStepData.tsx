@@ -1,5 +1,4 @@
 import React from 'react';
-import { Typography } from '../Typography';
 
 const testCustomNavEvent = (direction: string) => {
     const event = new Event(direction, { bubbles: true });
@@ -68,107 +67,6 @@ export const testStepData = [
 export const noNavTestStepData = [
     {
         title: 'No Nav Buttons',
-        content: (
-            <div>
-                <p>
-                    If a button has ID = 'prev'
-                    <br />
-                    Or a button has ID = 'next'
-                    <br />
-                </p>
-                <button id="prev">prev</button>
-                <button id="next">next</button>
-                <p>
-                    It can be used to navigate
-                    <br />
-                </p>
-            </div>
-        ),
-    },
-    {
-        title: 'No Nav Buttons',
-        content: (
-            <div>
-                <p>
-                    If a button has ID = 'prev'
-                    <br />
-                    Or a button has ID = 'next'
-                    <br />
-                </p>
-                <button id="prev">prev</button>
-                <button id="next">next</button>
-                <p>
-                    pretty cool, right?
-                    <br />
-                </p>
-            </div>
-        ),
-    },
-    {
-        content: (
-            <div>
-                <p>
-                    Also you can use <strong>custom events</strong>
-                    <br />
-                    <br />
-                    <code>
-                        {"const event = new Event('next', { bubbles: true });"}
-                        <br />
-                        {'document.dispatchEvent(event);'}
-                    </code>
-                    <br />
-                    <strong>or</strong>
-                    <br />
-                    <code>
-                        {"const event = new Event('prev', { bubbles: true });"}
-                        <br />
-                        {'document.dispatchEvent(event);'}
-                    </code>
-                    <br />
-                    <br />
-                </p>
-                <button onClick={() => testCustomNavEvent('prev')}>
-                    custom prev
-                </button>
-                <button onClick={() => testCustomNavEvent('next')}>
-                    custom next
-                </button>
-                <p>
-                    ta da!
-                    <br />
-                </p>
-            </div>
-        ),
-    },
-    {
-        title: 'No Nav Buttons',
-        content: (
-            <div>
-                <p>
-                    If a button has ID = 'prev'
-                    <br />
-                    Or a button has ID = 'next'
-                    <br />
-                </p>
-                <button id="prev">prev</button>
-                <button id="next">next</button>
-                <p>
-                    pretty cool, right?
-                    <br />
-                </p>
-            </div>
-        ),
-    },
-];
-
-export const customTitleTestStepData = [
-    {
-        title: (
-            <Typography
-                children={'Look at this fancy title style!'}
-                variant={'h1'}
-            />
-        ),
         content: (
             <div>
                 <p>

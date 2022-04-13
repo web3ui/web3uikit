@@ -2,11 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Stepper } from '.';
 import { Button } from '../Button';
-import {
-    testStepData,
-    noNavTestStepData,
-    customTitleTestStepData,
-} from './testStepData';
+import { testStepData, noNavTestStepData } from './testStepData';
 import { Avatar } from '../Avatar';
 
 const parentWrapper = {
@@ -83,14 +79,6 @@ export const SmallerStepperCount = Template.bind({});
 SmallerStepperCount.args = {
     step: 1,
     stepData: noNavTestStepData,
-    hasNavButtons: false,
-    headerWidth: 400,
-};
-
-export const TitleCustomStyle = Template.bind({});
-TitleCustomStyle.args = {
-    step: 1,
-    stepData: customTitleTestStepData,
     hasNavButtons: false,
     headerWidth: 400,
 };

@@ -3,13 +3,12 @@ import { Information } from '../Info';
 import { Modal } from '../Modal';
 import { Typography } from '../Typography';
 import styles from './NFT.styles';
-import { TNFTAttributes } from './types';
 const { DivModalStyled } = styles;
 interface INFTModal {
     /**
      * attributes / traits metadata
      */
-    attributes?: TNFTAttributes;
+    attributes?: Array<any>;
 
     /**
      * toggle modal visibility

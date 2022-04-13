@@ -29,9 +29,9 @@ const IconWrapperStyled = styled.div`
 
 const TextContentStyled = styled.div`
     display: flex;
+    flex-wrap: wrap;
     margin-left: 10px;
     width: 100%;
-    flex-wrap: wrap;
 `;
 
 const SpanStyled = styled.span`
@@ -76,10 +76,10 @@ const NotificationStyled = styled.div<INotificationStyled>`
     color: ${color.grey};
     display: flex;
     margin: 18px;
+    overflow: hidden;
     padding: 16px 48px 16px 16px;
     position: relative;
     width: 320px;
-    overflow: hidden;
     z-index: 9999;
 
     ${(p) => getNotificationAnimation(p.position, p.isClosing)}
@@ -92,15 +92,13 @@ const NotificationStyled = styled.div<INotificationStyled>`
     }
 `;
 
-const NotificationStyles = {
+export default {
+    BarStyled,
     CloseWrapperStyled,
     IconWrapperStyled,
+    NotificationContainerStyled,
     NotificationStyled,
     SpanStyled,
     TextContentStyled,
     TitleStyled,
-    NotificationContainerStyled,
-    BarStyled,
 };
-
-export default NotificationStyles;

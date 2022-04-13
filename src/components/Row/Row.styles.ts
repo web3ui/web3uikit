@@ -3,7 +3,7 @@ import { IRowProps } from '.';
 import fonts from '../../styles/fonts';
 import { IColBreakpointsConfig } from './types';
 
-export const RowDiv = styled.div<IRowProps>`
+const RowDiv = styled.div<IRowProps>`
     ${fonts.text}
     display: flex;
     flex-wrap: wrap;
@@ -39,7 +39,7 @@ interface IColProps {
     breakpointsConfig: IColBreakpointsConfig;
 }
 
-export const ColDiv = styled.div<Required<IColProps>>`
+const ColDiv = styled.div<Required<IColProps>>`
     color: white;
     order: ${(props) => props.order};
     ${fonts.text}
@@ -125,3 +125,8 @@ export const ColDiv = styled.div<Required<IColProps>>`
         ${(props) => props.isFullWidth && `max-width: 100%; flex: 100%;`}
     }
 `;
+
+export default {
+    ColDiv,
+    RowDiv,
+};

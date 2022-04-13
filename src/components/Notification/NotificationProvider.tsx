@@ -32,10 +32,10 @@ const NotificationProvider: FC = (props) => {
 
     const toasts = useMemo(() => {
         const toaster: IToasts = {
-            topR: [],
-            topL: [],
-            bottomR: [],
             bottomL: [],
+            bottomR: [],
+            topL: [],
+            topR: [],
         };
         state.forEach((toast: PayloadType) =>
             toaster[toast.position].push(toast),
@@ -44,14 +44,14 @@ const NotificationProvider: FC = (props) => {
         return (Object.keys(toaster) as IPosition[]).map((pos) => {
             return (
                 <NotificationContainerStyled
-                    position={pos}
                     key={`container-${pos}`}
+                    position={pos}
                 >
                     {toaster?.[pos]?.map((toast: PayloadType) => (
                         <Notification
-                            key={toast.id}
-                            id={toast.id || String(Date.now())}
                             dispatch={dispatch}
+                            id={toast.id || String(Date.now())}
+                            key={toast.id}
                             {...toast}
                         />
                     ))}

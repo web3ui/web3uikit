@@ -1,8 +1,8 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Select from './Select';
-import { Icon, iconTypes } from '../Icon';
 import color from '../../styles/colors';
+import { Icon, iconTypes } from '../Icon';
+import Select from './Select';
 
 export default {
     title: '2.Forms/Select',

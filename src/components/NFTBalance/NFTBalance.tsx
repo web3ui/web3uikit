@@ -38,8 +38,8 @@ const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
     if (error) {
         return (
             <div data-testid="nft-balance-error">
-                Couldn't get Nft Balance for {address}
-                {error.message}
+                <Typography>Couldn't get Nft Balance for {address}</Typography>
+                <Typography>{error.message}</Typography>
             </div>
         );
     }

@@ -21,10 +21,15 @@ const FetchedNFT: React.FC<{
                 metadata?.animation_url,
                 metadata?.image || metadata?.image_url,
             )}
-            <div id="information">
-                <Typography variant="body16">
-                    {metadata?.name || name}
-                </Typography>
+            <div id="nft-info">
+                <div>
+                    <Typography variant="body16">
+                        {metadata?.name || name}
+                    </Typography>
+                    <Typography variant="caption12">ERC721</Typography>
+                </div>
+            </div>
+            <div id="nft-footer">
                 <Button
                     icon="info"
                     isTransparent

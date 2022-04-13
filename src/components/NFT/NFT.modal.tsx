@@ -34,12 +34,7 @@ const NFTModal: React.FC<INFTModal> = ({ attributes, setShowModal }) => {
                         attributes.map((attribute, index) => {
                             const entries = Object.entries(attribute);
                             return (
-                                <div
-                                    style={{
-                                        width: '240px',
-                                        maxWidth: '300px',
-                                    }}
-                                >
+                                <div id="widget-row">
                                     <Information
                                         topic={
                                             typeof attribute !== 'string'

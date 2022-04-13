@@ -55,10 +55,6 @@ const NFT: React.FC<INFTProps> = ({
         return <div data-testid="no-moralis-instance" />;
     }
 
-    if (!data) {
-        <div data-testid="nft-metadata-error">No response</div>;
-    }
-
     if (isLoading || isFetching) {
         return (
             <div data-testid="nft-metadata-loading">
@@ -73,24 +69,27 @@ const NFT: React.FC<INFTProps> = ({
         );
     }
 
-    if (!data?.metadata) {
-        if (!error) {
-            return (
-                <DivStyled id="nft">
-                    <Skeleton theme="text" width="100%" height="200px" />
-                    <div id="information">
-                        <Tooltip
-                            children={
-                                <Icon svg="info" fill={colors.yellowDark} />
-                            }
-                            content={'There is no metadata'}
-                            position={'top'}
-                        />
-                    </div>
-                </DivStyled>
-            );
-        }
+    if (error) {
         return <div data-testid="nft-metadata-error">{error.message}</div>;
+    }
+
+    if (!data) {
+        return <div data-testid="nft-metadata-error">No response</div>;
+    }
+
+    if (!data?.metadata) {
+        return (
+            <DivStyled id="nft">
+                <Skeleton theme="text" width="100%" height="200px" />
+                <div id="information">
+                    <Tooltip
+                        children={<Icon svg="info" fill={colors.yellowDark} />}
+                        content={'There is no metadata'}
+                        position={'top'}
+                    />
+                </div>
+            </DivStyled>
+        );
     }
 
     return (
@@ -104,11 +103,18 @@ const NFT: React.FC<INFTProps> = ({
                         (JSON.parse(String(data.metadata)) as TNFTMetadata)
                             ?.image_url,
                 )}
-                <div id="information">
-                    <Typography variant="body16">
-                        {(JSON.parse(String(data.metadata)) as TNFTMetadata)
-                            ?.name || name}
-                    </Typography>
+                <div id="nft-info">
+                    <div>
+                        <Typography variant="caption14" color={colors.blueDark}>
+                            {(JSON.parse(String(data.metadata)) as TNFTMetadata)
+                                ?.name || name}
+                        </Typography>
+                        <Typography variant="caption12">
+                            {data.contract_type || 'ERC721'}
+                        </Typography>
+                    </div>
+                </div>
+                <div id="nft-footer">
                     <Button
                         icon="info"
                         isTransparent

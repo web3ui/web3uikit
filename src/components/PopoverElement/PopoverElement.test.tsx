@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, render, cleanup } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './PopoverElement.stories';
 import 'jest-styled-components';
@@ -15,13 +14,13 @@ describe('Default', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Default onClick={testClickEvent} />, container);
+        render(<Default onClick={testClickEvent} />, {
+            container: document.body.appendChild(container),
+        });
     });
 
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('should render the component', () => {
@@ -51,8 +50,7 @@ describe('Custom', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
+        render(
             <Default
                 height={height}
                 width={width}
@@ -62,13 +60,14 @@ describe('Custom', () => {
                 backgroundColor={'transparent'}
                 onClick={testClickEvent}
             />,
-            container,
+            {
+                container: document.body.appendChild(container),
+            },
         );
     });
 
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('should render the component', () => {

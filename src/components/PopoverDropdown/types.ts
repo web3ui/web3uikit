@@ -4,7 +4,7 @@ export interface PopoverDropdownProps {
     /**
      * Set children which should have a tooltip
      */
-    children: Array<React.ReactNode>;
+    children: React.ReactNode[];
 
     /**
      * The dropdown ID should be assigned

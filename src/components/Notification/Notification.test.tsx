@@ -1,7 +1,7 @@
 import 'jest-styled-components';
 import * as stories from './Notification.stories';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, cleanup } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 const { Regular, Standard, CustomIcon } = composeStories(stories);
 
@@ -17,13 +17,13 @@ describe('Notification - Standard - Active - Regular Text - Regular Icon', () =>
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Standard />, container);
+        render(<Standard />, {
+            container: document.body.appendChild(container),
+        });
     });
 
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -75,13 +75,13 @@ describe('Notification - Regular - Active - Custom Text - Regular Icon', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Regular />, container);
+        render(<Regular />, {
+            container: document.body.appendChild(container),
+        });
     });
 
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -126,13 +126,13 @@ describe('Notification - Active - Custom Text - Custom Icon', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<CustomIcon />, container);
+        render(<CustomIcon />, {
+            container: document.body.appendChild(container),
+        });
     });
 
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {

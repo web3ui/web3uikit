@@ -18,7 +18,6 @@ function reducer(state: PayloadType[], action: NotificationActionType) {
         case 'add_notification':
             return [...state, { ...action.payload }];
         case 'remove_notification':
-            console.log('action', action, 'state', state);
             return state.filter((toast) => toast.id !== action.id);
         case 'clear_notifications':
             return [];
@@ -27,7 +26,7 @@ function reducer(state: PayloadType[], action: NotificationActionType) {
     }
 }
 
-const NotificationProvider: FC = (props) => {
+const NotificationProvider: FC<{ children: React.ReactChild }> = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const toasts = useMemo(() => {

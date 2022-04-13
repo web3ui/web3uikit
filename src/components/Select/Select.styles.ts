@@ -223,7 +223,7 @@ export const SelectStyled = styled.select`
     }
 `;
 
-const SelectStyles = {
+export default {
     DivStyledWrapper,
     DropDownIcon,
     ErrorLabel,
@@ -233,8 +233,6 @@ const SelectStyles = {
     Options,
     PrefixIcon,
     PrefixSpan,
-    SelectedItem,
     SelectStyled,
+    SelectedItem,
 };
-
-export default SelectStyles;

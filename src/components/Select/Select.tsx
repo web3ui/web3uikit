@@ -6,7 +6,7 @@ import {
     DivWrapperStyled,
     LabelStyled as LabelStyledTrad,
 } from '../Input/Input.styles';
-import SelectStyles from './Select.styles';
+import styles from './Select.styles';
 import type { SelectProps } from './types';
 
 const {
@@ -19,9 +19,9 @@ const {
     Options,
     PrefixIcon,
     PrefixSpan,
-    SelectedItem,
     SelectStyled,
-} = SelectStyles;
+    SelectedItem,
+} = styles;
 
 const Select: React.FC<SelectProps> = ({
     customNoDataText = 'No Data',
@@ -111,12 +111,12 @@ const Select: React.FC<SelectProps> = ({
 
                 <DropDownIcon>
                     <Icon
+                        fill={color.grey}
                         svg={
                             isOpen
                                 ? iconTypes.triangleUp
                                 : iconTypes.triangleDown
                         }
-                        fill={color.grey}
                     />
                 </DropDownIcon>
             </SelectedItem>

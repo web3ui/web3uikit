@@ -78,7 +78,7 @@
         "@storybook/react": "^6.4.21",
         "@storybook/testing-react": "^1.2.4",
         "@testing-library/jest-dom": "^5.16.1",
-        "@testing-library/react": "13.0.0-alpha.7",
+        "@testing-library/react": "^13.0.1",
         "@types/blockies": "^0.0.2",
         "@types/react": "^17.0.43",
         "@types/react-blockies": "^1.4.1",

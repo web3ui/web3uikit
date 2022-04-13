@@ -317,6 +317,8 @@ Try the `<TextArea />` component in the [interactive documentation](https://web3
 
 ### `<Modal />`
 
+Modal is a popup that can have arbitary elements and can be closed by clicking on the close or cancel buttons.
+
 ![Modal2](https://user-images.githubusercontent.com/78314301/149968047-5844ac05-5ea0-484c-b1fd-137641824de0.gif)
 
 Try the `<Modal />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/5-popup-modal)

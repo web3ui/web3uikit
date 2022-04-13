@@ -1,9 +1,9 @@
-import { NotificationProps } from './types';
 import React, { useEffect, useState } from 'react';
+import color from '../../styles/colors';
 import { Icon } from '../Icon';
 import { iconTypes, TIconType } from '../Icon/collection';
 import NotificationStyles from './Notification.styles';
-import color from '../../styles/colors';
+import { NotificationProps } from './types';
 
 const {
     BarStyled,

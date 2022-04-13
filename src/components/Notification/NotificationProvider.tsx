@@ -1,13 +1,13 @@
 import React, { FC, useContext, useMemo, useReducer } from 'react';
 import NotificationContext from './context';
 import Notification from './Notification';
+import NotificationStyles from './Notification.styles';
 import {
     IPosition,
     IToasts,
     NotificationActionType,
     PayloadType,
 } from './types';
-import NotificationStyles from './Notification.styles';
 
 const { NotificationContainerStyled } = NotificationStyles;
 

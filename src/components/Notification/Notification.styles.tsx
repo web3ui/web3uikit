@@ -1,14 +1,14 @@
+import styled from 'styled-components';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
-import styled from 'styled-components';
-import { INotificationContainer, INotificationStyled } from './types';
 import {
     getNotificationAnimation,
     getNotificationColor,
     getNotificationPosition,
     getNotificationTheme,
 } from './themes/themes';
+import { INotificationContainer, INotificationStyled } from './types';
 
 const NotificationContainerStyled = styled.div<INotificationContainer>`
     position: fixed;

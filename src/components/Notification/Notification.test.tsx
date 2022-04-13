@@ -1,8 +1,8 @@
+import { composeStories } from '@storybook/testing-react';
 import 'jest-styled-components';
-import * as stories from './Notification.stories';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { composeStories } from '@storybook/testing-react';
+import * as stories from './Notification.stories';
 const { Regular, Standard, CustomIcon } = composeStories(stories);
 
 describe('Notification - Standard - Active - Regular Text - Regular Icon', () => {

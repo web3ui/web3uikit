@@ -1,6 +1,4 @@
-/* eslint-disable new-cap */
-import ReactDOM from 'react-dom';
-import { render, screen, fireEvent } from '@testing-library/react';
+import { cleanup, render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import { composeStories } from '@storybook/testing-react';
@@ -69,19 +67,20 @@ describe('Input - Text', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
+
+        render(
             <DefaultInput
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                     testEvent(event.target)
                 }
             />,
-            container,
+            {
+                container: document.body.appendChild(container),
+            },
         );
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -139,19 +138,20 @@ describe('Input - Text Error', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
+
+        render(
             <InputError
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                     testEvent(event.target)
                 }
             />,
-            container,
+            {
+                container: document.body.appendChild(container),
+            },
         );
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -207,19 +207,20 @@ describe('Input - Text Confirmed', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
+
+        render(
             <InputConfirmed
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                     testEvent(event.target)
                 }
             />,
-            container,
+            {
+                container: document.body.appendChild(container),
+            },
         );
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -276,19 +277,20 @@ describe('Input - Number', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
+
+        render(
             <NumberInput
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                     testEvent(event.target)
                 }
             />,
-            container,
+            {
+                container: document.body.appendChild(container),
+            },
         );
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -356,19 +358,20 @@ describe('Input - Password', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
+
+        render(
             <PasswordInput
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                     testEvent(event.target)
                 }
             />,
-            container,
+            {
+                container: document.body.appendChild(container),
+            },
         );
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -392,7 +395,7 @@ describe('Input - Password', () => {
             `[data-testid="${testInputId}"]`,
         );
         expect(input).not.toBeNull();
-        input && expect(input.type).toBe('text');
+        input && expect(input.type).toBe('password');
     });
 
     it('renders input with the name passed', () => {
@@ -427,19 +430,20 @@ describe('Input - Email', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
+
+        render(
             <EmailInput
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                     testEvent(event.target)
                 }
             />,
-            container,
+            {
+                container: document.body.appendChild(container),
+            },
         );
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -498,19 +502,20 @@ describe('Input - Tel', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
+
+        render(
             <TelInput
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                     testEvent(event.target)
                 }
             />,
-            container,
+            {
+                container: document.body.appendChild(container),
+            },
         );
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -565,12 +570,13 @@ describe('Input - Tel', () => {
 describe('PrefixCopyableHidden - Text', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrefixCopyableHidden />, container);
+
+        render(<PrefixCopyableHidden />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the hidden value', () => {
@@ -584,12 +590,13 @@ describe('PrefixCopyableHidden - Text', () => {
 describe('Validation - Required', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Validation />, container);
+
+        render(<Validation />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the required attribute', () => {
@@ -616,12 +623,13 @@ describe('Validation - Required', () => {
 describe('Validation - Number Range', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ValidateNumberRange />, container);
+
+        render(<ValidateNumberRange />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders HTML validation attributes', () => {
@@ -666,12 +674,13 @@ describe('Validation - Number Range', () => {
 describe('Validation - Character length Range', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ValidateValueLength />, container);
+
+        render(<ValidateValueLength />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders HTML validation attributes', () => {

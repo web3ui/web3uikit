@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import color from '../../styles/colors';
 import { Icon, iconTypes } from '../Icon';
 import { Illustration } from '../Illustrations';
-import {
-    DivWrapperStyled,
-    LabelStyled as LabelStyledTrad,
-} from '../Input/Input.styles';
-import styles from './Select.styles';
+import SelectStyles from './Select.styles';
 import type { SelectProps } from './types';
+import InputStyles from '../Input/Input.styles';
+const { DivWrapperStyled, LabelStyled: LabelStyledTrad } = InputStyles;
 
 const {
     DivStyledWrapper,
@@ -21,7 +19,7 @@ const {
     PrefixSpan,
     SelectStyled,
     SelectedItem,
-} = styles;
+} = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
     customNoDataText = 'No Data',

@@ -1,5 +1,5 @@
 import { composeStories } from '@storybook/testing-react';
-import { render, cleanup } from '@testing-library/react';
+import { cleanup, render } from '@testing-library/react';
 import React from 'react';
 import color from '../../styles/colors';
 import rgbToHex from '../../utils/rgbToHex';

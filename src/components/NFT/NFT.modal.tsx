@@ -31,22 +31,28 @@ const NFTModal: React.FC<INFTModal> = ({ attributes, setShowModal }) => {
                 <DivModalStyled>
                     {attributes && attributes.length > 0 ? (
                         attributes.map((attribute, index) => {
-                            const entries =
-                                typeof attribute !== 'string'
-                                    ? Object.entries(attribute)
-                                    : null;
+                            if (typeof attribute === 'string') {
+                                return (
+                                    <div
+                                        key={`${index}-attribute`}
+                                        id="widget-row"
+                                    >
+                                        <Information
+                                            topic={`#${index}`}
+                                            information={String(attribute)}
+                                            key={`attr-${index}`}
+                                        />
+                                    </div>
+                                );
+                            }
                             return (
                                 <div key={`${index}-attribute`} id="widget-row">
                                     <Information
                                         topic={
-                                            entries
-                                                ? entries[0][1]
-                                                : `#${index}`
+                                            attribute.trait_type || `#${index}`
                                         }
                                         information={
-                                            entries
-                                                ? entries[1][1]
-                                                : String(attribute)
+                                            attribute.value || `#${index}`
                                         }
                                         key={`attr-${index}`}
                                     />

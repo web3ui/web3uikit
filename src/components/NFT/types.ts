@@ -48,7 +48,6 @@ export type TNFTMetadata = {
 };
 
 export type TNFTAttributes =
-    | { [key: string]: string }[]
     | {
           trait_type?: string;
           value?: string;

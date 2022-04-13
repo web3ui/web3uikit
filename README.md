@@ -41,9 +41,7 @@ import { CryptoCards, Button } from 'web3uikit';
 const App = () => (
     <>
         <CryptoCards chain="ethereum" />
-        <Button theme="primary" type="button">
-            Launch dApp
-        </Button>
+        <Button theme="primary" type="button" text="Launch Dapp" />
     </>
 );
 ```

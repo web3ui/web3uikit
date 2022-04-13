@@ -1,6 +1,5 @@
-import ReactDOM from 'react-dom';
 import React from 'react';
-import { fireEvent } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Button.stories';
 import color from '../../styles/colors';
@@ -34,12 +33,13 @@ describe('Button - Primary', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Primary onClick={testClickEvent} />, container);
+
+        render(<Primary onClick={testClickEvent} />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -79,8 +79,10 @@ describe('Button - Primary', () => {
 describe('Button - Primary Large', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimaryLarge />, container);
+
+        render(<PrimaryLarge />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -106,8 +108,9 @@ describe('Button - Primary Large', () => {
 describe('Button - Primary Small', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimarySmall />, container);
+        render(<PrimarySmall />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -134,8 +137,10 @@ describe('Button - Primary with icon', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimaryWithIcon />, container);
+
+        render(<PrimaryWithIcon />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -165,8 +170,10 @@ describe('Button - Primary with icon', () => {
 describe('Button - Primary icon after', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimaryWithIconAfter />, container);
+
+        render(<PrimaryWithIconAfter />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -184,8 +191,10 @@ describe('Button - Primary icon after', () => {
 describe('Button - Primary icon only', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimaryWithIconOnly />, container);
+
+        render(<PrimaryWithIconOnly />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -206,8 +215,10 @@ describe('Button - Primary icon only', () => {
 describe('Button - Primary icon only large', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimaryWithIconOnlyLarge />, container);
+
+        render(<PrimaryWithIconOnlyLarge />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -228,8 +239,10 @@ describe('Button - Primary icon only large', () => {
 describe('Button - Primary icon only small', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimaryWithIconOnlySmall />, container);
+
+        render(<PrimaryWithIconOnlySmall />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -251,8 +264,10 @@ describe('Button - Secondary', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Secondary />, container);
+
+        render(<Secondary />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -297,8 +312,10 @@ describe('Button - Outline', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Outline />, container);
+
+        render(<Outline />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -342,8 +359,10 @@ describe('Button - ColoredRed', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ColoredRed />, container);
+
+        render(<ColoredRed />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -387,8 +406,10 @@ describe('Button - ColoredBlue', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ColoredBlue />, container);
+
+        render(<ColoredBlue />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -432,8 +453,10 @@ describe('Button - ColoredGreen', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ColoredGreen />, container);
+
+        render(<ColoredGreen />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -477,8 +500,10 @@ describe('Button - ColoredYellow', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ColoredYellow />, container);
+
+        render(<ColoredYellow />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -522,8 +547,10 @@ describe('Button - Outline', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ColoredYellow />, container);
+
+        render(<ColoredYellow />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -565,8 +592,10 @@ describe('Button - Outline', () => {
 describe('Button - Loading', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<LoadingButton />, container);
+
+        render(<LoadingButton />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -603,8 +632,10 @@ describe('Button - Loading', () => {
 describe('Button - Loading', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<LoadingButtonCustomProps />, container);
+
+        render(<LoadingButtonCustomProps />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);

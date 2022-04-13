@@ -121,7 +121,7 @@ const getIconColor = (color: string) => {
     `;
 };
 
-export const ButtonStyled = styled.button<TStyleProps>`
+const ButtonStyled = styled.button<TStyleProps>`
     ${initialStyles}
 
     ${(p) => p.isFullWidth && 'width: 100%;'}
@@ -144,3 +144,7 @@ export const ButtonStyled = styled.button<TStyleProps>`
 
     ${(p) => (p.isTransparent ? transparent : hoverEffect)}
 `;
+
+export default {
+    ButtonStyled,
+};

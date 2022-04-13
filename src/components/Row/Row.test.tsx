@@ -1,9 +1,7 @@
-import ReactDOM from 'react-dom';
-import '@testing-library/jest-dom';
-import 'jest-styled-components';
 import { composeStories } from '@storybook/testing-react';
-import * as stories from './Row.stories';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
+import * as stories from './Row.stories';
 
 const {
     RowComponent,
@@ -13,123 +11,76 @@ const {
     OrderedColumns,
 } = composeStories(stories);
 
-let container: HTMLDivElement;
+const testRowId = 'row';
 
-describe('Default Row', () => {
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<RowComponent />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+type TestStoryProps = {
+    name: string;
+    Component: any;
+    checkStyles?: boolean;
+    checkRoles?: boolean;
+};
 
-    it('renders the component', () => {
-        const element: HTMLDivElement | null =
-            container.querySelector(`[data-testid="row"]`);
-        expect(element).not.toBeNull();
-    });
-    it('renders the Correct Styles', () => {
-        const element: HTMLDivElement | null =
-            container.querySelector(`[data-testid="row"]`);
-        const style = element && getComputedStyle(element);
-        expect(style?.alignItems).toEqual('center');
-        expect(style?.justifyContent).toEqual('center');
-    });
-    it('renders all Roles', () => {
-        const element = container.querySelectorAll(`[role="col"]`);
-        const cols = (RowComponent?.args?.children as any).props?.children;
-        expect(cols.length).toEqual(element?.length);
-    });
-});
+function testStory({
+    name,
+    Component,
+    checkStyles = true,
+    checkRoles = true,
+}: TestStoryProps) {
+    return test(name, () => {
+        const children = Component?.args?.children as any;
+        render(<Component />);
 
-describe('Custom Breakpoints', () => {
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<CustomBreakpoints />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+        // renders the component
+        const row = screen.getAllByTestId(testRowId) as HTMLDivElement[] | null;
+        expect(row).not.toBeNull();
 
-    it('renders the component', () => {
-        const element: HTMLDivElement | null =
-            container.querySelector(`[data-testid="row"]`);
-        expect(element).not.toBeNull();
-    });
-    it('renders the Correct Styles', () => {
-        const element: HTMLDivElement | null =
-            container.querySelector(`[data-testid="row"]`);
-        const style = element && getComputedStyle(element);
-        expect(style?.alignItems).toEqual('center');
-        expect(style?.justifyContent).toEqual('center');
-    });
-    it('renders all Roles', () => {
-        const element = container.querySelectorAll(`[role="col"]`);
-        const cols = (CustomBreakpoints?.args?.children as any).props.children;
-        expect(cols.length).toEqual(element?.length);
-    });
-});
+        if (checkStyles) {
+            // renders row with correct styles
+            const style = row && getComputedStyle(row?.[0]);
 
-describe('Justify Content', () => {
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<JustifyContent />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+            expect(style?.alignItems).toEqual('center');
+            expect(style?.justifyContent).toEqual('center');
+        }
 
-    it('renders the component', () => {
-        const element: HTMLDivElement | null =
-            container.querySelector(`[data-testid="row"]`);
-        expect(element).not.toBeNull();
-    });
-});
+        if (checkRoles) {
+            // renders row with correct children
+            const colsElement = screen.getAllByRole('col');
+            const cols = children.props?.children;
 
-describe('Align Styles', () => {
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<AlignStyles />, container);
+            expect(cols.length).toEqual(colsElement?.length);
+        }
     });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+}
 
-    it('renders the component', () => {
-        const element: HTMLDivElement | null =
-            container.querySelector(`[data-testid="row"]`);
-        expect(element).not.toBeNull();
-    });
-});
+const data = [
+    {
+        name: 'Default Row',
+        Component: RowComponent,
+    },
+    {
+        name: 'Custom Breakpoints',
+        Component: CustomBreakpoints,
+    },
+    {
+        name: 'Justify Content',
+        Component: JustifyContent,
+        checkStyles: false,
+        checkRoles: false,
+    },
+    {
+        name: 'Align Styles',
+        Component: AlignStyles,
+        checkStyles: false,
+        checkRoles: false,
+    },
+    {
+        name: 'Ordered Columns',
+        Component: OrderedColumns,
+        checkStyles: false,
+    },
+];
 
-describe('Ordered Columns', () => {
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<OrderedColumns />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('renders the component', () => {
-        const element: HTMLDivElement | null =
-            container.querySelector(`[data-testid="row"]`);
-        expect(element).not.toBeNull();
-    });
-    it('renders all Roles', () => {
-        const element = container.querySelectorAll(`[role="col"]`);
-        const cols = (OrderedColumns?.args?.children as any)?.props?.children;
-        expect(cols.length).toEqual(element.length);
-    });
-});
+for (let index = 0; index < data.length; index++) {
+    const element = data[index];
+    testStory({ ...element });
+}

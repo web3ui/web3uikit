@@ -1,6 +1,8 @@
 import React, { createContext, useContext } from 'react';
-import { ColDiv, RowDiv } from './Row.styles';
+import styles from './Row.styles';
 import { IColProps, IRowProps } from './types';
+
+const { ColDiv, RowDiv } = styles;
 
 const Context = createContext({
     lg: 0,
@@ -12,26 +14,26 @@ const Context = createContext({
 });
 
 export function Col({
-    children,
-    span = 0,
-    isFullWidth = false,
     breakpointsConfig = {},
+    children,
+    isFullWidth = false,
     order = 0,
+    span = 0,
 }: IColProps): JSX.Element {
     const prov = useContext(Context);
     return (
         <ColDiv
+            breakpointsConfig={breakpointsConfig}
+            colGap={prov.colGap}
             isFullWidth={isFullWidth}
-            order={order}
-            span={span}
             lg={prov.lg}
             md={prov.md}
-            sm={prov.sm}
-            xs={prov.xs}
-            rowGap={prov.rowGap}
-            colGap={prov.colGap}
-            breakpointsConfig={breakpointsConfig}
+            order={order}
             role="col"
+            rowGap={prov.rowGap}
+            sm={prov.sm}
+            span={span}
+            xs={prov.xs}
         >
             {children}
         </ColDiv>
@@ -54,10 +56,10 @@ function Row({
         <Context.Provider value={{ xs, md, sm, lg, rowGap, colGap }}>
             <RowDiv
                 alignItems={alignItems}
-                justifyItems={justifyItems}
                 colGap={colGap}
-                rowGap={rowGap}
                 data-testid="row"
+                justifyItems={justifyItems}
+                rowGap={rowGap}
                 width={width}
             >
                 {children}

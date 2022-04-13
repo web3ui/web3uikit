@@ -1,6 +1,6 @@
 import * as stories from './NFTCollection.stories';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { cleanup, render } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 
 const { Default } = composeStories(stories);
@@ -13,11 +13,12 @@ describe('NFTCollection - Default', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<Default />, container);
+        render(<Default />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {

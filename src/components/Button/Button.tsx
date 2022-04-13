@@ -1,8 +1,9 @@
 import React from 'react';
 import Icon from '../../components/Icon/Icon';
 import { Loading } from '../Loading';
-import { ButtonStyled } from './Button.styles';
+import ButtonStyles from './Button.styles';
 import { ButtonProps } from './types';
+const { ButtonStyled } = ButtonStyles;
 
 const Button: React.FC<ButtonProps> = ({
     color,

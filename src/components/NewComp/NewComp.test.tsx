@@ -1,11 +1,15 @@
 // importing boilerplate stuff
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { composeStories } from '@storybook/testing-react';
+import {
+    render,
+    screen,
+    fireEvent,
+} from '@testing-library/react';
 import * as stories from './NewComp.stories';
 
-// importing fire event from RTL to mock a click event
-import { fireEvent } from '@testing-library/react';
+// // importing fire event from RTL to mock a click event
+// import { fireEvent } from '@testing-library/react';
 
 // importing color and a testing tool to convert RGB to HEX
 import color from '../../styles/colors';
@@ -31,244 +35,169 @@ const testText = 'test-text';
 // /////////////////////////////////////////////////////
 
 // Test Story 1: Default
-describe('Default', () => {
-    let container: HTMLDivElement;
+test('Renders Default component', () => {
     const testTextOn = Default?.args?.textOn;
+
+    render(<Default />);
+
+    const component = screen.getByTestId(testCompId);
+    expect(component).not.toBeNull();
+
+    const icon = screen.getByTestId(iconTestId);
+    expect(icon).not.toBeNull();
+
+    const title = screen.getByTestId(testTitle);
+    expect(title).not.toBeNull();
+    expect(title.textContent).toBe('The Demo Component');
+
+    const heading = screen.getByTestId(testHeading);
+    expect(heading).not.toBeNull();
+    expect(heading.textContent).toBe(testTextOn);
+
+    const styles = heading && getComputedStyle(heading);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.green);
+
+    const text = screen.getByTestId(testText);
+    expect(text).not.toBeNull();
+    expect(text.textContent).toBe('Clicked: 0 times');
+
+    const textWithoutUnderline = screen.getByTestId(testText);
+    expect(textWithoutUnderline).not.toBeNull();
+    const twlStyles = textWithoutUnderline && getComputedStyle(textWithoutUnderline);
+    expect(twlStyles?.textDecoration).toBe('none');
+});
+
+// Test Story 2: Button Click
+test('changes UI onClick of the button', () => {
     const testTextOff = Default?.args?.textOff;
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Default />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(<Default />);
 
-    it('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${testCompId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-    it('renders the Icon', () => {
-        const element = container.querySelector(
-            `[data-testid="${iconTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-    it('renders the Title with correct text', () => {
-        const element = container.querySelector(`[data-testid="${testTitle}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe('The Demo Component');
-    });
-    it('renders the Heading with textOn by default', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe(testTextOn);
-    });
-    it('renders the Heading with correct styles', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.green);
-    });
-    it('renders the correct default Text', () => {
-        const element = container.querySelector(`[data-testid="${testText}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe('Clicked: -1 times');
-    });
-    it('renders the Text without underline', () => {
-        const element = container.querySelector(`[data-testid="${testText}"]`);
-        expect(element).not.toBeNull();
-        const styles = element && getComputedStyle(element);
-        expect(styles?.textDecoration).toBe('none');
-    });
-    it('changes UI onClick of the button', () => {
-        const buttonEle = container.querySelector(
-            `[data-testid="${buttonTestId}"]`,
-        );
-        buttonEle && fireEvent.click(buttonEle);
+    const buttonElement = screen.getByTestId(buttonTestId);
 
-        const textEle = container.querySelector(`[data-testid="${testText}"]`);
-        expect(textEle).not.toBeNull();
-        expect(textEle?.textContent).toBe('Clicked: 1 times');
+    buttonElement && fireEvent.click(buttonElement);
 
-        const headingEle = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        expect(headingEle).not.toBeNull();
-        expect(headingEle?.textContent).toBe(testTextOff);
+    const textElelement = screen.getByTestId(testText);
+    expect(textElelement).not.toBeNull();
+    expect(textElelement.textContent).toBe('Clicked: 1 times');
 
-        const styles = headingEle && getComputedStyle(headingEle);
-        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.red);
-    });
+    const headingElement = screen.getByTestId(testHeading);
+    expect(headingElement).not.toBeNull();
+    expect(headingElement.textContent).toBe(testTextOff);
+
+    const styles = headingElement && getComputedStyle(headingElement);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.red);
 });
 
-// Test Story 2: InitializeRed
-describe('InitializeRed', () => {
-    let container: HTMLDivElement;
-    const testTextOn = InitializeRed?.args?.textOn;
+// Test Story 3: InitializeRed
+test('Renders InitializeRed', () => {
     const testTextOff = InitializeRed?.args?.textOff;
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<InitializeRed />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(<InitializeRed />);
 
-    it('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${testCompId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-    it('renders the Icon', () => {
-        const element = container.querySelector(
-            `[data-testid="${iconTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-    it('renders the Title with correct text', () => {
-        const element = container.querySelector(`[data-testid="${testTitle}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe('The Demo Component');
-    });
-    it('renders the Heading with textOff by default', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe(testTextOff);
-    });
-    it('renders the Heading with correct styles', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.red);
-    });
-    it('renders the correct default Text', () => {
-        const element = container.querySelector(`[data-testid="${testText}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe('Clicked: -1 times');
-    });
-    it('renders the Text without underline', () => {
-        const element = container.querySelector(`[data-testid="${testText}"]`);
-        expect(element).not.toBeNull();
-        const styles = element && getComputedStyle(element);
-        expect(styles?.textDecoration).toBe('none');
-    });
-    it('changes UI onClick of the button', () => {
-        const buttonEle = container.querySelector(
-            `[data-testid="${buttonTestId}"]`,
-        );
-        buttonEle && fireEvent.click(buttonEle);
+    const component = screen.getByTestId(testCompId);
+    expect(component).not.toBeNull();
 
-        const textEle = container.querySelector(`[data-testid="${testText}"]`);
-        expect(textEle).not.toBeNull();
-        expect(textEle?.textContent).toBe('Clicked: 1 times');
+    const icon = screen.getByTestId(iconTestId);
+    expect(icon).not.toBeNull();
 
-        const headingEle = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        expect(headingEle).not.toBeNull();
-        expect(headingEle?.textContent).toBe(testTextOn);
+    const title = screen.getByTestId(testTitle);
+    expect(title).not.toBeNull();
+    expect(title.textContent).toBe('The Demo Component');
 
-        const styles = headingEle && getComputedStyle(headingEle);
-        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.green);
-    });
+    const heading = screen.getByTestId(testHeading);
+    expect(heading).not.toBeNull();
+    expect(heading.textContent).toBe(testTextOff);
+
+    const styles = heading && getComputedStyle(heading);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.red);
+
+    const text = screen.getByTestId(testText);
+    expect(text).not.toBeNull();
+    expect(text.textContent).toBe('Clicked: 0 times');
+
+    const textWithoutUnderline = screen.getByTestId(testText);
+    expect(textWithoutUnderline).not.toBeNull();
+    const twlStyles = textWithoutUnderline && getComputedStyle(textWithoutUnderline);
+    expect(twlStyles?.textDecoration).toBe('none');
 });
 
-// Test Story 3: UnderLinedText
-describe('UnderLinedText', () => {
-    let container: HTMLDivElement;
+// Test Story 3: Button click
+test('changes UI onClick of the button', () => {
+    const testTextOn = InitializeRed?.args?.textOn;
+
+    render(<InitializeRed />);
+
+    const buttonElement = screen.getByTestId(buttonTestId);
+    buttonElement && fireEvent.click(buttonElement);
+
+    const textElelement = screen.getByTestId(testText);
+    expect(textElelement).not.toBeNull();
+    expect(textElelement.textContent).toBe('Clicked: 1 times');
+
+    const headingElement = screen.getByTestId(testHeading);
+    expect(headingElement).not.toBeNull();
+    expect(headingElement.textContent).toBe(testTextOn);
+
+    const styles = headingElement && getComputedStyle(headingElement);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.green);
+});
+
+// Test Story 4: UnderLinedText
+test('Renders UnderLinedText', () => {
     const testTextOn = UnderLinedText?.args?.textOn;
+
+    render(<UnderLinedText />);
+
+    const component = screen.getByTestId(testCompId);
+    expect(component).not.toBeNull();
+
+    const icon = screen.getByTestId(iconTestId);
+    expect(icon).not.toBeNull();
+
+    const title = screen.getByTestId(testTitle);
+    expect(title).not.toBeNull();
+    expect(title.textContent).toBe('The Demo Component');
+
+    const heading = screen.getByTestId(testHeading);
+    expect(heading).not.toBeNull();
+    expect(heading.textContent).toBe(testTextOn);
+
+    const styles = heading && getComputedStyle(heading);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.green);
+
+    const text = screen.getByTestId(testText);
+    expect(text).not.toBeNull();
+    expect(text.textContent).toBe('Clicked: 0 times');
+
+    const textWithoutUnderline = screen.queryByTestId(testText);
+    expect(textWithoutUnderline).not.toBeNull();
+    const twlStyles = textWithoutUnderline && getComputedStyle(textWithoutUnderline);
+    expect(twlStyles?.textDecoration).toBe('underline');
+});
+
+test('changes UI onClick of the button', () => {
     const testTextOff = UnderLinedText?.args?.textOff;
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<UnderLinedText />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(<UnderLinedText />);
 
-    it('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${testCompId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-    it('renders the Icon', () => {
-        const element = container.querySelector(
-            `[data-testid="${iconTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-    it('renders the Title with correct text', () => {
-        const element = container.querySelector(`[data-testid="${testTitle}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe('The Demo Component');
-    });
-    it('renders the Heading with textOn by default', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe(testTextOn);
-    });
-    it('renders the Heading with correct styles', () => {
-        const element = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.green);
-    });
-    it('renders the correct default Text', () => {
-        const element = container.querySelector(`[data-testid="${testText}"]`);
-        expect(element).not.toBeNull();
-        expect(element?.textContent).toBe('Clicked: -1 times');
-    });
-    it('renders the Text with underline', () => {
-        const element = container.querySelector(`[data-testid="${testText}"]`);
-        expect(element).not.toBeNull();
-        const styles = element && getComputedStyle(element);
-        expect(styles?.textDecoration).toBe('underline');
-    });
-    it('changes UI onClick of the button', () => {
-        const buttonEle = container.querySelector(
-            `[data-testid="${buttonTestId}"]`,
-        );
-        buttonEle && fireEvent.click(buttonEle);
+    const buttonElement = screen.getByTestId(buttonTestId);
+    buttonElement && fireEvent.click(buttonElement);
 
-        const textEle = container.querySelector(`[data-testid="${testText}"]`);
-        expect(textEle).not.toBeNull();
-        expect(textEle?.textContent).toBe('Clicked: 1 times');
+    const textElelement = screen.getByTestId(testText);
+    expect(textElelement).not.toBeNull();
+    expect(textElelement.textContent).toBe('Clicked: 1 times');
 
-        const headingEle = container.querySelector(
-            `[data-testid="${testHeading}"]`,
-        );
-        expect(headingEle).not.toBeNull();
-        expect(headingEle?.textContent).toBe(testTextOff);
+    const headingElement = screen.getByTestId(testHeading);
+    expect(headingElement).not.toBeNull();
+    expect(headingElement.textContent).toBe(testTextOff);
 
-        const styles = headingEle && getComputedStyle(headingEle);
-        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-        expect(colorHex).toBe(color.red);
-    });
+    const styles = headingElement && getComputedStyle(headingElement);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.red);
 });

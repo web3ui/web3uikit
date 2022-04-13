@@ -12,29 +12,29 @@ import type { NewCompProps } from './types';
 // pick the props that you will use for conditional CSS
 type TStyleProps = Pick<NewCompProps, 'state' | 'hasUnderline'>;
 
-////////////////////
+// //////////////////
 // Theme CSS
 // CSS Props should be sorted alphabetically
-////////////////////
-export const greenColor = css`
+// //////////////////
+const greenColor = css`
     color: ${color.green};
 `;
-export const redColor = css`
+const redColor = css`
     color: ${color.red};
 `;
 
-////////////////////
+// //////////////////
 // Styled Components
 // CSS Props should be sorted alphabetically
-////////////////////
-export const SectionStyled = styled.section`
+// //////////////////
+const SectionStyled = styled.section`
     background-color: ${color.white};
     border-bottom: 5px solid ${color.green};
     border-top: 5px solid ${color.yellow};
     padding: 12px 24px;
 `;
 
-export const SpanStyled = styled.span`
+const SpanStyled = styled.span`
     display: flex;
     align-items: center;
 
@@ -43,14 +43,14 @@ export const SpanStyled = styled.span`
     }
 `;
 
-export const TitleStyled = styled.h1<TStyleProps>`
+const TitleStyled = styled.h1<TStyleProps>`
     ${resetCSS};
     ${fonts.heading};
     ${fonts.h1};
     margin-bottom: 12px;
 `;
 
-export const HeadingStyled = styled.h2<TStyleProps>`
+const HeadingStyled = styled.h2<TStyleProps>`
     ${resetCSS};
     ${fonts.heading};
     ${fonts.h2};
@@ -58,7 +58,7 @@ export const HeadingStyled = styled.h2<TStyleProps>`
     ${(p) => (p.state === 'greenLight' ? greenColor : redColor)};
 `;
 
-export const TextStyled = styled.p<TStyleProps>`
+const TextStyled = styled.p<TStyleProps>`
     ${resetCSS};
     ${fonts.heading};
     ${fonts.text};
@@ -74,3 +74,13 @@ export const TextStyled = styled.p<TStyleProps>`
 // 5 - Modifier styles (hover, active etc)
 // 6 - State changed styles ${(p) => (p.prop ? green : red)};
 // each should be sorted alphabetically as best as possible
+
+export default {
+    HeadingStyled,
+    SectionStyled,
+    SpanStyled,
+    TextStyled,
+    TitleStyled,
+    greenColor,
+    redColor,
+};

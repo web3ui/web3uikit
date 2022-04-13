@@ -179,11 +179,15 @@ Try the `<Information />` component in the [interactive documentation](https://w
 
 ### `<LinkTo />`
 
+LinkTo component is a simple link component that can be used to navigate to another page or to another component.
+
 ![LinkTo](https://user-images.githubusercontent.com/78314301/149967486-6bc37003-7fd4-42c3-ac72-33e798260d60.gif)
 
 Try the `<LinkTo />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-linkto)
 
 ### `<Logo />`
+
+Logo component is a simple logo component having moralis or other icons that can be used in any layout.
 
 ![Logo](https://user-images.githubusercontent.com/78314301/149967496-33652586-57ff-4d64-a88f-9e93305085ae.gif)
 
@@ -312,6 +316,8 @@ Try the `<TextArea />` component in the [interactive documentation](https://web3
 # 🎉 `Popup`
 
 ### `<Modal />`
+
+Modal is a popup that can have arbitary elements and can be closed by clicking on the close or cancel buttons.
 
 ![Modal2](https://user-images.githubusercontent.com/78314301/149968047-5844ac05-5ea0-484c-b1fd-137641824de0.gif)
 

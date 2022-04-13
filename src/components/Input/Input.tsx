@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { CopyButton } from '../CopyButton';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
-import {
+import InputStyles from './Input.styles';
+import type { InputProps } from './types';
+
+const {
     CopyContainerStyled,
     DivStyled,
     DivWrapperStyled,
@@ -10,8 +13,7 @@ import {
     LabelStyled,
     StrongStyled,
     VisibilityIcon,
-} from './Input.styles';
-import type { InputProps } from './types';
+} = InputStyles;
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,

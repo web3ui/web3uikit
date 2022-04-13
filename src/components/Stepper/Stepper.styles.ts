@@ -11,7 +11,7 @@ type TStyleProps = Pick<
 
 type THeaderStyleProps = Pick<StepperProps, 'headerWidth'>;
 
-export const SectionStyled = styled.section`
+const SectionStyled = styled.section`
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -19,7 +19,7 @@ export const SectionStyled = styled.section`
     position: relative;
 `;
 
-export const OrderedListStyled = styled.ol`
+const OrderedListStyled = styled.ol`
     ${resetCSS};
     align-items: center;
     display: flex;
@@ -31,7 +31,7 @@ export const OrderedListStyled = styled.ol`
     width: 100%;
 `;
 
-export const ListItemStyled = styled.li<TStyleProps>`
+const ListItemStyled = styled.li<TStyleProps>`
     ${resetCSS};
     ${fonts.text};
     align-items: center;
@@ -51,7 +51,7 @@ export const ListItemStyled = styled.li<TStyleProps>`
     opacity: ${(p) => (p.activeStep < p.thisStep ? '50%' : '100%')};
 `;
 
-export const SpanStyled = styled.span<TStyleProps>`
+const SpanStyled = styled.span<TStyleProps>`
     background-color: rgba(46, 125, 175, 0.3);
     border: none;
     display: block;
@@ -67,7 +67,7 @@ export const SpanStyled = styled.span<TStyleProps>`
     );
 `;
 
-export const DivStyled = styled.div`
+const DivStyled = styled.div`
     text-align: center;
 
     div[role='spinner'] {
@@ -75,7 +75,7 @@ export const DivStyled = styled.div`
     }
 `;
 
-export const DivStyledContent = styled.div`
+const DivStyledContent = styled.div`
     ${resetCSS};
     ${fonts.text};
     display: inline-block;
@@ -92,7 +92,7 @@ export const DivStyledContent = styled.div`
     }
 `;
 
-export const NavStyled = styled.nav`
+const NavStyled = styled.nav`
     display: flex;
     justify-content: center;
     margin-top: 12px;
@@ -102,9 +102,9 @@ export const NavStyled = styled.nav`
     }
 `;
 
-export const FooterStyled = styled.footer``;
+const FooterStyled = styled.footer``;
 
-export const DivStyledHelper = styled.div`
+const DivStyledHelper = styled.div`
     margin-top: 26px;
     text-align: center;
 
@@ -121,7 +121,20 @@ export const DivStyledHelper = styled.div`
     }
 `;
 
-export const HeaderStyled = styled.header<THeaderStyleProps>`
+const HeaderStyled = styled.header<THeaderStyleProps>`
     ${(p) => p.headerWidth && `max-width: ${p.headerWidth}px`};
     width: 100%;
 `;
+
+export default {
+    DivStyled,
+    DivStyledContent,
+    DivStyledHelper,
+    FooterStyled,
+    HeaderStyled,
+    ListItemStyled,
+    NavStyled,
+    OrderedListStyled,
+    SectionStyled,
+    SpanStyled,
+};

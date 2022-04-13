@@ -1,8 +1,8 @@
-import resetCSS from '../../styles/reset';
-import fonts from '../../styles/fonts';
-import color from '../../styles/colors';
 import styled, { css } from 'styled-components';
-import { SelectProps, LabelProps, SelectedItemProps } from './types';
+import color from '../../styles/colors';
+import fonts from '../../styles/fonts';
+import resetCSS from '../../styles/reset';
+import { LabelProps, SelectedItemProps, SelectProps } from './types';
 
 const DivStyledWrapper = styled.div<Pick<SelectProps, 'state'>>`
     ${resetCSS};

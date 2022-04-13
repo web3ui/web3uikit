@@ -1,25 +1,25 @@
-import * as stories from './Skeleton.stories';
+import { composeStories } from '@storybook/testing-react';
+import { cleanup, render } from '@testing-library/react';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import color from '../../styles/colors';
 import rgbToHex from '../../utils/rgbToHex';
-import { composeStories } from '@storybook/testing-react';
+import * as stories from './Skeleton.stories';
 
 const { SkeletonImage } = composeStories(stories);
-
-export const skeletonTestId = 'test-skeleton-id';
-
-let container: HTMLDivElement;
+const skeletonTestId = 'test-skeleton-id';
 
 describe('Skeleton - Image', () => {
+let container: HTMLDivElement;
+
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<SkeletonImage />, container);
+        render(<SkeletonImage />, {
+            container: document.body.appendChild(container),
+        });
     });
+
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {

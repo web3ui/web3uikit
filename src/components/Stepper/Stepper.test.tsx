@@ -146,7 +146,7 @@ describe('PreLoadStep0', () => {
 
     it('renders the loading spinner', () => {
         const loadingSpinner: HTMLDivElement | null = container.querySelector(
-            `[data-testid="test-loading"]`,
+            '[data-testid="test-loading"]',
         );
         expect(loadingSpinner).not.toBeNull();
     });

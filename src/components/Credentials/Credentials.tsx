@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import { Typography } from '../Typography';
-import CredentialsStyles from './Credentials.styles';
+import styles from './Credentials.styles';
 import color from '../../styles/colors';
 import { ICredentialsProps } from './types';
 import CredentialsHeader from './components/CredentialsHeader';
@@ -8,7 +8,7 @@ import { HideButton } from '../HideButton';
 import { CopyButton } from '../CopyButton';
 
 const { CredentialsStyled, DividerStyled, PreformattedStyled, ToolsStyled } =
-    CredentialsStyles;
+    styles;
 
 const Credentials: FC<ICredentialsProps> = ({
     hasCopyButton = true,

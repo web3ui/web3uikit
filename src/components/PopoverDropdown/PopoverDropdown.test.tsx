@@ -1,7 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { composeStories } from '@storybook/testing-react';
-import { fireEvent, waitFor, screen } from '@testing-library/react';
+import {
+    fireEvent,
+    waitFor,
+    screen,
+    render,
+    cleanup,
+} from '@testing-library/react';
 import * as stories from './PopoverDropdown.stories';
 import 'jest-styled-components';
 
@@ -15,12 +20,13 @@ describe('Default', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<PopoverSelection position={'bottom'} />, container);
+        render(<PopoverSelection position={'bottom'} />, {
+            container: document.body.appendChild(container),
+        });
     });
 
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('should render the parent', () => {

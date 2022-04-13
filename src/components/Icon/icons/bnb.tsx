@@ -3,6 +3,8 @@ import React from 'react';
 
 const bnbIcon = (fill: string, size: number, style?: React.CSSProperties) => (
     <svg
+        aria-hidden="true"
+        data-testid="test-icon"
         id="Layer2"
         data-name="Layer2"
         xmlns="http://www.w3.org/2000/svg"

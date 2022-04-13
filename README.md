@@ -50,45 +50,46 @@ const App = () => (
 
 # 🧭 `Table of contents`
 
-- [Web3UIKit!](#web3uikit)
-- [⭐️ `Star us`](#️-star-us)
-- [🤝 `Need help?`](#-need-help)
-- [🚀 `Quick Start`](#-quick-start)
-    - [💿 Installation](#-installation)
-    - [🧰 Usage](#-usage)
-- [🧭 `Table of contents`](#-table-of-contents)
-- [⛓ `Web3 Components`](#-web3-components)
-    - [`<ConnectButton />`](#connectbutton-)
-- [📖 `UI Components`](#-ui-components)
-    - [`<Accordion />`](#accordion-)
-    - [`<Avatar />`](#avatar-)
-    - [`<Badge />`](#badge-)
-    - [`<BannerStrip />`](#bannerstrip-)
-    - [`<Breadcrumbs />`](#breadcrumbs-)
-    - [`<Card />`](#card-)
-    - [`<CryptoCards />`](#cryptocards-)
-    - [`<CryptoLogos />`](#cryptologos-)
-    - [`<Icon />`](#icon-)
-    - [`<Illustration />`](#illustration-)
-    - [`<Information />`](#information-)
-    - [`<LinkTo />`](#linkto-)
-    - [`<Logo />`](#logo-)
-    - [`<Notification />`](#notification-)
-    - [`<Table />`](#table-)
-    - [`<Tag />`](#tag-)
-    - [`<Todo />`](#todo-)
-    - [`<Widget />`](#widget-)
-- [⚙️ `Interaction Components`](#️-interaction-components)
-    - [`<Button />`](#button-)
-    - [`<Checkbox />`](#checkbox-)
-    - [`<Form />`](#form-)
-    - [`<Input />`](#input-)
-    - [`<Radios />`](#radios-)
-    - [`<Select />`](#select-)
-    - [`<TextArea />`](#textarea-)
-- [🎉 `Popup`](#-popup)
-    - [`<Modal />`](#modal-)
-    - [`<Tooltip />`](#tooltip-)
+-   [Web3UIKit!](#web3uikit)
+-   [⭐️ `Star us`](#️-star-us)
+-   [🤝 `Need help?`](#-need-help)
+-   [🚀 `Quick Start`](#-quick-start)
+    -   [💿 Installation](#-installation)
+    -   [🧰 Usage](#-usage)
+-   [🧭 `Table of contents`](#-table-of-contents)
+-   [⛓ `Web3 Components`](#-web3-components)
+    -   [`<ConnectButton />`](#connectbutton-)
+-   [📖 `UI Components`](#-ui-components)
+    -   [`<Accordion />`](#accordion-)
+    -   [`<Avatar />`](#avatar-)
+    -   [`<Badge />`](#badge-)
+    -   [`<BannerStrip />`](#bannerstrip-)
+    -   [`<Breadcrumbs />`](#breadcrumbs-)
+    -   [`<Card />`](#card-)
+    -   [`<CryptoCards />`](#cryptocards-)
+    -   [`<CryptoLogos />`](#cryptologos-)
+    -   [`<Icon />`](#icon-)
+    -   [`<Illustration />`](#illustration-)
+    -   [`<Information />`](#information-)
+    -   [`<LinkTo />`](#linkto-)
+    -   [`<Logo />`](#logo-)
+    -   [`<Notification />`](#notification-)
+    -   [`<Table />`](#table-)
+    -   [`<Tag />`](#tag-)
+    -   [`<Todo />`](#todo-)
+    -   [`<Widget />`](#widget-)
+-   [⚙️ `Interaction Components`](#️-interaction-components)
+    -   [`<Button />`](#button-)
+    -   [`<Checkbox />`](#checkbox-)
+    -   [`<Credentials />`](#credentials-)
+    -   [`<Form />`](#form-)
+    -   [`<Input />`](#input-)
+    -   [`<Radios />`](#radios-)
+    -   [`<Select />`](#select-)
+    -   [`<TextArea />`](#textarea-)
+-   [🎉 `Popup`](#-popup)
+    -   [`<Modal />`](#modal-)
+    -   [`<Tooltip />`](#tooltip-)
 
 # ⛓ `Web3 Components`
 
@@ -178,11 +179,15 @@ Try the `<Information />` component in the [interactive documentation](https://w
 
 ### `<LinkTo />`
 
+LinkTo component is a simple link component that can be used to navigate to another page or to another component.
+
 ![LinkTo](https://user-images.githubusercontent.com/78314301/149967486-6bc37003-7fd4-42c3-ac72-33e798260d60.gif)
 
 Try the `<LinkTo />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-linkto)
 
 ### `<Logo />`
+
+Logo component is a simple logo component having moralis or other icons that can be used in any layout.
 
 ![Logo](https://user-images.githubusercontent.com/78314301/149967496-33652586-57ff-4d64-a88f-9e93305085ae.gif)
 
@@ -251,6 +256,7 @@ Try the `<Tag />` component in the [interactive documentation](https://web3ui.gi
 ![Todo](https://user-images.githubusercontent.com/16763860/161817468-2eedf624-145c-40bb-afcf-67d8d946b1c7.gif)
 
 Try the `<Todo />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-todo)
+
 ### `<Widget />`
 
 ![Widget](https://user-images.githubusercontent.com/16763860/162152763-bf3179d5-6fd7-458f-abb9-d8db42db41b7.gif)
@@ -270,6 +276,12 @@ Try the `<Button />` component in the [interactive documentation](https://web3ui
 ![Checkbox](https://user-images.githubusercontent.com/78314301/149967557-c5d3a841-36a4-4448-9ba6-45e9fc3981d4.gif)
 
 Try the `<Checkbox />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/2-forms-checkbox-switch)
+
+### `<Credentials />`
+
+![Credentials](https://user-images.githubusercontent.com/35369843/162796378-1f9abda6-ce04-4c9b-bd05-ef0b5df48ebc.gif)
+
+Try the `<Credentials />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/2-forms-credentials--with-title-and-icon)
 
 ### `<Form />`
 
@@ -304,6 +316,8 @@ Try the `<TextArea />` component in the [interactive documentation](https://web3
 # 🎉 `Popup`
 
 ### `<Modal />`
+
+Modal is a popup that can have arbitary elements and can be closed by clicking on the close or cancel buttons.
 
 ![Modal2](https://user-images.githubusercontent.com/78314301/149968047-5844ac05-5ea0-484c-b1fd-137641824de0.gif)
 

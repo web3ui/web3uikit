@@ -1,16 +1,18 @@
 import React from 'react';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
-import { TagStyled, SpanStyled } from './Tag.styles';
+import styles from './Tag.styles';
 import { TagProps } from './types';
 import colors from '../../styles/colors';
+
+const { TagStyled, SpanStyled } = styles;
 
 const Tag: React.FC<TagProps> = ({
     active = false,
     color,
     fontSize,
-    id,
     hasCancel = false,
+    id,
     onCancelClick,
     text = 'Tag',
     theme = 'regular',
@@ -30,7 +32,11 @@ const Tag: React.FC<TagProps> = ({
             width={width}
         >
             {theme === 'status' && active && (
-                <Icon fill="inherit" size={16} svg={iconTypes.checkmark} />
+                <Icon
+                    fill="inherit"
+                    size={16}
+                    svg={iconTypes.checkmark}
+                />
             )}
             <strong data-testid="test-tag-text">{text}</strong>
             {hasCancel && (
@@ -39,7 +45,6 @@ const Tag: React.FC<TagProps> = ({
                         fill={colors.blue}
                         size={16}
                         svg="x"
-                        style={{ marginLeft: '8px' }}
                     />
                 </SpanStyled>
             )}

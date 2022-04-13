@@ -13,13 +13,15 @@ import color from '../../styles/colors';
 import { NewCompProps } from './types';
 
 // importing CSS styles as styled components, sorted alphabetically
-import {
+import styles from './NewComp.styles';
+
+const {
     HeadingStyled,
     SectionStyled,
     SpanStyled,
     TextStyled,
     TitleStyled,
-} from './NewComp.styles';
+} = styles;
 
 // Normal boilerplate React functional component
 const NewComp: React.FC<NewCompProps> = ({
@@ -32,7 +34,7 @@ const NewComp: React.FC<NewCompProps> = ({
 }) => {
     // Standard use of useState to track internal state variables
     const [compState, setCompState] = useState(state);
-    let [count, setCount] = useState(-1);
+    const [count, setCount] = useState(-1);
 
     // Standard use of useEffect hook to mimic life cycle methods
     useEffect(() => {

@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { CheckboxProps } from '.';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
-import { StyledInput, StyledLabel } from './Checkbox.styles';
+import styles from './Checkbox.styles';
+
+const { StyledInput, StyledLabel } = styles;
 
 const Checkbox: React.FC<CheckboxProps> = ({
     checked = false,

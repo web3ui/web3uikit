@@ -1,12 +1,8 @@
-import { PopoverDropdownProps } from './types';
 import React, { useState } from 'react';
-import {
-    DivStyledArrow,
-    DivStyledFlex,
-    DivStyledDropdown,
-    DivStyledChild,
-} from './PopoverDropdown.styles';
-
+import { PopoverDropdownProps } from './types';
+import PopoverDropdownStyles from './PopoverDropdown.styles';
+const { DivStyledArrow, DivStyledFlex, DivStyledDropdown, DivStyledChild } =
+    PopoverDropdownStyles;
 const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
     children,
     id,

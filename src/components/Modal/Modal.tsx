@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { ModalProps } from './types';
 import Button from '../Button/Button';
 import { iconTypes } from '../Icon/collection';
-import {
-    HeaderStyled,
+import styles from './Modal.styles';
+
+const {
+    CustomFooterStyled,
+    DivStyled,
+    DivStyledContent,
     DivStyledWrap,
     FooterStyled,
-    DivStyledContent,
-    DivStyled,
-    CustomFooterStyled,
-} from './Modal.styles';
+    HeaderStyled,
+} = styles;
 
 const Modal: React.FC<ModalProps> = ({
     cancelText = 'Cancel',

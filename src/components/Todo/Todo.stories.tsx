@@ -12,7 +12,9 @@ export default {
     },
 } as ComponentMeta<typeof Todo>;
 
-const Template: ComponentStory<typeof Todo> = (args) => <Todo {...args} />;
+const Template: ComponentStory<typeof Todo> = (args) => {
+    return <Todo {...args} />;
+};
 
 export const DefaultTodo = Template.bind({});
 DefaultTodo.args = {

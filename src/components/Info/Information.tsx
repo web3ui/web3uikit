@@ -1,6 +1,8 @@
 import React from 'react';
-import { DivStyled, PStyledTopic, PStyledInfo } from './Information.styles';
+import styles from './Information.styles';
 import { InfoProps } from './types';
+
+const { DivStyled, PStyledTopic, PStyledInfo } = styles;
 
 const Info: React.FC<InfoProps> = ({ id, information, topic }: InfoProps) => {
     return (

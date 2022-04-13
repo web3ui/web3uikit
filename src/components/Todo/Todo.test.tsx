@@ -1,7 +1,6 @@
 import { composeStories } from '@storybook/testing-react';
-import { screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import * as stories from './Todo.stories';
 
 const { DefaultTodo, WithInitialTodos, FullWidthTodos } =
@@ -10,147 +9,78 @@ const { DefaultTodo, WithInitialTodos, FullWidthTodos } =
 const todoTestId = 'test-todo';
 const todoLabelId = 'test-label';
 const todoButtonId = 'test-button';
+const todoElementId = 'test-tag-id';
 const todoContentId = 'test-todo_content';
-
-let container: HTMLDivElement;
 
 export const testCompId = 'test-new-comp';
 
-describe('Todos - Default', () => {
+test('DefaultTodo', async () => {
     const labelText = DefaultTodo.args?.label;
+    render(<DefaultTodo label={labelText} />);
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<DefaultTodo label={labelText} />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    const element = screen.getByTestId(todoTestId);
+    expect(element).not.toBeNull();
 
-    it('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${todoTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-
-    it('renders label text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${todoLabelId}"]`,
-        );
-        expect(element?.textContent).toBe(labelText);
-    });
+    const labelElement = screen.getByTestId(todoLabelId);
+    expect(labelElement?.textContent).toBe(labelText);
 });
 
-describe('Todos - WithInitialTodos', () => {
+test('WithInitialTodos', async () => {
     const labelText = WithInitialTodos.args?.label;
     const todos = WithInitialTodos.args?.todos;
     const buttonText = WithInitialTodos.args?.buttonText;
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
-            <WithInitialTodos
-                label={labelText}
-                todos={todos}
-                buttonText={buttonText}
-            />,
-            container,
-        );
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(
+        <WithInitialTodos
+            label={labelText}
+            todos={todos}
+            buttonText={buttonText}
+        />,
+    );
 
-    it('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${todoTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
+    const element = screen.getByTestId(todoTestId);
+    expect(element).not.toBeNull();
 
-    it('renders label text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${todoLabelId}"]`,
-        );
-        expect(element?.textContent).toBe(labelText);
-    });
+    const labelElement = screen.getByTestId(todoLabelId);
+    expect(labelElement?.textContent).toBe(labelText);
 
-    it('renders button text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${todoButtonId}"]`,
-        );
-        expect(element?.textContent).toContain(buttonText);
-    });
+    const buttonElement = screen.getByTestId(todoButtonId);
+    expect(buttonElement?.textContent).toContain(buttonText);
 
-    it('renders passed todos data correctly', async () => {
-        const elements = await screen.findAllByTestId('test-tag-id');
-
-        expect(elements.length).toBe(todos?.length);
-    });
+    const todoElement = await screen.findAllByTestId(todoElementId);
+    expect(todoElement?.length).toBe(todos?.length);
 });
 
-describe('Todos - FullWidthTodos', () => {
+test('FullWidthTodos', async () => {
     const labelText = FullWidthTodos.args?.label;
     const todos = FullWidthTodos.args?.todos;
     const buttonText = FullWidthTodos.args?.buttonText;
     const fullWidth = FullWidthTodos.args?.fullWidth;
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(
-            <FullWidthTodos
-                todos={todos}
-                label={labelText}
-                fullWidth={fullWidth}
-                buttonText={buttonText}
-            />,
-            container,
-        );
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(
+        <FullWidthTodos
+            label={labelText}
+            todos={todos}
+            buttonText={buttonText}
+            fullWidth={fullWidth}
+        />,
+    );
 
-    it('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${todoTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
+    const element = screen.getByTestId(todoTestId);
+    expect(element).not.toBeNull();
 
-    it('renders label text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${todoLabelId}"]`,
-        );
-        expect(element?.textContent).toBe(labelText);
-    });
+    const labelElement = screen.getByTestId(todoLabelId);
+    expect(labelElement?.textContent).toBe(labelText);
 
-    it('renders button text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${todoButtonId}"]`,
-        );
-        expect(element?.textContent).toContain(buttonText);
-    });
+    const buttonElement = screen.getByTestId(todoButtonId);
+    expect(buttonElement?.textContent).toContain(buttonText);
 
-    it('renders passed todos data correctly', async () => {
-        const elements = await screen.findAllByTestId('test-tag-id');
+    const todoElement = await screen.findAllByTestId(todoElementId);
+    expect(todoElement?.length).toBe(todos?.length);
 
-        expect(elements.length).toBe(todos?.length);
-    });
+    const todoContent = screen.getByTestId(todoContentId);
+    const styles = todoContent && (getComputedStyle(todoContent) as any);
+    const flexDirection = styles?._values?.['flex-direction'];
 
-    it('renders todos content with full width', async () => {
-        const todoContent = screen.getByTestId(todoContentId);
-
-        const styles = todoContent && (getComputedStyle(todoContent) as any);
-        const flexDirection = styles?._values?.['flex-direction'];
-
-        expect(flexDirection).toBe('column');
-    });
+    expect(flexDirection).toBe('column');
 });

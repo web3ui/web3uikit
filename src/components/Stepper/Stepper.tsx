@@ -2,7 +2,11 @@ import React, { useEffect, useRef, useState, Fragment } from 'react';
 import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { Loading } from '../Loading';
-import {
+import HeaderStyles from './Stepper.styles';
+import { H2Styled } from '../../styles/StyledElements';
+import color from '../../styles/colors';
+import { StepperProps } from './types';
+const {
     DivStyled,
     DivStyledContent,
     DivStyledHelper,
@@ -13,11 +17,7 @@ import {
     SectionStyled,
     SpanStyled,
     HeaderStyled,
-} from './Stepper.styles';
-import { H2Styled } from '../../styles/StyledElements';
-import color from '../../styles/colors';
-import { StepperProps } from './types';
-
+} = HeaderStyles;
 const Stepper: React.FC<StepperProps> = ({
     step = 0,
     stepData,

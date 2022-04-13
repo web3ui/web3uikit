@@ -10,7 +10,7 @@ export default {
 
 const Template: ComponentStory<typeof LinkTo> = (args) => <LinkTo {...args} />;
 const TemplateText: ComponentStory<typeof LinkTo> = (args) => (
-    <p
+    <div
         style={{
             color: color.grey,
             fontFamily: 'Open Sans, sans-serif',
@@ -22,7 +22,7 @@ const TemplateText: ComponentStory<typeof LinkTo> = (args) => (
         }}
     >
         This is a link <LinkTo {...args} /> to something
-    </p>
+    </div>
 );
 
 export const ExternalLink = Template.bind({});
@@ -55,9 +55,9 @@ MailToLinkIconAfter.args = {
     type: 'email',
 };
 
-////////////////////
+// //////////////////
 // Visual Testing //
-////////////////////
+// //////////////////
 export const LinkWithOutText = Template.bind({});
 LinkWithOutText.args = {
     address: 'https://www.youtube.com/c/MoralisWeb3/featured',

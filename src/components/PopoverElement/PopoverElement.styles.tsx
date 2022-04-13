@@ -37,7 +37,7 @@ const TextStyled = styled.p<
     ${fonts.textBold};
 `;
 
-export const PopoverElementStyles = {
+export default {
     DivContainerStyled,
     DivImageStyled,
     DivStyled,

@@ -3,6 +3,8 @@ import React from 'react';
 
 const dappsIcon = (fill: string, size: number, style?: React.CSSProperties) => (
     <svg
+        aria-hidden="true"
+        data-testid="test-icon"
         width={size}
         height={size}
         viewBox="0 0 24 24"

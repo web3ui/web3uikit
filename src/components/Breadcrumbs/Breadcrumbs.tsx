@@ -2,14 +2,16 @@ import React from 'react';
 import color from '../../styles/colors';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
-import {
+import styles from './Breadcrumbs.styles';
+import { IBreadcrumbs, Route } from './types';
+
+const {
     Breadcrumb,
     BreadcrumbsSeparator,
     ListItemStyled,
     ListStyled,
     NavStyled,
-} from './Breadcrumbs.styles';
-import { IBreadcrumbs, Route } from './types';
+} = styles;
 
 function getNumberOfRoutesToRender(routes: Route[], currentLocation?: string) {
     if (!currentLocation) return routes.length - 1;

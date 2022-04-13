@@ -6,7 +6,7 @@ import { TextAreaProps } from './types';
 
 type TStyleProps = Pick<TextAreaProps, 'state' | 'width'>;
 
-export const TextAreaWrapper = styled.div<TStyleProps>`
+const TextAreaWrapper = styled.div<TStyleProps>`
     ${resetCSS};
     background-color: ${color.white};
     border-radius: 16px;
@@ -64,7 +64,7 @@ export const TextAreaWrapper = styled.div<TStyleProps>`
     }
 `;
 
-export const LabelStyled = styled.label`
+const LabelStyled = styled.label`
     ${resetCSS}
     ${fonts.text}
     background-color: ${color.white};
@@ -77,7 +77,7 @@ export const LabelStyled = styled.label`
     transition: all 0.1s ease-out;
 `;
 
-export const TextAreaStyled = styled.textarea<TStyleProps>`
+const TextAreaStyled = styled.textarea<TStyleProps>`
     ${resetCSS}
     ${fonts.text}
     background-color: transparent;
@@ -117,10 +117,8 @@ export const TextAreaStyled = styled.textarea<TStyleProps>`
     }
 `;
 
-const TextAreaStyles = {
+export default {
     TextAreaStyled,
     LabelStyled,
     TextAreaWrapper,
 };
-
-export default TextAreaStyles;

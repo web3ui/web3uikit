@@ -179,6 +179,8 @@ Try the `<Information />` component in the [interactive documentation](https://w
 
 ### `<LinkTo />`
 
+LinkTo component is a simple link component that can be used to navigate to another page or to another component.
+
 ![LinkTo](https://user-images.githubusercontent.com/78314301/149967486-6bc37003-7fd4-42c3-ac72-33e798260d60.gif)
 
 Try the `<LinkTo />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-linkto)

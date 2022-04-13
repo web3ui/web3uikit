@@ -15,13 +15,8 @@ import { NewCompProps } from './types';
 // importing CSS styles as styled components, sorted alphabetically
 import styles from './NewComp.styles';
 
-const {
-    HeadingStyled,
-    SectionStyled,
-    SpanStyled,
-    TextStyled,
-    TitleStyled,
-} = styles;
+const { HeadingStyled, SectionStyled, SpanStyled, TextStyled, TitleStyled } =
+    styles;
 
 // Normal boilerplate React functional component
 const NewComp: React.FC<NewCompProps> = ({
@@ -70,7 +65,7 @@ const NewComp: React.FC<NewCompProps> = ({
                     {compState === 'greenLight' ? textOn : textOff}
                 </HeadingStyled>
             </SpanStyled>
-            <Button onClick={toggleState}></Button>
+            <Button onClick={toggleState} />
             <TextStyled hasUnderline={hasUnderline} data-testid="test-text">
                 Clicked: {count} times
             </TextStyled>

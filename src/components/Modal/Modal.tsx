@@ -64,25 +64,27 @@ const Modal: React.FC<ModalProps> = ({
                     fixedMode={fixedMode}
                     headerHasBottomBorder={headerHasBottomBorder}
                 >
-                    {typeof title == 'string' ? <h3>{title}</h3> : title}
-                    {closeButton ? (
-                        closeButton
-                    ) : (
-                        <Button
-                            iconColor={'#68738D'}
-                            theme={'secondary'}
-                            radius={40}
-                            id={'close'}
-                            data-testid={'modal-close-test-id'}
-                            icon={iconTypes.x}
-                            iconLayout={'icon-only'}
-                            onClick={
-                                onCloseButtonPressed
-                                    ? onCloseButtonPressed
-                                    : toggleVisibility
-                            }
-                        />
-                    )}
+                    <>
+                        {typeof title == 'string' ? <h3>{title}</h3> : title}
+                        {closeButton ? (
+                            closeButton
+                        ) : (
+                            <Button
+                                iconColor={'#68738D'}
+                                theme={'secondary'}
+                                radius={40}
+                                id={'close'}
+                                data-testid={'modal-close-test-id'}
+                                icon={iconTypes.x}
+                                iconLayout={'icon-only'}
+                                onClick={
+                                    onCloseButtonPressed
+                                        ? onCloseButtonPressed
+                                        : toggleVisibility
+                                }
+                            />
+                        )}
+                    </>
                 </HeaderStyled>
 
                 <DivStyledContent

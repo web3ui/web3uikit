@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
-import { RadiosProps } from './';
 import { CreditCard, CreditCardProps } from '../CreditCard';
-import {
+import { RadiosProps } from './';
+import styles from './Radios.styles';
+
+const {
     DivStyled,
     FieldsetStyled,
     LabelStyled,
     LegendStyled,
     RadioButtonStyled,
-} from './Radios.styles';
+} = styles;
 
 const Radios: React.FC<RadiosProps> = ({
+    disabled = false,
     id,
     items,
     onChange,
     onCreditCardRemoved,
+    setWhichIsChecked,
     title,
     validation,
-    setWhichIsChecked,
-    disabled = false,
 }) => {
     const formattedID = id.replace(/\s/g, '-');
     const isCreditCards = Boolean(typeof items[0] === 'object');
@@ -72,6 +74,7 @@ const Radios: React.FC<RadiosProps> = ({
                             data-testid={`test-label-${i}`}
                             htmlFor={`${formattedID}_${i}`}
                             isCreditCardMode={isCreditCards}
+                            role="label"
                         >
                             {typeof item === 'string'
                                 ? item

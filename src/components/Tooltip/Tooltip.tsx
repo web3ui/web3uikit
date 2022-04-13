@@ -1,31 +1,34 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import styles from './Tooltip.styles';
 import { TooltipProps } from './types';
-import {
-    StyledHoverDiv,
-    StyledTooltipParentDiv,
-    StyledPopoverArrowDiv,
-    StyledTooltipTextDiv,
-} from './Tooltip.styles';
+
+const {
+    DivStyled,
+    DivStyledArrow,
+    DivStyledTooltipParent,
+    DivStyledTooltipText,
+} = styles;
 
 const Tooltip: React.FC<TooltipProps> = ({
-    position = 'bottom',
-    content,
     children,
-    minWidth,
+    content,
     maxWidth,
+    minWidth,
+    position = 'bottom',
 }: TooltipProps) => {
-    const parretnRef = useRef(null);
+    const parentRef = useRef(null);
     const popoverRef = useRef(null);
     const [width, setWidth] = useState(0);
     const [height, setHeight] = useState(0);
-    const [popverWidth, setPopoverWidth] = useState(0);
+    const [popoverWidth, setPopoverWidth] = useState(0);
     const [popoverHeight, setPopoverHeight] = useState(0);
+
     useEffect(() => {
         setWidth(
-            parretnRef.current ? (parretnRef.current as any).offsetWidth : 0,
+            parentRef.current ? (parentRef.current as any).offsetWidth : 0,
         );
         setHeight(
-            parretnRef.current ? (parretnRef.current as any).offsetHeight : 0,
+            parentRef.current ? (parentRef.current as any).offsetHeight : 0,
         );
         setPopoverWidth(
             popoverRef.current ? (popoverRef.current as any).offsetWidth : 0,
@@ -33,16 +36,17 @@ const Tooltip: React.FC<TooltipProps> = ({
         setPopoverHeight(
             popoverRef.current ? (popoverRef.current as any).offsetHeight : 0,
         );
-    }, [parretnRef.current, popoverRef.current]);
+    }, [parentRef.current, popoverRef.current]);
+
     return (
-        <StyledTooltipParentDiv
-            ref={parretnRef}
+        <DivStyledTooltipParent
+            ref={parentRef}
             data-testid={'tooltip-container-test-id'}
         >
             <div>{children}</div>
-            <StyledHoverDiv
+            <DivStyled
                 ref={popoverRef}
-                popoverWidth={popverWidth}
+                popoverWidth={popoverWidth}
                 popoverHeight={popoverHeight}
                 height={height}
                 width={width}
@@ -50,12 +54,15 @@ const Tooltip: React.FC<TooltipProps> = ({
                 position={position}
                 data-testid={'tooltip-children-test-id'}
             >
-                <StyledTooltipTextDiv maxWidth={maxWidth} minWidth={minWidth}>
+                <DivStyledTooltipText
+                    maxWidth={maxWidth}
+                    minWidth={minWidth}
+                >
                     {content}
-                </StyledTooltipTextDiv>
-                <StyledPopoverArrowDiv position={position} />
-            </StyledHoverDiv>
-        </StyledTooltipParentDiv>
+                </DivStyledTooltipText>
+                <DivStyledArrow position={position} />
+            </DivStyled>
+        </DivStyledTooltipParent>
     );
 };
 

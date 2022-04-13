@@ -105,6 +105,18 @@ See the pattern?
 
 &nbsp;
 
+### Debugging Tips
+
+Do not forget these two sweet tips to make debugging easier!
+
+`DivStyled.displayName = 'MyNewComponent'`
+Adding this in the styles after the DivStyled is declared makes bugging with React dev tools easier
+
+`<DivStyled className="MyNewComponent">`
+Adding this in the markup will make it easy to debug any CSS issues you might face
+
+&nbsp;
+
 **Q:** But what if there is two `<div>` tags in my component?
 
 **A:** You can add an optional 3rd identifier of your choosing that helps make sense to the next dev

@@ -3,6 +3,8 @@ import React from 'react';
 
 const xrpIcon = (fill: string, size: number, style?: React.CSSProperties) => (
     <svg
+        aria-hidden="true"
+        data-testid="test-icon"
         xmlns="http://www.w3.org/2000/svg"
         width={size}
         height={size / 1.230769230769231}

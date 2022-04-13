@@ -1,168 +1,74 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { fireEvent, waitFor, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
-import * as stories from './Tooltip.stories';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import 'jest-styled-components';
+import React from 'react';
+import * as stories from './Tooltip.stories';
 
 const { Bottom, Top, Left, Right } = composeStories(stories);
 
-describe('Tooltip - Bottom', () => {
-    let container: HTMLDivElement;
-    const childrenId = 'tooltip-children-test-id';
+const toolTipContainer = 'tooltip-container-test-id';
+const toolTipChildren = 'tooltip-children-test-id';
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Bottom />, container);
-    });
+test('Tooltip - Bottom', async () => {
+    render(<Bottom />);
 
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    // should render widget
+    const container = screen.getByTestId(toolTipContainer);
+    expect(container).not.toBeNull();
 
-    it('should render the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${childrenId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
+    // should show text on hover
+    fireEvent.mouseOver(screen.getByTestId(toolTipChildren));
 
-    it('should show text on hover', async () => {
-        fireEvent.mouseOver(screen.getByTestId(childrenId));
-
-        const r = await waitFor(() =>
-            screen.getByTestId('tooltip-container-test-id'),
-        );
-        expect(r).toBeDefined();
-    });
+    const childrenContainer = await waitFor(() =>
+        screen.getByTestId(toolTipContainer),
+    );
+    expect(childrenContainer).toBeDefined();
 });
 
-describe('Tooltip - Top', () => {
-    let container: HTMLDivElement;
-    const childrenId = 'tooltip-children-test-id';
+test('Tooltip - Top', async () => {
+    render(<Top />);
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Top />, container);
-    });
+    // should render widget
+    const container = screen.getByTestId(toolTipContainer);
+    expect(container).not.toBeNull();
 
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    // should show text on hover
+    fireEvent.mouseOver(screen.getByTestId(toolTipChildren));
 
-    it('should render the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${childrenId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-
-    it('should show text on hover', async () => {
-        fireEvent.mouseOver(screen.getByTestId(childrenId));
-
-        const r = await waitFor(() =>
-            screen.getByTestId('tooltip-container-test-id'),
-        );
-        expect(r).toBeDefined();
-    });
+    const childrenContainer = await waitFor(() =>
+        screen.getByTestId(toolTipContainer),
+    );
+    expect(childrenContainer).toBeDefined();
 });
 
-describe('Tooltip - Left', () => {
-    let container: HTMLDivElement;
-    const childrenId = 'tooltip-children-test-id';
+test('Tooltip - Right', async () => {
+    render(<Right />);
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Left />, container);
-    });
+    // should render widget
+    const container = screen.getByTestId(toolTipContainer);
+    expect(container).not.toBeNull();
 
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    // should show text on hover
+    fireEvent.mouseOver(screen.getByTestId(toolTipChildren));
 
-    it('should render the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${childrenId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-
-    it('should show text on hover', async () => {
-        fireEvent.mouseOver(screen.getByTestId(childrenId));
-
-        const r = await waitFor(() =>
-            screen.getByTestId('tooltip-container-test-id'),
-        );
-        expect(r).toBeDefined();
-    });
+    const childrenContainer = await waitFor(() =>
+        screen.getByTestId(toolTipContainer),
+    );
+    expect(childrenContainer).toBeDefined();
 });
 
-describe('Tooltip - Top', () => {
-    let container: HTMLDivElement;
-    const childrenId = 'tooltip-children-test-id';
+test('Tooltip - Left', async () => {
+    render(<Left />);
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Top />, container);
-    });
+    // should render widget
+    const container = screen.getByTestId(toolTipContainer);
+    expect(container).not.toBeNull();
 
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    // should show text on hover
+    fireEvent.mouseOver(screen.getByTestId(toolTipChildren));
 
-    it('should render the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${childrenId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-
-    it('should show text on hover', async () => {
-        fireEvent.mouseOver(screen.getByTestId(childrenId));
-
-        const r = await waitFor(() =>
-            screen.getByTestId('tooltip-container-test-id'),
-        );
-        expect(r).toBeDefined();
-    });
-});
-
-describe('Tooltip - Right', () => {
-    let container: HTMLDivElement;
-    const childrenId = 'tooltip-children-test-id';
-
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Right />, container);
-    });
-
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
-
-    it('should render the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${childrenId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
-
-    it('should show text on hover', async () => {
-        fireEvent.mouseOver(screen.getByTestId(childrenId));
-
-        const r = await waitFor(() =>
-            screen.getByTestId('tooltip-container-test-id'),
-        );
-        expect(r).toBeDefined();
-    });
+    const childrenContainer = await waitFor(() =>
+        screen.getByTestId(toolTipContainer),
+    );
+    expect(childrenContainer).toBeDefined();
 });

@@ -36,3 +36,13 @@ export const OneLine = Template.bind({});
 OneLine.args = {
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
 };
+
+export const WithCustomColors = Template.bind({});
+WithCustomColors.args = {
+    icon: 'windows',
+    iconColor: 'green',
+    title: 'CLI API Key:',
+    titleColor: 'blue',
+    text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
+    textColor: 'red',
+};

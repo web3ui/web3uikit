@@ -5,5 +5,7 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
-    "cSpell.words": ["testclass"]
+    "eslint.rules.customizations": [{ "rule": "*", "severity": "error" }],
+    "scss.lint.unknownAtRules": "ignore",
+    "emmet.excludeLanguages": ["typescriptreact"]
 }

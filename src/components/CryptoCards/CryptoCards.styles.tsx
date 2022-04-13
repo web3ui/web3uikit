@@ -4,7 +4,7 @@ import color from '../../styles/colors';
 import resetCSS from '../../styles/reset';
 import { getShade } from '../../styles/colors';
 
-export const DivStyledCryptoCard = styled.div`
+const DivStyledCryptoCard = styled.div`
     ${resetCSS};
     align-items: center;
     background: ${(props) => props.color};
@@ -42,7 +42,7 @@ export const DivStyledCryptoCard = styled.div`
     background: ${(props) => props.color};
 `;
 
-export const DivStyledImage = styled.div`
+const DivStyledImage = styled.div`
     flex-grow: 0;
     flex: none;
     height: 160px;
@@ -53,7 +53,7 @@ export const DivStyledImage = styled.div`
     width: 120px;
 `;
 
-export const DivStyledInfo = styled.div`
+const DivStyledInfo = styled.div`
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -69,12 +69,12 @@ export const DivStyledInfo = styled.div`
     width: 162px;
 `;
 
-export const DivStyledLogo = styled.div`
+const DivStyledLogo = styled.div`
     border-radius: 0px;
     height: 136px;
 `;
 
-export const DivStyledNetworkInfo = styled.div`
+const DivStyledNetworkInfo = styled.div`
     bottom: 0%;
     color: ${color.white};
     flex-grow: 0;
@@ -90,7 +90,7 @@ export const DivStyledNetworkInfo = styled.div`
     width: 100%;
 `;
 
-export const DivStyledButton = styled.div`
+const DivStyledButton = styled.div`
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -106,7 +106,7 @@ export const DivStyledButton = styled.div`
     width: 187px;
 `;
 
-export const PStyledChainName = styled.p`
+const PStyledChainName = styled.p`
     ${fonts.montserrat};
     ${fonts.textBold500};
     font-size: 32px;
@@ -116,7 +116,7 @@ export const PStyledChainName = styled.p`
     word-break: break-all;
 `;
 
-export const PStyledNetwork = styled.p`
+const PStyledNetwork = styled.p`
     ${fonts.openSans};
     ${fonts.textBold700};
     font-size: 20px;
@@ -126,3 +126,14 @@ export const PStyledNetwork = styled.p`
     overflow: hidden;
     word-break: break-all;
 `;
+
+export default {
+    DivStyledCryptoCard,
+    DivStyledButton,
+    DivStyledImage,
+    DivStyledInfo,
+    DivStyledLogo,
+    DivStyledNetworkInfo,
+    PStyledChainName,
+    PStyledNetwork,
+};

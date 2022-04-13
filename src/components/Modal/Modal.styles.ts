@@ -24,11 +24,12 @@ export const DivStyledWrap = styled.div<TStyleProps>`
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     left: 50%;
-    max-height: 100%;
+    max-height: 98%;
+    max-width: ${(p) => p.width};
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: ${(p) => p.width};
+    width: 96%;
     ${(p) => !p.canOverflow && overflow()}
 `;
 
@@ -42,8 +43,9 @@ export const HeaderStyled = styled.header<{
     display: flex;
     padding: 28px 32px 24px;
     justify-content: ${(p) => (p.title ? 'space-between' : 'flex-end')};
-    border-bottom: ${(p) => (p.headerHasBottomBorder ? `1px solid ${colors.paleBlue2}` : undefined)};
-    
+    border-bottom: ${(p) =>
+        p.headerHasBottomBorder ? `1px solid ${colors.paleBlue2}` : undefined};
+
     div {
         border-color: ${colors.blue};
         border-radius: 15px;
@@ -70,8 +72,13 @@ export const FooterStyled = styled.footer<TStyleProps>`
         p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
     border-top: 1px solid ${colors.paleBlue2};
     display: flex;
+    flex-wrap: wrap;
     padding: 15px 32px 20px;
     justify-content: ${(p) => (p.hasCancel ? 'space-between' : 'flex-end')};
+
+    button {
+        margin: 3px 0;
+    }
 `;
 
 export const DivStyled = styled.div<TStyleProps>`

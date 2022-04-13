@@ -14,6 +14,7 @@ const HeaderStyled = styled.div`
 
 const CredentialsHeader: FC<ICredentialsHeaderProps> = ({
     title,
+    titleColor = color.blueDark,
     icon,
     iconColor = color.grey,
     iconSize = 24,
@@ -34,7 +35,7 @@ const CredentialsHeader: FC<ICredentialsHeaderProps> = ({
                 <Typography
                     variant="body16"
                     weight="600"
-                    color={color.blueDark}
+                    color={titleColor}
                     data-testid="cred-test-header-text"
                 >
                     {title}

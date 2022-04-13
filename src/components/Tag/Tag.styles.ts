@@ -1,13 +1,18 @@
 import styled from 'styled-components';
+import colorStyles from './styles/colors';
+import themeStyles from './styles/themes';
 import type { TagProps, Tone } from './types';
-import {
+
+const {
     activeStatus,
     discount,
     inactiveStatus,
     initialStyles,
     regular,
-} from './styles/themes';
-import {
+    chips,
+} =themeStyles;
+
+const {
     coloredBlue,
     coloredBlueDark,
     coloredGrayDark,
@@ -22,7 +27,8 @@ import {
     coloredRedDark,
     coloredYellow,
     coloredYellowDark,
-} from './styles/colors';
+    coloredBlueLight,
+} = colorStyles;
 
 type TStyleProps = Pick<
     TagProps,
@@ -35,6 +41,8 @@ const getTheme = (theme: string, active?: boolean) => {
             return active ? activeStatus : inactiveStatus;
         case 'discount':
             return discount;
+        case 'chips':
+            return chips;
         default:
             return regular;
     }
@@ -50,6 +58,8 @@ const getColors = (color?: string, tone?: Tone) => {
             return tone === 'light' ? coloredYellow : coloredYellowDark;
         case 'blue':
             return tone === 'light' ? coloredBlue : coloredBlueDark;
+        case 'blueLight':
+            return coloredBlueLight;
         case 'purple':
             return tone === 'light' ? coloredPurple : coloredPurpleDark;
         case 'pink':
@@ -61,7 +71,12 @@ const getColors = (color?: string, tone?: Tone) => {
     }
 };
 
-export const TagStyled = styled.div<TStyleProps>`
+const SpanStyled = styled.div<TStyleProps>`
+    cursor: pointer;
+    margin-left: 8px;
+`;
+
+const TagStyled = styled.div<TStyleProps>`
     ${initialStyles}
     ${({ active, theme }) => getTheme(theme, active)}
     ${({ color, theme, tone }) =>
@@ -73,5 +88,13 @@ export const TagStyled = styled.div<TStyleProps>`
         Boolean(width) &&
         `height: ${width}; width: ${width}; border-radius: 50%;`};
 
+    ${({ theme, tone }) =>
+        theme === 'chips' && tone === 'dark' && 'border: 0px;'};
+
     ${({ fontSize }) => Boolean(fontSize) && `font-size: ${fontSize}`};
 `;
+
+export default {
+    SpanStyled,
+    TagStyled,
+};

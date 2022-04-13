@@ -50,19 +50,24 @@ const App = () => (
 
 # 🧭 `Table of contents`
 
--   [`web3uikit`](#web3uikit-%EF%B8%8F)
--   [🚀 Quick Start](#-quick-start)
+-   [Web3UIKit!](#web3uikit)
+-   [⭐️ `Star us`](#️-star-us)
+-   [🤝 `Need help?`](#-need-help)
+-   [🚀 `Quick Start`](#-quick-start)
     -   [💿 Installation](#-installation)
     -   [🧰 Usage](#-usage)
--   [🧭 Table of contents](#-table-of-contents)
--   [⛓ Web3 Components](#-web3-components)
+-   [🧭 `Table of contents`](#-table-of-contents)
+-   [⛓ `Web3 Components`](#-web3-components)
     -   [`<ConnectButton />`](#connectbutton-)
--   [📖 UI Components](#-ui-components)
+-   [📖 `UI Components`](#-ui-components)
+    -   [`<Accordion />`](#accordion-)
     -   [`<Avatar />`](#avatar-)
+    -   [`<Badge />`](#badge-)
     -   [`<BannerStrip />`](#bannerstrip-)
     -   [`<Breadcrumbs />`](#breadcrumbs-)
     -   [`<Card />`](#card-)
     -   [`<CryptoCards />`](#cryptocards-)
+    -   [`<CryptoLogos />`](#cryptologos-)
     -   [`<Icon />`](#icon-)
     -   [`<Illustration />`](#illustration-)
     -   [`<Information />`](#information-)
@@ -71,15 +76,18 @@ const App = () => (
     -   [`<Notification />`](#notification-)
     -   [`<Table />`](#table-)
     -   [`<Tag />`](#tag-)
--   [⚙️ Interaction Components](#%EF%B8%8F-interaction-components)
+    -   [`<Todo />`](#todo-)
+    -   [`<Widget />`](#widget-)
+-   [⚙️ `Interaction Components`](#️-interaction-components)
     -   [`<Button />`](#button-)
     -   [`<Checkbox />`](#checkbox-)
+    -   [`<Credentials />`](#credentials-)
     -   [`<Form />`](#form-)
     -   [`<Input />`](#input-)
     -   [`<Radios />`](#radios-)
     -   [`<Select />`](#select-)
     -   [`<TextArea />`](#textarea-)
--   [🎉 Popup](#-popup)
+-   [🎉 `Popup`](#-popup)
     -   [`<Modal />`](#modal-)
     -   [`<Tooltip />`](#tooltip-)
 
@@ -99,41 +107,61 @@ Try the `<ConnectButton />` component in the [interactive documentation](https:/
 
 # 📖 `UI Components`
 
+### `<Accordion />`
+
+The accordion component is a nice user interface element that can allow you to show and hide text or other components, so you do not overwhelm your user with too much awesome content
+
+![accordion](https://user-images.githubusercontent.com/13779759/161834402-ba7a847f-dcf1-48d5-a42d-f934117886dd.png)
+
+Try the `<Accordion />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/3-layout-accordion)
+
 ### `<Avatar />`
 
 ![avatar](https://user-images.githubusercontent.com/78314301/149967253-4e209eb2-6d0f-4222-96bc-7e74c4cc6dfd.gif)
 
-Try the `<Avatar />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-avatar--avatar-image-default)
+Try the `<Avatar />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/6-graphic-avatar)
+
+### `<Badge />`
+
+![badge](https://user-images.githubusercontent.com/35369843/162045684-fbcfe50f-79b3-452b-86a4-d546d19a3d43.png)
+
+Try the `<Badge />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/4-ui-badge--all)
 
 ### `<BannerStrip />`
 
 ![BannerStrip](https://user-images.githubusercontent.com/78314301/149967389-27af6b7e-f71c-4d1b-aee5-f8b3d3eb7080.gif)
 
-Try the `<BannerStrip />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-bannerstrip--standard)
+Try the `<BannerStrip />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/5-popup-bannerstrip)
 
 ### `<Breadcrumbs />`
 
 ![Breadcrumbs](https://user-images.githubusercontent.com/89942527/150335190-814ccd3f-b593-4a08-928f-e2ade7e74ba7.gif)
 
-Try the `<Breadcrumbs />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-breadcrumbs--one)
+Try the `<Breadcrumbs />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-breadcrumbs)
 
 ### `<Card />`
 
 ![Card](https://user-images.githubusercontent.com/78314301/150301096-bb5217e7-d88f-4744-8bcf-9a5af05e47de.gif)
 
-Try the `<Card />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-card--regular)
+Try the `<Card />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-card)
 
 ### `<CryptoCards />`
 
 ![CryptoCards](https://user-images.githubusercontent.com/78314301/149967411-e26f6584-1b38-4467-9a80-8b05831ffbaf.gif)
 
-Try the `<CryptoCards />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-crypto-cards--ethereum)
+Try the `<CryptoCards />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-crypto-cards)
+
+### `<CryptoLogos />`
+
+![CryptoLogos](https://user-images.githubusercontent.com/35369843/162805867-b7bf12a9-fc4f-4098-927b-497252fe46fc.gif)
+
+Try the `<CryptoLogos />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/6-graphic-crypto-logos--ethereum)
 
 ### `<Icon />`
 
 ![Icon](https://user-images.githubusercontent.com/78314301/149967423-af2d950e-100a-4a36-a68b-f4ad99894994.gif)
 
-Try the `<Icon />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-icon--example)
+Try the `<Icon />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/6-graphic-icon)
 
 ### `<Illustration />`
 
@@ -141,25 +169,25 @@ Try the `<Icon />` component in the [interactive documentation](https://web3ui.g
 
 ![Illustration2](https://user-images.githubusercontent.com/78314301/149967441-215e79db-54d7-4eec-856a-0335778a07a5.jpg)
 
-Try the <Illustration />` component in the [interactive documentation](<https://web3ui.github.io/web3uikit/?path=/docs/ui-illustration--ethereum&globals=backgrounds.value:!hex(041836)>)
+Try the <Illustration />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/6-graphic-illustration)
 
 ### `<Information />`
 
 ![Information](https://user-images.githubusercontent.com/78314301/149967475-f7e055d1-5894-4c50-9c66-38939ba72d94.png)
 
-Try the `<Information />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-information--regular)
+Try the `<Information />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-information)
 
 ### `<LinkTo />`
 
 ![LinkTo](https://user-images.githubusercontent.com/78314301/149967486-6bc37003-7fd4-42c3-ac72-33e798260d60.gif)
 
-Try the `<LinkTo />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-linkto--external-link)
+Try the `<LinkTo />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-linkto)
 
 ### `<Logo />`
 
 ![Logo](https://user-images.githubusercontent.com/78314301/149967496-33652586-57ff-4d64-a88f-9e93305085ae.gif)
 
-Try the `<Logo />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/ui-logo--logo-icon-black&globals=backgrounds.value:transparent;backgrounds.grid:false)
+Try the `<Logo />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/6-graphic-logo)
 
 ### `<Notification />`
 
@@ -205,19 +233,31 @@ Example:
 <NotificationProvider>
 ```
 
-Try the `<Notification />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-notification--regular)
+Try the `<Notification />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/5-popup-notification)
 
 ### `<Table />`
 
 ![Table](https://user-images.githubusercontent.com/78314301/149967517-735b9f99-7848-47d5-8342-c4c06ba4562b.gif)
 
-Try the `<Table />` component in the [interactive documentation](http://web3ui.github.io/?path=/story/ui-table--default-table&globals=backgrounds.value:transparent)
+Try the `<Table />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/3-layout-table)
 
 ### `<Tag />`
 
 ![Tag](https://user-images.githubusercontent.com/78314301/149967535-9f1ea1cb-d86d-4fdd-86c3-410e0ba3698e.gif)
 
-Try the `<Tag />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/ui-tag--regular)
+Try the `<Tag />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-tag)
+
+### `<Todo />`
+
+![Todo](https://user-images.githubusercontent.com/16763860/161817468-2eedf624-145c-40bb-afcf-67d8d946b1c7.gif)
+
+Try the `<Todo />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-todo)
+
+### `<Widget />`
+
+![Widget](https://user-images.githubusercontent.com/16763860/162152763-bf3179d5-6fd7-458f-abb9-d8db42db41b7.gif)
+
+Try the `<Widget />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/4-ui-widget)
 
 # ⚙️ `Interaction Components`
 
@@ -225,43 +265,49 @@ Try the `<Tag />` component in the [interactive documentation](https://web3ui.gi
 
 ![Button](https://user-images.githubusercontent.com/78314301/149967549-137516af-95c2-4ea2-bf4b-eafd2924a495.gif)
 
-Try the `<Button />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/interaction-button--primary)
+Try the `<Button />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/2-forms-button)
 
 ### `<Checkbox />`
 
 ![Checkbox](https://user-images.githubusercontent.com/78314301/149967557-c5d3a841-36a4-4448-9ba6-45e9fc3981d4.gif)
 
-Try the `<Checkbox />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/interaction-checkbox-switch--box)
+Try the `<Checkbox />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/2-forms-checkbox-switch)
+
+### `<Credentials />`
+
+![Credentials](https://user-images.githubusercontent.com/35369843/162796378-1f9abda6-ce04-4c9b-bd05-ef0b5df48ebc.gif)
+
+Try the `<Credentials />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/2-forms-credentials--with-title-and-icon)
 
 ### `<Form />`
 
 ![Form](https://user-images.githubusercontent.com/78314301/149967564-94c0dee7-be93-4d14-a495-2a18274652a7.gif)
 
-Try the `<Form />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/interaction-form--demo-form)
+Try the `<Form />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/2-forms-form)
 
 ### `<Input />`
 
 ![Input](https://user-images.githubusercontent.com/78314301/149967573-a4ae7a56-f747-4012-8472-c9679e24b503.gif)
 
-Try the `<Input />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/interaction-input--text-input)
+Try the `<Input />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/2-forms-input)
 
 ### `<Radios />`
 
 ![Radios](https://user-images.githubusercontent.com/78314301/149967585-baeac5ea-0130-482b-adac-38bc3e6b70a6.gif)
 
-Try the `<Radios />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/interaction-radios--radio-group)
+Try the `<Radios />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/2-forms-radios)
 
 ### `<Select />`
 
 ![Select](https://user-images.githubusercontent.com/78314301/149967597-fe3163d6-2459-4e40-ad14-eb9c9f1707f0.gif)
 
-Try the `<Select />` component in the [interactive documentation](http://web3ui.github.io/?path=/story/interaction-select--default&globals=backgrounds.value:transparent)
+Try the `<Select />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/2-forms-select)
 
 ### `<TextArea />`
 
 ![TextArea](https://user-images.githubusercontent.com/78314301/149967623-d1e1dbfc-b2c7-4acb-9c2a-e2ac0fe2bc3c.gif)
 
-Try the `<TextArea />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/interaction-textarea--standard)
+Try the `<TextArea />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/2-forms-textarea)
 
 # 🎉 `Popup`
 
@@ -269,10 +315,10 @@ Try the `<TextArea />` component in the [interactive documentation](https://web3
 
 ![Modal2](https://user-images.githubusercontent.com/78314301/149968047-5844ac05-5ea0-484c-b1fd-137641824de0.gif)
 
-Try the `<Modal />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/popup-modal--regular)
+Try the `<Modal />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/5-popup-modal)
 
 ### `<Tooltip />`
 
 ![Tooltip](https://user-images.githubusercontent.com/78314301/149967796-9ce75474-ae3f-415b-8d7c-a67b8c18885d.gif)
 
-Try the `<Tooltip />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/popup-tooltip--bottom)
+Try the `<Tooltip />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/5-popup-tooltip)

@@ -8,6 +8,7 @@ const color = {
     blueDark2: '#112F5C',
     blueLight: '#F2F6FF',
     blueLight2: '#E5EDFF',
+    blueLight3: '#E6EDFF',
     blueSky: '#9ECCEA',
     blueSkyDark: '#51A5DA',
     blueSkyLight: '#E8EAED',

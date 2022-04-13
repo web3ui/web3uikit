@@ -7,7 +7,8 @@ import { Input } from '../Input';
 import { Radios } from '../Radios';
 import { Select } from '../Select';
 import { TextArea } from '../TextArea';
-import { H3Styled, H4Styled, FormStyled } from './Form.styles';
+import styles from './Form.styles';
+const { H3Styled, H4Styled, FormStyled } = styles;
 import { FormProps, DataInput } from './types';
 
 const Form: React.FC<FormProps> = ({

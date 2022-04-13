@@ -2,7 +2,15 @@ import styled from 'styled-components';
 import { HeroProps } from './types';
 
 // styles
-type TStyleProps = Pick<HeroProps, 'height' | 'backgroundColor' | 'rounded' | 'align'>;
+type TStyleProps = Pick<
+    HeroProps,
+    | 'align'
+    | 'backgroundColor'
+    | 'backgroundURL'
+    | 'height'
+    | 'linearGradient'
+    | 'rounded'
+>;
 
 enum Position {
     'left' = 'flex-start',
@@ -18,13 +26,20 @@ export const SectionStyled = styled.section<TStyleProps>`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    overflow: hidden;
+    position: relative;
     width: 100%;
 
-    align-items: ${({ align = 'center' }) => Position?.[align] || Position.center};
+    align-items: ${({ align = 'center' }) =>
+        Position?.[align] || Position.center};
     border-radius: ${(p) => p.rounded || '0px'};
     background-color: ${(p) => p.backgroundColor};
-    height: ${(p) => p.height || '80vh'};
-    max-height: ${(p) => p.height || '80vh'};
+    background-image: ${({ backgroundURL, linearGradient = '' }) =>
+        backgroundURL
+            ? `${linearGradient && linearGradient + ', '} url(${backgroundURL})`
+            : linearGradient};
+    height: ${({ height }) => height || '80vh'};
+    max-height: ${({ height }) => height || '80vh'};
 
     h1 {
         padding: 0px 40px;

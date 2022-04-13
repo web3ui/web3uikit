@@ -1,161 +1,79 @@
 import * as stories from './Badge.stories';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, screen } from '@testing-library/react';
 import color from '../../styles/colors';
 import rgbToHex from '../../utils/rgbToHex';
 import { composeStories } from '@storybook/testing-react';
 
-const { Normal, Danger, Success, Warning } = composeStories(stories);
+const { Danger, Normal, Success, Warning } = composeStories(stories);
 
-export const badgeTestId = 'test-badge-id';
-export const badgeTestTextId = 'test-badge-text';
+const testId = 'test-badge-id';
+const testText = 'test-badge-text';
 
-let container: HTMLDivElement;
+test('Renders Danger', () => {
+    const badgeText = Normal.args?.text;
 
-describe('Badge - Default', () => {
-    const testText = Normal.args?.text;
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Normal />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(<Danger />);
+    const element = screen.getByTestId(testId);
+    expect(element).not.toBeNull();
 
-    it('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${badgeTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
+    const styles = element && getComputedStyle(element);
+    const backgroundColorHex =
+        styles && rgbToHex(styles.backgroundColor).toUpperCase();
+    expect(backgroundColorHex).toBe(color.red);
 
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${badgeTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(testText);
-    });
-
-    it('renders correct color for badge', () => {
-        const element: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${badgeTestId}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        const backgroundColorHex =
-            styles && rgbToHex(styles.backgroundColor).toUpperCase();
-        expect(backgroundColorHex).toBe(color.blue);
-    });
+    const text = screen.getByTestId(testText);
+    expect(text).not.toBeNull();
+    expect(text.textContent).toBe(badgeText);
 });
 
-describe('Badge - Danger', () => {
-    const testText = Danger.args?.text;
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Danger />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+test('Renders Normal', () => {
+    const badgeText = Normal.args?.text;
 
-    it('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${badgeTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
+    render(<Normal />);
+    const element = screen.getByTestId(testId);
+    expect(element).not.toBeNull();
 
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${badgeTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(testText);
-    });
+    const styles = element && getComputedStyle(element);
+    const backgroundColorHex =
+        styles && rgbToHex(styles.backgroundColor).toUpperCase();
+    expect(backgroundColorHex).toBe(color.blue);
 
-    it('renders correct color for badge', () => {
-        const element: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${badgeTestId}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        const backgroundColorHex =
-            styles && rgbToHex(styles.backgroundColor).toUpperCase();
-        expect(backgroundColorHex).toBe(color.red);
-    });
+    const text = screen.getByTestId(testText);
+    expect(text).not.toBeNull();
+    expect(text.textContent).toBe(badgeText);
 });
 
-describe('Badge - Success', () => {
-    const testText = Success.args?.text;
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Success />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+test('Renders Success', () => {
+    const badgeText = Normal.args?.text;
 
-    it('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${badgeTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
+    render(<Success />);
+    const element = screen.getByTestId(testId);
+    expect(element).not.toBeNull();
 
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${badgeTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(testText);
-    });
+    const styles = element && getComputedStyle(element);
+    const backgroundColorHex =
+        styles && rgbToHex(styles.backgroundColor).toUpperCase();
+    expect(backgroundColorHex).toBe(color.green);
 
-    it('renders correct color for badge', () => {
-        const element: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${badgeTestId}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        const backgroundColorHex =
-            styles && rgbToHex(styles.backgroundColor).toUpperCase();
-        expect(backgroundColorHex).toBe(color.green);
-    });
+    const text = screen.getByTestId(testText);
+    expect(text).not.toBeNull();
+    expect(text.textContent).toBe(badgeText);
 });
 
-describe('Badge - Warning', () => {
-    const testText = Warning.args?.text;
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Warning />, container);
-    });
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+test('Renders Warning', () => {
+    const badgeText = Normal.args?.text;
 
-    it('renders the component', () => {
-        const element = container.querySelector(
-            `[data-testid="${badgeTestId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
+    render(<Warning />);
+    const element = screen.getByTestId(testId);
+    expect(element).not.toBeNull();
 
-    it('renders text correctly', () => {
-        const element = container.querySelector(
-            `[data-testid="${badgeTestTextId}"]`,
-        );
-        expect(element?.textContent).toBe(testText);
-    });
+    const styles = element && getComputedStyle(element);
+    const backgroundColorHex =
+        styles && rgbToHex(styles.backgroundColor).toUpperCase();
+    expect(backgroundColorHex).toBe(color.yellow);
 
-    it('renders correct color for badge', () => {
-        const element: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${badgeTestId}"]`,
-        );
-        const styles = element && getComputedStyle(element);
-        const backgroundColorHex =
-            styles && rgbToHex(styles.backgroundColor).toUpperCase();
-        expect(backgroundColorHex).toBe(color.yellow);
-    });
+    const text = screen.getByTestId(testText);
+    expect(text).not.toBeNull();
+    expect(text.textContent).toBe(badgeText);
 });

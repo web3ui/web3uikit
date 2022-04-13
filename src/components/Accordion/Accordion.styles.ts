@@ -9,7 +9,7 @@ import type { AccordionProps } from './types';
 // styles
 type TStyleProps = Pick<AccordionProps, 'theme'>;
 
-export const getThemeColor = (theme: string) => {
+const getThemeColor = (theme: string) => {
     switch (theme) {
         case 'blue':
             return color.blue;
@@ -24,7 +24,7 @@ export const getThemeColor = (theme: string) => {
     }
 };
 
-export const SectionStyled = styled.section<TStyleProps>`
+const SectionStyled = styled.section<TStyleProps>`
     background-color: ${color.white};
     border: 1px solid ${(p) => getThemeColor(p.theme)};
     border-radius: 20px;
@@ -34,7 +34,7 @@ export const SectionStyled = styled.section<TStyleProps>`
     transition: opacity 0.3s ease-out;
 `;
 
-export const HeaderStyled = styled.header`
+const HeaderStyled = styled.header`
     display: flex;
     cursor: pointer;
     flex-wrap: wrap;
@@ -46,7 +46,7 @@ export const HeaderStyled = styled.header`
     }
 `;
 
-export const H4Styled = styled.h4`
+const H4Styled = styled.h4`
     ${resetCSS}
     ${fonts.heading}
     ${fonts.h4}
@@ -54,7 +54,7 @@ export const H4Styled = styled.h4`
     padding: 8px 0;
 `;
 
-export const DivStyled = styled.div`
+const DivStyled = styled.div`
     align-items: center;
     display: flex;
     justify-content: center;
@@ -81,7 +81,16 @@ export const DivStyled = styled.div`
     }
 `;
 
-export const DivStyledContent = styled.div`
+const DivStyledContent = styled.div`
     overflow: hidden;
     transition: max-height 0.3s ease-out;
 `;
+
+export default {
+    DivStyled,
+    DivStyledContent,
+    H4Styled,
+    HeaderStyled,
+    SectionStyled,
+    getThemeColor,
+};

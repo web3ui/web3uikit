@@ -6,12 +6,13 @@ import { TagProps } from '../types';
 
 type TStyleProps = Pick<TagProps, 'width'>;
 
-export const initialStyles = css`
+const initialStyles = css`
     ${resetCSS}
     ${fonts.text}
     ${fonts.textBold700};
     align-items: center;
     border-radius: 20px;
+    display: flex;
     font-size: 14px;
     justify-content: center;
     overflow: hidden;
@@ -20,11 +21,11 @@ export const initialStyles = css`
     width: 100%;
 `;
 
-export const regular = css`
+const regular = css`
     background: ${color.blueLight};
 `;
 
-export const activeStatus = css`
+const activeStatus = css`
     background: ${color.greenForestLight};
     color: ${color.green};
     display: flex;
@@ -35,11 +36,11 @@ export const activeStatus = css`
     }
 `;
 
-export const inactiveStatus = css`
+const inactiveStatus = css`
     background: ${color.blueLight};
 `;
 
-export const discount = css<TStyleProps>`
+const discount = css<TStyleProps>`
     align-items: center;
     background: ${color.green};
     border-radius: 30px;
@@ -51,3 +52,26 @@ export const discount = css<TStyleProps>`
     padding: 0 4px;
     width: 32px;
 `;
+
+const chips = css<TStyleProps>`
+    align-items: center;
+    background: ${color.green};
+    border-left: 5px solid;
+    border-radius: 5px;
+    color: ${color.white};
+    display: flex;
+    font-size: 12px;
+    height: 32px;
+    justify-content: center;
+    padding: 6px 12px;
+    width: 32px;
+`;
+
+export default {
+    activeStatus,
+    chips,
+    discount,
+    inactiveStatus,
+    initialStyles,
+    regular,
+};

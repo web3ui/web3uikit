@@ -5,10 +5,8 @@ import { iconTypes } from '../Icon';
 import { Illustration } from '../Illustrations';
 import SelectStyles from './Select.styles';
 import type { SelectProps } from './types';
-import {
-    DivWrapperStyled,
-    LabelStyled as LabelStyledTrad,
-} from '../Input/Input.styles';
+import InputStyles from '../Input/Input.styles';
+const { DivWrapperStyled, LabelStyled: LabelStyledTrad } = InputStyles;
 
 const {
     DivStyledWrapper,
@@ -184,7 +182,7 @@ const Select: React.FC<SelectProps> = ({
                 {options.map(
                     (option, index) =>
                         index !== selectedOptionIndex && (
-                            <option id={String(option?.id)} key={option?.id} >
+                            <option id={String(option?.id)} key={option?.id}>
                                 {option?.label}
                             </option>
                         ),

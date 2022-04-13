@@ -3,20 +3,19 @@ import { Information } from '../Info';
 import { Modal } from '../Modal';
 import { Typography } from '../Typography';
 import styles from './NFT.styles';
+import { TNFTAttributes } from './types';
 const { DivModalStyled } = styles;
 interface INFTModal {
     /**
      * attributes / traits metadata
      */
-    attributes?: ListOfObject | string[];
+    attributes?: TNFTAttributes;
 
     /**
      * toggle modal visibility
      */
     setShowModal: (e: boolean) => void;
 }
-
-type ListOfObject = { [key: string]: string }[];
 
 const NFTModal: React.FC<INFTModal> = ({ attributes, setShowModal }) => {
     return (
@@ -32,18 +31,21 @@ const NFTModal: React.FC<INFTModal> = ({ attributes, setShowModal }) => {
                 <DivModalStyled>
                     {attributes && attributes.length > 0 ? (
                         attributes.map((attribute, index) => {
-                            const entries = Object.entries(attribute);
+                            const entries =
+                                typeof attribute !== 'string'
+                                    ? Object.entries(attribute)
+                                    : null;
                             return (
-                                <div id="widget-row">
+                                <div key={`${index}-attribute`} id="widget-row">
                                     <Information
                                         topic={
-                                            typeof attribute !== 'string'
+                                            entries
                                                 ? entries[0][1]
                                                 : `#${index}`
                                         }
                                         information={
-                                            typeof attribute !== 'string'
-                                                ? entries[0][1]
+                                            entries
+                                                ? entries[1][1]
                                                 : String(attribute)
                                         }
                                         key={`attr-${index}`}

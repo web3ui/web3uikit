@@ -37,12 +37,20 @@ export interface INFTProps {
  */
 export type TNFTMetadata = {
     animation_url?: string;
-    attributes?: { [key: string]: string }[];
+    attributes?: TNFTAttributes;
     background_color?: string;
     description?: string;
     image?: string;
     image_url?: string;
     name?: string;
-    traits?: { [key: string]: string }[];
+    traits?: TNFTAttributes;
     youtube_url?: string;
 };
+
+export type TNFTAttributes =
+    | { [key: string]: string }[]
+    | {
+          trait_type?: string;
+          value?: string;
+      }[]
+    | string[];

@@ -1,9 +1,9 @@
-import * as stories from './Skeleton.stories';
+import { composeStories } from '@storybook/testing-react';
+import { render, cleanup } from '@testing-library/react';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import color from '../../styles/colors';
 import rgbToHex from '../../utils/rgbToHex';
-import { composeStories } from '@storybook/testing-react';
+import * as stories from './Skeleton.stories';
 
 const { SkeletonImage } = composeStories(stories);
 
@@ -15,11 +15,10 @@ describe('Skeleton - Image', () => {
     beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
-        ReactDOM.render(<SkeletonImage />, container);
+        render(<SkeletonImage />, container);
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {

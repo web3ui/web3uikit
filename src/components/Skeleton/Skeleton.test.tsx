@@ -6,17 +6,18 @@ import rgbToHex from '../../utils/rgbToHex';
 import * as stories from './Skeleton.stories';
 
 const { SkeletonImage } = composeStories(stories);
-
-export const skeletonTestId = 'test-skeleton-id';
-
-let container: HTMLDivElement;
+const skeletonTestId = 'test-skeleton-id';
 
 describe('Skeleton - Image', () => {
+let container: HTMLDivElement;
+
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        render(<SkeletonImage />, container);
+        render(<SkeletonImage />, {
+            container: document.body.appendChild(container),
+        });
     });
+
     afterEach(() => {
         cleanup();
     });

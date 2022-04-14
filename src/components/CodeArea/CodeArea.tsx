@@ -1,8 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import CodeAreaStyles from './CodeArea.styles';
-import color from '../../styles/colors';
 import { ICodeAreaProps } from './types';
-import { Icon } from '../Icon';
 import LineNumbers from './LineNumbers';
 
 const {
@@ -53,19 +51,10 @@ const CodeArea: FC<ICodeAreaProps> = ({
                         onChange={(
                             event: React.ChangeEvent<HTMLTextAreaElement>,
                         ) => valueChanged(event)}
+                        spellCheck={false}
                         value={currentValue}
                     />
                 </ContentStyled>
-                <Icon
-                    svg="expand"
-                    style={{
-                        position: 'absolute',
-                        bottom: '8px',
-                        right: '8px',
-                        zIndex: '1',
-                    }}
-                    fill={color.blue}
-                />
             </WrapperStyled>
         </WidthWrapperStyled>
     );

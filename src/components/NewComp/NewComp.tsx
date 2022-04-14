@@ -21,6 +21,7 @@ const { HeadingStyled, SectionStyled, SpanStyled, TextStyled, TitleStyled } =
 // Normal boilerplate React functional component
 const NewComp: React.FC<NewCompProps> = ({
     // deconstructing props and setting any default values, sorted alphabetically
+    bgColor = 'white',
     hasUnderline = false,
     onClick,
     state = 'greenLight',
@@ -47,7 +48,7 @@ const NewComp: React.FC<NewCompProps> = ({
     };
 
     return (
-        <SectionStyled data-testid="test-new-comp">
+        <SectionStyled data-testid="test-new-comp" bgColor={bgColor}>
             <TitleStyled data-testid="test-title">
                 The Demo Component
             </TitleStyled>

@@ -1,3 +1,5 @@
+import { Colors } from '../../interfaces/color';
+
 export const colorState = ['greenLight', 'redLight'] as const;
 export type TColorState = typeof colorState[number];
 
@@ -5,6 +7,10 @@ export type TColorState = typeof colorState[number];
 // Storybook pulls them to make our docs
 
 export interface NewCompProps {
+    /**
+     * Set the Background color of New Component
+     */
+    bgColor?: Colors;
     /**
      * The New Component needs text for its green light state
      */

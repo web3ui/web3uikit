@@ -6,14 +6,24 @@ import { moralisContext } from '../../decorators';
 export default {
     title: '1.Web3/NFT',
     component: NFT,
-    decorators: [moralisContext],
+    decorators: [
+        moralisContext,
+        (storyFn) => (
+            <div style={{ backgroundColor: '#f2f6ff', padding: '64px' }}>
+                {storyFn()}
+            </div>
+        ),
+    ],
+    parameters: {
+        docs: {
+            source: {
+                excludeDecorators: true,
+            },
+        },
+    },
 } as ComponentMeta<typeof NFT>;
 
-const Template: ComponentStory<typeof NFT> = (args) => (
-    <div style={{ backgroundColor: '#f2f6ff', padding: '64px' }}>
-        <NFT {...args} />
-    </div>
-);
+const Template: ComponentStory<typeof NFT> = (args) => <NFT {...args} />;
 
 export const CryptoPunk01 = Template.bind({});
 CryptoPunk01.args = {

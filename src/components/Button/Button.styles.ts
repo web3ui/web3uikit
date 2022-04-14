@@ -12,6 +12,7 @@ import {
     outlineSmall,
     primary,
     secondary,
+    text,
     translucent,
 } from './styles/standardThemes';
 import { sizeSmall, sizeRegular, sizeLarge } from './styles/sizeStyles';
@@ -58,6 +59,8 @@ const getThemeStyles = (theme: string, size: string) => {
             }
         case 'translucent':
             return translucent;
+        case 'text':
+            return text;
         case 'secondary':
         default:
             return secondary;

@@ -30,7 +30,7 @@ export interface ButtonProps {
     /**
      * Set the color to show its importance to the user
      */
-    theme?: 'primary' | 'outline' | 'secondary' | 'colored' | 'translucent';
+    theme?: 'primary' | 'outline' | 'secondary' | 'colored' | 'translucent' | 'text';
 
     /**
      * If 'theme' is set to 'colored', you can choose the color from these options

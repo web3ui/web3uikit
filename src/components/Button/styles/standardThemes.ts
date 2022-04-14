@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 import color, { getShade, gradientColors } from '../../../styles/colors';
 
-// theme = primary | outline | secondary | translucent
+// theme = primary | outline | secondary | translucent | text
 
 export const secondary = css`
     background-color: ${color.blueLight};
@@ -153,5 +153,34 @@ export const translucent = css`
 
     svg {
         fill: ${color.white};
+    }
+`;
+
+export const text = css`
+    background-color: ${color.white};
+    border-color: transparent;
+
+    color: ${color.blue};
+
+    :hover {
+        color: ${color.paleCerulean};
+        background-color: ${color.blueLight};
+        border-color: transparent;
+
+        svg {
+            fill: ${color.paleCerulean};
+        }
+    }
+
+    :active {
+        border-color: transparent;
+    }
+
+    :focus {
+        border-color: transparent;
+    }
+
+    svg {
+        fill: ${color.blue};
     }
 `;

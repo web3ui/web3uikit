@@ -6,13 +6,25 @@ import { moralisContext } from '../../decorators';
 export default {
     title: '1.Web3/NFT Balance',
     component: NFTBalance,
-    decorators: [moralisContext],
+    decorators: [
+        moralisContext,
+        (storyFn) => (
+            <div style={{ backgroundColor: '#f2f6ff', padding: '64px' }}>
+                {storyFn()}
+            </div>
+        ),
+    ],
+    parameters: {
+        docs: {
+            source: {
+                excludeDecorators: true,
+            },
+        },
+    },
 } as ComponentMeta<typeof NFTBalance>;
 
 const Template: ComponentStory<typeof NFTBalance> = (args) => (
-    <div style={{ backgroundColor: '#f2f6ff', padding: '64px' }}>
-        <NFTBalance {...args} />
-    </div>
+    <NFTBalance {...args} />
 );
 
 export const Default = Template.bind({});

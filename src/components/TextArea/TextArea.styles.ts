@@ -88,10 +88,6 @@ const TextAreaStyled = styled.textarea<TStyleProps>`
     padding: 2px;
     width: 100%;
 
-    ::-webkit-resizer {
-        visibility: hidden;
-    }
-
     &::placeholder {
         opacity: 0;
     }

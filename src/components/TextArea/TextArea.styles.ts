@@ -93,8 +93,7 @@ const TextAreaStyled = styled.textarea<TStyleProps>`
     }
 
     &::placeholder {
-        visibility: hidden;
-        display: none;
+        opacity: 0;
     }
 
     &:focus,
@@ -110,8 +109,7 @@ const TextAreaStyled = styled.textarea<TStyleProps>`
 
     &:focus {
         &::placeholder {
-            display: none;
-            visibility: visible;
+            opacity: 1;
             color: ${color.grey};
         }
     }

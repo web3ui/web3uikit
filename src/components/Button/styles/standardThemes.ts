@@ -157,14 +157,13 @@ export const translucent = css`
 `;
 
 export const text = css`
-    background-color: ${color.white};
+    background-color: transparent;
     border-color: transparent;
-
     color: ${color.blue};
 
     :hover {
         color: ${color.paleCerulean};
-        background-color: ${color.blueLight};
+        background-color: ${color.blueSkyDark};
         border-color: transparent;
 
         svg {
@@ -174,6 +173,7 @@ export const text = css`
 
     :active {
         border-color: transparent;
+        background-color: ${color.grey};
     }
 
     :focus {

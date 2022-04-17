@@ -2,10 +2,18 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import LinkTo from './LinkTo';
 import color from '../../styles/colors';
+import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
 export default {
     title: '4.UI/LinkTo',
     component: LinkTo,
+    parameters: {
+        docs: {
+            source: {
+                excludeDecorators: true,
+            },
+        },
+    },
 } as ComponentMeta<typeof LinkTo>;
 
 const Template: ComponentStory<typeof LinkTo> = (args) => <LinkTo {...args} />;
@@ -92,4 +100,26 @@ MailToLinkInTextIconAfter.args = {
     iconLayout: 'trailing',
     text: 'Email Us',
     type: 'email',
+};
+
+export const InternalLink: ComponentStory<typeof LinkTo> = Template.bind({});
+InternalLink.decorators = [
+    (Story) => (
+        <MemoryRouter>
+            <Routes>
+                <Route path="/" element={<Story />} />
+                <Route
+                    path="home"
+                    element={
+                        <LinkTo address="/" type="internal" text="Go Back" />
+                    }
+                />
+            </Routes>
+        </MemoryRouter>
+    ),
+];
+InternalLink.args = {
+    type: 'internal',
+    address: '/home',
+    text: 'Go to Home',
 };

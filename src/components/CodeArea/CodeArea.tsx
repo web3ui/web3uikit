@@ -40,13 +40,16 @@ const CodeArea: FC<ICodeAreaProps> = ({
 
     return (
         <WidthWrapperStyled maxWidth={maxWidth}>
-            <WrapperStyled>
+            <WrapperStyled data-testid="test-codearea-wrapper">
                 {headerComponent && (
-                    <HeaderStyled>{headerComponent}</HeaderStyled>
+                    <HeaderStyled data-testid="test-codearea-header">
+                        {headerComponent}
+                    </HeaderStyled>
                 )}
                 <ContentStyled>
                     <LineNumbers currentValue={currentValue} />
                     <TextAreaStyled
+                        data-testid="test-codearea"
                         ref={textareaRef}
                         onChange={(
                             event: React.ChangeEvent<HTMLTextAreaElement>,

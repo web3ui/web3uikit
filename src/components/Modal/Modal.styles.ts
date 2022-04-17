@@ -40,6 +40,14 @@ const HeaderStyled = styled.header<{
     headerHasBottomBorder: boolean;
 }>`
     ${(p) => p.fixedMode && 'position: sticky;top: 0;background-color: white;'}
+    ${(p) =>
+        typeof p.title === 'string' &&
+        `h3 {
+        color: ${colors.blue};
+        padding-right: 8px;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }`}
     align-items: center;
     display: flex;
     padding: 28px 32px 24px;
@@ -52,15 +60,13 @@ const HeaderStyled = styled.header<{
         border-radius: 15px;
     }
 
-    h3 {
-        color: ${colors.blue};
-        padding-right: 8px;
-        margin-block-start: 0;
-        margin-block-end: 0;
-    }
-
     button {
         min-width: 30px;
+    }
+
+    #modal-close-button {
+        border: 3px solid ${colors.paleBlue2};
+        background-color: white;
     }
 `;
 
@@ -79,6 +85,13 @@ const FooterStyled = styled.footer<TStyleProps>`
 
     button {
         margin: 3px 0;
+    }
+
+    #modal-cancel-button {
+        color: ${colors.grey};
+        :hover {
+            color: ${colors.black};
+        }
     }
 `;
 

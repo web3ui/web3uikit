@@ -80,6 +80,7 @@ const App = () => (
 -   [⚙️ `Interaction Components`](#️-interaction-components)
     -   [`<Button />`](#button-)
     -   [`<Checkbox />`](#checkbox-)
+    -   [`<CodeArea />`](#codearea-)
     -   [`<Credentials />`](#credentials-)
     -   [`<Form />`](#form-)
     -   [`<Input />`](#input-)
@@ -295,6 +296,12 @@ Try the `<Button />` component in the [interactive documentation](https://web3ui
 ![Checkbox](https://user-images.githubusercontent.com/78314301/149967557-c5d3a841-36a4-4448-9ba6-45e9fc3981d4.gif)
 
 Try the `<Checkbox />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/2-forms-checkbox-switch)
+
+### `<CodeArea />`
+
+![CodeArea](https://user-images.githubusercontent.com/35369843/163712210-4e422e57-bc8d-4af0-a6a0-fa8e3b1fa207.png)
+
+Try the `<CodeArea />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/2-forms-codearea--multiple-lines)
 
 ### `<Credentials />`
 

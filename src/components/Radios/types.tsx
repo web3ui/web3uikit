@@ -10,6 +10,11 @@ type TRadioLayouts = {
 
 interface RadiosProps {
     /**
+     * If Radio group is disabled
+     */
+    disabled?: boolean;
+
+    /**
      * this collection of radio buttons needs an ID to group them
      */
     id: string;
@@ -20,24 +25,9 @@ interface RadiosProps {
     items: string[] | CreditCardProps[];
 
     /**
-     * you can supply a title for the radio group, it will return a HTML legend tag stayed as an H3
+     * to keep radio button in same row
      */
-    title?: string;
-
-    /**
-     * set default checked radio. Pass the array position number. EG: 0 is first.
-     */
-    setWhichIsChecked?: number;
-
-    /**
-     * You can validate your radios
-     */
-    validation?: ValidateRadios;
-
-    /**
-     * If Radio group is disabled
-     */
-    disabled?: boolean;
+    isRow?: boolean;
 
     /**
      * standard onChange that returns the entire event, as normal you can access event.target
@@ -48,10 +38,21 @@ interface RadiosProps {
      * if using CreditCardProps to power your checkboxes you can use this event to catch the onRemove event
      */
     onCreditCardRemoved?: (arrayIndex: number) => void;
+
+    /**
+     * set default checked radio. Pass the array position number. EG: 0 is first.
+     */
+    setWhichIsChecked?: number;
+
+    /**
+     * you can supply a title for the radio group, it will return a HTML legend tag stayed as an H3
+     */
+    title?: string;
+
+    /**
+     * You can validate your radios
+     */
+    validation?: ValidateRadios;
 }
 
-export {
-    ValidateRadios,
-    TRadioLayouts,
-    RadiosProps,
-};
+export { ValidateRadios, TRadioLayouts, RadiosProps };

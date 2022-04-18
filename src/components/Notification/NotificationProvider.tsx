@@ -26,7 +26,7 @@ function reducer(state: PayloadType[], action: NotificationActionType) {
     }
 }
 
-const NotificationProvider: FC<{ children: React.ReactChild }> = (props) => {
+const NotificationProvider: FC<{ children: React.ReactNode }> = (props) => {
     const [state, dispatch] = useReducer(reducer, initialState);
 
     const toasts = useMemo(() => {

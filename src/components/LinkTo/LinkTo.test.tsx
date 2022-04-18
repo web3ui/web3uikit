@@ -1,9 +1,6 @@
 import React from 'react';
 import { composeStories } from '@storybook/testing-react';
-import {
-    render,
-    screen,
-} from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import * as stories from './LinkTo.stories';
 import 'jest-styled-components';
 import color from '../../styles/colors';
@@ -12,6 +9,7 @@ import rgbToHex from '../../utils/rgbToHex';
 const {
     ExternalLink,
     ExternalLinkIconAfter,
+    InternalLink,
     LinkInText,
     LinkWithOutText,
     MailToLink,
@@ -54,8 +52,8 @@ test('Renders ExternalLink', () => {
     const inlineLinkStyles = inlineLink && getComputedStyle(inlineLink);
     expect(inlineLinkStyles?.display).toBe('inline-block');
 
-   const flexSpan = screen.getByTestId(testFlexId);
-   const flexSpanStyles = flexSpan && getComputedStyle(flexSpan);
+    const flexSpan = screen.getByTestId(testFlexId);
+    const flexSpanStyles = flexSpan && getComputedStyle(flexSpan);
     expect(flexSpanStyles?.flexDirection).toBe('row');
 });
 
@@ -121,7 +119,6 @@ test('Renders Email', () => {
     const styles = colorLink && getComputedStyle(colorLink);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
     expect(colorHex).toBe(color.blue);
-
 
     const inlineLink = screen.getByTestId(testId);
     const inlineLinkStyles = inlineLink && getComputedStyle(inlineLink);
@@ -237,4 +234,30 @@ test('Renders link In text', () => {
     const flexSpan = screen.getByTestId(testFlexId);
     const flexSpanStyles = flexSpan && getComputedStyle(flexSpan);
     expect(flexSpanStyles?.flexDirection).toBe('row');
+});
+
+test('Renders - Internal Link', () => {
+    const testAddress = InternalLink?.args?.address;
+    const testText = InternalLink?.args?.text;
+
+    render(<InternalLink />);
+
+    const link = screen.getByTestId(testId);
+    expect(link).not.toBeNull();
+
+    const textLink = screen.getByTestId(testTextWrap);
+    expect(textLink.textContent).toBe(testText);
+
+    const anchorLink = screen.getByTestId(testId);
+    expect(anchorLink.getAttribute('href')).toBe(testAddress);
+
+    const colorLink = screen.getByTestId(testId);
+    const styles = colorLink && getComputedStyle(colorLink);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.blue);
+
+    // after clicking on the link
+    fireEvent.click(link);
+    expect(screen.getByTestId(testId)).not.toBeNull();
+    expect(screen.getByTestId(testTextWrap).textContent).toBe('Go Back');
 });

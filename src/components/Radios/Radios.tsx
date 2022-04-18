@@ -5,6 +5,7 @@ import styles from './Radios.styles';
 
 const {
     DivStyled,
+    DivWrapperStyled,
     FieldsetStyled,
     LabelStyled,
     LegendStyled,
@@ -14,6 +15,7 @@ const {
 const Radios: React.FC<RadiosProps> = ({
     disabled = false,
     id,
+    isRow = false,
     items,
     onChange,
     onCreditCardRemoved,
@@ -50,39 +52,43 @@ const Radios: React.FC<RadiosProps> = ({
             {title && (
                 <LegendStyled data-testid="test-legend">{title}</LegendStyled>
             )}
-
-            {(items as Array<CreditCardProps | string>).map(
-                (item: CreditCardProps | string, i: number) => (
-                    <DivStyled key={`${formattedID}_${i}`} disabled={disabled}>
-                        <RadioButtonStyled
-                            checked={i === whichIsChecked}
-                            data-testid={`test-input-${i}`}
-                            id={`${formattedID}_${i}`}
-                            name={`${formattedID}_group`}
-                            onChange={(e) => {
-                                if (disabled) {
-                                    return;
-                                }
-                                onChange(e);
-                                setChecked(i);
-                            }}
-                            required={validation?.required}
-                            type="radio"
-                            value={i}
-                        />
-                        <LabelStyled
-                            data-testid={`test-label-${i}`}
-                            htmlFor={`${formattedID}_${i}`}
-                            isCreditCardMode={isCreditCards}
-                            role="label"
+            <DivWrapperStyled isRow={isRow}>
+                {(items as Array<CreditCardProps | string>).map(
+                    (item: CreditCardProps | string, i: number) => (
+                        <DivStyled
+                            key={`${formattedID}_${i}`}
+                            disabled={disabled}
                         >
-                            {typeof item === 'string'
-                                ? item
-                                : renderCreditCard(item, i)}
-                        </LabelStyled>
-                    </DivStyled>
-                ),
-            )}
+                            <RadioButtonStyled
+                                checked={i === whichIsChecked}
+                                data-testid={`test-input-${i}`}
+                                id={`${formattedID}_${i}`}
+                                name={`${formattedID}_group`}
+                                onChange={(e) => {
+                                    if (disabled) {
+                                        return;
+                                    }
+                                    onChange(e);
+                                    setChecked(i);
+                                }}
+                                required={validation?.required}
+                                type="radio"
+                                value={i}
+                            />
+                            <LabelStyled
+                                data-testid={`test-label-${i}`}
+                                htmlFor={`${formattedID}_${i}`}
+                                isCreditCardMode={isCreditCards}
+                                role="label"
+                            >
+                                {typeof item === 'string'
+                                    ? item
+                                    : renderCreditCard(item, i)}
+                            </LabelStyled>
+                        </DivStyled>
+                    ),
+                )}
+            </DivWrapperStyled>
         </FieldsetStyled>
     );
 };

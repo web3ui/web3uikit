@@ -40,14 +40,14 @@ interface RadiosProps {
     onCreditCardRemoved?: (arrayIndex: number) => void;
 
     /**
-     * set default checked radio. Pass the array position number. EG: 0 is first.
-     */
-    setWhichIsChecked?: number;
-
-    /**
      * set the selected state of the input, index position of items
      */
     selectedState?: number;
+
+    /**
+     * set default checked radio. Pass the array position number. EG: 0 is first.
+     */
+    setWhichIsChecked?: number;
 
     /**
      * you can supply a title for the radio group, it will return a HTML legend tag stayed as an H3

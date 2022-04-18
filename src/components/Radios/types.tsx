@@ -30,7 +30,7 @@ interface RadiosProps {
     isRow?: boolean;
 
     /**
-     * set default checked radio. Pass the array position number. EG: 0 is first.
+     * standard onChange that returns the entire event, as normal you can access event.target
      */
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 

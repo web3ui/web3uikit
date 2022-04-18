@@ -80,7 +80,7 @@ export const BulbTab = styled.div<IStyledBulb>`
         isActive &&
         css`
             border-color: ${color.blue};
-            background-color: transparent;
+            background-color: ${color.white};
         `};
     ${(props) =>
         (props.isActive || props.isDisabled) && 'pointer-events: none;'};

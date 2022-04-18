@@ -17,7 +17,7 @@ interface RadiosProps {
     /**
      * this collection of radio buttons needs an ID to group them
      */
-    id: string;
+    id?: string;
 
     /**
      * you must supply radio button items, each of these should be a string
@@ -38,6 +38,11 @@ interface RadiosProps {
      * if using CreditCardProps to power your checkboxes you can use this event to catch the onRemove event
      */
     onCreditCardRemoved?: (arrayIndex: number) => void;
+
+    /**
+     * set the selected state of the input, index position of items
+     */
+    selectedState?: number;
 
     /**
      * set default checked radio. Pass the array position number. EG: 0 is first.

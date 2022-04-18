@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { CreditCard, CreditCardProps } from '../CreditCard';
+import React, { useEffect, useState } from 'react';
 import { RadiosProps } from './';
+import { CreditCard, CreditCardProps } from '../CreditCard';
 import styles from './Radios.styles';
 
 const {
@@ -22,12 +22,19 @@ const Radios: React.FC<RadiosProps> = ({
     setWhichIsChecked,
     title,
     validation,
+    selectedState,
 }) => {
-    const formattedID = id.replace(/\s/g, '-');
+    const formattedID = id?.replace(/\s/g, '-');
     const isCreditCards = Boolean(typeof items[0] === 'object');
     const [whichIsChecked, setChecked] = useState<number>(
         setWhichIsChecked || items.length,
     );
+
+    useEffect(() => {
+        if (typeof selectedState != 'undefined') {
+            setChecked(selectedState);
+        }
+    }, [selectedState]);
 
     const renderCreditCard = (item: CreditCardProps, arrayIndex: number) => (
         <CreditCard
@@ -69,7 +76,9 @@ const Radios: React.FC<RadiosProps> = ({
                                         return;
                                     }
                                     onChange(e);
-                                    setChecked(i);
+                                    if (typeof selectedState == 'undefined') {
+                                        setChecked(i);
+                                    }
                                 }}
                                 required={validation?.required}
                                 type="radio"

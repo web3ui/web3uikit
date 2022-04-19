@@ -19,6 +19,12 @@ export interface ICodeAreaProps {
      * please add the text you want to show in the codearea
      */
     text: string;
+
+    /**
+     * if true disabled editing of the text content
+     * standard prop for textarea
+     */
+    disabled?: boolean;
 }
 
 export interface ILineNumbersProps {

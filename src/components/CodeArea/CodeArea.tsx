@@ -16,6 +16,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
     maxWidth = '100%',
     onChange,
     headerComponent,
+    disabled,
 }) => {
     const [currentValue, setCurrentValue] = useState(text);
 
@@ -56,6 +57,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
                         ) => valueChanged(event)}
                         spellCheck={false}
                         value={currentValue}
+                        disabled={disabled}
                     />
                 </ContentStyled>
             </WrapperStyled>

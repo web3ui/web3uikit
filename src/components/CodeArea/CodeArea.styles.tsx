@@ -17,11 +17,7 @@ const TextAreaStyled = styled.textarea`
     color: ${color.blueDark};
     font-style: italic;
     overflow-y: hidden;
-    white-space: nowrap;
-
-    ::-webkit-resizer {
-        visibility: hidden;
-    }
+    white-space: pre;
 `;
 
 const ContentStyled = styled.div`

@@ -72,8 +72,8 @@ const Modal: React.FC<ModalProps> = ({
                             <Button
                                 iconColor={'#68738D'}
                                 theme={'secondary'}
-                                radius={40}
-                                id={'close'}
+                                radius={100}
+                                id={'modal-close-button'}
                                 data-testid={'modal-close-test-id'}
                                 icon={iconTypes.x}
                                 iconLayout={'icon-only'}
@@ -102,6 +102,7 @@ const Modal: React.FC<ModalProps> = ({
                     >
                         {hasCancel && (
                             <Button
+                                id="modal-cancel-button"
                                 data-testid={'modal-cancel-button-test-id'}
                                 disabled={isCancelDisabled}
                                 text={cancelText}

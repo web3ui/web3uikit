@@ -8,6 +8,8 @@ import { Input } from '../Input';
 import { useArgs } from '@storybook/addons';
 import { Button } from '../Button';
 import Dropdown from '../Dropdown/Dropdown';
+import { Typography } from '../Typography';
+import color from '../../styles/colors';
 
 const hasPositionAbsoluteFix = {
     transform: 'scale(1)',
@@ -47,24 +49,18 @@ const Template: ComponentStory<typeof Modal> = (args) => {
 export const Regular = Template.bind({});
 Regular.args = {
     id: 'regular',
-    title: 'Confirm',
-    okText: 'this is very big, far too big',
-    cancelText: 'oh so is this, much too big lads',
+    title: (
+        <div style={{ display: 'flex', gap: 10 }}>
+            <Icon svg={iconTypes.edit} size={28} fill={colors.grey} />
+            <Typography variant="h3" color={color.grey}>
+                Edit Nickname
+            </Typography>
+        </div>
+    ),
+    okText: 'Save Changes',
+    cancelText: 'Discard Changes',
     isVisible: true,
-    children: [
-        <div
-            key={'0'}
-            style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'column',
-            }}
-        >
-            <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
-            <p>Proceed uploading?</p>
-        </div>,
-    ],
+    children: [<Input key={0} label="Nickname" width="100%" />],
 };
 
 export const BorderedHeader = Template.bind({});

@@ -2,6 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 import Button from '../../components/Button/Button';
 import { iconTypes } from '../Icon/collection';
+import color from '../../styles/colors';
 
 export default {
     title: '2.Forms/Button',
@@ -10,6 +11,21 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const TemplateText: ComponentStory<typeof Button> = (args) => (
+    <div
+        style={{
+            color: color.grey,
+            fontFamily: 'Open Sans, sans-serif',
+            fontSize: '16px',
+            fontStyle: 'normal',
+            fontWeight: '400',
+            letterSpacing: '0em',
+            lineHeight: '24px',
+        }}
+    >
+        This is a button <Button {...args} /> with text.
+    </div>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -399,6 +415,14 @@ Text.args = {
     theme: 'text',
     icon: iconTypes.plus,
     iconLayout: 'trailing',
+    size: 'large',
+};
+
+export const ButtonInText = TemplateText.bind({});
+ButtonInText.args = {
+    id: 'test-button-in-text',
+    text: 'Text',
+    theme: 'text',
     size: 'large',
 };
 

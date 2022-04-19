@@ -146,6 +146,8 @@ const ButtonStyled = styled.button<TStyleProps>`
     ${(p) => p.iconColor && getIconColor(p.iconColor)}
 
     ${(p) => (p.isTransparent ? transparent : hoverEffect)}
+
+    ${(p) => p.theme === 'text' && 'padding: 0;'}
 `;
 
 export default {

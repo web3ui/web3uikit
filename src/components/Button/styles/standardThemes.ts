@@ -160,6 +160,7 @@ export const text = css`
     background-color: transparent;
     border-color: transparent;
     color: ${color.blue};
+    display: inline-flex;
 
     :hover {
         color: ${color.paleCerulean};

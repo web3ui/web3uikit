@@ -249,11 +249,10 @@ const Form: React.FC<FormProps> = ({
                 <Button
                     {...buttonConfig}
                     id="form-submit"
+                    text="Submit"
                     type="submit"
                     disabled={isDisabled}
-                >
-                    Submit
-                </Button>
+                />
             )}
         </FormStyled>
     );

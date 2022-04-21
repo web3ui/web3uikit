@@ -10,7 +10,7 @@ import fonts from '../../styles/fonts';
 import type { NewCompProps } from './types';
 
 // pick the props that you will use for conditional CSS
-type TStyleProps = Pick<NewCompProps, 'state' | 'hasUnderline'>;
+type TStyleProps = Pick<NewCompProps, 'state' | 'hasUnderline' | 'bgColor'>;
 
 // //////////////////
 // Theme CSS
@@ -27,11 +27,11 @@ const redColor = css`
 // Styled Components
 // CSS Props should be sorted alphabetically
 // //////////////////
-const SectionStyled = styled.section`
-    background-color: ${color.white};
+const SectionStyled = styled.section<TStyleProps>`
     border-bottom: 5px solid ${color.green};
     border-top: 5px solid ${color.yellow};
     padding: 12px 24px;
+    background-color: ${(p) => p.bgColor && color[p.bgColor]};
 `;
 
 const SpanStyled = styled.span`

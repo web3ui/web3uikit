@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import color from '../../styles/colors';
-import { Icon } from '../Icon';
-import { iconTypes } from '../Icon';
+import { Icon, iconTypes } from '../Icon';
 import { Illustration } from '../Illustrations';
 import SelectStyles from './Select.styles';
 import type { SelectProps } from './types';
-import {
-    DivWrapperStyled,
-    LabelStyled as LabelStyledTrad,
-} from '../Input/Input.styles';
+import InputStyles from '../Input/Input.styles';
+const { DivWrapperStyled, LabelStyled: LabelStyledTrad } = InputStyles;
 
 const {
     DivStyledWrapper,
@@ -20,8 +17,8 @@ const {
     Options,
     PrefixIcon,
     PrefixSpan,
-    SelectedItem,
     SelectStyled,
+    SelectedItem,
 } = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
@@ -112,12 +109,12 @@ const Select: React.FC<SelectProps> = ({
 
                 <DropDownIcon>
                     <Icon
+                        fill={color.grey}
                         svg={
                             isOpen
                                 ? iconTypes.triangleUp
                                 : iconTypes.triangleDown
                         }
-                        fill={color.grey}
                     />
                 </DropDownIcon>
             </SelectedItem>
@@ -184,7 +181,7 @@ const Select: React.FC<SelectProps> = ({
                 {options.map(
                     (option, index) =>
                         index !== selectedOptionIndex && (
-                            <option id={String(option?.id)} key={option?.id} >
+                            <option id={String(option?.id)} key={option?.id}>
                                 {option?.label}
                             </option>
                         ),

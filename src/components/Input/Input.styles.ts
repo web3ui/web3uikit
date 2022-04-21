@@ -4,7 +4,7 @@ import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 import { InputProps, LabelProps } from './types';
 
-export const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
+const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
     ${resetCSS}
     border-radius: 16px;
     display: flex;
@@ -106,7 +106,7 @@ export const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
     }}
 `;
 
-export const LabelStyled = styled.label<LabelProps>`
+const LabelStyled = styled.label<LabelProps>`
     ${resetCSS}
     ${fonts.text}
     background-color: ${({ labelBgColor }) => labelBgColor || color.white};
@@ -118,7 +118,7 @@ export const LabelStyled = styled.label<LabelProps>`
     z-index: 1;
 `;
 
-export const InputStyled = styled.input`
+const InputStyled = styled.input`
     ${resetCSS}
     ${fonts.text}
     background-color: transparent;
@@ -169,12 +169,12 @@ const inputIconStyle = css`
     }
 `;
 
-export const DivStyled = styled.div`
+const DivStyled = styled.div`
     ${inputIconStyle}
     margin-right: 12px;
 `;
 
-export const CopyContainerStyled = styled.div`
+const CopyContainerStyled = styled.div`
     height: 100%;
     justify-content: center;
     margin-left: 24px;
@@ -197,7 +197,7 @@ export const CopyContainerStyled = styled.div`
     }
 `;
 
-export const VisibilityIcon = styled.button`
+const VisibilityIcon = styled.button`
     ${resetButtonCSS}
     ${inputIconStyle}
     position: relative;
@@ -208,7 +208,7 @@ export const VisibilityIcon = styled.button`
     }
 `;
 
-export const StrongStyled = styled.strong`
+const StrongStyled = styled.strong`
     ${resetCSS}
     ${fonts.text}
     bottom: -23px;
@@ -223,3 +223,13 @@ export const StrongStyled = styled.strong`
     white-space: nowrap;
     width: calc(100% - 26px);
 `;
+
+export default {
+    CopyContainerStyled,
+    DivStyled,
+    DivWrapperStyled,
+    InputStyled,
+    LabelStyled,
+    StrongStyled,
+    VisibilityIcon,
+};

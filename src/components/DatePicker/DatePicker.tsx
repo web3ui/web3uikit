@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Icon, iconTypes } from '../Icon';
 import { SpanStyled } from './DatePicker.styles';
-import {
-    DivWrapperStyled,
-    InputStyled,
-    LabelStyled,
-    StrongStyled,
-} from '../Input/Input.styles';
+import InputStyles from '../Input/Input.styles';
 import color from '../../styles/colors';
 import { DatePickerProps } from './types';
-
+const { DivWrapperStyled, InputStyled, LabelStyled, StrongStyled } =
+    InputStyles;
 const DatePicker: React.FC<DatePickerProps> = ({
     disabled = false,
     id,

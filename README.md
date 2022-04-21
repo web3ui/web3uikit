@@ -41,9 +41,7 @@ import { CryptoCards, Button } from 'web3uikit';
 const App = () => (
     <>
         <CryptoCards chain="ethereum" />
-        <Button theme="primary" type="button">
-            Launch dApp
-        </Button>
+        <Button theme="primary" type="button" text="Launch Dapp" />
     </>
 );
 ```
@@ -59,6 +57,7 @@ const App = () => (
 -   [🧭 `Table of contents`](#-table-of-contents)
 -   [⛓ `Web3 Components`](#-web3-components)
     -   [`<ConnectButton />`](#connectbutton-)
+    -   [`<NFT />`](#nft-)
 -   [📖 `UI Components`](#-ui-components)
     -   [`<Accordion />`](#accordion-)
     -   [`<Avatar />`](#avatar-)
@@ -81,6 +80,7 @@ const App = () => (
 -   [⚙️ `Interaction Components`](#️-interaction-components)
     -   [`<Button />`](#button-)
     -   [`<Checkbox />`](#checkbox-)
+    -   [`<CodeArea />`](#codearea-)
     -   [`<Credentials />`](#credentials-)
     -   [`<Form />`](#form-)
     -   [`<Input />`](#input-)
@@ -104,6 +104,26 @@ If you want to use this component with the connected server but without adding a
 The ConnectButton component automatically adds to the local storage info about the connector user used and will automatically call enableWeb3() after rereshing the page. So if user was connected once it will automatically initialize web3 connection(No need anymore to add UseEffect hook for enableWeb3() after refrshing the page)
 
 Try the `<ConnectButton />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/1-web3-connectbutton--default)
+
+### `<NFT />`
+
+![NFT](https://user-images.githubusercontent.com/35369843/163435770-2d639007-714c-4f83-99f9-39d7a9814138.gif)
+
+The `<NFT />` component allows you to display a single NFT as Card. By clicking on the card you can also view all the traits of the NFT.It uses hooks from [react-moralis](https://docs.moralis.io/moralis-dapp/web3-sdk/account) to fetch the NFT.
+
+If you want to use this component wrap your app with `<MoralisProvider appId={MORALIS_APP_ID} serverUrl={MORALIS_SERVER_URL} ></MoralisProvider >`. Read more about moralis [here](https://docs.moralis.io/introduction/readme)
+
+Try the `<NFT />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/1-web3-nft--crypto-punk-01)
+
+### `<NFTBalance />`
+
+![NFTBalance](https://user-images.githubusercontent.com/35369843/163435985-21b43541-a5bf-4218-8981-3466f9af4b63.gif)
+
+The `<NFTBalance />` component allows you to display all the NFT's an address owns. It uses hooks from [react-moralis](https://docs.moralis.io/moralis-dapp/web3-sdk/account) to fetch all NFT's of an address.
+
+If you want to use this component wrap your app with `<MoralisProvider appId={MORALIS_APP_ID} serverUrl={MORALIS_SERVER_URL} ></MoralisProvider >`. Read more about moralis [here](https://docs.moralis.io/introduction/readme)
+
+Try the `<NFTBalance />` component in the [interactive documentation](http://localhost:6006/?path=/docs/1-web3-nft-balance--default)
 
 # 📖 `UI Components`
 
@@ -276,6 +296,12 @@ Try the `<Button />` component in the [interactive documentation](https://web3ui
 ![Checkbox](https://user-images.githubusercontent.com/78314301/149967557-c5d3a841-36a4-4448-9ba6-45e9fc3981d4.gif)
 
 Try the `<Checkbox />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/2-forms-checkbox-switch)
+
+### `<CodeArea />`
+
+![CodeArea](https://user-images.githubusercontent.com/35369843/163712210-4e422e57-bc8d-4af0-a6a0-fa8e3b1fa207.png)
+
+Try the `<CodeArea />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/2-forms-codearea--multiple-lines)
 
 ### `<Credentials />`
 

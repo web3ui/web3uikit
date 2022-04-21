@@ -29,7 +29,9 @@ const LineNumbers: FC<ILineNumbersProps> = ({ currentValue }) => {
 
     return (
         <SideStyled>
-            <StyledUl>{rowNumbers}</StyledUl>
+            <StyledUl data-testid="test-codearea-linenumbers">
+                {rowNumbers}
+            </StyledUl>
         </SideStyled>
     );
 };

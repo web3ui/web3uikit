@@ -31,6 +31,7 @@ const DivStyled = styled.div<Pick<RadiosProps, 'disabled'>>`
 `;
 
 const DivWrapperStyled = styled.div<Pick<RadiosProps, 'isRow'>>`
+    align-items: ${({ isRow }) => isRow ? 'center' : 'flex-start'};
     flex-direction: ${(p) => (p.isRow ? 'row' : 'column')};
     gap: ${(p) => p.isRow && '12px'};
     display: flex;

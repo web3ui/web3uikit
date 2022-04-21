@@ -19,10 +19,11 @@ const Radios: React.FC<RadiosProps> = ({
     items,
     onChange,
     onCreditCardRemoved,
+    selectedState,
     setWhichIsChecked,
+    suffix,
     title,
     validation,
-    selectedState,
 }) => {
     const formattedID = id?.replace(/\s/g, '-');
     const isCreditCards = Boolean(typeof items[0] === 'object');
@@ -38,16 +39,7 @@ const Radios: React.FC<RadiosProps> = ({
 
     const renderCreditCard = (item: CreditCardProps, arrayIndex: number) => (
         <CreditCard
-            brand={item.brand}
-            expiresAt={{
-                month: '11',
-                year: '21',
-            }}
-            fingerprint={item.fingerprint}
-            id={item.id}
-            isExpired={item.isExpired}
-            lastDigits={item.lastDigits}
-            name={item.name}
+            {...item}
             onRemove={() =>
                 onCreditCardRemoved && onCreditCardRemoved(arrayIndex)
             }
@@ -97,6 +89,8 @@ const Radios: React.FC<RadiosProps> = ({
                         </DivStyled>
                     ),
                 )}
+
+                {suffix && <>{suffix}</>}
             </DivWrapperStyled>
         </FieldsetStyled>
     );

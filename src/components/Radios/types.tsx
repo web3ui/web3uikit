@@ -48,6 +48,11 @@ interface RadiosProps {
      * if using CreditCardProps to power your checkboxes you can use this event to catch the onRemove event
      */
     onCreditCardRemoved?: (arrayIndex: number) => void;
+
+    /**
+     * an element that'll be added at the end of the radios items
+     */
+    suffix: JSX.Element;
 }
 
 export {

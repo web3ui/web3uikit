@@ -20,6 +20,7 @@ const Radios: React.FC<RadiosProps> = ({
     setWhichIsChecked,
     title,
     validation,
+    suffix,
 }) => {
     const formattedID = id.replace(/\s/g, '-');
     const isCreditCards = Boolean(typeof items[0] === 'object');
@@ -83,6 +84,8 @@ const Radios: React.FC<RadiosProps> = ({
                     </DivStyled>
                 ),
             )}
+
+            {suffix && <>{suffix}</>}
         </FieldsetStyled>
     );
 };

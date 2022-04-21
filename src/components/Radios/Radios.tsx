@@ -99,7 +99,7 @@ const Radios: React.FC<RadiosProps> = ({
                     ),
                 )}
 
-                {suffix && <>suffix</>}
+                {suffix && <>{suffix}</>}
             </DivWrapperStyled>
         </FieldsetStyled>
     );

@@ -4,12 +4,11 @@ import { iconTypes } from '../Icon/collection';
 import colors from '../../styles/colors';
 import { Icon } from '../Icon';
 import { Tooltip } from '../Tooltip';
-import CardStyles from './Card.styles';
+import styles from './Card.styles';
 import { Typography } from '../Typography';
 import color from '../../styles/colors';
 
-const { AbsoluteIconStyled, DivStyled, FooterStyled, HeaderStyled } =
-    CardStyles;
+const { AbsoluteIconStyled, DivStyled, FooterStyled, HeaderStyled } = styles;
 
 const Card: React.FC<CardProps> = ({
     id,

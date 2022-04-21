@@ -3,29 +3,6 @@ import { IRowProps } from '.';
 import fonts from '../../styles/fonts';
 import { IColBreakpointsConfig } from './types';
 
-export const RowDiv = styled.div<IRowProps>`
-    ${fonts.text}
-    display: flex;
-    flex-wrap: wrap;
-    width: ${(props) => `${props.width && `${props.width}px`} `};
-    gap: ${(props) =>
-        props.rowGap ? `${props.rowGap}px ${props.colGap}px` : '15px 15px'};
-    margin-left: ${(props) => props.colGap && `${props.colGap / 2}px`};
-    align-items: ${(props) => props.alignItems && props.alignItems};
-    justify-content: ${(props) => props.justifyItems && props.justifyItems};
-`;
-
-const getConfig = (
-    breakPointConfig: object,
-    toGet: string,
-    span: number,
-): number => {
-    if (Object.keys(breakPointConfig).includes(toGet)) {
-        return (breakPointConfig as any)[toGet] as number;
-    }
-    return span;
-};
-
 interface IColProps {
     isFullWidth: boolean;
     order: number;
@@ -39,7 +16,30 @@ interface IColProps {
     breakpointsConfig: IColBreakpointsConfig;
 }
 
-export const ColDiv = styled.div<Required<IColProps>>`
+const getConfig = (
+    breakPointConfig: object,
+    toGet: string,
+    span: number,
+): number => {
+    if (Object.keys(breakPointConfig).includes(toGet)) {
+        return (breakPointConfig as any)[toGet] as number;
+    }
+    return span;
+};
+
+const RowDiv = styled.div<IRowProps>`
+    ${fonts.text}
+    display: flex;
+    flex-wrap: wrap;
+    align-items: ${(props) => props.alignItems && props.alignItems};
+    gap: ${(props) =>
+        props.rowGap ? `${props.rowGap}px ${props.colGap}px` : '15px 15px'};
+    justify-content: ${(props) => props.justifyItems && props.justifyItems};
+    margin-left: ${(props) => props.colGap && `${props.colGap / 2}px`};
+    width: ${(props) => `${props.width && `${props.width}px`} `};
+`;
+
+const ColDiv = styled.div<Required<IColProps>>`
     color: white;
     order: ${(props) => props.order};
     ${fonts.text}
@@ -60,7 +60,7 @@ export const ColDiv = styled.div<Required<IColProps>>`
                       getConfig(props.breakpointsConfig, 'xs', props.span)
                   }% - ${props.colGap}px)`
                 : '100%'};
-        ${(props) => props.isFullWidth && `max-width: 100%; flex: 100%;`}
+        ${(props) => props.isFullWidth && 'max-width: 100%; flex: 100%;'}
     }
 
     // sm devices (tablets, 768px and up)
@@ -81,7 +81,7 @@ export const ColDiv = styled.div<Required<IColProps>>`
                       getConfig(props.breakpointsConfig, 'sm', props.span)
                   }% - ${props.colGap}px)`
                 : '100%'};
-        ${(props) => props.isFullWidth && `max-width: 100%; flex: 100%;`}
+        ${(props) => props.isFullWidth && 'max-width: 100%; flex: 100%;'}
     }
 
     // Meduim(desktops, 992px and up)
@@ -101,7 +101,7 @@ export const ColDiv = styled.div<Required<IColProps>>`
                       getConfig(props.breakpointsConfig, 'md', props.span)
                   }% - ${props.colGap}px)`
                 : '100%'};
-        ${(props) => props.isFullWidth && `max-width: 100%; flex: 100%;`}
+        ${(props) => props.isFullWidth && 'max-width: 100%; flex: 100%;'}
     }
 
     // large devices (large desktops, 1200px and up)
@@ -122,6 +122,11 @@ export const ColDiv = styled.div<Required<IColProps>>`
                   }% - ${props.colGap}px )`
                 : '90%'};
 
-        ${(props) => props.isFullWidth && `max-width: 100%; flex: 100%;`}
+        ${(props) => props.isFullWidth && 'max-width: 100%; flex: 100%;'}
     }
 `;
+
+export default {
+    ColDiv,
+    RowDiv,
+};

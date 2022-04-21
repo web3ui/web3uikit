@@ -3,7 +3,7 @@ import resetCSS from '../../styles/reset';
 import fonts from '../../styles/fonts';
 import colors from '../../styles/colors';
 
-export const DivStyled = styled.div`
+const DivStyled = styled.div`
     ${resetCSS};
     ${fonts.text};
     ${fonts.textBold};
@@ -17,13 +17,15 @@ export const DivStyled = styled.div`
     width: 100%;
 `;
 
-export const PStyledTopic = styled.p`
+const PStyledTopic = styled.p`
     color: ${colors.blue};
     margin: 0;
 `;
 
-export const PStyledInfo = styled.p`
+const PStyledInfo = styled.p`
     color: ${colors.blueDark};
     font-size: 24px;
     margin: 0;
 `;
+
+export default { DivStyled, PStyledTopic, PStyledInfo };

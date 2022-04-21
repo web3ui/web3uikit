@@ -12,6 +12,10 @@ export const secondary = css`
         border-color: ${color.blue};
     }
 
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.blueDark};
+    }
+
     svg {
         fill: ${color.blue};
     }
@@ -42,6 +46,10 @@ export const primary = css`
             #21bf96;
     }
 
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.greenDark};
+    }
+
     svg {
         fill: ${color.white};
     }
@@ -67,6 +75,10 @@ export const outlineLarge = css`
         padding: 2px 18px;
     }
 
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.grey};
+    }
+
     svg {
         fill: ${color.grey};
     }
@@ -85,6 +97,10 @@ export const outlineRegular = css`
 
     :active {
         border-color: ${color.paleCerulean};
+    }
+
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.beauBlue};
     }
 
     svg {
@@ -117,6 +133,10 @@ export const outlineSmall = css`
         }
     }
 
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.greenDark};
+    }
+
     svg {
         fill: ${color.green};
     }
@@ -126,6 +146,11 @@ export const translucent = css`
     background-color: ${getShade('dark', 20)};
     border-style: inset;
     color: ${color.white};
+
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.blueDark};
+    }
+
     svg {
         fill: ${color.white};
     }

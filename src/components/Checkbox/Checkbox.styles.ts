@@ -5,13 +5,13 @@ import color from '../../styles/colors';
 
 import { CheckboxProps } from './types';
 
-export const inputStyles = css`
+const inputStyles = css`
     ${resetCSS};
     position: absolute;
     top: -30px;
 `;
 
-export const labelStyles = css`
+const labelStyles = css`
     ${resetCSS};
     ${font.text};
     cursor: pointer;
@@ -22,12 +22,12 @@ export const labelStyles = css`
     width: fit-content;
 `;
 
-export const labelDisabled = css`
+const labelDisabled = css`
     opacity: 50%;
     pointer-events: none;
 `;
 
-export const boxStyles = css`
+const boxStyles = css`
     padding-left: 28px;
 
     &:before,
@@ -73,7 +73,7 @@ export const boxStyles = css`
     }
 `;
 
-export const boxCheckedStyles = css`
+const boxCheckedStyles = css`
     &:before {
         background-color: ${color.green};
         border-color: ${color.greenLight};
@@ -83,7 +83,7 @@ export const boxCheckedStyles = css`
     }
 `;
 
-export const switchStyles = css`
+const switchStyles = css`
     padding-left: 48px;
 
     &:before {
@@ -127,7 +127,7 @@ export const switchStyles = css`
     }
 `;
 
-export const switchOnStyles = css`
+const switchOnStyles = css`
     &:before {
         background-color: ${color.green};
     }
@@ -139,11 +139,11 @@ export const switchOnStyles = css`
     }
 `;
 
-export const StyledInput = styled.input<Pick<CheckboxProps, 'layout'>>`
+const StyledInput = styled.input<Pick<CheckboxProps, 'layout'>>`
     ${inputStyles}
 `;
 
-export const StyledLabel = styled.label<
+const StyledLabel = styled.label<
     Pick<CheckboxProps, 'layout' | 'checked' | 'disabled'>
 >`
     ${labelStyles}
@@ -153,3 +153,5 @@ export const StyledLabel = styled.label<
     ${(p) => p.layout === 'switch' && switchStyles}
     ${(p) => p.layout === 'switch' && p.checked && switchOnStyles}
 `;
+
+export default { StyledInput, StyledLabel };

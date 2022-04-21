@@ -1,8 +1,14 @@
-import React, { useEffect, useRef, useState, Fragment } from 'react';
 import { Button } from '../Button';
+import { H2Styled } from '../../styles/StyledElements';
 import { Icon } from '../Icon';
 import { Loading } from '../Loading';
-import {
+import { StepperProps } from './types';
+import { Typography } from '../Typography';
+import color from '../../styles/colors';
+import HeaderStyles from './Stepper.styles';
+import React, { useEffect, useRef, useState, Fragment } from 'react';
+
+const {
     DivStyled,
     DivStyledHelper,
     FooterStyled,
@@ -12,11 +18,7 @@ import {
     SectionStyled,
     SpanStyled,
     HeaderStyled,
-} from './Stepper.styles';
-import { H2Styled } from '../../styles/StyledElements';
-import color from '../../styles/colors';
-import { StepperProps } from './types';
-import { Typography } from '../Typography';
+} = HeaderStyles;
 
 const Stepper: React.FC<StepperProps> = ({
     step = 0,

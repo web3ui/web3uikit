@@ -2,9 +2,9 @@ import { ListItemStyled } from './Breadcrumbs.styles';
 
 // Route
 export interface Route {
+    breadcrumb: React.ReactNode;
     icon?: React.ReactNode;
     path: string;
-    breadcrumb: React.ReactNode;
 }
 
 export interface BreadcrumbsProps {

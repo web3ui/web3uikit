@@ -14,12 +14,13 @@ import { Tooltip } from '../Tooltip';
 import { Button } from '../Button';
 
 const CreditCard: React.FC<CreditCardProps> = ({
+    brand,
     expiresAt,
     isExpired,
+    isRemovable = false,
     lastDigits,
     name,
     onRemove,
-    brand,
     pressed,
 }: CreditCardProps) => {
     return (
@@ -32,15 +33,19 @@ const CreditCard: React.FC<CreditCardProps> = ({
                 <Tooltip
                     position="bottom"
                     children={
-                        <Button
-                            onClick={() => onRemove && onRemove()}
-                            isTransparent={true}
-                            theme={'secondary'}
-                            icon={iconTypes.bin}
-                            iconLayout={'icon-only'}
-                            size={'small'}
-                            iconColor={'red'}
-                        />
+                        <>
+                            {!isRemovable && (
+                                <Button
+                                    onClick={() => onRemove && onRemove()}
+                                    isTransparent={true}
+                                    theme={'secondary'}
+                                    icon={iconTypes.bin}
+                                    iconLayout={'icon-only'}
+                                    size={'small'}
+                                    iconColor={'red'}
+                                />
+                            )}
+                        </>
                     }
                     content="Remove"
                 />

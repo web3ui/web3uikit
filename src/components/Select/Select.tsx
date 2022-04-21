@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import color from '../../styles/colors';
-import { Icon } from '../Icon';
-import { iconTypes } from '../Icon';
+import { Icon, iconTypes } from '../Icon';
 import { Illustration } from '../Illustrations';
 import SelectStyles from './Select.styles';
 import type { SelectProps } from './types';
-import {
-    DivWrapperStyled,
-    LabelStyled as LabelStyledTrad,
-} from '../Input/Input.styles';
+import InputStyles from '../Input/Input.styles';
+const { DivWrapperStyled, LabelStyled: LabelStyledTrad } = InputStyles;
 
 const {
     DivStyledWrapper,
@@ -20,8 +17,8 @@ const {
     Options,
     PrefixIcon,
     PrefixSpan,
-    SelectedItem,
     SelectStyled,
+    SelectedItem,
 } = SelectStyles;
 
 const Select: React.FC<SelectProps> = ({
@@ -71,6 +68,7 @@ const Select: React.FC<SelectProps> = ({
             document.removeEventListener('click', handleClickOutside);
         };
     }, []);
+
     useEffect(() => {
         if (value) {
             const valueOptionItem = options.find(
@@ -91,10 +89,10 @@ const Select: React.FC<SelectProps> = ({
             style={{ ...style, width }}
         >
             <SelectedItem
-                data-testid="test-selected"
-                state={state}
-                onClick={toggling}
                 aria-label="option-selected"
+                data-testid="test-selected"
+                onClick={toggling}
+                state={state}
             >
                 {typeof selectedOptionIndex !== 'undefined' && (
                     <>
@@ -111,12 +109,12 @@ const Select: React.FC<SelectProps> = ({
 
                 <DropDownIcon>
                     <Icon
+                        fill={color.grey}
                         svg={
                             isOpen
                                 ? iconTypes.triangleUp
                                 : iconTypes.triangleDown
                         }
-                        fill={color.grey}
                     />
                 </DropDownIcon>
             </SelectedItem>
@@ -138,10 +136,10 @@ const Select: React.FC<SelectProps> = ({
                             (option, index) =>
                                 index !== selectedOptionIndex && (
                                     <Option
-                                        onClick={onOptionClicked(index)}
-                                        key={option?.label}
-                                        data-testid="test-option"
                                         aria-label="select-option"
+                                        data-testid="test-option"
+                                        key={option?.label}
+                                        onClick={onOptionClicked(index)}
                                     >
                                         <PrefixIcon>
                                             {option?.prefix}
@@ -153,9 +151,9 @@ const Select: React.FC<SelectProps> = ({
                     ) : (
                         <>
                             <Illustration
+                                height="60px"
                                 logo="servers"
                                 width="100%"
-                                height="60px"
                             />
                             <NoDataTextStyled>
                                 {customNoDataText}
@@ -183,7 +181,7 @@ const Select: React.FC<SelectProps> = ({
                 {options.map(
                     (option, index) =>
                         index !== selectedOptionIndex && (
-                            <option key={option?.id} id={String(option?.id)}>
+                            <option id={String(option?.id)} key={option?.id}>
                                 {option?.label}
                             </option>
                         ),

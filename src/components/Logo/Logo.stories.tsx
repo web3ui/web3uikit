@@ -77,7 +77,7 @@ AmexRegular.args = {
 
 export const AmexSmall = Template.bind({});
 AmexSmall.args = {
-    theme: 'mastercard',
+    theme: 'amex',
     size: 'small',
 };
 
@@ -89,6 +89,6 @@ DinersRegular.args = {
 
 export const DinersSmall = Template.bind({});
 DinersSmall.args = {
-    theme: 'mastercard',
+    theme: 'diners',
     size: 'small',
 };

@@ -86,6 +86,7 @@ CreditCardSelectorSuffix.args = {
                 month: '04',
                 year: '22',
             },
+            isRemovable: false,
         },
         {
             id: 'marty-mc-fly-master-id',
@@ -98,6 +99,7 @@ CreditCardSelectorSuffix.args = {
                 month: '11',
                 year: '24',
             },
+            isRemovable: true,
         },
         {
             id: 'marty-mc-fly-amex-id',

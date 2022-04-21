@@ -19,11 +19,11 @@ const Radios: React.FC<RadiosProps> = ({
     items,
     onChange,
     onCreditCardRemoved,
+    selectedState,
     setWhichIsChecked,
+    suffix,
     title,
     validation,
-    suffix,
-    selectedState,
 }) => {
     const formattedID = id?.replace(/\s/g, '-');
     const isCreditCards = Boolean(typeof items[0] === 'object');
@@ -52,6 +52,7 @@ const Radios: React.FC<RadiosProps> = ({
             onRemove={() =>
                 onCreditCardRemoved && onCreditCardRemoved(arrayIndex)
             }
+            isRemovable={item.isRemovable}
         />
     );
 

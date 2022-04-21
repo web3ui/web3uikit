@@ -39,20 +39,10 @@ const Radios: React.FC<RadiosProps> = ({
 
     const renderCreditCard = (item: CreditCardProps, arrayIndex: number) => (
         <CreditCard
-            brand={item.brand}
-            expiresAt={{
-                month: '11',
-                year: '21',
-            }}
-            fingerprint={item.fingerprint}
-            id={item.id}
-            isExpired={item.isExpired}
-            lastDigits={item.lastDigits}
-            name={item.name}
+            {...item}
             onRemove={() =>
                 onCreditCardRemoved && onCreditCardRemoved(arrayIndex)
             }
-            isRemovable={item.isRemovable}
         />
     );
 

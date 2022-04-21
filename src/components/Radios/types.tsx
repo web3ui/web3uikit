@@ -62,7 +62,7 @@ interface RadiosProps {
     /**
      * an element that'll be added at the end of the radios items
      */
-    suffix: JSX.Element;
+    suffix?: JSX.Element;
 }
 
 export { ValidateRadios, TRadioLayouts, RadiosProps };

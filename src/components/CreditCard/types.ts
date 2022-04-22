@@ -55,6 +55,7 @@ export interface CreditCardProps {
 
     /**
      * A props to show or hide the delete icon on the credit card
+     * default to true
      */
     isRemovable?: boolean;
 }

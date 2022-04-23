@@ -36,6 +36,9 @@ const Input: React.FC<InputProps> = ({
     value = '',
     width = '320px',
     labelBgColor,
+    iconPosition = 'front',
+    customInput,
+    ...props
 }: InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
     const [currentState, setCurrentState] = useState(state);
@@ -47,6 +50,7 @@ const Input: React.FC<InputProps> = ({
     useEffect(() => setCurrentState(state), [state]);
     useEffect(() => setMainType(type), [type]);
     useEffect(() => setCurrentValue(value), [value]);
+    useEffect(() => setInvalidMessage(errorMessage), [errorMessage]);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
@@ -111,14 +115,17 @@ const Input: React.FC<InputProps> = ({
             style={{ ...style, width }}
             size={size}
         >
-            {prefixIcon && (
+            {prefixIcon && iconPosition == 'front' && (
                 <DivStyled className="input_prefixIcon">
                     <Icon svg={prefixIcon} />
                 </DivStyled>
             )}
+            {customInput && customInput}
+
             <InputStyled
                 autoComplete={`${autoComplete}`}
                 autoFocus={autoFocus}
+                customInput={customInput}
                 data-testid="test-input"
                 disabled={currentState == 'disabled'}
                 id={id}
@@ -144,25 +151,28 @@ const Input: React.FC<InputProps> = ({
                         : 'text'
                 }
                 value={currentValue}
+                {...props}
             />
+
             {label && (
                 <LabelStyled
                     data-testid="test-label"
                     htmlFor={id}
-                    hasPrefix={typeof prefixIcon !== 'undefined'}
+                    hasPrefix={
+                        typeof prefixIcon !== 'undefined' &&
+                        iconPosition == 'front'
+                    }
                     labelBgColor={labelBgColor}
                 >
                     {label}
                     {validation?.required && '*'}
                 </LabelStyled>
             )}
-
             {currentState === 'error' && (
                 <StrongStyled data-testid="test-invalid-feedback">
                     {invalidMessage}
                 </StrongStyled>
             )}
-
             {canToggleHideInput() && (
                 <VisibilityIcon
                     className="input_visibility"
@@ -176,7 +186,11 @@ const Input: React.FC<InputProps> = ({
                     )}
                 </VisibilityIcon>
             )}
-
+            {prefixIcon && iconPosition == 'end' && (
+                <DivStyled className="input_prefixIcon">
+                    <Icon svg={prefixIcon} />
+                </DivStyled>
+            )}
             {hasCopyButton && (
                 <CopyContainerStyled>
                     <CopyButton text={currentValue} />

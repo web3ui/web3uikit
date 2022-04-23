@@ -118,13 +118,14 @@ const LabelStyled = styled.label<LabelProps>`
     z-index: 1;
 `;
 
-const InputStyled = styled.input`
+const InputStyled = styled.input<Pick<InputProps, 'customInput'>>`
     ${resetCSS}
     ${fonts.text}
     background-color: transparent;
     overflow: hidden;
     transition: all 0.1s ease-out;
     width: 100%;
+    ${(p) => p.customInput && 'width: 0px; height:0px;'}
 
     &:focus,
     .input_filled & {

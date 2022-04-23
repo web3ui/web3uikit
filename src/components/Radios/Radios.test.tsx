@@ -272,3 +272,15 @@ test('Radios - RadiosSetParticular', async () => {
     // When the label is clicked the checked input is returned
     expect(testEvent).toHaveBeenCalledWith(input);
 });
+
+it('Adds Suffix to Radio', () => {
+    const { getByTestId } = render(
+        <RadiosSetParticular
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                testEvent(event.target)
+            }
+            suffix={<p data-testid="test"></p>}
+        />,
+    );
+    expect(getByTestId('test')).toBeDefined();
+});

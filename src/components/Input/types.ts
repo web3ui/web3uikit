@@ -12,6 +12,11 @@ export interface InputProps {
     autoFocus?: boolean;
 
     /**
+     * Will replace input div with a JSX element
+     */
+    customInput?: JSX.Element;
+
+    /**
      * it is best to set a unique ID for each input to verify change events
      */
     id?: string;
@@ -35,6 +40,11 @@ export interface InputProps {
      * Icon prefixIcon for the input field
      */
     prefixIcon?: TIconType;
+
+    /**
+     * Icon prefixIcon for the input field
+     */
+    iconPosition?: 'front' | 'end';
 
     /**
      * types of input available

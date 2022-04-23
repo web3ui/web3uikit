@@ -19,7 +19,6 @@ const PreformattedStyled = styled.pre`
     display: flex;
     height: max-content;
     justify-content: space-between;
-    overflow-x: auto;
     position: relative;
 `;
 
@@ -42,8 +41,15 @@ const DividerStyled = styled.div`
     }
 `;
 
+const DivWrapper = styled.div<Pick<ICredentialsProps, 'isHidden'>>`
+    ${resetCSS};
+    overflow-x: ${(p) => p.isHidden && 'hidden'};
+    width: 90%;
+`;
+
 export default {
     CredentialsStyled,
+    DivWrapper,
     DividerStyled,
     PreformattedStyled,
     ToolsStyled,

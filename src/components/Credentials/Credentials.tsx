@@ -6,9 +6,15 @@ import { ICredentialsProps } from './types';
 import CredentialsHeader from './components/CredentialsHeader';
 import { HideButton } from '../HideButton';
 import { CopyButton } from '../CopyButton';
+import TruncateString from './components/TruncateString';
 
-const { CredentialsStyled, DividerStyled, PreformattedStyled, ToolsStyled } =
-    styles;
+const {
+    CredentialsStyled,
+    DividerStyled,
+    DivWrapper,
+    PreformattedStyled,
+    ToolsStyled,
+} = styles;
 
 const Credentials: FC<ICredentialsProps> = ({
     hasCopyButton = true,
@@ -38,13 +44,22 @@ const Credentials: FC<ICredentialsProps> = ({
                 iconSize={iconSize}
             />
             <PreformattedStyled>
-                <Typography
-                    monospace
-                    color={textColor}
-                    data-testid="cred-test-text"
-                >
-                    {isValueHidden ? hiddenText : text}
-                </Typography>
+                <DivWrapper isHidden={isValueHidden}>
+                    <Typography
+                        monospace
+                        color={textColor}
+                        data-testid="cred-test-text"
+                    >
+                        {isValueHidden ? (
+                            hiddenText
+                        ) : (
+                            <TruncateString
+                                text={text}
+                                percentageOfCharsAfterTrunc={55}
+                            />
+                        )}
+                    </Typography>
+                </DivWrapper>
                 <ToolsStyled>
                     {hasHideButton && (
                         <HideButton

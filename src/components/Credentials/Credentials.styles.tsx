@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import color from '../../styles/colors';
 import resetCSS from '../../styles/reset';
-import { ICredentialsProps } from './types';
+import { ICredentialsProps, TDivWrapper } from './types';
 
 const CredentialsStyled = styled.div<Pick<ICredentialsProps, 'width'>>`
     background: ${color.blueLight};
@@ -41,15 +41,15 @@ const DividerStyled = styled.div`
     }
 `;
 
-const DivWrapper = styled.div<Pick<ICredentialsProps, 'isHidden'>>`
+const DivWrapperStyled = styled.div<TDivWrapper>`
     ${resetCSS};
-    overflow-x: ${(p) => p.isHidden && 'hidden'};
+    overflow-x: ${(p) => (p.isHidden ? 'hidden' : p.isMultiline && 'auto')};
     width: 90%;
 `;
 
 export default {
     CredentialsStyled,
-    DivWrapper,
+    DivWrapperStyled,
     DividerStyled,
     PreformattedStyled,
     ToolsStyled,

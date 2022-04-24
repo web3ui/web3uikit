@@ -11,7 +11,7 @@ import TruncateString from './components/TruncateString';
 const {
     CredentialsStyled,
     DividerStyled,
-    DivWrapper,
+    DivWrapperStyled,
     PreformattedStyled,
     ToolsStyled,
 } = styles;
@@ -31,8 +31,16 @@ const Credentials: FC<ICredentialsProps> = ({
     hiddenText = '•••••••••••••••••••••••••••••••',
 }) => {
     const [isValueHidden, setIsValueHidden] = useState(isHidden);
+    const [isMultiline, setIsMultiline] = useState(
+        (text.match(/\n/g) || []).length > 0,
+    );
 
     useEffect(() => setIsValueHidden(isHidden), [isHidden]);
+
+    useEffect(
+        () => setIsMultiline((text.match(/\n/g) || []).length > 0),
+        [text],
+    );
 
     return (
         <CredentialsStyled width={width} data-testid="test-credentials">
@@ -44,7 +52,10 @@ const Credentials: FC<ICredentialsProps> = ({
                 iconSize={iconSize}
             />
             <PreformattedStyled>
-                <DivWrapper isHidden={isValueHidden}>
+                <DivWrapperStyled
+                    isHidden={isValueHidden}
+                    isMultiline={isMultiline}
+                >
                     <Typography
                         monospace
                         color={textColor}
@@ -52,6 +63,8 @@ const Credentials: FC<ICredentialsProps> = ({
                     >
                         {isValueHidden ? (
                             hiddenText
+                        ) : isMultiline ? ( // Multiline text will be shown with scrollbar
+                            text
                         ) : (
                             <TruncateString
                                 text={text}
@@ -59,7 +72,7 @@ const Credentials: FC<ICredentialsProps> = ({
                             />
                         )}
                     </Typography>
-                </DivWrapper>
+                </DivWrapperStyled>
                 <ToolsStyled>
                     {hasHideButton && (
                         <HideButton

@@ -113,3 +113,15 @@ export type TStringTruncate = {
      */
     leftPercentage: number;
 };
+
+export type TDivWrapper = {
+    /**
+     * text is hidden
+     */
+    isHidden: boolean;
+
+    /**
+     * text is multiline
+     */
+    isMultiline: boolean;
+};

@@ -46,3 +46,17 @@ WithCustomColors.args = {
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
     textColor: 'red',
 };
+
+export const Multiline = Template.bind({});
+Multiline.args = {
+    title: 'Multiline Text:',
+    hasHideButton: false,
+    text: `[common]
+    dapp_addr = onfkgi4pc9ld.moralis.io
+    dapp_port = 7000
+    token = KKKaDjYz0i
+[Ganache]
+    type = http
+    local_port = 8545
+    custom_domains = onfkgi4pc9ld.moralis.io`,
+};

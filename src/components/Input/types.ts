@@ -17,6 +17,11 @@ export interface InputProps {
     customInput?: JSX.Element;
 
     /**
+     * Will replace input div with a JSX element
+     */
+    description?: string;
+
+    /**
      * it is best to set a unique ID for each input to verify change events
      */
     id?: string;

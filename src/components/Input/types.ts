@@ -17,7 +17,7 @@ export interface InputProps {
     customInput?: JSX.Element;
 
     /**
-     * Will replace input div with a JSX element
+     * Description of input, Error state message overrides
      */
     description?: string;
 

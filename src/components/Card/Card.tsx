@@ -11,16 +11,18 @@ import color from '../../styles/colors';
 const { AbsoluteIconStyled, DivStyled, FooterStyled, HeaderStyled } = styles;
 
 const Card: React.FC<CardProps> = ({
-    id,
     children,
     cursorType = 'pointer',
     description,
-    isSelected,
-    title,
-    tooltipText,
+    id,
     isDisabled = false,
-    setIsSelected,
+    isSelected,
     onClick,
+    setIsSelected,
+    title,
+    tooltipMove,
+    tooltipMoveBody,
+    tooltipText,
 }: CardProps) => {
     return (
         <DivStyled
@@ -63,6 +65,8 @@ const Card: React.FC<CardProps> = ({
                                 />,
                             ]}
                             content={tooltipText}
+                            move={tooltipMove}
+                            moveBody={tooltipMoveBody}
                         />
                     </AbsoluteIconStyled>
                 )}

@@ -24,7 +24,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
     chainId,
     moralisAuth = true,
     signingMessage = 'Moralis Authentication',
-    resolveAddress = true,
+    resolveAddress = false,
 }) => {
     const {
         web3,

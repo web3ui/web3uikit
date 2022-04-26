@@ -3,7 +3,7 @@ export interface WalletModalProps extends ConnectButtonProps {
     /**
      * Set name of the WalletModal
      */
-    name: string;
+    name?: string;
 
     /**
      * Modal is open if true

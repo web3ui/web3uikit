@@ -196,3 +196,25 @@ InputFilledHack.args = {
     name: 'Test text Input',
     placeholder: 'Yeah, you can use placeholder now',
 };
+
+export const CustomInput = FilledTemplate.bind({});
+CustomInput.args = {
+    label: 'Custom input',
+    name: 'Test text Custom input',
+    placeholder: 'Custom input placeholder',
+    // customInput: (
+    //     <div
+    //         style={{ width: '50px', height: '50px', border: '1px solid black' }}
+    //     ></div>
+    // ),
+};
+
+export const ValidateStringsMatch = Template.bind({});
+ValidateStringsMatch.args = {
+    label: 'The input should be `Moralis`',
+    type: 'text',
+    validation: {
+        match: 'Moralis',
+        matchInvalidMessage: 'The input is invalid',
+    },
+};

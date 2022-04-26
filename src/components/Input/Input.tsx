@@ -74,7 +74,8 @@ const Input: React.FC<InputProps> = ({
                 validation?.numberMin ||
                 validation?.characterMaxLength ||
                 validation?.characterMinLength ||
-                validation?.regExp,
+                validation?.regExp ||
+                validation?.match,
         );
 
     const validate = (event: React.FocusEvent<HTMLInputElement>) => {
@@ -97,6 +98,21 @@ const Input: React.FC<InputProps> = ({
                 setCurrentState('error');
                 return;
             }
+        }
+
+        // check if the input matches a given string
+        if (validation?.match) {
+            if (event?.target.value === validation?.match) {
+                setCurrentState('confirmed');
+            } else {
+                setCurrentState('error');
+                setInvalidMessage(
+                    validation?.matchInvalidMessage ||
+                        'The input does not match the provided string',
+                );
+            }
+
+            return;
         }
 
         // finally if all pass but the Input is in error state

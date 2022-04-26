@@ -166,4 +166,14 @@ export type ValidateInput = {
      * user feedback text if the RegExp fails to pass
      */
     regExpInvalidMessage?: string;
+
+    /**
+     * check if two strings match
+     */
+    match?: string;
+
+    /**
+     * user feedback text if the match fails to pass
+     */
+    matchInvalidMessage?: string;
 };

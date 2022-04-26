@@ -19,6 +19,7 @@ const Input: React.FC<InputProps> = ({
     autoComplete = true,
     autoFocus = false,
     disabled = false,
+    description,
     errorMessage = 'Sorry this is not valid',
     hasCopyButton = false,
     id,
@@ -169,8 +170,19 @@ const Input: React.FC<InputProps> = ({
                 </LabelStyled>
             )}
             {currentState === 'error' && (
-                <StrongStyled data-testid="test-invalid-feedback">
+                <StrongStyled
+                    data-testid="test-invalid-feedback"
+                    isError={true}
+                >
                     {invalidMessage}
+                </StrongStyled>
+            )}
+            {description && !(currentState === 'error') && (
+                <StrongStyled
+                    data-testid="test-invalid-feedback"
+                    isError={false}
+                >
+                    {description}
                 </StrongStyled>
             )}
             {canToggleHideInput() && (

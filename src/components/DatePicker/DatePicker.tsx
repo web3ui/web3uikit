@@ -100,7 +100,10 @@ const DatePicker: React.FC<DatePickerProps> = ({
             </SpanStyled>
 
             {currentState === 'error' && (
-                <StrongStyled data-testid="date-picker_feedback">
+                <StrongStyled
+                    data-testid="date-picker_feedback"
+                    isError={false}
+                >
                     {invalidMessage}
                 </StrongStyled>
             )}

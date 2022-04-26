@@ -112,7 +112,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         if (isInitialized) logout();
     }
     async function resolve() {
-        if (resolveAddress === true) {
+        if (resolveAddress) {
             const name = await web3?.lookupAddress(account!);
             if (name) {
                 setName(name!);

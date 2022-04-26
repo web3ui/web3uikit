@@ -20,7 +20,7 @@ const {
 type web3StatusType = 'disconnected' | 'pending' | 'only_web3';
 
 const ConnectButton: React.FC<ConnectButtonProps> = ({
-    name = 'Connect Wallet',
+    customText = 'Connect Wallet',
     chainId,
     moralisAuth = true,
     signingMessage = 'Moralis Authentication',
@@ -98,11 +98,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
     useEffect(() => {
         resolver();
         async function resolver() {
-            //  const network = await web3?.getNetwork();
-            // const chainID = network?.chainId;
-            // if (chainID === 1) {
             await resolve();
-            //}
         }
     }, [chainId, account]);
     async function disconnectWallet() {
@@ -117,15 +113,12 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
     }
     async function resolve() {
         if (resolveAddress === true) {
-            let name = await web3?.lookupAddress(account!);
-            if (name !== null || undefined || '') {
-                setHasName(true);
+            const name = await web3?.lookupAddress(account!);
+            if (name) {
                 setName(name!);
-            } else {
-                setHasName(false);
+                return setHasName(true);
             }
-        } else {
-            setHasName(false);
+            return setHasName(false);
         }
     }
     if (!account || (moralisAuth && isInitialized && !isAuthenticated)) {
@@ -134,10 +127,10 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
                 <ConnectButtonStyled
                     onClick={() => setIsConnectModalOpen(true)}
                 >
-                    <TextStyled>{name}</TextStyled>
+                    <TextStyled>{customText}</TextStyled>
                 </ConnectButtonStyled>
                 <WalletModal
-                    name={name}
+                    customText={customText}
                     chainId={chainId}
                     signingMessage={signingMessage}
                     isOpened={isConnectModalOpen}

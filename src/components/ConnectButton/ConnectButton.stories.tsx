@@ -32,6 +32,6 @@ const Template: ComponentStory<typeof ConnectButton> = (args) => (
 export const Default = Template.bind({});
 export const NoMoralisAuth = Template.bind({});
 NoMoralisAuth.args = {
-    name: 'Connect Wallet',
+    customText: 'Connect Wallet',
     moralisAuth: false,
 };

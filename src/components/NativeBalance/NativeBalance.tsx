@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useMoralis } from 'react-moralis';
+import { getNativeByChain } from '../../web3utils';
 import NativeBalanceStyles from './NativeBalance.styles';
 import { NativeBalanceProps } from './types';
 const { BalanceStyled } = NativeBalanceStyles;
@@ -12,23 +13,6 @@ const NativeBalance: React.FC<NativeBalanceProps> = ({ style }) => {
         ticker?: string;
     }>({});
 
-    function ticker(chain: string) {
-        switch (chain) {
-            case '0x1' || '0x2a' || '0x3' || '0x4' || '0x5':
-                return 'ETH';
-            case '0x89' || '0x13881':
-                return 'MATIC';
-            case '0xa86a' || '0xa869':
-                return 'AVAX';
-            case '0x38' || '0x61':
-                return 'BNB';
-            case '0x539':
-                return 'ETH';
-            default:
-                return '';
-        }
-    }
-
     useEffect(() => {
         if (account && chainId) {
             web3?.getBalance(account).then((result) => {
@@ -40,7 +24,7 @@ const NativeBalance: React.FC<NativeBalanceProps> = ({ style }) => {
                         ).toFixed(8),
                     ),
                     balance: result,
-                    ticker: ticker(chainId),
+                    ticker: getNativeByChain(chainId),
                 });
             });
         }

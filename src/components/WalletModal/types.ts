@@ -1,9 +1,9 @@
 import { ConnectButtonProps } from '../ConnectButton/types';
 export interface WalletModalProps extends ConnectButtonProps {
     /**
-     * Set name of the WalletModal
+     * Set Text of the WalletModal
      */
-    name?: string;
+    customText?: string;
 
     /**
      * Modal is open if true

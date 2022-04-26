@@ -20,7 +20,7 @@ const {
 } = WalletModalStyles;
 
 const WalletModal: FC<WalletModalProps> = ({
-    name = 'Connect Wallet',
+    customText = 'Connect Wallet',
     chainId,
     isOpened = true,
     moralisAuth,
@@ -51,7 +51,7 @@ const WalletModal: FC<WalletModalProps> = ({
         <WrapperStyled>
             <ModalStyled>
                 <HeaderStyled>
-                    <TitleStyled>{name}</TitleStyled>
+                    <TitleStyled>{customText}</TitleStyled>
                     <Button
                         icon={iconTypes.x}
                         iconLayout="icon-only"

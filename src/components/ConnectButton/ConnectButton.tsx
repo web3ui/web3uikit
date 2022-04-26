@@ -115,20 +115,13 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         if (isInitialized) logout();
     }
     async function resolve() {
-        const network = await web3?.getNetwork();
-        const chainID = network?.chainId;
-        if (chainID === 1 && resolveAddress === true) {
-            try {
-                let name = await web3?.lookupAddress(account!);
-                console.log('passed');
-                if (name !== null || undefined || '') {
-                    setHasName(true);
-                    setName(name!);
-                } else {
-                    setHasName(false);
-                }
-            } catch (e) {
-                console.log('error', e);
+        if (resolveAddress === true) {
+            let name = await web3?.lookupAddress(account!);
+            if (name !== null || undefined || '') {
+                setHasName(true);
+                setName(name!);
+            } else {
+                setHasName(false);
             }
         } else {
             setHasName(false);

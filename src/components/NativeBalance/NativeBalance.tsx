@@ -31,10 +31,8 @@ const NativeBalance: React.FC<NativeBalanceProps> = ({ style }) => {
 
     useEffect(() => {
         if (account && chainId) {
-            console.log(chainId);
             web3?.getBalance(account).then((result) => {
                 // eslint-disable-next-line new-cap
-                console.log('passed');
                 setBalance({
                     formatted: String(
                         Number(

@@ -24,7 +24,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
     chainId,
     moralisAuth = true,
     signingMessage = 'Moralis Authentication',
-    resolveAddress = false,
+    resolveAddress = true,
 }) => {
     const {
         web3,
@@ -98,11 +98,11 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
     useEffect(() => {
         resolver();
         async function resolver() {
-            const network = await web3?.getNetwork();
-            const chainID = network?.chainId;
-            if (chainID === 1) {
-                await resolve();
-            }
+            //  const network = await web3?.getNetwork();
+            // const chainID = network?.chainId;
+            // if (chainID === 1) {
+            await resolve();
+            //}
         }
     }, [chainId, account]);
     async function disconnectWallet() {

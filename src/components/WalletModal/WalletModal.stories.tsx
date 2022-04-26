@@ -37,5 +37,6 @@ const Template: ComponentStory<typeof WalletModal> = (args) => {
 
 export const DefaultWalletModal = Template.bind({});
 DefaultWalletModal.args = {
+    name: 'Connect Wallet',
     isOpened: true,
 };

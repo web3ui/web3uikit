@@ -1,5 +1,10 @@
 export interface ConnectButtonProps {
     /**
+     * name on the button, by default it is 'Connect Wallet'
+     */
+    name: string;
+
+    /**
      * an optional chain id of the blockchain that the web3 wallet is connected to
      */
     chainId?: number;

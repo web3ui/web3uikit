@@ -217,6 +217,7 @@ ValidateStringsMatch.args = {
         match: 'Moralis',
         matchInvalidMessage: 'The input is invalid',
     },
+};
 
 export const Description = Template.bind({});
 Description.args = {

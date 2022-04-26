@@ -23,8 +23,10 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
     chainId,
     moralisAuth = true,
     signingMessage = 'Moralis Authentication',
+    resolveAddress = true,
 }) => {
     const {
+        web3,
         account,
         isAuthenticated,
         logout,
@@ -41,6 +43,8 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
     const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
     const [web3Status, setWeb3Status] =
         useState<web3StatusType>('disconnected');
+    const [hasName, setHasName] = useState<boolean>();
+    const [Name, setName] = useState<string>();
 
     useEffect(() => {
         // to avoid problems in Next.JS apps because of window object
@@ -90,6 +94,16 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         });
     }, []);
 
+    useEffect(() => {
+        resolver();
+        async function resolver() {
+            const network = await web3?.getNetwork();
+            const chainID = network?.chainId;
+            if (chainID === 1) {
+                await resolve();
+            }
+        }
+    }, [chainId, account]);
     async function disconnectWallet() {
         // to avoid problems in Next.JS apps because of localStorage
         if (typeof window == 'undefined') return;
@@ -100,7 +114,26 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         deactivateWeb3();
         if (isInitialized) logout();
     }
-
+    async function resolve() {
+        const network = await web3?.getNetwork();
+        const chainID = network?.chainId;
+        if (chainID === 1 && resolveAddress === true) {
+            try {
+                let name = await web3?.lookupAddress(account!);
+                console.log('passed');
+                if (name !== null || undefined || '') {
+                    setHasName(true);
+                    setName(name!);
+                } else {
+                    setHasName(false);
+                }
+            } catch (e) {
+                console.log('error', e);
+            }
+        } else {
+            setHasName(false);
+        }
+    }
     if (!account || (moralisAuth && isInitialized && !isAuthenticated)) {
         return (
             <WrapperStyled>
@@ -128,7 +161,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
                 </BalanceBlockStyled>
                 <AddressStyled onClick={() => disconnectWallet()}>
                     <TextStyled style={{ marginRight: '8px' }}>
-                        {account && getEllipsisTxt(account)}
+                        {account && !hasName ? getEllipsisTxt(account) : Name}
                     </TextStyled>
                     <Blockie scale={2.5} seed={account} />
                 </AddressStyled>

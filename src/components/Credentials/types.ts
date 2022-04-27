@@ -66,3 +66,62 @@ export interface ICredentialsHeaderProps {
      */
     iconSize?: number;
 }
+
+export interface ITruncateStringProps {
+    /**
+     * String to replace the truncated section
+     */
+    replaceString?: string;
+    /**
+     * String to Truncate according to screen width
+     */
+    text: string;
+    /**
+     * Percentage of characters(approx) to remain after truncate
+     */
+    percentageOfCharsAfterTrunc?: number;
+}
+
+export type TStringTruncate = {
+    /**
+     * Text to truncate
+     */
+    text: string;
+    /**
+     * String to replace the truncated section
+     */
+    replaceString: string;
+    /**
+     * to store widths for calculating if text should be truncated or not
+     */
+    measurements: {
+        /**
+         * Width of text component
+         */
+        text: number;
+        /**
+         * Width of parent component (which contains text)
+         */
+        component: number;
+        /**
+         * Width of replace string component
+         */
+        replace: number;
+    };
+    /**
+     * Percentage of characters from that should remain after truncate (approx)
+     */
+    leftPercentage: number;
+};
+
+export type TDivWrapper = {
+    /**
+     * text is hidden
+     */
+    isHidden: boolean;
+
+    /**
+     * text is multiline
+     */
+    isMultiline: boolean;
+};

@@ -37,9 +37,10 @@ export interface TextAreaProps {
     state?: 'error' | 'confirmed' | 'disabled';
 
     /**
-     * types of input available
+     * You can validate your textarea
+     * characterMaxLength, characterMinLength, numberMax, numberMin, regExp, regExpInvalidMessage & required
      */
-    type?: 'text' | 'number' | 'email' | 'tel' | 'password';
+    validation?: ValidateInput;
 
     /**
      * you can pass a default value so the input is pre-filled
@@ -50,10 +51,4 @@ export interface TextAreaProps {
      * you can pass a CSS value for the components width
      */
     width?: string;
-
-    /**
-     * You can validate your textarea
-     * characterMaxLength, characterMinLength, numberMax, numberMin, regExp, regExpInvalidMessage & required
-     */
-    validation?: ValidateInput;
 }

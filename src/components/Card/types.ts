@@ -50,6 +50,16 @@ export interface CardProps {
      * Runs a function when clicked
      */
     onClick?: () => void;
+
+    /**
+     * Moves the tooltip arrow +/- up/down/left/right (use responsibly, arrow can move the the X / Y axis indefinitely)
+     */
+    tooltipMove?: number;
+
+    /**
+     * Moves the tooltip body +/- up/down/left/right (use responsibly, arrow can move the the X / Y axis indefinitely)
+     */
+    tooltipMoveBody?: number;
 }
 
 export interface AbsoluteIconStyledProps {

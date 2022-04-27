@@ -6,9 +6,15 @@ import { ICredentialsProps } from './types';
 import CredentialsHeader from './components/CredentialsHeader';
 import { HideButton } from '../HideButton';
 import { CopyButton } from '../CopyButton';
+import TruncateString from './components/TruncateString';
 
-const { CredentialsStyled, DividerStyled, PreformattedStyled, ToolsStyled } =
-    styles;
+const {
+    CredentialsStyled,
+    DividerStyled,
+    DivWrapperStyled,
+    PreformattedStyled,
+    ToolsStyled,
+} = styles;
 
 const Credentials: FC<ICredentialsProps> = ({
     hasCopyButton = true,
@@ -25,8 +31,16 @@ const Credentials: FC<ICredentialsProps> = ({
     hiddenText = '•••••••••••••••••••••••••••••••',
 }) => {
     const [isValueHidden, setIsValueHidden] = useState(isHidden);
+    const [isMultiline, setIsMultiline] = useState(
+        (text.match(/\n/g) || []).length > 0,
+    );
 
     useEffect(() => setIsValueHidden(isHidden), [isHidden]);
+
+    useEffect(
+        () => setIsMultiline((text.match(/\n/g) || []).length > 0),
+        [text],
+    );
 
     return (
         <CredentialsStyled width={width} data-testid="test-credentials">
@@ -38,13 +52,27 @@ const Credentials: FC<ICredentialsProps> = ({
                 iconSize={iconSize}
             />
             <PreformattedStyled>
-                <Typography
-                    monospace
-                    color={textColor}
-                    data-testid="cred-test-text"
+                <DivWrapperStyled
+                    isHidden={isValueHidden}
+                    isMultiline={isMultiline}
                 >
-                    {isValueHidden ? hiddenText : text}
-                </Typography>
+                    <Typography
+                        monospace
+                        color={textColor}
+                        data-testid="cred-test-text"
+                    >
+                        {isValueHidden ? (
+                            hiddenText
+                        ) : isMultiline ? ( // Multiline text will be shown with scrollbar
+                            text
+                        ) : (
+                            <TruncateString
+                                text={text}
+                                percentageOfCharsAfterTrunc={55}
+                            />
+                        )}
+                    </Typography>
+                </DivWrapperStyled>
                 <ToolsStyled>
                     {hasHideButton && (
                         <HideButton

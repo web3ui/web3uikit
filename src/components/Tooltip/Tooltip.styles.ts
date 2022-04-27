@@ -11,86 +11,79 @@ interface IStyledHoverSpan {
     position: Position;
     width: number;
     minWidth: number;
+    moveBody: number;
 }
+
+const defaultTriangleStyle = css`
+    position: absolute;
+    height: 0;
+    width: 0;
+`;
+
+type TTooltipPositioningProps = Pick<TooltipProps, 'move' | 'moveBody'>;
 
 // Left Position comps
 const leftPositionPopover = css<IStyledHoverSpan>`
     right: ${(props) => props.width && `calc(${props.width}px + 10px)`};
-    top: 0px;
-    ${(props) => {
-        return `transform: translateY(-${
-            (props.popoverHeight - props.height) / 2
-        }px)`;
-    }}
+    top: 50%;
+    transform: translateY(${(p) => `${p.moveBody}%`});
 `;
 
-const leftPositionTriangle = css`
+const leftPositionTriangle = css<TTooltipPositioningProps>`
+    ${defaultTriangleStyle};
     border-bottom: 10px solid transparent;
     border-left: 10px solid ${color.blueDark2};
     border-top: 10px solid transparent;
-    height: 0;
-    position: absolute;
     right: -10px;
-    top: calc(50% - 10px);
-    width: 0;
+    top: calc(${(p) => `${p.move}%`} - 10px);
 `;
 
 // Right position comps
 const rightPositionPopover = css<IStyledHoverSpan>`
     left: ${(props) => props.width && `calc(${props.width}px + 10px)`};
-    top: 0px;
-    ${(props) => {
-        return `transform: translateY(-${
-            (props.popoverHeight - props.height) / 2
-        }px)`;
-    }}}
+    top: 50%;
+    transform: translateY(${(p) => `${p.moveBody}%`});
 `;
 
-const rightPositionTriangle = css`
+const rightPositionTriangle = css<TTooltipPositioningProps>`
+    ${defaultTriangleStyle};
     border-bottom: 10px solid transparent;
     border-right: 10px solid ${color.blueDark2};
     border-top: 10px solid transparent;
-    height: 0;
     left: -10px;
-    position: absolute;
-    top: calc(50% - 10px);
-    width: 0;
+    top: calc(${(p) => `${p.move}%`} - 10px);
 `;
 
 // Top Position Comps
 const topPositionPopover = css<IStyledHoverSpan>`
     bottom: ${(props) => props.height && `calc(${props.height}px + 10px)`};
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(${(p) => `${p.moveBody}%`});
 `;
 
-const topPositionTriangle = css`
+const topPositionTriangle = css<TTooltipPositioningProps>`
+    ${defaultTriangleStyle};
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid ${color.blueDark2};
-    height: 0;
-    left: calc(50% - 10px);
-    position: absolute;
+    left: calc(${(p) => `${p.move}%`} - 10px);
     top: 100%;
-    width: 0;
 `;
 
 // bottom Position Comps
 const bottomPositionPopover = css<IStyledHoverSpan>`
     left: 50%;
     top: ${(props) => props.height && `calc(${props.height}px + 10px)`};
-    transform: translateX(-50%);
+    transform: translateX(${(p) => `${p.moveBody}%`});
 `;
 
-const bottomPositionTriangle = css`
+const bottomPositionTriangle = css<TTooltipPositioningProps>`
+    ${defaultTriangleStyle}
     border-bottom: 10px solid ${color.blueDark2};
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    height: 0;
-    left: calc(50% - 10px);
-    position: absolute;
+    left: calc(${(p) => `${p.move}%`} - 10px);
     top: -10px;
-    width: 0;
 `;
 
 const getTriangleComp = {
@@ -143,7 +136,7 @@ const DivStyledTooltipText = styled.div<
 `;
 
 export const DivStyledArrow = styled.div<
-    Pick<TooltipProps, 'position'>
+    Pick<TooltipProps, 'position' | 'move' | 'moveBody'>
 >`
     ${({ position }) => getTriangleComp[position]}
 `;

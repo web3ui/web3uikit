@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { CreditCardProps } from '../CreditCard';
@@ -13,13 +13,14 @@ import { FormProps, DataInput } from './types';
 
 const Form: React.FC<FormProps> = ({
     buttonConfig,
+    customFooter,
     data,
     id,
+    isDisabled = false,
     onSubmit,
     title,
-    customFooter,
-    isDisabled = false,
 }) => {
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const formSubmitted = (event: React.SyntheticEvent) => {
         event.preventDefault();
         event.stopPropagation();
@@ -37,6 +38,8 @@ const Form: React.FC<FormProps> = ({
                     id: id,
                     data: dataReturned,
                 });
+            data.map((input) => (input.value = ''));
+            setIsSubmitted(true);
         } else {
             form.reportValidity();
         }
@@ -248,10 +251,10 @@ const Form: React.FC<FormProps> = ({
             ) : (
                 <Button
                     {...buttonConfig}
+                    disabled={isDisabled || isSubmitted}
                     id="form-submit"
                     text="Submit"
                     type="submit"
-                    disabled={isDisabled}
                 />
             )}
         </FormStyled>

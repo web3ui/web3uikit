@@ -52,6 +52,12 @@ export interface CreditCardProps {
      * set pressed
      */
     pressed?: boolean;
+
+    /**
+     * A props to show or hide the delete icon on the credit card
+     * default to true
+     */
+    isRemovable?: boolean;
 }
 
 export type creditCardBrands = 'mastercard' | 'visa' | 'amex' | 'diners';

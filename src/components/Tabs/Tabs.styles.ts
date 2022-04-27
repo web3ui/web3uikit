@@ -38,7 +38,7 @@ export const StyledTabBar = styled.div<IStyledTabBar>`
     ${(props) =>
         props.haveBackground &&
         `
- background-color: #f2f6ff;
+ background-color: ${color.blueLight};
     border-radius: 16px;`}
 `;
 
@@ -72,7 +72,7 @@ export const BulbTab = styled.div<IStyledBulb>`
     padding: 8px 16px;
     display: flex;
     align-items: center;
-    background-color: #f2f6ff;
+    background-color: ${color.blueLight};
     border: 2px solid transparent;
     cursor: pointer;
     color: ${color.blue};
@@ -80,7 +80,7 @@ export const BulbTab = styled.div<IStyledBulb>`
         isActive &&
         css`
             border-color: ${color.blue};
-            background-color: transparent;
+            background-color: ${color.white};
         `};
     ${(props) =>
         (props.isActive || props.isDisabled) && 'pointer-events: none;'};
@@ -88,7 +88,7 @@ export const BulbTab = styled.div<IStyledBulb>`
     ${(props) => props.isDisabled && `color:${color.greyDisabled};`}
     line-height: ${(props) => props.lineHeight && `${props.lineHeight}px`};
     &:hover {
-        background: #e5edff;
+        background: ${color.blueLight2};
     }
 
     & > span {

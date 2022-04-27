@@ -14,6 +14,8 @@ const Tooltip: React.FC<TooltipProps> = ({
     content,
     maxWidth,
     minWidth,
+    move = 50,
+    moveBody = -50,
     position = 'bottom',
 }: TooltipProps) => {
     const parentRef = useRef(null);
@@ -53,14 +55,12 @@ const Tooltip: React.FC<TooltipProps> = ({
                 minWidth={minWidth as number}
                 position={position}
                 data-testid={'tooltip-children-test-id'}
+                moveBody={moveBody}
             >
-                <DivStyledTooltipText
-                    maxWidth={maxWidth}
-                    minWidth={minWidth}
-                >
+                <DivStyledTooltipText maxWidth={maxWidth} minWidth={minWidth}>
                     {content}
                 </DivStyledTooltipText>
-                <DivStyledArrow position={position} />
+                <DivStyledArrow position={position} move={move} />
             </DivStyled>
         </DivStyledTooltipParent>
     );

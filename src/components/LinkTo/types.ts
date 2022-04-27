@@ -1,7 +1,7 @@
 export const layoutState = ['leading', 'trailing'] as const;
 export type TLayoutState = typeof layoutState[number];
 
-export const typeState = ['email', 'external'] as const;
+export const typeState = ['email', 'external', 'internal'] as const;
 export type TTypeState = typeof typeState[number];
 
 export interface LinkToProps {

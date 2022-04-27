@@ -101,7 +101,7 @@ describe('Button - Primary Large', () => {
         expect(bgColorHex).toBe(color.green);
         expect(styles?.borderWidth).toBe('2px');
         expect(styles?.fontSize).toBe('16px');
-        expect(styles?.padding).toBe('4px 20px');
+        expect(styles?.padding).toBe('6px 22px');
     });
 });
 

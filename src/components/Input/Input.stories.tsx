@@ -196,3 +196,10 @@ InputFilledHack.args = {
     name: 'Test text Input',
     placeholder: 'Yeah, you can use placeholder now',
 };
+
+export const Description = Template.bind({});
+Description.args = {
+    label: 'Fill me',
+    description: 'this is something you need',
+    validation: { required: true },
+};

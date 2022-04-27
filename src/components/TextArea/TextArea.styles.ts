@@ -88,13 +88,8 @@ const TextAreaStyled = styled.textarea<TStyleProps>`
     padding: 2px;
     width: 100%;
 
-    ::-webkit-resizer {
-        visibility: hidden;
-    }
-
     &::placeholder {
-        visibility: hidden;
-        display: none;
+        opacity: 0;
     }
 
     &:focus,
@@ -110,8 +105,7 @@ const TextAreaStyled = styled.textarea<TStyleProps>`
 
     &:focus {
         &::placeholder {
-            display: none;
-            visibility: visible;
+            opacity: 1;
             color: ${color.grey};
         }
     }

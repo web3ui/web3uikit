@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOMServer from 'react-dom/server';
 import { act } from 'react-dom/test-utils';
 import { fireEvent, render, cleanup } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
@@ -12,7 +11,7 @@ const { Demo, PreLoadStep0, StepsWithFooter, StepsWithoutNav } =
 let container: HTMLDivElement;
 const stepperTestID = 'test-stepper';
 const stepperTestTitle = 'test-stepper_title';
-const stepperTestContent = 'test-stepper_content';
+// const stepperTestContent = 'test-stepper_content';
 const stepperTestNav = 'test-stepper_nav';
 const stepperTestNumbers = 'test-stepper_numbers';
 const stepperTestHelper = 'test-stepper_helper';
@@ -41,18 +40,6 @@ describe('Demo', () => {
         );
         expect(title).not.toBeNull();
         expect(title?.textContent).toBe(testStepData[0].title);
-    });
-
-    it('renders the correct content', () => {
-        const content: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${stepperTestContent}"]`,
-        );
-        expect(content).not.toBeNull();
-
-        const jsxToHtml = ReactDOMServer.renderToStaticMarkup(
-            testStepData[0].content,
-        );
-        expect(content?.innerHTML).toBe(jsxToHtml);
     });
 
     it('next & prev nav cycles the content', () => {

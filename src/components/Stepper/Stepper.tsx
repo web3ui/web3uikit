@@ -1,14 +1,15 @@
-import React, { useEffect, useRef, useState, Fragment } from 'react';
 import { Button } from '../Button';
+import { H2Styled } from '../../styles/StyledElements';
 import { Icon } from '../Icon';
 import { Loading } from '../Loading';
-import HeaderStyles from './Stepper.styles';
-import { H2Styled } from '../../styles/StyledElements';
-import color from '../../styles/colors';
 import { StepperProps } from './types';
+import { Typography } from '../Typography';
+import color from '../../styles/colors';
+import HeaderStyles from './Stepper.styles';
+import React, { useEffect, useRef, useState, Fragment } from 'react';
+
 const {
     DivStyled,
-    DivStyledContent,
     DivStyledHelper,
     FooterStyled,
     ListItemStyled,
@@ -18,6 +19,7 @@ const {
     SpanStyled,
     HeaderStyled,
 } = HeaderStyles;
+
 const Stepper: React.FC<StepperProps> = ({
     step = 0,
     stepData,
@@ -71,7 +73,7 @@ const Stepper: React.FC<StepperProps> = ({
     const renderPreloader = () => (
         <DivStyled>
             <H2Styled id="stepper-load-title" data-testid="test-stepper_title">
-                Just one sec...
+                <Typography children={'Just one sec...'} variant={'h2'} />
             </H2Styled>
             <Loading size={20} spinnerColor={color.green} />
         </DivStyled>
@@ -79,20 +81,29 @@ const Stepper: React.FC<StepperProps> = ({
 
     const renderContent = () => (
         <DivStyled id={`step-${activeStep}`}>
-            <H2Styled id="stepper-title" data-testid="test-stepper_title">
-                {activeStep <= stepData.length
-                    ? stepData[Number(activeStep - 1)].title || ''
-                    : completeTitle}
-            </H2Styled>
-            <DivStyledContent
+            <div id="stepper-title" data-testid="test-stepper_title">
+                {activeStep <= stepData.length ? (
+                    <Typography
+                        children={stepData[Number(activeStep - 1)].title || ''}
+                        variant={'h2'}
+                    />
+                ) : (
+                    completeTitle
+                )}
+            </div>
+            <div
                 onClick={handleContentClick}
                 data-testid="test-stepper_content"
                 id="stepper-content"
             >
-                {activeStep <= stepData.length
-                    ? stepData[Number(activeStep - 1)].content
-                    : completeMessage}
-            </DivStyledContent>
+                {activeStep <= stepData.length ? (
+                    <Typography
+                        children={stepData[Number(activeStep - 1)].content}
+                    />
+                ) : (
+                    completeMessage
+                )}
+            </div>
         </DivStyled>
     );
 

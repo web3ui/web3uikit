@@ -118,13 +118,14 @@ const LabelStyled = styled.label<LabelProps>`
     z-index: 1;
 `;
 
-const InputStyled = styled.input`
+const InputStyled = styled.input<Pick<InputProps, 'customInput'>>`
     ${resetCSS}
     ${fonts.text}
     background-color: transparent;
     overflow: hidden;
     transition: all 0.1s ease-out;
     width: 100%;
+    ${(p) => p.customInput && 'width: 0px; height:0px;'}
 
     &:focus,
     .input_filled & {
@@ -208,11 +209,15 @@ const VisibilityIcon = styled.button`
     }
 `;
 
-const StrongStyled = styled.strong`
+interface IStrongStyledProps {
+    isError: boolean;
+}
+
+const StrongStyled = styled.strong<IStrongStyledProps>`
     ${resetCSS}
     ${fonts.text}
     bottom: -23px;
-    color: ${color.red};
+    color: ${(props) => (props.isError ? color.red : color.grey)};
     font-size: 12px;
     height: 24px;
     left: 16px;

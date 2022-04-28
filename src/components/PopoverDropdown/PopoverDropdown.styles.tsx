@@ -89,8 +89,8 @@ export const DivStyledFlex = styled.div`
     flex-direction: column;
     position: relative;
     width: max-content;
-    marginBottom: -10px;
-    padding-bottom: 10px;
+    // marginBottom: -10px;
+    // padding-bottom: 10px;
     border: 1px solid red;
 `;
 
@@ -109,6 +109,7 @@ export const DivStyledChild = styled.div`
     cursor: pointer;
     height: auto;
     width: 100%;
+    border: 1px solid green;
 
     :hover {
         background: ${color.blueDark2};

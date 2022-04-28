@@ -32,7 +32,7 @@ export const getChainLogoName = (chain: chainIdType) => {
 const GridStyled = styled.div`
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(154px, 1fr));
     width: 100%;
 `;
 

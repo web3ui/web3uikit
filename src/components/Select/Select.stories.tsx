@@ -146,6 +146,23 @@ PrefixText.args = {
     defaultOptionIndex: 0,
 };
 
+export const PrefixIcon = Template.bind({});
+PrefixIcon.args = {
+    options: [
+        {
+            label: 'All',
+            id: 'All',
+        },
+        {
+            label: 'Active',
+            id: 'Active',
+        },
+    ],
+    onChange: onTestOptionChange,
+    prefixIcon: 'server',
+    label: 'Select Server',
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
     options: optionsList,

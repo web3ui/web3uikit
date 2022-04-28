@@ -24,12 +24,8 @@ const DivStyledWrap = styled.div<TStyleProps>`
     background-color: ${colors.white};
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
-    left: 50%;
-    max-height: 98%;
+    margin: auto;
     max-width: ${(p) => p.width};
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
     width: 96%;
     ${(p) => !p.canOverflow && overflow()}
 `;
@@ -96,10 +92,14 @@ const FooterStyled = styled.footer<TStyleProps>`
 `;
 
 const DivStyled = styled.div<TStyleProps>`
-    ${(p) => (p.isVisible ? 'display: grid;' : 'display: none;')};
+    ${(p) => (p.isVisible ? 'display: flex;' : 'display: none;')};
+    align-items: flex-start;
     background: rgba(0, 0, 0, 0.3);
     bottom: 0;
+    height: 100vh;
+    justify-content: center;
     left: 0;
+    overflow: auto;
     position: fixed;
     right: 0;
     top: 0;

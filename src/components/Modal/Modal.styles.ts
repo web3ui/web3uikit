@@ -111,7 +111,7 @@ const CustomFooterStyled = styled.footer<TStyleProps>`
         p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
     border-top: 1px solid ${colors.paleBlue2};
     display: flex;
-    padding: 24px 32px 32px;
+    padding: 0px 32px 32px;
 `;
 
 const CustomButtonStyle = styled.div`

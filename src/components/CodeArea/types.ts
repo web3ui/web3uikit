@@ -6,6 +6,12 @@ export interface ICodeAreaProps {
     maxWidth?: string;
 
     /**
+     * minimal height of component
+     * default is "400px"
+     */
+    minHeight?: string;
+
+    /**
      * standard onChange that returns the entire event, as normal you can access event.target
      */
     onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;

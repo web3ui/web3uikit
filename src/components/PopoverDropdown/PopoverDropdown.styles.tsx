@@ -27,7 +27,8 @@ const bottom = css<TStyleProps>`
     &:after {
         position: absolute;
         content: '';
-        bottom: 100%;
+        bottom: 0%;
+        left: 2rem;
         transform: translateX(${(p) => `${p.move}%`}) translateY(0%);
         border: ${arrowSize} solid transparent;
         border-bottom-color: ${color.blueDark};
@@ -80,8 +81,14 @@ const top = css<TStyleProps>`
 `;
 
 export const DivStyledArrow = styled.div<TStyleProps>`
-    z-index: 999;
-    ${(p) => (p.position ? getContainerStyleByPosition(p.position) : '')}
+    // z-index: 999;
+    z-index: 1002;
+    width: 130%;
+    height: 10px;
+    top: 32px;
+
+    ${(p) => (p.position ? getContainerStyleByPosition(p.position) : '')};
+    background: transparent;
 `;
 
 export const DivStyledFlex = styled.div`
@@ -89,9 +96,6 @@ export const DivStyledFlex = styled.div`
     flex-direction: column;
     position: relative;
     width: max-content;
-    // marginBottom: -10px;
-    // padding-bottom: 10px;
-    border: 1px solid red;
 `;
 
 export const DivStyledDropdown = styled.div<TStyleProps>`
@@ -109,7 +113,6 @@ export const DivStyledChild = styled.div`
     cursor: pointer;
     height: auto;
     width: 100%;
-    border: 1px solid green;
 
     :hover {
         background: ${color.blueDark2};

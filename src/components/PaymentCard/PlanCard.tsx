@@ -33,8 +33,8 @@ const PlanCard: React.FC<IPlanCardProps> = ({
                 >
                     {descriptionTitle}
                 </Typography>
-                {description.map((feature) => (
-                    <div>
+                {description.map((feature, index) => (
+                    <div key={index}>
                         <Icon svg="check" fill={color.green} />
                         <Typography
                             variant="caption14"

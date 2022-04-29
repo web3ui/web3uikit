@@ -17,5 +17,5 @@ const Template: ComponentStory<typeof PlanCard> = (args) => (
     <PlanCard {...args} />
 );
 
-export const Success = Template.bind({});
-Success.args = data.success;
+export const PlanCardStory = Template.bind({});
+PlanCardStory.args = data.success;

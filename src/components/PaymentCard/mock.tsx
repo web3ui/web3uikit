@@ -10,10 +10,6 @@ export default {
             'Unlimited Plugins',
             'Community Support',
             'IPFS Gateway',
-            'Unlimited ideas',
-            'Unlimited Plugins',
-            'Community Support',
-            'IPFS Gateway',
         ],
         footer: (
             <Button text="Talk to Sales" theme="primary" isFullWidth={true} />

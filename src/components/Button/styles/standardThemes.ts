@@ -71,8 +71,8 @@ export const outlineLarge = css`
     }
 
     :active {
-        border-width: 4px;
-        padding: 2px 18px;
+        /* border-width: 4px;
+        padding: 2px 18px; */
     }
 
     :focus {

@@ -27,13 +27,13 @@ const getTag = (variant: variantType) => {
 };
 
 const DynamicText: FC<TypographyProps> = ({
-    children,
-    copyable,
-    iconSize,
+    variant = 'body16',
     italic,
     monospace,
+    copyable,
+    children,
+    iconSize,
     onCopy = () => {},
-    variant = 'body16',
     ...otherProps
 }) => {
     const Tag = getTag(variant);

@@ -25,7 +25,7 @@ const OrderedListStyled = styled.ol`
     display: flex;
     justify-content: space-between;
     list-style: none;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
     position: relative;
     text-align: center;
     width: 100%;

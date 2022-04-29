@@ -15,7 +15,8 @@ const LabelStyled = styled.label<LabelProps>`
     ${fonts.text}
     background-color: ${color.white};
     height: 24px;
-    left: 12px;
+    left: ${({ hasPrefixIcon, hasSelectedIndex }) =>
+        hasPrefixIcon && !hasSelectedIndex ? 50 : 12}px;
     line-height: 1;
     pointer-events: none;
     position: absolute;
@@ -54,6 +55,8 @@ const SelectedItem = styled.div<SelectedItemProps>`
                 return color.greyLight;
         }
     }};
+
+    ${({ hasPrefixIcon }) => hasPrefixIcon && 'gap: 15px'};
 
     ${({ state }) =>
         state === 'disabled' &&

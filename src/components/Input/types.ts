@@ -17,6 +17,11 @@ export interface InputProps {
     customInput?: JSX.Element;
 
     /**
+     * Description of input, Error state message overrides
+     */
+    description?: string;
+
+    /**
      * it is best to set a unique ID for each input to verify change events
      */
     id?: string;

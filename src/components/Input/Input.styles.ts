@@ -209,11 +209,15 @@ const VisibilityIcon = styled.button`
     }
 `;
 
-const StrongStyled = styled.strong`
+interface IStrongStyledProps {
+    isError: boolean;
+}
+
+const StrongStyled = styled.strong<IStrongStyledProps>`
     ${resetCSS}
     ${fonts.text}
     bottom: -23px;
-    color: ${color.red};
+    color: ${(props) => (props.isError ? color.red : color.grey)};
     font-size: 12px;
     height: 24px;
     left: 16px;

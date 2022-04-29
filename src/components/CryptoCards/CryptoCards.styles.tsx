@@ -107,7 +107,7 @@ const DivStyledButton = styled.div`
 `;
 
 const PStyledChainName = styled.p`
-    ${fonts.montserrat};
+    ${fonts.openSans};
     ${fonts.textBold500};
     font-size: 32px;
     height: 55%;

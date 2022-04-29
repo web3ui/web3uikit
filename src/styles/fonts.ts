@@ -5,7 +5,7 @@ const heading = css`
     -webkit-font-smoothing: antialiased;
     color: ${color.grey};
     fill: ${color.grey};
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'open-sans', sans-serif;
     font-size: 36px;
     font-style: normal;
     font-weight: 600;
@@ -40,13 +40,13 @@ const h5 = css`
 `;
 
 const ibm = css`
-    font-family: IBM Plex Mono, sans-serif;
+    font-family: IBM Plex Mono, 'Lucida Console', sans-serif;
     font-size: 16px;
     font-style: normal;
 `;
 
 const ibmMono = css`
-    font-family: IBM Plex Mono, monospace;
+    font-family: IBM Plex Mono, 'Lucida Console', monospace;
     font-size: 14px;
 `;
 
@@ -86,24 +86,9 @@ const semiBold = css`
     font-weight: 600;
 `;
 
-const argentumSans = css`
-    @import url('//db.onlinewebfonts.com/c/203f1615b37d6fb2fcd85695bc4c4b00?family=Argentum+Sans');
-    font-family: 'Argentum Sans', sans-serif;
-`;
-
 const openSans = css`
-    @import url('//fonts.googleapis.com/css?family=Open+Sans');
-    font-family: 'Open Sans', sans-serif;
-`;
-
-const montserrat = css`
-    @import url('//fonts.googleapis.com/css2?family=Montserrat');
-    font-family: 'Montserrat', sans-serif;
-`;
-
-const creepster = css`
-    @import url('//fonts.googleapis.com/css2?family=Creepster&display=swap');
-    font-family: 'Creepster', cursive;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Open Sans', Tahoma, sans-serif;
 `;
 
 const fonts = {
@@ -122,9 +107,6 @@ const fonts = {
     semiBold,
     textBold500,
     openSans,
-    montserrat,
-    argentumSans,
-    creepster,
 };
 
 export default fonts;

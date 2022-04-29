@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Table from './Table';
-import { columnsConfig, header, data, pageSize, maxPages } from './MockData';
+import { columnsConfig, syncColumnsConfig, header, syncHeader, data, syncData, pageSize, maxPages } from './MockData';
 import { Loading } from '../Loading';
 import color from '../../styles/colors';
 export default {
@@ -34,7 +34,7 @@ NoPagination.args = {
 
 export const Scrolling = Template.bind({});
 Scrolling.args = {
-    columnsConfig: `80px 450px 450px 450px 80px`,
+    columnsConfig: '80px 450px 450px 450px 80px',
     header,
     data,
     pageSize,
@@ -116,4 +116,15 @@ CustomLoader.args = {
             <Loading size={30} text="Fetching..." spinnerColor={color.blue} />
         </div>
     ),
+};
+
+export const SyncTableExample = Template.bind({});
+
+SyncTableExample.args = {
+    columnsConfig: syncColumnsConfig,
+    header: syncHeader,
+    data: syncData,
+    pageSize,
+    maxPages,
+    alignCellItems: 'center',
 };

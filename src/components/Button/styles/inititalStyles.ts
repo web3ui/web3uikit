@@ -64,6 +64,7 @@ export const isLoadingMode = css`
 
 export const transparent = css`
     background-color: transparent;
+    border-color: transparent;
 `;
 
 export const hoverEffect = css`

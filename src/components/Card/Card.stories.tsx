@@ -179,20 +179,3 @@ ProPlan.args = {
         </div>,
     ],
 };
-
-export const CustomFont = Template.bind({});
-CustomFont.args = {
-    tooltipText: 'Check this font out!',
-    children: [<div key={'0'}>{getModuleAnimation('Lazy NFT')}</div>],
-    title: (
-        <p style={{ fontFamily: 'Creepster, cursive' }}>
-            {'Such a nice font here!'}
-        </p>
-    ),
-    description: (
-        <p style={{ fontFamily: 'Creepster, cursive' }}>
-            {'Testing out some fancy fonts :)'}
-        </p>
-    ),
-    isDisabled: true,
-};

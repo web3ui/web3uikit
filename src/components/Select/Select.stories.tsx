@@ -150,12 +150,14 @@ export const PrefixIcon = Template.bind({});
 PrefixIcon.args = {
     options: [
         {
-            label: 'All',
-            id: 'All',
+            label: 'Mainnet',
+            id: 'Mainnet',
+            prefix: <Icon svg={iconTypes.server} fill={color.grey} />,
         },
         {
-            label: 'Active',
-            id: 'Active',
+            label: 'Testnet',
+            id: 'Testnet',
+            prefix: <Icon svg={iconTypes.testnet} fill={color.grey} />,
         },
     ],
     onChange: onTestOptionChange,

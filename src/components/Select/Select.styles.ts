@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components';
+import { LabelProps, SelectedItemProps, SelectProps } from './types';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
-import { LabelProps, SelectedItemProps, SelectProps } from './types';
+import styled, { css } from 'styled-components';
 
 const DivStyledWrapper = styled.div<Pick<SelectProps, 'state'>>`
     ${resetCSS};
@@ -185,7 +185,7 @@ const Option = styled.div`
     align-items: center;
     cursor: pointer;
     display: flex;
-    padding: 13px 20px;
+    padding: 14px 50px 14px 16px;
     &:hover {
         background-color: rgba(128, 128, 128, 0.1);
     }

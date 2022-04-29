@@ -15,9 +15,11 @@ const DivStyled = styled.div`
     :first-child {
         :first-child {
             ${fonts.openSans};
+            font-weight: 400;
         }
         :nth-child(1) {
-            ${fonts.argentumSans};
+            ${fonts.openSans};
+            font-weight: 600;
         }
     }
 `;

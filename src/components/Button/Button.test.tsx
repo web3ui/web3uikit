@@ -529,7 +529,7 @@ describe('Button - ColoredYellow', () => {
         const styles = element && getComputedStyle(element);
         const bgColorHex =
             styles && rgbToHex(styles.backgroundColor).toUpperCase();
-        expect(bgColorHex).toBe(color.yellow);
+        expect(bgColorHex).toBe(color.yellowLight);
         const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.yellow);
     });
@@ -576,7 +576,7 @@ describe('Button - Outline', () => {
         const styles = element && getComputedStyle(element);
         const bgColorHex =
             styles && rgbToHex(styles.backgroundColor).toUpperCase();
-        expect(bgColorHex).toBe(color.yellow);
+        expect(bgColorHex).toBe(color.yellowLight);
         const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.yellow);
     });

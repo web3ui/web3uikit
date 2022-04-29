@@ -31,8 +31,8 @@ export const Divider = styled.div`
     padding-top: 1px;
     background: radial-gradient(
         106.45% 108.64% at 32.33% -4.84%,
-        #ecf5fc 0.52%,
-        #cee4f3 100%
+        #ECF5FC 0.52%,
+        #CEE4F3 100%
     );
     grid-column: 1 / -1;
 `;
@@ -67,6 +67,7 @@ export const DivTableCell = styled.div<
     align-items: ${(props) => props.alignCellItems};
     justify-content: ${(props) => props.justifyCellItems};
     display: flex;
+    padding: 16px 0;
 `;
 
 export const TableGrid = styled.div.attrs((props: any) => ({
@@ -75,29 +76,42 @@ export const TableGrid = styled.div.attrs((props: any) => ({
     ${resetCSS}
     ${fonts.text}
     padding-bottom: 11px;
-    border-radius: 10px;
-    border: 2px solid transparent;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     background-color: white;
     display: grid;
     grid-template-columns: ${(props) => props.columns};
-    row-gap: 22px;
+    // row-gap: 22px;
     column-gap: 11px;
-    overflow: none;
+    overflow: hidden;
     min-height: fit-content;
     min-width: fit-content;
     & > .firstCol {
-        /* border: 2px dashed red; */
         padding-left: 22px;
     }
     & > .lastCol {
-        /* border: 2px dashed red; */
         padding-right: 22px;
     }
     & > div.table_header {
-        margin-bottom: -11px;
+        font-weight: 600;
+        padding: 12px 0;
+    
+        &:first-of-type {
+            padding-left: 22px;
+        }
     }
+`;
+
+export const TableGridContainer = styled.div`
+    background: radial-gradient(
+        106.45% 108.64% at 32.33% -4.84%,
+        #ECF5FC 0.52%,
+        #CEE4F3 100%
+    );
+    border-radius: 20px;
+    padding: 1px;
+    position: relative;
+    overflow: hidden;
 `;
 
 interface PaginationTag {

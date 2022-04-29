@@ -56,7 +56,7 @@ const SelectedItem = styled.div<SelectedItemProps>`
         }
     }};
 
-    ${({ hasPrefixIcon }) => hasPrefixIcon && 'gap: 15px'};
+    ${({ hasPrefixIcon }) => hasPrefixIcon && 'gap: 13px'};
 
     ${({ state }) =>
         state === 'disabled' &&
@@ -111,7 +111,6 @@ const SelectedItem = styled.div<SelectedItemProps>`
 const iconStyle = css`
     align-items: center;
     display: flex;
-    height: 100%;
     justify-content: center;
     max-height: 24px;
     max-width: 24px;
@@ -121,7 +120,7 @@ const iconStyle = css`
 const PrefixIcon = styled.div`
     ${resetCSS}
     ${iconStyle}
-    margin-right: 8px;
+    margin-right: 13px;
     & :first-child {
         width: 100%;
         height: 100%;

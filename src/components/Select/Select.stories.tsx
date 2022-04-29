@@ -151,17 +151,23 @@ PrefixIcon.args = {
     options: [
         {
             label: 'Mainnet',
-            id: 'Mainnet',
+            id: 'Testnet',
             prefix: <Icon svg={iconTypes.server} fill={color.grey} />,
         },
         {
-            label: 'Testnet',
+            label: 'Mainnet',
             id: 'Testnet',
             prefix: <Icon svg={iconTypes.testnet} fill={color.grey} />,
+        },
+        {
+            label: 'Local Dev Chain',
+            id: 'LocalDevChain',
+            prefix: <Icon svg={iconTypes.btc} fill={color.grey} />,
         },
     ],
     onChange: onTestOptionChange,
     prefixIcon: 'server',
+    width: '100%',
     label: 'Select Server',
 };
 

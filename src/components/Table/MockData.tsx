@@ -1,6 +1,7 @@
 import * as React from 'react';
 import color from '../../styles/colors';
 import { Avatar } from '../Avatar';
+import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import { Tag } from '../Tag';
@@ -103,7 +104,7 @@ export const data = [
 export const pageSize: number = 5;
 export const maxPages = 3;
 
-export const syncColumnsConfig = '3fr 2fr 2fr 0.5fr';
+export const syncColumnsConfig = '3fr 2fr 2fr 0.7fr';
 export const syncHeader = [
     <span>Description</span>,
     <span>Last Synced</span>,
@@ -128,13 +129,20 @@ export const syncData = [
             120392131
         </Typography>,
         <>
-            <div style={{ marginLeft: '16px', opacity: '0.5' }}>
-                <Typography variant="body16" color={color.blue}>
-                    Edit
-                </Typography>
-            </div>
-
-            <Icon fill="red" size={32} svg={iconTypes.x} style={{ opacity: '0.5' }} />
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
         </>,
     ],
     [
@@ -153,13 +161,20 @@ export const syncData = [
             120392131
         </Typography>,
         <>
-            <div style={{ marginLeft: '16px', opacity: '0.5' }}>
-                <Typography variant="body16" color={color.blue}>
-                    Edit
-                </Typography>
-            </div>
-
-            <Icon fill="red" size={24} svg={iconTypes.x} style={{ opacity: '0.5' }} />
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
         </>,
     ],
     [
@@ -178,13 +193,20 @@ export const syncData = [
             120392131
         </Typography>,
         <>
-            <div style={{ marginLeft: '16px', opacity: '0.5' }}>
-                <Typography variant="body16" color={color.blue}>
-                    Edit
-                </Typography>
-            </div>
-
-            <Icon fill="red" size={24} svg={iconTypes.x} style={{ opacity: '0.5' }} />
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
         </>,
     ],
     [
@@ -203,13 +225,20 @@ export const syncData = [
             120392131
         </Typography>,
         <>
-            <div style={{ marginLeft: '16px', opacity: '0.5' }}>
-                <Typography variant="body16" color={color.blue}>
-                    Edit
-                </Typography>
-            </div>
-
-            <Icon fill="red" size={24} svg={iconTypes.x} style={{ opacity: '0.5' }} />
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
         </>,
     ],
     [
@@ -228,13 +257,20 @@ export const syncData = [
             120392131
         </Typography>,
         <>
-            <div style={{ marginLeft: '16px', opacity: '0.5' }}>
-                <Typography variant="body16" color={color.blue}>
-                    Edit
-                </Typography>
-            </div>
-
-            <Icon fill="red" size={24} svg={iconTypes.x} style={{ opacity: '0.5' }} />
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
         </>,
     ],
     [
@@ -253,13 +289,20 @@ export const syncData = [
             120392131
         </Typography>,
         <>
-            <div style={{ marginLeft: '16px', opacity: '0.5' }}>
-                <Typography variant="body16" color={color.blue}>
-                    Edit
-                </Typography>
-            </div>
-
-            <Icon fill="red" size={24} svg={iconTypes.x} style={{ opacity: '0.5' }} />
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
         </>,
     ],
     [
@@ -278,13 +321,20 @@ export const syncData = [
             120392131
         </Typography>,
         <>
-            <div style={{ marginLeft: '16px', opacity: '0.5' }}>
-                <Typography variant="body16" color={color.blue}>
-                    Edit
-                </Typography>
-            </div>
-
-            <Icon fill="red" size={24} svg={iconTypes.x} style={{ opacity: '0.5' }} />
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
         </>,
     ],
     [
@@ -303,13 +353,20 @@ export const syncData = [
             120392131
         </Typography>,
         <>
-            <div style={{ marginLeft: '16px', opacity: '0.5' }}>
-                <Typography variant="body16" color={color.blue}>
-                    Edit
-                </Typography>
-            </div>
-
-            <Icon fill="red" size={24} svg={iconTypes.x} style={{ opacity: '0.5' }} />
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
         </>,
     ],
     [
@@ -328,13 +385,20 @@ export const syncData = [
             120392131
         </Typography>,
         <>
-            <div style={{ marginLeft: '16px', opacity: '0.5' }}>
-                <Typography variant="body16" color={color.blue}>
-                    Edit
-                </Typography>
-            </div>
-
-            <Icon fill="red" size={24} svg={iconTypes.x} style={{ opacity: '0.5' }} />
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
         </>,
     ],
     [
@@ -353,13 +417,148 @@ export const syncData = [
             120392131
         </Typography>,
         <>
-            <div style={{ marginLeft: '16px', opacity: '0.5' }}>
-                <Typography variant="body16" color={color.blue}>
-                    Edit
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
+        </>,
+    ],
+    [
+        <>
+            <Avatar theme="image" isRounded={true} size={36} />
+            <div style={{ marginLeft: '16px' }}>
+                <Typography variant="body16" color={color.blueDark}>
+                    Moralis Magi
                 </Typography>
             </div>
-
-            <Icon fill="red" size={24} svg={iconTypes.x} style={{ opacity: '0.5' }} />
+        </>,
+        <Typography variant="body16" color={color.grey}>
+            01/03/2022 7:44 AM
+        </Typography>,
+        <Typography variant="body16" color={color.grey}>
+            120392131
+        </Typography>,
+        <>
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
+        </>,
+    ],
+    [
+        <>
+            <Avatar theme="image" isRounded={true} size={36} />
+            <div style={{ marginLeft: '16px' }}>
+                <Typography variant="body16" color={color.blueDark}>
+                    Moralis Magi
+                </Typography>
+            </div>
+        </>,
+        <Typography variant="body16" color={color.grey}>
+            01/03/2022 7:44 AM
+        </Typography>,
+        <Typography variant="body16" color={color.grey}>
+            120392131
+        </Typography>,
+        <>
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
+        </>,
+    ],
+    [
+        <>
+            <Avatar theme="image" isRounded={true} size={36} />
+            <div style={{ marginLeft: '16px' }}>
+                <Typography variant="body16" color={color.blueDark}>
+                    Moralis Magi
+                </Typography>
+            </div>
+        </>,
+        <Typography variant="body16" color={color.grey}>
+            01/03/2022 7:44 AM
+        </Typography>,
+        <Typography variant="body16" color={color.grey}>
+            120392131
+        </Typography>,
+        <>
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
+        </>,
+    ],
+    [
+        <>
+            <Avatar theme="image" isRounded={true} size={36} />
+            <div style={{ marginLeft: '16px' }}>
+                <Typography variant="body16" color={color.blueDark}>
+                    Moralis Magi
+                </Typography>
+            </div>
+        </>,
+        <Typography variant="body16" color={color.grey}>
+            01/03/2022 7:44 AM
+        </Typography>,
+        <Typography variant="body16" color={color.grey}>
+            120392131
+        </Typography>,
+        <>
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
         </>,
     ],
 ];

@@ -33,9 +33,11 @@ const ChainSelector: FC<IChainSelectorProps> = ({
 
     const toggleEvm = (chain: string) => {
         if (values.map((x) => x.chainId).includes(chain)) {
+            // toggling same element
             const newArray = values.filter((e) => e.chainId !== chain);
             setValue(newArray);
-        } else {
+        } else if (IsMultipleAllowed) {
+            // adding if multiple elements are allowed
             const newArray = [
                 ...values,
                 {
@@ -45,6 +47,15 @@ const ChainSelector: FC<IChainSelectorProps> = ({
                 },
             ];
             setValue(newArray);
+        } else {
+            // one card selection case
+            setValue([
+                {
+                    chainId: chain,
+                    maxRecordsPerCategory: 50,
+                    userSync: true,
+                },
+            ]);
         }
     };
 

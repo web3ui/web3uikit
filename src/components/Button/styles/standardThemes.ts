@@ -170,6 +170,7 @@ export const ghost = css`
     color: ${color.white};
 
     :hover {
+        color: ${color.blueDark}20;
         background: ${color.white};
     }
 
@@ -180,12 +181,19 @@ export const ghost = css`
 
 export const link = css`
     background-color: transparent;
+    border: 0;
     border-bottom: 1px solid ${color.blue};
     padding: 0px;
     color: ${color.blue};
 
+    :active {
+        border-width: 0px;
+        border-bottom: 1px solid ${color.blue};
+    }
+
     :hover {
         color: ${color.blueSkyDark};
+        border-bottom: 1px solid ${color.blueSkyDark};
     }
 
     svg {

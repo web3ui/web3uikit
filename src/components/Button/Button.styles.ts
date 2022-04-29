@@ -4,6 +4,8 @@ import {
     coloredGreen,
     coloredRed,
     coloredYellow,
+    statusDanger,
+    statusSuccess,
 } from './styles/coloredThemes';
 import {
     iconLeading,
@@ -98,11 +100,14 @@ const getSizeStyles = (size: string) => {
     }
 };
 
-const getColored = (color: string) => {
+const getColored = (color: string, theme: string) => {
+    console.table(coloredRed);
     switch (color) {
         case 'red':
+            if (theme === 'status') return statusDanger;
             return coloredRed;
         case 'green':
+            if (theme === 'status') return statusSuccess;
             return coloredGreen;
         case 'blue':
             return coloredBlue;
@@ -141,7 +146,7 @@ const ButtonStyled = styled.button<TStyleProps>`
     ${({ color, theme }) =>
         color &&
         (theme === 'colored' || theme === 'status') &&
-        getColored(color)}
+        getColored(color, theme)}
     ${({ theme, size }) => theme !== 'link' && size && getSizeStyles(size)}
     ${(p) => p.iconLayout && getIconLayoutStyles(p.iconLayout)}
 

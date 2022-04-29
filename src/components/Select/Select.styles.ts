@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components';
+import { LabelProps, SelectedItemProps, SelectProps } from './types';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
-import { LabelProps, SelectedItemProps, SelectProps } from './types';
+import styled, { css } from 'styled-components';
 
 const DivStyledWrapper = styled.div<Pick<SelectProps, 'state'>>`
     ${resetCSS};
@@ -56,7 +56,7 @@ const SelectedItem = styled.div<SelectedItemProps>`
         }
     }};
 
-    ${({ hasPrefixIcon }) => hasPrefixIcon && 'gap: 15px'};
+    ${({ hasPrefixIcon }) => hasPrefixIcon && 'gap: 13px'};
 
     ${({ state }) =>
         state === 'disabled' &&
@@ -111,7 +111,6 @@ const SelectedItem = styled.div<SelectedItemProps>`
 const iconStyle = css`
     align-items: center;
     display: flex;
-    height: 100%;
     justify-content: center;
     max-height: 24px;
     max-width: 24px;
@@ -121,7 +120,7 @@ const iconStyle = css`
 const PrefixIcon = styled.div`
     ${resetCSS}
     ${iconStyle}
-    margin-right: 8px;
+    margin-right: 13px;
     & :first-child {
         width: 100%;
         height: 100%;
@@ -185,7 +184,7 @@ const Option = styled.div`
     align-items: center;
     cursor: pointer;
     display: flex;
-    padding: 13px 20px;
+    padding: 14px 50px 14px 16px;
     &:hover {
         background-color: rgba(128, 128, 128, 0.1);
     }

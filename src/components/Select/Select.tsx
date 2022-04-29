@@ -31,6 +31,7 @@ const Select: React.FC<SelectProps> = ({
     onChange,
     onChangeTraditional,
     options = [],
+    prefixIcon,
     prefixText,
     state = disabled ? 'disabled' : undefined,
     style,
@@ -93,15 +94,27 @@ const Select: React.FC<SelectProps> = ({
                 data-testid="test-selected"
                 onClick={toggling}
                 state={state}
+                hasPrefixIcon={Boolean(prefixIcon)}
             >
+                {prefixIcon && (
+                    <Icon
+                        size={24}
+                        svg={prefixIcon}
+                        style={{
+                            fill: 'currentColor',
+                        }}
+                    />
+                )}
+
                 {typeof selectedOptionIndex !== 'undefined' && (
                     <>
                         {prefixText && <PrefixSpan>{prefixText}</PrefixSpan>}
-                        {options[selectedOptionIndex]?.prefix && (
-                            <PrefixIcon>
-                                {options[selectedOptionIndex]?.prefix}
-                            </PrefixIcon>
-                        )}
+                        {options[selectedOptionIndex]?.prefix &&
+                            !Boolean(prefixIcon) && (
+                                <PrefixIcon>
+                                    {options[selectedOptionIndex]?.prefix}
+                                </PrefixIcon>
+                            )}
 
                         {options[selectedOptionIndex]?.label}
                     </>
@@ -125,6 +138,7 @@ const Select: React.FC<SelectProps> = ({
                     hasSelectedIndex={
                         typeof selectedOptionIndex !== 'undefined'
                     }
+                    hasPrefixIcon={Boolean(prefixIcon)}
                 >
                     {label}
                 </LabelStyled>
@@ -141,9 +155,11 @@ const Select: React.FC<SelectProps> = ({
                                         key={option?.label}
                                         onClick={onOptionClicked(index)}
                                     >
-                                        <PrefixIcon>
-                                            {option?.prefix}
-                                        </PrefixIcon>
+                                        {option.prefix && (
+                                            <PrefixIcon>
+                                                {option.prefix}
+                                            </PrefixIcon>
+                                        )}
                                         {option?.label}
                                     </Option>
                                 ),

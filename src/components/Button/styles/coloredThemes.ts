@@ -67,8 +67,8 @@ export const coloredBlue = css`
     ${coloredShades}
 `;
 export const coloredYellow = css`
-    background-color: ${color.yellow};
-    border-color: ${color.yellow};
+    background-color: ${color.yellowLight};
+    border-color: ${color.yellowLight};
     color: ${color.yellow};
 
     :focus {
@@ -76,7 +76,7 @@ export const coloredYellow = css`
     }
 
     svg {
-        fill: ${color.yellow};
+        fill: ${color.yellowLight};
     }
 
     ${coloredShades}

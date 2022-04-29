@@ -1,24 +1,8 @@
 import styled from 'styled-components';
-import type { ButtonProps } from './types';
 import {
-    initialStyles,
-    isLoadingMode,
-    transparent,
-    hoverEffect,
-} from './styles/inititalStyles';
-import {
-    outlineLarge,
-    outlineRegular,
-    outlineSmall,
-    primary,
-    secondary,
-    translucent,
-} from './styles/standardThemes';
-import { sizeSmall, sizeRegular, sizeLarge } from './styles/sizeStyles';
-import {
-    coloredRed,
-    coloredGreen,
     coloredBlue,
+    coloredGreen,
+    coloredRed,
     coloredYellow,
 } from './styles/coloredThemes';
 import {
@@ -28,6 +12,26 @@ import {
     largeIconResize,
     smallIconResize,
 } from './styles/iconStyles';
+import {
+    hoverEffect,
+    initialStyles,
+    isLoadingMode,
+    transparent,
+} from './styles/inititalStyles';
+import { sizeLarge, sizeRegular, sizeSmall } from './styles/sizeStyles';
+import {
+    ghost,
+    link,
+    outlineLarge,
+    outlineRegular,
+    outlineSmall,
+    primary,
+    secondary,
+    status,
+    text,
+    translucent,
+} from './styles/standardThemes';
+import type { ButtonProps } from './types';
 
 type TStyleProps = Pick<
     ButtonProps,
@@ -58,6 +62,14 @@ const getThemeStyles = (theme: string, size: string) => {
             }
         case 'translucent':
             return translucent;
+        case 'status':
+            return status;
+        case 'ghost':
+            return ghost;
+        case 'link':
+            return link;
+        case 'text':
+            return text;
         case 'secondary':
         default:
             return secondary;
@@ -126,8 +138,11 @@ const ButtonStyled = styled.button<TStyleProps>`
 
     ${(p) => p.isFullWidth && 'width: 100%;'}
     ${(p) => p.theme && p.size && getThemeStyles(p.theme, p.size)}
-    ${(p) => p.color && p.theme === 'colored' && getColored(p.color)}
-    ${(p) => p.size && getSizeStyles(p.size)}
+    ${({ color, theme }) =>
+        color &&
+        (theme === 'colored' || theme === 'status') &&
+        getColored(color)}
+    ${({ theme, size }) => theme !== 'link' && size && getSizeStyles(size)}
     ${(p) => p.iconLayout && getIconLayoutStyles(p.iconLayout)}
 
     ${(p) =>
@@ -138,11 +153,14 @@ const ButtonStyled = styled.button<TStyleProps>`
 
     ${(p) => p.isLoading && isLoadingMode}
 
-    ${(p) => p.radius && `border-radius: ${p.radius}px;`}
+    ${({ radius, theme }) =>
+        theme === 'link'
+            ? 'border-radius: 0px;'
+            : radius && `border-radius: ${radius}px;`}
 
     ${(p) => p.iconColor && getIconColor(p.iconColor)}
 
-    ${(p) => (p.isTransparent ? transparent : hoverEffect)}
+    ${({ isTransparent }) => (isTransparent ? transparent : hoverEffect)}
 `;
 
 export default {

@@ -69,7 +69,7 @@ export const transparent = css`
 export const hoverEffect = css`
     :hover {
         :after {
-            background-color: ${getShade('dark', 10)};
+            /* background-color: ${getShade('dark', 10)}; */
         }
     }
 `;

@@ -60,6 +60,12 @@ const DivStyledItem = styled.div`
     &:hover {
         box-shadow: inset 0 0 0 1px ${color.blueSky};
     }
+    @media only screen and (max-width: 420px) {
+        width: 52px;
+        height: 52px;
+        line-height: 52px;
+        border-radius: 10px;
+    }
 `;
 
 export default {

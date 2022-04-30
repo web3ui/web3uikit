@@ -4,6 +4,7 @@ import { IPlanCardProps } from './types';
 import { Typography } from '../Typography';
 import color from '../../styles/colors';
 import { Icon } from '../Icon';
+import YourPlanButton from './Components/YourPlanButton';
 
 const { DivStyled, DivStyledFeatures, DivStyledCardFooter } = styles;
 
@@ -14,6 +15,7 @@ const PlanCard: React.FC<IPlanCardProps> = ({
     descriptionTitle,
     title,
     isActive,
+    isCurrentPlan,
 }) => {
     return (
         <DivStyled
@@ -46,7 +48,9 @@ const PlanCard: React.FC<IPlanCardProps> = ({
                     </div>
                 ))}
             </DivStyledFeatures>
-            <DivStyledCardFooter>{footer}</DivStyledCardFooter>
+            <DivStyledCardFooter>
+                {isCurrentPlan ? <YourPlanButton /> : footer}
+            </DivStyledCardFooter>
         </DivStyled>
     );
 };

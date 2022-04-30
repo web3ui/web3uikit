@@ -12,6 +12,7 @@ const DivStyled = styled.div<TDivStyle>`
     flex-direction: column;
     height: 448px;
     max-width: 386.67px;
+    width: 100%;
     padding: 32px;
     ${(props) =>
         props.isActive &&

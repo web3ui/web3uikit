@@ -11,38 +11,32 @@ import Dropdown from '../Dropdown/Dropdown';
 import { Typography } from '../Typography';
 import color from '../../styles/colors';
 
-const hasPositionAbsoluteFix = {
-    transform: 'scale(1)',
-    height: '90vh',
-};
-
 export default {
     title: '5.Popup/Modal',
     component: Modal,
-    decorators: [
-        (storyFn) => <div style={hasPositionAbsoluteFix}>{storyFn()}</div>,
-    ],
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => {
     const [{}, updateArgs] = useArgs();
 
     return (
-        <Modal
-            {...args}
-            onCancel={() => {
-                console.log('canceled');
-                updateArgs({ isVisible: false });
-            }}
-            onOk={() => {
-                console.log('pressed ok');
-                updateArgs({ isVisible: false });
-            }}
-            onCloseButtonPressed={() => {
-                console.log('pressed close');
-                updateArgs({ isVisible: false });
-            }}
-        />
+        <div>
+            <Modal
+                {...args}
+                onCancel={() => {
+                    console.log('canceled');
+                    updateArgs({ isVisible: false });
+                }}
+                onOk={() => {
+                    console.log('pressed ok');
+                    updateArgs({ isVisible: false });
+                }}
+                onCloseButtonPressed={() => {
+                    console.log('pressed close');
+                    updateArgs({ isVisible: false });
+                }}
+            />
+        </div>
     );
 };
 
@@ -63,6 +57,23 @@ Regular.args = {
     children: [<Input key={0} label="Nickname" width="100%" />],
 };
 
+export const VerticalCenter = Template.bind({});
+VerticalCenter.args = {
+    id: 'v-center',
+    title: (
+        <div style={{ display: 'flex', gap: 10 }}>
+            <Icon svg={iconTypes.edit} size={28} fill={colors.grey} />
+            <Typography variant="h3" color={color.grey}>
+                Edit Nickname
+            </Typography>
+        </div>
+    ),
+    okText: 'Save Changes',
+    cancelText: 'Discard Changes',
+    isCentered: true,
+    isVisible: true,
+    children: [<Input key={0} label="Nickname" width="100%" />],
+};
 export const BorderedHeader = Template.bind({});
 BorderedHeader.args = {
     id: 'regular',

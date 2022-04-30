@@ -5,7 +5,12 @@ import { ModalProps } from './types';
 
 type TStyleProps = Pick<
     ModalProps,
-    'isVisible' | 'hasCancel' | 'width' | 'canOverflow' | 'fixedMode'
+    | 'canOverflow'
+    | 'fixedMode'
+    | 'hasCancel'
+    | 'isCentered'
+    | 'isVisible'
+    | 'width'
 >;
 
 const overflow = (): string => {
@@ -24,7 +29,7 @@ const DivStyledWrap = styled.div<TStyleProps>`
     background-color: ${colors.white};
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
-    margin: auto;
+    margin: 80px auto;
     max-width: ${(p) => p.width};
     width: 96%;
     ${(p) => !p.canOverflow && overflow()}
@@ -92,10 +97,10 @@ const FooterStyled = styled.footer<TStyleProps>`
 `;
 
 const DivStyled = styled.div<TStyleProps>`
-    ${(p) => (p.isVisible ? 'display: flex;' : 'display: none;')};
-    align-items: flex-start;
+    align-items: ${({ isCentered }) => (isCentered ? ' center' : 'flex-start')};
     background: rgba(0, 0, 0, 0.3);
     bottom: 0;
+    display: ${({ isVisible }) => (isVisible ? ' flex' : 'none')};
     height: 100vh;
     justify-content: center;
     left: 0;

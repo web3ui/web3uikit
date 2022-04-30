@@ -15,15 +15,22 @@ export interface IPlanCardProps {
     isActive: boolean;
 
     /**
-     * the component can be set as disabled
+     * Is the plan the current users plan
+     */
+    isCurrentPlan: boolean;
+
+    /**
+     * the title component of the Card
      */
     title: JSX.Element;
+
     /**
-     * the component can be set as disabled
+     * the subtitle component of the Card
      */
     subTitle: string;
+
     /**
-     * the component can be set as disabled
+     * the description title component of the Card
      */
     descriptionTitle: string;
 }

@@ -12,12 +12,12 @@ export interface IPlanCardProps {
     /**
      * the component can be set as disabled
      */
-    isActive: boolean;
+    isActive?: boolean;
 
     /**
      * Is the plan the current users plan
      */
-    isCurrentPlan: boolean;
+    isCurrentPlan?: boolean;
 
     /**
      * the title component of the Card

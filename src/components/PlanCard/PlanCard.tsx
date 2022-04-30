@@ -14,8 +14,8 @@ const PlanCard: React.FC<IPlanCardProps> = ({
     subTitle,
     descriptionTitle,
     title,
-    isActive,
-    isCurrentPlan,
+    isActive = false,
+    isCurrentPlan = false,
 }) => {
     return (
         <DivStyled

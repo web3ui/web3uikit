@@ -30,6 +30,12 @@ OneLine.args = {
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
 };
 
+export const MinHeight0 = Template.bind({});
+MinHeight0.args = {
+    text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
+    minHeight: '0px',
+};
+
 export const WithHeader = Template.bind({});
 WithHeader.args = {
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',

@@ -54,7 +54,11 @@ Regular.args = {
     okText: 'Save Changes',
     cancelText: 'Discard Changes',
     isVisible: true,
-    children: [<Input key={0} label="Nickname" width="100%" />],
+    children: [
+        <div style={{ padding: '20px 0 20px 0' }}>
+            <Input key={0} label="Nickname" width="100%" />
+        </div>,
+    ],
 };
 
 export const VerticalCenter = Template.bind({});
@@ -370,51 +374,46 @@ export const WithDropdown = Template.bind({});
 WithDropdown.args = {
     id: 'regular',
     isVisible: true,
-    hasFooter: false,
     canOverflow: true,
     children: [
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            efficitur id leo sed auctor. Cras mollis, nisi ut venenatis aliquet,
-            purus nisl finibus ipsum, eget condimentum dolor lacus vel risus.
-            Curabitur ullamcorper lorem porttitor nisl auctor, in rutrum mauris
-            luctus. Fusce vel mi ut sapien porttitor pulvinar.
-        </p>,
-        <Dropdown
-            onChange={() => {}}
-            label="Select Region: "
-            width="100%"
-            options={[
-                {
-                    id: 'New York',
-                    label: 'New York',
-                },
-                {
-                    id: 'Toronto',
-                    label: 'Toronto',
-                },
-                {
-                    id: 'London',
-                    label: 'London',
-                },
-                {
-                    id: 'Amsterdam',
-                    label: 'Amsterdam',
-                },
-                {
-                    id: 'Frankfurt',
-                    label: 'Frankfurt',
-                },
-                {
-                    id: 'Bangalore',
-                    label: 'Bangalore',
-                },
-                {
-                    id: 'Singapore',
-                    label: 'Singapore',
-                },
-            ]}
-        />,
+        <div style={{ marginBottom: '20px' }}>
+            <Dropdown
+                onChange={() => {}}
+                label="Select Region: "
+                width="100%"
+                options={[
+                    {
+                        id: 'New York',
+                        label: 'New York',
+                    },
+                    {
+                        id: 'Toronto',
+                        label: 'Toronto',
+                    },
+                    {
+                        id: 'London',
+                        label: 'London',
+                    },
+                    {
+                        id: 'Amsterdam',
+                        label: 'Amsterdam',
+                    },
+                    {
+                        id: 'Frankfurt',
+                        label: 'Frankfurt',
+                    },
+                    {
+                        id: 'Bangalore',
+                        label: 'Bangalore',
+                    },
+                    {
+                        id: 'Singapore',
+                        label: 'Singapore',
+                    },
+                ]}
+            />
+            ,
+        </div>,
     ],
 };
 

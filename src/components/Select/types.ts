@@ -1,4 +1,5 @@
 import React from 'react';
+import { TIconType } from '../Icon/collection';
 
 export interface SelectProps {
     /**
@@ -35,6 +36,12 @@ export interface SelectProps {
      * css style prop
      */
     style?: React.CSSProperties;
+
+    /**
+     * Icon name the should be displayed before the options
+     */
+
+    prefixIcon?: TIconType;
 
     /**
      * String that you want to display before the selected option
@@ -103,12 +110,22 @@ export interface OptionProps {
 
 export interface LabelProps {
     /**
+     * true if there is a prefix icon before the label
+     */
+    hasPrefixIcon: boolean;
+
+    /**
      * true if the default index is defined
      */
     hasSelectedIndex: boolean;
 }
 
 export interface SelectedItemProps {
+    /**
+     * true if there is a prefix icon before the label
+     */
+    hasPrefixIcon: boolean;
+
     /**
      * duplicate of state
      */

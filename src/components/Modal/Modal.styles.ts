@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import { ModalProps } from './types';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
-import { ModalProps } from './types';
+import styled from 'styled-components';
 
 type TStyleProps = Pick<
     ModalProps,
@@ -16,15 +16,16 @@ type TStyleProps = Pick<
 const overflow = (): string => {
     return `
             overflow: auto;
-            ::-webkit-scrollbar {
-                display: none;
-            }
             scrollbar-width: none;
+            ::-webkit-scrollbar {
+              display: none;
+            }
             -ms-overflow-style: none;
         `;
 };
 
 const DivStyledWrap = styled.div<TStyleProps>`
+    ${(p) => !p.canOverflow && overflow()}
     ${fonts.text};
     background-color: ${colors.white};
     border-radius: 20px;
@@ -32,7 +33,6 @@ const DivStyledWrap = styled.div<TStyleProps>`
     margin: 80px auto;
     max-width: ${(p) => p.width};
     width: 96%;
-    ${(p) => !p.canOverflow && overflow()}
 `;
 
 const HeaderStyled = styled.header<{
@@ -51,7 +51,7 @@ const HeaderStyled = styled.header<{
     }`}
     align-items: center;
     display: flex;
-    padding: 28px 32px 24px;
+    padding: 32px 32px 24px;
     justify-content: ${(p) => (p.title ? 'space-between' : 'flex-end')};
     border-bottom: ${(p) =>
         p.headerHasBottomBorder ? `1px solid ${colors.paleBlue2}` : undefined};
@@ -72,7 +72,7 @@ const HeaderStyled = styled.header<{
 `;
 
 const DivStyledContent = styled.div`
-    padding: 5px 32px 15px;
+    padding: 0px 32px 0px;
 `;
 
 const FooterStyled = styled.footer<TStyleProps>`
@@ -81,7 +81,7 @@ const FooterStyled = styled.footer<TStyleProps>`
     border-top: 1px solid ${colors.paleBlue2};
     display: flex;
     flex-wrap: wrap;
-    padding: 15px 32px 20px;
+    padding: 24px 32px 32px;
     justify-content: ${(p) => (p.hasCancel ? 'space-between' : 'flex-end')};
 
     button {
@@ -116,7 +116,7 @@ const CustomFooterStyled = styled.footer<TStyleProps>`
         p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
     border-top: 1px solid ${colors.paleBlue2};
     display: flex;
-    padding: 15px 32px 20px;
+    padding: 0px 32px 32px;
 `;
 
 const CustomButtonStyle = styled.div`

@@ -33,6 +33,7 @@ export * from './components/NativeBalance';
 export * from './components/NFT';
 export * from './components/NFTBalance';
 export * from './components/Notification';
+export * from './components/PlanCard';
 export * from './components/PopoverDropdown';
 export * from './components/PopoverElement';
 export * from './components/Radios';
@@ -49,5 +50,4 @@ export * from './components/Tooltip';
 export * from './components/Typography';
 export * from './components/WalletModal';
 export * from './components/Widget';
-
 export * from './web3utils';

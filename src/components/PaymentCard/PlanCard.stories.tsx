@@ -14,7 +14,14 @@ export default {
 } as ComponentMeta<typeof PlanCard>;
 
 const Template: ComponentStory<typeof PlanCard> = (args) => (
-    <PlanCard {...args} />
+    <div
+        style={{
+            display: 'flex',
+            flexDirection: 'column',
+        }}
+    >
+        <PlanCard {...args} />
+    </div>
 );
 
 export const PlanCardStory = Template.bind({});

@@ -19,3 +19,6 @@ const Template: ComponentStory<typeof PlanCard> = (args) => (
 
 export const PlanCardStory = Template.bind({});
 PlanCardStory.args = data.success;
+
+export const CurrentPlanStory = Template.bind({});
+CurrentPlanStory.args = { ...data.success, isCurrentPlan: true };

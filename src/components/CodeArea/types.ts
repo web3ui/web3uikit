@@ -7,7 +7,6 @@ export interface ICodeAreaProps {
 
     /**
      * maximum height of component
-     * default is "100%"
      */
     maxHeight?: string;
 

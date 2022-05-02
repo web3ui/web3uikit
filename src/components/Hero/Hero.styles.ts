@@ -10,6 +10,7 @@ type TStyleProps = Pick<
     | 'height'
     | 'linearGradient'
     | 'rounded'
+    | 'padding'
 >;
 
 enum Position {
@@ -29,27 +30,51 @@ export const SectionStyled = styled.section<TStyleProps>`
     overflow: hidden;
     position: relative;
     width: 100%;
-
+    
     align-items: ${({ align = 'center' }) =>
         Position?.[align] || Position.center};
     border-radius: ${(p) => p.rounded || '0px'};
     background-color: ${(p) => p.backgroundColor};
     background-image: ${({ backgroundURL, linearGradient = '' }) =>
         backgroundURL
-            ? `${linearGradient && linearGradient + ', '} url(${backgroundURL})`
-            : linearGradient};
+        ? `${linearGradient && linearGradient + ', '} url(${backgroundURL})`
+        : linearGradient};
     height: ${({ height }) => height || '80vh'};
     max-height: ${({ height }) => height || '80vh'};
+    padding: ${({ padding }) => padding || '20px'} 0;
 
     h1 {
         padding: 0px 40px;
+        z-index: 1;
     }
 
     > span {
         padding: 20px 40px 0px;
+        z-index: 1;
+    }
+    * {
+        z-index: 0;
+    }
+
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 2em;
+        }
+        height: fit-content;
+        max-height: fit-content;
     }
 `;
 
 export const DivStyled = styled.div`
     padding: 20px 40px 0px;
+`;
+
+export const ImageStyled = styled.img`
+    width: 126.85px;
+    height: 176.61px;
+    max-height: calc(100% - 44px);
+    position: absolute;
+    right: 84px;
+    top: 22px;
+    bottom: 22px;
 `;

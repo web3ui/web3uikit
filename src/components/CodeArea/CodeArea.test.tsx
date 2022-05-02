@@ -12,7 +12,7 @@ const testLineNumbers = 'test-codearea-linenumbers';
 const testTextAreaId = 'test-codearea';
 const testWrapperId = 'test-codearea-wrapper';
 
-test('Render - CodeArea Online', () => {
+test('Render - CodeArea Oneline', () => {
     const text = OneLine.args?.text;
     render(<OneLine />);
     const element = screen.getByTestId(testTextAreaId);

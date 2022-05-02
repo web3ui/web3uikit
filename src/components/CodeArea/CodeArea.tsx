@@ -1,14 +1,13 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import CodeAreaStyles from './CodeArea.styles';
-import colors from '../../styles/colors';
-import { Icon } from '../Icon';
+import { Button } from '../Button';
 import { ICodeAreaProps } from './types';
 import LineNumbers from './LineNumbers';
 
 const {
     ContentStyled,
     HeaderStyled,
-    MaximizeButtonStyled,
+    DivStyledButtonWrap,
     TextAreaStyled,
     WidthWrapperStyled,
     WrapperStyled,
@@ -24,6 +23,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
     maxHeight,
 }) => {
     const [currentValue, setCurrentValue] = useState(text);
+    const hasMaxHeight = Boolean(maxHeight);
 
     useEffect(() => setCurrentValue(text), [text]);
 
@@ -38,7 +38,6 @@ const CodeArea: FC<ICodeAreaProps> = ({
         if (textareaRef && textareaRef.current) {
             textareaRef.current.style.height = '0px';
             textareaRef.current.style.minHeight = minHeight;
-            textareaRef.current.style.maxHeight = maxHeight || 'none';
             const scrollHeight = textareaRef.current.scrollHeight;
             textareaRef.current.style.height = scrollHeight + 'px';
             textareaRef.current.style.minHeight = scrollHeight + 'px';
@@ -66,9 +65,25 @@ const CodeArea: FC<ICodeAreaProps> = ({
                         disabled={disabled}
                     >
                     </TextAreaStyled>
-                    <MaximizeButtonStyled>
-                        <Icon svg="maximize" fill={colors.blue} />
-                    </MaximizeButtonStyled>
+                    {hasMaxHeight && (
+                        <DivStyledButtonWrap data-testid="test-codearea-maximize-button-wrapper">
+                            <Button
+                                icon='maximize'
+                                iconLayout="icon-only"
+                                id="test-button-primary-icon-only"
+                                data-testid="test-button"
+                                isTransparent
+                                onClick={() => {
+                                    if (textareaRef && textareaRef.current) {
+                                        textareaRef.current.style.height = maxHeight || '100%';
+                                    }
+                                }}
+                                radius={20}
+                                theme="secondary"
+                                type="button"
+                            />
+                        </DivStyledButtonWrap>
+                    )}
                 </ContentStyled>
             </WrapperStyled>
         </WidthWrapperStyled>

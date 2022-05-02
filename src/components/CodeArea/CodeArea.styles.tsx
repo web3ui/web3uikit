@@ -25,9 +25,7 @@ const ContentStyled = styled.div`
     display: flex;
 `;
 
-const MaximizeButtonStyled = styled.button`
-    background: transparent;
-    border: none;
+const DivStyledButtonWrap = styled.div`
     margin: 19px;
     position: absolute;
     right: 0;
@@ -72,7 +70,7 @@ const CodeAreaStyles = {
     WrapperStyled,
     ContentStyled,
     HeaderStyled,
-    MaximizeButtonStyled,
+    DivStyledButtonWrap,
 };
 
 export default CodeAreaStyles;

@@ -34,7 +34,7 @@ export const StyledTabBar = styled.div<IStyledTabBar>`
     display: flex;
     ${(props) => props.isVertical && 'flex-direction: column;'}
     max-width: fit-content;
-    height: 40px;
+    max-height: fit-content;
     ${(props) =>
         props.haveBackground &&
         `

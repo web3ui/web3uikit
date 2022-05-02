@@ -14,8 +14,10 @@ const inputStyles = css`
 const labelStyles = css`
     ${resetCSS};
     ${font.text};
+    color: ${color.blueDark};
     cursor: pointer;
     display: block;
+    font-size: 18px;
     margin-bottom: 4px;
     overflow: hidden;
     position: relative;

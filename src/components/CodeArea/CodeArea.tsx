@@ -1,11 +1,14 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import CodeAreaStyles from './CodeArea.styles';
+import colors from '../../styles/colors';
+import { Icon } from '../Icon';
 import { ICodeAreaProps } from './types';
 import LineNumbers from './LineNumbers';
 
 const {
     ContentStyled,
     HeaderStyled,
+    MaximizeButtonStyled,
     TextAreaStyled,
     WidthWrapperStyled,
     WrapperStyled,
@@ -61,7 +64,11 @@ const CodeArea: FC<ICodeAreaProps> = ({
                         spellCheck={false}
                         value={currentValue}
                         disabled={disabled}
-                    />
+                    >
+                    </TextAreaStyled>
+                    <MaximizeButtonStyled>
+                        <Icon svg="maximize" fill={colors.blue} />
+                    </MaximizeButtonStyled>
                 </ContentStyled>
             </WrapperStyled>
         </WidthWrapperStyled>

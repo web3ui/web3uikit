@@ -24,6 +24,14 @@ const ContentStyled = styled.div`
     display: flex;
 `;
 
+const MaximizeButtonStyled = styled.button`
+    background: transparent;
+    border: none;
+    margin: 19px;
+    position: absolute;
+    right: 0;
+`;
+
 const SideStyled = styled.div`
     background: ${color.blueLight2};
     overflow: hidden;
@@ -63,6 +71,7 @@ const CodeAreaStyles = {
     WrapperStyled,
     ContentStyled,
     HeaderStyled,
+    MaximizeButtonStyled,
 };
 
 export default CodeAreaStyles;

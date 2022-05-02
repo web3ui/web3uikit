@@ -6,6 +6,12 @@ export interface ICodeAreaProps {
     maxWidth?: string;
 
     /**
+     * maximum height of component
+     * default is "100%"
+     */
+    maxHeight?: string;
+
+    /**
      * minimal height of component
      * default is "400px"
      */

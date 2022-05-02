@@ -18,6 +18,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
     headerComponent,
     disabled,
     minHeight = '400px',
+    maxHeight = '100%',
 }) => {
     const [currentValue, setCurrentValue] = useState(text);
 
@@ -34,6 +35,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
         if (textareaRef && textareaRef.current) {
             textareaRef.current.style.height = '0px';
             textareaRef.current.style.minHeight = minHeight;
+            textareaRef.current.style.maxHeight = maxHeight;
             const scrollHeight = textareaRef.current.scrollHeight;
             textareaRef.current.style.height = scrollHeight + 'px';
             textareaRef.current.style.minHeight = scrollHeight + 'px';

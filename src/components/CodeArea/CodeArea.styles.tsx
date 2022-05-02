@@ -18,6 +18,7 @@ const TextAreaStyled = styled.textarea`
     font-style: italic;
     overflow-y: hidden;
     white-space: pre;
+    resize: none;
 `;
 
 const ContentStyled = styled.div`

@@ -12,6 +12,7 @@ const Hero: React.FC<HeroProps> = ({
     customImage = null,
     height = '80vh',
     linearGradient,
+    padding,
     rounded,
     subTitle,
     textColor = `${color.greyDark}`,
@@ -26,6 +27,7 @@ const Hero: React.FC<HeroProps> = ({
             height={height}
             rounded={rounded}
             align={align}
+            padding={padding}
         >
             <Typography
                 color={textColor}

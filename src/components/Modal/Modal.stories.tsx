@@ -11,9 +11,17 @@ import Dropdown from '../Dropdown/Dropdown';
 import { Typography } from '../Typography';
 import color from '../../styles/colors';
 
+const hasPositionAbsoluteFix = {
+    transform: 'scale(1)',
+    height: '90vh',
+};
+
 export default {
     title: '5.Popup/Modal',
     component: Modal,
+    decorators: [
+        (storyFn) => <div style={hasPositionAbsoluteFix}>{storyFn()}</div>,
+    ],
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => {

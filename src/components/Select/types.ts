@@ -88,6 +88,11 @@ export interface SelectProps {
      * You can validate your inputs
      */
     validation?: { required: boolean };
+
+    /**
+     * Optional description under select component
+     */
+    description?: string;
 }
 
 export interface OptionProps {

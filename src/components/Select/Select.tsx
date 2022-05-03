@@ -9,6 +9,7 @@ const { DivWrapperStyled, LabelStyled: LabelStyledTrad } = InputStyles;
 
 const {
     DivStyledWrapper,
+    DivStyledDescription,
     DropDownIcon,
     ErrorLabel,
     LabelStyled,
@@ -24,6 +25,7 @@ const {
 const Select: React.FC<SelectProps> = ({
     customNoDataText = 'No Data',
     defaultOptionIndex,
+    description,
     disabled = false,
     errorMessage = '',
     id = String(Date.now()),
@@ -179,7 +181,13 @@ const Select: React.FC<SelectProps> = ({
                 </Options>
             )}
 
-            {errorMessage && <ErrorLabel>{errorMessage}</ErrorLabel>}
+            {state === 'error' && errorMessage ? (
+                <ErrorLabel>{errorMessage}</ErrorLabel>
+            ) : (
+                description && (
+                    <DivStyledDescription>{description}</DivStyledDescription>
+                )
+            )}
         </DivStyledWrapper>
     );
 
@@ -207,6 +215,9 @@ const Select: React.FC<SelectProps> = ({
                 <LabelStyledTrad hasPrefix={false} htmlFor={id}>
                     {label}
                 </LabelStyledTrad>
+            )}
+            {description && (
+                <DivStyledDescription>{description}</DivStyledDescription>
             )}
         </DivWrapperStyled>
     );

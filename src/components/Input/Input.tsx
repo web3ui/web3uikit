@@ -27,6 +27,7 @@ const Input: React.FC<InputProps> = ({
     label,
     name,
     onChange,
+    onBlur,
     placeholder = '',
     prefixIcon,
     size = 'regular',
@@ -78,6 +79,7 @@ const Input: React.FC<InputProps> = ({
         );
 
     const validate = (event: React.FocusEvent<HTMLInputElement>) => {
+        onBlur && onBlur(event);
         if (!hasValidation()) return;
 
         // check for HTML validation

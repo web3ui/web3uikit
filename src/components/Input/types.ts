@@ -37,6 +37,11 @@ export interface InputProps {
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
     /**
+     * standard onBlur that returns the entire event, it also checks validation rules
+     */
+    onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+
+    /**
      * a short piece of text to fill the input before the user interacts
      */
     placeholder?: string;

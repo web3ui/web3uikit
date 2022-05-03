@@ -9,7 +9,7 @@ export default {
     component: Input,
     parameters: {
         actions: {
-            handles: ['onChange', 'changed'],
+            handles: ['onChange', 'changed', 'onBlur'],
         },
     },
 } as ComponentMeta<typeof Input>;

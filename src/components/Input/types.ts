@@ -1,3 +1,4 @@
+import { RefObject } from 'react';
 import { TIconType } from '../Icon/collection';
 
 export interface InputProps {
@@ -25,6 +26,11 @@ export interface InputProps {
      * it is best to set a unique ID for each input to verify change events
      */
     id?: string;
+
+    /**
+     * ref object
+     */
+    ref?: RefObject<HTMLInputElement>;
 
     /**
      * please set a label, it really helps with accessibility

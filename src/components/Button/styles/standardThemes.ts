@@ -1,8 +1,6 @@
 import { css } from 'styled-components';
 import color, { getShade, gradientColors } from '../../../styles/colors';
 
-// theme = primary | outline | secondary | translucent
-
 export const secondary = css`
     background-color: ${color.blueLight};
     border-color: ${color.blueLight};
@@ -153,5 +151,68 @@ export const translucent = css`
 
     svg {
         fill: ${color.white};
+    }
+`;
+
+export const status = css`
+    background-color: ${color.yellowLight};
+    border-width: 0px;
+    color: ${color.yellow};
+
+    :hover {
+        :after {
+            background-color: ${color.yellowHover};
+        }
+    }
+
+    svg {
+        fill: ${color.white};
+    }
+`;
+
+export const ghost = css`
+    background-color: ${color.blueDark}20;
+    border-width: 0px;
+    color: ${color.white};
+
+    :hover {
+        color: ${color.blueDark}20;
+        background: ${color.white};
+    }
+
+    svg {
+        fill: ${color.white};
+    }
+`;
+
+export const link = css`
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid ${color.blue};
+    padding: 0px;
+    color: ${color.blue};
+
+    :active {
+        border-width: 0px;
+        border-bottom: 1px solid ${color.blue};
+    }
+
+    :hover {
+        color: ${color.blueSkyDark};
+        border-bottom: 1px solid ${color.blueSkyDark};
+    }
+
+    svg {
+        fill: ${color.blue};
+    }
+`;
+
+export const text = css`
+    background-color: transparent;
+    border-width: 0px;
+    color: ${color.blue};
+
+    svg {
+        fill: ${color.blue};
     }
 `;

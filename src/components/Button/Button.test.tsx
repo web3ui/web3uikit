@@ -6,9 +6,16 @@ import color from '../../styles/colors';
 import rgbToHex from '../../utils/rgbToHex';
 
 const {
-    Primary,
-    Secondary,
+    ColoredBlue,
+    ColoredGreen,
+    ColoredRed,
+    ColoredYellow,
+    Ghost,
+    Link,
+    LoadingButton,
+    LoadingButtonCustomProps,
     Outline,
+    Primary,
     PrimaryLarge,
     PrimarySmall,
     PrimaryWithIcon,
@@ -16,12 +23,11 @@ const {
     PrimaryWithIconOnly,
     PrimaryWithIconOnlyLarge,
     PrimaryWithIconOnlySmall,
-    ColoredRed,
-    ColoredGreen,
-    ColoredYellow,
-    ColoredBlue,
-    LoadingButton,
-    LoadingButtonCustomProps,
+    Secondary,
+    StatusDanger,
+    StatusSuccess,
+    StatusWarning,
+    Text,
 } = composeStories(stories);
 
 let container: HTMLDivElement;
@@ -658,6 +664,285 @@ describe('Button - Loading', () => {
         expect(bgColorHex).toBe(color.green);
         const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.white);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - StatusWarning', () => {
+    const testText = StatusWarning?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+
+        render(<StatusWarning />, {
+            container: document.body.appendChild(container),
+        });
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Warning button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.yellowLight);
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.yellow);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - StatusDanger', () => {
+    const testText = StatusDanger?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+
+        render(<StatusDanger />, {
+            container: document.body.appendChild(container),
+        });
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Warning button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.red);
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.red);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - StatusSuccess', () => {
+    const testText = StatusSuccess?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+
+        render(<StatusSuccess />, {
+            container: document.body.appendChild(container),
+        });
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Warning button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.green);
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.green);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - Ghost', () => {
+    const testText = Ghost?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+
+        render(<Ghost />, {
+            container: document.body.appendChild(container),
+        });
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Warning button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.white);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - Link', () => {
+    const testText = Link?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+
+        render(<Link />, {
+            container: document.body.appendChild(container),
+        });
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Warning button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && (styles.backgroundColor);
+        expect(bgColorHex).toBe('transparent');
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.blue);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - Text', () => {
+    const testText = Text?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+
+        render(<Text />, {
+            container: document.body.appendChild(container),
+        });
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Warning button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && (styles.backgroundColor);
+        expect(bgColorHex).toBe('transparent');
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.blue);
     });
     it('returns the normal onClick event', () => {
         const element = container.querySelector(

@@ -19,6 +19,28 @@ const coloredShades = css`
         }
     }
 `;
+export const statusDanger = css`
+    background-color: ${color.red};
+    border-color: ${color.red};
+    color: ${color.red};
+
+    svg {
+        fill: ${color.red};
+    }
+
+    ${coloredShades}
+`;
+export const statusSuccess = css`
+    background-color: ${color.green};
+    border-color: ${color.green};
+    color: ${color.green};
+
+    svg {
+        fill: ${color.green};
+    }
+
+    ${coloredShades}
+`;
 
 // theme = colored
 export const coloredRed = css`

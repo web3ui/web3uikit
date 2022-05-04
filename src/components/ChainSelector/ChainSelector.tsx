@@ -1,12 +1,11 @@
 import { Card } from '../Card';
+import { chainIdType, IChainSelectorProps, OptionType } from './types';
 import { CryptoLogos } from '../CryptoLogos';
 import { Loading } from '../Loading';
 import { Typography } from '../Typography';
 import ChainSelectStyles, { getChainLogoName } from './ChainSelector.styles';
-import { FC } from 'react';
 import color from '../../styles/colors';
-import { chainIdType, IChainSelectorProps, OptionType } from './types';
-import React from 'react';
+import React, { FC, useMemo } from 'react';
 
 const { GridStyled, CardContentStyled, GridElementStyled } = ChainSelectStyles;
 
@@ -17,9 +16,27 @@ const ChainSelector: FC<IChainSelectorProps> = ({
     setValue,
     isCompatibilityChecked,
 }) => {
-    const isAllSelected = !!providers
-        .map((o) => o.chainId)
-        .every((elem) => values.map((o) => o.chainId).includes(elem));
+    const getChainNameById = (chainId: string) =>
+        providers.find((provider) => provider.chainId === chainId)?.chain;
+
+    const isAllSelected = useMemo(() => {
+        let availableChains: (string | undefined)[] = [];
+        if (!isCompatibilityChecked) {
+            availableChains = providers.map((o) => getChainNameById(o.chainId));
+        } else {
+            providers.forEach((provider) => {
+                if (
+                    isCompatibilityChecked &&
+                    availableChains.includes(provider.chain)
+                ) {
+                    return;
+                } else availableChains.push(provider.chain);
+            });
+        }
+        const selectedChains = values.map((o) => getChainNameById(o.chainId));
+        return availableChains.every((elem) => selectedChains.includes(elem));
+    }, [providers, values, isCompatibilityChecked]);
+
     const checkIncompatibleChains = (providerOption: OptionType) => {
         if (!isCompatibilityChecked) return;
         return !!providers
@@ -68,6 +85,12 @@ const ChainSelector: FC<IChainSelectorProps> = ({
             }[] = [];
             const addedChains: (string | undefined)[] = [];
             providers.forEach((provider) => {
+                if (
+                    isCompatibilityChecked &&
+                    addedChains.includes(provider.chain)
+                ) {
+                    return;
+                }
                 addedChains.push(provider.chain);
                 newArray.push({
                     chainId: provider.chainId,

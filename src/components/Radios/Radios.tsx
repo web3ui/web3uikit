@@ -17,7 +17,9 @@ const Radios: React.FC<RadiosProps> = ({
     id,
     isRow = false,
     items,
+    ref,
     onChange,
+    onBlur,
     onCreditCardRemoved,
     selectedState,
     setWhichIsChecked,
@@ -62,6 +64,7 @@ const Radios: React.FC<RadiosProps> = ({
                                 checked={i === whichIsChecked}
                                 data-testid={`test-input-${i}`}
                                 id={`${formattedID}_${i}`}
+                                ref={ref}
                                 name={`${formattedID}_group`}
                                 onChange={(e) => {
                                     if (disabled) {
@@ -72,6 +75,7 @@ const Radios: React.FC<RadiosProps> = ({
                                         setChecked(i);
                                     }
                                 }}
+                                onBlur={(e) => onBlur && onBlur(e)}
                                 required={validation?.required}
                                 type="radio"
                                 value={i}

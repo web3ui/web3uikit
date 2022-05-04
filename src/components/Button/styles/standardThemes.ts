@@ -161,7 +161,7 @@ export const status = css`
 
     :hover {
         :after {
-            background-color: #FAE7BC;
+            background-color: ${color.yellowHover};
         }
     }
 

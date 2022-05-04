@@ -37,6 +37,7 @@ const color = {
     yellow: '#ECA609',
     yellowDark: '#F1A90E',
     yellowLight: '#FEF9EE',
+    yellowHover: '#FAE7BC',
 };
 
 export const gradientColors = {

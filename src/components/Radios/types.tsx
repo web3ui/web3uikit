@@ -43,7 +43,7 @@ interface RadiosProps {
     /**
      * standard onBlur that returns the entire event, as normal you can access event.target
      */
-    onBlur: (event: React.FocusEvent<HTMLInputElement>) => void;
+    onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 
     /**
      * if using CreditCardProps to power your checkboxes you can use this event to catch the onRemove event

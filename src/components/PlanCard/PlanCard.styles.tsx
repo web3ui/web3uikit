@@ -8,6 +8,7 @@ const DivStyled = styled.div<TDivStyle>`
     background: #ffffff;
     border-radius: 20px;
     border: 2px solid #c1d8e7;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: 448px;

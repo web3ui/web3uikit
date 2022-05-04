@@ -3,7 +3,6 @@ import React, {
     createRef,
     FC,
     KeyboardEvent,
-    useEffect,
     useMemo,
     useState,
 } from 'react';
@@ -12,166 +11,61 @@ import { Typography } from '../Typography';
 import { VerifyCodeProps } from './types';
 import styles from './VerifyCode.styles';
 
-const { DivStyledItem, DivStyledWrapper, InputStyled } = styles;
+const { DivStyledItem, DivStyledWrapper } = styles;
 
 const VerifyCode: FC<VerifyCodeProps> = ({
     autoFocus = false,
     length = 5,
-    onChange = () => {},
+    label = 'Enter Code',
     onCompleted = () => {},
     placeholder = 'X',
-    value: pValue,
-    title = 'Enter Code',
-    type = 'text',
-    passwordMask = 'X',
 }) => {
-    const emptyValue = new Array(length).fill(placeholder);
-
-    const [activeIndex, setActiveIndex] = useState<number>(-1);
-    // Array of characters to display the code. if nothing is there then placeholder is shown
-    const [value, setValue] = useState<string[]>(
-        pValue ? pValue.split('') : emptyValue,
-    );
-
-    const codeInputRef = createRef<HTMLInputElement>();
-    const itemsRef = useMemo(
+    const [code, setCode] = useState([...Array(length)].map(() => ''));
+    const inputRefs = useMemo(
         () =>
-            new Array(length).fill(null).map(() => createRef<HTMLDivElement>()),
+            new Array(length)
+                .fill(null)
+                .map(() => createRef<HTMLInputElement>()),
         [length],
     );
 
-    const isCodeRegex = new RegExp(`^[0-9]{${length}}$`);
-
-    const getItem = (index: number) => itemsRef[index]?.current;
-    const focusItem = (index: number): void => getItem(index)?.focus();
-    const blurItem = (index: number): void => getItem(index)?.blur();
-
-    const onItemFocus = (index: number) => () => {
-        setActiveIndex(index);
-        if (codeInputRef.current) codeInputRef.current.focus();
+    const processInput = (e: ChangeEvent<HTMLInputElement>, idx: number) => {
+        const num = e.target.value;
+        if (/[^0-9]/.test(num)) return;
+        const newCode = [...code];
+        newCode[idx] = num;
+        setCode(newCode);
+        if (idx !== length - 1) {
+            inputRefs[idx + 1].current?.focus();
+        }
+        if (newCode.every((num) => num !== '')) {
+            onCompleted(newCode.join(''));
+        }
     };
 
-    const onInputKeyUp = ({ key }: KeyboardEvent) => {
-        const newValue = [...value];
-        const nextIndex = activeIndex + 1;
-        const prevIndex = activeIndex - 1;
-        const codeInput = codeInputRef.current;
-        const currentItem = getItem(activeIndex);
+    const onKeyUp = (e: KeyboardEvent<HTMLInputElement>, idx: number) => {
+        const isDeleting = e.key === 'Delete' || e.key === 'Backspace';
+        if (isDeleting && !code[idx] && idx !== 0) {
+            const newCode = [...code];
+            newCode[idx - 1] = '';
+            setCode(newCode);
+            inputRefs[idx - 1].current?.focus();
+        }
+    };
 
-        const isLast = nextIndex === length;
-        const isDeleting = key === 'Delete' || key === 'Backspace';
+    const onPaste = (e: any) => {
+        e.preventDefault();
+        const pastedString = e.clipboardData?.getData('text');
+        if (!pastedString) return;
 
-        onItemFocus(activeIndex);
-
-        // if delete key is pressed replace current value with placeholder and focus on prevIndex
-        if (isDeleting) {
-            newValue[activeIndex] = placeholder;
-            setValue(newValue);
-            if (activeIndex > 0) {
-                setActiveIndex(prevIndex);
-                focusItem(prevIndex);
+        const isNumber = !Number.isNaN(+pastedString);
+        const newCode = pastedString.split('').slice(0, length);
+        if (isNumber) {
+            setCode(newCode);
+            if (newCode.every((num: string) => num !== '')) {
+                onCompleted(newCode.join(''));
             }
-
-            return;
         }
-
-        if (key === 'ArrowRight') {
-            setActiveIndex(nextIndex % length);
-            focusItem(nextIndex % length);
-            return;
-        }
-
-        if (key === 'ArrowLeft') {
-            setActiveIndex(prevIndex >= 0 ? prevIndex : length - 1);
-            focusItem(prevIndex >= 0 ? prevIndex : length - 1);
-            return;
-        }
-
-        // if key pressed is not number don't do anything
-        if (Number.isNaN(+key)) return;
-
-        // otherwise replace the current value and replace with new one.
-        if (codeInput) codeInput.value = '';
-        newValue[activeIndex] = key;
-        setValue(newValue);
-
-        // After input is set go to next box
-        if (!isLast) {
-            setActiveIndex(nextIndex);
-            focusItem(nextIndex);
-            return;
-        }
-
-        // if all conditions fail leave the component since all boxes are filled.
-        if (codeInput) codeInput.blur();
-        if (currentItem) currentItem.blur();
-
-        setActiveIndex(-1);
-    };
-
-    const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const { value: changeValue } = e.target;
-        const isCode = isCodeRegex.test(changeValue);
-
-        if (!isCode) return;
-
-        setValue(changeValue.split(''));
-        blurItem(activeIndex);
-    };
-
-    const onInputBlur = () => {
-        if (activeIndex === -1) return;
-
-        blurItem(activeIndex);
-        setActiveIndex(-1);
-    };
-
-    // autoFocus - focus on the first box on component mount
-    useEffect(() => {
-        if (autoFocus && itemsRef[0].current) {
-            itemsRef[0].current.focus();
-        }
-    }, []);
-
-    // clipboard pasting event listener
-    useEffect(() => {
-        const codeInput = codeInputRef.current;
-        if (!codeInput) return;
-
-        const onPaste = (e: ClipboardEvent) => {
-            e.preventDefault();
-
-            const pastedString = e.clipboardData?.getData('text');
-            if (!pastedString) return;
-
-            const isNumber = !Number.isNaN(+pastedString);
-            if (isNumber) setValue(pastedString.split('').slice(0, length));
-        };
-
-        codeInput.addEventListener('paste', onPaste);
-        return () => codeInput.removeEventListener('paste', onPaste);
-    }, []);
-
-    useEffect(() => {
-        const stringValue = value.join('');
-        const isCompleted = stringValue.length === length;
-
-        if (isCompleted && stringValue !== emptyValue.join('')) {
-            onCompleted(stringValue);
-        }
-        onChange(stringValue);
-    }, [value, length]);
-
-    useEffect(() => {
-        if (typeof pValue !== 'string') return;
-        if (pValue === '' && value.join('') === emptyValue.join('')) return;
-        // key internal state value and external prop value in sync
-        if (pValue !== value.join('')) setValue(pValue.split(''));
-    }, [pValue]);
-
-    const renderItemText = (itemValue: string) => {
-        if (itemValue === placeholder) return placeholder;
-        return type === 'password' ? passwordMask : itemValue;
     };
 
     return (
@@ -181,37 +75,27 @@ const VerifyCode: FC<VerifyCodeProps> = ({
                 weight="semibold"
                 color={color.black}
             >
-                {title}
+                {label}
             </Typography>
             <DivStyledWrapper
                 className="verify-code"
                 data-testid="test-verify-code-id"
             >
-                <InputStyled
-                    data-testid="test-verify-code-input-id"
-                    ref={codeInputRef}
-                    type="text"
-                    inputMode="numeric"
-                    id="verify-code-input"
-                    onChange={onInputChange}
-                    onKeyUp={onInputKeyUp}
-                    onBlur={onInputBlur}
-                />
-                {itemsRef.map((ref, i) => (
+                {code.map((num, idx) => (
                     <DivStyledItem
-                        key={i}
-                        ref={ref}
-                        role="button"
-                        tabIndex={0}
-                        className={`${
-                            value[i] !== placeholder
-                                ? 'is-filled'
-                                : 'is-placeholder'
-                        } ${i === activeIndex ? 'is-active' : ''}`}
-                        onFocus={onItemFocus(i)}
-                    >
-                        {renderItemText(value[i])}
-                    </DivStyledItem>
+                        autoFocus={autoFocus && !code[0].length && idx === 0}
+                        className={`${num !== '' && 'is-filled'}`}
+                        inputMode="numeric"
+                        key={idx}
+                        maxLength={1}
+                        onChange={(e) => processInput(e, idx)}
+                        onKeyUp={(e) => onKeyUp(e, idx)}
+                        onPaste={(e) => onPaste(e)}
+                        placeholder={placeholder[0]}
+                        ref={inputRefs[idx]}
+                        type="text"
+                        value={num}
+                    />
                 ))}
             </DivStyledWrapper>
         </>

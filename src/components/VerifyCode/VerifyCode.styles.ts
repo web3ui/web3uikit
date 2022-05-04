@@ -32,7 +32,7 @@ const InputStyled = styled.input`
     width: ${globalStyles.width};
 `;
 
-const DivStyledItem = styled.div`
+const DivStyledItem = styled.input`
     ${resetCSS};
     ${fonts.openSans};
     border-radius: 20px;
@@ -47,14 +47,15 @@ const DivStyledItem = styled.div`
     text-align: center;
     transition: box-shadow 0.2s ease-out;
     width: ${globalStyles.width};
-    &.is-placeholder {
+    &::placeholder {
         color: ${color.greyIcons};
+        opacity: 1; // firefox
     }
-    &.is-active {
-        box-shadow: inset 0 0 0 2px ${color.blueSky};
+    &:focus {
+        box-shadow: inset 0 0 0 2px ${color.blueSky} !important;
     }
     &.is-filled {
-        background: ${color.blueLight} !important;
+        background: ${color.blueLight};
         box-shadow: none;
     }
     &:hover {
@@ -66,6 +67,8 @@ const DivStyledItem = styled.div`
         line-height: 52px;
         border-radius: 10px;
     }
+    /* Firefox */
+    caret-color: transparent;
 `;
 
 export default {

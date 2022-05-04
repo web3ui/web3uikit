@@ -6,7 +6,6 @@ import * as stories from './VerifyCode.stories';
 const { Default } = composeStories(stories);
 
 const testId = 'test-verify-code-id';
-const testInputId = 'test-verify-code-input-id';
 
 test('Renders - VerifyCode component', () => {
     const titleText = 'Enter Code';
@@ -14,7 +13,6 @@ test('Renders - VerifyCode component', () => {
 
     const component = screen.getByTestId(testId);
     expect(component).not.toBeNull();
-    expect(component.firstChild).toBe(screen.getByTestId(testInputId));
-    expect(component.childElementCount).toBe(6);
+    expect(component.childElementCount).toBe(5);
     expect(screen.getByText(titleText)).not.toBeNull();
 });

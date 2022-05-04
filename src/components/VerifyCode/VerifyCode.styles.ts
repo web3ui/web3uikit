@@ -24,16 +24,6 @@ const DivStyledWrapper = styled.div`
 
 const InputStyled = styled.input`
     ${resetCSS};
-    height: ${globalStyles.height};
-    left: -2000px;
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    width: ${globalStyles.width};
-`;
-
-const DivStyledItem = styled.input`
-    ${resetCSS};
     ${fonts.openSans};
     border-radius: 20px;
     border: 0;
@@ -61,6 +51,12 @@ const DivStyledItem = styled.input`
     &:hover {
         box-shadow: inset 0 0 0 1px ${color.blueSky};
     }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
     @media only screen and (max-width: 420px) {
         width: 52px;
         height: 52px;
@@ -68,11 +64,11 @@ const DivStyledItem = styled.input`
         border-radius: 10px;
     }
     /* Firefox */
+    -moz-appearance: textfield;
     caret-color: transparent;
 `;
 
 export default {
-    DivStyledItem,
-    DivStyledWrapper,
     InputStyled,
+    DivStyledWrapper,
 };

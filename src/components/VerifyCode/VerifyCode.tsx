@@ -11,7 +11,7 @@ import { Typography } from '../Typography';
 import { VerifyCodeProps } from './types';
 import styles from './VerifyCode.styles';
 
-const { DivStyledItem, DivStyledWrapper } = styles;
+const { InputStyled, DivStyledWrapper } = styles;
 
 const VerifyCode: FC<VerifyCodeProps> = ({
     autoFocus = false,
@@ -31,6 +31,8 @@ const VerifyCode: FC<VerifyCodeProps> = ({
 
     const processInput = (e: ChangeEvent<HTMLInputElement>, idx: number) => {
         const num = e.target.value;
+        console.log(e);
+
         if (/[^0-9]/.test(num)) return;
         const newCode = [...code];
         newCode[idx] = num;
@@ -44,6 +46,8 @@ const VerifyCode: FC<VerifyCodeProps> = ({
     };
 
     const onKeyUp = (e: KeyboardEvent<HTMLInputElement>, idx: number) => {
+        if (e.key === 'ArrowUp' || e.key === 'ArrowDown') return;
+        console.log(e.key);
         const isDeleting = e.key === 'Delete' || e.key === 'Backspace';
         if (isDeleting && !code[idx] && idx !== 0) {
             const newCode = [...code];
@@ -82,7 +86,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
                 data-testid="test-verify-code-id"
             >
                 {code.map((num, idx) => (
-                    <DivStyledItem
+                    <InputStyled
                         autoFocus={autoFocus && !code[0].length && idx === 0}
                         className={`${num !== '' && 'is-filled'}`}
                         inputMode="numeric"
@@ -93,7 +97,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
                         onPaste={(e) => onPaste(e)}
                         placeholder={placeholder[0]}
                         ref={inputRefs[idx]}
-                        type="text"
+                        type="number"
                         value={num}
                     />
                 ))}

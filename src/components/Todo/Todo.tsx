@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState, useRef } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Tag } from '../Tag';
@@ -15,7 +15,6 @@ const Todo: React.FC<TodoProps> = ({
     pattern,
     todos = [],
 }) => {
-    const inputRef = useRef<HTMLInputElement | null>(null);
     const key = useMemo(() => Math.random(), []);
     const [inputValue, setInputValue] = useState<string>('');
     const [lists, setLists] = useState<string[]>(todos);

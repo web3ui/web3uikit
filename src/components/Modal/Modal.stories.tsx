@@ -401,7 +401,6 @@ WithDropdown.args = {
                     },
                 ]}
             />
-            ,
         </div>,
     ],
 };

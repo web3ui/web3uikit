@@ -204,7 +204,7 @@ const NoDataTextStyled = styled.p`
     margin-bottom: 5px;
 `;
 
-export const SelectStyled = styled.select`
+const SelectStyled = styled.select`
     ${resetCSS}
     ${fonts.text}
     background-color: transparent;
@@ -225,6 +225,22 @@ export const SelectStyled = styled.select`
     }
 `;
 
+const DivStyledDescription = styled.div`
+    ${resetCSS}
+    ${fonts.text}
+    bottom: -23px;
+    color: ${color.grey};
+    font-size: 12px;
+    height: 24px;
+    left: 16px;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 26px);
+`;
+
 export default {
     DivStyledWrapper,
     DropDownIcon,
@@ -237,4 +253,5 @@ export default {
     PrefixSpan,
     SelectStyled,
     SelectedItem,
+    DivStyledDescription,
 };

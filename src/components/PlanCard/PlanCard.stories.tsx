@@ -14,8 +14,18 @@ export default {
 } as ComponentMeta<typeof PlanCard>;
 
 const Template: ComponentStory<typeof PlanCard> = (args) => (
-    <PlanCard {...args} />
+    <div
+        style={{
+            display: 'flex',
+            flexDirection: 'column',
+        }}
+    >
+        <PlanCard {...args} />
+    </div>
 );
 
 export const PlanCardStory = Template.bind({});
 PlanCardStory.args = data.success;
+
+export const CurrentPlanStory = Template.bind({});
+CurrentPlanStory.args = { ...data.success, isCurrentPlan: true };

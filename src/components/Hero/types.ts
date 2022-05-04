@@ -62,4 +62,9 @@ export interface HeroProps {
      * pass a color HEX or the text will be light grey
      */
     textColor?: string;
+
+    /**
+     *  optional padding
+     */
+    padding?: string;
 }

@@ -31,8 +31,8 @@ export const Divider = styled.div`
     padding-top: 1px;
     background: radial-gradient(
         106.45% 108.64% at 32.33% -4.84%,
-        #ECF5FC 0.52%,
-        #CEE4F3 100%
+        #ecf5fc 0.52%,
+        #cee4f3 100%
     );
     grid-column: 1 / -1;
 `;
@@ -95,7 +95,7 @@ export const TableGrid = styled.div.attrs((props: any) => ({
     & > div.table_header {
         font-weight: 600;
         padding: 12px 0;
-    
+
         &:first-of-type {
             padding-left: 22px;
         }
@@ -105,13 +105,18 @@ export const TableGrid = styled.div.attrs((props: any) => ({
 export const TableGridContainer = styled.div`
     background: radial-gradient(
         106.45% 108.64% at 32.33% -4.84%,
-        #ECF5FC 0.52%,
-        #CEE4F3 100%
+        #ecf5fc 0.52%,
+        #cee4f3 100%
     );
     border-radius: 20px;
     padding: 1px;
     position: relative;
-    overflow: hidden;
+    overflow-x: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 interface PaginationTag {

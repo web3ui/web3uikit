@@ -13,4 +13,9 @@ export interface IWidgetProps {
      * children
      */
     children?: JSX.Element | JSX.Element[];
+
+    /**
+     * set if info is loading
+     */
+    isLoading?: boolean;
 }

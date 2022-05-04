@@ -445,3 +445,14 @@ TransparentButton.args = {
     radius: 20,
     isTransparent: true,
 };
+
+export const LargeOutlinedButton = Template.bind({});
+LargeOutlinedButton.args = {
+    icon: iconTypes.plus,
+    text: 'Large outline button',
+    id: 'test-button-large-outline',
+    theme: 'outline',
+    color: 'red',
+    type: 'button',
+    size: 'large',
+};

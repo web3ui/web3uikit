@@ -204,3 +204,23 @@ HTML5Select.args = {
     validation: { required: true },
     value: 'txt',
 };
+
+export const HTML5SelectWithDescription = Template.bind({});
+HTML5SelectWithDescription.args = {
+    description: 'Much Needed',
+    label: 'Good old HTML5',
+    onChangeTraditional: onTestOptionChange,
+    options: smallOptionsList,
+    traditionalHTML5: true,
+    validation: { required: true },
+    value: 'txt',
+};
+
+export const Description = Template.bind({});
+Description.args = {
+    options: smallOptionsList,
+    onChange: onTestOptionChange,
+    label: 'Label Text',
+    defaultOptionIndex: 0,
+    description: 'Much Needed',
+};

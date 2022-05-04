@@ -34,3 +34,10 @@ Demo.args = {
 };
 
 export const Multiple = Row.bind({});
+
+export const isLoading = Demo.bind({});
+isLoading.args = {
+    title: 'SOME INFO',
+    isLoading: true,
+    info: 'fetched info',
+};

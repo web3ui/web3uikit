@@ -28,8 +28,7 @@ const Credentials: FC<ICredentialsProps> = ({
     text,
     textColor = color.blueDark,
     width = 'auto',
-    hiddenText = '••• ••• ••• •••',
-    // hiddenText = '•••• •••• •••• ••••',
+    hiddenText = '•••••••••••••••••••••••••••••••',
 }) => {
     const [isValueHidden, setIsValueHidden] = useState(isHidden);
     const [isMultiline, setIsMultiline] = useState(

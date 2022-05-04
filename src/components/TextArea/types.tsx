@@ -1,3 +1,4 @@
+import React from 'react';
 import { ValidateInput } from '../Input/types';
 
 export interface TextAreaProps {
@@ -22,9 +23,19 @@ export interface TextAreaProps {
     name?: string;
 
     /**
+     * ref object
+     */
+    ref?: React.RefObject<HTMLTextAreaElement>;
+
+    /**
      * standard onChange that returns the entire event, as normal you can access event.target
      */
     onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+
+    /**
+     * standard onBlur that returns the entire event, as normal you can access event.target
+     */
+    onBlur?: (event: React.FocusEvent<HTMLTextAreaElement>) => void;
 
     /**
      * a short piece of text to fill the input before the user interacts

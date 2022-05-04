@@ -29,9 +29,12 @@ const Select: React.FC<SelectProps> = ({
     disabled = false,
     errorMessage = '',
     id = String(Date.now()),
+    ref,
+    refTraditional,
     label,
     onChange,
     onChangeTraditional,
+    onBlurTraditional,
     options = [],
     prefixIcon,
     prefixText,
@@ -88,6 +91,7 @@ const Select: React.FC<SelectProps> = ({
             aria-label="select"
             data-testid="test-wrapper"
             id={id}
+            ref={ref}
             state={state}
             style={{ ...style, width }}
         >
@@ -196,8 +200,12 @@ const Select: React.FC<SelectProps> = ({
             <SelectStyled
                 defaultValue="Please choose"
                 id={id}
+                ref={refTraditional}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
                     onChangeTraditional && onChangeTraditional(event)
+                }
+                onBlur={(event: React.FocusEvent<HTMLSelectElement>) =>
+                    onBlurTraditional && onBlurTraditional(event)
                 }
                 required={validation?.required}
             >

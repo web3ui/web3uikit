@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { RefObject } from 'react';
 import { TIconType } from '../Icon/collection';
 
 export interface SelectProps {
@@ -17,10 +17,25 @@ export interface SelectProps {
      */
     value?: string;
 
+     /**
+     * ref object for fancy select
+     */
+    ref?: RefObject<HTMLDivElement>;
+
+    /**
+     * ref object for traditional select
+     */
+    refTraditional?: RefObject<HTMLSelectElement>;
+
     /**
      * onChange that returns OptionProps typed data if not using traditional HTML5 mode
      */
     onChange?: (option: OptionProps) => void;
+
+    /**
+     * standard onBlur that returns the entire event, as normal you can access event.target
+     */
+    onBlurTraditional?: (event: React.FocusEvent<HTMLSelectElement>) => void;
 
     /**
      * traditional onChange that returns the entire event, as normal you can access event.target

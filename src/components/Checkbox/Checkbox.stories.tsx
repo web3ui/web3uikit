@@ -7,7 +7,7 @@ export default {
     component: Checkbox,
     parameters: {
         actions: {
-            handles: ['onChange', 'changed'],
+            handles: ['onChange', 'changed', 'onBlur'],
         },
     },
 } as ComponentMeta<typeof Checkbox>;

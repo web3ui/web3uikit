@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState, useRef } from 'react';
 import { Button } from '../Button';
 import { Input } from '../Input';
 import { Tag } from '../Tag';
@@ -15,6 +15,7 @@ const Todo: React.FC<TodoProps> = ({
     pattern,
     todos = [],
 }) => {
+    const inputRef = useRef<HTMLInputElement | null>(null);
     const key = useMemo(() => Math.random(), []);
     const [inputValue, setInputValue] = useState<string>('');
     const [lists, setLists] = useState<string[]>(todos);
@@ -27,7 +28,8 @@ const Todo: React.FC<TodoProps> = ({
         setLists([...updatedList]);
     };
 
-    const addTodo = () => {
+    const addTodo = (e: any) => {
+        e.preventDefault();
         setLists((prevTodo) => [...prevTodo, inputValue]);
         setInputValue('');
         const input: HTMLInputElement | null = document.querySelector(
@@ -39,27 +41,30 @@ const Todo: React.FC<TodoProps> = ({
 
     return (
         <SectionStyled data-testid="test-todo">
-            <DivStyled>
-                <Input
-                    id="todo-input"
-                    label={label}
-                    onChange={(e) => setInputValue(e.target.value)}
-                    size="large"
-                    validation={{
-                        regExp: pattern,
-                    }}
-                    key={key}
-                    value={inputValue}
-                />
-                <Button
-                    disabled={!inputValue}
-                    icon="plus"
-                    onClick={addTodo}
-                    size="large"
-                    text={buttonText}
-                    theme="primary"
-                />
-            </DivStyled>
+            <form onSubmit={addTodo}>
+                <DivStyled>
+                    <Input
+                        id="todo-input"
+                        label={label}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        size="large"
+                        validation={{
+                            regExp: pattern,
+                            required: true,
+                        }}
+                        key={key}
+                        value={inputValue}
+                    />
+                    <Button
+                        type="submit"
+                        disabled={!inputValue}
+                        icon="plus"
+                        size="large"
+                        text={buttonText}
+                        theme="primary"
+                    />
+                </DivStyled>
+            </form>
 
             <DivStyledContent
                 data-testid="test-todo_content"

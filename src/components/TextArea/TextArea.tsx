@@ -9,7 +9,9 @@ const TextArea: React.FC<TextAreaProps> = ({
     id = String(Date.now()),
     label,
     name,
+    ref,
     onChange,
+    onBlur,
     placeholder,
     state,
     validation,
@@ -17,6 +19,7 @@ const TextArea: React.FC<TextAreaProps> = ({
     width = '300px',
 }: TextAreaProps) => {
     const [currentValue, setCurrentValue] = useState(value);
+    const myRef = useRef<HTMLTextAreaElement | null>(ref ? ref.current : null);
 
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
@@ -51,8 +54,14 @@ const TextArea: React.FC<TextAreaProps> = ({
                 onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) =>
                     valueChanged(event)
                 }
+                onBlur={(event: React.FocusEvent<HTMLTextAreaElement>) =>
+                    onBlur && onBlur(event)
+                }
                 placeholder={placeholder}
-                ref={textareaRef}
+                ref={(event) => {
+                    textareaRef.current = event;
+                    if (myRef) myRef.current = event;
+                }}
                 required={validation?.required}
                 rows={4}
                 value={currentValue}

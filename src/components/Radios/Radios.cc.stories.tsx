@@ -127,8 +127,10 @@ CreditCardSelectorSuffix.args = {
         },
     ],
     isRow: true,
-    suffix: <div style={{ height: '2rem' }}>
-    <Button text="Add new card" theme="primary" />
-    </div>,
+    suffix: (
+        <div style={{ height: '2rem' }}>
+            <Button text="Add new card" theme="primary" />
+        </div>
+    ),
     title: 'How would you like pay for that?',
 };

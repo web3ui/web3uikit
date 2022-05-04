@@ -1,7 +1,16 @@
 import * as React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Table from './Table';
-import { columnsConfig, syncColumnsConfig, header, syncHeader, data, syncData, pageSize, maxPages } from './MockData';
+import {
+    columnsConfig,
+    syncColumnsConfig,
+    header,
+    syncHeader,
+    data,
+    syncData,
+    pageSize,
+    maxPages,
+} from './MockData';
 import { Loading } from '../Loading';
 import color from '../../styles/colors';
 export default {

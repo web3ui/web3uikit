@@ -1,11 +1,7 @@
 // importing boilerplate stuff
 import React from 'react';
 import { composeStories } from '@storybook/testing-react';
-import {
-    render,
-    screen,
-    fireEvent,
-} from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import * as stories from './NewComp.stories';
 
 // // importing fire event from RTL to mock a click event
@@ -64,7 +60,8 @@ test('Renders Default component', () => {
 
     const textWithoutUnderline = screen.getByTestId(testText);
     expect(textWithoutUnderline).not.toBeNull();
-    const twlStyles = textWithoutUnderline && getComputedStyle(textWithoutUnderline);
+    const twlStyles =
+        textWithoutUnderline && getComputedStyle(textWithoutUnderline);
     expect(twlStyles?.textDecoration).toBe('none');
 });
 
@@ -121,7 +118,8 @@ test('Renders InitializeRed', () => {
 
     const textWithoutUnderline = screen.getByTestId(testText);
     expect(textWithoutUnderline).not.toBeNull();
-    const twlStyles = textWithoutUnderline && getComputedStyle(textWithoutUnderline);
+    const twlStyles =
+        textWithoutUnderline && getComputedStyle(textWithoutUnderline);
     expect(twlStyles?.textDecoration).toBe('none');
 });
 
@@ -177,7 +175,8 @@ test('Renders UnderLinedText', () => {
 
     const textWithoutUnderline = screen.queryByTestId(testText);
     expect(textWithoutUnderline).not.toBeNull();
-    const twlStyles = textWithoutUnderline && getComputedStyle(textWithoutUnderline);
+    const twlStyles =
+        textWithoutUnderline && getComputedStyle(textWithoutUnderline);
     expect(twlStyles?.textDecoration).toBe('underline');
 });
 

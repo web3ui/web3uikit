@@ -9,7 +9,7 @@ const { SkeletonImage } = composeStories(stories);
 const skeletonTestId = 'test-skeleton-id';
 
 describe('Skeleton - Image', () => {
-let container: HTMLDivElement;
+    let container: HTMLDivElement;
 
     beforeEach(() => {
         container = document.createElement('div');

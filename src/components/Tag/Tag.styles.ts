@@ -10,7 +10,7 @@ const {
     initialStyles,
     regular,
     chips,
-} =themeStyles;
+} = themeStyles;
 
 const {
     coloredBlue,

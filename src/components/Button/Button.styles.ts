@@ -15,7 +15,6 @@ import {
     smallIconResize,
 } from './styles/iconStyles';
 import {
-    hoverEffect,
     initialStyles,
     isLoadingMode,
     transparent,
@@ -165,7 +164,7 @@ const ButtonStyled = styled.button<TStyleProps>`
 
     ${(p) => p.iconColor && getIconColor(p.iconColor)}
 
-    ${({ isTransparent }) => (isTransparent ? transparent : hoverEffect)}
+    ${({ isTransparent }) => (isTransparent ? transparent : null)}
 `;
 
 export default {

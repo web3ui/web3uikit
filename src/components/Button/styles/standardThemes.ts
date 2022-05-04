@@ -159,6 +159,12 @@ export const status = css`
     border-width: 0px;
     color: ${color.yellow};
 
+    :hover {
+        :after {
+            background-color: #FAE7BC;
+        }
+    }
+
     svg {
         fill: ${color.white};
     }

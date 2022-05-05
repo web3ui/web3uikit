@@ -22,7 +22,7 @@ test('DefaultTodo', async () => {
     expect(element).not.toBeNull();
 
     const labelElement = screen.getByTestId(todoLabelId);
-    expect(labelElement?.textContent).toBe(labelText);
+    expect(labelElement?.textContent).toContain(labelText);
 });
 
 test('WithInitialTodos', async () => {
@@ -42,7 +42,7 @@ test('WithInitialTodos', async () => {
     expect(element).not.toBeNull();
 
     const labelElement = screen.getByTestId(todoLabelId);
-    expect(labelElement?.textContent).toBe(labelText);
+    expect(labelElement?.textContent).toContain(labelText);
 
     const buttonElement = screen.getByTestId(todoButtonId);
     expect(buttonElement?.textContent).toContain(buttonText);
@@ -70,7 +70,7 @@ test('FullWidthTodos', async () => {
     expect(element).not.toBeNull();
 
     const labelElement = screen.getByTestId(todoLabelId);
-    expect(labelElement?.textContent).toBe(labelText);
+    expect(labelElement?.textContent).toContain(labelText);
 
     const buttonElement = screen.getByTestId(todoButtonId);
     expect(buttonElement?.textContent).toContain(buttonText);

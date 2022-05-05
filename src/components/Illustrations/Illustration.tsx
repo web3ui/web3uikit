@@ -74,9 +74,10 @@ const Illustration: React.FC<IllustrationProps> = ({
     logo,
     width,
     height,
+    ...props
 }: IllustrationProps) => {
     return (
-        <StyledIllustration width={width} height={height} id={id}>
+        <StyledIllustration width={width} height={height} id={id} {...props}>
             {getLogo(logo, width, height)}
         </StyledIllustration>
     );

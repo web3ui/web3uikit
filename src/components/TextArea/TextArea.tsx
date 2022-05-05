@@ -15,6 +15,7 @@ const TextArea: React.FC<TextAreaProps> = ({
     validation,
     value = '',
     width = '300px',
+    ...props
 }: TextAreaProps) => {
     const [currentValue, setCurrentValue] = useState(value);
 
@@ -39,6 +40,7 @@ const TextArea: React.FC<TextAreaProps> = ({
             data-testid="test-textarea-wrapper"
             state={state}
             width={width}
+            {...props}
         >
             <TextAreaStyled
                 autoComplete={`${autoComplete}`}

@@ -14,6 +14,7 @@ const Todo: React.FC<TodoProps> = ({
     onChange,
     pattern,
     todos = [],
+    ...props
 }) => {
     const key = useMemo(() => Math.random(), []);
     const [inputValue, setInputValue] = useState<string>('');
@@ -38,7 +39,7 @@ const Todo: React.FC<TodoProps> = ({
     };
 
     return (
-        <SectionStyled data-testid="test-todo">
+        <SectionStyled data-testid="test-todo" {...props}>
             <DivStyled>
                 <Input
                     id="todo-input"

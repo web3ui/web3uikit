@@ -27,6 +27,7 @@ const NewComp: React.FC<NewCompProps> = ({
     state = 'greenLight',
     textOff,
     textOn,
+    ...props
 }) => {
     // Standard use of useState to track internal state variables
     const [compState, setCompState] = useState(state);
@@ -48,7 +49,7 @@ const NewComp: React.FC<NewCompProps> = ({
     };
 
     return (
-        <SectionStyled data-testid="test-new-comp" bgColor={bgColor}>
+        <SectionStyled data-testid="test-new-comp" bgColor={bgColor} {...props}>
             <TitleStyled data-testid="test-title">
                 The Demo Component
             </TitleStyled>

@@ -24,6 +24,7 @@ const Radios: React.FC<RadiosProps> = ({
     suffix,
     title,
     validation,
+    ...props
 }) => {
     const formattedID = id?.replace(/\s/g, '-');
     const isCreditCards = Boolean(typeof items[0] === 'object');
@@ -47,7 +48,11 @@ const Radios: React.FC<RadiosProps> = ({
     );
 
     return (
-        <FieldsetStyled id={`${formattedID}`} data-testid="test-fieldset">
+        <FieldsetStyled
+            id={`${formattedID}`}
+            data-testid="test-fieldset"
+            {...props}
+        >
             {title && (
                 <LegendStyled data-testid="test-legend">{title}</LegendStyled>
             )}

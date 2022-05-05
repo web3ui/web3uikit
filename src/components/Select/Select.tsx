@@ -41,6 +41,7 @@ const Select: React.FC<SelectProps> = ({
     validation,
     value,
     width = '200px',
+    ...props
 }: SelectProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOptionIndex, setSelectedOptionIndex] =
@@ -90,6 +91,7 @@ const Select: React.FC<SelectProps> = ({
             id={id}
             state={state}
             style={{ ...style, width }}
+            {...props}
         >
             <SelectedItem
                 aria-label="option-selected"

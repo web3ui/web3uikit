@@ -74,9 +74,14 @@ const Breadcrumbs: IBreadcrumbs = ({
     routes,
     separator,
     currentLocation,
+    ...props
 }) => {
     return (
-        <NavStyled color={theme} data-testid={'breadcrumbs-nav-test-id'}>
+        <NavStyled
+            color={theme}
+            data-testid={'breadcrumbs-nav-test-id'}
+            {...props}
+        >
             <ListStyled style={style} data-testid={'breadcrumbs-ol-test-id'}>
                 {renderList(routes, separator, currentLocation)}
             </ListStyled>

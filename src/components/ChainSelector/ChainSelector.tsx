@@ -15,6 +15,7 @@ const ChainSelector: FC<IChainSelectorProps> = ({
     values,
     setValue,
     isCompatibilityChecked,
+    ...props
 }) => {
     const getChainNameById = (chainId: string) =>
         providers.find((provider) => provider.chainId === chainId)?.chain;
@@ -102,7 +103,7 @@ const ChainSelector: FC<IChainSelectorProps> = ({
     };
 
     return (
-        <div data-testid={'test-chain-selector'}>
+        <div data-testid={'test-chain-selector'} {...props}>
             {providers?.length > 0 ? (
                 <GridStyled>
                     {providers.map((option) => (

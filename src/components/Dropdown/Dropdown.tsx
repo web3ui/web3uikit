@@ -28,6 +28,7 @@ const Dropdown: React.FC<IDropdown> = ({
     selectedState,
     showSelected = true,
     width = '250px',
+    ...props
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedIndex, setSelectedIndex] =
@@ -56,7 +57,7 @@ const Dropdown: React.FC<IDropdown> = ({
             (options.length == 1 && selectedIndex != null && hideSelected)
         ) {
             return (
-                <DivStyledOptionsContainer width={width} isOpen={isOpen}>
+                <DivStyledOptionsContainer width={width} isOpen={isOpen} {...props}>
                     <DivInnerStyledOptionsContainer>
                         <DivStyledNoData>
                             <Illustration

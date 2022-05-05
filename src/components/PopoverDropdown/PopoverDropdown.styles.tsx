@@ -74,6 +74,7 @@ const top = css<TStyleProps>`
         position: absolute;
         content: '';
         bottom: 0;
+        left: 2rem;
         transform: translateX(${(p) => `${p.move}%`}) translateY(100%);
         border: ${arrowSize} solid transparent;
         border-top-color: ${color.blueDark};
@@ -81,7 +82,6 @@ const top = css<TStyleProps>`
 `;
 
 export const DivStyledArrow = styled.div<TStyleProps>`
-    // z-index: 999;
     z-index: 1002;
     width: 130%;
     height: 10px;

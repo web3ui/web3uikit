@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     DivStyledArrow,
     DivStyledChild,
@@ -15,12 +15,32 @@ const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
     position,
     moveBody = -50,
 }) => {
+    let timeout: ReturnType<typeof setTimeout>;
     const [showDropdown, setVisibility] = useState(false);
+
+    const onTogglePopover = (state: boolean) => {
+        if (state === true) {
+            clearTimeout(timeout);
+            setVisibility(state);
+        } else {
+            timeout = setTimeout(() => {
+                setVisibility(state);
+                clearTimeout(timeout);
+            }, 300);
+        }
+    };
+
+    useEffect(() => {
+        return () => {
+            clearTimeout(timeout);
+        };
+    });
+
     return (
         <DivStyledFlex
             id={id}
-            onMouseEnter={() => setVisibility(true)}
-            onMouseLeave={() => setVisibility(false)}
+            onMouseEnter={() => onTogglePopover(true)}
+            onMouseLeave={() => onTogglePopover(false)}
         >
             <div data-testid={'dropdown-parent-test-id'}>{parent}</div>
 

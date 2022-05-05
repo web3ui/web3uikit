@@ -7,15 +7,17 @@ import { HeroProps } from './types';
 const Hero: React.FC<HeroProps> = ({
     align = 'center',
     backgroundColor = `${color.greyLight}`,
-    backgroundURL,
+    backgroundURL = '',
     children,
     customImage = null,
     height = '80vh',
     linearGradient,
+    padding,
     rounded,
     subTitle,
     textColor = `${color.greyDark}`,
     title,
+    ...props
 }) => {
     return (
         <SectionStyled
@@ -26,6 +28,8 @@ const Hero: React.FC<HeroProps> = ({
             height={height}
             rounded={rounded}
             align={align}
+            padding={padding}
+            {...props}
         >
             <Typography
                 color={textColor}
@@ -45,7 +49,13 @@ const Hero: React.FC<HeroProps> = ({
                 </Typography>
             )}
 
-            {customImage?.url && <img src={customImage.url} alt='Hero-image' style={customImage?.styles} />}
+            {customImage?.url && (
+                <img
+                    src={customImage.url}
+                    alt="Hero-image"
+                    style={customImage?.styles}
+                />
+            )}
 
             {children && (
                 <DivStyled data-testid="test-hero_child">{children}</DivStyled>

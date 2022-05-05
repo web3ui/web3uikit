@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Icon, iconTypes } from '../Icon';
 import { SpanStyled } from './DatePicker.styles';
-import {
-    DivWrapperStyled,
-    InputStyled,
-    LabelStyled,
-    StrongStyled,
-} from '../Input/Input.styles';
+import InputStyles from '../Input/Input.styles';
 import color from '../../styles/colors';
 import { DatePickerProps } from './types';
-
+const { DivWrapperStyled, InputStyled, LabelStyled, StrongStyled } =
+    InputStyles;
 const DatePicker: React.FC<DatePickerProps> = ({
     disabled = false,
     id,
@@ -20,6 +16,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
     type = 'date',
     validation,
     value = new Date().toISOString().substring(0, type === 'date' ? 10 : 7),
+    ...props
 }) => {
     const [current, setCurrent] = useState(value);
     const [currentState, setCurrentState] = useState(state);
@@ -67,6 +64,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
             className={label && 'input_filled'}
             data-testid="test-date-picker"
             state={currentState}
+            {...props}
         >
             <InputStyled
                 data-testid="date-picker_input"
@@ -104,7 +102,10 @@ const DatePicker: React.FC<DatePickerProps> = ({
             </SpanStyled>
 
             {currentState === 'error' && (
-                <StrongStyled data-testid="date-picker_feedback">
+                <StrongStyled
+                    data-testid="date-picker_feedback"
+                    isError={false}
+                >
                     {invalidMessage}
                 </StrongStyled>
             )}

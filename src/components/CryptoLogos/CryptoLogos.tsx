@@ -1,12 +1,15 @@
 import React from 'react';
 import Illustration from '../Illustrations/Illustration';
 import { CryptoLogoProps } from './types';
-import { DivStyledCryptoLogo } from './CryptoLogos.styles';
+import styles from './CryptoLogos.styles';
+
+const { DivStyledCryptoLogo } = styles;
 
 const CryptoLogos: React.FC<CryptoLogoProps> = ({
     chain,
     size = '48px',
     bgColor,
+    ...props
 }: CryptoLogoProps) => {
     return (
         <DivStyledCryptoLogo
@@ -14,6 +17,7 @@ const CryptoLogos: React.FC<CryptoLogoProps> = ({
             data-testid={'test-crypto-logo'}
             size={size}
             bgColor={bgColor}
+            {...props}
         >
             {
                 <Illustration

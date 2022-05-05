@@ -1,8 +1,8 @@
-import resetCSS from '../../styles/reset';
-import fonts from '../../styles/fonts';
+import { LabelProps, SelectedItemProps, SelectProps } from './types';
 import color from '../../styles/colors';
+import fonts from '../../styles/fonts';
+import resetCSS from '../../styles/reset';
 import styled, { css } from 'styled-components';
-import { SelectProps, LabelProps, SelectedItemProps } from './types';
 
 const DivStyledWrapper = styled.div<Pick<SelectProps, 'state'>>`
     ${resetCSS};
@@ -15,7 +15,8 @@ const LabelStyled = styled.label<LabelProps>`
     ${fonts.text}
     background-color: ${color.white};
     height: 24px;
-    left: 12px;
+    left: ${({ hasPrefixIcon, hasSelectedIndex }) =>
+        hasPrefixIcon && !hasSelectedIndex ? 50 : 12}px;
     line-height: 1;
     pointer-events: none;
     position: absolute;
@@ -54,6 +55,8 @@ const SelectedItem = styled.div<SelectedItemProps>`
                 return color.greyLight;
         }
     }};
+
+    ${({ hasPrefixIcon }) => hasPrefixIcon && 'gap: 13px'};
 
     ${({ state }) =>
         state === 'disabled' &&
@@ -108,7 +111,6 @@ const SelectedItem = styled.div<SelectedItemProps>`
 const iconStyle = css`
     align-items: center;
     display: flex;
-    height: 100%;
     justify-content: center;
     max-height: 24px;
     max-width: 24px;
@@ -118,7 +120,7 @@ const iconStyle = css`
 const PrefixIcon = styled.div`
     ${resetCSS}
     ${iconStyle}
-    margin-right: 8px;
+    margin-right: 13px;
     & :first-child {
         width: 100%;
         height: 100%;
@@ -182,7 +184,7 @@ const Option = styled.div`
     align-items: center;
     cursor: pointer;
     display: flex;
-    padding: 13px 20px;
+    padding: 14px 50px 14px 16px;
     &:hover {
         background-color: rgba(128, 128, 128, 0.1);
     }
@@ -202,7 +204,7 @@ const NoDataTextStyled = styled.p`
     margin-bottom: 5px;
 `;
 
-export const SelectStyled = styled.select`
+const SelectStyled = styled.select`
     ${resetCSS}
     ${fonts.text}
     background-color: transparent;
@@ -223,7 +225,23 @@ export const SelectStyled = styled.select`
     }
 `;
 
-const SelectStyles = {
+const DivStyledDescription = styled.div`
+    ${resetCSS}
+    ${fonts.text}
+    bottom: -23px;
+    color: ${color.grey};
+    font-size: 12px;
+    height: 24px;
+    left: 16px;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: calc(100% - 26px);
+`;
+
+export default {
     DivStyledWrapper,
     DropDownIcon,
     ErrorLabel,
@@ -233,8 +251,7 @@ const SelectStyles = {
     Options,
     PrefixIcon,
     PrefixSpan,
-    SelectedItem,
     SelectStyled,
+    SelectedItem,
+    DivStyledDescription,
 };
-
-export default SelectStyles;

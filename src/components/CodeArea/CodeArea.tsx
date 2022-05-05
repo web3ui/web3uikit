@@ -1,8 +1,6 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import CodeAreaStyles from './CodeArea.styles';
-import color from '../../styles/colors';
 import { ICodeAreaProps } from './types';
-import { Icon } from '../Icon';
 import LineNumbers from './LineNumbers';
 
 const {
@@ -18,6 +16,9 @@ const CodeArea: FC<ICodeAreaProps> = ({
     maxWidth = '100%',
     onChange,
     headerComponent,
+    disabled,
+    minHeight = '400px',
+    ...props
 }) => {
     const [currentValue, setCurrentValue] = useState(text);
 
@@ -33,7 +34,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
     useEffect(() => {
         if (textareaRef && textareaRef.current) {
             textareaRef.current.style.height = '0px';
-            textareaRef.current.style.minHeight = '0px';
+            textareaRef.current.style.minHeight = minHeight;
             const scrollHeight = textareaRef.current.scrollHeight;
             textareaRef.current.style.height = scrollHeight + 'px';
             textareaRef.current.style.minHeight = scrollHeight + 'px';
@@ -41,31 +42,26 @@ const CodeArea: FC<ICodeAreaProps> = ({
     }, [currentValue]);
 
     return (
-        <WidthWrapperStyled maxWidth={maxWidth}>
-            <WrapperStyled>
+        <WidthWrapperStyled maxWidth={maxWidth} {...props}>
+            <WrapperStyled data-testid="test-codearea-wrapper">
                 {headerComponent && (
-                    <HeaderStyled>{headerComponent}</HeaderStyled>
+                    <HeaderStyled data-testid="test-codearea-header">
+                        {headerComponent}
+                    </HeaderStyled>
                 )}
                 <ContentStyled>
                     <LineNumbers currentValue={currentValue} />
                     <TextAreaStyled
+                        data-testid="test-codearea"
                         ref={textareaRef}
                         onChange={(
                             event: React.ChangeEvent<HTMLTextAreaElement>,
                         ) => valueChanged(event)}
+                        spellCheck={false}
                         value={currentValue}
+                        disabled={disabled}
                     />
                 </ContentStyled>
-                <Icon
-                    svg="expand"
-                    style={{
-                        position: 'absolute',
-                        bottom: '8px',
-                        right: '8px',
-                        zIndex: '1',
-                    }}
-                    fill={color.blue}
-                />
             </WrapperStyled>
         </WidthWrapperStyled>
     );

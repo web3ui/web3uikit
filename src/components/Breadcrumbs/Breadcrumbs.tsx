@@ -2,14 +2,16 @@ import React from 'react';
 import color from '../../styles/colors';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
-import {
+import styles from './Breadcrumbs.styles';
+import { IBreadcrumbs, Route } from './types';
+
+const {
     Breadcrumb,
     BreadcrumbsSeparator,
     ListItemStyled,
     ListStyled,
     NavStyled,
-} from './Breadcrumbs.styles';
-import { IBreadcrumbs, Route } from './types';
+} = styles;
 
 function getNumberOfRoutesToRender(routes: Route[], currentLocation?: string) {
     if (!currentLocation) return routes.length - 1;
@@ -72,9 +74,14 @@ const Breadcrumbs: IBreadcrumbs = ({
     routes,
     separator,
     currentLocation,
+    ...props
 }) => {
     return (
-        <NavStyled color={theme} data-testid={'breadcrumbs-nav-test-id'}>
+        <NavStyled
+            color={theme}
+            data-testid={'breadcrumbs-nav-test-id'}
+            {...props}
+        >
             <ListStyled style={style} data-testid={'breadcrumbs-ol-test-id'}>
                 {renderList(routes, separator, currentLocation)}
             </ListStyled>

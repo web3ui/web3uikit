@@ -1,44 +1,37 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Widget.stories';
-import 'jest-styled-components';
 
 const { Demo } = composeStories(stories);
 
-describe('Widget - Demo', () => {
-    let container: HTMLDivElement;
-    const titleId = 'widget-title';
-    const infoId = 'widget-info';
+const container = 'widget-container';
+const titleId = 'widget-title';
+const infoId = 'widget-info';
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Demo />, container);
-    });
+test('Widget Test', async () => {
+    const demoInfoText = Demo.args?.info;
+    const demoTitleText = Demo.args?.title;
 
-    afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
-    });
+    render(<Demo />);
 
-    it('should render the title', () => {
-        const element = container.querySelector(`[data-testid="${titleId}"]`);
-        expect(element).toBeDefined();
-    });
+    // should render widget
+    const element = screen.getByTestId(container);
+    expect(element).not.toBeNull();
 
-    it('should render informartion', () => {
-        const element = container.querySelector(`[data-testid="${infoId}"]`);
-        expect(element).toBeDefined();
-    });
+    // should render the title
+    const titleElement = screen.getByTestId(titleId);
+    expect(titleElement).toBeDefined();
 
-    it('should render correct title', async () => {
-        const element = container.querySelector(`[data-testid="${titleId}"]`);
-        expect(element?.innerHTML).toBe('ENVIRONMENT');
-    });
+    // should render information
+    const infoElement = screen.getByTestId(infoId);
+    expect(infoElement).toBeDefined();
 
-    it('should render correct information', async () => {
-        const element = container.querySelector(`[data-testid="${infoId}"]`);
-        expect(element?.innerHTML).toBe('Mainnet');
-    });
+    // should render correct title
+    const titleText = screen.getByTestId(titleId);
+    expect(titleText?.textContent).toBe(demoTitleText);
+
+    // should render correct info
+    const infoText = screen.getByTestId(infoId);
+    expect(infoText?.textContent).toBe(demoInfoText);
 });

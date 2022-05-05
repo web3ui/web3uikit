@@ -9,6 +9,8 @@ const WrapperStyled = styled.div`
     height: 100vh;
     justify-content: center;
     left: 0;
+    max-height: 100%;
+    max-width: 100%;
     pointer-events: auto;
     position: fixed;
     top: 0;

@@ -1,15 +1,21 @@
-import ReactDOM from 'react-dom';
 import React from 'react';
-import { fireEvent } from '@testing-library/react';
+import { cleanup, fireEvent, render } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Button.stories';
 import color from '../../styles/colors';
 import rgbToHex from '../../utils/rgbToHex';
 
 const {
-    Primary,
-    Secondary,
+    ColoredBlue,
+    ColoredGreen,
+    ColoredRed,
+    ColoredYellow,
+    Ghost,
+    Link,
+    LoadingButton,
+    LoadingButtonCustomProps,
     Outline,
+    Primary,
     PrimaryLarge,
     PrimarySmall,
     PrimaryWithIcon,
@@ -17,12 +23,11 @@ const {
     PrimaryWithIconOnly,
     PrimaryWithIconOnlyLarge,
     PrimaryWithIconOnlySmall,
-    ColoredRed,
-    ColoredGreen,
-    ColoredYellow,
-    ColoredBlue,
-    LoadingButton,
-    LoadingButtonCustomProps,
+    Secondary,
+    StatusDanger,
+    StatusSuccess,
+    StatusWarning,
+    Text,
 } = composeStories(stories);
 
 let container: HTMLDivElement;
@@ -34,12 +39,13 @@ describe('Button - Primary', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Primary onClick={testClickEvent} />, container);
+
+        render(<Primary onClick={testClickEvent} />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -79,8 +85,10 @@ describe('Button - Primary', () => {
 describe('Button - Primary Large', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimaryLarge />, container);
+
+        render(<PrimaryLarge />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -99,15 +107,16 @@ describe('Button - Primary Large', () => {
         expect(bgColorHex).toBe(color.green);
         expect(styles?.borderWidth).toBe('2px');
         expect(styles?.fontSize).toBe('16px');
-        expect(styles?.padding).toBe('4px 20px');
+        expect(styles?.padding).toBe('6px 22px');
     });
 });
 
 describe('Button - Primary Small', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimarySmall />, container);
+        render(<PrimarySmall />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -134,8 +143,10 @@ describe('Button - Primary with icon', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimaryWithIcon />, container);
+
+        render(<PrimaryWithIcon />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -165,8 +176,10 @@ describe('Button - Primary with icon', () => {
 describe('Button - Primary icon after', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimaryWithIconAfter />, container);
+
+        render(<PrimaryWithIconAfter />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -184,8 +197,10 @@ describe('Button - Primary icon after', () => {
 describe('Button - Primary icon only', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimaryWithIconOnly />, container);
+
+        render(<PrimaryWithIconOnly />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -206,8 +221,10 @@ describe('Button - Primary icon only', () => {
 describe('Button - Primary icon only large', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimaryWithIconOnlyLarge />, container);
+
+        render(<PrimaryWithIconOnlyLarge />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -228,8 +245,10 @@ describe('Button - Primary icon only large', () => {
 describe('Button - Primary icon only small', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PrimaryWithIconOnlySmall />, container);
+
+        render(<PrimaryWithIconOnlySmall />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -251,8 +270,10 @@ describe('Button - Secondary', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Secondary />, container);
+
+        render(<Secondary />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -297,8 +318,10 @@ describe('Button - Outline', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Outline />, container);
+
+        render(<Outline />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -342,8 +365,10 @@ describe('Button - ColoredRed', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ColoredRed />, container);
+
+        render(<ColoredRed />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -387,8 +412,10 @@ describe('Button - ColoredBlue', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ColoredBlue />, container);
+
+        render(<ColoredBlue />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -432,8 +459,10 @@ describe('Button - ColoredGreen', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ColoredGreen />, container);
+
+        render(<ColoredGreen />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -477,8 +506,10 @@ describe('Button - ColoredYellow', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ColoredYellow />, container);
+
+        render(<ColoredYellow />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -522,8 +553,10 @@ describe('Button - Outline', () => {
 
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<ColoredYellow />, container);
+
+        render(<ColoredYellow />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -565,8 +598,10 @@ describe('Button - Outline', () => {
 describe('Button - Loading', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<LoadingButton />, container);
+
+        render(<LoadingButton />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -603,8 +638,10 @@ describe('Button - Loading', () => {
 describe('Button - Loading', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<LoadingButtonCustomProps />, container);
+
+        render(<LoadingButtonCustomProps />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
         document.body.removeChild(container);
@@ -627,6 +664,285 @@ describe('Button - Loading', () => {
         expect(bgColorHex).toBe(color.green);
         const colorHex = styles && rgbToHex(styles.color).toUpperCase();
         expect(colorHex).toBe(color.white);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - StatusWarning', () => {
+    const testText = StatusWarning?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+
+        render(<StatusWarning />, {
+            container: document.body.appendChild(container),
+        });
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Warning button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.yellowLight);
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.yellow);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - StatusDanger', () => {
+    const testText = StatusDanger?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+
+        render(<StatusDanger />, {
+            container: document.body.appendChild(container),
+        });
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Warning button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.red);
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.red);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - StatusSuccess', () => {
+    const testText = StatusSuccess?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+
+        render(<StatusSuccess />, {
+            container: document.body.appendChild(container),
+        });
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Warning button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && rgbToHex(styles.backgroundColor).toUpperCase();
+        expect(bgColorHex).toBe(color.green);
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.green);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - Ghost', () => {
+    const testText = Ghost?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+
+        render(<Ghost />, {
+            container: document.body.appendChild(container),
+        });
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Warning button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.white);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - Link', () => {
+    const testText = Link?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+
+        render(<Link />, {
+            container: document.body.appendChild(container),
+        });
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Warning button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && (styles.backgroundColor);
+        expect(bgColorHex).toBe('transparent');
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.blue);
+    });
+    it('returns the normal onClick event', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        element && fireEvent.click(element);
+        expect(testClickEvent).toHaveBeenCalled();
+    });
+});
+
+describe('Button - Text', () => {
+    const testText = Text?.args?.text;
+
+    beforeEach(() => {
+        container = document.createElement('div');
+
+        render(<Text />, {
+            container: document.body.appendChild(container),
+        });
+    });
+    afterEach(() => {
+        document.body.removeChild(container);
+        container.remove();
+    });
+
+    it('renders the component', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element).not.toBeNull();
+    });
+    it('renders text correctly', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        expect(element?.textContent).toBe(testText);
+    });
+    it('renders Warning button with correct styles', () => {
+        const element = container.querySelector(
+            `[data-testid="${buttonTestId}"]`,
+        );
+        const styles = element && getComputedStyle(element);
+        const bgColorHex =
+            styles && (styles.backgroundColor);
+        expect(bgColorHex).toBe('transparent');
+        const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+        expect(colorHex).toBe(color.blue);
     });
     it('returns the normal onClick event', () => {
         const element = container.querySelector(

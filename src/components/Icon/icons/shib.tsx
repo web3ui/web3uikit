@@ -3,6 +3,8 @@ import React from 'react';
 
 const shibIcon = (fill: string, size: number, style?: React.CSSProperties) => (
     <svg
+        aria-hidden="true"
+        data-testid="test-icon"
         id="Group_938"
         xmlns="http://www.w3.org/2000/svg"
         width={size}

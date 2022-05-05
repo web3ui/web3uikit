@@ -91,14 +91,14 @@ export const DivStyledArrow = styled.div<TStyleProps>`
     background: transparent;
 `;
 
-export const DivStyledFlex = styled.div`
+const DivStyledFlex = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
     width: max-content;
 `;
 
-export const DivStyledDropdown = styled.div<TStyleProps>`
+const DivStyledDropdown = styled.div<TStyleProps>`
     background: ${color.blueDark};
     border-radius: 20px;
     height: auto;
@@ -108,8 +108,7 @@ export const DivStyledDropdown = styled.div<TStyleProps>`
     z-index: 999;
     ${(p) => getContainerStyleByPosition(p.position)}
 `;
-
-export const DivStyledChild = styled.div`
+const DivStyledChild = styled.div`
     cursor: pointer;
     height: auto;
     width: 100%;
@@ -118,3 +117,10 @@ export const DivStyledChild = styled.div`
         background: ${color.blueDark2};
     }
 `;
+
+export default {
+    DivStyledArrow,
+    DivStyledChild,
+    DivStyledDropdown,
+    DivStyledFlex,
+};

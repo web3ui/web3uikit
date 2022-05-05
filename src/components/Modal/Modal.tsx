@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { ModalProps } from './types';
 import Button from '../Button/Button';
 import { iconTypes } from '../Icon/collection';
-import {
-    HeaderStyled,
+import styles from './Modal.styles';
+
+const {
+    CustomFooterStyled,
+    DivStyled,
+    DivStyledContent,
     DivStyledWrap,
     FooterStyled,
-    DivStyledContent,
-    DivStyled,
-    CustomFooterStyled,
-} from './Modal.styles';
+    HeaderStyled,
+} = styles;
 
 const Modal: React.FC<ModalProps> = ({
     cancelText = 'Cancel',
@@ -20,6 +22,7 @@ const Modal: React.FC<ModalProps> = ({
     hasFooter = true,
     id = String(Date.now()),
     isCancelDisabled,
+    isCentered = false,
     isOkDisabled,
     isVisible = true,
     okText = 'Ok',
@@ -32,6 +35,7 @@ const Modal: React.FC<ModalProps> = ({
     customFooter,
     closeButton,
     canOverflow = false,
+    ...props
 }: ModalProps) => {
     const [visible, setVisible] = useState(isVisible);
 
@@ -54,7 +58,13 @@ const Modal: React.FC<ModalProps> = ({
     };
 
     return (
-        <DivStyled id={id} isVisible={visible} data-testid="modal-test-id">
+        <DivStyled
+            data-testid="modal-test-id"
+            id={id}
+            isCentered={isCentered}
+            isVisible={visible}
+            {...props}
+        >
             <DivStyledWrap width={width} canOverflow={canOverflow}>
                 <HeaderStyled
                     data-testid={'modal-header-test-id'}
@@ -62,25 +72,27 @@ const Modal: React.FC<ModalProps> = ({
                     fixedMode={fixedMode}
                     headerHasBottomBorder={headerHasBottomBorder}
                 >
-                    {typeof title == 'string' ? <h3>{title}</h3> : title}
-                    {closeButton ? (
-                        closeButton
-                    ) : (
-                        <Button
-                            iconColor={'#68738D'}
-                            theme={'secondary'}
-                            radius={40}
-                            id={'close'}
-                            data-testid={'modal-close-test-id'}
-                            icon={iconTypes.x}
-                            iconLayout={'icon-only'}
-                            onClick={
-                                onCloseButtonPressed
-                                    ? onCloseButtonPressed
-                                    : toggleVisibility
-                            }
-                        />
-                    )}
+                    <>
+                        {typeof title == 'string' ? <h3>{title}</h3> : title}
+                        {closeButton ? (
+                            closeButton
+                        ) : (
+                            <Button
+                                iconColor={'#68738D'}
+                                theme={'secondary'}
+                                radius={100}
+                                id={'modal-close-button'}
+                                data-testid={'modal-close-test-id'}
+                                icon={iconTypes.x}
+                                iconLayout={'icon-only'}
+                                onClick={
+                                    onCloseButtonPressed
+                                        ? onCloseButtonPressed
+                                        : toggleVisibility
+                                }
+                            />
+                        )}
+                    </>
                 </HeaderStyled>
 
                 <DivStyledContent
@@ -98,6 +110,7 @@ const Modal: React.FC<ModalProps> = ({
                     >
                         {hasCancel && (
                             <Button
+                                id="modal-cancel-button"
                                 data-testid={'modal-cancel-button-test-id'}
                                 disabled={isCancelDisabled}
                                 text={cancelText}

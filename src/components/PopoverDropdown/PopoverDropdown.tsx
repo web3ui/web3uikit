@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import {
-    DivStyledArrow,
-    DivStyledChild,
-    DivStyledDropdown,
-    DivStyledFlex,
-} from './PopoverDropdown.styles';
 import { PopoverDropdownProps } from './types';
-
+import PopoverDropdownStyles from './PopoverDropdown.styles';
+const { DivStyledArrow, DivStyledFlex, DivStyledDropdown, DivStyledChild } =
+    PopoverDropdownStyles;
 const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
     children,
     id,
@@ -14,6 +10,7 @@ const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
     parent,
     position,
     moveBody = -50,
+    ...props
 }) => {
     let timeout: ReturnType<typeof setTimeout>;
     const [showDropdown, setVisibility] = useState(false);
@@ -41,6 +38,7 @@ const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
             id={id}
             onMouseEnter={() => onTogglePopover(true)}
             onMouseLeave={() => onTogglePopover(false)}
+            {...props}
         >
             <div data-testid={'dropdown-parent-test-id'}>{parent}</div>
 

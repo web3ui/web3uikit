@@ -3,14 +3,14 @@ import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
 
-export const H3Styled = styled.h3`
+const H3Styled = styled.h3`
     ${resetCSS};
     ${fonts.heading};
     ${fonts.h3};
     margin-bottom: 18px;
 `;
 
-export const H4Styled = styled.h4`
+const H4Styled = styled.h4`
     ${resetCSS};
     ${fonts.heading};
     ${fonts.h4};
@@ -18,7 +18,7 @@ export const H4Styled = styled.h4`
     margin-top: 32px;
 `;
 
-export const FormStyled = styled.form`
+const FormStyled = styled.form`
     ${resetCSS};
     background-color: ${color.white};
     border-radius: 16px;
@@ -33,3 +33,9 @@ export const FormStyled = styled.form`
         margin-top: 32px;
     }
 `;
+
+export default {
+    FormStyled,
+    H4Styled,
+    H3Styled,
+};

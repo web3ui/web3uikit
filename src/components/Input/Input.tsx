@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { CopyButton } from '../CopyButton';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
-import {
+import InputStyles from './Input.styles';
+import type { InputProps } from './types';
+
+const {
     CopyContainerStyled,
     DivStyled,
     DivWrapperStyled,
@@ -10,20 +13,22 @@ import {
     LabelStyled,
     StrongStyled,
     VisibilityIcon,
-} from './Input.styles';
-import type { InputProps } from './types';
+} = InputStyles;
 
 const Input: React.FC<InputProps> = ({
     autoComplete = true,
     autoFocus = false,
     disabled = false,
+    description,
     errorMessage = 'Sorry this is not valid',
     hasCopyButton = false,
     id,
+    ref,
     inputHidden = false,
     label,
     name,
     onChange,
+    onBlur,
     placeholder = '',
     prefixIcon,
     size = 'regular',
@@ -34,6 +39,9 @@ const Input: React.FC<InputProps> = ({
     value = '',
     width = '320px',
     labelBgColor,
+    iconPosition = 'front',
+    customInput,
+    ...props
 }: InputProps) => {
     const [currentValue, setCurrentValue] = useState(value);
     const [currentState, setCurrentState] = useState(state);
@@ -44,6 +52,8 @@ const Input: React.FC<InputProps> = ({
     useEffect(() => setIsInputHidden(type === 'password'), [inputHidden]);
     useEffect(() => setCurrentState(state), [state]);
     useEffect(() => setMainType(type), [type]);
+    useEffect(() => setCurrentValue(value), [value]);
+    useEffect(() => setInvalidMessage(errorMessage), [errorMessage]);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
@@ -70,6 +80,7 @@ const Input: React.FC<InputProps> = ({
         );
 
     const validate = (event: React.FocusEvent<HTMLInputElement>) => {
+        onBlur && onBlur(event);
         if (!hasValidation()) return;
 
         // check for HTML validation
@@ -107,15 +118,19 @@ const Input: React.FC<InputProps> = ({
             data-testid="test-div"
             style={{ ...style, width }}
             size={size}
+            {...props}
         >
-            {prefixIcon && (
+            {prefixIcon && iconPosition == 'front' && (
                 <DivStyled className="input_prefixIcon">
                     <Icon svg={prefixIcon} />
                 </DivStyled>
             )}
+            {customInput && customInput}
+
             <InputStyled
                 autoComplete={`${autoComplete}`}
                 autoFocus={autoFocus}
+                customInput={customInput}
                 data-testid="test-input"
                 disabled={currentState == 'disabled'}
                 id={id}
@@ -124,6 +139,7 @@ const Input: React.FC<InputProps> = ({
                 min={type === 'number' ? validation?.numberMin : undefined}
                 minLength={validation?.characterMinLength}
                 name={name}
+                ref={ref}
                 onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
                     validate(event)
                 }
@@ -141,25 +157,39 @@ const Input: React.FC<InputProps> = ({
                         : 'text'
                 }
                 value={currentValue}
+                {...props}
             />
+
             {label && (
                 <LabelStyled
                     data-testid="test-label"
                     htmlFor={id}
-                    hasPrefix={typeof prefixIcon !== 'undefined'}
+                    hasPrefix={
+                        typeof prefixIcon !== 'undefined' &&
+                        iconPosition == 'front'
+                    }
                     labelBgColor={labelBgColor}
                 >
                     {label}
                     {validation?.required && '*'}
                 </LabelStyled>
             )}
-
             {currentState === 'error' && (
-                <StrongStyled data-testid="test-invalid-feedback">
+                <StrongStyled
+                    data-testid="test-invalid-feedback"
+                    isError={true}
+                >
                     {invalidMessage}
                 </StrongStyled>
             )}
-
+            {description && !(currentState === 'error') && (
+                <StrongStyled
+                    data-testid="test-invalid-feedback"
+                    isError={false}
+                >
+                    {description}
+                </StrongStyled>
+            )}
             {canToggleHideInput() && (
                 <VisibilityIcon
                     className="input_visibility"
@@ -173,7 +203,11 @@ const Input: React.FC<InputProps> = ({
                     )}
                 </VisibilityIcon>
             )}
-
+            {prefixIcon && iconPosition == 'end' && (
+                <DivStyled className="input_prefixIcon">
+                    <Icon svg={prefixIcon} />
+                </DivStyled>
+            )}
             {hasCopyButton && (
                 <CopyContainerStyled>
                     <CopyButton text={currentValue} />

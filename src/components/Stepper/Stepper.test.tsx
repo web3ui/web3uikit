@@ -1,8 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import ReactDOMServer from 'react-dom/server';
 import { act } from 'react-dom/test-utils';
-import { fireEvent } from '@testing-library/react';
+import { fireEvent, render, cleanup } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Stepper.stories';
 import { noNavTestStepData, testStepData } from './testStepData';
@@ -13,7 +11,7 @@ const { Demo, PreLoadStep0, StepsWithFooter, StepsWithoutNav } =
 let container: HTMLDivElement;
 const stepperTestID = 'test-stepper';
 const stepperTestTitle = 'test-stepper_title';
-const stepperTestContent = 'test-stepper_content';
+// const stepperTestContent = 'test-stepper_content';
 const stepperTestNav = 'test-stepper_nav';
 const stepperTestNumbers = 'test-stepper_numbers';
 const stepperTestHelper = 'test-stepper_helper';
@@ -21,12 +19,12 @@ const stepperTestHelper = 'test-stepper_helper';
 describe('Demo', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<Demo />, container);
+        render(<Demo />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -42,18 +40,6 @@ describe('Demo', () => {
         );
         expect(title).not.toBeNull();
         expect(title?.textContent).toBe(testStepData[0].title);
-    });
-
-    it('renders the correct content', () => {
-        const content: HTMLDivElement | null = container.querySelector(
-            `[data-testid="${stepperTestContent}"]`,
-        );
-        expect(content).not.toBeNull();
-
-        const jsxToHtml = ReactDOMServer.renderToStaticMarkup(
-            testStepData[0].content,
-        );
-        expect(content?.innerHTML).toBe(jsxToHtml);
     });
 
     it('next & prev nav cycles the content', () => {
@@ -121,12 +107,12 @@ describe('Demo', () => {
 describe('PreLoadStep0', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<PreLoadStep0 />, container);
+        render(<PreLoadStep0 />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -146,7 +132,7 @@ describe('PreLoadStep0', () => {
 
     it('renders the loading spinner', () => {
         const loadingSpinner: HTMLDivElement | null = container.querySelector(
-            `[data-testid="test-loading"]`,
+            '[data-testid="test-loading"]',
         );
         expect(loadingSpinner).not.toBeNull();
     });
@@ -155,12 +141,13 @@ describe('PreLoadStep0', () => {
 describe('StepsWithFooter', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<StepsWithFooter />, container);
+
+        render(<StepsWithFooter />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -184,12 +171,13 @@ describe('StepsWithFooter', () => {
 describe('StepsWithoutNav', () => {
     beforeEach(() => {
         container = document.createElement('div');
-        document.body.appendChild(container);
-        ReactDOM.render(<StepsWithoutNav />, container);
+
+        render(<StepsWithoutNav />, {
+            container: document.body.appendChild(container),
+        });
     });
     afterEach(() => {
-        document.body.removeChild(container);
-        container.remove();
+        cleanup();
     });
 
     it('renders the component', () => {
@@ -224,7 +212,9 @@ describe('StepsWithoutNav', () => {
 
     it('next or prev events programmatically cycles the content', () => {
         act(() => {
-            ReactDOM.render(<StepsWithoutNav />, container);
+            render(<StepsWithoutNav />, {
+                container: document.body.appendChild(container),
+            });
         });
         const step1Title: HTMLHeadingElement | null = container.querySelector(
             `[data-testid="${stepperTestTitle}"]`,

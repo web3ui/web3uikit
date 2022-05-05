@@ -3,7 +3,7 @@ import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
 
-const WidgetStyled = styled.div`
+const DivStyled = styled.div`
     ${resetCSS};
     background-color: ${colors.white};
     border: 1px solid ${colors.paleBlue2};
@@ -15,15 +15,15 @@ const WidgetStyled = styled.div`
     :first-child {
         :first-child {
             ${fonts.openSans};
+            font-weight: 400;
         }
         :nth-child(1) {
-            ${fonts.argentumSans};
+            ${fonts.openSans};
+            font-weight: 600;
         }
     }
 `;
 
-const DivStyled = styled.div`
-    display: grid;
-    gap: 4px;
-`;
-export default { DivStyled, WidgetStyled };
+export default {
+    DivStyled,
+};

@@ -1,3 +1,4 @@
+import React from 'react';
 import { ValidateInput } from '../Input/types';
 
 export interface TextAreaProps {
@@ -22,9 +23,19 @@ export interface TextAreaProps {
     name?: string;
 
     /**
+     * ref object
+     */
+    ref?: React.RefObject<HTMLTextAreaElement>;
+
+    /**
      * standard onChange that returns the entire event, as normal you can access event.target
      */
     onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+
+    /**
+     * standard onBlur that returns the entire event, as normal you can access event.target
+     */
+    onBlur?: (event: React.FocusEvent<HTMLTextAreaElement>) => void;
 
     /**
      * a short piece of text to fill the input before the user interacts
@@ -37,9 +48,10 @@ export interface TextAreaProps {
     state?: 'error' | 'confirmed' | 'disabled';
 
     /**
-     * types of input available
+     * You can validate your textarea
+     * characterMaxLength, characterMinLength, numberMax, numberMin, regExp, regExpInvalidMessage & required
      */
-    type?: 'text' | 'number' | 'email' | 'tel' | 'password';
+    validation?: ValidateInput;
 
     /**
      * you can pass a default value so the input is pre-filled
@@ -50,10 +62,4 @@ export interface TextAreaProps {
      * you can pass a CSS value for the components width
      */
     width?: string;
-
-    /**
-     * You can validate your textarea
-     * characterMaxLength, characterMinLength, numberMax, numberMin, regExp, regExpInvalidMessage & required
-     */
-    validation?: ValidateInput;
 }

@@ -1,7 +1,23 @@
-import { css } from 'styled-components';
+import styled from 'styled-components';
 import color from '../../styles/colors';
+import fonts from '../../styles/fonts';
+import { BannerStripProps } from './types';
 
-const section = css`
+const getBackgroundColor = (type: string) => {
+    switch (type) {
+        case 'success':
+            return color.green;
+        case 'warning':
+            return color.yellow;
+        case 'error':
+            return color.red;
+        default:
+            return color.blue;
+    }
+};
+
+const SectionStyled = styled.section<Pick<BannerStripProps, 'type' | 'height'>>`
+    ${fonts.text};
     align-items: center;
     color: ${color.white};
     display: flex;
@@ -14,6 +30,8 @@ const section = css`
     top: 0;
     width: 100vw;
     z-index: 10001;
+    background-color: ${(p) => p.type && getBackgroundColor(p.type)};
+    height: ${({ height }) => height};
 
     button {
         padding: 0 8px;
@@ -28,8 +46,4 @@ const section = css`
     }
 `;
 
-const bannerStripStyles = {
-    section,
-};
-
-export default bannerStripStyles;
+export default { SectionStyled };

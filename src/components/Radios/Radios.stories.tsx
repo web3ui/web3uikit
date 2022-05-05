@@ -1,5 +1,5 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Radios from './Radios';
 
 export default {
@@ -7,7 +7,7 @@ export default {
     component: Radios,
     parameters: {
         actions: {
-            handles: ['onChange', 'changed'],
+            handles: ['onChange', 'changed', 'onBlur'],
         },
     },
 } as ComponentMeta<typeof Radios>;

@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { TableProps } from '.';
-import { paginate } from './Helper';
 import getModuleAnimation from '../Card/Animations/animations';
-import {
-    Divider,
-    PaginationTag,
-    TableGrid,
-    TableParent,
-    Pagination,
-    PaginationText,
-    NoData,
-    DivSpinnerLoaderParent,
-    DivTableCell,
-} from './Table.styles';
 import Loading from '../Loading/Loading';
 import { Typography } from '../Typography';
+import { paginate } from './Helper';
+import {
+    Divider,
+    DivSpinnerLoaderParent,
+    DivTableCell,
+    NoData,
+    Pagination,
+    PaginationTag,
+    PaginationText,
+    TableGrid,
+    TableGridContainer,
+    TableParent,
+} from './Table.styles';
 
 const Table: React.FC<TableProps> = ({
     columnsConfig,
@@ -31,6 +32,7 @@ const Table: React.FC<TableProps> = ({
     customLoadingContent,
     alignCellItems = 'start',
     justifyCellItems = 'start',
+    ...props
 }) => {
     const [pageNum, setPageNum] = useState<number>(
         customPageNumber ? customPageNumber : 0,
@@ -211,11 +213,13 @@ const Table: React.FC<TableProps> = ({
     );
 
     return (
-        <TableParent data-testid="test-table-parent">
-            <TableGrid columns={columnsConfig}>
-                <RenderTableHeader />
-                {isLoading ? <Loader /> : <RenderTable />}
-            </TableGrid>
+        <TableParent data-testid="test-table-parent" {...props}>
+            <TableGridContainer>
+                <TableGrid columns={columnsConfig}>
+                    <RenderTableHeader />
+                    {isLoading ? <Loader /> : <RenderTable />}
+                </TableGrid>
+            </TableGridContainer>
             <RenderPagination />
         </TableParent>
     );

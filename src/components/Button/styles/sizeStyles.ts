@@ -11,12 +11,14 @@ export const sizeSmall = css`
 export const sizeRegular = css`
     border-radius: 12px;
     font-size: 14px;
-    padding: 4px 16px;
+    font-weight: 600;
+    padding: 2px 14px;
 `;
 
 export const sizeLarge = css`
     border-radius: 16px;
     border-width: 2px;
     font-size: 16px;
-    padding: 4px 20px;
+    font-weight: 600;
+    padding: 6px 22px;
 `;

@@ -6,19 +6,21 @@ import bgConfig from './bgConfig';
 const getBackground = (chain: chainType) => bgConfig[chain];
 
 const getSize = (size?: sizeType) => css`
-    width: ${size};
     height: ${size};
+    width: ${size};
 `;
 
-export const DivStyledCryptoLogo = styled.div<CryptoLogoProps>`
+const DivStyledCryptoLogo = styled.div<CryptoLogoProps>`
     ${resetCSS};
+    ${(props) => getSize(props.size)}
     align-items: center;
-    background: ${(props) => props?.bgColor || getBackground(props.chain)};
     border-radius: 100%;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     overflow: hidden;
     position: relative;
-    ${(props) => getSize(props.size)}
+    background: ${(props) => props?.bgColor || getBackground(props.chain)};
 `;
+
+export default { DivStyledCryptoLogo };

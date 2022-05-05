@@ -8,6 +8,8 @@ import { Input } from '../Input';
 import { useArgs } from '@storybook/addons';
 import { Button } from '../Button';
 import Dropdown from '../Dropdown/Dropdown';
+import { Typography } from '../Typography';
+import color from '../../styles/colors';
 
 const hasPositionAbsoluteFix = {
     transform: 'scale(1)',
@@ -26,45 +28,64 @@ const Template: ComponentStory<typeof Modal> = (args) => {
     const [{}, updateArgs] = useArgs();
 
     return (
-        <Modal
-            {...args}
-            onCancel={() => {
-                console.log('canceled');
-                updateArgs({ isVisible: false });
-            }}
-            onOk={() => {
-                console.log('pressed ok');
-                updateArgs({ isVisible: false });
-            }}
-            onCloseButtonPressed={() => {
-                console.log('pressed close');
-                updateArgs({ isVisible: false });
-            }}
-        />
+        <div>
+            <Modal
+                {...args}
+                onCancel={() => {
+                    console.log('canceled');
+                    updateArgs({ isVisible: false });
+                }}
+                onOk={() => {
+                    console.log('pressed ok');
+                    updateArgs({ isVisible: false });
+                }}
+                onCloseButtonPressed={() => {
+                    console.log('pressed close');
+                    updateArgs({ isVisible: false });
+                }}
+            />
+        </div>
     );
 };
 
 export const Regular = Template.bind({});
 Regular.args = {
     id: 'regular',
-    title: 'Confirm',
+    title: (
+        <div style={{ display: 'flex', gap: 10 }}>
+            <Icon svg={iconTypes.edit} size={28} fill={colors.grey} />
+            <Typography variant="h3" color={color.grey}>
+                Edit Nickname
+            </Typography>
+        </div>
+    ),
+    okText: 'Save Changes',
+    cancelText: 'Discard Changes',
     isVisible: true,
     children: [
-        <div
-            key={'0'}
-            style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexDirection: 'column',
-            }}
-        >
-            <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
-            <p>Proceed uploading?</p>
+        <div style={{ padding: '20px 0 20px 0' }}>
+            <Input key={0} label="Nickname" width="100%" />
         </div>,
     ],
 };
 
+export const VerticalCenter = Template.bind({});
+VerticalCenter.args = {
+    id: 'v-center',
+    title: (
+        <div style={{ display: 'flex', gap: 10 }}>
+            <Icon svg={iconTypes.edit} size={28} fill={colors.grey} />
+            <Typography variant="h3" color={color.grey}>
+                Edit Nickname
+            </Typography>
+        </div>
+    ),
+    okText: 'Save Changes',
+    cancelText: 'Discard Changes',
+    isCentered: true,
+    isVisible: true,
+    children: [<Input key={0} label="Nickname" width="100%" />],
+};
 export const BorderedHeader = Template.bind({});
 BorderedHeader.args = {
     id: 'regular',
@@ -80,7 +101,10 @@ BorderedHeader.args = {
             }}
         >
             <Icon svg={iconTypes.cloud} size={64} fill={colors.blueDark2} />
-            <p>This is a demo on how to use <em>headerHasBottomBorder</em> props?</p>
+            <p>
+                This is a demo on how to use <em>headerHasBottomBorder</em>{' '}
+                props?
+            </p>
         </div>,
     ],
 };
@@ -249,9 +273,9 @@ CustomWidth.args = {
     title: 'You can pass any valid CSS value as width',
     isVisible: true,
     children: [
-        <p>this Modal is 300px width (and will scale down with screen size)</p>,
+        <p>this Modal is 900px width (and will scale down with screen size)</p>,
     ],
-    width: '300px',
+    width: '900px',
 };
 
 export const CustomFooter = Template.bind({});
@@ -358,51 +382,45 @@ export const WithDropdown = Template.bind({});
 WithDropdown.args = {
     id: 'regular',
     isVisible: true,
-    hasFooter: false,
     canOverflow: true,
     children: [
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            efficitur id leo sed auctor. Cras mollis, nisi ut venenatis aliquet,
-            purus nisl finibus ipsum, eget condimentum dolor lacus vel risus.
-            Curabitur ullamcorper lorem porttitor nisl auctor, in rutrum mauris
-            luctus. Fusce vel mi ut sapien porttitor pulvinar.
-        </p>,
-        <Dropdown
-            onChange={() => {}}
-            label="Select Region: "
-            width="100%"
-            options={[
-                {
-                    id: 'New York',
-                    label: 'New York',
-                },
-                {
-                    id: 'Toronto',
-                    label: 'Toronto',
-                },
-                {
-                    id: 'London',
-                    label: 'London',
-                },
-                {
-                    id: 'Amsterdam',
-                    label: 'Amsterdam',
-                },
-                {
-                    id: 'Frankfurt',
-                    label: 'Frankfurt',
-                },
-                {
-                    id: 'Bangalore',
-                    label: 'Bangalore',
-                },
-                {
-                    id: 'Singapore',
-                    label: 'Singapore',
-                },
-            ]}
-        />,
+        <div style={{ marginBottom: '20px' }}>
+            <Dropdown
+                onChange={() => {}}
+                label="Select Region: "
+                width="100%"
+                options={[
+                    {
+                        id: 'New York',
+                        label: 'New York',
+                    },
+                    {
+                        id: 'Toronto',
+                        label: 'Toronto',
+                    },
+                    {
+                        id: 'London',
+                        label: 'London',
+                    },
+                    {
+                        id: 'Amsterdam',
+                        label: 'Amsterdam',
+                    },
+                    {
+                        id: 'Frankfurt',
+                        label: 'Frankfurt',
+                    },
+                    {
+                        id: 'Bangalore',
+                        label: 'Bangalore',
+                    },
+                    {
+                        id: 'Singapore',
+                        label: 'Singapore',
+                    },
+                ]}
+            />
+        </div>,
     ],
 };
 

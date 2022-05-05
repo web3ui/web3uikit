@@ -20,7 +20,10 @@ const {
 type web3StatusType = 'disconnected' | 'pending' | 'only_web3';
 
 const ConnectButton: React.FC<ConnectButtonProps> = ({
+    chainId,
     moralisAuth = true,
+    signingMessage = 'Moralis Authentication',
+    ...props
 }) => {
     const {
         account,
@@ -44,19 +47,20 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         // to avoid problems in Next.JS apps because of window object
         if (typeof window == 'undefined') return;
 
-        const connectorId = window.localStorage.getItem(
-            'connectorId',
+        const provider = window.localStorage.getItem(
+            'provider',
         ) as MoralisType.Web3ProviderType;
         if (
             !isWeb3Enabled &&
             !isWeb3EnableLoading &&
-            connectorId &&
+            provider &&
             web3Status === 'disconnected'
         ) {
             // @ts-ignore
             setWeb3Status('pending');
             enableWeb3({
-                provider: connectorId,
+                provider,
+                chainId,
                 onSuccess: () => setWeb3Status('only_web3'),
             });
         }
@@ -66,8 +70,8 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         // to avoid problems in Next.JS apps because of window object
         if (typeof window == 'undefined') return;
 
-        const connectorId = window.localStorage.getItem(
-            'connectorId',
+        const provider = window.localStorage.getItem(
+            'provider',
         ) as MoralisType.Web3ProviderType;
         if (
             isInitialized &&
@@ -77,7 +81,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
             moralisAuth &&
             web3Status === 'only_web3'
         ) {
-            authenticate({ provider: connectorId });
+            authenticate({ provider, chainId, signingMessage });
         }
     }, [isAuthenticated, isInitialized, isWeb3Enabled, isAuthenticating]);
 
@@ -91,7 +95,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         // to avoid problems in Next.JS apps because of localStorage
         if (typeof window == 'undefined') return;
 
-        window.localStorage.removeItem('connectorId');
+        window.localStorage.removeItem('provider');
         setWeb3Status('disconnected');
 
         deactivateWeb3();
@@ -107,6 +111,8 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
                     <TextStyled>Connect Wallet</TextStyled>
                 </ConnectButtonStyled>
                 <WalletModal
+                    chainId={chainId}
+                    signingMessage={signingMessage}
                     isOpened={isConnectModalOpen}
                     moralisAuth={moralisAuth}
                     setIsOpened={setIsConnectModalOpen}
@@ -116,7 +122,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
     }
 
     return (
-        <WrapperStyled>
+        <WrapperStyled {...props}>
             <AccountInfoStyled>
                 <BalanceBlockStyled>
                     <NativeBalance style={{ margin: '0 8px 0 12px' }} />

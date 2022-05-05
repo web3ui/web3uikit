@@ -14,33 +14,40 @@ import { Tooltip } from '../Tooltip';
 import { Button } from '../Button';
 
 const CreditCard: React.FC<CreditCardProps> = ({
+    brand,
     expiresAt,
     isExpired,
+    isRemovable = true,
     lastDigits,
     name,
     onRemove,
-    brand,
     pressed,
+    ...props
 }: CreditCardProps) => {
     return (
         <DivStyledCreditCard
             brand={brand}
             isExpired={isExpired}
             pressed={pressed}
+            {...props}
         >
             <DivStyledFlexEnd>
                 <Tooltip
                     position="bottom"
                     children={
-                        <Button
-                            onClick={() => onRemove && onRemove()}
-                            isTransparent={true}
-                            theme={'secondary'}
-                            icon={iconTypes.bin}
-                            iconLayout={'icon-only'}
-                            size={'small'}
-                            iconColor={'red'}
-                        />
+                        <>
+                            {isRemovable && (
+                                <Button
+                                    onClick={() => onRemove && onRemove()}
+                                    isTransparent={true}
+                                    theme={'secondary'}
+                                    icon={iconTypes.bin}
+                                    iconLayout={'icon-only'}
+                                    size={'small'}
+                                    iconColor={'red'}
+                                />
+                            )}
+                        </>
                     }
                     content="Remove"
                 />

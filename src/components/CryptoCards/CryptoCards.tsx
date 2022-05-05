@@ -3,7 +3,9 @@ import { Button } from '../Button';
 import { iconTypes } from '../Icon/collection';
 import Illustration from '../Illustrations/Illustration';
 import { CryptoCardProps } from './types';
-import {
+import styles from './CryptoCards.styles';
+
+const {
     DivStyledCryptoCard,
     DivStyledButton,
     DivStyledImage,
@@ -12,7 +14,7 @@ import {
     DivStyledNetworkInfo,
     PStyledChainName,
     PStyledNetwork,
-} from './CryptoCards.styles';
+} = styles;
 
 const CryptoCards: React.FC<CryptoCardProps> = ({
     bgColor,
@@ -21,9 +23,10 @@ const CryptoCards: React.FC<CryptoCardProps> = ({
     chainType,
     onClick,
     settingsIcon,
+    ...props
 }: CryptoCardProps) => {
     return (
-        <DivStyledCryptoCard color={bgColor} data-testid={'test-crypto-card'}>
+        <DivStyledCryptoCard color={bgColor} data-testid={'test-crypto-card'} {...props}>
             <DivStyledInfo>
                 <DivStyledImage>
                     <DivStyledLogo>

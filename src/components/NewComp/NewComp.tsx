@@ -13,26 +13,25 @@ import color from '../../styles/colors';
 import { NewCompProps } from './types';
 
 // importing CSS styles as styled components, sorted alphabetically
-import {
-    HeadingStyled,
-    SectionStyled,
-    SpanStyled,
-    TextStyled,
-    TitleStyled,
-} from './NewComp.styles';
+import styles from './NewComp.styles';
+
+const { HeadingStyled, SectionStyled, SpanStyled, TextStyled, TitleStyled } =
+    styles;
 
 // Normal boilerplate React functional component
 const NewComp: React.FC<NewCompProps> = ({
     // deconstructing props and setting any default values, sorted alphabetically
+    bgColor = 'white',
     hasUnderline = false,
     onClick,
     state = 'greenLight',
     textOff,
     textOn,
+    ...props
 }) => {
     // Standard use of useState to track internal state variables
     const [compState, setCompState] = useState(state);
-    let [count, setCount] = useState(-1);
+    const [count, setCount] = useState(-1);
 
     // Standard use of useEffect hook to mimic life cycle methods
     useEffect(() => {
@@ -50,7 +49,7 @@ const NewComp: React.FC<NewCompProps> = ({
     };
 
     return (
-        <SectionStyled data-testid="test-new-comp">
+        <SectionStyled data-testid="test-new-comp" bgColor={bgColor} {...props}>
             <TitleStyled data-testid="test-title">
                 The Demo Component
             </TitleStyled>
@@ -68,7 +67,7 @@ const NewComp: React.FC<NewCompProps> = ({
                     {compState === 'greenLight' ? textOn : textOff}
                 </HeadingStyled>
             </SpanStyled>
-            <Button onClick={toggleState}></Button>
+            <Button onClick={toggleState} />
             <TextStyled hasUnderline={hasUnderline} data-testid="test-text">
                 Clicked: {count} times
             </TextStyled>

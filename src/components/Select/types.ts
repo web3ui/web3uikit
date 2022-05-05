@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { RefObject } from 'react';
+import { TIconType } from '../Icon/collection';
 
 export interface SelectProps {
     /**
@@ -16,10 +17,25 @@ export interface SelectProps {
      */
     value?: string;
 
+     /**
+     * ref object for fancy select
+     */
+    ref?: RefObject<HTMLDivElement>;
+
+    /**
+     * ref object for traditional select
+     */
+    refTraditional?: RefObject<HTMLSelectElement>;
+
     /**
      * onChange that returns OptionProps typed data if not using traditional HTML5 mode
      */
     onChange?: (option: OptionProps) => void;
+
+    /**
+     * standard onBlur that returns the entire event, as normal you can access event.target
+     */
+    onBlurTraditional?: (event: React.FocusEvent<HTMLSelectElement>) => void;
 
     /**
      * traditional onChange that returns the entire event, as normal you can access event.target
@@ -35,6 +51,12 @@ export interface SelectProps {
      * css style prop
      */
     style?: React.CSSProperties;
+
+    /**
+     * Icon name the should be displayed before the options
+     */
+
+    prefixIcon?: TIconType;
 
     /**
      * String that you want to display before the selected option
@@ -81,6 +103,11 @@ export interface SelectProps {
      * You can validate your inputs
      */
     validation?: { required: boolean };
+
+    /**
+     * Optional description under select component
+     */
+    description?: string;
 }
 
 export interface OptionProps {
@@ -103,12 +130,22 @@ export interface OptionProps {
 
 export interface LabelProps {
     /**
+     * true if there is a prefix icon before the label
+     */
+    hasPrefixIcon: boolean;
+
+    /**
      * true if the default index is defined
      */
     hasSelectedIndex: boolean;
 }
 
 export interface SelectedItemProps {
+    /**
+     * true if there is a prefix icon before the label
+     */
+    hasPrefixIcon: boolean;
+
     /**
      * duplicate of state
      */

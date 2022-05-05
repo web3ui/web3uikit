@@ -15,9 +15,10 @@ const HideButton: FC<IHideButtonProps> = ({
     iconSize = 24,
     isHidden = false,
     onToggle,
+    ...props
 }) => {
     return (
-        <HideButtonStyled onClick={onToggle} data-testid="test-hidebutton">
+        <HideButtonStyled onClick={onToggle} data-testid="test-hidebutton" {...props}>
             {isHidden ? (
                 <Icon svg="eyeClosed" size={iconSize} fill={`${iconColor}`} />
             ) : (

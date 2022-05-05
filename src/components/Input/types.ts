@@ -1,3 +1,4 @@
+import { RefObject } from 'react';
 import { TIconType } from '../Icon/collection';
 
 export interface InputProps {
@@ -12,9 +13,24 @@ export interface InputProps {
     autoFocus?: boolean;
 
     /**
+     * Will replace input div with a JSX element
+     */
+    customInput?: JSX.Element;
+
+    /**
+     * Description of input, Error state message overrides
+     */
+    description?: string;
+
+    /**
      * it is best to set a unique ID for each input to verify change events
      */
     id?: string;
+
+    /**
+     * ref object
+     */
+    ref?: RefObject<HTMLInputElement>;
 
     /**
      * please set a label, it really helps with accessibility
@@ -27,6 +43,11 @@ export interface InputProps {
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
     /**
+     * standard onBlur that returns the entire event, it also checks validation rules
+     */
+    onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+
+    /**
      * a short piece of text to fill the input before the user interacts
      */
     placeholder?: string;
@@ -35,6 +56,11 @@ export interface InputProps {
      * Icon prefixIcon for the input field
      */
     prefixIcon?: TIconType;
+
+    /**
+     * Icon prefixIcon for the input field
+     */
+    iconPosition?: 'front' | 'end';
 
     /**
      * types of input available

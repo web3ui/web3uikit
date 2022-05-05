@@ -1,8 +1,8 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Select from './Select';
-import { Icon, iconTypes } from '../Icon';
 import color from '../../styles/colors';
+import { Icon, iconTypes } from '../Icon';
+import Select from './Select';
 
 export default {
     title: '2.Forms/Select',
@@ -146,6 +146,31 @@ PrefixText.args = {
     defaultOptionIndex: 0,
 };
 
+export const PrefixIcon = Template.bind({});
+PrefixIcon.args = {
+    options: [
+        {
+            label: 'Mainnet',
+            id: 'Testnet',
+            prefix: <Icon svg={iconTypes.server} fill={color.grey} />,
+        },
+        {
+            label: 'Mainnet',
+            id: 'Testnet',
+            prefix: <Icon svg={iconTypes.testnet} fill={color.grey} />,
+        },
+        {
+            label: 'Local Dev Chain',
+            id: 'LocalDevChain',
+            prefix: <Icon svg={iconTypes.btc} fill={color.grey} />,
+        },
+    ],
+    onChange: onTestOptionChange,
+    prefixIcon: 'server',
+    width: '100%',
+    label: 'Select Server',
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
     options: optionsList,
@@ -178,4 +203,24 @@ HTML5Select.args = {
     traditionalHTML5: true,
     validation: { required: true },
     value: 'txt',
+};
+
+export const HTML5SelectWithDescription = Template.bind({});
+HTML5SelectWithDescription.args = {
+    description: 'Much Needed',
+    label: 'Good old HTML5',
+    onChangeTraditional: onTestOptionChange,
+    options: smallOptionsList,
+    traditionalHTML5: true,
+    validation: { required: true },
+    value: 'txt',
+};
+
+export const Description = Template.bind({});
+Description.args = {
+    options: smallOptionsList,
+    onChange: onTestOptionChange,
+    label: 'Label Text',
+    defaultOptionIndex: 0,
+    description: 'Much Needed',
 };

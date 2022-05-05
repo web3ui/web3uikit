@@ -1,10 +1,17 @@
 import React from 'react';
-import { DivStyled, PStyledTopic, PStyledInfo } from './Information.styles';
+import styles from './Information.styles';
 import { InfoProps } from './types';
 
-const Info: React.FC<InfoProps> = ({ id, information, topic }: InfoProps) => {
+const { DivStyled, PStyledTopic, PStyledInfo } = styles;
+
+const Info: React.FC<InfoProps> = ({
+    id,
+    information,
+    topic,
+    ...props
+}: InfoProps) => {
     return (
-        <DivStyled id={id} data-testid={'card-test-id'}>
+        <DivStyled id={id} data-testid={'card-test-id'} {...props}>
             <PStyledTopic data-testid={'topic-test-id'}>{topic}</PStyledTopic>
             <PStyledInfo data-testid={'info-test-id'}>
                 {information}

@@ -1,8 +1,9 @@
 import React from 'react';
 import Icon from '../../components/Icon/Icon';
 import { Loading } from '../Loading';
-import { ButtonStyled } from './Button.styles';
+import ButtonStyles from './Button.styles';
 import { ButtonProps } from './types';
+const { ButtonStyled } = ButtonStyles;
 
 const Button: React.FC<ButtonProps> = ({
     color,
@@ -22,6 +23,7 @@ const Button: React.FC<ButtonProps> = ({
     radius,
     isTransparent = false,
     iconColor,
+    ...props
 }: ButtonProps) => {
     return (
         <ButtonStyled
@@ -39,6 +41,7 @@ const Button: React.FC<ButtonProps> = ({
             type={type}
             radius={radius}
             iconColor={iconColor}
+            {...props}
         >
             {isLoading ? (
                 <Loading size={15} {...loadingProps} />

@@ -1,9 +1,9 @@
 import { CSSProperties } from 'styled-components';
 
 type customImageProps = {
-    url: string,
-    styles?: CSSProperties,
-}
+    url: string;
+    styles?: CSSProperties;
+};
 
 export interface HeroProps {
     /**
@@ -15,7 +15,7 @@ export interface HeroProps {
     /**
      * the URL of a background image is needed
      */
-    backgroundURL: string;
+    backgroundURL?: string;
 
     /**
      * pass a color HEX or the background will be dark grey
@@ -38,8 +38,8 @@ export interface HeroProps {
     height?: string;
 
     /**
-    * It's a prop that is used to set the linear gradient for the background.
-    */
+     * It's a prop that is used to set the linear gradient for the background.
+     */
     linearGradient?: string;
 
     /**
@@ -62,4 +62,9 @@ export interface HeroProps {
      * pass a color HEX or the text will be light grey
      */
     textColor?: string;
+
+    /**
+     *  optional padding
+     */
+    padding?: string;
 }

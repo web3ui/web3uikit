@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { CreditCardProps } from '../CreditCard';
@@ -7,18 +7,21 @@ import { Input } from '../Input';
 import { Radios } from '../Radios';
 import { Select } from '../Select';
 import { TextArea } from '../TextArea';
-import { H3Styled, H4Styled, FormStyled } from './Form.styles';
+import styles from './Form.styles';
+const { H3Styled, H4Styled, FormStyled } = styles;
 import { FormProps, DataInput } from './types';
 
 const Form: React.FC<FormProps> = ({
     buttonConfig,
+    customFooter,
     data,
     id,
+    isDisabled = false,
     onSubmit,
     title,
-    customFooter,
-    isDisabled = false,
+    ...props
 }) => {
+    const [isSubmitted, setIsSubmitted] = useState(false);
     const formSubmitted = (event: React.SyntheticEvent) => {
         event.preventDefault();
         event.stopPropagation();
@@ -36,6 +39,8 @@ const Form: React.FC<FormProps> = ({
                     id: id,
                     data: dataReturned,
                 });
+            data.map((input) => (input.value = ''));
+            setIsSubmitted(true);
         } else {
             form.reportValidity();
         }
@@ -226,7 +231,7 @@ const Form: React.FC<FormProps> = ({
     };
 
     return (
-        <FormStyled onSubmit={formSubmitted} id={id} data-testid="test-form">
+        <FormStyled onSubmit={formSubmitted} id={id} data-testid="test-form" {...props}>
             {title && (
                 <H3Styled data-testid="test-form-title">{title}</H3Styled>
             )}
@@ -247,12 +252,11 @@ const Form: React.FC<FormProps> = ({
             ) : (
                 <Button
                     {...buttonConfig}
+                    disabled={isDisabled || isSubmitted}
                     id="form-submit"
+                    text="Submit"
                     type="submit"
-                    disabled={isDisabled}
-                >
-                    Submit
-                </Button>
+                />
             )}
         </FormStyled>
     );

@@ -3,14 +3,16 @@ import { Tag } from '../Tag';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import { AccordionProps } from './types';
-import {
+import styles from './Accordion.styles';
+
+const {
     SectionStyled,
     HeaderStyled,
     H4Styled,
     DivStyled,
     DivStyledContent,
     getThemeColor,
-} from './Accordion.styles';
+} = styles;
 
 const Accordion: React.FC<AccordionProps> = ({
     children,
@@ -21,6 +23,7 @@ const Accordion: React.FC<AccordionProps> = ({
     tagText,
     theme = 'blue',
     title,
+    ...props
 }) => {
     const [isOpen, setIsOpen] = useState(isExpanded);
     const [height, setHeight] = useState('');
@@ -47,6 +50,7 @@ const Accordion: React.FC<AccordionProps> = ({
             id={id}
             style={{ opacity: opacity }}
             theme={theme}
+            {...props}
         >
             <HeaderStyled
                 aria-controls={`content-${formattedID}`}

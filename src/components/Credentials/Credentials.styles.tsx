@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import color from '../../styles/colors';
 import resetCSS from '../../styles/reset';
-import { ICredentialsProps } from './types';
+import { ICredentialsProps, TDivWrapper } from './types';
 
 const CredentialsStyled = styled.div<Pick<ICredentialsProps, 'width'>>`
     background: ${color.blueLight};
@@ -19,7 +19,6 @@ const PreformattedStyled = styled.pre`
     display: flex;
     height: max-content;
     justify-content: space-between;
-    overflow-x: auto;
     position: relative;
 `;
 
@@ -42,11 +41,16 @@ const DividerStyled = styled.div`
     }
 `;
 
-const CredentialsStyles = {
+const DivWrapperStyled = styled.div<TDivWrapper>`
+    ${resetCSS};
+    overflow-x: ${(p) => (p.isHidden ? 'hidden' : p.isMultiline && 'auto')};
+    width: 90%;
+`;
+
+export default {
     CredentialsStyled,
+    DivWrapperStyled,
     DividerStyled,
     PreformattedStyled,
     ToolsStyled,
 };
-
-export default CredentialsStyles;

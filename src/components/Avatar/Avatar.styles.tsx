@@ -66,4 +66,4 @@ const H4Styled = styled.h4<Pick<AvatarProps, 'textColor'>>`
     font-size: inherit;
 `;
 
-export { DivStyled, H4Styled };
+export default { DivStyled, H4Styled };

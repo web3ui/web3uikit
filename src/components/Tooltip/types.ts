@@ -7,14 +7,14 @@ export interface TooltipProps {
     children: Array<React.ReactNode> | React.ReactNode;
 
     /**
-     * Set position of tooltip
-     */
-    position: Position;
-
-    /**
      * Set element/text that will be shown within the tooltip
      */
     content: JSX.Element | string;
+
+    /**
+     * Set position of tooltip
+     */
+    position: Position;
 
     /**
      * Set the max width of the tooltip
@@ -25,4 +25,14 @@ export interface TooltipProps {
      * Set the min width of the tooltip
      */
     minWidth?: number;
+
+    /**
+     * Moves the arrow +/- up/down/left/right (use responsibly, arrow can move the the X / Y axis indefinitely)
+     */
+    move?: number;
+
+    /**
+     * Moves the body +/- up/down/left/right (use responsibly, arrow can move the the X / Y axis indefinitely)
+     */
+    moveBody?: number;
 }

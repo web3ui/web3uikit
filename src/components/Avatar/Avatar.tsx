@@ -1,8 +1,9 @@
-import { DivStyled, H4Styled } from './Avatar.styles';
+import styles from './Avatar.styles';
 import { AvatarProps } from './types';
 import React from 'react';
 import renderAvatarSVG from './images/guy';
 import color from '../../styles/colors';
+const { DivStyled, H4Styled } = styles;
 
 const avatarColors = ['#FEB7B7', '#E1B5F6', '#A7D6F9', '#AADCD6', '#F0DC7D'];
 
@@ -17,6 +18,7 @@ const Avatar: React.FC<AvatarProps> = ({
     textColor = color.white,
     theme,
     avatarKey = 1,
+    ...props
 }: AvatarProps) => {
     const getRandomColor = (): string => {
         if (avatarBackground) {
@@ -45,6 +47,7 @@ const Avatar: React.FC<AvatarProps> = ({
             size={size}
             textColor={textColor}
             theme={theme}
+            {...props}
         >
             {theme === 'image' ? (
                 !image && renderAvatarSVG()

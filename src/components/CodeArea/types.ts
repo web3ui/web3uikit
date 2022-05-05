@@ -6,6 +6,12 @@ export interface ICodeAreaProps {
     maxWidth?: string;
 
     /**
+     * minimal height of component
+     * default is "400px"
+     */
+    minHeight?: string;
+
+    /**
      * standard onChange that returns the entire event, as normal you can access event.target
      */
     onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
@@ -19,6 +25,12 @@ export interface ICodeAreaProps {
      * please add the text you want to show in the codearea
      */
     text: string;
+
+    /**
+     * if true disabled editing of the text content
+     * standard prop for textarea
+     */
+    disabled?: boolean;
 }
 
 export interface ILineNumbersProps {

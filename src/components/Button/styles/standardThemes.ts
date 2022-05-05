@@ -1,8 +1,6 @@
 import { css } from 'styled-components';
 import color, { getShade, gradientColors } from '../../../styles/colors';
 
-// theme = primary | outline | secondary | translucent
-
 export const secondary = css`
     background-color: ${color.blueLight};
     border-color: ${color.blueLight};
@@ -10,6 +8,10 @@ export const secondary = css`
 
     :active {
         border-color: ${color.blue};
+    }
+
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.blueDark};
     }
 
     svg {
@@ -42,6 +44,10 @@ export const primary = css`
             #21bf96;
     }
 
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.greenDark};
+    }
+
     svg {
         fill: ${color.white};
     }
@@ -63,8 +69,12 @@ export const outlineLarge = css`
     }
 
     :active {
-        border-width: 4px;
-        padding: 2px 18px;
+        border-width: 2px;
+        padding: 6px 22px;
+    }
+
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.grey};
     }
 
     svg {
@@ -85,6 +95,10 @@ export const outlineRegular = css`
 
     :active {
         border-color: ${color.paleCerulean};
+    }
+
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.beauBlue};
     }
 
     svg {
@@ -117,6 +131,10 @@ export const outlineSmall = css`
         }
     }
 
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.greenDark};
+    }
+
     svg {
         fill: ${color.green};
     }
@@ -126,7 +144,75 @@ export const translucent = css`
     background-color: ${getShade('dark', 20)};
     border-style: inset;
     color: ${color.white};
+
+    :focus {
+        box-shadow: 0px 0px 0px 2px ${color.blueDark};
+    }
+
     svg {
         fill: ${color.white};
+    }
+`;
+
+export const status = css`
+    background-color: ${color.yellowLight};
+    border-width: 0px;
+    color: ${color.yellow};
+
+    :hover {
+        :after {
+            background-color: ${color.yellowHover};
+        }
+    }
+
+    svg {
+        fill: ${color.white};
+    }
+`;
+
+export const ghost = css`
+    background-color: ${color.blueDark}20;
+    border-width: 0px;
+    color: ${color.white};
+
+    :hover {
+        color: ${color.blueDark}20;
+        background: ${color.white};
+    }
+
+    svg {
+        fill: ${color.white};
+    }
+`;
+
+export const link = css`
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid ${color.blue};
+    padding: 0px;
+    color: ${color.blue};
+
+    :active {
+        border-width: 0px;
+        border-bottom: 1px solid ${color.blue};
+    }
+
+    :hover {
+        color: ${color.blueSkyDark};
+        border-bottom: 1px solid ${color.blueSkyDark};
+    }
+
+    svg {
+        fill: ${color.blue};
+    }
+`;
+
+export const text = css`
+    background-color: transparent;
+    border-width: 0px;
+    color: ${color.blue};
+
+    svg {
+        fill: ${color.blue};
     }
 `;

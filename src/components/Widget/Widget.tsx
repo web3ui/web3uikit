@@ -1,11 +1,21 @@
-import { IWidgetProps } from './types';
-import WidgetStyles from './Widget.styles';
-import colors from '../../styles/colors';
 import React from 'react';
+import colors from '../../styles/colors';
+import { Skeleton } from '../Skeleton';
 import { Typography } from '../Typography';
-const Widget: React.FC<IWidgetProps> = ({ children, info, title }) => {
+import { IWidgetProps } from './types';
+import styles from './Widget.styles';
+
+const { DivStyled } = styles;
+
+const Widget: React.FC<IWidgetProps> = ({
+    children,
+    info,
+    title,
+    isLoading,
+    ...props
+}) => {
     return (
-        <WidgetStyles.WidgetStyled>
+        <DivStyled data-testid="widget-container" {...props}>
             <div>
                 <Typography
                     data-testid="widget-title"
@@ -21,11 +31,16 @@ const Widget: React.FC<IWidgetProps> = ({ children, info, title }) => {
                     weight="400"
                     color={colors.blueDark}
                 >
-                    {info}
+                    {isLoading ? (
+                        <Skeleton height="24px" width="100%" theme="subtitle" />
+                    ) : (
+                        info
+                    )}
                 </Typography>
             </div>
+
             {children}
-        </WidgetStyles.WidgetStyled>
+        </DivStyled>
     );
 };
 

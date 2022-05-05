@@ -32,6 +32,7 @@ import eyeClosedIcon from './icons/eye-closed';
 import eyeIcon from './icons/eye';
 import fileIcon from './icons/file';
 import githubIcon from './icons/github';
+import googleIcon from './icons/google';
 import gridIcon from './icons/grid';
 import helpCircleIcon from './icons/help-circle';
 import imageIcon from './icons/image';
@@ -144,6 +145,7 @@ export const iconTypes = {
     fil: 'fil',
     file: 'file',
     github: 'github',
+    google: 'google',
     grid: 'grid',
     helpCircle: 'helpCircle',
     image: 'image',
@@ -245,6 +247,7 @@ const collection = {
     fileIcon,
     filIcon,
     githubIcon,
+    googleIcon,
     gridIcon,
     helpCircleIcon,
     imageIcon,

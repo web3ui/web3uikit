@@ -18,6 +18,7 @@ const PopoverElement: React.FC<PopoverElementProps> = ({
     textColor = 'white',
     textSize = 14,
     width,
+    ...props
 }: PopoverElementProps) => {
     return (
         <DivContainerStyled
@@ -26,6 +27,7 @@ const PopoverElement: React.FC<PopoverElementProps> = ({
             icon={icon}
             iconColor={iconColor}
             id={id}
+            {...props}
         >
             <DivStyled
                 data-testid={'dropdown-element-click-test-id'}

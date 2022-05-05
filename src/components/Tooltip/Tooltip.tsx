@@ -17,6 +17,7 @@ const Tooltip: React.FC<TooltipProps> = ({
     move = 50,
     moveBody = -50,
     position = 'bottom',
+    ...props
 }: TooltipProps) => {
     const parentRef = useRef(null);
     const popoverRef = useRef(null);
@@ -44,6 +45,7 @@ const Tooltip: React.FC<TooltipProps> = ({
         <DivStyledTooltipParent
             ref={parentRef}
             data-testid={'tooltip-container-test-id'}
+            {...props}
         >
             <div>{children}</div>
             <DivStyled

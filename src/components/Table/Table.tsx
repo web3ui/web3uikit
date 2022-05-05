@@ -32,6 +32,7 @@ const Table: React.FC<TableProps> = ({
     customLoadingContent,
     alignCellItems = 'start',
     justifyCellItems = 'start',
+    ...props
 }) => {
     const [pageNum, setPageNum] = useState<number>(
         customPageNumber ? customPageNumber : 0,
@@ -212,7 +213,7 @@ const Table: React.FC<TableProps> = ({
     );
 
     return (
-        <TableParent data-testid="test-table-parent">
+        <TableParent data-testid="test-table-parent" {...props}>
             <TableGridContainer>
                 <TableGrid columns={columnsConfig}>
                     <RenderTableHeader />

@@ -5,7 +5,7 @@ import { NativeBalanceProps } from './types';
 
 const { BalanceStyled } = NativeBalanceStyles;
 
-const NativeBalance: React.FC<NativeBalanceProps> = ({ style }) => {
+const NativeBalance: React.FC<NativeBalanceProps> = ({ style, ...props }) => {
     const { account, chainId, web3, Moralis } = useMoralis();
     const [balance, setBalance] = useState<{
         formatted?: string;
@@ -30,7 +30,7 @@ const NativeBalance: React.FC<NativeBalanceProps> = ({ style }) => {
 
     if (!balance?.formatted || !account) return null;
 
-    return <BalanceStyled style={style}>{balance.formatted}</BalanceStyled>;
+    return <BalanceStyled style={style} {...props}>{balance.formatted}</BalanceStyled>;
 };
 
 export default NativeBalance;

@@ -118,6 +118,7 @@ const Input: React.FC<InputProps> = ({
             data-testid="test-div"
             style={{ ...style, width }}
             size={size}
+            {...props}
         >
             {prefixIcon && iconPosition == 'front' && (
                 <DivStyled className="input_prefixIcon">

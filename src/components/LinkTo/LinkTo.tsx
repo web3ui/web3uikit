@@ -13,6 +13,7 @@ const LinkTo: React.FC<LinkToProps> = ({
     text,
     type = 'external',
     iconLayout = 'leading',
+    ...props
 }) => {
     const renderContent = () => (
         <SpanStyledFlex iconLayout={iconLayout} data-testid="test-link-flex">
@@ -34,6 +35,7 @@ const LinkTo: React.FC<LinkToProps> = ({
             data-testid="test-link-to"
             href={`${type === 'email' ? 'mailto:' : ''}${address}`}
             target={`${type === 'email' ? '_self' : '_blank'}`}
+            {...props}
         >
             {renderContent()}
         </LinkStyled>

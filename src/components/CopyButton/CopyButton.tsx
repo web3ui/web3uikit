@@ -31,6 +31,7 @@ const CopyButton: FC<CopyButtonProps> = ({
     iconSize = 24,
     onCopy = () => {},
     revertIn = 3000,
+    ...props
 }) => {
     const [, copy] = useCopyToClipboard();
     const [value, set] = useState(false);
@@ -52,6 +53,7 @@ const CopyButton: FC<CopyButtonProps> = ({
                 onCopy(e);
                 copyToClipboard();
             }}
+            {...props}
         >
             <Icon
                 fill={value ? color.green : color.blue}

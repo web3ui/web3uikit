@@ -35,6 +35,7 @@ const Modal: React.FC<ModalProps> = ({
     customFooter,
     closeButton,
     canOverflow = false,
+    ...props
 }: ModalProps) => {
     const [visible, setVisible] = useState(isVisible);
 
@@ -62,6 +63,7 @@ const Modal: React.FC<ModalProps> = ({
             id={id}
             isCentered={isCentered}
             isVisible={visible}
+            {...props}
         >
             <DivStyledWrap width={width} canOverflow={canOverflow}>
                 <HeaderStyled

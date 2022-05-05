@@ -18,6 +18,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     onChange,
     onBlur,
     validation,
+    ...props
 }) => {
     const [isChecked, setIsChecked] = useState(checked);
 
@@ -36,6 +37,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
             data-testid="test-checkbox-label"
             disabled={disabled}
             layout={layout}
+            {...props}
         >
             {layout === 'box' && (
                 <span className="after">

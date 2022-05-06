@@ -3,7 +3,7 @@ import { Button } from '../Button';
 import { Input } from '../Input';
 import { Tag } from '../Tag';
 import styles from './Todo.styles';
-import { TodoProps, ColorProps } from './types';
+import { ColorProps, TodoProps } from './types';
 
 const { DivStyled, DivStyledContent, SectionStyled } = styles;
 
@@ -83,11 +83,7 @@ const Todo: React.FC<TodoProps> = ({
             >
                 {lists.map((todo, i) => (
                     <Tag
-                        color={
-                            (i < 8
-                                ? colors[i]
-                                : colors[i % 8])
-                        }
+                        color={i < 8 ? colors[i] : colors[i % 8]}
                         hasCancel
                         key={i}
                         onCancelClick={() => removeTodo(i)}

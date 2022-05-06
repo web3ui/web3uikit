@@ -1,9 +1,9 @@
 import React from 'react';
-import colors from '../../styles/colors';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import styles from './Tag.styles';
 import { TagProps } from './types';
+import colors from '../../styles/colors';
 
 const { TagStyled, SpanStyled } = styles;
 

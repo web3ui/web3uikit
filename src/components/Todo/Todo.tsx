@@ -3,9 +3,20 @@ import { Button } from '../Button';
 import { Input } from '../Input';
 import { Tag } from '../Tag';
 import styles from './Todo.styles';
-import { TodoProps } from './types';
+import { TodoProps, ColorProps } from './types';
 
 const { DivStyled, DivStyledContent, SectionStyled } = styles;
+
+const colors: ColorProps[] = [
+    'green',
+    'red',
+    'grey',
+    'yellow',
+    'blue',
+    'blueLight',
+    'purple',
+    'pink',
+];
 
 const Todo: React.FC<TodoProps> = ({
     buttonText = 'Add',
@@ -72,11 +83,16 @@ const Todo: React.FC<TodoProps> = ({
             >
                 {lists.map((todo, i) => (
                     <Tag
-                        color="blueLight"
+                        color={
+                            (i < 8
+                                ? colors[i]
+                                : colors[i % 8])
+                        }
                         hasCancel
                         key={i}
                         onCancelClick={() => removeTodo(i)}
                         text={todo}
+                        theme="chips"
                     />
                 ))}
             </DivStyledContent>

@@ -32,3 +32,13 @@ export interface TodoProps {
      */
     todos?: string[];
 }
+
+export type ColorProps =
+    | 'green'
+    | 'red'
+    | 'grey'
+    | 'yellow'
+    | 'blue'
+    | 'blueLight'
+    | 'purple'
+    | 'pink';

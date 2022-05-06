@@ -1,5 +1,9 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
+import {
+    fireEvent,
+    render,
+    screen,
+} from '@testing-library/react';
 import Modal from './Modal';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon';
@@ -19,7 +23,11 @@ const args: ModalProps = {
                 flexDirection: 'column',
             }}
         >
-            <Icon svg={iconTypes.cloud} size={64} fill={color.blueDark2} />
+            <Icon
+                svg={iconTypes.cloud}
+                size={64}
+                fill={color.blueDark2}
+            />
             <p>Proceed uploading?</p>
         </div>,
     ],

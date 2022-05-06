@@ -123,7 +123,9 @@ test('Avatar - CustomSizeAndFontSize', () => {
 
     // It has a custom font size
     const styles = element && getComputedStyle(element);
-    expect(styles?.fontSize).toBe(`${CustomSizeAndFontSize?.args?.fontSize}px`);
+    expect(styles?.fontSize).toBe(
+        `${CustomSizeAndFontSize?.args?.fontSize}px`,
+    );
 
     // It has a custom size
     expect(styles?.width).toBe(`${CustomSizeAndFontSize?.args?.size}px`);

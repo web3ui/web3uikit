@@ -30,15 +30,15 @@ export const SectionStyled = styled.section<TStyleProps>`
     overflow: hidden;
     position: relative;
     width: 100%;
-
+    
     align-items: ${({ align = 'center' }) =>
         Position?.[align] || Position.center};
     border-radius: ${(p) => p.rounded || '0px'};
     background-color: ${(p) => p.backgroundColor};
     background-image: ${({ backgroundURL, linearGradient = '' }) =>
         backgroundURL
-            ? `${linearGradient && linearGradient + ', '} url(${backgroundURL})`
-            : linearGradient};
+        ? `${linearGradient && linearGradient + ', '} url(${backgroundURL})`
+        : linearGradient};
     height: ${({ height }) => height || '80vh'};
     max-height: ${({ height }) => height || '80vh'};
     padding: ${({ padding }) => padding || '20px'} 0;

@@ -85,7 +85,7 @@ export const DivStyledArrow = styled.div<TStyleProps>`
     z-index: 1002;
     width: 130%;
     height: 10px;
-    top: 32px;
+    top: 34px;
 
     ${(p) => (p.position ? getContainerStyleByPosition(p.position) : '')};
     background: transparent;

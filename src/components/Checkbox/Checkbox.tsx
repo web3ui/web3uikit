@@ -10,12 +10,15 @@ const Checkbox: React.FC<CheckboxProps> = ({
     checked = false,
     disabled = false,
     id,
+    ref,
     label,
     labelWhenChecked,
     layout = 'box',
     name,
     onChange,
+    onBlur,
     validation,
+    ...props
 }) => {
     const [isChecked, setIsChecked] = useState(checked);
 
@@ -34,6 +37,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
             data-testid="test-checkbox-label"
             disabled={disabled}
             layout={layout}
+            {...props}
         >
             {layout === 'box' && (
                 <span className="after">
@@ -46,9 +50,11 @@ const Checkbox: React.FC<CheckboxProps> = ({
                 defaultChecked={isChecked}
                 disabled={disabled}
                 id={id}
+                ref={ref}
                 layout={layout}
                 name={name}
                 onChange={valueChanged}
+                onBlur={(event: React.FocusEvent<HTMLInputElement>) => onBlur && onBlur(event)}
                 required={validation?.required}
                 type="checkbox"
                 value={`${isChecked}`}

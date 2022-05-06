@@ -206,6 +206,56 @@ OutlineIconOnlySmall.args = {
     size: 'small',
 };
 
+export const StatusWarning = Template.bind({});
+StatusWarning.args = {
+    id: 'test-button-status-warning',
+    text: 'Warning',
+    theme: 'status',
+    type: 'button',
+};
+
+export const StatusDanger = Template.bind({});
+StatusDanger.args = {
+    id: 'test-button-status',
+    text: 'Error',
+    theme: 'status',
+    type: 'button',
+    color: 'red',
+};
+
+export const StatusSuccess = Template.bind({});
+StatusSuccess.args = {
+    id: 'test-button-status',
+    text: 'Success',
+    theme: 'status',
+    type: 'button',
+    color: 'green',
+};
+
+export const Ghost = Template.bind({});
+Ghost.args = {
+    id: 'test-button-ghost',
+    text: 'Ghost Button',
+    theme: 'ghost',
+    type: 'button',
+};
+
+export const Link = Template.bind({});
+Link.args = {
+    id: 'test-button-link',
+    text: 'Link Button',
+    theme: 'link',
+    type: 'button',
+};
+
+export const Text = Template.bind({});
+Text.args = {
+    id: 'test-button-Text',
+    text: 'Text Button',
+    theme: 'text',
+    type: 'button',
+};
+
 export const ColoredGreen = Template.bind({});
 ColoredGreen.args = {
     id: 'test-button-colored-green',

@@ -34,13 +34,13 @@ const DynamicText: FC<TypographyProps> = ({
     monospace,
     onCopy = () => {},
     variant = 'body16',
-    ...otherProps
+    ...props
 }) => {
     const Tag = getTag(variant);
 
     return (
         // @ts-ignore
-        <Tag {...otherProps}>
+        <Tag {...props}>
             {children}
             {copyable && (
                 <CopyButton

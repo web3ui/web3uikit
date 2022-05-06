@@ -24,6 +24,7 @@ const NFT: React.FC<INFTProps> = ({
     tokenId,
     fetchMetadata,
     metadata,
+    ...props
 }) => {
     const { isInitialized, isInitializing } = useMoralis();
     const Web3API = useMoralisWeb3Api();
@@ -57,7 +58,7 @@ const NFT: React.FC<INFTProps> = ({
 
     if (isLoading || isFetching) {
         return (
-            <div data-testid="nft-metadata-loading">
+            <div data-testid="nft-metadata-loading" {...props}>
                 <DivStyled id="nft">
                     <Skeleton theme="text" width="100%" height="200px" />
                     <div id="information">

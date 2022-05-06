@@ -1,3 +1,4 @@
+import React from 'react';
 import { CreditCardProps } from '../CreditCard';
 
 type ValidateRadios = {
@@ -30,9 +31,19 @@ interface RadiosProps {
     isRow?: boolean;
 
     /**
+     * ref object
+     */
+    ref?: React.RefObject<HTMLInputElement>;
+
+    /**
      * standard onChange that returns the entire event, as normal you can access event.target
      */
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+    /**
+     * standard onBlur that returns the entire event, as normal you can access event.target
+     */
+    onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 
     /**
      * if using CreditCardProps to power your checkboxes you can use this event to catch the onRemove event

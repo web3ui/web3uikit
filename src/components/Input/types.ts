@@ -1,3 +1,4 @@
+import { RefObject } from 'react';
 import { TIconType } from '../Icon/collection';
 
 export interface InputProps {
@@ -27,6 +28,11 @@ export interface InputProps {
     id?: string;
 
     /**
+     * ref object
+     */
+    ref?: RefObject<HTMLInputElement>;
+
+    /**
      * please set a label, it really helps with accessibility
      */
     label?: string;
@@ -35,6 +41,11 @@ export interface InputProps {
      * standard onChange that returns the entire event, as normal you can access event.target
      */
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+    /**
+     * standard onBlur that returns the entire event, it also checks validation rules
+     */
+    onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 
     /**
      * a short piece of text to fill the input before the user interacts

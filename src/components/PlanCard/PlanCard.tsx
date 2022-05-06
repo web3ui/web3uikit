@@ -16,12 +16,14 @@ const PlanCard: React.FC<IPlanCardProps> = ({
     title,
     isActive,
     isCurrentPlan,
+    ...props
 }) => {
     return (
         <DivStyled
             className="PlanCard"
             data-testid="test-PlanCard"
             isActive={isActive}
+            {...props}
         >
             <Typography variant="subtitle1" weight="600" color={color.blueDark}>
                 {subTitle}

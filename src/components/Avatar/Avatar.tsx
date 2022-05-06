@@ -18,6 +18,7 @@ const Avatar: React.FC<AvatarProps> = ({
     textColor = color.white,
     theme,
     avatarKey = 1,
+    ...props
 }: AvatarProps) => {
     const getRandomColor = (): string => {
         if (avatarBackground) {
@@ -46,6 +47,7 @@ const Avatar: React.FC<AvatarProps> = ({
             size={size}
             textColor={textColor}
             theme={theme}
+            {...props}
         >
             {theme === 'image' ? (
                 !image && renderAvatarSVG()

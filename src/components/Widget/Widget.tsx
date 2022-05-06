@@ -12,9 +12,10 @@ const Widget: React.FC<IWidgetProps> = ({
     info,
     title,
     isLoading,
+    ...props
 }) => {
     return (
-        <DivStyled data-testid="widget-container">
+        <DivStyled data-testid="widget-container" {...props}>
             <div>
                 <Typography
                     data-testid="widget-title"

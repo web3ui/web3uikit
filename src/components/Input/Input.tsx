@@ -23,10 +23,12 @@ const Input: React.FC<InputProps> = ({
     errorMessage = 'Sorry this is not valid',
     hasCopyButton = false,
     id,
+    ref,
     inputHidden = false,
     label,
     name,
     onChange,
+    onBlur,
     placeholder = '',
     prefixIcon,
     size = 'regular',
@@ -78,6 +80,7 @@ const Input: React.FC<InputProps> = ({
         );
 
     const validate = (event: React.FocusEvent<HTMLInputElement>) => {
+        onBlur && onBlur(event);
         if (!hasValidation()) return;
 
         // check for HTML validation
@@ -115,6 +118,7 @@ const Input: React.FC<InputProps> = ({
             data-testid="test-div"
             style={{ ...style, width }}
             size={size}
+            {...props}
         >
             {prefixIcon && iconPosition == 'front' && (
                 <DivStyled className="input_prefixIcon">
@@ -135,6 +139,7 @@ const Input: React.FC<InputProps> = ({
                 min={type === 'number' ? validation?.numberMin : undefined}
                 minLength={validation?.characterMinLength}
                 name={name}
+                ref={ref}
                 onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
                     validate(event)
                 }

@@ -9,9 +9,10 @@ const Badge: React.FC<BadgeProps> = ({
     state = 'normal',
     text,
     textVariant = 'body16',
+    ...props
 }) => {
     return (
-        <DivStyled data-testid="test-badge-id" state={state}>
+        <DivStyled data-testid="test-badge-id" state={state} {...props}>
             <Typography
                 color="white"
                 data-testid="test-badge-text"

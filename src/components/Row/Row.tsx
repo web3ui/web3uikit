@@ -19,6 +19,7 @@ export function Col({
     isFullWidth = false,
     order = 0,
     span = 0,
+    ...props
 }: IColProps): JSX.Element {
     const prov = useContext(Context);
     return (
@@ -34,6 +35,7 @@ export function Col({
             sm={prov.sm}
             span={span}
             xs={prov.xs}
+            {...props}
         >
             {children}
         </ColDiv>
@@ -51,6 +53,7 @@ function Row({
     md = 24,
     lg = 24,
     width,
+    ...props
 }: IRowProps): JSX.Element {
     return (
         <Context.Provider value={{ xs, md, sm, lg, rowGap, colGap }}>
@@ -61,6 +64,7 @@ function Row({
                 justifyItems={justifyItems}
                 rowGap={rowGap}
                 width={width}
+                {...props}
             >
                 {children}
             </RowDiv>

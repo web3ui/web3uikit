@@ -22,12 +22,14 @@ const CreditCard: React.FC<CreditCardProps> = ({
     name,
     onRemove,
     pressed,
+    ...props
 }: CreditCardProps) => {
     return (
         <DivStyledCreditCard
             brand={brand}
             isExpired={isExpired}
             pressed={pressed}
+            {...props}
         >
             <DivStyledFlexEnd>
                 <Tooltip

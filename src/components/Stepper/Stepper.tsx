@@ -29,6 +29,7 @@ const Stepper: React.FC<StepperProps> = ({
     completeMessage = 'You should tell the user what to do next, or use the onComplete function to programmatically fire an event',
     onComplete = () => null,
     headerWidth,
+    ...props
 }) => {
     const [activeStep, setActiveStep] = useState(step);
     const myStepRef = useRef(activeStep);
@@ -136,7 +137,7 @@ const Stepper: React.FC<StepperProps> = ({
     );
 
     return (
-        <SectionStyled data-testid="test-stepper">
+        <SectionStyled data-testid="test-stepper" {...props}>
             <HeaderStyled
                 headerWidth={headerWidth}
                 style={{ alignSelf: 'center' }}

@@ -29,6 +29,7 @@ const Credentials: FC<ICredentialsProps> = ({
     textColor = color.blueDark,
     width = 'auto',
     hiddenText = '•••••••••••••••••••••••••••••••',
+    ...props
 }) => {
     const [isValueHidden, setIsValueHidden] = useState(isHidden);
     const [isMultiline, setIsMultiline] = useState(
@@ -50,6 +51,7 @@ const Credentials: FC<ICredentialsProps> = ({
                 icon={icon}
                 iconColor={iconColor}
                 iconSize={iconSize}
+                {...props}
             />
             <PreformattedStyled>
                 <DivWrapperStyled
@@ -58,8 +60,10 @@ const Credentials: FC<ICredentialsProps> = ({
                 >
                     <Typography
                         monospace
-                        color={textColor}
+                        color={isValueHidden ? color.grey : textColor}
                         data-testid="cred-test-text"
+                        weight="400"
+                        variant={isValueHidden ? 'caption14' : 'body16'}
                     >
                         {isValueHidden ? (
                             hiddenText

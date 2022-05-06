@@ -19,6 +19,7 @@ const Form: React.FC<FormProps> = ({
     isDisabled = false,
     onSubmit,
     title,
+    ...props
 }) => {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const formSubmitted = (event: React.SyntheticEvent) => {
@@ -230,7 +231,7 @@ const Form: React.FC<FormProps> = ({
     };
 
     return (
-        <FormStyled onSubmit={formSubmitted} id={id} data-testid="test-form">
+        <FormStyled onSubmit={formSubmitted} id={id} data-testid="test-form" {...props}>
             {title && (
                 <H3Styled data-testid="test-form-title">{title}</H3Styled>
             )}

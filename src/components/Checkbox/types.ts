@@ -28,7 +28,7 @@ export interface CheckboxProps {
     /**
      * A label to show the boxes meaning
      */
-    label: string;
+    label: string | JSX.Element;
 
     /**
      * A label to show the boxes meaning

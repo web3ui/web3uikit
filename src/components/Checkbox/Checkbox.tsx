@@ -7,7 +7,7 @@ import styles from './Checkbox.styles';
 const { StyledInput, StyledLabel } = styles;
 
 const Checkbox: React.FC<CheckboxProps> = ({
-    checked = false,
+    checked,
     disabled = false,
     id,
     ref,
@@ -20,7 +20,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     validation,
     ...props
 }) => {
-    const [isChecked, setIsChecked] = useState(checked);
+    const [isChecked, setIsChecked] = useState(false);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setIsChecked(Boolean(event.target.checked));
@@ -28,7 +28,20 @@ const Checkbox: React.FC<CheckboxProps> = ({
         onChange(event);
     };
 
-    useEffect(() => setIsChecked(checked), [checked]);
+    useEffect(
+        () =>
+            setIsChecked(
+                typeof checked != undefined ? Boolean(checked) : isChecked,
+            ),
+        [checked],
+    );
+    useEffect(
+        () =>
+            setIsChecked(
+                typeof checked != undefined ? Boolean(checked) : isChecked,
+            ),
+        [isChecked],
+    );
 
     return (
         <StyledLabel

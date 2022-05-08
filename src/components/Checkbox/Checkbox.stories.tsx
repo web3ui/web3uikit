@@ -73,3 +73,17 @@ SwitchingText.args = {
     id: 'test-switch',
     layout: 'switch',
 };
+
+export const CustomLabel = Template.bind({});
+CustomLabel.args = {
+    label: (
+        <div>
+            This is Checkbox with custom label{' '}
+            <a href="https://ih1.redbubble.net/image.968162104.1958/st,small,507x507-pad,600x600,f8f8f8.jpg">
+                Click
+            </a>
+        </div>
+    ),
+    name: 'Test checkbox input',
+    id: 'test-checkbox',
+};

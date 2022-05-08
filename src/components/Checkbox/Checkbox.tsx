@@ -31,17 +31,15 @@ const Checkbox: React.FC<CheckboxProps> = ({
     useEffect(
         () =>
             setIsChecked(
-                typeof checked != undefined ? Boolean(checked) : isChecked,
+                typeof checked != 'undefined' ? Boolean(checked) : isChecked,
             ),
         [checked],
     );
-    useEffect(
-        () =>
-            setIsChecked(
-                typeof checked != undefined ? Boolean(checked) : isChecked,
-            ),
-        [isChecked],
-    );
+    useEffect(() => {
+        setIsChecked(
+            typeof checked != 'undefined' ? Boolean(checked) : isChecked,
+        );
+    }, [isChecked]);
 
     return (
         <StyledLabel
@@ -67,7 +65,9 @@ const Checkbox: React.FC<CheckboxProps> = ({
                 layout={layout}
                 name={name}
                 onChange={valueChanged}
-                onBlur={(event: React.FocusEvent<HTMLInputElement>) => onBlur && onBlur(event)}
+                onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
+                    onBlur && onBlur(event)
+                }
                 required={validation?.required}
                 type="checkbox"
                 value={`${isChecked}`}

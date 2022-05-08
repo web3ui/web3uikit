@@ -69,6 +69,7 @@ export const SwitchingText = Template.bind({});
 SwitchingText.args = {
     label: 'Opt in here',
     labelWhenChecked: 'Ok you are in',
+    checked: undefined,
     name: 'Test switch input',
     id: 'test-switch',
     layout: 'switch',

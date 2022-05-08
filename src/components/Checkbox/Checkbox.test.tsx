@@ -2,7 +2,6 @@ import React from 'react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Checkbox.stories';
 import { render, screen, fireEvent } from '@testing-library/react';
-import Checkbox from './Checkbox';
 
 const {
     Box,
@@ -189,11 +188,8 @@ test('Renders Checkbox - Switch On By Default', () => {
 });
 
 test('Renders Checkbox - Switching Text', () => {
-    const { rerender } = render(
-        <Checkbox
-            {...SwitchingText?.args}
-            label={`${SwitchingText?.args?.label}`}
-            name={`${SwitchingText.args?.name}`}
+    render(
+        <SwitchingText
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 testEvent(event.target)
             }
@@ -216,17 +212,6 @@ test('Renders Checkbox - Switching Text', () => {
     expect(inputElement.getAttribute('checked')).toBeNull();
     expect(inputElement.getAttribute('disabled')).toBeNull();
     // Label text changes on this click
-    rerender(
-        <Checkbox
-            {...SwitchingText?.args}
-            label={`${SwitchingText?.args?.label}`}
-            name={`${SwitchingText.args?.name}`}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                testEvent(event.target)
-            }
-            checked={true}
-        />,
-    );
     fireEvent.click(labelElement);
     expect(testEvent).toHaveBeenCalled();
     expect(testEvent).toHaveBeenCalledWith(inputElement);
@@ -234,16 +219,5 @@ test('Renders Checkbox - Switching Text', () => {
     expect(textElement.textContent).not.toBe(testLabelText);
     // Label text changes back to original on this click
     fireEvent.click(labelElement);
-    rerender(
-        <Checkbox
-            {...SwitchingText?.args}
-            label={`${SwitchingText?.args?.label}`}
-            name={`${SwitchingText.args?.name}`}
-            onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                testEvent(event.target)
-            }
-            checked={false}
-        />,
-    );
     expect(textElement.textContent).toBe(testLabelText);
 });

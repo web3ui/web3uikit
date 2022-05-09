@@ -7,6 +7,7 @@ const DivStyled = styled.section`
     display: flex;
     gap: 16px;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 `;
 
 const DivStyledContent = styled.div<TStyleProps>`

@@ -8,7 +8,7 @@ export default {
     component: Radios,
     parameters: {
         actions: {
-            handles: ['onChange', 'changed', 'onBlur'],
+            handles: ['onChange', 'changed'],
         },
     },
 } as ComponentMeta<typeof Radios>;

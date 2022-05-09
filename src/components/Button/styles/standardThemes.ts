@@ -11,7 +11,7 @@ export const secondary = css`
     }
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.blueDark};
+        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
     }
 
     svg {
@@ -42,10 +42,12 @@ export const primary = css`
                 #aadcd6 103.7%
             ),
             #21bf96;
+        outline: 0;
+        box-shadow: none;
     }
-
+    
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.greenDark};
+        box-shadow: 0px 0px 0px 2px ${color.blue};
     }
 
     svg {
@@ -71,10 +73,11 @@ export const outlineLarge = css`
     :active {
         border-width: 2px;
         padding: 6px 22px;
+        box-shadow: 0px 0px 0px 2px ${color.blueDark};
     }
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.grey};
+        box-shadow: 0px 0px 0px 2px ${color.blueSky};
     }
 
     svg {
@@ -98,7 +101,7 @@ export const outlineRegular = css`
     }
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.beauBlue};
+        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
     }
 
     svg {
@@ -132,7 +135,7 @@ export const outlineSmall = css`
     }
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.greenDark};
+        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
     }
 
     svg {
@@ -145,8 +148,12 @@ export const translucent = css`
     border-style: inset;
     color: ${color.white};
 
+    :active {
+        border: none;
+    }
+
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.blueDark};
+        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
     }
 
     svg {

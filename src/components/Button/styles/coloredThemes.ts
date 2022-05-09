@@ -49,7 +49,7 @@ export const coloredRed = css`
     color: ${color.red};
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.redDark};
+        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
     }
 
     svg {
@@ -64,7 +64,7 @@ export const coloredGreen = css`
     color: ${color.green};
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.greenDark};
+        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
     }
 
     svg {
@@ -79,7 +79,7 @@ export const coloredBlue = css`
     color: ${color.blue};
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.blueDark};
+        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
     }
 
     svg {
@@ -94,7 +94,7 @@ export const coloredYellow = css`
     color: ${color.yellow};
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.yellowDark};
+        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
     }
 
     svg {

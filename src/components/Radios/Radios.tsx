@@ -53,7 +53,6 @@ const Radios: React.FC<RadiosProps> = ({
         <FieldsetStyled
             id={`${formattedID}`}
             data-testid="test-fieldset"
-            {...props}
         >
             {title && (
                 <LegendStyled data-testid="test-legend">{title}</LegendStyled>
@@ -84,6 +83,7 @@ const Radios: React.FC<RadiosProps> = ({
                                 required={validation?.required}
                                 type="radio"
                                 value={i}
+                                {...props}
                             />
                             <LabelStyled
                                 data-testid={`test-label-${i}`}

@@ -43,7 +43,6 @@ const TextArea: React.FC<TextAreaProps> = ({
             data-testid="test-textarea-wrapper"
             state={state}
             width={width}
-            {...props}
         >
             <TextAreaStyled
                 autoComplete={`${autoComplete}`}
@@ -67,6 +66,7 @@ const TextArea: React.FC<TextAreaProps> = ({
                 required={validation?.required}
                 rows={4}
                 value={currentValue}
+                {...props}
             />
             {label && (
                 <LabelStyled data-testid="test-label" htmlFor={id}>

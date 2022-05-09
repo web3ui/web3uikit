@@ -48,7 +48,6 @@ const Checkbox: React.FC<CheckboxProps> = ({
             data-testid="test-checkbox-label"
             disabled={disabled}
             layout={layout}
-            {...props}
         >
             {layout === 'box' && (
                 <span className="after">
@@ -71,6 +70,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
                 required={validation?.required}
                 type="checkbox"
                 value={`${isChecked}`}
+                {...props}
             />
             <span data-testid="test-checkbox-text">
                 {isChecked ? labelWhenChecked || label : label}

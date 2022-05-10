@@ -57,11 +57,25 @@ export const SectionStyled = styled.section<TStyleProps>`
     }
 
     @media (max-width: 600px) {
-        h1 {
-            font-size: 2em;
-        }
+        align-items: center;
         height: fit-content;
         max-height: fit-content;
+        text-align: center;
+
+        h1 {
+            font-size: 18px;
+            line-height: unset;
+            padding: unset;
+            text-align: center;
+        }
+
+        > span {
+            font-size: 14px;
+            line-height: unset;
+            
+            padding: 20px 40px 0px;
+            z-index: 1;
+        }
     }
 `;
 

@@ -158,6 +158,7 @@ const Select: React.FC<SelectProps> = ({
                             (option, index) =>
                                 index !== selectedOptionIndex && (
                                     <Option
+                                        id={option.id.toString()}
                                         aria-label="select-option"
                                         data-testid="test-option"
                                         key={option?.label}

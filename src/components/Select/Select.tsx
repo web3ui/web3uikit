@@ -210,6 +210,7 @@ const Select: React.FC<SelectProps> = ({
                     onBlurTraditional && onBlurTraditional(event)
                 }
                 required={validation?.required}
+                {...props}
             >
                 <option disabled>Please choose</option>
                 {options.map(

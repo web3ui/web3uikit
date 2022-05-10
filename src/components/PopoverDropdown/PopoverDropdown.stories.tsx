@@ -4,6 +4,7 @@ import color from '../../styles/colors';
 import colors from '../../styles/colors';
 import PopoverDropdown from './PopoverDropdown';
 import PopoverElement from '../PopoverElement/PopoverElement';
+import { Button } from '../Button';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 
@@ -167,4 +168,11 @@ PopoverSelectionUser.args = {
     parent: (
         <Icon key="7" svg={iconTypes.helpCircle} fill={color.grey} size={50} />
     ),
+};
+
+export const PopoverButton = Template.bind({});
+PopoverButton.args = {
+    position: 'bottom',
+    children: [<PopoverElement text={'hello there!'} />, ,],
+    parent: <Button />,
 };

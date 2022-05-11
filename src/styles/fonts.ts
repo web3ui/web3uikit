@@ -1,4 +1,6 @@
 import color from './colors';
+import fontBreakpoints from './fontBreakpoint';
+import { fontSize } from './breakpoints';
 import { css } from 'styled-components';
 
 const heading = css`
@@ -6,37 +8,49 @@ const heading = css`
     color: ${color.grey};
     fill: ${color.grey};
     font-family: 'open-sans', sans-serif;
-    font-size: 36px;
+    font-size: ${fontSize.h1}px;
     font-style: normal;
     font-weight: 600;
     letter-spacing: 0;
+
+    ${fontBreakpoints.h1};
 `;
 
 const h1 = css`
-    font-size: 36px;
+    font-size: ${fontSize.h1}px;
     line-height: 40px;
     letter-spacing: -0.75px;
+
+    ${fontBreakpoints.h1};
 `;
 
 const h2 = css`
-    font-size: 28px;
+    font-size: ${fontSize.h2}px;
     line-height: 36px;
+
+    ${fontBreakpoints.h2}
 `;
 
 const h3 = css`
-    font-size: 24px;
+    font-size: ${fontSize.h3}px;
     font-weight: 700;
     line-height: 32px;
+
+    ${fontBreakpoints.h3}
 `;
 
 const h4 = css`
-    font-size: 20px;
+    font-size: ${fontSize.h4}px;
     line-height: 28px;
+
+    ${fontBreakpoints.h4}
 `;
 
 const h5 = css`
-    font-size: 16px;
+    font-size: ${fontSize.h5}px;
     line-height: 25px;
+
+    ${fontBreakpoints.h5}
 `;
 
 const ibm = css`

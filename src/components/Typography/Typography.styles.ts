@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import color from '../../styles/colors';
+import fontBreakpoint from '../../styles/fontBreakpoint';
 import type { TypographyProps, variantType, weightType } from './types';
 
 const openSans = css`
@@ -57,6 +58,7 @@ const h1 = css`
     font-size: 36px;
     line-height: 40px;
     letter-spacing: -0.75px;
+    ${fontBreakpoint.h1};
 `;
 
 const h2 = css`
@@ -64,6 +66,7 @@ const h2 = css`
     font-size: 32px;
     font-weight: 400;
     line-height: 36px;
+    ${fontBreakpoint.h2}
 `;
 
 const h3 = css`
@@ -71,6 +74,7 @@ const h3 = css`
     font-size: 24px;
     font-weight: 400;
     line-height: 32px;
+    ${fontBreakpoint.h3}
 `;
 
 const h4 = css`
@@ -78,6 +82,7 @@ const h4 = css`
     font-size: 20px;
     font-weight: 400;
     line-height: 28px;
+    ${fontBreakpoint.h4}
 `;
 
 const subtitle1 = css`

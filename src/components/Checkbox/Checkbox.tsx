@@ -16,6 +16,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     layout = 'box',
     name,
     onChange,
+    onValidChange,
     onBlur,
     validation,
     ...props
@@ -25,7 +26,34 @@ const Checkbox: React.FC<CheckboxProps> = ({
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setIsChecked(Boolean(event.target.checked));
         if (disabled) return;
-        onChange(event);
+
+        if (onValidChange && isValid(event)) {
+            onValidChange(event);
+        } else if (onValidChange && !isValid(event)) {
+            onValidChange();
+        } else if (onChange) {
+            onChange(event);
+        }
+    };
+
+    const hasValidation = () =>
+        Boolean(
+            validation?.required,
+        );
+
+    const isValid = (
+        event:
+            | React.FocusEvent<HTMLInputElement>
+            | React.ChangeEvent<HTMLInputElement>,
+    ): boolean => {
+        // check if there exists validation rules
+        if (!hasValidation()) return true;
+
+        // check for HTML validation
+        if (!event?.target.checkValidity()) return false;
+
+        // if no errors were found, then return true
+        return true;
     };
 
     useEffect(

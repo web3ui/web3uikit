@@ -43,6 +43,12 @@ export interface InputProps {
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
     /**
+     * onValidChange returns the entire event only if all defined validation rules are passed, as normal you can access event.target
+     * else it returns nothing
+     */
+    onValidChange?: (event?: React.ChangeEvent<HTMLInputElement>) => void;
+
+    /**
      * standard onBlur that returns the entire event, it also checks validation rules
      */
     onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;

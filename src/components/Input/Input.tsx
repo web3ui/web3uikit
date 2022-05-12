@@ -28,6 +28,7 @@ const Input: React.FC<InputProps> = ({
     label,
     name,
     onChange,
+    onValidChange,
     onBlur,
     placeholder = '',
     prefixIcon,
@@ -57,7 +58,13 @@ const Input: React.FC<InputProps> = ({
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
-        onChange && onChange(event);
+        if (onValidChange && isValid(event)) {
+            onValidChange(event);
+        } else if (onValidChange && !isValid(event)) {
+            onValidChange();
+        } else if (onChange) {
+            onChange(event);
+        }
     };
 
     const canToggleHideInput = (): boolean => {
@@ -79,27 +86,38 @@ const Input: React.FC<InputProps> = ({
                 validation?.regExp,
         );
 
-    const validate = (event: React.FocusEvent<HTMLInputElement>) => {
-        onBlur && onBlur(event);
-        if (!hasValidation()) return;
+    const isValid = (
+        event:
+            | React.FocusEvent<HTMLInputElement>
+            | React.ChangeEvent<HTMLInputElement>,
+    ): boolean => {
+        // check if there exists validation rules
+        if (!hasValidation()) return true;
 
         // check for HTML validation
-        if (!event?.target.checkValidity()) {
-            setInvalidMessage(event?.target.validationMessage || errorMessage);
-            setCurrentState('error');
-            return;
-        }
+        if (!event?.target.checkValidity()) return false;
 
         // check for the value passes the custom RegExp
         if (validation?.regExp) {
             const re = new RegExp(validation?.regExp);
-            if (!re.test(event?.target.value)) {
-                setInvalidMessage(
-                    validation?.regExpInvalidMessage || errorMessage,
-                );
-                setCurrentState('error');
-                return;
-            }
+            if (!re.test(event?.target.value)) return false;
+        }
+
+        // if no errors were found, then return true
+        return true;
+    };
+
+    const blurred = (event: React.FocusEvent<HTMLInputElement>) => {
+        onBlur && onBlur(event);
+
+        if (!isValid(event) && validation?.regExp) {
+            setInvalidMessage(validation?.regExpInvalidMessage || errorMessage);
+            setCurrentState('error');
+            return;
+        } else if (!isValid(event)) {
+            setInvalidMessage(event?.target.validationMessage || errorMessage);
+            setCurrentState('error');
+            return;
         }
 
         // finally if all pass but the Input is in error state
@@ -140,7 +158,7 @@ const Input: React.FC<InputProps> = ({
                 name={name}
                 ref={ref}
                 onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
-                    validate(event)
+                    blurred(event)
                 }
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                     valueChanged(event)

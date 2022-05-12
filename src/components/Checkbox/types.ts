@@ -48,7 +48,7 @@ export interface CheckboxProps {
     /**
      * The normal onChange event
      */
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
     /**
      * onValidChange returns the entire event only if all defined validation rules are passed, as normal you can access event.target

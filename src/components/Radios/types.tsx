@@ -38,7 +38,7 @@ interface RadiosProps {
     /**
      * standard onChange that returns the entire event, as normal you can access event.target
      */
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
     /**
      * onValidChange returns the entire event only if all defined validation rules are passed, as normal you can access event.target

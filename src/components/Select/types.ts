@@ -17,7 +17,7 @@ export interface SelectProps {
      */
     value?: string;
 
-     /**
+    /**
      * ref object for fancy select
      */
     ref?: RefObject<HTMLDivElement>;
@@ -31,6 +31,12 @@ export interface SelectProps {
      * onChange that returns OptionProps typed data if not using traditional HTML5 mode
      */
     onChange?: (option: OptionProps) => void;
+
+    /**
+     * onValidChange returns the entire event only if all defined validation rules are passed, as normal you can access event.target
+     * else it returns nothing
+     */
+    onValidChange?: (event?: React.ChangeEvent<HTMLSelectElement>) => void;
 
     /**
      * standard onBlur that returns the entire event, as normal you can access event.target

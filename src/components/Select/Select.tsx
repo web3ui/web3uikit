@@ -33,6 +33,7 @@ const Select: React.FC<SelectProps> = ({
     refTraditional,
     label,
     onChange,
+    onValidChange,
     onChangeTraditional,
     onBlurTraditional,
     options = [],
@@ -63,6 +64,37 @@ const Select: React.FC<SelectProps> = ({
         if (onChange) {
             onChange(options[selectedIndex]);
         }
+    };
+
+    const valueChanged = (
+        event: React.ChangeEvent<HTMLSelectElement>,
+    ) => {
+        if (disabled) return;
+
+        if (onValidChange && isValid(event)) {
+            onValidChange(event);
+        } else if (onValidChange && !isValid(event)) {
+            onValidChange();
+        } else if (onChangeTraditional) {
+            onChangeTraditional(event);
+        }
+    };
+
+    const hasValidation = () => Boolean(validation?.required);
+
+    const isValid = (
+        event:
+            | React.FocusEvent<HTMLSelectElement>
+            | React.ChangeEvent<HTMLSelectElement>,
+    ): boolean => {
+        // check if there exists validation rules
+        if (!hasValidation()) return true;
+
+        // check for HTML validation
+        if (!event?.target.checkValidity()) return false;
+
+        // if no errors were found, then return true
+        return true;
     };
 
     useEffect(() => {
@@ -205,7 +237,7 @@ const Select: React.FC<SelectProps> = ({
                 id={id}
                 ref={refTraditional}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
-                    onChangeTraditional && onChangeTraditional(event)
+                   valueChanged(event)
                 }
                 onBlur={(event: React.FocusEvent<HTMLSelectElement>) =>
                     onBlurTraditional && onBlurTraditional(event)

@@ -1,7 +1,14 @@
 import color from './colors';
 import fontBreakpoints from './fontBreakpoint';
-import { fontSize } from './breakpoints';
 import { css } from 'styled-components';
+
+export const fontSize = {
+    h1: 36,
+    h2: 28,
+    h3: 24,
+    h4: 20,
+    h5: 16,
+};
 
 const heading = css`
     -webkit-font-smoothing: antialiased;

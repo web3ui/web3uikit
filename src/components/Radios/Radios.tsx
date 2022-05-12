@@ -19,6 +19,7 @@ const Radios: React.FC<RadiosProps> = ({
     items,
     ref,
     onChange,
+    onValidChange,
     onBlur,
     onCreditCardRemoved,
     selectedState,
@@ -33,6 +34,42 @@ const Radios: React.FC<RadiosProps> = ({
     const [whichIsChecked, setChecked] = useState<number>(
         setWhichIsChecked || items.length,
     );
+
+    const valueChanged = (
+        event: React.ChangeEvent<HTMLInputElement>,
+        index: number,
+    ) => {
+        if (disabled) return;
+
+        if (onValidChange && isValid(event)) {
+            onValidChange(event);
+        } else if (onValidChange && !isValid(event)) {
+            onValidChange();
+        } else if (onChange) {
+            onChange(event);
+        }
+
+        if (typeof selectedState == 'undefined') {
+            setChecked(index);
+        }
+    };
+
+    const hasValidation = () => Boolean(validation?.required);
+
+    const isValid = (
+        event:
+            | React.FocusEvent<HTMLInputElement>
+            | React.ChangeEvent<HTMLInputElement>,
+    ): boolean => {
+        // check if there exists validation rules
+        if (!hasValidation()) return true;
+
+        // check for HTML validation
+        if (!event?.target.checkValidity()) return false;
+
+        // if no errors were found, then return true
+        return true;
+    };
 
     useEffect(() => {
         if (typeof selectedState != 'undefined') {
@@ -50,10 +87,7 @@ const Radios: React.FC<RadiosProps> = ({
     );
 
     return (
-        <FieldsetStyled
-            id={`${formattedID}`}
-            data-testid="test-fieldset"
-        >
+        <FieldsetStyled id={`${formattedID}`} data-testid="test-fieldset">
             {title && (
                 <LegendStyled data-testid="test-legend">{title}</LegendStyled>
             )}
@@ -71,13 +105,7 @@ const Radios: React.FC<RadiosProps> = ({
                                 ref={ref}
                                 name={`${formattedID}_group`}
                                 onChange={(e) => {
-                                    if (disabled) {
-                                        return;
-                                    }
-                                    onChange(e);
-                                    if (typeof selectedState == 'undefined') {
-                                        setChecked(i);
-                                    }
+                                    valueChanged(e, i);
                                 }}
                                 onBlur={(e) => onBlur && onBlur(e)}
                                 required={validation?.required}

@@ -33,6 +33,12 @@ export interface TextAreaProps {
     onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 
     /**
+     * onValidChange returns the entire event only if all defined validation rules are passed, as normal you can access event.target
+     * else it returns nothing
+     */
+    onValidChange?: (event?: React.ChangeEvent<HTMLTextAreaElement>) => void;
+
+    /**
      * standard onBlur that returns the entire event, as normal you can access event.target
      */
     onBlur?: (event: React.FocusEvent<HTMLTextAreaElement>) => void;

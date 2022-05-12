@@ -11,6 +11,7 @@ const TextArea: React.FC<TextAreaProps> = ({
     name,
     ref,
     onChange,
+    onValidChange,
     onBlur,
     placeholder,
     state,
@@ -26,7 +27,44 @@ const TextArea: React.FC<TextAreaProps> = ({
 
     const valueChanged = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setCurrentValue(event.target.value);
-        onChange && onChange(event);
+        if (onValidChange && isValid(event)) {
+            onValidChange(event);
+        } else if (onValidChange && !isValid(event)) {
+            onValidChange();
+        } else if (onChange) {
+            onChange(event);
+        }
+    };
+
+    const hasValidation = () =>
+        Boolean(
+            validation?.required ||
+                validation?.numberMax ||
+                validation?.numberMin ||
+                validation?.characterMaxLength ||
+                validation?.characterMinLength ||
+                validation?.regExp,
+        );
+
+    const isValid = (
+        event:
+            | React.FocusEvent<HTMLTextAreaElement>
+            | React.ChangeEvent<HTMLTextAreaElement>,
+    ): boolean => {
+        // check if there exists validation rules
+        if (!hasValidation()) return true;
+
+        // check for HTML validation
+        if (!event?.target.checkValidity()) return false;
+
+        // check for the value passes the custom RegExp
+        if (validation?.regExp) {
+            const re = new RegExp(validation?.regExp);
+            if (!re.test(event?.target.value)) return false;
+        }
+
+        // if no errors were found, then return true
+        return true;
     };
 
     useEffect(() => {

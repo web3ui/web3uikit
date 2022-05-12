@@ -1,14 +1,7 @@
 import color from './colors';
-import fontBreakpoints from './fontBreakpoint';
+import fontBreakpoint from './fontBreakpoint';
+import { fontSize } from './breakpoints';
 import { css } from 'styled-components';
-
-export const fontSize = {
-    h1: 36,
-    h2: 28,
-    h3: 24,
-    h4: 20,
-    h5: 16,
-};
 
 const heading = css`
     -webkit-font-smoothing: antialiased;
@@ -20,7 +13,7 @@ const heading = css`
     font-weight: 600;
     letter-spacing: 0;
 
-    ${fontBreakpoints.h1};
+    ${fontBreakpoint.h1};
 `;
 
 const h1 = css`
@@ -28,14 +21,14 @@ const h1 = css`
     line-height: 40px;
     letter-spacing: -0.75px;
 
-    ${fontBreakpoints.h1};
+    ${fontBreakpoint.h1};
 `;
 
 const h2 = css`
     font-size: ${fontSize.h2}px;
     line-height: 36px;
 
-    ${fontBreakpoints.h2}
+    ${fontBreakpoint.h2}
 `;
 
 const h3 = css`
@@ -43,21 +36,21 @@ const h3 = css`
     font-weight: 700;
     line-height: 32px;
 
-    ${fontBreakpoints.h3}
+    ${fontBreakpoint.h3}
 `;
 
 const h4 = css`
     font-size: ${fontSize.h4}px;
     line-height: 28px;
 
-    ${fontBreakpoints.h4}
+    ${fontBreakpoint.h4}
 `;
 
 const h5 = css`
     font-size: ${fontSize.h5}px;
     line-height: 25px;
 
-    ${fontBreakpoints.h5}
+    ${fontBreakpoint.h5}
 `;
 
 const ibm = css`

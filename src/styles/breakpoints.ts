@@ -15,4 +15,12 @@ const breakpoints = {
     xs: '320px',
 };
 
+export const fontSize = {
+    h1: 36,
+    h2: 28,
+    h3: 24,
+    h4: 20,
+    h5: 16,
+};
+
 export default breakpoints;

@@ -1,5 +1,4 @@
-import breakpoints from './breakpoints';
-import { fontSize } from './fonts';
+import breakpoints, { fontSize } from './breakpoints';
 import { css } from 'styled-components';
 
 const h1 = css`

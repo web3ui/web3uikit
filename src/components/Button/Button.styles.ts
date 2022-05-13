@@ -100,7 +100,6 @@ const getSizeStyles = (size: string) => {
 };
 
 const getColored = (color: string, theme: string) => {
-    //console.table(coloredRed);
     switch (color) {
         case 'red':
             if (theme === 'status') return statusDanger;

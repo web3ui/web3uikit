@@ -3,9 +3,20 @@ import { Button } from '../Button';
 import { Input } from '../Input';
 import { Tag } from '../Tag';
 import styles from './Todo.styles';
-import { TodoProps } from './types';
+import { ColorProps, TodoProps } from './types';
 
 const { DivStyled, DivStyledContent, SectionStyled } = styles;
+
+const colors: ColorProps[] = [
+    'green',
+    'red',
+    'grey',
+    'yellow',
+    'blue',
+    'blueLight',
+    'purple',
+    'pink',
+];
 
 const Todo: React.FC<TodoProps> = ({
     buttonText = 'Add',
@@ -14,6 +25,7 @@ const Todo: React.FC<TodoProps> = ({
     onChange,
     pattern,
     todos = [],
+    ...props
 }) => {
     const key = useMemo(() => Math.random(), []);
     const [inputValue, setInputValue] = useState<string>('');
@@ -27,7 +39,8 @@ const Todo: React.FC<TodoProps> = ({
         setLists([...updatedList]);
     };
 
-    const addTodo = () => {
+    const addTodo = (e: any) => {
+        e.preventDefault();
         setLists((prevTodo) => [...prevTodo, inputValue]);
         setInputValue('');
         const input: HTMLInputElement | null = document.querySelector(
@@ -38,28 +51,31 @@ const Todo: React.FC<TodoProps> = ({
     };
 
     return (
-        <SectionStyled data-testid="test-todo">
-            <DivStyled>
-                <Input
-                    id="todo-input"
-                    label={label}
-                    onChange={(e) => setInputValue(e.target.value)}
-                    size="large"
-                    validation={{
-                        regExp: pattern,
-                    }}
-                    key={key}
-                    value={inputValue}
-                />
-                <Button
-                    disabled={!inputValue}
-                    icon="plus"
-                    onClick={addTodo}
-                    size="large"
-                    text={buttonText}
-                    theme="primary"
-                />
-            </DivStyled>
+        <SectionStyled data-testid="test-todo" {...props}>
+            <form onSubmit={addTodo}>
+                <DivStyled>
+                    <Input
+                        id="todo-input"
+                        label={label}
+                        onChange={(e) => setInputValue(e.target.value)}
+                        size="large"
+                        validation={{
+                            regExp: pattern,
+                            required: true,
+                        }}
+                        key={key}
+                        value={inputValue}
+                    />
+                    <Button
+                        type="submit"
+                        disabled={!inputValue}
+                        icon="plus"
+                        size="large"
+                        text={buttonText}
+                        theme="primary"
+                    />
+                </DivStyled>
+            </form>
 
             <DivStyledContent
                 data-testid="test-todo_content"
@@ -67,11 +83,12 @@ const Todo: React.FC<TodoProps> = ({
             >
                 {lists.map((todo, i) => (
                     <Tag
-                        color="blueLight"
+                        color={i < 8 ? colors[i] : colors[i % 8]}
                         hasCancel
                         key={i}
                         onCancelClick={() => removeTodo(i)}
                         text={todo}
+                        theme="chips"
                     />
                 ))}
             </DivStyledContent>

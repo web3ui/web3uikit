@@ -4,9 +4,14 @@ import { InfoProps } from './types';
 
 const { DivStyled, PStyledTopic, PStyledInfo } = styles;
 
-const Info: React.FC<InfoProps> = ({ id, information, topic }: InfoProps) => {
+const Info: React.FC<InfoProps> = ({
+    id,
+    information,
+    topic,
+    ...props
+}: InfoProps) => {
     return (
-        <DivStyled id={id} data-testid={'card-test-id'}>
+        <DivStyled id={id} data-testid={'card-test-id'} {...props}>
             <PStyledTopic data-testid={'topic-test-id'}>{topic}</PStyledTopic>
             <PStyledInfo data-testid={'info-test-id'}>
                 {information}

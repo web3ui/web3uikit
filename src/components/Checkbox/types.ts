@@ -1,3 +1,5 @@
+import React from 'react';
+
 export type ValidateCheckbox = {
     required?: boolean;
 };
@@ -19,9 +21,14 @@ export interface CheckboxProps {
     id?: string;
 
     /**
+     * ref object
+     */
+    ref?: React.RefObject<HTMLInputElement>;
+
+    /**
      * A label to show the boxes meaning
      */
-    label: string;
+    label: string | JSX.Element;
 
     /**
      * A label to show the boxes meaning
@@ -42,6 +49,11 @@ export interface CheckboxProps {
      * The normal onChange event
      */
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+    /**
+     * The normal onBlur event
+     */
+    onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 
     /**
      * You can validate your checkbox and switches

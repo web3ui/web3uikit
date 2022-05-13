@@ -70,7 +70,7 @@ const SpanStyled = styled.span<TStyleProps>`
 const DivStyled = styled.div`
     text-align: center;
 
-    div[role='spinner'] {
+    & > div[role='spinner'] {
         margin: 30px auto;
     }
 `;

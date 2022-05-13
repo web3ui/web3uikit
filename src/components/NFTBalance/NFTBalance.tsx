@@ -13,7 +13,7 @@ import { INFTBalance } from './types';
 import { Skeleton } from '../Skeleton';
 const { DivStyled, DivFlexStyled } = styles;
 
-const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
+const NFTBalance: React.FC<INFTBalance> = ({ address, chain, ...props }) => {
     const { isInitialized, isInitializing } = useMoralis();
     const [limit, setLimit] = useState(5);
     const Web3Api = useMoralisWeb3Api();
@@ -61,7 +61,7 @@ const NFTBalance: React.FC<INFTBalance> = ({ address, chain }) => {
     }
 
     return (
-        <DivStyled gap={64}>
+        <DivStyled gap={64} {...props}>
             <DivStyled gap={8}>
                 <Typography variant="h1">{getEllipsisTxt(address)}</Typography>
                 <Typography>

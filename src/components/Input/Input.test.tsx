@@ -61,6 +61,21 @@ test('onChange event is returned, testEvent => event.target', () => {
     expect(testEvent).toHaveBeenCalledWith(input);
 });
 
+test('onBlur event is returned, testEvent => event.target', () => {
+    render(<Input onBlur={(e) => testEvent(e.target)} />);
+    const div: HTMLDivElement = screen.getByTestId(testDivId);
+    const input: HTMLInputElement = screen.getByTestId(testInputId);
+
+    expect(div.classList.contains('filled')).toBeFalsy;
+    expect(div.classList.contains('empty')).toBeTruthy;
+
+    input.focus();
+    fireEvent.blur(input, { target: { value: 'foo' } });
+
+    expect(input.value).toBe('foo');
+    expect(testEvent).toHaveBeenCalledWith(input);
+});
+
 describe('Input - Text', () => {
     const testLabel = DefaultInput?.args?.label;
     const testName = DefaultInput?.args?.name;

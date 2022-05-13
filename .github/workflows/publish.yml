@@ -23,7 +23,7 @@ jobs:
             - run: git config --global user.name "GitHub CD bot"
             - run: git config --global user.email "dmitrii@moralis.io"
             # upgrade npm version in package.json to the tag used in the release.
-            - run: npm version ${{ github.event.release.tag_name }}
+            - run: npm version --force ${{ github.event.release.tag_name }}
             # build the project
             - run: npm run build
             # run tests just in case

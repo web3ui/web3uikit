@@ -46,6 +46,11 @@ const App = () => (
 );
 ```
 
+
+### ▲ Usage with Next.js
+
+If you are using `web3uikit` with Next.js, be sure to follow the [official guide](https://github.com/vercel/next.js/tree/canary/examples/with-styled-components-babel), since we are using `styled-components` under the hood.
+
 # 🧭 `Table of contents`
 
 -   [Web3UIKit!](#web3uikit)

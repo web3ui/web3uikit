@@ -12,10 +12,12 @@ const Hero: React.FC<HeroProps> = ({
     customImage = null,
     height = '80vh',
     linearGradient,
+    padding,
     rounded,
     subTitle,
     textColor = `${color.greyDark}`,
     title,
+    ...props
 }) => {
     return (
         <SectionStyled
@@ -26,6 +28,8 @@ const Hero: React.FC<HeroProps> = ({
             height={height}
             rounded={rounded}
             align={align}
+            padding={padding}
+            {...props}
         >
             <Typography
                 color={textColor}

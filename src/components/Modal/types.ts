@@ -43,6 +43,11 @@ export interface ModalProps {
     isCancelDisabled?: boolean;
 
     /**
+     * center the vertically in the screen
+     */
+    isCentered?: boolean;
+
+    /**
      * set if 'Ok' button is disabled
      */
     isOkDisabled?: boolean;

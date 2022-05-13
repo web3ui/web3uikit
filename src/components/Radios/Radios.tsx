@@ -17,13 +17,16 @@ const Radios: React.FC<RadiosProps> = ({
     id,
     isRow = false,
     items,
+    ref,
     onChange,
+    onBlur,
     onCreditCardRemoved,
     selectedState,
     setWhichIsChecked,
     suffix,
     title,
     validation,
+    ...props
 }) => {
     const formattedID = id?.replace(/\s/g, '-');
     const isCreditCards = Boolean(typeof items[0] === 'object');
@@ -47,7 +50,10 @@ const Radios: React.FC<RadiosProps> = ({
     );
 
     return (
-        <FieldsetStyled id={`${formattedID}`} data-testid="test-fieldset">
+        <FieldsetStyled
+            id={`${formattedID}`}
+            data-testid="test-fieldset"
+        >
             {title && (
                 <LegendStyled data-testid="test-legend">{title}</LegendStyled>
             )}
@@ -62,6 +68,7 @@ const Radios: React.FC<RadiosProps> = ({
                                 checked={i === whichIsChecked}
                                 data-testid={`test-input-${i}`}
                                 id={`${formattedID}_${i}`}
+                                ref={ref}
                                 name={`${formattedID}_group`}
                                 onChange={(e) => {
                                     if (disabled) {
@@ -72,9 +79,11 @@ const Radios: React.FC<RadiosProps> = ({
                                         setChecked(i);
                                     }
                                 }}
+                                onBlur={(e) => onBlur && onBlur(e)}
                                 required={validation?.required}
                                 type="radio"
                                 value={i}
+                                {...props}
                             />
                             <LabelStyled
                                 data-testid={`test-label-${i}`}

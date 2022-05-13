@@ -23,9 +23,10 @@ const CryptoCards: React.FC<CryptoCardProps> = ({
     chainType,
     onClick,
     settingsIcon,
+    ...props
 }: CryptoCardProps) => {
     return (
-        <DivStyledCryptoCard color={bgColor} data-testid={'test-crypto-card'}>
+        <DivStyledCryptoCard color={bgColor} data-testid={'test-crypto-card'} {...props}>
             <DivStyledInfo>
                 <DivStyledImage>
                     <DivStyledLogo>

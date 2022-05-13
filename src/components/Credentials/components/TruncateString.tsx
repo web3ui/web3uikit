@@ -62,6 +62,14 @@ const TruncateString: FC<ITruncateStringProps> = ({
     };
 
     useEffect(() => {
+        if (!truncatedString?.includes('...')) {
+            setTruncatedString(text);
+        } else {
+            setTruncating(true);
+        }
+    }, [text]);
+
+    useEffect(() => {
         // 2. Call Truncating function on every state change
         if (truncating) {
             const ts = getTruncatedString(text);

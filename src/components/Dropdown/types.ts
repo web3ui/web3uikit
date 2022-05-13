@@ -57,4 +57,9 @@ export interface IDropdown {
      * if true will render label
      */
     isLabelVisible?: boolean;
+
+    /**
+     * Dropdown arrow type
+     */
+    dropdownArrowType?: 'normal' | 'filled';
 }

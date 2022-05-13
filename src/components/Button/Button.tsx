@@ -23,6 +23,7 @@ const Button: React.FC<ButtonProps> = ({
     radius,
     isTransparent = false,
     iconColor,
+    ...props
 }: ButtonProps) => {
     return (
         <ButtonStyled
@@ -40,6 +41,7 @@ const Button: React.FC<ButtonProps> = ({
             type={type}
             radius={radius}
             iconColor={iconColor}
+            {...props}
         >
             {isLoading ? (
                 <Loading size={15} {...loadingProps} />

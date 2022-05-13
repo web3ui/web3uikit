@@ -74,7 +74,7 @@ const Select: React.FC<SelectProps> = ({
         if (onValidChange && isValid(event)) {
             onValidChange(event);
         } else if (onValidChange && !isValid(event)) {
-            onValidChange();
+            return;
         } else if (onChangeTraditional) {
             onChangeTraditional(event);
         }

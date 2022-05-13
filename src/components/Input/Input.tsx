@@ -61,7 +61,7 @@ const Input: React.FC<InputProps> = ({
         if (onValidChange && isValid(event)) {
             onValidChange(event);
         } else if (onValidChange && !isValid(event)) {
-            onValidChange();
+            return;
         } else if (onChange) {
             onChange(event);
         }

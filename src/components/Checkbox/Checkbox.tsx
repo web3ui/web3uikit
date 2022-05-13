@@ -30,7 +30,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
         if (onValidChange && isValid(event)) {
             onValidChange(event);
         } else if (onValidChange && !isValid(event)) {
-            onValidChange();
+           return;
         } else if (onChange) {
             onChange(event);
         }

@@ -6,7 +6,8 @@ export interface ICodeAreaProps {
     maxWidth?: string;
 
     /**
-     * maximum height of component
+     * maximum height of component.
+     * Should be greater than minHeight
      */
     maxHeight?: string;
 

@@ -6,13 +6,14 @@ import React from 'react';
 import color from '../../styles/colors';
 import * as stories from './CodeArea.stories';
 
-const { MultipleLines, OneLine, WithHeader } = composeStories(stories);
+const { MultipleLines, OneLine, WithHeader, MaxHeight } = composeStories(stories);
 
 const testHeaderId = 'test-codearea-header';
 const testLineNumbers = 'test-codearea-linenumbers';
 const testTextAreaId = 'test-codearea';
 const testWrapperId = 'test-codearea-wrapper';
-const testButtonId = 'test-button';
+const testMaximizeButtonId = 'test-button-maximize';
+const textMinimizeButtonId = 'test-button-minimize';
 
 test('Render - CodeArea Oneline', () => {
     const text = OneLine.args?.text;
@@ -69,18 +70,24 @@ test('Renders - CodeArea with Header', () => {
 });
 
 test('Renders - maximize button', () => {
-    const maxHeight = '700px';
-    render(<CodeArea maxHeight={maxHeight} text={''} />);
-    const maximizeButton = screen.getByTestId(testButtonId);
+    render(<MaxHeight text={''} />);
+    const maximizeButton = screen.getByTestId(testMaximizeButtonId);
     expect(maximizeButton).not.toBeNull();
     fireEvent.click(maximizeButton);
     const textarea = screen.getByTestId(testTextAreaId) as HTMLDivElement;
     const styles = textarea && getComputedStyle(textarea);
-    expect(styles?.height).toBe(maxHeight);
+    expect(styles?.height).toBe('500px');
+
+    // test minimize button
+    const minimizeButton = screen.getByTestId(textMinimizeButtonId);
+    expect(minimizeButton).not.toBeNull();
+    fireEvent.click(minimizeButton);
+    const updatedStyles = textarea && getComputedStyle(textarea);
+    expect(updatedStyles?.height).toBe('400px');
 });
 
 test('Doesn\'t render maximize button', () => {
     render(<CodeArea text={''} />);
-    const maximizeButton = screen.queryByTestId(testButtonId);
+    const maximizeButton = screen.queryByTestId(testMaximizeButtonId);
     expect(maximizeButton).toBeNull();
 });

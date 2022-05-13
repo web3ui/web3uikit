@@ -23,6 +23,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
     maxHeight,
 }) => {
     const [currentValue, setCurrentValue] = useState(text);
+    const [isMaximized, setIsMaximized] = useState(false);
     const hasMaxHeight = Boolean(maxHeight);
 
     useEffect(() => setCurrentValue(text), [text]);
@@ -67,21 +68,37 @@ const CodeArea: FC<ICodeAreaProps> = ({
                     </TextAreaStyled>
                     {hasMaxHeight && (
                         <DivStyledButtonWrap data-testid="test-codearea-maximize-button-wrapper">
-                            <Button
-                                icon='maximize'
+                            {isMaximized ? <Button
+                                icon='minimize'
                                 iconLayout="icon-only"
                                 id="test-button-primary-icon-only"
-                                data-testid="test-button"
+                                data-testid="test-button-minimize"
                                 isTransparent
                                 onClick={() => {
                                     if (textareaRef && textareaRef.current) {
-                                        textareaRef.current.style.height = maxHeight || '100%';
+                                        textareaRef.current.style.height = minHeight;
+                                        setIsMaximized(false);
                                     }
                                 }}
                                 radius={20}
                                 theme="secondary"
                                 type="button"
-                            />
+                            /> : <Button
+                                icon='maximize'
+                                iconLayout="icon-only"
+                                id="test-button-primary-icon-only"
+                                data-testid="test-button-maximize"
+                                isTransparent
+                                onClick={() => {
+                                    if (textareaRef && textareaRef.current) {
+                                        textareaRef.current.style.height = maxHeight || '100%';
+                                        setIsMaximized(true);
+                                    }
+                                }}
+                                radius={20}
+                                theme="secondary"
+                                type="button"
+                            />}
                         </DivStyledButtonWrap>
                     )}
                 </ContentStyled>

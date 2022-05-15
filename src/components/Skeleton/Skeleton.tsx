@@ -20,6 +20,7 @@ const Skeleton: React.FC<SkeletonProps> = ({
     theme,
     height = getDefault(theme).height,
     width = getDefault(theme).width,
+    ...props
 }) => {
     return (
         <DivStyled
@@ -28,6 +29,7 @@ const Skeleton: React.FC<SkeletonProps> = ({
             height={height}
             theme={theme}
             width={width}
+            {...props}
         />
     );
 };

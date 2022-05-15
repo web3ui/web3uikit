@@ -25,6 +25,7 @@ const Notification: React.FC<NotificationProps> = ({
     title = 'New Message',
     type = 'info',
     position = 'topL',
+    ...props
 }: NotificationProps) => {
     const [isClosing, setIsClosing] = useState(false);
     const [intervalId, setIntervalId] = useState<NodeJS.Timeout>();
@@ -92,6 +93,7 @@ const Notification: React.FC<NotificationProps> = ({
             onMouseLeave={startTimer}
             type={type}
             position={position}
+            {...props}
         >
             <IconWrapperStyled data-testid={'test-notification-icon-wrapper'}>
                 <Icon size={24} svg={getIcon()} fill={getIconColor(type)} />

@@ -15,6 +15,7 @@ const Loading: React.FC<ILoadingProps> = ({
     direction = 'bottom',
     spinnerType = 'loader',
     fontSize,
+    ...props
 }) => {
     return (
         <StyledSpinnerParent
@@ -24,6 +25,7 @@ const Loading: React.FC<ILoadingProps> = ({
             size={size}
             spinnerColor={spinnerColor}
             fontSize={fontSize}
+            {...props}
         >
             {spinnerType == 'loader' ? (
                 <StyledSpinnerDiv spinnerColor={spinnerColor} size={size} />
@@ -35,7 +37,7 @@ const Loading: React.FC<ILoadingProps> = ({
     );
 };
 
-const WaveLoader: React.FC<ILoadingProps> = ({ size, spinnerColor }) => {
+const WaveLoader: React.FC<ILoadingProps> = ({ size, spinnerColor, ...props }) => {
     const states = [state1, state2, state3, state4];
     const [activeBalls, setActiveBalls] = useState(0);
 
@@ -52,7 +54,7 @@ const WaveLoader: React.FC<ILoadingProps> = ({ size, spinnerColor }) => {
         return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
     }, []);
     return (
-        <DivStyledWaveLoader size={size} spinnerColor={spinnerColor}>
+        <DivStyledWaveLoader size={size} spinnerColor={spinnerColor} {...props}>
             <span className={`${states[activeBalls].ball0 && 'active'}`} />
             <span className={`${states[activeBalls].ball1 && 'active'}`} />
             <span className={`${states[activeBalls].ball2 && 'active'}`} />

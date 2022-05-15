@@ -22,6 +22,7 @@ const Modal: React.FC<ModalProps> = ({
     hasFooter = true,
     id = String(Date.now()),
     isCancelDisabled,
+    isCentered = false,
     isOkDisabled,
     isVisible = true,
     okText = 'Ok',
@@ -34,6 +35,7 @@ const Modal: React.FC<ModalProps> = ({
     customFooter,
     closeButton,
     canOverflow = false,
+    ...props
 }: ModalProps) => {
     const [visible, setVisible] = useState(isVisible);
 
@@ -56,7 +58,13 @@ const Modal: React.FC<ModalProps> = ({
     };
 
     return (
-        <DivStyled id={id} isVisible={visible} data-testid="modal-test-id">
+        <DivStyled
+            data-testid="modal-test-id"
+            id={id}
+            isCentered={isCentered}
+            isVisible={visible}
+            {...props}
+        >
             <DivStyledWrap width={width} canOverflow={canOverflow}>
                 <HeaderStyled
                     data-testid={'modal-header-test-id'}

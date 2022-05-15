@@ -17,6 +17,7 @@ const Hero: React.FC<HeroProps> = ({
     subTitle,
     textColor = `${color.greyDark}`,
     title,
+    ...props
 }) => {
     return (
         <SectionStyled
@@ -28,6 +29,7 @@ const Hero: React.FC<HeroProps> = ({
             rounded={rounded}
             align={align}
             padding={padding}
+            {...props}
         >
             <Typography
                 color={textColor}

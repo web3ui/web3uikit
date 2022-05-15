@@ -16,6 +16,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
     type = 'date',
     validation,
     value = new Date().toISOString().substring(0, type === 'date' ? 10 : 7),
+    ...props
 }) => {
     const [current, setCurrent] = useState(value);
     const [currentState, setCurrentState] = useState(state);
@@ -63,6 +64,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
             className={label && 'input_filled'}
             data-testid="test-date-picker"
             state={currentState}
+            {...props}
         >
             <InputStyled
                 data-testid="date-picker_input"

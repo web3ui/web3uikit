@@ -18,6 +18,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
     headerComponent,
     disabled,
     minHeight = '400px',
+    ...props
 }) => {
     const [currentValue, setCurrentValue] = useState(text);
 
@@ -41,7 +42,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
     }, [currentValue]);
 
     return (
-        <WidthWrapperStyled maxWidth={maxWidth}>
+        <WidthWrapperStyled maxWidth={maxWidth} {...props}>
             <WrapperStyled data-testid="test-codearea-wrapper">
                 {headerComponent && (
                     <HeaderStyled data-testid="test-codearea-header">

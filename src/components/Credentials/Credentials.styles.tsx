@@ -9,9 +9,12 @@ const CredentialsStyled = styled.div<Pick<ICredentialsProps, 'width'>>`
     display: flex;
     flex-direction: column;
     padding: 16px;
-    padding: 16px;
     position: relative;
     width: ${(p) => p.width};
+
+    @media (max-width: 600px) {
+        padding: 16px 8px;
+    }
 `;
 
 const PreformattedStyled = styled.pre`
@@ -20,6 +23,10 @@ const PreformattedStyled = styled.pre`
     height: max-content;
     justify-content: space-between;
     position: relative;
+
+    @media (max-width: 600px) {
+        width: 100%;
+    }
 `;
 
 const ToolsStyled = styled.div`
@@ -45,6 +52,10 @@ const DivWrapperStyled = styled.div<TDivWrapper>`
     ${resetCSS};
     overflow-x: ${(p) => (p.isHidden ? 'hidden' : p.isMultiline && 'auto')};
     width: 90%;
+
+    @media (max-width: 600px) {
+        width: 80%;
+    }
 `;
 
 export default {

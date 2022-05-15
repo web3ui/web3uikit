@@ -21,7 +21,7 @@ describe('default', () => {
 
     it('toggles select', () => {
         const { rerender } = render(<Default />);
-        const element = screen.getByTestId(`popoverSelect`);
+        const element = screen.getByTestId('popoverSelect');
         fireEvent.click(element);
         rerender(<Default />);
         const RenderOptions = screen.getByTestId('popoverSelect');
@@ -37,7 +37,7 @@ describe('Controlled State', () => {
     });
     it('toggles select', () => {
         const { rerender } = render(<ControlledState />);
-        const element = screen.getByTestId(`popoverSelect`);
+        const element = screen.getByTestId('popoverSelect');
         fireEvent.click(element);
         rerender(<ControlledState />);
         const RenderOptions = screen.getByTestId('popoverSelect');
@@ -54,13 +54,13 @@ describe('NonFixedLabel', () => {
 
     it('renders label', () => {
         render(<NonFixedLabel />);
-        const element = screen.getAllByText(`Server:`);
+        const element = screen.getAllByText('Server:');
         expect(element).toBeDefined();
     });
 
     it('toggles select', () => {
         const { rerender } = render(<NonFixedLabel />);
-        const element = screen.getByTestId(`popoverSelect`);
+        const element = screen.getByTestId('popoverSelect');
         fireEvent.click(element);
         rerender(<NonFixedLabel />);
         const RenderOptions = screen.getByTestId('popoverSelect');
@@ -77,13 +77,13 @@ describe('IconLess', () => {
 
     it('renders label', () => {
         render(<Iconless />);
-        const element = screen.getAllByText(`Server:`);
+        const element = screen.getAllByText('Server:');
         expect(element).toBeDefined();
     });
 
     it('toggles select', () => {
         const { rerender } = render(<Iconless />);
-        const element = screen.getByTestId(`popoverSelect`);
+        const element = screen.getByTestId('popoverSelect');
         fireEvent.click(element);
         rerender(<Iconless />);
         const RenderOptions = screen.getByTestId('popoverSelect');

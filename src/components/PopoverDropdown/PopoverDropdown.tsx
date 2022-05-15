@@ -10,6 +10,7 @@ const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
     parent,
     position,
     moveBody = -50,
+    ...props
 }) => {
     const [showDropdown, setVisibility] = useState(false);
     return (
@@ -17,6 +18,7 @@ const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
             id={id}
             onMouseEnter={() => setVisibility(true)}
             onMouseLeave={() => setVisibility(false)}
+            {...props}
         >
             <div data-testid={'dropdown-parent-test-id'}>{parent}</div>
 

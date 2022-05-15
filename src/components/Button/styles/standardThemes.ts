@@ -1,8 +1,6 @@
 import { css } from 'styled-components';
 import color, { getShade, gradientColors } from '../../../styles/colors';
 
-// theme = primary | outline | secondary | translucent
-
 export const secondary = css`
     background-color: ${color.blueLight};
     border-color: ${color.blueLight};
@@ -13,7 +11,7 @@ export const secondary = css`
     }
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.blueDark};
+        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
     }
 
     svg {
@@ -44,10 +42,12 @@ export const primary = css`
                 #aadcd6 103.7%
             ),
             #21bf96;
+        outline: 0;
+        box-shadow: none;
     }
-
+    
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.greenDark};
+        box-shadow: 0px 0px 0px 2px ${color.blue};
     }
 
     svg {
@@ -73,10 +73,11 @@ export const outlineLarge = css`
     :active {
         border-width: 2px;
         padding: 6px 22px;
+        box-shadow: 0px 0px 0px 2px ${color.blueDark};
     }
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.grey};
+        box-shadow: 0px 0px 0px 2px ${color.blueSky};
     }
 
     svg {
@@ -100,7 +101,7 @@ export const outlineRegular = css`
     }
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.beauBlue};
+        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
     }
 
     svg {
@@ -134,7 +135,7 @@ export const outlineSmall = css`
     }
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.greenDark};
+        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
     }
 
     svg {
@@ -147,11 +148,78 @@ export const translucent = css`
     border-style: inset;
     color: ${color.white};
 
+    :active {
+        border: none;
+    }
+
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.blueDark};
+        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
     }
 
     svg {
         fill: ${color.white};
+    }
+`;
+
+export const status = css`
+    background-color: ${color.yellowLight};
+    border-width: 0px;
+    color: ${color.yellow};
+
+    :hover {
+        :after {
+            background-color: ${color.yellowHover};
+        }
+    }
+
+    svg {
+        fill: ${color.white};
+    }
+`;
+
+export const ghost = css`
+    background-color: ${color.blueDark}20;
+    border-width: 0px;
+    color: ${color.white};
+
+    :hover {
+        color: ${color.blueDark}20;
+        background: ${color.white};
+    }
+
+    svg {
+        fill: ${color.white};
+    }
+`;
+
+export const link = css`
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid ${color.blue};
+    padding: 0px;
+    color: ${color.blue};
+
+    :active {
+        border-width: 0px;
+        border-bottom: 1px solid ${color.blue};
+    }
+
+    :hover {
+        color: ${color.blueSkyDark};
+        border-bottom: 1px solid ${color.blueSkyDark};
+    }
+
+    svg {
+        fill: ${color.blue};
+    }
+`;
+
+export const text = css`
+    background-color: transparent;
+    border-width: 0px;
+    color: ${color.blue};
+
+    svg {
+        fill: ${color.blue};
     }
 `;

@@ -1,5 +1,13 @@
-import breakpoints, { fontSize } from './breakpoints';
+import breakpoints from './breakpoints';
 import { css } from 'styled-components';
+
+export const fontSize = {
+    h1: 36,
+    h2: 28,
+    h3: 24,
+    h4: 20,
+    h5: 16,
+};
 
 const h1 = css`
     @media screen and (max-width: ${breakpoints.xl}) {

@@ -1,6 +1,5 @@
 import color from './colors';
-import fontBreakpoint from './fontBreakpoint';
-import { fontSize } from './breakpoints';
+import fontBreakpoint, { fontSize } from './fontBreakpoint';
 import { css } from 'styled-components';
 
 const heading = css`

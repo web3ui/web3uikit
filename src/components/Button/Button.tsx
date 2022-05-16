@@ -46,7 +46,7 @@ const Button: React.FC<ButtonProps> = ({
             {isLoading ? (
                 <Loading size={15} {...loadingProps} />
             ) : (
-                icon && <Icon svg={icon} fill="inherit" size={20} />
+                icon && <Icon svg={icon} fill="inherit" size={18} />
             )}
             <span>{isLoading ? loadingText : text}</span>
         </ButtonStyled>

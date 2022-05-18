@@ -30,8 +30,11 @@ const VerifyCode: FC<VerifyCodeProps> = ({
     );
 
     const processInput = (e: ChangeEvent<HTMLInputElement>, idx: number) => {
-        const num = e.target.value[e.target.value.length - 1];
         const newCode = [...code];
+        const num =
+            newCode[idx] === e.target.value[0]
+                ? e.target.value[1]
+                : e.target.value[0];
         newCode[idx] = num;
         setCode(newCode);
         if (idx !== length - 1) {

@@ -124,6 +124,7 @@ const HookTemplate: ComponentStory<typeof Notification> = () => {
 export const hookDemo = HookTemplate.bind({});
 
 export const Regular = Template.bind({});
+
 Regular.args = {
     id: 'test-Notification',
     message: 'Somebody messaged you',

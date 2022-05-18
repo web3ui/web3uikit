@@ -1,5 +1,6 @@
-import { NotificationProps } from './types';
+import { NotificationProps, notifyType } from './types';
 import React, { useEffect, useState } from 'react';
+import { getNotificationColor } from './themes/themes';
 import { Icon } from '../Icon';
 import { iconTypes, TIconType } from '../Icon/collection';
 import NotificationStyles from './Notification.styles';
@@ -78,9 +79,9 @@ const Notification: React.FC<NotificationProps> = ({
         return iconTypes.checkmark;
     };
 
-    const getIconColor = (): string => {
+    const getIconColor = (type: notifyType): string => {
         if (iconColor) return iconColor;
-        return color.grey;
+        return getNotificationColor(type);
     };
 
     return (
@@ -95,7 +96,7 @@ const Notification: React.FC<NotificationProps> = ({
             {...props}
         >
             <IconWrapperStyled data-testid={'test-notification-icon-wrapper'}>
-                <Icon size={24} svg={getIcon()} fill={getIconColor()} />
+                <Icon size={24} svg={getIcon()} fill={getIconColor(type)} />
             </IconWrapperStyled>
             <TextContentStyled>
                 <TitleStyled data-testid={'test-notification-title'}>

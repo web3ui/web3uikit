@@ -20,7 +20,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
     onCompleted = () => {},
     placeholder = 'X',
 }) => {
-    const [code, setCode] = useState([...Array(length)].map(() => ''));
+    const [code, setCode] = useState(new Array(length).fill(''));
     const inputRefs = useMemo(
         () =>
             new Array(length)

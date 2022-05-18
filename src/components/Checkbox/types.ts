@@ -48,7 +48,7 @@ export interface CheckboxProps {
     /**
      * The normal onChange event
      */
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 
     /**
      * The normal onBlur event

@@ -20,26 +20,15 @@ const Checkbox: React.FC<CheckboxProps> = ({
     validation,
     ...props
 }) => {
-    const [isChecked, setIsChecked] = useState(false);
+    const [isChecked, setIsChecked] = useState(Boolean(checked));
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setIsChecked(Boolean(event.target.checked));
         if (disabled) return;
-        onChange(event);
+        setIsChecked(Boolean(event.target.checked));
+        onChange && onChange(event);
     };
 
-    useEffect(
-        () =>
-            setIsChecked(
-                typeof checked != 'undefined' ? Boolean(checked) : isChecked,
-            ),
-        [checked],
-    );
-    useEffect(() => {
-        setIsChecked(
-            typeof checked != 'undefined' ? Boolean(checked) : isChecked,
-        );
-    }, [isChecked]);
+    useEffect(() => setIsChecked(Boolean(checked)), [checked]);
 
     return (
         <StyledLabel

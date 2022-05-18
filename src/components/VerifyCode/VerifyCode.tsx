@@ -30,10 +30,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
     );
 
     const processInput = (e: ChangeEvent<HTMLInputElement>, idx: number) => {
-        const num = e.target.value;
-        console.log(e);
-
-        if (/[^0-9]/.test(num)) return;
+        const num = e.target.value[e.target.value.length - 1];
         const newCode = [...code];
         newCode[idx] = num;
         setCode(newCode);
@@ -47,7 +44,6 @@ const VerifyCode: FC<VerifyCodeProps> = ({
 
     const onKeyUp = (e: KeyboardEvent<HTMLInputElement>, idx: number) => {
         if (e.key === 'ArrowUp' || e.key === 'ArrowDown') return;
-        console.log(e.key);
         const isDeleting = e.key === 'Delete' || e.key === 'Backspace';
         if (isDeleting && !code[idx] && idx !== 0) {
             const newCode = [...code];

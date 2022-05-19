@@ -72,7 +72,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
     };
 
     return (
-        <>
+        <div className="VerifyCode" data-testid="test-VerifyCode">
             <Typography
                 variant="subtitle2"
                 weight="semibold"
@@ -88,6 +88,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
                     <InputStyled
                         autoFocus={autoFocus && !code[0].length && idx === 0}
                         className={`${num !== '' && 'is-filled'}`}
+                        data-testid={`test-verify-code-input-${idx}`}
                         inputMode="numeric"
                         key={idx}
                         maxLength={1}
@@ -101,7 +102,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
                     />
                 ))}
             </DivStyledWrapper>
-        </>
+        </div>
     );
 };
 

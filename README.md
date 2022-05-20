@@ -44,7 +44,8 @@ const App = () => (
             chain="ethereum" 
             bgColor='blue' 
             chainType='Network' 
-            onClick={console.log} />
+            onClick={console.log} 
+        />
         <Button theme="primary" type="button" text="Launch Dapp" />
     </>
 );

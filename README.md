@@ -40,7 +40,11 @@ import { CryptoCards, Button } from 'web3uikit';
 
 const App = () => (
     <>
-        <CryptoCards chain="ethereum" />
+        <CryptoCards 
+            chain="ethereum" 
+            bgColor='blue' 
+            chainType='Network' 
+            onClick={console.log} />
         <Button theme="primary" type="button" text="Launch Dapp" />
     </>
 );

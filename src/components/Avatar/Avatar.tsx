@@ -5,7 +5,14 @@ import renderAvatarSVG from './images/guy';
 import color from '../../styles/colors';
 const { DivStyled, H4Styled } = styles;
 
-const avatarColors = ['#FEB7B7', '#E1B5F6', '#A7D6F9', '#AADCD6', '#F0DC7D'];
+const avatarColors = [
+    '#FEB7B7',
+    '#E1B5F6',
+    '#A7D6F9',
+    '#AADCD6',
+    '#F0DC7D',
+    '#F0DC7D',
+];
 
 const Avatar: React.FC<AvatarProps> = ({
     avatarBackground,
@@ -27,10 +34,7 @@ const Avatar: React.FC<AvatarProps> = ({
         if (theme == 'image' || image) {
             return 'transparent';
         }
-        const pos =
-            avatarKey < avatarColors.length
-                ? avatarKey % avatarColors.length
-                : avatarColors.length % avatarKey;
+        const pos = avatarKey % avatarColors.length;
         return avatarColors[pos - 1];
     };
 

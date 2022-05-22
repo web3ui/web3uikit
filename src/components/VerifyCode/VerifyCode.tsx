@@ -72,37 +72,59 @@ const VerifyCode: FC<VerifyCodeProps> = ({
     };
 
     return (
-        <div className="VerifyCode" data-testid="test-VerifyCode">
-            <Typography
-                variant="subtitle2"
-                weight="semibold"
-                color={color.black}
+        <>
+            <div
+                style={{
+                    width: '520px',
+                }}
             >
-                {label}
-            </Typography>
-            <DivStyledWrapper
-                className="verify-code"
-                data-testid="test-verify-code-id"
-            >
-                {code.map((num, idx) => (
-                    <InputStyled
-                        autoFocus={autoFocus && !code[0].length && idx === 0}
-                        className={`${num !== '' && 'is-filled'}`}
-                        data-testid={`test-verify-code-input-${idx}`}
-                        inputMode="numeric"
-                        key={idx}
-                        maxLength={1}
-                        onChange={(e) => processInput(e, idx)}
-                        onKeyUp={(e) => onKeyUp(e, idx)}
-                        onPaste={(e) => onPaste(e)}
-                        placeholder={placeholder[0]}
-                        ref={inputRefs[idx]}
-                        type="number"
-                        value={num}
+                <Typography
+                    variant="subtitle2"
+                    weight="semibold"
+                    color={color.black}
+                >
+                    {label}
+                </Typography>
+
+                <form>
+                    <input
+                        name="code1"
+                        type={'number'}
+                        min="1"
+                        max="9"
+                        required={true}
                     />
-                ))}
-            </DivStyledWrapper>
-        </div>
+                    <input name="code1" type={'number'} required={true} />
+                    <input name="code1" type={'number'} required={true} />
+                    <input name="code1" type={'number'} required={true} />
+                    <button type="submit">Submit</button>
+                </form>
+
+                <DivStyledWrapper
+                    className="verify-code"
+                    data-testid="test-verify-code-id"
+                >
+                    {code.map((num, idx) => (
+                        <InputStyled
+                            autoFocus={
+                                autoFocus && !code[0].length && idx === 0
+                            }
+                            className={`${num !== '' && 'is-filled'}`}
+                            inputMode="numeric"
+                            key={idx}
+                            maxLength={1}
+                            onChange={(e) => processInput(e, idx)}
+                            onKeyUp={(e) => onKeyUp(e, idx)}
+                            onPaste={(e) => onPaste(e)}
+                            placeholder={placeholder[0]}
+                            ref={inputRefs[idx]}
+                            type="number"
+                            value={num}
+                        />
+                    ))}
+                </DivStyledWrapper>
+            </div>
+        </>
     );
 };
 

@@ -9,34 +9,15 @@ export default {
 
 const Template: ComponentStory<typeof Logo> = (args) => <Logo {...args} />;
 
-export const LogoIconWhite = Template.bind({});
-LogoIconWhite.args = {
+export const MoralisIcon = Template.bind({});
+MoralisIcon.args = {
     theme: 'icon',
-    color: 'white',
-};
-
-export const LogoIconBlack = Template.bind({});
-LogoIconBlack.args = {
-    theme: 'icon',
-    color: 'black',
-};
-
-export const LogoIconBlue = Template.bind({});
-LogoIconBlue.args = {
-    theme: 'icon',
-    color: 'blue',
 };
 
 export const LogoDefaultWhite = Template.bind({});
 LogoDefaultWhite.args = {
     theme: 'default',
     color: 'white',
-};
-
-export const LogoDefaultBlack = Template.bind({});
-LogoDefaultBlack.args = {
-    theme: 'default',
-    color: 'black',
 };
 
 export const LogoDefaultBlue = Template.bind({});

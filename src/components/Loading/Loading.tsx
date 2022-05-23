@@ -41,30 +41,21 @@ const WaveLoader: React.FC<ILoadingProps> = ({
     size,
     spinnerColor,
     ...props
-}) => {
-    const states = [state1, state2, state3, state4];
-    const [activeBalls, setActiveBalls] = useState(0);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveBalls((prevState) => {
-                if (prevState + 1 == states.length) {
-                    return 0;
-                }
-                return prevState + 1;
-            });
-        }, 150);
-
-        return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
-    }, []);
-    return (
-        <DivStyledWaveLoader size={size} spinnerColor={spinnerColor} {...props}>
-            <span className={`${states[activeBalls].ball0 && 'active'}`} />
-            <span className={`${states[activeBalls].ball1 && 'active'}`} />
-            <span className={`${states[activeBalls].ball2 && 'active'}`} />
-            <span className={`${states[activeBalls].ball3 && 'active'}`} />
-        </DivStyledWaveLoader>
-    );
-};
+}) => (
+    <DivStyledWaveLoader
+        aria-busy="true"
+        aria-label="loading, please wait"
+        role="alert"
+        size={size}
+        spinnerColor={spinnerColor}
+        {...props}
+    >
+        <span aria-hidden="true" id="anim-delay1"></span>
+        <span aria-hidden="true" id="anim-delay2"></span>
+        <span aria-hidden="true" id="anim-delay3"></span>
+        <span aria-hidden="true" id="anim-delay4"></span>
+        <span aria-hidden="true" id="anim-delay5"></span>
+    </DivStyledWaveLoader>
+);
 
 export default Loading;

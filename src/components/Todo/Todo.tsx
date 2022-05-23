@@ -9,7 +9,6 @@ const { DivStyled, DivStyledContent, SectionStyled } = styles;
 
 const colors: ColorProps[] = [
     'green',
-    'red',
     'grey',
     'yellow',
     'blue',

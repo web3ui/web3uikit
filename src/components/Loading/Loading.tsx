@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import color from '../../styles/colors';
 import {
     DivStyledWaveLoader,

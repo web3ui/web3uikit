@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import color from '../../styles/colors';
 import {
     DivStyledWaveLoader,
@@ -6,7 +6,6 @@ import {
     StyledSpinnerParent,
 } from './Loading.styles';
 import { ILoadingProps } from './types';
-import { state1, state2, state3, state4 } from './WaveLoaderStates';
 
 const Loading: React.FC<ILoadingProps> = ({
     size = 20,

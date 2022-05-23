@@ -5,7 +5,7 @@ export type Theme =
     | 'mastercard'
     | 'amex'
     | 'diners';
-export type Color = 'black' | 'white' | 'blue';
+export type Color = 'white' | 'blue';
 export type Size = 'small' | 'regular';
 
 export interface LogoProps {

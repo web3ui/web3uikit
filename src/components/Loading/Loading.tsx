@@ -37,7 +37,11 @@ const Loading: React.FC<ILoadingProps> = ({
     );
 };
 
-const WaveLoader: React.FC<ILoadingProps> = ({ size, spinnerColor, ...props }) => {
+const WaveLoader: React.FC<ILoadingProps> = ({
+    size,
+    spinnerColor,
+    ...props
+}) => {
     const states = [state1, state2, state3, state4];
     const [activeBalls, setActiveBalls] = useState(0);
 
@@ -49,7 +53,7 @@ const WaveLoader: React.FC<ILoadingProps> = ({ size, spinnerColor, ...props }) =
                 }
                 return prevState + 1;
             });
-        }, 1000);
+        }, 150);
 
         return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
     }, []);

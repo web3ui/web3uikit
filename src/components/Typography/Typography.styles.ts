@@ -31,7 +31,9 @@ export const getCSSWeight = (weight: weightType) => {
                 font-weight: 700;
             `;
         default:
-            throw new Error('Not correct font weight');
+            return css`
+                font-weight: ${weight};
+            `;
     }
 };
 

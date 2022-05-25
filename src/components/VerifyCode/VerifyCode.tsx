@@ -20,7 +20,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
     onCompleted = () => {},
     placeholder = 'X',
 }) => {
-    const [code, setCode] = useState([...Array(length)].map(() => ''));
+    const [code, setCode] = useState(new Array(length).fill(''));
     const inputRefs = useMemo(
         () =>
             new Array(length)
@@ -30,11 +30,11 @@ const VerifyCode: FC<VerifyCodeProps> = ({
     );
 
     const processInput = (e: ChangeEvent<HTMLInputElement>, idx: number) => {
-        const num = e.target.value;
-        console.log(e);
-
-        if (/[^0-9]/.test(num)) return;
         const newCode = [...code];
+        const num =
+            newCode[idx] === e.target.value[0]
+                ? e.target.value[1]
+                : e.target.value[0];
         newCode[idx] = num;
         setCode(newCode);
         if (idx !== length - 1) {
@@ -47,7 +47,6 @@ const VerifyCode: FC<VerifyCodeProps> = ({
 
     const onKeyUp = (e: KeyboardEvent<HTMLInputElement>, idx: number) => {
         if (e.key === 'ArrowUp' || e.key === 'ArrowDown') return;
-        console.log(e.key);
         const isDeleting = e.key === 'Delete' || e.key === 'Backspace';
         if (isDeleting && !code[idx] && idx !== 0) {
             const newCode = [...code];
@@ -73,7 +72,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
     };
 
     return (
-        <>
+        <div className="VerifyCode" data-testid="test-VerifyCode">
             <Typography
                 variant="subtitle2"
                 weight="semibold"
@@ -89,6 +88,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
                     <InputStyled
                         autoFocus={autoFocus && !code[0].length && idx === 0}
                         className={`${num !== '' && 'is-filled'}`}
+                        data-testid={`test-verify-code-input-${idx}`}
                         inputMode="numeric"
                         key={idx}
                         maxLength={1}
@@ -102,7 +102,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
                     />
                 ))}
             </DivStyledWrapper>
-        </>
+        </div>
     );
 };
 

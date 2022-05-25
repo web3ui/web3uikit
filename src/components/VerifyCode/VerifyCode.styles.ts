@@ -12,6 +12,7 @@ const globalStyles = {
 const DivStyledWrapper = styled.div`
     ${resetCSS};
     display: flex;
+    flex-wrap: wrap;
     gap: ${globalStyles.spacing};
     justify-content: flex-start;
     margin: 10px 0px;

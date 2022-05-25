@@ -47,23 +47,50 @@ export const StyledSpinnerDiv = styled.div<
     animation: 1s ${rotate} infinite;
 `;
 
-export const DivStyledWaveLoader = styled.div<
-    Pick<ILoadingProps, 'size' | 'spinnerColor'>
->`
+// const DivStyledWaveLoader = styled.div<Pick<ILoadingProps, 'size' | 'spinnerColor'>>`
+
+const waveAnim = keyframes`
+    from {height: 2px; width: 2px;}
+    to {height: 7px;width: 7px;}
+`;
+
+export const DivStyledWaveLoader = styled.div<ILoadingProps>`
     display: flex;
     justify-content: center;
-    align-items: center;
-    column-gap: 8px;
-    & > span {
-        width: ${(props) => props.size && props.size / 2}px;
-        height: ${(props) => props.size && props.size / 2}px;
-        transition: all 1000ms;
-        background-color: ${(props) =>
-            props.spinnerColor && props.spinnerColor};
-        border-radius: 50%;
-    }
-    & > .active {
-        width: ${(props) => props.size && props.size}px;
-        height: ${(props) => props.size && props.size}px;
+    width: fit-content;
+
+    span {
+        align-items: center;
+        display: flex;
+        height: 10px;
+        justify-content: center;
+        width: 10px;
+
+        &:before {
+            animation-direction: alternate;
+            animation-duration: 0.4s;
+            animation-iteration-count: infinite;
+            animation-name: ${waveAnim};
+            background-color: ${(props) => props.spinnerColor};
+            border-radius: 50%;
+            content: '';
+            display: block;
+        }
+
+        &#anim-delay1:before {
+            animation-delay: 0s;
+        }
+        &#anim-delay2:before {
+            animation-delay: 0.1s;
+        }
+        &#anim-delay3:before {
+            animation-delay: 0.2s;
+        }
+        &#anim-delay4:before {
+            animation-delay: 0.3s;
+        }
+        &#anim-delay5:before {
+            animation-delay: 0.4s;
+        }
     }
 `;

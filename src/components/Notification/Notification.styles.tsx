@@ -29,9 +29,10 @@ const IconWrapperStyled = styled.div`
 
 const TextContentStyled = styled.div`
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin-left: 10px;
     width: 100%;
-    flex-wrap: wrap;
 `;
 
 const SpanStyled = styled.span`

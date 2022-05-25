@@ -1,29 +1,15 @@
 import React from 'react';
 import { composeStories } from '@storybook/testing-react';
-import {
-    render,
-    screen,
-} from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import * as stories from './Logo.stories';
 
 const {
     AmexRegular,
     DinersRegular,
     LogoDefaultWhite,
-    LogoIconWhite,
     MastercardRegular,
     VisaRegular,
 } = composeStories(stories);
-
-
-test('Renders Logo Icon', () => {
-    const testlogoIconId = 'test-logo-icon';
-
-    render(<LogoIconWhite />);
-
-    const logoIcon = screen.getByTestId(testlogoIconId);
-    expect(logoIcon).not.toBeNull();
-});
 
 test('Renders Logo Default', () => {
     const testlogoIconId = 'test-logo-default';

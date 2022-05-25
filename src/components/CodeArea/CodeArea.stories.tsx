@@ -32,7 +32,7 @@ OneLine.args = {
 
 export const MaxHeight = Template.bind({});
 MaxHeight.args = {
-    maxHeight: '500px',
+    maxHeight: '50px',
     text: `[common]
     server_addr = onfkgi4pc9ld.moralis.io
     server_port = 7000

@@ -6,16 +6,20 @@ export interface ICodeAreaProps {
     maxWidth?: string;
 
     /**
+     * minimal height of component
+     */
+    minHeight?: string;
+
+    /**
      * maximum height of component.
      * Should be greater than minHeight
      */
     maxHeight?: string;
 
     /**
-     * minimal height of component
-     * default is "400px"
+     * if true is expanded full size by default when maxHeight is used
      */
-    minHeight?: string;
+    isMaximized?: boolean;
 
     /**
      * standard onChange that returns the entire event, as normal you can access event.target

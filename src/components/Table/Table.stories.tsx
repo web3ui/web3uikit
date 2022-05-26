@@ -1,7 +1,16 @@
 import * as React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Table from './Table';
-import { columnsConfig, syncColumnsConfig, header, syncHeader, data, syncData, pageSize, maxPages } from './MockData';
+import {
+    columnsConfig,
+    syncColumnsConfig,
+    header,
+    syncHeader,
+    data,
+    syncData,
+    pageSize,
+    maxPages,
+} from './MockData';
 import { Loading } from '../Loading';
 import color from '../../styles/colors';
 export default {
@@ -20,6 +29,7 @@ DefaultTable.args = {
     data: data,
     pageSize,
     maxPages,
+    isColumnSortable: [false, true, false, false],
 };
 
 export const NoPagination = Template.bind({});
@@ -100,6 +110,7 @@ LoadingTable.args = {
     pageSize,
     maxPages,
     isLoading: true,
+    isColumnSortable: [true, true],
 };
 
 export const CustomLoader = Template.bind({});
@@ -127,4 +138,5 @@ SyncTableExample.args = {
     pageSize,
     maxPages,
     alignCellItems: 'center',
+    isColumnSortable: [false, true, true, false],
 };

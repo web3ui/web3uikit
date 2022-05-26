@@ -5,7 +5,7 @@ export function paginate(
     maxPages: number = 10,
 ): number[] {
     // calculate total pages
-    let totalPages = Math.ceil(totalItems / pageSize);
+    const totalPages = Math.ceil(totalItems / pageSize);
 
     // ensure current page isn't out of range
     if (currentPage < 1) {
@@ -14,15 +14,16 @@ export function paginate(
         currentPage = totalPages;
     }
 
-    let startPage: number, endPage: number;
+    let startPage: number;
+    let endPage: number;
     if (totalPages <= maxPages) {
         // total pages less than max so show all pages
         startPage = 1;
         endPage = totalPages;
     } else {
         // total pages more than max so calculate start and end pages
-        let maxPagesBeforeCurrentPage = Math.floor(maxPages / 2);
-        let maxPagesAfterCurrentPage = Math.ceil(maxPages / 2) - 1;
+        const maxPagesBeforeCurrentPage = Math.floor(maxPages / 2);
+        const maxPagesAfterCurrentPage = Math.ceil(maxPages / 2) - 1;
         if (currentPage <= maxPagesBeforeCurrentPage) {
             // current page near the start
             startPage = 1;
@@ -39,10 +40,41 @@ export function paginate(
     }
 
     // create an array of pages to ng-repeat in the pager control
-    let pages = Array.from(Array(endPage + 1 - startPage).keys()).map(
+    const pages = Array.from(Array(endPage + 1 - startPage).keys()).map(
         (i) => startPage + i,
     );
 
     // return object with all pager properties required by the view
     return pages;
+}
+
+export function getInnerText(obj: any) {
+    let buf = '';
+    if (obj === null) return null;
+    if (obj) {
+        const type = typeof obj;
+        if (type === 'string' || type === 'number') {
+            buf += obj;
+        } else if (type === 'object') {
+            let children = null;
+            if (Array.isArray(obj)) {
+                children = obj;
+            } else {
+                const props = obj.props;
+                if (props) {
+                    children = props.children;
+                }
+            }
+            if (children) {
+                if (Array.isArray(children)) {
+                    children.forEach((o) => {
+                        buf += getInnerText(o);
+                    });
+                } else {
+                    buf += getInnerText(children);
+                }
+            }
+        }
+    }
+    return buf;
 }

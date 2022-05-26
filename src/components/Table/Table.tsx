@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { TableProps } from '.';
+import color from '../../styles/colors';
 import getModuleAnimation from '../Card/Animations/animations';
+import { Icon } from '../Icon';
 import Loading from '../Loading/Loading';
 import { Typography } from '../Typography';
-import { paginate } from './Helper';
+import { paginate, getInnerText } from './Helper';
 import {
     Divider,
     DivSpinnerLoaderParent,
@@ -32,11 +34,15 @@ const Table: React.FC<TableProps> = ({
     customLoadingContent,
     alignCellItems = 'start',
     justifyCellItems = 'start',
+    isColumnSortable = [],
     ...props
 }) => {
     const [pageNum, setPageNum] = useState<number>(
         customPageNumber ? customPageNumber : 0,
     );
+    const [tableData, setTableData] = useState(data);
+    const [sortField, setSortField] = useState(-1);
+    const [order, setOrder] = useState('asc');
 
     useEffect(() => {
         if (typeof onPageNumberChanged != 'undefined') {
@@ -58,11 +64,11 @@ const Table: React.FC<TableProps> = ({
 
     const computeCurrentData = (): (string | React.ReactNode)[][] => {
         if (noPagination) {
-            return data;
+            return tableData;
         }
         const from = pageNum * pageSize;
         const to = from + pageSize;
-        return data?.slice(from, to);
+        return tableData?.slice(from, to);
     };
 
     const handlePrev = (): void => {
@@ -72,24 +78,77 @@ const Table: React.FC<TableProps> = ({
     };
 
     const handleNext = (): void => {
-        if (pageNum + 1 < Math.ceil(data?.length / pageSize)) {
+        if (pageNum + 1 < Math.ceil(tableData?.length / pageSize)) {
             handleSetPageNumber(pageNum + 1);
         }
+    };
+
+    const handleSortingChange = (fieldId: number) => {
+        if (
+            isColumnSortable.length !== 0 &&
+            isColumnSortable.length > fieldId &&
+            !isLoading &&
+            isColumnSortable[fieldId]
+        ) {
+            const sortOrder =
+                fieldId === sortField && order === 'asc' ? 'desc' : 'asc';
+            setSortField(fieldId);
+            setOrder(sortOrder);
+            handleSorting(fieldId, sortOrder);
+        }
+    };
+
+    const handleSorting = (fieldId: number, sortOrder: string) => {
+        const sorted = [...data].sort((a, b) => {
+            let x = getInnerText(a[fieldId]);
+            let y = getInnerText(b[fieldId]);
+            if (!x && !y) return 0;
+            if (!x) return 1;
+            if (!y) return -1;
+            const pattern = /(\d{2})\/(\d{2})\/(\d{4})(.*)/g;
+            // To handle date sort convert to YYYY-MM-DD format
+            if (pattern.test(x)) {
+                x = x.replace(pattern, '$3-$2-$1 $4');
+            }
+            if (pattern.test(y)) {
+                y = y.replace(pattern, '$3-$2-$1 $4');
+            }
+            return (
+                x.localeCompare(y, 'en', {
+                    numeric: true,
+                    sensitivity: 'base',
+                }) * (sortOrder === 'asc' ? 1 : -1)
+            );
+        });
+        setTableData(sorted);
     };
 
     const RenderTableHeader = (): JSX.Element => {
         return (
             <>
                 {header.map((col, key) => (
-                    <DivTableCell
-                        key={`header_${key}`}
-                        role="table-header"
-                        className="table_header"
-                        alignCellItems={alignCellItems}
-                        justifyCellItems={justifyCellItems}
-                    >
-                        {col}
-                    </DivTableCell>
+                    <>
+                        <DivTableCell
+                            key={`header_${key}`}
+                            role="table-header"
+                            className="table_header"
+                            alignCellItems={alignCellItems}
+                            justifyCellItems={justifyCellItems}
+                            onClick={() => handleSortingChange(key)}
+                        >
+                            {col}
+                            {sortField === key && (
+                                <Icon
+                                    svg={
+                                        order === 'asc'
+                                            ? 'triangleUp'
+                                            : 'triangleDown'
+                                    }
+                                    fill={color.grey}
+                                />
+                            )}
+                        </DivTableCell>
+                    </>
                 ))}
                 <Divider />
             </>
@@ -111,48 +170,49 @@ const Table: React.FC<TableProps> = ({
     };
 
     const RenderTable = (): JSX.Element => {
-        if (computeCurrentData().length == 0) {
+        if (tableData && computeCurrentData().length == 0) {
             return <RenderNoData />;
         }
         return (
             <>
-                {computeCurrentData().map(
-                    (row: (string | React.ReactNode)[], rowKey, arr) => (
-                        <React.Fragment key={`fragment_${rowKey}`}>
-                            {row.map(
-                                (
-                                    item: string | React.ReactNode,
-                                    colKey: number,
-                                    rowData,
-                                ) => (
-                                    <DivTableCell
-                                        key={`tr_${rowKey}_${colKey}`}
-                                        role="table-item"
-                                        className={`${
-                                            colKey == 0 && 'firstCol'
-                                        } ${
-                                            colKey == rowData.length - 1 &&
-                                            'lastCol'
-                                        }`}
-                                        alignCellItems={alignCellItems}
-                                        justifyCellItems={justifyCellItems}
-                                    >
-                                        {item}
-                                    </DivTableCell>
-                                ),
-                            )}
-                            {rowKey != arr.length - 1 && (
-                                <Divider key={`divider_${rowKey}`} />
-                            )}
-                        </React.Fragment>
-                    ),
-                )}
+                {tableData &&
+                    computeCurrentData().map(
+                        (row: (string | React.ReactNode)[], rowKey, arr) => (
+                            <React.Fragment key={`fragment_${rowKey}`}>
+                                {row.map(
+                                    (
+                                        item: string | React.ReactNode,
+                                        colKey: number,
+                                        rowData,
+                                    ) => (
+                                        <DivTableCell
+                                            key={`tr_${rowKey}_${colKey}`}
+                                            role="table-item"
+                                            className={`${
+                                                colKey == 0 && 'firstCol'
+                                            } ${
+                                                colKey == rowData.length - 1 &&
+                                                'lastCol'
+                                            }`}
+                                            alignCellItems={alignCellItems}
+                                            justifyCellItems={justifyCellItems}
+                                        >
+                                            {item}
+                                        </DivTableCell>
+                                    ),
+                                )}
+                                {rowKey != arr.length - 1 && (
+                                    <Divider key={`divider_${rowKey}`} />
+                                )}
+                            </React.Fragment>
+                        ),
+                    )}
             </>
         );
     };
 
     const RenderPagination = (): JSX.Element => {
-        if (noPagination || data?.length == 0) {
+        if (noPagination || tableData?.length == 0) {
             return <></>;
         }
         return (
@@ -165,22 +225,26 @@ const Table: React.FC<TableProps> = ({
                     >
                         Prev
                     </PaginationText>
-                    {paginate(data?.length, pageNum, pageSize, maxPages).map(
-                        (key) => (
-                            <PaginationTag
-                                key={`pagination_${key}`}
-                                active={key - 1 == pageNum}
-                                onClick={() => handleSetPageNumber(key - 1)}
-                                role="pagination-item"
-                                data-testid={`pagination_${key - 1 == pageNum}`}
-                            >
-                                <span>{key}</span>
-                            </PaginationTag>
-                        ),
-                    )}
+                    {paginate(
+                        tableData?.length,
+                        pageNum,
+                        pageSize,
+                        maxPages,
+                    ).map((key) => (
+                        <PaginationTag
+                            key={`pagination_${key}`}
+                            active={key - 1 == pageNum}
+                            onClick={() => handleSetPageNumber(key - 1)}
+                            role="pagination-item"
+                            data-testid={`pagination_${key - 1 == pageNum}`}
+                        >
+                            <span>{key}</span>
+                        </PaginationTag>
+                    ))}
                     <PaginationText
                         isActive={
-                            pageNum + 1 < Math.ceil(data?.length / pageSize)
+                            pageNum + 1 <
+                            Math.ceil(tableData?.length / pageSize)
                         }
                         onClick={handleNext}
                         data-testid="pagination-next"

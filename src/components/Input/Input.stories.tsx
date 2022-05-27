@@ -27,6 +27,13 @@ DefaultInput.args = {
     name: 'Test text Input',
 };
 
+export const DefaultInputNumber = Template.bind({});
+DefaultInputNumber.args = {
+    label: 'Label text',
+    name: 'Test text Input',
+    value: 50,
+};
+
 export const InputError = Template.bind({});
 InputError.args = {
     label: 'Label text',

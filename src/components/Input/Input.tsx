@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { CopyButton } from '../CopyButton';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
@@ -109,12 +109,18 @@ const Input: React.FC<InputProps> = ({
         }
     };
 
+    const isInputEmpty = useMemo(() => {
+        if (typeof currentValue === 'string') {
+            return currentValue.length > 0;
+        } else if (typeof currentValue === 'number') {
+            return true;
+        } else return false;
+    }, [currentValue]);
+
     return (
         <DivWrapperStyled
             state={currentState}
-            className={`input input_${
-                currentValue && currentValue?.length > 0 ? 'filled' : 'empty'
-            }`}
+            className={`input input_${isInputEmpty ? 'filled' : 'empty'}`}
             data-testid="test-div"
             style={{ ...style, width }}
             size={size}

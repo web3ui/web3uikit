@@ -68,9 +68,9 @@ export interface InputProps {
     type?: 'text' | 'number' | 'email' | 'tel' | 'password';
 
     /**
-     * you can pass a default value so the input is pre-filled
+     * standard HTML value prop
      */
-    value?: string;
+    value?: string | number;
 
     /**
      * please give a descriptive name to the input, it help with accessibility

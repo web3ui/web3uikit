@@ -69,6 +69,10 @@ const Demo: ComponentStory<typeof Typography> = () => {
                 Caption 12 monospace
             </Typography>
             <br />
+            <Typography variant="caption12" weight="550">
+                Weight 550
+            </Typography>
+            <br />
         </div>
     );
 };

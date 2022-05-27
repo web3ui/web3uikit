@@ -4,6 +4,25 @@ import fonts from '../../styles/fonts';
 import color from '../../styles/colors';
 import { InputProps, LabelProps } from './types';
 
+const FlagSelectionStyled = styled.div`
+    border: 1px solid red;
+    align-items: left;
+    display: flex;
+    position: absolute;
+    height: 100%;
+    justify-content: center;
+    max-width: 24px;
+    width: 100%;
+    & :first-child {
+        fill: ${color.grey};
+        transition: fill 0.2s ease-out;
+        width: 100%;
+        height: 100%;
+    }
+    top: 0;
+    /* display: none; */
+`;
+
 const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
     ${resetCSS}
     border-radius: 16px;
@@ -145,6 +164,9 @@ const InputStyled = styled.input<Pick<InputProps, 'customInput'>>`
             visibility: visible;
             color: ${color.grey};
         }
+        /* ${FlagSelectionStyled} {
+            display: block;
+        } */
     }
 
     &:-webkit-autofill,
@@ -229,12 +251,21 @@ const StrongStyled = styled.strong<IStrongStyledProps>`
     width: calc(100% - 26px);
 `;
 
+const SpanStyledFlag = styled.span`
+    align-items: center;
+    display: flex;
+    height: 9.52px;
+    margin-right: 18px;
+`;
+
 export default {
     CopyContainerStyled,
     DivStyled,
     DivWrapperStyled,
     InputStyled,
     LabelStyled,
+    SpanStyledFlag,
     StrongStyled,
     VisibilityIcon,
+    FlagSelectionStyled,
 };

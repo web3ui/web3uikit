@@ -1,9 +1,13 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import 'flag-icons/css/flag-icons.min.css';
+import { callCodeData } from './codeData.utils';
 import { CopyButton } from '../CopyButton';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
+import { OptionProps } from '../Select';
 import InputStyles from './Input.styles';
+import React, { useState, useEffect, useMemo } from 'react';
 import type { InputProps } from './types';
+import { Dropdown } from '../Dropdown';
 
 const {
     CopyContainerStyled,
@@ -11,8 +15,10 @@ const {
     DivWrapperStyled,
     InputStyled,
     LabelStyled,
+    SpanStyledFlag,
     StrongStyled,
     VisibilityIcon,
+    FlagSelectionStyled,
 } = InputStyles;
 
 const Input: React.FC<InputProps> = ({
@@ -43,6 +49,9 @@ const Input: React.FC<InputProps> = ({
     customInput,
     ...props
 }: InputProps) => {
+    // / FLAG
+    const [selectedCountry, setSelectedCountry] = useState(callCodeData[212]);
+
     const [currentValue, setCurrentValue] = useState(value);
     const [currentState, setCurrentState] = useState(state);
     const [mainType, setMainType] = useState(type);
@@ -117,6 +126,56 @@ const Input: React.FC<InputProps> = ({
         } else return false;
     }, [currentValue]);
 
+    // ////////////////// FLAG
+    const getFLag = (value: string) => {
+        const code = value.split(' ')[0];
+        const country = callCodeData.find((item) => item.dialCode === code);
+        return country ? country.isoCode : '';
+    };
+
+    const countrySelector = () => {
+        const o: OptionProps[] = [];
+        callCodeData.map((country, index) => {
+            o.push({
+                prefix: (
+                    <div
+                        style={{
+                            maxWidth: 'fit-content',
+                        }}
+                    >
+                        <SpanStyledFlag
+                            className={`fi fi-${getFLag(
+                                country.dialCode,
+                            ).toLowerCase()}`}
+                        />
+                    </div>
+                ),
+                label: country.name,
+                id: index,
+            });
+        });
+        return (
+            <Dropdown
+                options={o}
+                onChange={(e) => countrySelected(Number(e.id))}
+            />
+        );
+    };
+
+    const countrySelected = (id: number) => {
+        setSelectedCountry(callCodeData[id]);
+        attemptFocusOnElement('verify-number-input');
+    };
+
+    const attemptFocusOnElement = (elementID: string) => {
+        const input: HTMLInputElement | null = document.querySelector(
+            `#${elementID}`,
+        );
+        input?.focus();
+    };
+
+    // ////////////////// FLAG
+
     return (
         <DivWrapperStyled
             state={currentState}
@@ -179,6 +238,7 @@ const Input: React.FC<InputProps> = ({
                     {validation?.required && '*'}
                 </LabelStyled>
             )}
+
             {currentState === 'error' && (
                 <StrongStyled
                     data-testid="test-invalid-feedback"
@@ -208,6 +268,10 @@ const Input: React.FC<InputProps> = ({
                     )}
                 </VisibilityIcon>
             )}
+            {type === 'tel' && (
+                <FlagSelectionStyled>{countrySelector()}</FlagSelectionStyled>
+            )}
+
             {prefixIcon && iconPosition == 'end' && (
                 <DivStyled className="input_prefixIcon">
                     <Icon svg={prefixIcon} />

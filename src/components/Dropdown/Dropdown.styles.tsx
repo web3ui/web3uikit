@@ -88,6 +88,7 @@ export const DivInnerStyledOptionsContainer = styled.div`
 `;
 
 export const DivStyledOptionItem = styled.div`
+    align-items: center;
     color: #041836;
     cursor: pointer;
     display: flex;

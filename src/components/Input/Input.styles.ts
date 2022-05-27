@@ -7,7 +7,7 @@ import { InputProps, LabelProps } from './types';
 const FlagSelectionStyled = styled.div`
     border: 1px solid red;
     align-items: left;
-    display: flex;
+    display: none;
     position: absolute;
     height: 100%;
     justify-content: center;
@@ -20,7 +20,6 @@ const FlagSelectionStyled = styled.div`
         height: 100%;
     }
     top: 0;
-    /* display: none; */
 `;
 
 const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
@@ -91,6 +90,10 @@ const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
     }
 
     &:focus-within {
+        ${FlagSelectionStyled} {
+            display: block;
+        }
+
         outline: 2px solid ${color.blue};
 
         label {
@@ -164,9 +167,6 @@ const InputStyled = styled.input<Pick<InputProps, 'customInput'>>`
             visibility: visible;
             color: ${color.grey};
         }
-        /* ${FlagSelectionStyled} {
-            display: block;
-        } */
     }
 
     &:-webkit-autofill,

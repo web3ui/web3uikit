@@ -25,6 +25,7 @@ const Tooltip: React.FC<TooltipProps> = ({
     const [height, setHeight] = useState(0);
     const [popoverWidth, setPopoverWidth] = useState(0);
     const [popoverHeight, setPopoverHeight] = useState(0);
+    const [hoverState, setHoverState] = useState(false);
 
     useEffect(() => {
         setWidth(
@@ -47,23 +48,34 @@ const Tooltip: React.FC<TooltipProps> = ({
             data-testid={'tooltip-container-test-id'}
             {...props}
         >
-            <div>{children}</div>
-            <DivStyled
-                ref={popoverRef}
-                popoverWidth={popoverWidth}
-                popoverHeight={popoverHeight}
-                height={height}
-                width={width}
-                minWidth={minWidth as number}
-                position={position}
-                data-testid={'tooltip-children-test-id'}
-                moveBody={moveBody}
+            <div
+                className="tooltip-content"
+                onMouseEnter={() => setHoverState(true)}
+                onMouseOut={() => setHoverState(false)}
             >
-                <DivStyledTooltipText maxWidth={maxWidth} minWidth={minWidth}>
-                    {content}
-                </DivStyledTooltipText>
-                <DivStyledArrow position={position} move={move} />
-            </DivStyled>
+                {children}
+            </div>
+            {hoverState && (
+                <DivStyled
+                    ref={popoverRef}
+                    popoverWidth={popoverWidth}
+                    popoverHeight={popoverHeight}
+                    height={height}
+                    width={width}
+                    minWidth={minWidth as number}
+                    position={position}
+                    data-testid={'tooltip-children-test-id'}
+                    moveBody={moveBody}
+                >
+                    <DivStyledTooltipText
+                        maxWidth={maxWidth}
+                        minWidth={minWidth}
+                    >
+                        {content}
+                    </DivStyledTooltipText>
+                    <DivStyledArrow position={position} move={move} />
+                </DivStyled>
+            )}
         </DivStyledTooltipParent>
     );
 };

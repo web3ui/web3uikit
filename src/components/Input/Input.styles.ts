@@ -229,9 +229,27 @@ const StrongStyled = styled.strong<IStrongStyledProps>`
     width: calc(100% - 26px);
 `;
 
+export const DivStyledBlockie = styled.div`
+    width: 24px;
+    height: 24px;
+    display: flex;
+    margin-right: 12px;
+    & .blockie {
+        border-radius: 50%;
+    }
+`;
+
+export const DivStyledEllipsis = styled.div`
+    ${fonts.text}
+    width: 100%;
+    margin: auto 0;
+`;
+
 export default {
     CopyContainerStyled,
     DivStyled,
+    DivStyledBlockie,
+    DivStyledEllipsis,
     DivWrapperStyled,
     InputStyled,
     LabelStyled,

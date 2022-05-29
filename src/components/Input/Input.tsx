@@ -1,13 +1,23 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, {
+    useState,
+    useEffect,
+    useMemo,
+    MutableRefObject,
+    useRef,
+} from 'react';
+import Blockies from 'react-blockies';
 import { CopyButton } from '../CopyButton';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import InputStyles from './Input.styles';
 import type { InputProps } from './types';
+import { getEllipsisTxt } from '../../web3utils';
 
 const {
     CopyContainerStyled,
     DivStyled,
+    DivStyledBlockie,
+    DivStyledEllipsis,
     DivWrapperStyled,
     InputStyled,
     LabelStyled,
@@ -43,7 +53,11 @@ const Input: React.FC<InputProps> = ({
     customInput,
     ...props
 }: InputProps) => {
+    const bluredTextRef = useRef<HTMLDivElement>(
+        null,
+    ) as MutableRefObject<HTMLDivElement>;
     const [currentValue, setCurrentValue] = useState(value);
+    const [isEditMode, setIsEditMode] = useState(true);
     const [currentState, setCurrentState] = useState(state);
     const [mainType, setMainType] = useState(type);
     const [isInputHidden, setIsInputHidden] = useState(inputHidden);
@@ -54,6 +68,13 @@ const Input: React.FC<InputProps> = ({
     useEffect(() => setMainType(type), [type]);
     useEffect(() => setCurrentValue(value), [value]);
     useEffect(() => setInvalidMessage(errorMessage), [errorMessage]);
+    useEffect(() => {
+        if (isEditMode) {
+            (
+                bluredTextRef.current?.nextElementSibling as HTMLInputElement
+            )?.focus();
+        }
+    }, [bluredTextRef, isEditMode]);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.target.value);
@@ -81,7 +102,14 @@ const Input: React.FC<InputProps> = ({
 
     const validate = (event: React.FocusEvent<HTMLInputElement>) => {
         onBlur && onBlur(event);
-        if (!hasValidation()) return;
+
+        if (
+            type !== 'address' &&
+            type !== 'bluredAddress' &&
+            !hasValidation()
+        ) {
+            return;
+        }
 
         // check for HTML validation
         if (!event?.target.checkValidity()) {
@@ -102,6 +130,20 @@ const Input: React.FC<InputProps> = ({
             }
         }
 
+        if (type === 'address' || type === 'bluredAddress') {
+            if (
+                currentValue !== '' &&
+                !/^0x[a-fA-F0-9]{40}$/.test(currentValue as string)
+            ) {
+                setInvalidMessage('Invalid 0x address');
+                setCurrentState('error');
+            } else {
+                setInvalidMessage('');
+                setCurrentState('initial');
+            }
+            return;
+        }
+
         // finally if all pass but the Input is in error state
         if (currentState === 'error') {
             setCurrentState('confirmed');
@@ -117,6 +159,13 @@ const Input: React.FC<InputProps> = ({
         } else return false;
     }, [currentValue]);
 
+    const inputType = (): string => {
+        if (type === 'address' || type === 'bluredAddress') return 'text';
+        else if (mainType !== 'password') return type;
+        else if (isInputHidden) return 'password';
+        else return 'text';
+    };
+
     return (
         <DivWrapperStyled
             state={currentState}
@@ -125,12 +174,35 @@ const Input: React.FC<InputProps> = ({
             style={{ ...style, width }}
             size={size}
         >
-            {prefixIcon && iconPosition == 'front' && (
-                <DivStyled className="input_prefixIcon">
-                    <Icon svg={prefixIcon} />
-                </DivStyled>
+            {type !== 'address' &&
+                type !== 'bluredAddress' &&
+                prefixIcon &&
+                iconPosition == 'front' && (
+                    <DivStyled className="input_prefixIcon">
+                        <Icon svg={prefixIcon} />
+                    </DivStyled>
+                )}
+            {(type === 'address' || type === 'bluredAddress') && (
+                <DivStyledBlockie>
+                    <Blockies
+                        size={6}
+                        seed={(currentValue as string)?.toLowerCase()}
+                        className="blockie"
+                    />
+                </DivStyledBlockie>
             )}
             {customInput && customInput}
+            {type === 'bluredAddress' && (
+                <DivStyledEllipsis
+                    style={{ display: isEditMode ? 'none' : 'block' }}
+                    onClick={() => {
+                        setIsEditMode(true);
+                    }}
+                    ref={bluredTextRef}
+                >
+                    {getEllipsisTxt(currentValue as string)}
+                </DivStyledEllipsis>
+            )}
 
             <InputStyled
                 autoComplete={`${autoComplete}`}
@@ -145,23 +217,21 @@ const Input: React.FC<InputProps> = ({
                 minLength={validation?.characterMinLength}
                 name={name}
                 ref={ref}
-                onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
-                    validate(event)
-                }
+                onBlur={(event: React.FocusEvent<HTMLInputElement>) => {
+                    validate(event);
+                    if (isInputEmpty) {
+                        setIsEditMode(false);
+                    }
+                }}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                     valueChanged(event)
                 }
                 pattern={validation?.regExp}
                 placeholder={placeholder}
                 required={validation?.required}
-                type={
-                    mainType !== 'password'
-                        ? type
-                        : isInputHidden
-                        ? 'password'
-                        : 'text'
-                }
+                type={inputType()}
                 value={currentValue}
+                hidden={type === 'bluredAddress' && !isEditMode}
                 {...props}
             />
 
@@ -170,8 +240,10 @@ const Input: React.FC<InputProps> = ({
                     data-testid="test-label"
                     htmlFor={id}
                     hasPrefix={
-                        typeof prefixIcon !== 'undefined' &&
-                        iconPosition == 'front'
+                        (typeof prefixIcon !== 'undefined' &&
+                            iconPosition == 'front') ||
+                        type === 'address' ||
+                        type === 'bluredAddress'
                     }
                     labelBgColor={labelBgColor}
                 >
@@ -208,11 +280,14 @@ const Input: React.FC<InputProps> = ({
                     )}
                 </VisibilityIcon>
             )}
-            {prefixIcon && iconPosition == 'end' && (
-                <DivStyled className="input_prefixIcon">
-                    <Icon svg={prefixIcon} />
-                </DivStyled>
-            )}
+            {type !== 'address' &&
+                type !== 'bluredAddress' &&
+                prefixIcon &&
+                iconPosition == 'end' && (
+                    <DivStyled className="input_prefixIcon">
+                        <Icon svg={prefixIcon} />
+                    </DivStyled>
+                )}
             {hasCopyButton && (
                 <CopyContainerStyled>
                     <CopyButton text={currentValue} />

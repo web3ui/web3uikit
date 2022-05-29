@@ -210,3 +210,16 @@ Description.args = {
     description: 'this is something you need',
     validation: { required: true },
 };
+
+export const AddressInput = Template.bind({});
+AddressInput.args = {
+    label: 'Address',
+    type: 'address',
+    validation: { required: true },
+};
+
+export const BluredAddressInput = Template.bind({});
+BluredAddressInput.args = {
+    label: 'Address',
+    type: 'bluredAddress',
+};

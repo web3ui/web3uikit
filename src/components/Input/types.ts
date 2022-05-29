@@ -65,7 +65,14 @@ export interface InputProps {
     /**
      * types of input available
      */
-    type?: 'text' | 'number' | 'email' | 'tel' | 'password';
+    type?:
+        | 'text'
+        | 'number'
+        | 'email'
+        | 'tel'
+        | 'password'
+        | 'address'
+        | 'bluredAddress';
 
     /**
      * standard HTML value prop

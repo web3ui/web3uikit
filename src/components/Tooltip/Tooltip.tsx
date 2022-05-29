@@ -50,6 +50,7 @@ const Tooltip: React.FC<TooltipProps> = ({
         >
             <div
                 className="tooltip-content"
+                data-testid={'tooltip-content-test-id'}
                 onMouseEnter={() => setHoverState(true)}
                 onMouseOut={() => setHoverState(false)}
             >
@@ -64,7 +65,6 @@ const Tooltip: React.FC<TooltipProps> = ({
                     width={width}
                     minWidth={minWidth as number}
                     position={position}
-                    data-testid={'tooltip-children-test-id'}
                     moveBody={moveBody}
                 >
                     <DivStyledTooltipText

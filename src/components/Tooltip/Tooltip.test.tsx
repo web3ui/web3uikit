@@ -7,7 +7,7 @@ import * as stories from './Tooltip.stories';
 const { Bottom, Top, Left, Right } = composeStories(stories);
 
 const toolTipContainer = 'tooltip-container-test-id';
-const toolTipChildren = 'tooltip-children-test-id';
+const toolTipContent = 'tooltip-content-test-id';
 
 test('Tooltip - Bottom', async () => {
     render(<Bottom />);
@@ -17,7 +17,7 @@ test('Tooltip - Bottom', async () => {
     expect(container).not.toBeNull();
 
     // should show text on hover
-    fireEvent.mouseOver(screen.getByTestId(toolTipChildren));
+    fireEvent.mouseOver(screen.getByTestId(toolTipContent));
 
     const childrenContainer = await waitFor(() =>
         screen.getByTestId(toolTipContainer),
@@ -33,7 +33,7 @@ test('Tooltip - Top', async () => {
     expect(container).not.toBeNull();
 
     // should show text on hover
-    fireEvent.mouseOver(screen.getByTestId(toolTipChildren));
+    fireEvent.mouseOver(screen.getByTestId(toolTipContent));
 
     const childrenContainer = await waitFor(() =>
         screen.getByTestId(toolTipContainer),
@@ -49,7 +49,7 @@ test('Tooltip - Right', async () => {
     expect(container).not.toBeNull();
 
     // should show text on hover
-    fireEvent.mouseOver(screen.getByTestId(toolTipChildren));
+    fireEvent.mouseOver(screen.getByTestId(toolTipContent));
 
     const childrenContainer = await waitFor(() =>
         screen.getByTestId(toolTipContainer),
@@ -65,7 +65,7 @@ test('Tooltip - Left', async () => {
     expect(container).not.toBeNull();
 
     // should show text on hover
-    fireEvent.mouseOver(screen.getByTestId(toolTipChildren));
+    fireEvent.mouseOver(screen.getByTestId(toolTipContent));
 
     const childrenContainer = await waitFor(() =>
         screen.getByTestId(toolTipContainer),

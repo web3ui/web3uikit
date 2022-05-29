@@ -12,6 +12,7 @@ interface IStyledHoverSpan {
     width: number;
     minWidth: number;
     moveBody: number;
+    hoverState: boolean;
 }
 
 const defaultTriangleStyle = css`
@@ -86,6 +87,12 @@ const bottomPositionTriangle = css<TTooltipPositioningProps>`
     top: -10px;
 `;
 
+const showTooltipContent = css<Pick<IStyledHoverSpan, 'hoverState'>>`
+    opacity: 1;
+    transition: 0.5s;
+    transition-delay: 0.1s;
+`;
+
 const getTriangleComp = {
     top: topPositionTriangle,
     bottom: bottomPositionTriangle,
@@ -105,20 +112,14 @@ const DivStyledTooltipParent = styled.div`
     ${resetCSS}
     color: #252525;
     position: relative;
-    // &:hover > div:nth-child(2) {
-    //     opacity: 1;
-    //     transition: 0.5s;
-    //     transition-delay: 0.1s;
-    // }
 `;
 const DivStyled = styled.div<IStyledHoverSpan>`
-    opacity: 1;
-    transition: 0.5s;
-    transition-delay: 0.1s;
+    opacity: 0;
     position: absolute;
     z-index: 1;
     min-width: ${(props) => props.minWidth}px;
     ${({ position }) => getPopoverComp[position]};
+    ${({ hoverState }) => hoverState && showTooltipContent}
 `;
 
 const DivStyledTooltipText = styled.div<

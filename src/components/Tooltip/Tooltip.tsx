@@ -56,26 +56,22 @@ const Tooltip: React.FC<TooltipProps> = ({
             >
                 {children}
             </div>
-            {hoverState && (
-                <DivStyled
-                    ref={popoverRef}
-                    popoverWidth={popoverWidth}
-                    popoverHeight={popoverHeight}
-                    height={height}
-                    width={width}
-                    minWidth={minWidth as number}
-                    position={position}
-                    moveBody={moveBody}
-                >
-                    <DivStyledTooltipText
-                        maxWidth={maxWidth}
-                        minWidth={minWidth}
-                    >
-                        {content}
-                    </DivStyledTooltipText>
-                    <DivStyledArrow position={position} move={move} />
-                </DivStyled>
-            )}
+            <DivStyled
+                ref={popoverRef}
+                popoverWidth={popoverWidth}
+                popoverHeight={popoverHeight}
+                height={height}
+                width={width}
+                minWidth={minWidth as number}
+                position={position}
+                moveBody={moveBody}
+                hoverState={hoverState}
+            >
+                <DivStyledTooltipText maxWidth={maxWidth} minWidth={minWidth}>
+                    {content}
+                </DivStyledTooltipText>
+                <DivStyledArrow position={position} move={move} />
+            </DivStyled>
         </DivStyledTooltipParent>
     );
 };

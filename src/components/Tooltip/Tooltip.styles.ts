@@ -107,20 +107,20 @@ const DivStyledTooltipParent = styled.div`
     position: relative;
 `;
 
-const DivStyledTooltipContent = styled.div`
-    &:hover + div {
-        opacity: 1;
-        transition: 0.5s;
-        transition-delay: 0.1s;
-    }
-`;
-
 const DivStyled = styled.div<IStyledHoverSpan>`
     opacity: 0;
     position: absolute;
     z-index: 1;
     min-width: ${(props) => props.minWidth}px;
     ${({ position }) => getPopoverComp[position]};
+`;
+
+const DivStyledTooltipContent = styled.div`
+    &:hover + ${DivStyled} {
+        opacity: 1;
+        transition: 0.5s;
+        transition-delay: 0.1s;
+    }
 `;
 
 const DivStyledTooltipText = styled.div<

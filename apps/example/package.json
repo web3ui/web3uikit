@@ -1,0 +1,19 @@
+{
+  "name": "@apps/example",
+  "version": "0.1.0",
+  "private": true,
+  "sideEffects": false,
+  "main": "./src/index.tsx",
+  "module": "./src/index.tsx",
+  "scripts": {
+    "start:dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@web3uikit/core": "0.1.0",
+    "@web3uikit/ui": "0.1.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0"
+  }
+}

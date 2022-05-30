@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.ui.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declarationDir": "lib",
+    "emitDeclarationOnly": true,
+    "rootDir": "src"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "package.json"]
+}

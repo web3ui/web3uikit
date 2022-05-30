@@ -1,9 +1,0 @@
-*.log
-.DS_Store
-node_modules
-.cache
-.history
-.env
-dist
-/src/*/*/__snapshots__/
-/storybook-static/

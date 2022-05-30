@@ -1,0 +1,27 @@
+{
+  "root": "apps/example",
+  "sourceRoot": "apps/example/src",
+  "projectType": "application",
+  "targets": {
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "postTargets": ["@web3uikit/core:publish", "@web3uikit/core:github"]
+      },
+      "projects": "dependencies"
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notes": "${notes}"
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
+      }
+    }
+  }
+}

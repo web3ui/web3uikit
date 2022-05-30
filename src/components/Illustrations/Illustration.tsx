@@ -15,6 +15,7 @@ import lazyNft from './images/various/lazyNft';
 import pack from './images/various/pack';
 import marketplace from './images/various/marketplace';
 import chest from './images/various/chest';
+import cronos from './images/chains/cronos';
 import bundle from './images/various/bundle';
 import styled from 'styled-components';
 import resetCSS from '../../styles/reset';
@@ -33,6 +34,8 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
             return fantom(width, height);
         case 'arbitrum':
             return arbitrum(width, height);
+        case 'cronos':
+            return cronos(width, height);
         case 'comingSoon':
             return comingSoon(width, height);
         case 'confirmed':

@@ -27,10 +27,7 @@ const Avatar: React.FC<AvatarProps> = ({
         if (theme == 'image' || image) {
             return 'transparent';
         }
-        const pos =
-            avatarKey < avatarColors.length
-                ? avatarKey % avatarColors.length
-                : avatarColors.length % avatarKey;
+        const pos = avatarKey % avatarColors.length;
         return avatarColors[pos - 1];
     };
 

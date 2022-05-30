@@ -19,7 +19,7 @@ interface IElement {
     [key: string]: any;
 }
 // Context for communinicting with tabs
-const TabContenxt = React.createContext({
+const TabContext = React.createContext({
     selectedKey: 0,
     setSelectedKey: null,
     tabStyle: 'bar',
@@ -60,7 +60,7 @@ function TabList({
         setTabChildren(getTabs(children as any));
     }, [children]);
     return (
-        <TabContenxt.Provider
+        <TabContext.Provider
             value={{
                 selectedKey,
                 setSelectedKey,
@@ -82,7 +82,7 @@ function TabList({
                     {tabChildren[selectedKey]}
                 </StyledTabContent>
             </StyleTabBarParent>
-        </TabContenxt.Provider>
+        </TabContext.Provider>
     );
 }
 
@@ -93,7 +93,7 @@ export function Tab({
     tabKey,
     tabName,
 }: ITab) {
-    const { selectedKey, setSelectedKey, tabStyle } = useContext(TabContenxt);
+    const { selectedKey, setSelectedKey, tabStyle } = useContext(TabContext);
     const handleTabClick = (key: number) => {
         if (isDisabled) {
             return;

@@ -60,7 +60,7 @@ export type variantType =
     | 'caption14'
     | 'caption12';
 
-export type weightType =
+export type TStandardWeight =
     | 'semibold'
     | 'bold'
     | 'regular'
@@ -68,4 +68,9 @@ export type weightType =
     | '400'
     | 'medium'
     | '500'
+    | '550'
     | '700';
+
+export type TCustomWeight = string & {};
+
+export type weightType = TStandardWeight | TCustomWeight;

@@ -21,25 +21,23 @@ const Checkbox: React.FC<CheckboxProps> = ({
     validation,
     ...props
 }) => {
-    const [isChecked, setIsChecked] = useState(false);
+    const [isChecked, setIsChecked] = useState(Boolean(checked));
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setIsChecked(Boolean(event.target.checked));
         if (disabled) return;
 
         if (onValidChange && isValid(event)) {
             onValidChange(event);
         } else if (onValidChange && !isValid(event)) {
-           return;
+            return;
         } else if (onChange) {
             onChange(event);
         }
+
+        setIsChecked(Boolean(event.target.checked));
     };
 
-    const hasValidation = () =>
-        Boolean(
-            validation?.required,
-        );
+    const hasValidation = () => Boolean(validation?.required);
 
     const isValid = (
         event:
@@ -56,18 +54,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
         return true;
     };
 
-    useEffect(
-        () =>
-            setIsChecked(
-                typeof checked != 'undefined' ? Boolean(checked) : isChecked,
-            ),
-        [checked],
-    );
-    useEffect(() => {
-        setIsChecked(
-            typeof checked != 'undefined' ? Boolean(checked) : isChecked,
-        );
-    }, [isChecked]);
+    useEffect(() => setIsChecked(Boolean(checked)), [checked]);
 
     return (
         <StyledLabel

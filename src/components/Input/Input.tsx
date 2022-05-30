@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { CopyButton } from '../CopyButton';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
@@ -79,11 +79,11 @@ const Input: React.FC<InputProps> = ({
     const hasValidation = () =>
         Boolean(
             validation?.required ||
-                validation?.numberMax ||
-                validation?.numberMin ||
-                validation?.characterMaxLength ||
-                validation?.characterMinLength ||
-                validation?.regExp,
+            validation?.numberMax ||
+            validation?.numberMin ||
+            validation?.characterMaxLength ||
+            validation?.characterMinLength ||
+            validation?.regExp,
         );
 
     const isValid = (
@@ -111,10 +111,17 @@ const Input: React.FC<InputProps> = ({
         onBlur && onBlur(event);
 
         if (!isValid(event) && validation?.regExp) {
-            setInvalidMessage(validation?.regExpInvalidMessage || errorMessage);
+            setInvalidMessage(validation?.regExpInvalidMessage || validation?.regExpInvalidMessage || errorMessage);
             setCurrentState('error');
             return;
         } else if (!isValid(event)) {
+            setInvalidMessage(event?.target.validationMessage || errorMessage);
+            setCurrentState('error');
+            return;
+        }
+
+        // check for HTML validation
+        if (!event?.target.checkValidity()) {
             setInvalidMessage(event?.target.validationMessage || errorMessage);
             setCurrentState('error');
             return;
@@ -127,12 +134,18 @@ const Input: React.FC<InputProps> = ({
         }
     };
 
+    const isInputEmpty = useMemo(() => {
+        if (typeof currentValue === 'string') {
+            return currentValue.length > 0;
+        } else if (typeof currentValue === 'number') {
+            return true;
+        } else return false;
+    }, [currentValue]);
+
     return (
         <DivWrapperStyled
             state={currentState}
-            className={`input input_${
-                currentValue && currentValue?.length > 0 ? 'filled' : 'empty'
-            }`}
+            className={`input input_${isInputEmpty ? 'filled' : 'empty'}`}
             data-testid="test-div"
             style={{ ...style, width }}
             size={size}

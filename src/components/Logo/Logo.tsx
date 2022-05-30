@@ -7,7 +7,12 @@ import { getMastercardLogo } from './images/mastercardLogo';
 import { getAmexLogo } from './images/amexLogo';
 import { getDinersLogo } from './images/dinersLogo';
 
-const Logo: React.FC<LogoProps> = ({ theme, color, size, ...props }: LogoProps) => {
+const Logo: React.FC<LogoProps> = ({
+    theme,
+    color,
+    size,
+    ...props
+}: LogoProps) => {
     switch (theme) {
         case 'amex':
             return (
@@ -36,7 +41,7 @@ const Logo: React.FC<LogoProps> = ({ theme, color, size, ...props }: LogoProps) 
         case 'icon':
             return (
                 <div data-testid="test-logo-icon" {...props}>
-                    {getMoralisLogo(color || 'white')}
+                    {getMoralisLogo()}
                 </div>
             );
         case 'visa':

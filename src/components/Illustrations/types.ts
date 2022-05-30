@@ -5,6 +5,7 @@ export const chainState = [
     'arbitrum',
     'avalanche',
     'fantom',
+    'cronos',
 ] as const;
 export type Chain = typeof chainState[number];
 

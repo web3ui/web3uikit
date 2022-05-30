@@ -9,7 +9,6 @@ const { DivStyled, DivStyledContent, SectionStyled } = styles;
 
 const colors: ColorProps[] = [
     'green',
-    'red',
     'grey',
     'yellow',
     'blue',
@@ -41,7 +40,7 @@ const Todo: React.FC<TodoProps> = ({
 
     const addTodo = (e: any) => {
         e.preventDefault();
-        setLists((prevTodo) => [...prevTodo, inputValue]);
+        setLists((prevTodo) => Array.from(new Set([...prevTodo, inputValue])));
         setInputValue('');
         const input: HTMLInputElement | null = document.querySelector(
             `input[key="${key}"]`,

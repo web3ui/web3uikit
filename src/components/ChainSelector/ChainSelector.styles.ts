@@ -18,6 +18,8 @@ export const getChainLogoName = (chain: chainIdType) => {
             return 'avalanche';
         case '0xfa':
             return 'fantom';
+        case '0x19':
+            return 'cronos';
         case '0x1':
         case '0x2a':
         case '0x3':

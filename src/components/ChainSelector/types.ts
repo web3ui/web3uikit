@@ -39,4 +39,5 @@ export type chainIdType =
     | '0xa4b1'
     | '0xfa'
     | '0xa869'
-    | '0xa86a';
+    | '0xa86a'
+    | '0x19';

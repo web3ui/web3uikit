@@ -21,6 +21,7 @@ export type chainType =
     | 'binance'
     | 'ethereum'
     | 'fantom'
-    | 'polygon';
+    | 'polygon'
+    | 'cronos';
 
 export type sizeType = string | number;

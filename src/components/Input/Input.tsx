@@ -111,23 +111,25 @@ const Input: React.FC<InputProps> = ({
             return;
         }
 
-        // check for HTML validation
-        if (!event?.target.checkValidity()) {
-            setInvalidMessage(event?.target.validationMessage || errorMessage);
-            setCurrentState('error');
-            return;
-        }
-
         // check for the value passes the custom RegExp
         if (validation?.regExp) {
             const re = new RegExp(validation?.regExp);
             if (!re.test(event?.target.value)) {
                 setInvalidMessage(
-                    validation?.regExpInvalidMessage || errorMessage,
+                    validation?.regExpInvalidMessage ||
+                        event?.target.validationMessage ||
+                        errorMessage,
                 );
                 setCurrentState('error');
                 return;
             }
+        }
+
+        // check for HTML validation
+        if (!event?.target.checkValidity()) {
+            setInvalidMessage(event?.target.validationMessage || errorMessage);
+            setCurrentState('error');
+            return;
         }
 
         if (type === 'address' || type === 'bluredAddress') {

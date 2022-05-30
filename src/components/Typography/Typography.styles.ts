@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 import color from '../../styles/colors';
-import fontBreakpoint from '../../styles/fontBreakpoint';
+import { fontBreakpoint } from '../../styles/fonts';
 import type { TypographyProps, variantType, weightType } from './types';
 
 const openSans = css`

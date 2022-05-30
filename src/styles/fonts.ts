@@ -10,7 +10,7 @@ export const fontSize = {
     h5: 16,
 };
 
-const fontBreakpoint = {
+export const fontBreakpoint = {
     h1: css`
         @media screen and (max-width: ${breakpoints.xl}) {
             font-size: ${fontSize.h1 - 2}px;

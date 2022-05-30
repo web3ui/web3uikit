@@ -109,6 +109,7 @@ const DivStyledTooltipParent = styled.div`
 
 const DivStyled = styled.div<IStyledHoverSpan>`
     opacity: 0;
+    visibility: hidden;
     position: absolute;
     z-index: 1;
     min-width: ${(props) => props.minWidth}px;
@@ -118,6 +119,7 @@ const DivStyled = styled.div<IStyledHoverSpan>`
 const DivStyledTooltipContent = styled.div`
     &:hover + ${DivStyled} {
         opacity: 1;
+        visibility: visible;
         transition: 0.5s;
         transition-delay: 0.1s;
     }

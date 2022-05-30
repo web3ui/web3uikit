@@ -6,6 +6,7 @@ const {
     DivStyled,
     DivStyledArrow,
     DivStyledTooltipParent,
+    DivStyledTooltipContent,
     DivStyledTooltipText,
 } = styles;
 
@@ -25,7 +26,6 @@ const Tooltip: React.FC<TooltipProps> = ({
     const [height, setHeight] = useState(0);
     const [popoverWidth, setPopoverWidth] = useState(0);
     const [popoverHeight, setPopoverHeight] = useState(0);
-    const [hoverState, setHoverState] = useState(false);
 
     useEffect(() => {
         setWidth(
@@ -48,14 +48,12 @@ const Tooltip: React.FC<TooltipProps> = ({
             data-testid={'tooltip-container-test-id'}
             {...props}
         >
-            <div
+            <DivStyledTooltipContent
                 className="tooltip-content"
                 data-testid={'tooltip-content-test-id'}
-                onMouseEnter={() => setHoverState(true)}
-                onMouseOut={() => setHoverState(false)}
             >
                 {children}
-            </div>
+            </DivStyledTooltipContent>
             <DivStyled
                 ref={popoverRef}
                 popoverWidth={popoverWidth}
@@ -65,7 +63,6 @@ const Tooltip: React.FC<TooltipProps> = ({
                 minWidth={minWidth as number}
                 position={position}
                 moveBody={moveBody}
-                hoverState={hoverState}
             >
                 <DivStyledTooltipText maxWidth={maxWidth} minWidth={minWidth}>
                     {content}

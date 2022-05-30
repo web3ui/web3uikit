@@ -72,34 +72,34 @@ const Input: React.FC<InputProps> = ({
     const hasValidation = () =>
         Boolean(
             validation?.required ||
-                validation?.numberMax ||
-                validation?.numberMin ||
-                validation?.characterMaxLength ||
-                validation?.characterMinLength ||
-                validation?.regExp,
+            validation?.numberMax ||
+            validation?.numberMin ||
+            validation?.characterMaxLength ||
+            validation?.characterMinLength ||
+            validation?.regExp,
         );
 
     const validate = (event: React.FocusEvent<HTMLInputElement>) => {
         onBlur && onBlur(event);
         if (!hasValidation()) return;
 
-        // check for HTML validation
-        if (!event?.target.checkValidity()) {
-            setInvalidMessage(event?.target.validationMessage || errorMessage);
-            setCurrentState('error');
-            return;
-        }
-
         // check for the value passes the custom RegExp
         if (validation?.regExp) {
             const re = new RegExp(validation?.regExp);
             if (!re.test(event?.target.value)) {
                 setInvalidMessage(
-                    validation?.regExpInvalidMessage || errorMessage,
+                    validation?.regExpInvalidMessage || event?.target.validationMessage || errorMessage,
                 );
                 setCurrentState('error');
                 return;
             }
+        }
+
+        // check for HTML validation
+        if (!event?.target.checkValidity()) {
+            setInvalidMessage(event?.target.validationMessage || errorMessage);
+            setCurrentState('error');
+            return;
         }
 
         // finally if all pass but the Input is in error state

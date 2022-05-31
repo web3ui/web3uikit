@@ -72,11 +72,11 @@ const Input: React.FC<InputProps> = ({
     const hasValidation = () =>
         Boolean(
             validation?.required ||
-            validation?.numberMax ||
-            validation?.numberMin ||
-            validation?.characterMaxLength ||
-            validation?.characterMinLength ||
-            validation?.regExp,
+                validation?.numberMax ||
+                validation?.numberMin ||
+                validation?.characterMaxLength ||
+                validation?.characterMinLength ||
+                validation?.regExp,
         );
 
     const validate = (event: React.FocusEvent<HTMLInputElement>) => {
@@ -88,7 +88,9 @@ const Input: React.FC<InputProps> = ({
             const re = new RegExp(validation?.regExp);
             if (!re.test(event?.target.value)) {
                 setInvalidMessage(
-                    validation?.regExpInvalidMessage || event?.target.validationMessage || errorMessage,
+                    validation?.regExpInvalidMessage ||
+                        event?.target.validationMessage ||
+                        errorMessage,
                 );
                 setCurrentState('error');
                 return;
@@ -105,7 +107,7 @@ const Input: React.FC<InputProps> = ({
         // finally if all pass but the Input is in error state
         if (currentState === 'error') {
             setCurrentState('confirmed');
-            setTimeout(() => setCurrentState('initial'), 3000);
+            setTimeout(() => setCurrentState(undefined), 3000);
         }
     };
 

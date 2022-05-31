@@ -71,7 +71,8 @@ const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
         }
     }
 
-    &:focus-within {
+    &:focus-within,
+    &.input_filled {
         outline: 2px solid ${color.blue};
 
         label {

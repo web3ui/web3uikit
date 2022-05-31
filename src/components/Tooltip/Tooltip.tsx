@@ -6,6 +6,7 @@ const {
     DivStyled,
     DivStyledArrow,
     DivStyledTooltipParent,
+    DivStyledTooltipContent,
     DivStyledTooltipText,
 } = styles;
 
@@ -47,7 +48,12 @@ const Tooltip: React.FC<TooltipProps> = ({
             data-testid={'tooltip-container-test-id'}
             {...props}
         >
-            <div>{children}</div>
+            <DivStyledTooltipContent
+                className="tooltip-content"
+                data-testid={'tooltip-content-test-id'}
+            >
+                {children}
+            </DivStyledTooltipContent>
             <DivStyled
                 ref={popoverRef}
                 popoverWidth={popoverWidth}
@@ -56,7 +62,6 @@ const Tooltip: React.FC<TooltipProps> = ({
                 width={width}
                 minWidth={minWidth as number}
                 position={position}
-                data-testid={'tooltip-children-test-id'}
                 moveBody={moveBody}
             >
                 <DivStyledTooltipText maxWidth={maxWidth} minWidth={minWidth}>

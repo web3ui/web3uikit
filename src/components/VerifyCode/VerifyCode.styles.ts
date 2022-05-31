@@ -15,7 +15,7 @@ const DivStyledWrapper = styled.div`
     flex-wrap: wrap;
     gap: ${globalStyles.spacing};
     justify-content: flex-start;
-    margin: 10px 0px;
+    margin: 10px 0px 4px 0px;
     position: relative;
     width: 100%;
     @media only screen and (max-width: 420px) {
@@ -69,7 +69,31 @@ const InputStyled = styled.input`
     caret-color: transparent;
 `;
 
+const DivStyledTooltip = styled.div`
+    background-color: ${color.red};
+    border-radius: 4px;
+    color: ${color.white};
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+    padding: 8px 12px;
+    position: absolute;
+    width: fit-content;
+    &::after {
+        content: ' ';
+        position: absolute;
+        left: 30px;
+        top: -4px;
+        border-top: none;
+        border-right: 6px solid transparent;
+        border-left: 6px solid transparent;
+        border-bottom: 4px solid ${color.red};
+    }
+`;
+
 export default {
     InputStyled,
     DivStyledWrapper,
+    DivStyledTooltip,
 };

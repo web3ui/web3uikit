@@ -11,7 +11,7 @@ import { Typography } from '../Typography';
 import { VerifyCodeProps } from './types';
 import styles from './VerifyCode.styles';
 
-const { InputStyled, DivStyledWrapper } = styles;
+const { InputStyled, DivStyledWrapper, DivStyledTooltip } = styles;
 
 const VerifyCode: FC<VerifyCodeProps> = ({
     autoFocus = false,
@@ -19,8 +19,11 @@ const VerifyCode: FC<VerifyCodeProps> = ({
     label = 'Enter Code',
     onCompleted = () => {},
     placeholder = 'X',
+    state = 'default',
+    errorMessage = 'Entered code is invalid. Please re-send code and try again.',
 }) => {
     const [code, setCode] = useState(new Array(length).fill(''));
+
     const inputRefs = useMemo(
         () =>
             new Array(length)
@@ -35,7 +38,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
             newCode[idx] === e.target.value[0]
                 ? e.target.value[1]
                 : e.target.value[0];
-        newCode[idx] = num;
+        newCode[idx] = num || '';
         setCode(newCode);
         if (idx !== length - 1) {
             inputRefs[idx + 1].current?.focus();
@@ -94,6 +97,10 @@ const VerifyCode: FC<VerifyCodeProps> = ({
                         maxLength={1}
                         onChange={(e) => processInput(e, idx)}
                         onKeyUp={(e) => onKeyUp(e, idx)}
+                        onKeyDown={(e) =>
+                            ['e', 'E', '+', '-', '.'].includes(e.key) &&
+                            e.preventDefault()
+                        }
                         onPaste={(e) => onPaste(e)}
                         placeholder={placeholder[0]}
                         ref={inputRefs[idx]}
@@ -102,6 +109,9 @@ const VerifyCode: FC<VerifyCodeProps> = ({
                     />
                 ))}
             </DivStyledWrapper>
+            {state === 'error' && errorMessage !== '' && (
+                <DivStyledTooltip>{errorMessage}</DivStyledTooltip>
+            )}
         </div>
     );
 };

@@ -12,3 +12,8 @@ const Template: ComponentStory<typeof VerifyCode> = (args) => (
 );
 
 export const Default = Template.bind({});
+
+export const Error = Template.bind({});
+Error.args = {
+    state: 'error',
+};

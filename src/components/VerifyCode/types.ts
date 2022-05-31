@@ -23,4 +23,14 @@ export interface VerifyCodeProps {
      * Label for the component
      */
     label?: string;
+
+    /**
+     * state of the code component
+     */
+    state?: 'default' | 'error';
+
+    /**
+     * error message to display on wrong input
+     */
+    errorMessage?: string;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './BannerStrip.stories';
-import color from '../../styles/colors';
+import { color } from '@web3uikit/styles';
 import rgbToHex from '../../utils/rgbToHex';
 
 const { Standard, StandardWithButton, Warning, Error, Success } =

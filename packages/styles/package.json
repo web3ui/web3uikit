@@ -1,5 +1,5 @@
 {
-  "name": "@web3uikit/core",
+  "name": "@web3uikit/styles",
   "version": "0.1.0",
   "private": true,
   "sideEffects": false,
@@ -26,8 +26,5 @@
   "devDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
-  },
-  "dependencies": {
-    "@web3uikit/styles": "0.1.0"
   }
 }

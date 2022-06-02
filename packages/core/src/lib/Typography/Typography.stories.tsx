@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Typography from './Typography';
 import React from 'react';
-import color from '../../styles/colors';
+import { color } from '@web3uikit/styles';
 import { NotificationProvider, useNotification } from '../Notification';
 
 export default {

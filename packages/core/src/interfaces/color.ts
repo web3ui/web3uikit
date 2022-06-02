@@ -1,3 +1,3 @@
-import Color from '../styles/colors';
+import { color } from '@web3uikit/styles';
 
-export type Colors = keyof typeof Color;
+export type Colors = keyof typeof color;

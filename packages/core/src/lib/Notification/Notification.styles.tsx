@@ -1,6 +1,4 @@
-import color from '../../styles/colors';
-import fonts from '../../styles/fonts';
-import resetCSS from '../../styles/reset';
+import { color, fonts, resetCSS } from '@web3uikit/styles';
 import styled from 'styled-components';
 import { INotificationContainer, INotificationStyled } from './types';
 import {

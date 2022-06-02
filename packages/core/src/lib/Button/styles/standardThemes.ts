@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
-import color, { getShade, gradientColors } from '../../../styles/colors';
-
+// import color, { getShade, gradientColors } from '../../../styles/colors';
+import { color, getShade, gradientColors } from '@web3uikit/styles';
 export const secondary = css`
   background-color: ${color.blueLight};
   border-color: ${color.blueLight};

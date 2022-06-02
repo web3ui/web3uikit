@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-import color from '../../styles/colors';
-import fonts from '../../styles/fonts';
-import resetCSS from '../../styles/reset';
+import { color, fonts, resetCSS } from '@web3uikit/styles';
 
 // types
 import type { AccordionProps } from './types';
@@ -10,87 +8,87 @@ import type { AccordionProps } from './types';
 type TStyleProps = Pick<AccordionProps, 'theme'>;
 
 const getThemeColor = (theme: string) => {
-    switch (theme) {
-        case 'blue':
-            return color.blue;
-        case 'red':
-            return color.red;
-        case 'green':
-            return color.green;
-        case 'yellow':
-            return color.yellow;
-        default:
-            return color.blue;
-    }
+  switch (theme) {
+    case 'blue':
+      return color.blue;
+    case 'red':
+      return color.red;
+    case 'green':
+      return color.green;
+    case 'yellow':
+      return color.yellow;
+    default:
+      return color.blue;
+  }
 };
 
 const SectionStyled = styled.section<TStyleProps>`
-    background-color: ${color.white};
-    border: 1px solid ${(p) => getThemeColor(p.theme)};
-    border-radius: 20px;
-    opacity: 0%;
-    overflow: hidden;
-    transition-delay: 0.3s;
-    transition: opacity 0.3s ease-out;
+  background-color: ${color.white};
+  border: 1px solid ${(p) => getThemeColor(p.theme)};
+  border-radius: 20px;
+  opacity: 0%;
+  overflow: hidden;
+  transition-delay: 0.3s;
+  transition: opacity 0.3s ease-out;
 `;
 
 const HeaderStyled = styled.header`
-    display: flex;
-    cursor: pointer;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 8px 12px;
+  display: flex;
+  cursor: pointer;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 8px 12px;
 
-    &:hover {
-        background-color: ${color.paleBlue2};
-    }
+  &:hover {
+    background-color: ${color.paleBlue2};
+  }
 `;
 
 const H4Styled = styled.h4`
-    ${resetCSS}
-    ${fonts.heading}
+  ${resetCSS}
+  ${fonts.heading}
     ${fonts.h4}
     line-height: 1;
-    padding: 8px 0;
+  padding: 8px 0;
 `;
 
 const DivStyled = styled.div`
-    align-items: center;
-    display: flex;
-    justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
 
-    p {
-        ${resetCSS}
-        ${fonts.text}
+  p {
+    ${resetCSS}
+    ${fonts.text}
         margin: 0 6px;
-        min-width: 100px;
-        text-align: right;
-    }
+    min-width: 100px;
+    text-align: right;
+  }
 
-    svg {
-        margin: 0 6px;
-        min-width: 18px;
-    }
+  svg {
+    margin: 0 6px;
+    min-width: 18px;
+  }
 
-    div {
-        margin: 0 6px;
-    }
+  div {
+    margin: 0 6px;
+  }
 
-    &:last-of-type {
-        margin-left: auto;
-    }
+  &:last-of-type {
+    margin-left: auto;
+  }
 `;
 
 const DivStyledContent = styled.div`
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
 `;
 
 export default {
-    DivStyled,
-    DivStyledContent,
-    H4Styled,
-    HeaderStyled,
-    SectionStyled,
-    getThemeColor,
+  DivStyled,
+  DivStyledContent,
+  H4Styled,
+  HeaderStyled,
+  SectionStyled,
+  getThemeColor
 };

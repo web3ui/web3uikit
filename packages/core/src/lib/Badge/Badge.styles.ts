@@ -1,8 +1,6 @@
-import color from '../../styles/colors';
-import fonts from '../../styles/fonts';
-import resetCSS from '../../styles/reset';
 import styled from 'styled-components';
 import type { BadgeProps, colorState } from './types';
+import { color, fonts, resetCSS } from '@web3uikit/styles';
 
 type TStyleProps = Pick<BadgeProps, 'state'>;
 

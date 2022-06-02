@@ -4,7 +4,7 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './Accordion.stories';
 import { tagTestId } from '../Tag/Tag.test';
 import { iconTestId } from '../Icon/Icon.test';
-import color from '../../styles/colors';
+import { color } from '@web3uikit/styles';
 
 const { Default, FullDemo, HasIcon, HasSubtitle, HasTag, ThemeColor } =
     composeStories(stories);

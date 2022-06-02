@@ -1,7 +1,5 @@
 import { css } from 'styled-components';
-import color from '../../../styles/colors';
-import fonts from '../../../styles/fonts';
-import resetCSS from '../../../styles/reset';
+import { color, fonts, resetCSS } from '@web3uikit/styles';
 import { TagProps } from '../types';
 
 type TStyleProps = Pick<TagProps, 'width'>;

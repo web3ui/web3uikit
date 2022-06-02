@@ -2,7 +2,7 @@ import React from 'react';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Button.stories';
-import color from '../../styles/colors';
+import { color } from '@web3uikit/styles';
 import rgbToHex from '../../utils/rgbToHex';
 
 const {

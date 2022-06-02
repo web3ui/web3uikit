@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
-import color, { getShade } from '../../../styles/colors';
-
+// import color, { getShade } from '../../../styles/colors';
+import { color, getShade } from '@web3uikit/styles';
 // theme = colored common shades
 const coloredShades = css`
   :after {

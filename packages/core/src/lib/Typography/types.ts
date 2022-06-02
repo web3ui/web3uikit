@@ -1,4 +1,4 @@
-import color from '../../styles/colors';
+import { color } from '@web3uikit/styles';
 
 export interface TypographyProps {
     /**

@@ -8,6 +8,7 @@ export * from './Icon';
 export * from './Loading';
 export * from './Loading';
 export * from './Logo';
+export * from './NewComp';
 export * from './Notification';
 export * from './Tag';
 export * from './Typography';

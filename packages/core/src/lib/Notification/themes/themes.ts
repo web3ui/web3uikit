@@ -1,5 +1,5 @@
 import { css, keyframes } from 'styled-components';
-import color from '../../../styles/colors';
+import { color } from '@web3uikit/styles';
 import { IPosition, notifyType } from '../types';
 
 const error = css`

@@ -1,19 +1,27 @@
 {
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "root": "packages/styles",
   "sourceRoot": "packages/styles/src",
   "projectType": "library",
   "targets": {
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+    "version": {
+      "executor": "@jscutlery/semver:version",
       "options": {
-        "lintFilePatterns": [
-          "packages/styles/**/*.ts"
-        ]
+        "postTargets": ["@web3uikit/styles:publish", "@web3uikit/styles:github"]
+      },
+      "projects": "dependencies"
+    },
+    "github": {
+      "executor": "@jscutlery/semver:github",
+      "options": {
+        "tag": "${tag}",
+        "notes": "${notes}"
+      }
+    },
+    "publish": {
+      "executor": "ngx-deploy-npm:deploy",
+      "options": {
+        "access": "public"
       }
     }
-  },
-  "tags": []
+  }
 }

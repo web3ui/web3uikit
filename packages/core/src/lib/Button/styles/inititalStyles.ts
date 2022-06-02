@@ -1,8 +1,8 @@
 import { css } from 'styled-components';
-import color, { getShade } from '../../../styles/colors';
-import resetCSS from '../../../styles/reset';
-import fonts from '../../../styles/fonts';
-
+// import color, { getShade } from '../../../styles/colors';
+// import resetCSS from '../../../styles/reset';
+// import fonts from '../../../styles/fonts';
+import { color, getShade, resetCSS, fonts } from '@web3uikit/styles';
 // the default styles for any button
 export const initialStyles = css`
   ${resetCSS}

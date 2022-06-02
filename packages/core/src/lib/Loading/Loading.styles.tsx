@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { ILoadingProps } from '.';
-import fonts from '../../styles/fonts';
+import { fonts } from '@web3uikit/styles';
 
 const rotate = keyframes`
     from{

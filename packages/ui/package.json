@@ -31,6 +31,7 @@
     "typescript": "^4.6.4"
   },
   "dependencies": {
+    "@web3uikit/core": "0.1.0",
     "@walletconnect/web3-provider": "^1.7.8"
   }
 }

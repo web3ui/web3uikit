@@ -98,6 +98,7 @@ importers:
   packages/ui:
     specifiers:
       '@walletconnect/web3-provider': ^1.7.8
+      '@web3uikit/core': 0.1.0
       moralis: ^1.7.0
       react: ^18.0.0
       react-dom: ^18.0.0
@@ -105,6 +106,7 @@ importers:
       typescript: ^4.6.4
     dependencies:
       '@walletconnect/web3-provider': 1.7.8
+      '@web3uikit/core': link:../core
     devDependencies:
       moralis: 1.7.0
       react: 18.1.0

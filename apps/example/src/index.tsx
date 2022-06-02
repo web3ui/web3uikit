@@ -3,7 +3,7 @@ import { lazily } from 'react-lazily';
 import { Suspense } from 'react';
 
 const { Button } = lazily(() => import('@web3uikit/core'));
-const { ConnectWallet } = lazily(() => import('@web3uikit/ui'));
+// const {  } = lazily(() => import('@web3uikit/ui'));
 export const App = () => {
   return (
     <Routes>
@@ -23,7 +23,7 @@ export const App = () => {
             <Button text="leading" iconType="leading" theme="outline" />
             <Button text="trailing" iconType="trailing" theme="outline" />
             <Button iconType="iconOnly" theme="outline" />
-            <ConnectWallet />
+            {/* <ConnectWallet /> */}
           </Suspense>
         }
       />

@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { lazily } from 'react-lazily';
 import { Suspense } from 'react';
 
-const { Button, Logo, Typography, Avatar, BannerStrip, NewComp } = lazily(() => import('@web3uikit/core'));
+const { Button, Logo, Typography, Avatar, BannerStrip, VerifyCode } = lazily(() => import('@web3uikit/core'));
 // const {  } = lazily(() => import('@web3uikit/ui'));
 export const App = () => {
   return (
@@ -17,7 +17,7 @@ export const App = () => {
               <Typography children='text' variant='h1' />
               <Avatar theme='image' />
               <BannerStrip text='Hey this is a notification you should check out' type='standard' />
-              <NewComp textOn='green light' textOff='red light!' />
+              <VerifyCode />
             </div>
             {/* <ConnectWallet /> */}
           </Suspense>

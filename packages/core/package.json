@@ -25,9 +25,13 @@
   },
   "devDependencies": {
     "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
+    "@types/react-blockies": "^1.4.1"
+
   },
   "dependencies": {
-    "@web3uikit/styles": "0.1.0"
+    "@web3uikit/styles": "0.1.0",
+    "react-blockies": "^1.4.1"
   }
 }

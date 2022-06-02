@@ -74,4 +74,10 @@ export interface TableProps {
      * A function that will be called if the page number is changed
      */
     onPageNumberChanged?(pageNum: number): void;
+
+    /**
+     * Give true if column needs to be sortable
+     * For Date Value, format should be DD-MM-YYYY
+     */
+    isColumnSortable?: boolean[];
 }

@@ -123,42 +123,10 @@ export const syncData = [
             </div>
         </>,
         <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
+            {new Date(2017, 12, 11, 6, 24).toLocaleString()}
         </Typography>,
         <Typography variant="body16" color={color.grey}>
-            120392131
-        </Typography>,
-        <>
-            <Button
-                isTransparent
-                disabled
-                text="Edit"
-                color="blue"
-                size="small"
-            />
-            <Button
-                isTransparent
-                disabled
-                iconLayout="icon-only"
-                iconColor="red"
-                icon="x"
-            />
-        </>,
-    ],
-    [
-        <>
-            <Avatar theme="image" isRounded={true} size={36} />
-            <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
-                    Moralis Magi
-                </Typography>
-            </div>
-        </>,
-        <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
-        </Typography>,
-        <Typography variant="body16" color={color.grey}>
-            120392131
+            120392112
         </Typography>,
         <>
             <Button
@@ -187,42 +155,10 @@ export const syncData = [
             </div>
         </>,
         <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
+            {new Date(2022, 4, 1, 16, 24).toLocaleString()}
         </Typography>,
         <Typography variant="body16" color={color.grey}>
-            120392131
-        </Typography>,
-        <>
-            <Button
-                isTransparent
-                disabled
-                text="Edit"
-                color="blue"
-                size="small"
-            />
-            <Button
-                isTransparent
-                disabled
-                iconLayout="icon-only"
-                iconColor="red"
-                icon="x"
-            />
-        </>,
-    ],
-    [
-        <>
-            <Avatar theme="image" isRounded={true} size={36} />
-            <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
-                    Moralis Magi
-                </Typography>
-            </div>
-        </>,
-        <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
-        </Typography>,
-        <Typography variant="body16" color={color.grey}>
-            120392131
+            120392114
         </Typography>,
         <>
             <Button
@@ -251,42 +187,10 @@ export const syncData = [
             </div>
         </>,
         <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
+            {new Date(2020, 1, 21, 12, 27).toLocaleString()}
         </Typography>,
         <Typography variant="body16" color={color.grey}>
-            120392131
-        </Typography>,
-        <>
-            <Button
-                isTransparent
-                disabled
-                text="Edit"
-                color="blue"
-                size="small"
-            />
-            <Button
-                isTransparent
-                disabled
-                iconLayout="icon-only"
-                iconColor="red"
-                icon="x"
-            />
-        </>,
-    ],
-    [
-        <>
-            <Avatar theme="image" isRounded={true} size={36} />
-            <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
-                    Moralis Magi
-                </Typography>
-            </div>
-        </>,
-        <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
-        </Typography>,
-        <Typography variant="body16" color={color.grey}>
-            120392131
+            120392118
         </Typography>,
         <>
             <Button
@@ -315,42 +219,10 @@ export const syncData = [
             </div>
         </>,
         <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
+            {new Date(2019, 5, 6, 13, 24).toLocaleString()}
         </Typography>,
         <Typography variant="body16" color={color.grey}>
-            120392131
-        </Typography>,
-        <>
-            <Button
-                isTransparent
-                disabled
-                text="Edit"
-                color="blue"
-                size="small"
-            />
-            <Button
-                isTransparent
-                disabled
-                iconLayout="icon-only"
-                iconColor="red"
-                icon="x"
-            />
-        </>,
-    ],
-    [
-        <>
-            <Avatar theme="image" isRounded={true} size={36} />
-            <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
-                    Moralis Magi
-                </Typography>
-            </div>
-        </>,
-        <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
-        </Typography>,
-        <Typography variant="body16" color={color.grey}>
-            120392131
+            120392119
         </Typography>,
         <>
             <Button
@@ -379,42 +251,10 @@ export const syncData = [
             </div>
         </>,
         <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
+            {new Date(2018, 12, 11, 15, 4).toLocaleString()}
         </Typography>,
         <Typography variant="body16" color={color.grey}>
-            120392131
-        </Typography>,
-        <>
-            <Button
-                isTransparent
-                disabled
-                text="Edit"
-                color="blue"
-                size="small"
-            />
-            <Button
-                isTransparent
-                disabled
-                iconLayout="icon-only"
-                iconColor="red"
-                icon="x"
-            />
-        </>,
-    ],
-    [
-        <>
-            <Avatar theme="image" isRounded={true} size={36} />
-            <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
-                    Moralis Magi
-                </Typography>
-            </div>
-        </>,
-        <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
-        </Typography>,
-        <Typography variant="body16" color={color.grey}>
-            120392131
+            120392120
         </Typography>,
         <>
             <Button
@@ -443,42 +283,10 @@ export const syncData = [
             </div>
         </>,
         <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
+            {new Date(2020, 4, 8, 16, 24).toLocaleString()}
         </Typography>,
         <Typography variant="body16" color={color.grey}>
-            120392131
-        </Typography>,
-        <>
-            <Button
-                isTransparent
-                disabled
-                text="Edit"
-                color="blue"
-                size="small"
-            />
-            <Button
-                isTransparent
-                disabled
-                iconLayout="icon-only"
-                iconColor="red"
-                icon="x"
-            />
-        </>,
-    ],
-    [
-        <>
-            <Avatar theme="image" isRounded={true} size={36} />
-            <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
-                    Moralis Magi
-                </Typography>
-            </div>
-        </>,
-        <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
-        </Typography>,
-        <Typography variant="body16" color={color.grey}>
-            120392131
+            120392122
         </Typography>,
         <>
             <Button
@@ -507,10 +315,10 @@ export const syncData = [
             </div>
         </>,
         <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
+            {new Date(2020, 5, 21, 16, 24).toLocaleString()}
         </Typography>,
         <Typography variant="body16" color={color.grey}>
-            120392131
+            120392124
         </Typography>,
         <>
             <Button
@@ -539,7 +347,199 @@ export const syncData = [
             </div>
         </>,
         <Typography variant="body16" color={color.grey}>
-            01/03/2022 7:44 AM
+            {new Date(2022, 4, 3, 16, 24).toLocaleString()}
+        </Typography>,
+        <Typography variant="body16" color={color.grey}>
+            120392125
+        </Typography>,
+        <>
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
+        </>,
+    ],
+    [
+        <>
+            <Avatar theme="image" isRounded={true} size={36} />
+            <div style={{ marginLeft: '16px' }}>
+                <Typography variant="body16" color={color.blueDark}>
+                    Moralis Magi
+                </Typography>
+            </div>
+        </>,
+        <Typography variant="body16" color={color.grey}>
+            {new Date(2022, 2, 18, 16, 24).toLocaleString()}
+        </Typography>,
+        <Typography variant="body16" color={color.grey}>
+            120392126
+        </Typography>,
+        <>
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
+        </>,
+    ],
+    [
+        <>
+            <Avatar theme="image" isRounded={true} size={36} />
+            <div style={{ marginLeft: '16px' }}>
+                <Typography variant="body16" color={color.blueDark}>
+                    Moralis Magi
+                </Typography>
+            </div>
+        </>,
+        <Typography variant="body16" color={color.grey}>
+            {new Date(2018, 1, 30, 18, 24).toLocaleString()}
+        </Typography>,
+        <Typography variant="body16" color={color.grey}>
+            120392127
+        </Typography>,
+        <>
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
+        </>,
+    ],
+    [
+        <>
+            <Avatar theme="image" isRounded={true} size={36} />
+            <div style={{ marginLeft: '16px' }}>
+                <Typography variant="body16" color={color.blueDark}>
+                    Moralis Magi
+                </Typography>
+            </div>
+        </>,
+        <Typography variant="body16" color={color.grey}>
+            {new Date(2022, 4, 21, 16, 24).toLocaleString()}
+        </Typography>,
+        <Typography variant="body16" color={color.grey}>
+            120392128
+        </Typography>,
+        <>
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
+        </>,
+    ],
+    [
+        <>
+            <Avatar theme="image" isRounded={true} size={36} />
+            <div style={{ marginLeft: '16px' }}>
+                <Typography variant="body16" color={color.blueDark}>
+                    Moralis Magi
+                </Typography>
+            </div>
+        </>,
+        <Typography variant="body16" color={color.grey}>
+            {new Date(2021, 7, 11, 16, 24).toLocaleString()}
+        </Typography>,
+        <Typography variant="body16" color={color.grey}>
+            120392129
+        </Typography>,
+        <>
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
+        </>,
+    ],
+    [
+        <>
+            <Avatar theme="image" isRounded={true} size={36} />
+            <div style={{ marginLeft: '16px' }}>
+                <Typography variant="body16" color={color.blueDark}>
+                    Moralis Magi
+                </Typography>
+            </div>
+        </>,
+        <Typography variant="body16" color={color.grey}>
+            {new Date(2019, 10, 10, 16, 24).toLocaleString()}
+        </Typography>,
+        <Typography variant="body16" color={color.grey}>
+            120392130
+        </Typography>,
+        <>
+            <Button
+                isTransparent
+                disabled
+                text="Edit"
+                color="blue"
+                size="small"
+            />
+            <Button
+                isTransparent
+                disabled
+                iconLayout="icon-only"
+                iconColor="red"
+                icon="x"
+            />
+        </>,
+    ],
+    [
+        <>
+            <Avatar theme="image" isRounded={true} size={36} />
+            <div style={{ marginLeft: '16px' }}>
+                <Typography variant="body16" color={color.blueDark}>
+                    Moralis Magi
+                </Typography>
+            </div>
+        </>,
+        <Typography variant="body16" color={color.grey}>
+            {new Date(2022, 9, 8, 16, 24).toLocaleString()}
         </Typography>,
         <Typography variant="body16" color={color.grey}>
             120392131

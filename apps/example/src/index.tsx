@@ -2,32 +2,25 @@ import { Route, Routes } from 'react-router-dom';
 import { lazily } from 'react-lazily';
 import { Suspense } from 'react';
 
-const { Button } = lazily(() => import('@web3uikit/core'));
+const { Button, Logo, Typography } = lazily(() => import('@web3uikit/core'));
 // const {  } = lazily(() => import('@web3uikit/ui'));
 export const App = () => {
   return (
     <Routes>
       <Route
-        path="/"
+        path='/'
         element={
           <Suspense fallback={<>Loading...</>}>
-            <Button size="large" text="Large" />
-            <Button text="Regular" />
-            <Button size="small" text="Small" />
-            <Button text="Primary" iconType="leading" />
-            <Button text="Primary" iconType="trailing" />
-            <Button text="Primary" iconType="iconOnly" />
-            <Button size="large" theme="outline" text="Large" />
-            <Button text="Regular" theme="outline" />
-            <Button size="small" text="Small" theme="outline" />
-            <Button text="leading" iconType="leading" theme="outline" />
-            <Button text="trailing" iconType="trailing" theme="outline" />
-            <Button iconType="iconOnly" theme="outline" />
+            <div style={{ display: 'flex', flexDirection: 'column', margin: '20px' }}>
+              <Logo theme='default' color='white' />
+              <Button size='large' text='Large' isFullWidth />
+              <Typography children='text' variant='h1' />
+            </div>
             {/* <ConnectWallet /> */}
           </Suspense>
         }
       />
-      <Route path="*" element={<>Not found...</>}></Route>
+      <Route path='*' element={<>Not found...</>}></Route>
     </Routes>
   );
 };

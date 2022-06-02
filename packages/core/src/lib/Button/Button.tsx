@@ -1,34 +1,50 @@
-import { useState } from 'react';
-import Icon from '../Icons/Icon';
-import { Plus } from '../Icons/plus';
-import ButtonStyles, { getIconStylesByTheme } from './Button.styles';
-import { IButtonProps } from './types';
+import React from 'react';
+import { Icon } from '../Icon';
+import { Loading } from '../Loading';
+import ButtonStyles from './Button.styles';
+import { ButtonProps } from './types';
 const { ButtonStyled } = ButtonStyles;
-const Button = ({
-  id,
+
+const Button: React.FC<ButtonProps> = ({
+  color,
+  disabled = false,
   icon,
-  isDisabled,
-  onClick,
+  iconLayout = 'leading',
+  id,
+  isFullWidth = false,
+  isLoading = false,
+  loadingText = 'Loading...',
+  onClick = (e) => e.preventDefault,
   size = 'regular',
-  text,
-  iconType = 'none',
-  theme = 'primary',
-}: IButtonProps) => {
-  const { iconColor, onHover } = getIconStylesByTheme(theme);
-  const [iconColorComputed, setIconColor] = useState(iconColor);
+  text = 'click',
+  theme,
+  type = 'button',
+  loadingProps,
+  radius,
+  isTransparent = false,
+  iconColor,
+  ...props
+}: ButtonProps) => {
   return (
     <ButtonStyled
-      onMouseEnter={() => setIconColor(onHover)}
-      onMouseLeave={() => setIconColor(iconColor)}
-      isDisabled={isDisabled}
-      iconType={iconType}
+      isTransparent={isTransparent}
+      color={color}
+      data-testid='test-button'
+      disabled={disabled || isLoading}
+      iconLayout={iconLayout}
+      id={id}
+      isFullWidth={isFullWidth}
+      isLoading={isLoading}
+      onClick={onClick}
       size={size}
       theme={theme}
-      id={id}
-      onClick={!isDisabled ? onClick : (e) => e.preventDefault()}
+      type={type}
+      radius={radius}
+      iconColor={iconColor}
+      {...props}
     >
-      <Icon svg={<Plus fill={iconColorComputed} />} />
-      <span>{text}</span>
+      {isLoading ? <Loading size={15} {...loadingProps} /> : icon && <Icon svg={icon} fill='inherit' size={18} />}
+      <span>{isLoading ? loadingText : text}</span>
     </ButtonStyled>
   );
 };

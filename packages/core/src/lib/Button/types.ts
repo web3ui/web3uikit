@@ -1,67 +1,90 @@
-export interface IButtonProps {
+import { TIconType } from '../Icon/collection';
+import { ILoadingProps } from '../Loading';
+
+export interface ButtonProps {
   /**
-   * useful to override button css
+   * The button ID will generated if not assigned
    */
   id?: string;
 
   /**
-   * run onclick function
+   * the function to be called on click
    */
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 
   /**
-   * set icon
+   * set the button to be interactive, or not
    */
-  icon?: JSX.Element;
+  disabled?: boolean;
 
   /**
-   * set button disabled
+   * What size should the button be
    */
-  isDisabled?: boolean;
+  size?: 'small' | 'regular' | 'large';
 
   /**
-   * set size
-   */
-  size?: keyof typeof EButtonSize;
-
-  /**
-   * text
+   * The text to display in the button
    */
   text?: string;
 
   /**
-   * set theme
+   * Set the color to show its importance to the user
    */
-  theme?: keyof typeof EButtonTheme;
+  theme?: 'primary' | 'outline' | 'secondary' | 'colored' | 'translucent' | 'status' | 'ghost' | 'text' | 'link';
 
   /**
-   *
+   * If 'theme' is set to 'colored', you can choose the color from these options
    */
-  iconType?: keyof typeof EButtonIcon;
-}
+  color?: 'blue' | 'green' | 'yellow' | 'red';
 
-export enum EButtonTheme {
-  primary,
-  outline,
-  secondary,
-  avatar,
-  editavatar,
-  Status,
-  source,
-  point,
-  ghost,
-  text,
-  link,
-}
+  /**
+   * Set the HTML button type for form interaction
+   */
+  type?: 'button' | 'submit' | 'reset';
 
-export enum EButtonIcon {
-  none,
-  leading,
-  trailing,
-  iconOnly,
-}
-export enum EButtonSize {
-  small,
-  regular,
-  large,
+  /**
+   * set an icon to show inside the button
+   * import { iconTypes } from "../../components/Icon/collection"
+   */
+  icon?: TIconType;
+
+  /**
+   * set an icon position, or maybe show only the icon
+   */
+  iconLayout?: 'leading' | 'trailing' | 'icon-only';
+
+  /**
+   * set the icon color
+   */
+  iconColor?: string;
+
+  /**
+   * set the button to be 100% width
+   */
+  isFullWidth?: boolean;
+
+  /**
+   * this is mostly like disabled mode except it gives the user a good visual indicator that something is loading
+   */
+  isLoading?: boolean;
+
+  /**
+   * Text to display when button is in loading state
+   */
+  loadingText?: string;
+
+  /**
+   * Loading Props, the props to send to the loading component
+   */
+  loadingProps?: ILoadingProps;
+
+  /**
+   * Border radius prop, allows a button to have a custom border radius
+   */
+  radius?: number;
+
+  /**
+   * The background color is set to `transparent` and the hover effect is disabled
+   */
+  isTransparent?: boolean;
 }

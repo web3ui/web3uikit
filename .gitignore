@@ -1,4 +1,5 @@
 node_modules
 
-packages/**/lib
+packages/core/lib/
+packages/ui/lib/
 apps/**/dist

@@ -30,6 +30,19 @@ OneLine.args = {
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
 };
 
+export const MaxHeight = Template.bind({});
+MaxHeight.args = {
+    maxHeight: '50px',
+    text: `[common]
+    server_addr = onfkgi4pc9ld.moralis.io
+    server_port = 7000
+    token = KKKaDjYz0i
+    [hardhat]
+    type = http
+    local_port = 8545
+    custom_domains = onfkgi4pc9ld.moralis.io`,
+};
+
 export const MinHeight0 = Template.bind({});
 MinHeight0.args = {
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',

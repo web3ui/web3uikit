@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import color from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import resetCSS from '../../styles/reset';
@@ -18,10 +18,17 @@ const TextAreaStyled = styled.textarea`
     font-style: italic;
     overflow-y: hidden;
     white-space: pre;
+    resize: none;
 `;
 
 const ContentStyled = styled.div`
     display: flex;
+`;
+
+const DivStyledButtonWrap = styled.div`
+    margin: 19px;
+    position: absolute;
+    right: 0;
 `;
 
 const SideStyled = styled.div`
@@ -40,14 +47,28 @@ const WrapperStyled = styled.div`
     border-radius: 16px;
     border: 2px solid ${color.paleBlue2};
     display: flex;
+    max-height: 100%;
     max-width: fit-content;
     overflow: hidden;
     position: relative;
     flex-direction: column;
 `;
 
-const WidthWrapperStyled = styled.div<Pick<ICodeAreaProps, 'maxWidth'>>`
+const notExpanded = css`
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0px 8px 5px -2px ${color.blueSky};
+    overflow: hidden;
+`;
+
+const WidthWrapperStyled = styled.div<
+    Pick<ICodeAreaProps, 'maxHeight' | 'maxWidth' | 'isMaximized'>
+>`
+    border-bottom: 2px solid ${color.paleBlue2};
+    max-height: ${(p) => p.maxHeight};
     max-width: ${(p) => p.maxWidth};
+
+    ${(p) => p.maxHeight && !p.isMaximized && notExpanded};
 `;
 
 const HeaderStyled = styled.div`
@@ -63,6 +84,7 @@ const CodeAreaStyles = {
     WrapperStyled,
     ContentStyled,
     HeaderStyled,
+    DivStyledButtonWrap,
 };
 
 export default CodeAreaStyles;

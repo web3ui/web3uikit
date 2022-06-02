@@ -1,11 +1,13 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import CodeAreaStyles from './CodeArea.styles';
+import { Button } from '../Button';
 import { ICodeAreaProps } from './types';
 import LineNumbers from './LineNumbers';
 
 const {
     ContentStyled,
     HeaderStyled,
+    DivStyledButtonWrap,
     TextAreaStyled,
     WidthWrapperStyled,
     WrapperStyled,
@@ -17,10 +19,13 @@ const CodeArea: FC<ICodeAreaProps> = ({
     onChange,
     headerComponent,
     disabled,
-    minHeight = '400px',
+    minHeight,
+    maxHeight,
     ...props
 }) => {
     const [currentValue, setCurrentValue] = useState(text);
+    const [isMaximized, setIsMaximized] = useState(false);
+    const hasMaxHeight = Boolean(maxHeight);
 
     useEffect(() => setCurrentValue(text), [text]);
 
@@ -34,7 +39,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
     useEffect(() => {
         if (textareaRef && textareaRef.current) {
             textareaRef.current.style.height = '0px';
-            textareaRef.current.style.minHeight = minHeight;
+            textareaRef.current.style.minHeight = minHeight || 'unset';
             const scrollHeight = textareaRef.current.scrollHeight;
             textareaRef.current.style.height = scrollHeight + 'px';
             textareaRef.current.style.minHeight = scrollHeight + 'px';
@@ -42,7 +47,12 @@ const CodeArea: FC<ICodeAreaProps> = ({
     }, [currentValue]);
 
     return (
-        <WidthWrapperStyled maxWidth={maxWidth} {...props}>
+        <WidthWrapperStyled
+            maxHeight={maxHeight}
+            maxWidth={maxWidth}
+            isMaximized={isMaximized}
+            {...props}
+        >
             <WrapperStyled data-testid="test-codearea-wrapper">
                 {headerComponent && (
                     <HeaderStyled data-testid="test-codearea-header">
@@ -60,7 +70,28 @@ const CodeArea: FC<ICodeAreaProps> = ({
                         spellCheck={false}
                         value={currentValue}
                         disabled={disabled}
-                    />
+                    ></TextAreaStyled>
+                    {hasMaxHeight && (
+                        <DivStyledButtonWrap data-testid="test-codearea-maximize-button-wrapper">
+                            <Button
+                                data-testid={
+                                    isMaximized
+                                        ? 'test-button-minimize'
+                                        : 'test-button-maximize'
+                                }
+                                icon={isMaximized ? 'minimize' : 'maximize'}
+                                iconLayout="icon-only"
+                                id="test-button-primary-icon-only"
+                                isTransparent
+                                onClick={() => {
+                                    setIsMaximized(!isMaximized);
+                                }}
+                                radius={20}
+                                theme="secondary"
+                                type="button"
+                            />
+                        </DivStyledButtonWrap>
+                    )}
                 </ContentStyled>
             </WrapperStyled>
         </WidthWrapperStyled>

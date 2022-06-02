@@ -97,6 +97,7 @@ import web3apiIcon from './icons/web3api';
 import atomicApiIcon from './icons/atomicApi';
 import metamaskIcon from './icons/metamask';
 import metamaskLinedIcon from './icons/metamaskLined';
+import solanaIcon from './icons/solana';
 
 export type TIconType = keyof typeof iconTypes;
 
@@ -181,6 +182,7 @@ export const iconTypes = {
     search: 'search',
     server: 'server',
     shib: 'shib',
+    solana: 'solana',
     speedyNode: 'speedyNode',
     star: 'star',
     stars: 'stars',
@@ -283,6 +285,7 @@ const collection = {
     searchIcon,
     serverIcon,
     shibIcon,
+    solanaIcon,
     speedyNodeIcon,
     starIcon,
     starsIcon,

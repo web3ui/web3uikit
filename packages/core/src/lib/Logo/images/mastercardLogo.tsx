@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { Size } from '../types';
 
 export const getMastercardLogo = (size: Size) => {

@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const minusIcon = (fill: string, size: number, style?: React.CSSProperties) => (
     <svg

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RadiosProps } from './';
 import { CreditCard, CreditCardProps } from '../CreditCard';
 import styles from './Radios.styles';

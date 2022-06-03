@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BannerStripProps } from '.';
 import { Button } from '../Button';
 import styles from './BannerStrip.styles';

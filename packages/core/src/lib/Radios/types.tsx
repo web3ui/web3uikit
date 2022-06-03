@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { CreditCardProps } from '../CreditCard';
 
 type ValidateRadios = {

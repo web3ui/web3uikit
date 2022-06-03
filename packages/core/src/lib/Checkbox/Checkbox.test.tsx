@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Checkbox.stories';
 import { render, screen, fireEvent } from '@testing-library/react';

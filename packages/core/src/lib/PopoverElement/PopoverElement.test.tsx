@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { fireEvent, render, cleanup } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './PopoverElement.stories';

@@ -1,7 +1,7 @@
 import { composeStories } from '@storybook/testing-react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import * as stories from './VerifyCode.stories';
-import React from 'react';
+
 
 const { Default } = composeStories(stories);
 

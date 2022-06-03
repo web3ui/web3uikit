@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import React from 'react';
+
 import { IconProps, Icon, iconTypes } from '.';
 import { color } from '@web3uikit/styles';
 import { TIconType } from './collection';

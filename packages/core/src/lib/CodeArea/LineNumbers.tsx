@@ -1,4 +1,4 @@
-import React, { FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 import { color } from '@web3uikit/styles';
 import { Typography } from '../Typography';
 import CodeAreaStyles from './CodeArea.styles';

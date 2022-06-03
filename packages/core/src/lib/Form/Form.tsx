@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import { Fragment, useState } from 'react';
 import { Button } from '../Button';
 import { Checkbox } from '../Checkbox';
 import { CreditCardProps } from '../CreditCard';

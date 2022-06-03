@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Icon, iconTypes } from '../Icon';
 import { SpanStyled } from './DatePicker.styles';
 import InputStyles from '../Input/Input.styles';

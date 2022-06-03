@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Icon from '../Icon/Icon';
 import { iconTypes } from '../Icon/collection';
 import { color } from '@web3uikit/styles';

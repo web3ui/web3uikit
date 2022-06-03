@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Information from './Information';
-import React from 'react';
+
 
 export default {
     title: '4.UI/Information',

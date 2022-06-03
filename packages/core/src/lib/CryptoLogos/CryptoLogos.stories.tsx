@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import React from 'react';
+
 import CryptoLogos from './CryptoLogos';
 
 export default {

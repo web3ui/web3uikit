@@ -5,7 +5,7 @@ import { StepperProps } from './types';
 import { Typography } from '../Typography';
 import { color, H2Styled } from '@web3uikit/styles';
 import HeaderStyles from './Stepper.styles';
-import React, { useEffect, useRef, useState, Fragment } from 'react';
+import { useEffect, useRef, useState, Fragment } from 'react';
 
 const {
   DivStyled,

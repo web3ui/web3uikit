@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import LinkTo from './LinkTo';
 import { color } from '@web3uikit/styles';

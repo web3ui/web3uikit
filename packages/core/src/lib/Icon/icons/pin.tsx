@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const pinIcon = (fill: string, size: number, style?: React.CSSProperties) => (
     <svg

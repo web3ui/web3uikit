@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Form from './Form';
 import { validateRegExp } from '../../utils/const';

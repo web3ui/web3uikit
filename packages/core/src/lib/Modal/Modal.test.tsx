@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { fireEvent, render, screen } from '@testing-library/react';
 import Modal from './Modal';
 import { Icon } from '../Icon';

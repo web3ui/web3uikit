@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { composeStories } from '@storybook/testing-react';
 import { render, within } from '@testing-library/react';
 import * as stories from './PlanCard.stories';

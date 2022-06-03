@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Typography } from '../Typography';
 import styles from './Credentials.styles';
 import { color } from '@web3uikit/styles';

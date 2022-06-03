@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Illustration from '../Illustrations/Illustration';
 import { CryptoLogoProps } from './types';
 import styles from './CryptoLogos.styles';

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { Size } from '../../types';
 
 const bundle = (width: Size = '303', height: Size = '398') => {

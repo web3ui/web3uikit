@@ -1,7 +1,7 @@
 import { composeStories } from '@storybook/testing-react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import 'jest-styled-components';
-import React from 'react';
+
 import * as stories from './Tooltip.stories';
 
 const { Bottom, Top, Left, Right } = composeStories(stories);

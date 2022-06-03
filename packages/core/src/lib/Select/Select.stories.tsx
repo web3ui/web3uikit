@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React from 'react';
+
 import { color } from '@web3uikit/styles';
 import { Icon, iconTypes } from '../Icon';
 import Select from './Select';

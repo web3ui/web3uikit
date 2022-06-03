@@ -1,5 +1,5 @@
 // Importing React and its awesome hooks
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 // importing elements from the kit, never add more elements, improve what we have
 import Icon from '../Icon/Icon';

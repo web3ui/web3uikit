@@ -1,4 +1,4 @@
-import React from 'react';
+
 export interface TableProps {
     /**
      * A String Template that defines the table layout.

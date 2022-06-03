@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const chevronLeftX2Icon = (
     fill: string,

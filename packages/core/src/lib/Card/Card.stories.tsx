@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Card from './Card';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import getModuleAnimation from './Animations/animations';
 import { Icon, iconTypes } from '../Icon';
 import { color } from '@web3uikit/styles';

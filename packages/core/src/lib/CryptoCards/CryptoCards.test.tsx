@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { fireEvent, render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './CryptoCards.stories';

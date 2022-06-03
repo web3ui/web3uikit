@@ -1,4 +1,4 @@
-import React from 'react';
+
 import styles from './Information.styles';
 import { InfoProps } from './types';
 

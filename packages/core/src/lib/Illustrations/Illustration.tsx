@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Chain, IllustrationProps, Logo, Size } from './types';
 import ethereum from './images/chains/ethereum';
 import binance from './images/chains/binance';

@@ -5,7 +5,7 @@ import {
     act,
     waitFor,
 } from '@testing-library/react';
-import React from 'react';
+
 import CopyButton from './CopyButton';
 import { iconTypes } from '../Icon';
 

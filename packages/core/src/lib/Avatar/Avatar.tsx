@@ -1,6 +1,6 @@
 import styles from './Avatar.styles';
 import { AvatarProps } from './types';
-import React from 'react';
+
 import renderAvatarSVG from './images/guy';
 import { color } from '@web3uikit/styles';
 const { DivStyled, H4Styled } = styles;

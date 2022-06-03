@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { Size } from '../../types';
 
 const fantomLogo = (width: Size = '120', height: Size = '160') => {

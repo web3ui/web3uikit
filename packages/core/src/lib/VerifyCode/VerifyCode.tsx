@@ -1,4 +1,4 @@
-import React, { ChangeEvent, createRef, FC, KeyboardEvent, useMemo, useState } from 'react';
+import { ChangeEvent, createRef, FC, KeyboardEvent, useMemo, useState } from 'react';
 import { color } from '@web3uikit/styles';
 import { Typography } from '../Typography';
 import { VerifyCodeProps } from './types';

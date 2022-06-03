@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { color } from '@web3uikit/styles';
 import { Typography } from '../../../Typography';
 import styles from './YourPlanButton.styles';

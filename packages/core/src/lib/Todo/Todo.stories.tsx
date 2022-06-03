@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import React from 'react';
+
 import Todo from './Todo';
 
 export default {

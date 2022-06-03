@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ValidateInput } from '../Input/types';
 
 export interface TextAreaProps {

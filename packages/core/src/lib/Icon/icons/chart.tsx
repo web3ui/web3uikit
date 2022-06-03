@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const chartIcon = (fill: string, size: number, style?: React.CSSProperties) => (
     <svg

@@ -1,6 +1,6 @@
 import { composeStories } from '@storybook/testing-react';
 import { fireEvent, render, screen } from '@testing-library/react';
-import React from 'react';
+
 import * as stories from './Radios.stories';
 
 const { RadioGroup, RadioGroupWithoutTitle, RadiosSetParticular, RadiosWithLongText } = composeStories(stories);

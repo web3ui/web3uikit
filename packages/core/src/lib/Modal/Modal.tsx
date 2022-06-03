@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ModalProps } from './types';
 import Button from '../Button/Button';
 import { iconTypes } from '../Icon/collection';

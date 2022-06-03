@@ -1,6 +1,6 @@
 import { composeStories } from '@storybook/testing-react';
 import { render, screen } from '@testing-library/react';
-import React from 'react';
+
 import * as stories from './Tag.stories';
 
 const { Regular, InactiveStatus, ActiveStatus, Discount, Blue, Grey, Green, Pink, Purple, Red, Yellow } =

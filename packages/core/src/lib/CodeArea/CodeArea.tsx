@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import CodeAreaStyles from './CodeArea.styles';
 import { Button } from '../Button';
 import { ICodeAreaProps } from './types';

@@ -1,5 +1,5 @@
 import * as stories from './Badge.stories';
-import React from 'react';
+
 import { render, screen } from '@testing-library/react';
 import rgbToHex from '../../utils/rgbToHex';
 import { color } from '@web3uikit/styles';

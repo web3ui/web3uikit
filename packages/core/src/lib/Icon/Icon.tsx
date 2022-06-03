@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-import React from 'react';
+
 import collection, { TIconType } from './collection';
 import styles from './Icon.styles';
 import type { IconProps } from './types';

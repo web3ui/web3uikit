@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CheckboxProps } from '.';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';

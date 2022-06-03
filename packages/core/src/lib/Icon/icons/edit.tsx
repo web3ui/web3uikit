@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const editIcon = (fill: string, size: number, style?: React.CSSProperties) => (
     <svg

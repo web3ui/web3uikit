@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { color } from '@web3uikit/styles';
 import { Icon, iconTypes } from '../Icon';
 import { Illustration } from '../Illustrations';

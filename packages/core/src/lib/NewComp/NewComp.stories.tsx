@@ -1,5 +1,5 @@
 // importing boilerplate stuff for Storybook
-import React from 'react';
+
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 // importing your new component
 import NewComp from './NewComp';

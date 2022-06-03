@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const visaIcon = (fill: string, size: number, style?: React.CSSProperties) => {
     return (

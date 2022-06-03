@@ -5,7 +5,7 @@ import { Loading } from '../Loading';
 import { Typography } from '../Typography';
 import ChainSelectStyles, { getChainLogoName } from './ChainSelector.styles';
 import { color } from '@web3uikit/styles';
-import React, { FC, useMemo } from 'react';
+import { FC, useMemo } from 'react';
 
 const { GridStyled, CardContentStyled, GridElementStyled } = ChainSelectStyles;
 

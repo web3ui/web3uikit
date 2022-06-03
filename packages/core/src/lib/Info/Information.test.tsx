@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Information.stories';
 import { render, screen } from '@testing-library/react';

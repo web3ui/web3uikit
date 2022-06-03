@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const googleIcon = (
     _fill: string,

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Typography } from '../Typography';
 import { color } from '@web3uikit/styles';
 import { SectionStyled, DivStyled } from './Hero.styles';

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Tooltip from './Tooltip';
 import { Icon } from '../Icon';

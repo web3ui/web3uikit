@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { color } from '@web3uikit/styles';
 import { CardProps } from './types';
 import { iconTypes } from '../Icon/collection';

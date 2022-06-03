@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './HideButton.stories';
 import { iconTestId } from '../Icon/Icon.test';

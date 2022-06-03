@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Blockies from 'react-blockies';
 import { BlockieStyles } from './Blockie.styles';
 import { BlockieProps } from './types';

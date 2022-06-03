@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { color } from '@web3uikit/styles';
 import { Icon, iconTypes } from '../Icon';
 import { ButtonStyled } from './CopyButton.styles';

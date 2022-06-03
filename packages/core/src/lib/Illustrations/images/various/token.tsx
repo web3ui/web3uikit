@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { Size } from '../../types';
 
 const token = (width: Size = '284', height: Size = '398') => {

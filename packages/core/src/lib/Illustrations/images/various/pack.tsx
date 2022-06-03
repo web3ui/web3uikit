@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { Size } from '../../types';
 
 const pack = (width: Size = '300', height: Size = '398') => {

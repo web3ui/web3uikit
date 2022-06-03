@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { TableProps } from '.';
 import { color } from '@web3uikit/styles';
 import getModuleAnimation from '../Card/Animations/animations';

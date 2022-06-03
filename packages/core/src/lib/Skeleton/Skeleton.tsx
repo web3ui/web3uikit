@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { DivStyled } from './Skeleton.styles';
 import { SkeletonProps, Theme } from './types';
 

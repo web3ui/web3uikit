@@ -4,3 +4,5 @@ packages/core/lib/
 packages/ui/lib/
 packages/styles/lib/
 apps/**/dist
+
+**/.DS_Store

@@ -1,1 +1,1 @@
-export * from './lib';
+export * from './lib/ConnectButton/ConnectButton';

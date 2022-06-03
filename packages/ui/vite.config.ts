@@ -11,11 +11,7 @@ export default defineConfig({
   define: {
     pkgJson: { name, version },
   },
-  plugins: [
-    react(),
-    tsconfigPaths(),
-    // dts(),
-  ],
+  plugins: [react(), tsconfigPaths(), dts({ entryRoot: './src' })],
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),

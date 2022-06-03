@@ -1,17 +1,7 @@
-import { IConnectWalletProps } from './types';
-import Moralis from 'moralis';
-import { Button } from '@web3uikit/core';
-const ConnectWallet = ({
-  text = 'Connect Wallet',
-  authType: provider,
-}: IConnectWalletProps) => {
-  return (
-    <Button
-      theme="secondary"
-      text={text}
-      onClick={() => Moralis.enableWeb3({ provider })}
-    />
-  );
-};
-
-export default ConnectWallet;
+import { Button } from  "@web3uikit/core"
+import Moralis from '@moralisweb3/evm-wallet-connect-connector'
+export const ConnectButton = () => {
+    return (
+        <Button text="Connect Wallet" onClick={() => Moralis.connect()}/>
+    )
+}

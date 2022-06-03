@@ -5,15 +5,15 @@
   "sideEffects": false,
   "files": [
     "package.json",
-    "lib"
+    "dist"
   ],
-  "main": "./lib/index.umd.js",
-  "module": "./lib/index.es.js",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./lib/index.es.js",
-      "require": "./lib/index.umd.js"
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.es.js"
     }
   },
   "scripts": {
@@ -26,5 +26,8 @@
   "devDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "@web3uikit/config": "*"
   }
 }

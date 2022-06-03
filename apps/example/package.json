@@ -10,10 +10,13 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@web3uikit/core": "0.1.0",
-    "@web3uikit/ui": "0.1.0",
+    "@web3uikit/core": "*",
+    "@web3uikit/ui": "*",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@web3uikit/config": "*"
   }
 }

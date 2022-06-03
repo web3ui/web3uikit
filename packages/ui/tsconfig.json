@@ -1,11 +1,8 @@
 {
-  "extends": "../../tsconfig.ui.json",
+  "extends": "@web3uikit/config/tsconfig.ui.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "declarationDir": "lib",
-    "emitDeclarationOnly": true,
-    "rootDir": "src"
+    "rootDir": "src",
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "package.json"]
+  "include": ["src"]
 }

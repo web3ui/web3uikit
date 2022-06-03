@@ -2,7 +2,7 @@ import { resolve } from 'path';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 
-const { name, version, dependencies } = require('./package.json');
+const { dependencies } = require('./package.json');
 const vendor = Object.keys(dependencies);
 
 const renderChunks = (deps: Record<string, string>) => {
@@ -15,12 +15,6 @@ const renderChunks = (deps: Record<string, string>) => {
 };
 
 export default defineConfig({
-  define: {
-    pkgJson: { name, version },
-  },
-  esbuild: {
-    jsxInject: `import React from 'react'`,
-  },
   plugins: [react()],
   server: {
     open: true,

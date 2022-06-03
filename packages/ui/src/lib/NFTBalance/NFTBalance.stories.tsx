@@ -1,10 +1,11 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import NFT from "./NFT";
+import NFTBalance from "./NFTBalance";
 import { moralisContext } from "../decorators";
+
 export default {
-  title: "1.Web3/NFT",
-  component: NFT,
+  title: "1.Web3/NFT Balance",
+  component: NFTBalance,
   decorators: [
     moralisContext,
     (storyFn) => (
@@ -20,14 +21,14 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof NFT>;
+} as ComponentMeta<typeof NFTBalance>;
 
-const Template: ComponentStory<typeof NFT> = (args) => <NFT {...args} />;
+const Template: ComponentStory<typeof NFTBalance> = (args) => (
+  <NFTBalance {...args} />
+);
 
-export const CryptoPunk01 = Template.bind({});
-CryptoPunk01.args = {
+export const Default = Template.bind({});
+Default.args = {
   chain: "eth",
-  address: "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
-  tokenId: "1",
-  fetchMetadata: true,
+  address: "0x951Eb8643E48A3B6d6d6AA7706B643AEE9B42f52",
 };

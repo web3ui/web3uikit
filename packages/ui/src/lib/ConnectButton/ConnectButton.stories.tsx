@@ -1,11 +1,11 @@
-import ConnectWallet from './ConnectButton';
-import { IConnectWalletProps } from './types';
+import ConnectWallet from "./ConnectButton";
+import { IConnectWalletProps } from "./types";
 export default {
-  title: 'UI/ConnectButton',
+  title: "1.Web3/NFT",
   component: ConnectWallet,
   argTypes: {
     onClick: {
-      action: 'Button Clicked',
+      action: "Button Clicked",
     },
   },
 };

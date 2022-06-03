@@ -35,7 +35,7 @@ export interface INFTProps {
 /**
  * NFT-Metadata-Standard: https://docs.opensea.io/docs/metadata-standards
  */
-export type TNFTMetadata = {
+type TNFTMetadata = {
   animation_url?: string;
   attributes?: Array<any>;
   background_color?: string;
@@ -46,3 +46,4 @@ export type TNFTMetadata = {
   traits?: Array<any>;
   youtube_url?: string;
 };
+export type { TNFTMetadata };

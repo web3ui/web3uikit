@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import { lazily } from 'react-lazily';
 import { Suspense } from 'react';
 const { Button, Logo, Typography, Avatar, BannerStrip, VerifyCode } = lazily(() => import('@web3uikit/core'));
-const { ConnectButton } = lazily(() => import('@web3uikit/ui'))
+// const { ConnectButton } = lazily(() => import('@web3uikit/ui'))
 export const App = () => {
   return (
     <Routes>
@@ -18,7 +18,7 @@ export const App = () => {
               <BannerStrip text='Hey this is a notification you should check out' type='standard' />
               <VerifyCode />
             </div>
-            <ConnectButton />
+            {/* <ConnectButton /> */}
           </Suspense>
         }
       />

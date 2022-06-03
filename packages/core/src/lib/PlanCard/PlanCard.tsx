@@ -1,4 +1,4 @@
-import React from 'react';
+
 import styles from './PlanCard.styles';
 import { IPlanCardProps } from './types';
 import { Typography } from '../Typography';

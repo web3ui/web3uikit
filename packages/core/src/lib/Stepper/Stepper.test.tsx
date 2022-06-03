@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { act } from 'react-dom/test-utils';
 import { fireEvent, render, cleanup } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';

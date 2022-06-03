@@ -4,7 +4,7 @@ import 'jest-styled-components';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Input.stories';
 import { color } from '@web3uikit/styles';
-import React from 'react';
+
 import rgbToHex from '../../utils/rgbToHex';
 import Input from './Input';
 

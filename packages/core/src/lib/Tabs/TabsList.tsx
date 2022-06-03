@@ -1,5 +1,5 @@
 // Importing React and its awesome hooks
-import React, { useState, useEffect, useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import {
     BulbTab,
     StyledTab,

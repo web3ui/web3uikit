@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Input } from '.';
 import { iconTypes } from '../Icon/collection';

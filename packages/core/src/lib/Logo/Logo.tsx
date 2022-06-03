@@ -1,5 +1,5 @@
 import { LogoProps } from './types';
-import React from 'react';
+
 import { getMoralisLogo } from './images/moralisLogoIcon';
 import { getMoralisDefault } from './images/moralisLogoDefault';
 import { getVisaLogo } from './images/visaLogo';

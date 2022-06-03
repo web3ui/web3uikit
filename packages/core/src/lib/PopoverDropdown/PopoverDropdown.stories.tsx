@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import React from 'react';
+
 import { color } from '@web3uikit/styles';
 import PopoverDropdown from './PopoverDropdown';
 import PopoverElement from '../PopoverElement/PopoverElement';

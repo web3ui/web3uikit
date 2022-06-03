@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Illustration } from '../../Illustrations';
 
 const getModuleAnimation = (

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { Size } from '../../types';
 
 const servers = (width: Size = '323', height: Size = '398') => {

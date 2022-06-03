@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ChainSelector from './ChainSelector';
 import { DappConfig } from './types';
 

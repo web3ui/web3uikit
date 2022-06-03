@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { CopyButton } from '../CopyButton';
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';

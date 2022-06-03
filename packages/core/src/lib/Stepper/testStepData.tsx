@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const testCustomNavEvent = (direction: string) => {
     const event = new Event(direction, { bubbles: true });

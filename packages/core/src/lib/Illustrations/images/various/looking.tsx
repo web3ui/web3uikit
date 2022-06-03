@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { Size } from '../../types';
 
 const looking = (width: Size = '323', height: Size = '391') => {

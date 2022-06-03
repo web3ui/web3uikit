@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { color } from '@web3uikit/styles';
 import Modal from './Modal';

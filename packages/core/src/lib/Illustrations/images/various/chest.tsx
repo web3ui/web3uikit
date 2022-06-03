@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { Size } from '../../types';
 
 const chest = (width: Size = '298', height: Size = '398') => {

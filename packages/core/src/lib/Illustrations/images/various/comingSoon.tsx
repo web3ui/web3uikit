@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { Size } from '../../types';
 
 const comingSoon = (width: Size = '491', height: Size = '329') => {

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { composeStories } from '@storybook/testing-react';
 import {
     fireEvent,

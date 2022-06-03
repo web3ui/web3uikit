@@ -1,5 +1,5 @@
 // importing boilerplate stuff
-import React from 'react';
+
 import { composeStories } from '@storybook/testing-react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import * as stories from './NewComp.stories';

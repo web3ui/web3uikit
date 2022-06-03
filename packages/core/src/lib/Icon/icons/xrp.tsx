@@ -1,5 +1,5 @@
 /* eslint-disable linebreak-style */
-import React from 'react';
+
 
 const xrpIcon = (fill: string, size: number, style?: React.CSSProperties) => (
     <svg

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Icon } from '../Icon';
 import { iconTypes } from '../Icon/collection';
 import styles from './Tag.styles';

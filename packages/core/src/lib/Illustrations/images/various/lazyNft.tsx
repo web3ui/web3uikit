@@ -1,4 +1,4 @@
-import React from 'react';
+
 import type { Size } from '../../types';
 
 const lazyNft = (width: Size = '289', height: Size = '398') => {

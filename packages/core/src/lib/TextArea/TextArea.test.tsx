@@ -1,7 +1,7 @@
 import { composeStories } from '@storybook/testing-react';
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
-import React from 'react';
+
 import { color } from '@web3uikit/styles';
 import * as stories from './TextArea.stories';
 

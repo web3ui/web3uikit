@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BadgeProps } from './types';
 import styles from './Badge.styles';
 import { Typography } from '../Typography';

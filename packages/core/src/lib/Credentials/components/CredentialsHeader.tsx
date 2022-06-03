@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import styled from 'styled-components';
 import { color } from '@web3uikit/styles';
 import { Icon } from '../../Icon';

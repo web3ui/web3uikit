@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import React from 'react';
+
 import { CodeArea } from '.';
 import { Button } from '../Button';
 import { Typography } from '../Typography';

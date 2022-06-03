@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Button } from '../Button';
 import { iconTypes } from '../Icon/collection';
 import Illustration from '../Illustrations/Illustration';

@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import React from 'react';
+
 import CopyButton from '../CopyButton/CopyButton';
 import { NotificationProvider, useNotification } from '../Notification';
 import { Typography } from '../Typography';

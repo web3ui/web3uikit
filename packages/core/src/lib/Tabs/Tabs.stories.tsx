@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import TabList from './TabsList';
 import Icon from '../Icon/Icon';

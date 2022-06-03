@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Button.stories';

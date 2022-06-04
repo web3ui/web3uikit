@@ -1,8 +1,7 @@
 {
   "extends": "@web3uikit/config/tsconfig.ui.json",
   "compilerOptions": {
-    "baseUrl": ".",
-    "rootDir": "src",
+    "rootDir": "src"
   },
   "include": ["src"]
 }

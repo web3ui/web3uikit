@@ -1,6 +1,4 @@
 import react from '@vitejs/plugin-react';
-import tsconfigPaths from 'vite-tsconfig-paths';
-
 import { UserConfigExport } from 'vite';
 import dts from 'vite-plugin-dts';
 
@@ -14,7 +12,6 @@ const config = (cwd: string, external?: string[]): UserConfigExport => {
     root: cwd,
     plugins: [
       react(),
-      tsconfigPaths({ root: cwd }),
       dts({ entryRoot: cwd + "/src", outputDir: cwd + "/dist" }),
     ],
     build: {

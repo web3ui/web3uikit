@@ -26,7 +26,8 @@
     "devDependencies": {
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
-        "@web3uikit/styles": "*"
+        "@web3uikit/styles": "*",
+        "styled-components": "^5.3.5"
     },
     "dependencies": {
         "@web3uikit/config": "*"

@@ -151,12 +151,14 @@ importers:
       '@web3uikit/styles': '*'
       react: ^18.0.0
       react-dom: ^18.0.0
+      styled-components: ^5.3.5
     dependencies:
       '@web3uikit/config': link:../config
     devDependencies:
       '@web3uikit/styles': link:../styles
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
+      styled-components: 5.3.5_4klixn56hmiqf6hh5nx3jyckvq
 
   packages/styles:
     specifiers:

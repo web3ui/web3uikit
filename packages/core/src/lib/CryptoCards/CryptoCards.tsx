@@ -1,6 +1,4 @@
-
 import { Button } from '../Button';
-import { iconTypes } from '../Icon/collection';
 import Illustration from '../Illustrations/Illustration';
 import { CryptoCardProps } from './types';
 import styles from './CryptoCards.styles';
@@ -26,7 +24,11 @@ const CryptoCards: React.FC<CryptoCardProps> = ({
     ...props
 }: CryptoCardProps) => {
     return (
-        <DivStyledCryptoCard color={bgColor} data-testid={'test-crypto-card'} {...props}>
+        <DivStyledCryptoCard
+            color={bgColor}
+            data-testid={'test-crypto-card'}
+            {...props}
+        >
             <DivStyledInfo>
                 <DivStyledImage>
                     <DivStyledLogo>
@@ -42,7 +44,7 @@ const CryptoCards: React.FC<CryptoCardProps> = ({
             </DivStyledInfo>
             <DivStyledButton>
                 <Button
-                    icon={settingsIcon || iconTypes.cog}
+                    icon={settingsIcon || 'cog'}
                     onClick={onClick}
                     text={btnText}
                     theme="translucent"

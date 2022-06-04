@@ -7,7 +7,8 @@
   "module": "./src/index.tsx",
   "scripts": {
     "start:dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "analyze": "source-map-explorer 'dist/assets/*.js'"
   },
   "dependencies": {
     "@web3uikit/core": "*",
@@ -15,7 +16,8 @@
     "@web3uikit/icons": "*",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "source-map-explorer":"*"
   },
   "devDependencies": {
     "@web3uikit/config": "*"

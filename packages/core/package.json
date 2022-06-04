@@ -1,38 +1,39 @@
 {
-  "name": "@web3uikit/core",
-  "version": "0.1.0",
-  "private": true,
-  "sideEffects": false,
-  "files": [
-    "package.json",
-    "dist"
-  ],
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.es.js"
+    "name": "@web3uikit/core",
+    "version": "0.1.0",
+    "private": true,
+    "sideEffects": false,
+    "files": [
+        "package.json",
+        "dist"
+    ],
+    "main": "./dist/index.cjs.js",
+    "module": "./dist/index.es.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "require": "./dist/index.cjs.js",
+            "import": "./dist/index.es.js"
+        }
+    },
+    "scripts": {
+        "build": "vite build"
+    },
+    "peerDependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+    },
+    "devDependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "react-router-dom": "^6.3.0",
+        "@types/react-blockies": "^1.4.1",
+        "styled-components": "^5.3.5"
+    },
+    "dependencies": {
+        "@web3uikit/config": "*",
+        "@web3uikit/styles": "*",
+        "@web3uikit/icons": "*",
+        "react-blockies": "^1.4.1"
     }
-  },
-  "scripts": {
-    "build": "vite build"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
-  "devDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-router-dom": "^6.3.0",
-    "@types/react-blockies": "^1.4.1"
-
-  },
-  "dependencies": {
-    "@web3uikit/config": "*",
-    "@web3uikit/styles": "*",
-    "react-blockies": "^1.4.1"
-  }
 }

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { CheckboxProps } from '.';
-import { Icon } from '../Icon';
-import { iconTypes } from '../Icon/collection';
+import { Icon } from '@web3uikit/icons';
 import styles from './Checkbox.styles';
 
 const { StyledInput, StyledLabel } = styles;
@@ -40,7 +39,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
         >
             {layout === 'box' && (
                 <span className="after">
-                    <Icon svg={iconTypes.check} fill="white" />
+                    <Icon svg="check" fill="white" />
                 </span>
             )}
 

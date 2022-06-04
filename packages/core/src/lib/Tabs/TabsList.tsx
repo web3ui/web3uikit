@@ -1,5 +1,11 @@
 // Importing React and its awesome hooks
-import { createContext, useState, useEffect, useContext } from 'react';
+import {
+    Children,
+    createContext,
+    useState,
+    useEffect,
+    useContext,
+} from 'react';
 import {
     BulbTab,
     StyledTab,
@@ -28,7 +34,7 @@ const TabContext = createContext({
 // Helper function for parsing tab components
 const getTabs = (children: JSX.Element) => {
     const data: IElement = {};
-    React.Children.forEach(children, (element: IElement) => {
+    Children.forEach(children, (element: IElement) => {
         if (element.type == Tab) {
             data[element.props.tabKey] = element.props.children;
         }

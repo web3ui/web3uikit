@@ -1,4 +1,3 @@
-
 import { Logo } from '../Logo';
 import { CreditCardProps } from './types';
 import {
@@ -9,7 +8,6 @@ import {
     PStyledDigits,
     PStyledText,
 } from './CreditCard.styles';
-import { iconTypes } from '../Icon';
 import { Tooltip } from '../Tooltip';
 import { Button } from '../Button';
 
@@ -41,7 +39,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
                                     onClick={() => onRemove && onRemove()}
                                     isTransparent={true}
                                     theme={'secondary'}
-                                    icon={iconTypes.bin}
+                                    icon={'bin'}
                                     iconLayout={'icon-only'}
                                     size={'small'}
                                     iconColor={'red'}

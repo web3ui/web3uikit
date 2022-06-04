@@ -1,4 +1,4 @@
-import { TIconType } from '../Icon/collection';
+import { TIconType } from '@web3uikit/icons';
 
 export interface CryptoCardProps {
     /**

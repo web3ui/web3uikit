@@ -1,7 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { CopyButton } from '../CopyButton';
-import { Icon } from '../Icon';
-import { iconTypes } from '../Icon/collection';
+import { Icon } from '@web3uikit/icons';
 import InputStyles from './Input.styles';
 import type { InputProps } from './types';
 
@@ -204,9 +203,9 @@ const Input: React.FC<InputProps> = ({
                     type="button"
                 >
                     {isInputHidden ? (
-                        <Icon svg={iconTypes.eyeClosed} />
+                        <Icon svg={'eyeClosed'} />
                     ) : (
-                        <Icon svg={iconTypes.eye} />
+                        <Icon svg={'eye'} />
                     )}
                 </VisibilityIcon>
             )}

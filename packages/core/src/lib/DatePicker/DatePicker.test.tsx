@@ -1,4 +1,3 @@
-
 import { render, screen } from '@testing-library/react';
 import DatePicker from './DatePicker';
 

@@ -1,4 +1,4 @@
-import { TIconType } from '../Icon/collection';
+import { TIconType } from '@web3uikit/icons';
 import { OptionProps } from '../Select';
 
 export interface IDropdown {

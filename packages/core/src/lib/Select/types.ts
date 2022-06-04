@@ -1,5 +1,5 @@
 import { RefObject } from 'react';
-import { TIconType } from '../Icon/collection';
+import { TIconType } from '@web3uikit/icons';
 
 export interface SelectProps {
     /**
@@ -17,7 +17,7 @@ export interface SelectProps {
      */
     value?: string;
 
-     /**
+    /**
      * ref object for fancy select
      */
     ref?: RefObject<HTMLDivElement>;

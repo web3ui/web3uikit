@@ -1,9 +1,8 @@
 // Importing React and its awesome hooks
 import { useState, useEffect } from 'react';
+import { Icon } from '@web3uikit/icons';
 
 // importing elements from the kit, never add more elements, improve what we have
-import Icon from '../Icon/Icon';
-import { iconTypes } from '../Icon/collection';
 import { Button } from '../Button';
 
 // importing centralized colors
@@ -55,11 +54,7 @@ const NewComp: React.FC<NewCompProps> = ({
             </TitleStyled>
             <SpanStyled>
                 <Icon
-                    svg={
-                        compState === 'greenLight'
-                            ? iconTypes.checkmark
-                            : iconTypes.x
-                    }
+                    svg={compState === 'greenLight' ? 'checkmark' : 'x'}
                     fill={compState === 'greenLight' ? color.green : color.red}
                     size={30}
                 />

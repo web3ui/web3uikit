@@ -1,8 +1,6 @@
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import TabList from './TabsList';
-import Icon from '../Icon/Icon';
-import { iconTypes } from '../Icon/collection';
+import { Icon } from '@web3uikit/icons';
 import Button from '../Button/Button';
 import { Tab } from '.';
 
@@ -26,11 +24,7 @@ TabBar.args = {
                             display: 'flex',
                         }}
                     >
-                        <Icon
-                            fill="black"
-                            size={22}
-                            svg={iconTypes.messageCircle}
-                        />{' '}
+                        <Icon fill="black" size={22} svg={'messageCircle'} />{' '}
                         <span style={{ paddingLeft: '4px' }}>Freinds </span>
                     </div>
                 }
@@ -45,14 +39,14 @@ TabBar.args = {
                             display: 'flex',
                         }}
                     >
-                        <Icon fill="black" size={22} svg={iconTypes.bell} />
+                        <Icon fill="black" size={22} svg={'bell'} />
                         <span style={{ paddingLeft: '4px' }}>Alerts </span>
                     </div>
                 }
                 tabKey={2}
             >
                 <Button
-                    icon={iconTypes.plus}
+                    icon={'plus'}
                     text="Add New Alert"
                     theme="primary"
                     type="button"
@@ -105,14 +99,14 @@ BulbWithIcon.args = {
     children: (
         <TabList tabStyle="bulbUnion" defaultActiveKey={1}>
             <TabList.Tab
-                tabName={<Icon fill="black" size={16} svg={iconTypes.grid} />}
+                tabName={<Icon fill="black" size={16} svg={'grid'} />}
                 tabKey={1}
                 lineHeight={0}
             >
                 <div>This is Card 1</div>
             </TabList.Tab>
             <TabList.Tab
-                tabName={<Icon fill="black" size={16} svg={iconTypes.list} />}
+                tabName={<Icon fill="black" size={16} svg={'list'} />}
                 lineHeight={0}
                 tabKey={2}
             >
@@ -127,14 +121,14 @@ VerticalBulbs.args = {
     children: (
         <TabList tabStyle="bulbUnion" isVertical={true}>
             <TabList.Tab
-                tabName={<Icon fill="black" size={16} svg={iconTypes.grid} />}
+                tabName={<Icon fill="black" size={16} svg={'grid'} />}
                 tabKey={1}
                 lineHeight={0}
             >
                 <div>This is Card 1</div>
             </TabList.Tab>
             <TabList.Tab
-                tabName={<Icon fill="black" size={16} svg={iconTypes.list} />}
+                tabName={<Icon fill="black" size={16} svg={'list'} />}
                 lineHeight={0}
                 tabKey={2}
             >

@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 
-import { IconProps, Icon, iconTypes } from '.';
-import { color } from '@web3uikit/styles';
+import { IconProps, Icon } from '.';
+import { iconTypes } from './collection';
 import { TIconType } from './collection';
+import { color } from '@web3uikit/styles';
 
 export const iconTestId = 'test-icon';
 

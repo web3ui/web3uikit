@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ModalProps } from './types';
 import Button from '../Button/Button';
-import { iconTypes } from '../Icon/collection';
 import styles from './Modal.styles';
 
 const {
@@ -83,7 +82,7 @@ const Modal: React.FC<ModalProps> = ({
                                 radius={100}
                                 id={'modal-close-button'}
                                 data-testid={'modal-close-test-id'}
-                                icon={iconTypes.x}
+                                icon={'x'}
                                 iconLayout={'icon-only'}
                                 onClick={
                                     onCloseButtonPressed

@@ -1,5 +1,5 @@
 // Importing React and its awesome hooks
-import { useState, useEffect, useContext } from 'react';
+import { createContext, useState, useEffect, useContext } from 'react';
 import {
     BulbTab,
     StyledTab,
@@ -19,7 +19,7 @@ interface IElement {
     [key: string]: any;
 }
 // Context for communinicting with tabs
-const TabContext = React.createContext({
+const TabContext = createContext({
     selectedKey: 0,
     setSelectedKey: null,
     tabStyle: 'bar',

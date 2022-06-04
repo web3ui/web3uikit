@@ -1,6 +1,6 @@
-
+import { createContext } from "react";
 
 // @ts-ignore
-const NotificationContext = React.createContext();
+const NotificationContext = createContext();
 
 export default NotificationContext;

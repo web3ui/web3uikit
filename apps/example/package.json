@@ -12,6 +12,7 @@
   "dependencies": {
     "@web3uikit/core": "*",
     "@web3uikit/ui": "*",
+    "@web3uikit/icons": "*",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0"

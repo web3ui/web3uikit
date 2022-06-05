@@ -94,15 +94,19 @@ importers:
       '@web3uikit/config': '*'
       '@web3uikit/core': '*'
       '@web3uikit/icons': '*'
+      '@web3uikit/ui': '*'
       react: ^18.0.0
       react-dom: ^18.0.0
+      react-moralis: ^1.3.5
       react-router-dom: ^6.3.0
       source-map-explorer: '*'
     dependencies:
       '@web3uikit/core': link:../../packages/core
       '@web3uikit/icons': link:../../packages/icons
+      '@web3uikit/ui': link:../../packages/ui
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
+      react-moralis: 1.4.0_jvmbiuzowzkvmz6b2oixkbg2di
       react-router-dom: 6.3.0_ef5jwxihqo6n7gxfmzogljlgcm
       source-map-explorer: 2.5.2
     devDependencies:
@@ -122,12 +126,10 @@ importers:
 
   packages/core:
     specifiers:
-      '@types/react-blockies': ^1.4.1
       '@web3uikit/config': '*'
       '@web3uikit/icons': '*'
       '@web3uikit/styles': '*'
       react: ^18.0.0
-      react-blockies: ^1.4.1
       react-dom: ^18.0.0
       react-router-dom: ^6.3.0
       styled-components: ^5.3.5
@@ -135,9 +137,7 @@ importers:
       '@web3uikit/config': link:../config
       '@web3uikit/icons': link:../icons
       '@web3uikit/styles': link:../styles
-      react-blockies: 1.4.1_react@18.1.0
     devDependencies:
-      '@types/react-blockies': 1.4.1
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
       react-router-dom: 6.3.0_ef5jwxihqo6n7gxfmzogljlgcm

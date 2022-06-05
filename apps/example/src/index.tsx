@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 const { Button, Logo, Typography, Avatar, BannerStrip, VerifyCode } = lazily(
     () => import('@web3uikit/core'),
 );
-// const { ConnectWallet, NFT } = lazily(() => import('@web3uikit/ui'));
+const { ConnectWallet, NFT } = lazily(() => import('@web3uikit/ui'));
 export const App = () => {
     return (
         <Routes>
@@ -35,13 +35,13 @@ export const App = () => {
                             />
                             <VerifyCode />
                         </div>
-                        {/* <ConnectWallet />
+                        <ConnectWallet />
                         <NFT
                             address="0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
                             chain="eth"
                             fetchMetadata
                             tokenId="1"
-                        /> */}
+                        />
                     </Suspense>
                 }
             />

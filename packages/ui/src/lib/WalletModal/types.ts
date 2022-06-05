@@ -1,4 +1,4 @@
-import { IConnectWalletProps } from '../ConnectButton/';
+import { IConnectWalletProps } from '../ConnectButton';
 export interface IWalletModalProps extends IConnectWalletProps {
     /**
      * an optional chain id of the blockchain that the web3 wallet is connected to

@@ -1,9 +1,5 @@
-
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { Icon } from '../Icon';
-import { iconTypes } from '../Icon/collection';
+import { Icon } from '@web3uikit/icons';
 import { Breadcrumbs } from '.';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -24,7 +20,7 @@ One.args = {
         {
             breadcrumb: 'Moralis Demo App 1',
             path: '#',
-            icon: <Icon svg={iconTypes.server} size={20} fill="currentColor" />,
+            icon: <Icon svg={'server'} size={20} fill="currentColor" />,
         },
     ],
     currentLocation: '#',
@@ -36,7 +32,7 @@ Two.args = {
         {
             breadcrumb: 'Moralis Demo App 1',
             path: '#',
-            icon: <Icon svg={iconTypes.server} size={20} fill="currentColor" />,
+            icon: <Icon svg={'server'} size={20} fill="currentColor" />,
         },
         {
             breadcrumb: 'Details',
@@ -52,7 +48,7 @@ Three.args = {
         {
             breadcrumb: 'Moralis Demo App 1',
             path: 'demo',
-            icon: <Icon svg={iconTypes.server} size={20} fill="currentColor" />,
+            icon: <Icon svg={'server'} size={20} fill="currentColor" />,
         },
         {
             breadcrumb: 'Details',
@@ -72,7 +68,7 @@ Four.args = {
         {
             breadcrumb: 'Moralis Demo App 1',
             path: '#',
-            icon: <Icon svg={iconTypes.server} size={20} fill="currentColor" />,
+            icon: <Icon svg={'server'} size={20} fill="currentColor" />,
         },
         {
             breadcrumb: 'Details',

@@ -13,7 +13,8 @@ import rgbToHex from '../../utils/rgbToHex';
 
 // importing testID from button and icon
 import { buttonTestId } from '../Button/Button.test';
-import { iconTestId } from '../Icon/Icon.test';
+
+const iconTestId = 'test-icon';
 
 // importing my stories to test
 const { Default, InitializeRed, UnderLinedText } = composeStories(stories);
@@ -32,168 +33,171 @@ const testText = 'test-text';
 
 // Test Story 1: Default
 test('Renders Default component', () => {
-  const testTextOn = Default?.args?.textOn;
+    const testTextOn = Default?.args?.textOn;
 
-  render(<Default />);
+    render(<Default />);
 
-  const component = screen.getByTestId(testCompId);
-  expect(component).not.toBeNull();
+    const component = screen.getByTestId(testCompId);
+    expect(component).not.toBeNull();
 
-  const icon = screen.getByTestId(iconTestId);
-  expect(icon).not.toBeNull();
+    const icon = screen.getByTestId(iconTestId);
+    expect(icon).not.toBeNull();
 
-  const title = screen.getByTestId(testTitle);
-  expect(title).not.toBeNull();
-  expect(title.textContent).toBe('The Demo Component');
+    const title = screen.getByTestId(testTitle);
+    expect(title).not.toBeNull();
+    expect(title.textContent).toBe('The Demo Component');
 
-  const heading = screen.getByTestId(testHeading);
-  expect(heading).not.toBeNull();
-  expect(heading.textContent).toBe(testTextOn);
+    const heading = screen.getByTestId(testHeading);
+    expect(heading).not.toBeNull();
+    expect(heading.textContent).toBe(testTextOn);
 
-  const styles = heading && getComputedStyle(heading);
-  const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-  expect(colorHex).toBe(color.green);
+    const styles = heading && getComputedStyle(heading);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.green);
 
-  const text = screen.getByTestId(testText);
-  expect(text).not.toBeNull();
-  expect(text.textContent).toBe('Clicked: 0 times');
+    const text = screen.getByTestId(testText);
+    expect(text).not.toBeNull();
+    expect(text.textContent).toBe('Clicked: 0 times');
 
-  const textWithoutUnderline = screen.getByTestId(testText);
-  expect(textWithoutUnderline).not.toBeNull();
-  const twlStyles = textWithoutUnderline && getComputedStyle(textWithoutUnderline);
-  expect(twlStyles?.textDecoration).toBe('none');
+    const textWithoutUnderline = screen.getByTestId(testText);
+    expect(textWithoutUnderline).not.toBeNull();
+    const twlStyles =
+        textWithoutUnderline && getComputedStyle(textWithoutUnderline);
+    expect(twlStyles?.textDecoration).toBe('none');
 });
 
 // Test Story 2: Button Click
 test('changes UI onClick of the button', () => {
-  const testTextOff = Default?.args?.textOff;
+    const testTextOff = Default?.args?.textOff;
 
-  render(<Default />);
+    render(<Default />);
 
-  const buttonElement = screen.getByTestId(buttonTestId);
+    const buttonElement = screen.getByTestId(buttonTestId);
 
-  buttonElement && fireEvent.click(buttonElement);
+    buttonElement && fireEvent.click(buttonElement);
 
-  const textElelement = screen.getByTestId(testText);
-  expect(textElelement).not.toBeNull();
-  expect(textElelement.textContent).toBe('Clicked: 1 times');
+    const textElelement = screen.getByTestId(testText);
+    expect(textElelement).not.toBeNull();
+    expect(textElelement.textContent).toBe('Clicked: 1 times');
 
-  const headingElement = screen.getByTestId(testHeading);
-  expect(headingElement).not.toBeNull();
-  expect(headingElement.textContent).toBe(testTextOff);
+    const headingElement = screen.getByTestId(testHeading);
+    expect(headingElement).not.toBeNull();
+    expect(headingElement.textContent).toBe(testTextOff);
 
-  const styles = headingElement && getComputedStyle(headingElement);
-  const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-  expect(colorHex).toBe(color.red);
+    const styles = headingElement && getComputedStyle(headingElement);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.red);
 });
 
 // Test Story 3: InitializeRed
 test('Renders InitializeRed', () => {
-  const testTextOff = InitializeRed?.args?.textOff;
+    const testTextOff = InitializeRed?.args?.textOff;
 
-  render(<InitializeRed />);
+    render(<InitializeRed />);
 
-  const component = screen.getByTestId(testCompId);
-  expect(component).not.toBeNull();
+    const component = screen.getByTestId(testCompId);
+    expect(component).not.toBeNull();
 
-  const icon = screen.getByTestId(iconTestId);
-  expect(icon).not.toBeNull();
+    const icon = screen.getByTestId(iconTestId);
+    expect(icon).not.toBeNull();
 
-  const title = screen.getByTestId(testTitle);
-  expect(title).not.toBeNull();
-  expect(title.textContent).toBe('The Demo Component');
+    const title = screen.getByTestId(testTitle);
+    expect(title).not.toBeNull();
+    expect(title.textContent).toBe('The Demo Component');
 
-  const heading = screen.getByTestId(testHeading);
-  expect(heading).not.toBeNull();
-  expect(heading.textContent).toBe(testTextOff);
+    const heading = screen.getByTestId(testHeading);
+    expect(heading).not.toBeNull();
+    expect(heading.textContent).toBe(testTextOff);
 
-  const styles = heading && getComputedStyle(heading);
-  const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-  expect(colorHex).toBe(color.red);
+    const styles = heading && getComputedStyle(heading);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.red);
 
-  const text = screen.getByTestId(testText);
-  expect(text).not.toBeNull();
-  expect(text.textContent).toBe('Clicked: 0 times');
+    const text = screen.getByTestId(testText);
+    expect(text).not.toBeNull();
+    expect(text.textContent).toBe('Clicked: 0 times');
 
-  const textWithoutUnderline = screen.getByTestId(testText);
-  expect(textWithoutUnderline).not.toBeNull();
-  const twlStyles = textWithoutUnderline && getComputedStyle(textWithoutUnderline);
-  expect(twlStyles?.textDecoration).toBe('none');
+    const textWithoutUnderline = screen.getByTestId(testText);
+    expect(textWithoutUnderline).not.toBeNull();
+    const twlStyles =
+        textWithoutUnderline && getComputedStyle(textWithoutUnderline);
+    expect(twlStyles?.textDecoration).toBe('none');
 });
 
 // Test Story 3: Button click
 test('changes UI onClick of the button', () => {
-  const testTextOn = InitializeRed?.args?.textOn;
+    const testTextOn = InitializeRed?.args?.textOn;
 
-  render(<InitializeRed />);
+    render(<InitializeRed />);
 
-  const buttonElement = screen.getByTestId(buttonTestId);
-  buttonElement && fireEvent.click(buttonElement);
+    const buttonElement = screen.getByTestId(buttonTestId);
+    buttonElement && fireEvent.click(buttonElement);
 
-  const textElelement = screen.getByTestId(testText);
-  expect(textElelement).not.toBeNull();
-  expect(textElelement.textContent).toBe('Clicked: 1 times');
+    const textElelement = screen.getByTestId(testText);
+    expect(textElelement).not.toBeNull();
+    expect(textElelement.textContent).toBe('Clicked: 1 times');
 
-  const headingElement = screen.getByTestId(testHeading);
-  expect(headingElement).not.toBeNull();
-  expect(headingElement.textContent).toBe(testTextOn);
+    const headingElement = screen.getByTestId(testHeading);
+    expect(headingElement).not.toBeNull();
+    expect(headingElement.textContent).toBe(testTextOn);
 
-  const styles = headingElement && getComputedStyle(headingElement);
-  const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-  expect(colorHex).toBe(color.green);
+    const styles = headingElement && getComputedStyle(headingElement);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.green);
 });
 
 // Test Story 4: UnderLinedText
 test('Renders UnderLinedText', () => {
-  const testTextOn = UnderLinedText?.args?.textOn;
+    const testTextOn = UnderLinedText?.args?.textOn;
 
-  render(<UnderLinedText />);
+    render(<UnderLinedText />);
 
-  const component = screen.getByTestId(testCompId);
-  expect(component).not.toBeNull();
+    const component = screen.getByTestId(testCompId);
+    expect(component).not.toBeNull();
 
-  const icon = screen.getByTestId(iconTestId);
-  expect(icon).not.toBeNull();
+    const icon = screen.getByTestId(iconTestId);
+    expect(icon).not.toBeNull();
 
-  const title = screen.getByTestId(testTitle);
-  expect(title).not.toBeNull();
-  expect(title.textContent).toBe('The Demo Component');
+    const title = screen.getByTestId(testTitle);
+    expect(title).not.toBeNull();
+    expect(title.textContent).toBe('The Demo Component');
 
-  const heading = screen.getByTestId(testHeading);
-  expect(heading).not.toBeNull();
-  expect(heading.textContent).toBe(testTextOn);
+    const heading = screen.getByTestId(testHeading);
+    expect(heading).not.toBeNull();
+    expect(heading.textContent).toBe(testTextOn);
 
-  const styles = heading && getComputedStyle(heading);
-  const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-  expect(colorHex).toBe(color.green);
+    const styles = heading && getComputedStyle(heading);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.green);
 
-  const text = screen.getByTestId(testText);
-  expect(text).not.toBeNull();
-  expect(text.textContent).toBe('Clicked: 0 times');
+    const text = screen.getByTestId(testText);
+    expect(text).not.toBeNull();
+    expect(text.textContent).toBe('Clicked: 0 times');
 
-  const textWithoutUnderline = screen.queryByTestId(testText);
-  expect(textWithoutUnderline).not.toBeNull();
-  const twlStyles = textWithoutUnderline && getComputedStyle(textWithoutUnderline);
-  expect(twlStyles?.textDecoration).toBe('underline');
+    const textWithoutUnderline = screen.queryByTestId(testText);
+    expect(textWithoutUnderline).not.toBeNull();
+    const twlStyles =
+        textWithoutUnderline && getComputedStyle(textWithoutUnderline);
+    expect(twlStyles?.textDecoration).toBe('underline');
 });
 
 test('changes UI onClick of the button', () => {
-  const testTextOff = UnderLinedText?.args?.textOff;
+    const testTextOff = UnderLinedText?.args?.textOff;
 
-  render(<UnderLinedText />);
+    render(<UnderLinedText />);
 
-  const buttonElement = screen.getByTestId(buttonTestId);
-  buttonElement && fireEvent.click(buttonElement);
+    const buttonElement = screen.getByTestId(buttonTestId);
+    buttonElement && fireEvent.click(buttonElement);
 
-  const textElelement = screen.getByTestId(testText);
-  expect(textElelement).not.toBeNull();
-  expect(textElelement.textContent).toBe('Clicked: 1 times');
+    const textElelement = screen.getByTestId(testText);
+    expect(textElelement).not.toBeNull();
+    expect(textElelement.textContent).toBe('Clicked: 1 times');
 
-  const headingElement = screen.getByTestId(testHeading);
-  expect(headingElement).not.toBeNull();
-  expect(headingElement.textContent).toBe(testTextOff);
+    const headingElement = screen.getByTestId(testHeading);
+    expect(headingElement).not.toBeNull();
+    expect(headingElement.textContent).toBe(testTextOff);
 
-  const styles = headingElement && getComputedStyle(headingElement);
-  const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-  expect(colorHex).toBe(color.red);
+    const styles = headingElement && getComputedStyle(headingElement);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.red);
 });

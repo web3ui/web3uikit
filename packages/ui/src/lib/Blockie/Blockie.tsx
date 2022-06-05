@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 import Blockies from 'react-blockies';
 import { BlockieStyles } from './Blockie.styles';
 import { BlockieProps } from './types';
@@ -10,7 +10,7 @@ const { BlockieStyled } = BlockieStyles;
  * @returns <Blockies> JSX Elemenet
  */
 
-const Blockie: React.FC<BlockieProps> = (props) => {
+const Blockie: FC<BlockieProps> = (props) => {
     return (
         <BlockieStyled data-testid="test-div">
             <Blockies

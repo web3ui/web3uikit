@@ -1,17 +1,16 @@
-export interface IConnectWalletProps {
-  /**
-   * 'Connect Wallet'  by default
-   */
-  text?: string;
+export interface IConnectButtonProps {
+    /**
+     * an optional chain id of the blockchain that the web3 wallet is connected to
+     */
+    chainId?: number;
 
-  /**
-   * auth type
-   */
-  authType?: keyof typeof EAuthType;
-}
+    /**
+     * if true & server is connected & web3 is enabled will automatically try to connect user to the server
+     */
+    moralisAuth?: boolean;
 
-export enum EAuthType {
-  walletconnect,
-  wc,
-  metamask,
+    /**
+     * an optional response message that will be displayed to the user once their sign-in request is successful
+     */
+    signingMessage?: string;
 }

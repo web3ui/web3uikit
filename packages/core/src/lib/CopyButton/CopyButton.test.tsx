@@ -7,7 +7,6 @@ import {
 } from '@testing-library/react';
 
 import CopyButton from './CopyButton';
-import { iconTypes } from '../Icon';
 
 const copyIconTestId = 'copy-icon';
 
@@ -24,7 +23,7 @@ test('Should render the component', () => {
     expect(element).not.toBeNull();
 
     // Verify that the `icon copy` is visible
-    expect(element.textContent).toBe(`${iconTypes.copy} icon`);
+    expect(element.textContent).toBe(`${'copy'} icon`);
 });
 
 test('Should render the component after clicking the button', async () => {
@@ -37,6 +36,6 @@ test('Should render the component after clicking the button', async () => {
     });
     await waitFor(() => {
         // Verify that the `icon check` is visible
-        expect(element.textContent).toBe(`${iconTypes.check} icon`);
+        expect(element.textContent).toBe(`${'check'} icon`);
     });
 });

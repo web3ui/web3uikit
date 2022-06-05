@@ -1,5 +1,5 @@
 import { RefObject } from 'react';
-import { TIconType } from '../Icon/collection';
+import { TIconType } from '@web3uikit/icons';
 
 export interface InputProps {
     /**

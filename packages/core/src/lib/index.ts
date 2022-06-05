@@ -19,7 +19,6 @@ export * from './Dropdown';
 export * from './Form';
 export * from './Hero';
 export * from './HideButton';
-export * from './Icon';
 export * from './Illustrations';
 export * from './Info';
 export * from './Input';

@@ -1,6 +1,6 @@
-import { Chain } from "../web3utils";
+import { Chain } from '../../web3utils';
 
 export interface INFTBalance {
-  chain: Chain;
-  address: string;
+    chain: Chain;
+    address: string;
 }

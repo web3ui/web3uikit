@@ -1,15 +1,35 @@
-import ConnectWallet from "./ConnectButton";
-import { IConnectWalletProps } from "./types";
-export default {
-  title: "1.Web3/NFT",
-  component: ConnectWallet,
-  argTypes: {
-    onClick: {
-      action: "Button Clicked",
-    },
-  },
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import ConnectButton from './ConnectButton';
+import { moralisContext } from '../../web3utils/decorators';
+
+const centerLayout = {
+    alignItems: 'center',
+    display: 'flex',
+    justifyContent: 'center',
 };
 
-export const Primary = (args: IConnectWalletProps) => (
-  <ConnectWallet {...args} />
+export default {
+    title: '1.Web3/ConnectButton',
+    component: ConnectButton,
+    decorators: [
+        moralisContext,
+        (storyFn) => <div style={centerLayout}>{storyFn()}</div>,
+    ],
+    parameters: {
+        docs: {
+            source: {
+                excludeDecorators: true,
+            },
+        },
+    },
+} as ComponentMeta<typeof ConnectButton>;
+
+const Template: ComponentStory<typeof ConnectButton> = (args) => (
+    <ConnectButton {...args} />
 );
+
+export const Default = Template.bind({});
+export const NoMoralisAuth = Template.bind({});
+NoMoralisAuth.args = {
+    moralisAuth: false,
+};

@@ -1,8 +1,4 @@
-node_modules
-
-packages/core/lib/
-packages/ui/lib/
-packages/styles/lib/
-apps/**/dist
-
+**/node_modules
+**/dist
+**/*.tsbuildinfo
 **/.DS_Store

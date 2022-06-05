@@ -1,8 +1,6 @@
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Hero from './Hero';
 import { Button } from '../Button';
-import { iconTypes } from '../Icon/collection';
 import { ImageStyled } from './Hero.styles';
 
 export default {
@@ -56,7 +54,7 @@ DappHero.args = {
     children: (
         <Button
             text="Access Database"
-            icon={iconTypes.arrowCircleRight}
+            icon="arrowCircleRight"
             theme="primary"
         />
     ),
@@ -74,7 +72,7 @@ GradientHero.args = {
     children: (
         <Button
             text="Submit a ticket"
-            icon={iconTypes.arrowCircleRight}
+            icon="arrowCircleRight"
             theme="primary"
         />
     ),

@@ -1,7 +1,5 @@
-
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Credentials.stories';
-import { iconTestId } from '../Icon/Icon.test';
 import { render, screen } from '@testing-library/react';
 
 const { WithTitleAndIcon, WithTitle, OneLine } = composeStories(stories);
@@ -11,7 +9,7 @@ export const testCompId = 'test-credentials';
 const testTitleIcon = 'cred-test-header-icon';
 const testTitleId = 'cred-test-header-text';
 const testTextId = 'cred-test-text';
-
+const iconTestId = 'test-icon';
 test('Renders - Credentials with Title and Icon', () => {
     render(<WithTitleAndIcon />);
     const testTitleText = WithTitleAndIcon?.args?.title;

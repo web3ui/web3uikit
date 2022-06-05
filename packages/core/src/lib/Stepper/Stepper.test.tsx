@@ -1,4 +1,3 @@
-
 import { act } from 'react-dom/test-utils';
 import { fireEvent, render, cleanup } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
@@ -39,7 +38,7 @@ describe('Demo', () => {
             `[data-testid="${stepperTestTitle}"]`,
         );
         expect(title).not.toBeNull();
-        expect(title?.textContent).toBe(testStepData[0].title);
+        expect(title?.textContent).toBe(testStepData[0]?.title);
     });
 
     it('next & prev nav cycles the content', () => {
@@ -53,7 +52,7 @@ describe('Demo', () => {
             `[data-testid="${stepperTestTitle}"]`,
         );
         expect(step2Title).not.toBeNull();
-        expect(step2Title?.textContent).toBe(testStepData[1].title);
+        expect(step2Title?.textContent).toBe(testStepData[1]?.title);
 
         const preButton = buttons[0];
         preButton && fireEvent.click(preButton);
@@ -61,7 +60,7 @@ describe('Demo', () => {
             `[data-testid="${stepperTestTitle}"]`,
         );
         expect(step1Title).not.toBeNull();
-        expect(step1Title?.textContent).toBe(testStepData[0].title);
+        expect(step1Title?.textContent).toBe(testStepData[0]?.title);
     });
 
     it('renders the correct amount of step number', () => {
@@ -82,7 +81,7 @@ describe('Demo', () => {
         const numbers = container.querySelectorAll(
             `[data-testid="${stepperTestNumbers}"] > li`,
         );
-        expect(numbers[0].textContent).toBe('1');
+        expect(numbers[0]?.textContent).toBe('1');
 
         const buttons = container.querySelectorAll(
             `[data-testid="${stepperTestNav}"] > button`,
@@ -93,7 +92,7 @@ describe('Demo', () => {
         const updatedNumbers = container.querySelectorAll(
             `[data-testid="${stepperTestNumbers}"] > li`,
         );
-        expect(updatedNumbers[0].textContent).toBe('check icon');
+        expect(updatedNumbers[0]?.textContent).toBe('check icon');
     });
 
     it('does not render the footer helper content', () => {
@@ -192,7 +191,7 @@ describe('StepsWithoutNav', () => {
             `[data-testid="${stepperTestTitle}"]`,
         );
         expect(step1Title).not.toBeNull();
-        expect(step1Title?.textContent).toBe(noNavTestStepData[0].title);
+        expect(step1Title?.textContent).toBe(noNavTestStepData[0]?.title);
 
         const nextButton = container.querySelector('#next');
         nextButton && fireEvent.click(nextButton);
@@ -200,14 +199,14 @@ describe('StepsWithoutNav', () => {
             `[data-testid="${stepperTestTitle}"]`,
         );
         expect(step2Title).not.toBeNull();
-        expect(step2Title?.textContent).toBe(noNavTestStepData[1].title);
+        expect(step2Title?.textContent).toBe(noNavTestStepData[1]?.title);
 
         const prevButton = container.querySelector('#prev');
         prevButton && fireEvent.click(prevButton);
         const step1TitleAgain: HTMLHeadingElement | null =
             container.querySelector(`[data-testid="${stepperTestTitle}"]`);
         expect(step1TitleAgain).not.toBeNull();
-        expect(step1TitleAgain?.textContent).toBe(noNavTestStepData[0].title);
+        expect(step1TitleAgain?.textContent).toBe(noNavTestStepData[0]?.title);
     });
 
     it('next or prev events programmatically cycles the content', () => {
@@ -220,7 +219,7 @@ describe('StepsWithoutNav', () => {
             `[data-testid="${stepperTestTitle}"]`,
         );
         expect(step1Title).not.toBeNull();
-        expect(step1Title?.textContent).toBe(noNavTestStepData[0].title);
+        expect(step1Title?.textContent).toBe(noNavTestStepData[0]?.title);
 
         act(() => {
             const eventNext = new Event('next', { bubbles: true });
@@ -231,7 +230,7 @@ describe('StepsWithoutNav', () => {
             `[data-testid="${stepperTestTitle}"]`,
         );
         expect(step2Title).not.toBeNull();
-        expect(step2Title?.textContent).toBe(noNavTestStepData[1].title);
+        expect(step2Title?.textContent).toBe(noNavTestStepData[1]?.title);
 
         act(() => {
             const eventPrev = new Event('prev', { bubbles: true });
@@ -241,6 +240,6 @@ describe('StepsWithoutNav', () => {
         const step1TitleAgain: HTMLHeadingElement | null =
             container.querySelector(`[data-testid="${stepperTestTitle}"]`);
         expect(step1TitleAgain).not.toBeNull();
-        expect(step1TitleAgain?.textContent).toBe(noNavTestStepData[0].title);
+        expect(step1TitleAgain?.textContent).toBe(noNavTestStepData[0]?.title);
     });
 });

@@ -10,7 +10,7 @@ import {
 import { useState, useEffect } from 'react';
 import { IDropdown } from './types';
 import { Illustration } from '../Illustrations';
-import { Icon } from '../Icon';
+import { Icon } from '@web3uikit/icons';
 import { OptionProps } from '../Select';
 import { Typography } from '../Typography';
 

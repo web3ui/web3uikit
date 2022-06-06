@@ -117,6 +117,12 @@ const caption12 = css`
     line-height: 1.5;
 `;
 
+const caption10 = css`
+    ${text};
+    font-size: 10px;
+    line-height: 1.5; 
+`;
+
 const body18 = css`
     ${text};
     font-size: 18px;
@@ -159,6 +165,8 @@ export const getFontStyle = (variant: variantType) => {
             return caption14;
         case 'caption12':
             return caption12;
+        case 'caption10':
+            return caption10;
         default:
             return body16;
     }

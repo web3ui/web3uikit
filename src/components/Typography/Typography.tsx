@@ -19,6 +19,7 @@ const getTag = (variant: variantType) => {
             return 'h2';
         case 'body18':
         case 'body16':
+        case 'caption10':
         case 'caption12':
         case 'caption14':
         default:

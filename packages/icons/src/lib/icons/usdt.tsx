@@ -1,7 +1,6 @@
-/* eslint-disable linebreak-style */
-
-
-const usdtIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const UsdtIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -31,4 +30,4 @@ const usdtIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         />
     </svg>
 );
-export default usdtIcon;
+export default UsdtIcon;

@@ -1,10 +1,10 @@
-
-
-const xCircleIcon = (
-    fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const CrossCircleIcon: FC<TIconProps> = ({
+    fill = 'inherit',
+    size = 18,
+    style,
+}) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -15,7 +15,7 @@ const xCircleIcon = (
         xmlns="http://www.w3.org/2000/svg"
         style={style}
     >
-        <title>x circle icon</title>
+        <title>Cross circle icon</title>
         <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -32,4 +32,4 @@ const xCircleIcon = (
         />
     </svg>
 );
-export default xCircleIcon;
+export default CrossCircleIcon;

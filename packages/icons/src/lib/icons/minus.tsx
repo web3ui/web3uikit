@@ -1,6 +1,6 @@
-
-
-const minusIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const MinusIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -16,4 +16,4 @@ const minusIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         <path d="M18 11V13L6 13L6 11L18 11Z" fill={fill} />
     </svg>
 );
-export default minusIcon;
+export default MinusIcon;

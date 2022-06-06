@@ -1,10 +1,6 @@
-
-
-const cameraIcon = (
-    fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const CameraIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -24,4 +20,4 @@ const cameraIcon = (
         />
     </svg>
 );
-export default cameraIcon;
+export default CameraIcon;

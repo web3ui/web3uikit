@@ -1,10 +1,10 @@
-
-
-const lockOpenIcon = (
-    fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const LockOpenIcon: FC<TIconProps> = ({
+    fill = 'inherit',
+    size = 18,
+    style,
+}) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -24,4 +24,4 @@ const lockOpenIcon = (
         />
     </svg>
 );
-export default lockOpenIcon;
+export default LockOpenIcon;

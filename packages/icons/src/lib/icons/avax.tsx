@@ -1,7 +1,6 @@
-/* eslint-disable linebreak-style */
-
-
-const avaxIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const AvaxIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -31,4 +30,4 @@ const avaxIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         </g>
     </svg>
 );
-export default avaxIcon;
+export default AvaxIcon;

@@ -1,6 +1,6 @@
-
-
-const pulseIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const PulseIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -20,4 +20,4 @@ const pulseIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         />
     </svg>
 );
-export default pulseIcon;
+export default PulseIcon;

@@ -1,10 +1,6 @@
-
-
-const reloadIcon = (
-    fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const ReloadIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -26,4 +22,4 @@ const reloadIcon = (
         />
     </svg>
 );
-export default reloadIcon;
+export default ReloadIcon;

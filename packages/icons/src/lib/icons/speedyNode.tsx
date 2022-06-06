@@ -1,11 +1,10 @@
-/* eslint-disable linebreak-style */
-
-
-const speedyNodeIcon = (
-    fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const SpeedyNodeIcon: FC<TIconProps> = ({
+    fill = 'inherit',
+    size = 18,
+    style,
+}) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -15,6 +14,7 @@ const speedyNodeIcon = (
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
     >
+        <title>SpeedyNode icon</title>
         <g clipPath="url(#clip0_359_27730)" style={style}>
             <path
                 d="M14.2947 20.5122C14.1464 20.5132 14.0004 20.4753 13.8713 20.4023L7.01273 16.445C6.88352 16.3705 6.77631 16.2633 6.70196 16.1341C6.62762 16.0049 6.58877 15.8584 6.58936 15.7094V7.80328C6.58877 7.65428 6.62762 7.50777 6.70196 7.37859C6.77631 7.2494 6.88352 7.14213 7.01273 7.06763L13.8544 3.11036C13.9831 3.03614 14.1291 2.99707 14.2778 2.99707C14.4264 2.99707 14.5724 3.03614 14.7011 3.11036L21.5767 7.07609C21.7059 7.15059 21.8131 7.25786 21.8874 7.38704C21.9618 7.51623 22.0006 7.66274 22 7.81174V15.7178C22.0006 15.8668 21.9618 16.0133 21.8874 16.1425C21.8131 16.2717 21.7059 16.379 21.5767 16.4535L14.7011 20.4023C14.5771 20.4725 14.4373 20.5103 14.2947 20.5122ZM8.28284 15.2274L14.2947 18.6942L20.3066 15.2274V8.28525L14.2947 4.81841L8.28284 8.28525V15.2274Z"
@@ -65,4 +65,4 @@ const speedyNodeIcon = (
         </defs>
     </svg>
 );
-export default speedyNodeIcon;
+export default SpeedyNodeIcon;

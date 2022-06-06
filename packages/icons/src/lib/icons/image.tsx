@@ -1,10 +1,6 @@
-
-
-const imagineIcon = (
-    fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const ImageIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -15,7 +11,7 @@ const imagineIcon = (
         xmlns="http://www.w3.org/2000/svg"
         style={style}
     >
-        <title>imagine icon</title>
+        <title>image icon</title>
         <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -36,4 +32,4 @@ const imagineIcon = (
         />
     </svg>
 );
-export default imagineIcon;
+export default ImageIcon;

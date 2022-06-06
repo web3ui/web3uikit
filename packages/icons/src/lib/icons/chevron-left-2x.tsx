@@ -1,10 +1,10 @@
-
-
-const chevronLeftX2Icon = (
-    fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const ChevronLeftX2Icon: FC<TIconProps> = ({
+    fill = 'inherit',
+    size = 18,
+    style,
+}) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -26,4 +26,4 @@ const chevronLeftX2Icon = (
         />
     </svg>
 );
-export default chevronLeftX2Icon;
+export default ChevronLeftX2Icon;

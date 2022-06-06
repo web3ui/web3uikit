@@ -1,7 +1,6 @@
-/* eslint-disable linebreak-style */
-
-
-const xrpIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const XrpIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -31,4 +30,4 @@ const xrpIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         </g>
     </svg>
 );
-export default xrpIcon;
+export default XrpIcon;

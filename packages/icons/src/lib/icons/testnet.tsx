@@ -1,10 +1,10 @@
-
-
-const testnetIcon = (
-    fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const TestnetIcon: FC<TIconProps> = ({
+    fill = 'inherit',
+    size = 18,
+    style,
+}) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -48,4 +48,4 @@ const testnetIcon = (
         />
     </svg>
 );
-export default testnetIcon;
+export default TestnetIcon;

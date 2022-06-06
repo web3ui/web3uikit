@@ -1,7 +1,6 @@
-/* eslint-disable linebreak-style */
-
-
-const adaIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const AdaIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -226,4 +225,4 @@ const adaIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         </g>
     </svg>
 );
-export default adaIcon;
+export default AdaIcon;

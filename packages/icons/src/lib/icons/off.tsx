@@ -1,6 +1,6 @@
-
-
-const offIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const OffIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -22,4 +22,4 @@ const offIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         />
     </svg>
 );
-export default offIcon;
+export default OffIcon;

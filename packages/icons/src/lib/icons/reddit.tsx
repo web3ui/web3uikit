@@ -1,10 +1,6 @@
-
-
-const redditIcon = (
-    fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const RedditIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -25,4 +21,4 @@ const redditIcon = (
         </g>
     </svg>
 );
-export default redditIcon;
+export default RedditIcon;

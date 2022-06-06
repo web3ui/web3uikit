@@ -1,10 +1,10 @@
-
-
-const eyeClosedIcon = (
-    fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const EyeClosedIcon: FC<TIconProps> = ({
+    fill = 'inherit',
+    size = 18,
+    style,
+}) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -38,4 +38,4 @@ const eyeClosedIcon = (
         />
     </svg>
 );
-export default eyeClosedIcon;
+export default EyeClosedIcon;

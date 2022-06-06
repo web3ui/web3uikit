@@ -1,6 +1,6 @@
-
-
-const plugIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const PlugIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -21,4 +21,4 @@ const plugIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         <path d="M17 8H15V13H17V8Z" fill={fill} />
     </svg>
 );
-export default plugIcon;
+export default PlugIcon;

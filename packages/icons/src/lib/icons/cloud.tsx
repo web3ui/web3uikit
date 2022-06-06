@@ -1,6 +1,6 @@
-
-
-const cloudIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const CloudIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -20,4 +20,4 @@ const cloudIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         />
     </svg>
 );
-export default cloudIcon;
+export default CloudIcon;

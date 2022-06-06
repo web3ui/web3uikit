@@ -1,10 +1,10 @@
-
-
-const windowsIcon = (
-    fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const WindowsIcon: FC<TIconProps> = ({
+    fill = 'inherit',
+    size = 18,
+    style,
+}) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -22,4 +22,4 @@ const windowsIcon = (
         />
     </svg>
 );
-export default windowsIcon;
+export default WindowsIcon;

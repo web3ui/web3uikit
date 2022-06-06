@@ -1,6 +1,6 @@
-
-
-const pinIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const PinIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -26,4 +26,4 @@ const pinIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         />
     </svg>
 );
-export default pinIcon;
+export default PinIcon;

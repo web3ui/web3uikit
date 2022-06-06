@@ -1,7 +1,6 @@
-/* eslint-disable linebreak-style */
-
-
-const filIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const FillIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -11,7 +10,7 @@ const filIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         viewBox="0 0 24 24"
         style={style}
     >
-        <title>fil icon</title>
+        <title>fill icon</title>
         <g id="filecoin-fil-logo" transform="translate(0 0.001)">
             <path
                 id="Path_1742"
@@ -32,4 +31,4 @@ const filIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         </g>
     </svg>
 );
-export default filIcon;
+export default FillIcon;

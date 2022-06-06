@@ -1,6 +1,6 @@
-
-
-const xIcon = (fill: string, size: number, style?: React.CSSProperties) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const CrossIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -11,7 +11,7 @@ const xIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         xmlns="http://www.w3.org/2000/svg"
         style={style}
     >
-        <title>x icon</title>
+        <title>cross icon</title>
         <path
             d="M16.0001 6.58575L17.4143 7.99997L8.00015 17.4138L6.58594 15.9996L16.0001 6.58575Z"
             fill={fill}
@@ -22,4 +22,4 @@ const xIcon = (fill: string, size: number, style?: React.CSSProperties) => (
         />
     </svg>
 );
-export default xIcon;
+export default CrossIcon;

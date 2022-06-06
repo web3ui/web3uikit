@@ -1,11 +1,10 @@
-/* eslint-disable linebreak-style */
-
-
-const web3apiIcon = (
-    fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const Web3ApiIcon: FC<TIconProps> = ({
+    fill = 'inherit',
+    size = 18,
+    style,
+}) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -14,6 +13,7 @@ const web3apiIcon = (
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
     >
+        <title>web3api icon</title>
         <g clipPath="url(#clip0_12659_107961)" style={style}>
             <path
                 d="M21.1951 19.982H15.0648C14.8515 19.982 14.6468 19.8972 14.4959 19.7463C14.345 19.5954 14.2603 19.3908 14.2603 19.1774C14.2603 18.964 14.345 18.7593 14.4959 18.6085C14.6468 18.4576 14.8515 18.3728 15.0648 18.3728H19.9447L19.2814 16.9162C19.1957 16.7224 19.19 16.5026 19.2654 16.3046C19.3408 16.1066 19.4913 15.9463 19.6842 15.8586C19.8771 15.7708 20.0968 15.7628 20.2957 15.8361C20.4945 15.9094 20.6563 16.0582 20.7461 16.2501L21.9276 18.8443C21.9833 18.9669 22.0074 19.1015 21.9977 19.2358C21.9879 19.3701 21.9446 19.4998 21.8717 19.613C21.7988 19.7262 21.6986 19.8193 21.5804 19.8838C21.4622 19.9482 21.3297 19.982 21.1951 19.982Z"
@@ -100,4 +100,4 @@ const web3apiIcon = (
         </defs>
     </svg>
 );
-export default web3apiIcon;
+export default Web3ApiIcon;

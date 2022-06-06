@@ -1,10 +1,6 @@
-
-
-const googleIcon = (
-    _fill: string,
-    size: number,
-    style?: React.CSSProperties,
-) => (
+import { FC } from 'react';
+import { TIconProps } from '../type';
+const GoogleIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
@@ -15,6 +11,7 @@ const googleIcon = (
         width={size}
         xmlns="http://www.w3.org/2000/svg"
     >
+        <title>google icon</title>
         <path
             fillRule="evenodd"
             clipRule="evenodd"
@@ -41,4 +38,4 @@ const googleIcon = (
         />
     </svg>
 );
-export default googleIcon;
+export default GoogleIcon;

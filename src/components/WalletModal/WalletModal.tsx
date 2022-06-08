@@ -32,6 +32,12 @@ const WalletModal: FC<WalletModalProps> = ({
     function connectWallet(provider: Moralis.Web3ProviderType) {
         // to avoid problems in Next.JS apps because of localStorage
         if (typeof window == 'undefined') return;
+        if (
+            typeof (window as any).ethereum == 'undefined' &&
+            provider == 'metamask'
+        ) {
+            return alert('Please install web3 wallet first');
+        }
         const connectProps = {
             provider,
             chainId,

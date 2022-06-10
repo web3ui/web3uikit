@@ -51,6 +51,10 @@ const Table: React.FC<TableProps> = ({
     }, [pageNum]);
 
     useEffect(() => {
+        setTableData(data);
+    }, [data]);
+
+    useEffect(() => {
         handleSetPageNumber(customPageNumber ? customPageNumber : 0);
     }, [customPageNumber]);
 

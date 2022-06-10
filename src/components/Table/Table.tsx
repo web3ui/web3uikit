@@ -41,7 +41,6 @@ const Table: React.FC<TableProps> = ({
         customPageNumber ? customPageNumber : 0,
     );
     const [tableData, setTableData] = useState(data);
-
     const [sortField, setSortField] = useState(-1);
     const [order, setOrder] = useState('asc');
 

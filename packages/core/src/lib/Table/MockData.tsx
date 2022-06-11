@@ -2,7 +2,7 @@ import * as React from 'react';
 import { color } from '@web3uikit/styles';
 import { Avatar } from '../Avatar';
 import { Button } from '../Button';
-import { Icon } from '@web3uikit/icons';
+import { Ada, MoreVert } from '@web3uikit/icons';
 import { Tag } from '../Tag';
 import { Typography } from '../Typography';
 
@@ -20,84 +20,84 @@ export const data = [
         'Moralis Magi',
         <Tag text="Nft Collection" color="blue" />,
         '0x18...130e',
-        <Icon fill="black" size={32} svg={'moreVert'} />,
+        <MoreVert fill="black" size={32} />,
     ],
     [
         <Avatar theme="image" isRounded={true} size={36} />,
         'My Cool Nft',
         <Tag text="Lazy Nft" color="red" />,
         '0x18...130e',
-        <Icon fill="black" size={32} svg={'moreVert'} />,
+        <MoreVert fill="black" size={32} />,
     ],
     [
         <Avatar theme="image" isRounded={true} size={36} />,
         'Magi Cool Topen',
         <Tag text="Pack" color="yellow" />,
         '0x18...130e',
-        <Icon fill="black" size={32} svg={'moreVert'} />,
+        <MoreVert fill="black" size={32} />,
     ],
     [
         <Avatar theme="image" isRounded={true} size={36} />,
         'My Marketplace',
         <Tag text="Nft Marketplace" color="red" />,
         '0x18...130e',
-        <Icon fill="black" size={32} svg={'moreVert'} />,
+        <MoreVert fill="black" size={32} />,
     ],
     [
         <Avatar theme="image" isRounded={true} size={36} />,
         'Owl Magi',
         <Tag text="Bundle" color="purple" />,
         '0x18...130e',
-        <Icon fill="black" size={32} svg={'moreVert'} />,
+        <MoreVert fill="black" size={32} />,
     ],
     [
         <Avatar theme="image" isRounded={true} size={36} />,
         'Owl Nft',
         <Tag text="Token" color="green" />,
         '0x18...130e',
-        <Icon fill="black" size={32} svg={'moreVert'} />,
+        <MoreVert fill="black" size={32} />,
     ],
     [
         <Avatar theme="image" isRounded={true} size={36} />,
         'Ape Yacht',
         <Tag text="Nft Collection" color="blue" />,
         '0x18...130e',
-        <Icon fill="black" size={32} svg={'moreVert'} />,
+        <MoreVert fill="black" size={32} />,
     ],
     [
         <Avatar theme="image" isRounded={true} size={36} />,
         'Charzard',
         <Tag text="Bundle" color="red" />,
         '0x18...130e',
-        <Icon fill="black" size={32} svg={'moreVert'} />,
+        <MoreVert fill="black" size={32} />,
     ],
     [
         <Avatar theme="image" isRounded={true} size={36} />,
         'Magi',
         <Tag text="Token" color="green" />,
         '0x18...130e',
-        <Icon fill="black" size={32} svg={'moreVert'} />,
+        <MoreVert fill="black" size={32} />,
     ],
     [
         <Avatar theme="image" isRounded={true} size={36} />,
         'Moralis Magi',
         <Tag text="Nft Collection" color="blue" />,
         '0x18...130e',
-        <Icon fill="black" size={32} svg={'moreVert'} />,
+        <MoreVert fill="black" size={32} />,
     ],
     [
         <Avatar theme="image" isRounded={true} size={36} />,
         'My Cool Nft',
         <Tag text="Lazy Nft" color="red" />,
         '0x18...130e',
-        <Icon fill="black" size={32} svg={'moreVert'} />,
+        <MoreVert fill="black" size={32} />,
     ],
     [
         <Avatar theme="image" isRounded={true} size={36} />,
         'Magi Cool Topen',
         <Tag text="Pack" color="yellow" />,
         '0x18...130e',
-        <Icon fill="black" size={32} svg={'moreVert'} />,
+        <MoreVert fill="black" size={32} />,
     ],
 ];
 export const pageSize: number = 5;

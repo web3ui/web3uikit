@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 import { color } from '@web3uikit/styles';
-import { Icon } from '@web3uikit/icons';
+import { Check, Copy } from '@web3uikit/icons';
 import { ButtonStyled } from './CopyButton.styles';
 import { CopiedValue, CopyButtonProps, CopyFn } from './types';
 
@@ -55,11 +55,11 @@ const CopyButton: FC<CopyButtonProps> = ({
             }}
             {...props}
         >
-            <Icon
-                fill={value ? color.green : color.blue}
-                size={iconSize}
-                svg={value ? 'check' : 'copy'}
-            />
+            {value ? (
+                <Check fill={color.green} size={iconSize} />
+            ) : (
+                <Copy fill={color.blue} size={iconSize} />
+            )}
         </ButtonStyled>
     );
 };

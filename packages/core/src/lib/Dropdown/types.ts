@@ -1,4 +1,4 @@
-import { TIconType } from '@web3uikit/icons';
+import React from 'react';
 import { OptionProps } from '../Select';
 
 export interface IDropdown {
@@ -29,7 +29,7 @@ export interface IDropdown {
     /**
      * Name of the prefix Icon
      */
-    icon?: TIconType;
+    icon?: React.ReactElement; //Icon
     /**
      * Name of the prefix Icon
      */

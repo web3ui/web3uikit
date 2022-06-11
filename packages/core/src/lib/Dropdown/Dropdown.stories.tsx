@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Dropdown from './Dropdown';
-import { Icon } from '@web3uikit/icons';
+import { Cog, Server } from '@web3uikit/icons';
 import { color } from '@web3uikit/styles';
 import { Avatar } from '../Avatar';
 
@@ -164,12 +164,12 @@ LabelLess.args = {
         {
             label: 'Api Key',
             id: 'Api Key',
-            prefix: <Icon svg="cog" fill={color.blue} />,
+            prefix: <Cog fill={color.blue} />,
         },
         {
             label: 'Testnet',
             id: 'Testnet',
-            prefix: <Icon svg="server" fill={color.blue} />,
+            prefix: <Server fill={color.blue} />,
         },
     ],
     label: 'Server: ',

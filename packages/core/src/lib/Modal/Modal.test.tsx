@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import Modal from './Modal';
-import { Icon } from '@web3uikit/icons';
+import { Cloud } from '@web3uikit/icons';
 import { color } from '@web3uikit/styles';
 import { ModalProps } from './types';
 
@@ -17,7 +17,7 @@ const args: ModalProps = {
                 flexDirection: 'column',
             }}
         >
-            <Icon svg={'cloud'} size={64} fill={color.blueDark2} />
+            <Cloud size={64} fill={color.blueDark2} />
             <p>Proceed uploading?</p>
         </div>,
     ],

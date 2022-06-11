@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ModalProps } from './types';
 import Button from '../Button/Button';
 import styles from './Modal.styles';
+import { Cross } from '@web3uikit/icons';
 
 const {
     CustomFooterStyled,
@@ -82,7 +83,7 @@ const Modal: React.FC<ModalProps> = ({
                                 radius={100}
                                 id={'modal-close-button'}
                                 data-testid={'modal-close-test-id'}
-                                icon={'x'}
+                                icon={<Cross />}
                                 iconLayout={'icon-only'}
                                 onClick={
                                     onCloseButtonPressed

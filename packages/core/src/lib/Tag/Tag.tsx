@@ -1,4 +1,4 @@
-import { Icon } from '@web3uikit/icons';
+import { Checkmark, Cross } from '@web3uikit/icons';
 import styles from './Tag.styles';
 import { TagProps } from './types';
 import { color as colors } from '@web3uikit/styles';
@@ -31,12 +31,12 @@ const Tag: React.FC<TagProps> = ({
             {...props}
         >
             {theme === 'status' && active && (
-                <Icon fill="inherit" size={16} svg={'checkmark'} />
+                <Checkmark fill="inherit" size={16} />
             )}
             <strong data-testid="test-tag-text">{text}</strong>
             {hasCancel && (
                 <SpanStyled onClick={onCancelClick}>
-                    <Icon fill={colors.blue} size={16} svg="x" />
+                    <Cross fill={colors.blue} size={16} />
                 </SpanStyled>
             )}
         </TagStyled>

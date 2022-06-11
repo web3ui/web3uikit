@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { TIconProps } from '../type';
 const MinimizeIcon: FC<TIconProps> = ({
-    fill = 'inherit',
+    fill = 'currentColor',
     size = 18,
     style,
 }) => (

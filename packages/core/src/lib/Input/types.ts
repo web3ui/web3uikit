@@ -1,5 +1,4 @@
-import { RefObject } from 'react';
-import { TIconType } from '@web3uikit/icons';
+import React, { RefObject } from 'react';
 
 export interface InputProps {
     /**
@@ -55,7 +54,7 @@ export interface InputProps {
     /**
      * Icon prefixIcon for the input field
      */
-    prefixIcon?: TIconType;
+    prefixIcon?: React.ReactElement;
 
     /**
      * Icon prefixIcon for the input field

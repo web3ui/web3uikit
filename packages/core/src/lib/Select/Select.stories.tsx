@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { color } from '@web3uikit/styles';
-import { Icon } from '@web3uikit/icons';
+import { Btc, Discord, Server, Testnet } from '@web3uikit/icons';
 import Select from './Select';
 
 export default {
@@ -19,7 +19,7 @@ const smallOptionsList = [
     {
         label: 'Discord',
         id: 'discord',
-        prefix: <Icon svg={'discord'} fill={color.grey} />,
+        prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Emoji',
@@ -34,7 +34,7 @@ const smallOptionsList = [
     {
         label: 'dApp',
         id: 'dapp',
-        prefix: <Icon svg={'server'} fill={color.grey} />,
+        prefix: <Server fill={color.grey} />,
     },
 ];
 
@@ -42,7 +42,7 @@ const optionsList = [
     {
         label: 'Discord',
         id: 'discord',
-        prefix: <Icon svg={'discord'} fill={color.grey} />,
+        prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Emoji',
@@ -57,32 +57,32 @@ const optionsList = [
     {
         label: 'dApp',
         id: 'dapp',
-        prefix: <Icon svg={'server'} fill={color.grey} />,
+        prefix: <Server fill={color.grey} />,
     },
     {
         label: 'Discord',
         id: 'discord',
-        prefix: <Icon svg={'discord'} fill={color.grey} />,
+        prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Discord',
         id: 'discord',
-        prefix: <Icon svg={'discord'} fill={color.grey} />,
+        prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Discord',
         id: 'discord',
-        prefix: <Icon svg={'discord'} fill={color.grey} />,
+        prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Discord',
         id: 'discord',
-        prefix: <Icon svg={'discord'} fill={color.grey} />,
+        prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Discord',
         id: 'discord',
-        prefix: <Icon svg={'discord'} fill={color.grey} />,
+        prefix: <Discord fill={color.grey} />,
     },
 ];
 
@@ -152,17 +152,17 @@ PrefixIcon.args = {
         {
             label: 'Mainnet',
             id: 'Testnet',
-            prefix: <Icon svg={'server'} fill={color.grey} />,
+            prefix: <Server fill={color.grey} />,
         },
         {
             label: 'Mainnet',
             id: 'Testnet',
-            prefix: <Icon svg={'testnet'} fill={color.grey} />,
+            prefix: <Testnet fill={color.grey} />,
         },
         {
             label: 'Local Dev Chain',
             id: 'LocalDevChain',
-            prefix: <Icon svg={'btc'} fill={color.grey} />,
+            prefix: <Btc fill={color.grey} />,
         },
     ],
     onChange: onTestOptionChange,

@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Card from './Card';
 import { useState } from 'react';
 import getModuleAnimation from './Animations/animations';
-import { Icon } from '@web3uikit/icons';
+import { Checkmark } from '@web3uikit/icons';
 import { color } from '@web3uikit/styles';
 import { Button } from '../Button';
 
@@ -130,7 +130,7 @@ ProPlan.args = {
                     color: color.grey,
                 }}
             >
-                <Icon svg={'checkmark'} fill="green" />
+                <Checkmark fill="green" />
                 Servers never Sleep
             </div>
             <div
@@ -140,7 +140,7 @@ ProPlan.args = {
                     color: color.grey,
                 }}
             >
-                <Icon svg={'checkmark'} fill="green" />
+                <Checkmark fill="green" />
                 More requests
             </div>
             <div
@@ -150,7 +150,7 @@ ProPlan.args = {
                     color: color.grey,
                 }}
             >
-                <Icon svg={'checkmark'} fill="green" />
+                <Checkmark fill="green" />
                 Higher limits
             </div>
             <div
@@ -160,7 +160,7 @@ ProPlan.args = {
                     color: color.grey,
                 }}
             >
-                <Icon svg={'checkmark'} fill="green" />
+                <Checkmark fill="green" />
                 Request auto scaling
             </div>
             <div
@@ -170,7 +170,7 @@ ProPlan.args = {
                     color: color.grey,
                 }}
             >
-                <Icon svg={'checkmark'} fill="green" />
+                <Checkmark fill="green" />
                 Email support
             </div>
             <Button text="Upgrade" theme="primary" isFullWidth />

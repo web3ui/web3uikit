@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { CopyButton } from '../CopyButton';
-import { Icon } from '@web3uikit/icons';
+import { Eye, EyeClosed } from '@web3uikit/icons';
 import InputStyles from './Input.styles';
 import type { InputProps } from './types';
 
@@ -127,9 +127,7 @@ const Input: React.FC<InputProps> = ({
             size={size}
         >
             {prefixIcon && iconPosition == 'front' && (
-                <DivStyled className="input_prefixIcon">
-                    <Icon svg={prefixIcon} />
-                </DivStyled>
+                <DivStyled className="input_prefixIcon">{prefixIcon}</DivStyled>
             )}
             {customInput && customInput}
 
@@ -202,17 +200,11 @@ const Input: React.FC<InputProps> = ({
                     onClick={() => toggleHideInput()}
                     type="button"
                 >
-                    {isInputHidden ? (
-                        <Icon svg={'eyeClosed'} />
-                    ) : (
-                        <Icon svg={'eye'} />
-                    )}
+                    {isInputHidden ? <EyeClosed /> : <Eye />}
                 </VisibilityIcon>
             )}
             {prefixIcon && iconPosition == 'end' && (
-                <DivStyled className="input_prefixIcon">
-                    <Icon svg={prefixIcon} />
-                </DivStyled>
+                <DivStyled className="input_prefixIcon">{prefixIcon}</DivStyled>
             )}
             {hasCopyButton && (
                 <CopyContainerStyled>

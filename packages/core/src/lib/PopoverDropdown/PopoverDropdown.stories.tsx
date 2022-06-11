@@ -2,7 +2,15 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { color } from '@web3uikit/styles';
 import PopoverDropdown from './PopoverDropdown';
 import PopoverElement from '../PopoverElement/PopoverElement';
-import { Icon } from '@web3uikit/icons';
+import {
+    Cog,
+    HelpCircle,
+    LifeRing,
+    LogOut,
+    Network,
+    Server,
+    Testnet,
+} from '@web3uikit/icons';
 
 export default {
     title: '5.Popup/Popover Dropdown',
@@ -35,7 +43,7 @@ PopoverSelection.args = {
             width={260}
             text={'Testnet Server'}
             textSize={20}
-            icon={'testnet'}
+            icon={<Testnet fill={color.white} size={30} />}
             iconSize={30}
             backgroundColor={'transparent'}
             textColor={color.white}
@@ -48,7 +56,7 @@ PopoverSelection.args = {
             text={'Mainnet Server'}
             textSize={20}
             iconSize={30}
-            icon={'network'}
+            icon={<Network fill={color.white} size={30} />}
             backgroundColor={'transparent'}
             textColor={color.white}
             onClick={() => alert('Mainnet Server')}
@@ -61,12 +69,12 @@ PopoverSelection.args = {
             textSize={20}
             iconSize={30}
             backgroundColor={'transparent'}
-            icon={'server'}
+            icon={<Server fill={color.white} size={30} />}
             textColor={color.white}
             onClick={() => alert('Local Devchain Server')}
         />,
     ],
-    parent: <Icon key="3" svg={'helpCircle'} fill={color.grey} size={50} />,
+    parent: <HelpCircle key="3" fill={color.grey} size={50} />,
 };
 
 export const PopoverCustomPosition = Template.bind({});
@@ -81,7 +89,7 @@ PopoverCustomPosition.args = {
             width={260}
             text={'Testnet Server'}
             textSize={20}
-            icon={'testnet'}
+            icon={<Testnet fill={color.white} size={30} />}
             iconSize={30}
             backgroundColor={'transparent'}
             textColor={color.white}
@@ -94,7 +102,7 @@ PopoverCustomPosition.args = {
             text={'Mainnet Server'}
             textSize={20}
             iconSize={30}
-            icon={'network'}
+            icon={<Network fill={color.white} size={30} />}
             backgroundColor={'transparent'}
             textColor={color.white}
             onClick={() => alert('Mainnet Server')}
@@ -107,12 +115,12 @@ PopoverCustomPosition.args = {
             textSize={20}
             iconSize={30}
             backgroundColor={'transparent'}
-            icon={'server'}
+            icon={<Server fill={color.white} size={30} />}
             textColor={color.white}
             onClick={() => alert('Local Devchain Server')}
         />,
     ],
-    parent: <Icon key="3" svg={'helpCircle'} fill={color.grey} size={50} />,
+    parent: <HelpCircle key="3" fill={color.grey} size={50} />,
 };
 
 export const PopoverSelectionUser = Template.bind({});
@@ -125,7 +133,7 @@ PopoverSelectionUser.args = {
             width={260}
             text={'Account Settings'}
             textSize={20}
-            icon={'cog'}
+            icon={<Cog fill={color.white} size={30} />}
             iconSize={30}
             backgroundColor={'transparent'}
             textColor={color.white}
@@ -138,7 +146,7 @@ PopoverSelectionUser.args = {
             text={'Support Page'}
             textSize={20}
             iconSize={30}
-            icon={'lifeRing'}
+            icon={<LifeRing fill={color.white} size={30} />}
             backgroundColor={'transparent'}
             textColor={color.white}
             onClick={() => alert('Support Page')}
@@ -152,10 +160,10 @@ PopoverSelectionUser.args = {
             iconSize={30}
             backgroundColor={'transparent'}
             iconColor={color.red}
-            icon={'logOut'}
+            icon={<LogOut fill={color.red} size={30} />}
             textColor={color.red}
             onClick={() => alert('Logout')}
         />,
     ],
-    parent: <Icon key="7" svg={'helpCircle'} fill={color.grey} size={50} />,
+    parent: <HelpCircle key="7" fill={color.grey} size={50} />,
 };

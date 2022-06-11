@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { color } from '@web3uikit/styles';
 import Modal from './Modal';
-import { Icon } from '@web3uikit/icons';
+import { Cloud, Download, Edit, Mail } from '@web3uikit/icons';
 import { Input } from '../Input';
 import { useArgs } from '@storybook/addons';
 import { Button } from '../Button';
@@ -50,7 +50,7 @@ Regular.args = {
     id: 'regular',
     title: (
         <div style={{ display: 'flex', gap: 10 }}>
-            <Icon svg={'edit'} size={28} fill={color.grey} />
+            <Edit size={28} fill={color.grey} />
             <Typography variant="h3" color={color.grey}>
                 Edit Nickname
             </Typography>
@@ -71,7 +71,7 @@ VerticalCenter.args = {
     id: 'v-center',
     title: (
         <div style={{ display: 'flex', gap: 10 }}>
-            <Icon svg={'edit'} size={28} fill={color.grey} />
+            <Edit size={28} fill={color.grey} />
             <Typography variant="h3" color={color.grey}>
                 Edit Nickname
             </Typography>
@@ -97,7 +97,7 @@ BorderedHeader.args = {
                 placeItems: 'center',
             }}
         >
-            <Icon svg={'cloud'} size={64} fill={color.blueDark2} />
+            <Cloud size={64} fill={color.blueDark2} />
             <p>
                 This is a demo on how to use <em>headerHasBottomBorder</em>{' '}
                 props?
@@ -125,7 +125,7 @@ ButtonsDisabled.args = {
                 flexDirection: 'column',
             }}
         >
-            <Icon svg={'download'} size={64} fill={color.blueDark2} />
+            <Download size={64} fill={color.blueDark2} />
             <p>Wait until the file is ready to be downloaded</p>
         </div>,
     ],
@@ -155,7 +155,7 @@ OneButtonDisabled.args = {
                 flexDirection: 'column',
             }}
         >
-            <Icon svg={'mail'} size={64} fill={color.blueDark2} />
+            <Mail size={64} fill={color.blueDark2} />
             <Input
                 key={0}
                 onChange={(e) => console.log(e.target.value)}
@@ -249,7 +249,7 @@ MaxHeight.args = {
                 flexDirection: 'column',
             }}
         >
-            <Icon svg={'cloud'} size={64} fill={color.blueDark2} />
+            <Cloud size={64} fill={color.blueDark2} />
             <p>Moralis web3uiKit will be PAMP!</p>
             <p>Moralis web3uiKit will be PAMP!</p>
             <p>Moralis web3uiKit will be PAMP!</p>
@@ -316,7 +316,7 @@ CustomCloseButton.args = {
                 flexDirection: 'column',
             }}
         >
-            <Icon svg={'cloud'} size={64} fill={color.blueDark2} />
+            <Cloud size={64} fill={color.blueDark2} />
             <p>Proceed uploading?</p>
         </div>,
     ],
@@ -349,7 +349,7 @@ CustomCloseRoundButton.args = {
                 flexDirection: 'column',
             }}
         >
-            <Icon svg={'cloud'} size={64} fill={color.blueDark2} />
+            <Cloud size={64} fill={color.blueDark2} />
             <p>Proceed uploading?</p>
         </div>,
     ],
@@ -369,7 +369,7 @@ NoTitle.args = {
                 flexDirection: 'column',
             }}
         >
-            <Icon svg={'cloud'} size={64} fill={color.blueDark2} />
+            <Cloud size={64} fill={color.blueDark2} />
             <p>Proceed uploading?</p>
         </div>,
     ],
@@ -436,7 +436,7 @@ NoOverflow.args = {
                 flexDirection: 'column',
             }}
         >
-            <Icon svg={'cloud'} size={64} fill={color.blueDark2} />
+            <Cloud size={64} fill={color.blueDark2} />
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                 eu posuere tortor. Maecenas ac suscipit lacus. Fusce at enim

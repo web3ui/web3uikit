@@ -1,5 +1,5 @@
 import { color } from '@web3uikit/styles';
-import { Icon } from '@web3uikit/icons';
+import { ChevronRight } from '@web3uikit/icons';
 import styles from './Breadcrumbs.styles';
 import { IBreadcrumbs, Route } from './types';
 
@@ -51,11 +51,7 @@ function renderList(
                     data-testid={'breadcrumbs-separator-test-id'}
                 >
                     {separator ?? (
-                        <Icon
-                            svg="chevronRight"
-                            fill="currentColor"
-                            size={24}
-                        />
+                        <ChevronRight fill="currentColor" size={24} />
                     )}
                 </BreadcrumbsSeparator>,
             );

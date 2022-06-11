@@ -1,6 +1,10 @@
 import { FC } from 'react';
 import { TIconProps } from '../type';
-const PinIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
+const PinIcon: FC<TIconProps> = ({
+    fill = 'currentColor',
+    size = 18,
+    style,
+}) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"

@@ -1,4 +1,4 @@
-import { TIconType } from '@web3uikit/icons';
+import React from 'react';
 
 export interface PopoverElementProps {
     /**
@@ -14,7 +14,7 @@ export interface PopoverElementProps {
     /**
      * The icon next to the text
      */
-    icon?: TIconType;
+    icon?: React.ReactElement; //Icon
 
     /**
      * The color of the icon

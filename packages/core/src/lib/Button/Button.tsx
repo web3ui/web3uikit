@@ -1,7 +1,7 @@
-import { Icon } from '@web3uikit/icons';
 import { Loading } from '../Loading';
 import ButtonStyles from './Button.styles';
 import { ButtonProps } from './types';
+
 const { ButtonStyled } = ButtonStyles;
 
 const Button: React.FC<ButtonProps> = ({
@@ -42,11 +42,7 @@ const Button: React.FC<ButtonProps> = ({
             iconColor={iconColor}
             {...props}
         >
-            {isLoading ? (
-                <Loading size={15} {...loadingProps} />
-            ) : (
-                icon && <Icon svg={icon} fill="inherit" size={18} />
-            )}
+            {isLoading ? <Loading size={15} {...loadingProps} /> : icon && icon}
             <span>{isLoading ? loadingText : text}</span>
         </ButtonStyled>
     );

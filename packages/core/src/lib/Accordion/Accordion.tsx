@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Tag } from '../Tag';
-import { Icon } from '@web3uikit/icons';
+import { Plus, Minus, LockOpen, LockClosed } from '@web3uikit/icons';
 import { AccordionProps } from './types';
 import styles from './Accordion.styles';
 
@@ -60,10 +60,12 @@ const Accordion: React.FC<AccordionProps> = ({
                 onClick={toggleOpen}
             >
                 <DivStyled>
-                    <Icon
-                        svg={isOpen ? 'minus' : 'plus'}
-                        fill={getThemeColor(theme)}
-                    />
+                    {isOpen ? (
+                        <Minus fill={getThemeColor(theme)} />
+                    ) : (
+                        <Plus fill={getThemeColor(theme)} />
+                    )}
+
                     <H4Styled data-testid="test-accordion-title">
                         {title}
                     </H4Styled>
@@ -73,12 +75,12 @@ const Accordion: React.FC<AccordionProps> = ({
                     {subTitle && (
                         <p data-testid="test-accordion-subtitle">{subTitle}</p>
                     )}
-                    {hasLockIcon && (
-                        <Icon
-                            svg={isOpen ? 'lockOpen' : 'lockClosed'}
-                            fill={getThemeColor(theme)}
-                        />
-                    )}
+                    {hasLockIcon &&
+                        (isOpen ? (
+                            <LockOpen fill={getThemeColor(theme)} />
+                        ) : (
+                            <LockClosed fill={getThemeColor(theme)} />
+                        ))}
                     {tagText && (
                         <Tag text={tagText} color={theme} tone="dark" />
                     )}

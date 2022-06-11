@@ -1,5 +1,5 @@
 import { color } from '@web3uikit/styles';
-import { TIconType } from '@web3uikit/icons';
+import React from 'react';
 import { Typography } from '../Typography';
 
 export interface ICredentialsProps extends ICredentialsHeaderProps {
@@ -54,7 +54,7 @@ export interface ICredentialsHeaderProps {
     /**
      * header Icon
      */
-    icon?: TIconType;
+    icon?: React.ReactElement; //Icon
 
     /**
      * header Icon color

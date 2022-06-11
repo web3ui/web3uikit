@@ -2,6 +2,7 @@ import { Button } from '../Button';
 import Illustration from '../Illustrations/Illustration';
 import { CryptoCardProps } from './types';
 import styles from './CryptoCards.styles';
+import { Cog } from '@web3uikit/icons';
 
 const {
     DivStyledCryptoCard,
@@ -44,7 +45,7 @@ const CryptoCards: React.FC<CryptoCardProps> = ({
             </DivStyledInfo>
             <DivStyledButton>
                 <Button
-                    icon={settingsIcon || 'cog'}
+                    icon={settingsIcon || <Cog />}
                     onClick={onClick}
                     text={btnText}
                     theme="translucent"

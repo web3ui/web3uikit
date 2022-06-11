@@ -1,4 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Windows } from '@web3uikit/icons';
+import { color } from '@web3uikit/styles';
 import { Credentials } from '.';
 
 export default {
@@ -12,7 +14,7 @@ const Template: ComponentStory<typeof Credentials> = (args) => (
 
 export const WithTitleAndIcon = Template.bind({});
 WithTitleAndIcon.args = {
-    icon: 'windows',
+    icon: <Windows fill={color.grey} />,
     title: 'CLI API Key:',
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
 };
@@ -25,7 +27,7 @@ WithTitle.args = {
 
 export const WithCustomWidth = Template.bind({});
 WithCustomWidth.args = {
-    icon: 'windows',
+    icon: <Windows fill={color.grey} />,
     title: 'CLI API Key:',
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
     width: '700px',
@@ -38,7 +40,7 @@ OneLine.args = {
 
 export const WithCustomColors = Template.bind({});
 WithCustomColors.args = {
-    icon: 'windows',
+    icon: <Windows fill={color.grey} />,
     iconColor: 'green',
     title: 'CLI API Key:',
     titleColor: 'blue',

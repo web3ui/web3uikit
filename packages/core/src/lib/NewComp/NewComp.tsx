@@ -1,6 +1,6 @@
 // Importing React and its awesome hooks
 import { useState, useEffect } from 'react';
-import { Icon } from '@web3uikit/icons';
+import { Checkmark, Cross } from '@web3uikit/icons';
 
 // importing elements from the kit, never add more elements, improve what we have
 import { Button } from '../Button';
@@ -53,11 +53,11 @@ const NewComp: React.FC<NewCompProps> = ({
                 The Demo Component
             </TitleStyled>
             <SpanStyled>
-                <Icon
-                    svg={compState === 'greenLight' ? 'checkmark' : 'x'}
-                    fill={compState === 'greenLight' ? color.green : color.red}
-                    size={30}
-                />
+                {compState === 'greenLight' ? (
+                    <Checkmark fill={color.green} size={30} />
+                ) : (
+                    <Cross fill={color.red} size={30} />
+                )}
                 <HeadingStyled state={compState} data-testid="test-heading">
                     {compState === 'greenLight' ? textOn : textOff}
                 </HeadingStyled>

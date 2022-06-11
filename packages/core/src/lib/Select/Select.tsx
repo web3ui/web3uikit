@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { color } from '@web3uikit/styles';
-import { Icon } from '@web3uikit/icons';
+import { Ada, TriangleDown, TriangleUp } from '@web3uikit/icons';
 import { Illustration } from '../Illustrations';
 import SelectStyles from './Select.styles';
 import type { OptionProps, SelectProps } from './types';
@@ -104,15 +104,7 @@ const Select: React.FC<SelectProps> = ({
                 state={state}
                 hasPrefixIcon={Boolean(prefixIcon)}
             >
-                {prefixIcon && (
-                    <Icon
-                        size={24}
-                        svg={prefixIcon}
-                        style={{
-                            fill: 'currentColor',
-                        }}
-                    />
-                )}
+                {prefixIcon && prefixIcon}
 
                 {typeof selectedOptionIndex !== 'undefined' && (
                     <>
@@ -129,10 +121,11 @@ const Select: React.FC<SelectProps> = ({
                 )}
 
                 <DropDownIcon>
-                    <Icon
-                        fill={color.grey}
-                        svg={isOpen ? 'triangleUp' : 'triangleDown'}
-                    />
+                    {isOpen ? (
+                        <TriangleUp fill={color.grey} />
+                    ) : (
+                        <TriangleDown fill={color.grey} />
+                    )}
                 </DropDownIcon>
             </SelectedItem>
             {label && (

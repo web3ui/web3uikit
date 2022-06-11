@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Server } from '@web3uikit/icons';
 import { Input } from '.';
 import { validateRegExp } from '../../utils/const';
 
@@ -51,7 +52,7 @@ export const InputPrefix = Template.bind({});
 InputPrefix.args = {
     label: 'Label text',
     name: 'Test text Input',
-    prefixIcon: 'server',
+    prefixIcon: <Server />,
 };
 
 export const EmailInput = Template.bind({});
@@ -87,7 +88,7 @@ PrefixCopyableHidableActive.args = {
     hasCopyButton: true,
     label: 'Label text',
     name: 'Test text Input',
-    prefixIcon: 'server',
+    prefixIcon: <Server />,
     type: 'text',
 };
 
@@ -97,7 +98,7 @@ PrefixCopyableHidden.args = {
     inputHidden: true,
     label: 'Label text',
     name: 'Test text Input',
-    prefixIcon: 'server',
+    prefixIcon: <Server />,
     type: 'text',
     value: 'Test',
 };
@@ -107,7 +108,7 @@ PrefixCopyable.args = {
     hasCopyButton: true,
     label: 'Label text',
     name: 'Test text Input',
-    prefixIcon: 'server',
+    prefixIcon: <Server />,
     type: 'text',
 };
 
@@ -115,7 +116,7 @@ export const PrefixHidable = Template.bind({});
 PrefixHidable.args = {
     label: 'Label text',
     name: 'Test text Input',
-    prefixIcon: 'server',
+    prefixIcon: <Server />,
     type: 'text',
 };
 
@@ -123,7 +124,7 @@ export const Prefix = Template.bind({});
 Prefix.args = {
     label: 'Label text',
     name: 'Test text Input',
-    prefixIcon: 'server',
+    prefixIcon: <Server />,
     type: 'text',
 };
 
@@ -147,7 +148,7 @@ PrefixCopyableHidableDisabled.args = {
     hasCopyButton: true,
     label: 'Label text',
     name: 'Test text Input',
-    prefixIcon: 'server',
+    prefixIcon: <Server />,
     state: 'disabled',
     type: 'text',
 };

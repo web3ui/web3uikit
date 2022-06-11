@@ -2,9 +2,9 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import Notification from './Notification';
 import { Button } from '../Button';
-import { TIconType } from '@web3uikit/icons';
 import NotificationProvider, { useNotification } from './NotificationProvider';
 import { IPosition, notifyType } from './types';
+import { Bell, Cloud } from '@web3uikit/icons';
 
 export default {
     title: '5.Popup/Notification',
@@ -27,7 +27,7 @@ const HookTemplate: ComponentStory<typeof Notification> = () => {
 
     const handleNewNotification = (
         type: notifyType,
-        icon?: TIconType,
+        icon?: React.ReactElement,
         position?: IPosition,
     ) => {
         dispatch({
@@ -77,7 +77,7 @@ const HookTemplate: ComponentStory<typeof Notification> = () => {
                 />
                 <Button
                     text="Custom Icon"
-                    onClick={() => handleNewNotification('info', 'bell')}
+                    onClick={() => handleNewNotification('info', <Bell />)}
                     isFullWidth={true}
                 />
             </div>
@@ -136,7 +136,7 @@ Standard.args = {
 
 export const CustomIcon = Template.bind({});
 CustomIcon.args = {
-    icon: 'cloud',
+    icon: <Cloud />,
     message: 'TX: 0x2134...e82c5',
     title: 'New Event Sync',
 };

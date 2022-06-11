@@ -1,4 +1,4 @@
-import { TIconType } from '@web3uikit/icons';
+import React from 'react';
 
 export interface CryptoCardProps {
     /**
@@ -36,5 +36,5 @@ export interface CryptoCardProps {
     /**
      * The type of settings icon
      */
-    settingsIcon?: TIconType;
+    settingsIcon?: React.ReactElement;
 }

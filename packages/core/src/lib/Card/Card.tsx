@@ -1,6 +1,6 @@
 import { color } from '@web3uikit/styles';
 import { CardProps } from './types';
-import { Icon } from '@web3uikit/icons';
+import { Checkmark, HelpCircle } from '@web3uikit/icons';
 import { Tooltip } from '../Tooltip';
 import styles from './Card.styles';
 import { Typography } from '../Typography';
@@ -42,11 +42,10 @@ const Card: React.FC<CardProps> = ({
             <HeaderStyled data-testid={'header-test-id'}>
                 {isSelected && (
                     <AbsoluteIconStyled position="topL">
-                        <Icon
+                        <Checkmark
                             data-testid={'check-test-id'}
                             fill={color.green}
                             size={24}
-                            svg="checkmark"
                         />
                     </AbsoluteIconStyled>
                 )}
@@ -55,12 +54,11 @@ const Card: React.FC<CardProps> = ({
                         <Tooltip
                             position={'bottom'}
                             children={[
-                                <Icon
+                                <HelpCircle
                                     key="ttip-card"
                                     data-testid={'help-test-id'}
                                     fill={color.blue}
                                     size={22}
-                                    svg={'helpCircle'}
                                 />,
                             ]}
                             content={tooltipText}

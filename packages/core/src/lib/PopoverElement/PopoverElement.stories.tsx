@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { LogOut } from '@web3uikit/icons';
 import { color } from '@web3uikit/styles';
 import PopoverElement from './PopoverElement';
 
@@ -17,7 +18,7 @@ Default.args = {};
 
 export const Logout = Template.bind({});
 Logout.args = {
-    icon: 'logOut',
+    icon: <LogOut fill={color.red} />,
     iconColor: color.red,
     text: 'Logout',
     textColor: color.red,

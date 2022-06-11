@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from 'styled-components';
 import { color, resetButtonCSS } from '@web3uikit/styles';
-import { Icon } from '@web3uikit/icons';
+import { Eye, EyeClosed } from '@web3uikit/icons';
 import { IHideButtonProps } from './types';
 
 const HideButtonStyled = styled.button`
@@ -23,9 +23,9 @@ const HideButton: FC<IHideButtonProps> = ({
             {...props}
         >
             {isHidden ? (
-                <Icon svg="eyeClosed" size={iconSize} fill={`${iconColor}`} />
+                <EyeClosed size={iconSize} fill={`${iconColor}`} />
             ) : (
-                <Icon svg="eye" size={iconSize} fill={`${iconColor}`} />
+                <Eye size={iconSize} fill={`${iconColor}`} />
             )}
         </HideButtonStyled>
     );

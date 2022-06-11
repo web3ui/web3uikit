@@ -1,5 +1,5 @@
-import type { TIconType } from '@web3uikit/icons';
 import { ILoadingProps } from '../Loading';
+import React from 'react';
 
 export interface ButtonProps {
     /**
@@ -53,9 +53,8 @@ export interface ButtonProps {
 
     /**
      * set an icon to show inside the button
-     * import { iconTypes } from "../../components/Icon/collection"
      */
-    icon?: TIconType;
+    icon?: React.ReactNode;
 
     /**
      * set an icon position, or maybe show only the icon

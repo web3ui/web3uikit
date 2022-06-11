@@ -1,6 +1,9 @@
-import { FC } from 'react';
 import { TIconProps } from '../type';
-const AdaIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
+const AdaIcon = ({
+    fill = 'currentColor',
+    size = 18,
+    style,
+}: TIconProps): JSX.Element => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"

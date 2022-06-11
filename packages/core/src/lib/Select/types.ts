@@ -1,6 +1,4 @@
-import { RefObject } from 'react';
-import { TIconType } from '@web3uikit/icons';
-
+import React, { RefObject } from 'react';
 export interface SelectProps {
     /**
      * it is best to set a unique ID for each select component to verify change events
@@ -56,7 +54,7 @@ export interface SelectProps {
      * Icon name the should be displayed before the options
      */
 
-    prefixIcon?: TIconType;
+    prefixIcon?: React.ReactElement; //Icon
 
     /**
      * String that you want to display before the selected option

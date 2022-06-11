@@ -7,7 +7,7 @@ import {
 import styles from './NFT.styles';
 import { color } from '@web3uikit/styles';
 import { Button, Skeleton, Typography, Tooltip } from '@web3uikit/core';
-import { Icon } from '@web3uikit/icons';
+import { Info } from '@web3uikit/icons';
 import NFTModal from './NFT.modal';
 import { INFTProps, TNFTMetadata } from './types';
 import NFTUtils from './NFT.utils';
@@ -81,7 +81,7 @@ const NFT: React.FC<INFTProps> = ({
                 <Skeleton theme="text" width="100%" height="200px" />
                 <div id="information">
                     <Tooltip
-                        children={<Icon svg="info" fill={color.yellowDark} />}
+                        children={<Info fill={color.yellowDark} />}
                         content={'There is no metadata'}
                         position={'top'}
                     />
@@ -114,7 +114,7 @@ const NFT: React.FC<INFTProps> = ({
                 </div>
                 <div id="nft-footer">
                     <Button
-                        icon="info"
+                        icon={<Info fill={color.grey} />}
                         isTransparent
                         iconColor={color.grey}
                         iconLayout="icon-only"

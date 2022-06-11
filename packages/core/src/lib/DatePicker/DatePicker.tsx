@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Icon } from '@web3uikit/icons';
+import { Calendar } from '@web3uikit/icons';
 import { SpanStyled } from './DatePicker.styles';
 import InputStyles from '../Input/Input.styles';
 import { color } from '@web3uikit/styles';
@@ -94,7 +94,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
             )}
 
             <SpanStyled data-testid="date-picker_icon">
-                <Icon svg={'calendar'} fill={color.greyDark} size={24} />
+                <Calendar fill={color.greyDark} size={24} />
             </SpanStyled>
 
             {currentState === 'error' && (

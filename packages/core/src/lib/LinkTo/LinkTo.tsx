@@ -1,4 +1,4 @@
-import { Icon } from '@web3uikit/icons';
+import { Link, Mail } from '@web3uikit/icons';
 import { color } from '@web3uikit/styles';
 import { LinkToProps } from './types';
 import styles from './LinkTo.styles';
@@ -15,13 +15,12 @@ const LinkTo: React.FC<LinkToProps> = ({
 }) => {
     const renderContent = () => (
         <SpanStyledFlex iconLayout={iconLayout} data-testid="test-link-flex">
-            {type !== 'internal' && (
-                <Icon
-                    svg={type === 'email' ? 'mail' : 'link'}
-                    fill={color.blue}
-                    size={14}
-                />
-            )}
+            {type !== 'internal' &&
+                (type === 'email' ? (
+                    <Mail fill={color.blue} size={14} />
+                ) : (
+                    <Link fill={color.blue} size={14} />
+                ))}
             <SpanStyledText data-testid="test-link-text">
                 {text || address}
             </SpanStyledText>

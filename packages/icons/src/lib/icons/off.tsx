@@ -1,6 +1,10 @@
 import { FC } from 'react';
 import { TIconProps } from '../type';
-const OffIcon: FC<TIconProps> = ({ fill = 'inherit', size = 18, style }) => (
+const OffIcon: FC<TIconProps> = ({
+    fill = 'currentColor',
+    size = 18,
+    style,
+}) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"

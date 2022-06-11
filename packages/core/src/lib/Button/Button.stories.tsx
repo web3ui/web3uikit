@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Plus, Cog } from '@web3uikit/icons';
 import Button from './Button';
 
 export default {
@@ -41,7 +42,7 @@ PrimaryWithIcon.args = {
     text: 'Primary with icon',
     theme: 'primary',
     type: 'button',
-    icon: 'plus',
+    icon: <Plus size={52} />,
 };
 
 export const PrimaryWithIconAfter = Template.bind({});
@@ -50,7 +51,7 @@ PrimaryWithIconAfter.args = {
     text: 'Primary with icon',
     theme: 'primary',
     type: 'button',
-    icon: 'plus',
+    icon: <Plus size={24} />,
     iconLayout: 'trailing',
 };
 
@@ -60,13 +61,13 @@ PrimaryWithIconOnly.args = {
     text: 'Primary icon only',
     theme: 'primary',
     type: 'button',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
 };
 
 export const PrimaryWithIconOnlyLarge = Template.bind({});
 PrimaryWithIconOnlyLarge.args = {
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
     id: 'test-button-primary-icon-only',
     size: 'large',
@@ -77,7 +78,7 @@ PrimaryWithIconOnlyLarge.args = {
 
 export const PrimaryWithIconOnlySmall = Template.bind({});
 PrimaryWithIconOnlySmall.args = {
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
     id: 'test-button-primary-icon-only',
     size: 'small',
@@ -100,7 +101,7 @@ SecondaryWithIcon.args = {
     text: 'Secondary with icon',
     theme: 'secondary',
     type: 'button',
-    icon: 'plus',
+    icon: <Plus />,
 };
 
 export const SecondaryWithIconAfter = Template.bind({});
@@ -109,7 +110,7 @@ SecondaryWithIconAfter.args = {
     text: 'Secondary with icon',
     theme: 'secondary',
     type: 'button',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'trailing',
 };
 
@@ -119,7 +120,7 @@ SecondaryIconOnly.args = {
     text: 'Secondary icon only',
     theme: 'secondary',
     type: 'button',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
 };
 
@@ -129,7 +130,7 @@ SecondaryIconOnlyLarge.args = {
     text: 'Secondary icon large',
     theme: 'secondary',
     type: 'button',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
     size: 'large',
 };
@@ -140,7 +141,7 @@ SecondaryIconOnlySmall.args = {
     text: 'Secondary icon small',
     theme: 'secondary',
     type: 'button',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
     size: 'small',
 };
@@ -159,7 +160,7 @@ OutlineWithIcon.args = {
     text: 'Outline with icon',
     theme: 'outline',
     type: 'button',
-    icon: 'plus',
+    icon: <Plus />,
 };
 
 export const OutlineWithIconAfter = Template.bind({});
@@ -168,7 +169,7 @@ OutlineWithIconAfter.args = {
     text: 'Outline with icon',
     theme: 'outline',
     type: 'button',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'trailing',
 };
 
@@ -178,7 +179,7 @@ OutlineIconOnly.args = {
     text: 'Outline icon only',
     theme: 'outline',
     type: 'button',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
 };
 
@@ -187,8 +188,8 @@ OutlineIconOnlyLarge.args = {
     id: 'test-button-outline-icon-only',
     text: 'Outline icon only',
     theme: 'outline',
+    icon: <Plus />,
     type: 'button',
-    icon: 'plus',
     iconLayout: 'icon-only',
     size: 'large',
 };
@@ -199,7 +200,7 @@ OutlineIconOnlySmall.args = {
     text: 'Outline icon only',
     theme: 'outline',
     type: 'button',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
     size: 'small',
 };
@@ -317,7 +318,7 @@ ColoredIcon.args = {
     theme: 'colored',
     type: 'button',
     color: 'blue',
-    icon: 'plus',
+    icon: <Plus />,
 };
 
 export const ColoredIconAfter = Template.bind({});
@@ -327,7 +328,7 @@ ColoredIconAfter.args = {
     theme: 'colored',
     type: 'button',
     color: 'blue',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'trailing',
 };
 
@@ -338,7 +339,7 @@ ColoredIconOnly.args = {
     theme: 'colored',
     type: 'button',
     color: 'blue',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
 };
 
@@ -387,7 +388,7 @@ DisabledIcon.args = {
     theme: 'colored',
     type: 'button',
     color: 'yellow',
-    icon: 'plus',
+    icon: <Plus />,
 };
 
 export const DisabledIconAfter = Template.bind({});
@@ -398,7 +399,7 @@ DisabledIconAfter.args = {
     theme: 'colored',
     type: 'button',
     color: 'green',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'trailing',
 };
 
@@ -410,7 +411,7 @@ DisabledIconOnly.args = {
     theme: 'colored',
     type: 'button',
     color: 'blue',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
 };
 
@@ -422,7 +423,7 @@ DisabledIconOnlyLarge.args = {
     theme: 'colored',
     type: 'button',
     color: 'red',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
     size: 'large',
 };
@@ -435,7 +436,7 @@ DisabledIconOnlySmall.args = {
     theme: 'colored',
     type: 'button',
     color: 'yellow',
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
     size: 'small',
 };
@@ -445,7 +446,7 @@ Translucent.args = {
     id: 'test-button-translucent-icon-large',
     text: 'Translucent',
     theme: 'translucent',
-    icon: 'cog',
+    icon: <Cog />,
     iconLayout: 'leading',
     size: 'large',
 };
@@ -473,7 +474,7 @@ LoadingButtonCustomProps.args = {
 
 export const PrimaryWithIconOnlyRound = Template.bind({});
 PrimaryWithIconOnlyRound.args = {
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
     id: 'test-button-primary-icon-only',
     theme: 'colored',
@@ -484,7 +485,7 @@ PrimaryWithIconOnlyRound.args = {
 
 export const TransparentButton = Template.bind({});
 TransparentButton.args = {
-    icon: 'plus',
+    icon: <Plus />,
     iconLayout: 'icon-only',
     id: 'test-button-primary-icon-only',
     theme: 'secondary',
@@ -496,7 +497,7 @@ TransparentButton.args = {
 
 export const LargeOutlinedButton = Template.bind({});
 LargeOutlinedButton.args = {
-    icon: 'plus',
+    icon: <Plus />,
     text: 'Large outline button',
     id: 'test-button-large-outline',
     theme: 'outline',

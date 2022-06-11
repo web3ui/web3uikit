@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Icon } from '@web3uikit/icons';
+import { Server } from '@web3uikit/icons';
 import { Breadcrumbs } from '.';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ One.args = {
         {
             breadcrumb: 'Moralis Demo App 1',
             path: '#',
-            icon: <Icon svg={'server'} size={20} fill="currentColor" />,
+            icon: <Server size={20} fill="currentColor" />,
         },
     ],
     currentLocation: '#',
@@ -32,7 +32,7 @@ Two.args = {
         {
             breadcrumb: 'Moralis Demo App 1',
             path: '#',
-            icon: <Icon svg={'server'} size={20} fill="currentColor" />,
+            icon: <Server size={20} fill="currentColor" />,
         },
         {
             breadcrumb: 'Details',
@@ -48,7 +48,7 @@ Three.args = {
         {
             breadcrumb: 'Moralis Demo App 1',
             path: 'demo',
-            icon: <Icon svg={'server'} size={20} fill="currentColor" />,
+            icon: <Server size={20} fill="currentColor" />,
         },
         {
             breadcrumb: 'Details',
@@ -68,7 +68,7 @@ Four.args = {
         {
             breadcrumb: 'Moralis Demo App 1',
             path: '#',
-            icon: <Icon svg={'server'} size={20} fill="currentColor" />,
+            icon: <Server size={20} fill="currentColor" />,
         },
         {
             breadcrumb: 'Details',

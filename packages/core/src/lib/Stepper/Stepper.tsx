@@ -1,5 +1,5 @@
 import { Button } from '../Button';
-import { Icon } from '@web3uikit/icons';
+import { Check } from '@web3uikit/icons';
 import { Loading } from '../Loading';
 import { StepperProps } from './types';
 import { Typography } from '../Typography';
@@ -120,7 +120,7 @@ const Stepper: React.FC<StepperProps> = ({
                         {activeStep <= Number(index + 1) ? (
                             Number(index + 1)
                         ) : (
-                            <Icon svg="check" fill={color.green} />
+                            <Check fill={color.green} />
                         )}
                     </ListItemStyled>
 

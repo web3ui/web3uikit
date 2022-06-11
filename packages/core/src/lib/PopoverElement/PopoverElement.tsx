@@ -1,6 +1,6 @@
 import { PopoverElementProps } from './types';
 import PopoverElementStyles from './PopoverElement.styles';
-import { Icon } from '@web3uikit/icons';
+import { Ada, Check } from '@web3uikit/icons';
 
 const { DivContainerStyled, DivStyled, DivImageStyled, TextStyled } =
     PopoverElementStyles;
@@ -8,7 +8,7 @@ const { DivContainerStyled, DivStyled, DivImageStyled, TextStyled } =
 const PopoverElement: React.FC<PopoverElementProps> = ({
     backgroundColor = 'transparent',
     height,
-    icon = 'check',
+    icon = <Check />,
     iconColor = 'white',
     iconSize = 20,
     id,
@@ -38,13 +38,7 @@ const PopoverElement: React.FC<PopoverElementProps> = ({
                     }
                 }}
             >
-                {icon ? (
-                    <DivImageStyled>
-                        <Icon fill={iconColor} size={iconSize} svg={icon} />
-                    </DivImageStyled>
-                ) : (
-                    ''
-                )}
+                {icon ? <DivImageStyled>{icon}</DivImageStyled> : ''}
                 <TextStyled
                     data-testid={'dropdown-element-text-test-id'}
                     textColor={textColor}

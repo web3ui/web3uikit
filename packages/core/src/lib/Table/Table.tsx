@@ -2,7 +2,7 @@ import { Fragment, ReactNode, useEffect, useState } from 'react';
 import { TableProps } from '.';
 import { color } from '@web3uikit/styles';
 import getModuleAnimation from '../Card/Animations/animations';
-import { Icon } from '@web3uikit/icons';
+import { TriangleUp, TriangleDown } from '@web3uikit/icons';
 import Loading from '../Loading/Loading';
 import { Typography } from '../Typography';
 import { paginate, getInnerText } from './Helper';
@@ -137,16 +137,12 @@ const Table: React.FC<TableProps> = ({
                             onClick={() => handleSortingChange(key)}
                         >
                             {col}
-                            {sortField === key && (
-                                <Icon
-                                    svg={
-                                        order === 'asc'
-                                            ? 'triangleUp'
-                                            : 'triangleDown'
-                                    }
-                                    fill={color.grey}
-                                />
-                            )}
+                            {sortField === key &&
+                                (order === 'asc' ? (
+                                    <TriangleUp fill={color.grey} />
+                                ) : (
+                                    <TriangleDown fill={color.grey} />
+                                ))}
                         </DivTableCell>
                     </>
                 ))}

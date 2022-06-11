@@ -2,7 +2,7 @@ import styles from './PlanCard.styles';
 import { IPlanCardProps } from './types';
 import { Typography } from '../Typography';
 import { color } from '@web3uikit/styles';
-import { Icon } from '@web3uikit/icons';
+import { Check } from '@web3uikit/icons';
 import YourPlanButton from './Components/YourPlanButton';
 
 const { DivStyled, DivStyledFeatures, DivStyledCardFooter } = styles;
@@ -38,7 +38,7 @@ const PlanCard: React.FC<IPlanCardProps> = ({
                 </Typography>
                 {description.map((feature, index) => (
                     <div key={index}>
-                        <Icon svg="check" fill={color.green} />
+                        <Check fill={color.green} />
                         <Typography
                             variant="caption14"
                             weight="semibold"

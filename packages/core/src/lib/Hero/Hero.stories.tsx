@@ -2,6 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Hero from './Hero';
 import { Button } from '../Button';
 import { ImageStyled } from './Hero.styles';
+import { ArrowCircleRight } from '@web3uikit/icons';
 
 export default {
     title: '4.UI/Hero',
@@ -54,7 +55,7 @@ DappHero.args = {
     children: (
         <Button
             text="Access Database"
-            icon="arrowCircleRight"
+            icon={<ArrowCircleRight />}
             theme="primary"
         />
     ),
@@ -72,7 +73,7 @@ GradientHero.args = {
     children: (
         <Button
             text="Submit a ticket"
-            icon="arrowCircleRight"
+            icon={<ArrowCircleRight />}
             theme="primary"
         />
     ),

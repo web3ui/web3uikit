@@ -1,8 +1,8 @@
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Form from './Form';
 import { validateRegExp } from '../../utils/const';
 import { Button } from '../Button';
+import { ArrowCircleLeft, ArrowCircleRight } from '@web3uikit/icons';
 
 export default {
     title: '2.Forms/Form',
@@ -252,13 +252,13 @@ CustomFooter.args = {
     customFooter: (
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Button
-                icon={'arrowCircleLeft'}
+                icon={<ArrowCircleLeft />}
                 text={'Cancel Install'}
                 theme={'secondary'}
                 size="regular"
             />
             <Button
-                icon={'arrowCircleRight'}
+                icon={<ArrowCircleRight />}
                 text={'Confirm'}
                 theme={'primary'}
                 type="submit"

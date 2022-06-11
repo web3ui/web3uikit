@@ -1,3 +1,4 @@
+import { Plus } from '@web3uikit/icons';
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '../Button';
 import { Input } from '../Input';
@@ -68,7 +69,7 @@ const Todo: React.FC<TodoProps> = ({
                     <Button
                         type="submit"
                         disabled={!inputValue}
-                        icon="plus"
+                        icon={<Plus />}
                         size="large"
                         text={buttonText}
                         theme="primary"

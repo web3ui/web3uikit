@@ -166,7 +166,7 @@ PrefixIcon.args = {
         },
     ],
     onChange: onTestOptionChange,
-    prefixIcon: 'server',
+    prefixIcon: <Server fill={color.grey} />,
     width: '100%',
     label: 'Select Server',
 };

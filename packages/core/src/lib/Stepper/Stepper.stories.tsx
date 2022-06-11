@@ -1,4 +1,3 @@
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Stepper } from '.';
 import { Button } from '../Button';
@@ -43,7 +42,7 @@ Demo.args = {
 };
 
 export const PreLoadStep0 = Template.bind({});
-PreLoadStep0.args = { stepData: testStepData };
+PreLoadStep0.args = { stepData: testStepData, step: 0 };
 
 export const StepsWithFooter = Template.bind({});
 StepsWithFooter.args = {

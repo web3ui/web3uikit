@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Dropdown from './Dropdown';
-import { Cog, Server } from '@web3uikit/icons';
+import { Cog, Download, Server } from '@web3uikit/icons';
 import { color } from '@web3uikit/styles';
 import { Avatar } from '../Avatar';
 
@@ -40,7 +40,7 @@ Default.args = {
         },
     ],
     label: 'Server: ',
-    icon: 'download',
+    icon: <Download />,
     isDisabled: false,
 };
 
@@ -62,7 +62,7 @@ ControlledState.args = {
         },
     ],
     label: 'Server: ',
-    icon: 'download',
+    icon: <Download />,
     selectedState: 0,
 };
 
@@ -85,7 +85,7 @@ NonFixedLabel.args = {
     ],
     label: 'Server: ',
     isLabelFixed: false,
-    icon: 'download',
+    icon: <Download />,
 };
 
 export const Iconless = Template.bind({});

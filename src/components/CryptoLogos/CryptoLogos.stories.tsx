@@ -47,3 +47,9 @@ Arbitrum.args = {
     chain: 'arbitrum',
     size: '48px',
 };
+
+export const Cronos = Template.bind({});
+Cronos.args = {
+    chain: 'cronos',
+    size: '48px',
+};

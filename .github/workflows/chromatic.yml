@@ -1,0 +1,14 @@
+name: Rebuild Chromatic
+on:
+    push:
+        branches:
+            - master
+jobs:
+    build:
+        name: Rebuild Chromatic
+
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repo
+              run: npx chromatic --project-token=${{ secrets.CHROMATIC_TOKEN }}

@@ -11,4 +11,7 @@ jobs:
 
         steps:
             - name: Checkout repo
+              uses: actions/checkout@v2
+
+            - name: Publish Chromatic
               run: npx chromatic --project-token=${{ secrets.CHROMATIC_TOKEN }}

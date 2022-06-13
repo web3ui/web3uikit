@@ -27,11 +27,13 @@
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
         "react-router-dom": "^6.3.0",
-        "styled-components": "^5.3.5"
+        "styled-components": "^5.3.5",
+        "@types/react-blockies": "^1.4.1"
     },
     "dependencies": {
         "@web3uikit/config": "*",
         "@web3uikit/styles": "*",
-        "@web3uikit/icons": "*"
+        "@web3uikit/icons": "*",
+        "react-blockies": "^1.4.1"
     }
 }

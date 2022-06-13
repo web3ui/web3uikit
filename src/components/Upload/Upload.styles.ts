@@ -46,7 +46,51 @@ const TextContentStyled = styled.div`
     gap: 4px;
 `;
 
+const InputStyled = styled.input`
+    ${resetCSS};
+    display: none;
+`;
+const DivUploadedStyled = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 8px;
+    gap: 8px;
+    background: transparent;
+    border: 2px dashed ${color.blueSky};
+    border-radius: 13px;
+    user-select: none;
+`;
+const ImageFrameStyled = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 0px 32px;
+    gap: 8px;
+    width: 90%;
+    user-select: none;
+`;
+const ImageStyled = styled.img`
+    width: 144px;
+    height: 144px;
+    border-radius: 8px;
+`;
+const IconDivStyled = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+`;
 export default {
     DivStyled,
     TextContentStyled,
+    InputStyled,
+    DivUploadedStyled,
+    ImageStyled,
+    ImageFrameStyled,
+    IconDivStyled,
 };

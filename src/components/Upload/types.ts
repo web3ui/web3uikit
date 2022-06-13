@@ -9,12 +9,11 @@ export interface UploadProps {
     /**
      * The callback function to be called on click
      */
-    onClick?: (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
-
-    /**
-     * boolean
-     */
-    pressed?: boolean;
+    onClick?: (
+        event:
+            | React.MouseEvent<HTMLDivElement, MouseEvent>
+            | React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    ) => void;
 
     onUpload?: () => void;
 }

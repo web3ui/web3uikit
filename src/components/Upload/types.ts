@@ -15,4 +15,6 @@ export interface UploadProps {
      * boolean
      */
     pressed?: boolean;
+
+    onUpload?: () => void;
 }

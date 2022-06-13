@@ -8,7 +8,11 @@ import styles from './Upload.styles';
 
 const { DivStyled, TextContentStyled } = styles;
 
-const Upload: React.FC<UploadProps> = ({ theme = 'withIcon' }) => {
+const Upload: React.FC<UploadProps> = ({
+    theme = 'withIcon',
+    onClick,
+    onUpload,
+}) => {
     // const [isPressed, setIsPressed] = useState(false);
 
     const browseFile = (
@@ -18,13 +22,15 @@ const Upload: React.FC<UploadProps> = ({ theme = 'withIcon' }) => {
         console.log('clicked');
     };
 
-    const divClickHandler = (
+    const onClickHandler = (
         event: React.MouseEvent<HTMLDivElement, MouseEvent>,
     ) => {
-        event.preventDefault;
+        // our logic
+        onClick && onClick(event);
+        onUpload && onUpload();
     };
     return (
-        <DivStyled onClick={divClickHandler}>
+        <DivStyled onClick={onClickHandler}>
             {theme === 'textOnly' && (
                 <>
                     <Typography variant="h4" weight="400">

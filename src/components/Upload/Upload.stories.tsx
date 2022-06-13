@@ -5,7 +5,10 @@ import Upload from './Upload';
 export default {
     title: '4.UI/Upload',
     component: Upload,
-    argTypes: { onClick: { action: 'clicked' } },
+    argTypes: {
+        onClick: { action: 'clicked' },
+        onUpload: { action: 'file uploaded' },
+    },
 } as ComponentMeta<typeof Upload>;
 
 const Template: ComponentStory<typeof Upload> = (args) => <Upload {...args} />;

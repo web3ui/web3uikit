@@ -98,6 +98,7 @@ import atomicApiIcon from './icons/atomicApi';
 import metamaskIcon from './icons/metamask';
 import metamaskLinedIcon from './icons/metamaskLined';
 import solanaIcon from './icons/solana';
+import trendingUpIcon from './icons/trendingUp';
 
 export type TIconType = keyof typeof iconTypes;
 
@@ -189,6 +190,7 @@ export const iconTypes = {
     telegram: 'telegram',
     testnet: 'testnet',
     triangleDown: 'triangleDown',
+    trendingUp: 'trendingUp',
     triangleUp: 'triangleUp',
     twitter: 'twitter',
     uni: 'uni',
@@ -292,6 +294,7 @@ const collection = {
     telegramIcon,
     testnetIcon,
     triangleDownIcon,
+    trendingUpIcon,
     triangleUpIcon,
     twitterIcon,
     uniIcon,

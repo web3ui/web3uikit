@@ -13,7 +13,10 @@ const DivStyled = styled.div`
     flex-direction: column;
     gap: 8px;
     justify-content: center;
-    padding: 40px;
+    min-height: 160px;
+    overflow: hidden;
+    padding: 8px;
+    position: relative;
     text-align: center;
     user-select: none;
     width: 100%;
@@ -50,46 +53,22 @@ const TextContentStyled = styled.div`
 const InputStyled = styled.input`
     display: none;
 `;
-const DivUploadedStyled = styled.div`
-    ${resetCSS};
-    align-items: flex-start;
-    background: transparent;
-    border-radius: 13px;
-    border: 2px dashed ${color.blueSky};
-    display: flex;
-    gap: 8px;
-    justify-content: flex-end;
-    padding: 8px;
-    user-select: none;
-    width: 100%;
-`;
-const ImageFrameStyled = styled.div`
-    align-items: center;
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 8px;
-    width: fit-content;
-    /* padding: 0px 0px 0px 32px; */
-    user-select: none;
-`;
+
 const ImageStyled = styled.img`
     height: 144px;
+    border-radius: 8px;
 `;
+
 const IconDivStyled = styled.div`
-    align-items: center;
     cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    position: absolute;
+    top: 8px;
+    right: 8px;
 `;
 export default {
     DivStyled,
     TextContentStyled,
     InputStyled,
-    DivUploadedStyled,
     ImageStyled,
-    ImageFrameStyled,
     IconDivStyled,
 };

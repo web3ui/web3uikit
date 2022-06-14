@@ -9,7 +9,6 @@ const {
     DivStyled,
     TextContentStyled,
     InputStyled,
-    DivUploadedStyled,
     ImageStyled,
     ImageFrameStyled,
     IconDivStyled,
@@ -38,13 +37,13 @@ const Upload: React.FC<UploadProps> = ({ theme = 'withIcon', onChange }) => {
     };
 
     return (
-        <>
+        <DivStyled
+            onClick={onClickHandler}
+            onDragOver={(e) => e.preventDefault()}
+            onDrop={onDropHandler}
+        >
             {fileSelected === null && (
-                <DivStyled
-                    onClick={onClickHandler}
-                    onDragOver={(e) => e.preventDefault()}
-                    onDrop={onDropHandler}
-                >
+                <>
                     <InputStyled
                         type="file"
                         id="file"
@@ -78,22 +77,20 @@ const Upload: React.FC<UploadProps> = ({ theme = 'withIcon', onChange }) => {
                             </TextContentStyled>
                         </>
                     )}
-                </DivStyled>
+                </>
             )}
             {fileSelected && (
-                <DivUploadedStyled>
-                    <ImageFrameStyled>
-                        <ImageStyled
-                            src={URL.createObjectURL(fileSelected)}
-                            alt="image"
-                        />
-                    </ImageFrameStyled>
+                <>
+                    <ImageStyled
+                        src={URL.createObjectURL(fileSelected)}
+                        alt="image"
+                    />
                     <IconDivStyled onClick={() => setFileSelected(null)}>
-                        <Icon svg="bin" fill={color.blueSky} size={24} />
+                        <Icon svg="bin" fill={color.blue} size={24} />
                     </IconDivStyled>
-                </DivUploadedStyled>
+                </>
             )}
-        </>
+        </DivStyled>
     );
 };
 

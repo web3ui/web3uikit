@@ -24,10 +24,11 @@ const BlockieIcon = ({
                 borderRadius: '32px',
                 display: 'inline-flex',
                 overflow: 'hidden',
-                width: '24px',
-                height: '24px',
-                marginRight: '12px',
+                width: 'min-content',
+                height: 'min-content',
+                margin: 'auto 12px auto 0',
                 opacity: disabled ? '50%' : '100%',
+                aspectRatio: '1 / 1',
             }}
         >
             <Blockies

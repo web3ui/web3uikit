@@ -47,6 +47,9 @@ AddressInput.args = {
     placeholder: 'Enter here',
     size: 'regular',
     type: 'address',
+    style: {
+        width: '80px',
+    },
 };
 
 export const AddressBlurInput = Template.bind({});
@@ -55,7 +58,8 @@ AddressBlurInput.args = {
         text: 'Enter Address',
     },
     name: 'Address Input',
-    placeholder: 'Enter here',
+    allowClear: true,
+    width: '100%',
     size: 'large',
     type: 'address',
     formatter: (str: string) => {

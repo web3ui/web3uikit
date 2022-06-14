@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 import { color } from '@web3uikit/styles';
 import { StyleProps } from '../Input.styles';
 
-const getLabelStyles = ({ label }: StyleProps) => {
+const getLabelStyles = ({ label, value }: StyleProps) => {
     return css`
         transition: all 0.1s ease-out;
         &:focus-within {
@@ -17,17 +17,13 @@ const getLabelStyles = ({ label }: StyleProps) => {
             ${labelUpPosition}
         }
         //To change label position if input has value - NOTE: set placeholder default value to ' '
-        input:not(:focus) {
-            &:not(:placeholder-shown) + label {
-                ${labelUpPosition}
-            }
+        input:not(:focus) + label {
+            ${Boolean(value && value.toString().length > 0) && labelUpPosition}
         }
-        //to hide placeholder when label is present
+        //to change label position when placeholder is present
         input:placeholder-shown {
-            &:not(:focus) {
-                ::placeholder {
-                    ${label && `color: transparent`}
-                }
+            &:not(:focus) + label {
+                ${labelUpPosition}
             }
         }
     `;

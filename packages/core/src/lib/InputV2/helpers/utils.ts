@@ -64,6 +64,8 @@ const validate = (
             () => setCurrentState(isFilled ? 'filled' : 'initial'),
             3000,
         );
+    } else {
+        setCurrentState(isFilled ? 'filled' : 'initial');
     }
 };
 

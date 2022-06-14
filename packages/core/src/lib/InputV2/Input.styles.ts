@@ -8,8 +8,8 @@ import {
 } from './helpers/helper.styles';
 
 export type StyleProps = Pick<TInputProps, 'value' | 'size'> & {
-    state: TInputState;
-    label: string;
+    state?: TInputState;
+    label?: string;
 };
 
 const DivWrapperStyled = styled.div<StyleProps>`

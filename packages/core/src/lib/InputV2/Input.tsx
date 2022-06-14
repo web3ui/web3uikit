@@ -27,7 +27,7 @@ function InputBase(
         validation,
         description,
         errorMessage = 'Sorry this is not valid',
-        width,
+        width = '100%',
         type = 'text',
         allowCopy = false,
         allowClear = false,
@@ -51,6 +51,7 @@ function InputBase(
         placeholder,
         required,
         disabled,
+        style,
         ...otherProps
     } = restProps;
     const formattedTextRef = useRef<HTMLDivElement>(
@@ -121,6 +122,7 @@ function InputBase(
                 onClick={() => {
                     setIsEditMode(true);
                 }}
+                style={{ width, ...style }}
             >
                 {
                     <RenderLeftIcon
@@ -136,7 +138,9 @@ function InputBase(
                         style={{ display: isEditMode ? 'none' : 'block' }}
                         ref={formattedTextRef}
                     >
-                        {formatter(currentValue as string)}
+                        {currentValue
+                            ? formatter(currentValue as string)
+                            : placeholder && placeholder}
                     </DivStyledText>
                 )}
                 <InputStyled
@@ -157,7 +161,7 @@ function InputBase(
                     ref={ref}
                     type={currentType}
                     pattern={validation?.regExp || pattern}
-                    placeholder={placeholder || ' '}
+                    placeholder={placeholder}
                     value={currentValue}
                     onFocus={(event) => handleFocusEvent(event)}
                     required={validation?.required || required}

@@ -10,10 +10,8 @@ export interface UploadProps {
      * The callback function to be called on click
      */
     onClick?: (
-        event:
-            | React.MouseEvent<HTMLDivElement, MouseEvent>
-            | React.MouseEvent<HTMLButtonElement, MouseEvent>,
+        event: React.MouseEvent<HTMLDivElement | HTMLButtonElement, MouseEvent>,
     ) => void;
 
-    onUpload?: () => void;
+    onChange: (file: Blob | null) => void;
 }

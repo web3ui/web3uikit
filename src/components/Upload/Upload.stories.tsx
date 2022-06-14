@@ -6,8 +6,7 @@ export default {
     title: '4.UI/Upload',
     component: Upload,
     argTypes: {
-        onClick: { action: 'clicked' },
-        onUpload: { action: 'file uploaded' },
+        onChange: { action: 'file uploaded' },
     },
 } as ComponentMeta<typeof Upload>;
 

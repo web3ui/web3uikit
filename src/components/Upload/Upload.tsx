@@ -10,7 +10,6 @@ const {
     TextContentStyled,
     InputStyled,
     ImageStyled,
-    ImageFrameStyled,
     IconDivStyled,
 } = styles;
 

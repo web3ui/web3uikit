@@ -7,11 +7,12 @@ export interface UploadProps {
     theme?: 'textOnly' | 'withIcon';
 
     /**
-     * The callback function to be called on click
+     * The callback function to be called onChange
      */
-    onClick?: (
-        event: React.MouseEvent<HTMLDivElement | HTMLButtonElement, MouseEvent>,
-    ) => void;
 
     onChange: (file: Blob | null) => void;
+}
+
+export interface DivStyledProps {
+    isFileSelected: boolean;
 }

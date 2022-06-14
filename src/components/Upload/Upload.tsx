@@ -41,6 +41,7 @@ const Upload: React.FC<UploadProps> = ({ theme = 'withIcon', onChange }) => {
             onClick={onClickHandler}
             onDragOver={(e) => e.preventDefault()}
             onDrop={onDropHandler}
+            isFileSelected={Boolean(fileSelected)}
         >
             {fileSelected === null && (
                 <>

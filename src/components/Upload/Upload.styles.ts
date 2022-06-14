@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import color from '../../styles/colors';
 import resetCSS from '../../styles/reset';
 
@@ -20,16 +20,21 @@ const DivStyled = styled.div`
     text-align: center;
     user-select: none;
     width: 100%;
-    &:hover {
-        background: radial-gradient(
-            102.8% 102.8% at 3.14% -9.06%,
-            #e9fffc 0%,
-            #e8fefb 4.74%,
-            #e4f4f7 50.11%,
-            #e1eef4 83.07%,
-            #e0ecf3 100%
-        );
-    }
+    ${(props) =>
+        !props.isFileSelected &&
+        css`
+            &:hover {
+                background: radial-gradient(
+                    102.8% 102.8% at 3.14% -9.06%,
+                    #e9fffc 0%,
+                    #e8fefb 4.74%,
+                    #e4f4f7 50.11%,
+                    #e1eef4 83.07%,
+                    #e0ecf3 100%
+                );
+            }
+        `}
+
     &:active {
         background: radial-gradient(
             102.8% 102.8% at 3.14% -9.06%,

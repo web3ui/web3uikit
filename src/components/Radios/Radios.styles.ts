@@ -31,7 +31,7 @@ const DivStyled = styled.div<Pick<RadiosProps, 'disabled'>>`
 `;
 
 const DivWrapperStyled = styled.div<Pick<RadiosProps, 'isRow'>>`
-    align-items: ${({ isRow }) => isRow ? 'center' : 'flex-start'};
+    align-items: ${({ isRow }) => (isRow ? 'center' : 'flex-start')};
     flex-direction: ${(p) => (p.isRow ? 'row' : 'column')};
     gap: ${(p) => p.isRow && '12px'};
     display: flex;
@@ -40,7 +40,7 @@ const DivWrapperStyled = styled.div<Pick<RadiosProps, 'isRow'>>`
 
 const LabelStyled = styled.label<TStyleProps>`
     ${resetCSS};
-    ${fonts.heading}
+    /* ${fonts.heading} */
     ${fonts.text}
     padding-left: ${(p) => (p.isCreditCardMode ? '0' : '28px')};
     align-content: center;

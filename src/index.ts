@@ -1,4 +1,5 @@
 // Components
+/* PLOP_INJECT_EXPORT */
 export * from './components/Accordion';
 export * from './components/Avatar';
 export * from './components/Badge';

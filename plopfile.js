@@ -55,13 +55,22 @@ module.exports = (plop) => {
                 {
                     type: 'addMany',
                     destination:
-                        'src/components/{{ getSubDirectoryPath subDirectory }}{{ name }}',
+                        'src/components{{ getSubDirectoryPath subDirectory }}/{{ name }}',
                     base: basePath,
                     templateFiles: `${basePath}/**`,
+                },
+                {
+                    type: 'append',
+                    path: 'src/index.ts',
+                    pattern: '/* PLOP_INJECT_EXPORT */',
+                    template:
+                        "export * from './components{{ getSubDirectoryPath subDirectory }}/{{ name }}';",
                 },
             ];
         },
     });
     plop.setHelper('getInterface', (name) => `${name}Props`);
-    plop.setHelper('getSubDirectoryPath', (subDirectory) => `${subDirectory}/`);
+    plop.setHelper('getSubDirectoryPath', (subDirectory) => {
+        if (subDirectory) return `/${subDirectory}`;
+    });
 };

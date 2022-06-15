@@ -16,7 +16,8 @@
         "nx:graph": "nx graph --skip-nx-cache",
         "start:dev": "nx run-many --target=start:dev --all --parallel --verbose=true",
         "storybook": "start-storybook -p 6006",
-        "analyze": "nx run example:analyze"
+        "analyze": "nx run example:analyze",
+        "icons:create": "nx run-many --target=icons:create --all --parallel --verbose=true"
     },
     "dependencies": {
         "@babel/core": "^7.18.2",

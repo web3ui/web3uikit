@@ -1,45 +1,30 @@
-import { FC } from 'react';
-import { TIconProps } from '../type';
-const GridIcon: FC<TIconProps> = ({
-    fill = 'currentColor',
-    size = 18,
-    style,
-}) => (
+// Auto-generated file created by svgr-cli source svg-template.js
+// Run pnpm icons:create to update
+// Do not edit
+import { SVGProps } from 'react';
+import { SVGRProps } from '../type';
+const SvgGrid = ({
+    title,
+    titleId,
+    ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="none"
-        height={size}
+        fill="currentColor"
         viewBox="0 0 24 24"
-        width={size}
         xmlns="http://www.w3.org/2000/svg"
-        style={style}
+        width="1em"
+        height="1em"
+        aria-labelledby={titleId}
+        {...props}
     >
-        <title>grid icon</title>
+        {title ? <title id={titleId}>{title}</title> : null}
         <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M3 3.79747C3 3.35704 3.35704 3 3.79747 3H10.1772C10.6176 3 10.9747 3.35704 10.9747 3.79747V10.1772C10.9747 10.6176 10.6176 10.9747 10.1772 10.9747H3.79747C3.35704 10.9747 3 10.6176 3 10.1772V3.79747ZM4.59494 4.59494V9.37975H9.37975V4.59494H4.59494Z"
-            fill={fill}
-        />
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M13.0253 3.79747C13.0253 3.35704 13.3824 3 13.8228 3H20.2025C20.643 3 21 3.35704 21 3.79747V10.1772C21 10.6176 20.643 10.9747 20.2025 10.9747H13.8228C13.3824 10.9747 13.0253 10.6176 13.0253 10.1772V3.79747ZM14.6203 4.59494V9.37975H19.4051V4.59494H14.6203Z"
-            fill={fill}
-        />
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M13.0253 13.8228C13.0253 13.3824 13.3824 13.0253 13.8228 13.0253H20.2025C20.643 13.0253 21 13.3824 21 13.8228V20.2025C21 20.643 20.643 21 20.2025 21H13.8228C13.3824 21 13.0253 20.643 13.0253 20.2025V13.8228ZM14.6203 14.6203V19.4051H19.4051V14.6203H14.6203Z"
-            fill={fill}
-        />
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M3 13.8228C3 13.3824 3.35704 13.0253 3.79747 13.0253H10.1772C10.6176 13.0253 10.9747 13.3824 10.9747 13.8228V20.2025C10.9747 20.643 10.6176 21 10.1772 21H3.79747C3.35704 21 3 20.643 3 20.2025V13.8228ZM4.59494 14.6203V19.4051H9.37975V14.6203H4.59494Z"
-            fill={fill}
+            d="M3 3.797c0-.44.357-.797.797-.797h6.38c.44 0 .798.357.798.797v6.38c0 .44-.357.798-.798.798h-6.38A.798.798 0 0 1 3 10.177v-6.38Zm1.595.798V9.38H9.38V4.595H4.595ZM13.025 3.797c0-.44.357-.797.798-.797h6.38c.44 0 .797.357.797.797v6.38c0 .44-.357.798-.797.798h-6.38a.798.798 0 0 1-.798-.798v-6.38Zm1.595.798V9.38h4.785V4.595H14.62ZM13.025 13.823c0-.44.357-.798.798-.798h6.38c.44 0 .797.357.797.798v6.38c0 .44-.357.797-.797.797h-6.38a.797.797 0 0 1-.798-.797v-6.38Zm1.595.797v4.785h4.785V14.62H14.62ZM3 13.823c0-.44.357-.798.797-.798h6.38c.44 0 .798.357.798.798v6.38c0 .44-.357.797-.798.797h-6.38A.797.797 0 0 1 3 20.203v-6.38Zm1.595.797v4.785H9.38V14.62H4.595Z"
+            fill="currentColor"
         />
     </svg>
 );
-export default GridIcon;
+
+export default SvgGrid;

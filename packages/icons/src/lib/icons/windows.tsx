@@ -1,25 +1,30 @@
-import { FC } from 'react';
-import { TIconProps } from '../type';
-const WindowsIcon: FC<TIconProps> = ({
-    fill = 'currentColor',
-    size = 18,
-    style,
-}) => (
+// Auto-generated file created by svgr-cli source svg-template.js
+// Run pnpm icons:create to update
+// Do not edit
+import { SVGProps } from 'react';
+import { SVGRProps } from '../type';
+const SvgWindows = ({
+    title,
+    titleId,
+    ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="none"
-        height={size}
+        fill="currentColor"
         viewBox="0 0 24 24"
-        width={size}
         xmlns="http://www.w3.org/2000/svg"
-        style={style}
+        width="1em"
+        height="1em"
+        aria-labelledby={titleId}
+        {...props}
     >
-        <title>windows icon</title>
+        {title ? <title id={titleId}>{title}</title> : null}
         <path
-            d="M4 4V11.6786H11.6786V4H4ZM12.3214 4V11.6786H20V4H12.3214ZM4 12.3214V20H11.6786V12.3214H4ZM12.3214 12.3214V20H20V12.3214H12.3214Z"
-            fill={fill}
+            d="M4 4v7.679h7.679V4H4Zm8.321 0v7.679H20V4h-7.679ZM4 12.321V20h7.679v-7.679H4Zm8.321 0V20H20v-7.679h-7.679Z"
+            fill="currentColor"
         />
     </svg>
 );
-export default WindowsIcon;
+
+export default SvgWindows;

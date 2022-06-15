@@ -1,2 +1,1 @@
-export * from './lib';
-export * from './util';
+export * from './lib/icons';

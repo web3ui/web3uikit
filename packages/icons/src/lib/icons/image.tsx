@@ -1,39 +1,34 @@
-import { FC } from 'react';
-import { TIconProps } from '../type';
-const ImageIcon: FC<TIconProps> = ({
-    fill = 'currentColor',
-    size = 18,
-    style,
-}) => (
+// Auto-generated file created by svgr-cli source svg-template.js
+// Run pnpm icons:create to update
+// Do not edit
+import { SVGProps } from 'react';
+import { SVGRProps } from '../type';
+const SvgImage = ({
+    title,
+    titleId,
+    ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="none"
-        height={size}
+        fill="currentColor"
         viewBox="0 0 24 24"
-        width={size}
         xmlns="http://www.w3.org/2000/svg"
-        style={style}
+        width="1em"
+        height="1em"
+        aria-labelledby={titleId}
+        {...props}
     >
-        <title>image icon</title>
+        {title ? <title id={titleId}>{title}</title> : null}
         <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M5.62025 4.59494C5.05399 4.59494 4.59494 5.05399 4.59494 5.62025V18.3797C4.59494 18.946 5.05399 19.4051 5.62025 19.4051H18.3797C18.946 19.4051 19.4051 18.946 19.4051 18.3797V5.62025C19.4051 5.05399 18.946 4.59494 18.3797 4.59494H5.62025ZM3 5.62025C3 4.17313 4.17313 3 5.62025 3H18.3797C19.8269 3 21 4.17313 21 5.62025V18.3797C21 19.8269 19.8269 21 18.3797 21H5.62025C4.17313 21 3 19.8269 3 18.3797V5.62025Z"
-            fill={fill}
+            d="M5.62 4.595c-.566 0-1.025.459-1.025 1.025v12.76c0 .566.459 1.025 1.025 1.025h12.76c.566 0 1.025-.459 1.025-1.025V5.62c0-.566-.459-1.025-1.025-1.025H5.62ZM3 5.62A2.62 2.62 0 0 1 5.62 3h12.76A2.62 2.62 0 0 1 21 5.62v12.76A2.62 2.62 0 0 1 18.38 21H5.62A2.62 2.62 0 0 1 3 18.38V5.62Z"
+            fill="currentColor"
         />
         <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M8.81013 8.24051C8.49553 8.24051 8.24051 8.49553 8.24051 8.81013C8.24051 9.12472 8.49553 9.37975 8.81013 9.37975C9.12472 9.37975 9.37975 9.12472 9.37975 8.81013C9.37975 8.49553 9.12472 8.24051 8.81013 8.24051ZM6.64557 8.81013C6.64557 7.61467 7.61467 6.64557 8.81013 6.64557C10.0056 6.64557 10.9747 7.61467 10.9747 8.81013C10.9747 10.0056 10.0056 10.9747 8.81013 10.9747C7.61467 10.9747 6.64557 10.0056 6.64557 8.81013Z"
-            fill={fill}
-        />
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M15.0817 9.61332C15.3931 9.30189 15.898 9.30189 16.2095 9.61332L20.7664 14.1703C21.0779 14.4817 21.0779 14.9866 20.7664 15.2981C20.455 15.6095 19.9501 15.6095 19.6386 15.2981L15.6456 11.305L6.18415 20.7664C5.87272 21.0779 5.36779 21.0779 5.05636 20.7664C4.74493 20.455 4.74493 19.9501 5.05636 19.6386L15.0817 9.61332Z"
-            fill={fill}
+            d="M8.81 8.24a.57.57 0 1 0 0 1.14.57.57 0 0 0 0-1.14Zm-2.164.57a2.165 2.165 0 1 1 4.329 0 2.165 2.165 0 0 1-4.33 0ZM15.082 9.613a.797.797 0 0 1 1.127 0l4.557 4.557a.797.797 0 1 1-1.127 1.128l-3.993-3.993-9.462 9.461a.797.797 0 1 1-1.128-1.127L15.082 9.613Z"
+            fill="currentColor"
         />
     </svg>
 );
-export default ImageIcon;
+
+export default SvgImage;

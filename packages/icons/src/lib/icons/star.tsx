@@ -1,25 +1,30 @@
-import { FC } from 'react';
-import { TIconProps } from '../type';
-const StarIcon: FC<TIconProps> = ({
-    fill = 'currentColor',
-    size = 18,
-    style,
-}) => (
+// Auto-generated file created by svgr-cli source svg-template.js
+// Run pnpm icons:create to update
+// Do not edit
+import { SVGProps } from 'react';
+import { SVGRProps } from '../type';
+const SvgStar = ({
+    title,
+    titleId,
+    ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="none"
-        height={size}
+        fill="currentColor"
         viewBox="0 0 24 24"
-        width={size}
         xmlns="http://www.w3.org/2000/svg"
-        style={style}
+        width="1em"
+        height="1em"
+        aria-labelledby={titleId}
+        {...props}
     >
-        <title>star icon</title>
+        {title ? <title id={titleId}>{title}</title> : null}
         <path
-            d="M11.2039 2.5507C11.4545 1.81643 12.5455 1.81643 12.7961 2.5507L14.819 8.4784C14.9311 8.80677 15.2525 9.0291 15.6151 9.0291H22.1613C22.9722 9.0291 23.3094 10.0171 22.6533 10.4709L17.3573 14.1344C17.0639 14.3373 16.9412 14.6971 17.0532 15.0254L19.0761 20.9531C19.3267 21.6874 18.4441 22.298 17.788 21.8442L12.492 18.1807C12.1986 17.9777 11.8014 17.9777 11.508 18.1807L6.21197 21.8442C5.55595 22.298 4.67328 21.6874 4.92386 20.9531L6.94675 15.0254C7.05882 14.6971 6.93605 14.3373 6.64267 14.1344L1.34666 10.4709C0.690636 10.0171 1.02778 9.0291 1.83867 9.0291H8.38491C8.74755 9.0291 9.06894 8.80677 9.181 8.4784L11.2039 2.5507Z"
-            fill={fill}
+            d="M11.204 2.55c.25-.734 1.341-.734 1.592 0l2.023 5.928c.112.329.433.551.796.551h6.546c.811 0 1.148.988.492 1.442l-5.296 3.663a.776.776 0 0 0-.304.891l2.023 5.928c.25.734-.632 1.345-1.288.891l-5.296-3.663a.871.871 0 0 0-.984 0l-5.296 3.663c-.656.454-1.539-.157-1.288-.89l2.023-5.929a.776.776 0 0 0-.304-.89L1.347 10.47c-.656-.454-.32-1.442.492-1.442h6.546a.834.834 0 0 0 .796-.55l2.023-5.928Z"
+            fill="currentColor"
         />
     </svg>
 );
-export default StarIcon;
+
+export default SvgStar;

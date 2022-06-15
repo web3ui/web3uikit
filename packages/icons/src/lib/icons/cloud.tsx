@@ -1,27 +1,30 @@
-import { FC } from 'react';
-import { TIconProps } from '../type';
-const CloudIcon: FC<TIconProps> = ({
-    fill = 'currentColor',
-    size = 18,
-    style,
-}) => (
+// Auto-generated file created by svgr-cli source svg-template.js
+// Run pnpm icons:create to update
+// Do not edit
+import { SVGProps } from 'react';
+import { SVGRProps } from '../type';
+const SvgCloud = ({
+    title,
+    titleId,
+    ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="none"
-        height={size}
+        fill="currentColor"
         viewBox="0 0 24 24"
-        width={size}
         xmlns="http://www.w3.org/2000/svg"
-        style={style}
+        width="1em"
+        height="1em"
+        aria-labelledby={titleId}
+        {...props}
     >
-        <title>cloud icon</title>
+        {title ? <title id={titleId}>{title}</title> : null}
         <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M7.24673 10.1605L6.45645 10.296C4.87436 10.5674 3.66667 12.0123 3.66667 13.75C3.66667 15.683 5.15905 17.25 7 17.25H17.8333C19.214 17.25 20.3333 16.0747 20.3333 14.625C20.3333 13.313 19.415 12.223 18.2167 12.0304L17.1201 11.8542L16.8517 10.724C16.3093 8.44025 14.3405 6.75 12 6.75C10.1312 6.75 8.49953 7.82571 7.6398 9.42794L7.24673 10.1605ZM18.4688 10.3006C17.7457 7.25579 15.1237 5 12 5C9.50539 5 7.3308 6.43867 6.18774 8.56893C3.81262 8.97634 2 11.1409 2 13.75C2 16.6495 4.23858 19 7 19H17.8333C20.1345 19 22 17.0412 22 14.625C22 12.4356 20.4684 10.6219 18.4688 10.3006Z"
-            fill={fill}
+            d="m7.247 10.16-.79.136c-1.583.271-2.79 1.716-2.79 3.454 0 1.933 1.492 3.5 3.333 3.5h10.833c1.381 0 2.5-1.175 2.5-2.625 0-1.312-.918-2.402-2.116-2.595l-1.097-.176-.268-1.13C16.309 8.44 14.34 6.75 12 6.75c-1.869 0-3.5 1.076-4.36 2.678l-.393.732Zm11.222.14C17.746 7.257 15.124 5 12 5 9.505 5 7.33 6.439 6.188 8.569 3.813 8.976 2 11.14 2 13.75 2 16.65 4.239 19 7 19h10.833C20.135 19 22 17.041 22 14.625c0-2.19-1.532-4.003-3.531-4.324Z"
+            fill="currentColor"
         />
     </svg>
 );
-export default CloudIcon;
+
+export default SvgCloud;

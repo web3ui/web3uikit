@@ -1,27 +1,30 @@
-import { FC } from 'react';
-import { TIconProps } from '../type';
-const InfoIcon: FC<TIconProps> = ({
-    fill = 'currentColor',
-    size = 18,
-    style,
-}) => (
+// Auto-generated file created by svgr-cli source svg-template.js
+// Run pnpm icons:create to update
+// Do not edit
+import { SVGProps } from 'react';
+import { SVGRProps } from '../type';
+const SvgInfo = ({
+    title,
+    titleId,
+    ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="none"
-        height={size}
+        fill="currentColor"
         viewBox="0 0 24 24"
-        width={size}
         xmlns="http://www.w3.org/2000/svg"
-        style={style}
+        width="1em"
+        height="1em"
+        aria-labelledby={titleId}
+        {...props}
     >
-        <title>info icon</title>
+        {title ? <title id={titleId}>{title}</title> : null}
         <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3ZM12.0058 9.89516C11.1711 9.89516 10.4816 9.20565 10.4816 8.37097C10.4816 7.5 11.1711 6.84677 12.0058 6.84677C12.8768 6.84677 13.53 7.5 13.53 8.37097C13.53 9.20565 12.8768 9.89516 12.0058 9.89516ZM13.2034 11.0927V16.0282C13.2034 16.2823 13.0219 16.5 12.7679 16.5H11.28C11.026 16.5 10.8445 16.2823 10.8445 16.0282V11.0927C10.8445 10.875 11.0623 10.6935 11.28 10.6935H12.7679C12.9857 10.6935 13.2034 10.875 13.2034 11.0927Z"
-            fill={fill}
+            d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18Zm.006 6.895c-.835 0-1.524-.69-1.524-1.524 0-.871.69-1.524 1.524-1.524.87 0 1.524.653 1.524 1.524a1.51 1.51 0 0 1-1.524 1.524Zm1.197 1.198v4.935c0 .254-.181.472-.435.472H11.28c-.254 0-.435-.218-.435-.472v-4.935c0-.218.217-.4.435-.4h1.488c.218 0 .435.182.435.4Z"
+            fill="currentColor"
         />
     </svg>
 );
-export default InfoIcon;
+
+export default SvgInfo;

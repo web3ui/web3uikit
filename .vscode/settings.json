@@ -1,16 +1,17 @@
 {
-  "files.exclude": {
-    "**/.git": true,
-    "**/.gitkeep": true,
-    "**/node_modules": true
-  },
-  "prettier.configPath": ".prettierrc",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
-  },
-  "eslint.rules.customizations": [{ "rule": "*", "severity": "error" }],
-  "scss.lint.unknownAtRules": "ignore",
-  "typescript.tsdk": "./node_modules/typescript/lib"
+    "files.exclude": {
+        "**/.git": true,
+        "**/.gitkeep": true,
+        "**/node_modules": true
+    },
+    "prettier.configPath": ".prettierrc",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.rules.customizations": [{ "rule": "*", "severity": "error" }],
+    "scss.lint.unknownAtRules": "ignore",
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "svg.preview.background": "dark-transparent"
 }

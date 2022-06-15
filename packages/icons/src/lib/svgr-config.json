@@ -1,0 +1,12 @@
+{
+    "typescript": true,
+    "icon": true,
+    "titleProp": true,
+    "removeViewBox": false,
+    "replaceAttrValues": {
+        "none": "currentColor"
+    },
+    "svgProps": {
+        "data-testid": "test-icon"
+    }
+}

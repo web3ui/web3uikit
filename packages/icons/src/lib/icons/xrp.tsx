@@ -1,37 +1,37 @@
-import { FC } from 'react';
-import { TIconProps } from '../type';
-const XrpIcon: FC<TIconProps> = ({
-    fill = 'currentColor',
-    size = 18,
-    style,
-}) => (
+// Auto-generated file created by svgr-cli source svg-template.js
+// Run pnpm icons:create to update
+// Do not edit
+import { SVGProps } from 'react';
+import { SVGRProps } from '../type';
+const SvgXrp = ({
+    title,
+    titleId,
+    ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
         xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size / 1.230769230769231}
         viewBox="0 0 24 19.8"
+        width="1em"
+        height="1em"
+        aria-labelledby={titleId}
+        {...props}
     >
-        <g id="Layer_2" data-name="Layer 2" opacity="0.7" style={style}>
-            <title>xrp icon</title>
-            <g id="Layer_1" data-name="Layer 1">
+        {title ? <title id={titleId}>{title}</title> : null}
+        <g data-name="Layer 2" opacity={0.7}>
+            <g data-name="Layer 1" fill="#23292F">
                 <path
-                    id="Path_1"
                     data-name="Path1"
-                    d="M21.38,0h3.469L17.63,7.153a6.742,6.742,0,0,1-9.469,0L.94,0H4.412L9.9,5.434a4.268,4.268,0,0,0,6,0Z"
-                    transform="translate(-0.896)"
-                    fill={fill || '#23292F'}
+                    d="M20.484 0h3.469l-7.219 7.153a6.742 6.742 0 0 1-9.469 0L.044 0h3.472l5.488 5.434a4.268 4.268 0 0 0 6 0Z"
                 />
                 <path
-                    id="Path_2"
                     data-name="Path2"
-                    d="M3.471,238.327H0l7.266-7.2a6.742,6.742,0,0,1,9.469,0l7.266,7.2H20.531L15,232.849a4.268,4.268,0,0,0-6,0Z"
-                    transform="translate(0 -218.527)"
-                    fill={fill || '#23292F'}
+                    d="M3.471 19.8H0l7.266-7.2a6.742 6.742 0 0 1 9.469 0l7.266 7.2h-3.47L15 14.322a4.268 4.268 0 0 0-6 0Z"
                 />
             </g>
         </g>
     </svg>
 );
-export default XrpIcon;
+
+export default SvgXrp;

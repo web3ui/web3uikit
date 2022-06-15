@@ -5,7 +5,7 @@ import { Suspense } from 'react';
 const { Button, Logo, Typography, Avatar, BannerStrip, VerifyCode } = lazily(
     () => import('@web3uikit/core'),
 );
-import { Ada, EmotionIconBase } from '@web3uikit/icons';
+import { Ada } from '@web3uikit/icons';
 const { ConnectWallet, NFT } = lazily(() => import('@web3uikit/ui'));
 export const App = () => {
     console.log(Ada);
@@ -22,7 +22,9 @@ export const App = () => {
                                 margin: '20px',
                             }}
                         >
-                            <Ada fill="#000" size={20} />
+                            <Ada
+                                style={{ fontSize: '100px', color: 'black' }}
+                            />
                             <Logo theme="default" color="white" />
                             <Button
                                 size="large"

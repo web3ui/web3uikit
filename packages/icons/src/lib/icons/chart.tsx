@@ -1,35 +1,30 @@
-import { FC } from 'react';
-import { TIconProps } from '../type';
-const ChartIcon: FC<TIconProps> = ({
-    fill = 'currentColor',
-    size = 18,
-    style,
-}) => (
+// Auto-generated file created by svgr-cli source svg-template.js
+// Run pnpm icons:create to update
+// Do not edit
+import { SVGProps } from 'react';
+import { SVGRProps } from '../type';
+const SvgChart = ({
+    title,
+    titleId,
+    ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="none"
-        height={size}
+        fill="currentColor"
         viewBox="0 0 24 24"
-        width={size}
         xmlns="http://www.w3.org/2000/svg"
-        style={style}
+        width="1em"
+        height="1em"
+        aria-labelledby={titleId}
+        {...props}
     >
-        <title>chart icon</title>
-        <path d="M4 4H5.68421V20H4V4Z" fill={fill} />
-        <path d="M20 11.2V8.8L6.52632 8.8V11.2L20 11.2Z" fill={fill} />
+        {title ? <title id={titleId}>{title}</title> : null}
         <path
-            d="M13.2632 7.2V4.8L6.52632 4.8L6.52632 7.2L13.2632 7.2Z"
-            fill={fill}
-        />
-        <path
-            d="M17.4737 12.8V15.2H6.52632L6.52632 12.8L17.4737 12.8Z"
-            fill={fill}
-        />
-        <path
-            d="M14.9474 19.2L14.9474 16.8L6.52632 16.8V19.2H14.9474Z"
-            fill={fill}
+            d="M4 4h1.684v16H4V4ZM20 11.2V8.8H6.526v2.4H20ZM13.263 7.2V4.8H6.526v2.4h6.737ZM17.474 12.8v2.4H6.526v-2.4h10.948ZM14.947 19.2v-2.4h-8.42v2.4h8.42Z"
+            fill="currentColor"
         />
     </svg>
 );
-export default ChartIcon;
+
+export default SvgChart;

@@ -1,27 +1,30 @@
-import { FC } from 'react';
-import { TIconProps } from '../type';
-const ExclamationIcon: FC<TIconProps> = ({
-    fill = 'currentColor',
-    size = 18,
-    style,
-}) => (
+// Auto-generated file created by svgr-cli source svg-template.js
+// Run pnpm icons:create to update
+// Do not edit
+import { SVGProps } from 'react';
+import { SVGRProps } from '../type';
+const SvgExclamation = ({
+    title,
+    titleId,
+    ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="none"
-        height={size}
+        fill="currentColor"
         viewBox="0 0 24 24"
-        width={size}
         xmlns="http://www.w3.org/2000/svg"
-        style={style}
+        width="1em"
+        height="1em"
+        aria-labelledby={titleId}
+        {...props}
     >
-        <title>exclamation icon</title>
+        {title ? <title id={titleId}>{title}</title> : null}
         <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21ZM11.9942 14.1048C12.8289 14.1048 13.5184 14.7944 13.5184 15.629C13.5184 16.5 12.8289 17.1532 11.9942 17.1532C11.1232 17.1532 10.47 16.5 10.47 15.629C10.47 14.7944 11.1232 14.1048 11.9942 14.1048ZM10.7966 12.9073L10.5426 7.97177C10.5426 7.71774 10.724 7.5 10.9781 7.5H12.974C13.2281 7.5 13.4095 7.71774 13.4095 7.97177L13.1555 12.9073C13.1555 13.125 12.9377 13.3065 12.72 13.3065H11.2321C11.0143 13.3065 10.7966 13.125 10.7966 12.9073Z"
-            fill={fill}
+            d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm-.006-6.895c.835 0 1.524.69 1.524 1.524a1.51 1.51 0 0 1-1.524 1.524c-.87 0-1.524-.653-1.524-1.524a1.51 1.51 0 0 1 1.524-1.524Zm-1.197-1.198-.254-4.935c0-.254.181-.472.435-.472h1.996c.254 0 .435.218.435.472l-.254 4.935c0 .218-.217.4-.435.4h-1.488c-.218 0-.435-.182-.435-.4Z"
+            fill="currentColor"
         />
     </svg>
 );
-export default ExclamationIcon;
+
+export default SvgExclamation;

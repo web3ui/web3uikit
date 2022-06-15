@@ -1,78 +1,57 @@
-import { FC } from 'react';
-import { TIconProps } from '../type';
-const EthIcon: FC<TIconProps> = ({
-    fill = 'currentColor',
-    size = 18,
-    style,
-}) => (
+// Auto-generated file created by svgr-cli source svg-template.js
+// Run pnpm icons:create to update
+// Do not edit
+import { SVGProps } from 'react';
+import { SVGRProps } from '../type';
+const SvgEth = ({
+    title,
+    titleId,
+    ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        id="Layer_x0020_1"
         xmlns="http://www.w3.org/2000/svg"
-        width={size}
-        height={size}
         viewBox="0 0 24 39.1"
-        style={style}
+        width="1em"
+        height="1em"
+        aria-labelledby={titleId}
+        {...props}
     >
-        <title>eth icon</title>
-        <g id="12">
-            <g id="Group_1522" data-name="Group 1522">
-                <path
-                    id="Path_1705"
-                    data-name="Path 1705"
-                    d="M383.762,0,383.5.891V26.756l.262.262,12.006-7.1Z"
-                    transform="translate(-371.776)"
-                    // fill={fill || '#343434'}
-                    fill={fill}
-                    fillOpacity="0.8"
-                />
-                <path
-                    id="Path_1706"
-                    data-name="Path 1706"
-                    d="M12.006,0,0,19.921l12.006,7.1V0Z"
-                    // fill={fill || '#8c8c8c'}
-                    fill={fill}
-                    fillOpacity="0.4"
-                />
-                <path
-                    id="Path_1707"
-                    data-name="Path 1707"
-                    d="M387.388,731.983l-.148.18v9.214l.148.432L399.4,724.89Z"
-                    transform="translate(-375.401 -702.709)"
-                    // fill={fill || '#3c3c3b'}
-                    fill={fill}
-                    fillOpacity="0.8"
-                />
-                <path
-                    id="Path_1708"
-                    data-name="Path 1708"
-                    d="M12.006,741.809v-9.826L0,724.89Z"
-                    transform="translate(0 -702.709)"
-                    // fill={fill || '#8c8c8c'}
-                    fill={fill}
-                    fillOpacity="0.4"
-                />
-                <path
-                    id="Path_1709"
-                    data-name="Path 1709"
-                    d="M392.07,484.884l12.006-7.1L392.07,472.33Z"
-                    transform="translate(-380.083 -457.875)"
-                    // fill={fill || '#141414'}
-                    fill={fill}
-                    fillOpacity="0.8"
-                />
-                <path
-                    id="Path_1710"
-                    data-name="Path 1710"
-                    d="M0,477.787l12.006,7.1V472.33Z"
-                    transform="translate(0 -457.875)"
-                    // fill={fill || '#393939'}
-                    fill={fill}
-                    fillOpacity="0.4"
-                />
-            </g>
+        {title ? <title id={titleId}>{title}</title> : null}
+        <g data-name="Group 1522">
+            <path
+                data-name="Path 1705"
+                d="m11.986 0-.262.891v25.865l.262.262 12.006-7.1Z"
+                fill="#343434"
+            />
+            <path
+                data-name="Path 1706"
+                d="M12.006 0 0 19.921l12.006 7.1V0Z"
+                fill="#8c8c8c"
+            />
+            <path
+                data-name="Path 1707"
+                d="m11.987 29.274-.148.18v9.214l.148.432 12.012-16.919Z"
+                fill="#3c3c3b"
+            />
+            <path
+                data-name="Path 1708"
+                d="M12.006 39.1v-9.826L0 22.181Z"
+                fill="#8c8c8c"
+            />
+            <path
+                data-name="Path 1709"
+                d="m11.987 27.009 12.006-7.1-12.006-5.454Z"
+                fill="#141414"
+            />
+            <path
+                data-name="Path 1710"
+                d="m0 19.912 12.006 7.1V14.455Z"
+                fill="#393939"
+            />
         </g>
     </svg>
 );
-export default EthIcon;
+
+export default SvgEth;

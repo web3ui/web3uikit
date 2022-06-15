@@ -1,28 +1,34 @@
-import { FC } from 'react';
-import { TIconProps } from '../type';
-const PlugIcon: FC<TIconProps> = ({
-    fill = 'currentColor',
-    size = 18,
-    style,
-}) => (
+// Auto-generated file created by svgr-cli source svg-template.js
+// Run pnpm icons:create to update
+// Do not edit
+import { SVGProps } from 'react';
+import { SVGRProps } from '../type';
+const SvgPlug = ({
+    title,
+    titleId,
+    ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="none"
-        height={size}
+        fill="currentColor"
         viewBox="0 0 24 24"
-        width={size}
         xmlns="http://www.w3.org/2000/svg"
-        style={style}
+        width="1em"
+        height="1em"
+        aria-labelledby={titleId}
+        {...props}
     >
-        <title>plug icon</title>
+        {title ? <title id={titleId}>{title}</title> : null}
         <path
-            d="M5.086 19.6986C0.971332 15.4551 0.971332 8.54493 5.086 4.30145L5.3783 4H18.6217L18.914 4.30145C23.0287 8.54493 23.0287 15.4551 18.914 19.6986L18.6217 20H5.3783L5.086 19.6986ZM6.23271 6.08696C3.28724 9.42609 3.28724 14.5739 6.23271 17.913H17.7673C20.7128 14.5739 20.7128 9.42609 17.7673 6.08696H6.23271Z"
-            fill={fill}
+            d="M5.086 19.699C.971 15.455.971 8.545 5.086 4.3L5.378 4h13.244l.292.301c4.115 4.244 4.115 11.154 0 15.398l-.292.301H5.378l-.292-.301ZM6.233 6.087c-2.946 3.34-2.946 8.487 0 11.826h11.534c2.946-3.34 2.946-8.487 0-11.826H6.233Z"
+            fill="currentColor"
         />
-        <path d="M9 8H7V13H9V8Z" fill={fill} />
-        <path d="M14 14H10V16H14V14Z" fill={fill} />
-        <path d="M17 8H15V13H17V8Z" fill={fill} />
+        <path
+            d="M9 8H7v5h2V8ZM14 14h-4v2h4v-2ZM17 8h-2v5h2V8Z"
+            fill="currentColor"
+        />
     </svg>
 );
-export default PlugIcon;
+
+export default SvgPlug;

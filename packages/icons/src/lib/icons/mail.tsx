@@ -1,33 +1,34 @@
-import { FC } from 'react';
-import { TIconProps } from '../type';
-const MailIcon: FC<TIconProps> = ({
-    fill = 'currentColor',
-    size = 18,
-    style,
-}) => (
+// Auto-generated file created by svgr-cli source svg-template.js
+// Run pnpm icons:create to update
+// Do not edit
+import { SVGProps } from 'react';
+import { SVGRProps } from '../type';
+const SvgMail = ({
+    title,
+    titleId,
+    ...props
+}: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="none"
-        height={size}
+        fill="currentColor"
         viewBox="0 0 24 24"
-        width={size}
         xmlns="http://www.w3.org/2000/svg"
-        style={style}
+        width="1em"
+        height="1em"
+        aria-labelledby={titleId}
+        {...props}
     >
-        <title>mail icon</title>
+        {title ? <title id={titleId}>{title}</title> : null}
         <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M4.64373 5.57746C4.07661 5.57746 3.60925 6.0356 3.60925 6.59155V17.4085C3.60925 17.9644 4.07661 18.4225 4.64373 18.4225H19.3563C19.9234 18.4225 20.3907 17.9644 20.3907 17.4085V6.59155C20.3907 6.0356 19.9234 5.57746 19.3563 5.57746H4.64373ZM2.00007 6.59155C2.00007 5.1644 3.18788 4 4.64373 4H19.3563C20.8121 4 21.9999 5.1644 21.9999 6.59155V17.4085C21.9999 18.8356 20.8121 20 19.3563 20H4.64373C3.18788 20 2.00007 18.8356 2.00007 17.4085V6.59155Z"
-            fill={fill}
+            d="M4.644 5.577a1.03 1.03 0 0 0-1.035 1.015v10.817a1.03 1.03 0 0 0 1.035 1.014h14.712a1.03 1.03 0 0 0 1.035-1.014V6.591a1.03 1.03 0 0 0-1.035-1.015H4.644ZM2 6.592C2 5.164 3.188 4 4.644 4h14.712C20.812 4 22 5.164 22 6.592v10.817C22 18.835 20.812 20 19.356 20H4.644C3.188 20 2 18.836 2 17.409V6.591Z"
+            fill="currentColor"
         />
         <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M2.14551 6.13924C2.40034 5.78238 2.90203 5.69559 3.26606 5.94539L12 11.9386L20.7339 5.94539C21.098 5.69559 21.5997 5.78238 21.8545 6.13924C22.1093 6.4961 22.0208 6.9879 21.6567 7.2377L12.4614 13.5476C12.1844 13.7377 11.8156 13.7377 11.5386 13.5476L2.34326 7.2377C1.97922 6.9879 1.89069 6.4961 2.14551 6.13924Z"
-            fill={fill}
+            d="M2.146 6.14a.815.815 0 0 1 1.12-.195L12 11.94l8.734-5.994a.815.815 0 0 1 1.12.194.779.779 0 0 1-.197 1.099l-9.196 6.31a.818.818 0 0 1-.922 0l-9.196-6.31a.779.779 0 0 1-.197-1.099Z"
+            fill="currentColor"
         />
     </svg>
 );
-export default MailIcon;
+
+export default SvgMail;

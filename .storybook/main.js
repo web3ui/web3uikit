@@ -10,10 +10,7 @@ require('fs').mkdirSync(previewFolder, { recursive: true });
 /** @type {import('@storybook/builder-vite').StorybookViteConfig} */
 module.exports = {
     stories: glob('packages/**/*.stories.@(js|jsx|ts|tsx)', {
-        ignore: [
-            'packages/**/node_modules/**/*',
-            'packages/**/Icon.stories.tsx',
-        ],
+        ignore: ['packages/**/node_modules/**/*'],
         onlyFiles: true,
         absolute: true,
     }),

@@ -11,6 +11,7 @@ const Icon: React.FC<IconProps> = ({
     size = 18,
     svg,
     style,
+    title,
     ...props
 }) => {
     const getIcon = (
@@ -24,7 +25,11 @@ const Icon: React.FC<IconProps> = ({
         return collection[key](fill, size, style);
     };
 
-    return <StyledIconDiv {...props}>{getIcon(fill, size, svg, style)}</StyledIconDiv>;
+    return (
+        <StyledIconDiv {...props} title={title}>
+            {getIcon(fill, size, svg, style)}
+        </StyledIconDiv>
+    );
 };
 
 export default Icon;

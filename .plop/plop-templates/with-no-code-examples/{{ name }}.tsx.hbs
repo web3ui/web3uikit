@@ -1,0 +1,18 @@
+import React from 'react';
+import { {{ getInterface name }} } from './types';
+import styles from './{{ name }}.styles'
+
+const { DivStyled } = styles;
+
+export const {{ name }}: React.FC<{{ getInterface name }}> = () => {
+  return (
+    <DivStyled 
+      className="{{ name }}"
+      data-testid="test-{{ name }}"
+    >
+    </DivStyled>
+  );
+
+};
+
+export default {{ name }};

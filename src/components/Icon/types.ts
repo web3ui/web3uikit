@@ -21,4 +21,9 @@ export interface IconProps {
      * CSS style props
      */
     style?: React.CSSProperties;
+
+    /**
+     * default HTML title prop
+     */
+    title?: string;
 }

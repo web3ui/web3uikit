@@ -33,7 +33,7 @@ const DynamicText: FC<TypographyProps> = ({
     iconSize,
     italic,
     monospace,
-    onCopy = () => {},
+    onCopy,
     variant = 'body16',
     ...props
 }) => {
@@ -46,8 +46,8 @@ const DynamicText: FC<TypographyProps> = ({
             {copyable && (
                 <CopyButton
                     iconSize={iconSize}
-                    text={`${children}`}
                     onCopy={onCopy}
+                    text={`${children}`}
                 />
             )}
         </Tag>
@@ -56,8 +56,8 @@ const DynamicText: FC<TypographyProps> = ({
 
 const Typography = styled(DynamicText)`
     ${(p) => getTypographyStyle(p)};
-    position: relative;
     margin: 0;
+    position: relative;
 `;
 
 export default Typography;

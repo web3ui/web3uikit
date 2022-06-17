@@ -70,6 +70,11 @@ const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
             ${(p) => !p?.state && `color: ${color.blue};`}
         }
     }
+    :not(&:focus-within) {
+        &.input_filled {
+            outline-color: ${color.blueSky} !important;
+        }
+    }
 
     &:focus-within,
     &.input_filled {
@@ -129,6 +134,7 @@ const InputStyled = styled.input<Pick<InputProps, 'customInput'>>`
     ${(p) => p.customInput && 'width: 0px; height:0px;'}
 
     &:focus,
+    &:placeholder-shown,
     .input_filled & {
         + label {
             font-size: 14px;

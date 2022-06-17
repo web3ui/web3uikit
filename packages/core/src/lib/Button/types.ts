@@ -54,7 +54,7 @@ export interface ButtonProps {
     /**
      * set an icon to show inside the button
      */
-    icon?: React.ReactNode;
+    icon?: JSX.Element;
 
     /**
      * set an icon position, or maybe show only the icon

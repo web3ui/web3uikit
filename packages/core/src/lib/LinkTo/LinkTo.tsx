@@ -17,9 +17,17 @@ const LinkTo: React.FC<LinkToProps> = ({
         <SpanStyledFlex iconLayout={iconLayout} data-testid="test-link-flex">
             {type !== 'internal' &&
                 (type === 'email' ? (
-                    <Mail fill={color.blue} size={14} />
+                    <Mail
+                        fill={color.blue}
+                        fontSize={24}
+                        style={{ marginTop: 'auto' }}
+                    />
                 ) : (
-                    <Link fill={color.blue} size={14} />
+                    <Link
+                        fill={color.blue}
+                        fontSize={24}
+                        style={{ marginTop: 'auto' }}
+                    />
                 ))}
             <SpanStyledText data-testid="test-link-text">
                 {text || address}

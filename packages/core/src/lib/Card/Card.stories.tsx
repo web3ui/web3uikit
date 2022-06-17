@@ -126,6 +126,7 @@ ProPlan.args = {
             <div
                 style={{
                     display: 'flex',
+                    alignItems: 'center',
                     fontSize: '12px',
                     color: color.grey,
                 }}
@@ -136,6 +137,7 @@ ProPlan.args = {
             <div
                 style={{
                     display: 'flex',
+                    alignItems: 'center',
                     fontSize: '12px',
                     color: color.grey,
                 }}
@@ -146,6 +148,7 @@ ProPlan.args = {
             <div
                 style={{
                     display: 'flex',
+                    alignItems: 'center',
                     fontSize: '12px',
                     color: color.grey,
                 }}
@@ -156,6 +159,7 @@ ProPlan.args = {
             <div
                 style={{
                     display: 'flex',
+                    alignItems: 'center',
                     fontSize: '12px',
                     color: color.grey,
                 }}
@@ -166,6 +170,7 @@ ProPlan.args = {
             <div
                 style={{
                     display: 'flex',
+                    alignItems: 'center',
                     fontSize: '12px',
                     color: color.grey,
                 }}

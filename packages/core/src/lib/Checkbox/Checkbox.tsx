@@ -39,7 +39,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
         >
             {layout === 'box' && (
                 <span className="after">
-                    <Check fill="white" />
+                    <Check fill="#fff" />
                 </span>
             )}
 

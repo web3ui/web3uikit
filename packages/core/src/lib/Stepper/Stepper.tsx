@@ -72,9 +72,9 @@ const Stepper: React.FC<StepperProps> = ({
 
     const renderPreloader = () => (
         <DivStyled>
-            <H2Styled id="stepper-load-title" data-testid="test-stepper_title">
-                <Typography children={'Just one sec...'} variant={'h2'} />
-            </H2Styled>
+            <div id="stepper-load-title" data-testid="test-stepper_title">
+                <Typography children={'Just one sec...'} variant="h2" />
+            </div>
             <Loading size={20} spinnerColor={color.green} />
         </DivStyled>
     );
@@ -120,7 +120,7 @@ const Stepper: React.FC<StepperProps> = ({
                         {activeStep <= Number(index + 1) ? (
                             Number(index + 1)
                         ) : (
-                            <Check fill={color.green} />
+                            <Check fill={color.green} fontSize={15} />
                         )}
                     </ListItemStyled>
 

@@ -37,8 +37,9 @@ const Dropdown: React.FC<IDropdown> = ({
     ...props
 }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedIndex, setSelectedIndex] =
-        useState<number | undefined>(defaultOptionIndex);
+    const [selectedIndex, setSelectedIndex] = useState<number | undefined>(
+        defaultOptionIndex,
+    );
     useEffect(() => {
         if (isDisabled) {
             setIsOpen(false);
@@ -157,14 +158,14 @@ const Dropdown: React.FC<IDropdown> = ({
                     {dropdownArrowType === 'normal' ? (
                         isOpen ? (
                             <ChevronUp
-                                size={24}
+                                fontSize={24}
                                 style={{
                                     fill: 'currentColor',
                                 }}
                             />
                         ) : (
                             <ChevronDown
-                                size={24}
+                                fontSize={24}
                                 style={{
                                     fill: 'currentColor',
                                 }}
@@ -172,14 +173,14 @@ const Dropdown: React.FC<IDropdown> = ({
                         )
                     ) : isOpen ? (
                         <TriangleUp
-                            size={24}
+                            fontSize={24}
                             style={{
                                 fill: 'currentColor',
                             }}
                         />
                     ) : (
                         <TriangleDown
-                            size={24}
+                            fontSize={24}
                             style={{
                                 fill: 'currentColor',
                             }}

@@ -608,7 +608,7 @@ const SvgDoge = ({
                     />
                     <path
                         data-name="Line 1"
-                        fill="currentColor"
+                        fill="none"
                         d="m5.144 10.727-1.617-1.51"
                     />
                     <path

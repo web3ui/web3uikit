@@ -31,12 +31,12 @@ const Tag: React.FC<TagProps> = ({
             {...props}
         >
             {theme === 'status' && active && (
-                <Checkmark fill="inherit" size={16} />
+                <Checkmark fill="inherit" fontSize={12} />
             )}
             <strong data-testid="test-tag-text">{text}</strong>
             {hasCancel && (
                 <SpanStyled onClick={onCancelClick}>
-                    <Cross fill={colors.blue} size={16} />
+                    <Cross fill={colors.blue} fontSize={10} />
                 </SpanStyled>
             )}
         </TagStyled>

@@ -20,10 +20,7 @@ const SvgTriangleDown = ({
         {...props}
     >
         {title ? <title id={titleId}>{title}</title> : null}
-        <path
-            d="m11.646 16.646-4.792-4.792A.5.5 0 0 1 7.207 11h9.586a.5.5 0 0 1 .353.854l-4.792 4.792a.5.5 0 0 1-.708 0Z"
-            fill="currentColor"
-        />
+        <path d="m11.646 16.646-4.792-4.792A.5.5 0 0 1 7.207 11h9.586a.5.5 0 0 1 .353.854l-4.792 4.792a.5.5 0 0 1-.708 0z" />
     </svg>
 );
 

@@ -40,7 +40,7 @@ Default.args = {
         },
     ],
     label: 'Server: ',
-    icon: <Download />,
+    icon: <Download fontSize={24} />,
     isDisabled: false,
 };
 
@@ -62,7 +62,7 @@ ControlledState.args = {
         },
     ],
     label: 'Server: ',
-    icon: <Download />,
+    icon: <Download fontSize={24} />,
     selectedState: 0,
 };
 
@@ -85,7 +85,7 @@ NonFixedLabel.args = {
     ],
     label: 'Server: ',
     isLabelFixed: false,
-    icon: <Download />,
+    icon: <Download fontSize={24} />,
 };
 
 export const Iconless = Template.bind({});

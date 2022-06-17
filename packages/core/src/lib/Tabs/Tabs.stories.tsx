@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import TabList from './TabsList';
-import { MessageCircle, Bell, List, Grid } from '@web3uikit/icons';
+import { MessageCircle, Bell, List, Grid, Plus } from '@web3uikit/icons';
 import Button from '../Button/Button';
 import { Tab } from '.';
 
@@ -24,7 +24,7 @@ TabBar.args = {
                             display: 'flex',
                         }}
                     >
-                        <MessageCircle fill="black" size={22} />{' '}
+                        <MessageCircle fill="black" fontSize={22} />{' '}
                         <span style={{ paddingLeft: '4px' }}>Freinds </span>
                     </div>
                 }
@@ -39,14 +39,14 @@ TabBar.args = {
                             display: 'flex',
                         }}
                     >
-                        <Bell fill="black" size={22} />
+                        <Bell fill="black" fontSize={22} />
                         <span style={{ paddingLeft: '4px' }}>Alerts </span>
                     </div>
                 }
                 tabKey={2}
             >
                 <Button
-                    icon={'plus'}
+                    icon={<Plus />}
                     text="Add New Alert"
                     theme="primary"
                     type="button"
@@ -99,14 +99,14 @@ BulbWithIcon.args = {
     children: (
         <TabList tabStyle="bulbUnion" defaultActiveKey={1}>
             <TabList.Tab
-                tabName={<Grid fill="black" size={16} />}
+                tabName={<Grid fill="black" fontSize={16} />}
                 tabKey={1}
                 lineHeight={0}
             >
                 <div>This is Card 1</div>
             </TabList.Tab>
             <TabList.Tab
-                tabName={<List fill="black" size={16} />}
+                tabName={<List fill="black" fontSize={16} />}
                 lineHeight={0}
                 tabKey={2}
             >
@@ -121,14 +121,14 @@ VerticalBulbs.args = {
     children: (
         <TabList tabStyle="bulbUnion" isVertical={true}>
             <TabList.Tab
-                tabName={<Grid fill="black" size={16} />}
+                tabName={<Grid fill="black" fontSize={16} />}
                 tabKey={1}
                 lineHeight={0}
             >
                 <div>This is Card 1</div>
             </TabList.Tab>
             <TabList.Tab
-                tabName={<List fill="black" size={16} />}
+                tabName={<List fill="black" fontSize={16} />}
                 lineHeight={0}
                 tabKey={2}
             >

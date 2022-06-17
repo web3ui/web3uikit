@@ -56,9 +56,9 @@ const CopyButton: FC<CopyButtonProps> = ({
             {...props}
         >
             {value ? (
-                <Check fill={color.green} size={iconSize} />
+                <Check fill={color.green} fontSize={iconSize} />
             ) : (
-                <Copy fill={color.blue} size={iconSize} />
+                <Copy fill={color.blue} fontSize={iconSize} />
             )}
         </ButtonStyled>
     );

@@ -42,7 +42,7 @@ PrimaryWithIcon.args = {
     text: 'Primary with icon',
     theme: 'primary',
     type: 'button',
-    icon: <Plus size={52} />,
+    icon: <Plus fontSize="5px" height={'10px'} width={'10px'} />,
 };
 
 export const PrimaryWithIconAfter = Template.bind({});
@@ -51,7 +51,7 @@ PrimaryWithIconAfter.args = {
     text: 'Primary with icon',
     theme: 'primary',
     type: 'button',
-    icon: <Plus size={24} />,
+    icon: <Plus fontSize={2} />,
     iconLayout: 'trailing',
 };
 

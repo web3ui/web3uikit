@@ -83,7 +83,7 @@ const Modal: React.FC<ModalProps> = ({
                                 radius={100}
                                 id={'modal-close-button'}
                                 data-testid={'modal-close-test-id'}
-                                icon={<Cross />}
+                                icon={<Cross fontSize={10} />}
                                 iconLayout={'icon-only'}
                                 onClick={
                                     onCloseButtonPressed

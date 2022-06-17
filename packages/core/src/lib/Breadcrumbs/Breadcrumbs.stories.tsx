@@ -20,7 +20,7 @@ One.args = {
         {
             breadcrumb: 'Moralis Demo App 1',
             path: '#',
-            icon: <Server size={20} fill="currentColor" />,
+            icon: <Server fontSize={20} fill="currentColor" />,
         },
     ],
     currentLocation: '#',
@@ -32,7 +32,7 @@ Two.args = {
         {
             breadcrumb: 'Moralis Demo App 1',
             path: '#',
-            icon: <Server size={20} fill="currentColor" />,
+            icon: <Server fontSize={20} fill="currentColor" />,
         },
         {
             breadcrumb: 'Details',
@@ -48,7 +48,7 @@ Three.args = {
         {
             breadcrumb: 'Moralis Demo App 1',
             path: 'demo',
-            icon: <Server size={20} fill="currentColor" />,
+            icon: <Server fontSize={20} fill="currentColor" />,
         },
         {
             breadcrumb: 'Details',
@@ -68,7 +68,7 @@ Four.args = {
         {
             breadcrumb: 'Moralis Demo App 1',
             path: '#',
-            icon: <Server size={20} fill="currentColor" />,
+            icon: <Server fontSize={20} fill="currentColor" />,
         },
         {
             breadcrumb: 'Details',

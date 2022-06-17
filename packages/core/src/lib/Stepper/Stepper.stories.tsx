@@ -42,7 +42,7 @@ Demo.args = {
 };
 
 export const PreLoadStep0 = Template.bind({});
-PreLoadStep0.args = { stepData: testStepData, step: 0 };
+PreLoadStep0.args = { step: 0, stepData: testStepData };
 
 export const StepsWithFooter = Template.bind({});
 StepsWithFooter.args = {

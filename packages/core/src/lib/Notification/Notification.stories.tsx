@@ -77,7 +77,9 @@ const HookTemplate: ComponentStory<typeof Notification> = () => {
                 />
                 <Button
                     text="Custom Icon"
-                    onClick={() => handleNewNotification('info', <Bell />)}
+                    onClick={() =>
+                        handleNewNotification('info', <Bell fontSize={20} />)
+                    }
                     isFullWidth={true}
                 />
             </div>

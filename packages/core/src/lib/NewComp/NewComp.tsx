@@ -54,9 +54,9 @@ const NewComp: React.FC<NewCompProps> = ({
             </TitleStyled>
             <SpanStyled>
                 {compState === 'greenLight' ? (
-                    <Checkmark fill={color.green} size={30} />
+                    <Checkmark fill={color.green} fontSize={20} />
                 ) : (
-                    <Cross fill={color.red} size={30} />
+                    <Cross fill={color.red} fontSize={20} />
                 )}
                 <HeadingStyled state={compState} data-testid="test-heading">
                     {compState === 'greenLight' ? textOn : textOff}

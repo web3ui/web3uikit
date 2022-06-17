@@ -10,7 +10,7 @@ const SvgTrending = ({
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
         data-testid="test-icon"
-        fill="currentColor"
+        fill="none"
         viewBox="0 0 24 14"
         xmlns="http://www.w3.org/2000/svg"
         width="1em"

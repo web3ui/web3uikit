@@ -1,6 +1,6 @@
 import { PopoverElementProps } from './types';
 import PopoverElementStyles from './PopoverElement.styles';
-import { Ada, Check } from '@web3uikit/icons';
+import { Check } from '@web3uikit/icons';
 
 const { DivContainerStyled, DivStyled, DivImageStyled, TextStyled } =
     PopoverElementStyles;
@@ -8,7 +8,7 @@ const { DivContainerStyled, DivStyled, DivImageStyled, TextStyled } =
 const PopoverElement: React.FC<PopoverElementProps> = ({
     backgroundColor = 'transparent',
     height,
-    icon = <Check />,
+    icon = <Check fontSize={20} />,
     iconColor = 'white',
     iconSize = 20,
     id,

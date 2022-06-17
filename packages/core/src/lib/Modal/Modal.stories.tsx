@@ -1,7 +1,13 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { color } from '@web3uikit/styles';
 import Modal from './Modal';
-import { Cloud, Download, Edit, Mail } from '@web3uikit/icons';
+import {
+    Cloud,
+    Download,
+    Edit,
+    Mail,
+    ArrowCircleRight,
+} from '@web3uikit/icons';
 import { Input } from '../Input';
 import { useArgs } from '@storybook/addons';
 import { Button } from '../Button';
@@ -50,7 +56,7 @@ Regular.args = {
     id: 'regular',
     title: (
         <div style={{ display: 'flex', gap: 10 }}>
-            <Edit size={28} fill={color.grey} />
+            <Edit fontSize={28} fill={color.grey} />
             <Typography variant="h3" color={color.grey}>
                 Edit Nickname
             </Typography>
@@ -71,7 +77,7 @@ VerticalCenter.args = {
     id: 'v-center',
     title: (
         <div style={{ display: 'flex', gap: 10 }}>
-            <Edit size={28} fill={color.grey} />
+            <Edit fontSize={28} fill={color.grey} />
             <Typography variant="h3" color={color.grey}>
                 Edit Nickname
             </Typography>
@@ -97,7 +103,7 @@ BorderedHeader.args = {
                 placeItems: 'center',
             }}
         >
-            <Cloud size={64} fill={color.blueDark2} />
+            <Cloud fontSize={64} stroke={color.blueDark} />
             <p>
                 This is a demo on how to use <em>headerHasBottomBorder</em>{' '}
                 props?
@@ -125,7 +131,7 @@ ButtonsDisabled.args = {
                 flexDirection: 'column',
             }}
         >
-            <Download size={64} fill={color.blueDark2} />
+            <Download fontSize={64} fill={color.blueDark2} />
             <p>Wait until the file is ready to be downloaded</p>
         </div>,
     ],
@@ -155,7 +161,7 @@ OneButtonDisabled.args = {
                 flexDirection: 'column',
             }}
         >
-            <Mail size={64} fill={color.blueDark2} />
+            <Mail fontSize={64} fill={color.blueDark2} />
             <Input
                 key={0}
                 onChange={(e) => console.log(e.target.value)}
@@ -249,7 +255,7 @@ MaxHeight.args = {
                 flexDirection: 'column',
             }}
         >
-            <Cloud size={64} fill={color.blueDark2} />
+            <Cloud fontSize={64} stroke={color.blueDark} />
             <p>Moralis web3uiKit will be PAMP!</p>
             <p>Moralis web3uiKit will be PAMP!</p>
             <p>Moralis web3uiKit will be PAMP!</p>
@@ -316,7 +322,7 @@ CustomCloseButton.args = {
                 flexDirection: 'column',
             }}
         >
-            <Cloud size={64} fill={color.blueDark2} />
+            <Cloud fontSize={64} stroke={color.blueDark} />
             <p>Proceed uploading?</p>
         </div>,
     ],
@@ -329,7 +335,7 @@ CustomCloseRoundButton.args = {
     isVisible: true,
     closeButton: (
         <Button
-            icon="arrowCircleRight"
+            icon={<ArrowCircleRight fontSize={24} />}
             iconLayout="icon-only"
             id="close"
             onClick={() => {}}
@@ -349,7 +355,7 @@ CustomCloseRoundButton.args = {
                 flexDirection: 'column',
             }}
         >
-            <Cloud size={64} fill={color.blueDark2} />
+            <Cloud fontSize={64} stroke={color.blueDark} />
             <p>Proceed uploading?</p>
         </div>,
     ],
@@ -369,7 +375,7 @@ NoTitle.args = {
                 flexDirection: 'column',
             }}
         >
-            <Cloud size={64} fill={color.blueDark2} />
+            <Cloud fontSize={64} stroke={color.blueDark} />
             <p>Proceed uploading?</p>
         </div>,
     ],
@@ -436,7 +442,7 @@ NoOverflow.args = {
                 flexDirection: 'column',
             }}
         >
-            <Cloud size={64} fill={color.blueDark2} />
+            <Cloud fontSize={64} stroke={color.blueDark} />
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                 eu posuere tortor. Maecenas ac suscipit lacus. Fusce at enim

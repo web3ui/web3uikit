@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { color } from '@web3uikit/styles';
-import { Ada, TriangleDown, TriangleUp } from '@web3uikit/icons';
+import { TriangleDown, TriangleUp } from '@web3uikit/icons';
 import { Illustration } from '../Illustrations';
 import SelectStyles from './Select.styles';
 import type { OptionProps, SelectProps } from './types';

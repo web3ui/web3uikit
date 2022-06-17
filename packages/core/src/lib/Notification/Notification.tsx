@@ -1,7 +1,7 @@
 import { NotificationProps, notifyType } from './types';
 import { useEffect, useState } from 'react';
 import { getNotificationColor } from './themes/themes';
-import { Ada, Check, Cross, Exclamation, Info } from '@web3uikit/icons';
+import { Checkmark, Cross, Exclamation, Info } from '@web3uikit/icons';
 import NotificationStyles from './Notification.styles';
 import { color } from '@web3uikit/styles';
 
@@ -18,7 +18,6 @@ const {
 const Notification: React.FC<NotificationProps> = ({
     dispatch,
     icon,
-    iconColor,
     id,
     message,
     title = 'New Message',
@@ -72,14 +71,14 @@ const Notification: React.FC<NotificationProps> = ({
     const getIcon = (): React.ReactElement => {
         if (icon) return icon;
         if (type === 'error' || type === 'warning') {
-            return <Exclamation fill={getIconColor(type)} />;
+            return <Exclamation fontSize={20} fill={getIconColor(type)} />;
         }
-        if (type === 'info') return <Info fill={getIconColor(type)} />;
-        return <Check fill={getIconColor(type)} />;
+        if (type === 'info')
+            return <Info fontSize={20} fill={getIconColor(type)} />;
+        return <Checkmark fontSize={20} fill={getIconColor(type)} />;
     };
 
     const getIconColor = (type: notifyType): string => {
-        if (iconColor) return iconColor;
         return getNotificationColor(type);
     };
 
@@ -105,7 +104,7 @@ const Notification: React.FC<NotificationProps> = ({
                     onClick={closeNotification}
                     data-testid={'test-notification-x'}
                 >
-                    <Cross size={24} fill={color.greyIcons} />
+                    <Cross fontSize={10} fill={color.greyIcons} />
                 </CloseWrapperStyled>
                 <SpanStyled data-testid={'test-notification-message'}>
                     {message}

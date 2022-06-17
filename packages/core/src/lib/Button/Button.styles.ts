@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
     coloredBlue,
     coloredGreen,
@@ -128,9 +128,8 @@ const iconOnlyBorderFix = (theme: string) => {
 };
 
 const getIconColor = (color: string) => {
-    return `
-    svg 
-        {
+    return css`
+        svg {
             fill: ${color};
         }
     `;

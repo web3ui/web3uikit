@@ -61,9 +61,9 @@ const Accordion: React.FC<AccordionProps> = ({
             >
                 <DivStyled>
                     {isOpen ? (
-                        <Minus fill={getThemeColor(theme)} />
+                        <Minus fill={getThemeColor(theme)} fontSize="2px" />
                     ) : (
-                        <Plus fill={getThemeColor(theme)} />
+                        <Plus fill={getThemeColor(theme)} fontSize="10px" />
                     )}
 
                     <H4Styled data-testid="test-accordion-title">

@@ -11,7 +11,7 @@ const SvgArrowCircleLeft = ({
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="currentColor"
+        fill="none"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         width="1em"

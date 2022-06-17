@@ -45,7 +45,7 @@ const Card: React.FC<CardProps> = ({
                         <Checkmark
                             data-testid={'check-test-id'}
                             fill={color.green}
-                            size={24}
+                            fontSize={24}
                         />
                     </AbsoluteIconStyled>
                 )}
@@ -58,7 +58,7 @@ const Card: React.FC<CardProps> = ({
                                     key="ttip-card"
                                     data-testid={'help-test-id'}
                                     fill={color.blue}
-                                    size={22}
+                                    fontSize={22}
                                 />,
                             ]}
                             content={tooltipText}

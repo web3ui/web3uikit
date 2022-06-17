@@ -3,9 +3,7 @@
     "icon": true,
     "titleProp": true,
     "removeViewBox": false,
-    "replaceAttrValues": {
-        "none": "currentColor"
-    },
+    "replaceAttrValues": {},
     "svgProps": {
         "data-testid": "test-icon"
     }

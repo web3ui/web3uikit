@@ -43,7 +43,7 @@ PopoverSelection.args = {
             width={260}
             text={'Testnet Server'}
             textSize={20}
-            icon={<Testnet fill={color.white} size={30} />}
+            icon={<Testnet fill={color.white} fontSize={20} />}
             iconSize={30}
             backgroundColor={'transparent'}
             textColor={color.white}
@@ -56,7 +56,7 @@ PopoverSelection.args = {
             text={'Mainnet Server'}
             textSize={20}
             iconSize={30}
-            icon={<Network fill={color.white} size={30} />}
+            icon={<Network fill={color.white} fontSize={20} />}
             backgroundColor={'transparent'}
             textColor={color.white}
             onClick={() => alert('Mainnet Server')}
@@ -69,12 +69,12 @@ PopoverSelection.args = {
             textSize={20}
             iconSize={30}
             backgroundColor={'transparent'}
-            icon={<Server fill={color.white} size={30} />}
+            icon={<Server fill={color.white} fontSize={20} />}
             textColor={color.white}
             onClick={() => alert('Local Devchain Server')}
         />,
     ],
-    parent: <HelpCircle key="3" fill={color.grey} size={50} />,
+    parent: <HelpCircle key="3" fill={color.grey} fontSize={50} />,
 };
 
 export const PopoverCustomPosition = Template.bind({});
@@ -89,7 +89,7 @@ PopoverCustomPosition.args = {
             width={260}
             text={'Testnet Server'}
             textSize={20}
-            icon={<Testnet fill={color.white} size={30} />}
+            icon={<Testnet fill={color.white} fontSize={20} />}
             iconSize={30}
             backgroundColor={'transparent'}
             textColor={color.white}
@@ -102,7 +102,7 @@ PopoverCustomPosition.args = {
             text={'Mainnet Server'}
             textSize={20}
             iconSize={30}
-            icon={<Network fill={color.white} size={30} />}
+            icon={<Network fill={color.white} fontSize={20} />}
             backgroundColor={'transparent'}
             textColor={color.white}
             onClick={() => alert('Mainnet Server')}
@@ -115,12 +115,12 @@ PopoverCustomPosition.args = {
             textSize={20}
             iconSize={30}
             backgroundColor={'transparent'}
-            icon={<Server fill={color.white} size={30} />}
+            icon={<Server fill={color.white} fontSize={20} />}
             textColor={color.white}
             onClick={() => alert('Local Devchain Server')}
         />,
     ],
-    parent: <HelpCircle key="3" fill={color.grey} size={50} />,
+    parent: <HelpCircle key="3" fill={color.grey} fontSize={50} />,
 };
 
 export const PopoverSelectionUser = Template.bind({});
@@ -133,7 +133,7 @@ PopoverSelectionUser.args = {
             width={260}
             text={'Account Settings'}
             textSize={20}
-            icon={<Cog fill={color.white} size={30} />}
+            icon={<Cog fill={color.white} fontSize={20} />}
             iconSize={30}
             backgroundColor={'transparent'}
             textColor={color.white}
@@ -146,7 +146,7 @@ PopoverSelectionUser.args = {
             text={'Support Page'}
             textSize={20}
             iconSize={30}
-            icon={<LifeRing fill={color.white} size={30} />}
+            icon={<LifeRing fill={color.white} fontSize={20} />}
             backgroundColor={'transparent'}
             textColor={color.white}
             onClick={() => alert('Support Page')}
@@ -160,10 +160,10 @@ PopoverSelectionUser.args = {
             iconSize={30}
             backgroundColor={'transparent'}
             iconColor={color.red}
-            icon={<LogOut fill={color.red} size={30} />}
+            icon={<LogOut fill={color.red} fontSize={20} />}
             textColor={color.red}
             onClick={() => alert('Logout')}
         />,
     ],
-    parent: <HelpCircle key="7" fill={color.grey} size={50} />,
+    parent: <HelpCircle key="7" fill={color.grey} fontSize={50} />,
 };

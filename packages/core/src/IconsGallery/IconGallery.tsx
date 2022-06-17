@@ -3,6 +3,7 @@ import * as Icons from '@web3uikit/icons';
 import { IPosition, notifyType } from '../lib/Notification/types';
 import { useState } from 'react';
 import * as styles from './iconGallery.styles';
+import { color } from '@web3uikit/styles';
 const { StyledDivGallery, StyledDivGrid, StyledDivIcon } = styles;
 
 const IconsGallery = () => {
@@ -13,7 +14,7 @@ const IconsGallery = () => {
                 key={Icon.name.slice(3)}
                 onClick={() => handleClick(Icon.name.slice(3), 'info')}
             >
-                <Icon fontSize={'50px'} color={'#000'} />
+                <Icon fontSize={30} color={color.red} />
             </StyledDivIcon>
         );
     });

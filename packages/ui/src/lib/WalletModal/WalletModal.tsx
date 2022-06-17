@@ -5,6 +5,7 @@ import { Button } from '@web3uikit/core';
 import connectors from './config';
 import { IWalletModalProps } from './types';
 import WalletModalStyles from './WalletModal.styles';
+import { Cross } from '@web3uikit/icons';
 
 const {
     GridItemStyled,
@@ -52,7 +53,7 @@ const WalletModal: FC<IWalletModalProps> = ({
                 <HeaderStyled>
                     <TitleStyled>Connect Wallet</TitleStyled>
                     <Button
-                        icon={'x'}
+                        icon={<Cross />}
                         iconLayout="icon-only"
                         theme="outline"
                         onClick={() => setIsOpened(!isOpened)}

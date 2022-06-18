@@ -1,0 +1,49 @@
+name: Updating the StoryBook Docs frontend
+on:
+    push:
+        branches:
+            - master
+jobs:
+    build:
+        name: Build, lint, test on ubuntu-latest and deploy
+
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v2
+
+            - name: Use Node ${{ matrix.node }}
+              uses: actions/setup-node@v2
+              with:
+                  node-version: ${{ matrix.node }}
+
+            - name: Check REACT_APP_MORALIS_APP_ID
+              run: echo "REACT_APP_MORALIS_APP_ID=${{ secrets.REACT_APP_MORALIS_APP_ID }}"
+
+            - name: Check NPM_TOKEN
+              run: echo "MORALIS_APP_ID=${{ secrets.NPM_TOKEN }}"
+
+            - name: Install
+              run: pnpm install
+
+            - name: Install Github Pages
+              run: pnpm add -D gh-pages
+
+            - name: Test
+              run: pnpm test --ci --coverage --maxWorkers=2 --updateSnapshot
+
+            - name: Check MORALIS_APP_ID
+              run: echo "MORALIS_APP_ID=${{ secrets.MORALIS_APP_ID }}"
+
+            - name: Build Storybook
+              run: pnpm build-storybook
+              env:
+                  STORYBOOK_MORALIS_APP_ID: ${{ secrets.STORYBOOK_MORALIS_APP_ID }}
+                  STORYBOOK_MORALIS_SERVER_URL: ${{ secrets.STORYBOOK_MORALIS_SERVER_URL }}
+
+            - name: Deploy
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./storybook-static

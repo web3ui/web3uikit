@@ -1,36 +1,29 @@
-name: release
-
-on:
-  - workflow_dispatch
-
+name: CI
+on: [push]
 jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-      - name: Setup Git
-        run: |
-          git config user.name "GitHub Bot"
-          git config user.email "gituser@example.com"
-      - run: yarn install --frozen-lockfile --prefer-offline
-      - name: Version
-        shell: bash
-        run: yarn nx affected --base=last-release --target=version
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Tag last-release
-        shell: bash
-        run: git tag -f last-release
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-          force: true
-          tags: true
+    build:
+        name: Build, lint, and test on Node ${{ matrix.node }} and ${{ matrix.os }}
+
+        runs-on: ${{ matrix.os }}
+        strategy:
+            matrix:
+                node: ['14.x', '16.x']
+                os: [ubuntu-latest, windows-latest, macOS-latest]
+
+        steps:
+            - name: Checkout repo
+              uses: actions/checkout@v2
+
+            - name: Use Node ${{ matrix.node }}
+              uses: actions/setup-node@v2
+              with:
+                  node-version: ${{ matrix.node }}
+
+            - name: Install
+              run: pnpm install --network-timeout 1000000
+
+            - name: Test
+              run: pnpm test --ci --coverage --maxWorkers=2 --updateSnapshot
+
+            - name: Build
+              run: pnpm build

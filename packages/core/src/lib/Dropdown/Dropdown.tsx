@@ -158,6 +158,8 @@ const Dropdown: React.FC<IDropdown> = ({
                     {dropdownArrowType === 'normal' ? (
                         isOpen ? (
                             <ChevronUp
+                                title="chevron up icon"
+                                titleId="dropdown chevron up icon"
                                 fontSize={24}
                                 style={{
                                     fill: 'currentColor',
@@ -166,6 +168,8 @@ const Dropdown: React.FC<IDropdown> = ({
                         ) : (
                             <ChevronDown
                                 fontSize={24}
+                                title="chevron down icon"
+                                titleId="dropdown chevron down icon"
                                 style={{
                                     fill: 'currentColor',
                                 }}
@@ -173,6 +177,8 @@ const Dropdown: React.FC<IDropdown> = ({
                         )
                     ) : isOpen ? (
                         <TriangleUp
+                            title="triangle up icon"
+                            titleId="dropdown triangle up icon"
                             fontSize={24}
                             style={{
                                 fill: 'currentColor',
@@ -180,6 +186,8 @@ const Dropdown: React.FC<IDropdown> = ({
                         />
                     ) : (
                         <TriangleDown
+                            title="triangle down icon"
+                            titleId="dropdown triangle down icon"
                             fontSize={24}
                             style={{
                                 fill: 'currentColor',

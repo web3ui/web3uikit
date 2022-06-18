@@ -94,7 +94,12 @@ const DatePicker: React.FC<DatePickerProps> = ({
             )}
 
             <SpanStyled data-testid="date-picker_icon">
-                <Calendar fill={color.greyDark} fontSize={24} />
+                <Calendar
+                    title="calendar icon"
+                    titleId="datepicker calendar icon"
+                    fill={color.greyDark}
+                    fontSize={24}
+                />
             </SpanStyled>
 
             {currentState === 'error' && (

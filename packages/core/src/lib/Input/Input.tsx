@@ -200,7 +200,14 @@ const Input: React.FC<InputProps> = ({
                     onClick={() => toggleHideInput()}
                     type="button"
                 >
-                    {isInputHidden ? <EyeClosed /> : <Eye />}
+                    {isInputHidden ? (
+                        <EyeClosed
+                            title="eye closed icon"
+                            titleId="input eye closed icon"
+                        />
+                    ) : (
+                        <Eye title="eye icon" titleId="input eye icon" />
+                    )}
                 </VisibilityIcon>
             )}
             {prefixIcon && iconPosition == 'end' && (

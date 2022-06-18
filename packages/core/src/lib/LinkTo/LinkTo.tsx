@@ -18,12 +18,16 @@ const LinkTo: React.FC<LinkToProps> = ({
             {type !== 'internal' &&
                 (type === 'email' ? (
                     <Mail
+                        title="mail icon"
+                        titleId="linkto mail icon"
                         fill={color.blue}
                         fontSize={24}
                         style={{ marginTop: 'auto' }}
                     />
                 ) : (
                     <Link
+                        title="link icon"
+                        titleId="linkto link icon"
                         fill={color.blue}
                         fontSize={24}
                         style={{ marginTop: 'auto' }}

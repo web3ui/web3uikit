@@ -44,6 +44,8 @@ const Card: React.FC<CardProps> = ({
                     <AbsoluteIconStyled position="topL">
                         <Checkmark
                             data-testid={'check-test-id'}
+                            title="checkmark icon"
+                            titleId="card checkmark icon"
                             fill={color.green}
                             fontSize={24}
                         />
@@ -56,6 +58,8 @@ const Card: React.FC<CardProps> = ({
                             children={[
                                 <HelpCircle
                                     key="ttip-card"
+                                    title="help circle icon"
+                                    titleId="card help circle icon"
                                     data-testid={'help-test-id'}
                                     fill={color.blue}
                                     fontSize={22}

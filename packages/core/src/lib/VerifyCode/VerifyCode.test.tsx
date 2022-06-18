@@ -1,11 +1,11 @@
 import { composeStories } from '@storybook/testing-react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import * as stories from './VerifyCode.stories';
-
+import { vi } from 'vitest';
 
 const { Default } = composeStories(stories);
 
-const testOnComplete = jest.fn();
+const testOnComplete = vi.fn();
 
 describe('Test VerifyCode component', () => {
     test('renders the component', () => {

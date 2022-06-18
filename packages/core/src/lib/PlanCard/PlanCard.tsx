@@ -38,7 +38,11 @@ const PlanCard: React.FC<IPlanCardProps> = ({
                 </Typography>
                 {description.map((feature, index) => (
                     <div key={index}>
-                        <Check fill={color.green} />
+                        <Check
+                            title="check icon"
+                            titleId="plan-card check icon"
+                            fill={color.green}
+                        />
                         <Typography
                             variant="caption14"
                             weight="semibold"

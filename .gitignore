@@ -3,3 +3,4 @@
 **/*.tsbuildinfo
 **/.DS_Store
 .env
+**/coverage

@@ -45,7 +45,14 @@ const CryptoCards: React.FC<CryptoCardProps> = ({
             </DivStyledInfo>
             <DivStyledButton>
                 <Button
-                    icon={settingsIcon || <Cog />}
+                    icon={
+                        settingsIcon || (
+                            <Cog
+                                title="cog icon"
+                                titleId="cryptoCards cog icon"
+                            />
+                        )
+                    }
                     onClick={onClick}
                     text={btnText}
                     theme="translucent"

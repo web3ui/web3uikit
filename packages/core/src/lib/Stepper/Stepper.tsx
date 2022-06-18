@@ -120,7 +120,12 @@ const Stepper: React.FC<StepperProps> = ({
                         {activeStep <= Number(index + 1) ? (
                             Number(index + 1)
                         ) : (
-                            <Check fill={color.green} fontSize={15} />
+                            <Check
+                                title="check icon"
+                                titleId="stepper check icon"
+                                fill={color.green}
+                                fontSize={15}
+                            />
                         )}
                     </ListItemStyled>
 

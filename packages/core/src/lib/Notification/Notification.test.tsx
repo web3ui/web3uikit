@@ -43,21 +43,21 @@ describe('Notification - Standard - Active - Regular Text - Regular Icon', () =>
 
     it('should render left icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${iconId}"] > div > svg`,
+            `[data-testid="${iconId}"]  > svg`,
         );
         expect(iconSVG).not.toBeNull();
     });
 
     it('should render close icon', () => {
         const closeSVGtitle = container.querySelector(
-            `[data-testid="${closeId}"] > div > svg > title`,
+            `[data-testid="${closeId}"]  > svg > title`,
         );
-        expect(closeSVGtitle?.innerHTML).toBe('x icon');
+        expect(closeSVGtitle?.innerHTML).toBe('cross icon');
     });
 
     it('should render correct', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${closeId}"] > div > svg`,
+            `[data-testid="${closeId}"]  > svg`,
         );
         expect(iconSVG).not.toBeNull();
     });
@@ -101,14 +101,14 @@ describe('Notification - Regular - Active - Custom Text - Regular Icon', () => {
 
     it('should render left icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${iconId}"] > div > svg`,
+            `[data-testid="${iconId}"]  > svg`,
         );
         expect(iconSVG).not.toBeNull();
     });
 
     it('should render close icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${closeId}"] > div > svg`,
+            `[data-testid="${closeId}"] > svg`,
         );
         expect(iconSVG).not.toBeNull();
     });
@@ -152,14 +152,14 @@ describe('Notification - Active - Custom Text - Custom Icon', () => {
 
     it('should render left icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${iconId}"] > div > svg`,
+            `[data-testid="${iconId}"]  > svg`,
         );
         expect(iconSVG).not.toBeNull();
     });
 
     it('should render close icon', () => {
         const iconSVG = container.querySelector(
-            `[data-testid="${closeId}"] > div > svg`,
+            `[data-testid="${closeId}"] > svg`,
         );
         expect(iconSVG).not.toBeNull();
     });

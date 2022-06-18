@@ -231,21 +231,27 @@ const Form: React.FC<FormProps> = ({
     };
 
     return (
-        <FormStyled onSubmit={formSubmitted} id={id} data-testid="test-form" {...props}>
+        <FormStyled
+            onSubmit={formSubmitted}
+            id={id}
+            data-testid="test-form"
+            {...props}
+        >
             {title && (
                 <H3Styled data-testid="test-form-title">{title}</H3Styled>
             )}
 
-            {data.map((input, i) => (
-                <div
-                    className="form-item"
-                    data-testclass="form-ele"
-                    data-testid={`form-ele-${i}`}
-                    key={`form-ele-${i}`}
-                >
-                    {renderInputType(input, i)}
-                </div>
-            ))}
+            {data &&
+                data.map((input, i) => (
+                    <div
+                        className="form-item"
+                        data-testclass="form-ele"
+                        data-testid={`form-ele-${i}`}
+                        key={`form-ele-${i}`}
+                    >
+                        {renderInputType(input, i)}
+                    </div>
+                ))}
 
             {customFooter ? (
                 <div className="customFooter">{customFooter}</div>

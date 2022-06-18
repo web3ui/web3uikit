@@ -23,9 +23,19 @@ const HideButton: FC<IHideButtonProps> = ({
             {...props}
         >
             {isHidden ? (
-                <EyeClosed fontSize={iconSize} fill={`${iconColor}`} />
+                <EyeClosed
+                    title="eye closed icon"
+                    titleId="hidebutton eye closed icon"
+                    fontSize={iconSize}
+                    fill={`${iconColor}`}
+                />
             ) : (
-                <Eye fontSize={iconSize} fill={`${iconColor}`} />
+                <Eye
+                    title="eye icon"
+                    titleId="hidebutton eye icon"
+                    fontSize={iconSize}
+                    fill={`${iconColor}`}
+                />
             )}
         </HideButtonStyled>
     );

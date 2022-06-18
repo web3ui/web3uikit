@@ -1,9 +1,9 @@
 {
-  "files": [],
-  "references": [
-    { "path": "packages/core" },
-    { "path": "packages/styles" },
-    { "path": "packages/ui" },
-    { "path": "packages/icons" }
-  ]
+    "files": [],
+    "references": [
+        { "path": "packages/core" },
+        { "path": "packages/styles" },
+        { "path": "packages/ui" },
+        { "path": "packages/icons" }
+    ]
 }

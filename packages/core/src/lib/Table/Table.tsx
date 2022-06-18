@@ -139,9 +139,17 @@ const Table: React.FC<TableProps> = ({
                             {col}
                             {sortField === key &&
                                 (order === 'asc' ? (
-                                    <TriangleUp fill={color.grey} />
+                                    <TriangleUp
+                                        title="triangle up icon"
+                                        titleId="table triangle up icon"
+                                        fill={color.grey}
+                                    />
                                 ) : (
-                                    <TriangleDown fill={color.grey} />
+                                    <TriangleDown
+                                        title="triangle down icon"
+                                        titleId="table triangle down icon"
+                                        fill={color.grey}
+                                    />
                                 ))}
                         </DivTableCell>
                     </>

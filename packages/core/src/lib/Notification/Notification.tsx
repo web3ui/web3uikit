@@ -71,11 +71,32 @@ const Notification: React.FC<NotificationProps> = ({
     const getIcon = (): React.ReactElement => {
         if (icon) return icon;
         if (type === 'error' || type === 'warning') {
-            return <Exclamation fontSize={20} fill={getIconColor(type)} />;
+            return (
+                <Exclamation
+                    title="exclamation icon"
+                    titleId="notification exclamation icon"
+                    fontSize={20}
+                    fill={getIconColor(type)}
+                />
+            );
         }
         if (type === 'info')
-            return <Info fontSize={20} fill={getIconColor(type)} />;
-        return <Checkmark fontSize={20} fill={getIconColor(type)} />;
+            return (
+                <Info
+                    title="info icon"
+                    titleId="notification info icon"
+                    fontSize={20}
+                    fill={getIconColor(type)}
+                />
+            );
+        return (
+            <Checkmark
+                title="checkmark icon"
+                titleId="notification checkmark icon"
+                fontSize={20}
+                fill={getIconColor(type)}
+            />
+        );
     };
 
     const getIconColor = (type: notifyType): string => {
@@ -104,7 +125,12 @@ const Notification: React.FC<NotificationProps> = ({
                     onClick={closeNotification}
                     data-testid={'test-notification-x'}
                 >
-                    <Cross fontSize={10} fill={color.greyIcons} />
+                    <Cross
+                        title="cross icon"
+                        titleId="notification cross icon"
+                        fontSize={10}
+                        fill={color.greyIcons}
+                    />
                 </CloseWrapperStyled>
                 <SpanStyled data-testid={'test-notification-message'}>
                     {message}

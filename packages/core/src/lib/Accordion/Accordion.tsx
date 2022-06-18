@@ -61,9 +61,19 @@ const Accordion: React.FC<AccordionProps> = ({
             >
                 <DivStyled>
                     {isOpen ? (
-                        <Minus fill={getThemeColor(theme)} fontSize="2px" />
+                        <Minus
+                            title="minus icon"
+                            titleId="accordion minus icon"
+                            fill={getThemeColor(theme)}
+                            fontSize="2px"
+                        />
                     ) : (
-                        <Plus fill={getThemeColor(theme)} fontSize="10px" />
+                        <Plus
+                            title="plus icon"
+                            titleId="accordion plus icon"
+                            fill={getThemeColor(theme)}
+                            fontSize="10px"
+                        />
                     )}
 
                     <H4Styled data-testid="test-accordion-title">
@@ -77,9 +87,17 @@ const Accordion: React.FC<AccordionProps> = ({
                     )}
                     {hasLockIcon &&
                         (isOpen ? (
-                            <LockOpen fill={getThemeColor(theme)} />
+                            <LockOpen
+                                title="lock open icon"
+                                titleId="accordion lock open icon"
+                                fill={getThemeColor(theme)}
+                            />
                         ) : (
-                            <LockClosed fill={getThemeColor(theme)} />
+                            <LockClosed
+                                title="lock closed icon"
+                                titleId="accordion lock closed icon"
+                                fill={getThemeColor(theme)}
+                            />
                         ))}
                     {tagText && (
                         <Tag text={tagText} color={theme} tone="dark" />

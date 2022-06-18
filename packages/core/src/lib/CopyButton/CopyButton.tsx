@@ -56,9 +56,19 @@ const CopyButton: FC<CopyButtonProps> = ({
             {...props}
         >
             {value ? (
-                <Check fill={color.green} fontSize={iconSize} />
+                <Check
+                    title="check icon"
+                    titleId="copybutton check icon"
+                    fill={color.green}
+                    fontSize={iconSize}
+                />
             ) : (
-                <Copy fill={color.blue} fontSize={iconSize} />
+                <Copy
+                    title="copy icon"
+                    titleId="copybutton copy icon"
+                    fill={color.blue}
+                    fontSize={iconSize}
+                />
             )}
         </ButtonStyled>
     );

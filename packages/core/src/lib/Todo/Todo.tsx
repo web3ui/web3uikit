@@ -69,7 +69,9 @@ const Todo: React.FC<TodoProps> = ({
                     <Button
                         type="submit"
                         disabled={!inputValue}
-                        icon={<Plus />}
+                        icon={
+                            <Plus title="plus icon" titleId="todo plus icon" />
+                        }
                         size="large"
                         text={buttonText}
                         theme="primary"

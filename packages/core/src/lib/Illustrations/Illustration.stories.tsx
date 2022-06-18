@@ -1,5 +1,5 @@
-
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { color } from '@web3uikit/styles';
 import Illustration from './Illustration';
 
 export default {
@@ -11,32 +11,46 @@ const Template: ComponentStory<typeof Illustration> = (args) => (
     <Illustration {...args} />
 );
 
-export const Ethereum = Template.bind({});
+const BackgroundColoredTemplate: ComponentStory<typeof Illustration> = (
+    args,
+) => (
+    <div
+        style={{
+            width: '90vw',
+            height: '90vh',
+            backgroundColor: `${color.blueSkyDark}`,
+        }}
+    >
+        <Illustration {...args} />
+    </div>
+);
+
+export const Ethereum = BackgroundColoredTemplate.bind({});
 Ethereum.args = {
     logo: 'ethereum',
 };
 
-export const Binance = Template.bind({});
+export const Binance = BackgroundColoredTemplate.bind({});
 Binance.args = {
     logo: 'binance',
 };
 
-export const Polygon = Template.bind({});
+export const Polygon = BackgroundColoredTemplate.bind({});
 Polygon.args = {
     logo: 'polygon',
 };
 
-export const Avalanche = Template.bind({});
+export const Avalanche = BackgroundColoredTemplate.bind({});
 Avalanche.args = {
     logo: 'avalanche',
 };
 
-export const Fantom = Template.bind({});
+export const Fantom = BackgroundColoredTemplate.bind({});
 Fantom.args = {
     logo: 'fantom',
 };
 
-export const Arbitrum = Template.bind({});
+export const Arbitrum = BackgroundColoredTemplate.bind({});
 Arbitrum.args = {
     logo: 'arbitrum',
 };

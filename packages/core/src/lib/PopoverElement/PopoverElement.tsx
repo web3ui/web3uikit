@@ -8,7 +8,13 @@ const { DivContainerStyled, DivStyled, DivImageStyled, TextStyled } =
 const PopoverElement: React.FC<PopoverElementProps> = ({
     backgroundColor = 'transparent',
     height,
-    icon = <Check fontSize={20} />,
+    icon = (
+        <Check
+            fontSize={20}
+            title="check icon"
+            titleId="popover element check icon"
+        />
+    ),
     iconColor = 'white',
     iconSize = 20,
     id,

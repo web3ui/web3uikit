@@ -1,8 +1,7 @@
-
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Checkbox.stories';
 import { render, screen, fireEvent } from '@testing-library/react';
-
+import { vi } from 'vitest';
 const {
     Box,
     BoxDisabled,
@@ -16,7 +15,7 @@ const {
 const labelTestID = 'test-checkbox-label';
 const inputTestID = 'test-checkbox-input';
 const textTestID = 'test-checkbox-text';
-const testEvent = jest.fn();
+const testEvent = vi.fn();
 
 test('Renders Checkbox - Box', () => {
     render(

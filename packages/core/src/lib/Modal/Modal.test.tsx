@@ -3,6 +3,7 @@ import Modal from './Modal';
 import { Cloud } from '@web3uikit/icons';
 import { color } from '@web3uikit/styles';
 import { ModalProps } from './types';
+import { vi } from 'vitest';
 
 const args: ModalProps = {
     id: 'regular',
@@ -49,7 +50,7 @@ test('Renders Modal', () => {
 
     const closeButton = header?.lastChild;
     expect(closeButton).not.toBeNull();
-    expect(closeButton?.textContent).toBe('x iconclick');
+    expect(closeButton?.textContent).toBe('cross iconclick');
 
     const cancelButton = footer?.firstChild;
     expect(cancelButton).not.toBeNull();
@@ -59,7 +60,7 @@ test('Renders Modal', () => {
 });
 
 test('Handle Cancel', () => {
-    const handleCancel = jest.fn();
+    const handleCancel = vi.fn();
 
     render(<Modal {...args} onCancel={handleCancel} />);
 
@@ -72,11 +73,11 @@ test('Handle Cancel', () => {
 });
 
 test('Handle Close', () => {
-    const handleClose = jest.fn();
+    const handleClose = vi.fn();
 
     render(<Modal {...args} onCloseButtonPressed={handleClose} />);
 
-    fireEvent.click(screen.getByText('x icon'));
+    fireEvent.click(screen.getByText('cross icon'));
 
     const modal = screen.getByTestId(modalTestId);
     expect(modal).not.toBeNull();

@@ -1,3 +1,7 @@
+import { initialize } from 'msw-storybook-addon';
+// Start Mock Service Worker
+initialize({ onUnhandledRequest: 'bypass' });
+
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {

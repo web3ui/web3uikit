@@ -54,9 +54,19 @@ const NewComp: React.FC<NewCompProps> = ({
             </TitleStyled>
             <SpanStyled>
                 {compState === 'greenLight' ? (
-                    <Checkmark fill={color.green} fontSize={20} />
+                    <Checkmark
+                        title="checkmark icon"
+                        titleId="newcomp checkmark icon"
+                        fill={color.green}
+                        fontSize={20}
+                    />
                 ) : (
-                    <Cross fill={color.red} fontSize={20} />
+                    <Cross
+                        title="cross icon"
+                        titleId="newcomp cross icon"
+                        fill={color.red}
+                        fontSize={20}
+                    />
                 )}
                 <HeadingStyled state={compState} data-testid="test-heading">
                     {compState === 'greenLight' ? textOn : textOff}

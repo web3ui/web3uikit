@@ -51,7 +51,12 @@ function renderList(
                     data-testid={'breadcrumbs-separator-test-id'}
                 >
                     {separator ?? (
-                        <ChevronRight fill="currentColor" fontSize={24} />
+                        <ChevronRight
+                            title="chevron right icon"
+                            titleId="breadcrumbs chevron right icon"
+                            fill="currentColor"
+                            fontSize={24}
+                        />
                     )}
                 </BreadcrumbsSeparator>,
             );

@@ -5,6 +5,7 @@
     "removeViewBox": false,
     "replaceAttrValues": {},
     "svgProps": {
-        "data-testid": "test-icon"
+        "data-testid": "test-icon",
+        "aria-hidden": "true"
     }
 }

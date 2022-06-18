@@ -2,7 +2,7 @@ import { Input, useCopyToClipboard, useNotification } from '../lib/index';
 import * as Icons from '@web3uikit/icons';
 import { IPosition, notifyType } from '../lib/Notification/types';
 import { useState } from 'react';
-import * as styles from './iconGallery.styles';
+import * as styles from './IconGallery.styles';
 import { color } from '@web3uikit/styles';
 const { StyledDivGallery, StyledDivGrid, StyledDivIcon } = styles;
 

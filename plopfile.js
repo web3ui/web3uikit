@@ -9,10 +9,13 @@ module.exports = (plop) => {
                 pattern: 'properCase',
             },
             {
-                type: 'input',
+                type: 'list',
                 name: 'subDirectory',
-                message:
-                    '🧙 : What subdirectory is the component in? (optional)',
+                message: '🧙 : What subdirectory is the component in?',
+                choices: [
+                    { name: '1.Core', value: 'core' },
+                    { name: '2.UI', value: 'ui' },
+                ],
             },
             {
                 type: 'list',
@@ -47,7 +50,6 @@ module.exports = (plop) => {
         ],
         actions: (data) => {
             data.name = plop.getHelper('properCase')(data.name);
-            data.subDirectory = plop.getHelper('properCase')(data.subDirectory);
             const basePath = `.plop/plop-templates/${
                 data.isBlank ? 'with-no-code-examples' : 'with-code-examples'
             }/`;
@@ -55,16 +57,15 @@ module.exports = (plop) => {
                 {
                     type: 'addMany',
                     destination:
-                        'src/components{{ getSubDirectoryPath subDirectory }}/{{ name }}',
+                        'packages/{{ subDirectory }}/src/lib/{{ name }}',
                     base: basePath,
                     templateFiles: `${basePath}/**`,
                 },
                 {
                     type: 'append',
-                    path: 'src/index.ts',
+                    path: 'packages/{{ subDirectory }}/src/lib/index.ts',
                     pattern: '/* PLOP_INJECT_EXPORT */',
-                    template:
-                        "export * from './components{{ getSubDirectoryPath subDirectory }}/{{ name }}';",
+                    template: "export * from './{{ name }}';",
                 },
             ];
         },

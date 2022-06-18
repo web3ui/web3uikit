@@ -10,3 +10,6 @@ export { default as resetCSS } from './reset';
 export * from './reset';
 
 export * from './StyledElements';
+
+export { default as rgbToHex } from './rgbToHex';
+export { default as HexToRgb } from './HexToRgb';

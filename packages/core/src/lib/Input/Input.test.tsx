@@ -3,10 +3,9 @@ import '@testing-library/jest-dom';
 import 'jest-styled-components';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Input.stories';
-import { color } from '@web3uikit/styles';
 import { vi } from 'vitest';
+import { color, rgbToHex } from '@web3uikit/styles';
 
-import rgbToHex from '../../utils/rgbToHex';
 import Input from './Input';
 
 const {

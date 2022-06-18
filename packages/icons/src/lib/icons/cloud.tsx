@@ -17,6 +17,7 @@ const SvgCloud = ({
         width="1em"
         height="1em"
         data-testid="test-icon"
+        aria-hidden="true"
         aria-labelledby={titleId}
         {...props}
     >

@@ -15,6 +15,7 @@ const SvgPlus = ({
         viewBox="0 0 24 24"
         fill="currentColor"
         data-testid="test-icon"
+        aria-hidden="true"
         aria-labelledby={titleId}
         {...props}
     >

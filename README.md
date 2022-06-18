@@ -24,13 +24,13 @@ If you need help with setting up the boilerplate or have other questions - don't
 ### 💿 Installation
 
 ```bash
-npm install web3uikit
+npm install @web3uikit/core @web3uikit/ui @web3uikit/icons
 ```
 
 or
 
 ```bash
-yarn add web3uikit
+yarn add  @web3uikit/core @web3uikit/ui @web3uikit/icons
 ```
 
 ### 🧰 Usage
@@ -40,17 +40,16 @@ import { CryptoCards, Button } from 'web3uikit';
 
 const App = () => (
     <>
-        <CryptoCards 
-            chain="ethereum" 
-            bgColor='blue' 
-            chainType='Network' 
-            onClick={console.log} 
+        <CryptoCards
+            chain="ethereum"
+            bgColor="blue"
+            chainType="Network"
+            onClick={console.log}
         />
         <Button theme="primary" type="button" text="Launch Dapp" />
     </>
 );
 ```
-
 
 ### ▲ Usage with Next.js
 

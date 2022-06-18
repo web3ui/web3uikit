@@ -15,6 +15,7 @@ const SvgLockClosed = ({
         viewBox="0 0 19 18"
         xmlns="http://www.w3.org/2000/svg"
         data-testid="test-icon"
+        aria-hidden="true"
         aria-labelledby={titleId}
         {...props}
     >

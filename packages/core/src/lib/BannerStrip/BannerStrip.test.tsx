@@ -1,9 +1,7 @@
-
 import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './BannerStrip.stories';
-import { color } from '@web3uikit/styles';
-import rgbToHex from '../../utils/rgbToHex';
+import { color, rgbToHex } from '@web3uikit/styles';
 
 const { Standard, StandardWithButton, Warning, Error, Success } =
     composeStories(stories);

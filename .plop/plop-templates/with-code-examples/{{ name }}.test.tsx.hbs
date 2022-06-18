@@ -1,14 +1,14 @@
 // importing boilerplate stuff
-
+import React from 'react';
 import { composeStories } from '@storybook/testing-react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import * as stories from './NewComp.stories';
+import * as stories from './{{ name }}.stories';
 
 // // importing fire event from RTL to mock a click event
 // import { fireEvent } from '@testing-library/react';
 
 // importing color and a testing tool to convert RGB to HEX
-import { color, rgbToHex } from '@web3uikit/styles';
+import {color,rgbToHex} from '@web3uikit/styles';
 
 // importing testID from button and icon
 import { buttonTestId } from '../Button/Button.test';

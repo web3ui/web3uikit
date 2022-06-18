@@ -19,7 +19,8 @@
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
         "analyze": "nx run example:analyze",
-        "icons:create": "nx run-many --target=icons:create --all --parallel --verbose=true"
+        "icons:create": "nx run-many --target=icons:create --all --parallel --verbose=true",
+        "new": "plop"
     },
     "dependencies": {
         "@babel/core": "^7.18.2",
@@ -58,6 +59,7 @@
         "jest-styled-components": "^7.0.8",
         "msw": "^0.42.1",
         "msw-storybook-addon": "^1.6.3",
+        "plop": "^3.1.1",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
         "react-lazily": "^0.9.1",

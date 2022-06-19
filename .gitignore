@@ -3,4 +3,5 @@
 **/*.tsbuildinfo
 **/.DS_Store
 .env
+/storybook-static/
 **/coverage

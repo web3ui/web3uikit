@@ -14,7 +14,11 @@ module.exports = {
         onlyFiles: true,
         absolute: true,
     }),
-    addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
+    addons: [
+        '@storybook/addon-links',
+        '@storybook/addon-essentials',
+        'msw-storybook-addon',
+    ],
     framework: '@storybook/react',
     staticDirs: ['../' + previewFolder],
     typescript: {

@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { MoralisProvider, useMoralis } from 'react-moralis';
 import { DecoratorFn } from '@storybook/react';
 import { default as MoralisType } from 'moralis/types';
 
 export const moralisContext: DecoratorFn = (Story) => {
-    const MORALIS_APP_ID = 'Ee6dXw6BMrIwvZCToiliDH2qZaIipi1RIN2ODI3v';
-    const MORALIS_SERVER_URL =
-        'https://inlxtebatbqn.usemoralis.com:2053/server';
+    const MORALIS_APP_ID = import.meta.env.STORYBOOK_MORALIS_APPLICATION_ID;
+    const MORALIS_SERVER_URL = import.meta.env.STORYBOOK_MORALIS_SERVER_URL;
 
     const Web3Initialize = () => {
         const {

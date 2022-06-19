@@ -114,7 +114,7 @@ const NFT: React.FC<INFTProps> = ({
                 </div>
                 <div id="nft-footer">
                     <Button
-                        icon={<Info fill={color.grey} />}
+                        icon={<Info fill={color.grey} fontSize={20} />}
                         isTransparent
                         iconColor={color.grey}
                         iconLayout="icon-only"

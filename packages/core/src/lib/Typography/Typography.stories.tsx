@@ -1,110 +1,85 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Typography from './Typography';
-
-import { color } from '@web3uikit/styles';
-import { NotificationProvider, useNotification } from '../Notification';
+import React from 'react';
 
 export default {
     title: '4.UI/Typography',
     component: Typography,
-    decorators: [
-        (Story) => (
-            <NotificationProvider>
-                <Story />
-            </NotificationProvider>
-        ),
-    ],
 } as ComponentMeta<typeof Typography>;
 
-const Demo: ComponentStory<typeof Typography> = () => {
-    return (
-        <div>
-            <Typography variant="h1">Headline 1</Typography>
-            <Typography variant="h2">Headline 2</Typography>
-            <Typography variant="h3">Headline 3</Typography>
-            <Typography variant="h4">Headline 4</Typography>
-            <Typography variant="subtitle1">Subtitle 1</Typography>
-            <Typography variant="subtitle2">Subtitle 2</Typography>
-            <Typography variant="body18" weight="semibold">
-                Body 18
-            </Typography>
-            <br />
-            <Typography variant="body18">Body 18</Typography>
-            <br />
-            <Typography variant="body18" color={color.red}>
-                Body 18 Red
-            </Typography>
-            <br />
-            <Typography variant="body16" weight="semibold">
-                Body 16
-            </Typography>
-            <br />
-            <Typography variant="body16">Body 16</Typography>
-            <br />
-            <Typography variant="body16" monospace>
-                Body 16 monospace
-            </Typography>
-            <br />
-            <Typography variant="body16" italic>
-                Body 16
-            </Typography>
-            <br />
-            <Typography variant="caption14" weight="semibold">
-                Caption 14
-            </Typography>
-            <br />
-            <Typography variant="caption14" weight="regular">
-                Caption 14
-            </Typography>
-            <br />
-            <Typography variant="caption14" weight="regular" monospace italic>
-                Caption 14 monospace
-            </Typography>
-            <br />
-            <Typography variant="caption12" weight="semibold">
-                Caption 12
-            </Typography>
-            <br />
-            <Typography variant="caption12" weight="regular" monospace>
-                Caption 12 monospace
-            </Typography>
-            <br />
-            <Typography variant="caption12" weight="550">
-                Weight 550
-            </Typography>
-            <br />
-        </div>
-    );
+const Template: ComponentStory<typeof Typography> = (args) => (
+    <Typography {...args} />
+);
+
+export const Heading1 = Template.bind({});
+Heading1.args = {
+    children: 'Typography H1',
+    variant: 'H1',
 };
 
-const Template: ComponentStory<typeof Typography> = (args) => {
-    const notify = useNotification();
-
-    return (
-        <Typography
-            {...args}
-            onCopy={() => {
-                notify({
-                    type: 'success',
-                    message: 'Copied to clipboard',
-                    title: 'New Notification',
-                    position: 'topR',
-                });
-            }}
-        />
-    );
+export const Heading2 = Template.bind({});
+Heading2.args = {
+    children: 'Typography H2',
+    variant: 'H2',
 };
 
-export const Regular = Demo.bind({});
+export const Heading3 = Template.bind({});
+Heading3.args = {
+    children: 'Typography H3',
+    variant: 'H3',
+};
 
-export const Text = Template.bind({});
-Text.args = {
-    children: 'Demo Text',
+export const Heading4 = Template.bind({});
+Heading4.args = {
+    children: 'Typography H4',
+    variant: 'H4',
+};
+
+export const Subtitle1 = Template.bind({});
+Subtitle1.args = {
+    children: 'Typography Subtitle1',
+    variant: 'subtitle1',
+};
+
+export const Subtitle2 = Template.bind({});
+Subtitle2.args = {
+    children: 'Typography Subtitle2',
+    variant: 'subtitle2',
+};
+
+export const Body18 = Template.bind({});
+Body18.args = {
+    children: 'Typography Body18',
+    variant: 'body18',
+};
+
+export const Body16 = Template.bind({});
+Body16.args = {
+    children: 'Typography Body16',
+    variant: 'body16',
+};
+
+export const Caption14 = Template.bind({});
+Caption14.args = {
+    children: 'Typography Caption14',
+    variant: 'caption14',
+};
+
+export const Caption12 = Template.bind({});
+Caption12.args = {
+    children: 'Typography Caption12',
+    variant: 'caption12',
+};
+
+export const Caption10 = Template.bind({});
+Caption10.args = {
+    children: 'Typography Caption10',
+    variant: 'caption10',
 };
 
 export const Copyable = Template.bind({});
 Copyable.args = {
-    children: 'Copyable Text 222',
+    children: 'Copyable Text to clipboard',
     copyable: true,
     variant: 'body18',
 };

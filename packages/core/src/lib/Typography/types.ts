@@ -58,7 +58,8 @@ export type variantType =
     | 'body16'
     | 'body18'
     | 'caption14'
-    | 'caption12';
+    | 'caption12'
+    | 'caption10';
 
 export type TStandardWeight =
     | 'semibold'

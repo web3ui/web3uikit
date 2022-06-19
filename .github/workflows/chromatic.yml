@@ -12,10 +12,10 @@ jobs:
         # Job steps
         steps:
             - name: Checkout repo
-            - uses: actions/checkout@v1
+              uses: actions/checkout@v1
 
             - name: Install pnpm
-            - uses: pnpm/action-setup@v2.2.2
+              uses: pnpm/action-setup@v2.2.2
               with:
                   version: 7
 

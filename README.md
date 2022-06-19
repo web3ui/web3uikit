@@ -33,6 +33,12 @@ or
 yarn add  @web3uikit/core @web3uikit/ui @web3uikit/icons
 ```
 
+ℹ️ Each of them can be installed separately.
+
+-   @web3uikit/core - Contains all the basic components such as Input, Button, Cards, Typography etc
+-   @web3uikit/icons - Contains all the Icons
+-   @web3uikit/ui - Contains all the web3 components such as Connect Button,NFT,NFT Balance etc
+
 ### 🧰 Usage
 
 ```jsx

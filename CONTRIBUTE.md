@@ -25,7 +25,7 @@ We have made a battle tested front end web3 stack for the roaring 20s
 -   Storybook: lets us build quickly in isolation and test props on the fly
 -   RTL: React Test Library makes testing easy
 -   Prettier makes our code look nice and helps with Pull Requests
--   Yarn is used to get reliable package management on Mac, PC & Lynx
+-   pnpm is used to get reliable package management on Mac, PC & Lynx
 
 &nbsp;
 
@@ -35,10 +35,11 @@ You want to get started? Follow these 3 simple steps
 
 -   Clone the web3uiKit repo https://github.com/web3ui/web3uikit
 -   Open a terminal window and `cd` to the project folder
--   Run `yarn` you may need to install Yarn globally first
+-   Run `pnpm install` you may need to install pnpm globally first
 -   Make a new branch, see BRANCH NAMING
--   Run `yarn storybook` and there you go, ready to code?
+-   Run `pnpm storybook` and there you go, ready to code?
 -   Not sure where to start, lets look at `NewComp` we made it specially for you
+-   Want to create a new component? run `pnpm new` to create boilerplate code.
 -   Still stuck? Checkout the onboarding video (bottom of this page)
 
 &nbsp;

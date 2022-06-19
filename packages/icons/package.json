@@ -17,8 +17,8 @@
         }
     },
     "scripts": {
-        "build": "npx @svgr/cli -d src/lib/icons src/lib/svgs --config-file src/lib/svgr-config.json --template src/lib/svg-template.js && vite build",
-        "icons:create": "npx @svgr/cli -d src/lib/icons src/lib/svgs --config-file src/lib/svgr-config.json --template src/lib/svg-template.js"
+        "build": "vite build",
+        "icons:create": "npx @svgr/cli --out-dir src/lib/icons src/lib/svgs --config-file src/lib/svgr-config.json --template src/lib/svg-template.js"
     },
     "peerDependencies": {
         "react": "^18.0.0",

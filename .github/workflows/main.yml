@@ -27,8 +27,8 @@ jobs:
             - name: Install
               run: pnpm install
 
-            - name: Test
-              run: pnpm test:coverage
-
             - name: Build
               run: pnpm build
+
+            - name: Test
+              run: pnpm test:coverage

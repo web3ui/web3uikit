@@ -19,7 +19,7 @@
     "scripts": {
         "build": "vite build",
         "test": "vitest run",
-        "test:coverage": "vitest run --coverage",
+        "test:coverage": "vitest run --coverage -u",
         "test:ui": "vitest --ui"
     },
     "peerDependencies": {

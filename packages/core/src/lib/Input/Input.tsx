@@ -55,7 +55,13 @@ const Input: React.FC<InputProps> = ({
     useEffect(() => setInvalidMessage(errorMessage), [errorMessage]);
 
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setCurrentValue(event.target.value);
+        if (currentValue && validation?.characterMaxLength) {
+            setCurrentValue(
+                event.target.value.slice(0, validation?.characterMaxLength),
+            );
+        } else {
+            setCurrentValue(event.target.value);
+        }
         onChange && onChange(event);
     };
 

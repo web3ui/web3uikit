@@ -13,6 +13,11 @@ jobs:
             - name: Checkout repo
               uses: actions/checkout@v2
 
+            - name: Install pnpm
+            - uses: pnpm/action-setup@v2.2.2
+              with:
+                  version: 7
+
             - name: Use Node ${{ matrix.node }}
               uses: actions/setup-node@v2
               with:
@@ -39,7 +44,7 @@ jobs:
             - name: Build Storybook
               run: pnpm build-storybook
               env:
-                  STORYBOOK_MORALIS_APP_ID: ${{ secrets.STORYBOOK_MORALIS_APP_ID }}
+                  STORYBOOK_MORALIS_APPLICATION_ID: ${{ secrets.STORYBOOK_MORALIS_APP_ID }}
                   STORYBOOK_MORALIS_SERVER_URL: ${{ secrets.STORYBOOK_MORALIS_SERVER_URL }}
 
             - name: Deploy

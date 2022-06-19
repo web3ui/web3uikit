@@ -55,6 +55,11 @@ Arbitrum.args = {
     logo: 'arbitrum',
 };
 
+export const Cronos = BackgroundColoredTemplate.bind({});
+Cronos.args = {
+    logo: 'cronos',
+};
+
 export const ComingSoon = Template.bind({});
 ComingSoon.args = {
     logo: 'comingSoon',

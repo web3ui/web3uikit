@@ -31,7 +31,7 @@ jobs:
               run: pnpm add -D gh-pages
 
             - name: Test
-              run: pnpm test --ci --coverage --maxWorkers=2 --updateSnapshot
+              run: pnpm test:coverage
 
             - name: Check MORALIS_APP_ID
               run: echo "MORALIS_APP_ID=${{ secrets.MORALIS_APP_ID }}"

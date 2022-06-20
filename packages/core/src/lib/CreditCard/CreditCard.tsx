@@ -10,6 +10,7 @@ import {
 } from './CreditCard.styles';
 import { Tooltip } from '../Tooltip';
 import { Button } from '../Button';
+import { Bin } from '@web3uikit/icons';
 
 const CreditCard: React.FC<CreditCardProps> = ({
     brand,
@@ -39,7 +40,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
                                     onClick={() => onRemove && onRemove()}
                                     isTransparent={true}
                                     theme={'secondary'}
-                                    icon={'bin'}
+                                    icon={<Bin fontSize={20} />}
                                     iconLayout={'icon-only'}
                                     size={'small'}
                                     iconColor={'red'}

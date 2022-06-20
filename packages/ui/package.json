@@ -39,8 +39,6 @@
         "react-blockies": "^1.4.1",
         "react-moralis": "^1.3.5",
         "moralis": "^1.8.0",
-        "@walletconnect/web3-provider": "^1.7.8",
-        "@moralisweb3/evm-wallet-connect-connector": "2.0.0-alpha.1",
-        "@moralisweb3/evm-api": "2.0.0-alpha.1"
+        "@walletconnect/web3-provider": "^1.7.8"
     }
 }

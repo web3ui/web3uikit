@@ -24,20 +24,20 @@ If you need help with setting up the boilerplate or have other questions - don't
 ### 💿 Installation
 
 ```bash
-npm install @web3uikit/core @web3uikit/ui @web3uikit/icons
+npm install @web3uikit/core @web3uikit/web3 @web3uikit/icons
 ```
 
 or
 
 ```bash
-yarn add  @web3uikit/core @web3uikit/ui @web3uikit/icons
+yarn add  @web3uikit/core @web3uikit/web3 @web3uikit/icons
 ```
 
 ℹ️ Each of them can be installed separately.
 
 -   @web3uikit/core - Contains all the basic components such as Input, Button, Cards, Typography etc
 -   @web3uikit/icons - Contains all the Icons
--   @web3uikit/ui - Contains all the web3 components such as Connect Button,NFT,NFT Balance etc
+-   @web3uikit/web3 - Contains all the web3 components such as Connect Button,NFT,NFT Balance etc
 
 ### 🧰 Usage
 

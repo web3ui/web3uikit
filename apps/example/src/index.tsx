@@ -6,7 +6,7 @@ const { Button, Logo, Typography, Avatar, BannerStrip, VerifyCode } = lazily(
     () => import('@web3uikit/core'),
 );
 import { Ada } from '@web3uikit/icons';
-const { ConnectWallet, NFT } = lazily(() => import('@web3uikit/ui'));
+const { ConnectWallet, NFT } = lazily(() => import('@web3uikit/web3'));
 export const App = () => {
     console.log(Ada);
     return (

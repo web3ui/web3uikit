@@ -1,5 +1,5 @@
 {
-    "name": "@web3uikit/ui",
+    "name": "@web3uikit/web3",
     "version": "0.1.0",
     "private": true,
     "sideEffects": false,

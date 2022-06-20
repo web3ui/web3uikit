@@ -3,7 +3,7 @@
     "references": [
         { "path": "packages/core" },
         { "path": "packages/styles" },
-        { "path": "packages/ui" },
+        { "path": "packages/web3" },
         { "path": "packages/icons" }
     ]
 }

@@ -14,7 +14,7 @@ module.exports = (plop) => {
                 message: '🧙 : What subdirectory is the component in?',
                 choices: [
                     { name: '1.Core', value: 'core' },
-                    { name: '2.UI', value: 'ui' },
+                    { name: '2.Web3', value: 'web3' },
                 ],
             },
             {

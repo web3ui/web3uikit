@@ -13,22 +13,25 @@ const TextAreaStyled = styled.textarea`
     padding: 16px 8px;
     position: relative;
     width: 100vw;
-
     color: ${color.blueDark};
     font-style: italic;
     overflow-y: hidden;
     white-space: pre;
     resize: none;
+    margin-right: 10px;
 `;
 
 const ContentStyled = styled.div`
     display: flex;
+    background: ${color.blueLight};
 `;
 
 const DivStyledButtonWrap = styled.div`
-    margin: 19px;
+    margin: 8px;
     position: absolute;
     right: 0;
+    background-color: ${color.blueLight};
+    border-radius: 20px;
 `;
 
 const SideStyled = styled.div`
@@ -45,7 +48,7 @@ const StyledUl = styled.ul`
 
 const WrapperStyled = styled.div`
     border-radius: 16px;
-    border: 2px solid ${color.paleBlue2};
+    outline: 2px solid ${color.paleBlue2};
     display: flex;
     max-height: 100%;
     max-width: fit-content;
@@ -62,13 +65,9 @@ const notExpanded = css`
 `;
 
 const WidthWrapperStyled = styled.div<
-    Pick<ICodeAreaProps, 'maxHeight' | 'maxWidth' | 'isMaximized'>
+    Pick<ICodeAreaProps, 'maxWidth' | 'isMaximized'>
 >`
-    border-bottom: 2px solid ${color.paleBlue2};
-    max-height: ${(p) => p.maxHeight};
     max-width: ${(p) => p.maxWidth};
-
-    ${(p) => p.maxHeight && !p.isMaximized && notExpanded};
 `;
 
 const HeaderStyled = styled.div`

@@ -6,15 +6,10 @@ export interface ICodeAreaProps {
     maxWidth?: string;
 
     /**
-     * minimal height of component
+     * height of component
+     * default is "fit-content"
      */
-    minHeight?: string;
-
-    /**
-     * maximum height of component.
-     * Should be greater than minHeight
-     */
-    maxHeight?: string;
+    height?: string;
 
     /**
      * if true is expanded full size by default when maxHeight is used

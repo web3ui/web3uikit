@@ -10,12 +10,13 @@ const LinkTo: React.FC<LinkToProps> = ({
     address,
     text,
     type = 'external',
-    iconLayout = 'leading',
+    iconLayout = 'none',
     ...props
 }) => {
     const renderContent = () => (
         <SpanStyledFlex iconLayout={iconLayout} data-testid="test-link-flex">
-            {type !== 'internal' &&
+            {iconLayout !== 'none' &&
+                type !== 'internal' &&
                 (type === 'email' ? (
                     <Mail
                         title="mail icon"

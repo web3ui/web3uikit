@@ -12,6 +12,7 @@ const {
     LinkWithOutText,
     MailToLink,
     MailToLinkIconAfter,
+    NoIconLink,
 } = composeStories(stories);
 
 const testIcon = 'test-icon';
@@ -258,4 +259,35 @@ test('Renders - Internal Link', () => {
     fireEvent.click(link);
     expect(screen.getByTestId(testId)).not.toBeNull();
     expect(screen.getByTestId(testTextWrap).textContent).toBe('Go Back');
+});
+
+test('Renders Email', () => {
+    const testAddress = `mailto:${MailToLink?.args?.address}`;
+    const testText = MailToLink?.args?.text;
+
+    render(<NoIconLink />);
+
+    const link = screen.getByTestId(testId);
+    expect(link).not.toBeNull();
+
+    const textLink = screen.getByTestId(testTextWrap);
+    expect(textLink.textContent).toBe(testText);
+
+    const anchorLink = screen.getByTestId(testId);
+    expect(anchorLink.getAttribute('href')).toBe(testAddress);
+
+    const targetLink = screen.getByTestId(testId);
+    expect(targetLink.getAttribute('target')).toBe('_self');
+
+    const iconSVG = screen.queryByTestId(testIcon);
+    expect(iconSVG).toBeNull();
+
+    const colorLink = screen.getByTestId(testId);
+    const styles = colorLink && getComputedStyle(colorLink);
+    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
+    expect(colorHex).toBe(color.blue);
+
+    const inlineLink = screen.getByTestId(testId);
+    const inlineLinkStyles = inlineLink && getComputedStyle(inlineLink);
+    expect(inlineLinkStyles?.display).toBe('inline-block');
 });

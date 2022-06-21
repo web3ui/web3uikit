@@ -9,18 +9,18 @@
         "packages/*"
     ],
     "scripts": {
-        "build": "nx run-many --target=build --all --parallel --verbose=true",
-        "test": "nx affected --target=test --all --parallel --verbose=true",
-        "test:coverage": "nx affected --target=test:coverage --all --parallel --verbose=true",
-        "test:ui": "nx affected --target=test:ui --all --parallel --verbose=true",
+        "build": "nx run-many --target=build --all --parallel",
+        "test": "nx affected --target=test --all --parallel",
+        "test:coverage": "nx affected --target=test:coverage --all --parallel",
+        "test:ui": "nx affected --target=test:ui --all --parallel",
         "nm:clear": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
         "nx:clear": "nx clear-cache",
         "nx:graph": "nx graph --skip-nx-cache",
-        "start:dev": "nx run-many --target=start:dev --all --parallel --verbose=true",
+        "start:dev": "nx run-many --target=start:dev --all --parallel",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook -o dist/storybook wp5",
         "analyze": "nx run example:analyze",
-        "icons:create": "nx run-many --target=icons:create --all --parallel --verbose=true",
+        "icons:create": "nx run-many --target=icons:create --all --parallel",
         "new": "plop"
     },
     "dependencies": {

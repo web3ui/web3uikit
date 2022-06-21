@@ -7,6 +7,9 @@ const previewFolder = 'node_modules/.cache/storybook/public';
 // create `cache` folder if not exists
 require('fs').mkdirSync(previewFolder, { recursive: true });
 
+// preview or build mode
+const build = process.argv.pop() === 'wp5';
+
 /** @type {import('@storybook/builder-vite').StorybookViteConfig} */
 module.exports = {
     stories: glob('packages/**/*.stories.@(js|jsx|ts|tsx)', {
@@ -25,13 +28,13 @@ module.exports = {
         check: true,
     },
     core: {
-        builder: '@storybook/builder-vite',
+        builder: build ? 'webpack5' : '@storybook/builder-vite',
         disableTelemetry: true,
     },
     features: {
-        storyStoreV7: true,
+        storyStoreV7: !build,
     },
-    async viteFinal(config, { configType }) {
+    async viteFinal(config) {
         config.plugins.push(tsconfigPaths.default());
         config.resolve = {
             ...config.resolve,
@@ -40,6 +43,11 @@ module.exports = {
                 fs: require.resolve('rollup-plugin-node-builtins'),
             },
         };
+        return config;
+    },
+    webpackFinal: async (config) => {
+        const Polyfill = require('node-polyfill-webpack-plugin');
+        config.plugins = [...config.plugins, new Polyfill()];
         return config;
     },
 };

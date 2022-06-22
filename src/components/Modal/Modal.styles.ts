@@ -2,6 +2,7 @@ import { ModalProps } from './types';
 import colors from '../../styles/colors';
 import fonts from '../../styles/fonts';
 import styled from 'styled-components';
+import hexToRgb from '../../utils/HexToRgb';
 
 type TStyleProps = Pick<
     ModalProps,
@@ -51,7 +52,7 @@ const HeaderStyled = styled.header<{
     }`}
     align-items: center;
     display: flex;
-    padding: 32px 32px 24px;
+    padding: 24px 32px 20px;
     justify-content: ${(p) => (p.title ? 'space-between' : 'flex-end')};
     border-bottom: ${(p) =>
         p.headerHasBottomBorder ? `1px solid ${colors.paleBlue2}` : undefined};
@@ -98,7 +99,7 @@ const FooterStyled = styled.footer<TStyleProps>`
 
 const DivStyled = styled.div<TStyleProps>`
     align-items: ${({ isCentered }) => (isCentered ? ' center' : 'flex-start')};
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(${hexToRgb(colors.blueDark)}, 0.7);
     bottom: 0;
     display: ${({ isVisible }) => (isVisible ? ' flex' : 'none')};
     height: 100vh;

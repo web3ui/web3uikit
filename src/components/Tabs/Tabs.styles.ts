@@ -38,7 +38,7 @@ export const StyledTabBar = styled.div<IStyledTabBar>`
     ${(props) =>
         props.haveBackground &&
         `
- background-color: ${color.culturedBlue};
+ background-color: ${color.blueCultured};
     border-radius: 16px;`}
 `;
 
@@ -72,7 +72,7 @@ export const BulbTab = styled.div<IStyledBulb>`
     padding: 8px 16px;
     display: flex;
     align-items: center;
-    background-color: ${color.culturedBlue};
+    background-color: ${color.blueCultured};
     border: 2px solid transparent;
     cursor: pointer;
     color: ${color.blue};

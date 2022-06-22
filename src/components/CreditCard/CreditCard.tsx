@@ -36,17 +36,20 @@ const CreditCard: React.FC<CreditCardProps> = ({
                     position="bottom"
                     children={
                         <>
-                            {isRemovable && (
-                                <Button
-                                    onClick={() => onRemove && onRemove()}
-                                    isTransparent={true}
-                                    theme={'secondary'}
-                                    icon={iconTypes.bin}
-                                    iconLayout={'icon-only'}
-                                    size={'small'}
-                                    iconColor={'red'}
-                                />
-                            )}
+                            <Button
+                                onClick={() => onRemove && onRemove()}
+                                isTransparent={true}
+                                theme={'secondary'}
+                                icon={iconTypes.bin}
+                                iconLayout={'icon-only'}
+                                size={'small'}
+                                visibility={
+                                    isRemovable || isExpired
+                                        ? 'visible'
+                                        : 'hidden'
+                                }
+                                iconColor={'red'}
+                            />
                         </>
                     }
                     content="Remove"
@@ -55,8 +58,11 @@ const CreditCard: React.FC<CreditCardProps> = ({
             <PStyledDigits>{`•••• ${lastDigits}`}</PStyledDigits>
             <DivStyledFlex>
                 <DivStyledFlexText>
-                    <PStyledText>{name}</PStyledText>
-                    <PStyledText>{`${expiresAt.month} / ${expiresAt.year}`}</PStyledText>
+                    <PStyledText isExpired={false}>{name}</PStyledText>
+                    <PStyledText isExpired={isExpired}>
+                        {`${expiresAt.month} / ${expiresAt.year}`}{' '}
+                        {isExpired && '*expired'}
+                    </PStyledText>
                 </DivStyledFlexText>
                 <Logo size="small" theme={brand} />
             </DivStyledFlex>

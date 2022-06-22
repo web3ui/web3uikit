@@ -84,6 +84,11 @@ export interface ButtonProps {
     radius?: number;
 
     /**
+     * Visibility of the button
+     */
+    visibility?: 'visible' | 'hidden';
+
+    /**
      * The background color is set to `transparent` and the hover effect is disabled
      */
     isTransparent?: boolean;

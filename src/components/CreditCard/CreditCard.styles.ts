@@ -5,6 +5,7 @@ import colors, { colorPercentage, gradientColors } from '../../styles/colors';
 import { creditCardBrands, CreditCardProps } from './types';
 
 type TStyleProps = Pick<CreditCardProps, 'isExpired' | 'pressed' | 'brand'>;
+type TStyleExpired = Pick<CreditCardProps, 'isExpired'>;
 
 const getBgGradient = (brand: creditCardBrands) => {
     switch (brand) {
@@ -75,9 +76,9 @@ export const PStyledDigits = styled.p`
     margin: 0;
 `;
 
-export const PStyledText = styled.p`
+export const PStyledText = styled.p<TStyleExpired>`
     ${fonts.semiBold}
-    color: ${colors.white};
+    color: ${(p) => p.isExpired ? colors.red : colors.white};
     font-size: 12px;
     line-height: 16px;
     margin: 0 0 0 5px;

@@ -12,6 +12,7 @@ const color = {
     blueSky: '#9ECCEA',
     blueSkyDark: '#51A5DA',
     blueSkyLight: '#E8EAED',
+    culturedBlue: '#EBEFF9',
     green: '#21BF96',
     greenDark: '#0FA67F',
     greenForestDark: '#3BC49D',

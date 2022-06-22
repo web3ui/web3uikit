@@ -36,20 +36,17 @@ const CreditCard: React.FC<CreditCardProps> = ({
                     position="bottom"
                     children={
                         <>
-                            <Button
-                                onClick={() => onRemove && onRemove()}
-                                isTransparent={true}
-                                theme={'secondary'}
-                                icon={iconTypes.bin}
-                                iconLayout={'icon-only'}
-                                size={'small'}
-                                visibility={
-                                    isRemovable || isExpired
-                                        ? 'visible'
-                                        : 'hidden'
-                                }
-                                iconColor={'red'}
-                            />
+                          {(isRemovable || isExpired) && (
+                                <Button
+                                    onClick={() => onRemove && onRemove()}
+                                    isTransparent={true}
+                                    theme={'secondary'}
+                                    icon={iconTypes.bin}
+                                    iconLayout={'icon-only'}
+                                    size={'small'}
+                                    iconColor={'red'}
+                                />
+                            )}
                         </>
                     }
                     content="Remove"

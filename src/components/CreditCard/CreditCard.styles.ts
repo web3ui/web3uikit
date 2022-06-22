@@ -26,8 +26,10 @@ export const DivStyledCreditCard = styled.div<TStyleProps>`
     background: ${({ brand }) => getBgGradient(brand)};
     border: 2px solid ${colorPercentage(colors.white, 40)};
     border-radius: 16px;
-    display: grid;
-    gap: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    gap: 17%;
     padding: 16px;
     height: 154px;
     width: 277px;

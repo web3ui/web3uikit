@@ -69,9 +69,7 @@ const Todo: React.FC<TodoProps> = ({
                 />
 
                 <Button
-                    onClick={() => {
-                        addTodo();
-                    }}
+                    onClick={addTodo}
                     disabled={!isInputVlaid}
                     icon="plus"
                     size="large"

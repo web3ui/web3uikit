@@ -28,18 +28,21 @@ const Todo: React.FC<TodoProps> = ({
 }) => {
     const key = useMemo(() => Math.random(), []);
     const [inputValue, setInputValue] = useState<string>('');
+    const [isInputVlaid, setIsInputValid] = useState<boolean>(false);
     const [lists, setLists] = useState<string[]>(todos);
-
     useEffect(() => onChange && onChange(lists), [lists]);
     useEffect(() => setLists(todos), [todos]);
+    useEffect(() => {
+        const expression = new RegExp(pattern || '(.*?)');
+        setIsInputValid(expression.test(inputValue));
+    }, [inputValue]);
 
     const removeTodo = (id: number) => {
         const updatedList = lists.filter((item) => item !== lists[id]);
         setLists([...updatedList]);
     };
 
-    const addTodo = (e: any) => {
-        e.preventDefault();
+    const addTodo = () => {
         setLists((prevTodo) => Array.from(new Set([...prevTodo, inputValue])));
         setInputValue('');
         const input: HTMLInputElement | null = document.querySelector(
@@ -51,30 +54,29 @@ const Todo: React.FC<TodoProps> = ({
 
     return (
         <SectionStyled data-testid="test-todo" {...props}>
-            <form onSubmit={addTodo}>
-                <DivStyled>
-                    <Input
-                        id="todo-input"
-                        label={label}
-                        onChange={(e) => setInputValue(e.target.value)}
-                        size="large"
-                        validation={{
-                            regExp: pattern,
-                            required: true,
-                        }}
-                        key={key}
-                        value={inputValue}
-                    />
-                    <Button
-                        type="submit"
-                        disabled={!inputValue}
-                        icon="plus"
-                        size="large"
-                        text={buttonText}
-                        theme="primary"
-                    />
-                </DivStyled>
-            </form>
+            <DivStyled>
+                <Input
+                    id="todo-input"
+                    label={label}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    size="large"
+                    validation={{
+                        regExp: pattern,
+                        required: true,
+                    }}
+                    key={key}
+                    value={inputValue}
+                />
+
+                <Button
+                    disabled={!isInputVlaid}
+                    icon="plus"
+                    onClick={addTodo}
+                    size="large"
+                    text={buttonText}
+                    theme="primary"
+                />
+            </DivStyled>
 
             <DivStyledContent
                 data-testid="test-todo_content"

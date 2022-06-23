@@ -86,7 +86,7 @@ export interface ButtonProps {
     /**
      * Visibility of the button
      */
-    visibility?: 'visible' | 'hidden';
+    visibility?: boolean
 
     /**
      * The background color is set to `transparent` and the hover effect is disabled

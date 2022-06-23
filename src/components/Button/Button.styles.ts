@@ -164,7 +164,7 @@ const ButtonStyled = styled.button<TStyleProps>`
 
     ${(p) => p.iconColor && getIconColor(p.iconColor)}
 
-    ${(p) => p.visibility && `visibility: ${p.visibility};`}
+    ${(p) => p.visibility && `visibility: ${p.visibility ? 'visible' : 'hidden'};`}
 
     ${({ isTransparent }) => (isTransparent ? transparent : null)}
 `;

@@ -509,5 +509,5 @@ LargeOutlinedButton.args = {
 
 export const InvisibleButton = Template.bind({});
 InvisibleButton.args = {
-    visibility: 'hidden',
+    visibility: false,
 };

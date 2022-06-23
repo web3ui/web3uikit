@@ -2,11 +2,19 @@ import { useEffect } from 'react';
 import { MoralisProvider, useMoralis } from 'react-moralis';
 import { DecoratorFn } from '@storybook/react';
 import { default as MoralisType } from 'moralis/types';
+let MORALIS_APP_ID: string | null | undefined = null;
+let MORALIS_SERVER_URL: string | null | undefined = null;
+
+if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+    MORALIS_APP_ID = import.meta.env.STORYBOOK_MORALIS_APPLICATION_ID;
+    MORALIS_SERVER_URL = import.meta.env.STORYBOOK_MORALIS_SERVER_URL;
+} else {
+    MORALIS_APP_ID = process.env.STORYBOOK_MORALIS_APPLICATION_ID;
+    MORALIS_SERVER_URL = process.env.STORYBOOK_MORALIS_SERVER_URL;
+}
 
 export const moralisContext: DecoratorFn = (Story) => {
-    const MORALIS_APP_ID = import.meta.env.STORYBOOK_MORALIS_APPLICATION_ID;
-    const MORALIS_SERVER_URL = import.meta.env.STORYBOOK_MORALIS_SERVER_URL;
-
+    console.log(process.env.NODE_ENV);
     const Web3Initialize = () => {
         const {
             enableWeb3,

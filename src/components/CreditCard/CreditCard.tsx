@@ -36,7 +36,7 @@ const CreditCard: React.FC<CreditCardProps> = ({
                     position="bottom"
                     children={
                         <>
-                          {(isRemovable || isExpired) && (
+                            {(isRemovable || isExpired) && (
                                 <Button
                                     onClick={() => onRemove && onRemove()}
                                     isTransparent={true}

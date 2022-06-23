@@ -21,7 +21,6 @@ const Button: React.FC<ButtonProps> = ({
     type = 'button',
     loadingProps,
     radius,
-    visibility,
     isTransparent = false,
     iconColor,
     ...props
@@ -41,7 +40,6 @@ const Button: React.FC<ButtonProps> = ({
             theme={theme}
             type={type}
             radius={radius}
-            visibility={visibility}
             iconColor={iconColor}
             {...props}
         >

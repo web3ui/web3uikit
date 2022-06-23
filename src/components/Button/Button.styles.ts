@@ -44,7 +44,6 @@ type TStyleProps = Pick<
     | 'isLoading'
     | 'radius'
     | 'isTransparent'
-    | 'visibility'
     | 'iconColor'
 >;
 
@@ -163,8 +162,6 @@ const ButtonStyled = styled.button<TStyleProps>`
             : radius && `border-radius: ${radius}px;`}
 
     ${(p) => p.iconColor && getIconColor(p.iconColor)}
-
-    ${(p) => p.visibility && `visibility: ${p.visibility ? 'visible' : 'hidden'};`}
 
     ${({ isTransparent }) => (isTransparent ? transparent : null)}
 `;

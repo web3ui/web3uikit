@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import DatePicker from './DatePicker';
+import { test, expect, describe } from 'vitest';
 
 const datePickerTestId = 'test-date-picker';
 const datePickerIcon = 'date-picker_icon';

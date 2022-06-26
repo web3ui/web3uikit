@@ -2,6 +2,7 @@ import * as React from 'react';
 import { composeStories } from '@storybook/testing-react';
 import * as Stories from './Tabs.stories';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { test, expect, describe } from 'vitest';
 
 const {
     TabBar,

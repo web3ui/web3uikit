@@ -2,8 +2,8 @@ import { cleanup, fireEvent, render } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Button.stories';
 import { color, rgbToHex } from '@web3uikit/styles';
+import { test, expect, describe, vi } from 'vitest';
 
-import { vi } from 'vitest';
 const {
     ColoredBlue,
     ColoredGreen,

@@ -1,7 +1,8 @@
 import { composeStories } from '@storybook/testing-react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import * as stories from './LinkTo.stories';
-import 'jest-styled-components';
+import { test, expect, describe } from 'vitest';
+
 import { color, rgbToHex } from '@web3uikit/styles';
 
 const {

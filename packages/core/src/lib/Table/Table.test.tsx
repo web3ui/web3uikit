@@ -2,7 +2,7 @@ import * as React from 'react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Table.stories';
 import { render, fireEvent, screen } from '@testing-library/react';
-import { vi } from 'vitest';
+import { test, expect, describe, vi } from 'vitest';
 
 const {
     DefaultTable,

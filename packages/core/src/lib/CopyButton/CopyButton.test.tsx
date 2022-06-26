@@ -5,6 +5,7 @@ import {
     act,
     waitFor,
 } from '@testing-library/react';
+import { test, expect, describe } from 'vitest';
 
 import CopyButton from './CopyButton';
 

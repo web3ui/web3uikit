@@ -4,7 +4,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 
 import { color } from '@web3uikit/styles';
 import * as stories from './TextArea.stories';
-import { vi } from 'vitest';
+import { test, expect, describe, vi } from 'vitest';
 
 const { Default, Error, Confirmed, Disabled, CustomWidth } =
     composeStories(stories);

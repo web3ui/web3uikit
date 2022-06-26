@@ -1,7 +1,8 @@
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Checkbox.stories';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { vi } from 'vitest';
+import { test, expect, describe, vi } from 'vitest';
+
 const {
     Box,
     BoxDisabled,

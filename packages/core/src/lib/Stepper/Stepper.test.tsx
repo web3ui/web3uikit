@@ -3,6 +3,7 @@ import { fireEvent, render, cleanup } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Stepper.stories';
 import { noNavTestStepData, testStepData } from './testStepData';
+import { test, expect, describe } from 'vitest';
 
 const { Demo, PreLoadStep0, StepsWithFooter, StepsWithoutNav } =
     composeStories(stories);

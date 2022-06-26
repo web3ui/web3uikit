@@ -1,7 +1,7 @@
-
 import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Card.stories';
+import { test, expect, describe } from 'vitest';
 
 const { Regular, RegularSelected, Disabled } = composeStories(stories);
 

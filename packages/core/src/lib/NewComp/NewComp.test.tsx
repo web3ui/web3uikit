@@ -3,6 +3,7 @@
 import { composeStories } from '@storybook/testing-react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import * as stories from './NewComp.stories';
+import { test, expect, describe } from 'vitest';
 
 // // importing fire event from RTL to mock a click event
 // import { fireEvent } from '@testing-library/react';

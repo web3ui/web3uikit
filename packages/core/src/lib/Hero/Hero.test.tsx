@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Hero from './Hero';
 import { Button } from '../Button';
 import { color, rgbToHex } from '@web3uikit/styles';
+import { test, expect, describe } from 'vitest';
 
 const testTitle = 'never test a Hero';
 const testBgURL =

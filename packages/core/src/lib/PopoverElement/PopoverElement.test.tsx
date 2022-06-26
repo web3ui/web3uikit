@@ -1,8 +1,8 @@
 import { fireEvent, render, cleanup } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './PopoverElement.stories';
-import 'jest-styled-components';
-import { vi } from 'vitest';
+
+import { test, expect, describe, vi } from 'vitest';
 
 const { Default } = composeStories(stories);
 const testClickEvent = vi.fn();

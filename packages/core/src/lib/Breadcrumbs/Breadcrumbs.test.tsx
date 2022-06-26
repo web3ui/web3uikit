@@ -2,9 +2,7 @@ import { fireEvent, waitFor, screen, render } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Breadcrumbs.stories';
 import { color } from '@web3uikit/styles';
-
-import 'jest-styled-components';
-
+import { test, expect, describe } from 'vitest';
 const { One, Two, Three, Four } = composeStories(stories);
 
 const olId = 'breadcrumbs-ol-test-id';

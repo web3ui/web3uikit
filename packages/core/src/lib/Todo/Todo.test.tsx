@@ -2,6 +2,7 @@ import { composeStories } from '@storybook/testing-react';
 import { render, screen } from '@testing-library/react';
 
 import * as stories from './Todo.stories';
+import { test, expect, describe } from 'vitest';
 
 const { DefaultTodo, WithInitialTodos, FullWidthTodos } =
     composeStories(stories);

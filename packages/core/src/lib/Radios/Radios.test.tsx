@@ -2,7 +2,7 @@ import { composeStories } from '@storybook/testing-react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import * as stories from './Radios.stories';
-import { vi } from 'vitest';
+import { test, expect, describe, vi } from 'vitest';
 
 const {
     RadioGroup,

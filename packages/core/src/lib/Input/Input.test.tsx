@@ -1,9 +1,10 @@
 import { cleanup, render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import 'jest-styled-components';
+
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Input.stories';
-import { vi } from 'vitest';
+import { test, expect, describe, vi } from 'vitest';
+
 import { color, rgbToHex } from '@web3uikit/styles';
 
 import Input from './Input';

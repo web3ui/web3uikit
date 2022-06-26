@@ -1,6 +1,6 @@
 import { composeStories } from '@storybook/testing-react';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
-import 'jest-styled-components';
+import { test, expect, describe } from 'vitest';
 
 import * as stories from './Tooltip.stories';
 

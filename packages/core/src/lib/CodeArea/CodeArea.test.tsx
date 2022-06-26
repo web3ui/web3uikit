@@ -2,6 +2,7 @@ import { composeStories } from '@storybook/testing-react';
 import { CodeArea } from '.';
 import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
+import { test, expect, describe } from 'vitest';
 
 import { color } from '@web3uikit/styles';
 import * as stories from './CodeArea.stories';

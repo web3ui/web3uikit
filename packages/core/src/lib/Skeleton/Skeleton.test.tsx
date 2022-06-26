@@ -4,6 +4,7 @@ import { cleanup, render } from '@testing-library/react';
 import { color, rgbToHex } from '@web3uikit/styles';
 
 import * as stories from './Skeleton.stories';
+import { test, expect, describe } from 'vitest';
 
 const { SkeletonImage } = composeStories(stories);
 const skeletonTestId = 'test-skeleton-id';

@@ -1,4 +1,5 @@
 import * as stories from './Badge.stories';
+import { test, expect, describe } from 'vitest';
 
 import { render, screen } from '@testing-library/react';
 import { color, rgbToHex } from '@web3uikit/styles';

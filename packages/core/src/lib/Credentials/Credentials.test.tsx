@@ -1,6 +1,7 @@
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Credentials.stories';
 import { render, screen } from '@testing-library/react';
+import { test, expect, describe } from 'vitest';
 
 const { WithTitleAndIcon, WithTitle, OneLine } = composeStories(stories);
 

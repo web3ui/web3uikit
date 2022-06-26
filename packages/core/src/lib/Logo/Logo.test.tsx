@@ -1,7 +1,7 @@
-
 import { composeStories } from '@storybook/testing-react';
 import { render, screen } from '@testing-library/react';
 import * as stories from './Logo.stories';
+import { test, expect, describe } from 'vitest';
 
 const {
     AmexRegular,

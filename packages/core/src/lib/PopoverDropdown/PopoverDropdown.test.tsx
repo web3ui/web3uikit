@@ -1,4 +1,3 @@
-
 import { composeStories } from '@storybook/testing-react';
 import {
     fireEvent,
@@ -8,7 +7,7 @@ import {
     cleanup,
 } from '@testing-library/react';
 import * as stories from './PopoverDropdown.stories';
-import 'jest-styled-components';
+import { test, expect, describe } from 'vitest';
 
 const { PopoverSelection } = composeStories(stories);
 

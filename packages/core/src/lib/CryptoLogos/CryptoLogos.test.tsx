@@ -1,7 +1,8 @@
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './CryptoLogos.stories';
 import { color, rgbToHex } from '@web3uikit/styles';
-import 'jest-styled-components';
+import { test, expect, describe } from 'vitest';
+
 import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 

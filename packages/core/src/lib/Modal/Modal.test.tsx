@@ -3,7 +3,7 @@ import Modal from './Modal';
 import { Cloud } from '@web3uikit/icons';
 import { color } from '@web3uikit/styles';
 import { ModalProps } from './types';
-import { vi } from 'vitest';
+import { test, expect, describe, vi } from 'vitest';
 
 const args: ModalProps = {
     id: 'regular',

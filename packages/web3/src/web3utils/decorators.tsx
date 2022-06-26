@@ -14,7 +14,6 @@ if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
 }
 
 export const moralisContext: DecoratorFn = (Story) => {
-    console.log(process.env.NODE_ENV);
     const Web3Initialize = () => {
         const {
             enableWeb3,

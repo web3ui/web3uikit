@@ -1,8 +1,8 @@
-
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Avatar.stories';
 import { roundedEdgeValue } from './Avatar.styles';
 import { render, screen } from '@testing-library/react';
+import { test, expect, describe } from 'vitest';
 
 const {
     AvatarImageDefault,
@@ -123,9 +123,7 @@ test('Avatar - CustomSizeAndFontSize', () => {
 
     // It has a custom font size
     const styles = element && getComputedStyle(element);
-    expect(styles?.fontSize).toBe(
-        `${CustomSizeAndFontSize?.args?.fontSize}px`,
-    );
+    expect(styles?.fontSize).toBe(`${CustomSizeAndFontSize?.args?.fontSize}px`);
 
     // It has a custom size
     expect(styles?.width).toBe(`${CustomSizeAndFontSize?.args?.size}px`);

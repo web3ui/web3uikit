@@ -1,6 +1,5 @@
-import 'jest-styled-components';
 import * as stories from './Notification.stories';
-
+import { test, expect, describe } from 'vitest';
 import { render, cleanup } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 const { Regular, Standard, CustomIcon } = composeStories(stories);

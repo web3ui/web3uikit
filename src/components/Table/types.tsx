@@ -76,6 +76,11 @@ export interface TableProps {
     onPageNumberChanged?(pageNum: number): void;
 
     /**
+     * On Table Row Click
+     */
+    onRowClick?(index: number): void;
+
+    /**
      * Give true if column needs to be sortable
      * For Date Value, format should be DD-MM-YYYY
      */

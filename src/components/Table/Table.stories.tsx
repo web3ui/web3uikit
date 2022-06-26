@@ -16,7 +16,10 @@ import color from '../../styles/colors';
 export default {
     title: '3.Layout/Table',
     component: Table,
-    argTypes: { onPageNumberChanged: { action: 'Page Number Changed' } },
+    argTypes: {
+        onPageNumberChanged: { action: 'Page Number Changed' },
+        onRowClick: { action: 'Row Clicked' },
+    },
 } as ComponentMeta<typeof Table>;
 
 const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;

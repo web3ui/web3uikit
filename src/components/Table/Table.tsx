@@ -202,12 +202,15 @@ const Table: React.FC<TableProps> = ({
                                             }`}
                                             alignCellItems={alignCellItems}
                                             justifyCellItems={justifyCellItems}
-                                            onClick={() => {
-                                                if (onRowClick) {
-                                                    console.log(
-                                                        `tr_${rowKey}_${colKey}`,
+                                            onClick={(e) => {
+                                                if (
+                                                    onRowClick &&
+                                                    e.target === e.currentTarget
+                                                ) {
+                                                    onRowClick(
+                                                        rowKey +
+                                                            pageSize * pageNum,
                                                     );
-                                                    onRowClick(rowKey);
                                                 }
                                             }}
                                         >

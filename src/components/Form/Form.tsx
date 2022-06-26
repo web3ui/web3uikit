@@ -165,7 +165,7 @@ const Form: React.FC<FormProps> = ({
 
     const renderTextArea = (input: DataInput, index: number) => (
         <Fragment key={`${input.name}_${index}`}>
-            <H4Styled>{input.value}</H4Styled>
+            <H4Styled>{input.name}</H4Styled>
             <TextArea
                 id={`textarea_${index}`}
                 name={input.name}
@@ -231,7 +231,12 @@ const Form: React.FC<FormProps> = ({
     };
 
     return (
-        <FormStyled onSubmit={formSubmitted} id={id} data-testid="test-form" {...props}>
+        <FormStyled
+            onSubmit={formSubmitted}
+            id={id}
+            data-testid="test-form"
+            {...props}
+        >
             {title && (
                 <H3Styled data-testid="test-form-title">{title}</H3Styled>
             )}

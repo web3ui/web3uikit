@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import resetCSS from '../../styles/reset';
-import color from '../../styles/colors';
+import color, { gradientColors } from '../../styles/colors';
 import fonts from '../../styles/fonts';
 
 // Styling Interfaces
@@ -38,7 +38,7 @@ export const StyledTabBar = styled.div<IStyledTabBar>`
     ${(props) =>
         props.haveBackground &&
         `
- background-color: ${color.blueLight};
+ background-color: ${color.blueCultured};
     border-radius: 16px;`}
 `;
 
@@ -72,23 +72,28 @@ export const BulbTab = styled.div<IStyledBulb>`
     padding: 8px 16px;
     display: flex;
     align-items: center;
-    background-color: ${color.blueLight};
+    background-color: ${color.blueCultured};
     border: 2px solid transparent;
     cursor: pointer;
     color: ${color.blue};
     ${({ isActive }) =>
         isActive &&
         css`
-            border-color: ${color.blue};
-            background-color: ${color.white};
+            border-color: ${color.blueSky};
+            background: ${color.white};
         `};
-    ${(props) =>
-        (props.isActive || props.isDisabled) && 'pointer-events: none;'};
+    ${(props) => props.isDisabled && 'pointer-events: none;'};
     ${(props) => props.hasMargin && 'margin-right:6px;'}
-    ${(props) => props.isDisabled && `color:${color.greyDisabled};`}
+    ${(props) =>
+        props.isDisabled && `opacity: 0.5; background-color: ${color.white};`}
     line-height: ${(props) => props.lineHeight && `${props.lineHeight}px`};
     &:hover {
         background: ${color.blueLight2};
+        ${({ isActive }) =>
+            isActive &&
+            css`
+                background: ${gradientColors.beauBlue};
+            `};
     }
 
     & > span {

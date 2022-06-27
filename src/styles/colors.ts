@@ -4,6 +4,7 @@ const color = {
     blue: '#2E7DAF',
     blueCloud: '#EEF6FB',
     blueCloudDark: '#3092CF',
+    blueCultured: '#EBEFF9',
     blueDark: '#041836',
     blueDark2: '#112F5C',
     blueLight: '#F2F6FF',

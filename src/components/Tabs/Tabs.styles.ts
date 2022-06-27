@@ -80,12 +80,12 @@ export const BulbTab = styled.div<IStyledBulb>`
         isActive &&
         css`
             border-color: ${color.blueSky};
-            background: transparent;
+            background: ${color.white};
         `};
     ${(props) => props.isDisabled && 'pointer-events: none;'};
     ${(props) => props.hasMargin && 'margin-right:6px;'}
     ${(props) =>
-        props.isDisabled && 'opacity: 0.5; background-color: transparent;'}
+        props.isDisabled && `opacity: 0.5; background-color: ${color.white};`}
     line-height: ${(props) => props.lineHeight && `${props.lineHeight}px`};
     &:hover {
         background: ${color.blueLight2};

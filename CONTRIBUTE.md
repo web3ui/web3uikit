@@ -25,7 +25,7 @@ We have made a battle tested front end web3 stack for the roaring 20s
 -   Storybook: lets us build quickly in isolation and test props on the fly
 -   RTL: React Test Library makes testing easy
 -   Prettier makes our code look nice and helps with Pull Requests
--   pnpm is used to get reliable package management on Mac, PC & Lynx
+-   pnpm is used to get reliable monorepo package management on Mac, PC & Lynx
 
 &nbsp;
 

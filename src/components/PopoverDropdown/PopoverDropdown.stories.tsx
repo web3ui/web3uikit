@@ -1,170 +1,125 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
-import color from '../../styles/colors';
-import colors from '../../styles/colors';
 import PopoverDropdown from './PopoverDropdown';
 import PopoverElement from '../PopoverElement/PopoverElement';
-import { Icon } from '../Icon';
+import color from '../../styles/colors';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { iconTypes } from '../Icon/collection';
 
 export default {
     title: '5.Popup/Popover Dropdown',
     component: PopoverDropdown,
-    subcomponents: { PopoverElement },
-    argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof PopoverDropdown>;
 
 const Template: ComponentStory<typeof PopoverDropdown> = (args) => (
     <div
+        data-note="do not copy this div, its only for display purpose in Storybook"
         style={{
-            display: 'flex',
-            justifyContent: 'center',
             alignItems: 'center',
-            margin: 0,
-            minHeight: '100vh',
+            display: 'flex',
+            height: '60vh',
+            justifyContent: 'center',
+            width: '100%',
         }}
     >
         <PopoverDropdown {...args} />
     </div>
 );
 
-export const PopoverSelection = Template.bind({});
-PopoverSelection.args = {
+export const PopoverWithElements = Template.bind({});
+PopoverWithElements.args = {
     position: 'bottom',
     children: [
         <PopoverElement
-            key="0"
+            backgroundColor={'transparent'}
             height={50}
-            width={260}
-            text={'Testnet Server'}
-            textSize={20}
             icon={iconTypes.testnet}
             iconSize={30}
-            backgroundColor={'transparent'}
-            textColor={colors.white}
-            onClick={() => alert('Testnet Server')}
-        />,
-        <PopoverElement
-            key="1"
-            height={50}
-            width={260}
-            text={'Mainnet Server'}
-            textSize={20}
-            iconSize={30}
-            icon={iconTypes.network}
-            backgroundColor={'transparent'}
-            textColor={colors.white}
-            onClick={() => alert('Mainnet Server')}
-        />,
-        <PopoverElement
-            key="2"
-            height={50}
-            width={260}
-            text={'Local Devchain Server'}
-            textSize={20}
-            iconSize={30}
-            backgroundColor={'transparent'}
-            icon={iconTypes.server}
-            textColor={colors.white}
-            onClick={() => alert('Local Devchain Server')}
-        />,
-    ],
-    parent: (
-        <Icon key="3" svg={iconTypes.helpCircle} fill={color.grey} size={50} />
-    ),
-};
-
-export const PopoverCustomPosition = Template.bind({});
-PopoverCustomPosition.args = {
-    position: 'bottom',
-    moveBody: -80,
-    move: -80,
-    children: [
-        <PopoverElement
             key="0"
-            height={50}
-            width={260}
             text={'Testnet Server'}
+            textColor={color.white}
             textSize={20}
-            icon={iconTypes.testnet}
-            iconSize={30}
-            backgroundColor={'transparent'}
-            textColor={colors.white}
-            onClick={() => alert('Testnet Server')}
+            width={260}
         />,
         <PopoverElement
-            key="1"
+            backgroundColor={'transparent'}
             height={50}
-            width={260}
-            text={'Mainnet Server'}
-            textSize={20}
-            iconSize={30}
             icon={iconTypes.network}
-            backgroundColor={'transparent'}
-            textColor={colors.white}
-            onClick={() => alert('Mainnet Server')}
+            iconSize={30}
+            key="1"
+            text={'Mainnet Server'}
+            textColor={color.white}
+            textSize={20}
+            width={260}
         />,
         <PopoverElement
-            key="2"
-            height={50}
-            width={260}
-            text={'Local Devchain Server'}
-            textSize={20}
-            iconSize={30}
             backgroundColor={'transparent'}
+            height={50}
             icon={iconTypes.server}
-            textColor={colors.white}
-            onClick={() => alert('Local Devchain Server')}
+            iconSize={30}
+            key="2"
+            text={'Local Devchain Server'}
+            textColor={color.white}
+            textSize={20}
+            width={260}
         />,
     ],
-    parent: (
-        <Icon key="3" svg={iconTypes.helpCircle} fill={color.grey} size={50} />
-    ),
+    parent: <button>hover me!</button>,
 };
 
-export const PopoverSelectionUser = Template.bind({});
-PopoverSelectionUser.args = {
+export const PopoverAnything = Template.bind({});
+PopoverAnything.args = {
+    id: 'testing-the-id',
+    children: [
+        <a href="#" style={{ color: 'white' }}>
+            Home
+        </a>,
+        <p style={{ color: 'white' }}>Contact us</p>,
+        <button>Logout from your account</button>,
+    ],
+    parent: <p style={{ margin: '0' }}>hey, wanna hover on over?</p>,
+};
+
+export const PopoverBackgroundColor = Template.bind({});
+PopoverBackgroundColor.args = {
+    backgroundColor: 'pink',
     position: 'bottom',
     children: [
-        <PopoverElement
-            key="4"
-            height={50}
-            width={260}
-            text={'Account Settings'}
-            textSize={20}
-            icon={iconTypes.cog}
-            iconSize={30}
-            backgroundColor={'transparent'}
-            textColor={colors.white}
-            onClick={() => alert('Account Settings')}
-        />,
-        <PopoverElement
-            key="5"
-            height={50}
-            width={260}
-            text={'Support Page'}
-            textSize={20}
-            iconSize={30}
-            icon={iconTypes.lifeRing}
-            backgroundColor={'transparent'}
-            textColor={colors.white}
-            onClick={() => alert('Support Page')}
-        />,
-        <PopoverElement
-            key="6"
-            height={50}
-            width={260}
-            text={'Logout'}
-            textSize={20}
-            iconSize={30}
-            backgroundColor={'transparent'}
-            iconColor={colors.red}
-            icon={iconTypes.logOut}
-            textColor={colors.red}
-            onClick={() => alert('Logout')}
-        />,
+        <a href="#">Home</a>,
+        <p>Contact us</p>,
+        <button>Logout from your account</button>,
     ],
-    parent: (
-        <Icon key="7" svg={iconTypes.helpCircle} fill={color.grey} size={50} />
-    ),
+    parent: <p style={{ margin: '0' }}>think pink!</p>,
+};
+
+export const PopoverWidth = Template.bind({});
+PopoverWidth.args = {
+    position: 'bottom',
+    width: '100px',
+    children: [<button>only 100px</button>],
+    parent: <button>custom min width</button>,
+};
+
+export const PopoverPositionTop = Template.bind({});
+PopoverPositionTop.args = {
+    position: 'top',
+    children: [<button>pop on top!</button>],
+    parent: <button>hover me!</button>,
+};
+
+export const PopoverPositionRight = Template.bind({});
+PopoverPositionRight.args = {
+    position: 'right',
+    children: [
+        <button>or why</button>,
+        <button>try to</button>,
+        <button>the right</button>,
+    ],
+    parent: <button>hover me!</button>,
+};
+
+export const PopoverPositionLeft = Template.bind({});
+PopoverPositionLeft.args = {
+    position: 'left',
+    children: [<button>left position</button>, <button>works too!</button>],
+    parent: <button>hover me!</button>,
 };

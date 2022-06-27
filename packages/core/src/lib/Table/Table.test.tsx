@@ -130,7 +130,7 @@ describe('Table - DefaultTable', () => {
     });
 
     it('Callback on Row Click', () => {
-        const rowClick = jest.fn();
+        const rowClick = vi.fn();
         const { container } = render(<DefaultTable onRowClick={rowClick} />);
         const tableCell = container.querySelector('div[data-key="tr_0_0"]');
         fireEvent.click(tableCell as Element);

@@ -128,6 +128,14 @@ describe('Table - DefaultTable', () => {
             element[Object.keys(element)[0] as string].return.key;
         expect(newPagination).not.toEqual(currentPagination);
     });
+
+    it('Callback on Row Click', () => {
+        const rowClick = jest.fn();
+        const { container } = render(<DefaultTable onRowClick={rowClick} />);
+        const tableCell = container.querySelector('div[data-key="tr_0_0"]');
+        fireEvent.click(tableCell as Element);
+        expect(rowClick).toBeCalledWith(0);
+    });
 });
 
 describe('Table - NoPagination', () => {

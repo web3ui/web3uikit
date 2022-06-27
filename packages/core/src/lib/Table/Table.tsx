@@ -20,21 +20,22 @@ import {
 } from './Table.styles';
 
 const Table: React.FC<TableProps> = ({
+    alignCellItems = 'start',
     columnsConfig,
-    header,
-    data,
-    pageSize,
-    maxPages,
-    noPagination,
-    customPageNumber,
-    onPageNumberChanged,
+    customLoadingContent,
     customNoDataComponent,
     customNoDataText = 'No Data',
-    isLoading = false,
-    customLoadingContent,
-    alignCellItems = 'start',
-    justifyCellItems = 'start',
+    customPageNumber,
+    data,
+    header,
     isColumnSortable = [],
+    isLoading = false,
+    justifyCellItems = 'start',
+    maxPages,
+    noPagination,
+    onPageNumberChanged,
+    onRowClick,
+    pageSize,
     ...props
 }) => {
     const [pageNum, setPageNum] = useState<number>(
@@ -195,6 +196,7 @@ const Table: React.FC<TableProps> = ({
                                     ) => (
                                         <DivTableCell
                                             key={`tr_${rowKey}_${colKey}`}
+                                            data-key={`tr_${rowKey}_${colKey}`}
                                             role="table-item"
                                             className={`${
                                                 colKey == 0 && 'firstCol'
@@ -204,6 +206,17 @@ const Table: React.FC<TableProps> = ({
                                             }`}
                                             alignCellItems={alignCellItems}
                                             justifyCellItems={justifyCellItems}
+                                            onClick={(e) => {
+                                                if (
+                                                    onRowClick &&
+                                                    e.target === e.currentTarget
+                                                ) {
+                                                    onRowClick(
+                                                        rowKey +
+                                                            pageSize * pageNum,
+                                                    );
+                                                }
+                                            }}
                                         >
                                             {item}
                                         </DivTableCell>

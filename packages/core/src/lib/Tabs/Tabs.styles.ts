@@ -1,94 +1,100 @@
 import styled, { css } from 'styled-components';
-import { color, fonts, resetCSS } from '@web3uikit/styles';
+import { color, gradientColors, fonts, resetCSS } from '@web3uikit/styles';
 
 // Styling Interfaces
 interface IStyledTab {
-  isActive: boolean;
-  isDisabled: boolean;
-  lineHeight: number;
+    isActive: boolean;
+    isDisabled: boolean;
+    lineHeight: number;
 }
 interface IStyledTabBarParent {
-  isVertical: boolean;
+    isVertical: boolean;
 }
 interface IStyledTabBar {
-  haveBackground: boolean;
-  isVertical: boolean;
+    haveBackground: boolean;
+    isVertical: boolean;
 }
 interface IStyledBulb extends IStyledTab {
-  hasMargin: boolean;
+    hasMargin: boolean;
 }
 
 // Styles
 export const StyleTabBarParent = styled.div<IStyledTabBarParent>`
-  ${resetCSS}
-  ${fonts.text}
+    ${resetCSS}
+    ${fonts.text}
     min-height: fit-content;
-  display: flex;
-  flex-direction: row;
-  ${(props) => !props.isVertical && 'flex-direction:column'}
+    display: flex;
+    flex-direction: row;
+    ${(props) => !props.isVertical && 'flex-direction:column'}
 `;
 
 export const StyledTabBar = styled.div<IStyledTabBar>`
-  display: flex;
-  ${(props) => props.isVertical && 'flex-direction: column;'}
-  max-width: fit-content;
-  max-height: fit-content;
-  ${(props) =>
-    props.haveBackground &&
-    `
- background-color: ${color.blueLight};
+    display: flex;
+    ${(props) => props.isVertical && 'flex-direction: column;'}
+    max-width: fit-content;
+    max-height: fit-content;
+    ${(props) =>
+        props.haveBackground &&
+        `
+    background-color: ${color.blueCultured};
     border-radius: 16px;`}
 `;
 
 export const StyledTabContent = styled.div<IStyledTabBarParent>`
-  padding: ${(props) => (props.isVertical ? '0px 11px' : '11px 0px')};
+    padding: ${(props) => (props.isVertical ? '0px 11px' : '11px 0px')};
 `;
 
 export const StyledTab = styled.div<IStyledTab>`
-  transition-duration: 500ms;
-  transition-property: border;
-  transition-timing-function: ease-in-out;
-  margin: 0px 48px 0px 0px;
-  padding-bottom: 4px;
-  line-height: 24px;
-  padding-bottom: 4px;
-  margin-bottom: 11px;
-  cursor: pointer;
-  ${(props) => props.isActive && 'font-weight:600;'};
-  ${(props) => props.isActive && 'border-bottom: 2px solid #21BF96;'};
-  ${(props) => (props.isActive || props.isDisabled) && 'pointer-events: none;'};
-  ${(props) => !props.isActive && `color:${color.greyIcons};`};
-  line-height: ${(props) => props.lineHeight && `${props.lineHeight}px`};
-  ${(props) => props.isDisabled && `color:${color.greyDisabled};`}
+    transition-duration: 500ms;
+    transition-property: border;
+    transition-timing-function: ease-in-out;
+    margin: 0px 48px 0px 0px;
+    padding-bottom: 4px;
+    line-height: 24px;
+    padding-bottom: 4px;
+    margin-bottom: 11px;
+    cursor: pointer;
+    ${(props) => props.isActive && 'font-weight:600;'};
+    ${(props) => props.isActive && 'border-bottom: 2px solid #21BF96;'};
+    ${(props) =>
+        (props.isActive || props.isDisabled) && 'pointer-events: none;'};
+    ${(props) => !props.isActive && `color:${color.greyIcons};`};
+    line-height: ${(props) => props.lineHeight && `${props.lineHeight}px`};
+    ${(props) => props.isDisabled && `color:${color.greyDisabled};`}
 `;
 
 export const BulbTab = styled.div<IStyledBulb>`
-  transition-duration: 200ms;
-  transition-timing-function: ease-in-out;
-  border-radius: 16px;
-  padding: 8px 16px;
-  display: flex;
-  align-items: center;
-  background-color: ${color.blueLight};
-  border: 2px solid transparent;
-  cursor: pointer;
-  color: ${color.blue};
-  ${({ isActive }) =>
-    isActive &&
-    css`
-      border-color: ${color.blue};
-      background-color: ${color.white};
-    `};
-  ${(props) => (props.isActive || props.isDisabled) && 'pointer-events: none;'};
-  ${(props) => props.hasMargin && 'margin-right:6px;'}
-  ${(props) => props.isDisabled && `color:${color.greyDisabled};`}
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+    border-radius: 16px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    background-color: ${color.blueCultured};
+    border: 2px solid transparent;
+    cursor: pointer;
+    color: ${color.blue};
+    ${({ isActive }) =>
+        isActive &&
+        css`
+            border-color: ${color.blueSky};
+            background: ${color.white};
+        `};
+    ${(props) => props.isDisabled && 'pointer-events: none;'};
+    ${(props) => props.hasMargin && 'margin-right:6px;'}
+    ${(props) =>
+        props.isDisabled && `opacity: 0.5; background-color: ${color.white};`}
     line-height: ${(props) => props.lineHeight && `${props.lineHeight}px`};
-  &:hover {
-    background: ${color.blueLight2};
-  }
-
-  & > span {
-    font-weight: 600;
-    font-size: 14px;
-  }
+    &:hover {
+        background: ${color.blueLight2};
+        ${({ isActive }) =>
+            isActive &&
+            css`
+                background: ${gradientColors.beauBlue};
+            `};
+    }
+    & > span {
+        font-weight: 600;
+        font-size: 14px;
+    }
 `;

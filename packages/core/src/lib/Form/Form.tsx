@@ -165,7 +165,7 @@ const Form: React.FC<FormProps> = ({
 
     const renderTextArea = (input: DataInput, index: number) => (
         <Fragment key={`${input.name}_${index}`}>
-            <H4Styled>{input.value}</H4Styled>
+            <H4Styled>{input.name}</H4Styled>
             <TextArea
                 id={`textarea_${index}`}
                 name={input.name}

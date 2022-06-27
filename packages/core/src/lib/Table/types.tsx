@@ -1,4 +1,3 @@
-
 export interface TableProps {
     /**
      * A String Template that defines the table layout.
@@ -74,6 +73,11 @@ export interface TableProps {
      * A function that will be called if the page number is changed
      */
     onPageNumberChanged?(pageNum: number): void;
+
+    /**
+     * On Table Row Click
+     */
+    onRowClick?(index: number): void;
 
     /**
      * Give true if column needs to be sortable

@@ -5,11 +5,12 @@ import * as stories from './Card.stories';
 
 const { Regular, RegularSelected, Disabled } = composeStories(stories);
 
-const cardId = 'card-test-id';
-const checkmarkId = 'check-test-id';
-const descriptionId = 'desc-test-id';
-const titleId = 'title-test-id';
-const headerId = 'header-test-id';
+const cardId = 'test-card';
+const headerId = 'test-card__header';
+const checkmarkId = 'test-card__icon-check';
+const descriptionId = 'test-card__description';
+const titleId = 'test-card__title';
+
 test('Renders - Card Regular', () => {
     render(<Regular />);
     const desc = Regular?.args?.description;

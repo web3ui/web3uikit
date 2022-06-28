@@ -15,7 +15,7 @@ const {
     CustomSizeAndFontSize,
 } = composeStories(stories);
 
-const testTextId = 'test-text';
+const testTextId = 'test-avatar__title';
 export const testAvatarId = 'test-avatar';
 
 test('Avatar - Default Guy', () => {
@@ -123,9 +123,7 @@ test('Avatar - CustomSizeAndFontSize', () => {
 
     // It has a custom font size
     const styles = element && getComputedStyle(element);
-    expect(styles?.fontSize).toBe(
-        `${CustomSizeAndFontSize?.args?.fontSize}px`,
-    );
+    expect(styles?.fontSize).toBe(`${CustomSizeAndFontSize?.args?.fontSize}px`);
 
     // It has a custom size
     expect(styles?.width).toBe(`${CustomSizeAndFontSize?.args?.size}px`);

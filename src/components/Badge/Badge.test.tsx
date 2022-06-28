@@ -7,8 +7,8 @@ import { composeStories } from '@storybook/testing-react';
 
 const { Danger, Normal, Success, Warning } = composeStories(stories);
 
-const testId = 'test-badge-id';
-const testText = 'test-badge-text';
+const testId = 'test-badge';
+const testText = 'test-badge__text';
 
 test('Renders Danger', () => {
     const badgeText = Normal.args?.text;

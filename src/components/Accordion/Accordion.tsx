@@ -55,7 +55,7 @@ const Accordion: React.FC<AccordionProps> = ({
             <HeaderStyled
                 aria-controls={`content-${formattedID}`}
                 aria-expanded={isOpen}
-                data-testid="test-accordion-header"
+                data-testid="test-accordion__header"
                 id={`accordion-control-${formattedID}`}
                 role="button"
                 onClick={toggleOpen}
@@ -65,14 +65,14 @@ const Accordion: React.FC<AccordionProps> = ({
                         svg={isOpen ? iconTypes.minus : iconTypes.plus}
                         fill={getThemeColor(theme)}
                     />
-                    <H4Styled data-testid="test-accordion-title">
+                    <H4Styled data-testid="test-accordion__title">
                         {title}
                     </H4Styled>
                 </DivStyled>
 
                 <DivStyled>
                     {subTitle && (
-                        <p data-testid="test-accordion-subtitle">{subTitle}</p>
+                        <p data-testid="test-accordion__subtitle">{subTitle}</p>
                     )}
                     {hasLockIcon && (
                         <Icon
@@ -92,7 +92,7 @@ const Accordion: React.FC<AccordionProps> = ({
 
             <DivStyledContent
                 aria-hidden={isOpen}
-                data-testid="test-accordion-content"
+                data-testid="test-accordion__content"
                 id={`content-${formattedID}`}
                 ref={divElement}
                 style={{ maxHeight: height }}

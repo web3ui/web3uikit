@@ -10,14 +10,10 @@ const { BlockieStyled } = BlockieStyles;
  * @returns <Blockies> JSX Elemenet
  */
 
-const Blockie: React.FC<BlockieProps> = (props) => {
+const Blockie: React.FC<BlockieProps> = ({ seed, ...props }) => {
     return (
-        <BlockieStyled data-testid="test-div">
-            <Blockies
-                {...props}
-                seed={props?.seed?.toLowerCase()}
-                className="identicon"
-            />
+        <BlockieStyled data-testid="test-blockie">
+            <Blockies seed={seed?.toLowerCase()} {...props} />
         </BlockieStyled>
     );
 };

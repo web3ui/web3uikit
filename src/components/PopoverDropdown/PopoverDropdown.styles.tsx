@@ -1,119 +1,163 @@
 import styled, { css } from 'styled-components';
-import color from '../../styles/colors';
-import { PopoverDropdownProps, Position } from './types';
-type TStyleProps = Pick<PopoverDropdownProps, 'position' | 'move' | 'moveBody'>;
+import resetCSS from '../../styles/reset';
+import { IPopoverDropdownProps } from './types';
 
-const arrowSize = '10px';
+type TStyleProps = Pick<
+    IPopoverDropdownProps,
+    'backgroundColor' | 'position' | 'width'
+>;
 
-const getContainerStyleByPosition = (position: Position) => {
+const sizeValue = 20;
+const halfSizeValue = sizeValue / 2;
+const size = `${sizeValue}px`;
+const halfSize = `${halfSizeValue}px`;
+
+const DivStyled = styled.div`
+    ${resetCSS};
+    position: relative;
+
+    &:hover {
+        ul {
+            display: block;
+        }
+    }
+`;
+
+const positionBottomStyles = css`
+    left: 50%;
+    top: calc(100% + ${halfSize});
+    transform: translateX(-50%);
+
+    &:before {
+        height: ${halfSize};
+        left: 0;
+        top: -${halfSize};
+        width: 100%;
+    }
+
+    &:after {
+        left: calc(50% - ${halfSize});
+        top: -6px;
+    }
+`;
+
+const positionTopStyles = css`
+    left: 50%;
+    bottom: calc(100% + ${halfSize});
+    transform: translateX(-50%);
+
+    &:before {
+        bottom: -${halfSize};
+        height: ${halfSize};
+        left: 0;
+        width: 100%;
+    }
+
+    &:after {
+        left: calc(50% - ${halfSize});
+        bottom: -6px;
+    }
+`;
+
+const positionRightStyles = css`
+    left: calc(100% + ${halfSize});
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:before {
+        height: 100%;
+        left: -${halfSize};
+        top: 0;
+        width: ${halfSize};
+    }
+
+    &:after {
+        top: calc(50% - ${halfSize});
+        left: -2px;
+    }
+`;
+
+const positionLeftStyles = css`
+    right: calc(100% + ${halfSize});
+    top: 50%;
+    transform: translateY(-50%);
+
+    &:before {
+        height: 100%;
+        right: -${halfSize};
+        top: 0;
+        width: ${halfSize};
+    }
+
+    &:after {
+        top: calc(50% - ${halfSize});
+        right: -2px;
+    }
+`;
+
+const setPosition = (position: string) => {
     switch (position) {
         case 'top':
-            return top;
+            return positionTopStyles;
         case 'bottom':
-            return bottom;
+            return positionBottomStyles;
         case 'left':
-            return left;
+            return positionLeftStyles;
         case 'right':
-            return right;
+            return positionRightStyles;
+        default:
+            return positionBottomStyles;
     }
 };
 
-const bottom = css<TStyleProps>`
-    background: ${color.blueDark};
-    bottom: -0.25rem;
-    left: 50%;
+const ListStyled = styled.ul<TStyleProps>`
+    ${resetCSS};
+    background-color: ${(p) => `${p.backgroundColor}`};
+    border-radius: ${size};
+    display: none;
+    list-style: none;
+    min-width: ${(p) => `${p.width}`};
+    padding: 8px;
     position: absolute;
-    transform: translateX(${(p) => `${p.moveBody}%`}) translateY(100%);
-    &:after {
-        position: absolute;
-        content: '';
-        bottom: 100%;
-        transform: translateX(${(p) => `${p.move}%`}) translateY(0%);
-        border: ${arrowSize} solid transparent;
-        border-bottom-color: ${color.blueDark};
+    ${(p) => p.position && setPosition(p.position)}
+
+    &:hover {
+        display: block;
     }
-`;
 
-const left = css<TStyleProps>`
-    left: -0.5rem;
-    position: absolute;
-    top: 50%;
-    transform: translateX(-100%) translateY(${(p) => `${p.moveBody}%`});
-    &:after {
-        position: absolute;
-        content: '';
-        left: 100%;
-        transform: translateY(${(p) => `${p.move}%`});
-        border: ${arrowSize} solid transparent;
-        border-left-color: ${color.blueDark};
+    li {
+        ${resetCSS};
+        display: block;
+        list-style: none;
+        position: relative;
+        z-index: 2;
     }
-`;
 
-const right = css<TStyleProps>`
-    position: absolute;
-    right: -0.5rem;
-    top: 50%;
-    transform: translateX(100%) translateY(${(p) => `${p.moveBody}%`});
-    &:after {
-        position: absolute;
+    &:before {
+        // dead-zone buffer to prevent off-hover bug
+        background-color: transparent;
         content: '';
-        right: 100%;
-        transform: translateY(${(p) => `${p.move}%`});
-        border: ${arrowSize} solid transparent;
-        border-right-color: ${color.blueDark};
-    }
-`;
-
-const top = css<TStyleProps>`
-    left: 50%;
-    position: absolute;
-    top: -0.5rem;
-    transform: translateX(${(p) => `${p.moveBody}%`}) translateY(-100%);
-    &:after {
+        display: block;
         position: absolute;
-        content: '';
-        bottom: 0;
-        transform: translateX(${(p) => `${p.move}%`}) translateY(100%);
-        border: ${arrowSize} solid transparent;
-        border-top-color: ${color.blueDark};
+        // dynamic values come from setPosition()
     }
-`;
 
-const DivStyledArrow = styled.div<TStyleProps>`
-    z-index: 999;
-    ${(p) => (p.position ? getContainerStyleByPosition(p.position) : '')}
-`;
-
-const DivStyledFlex = styled.div`
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: max-content;
-`;
-
-const DivStyledDropdown = styled.div<TStyleProps>`
-    background: ${color.blueDark};
-    border-radius: 20px;
-    height: auto;
-    overflow: hidden;
-    position: absolute;
-    width: max-content;
-    z-index: 999;
-    ${(p) => getContainerStyleByPosition(p.position)}
-`;
-const DivStyledChild = styled.div`
-    cursor: pointer;
-    height: auto;
-    width: 100%;
-
-    :hover {
-        background: ${color.blueDark2};
+    &:after {
+        // the tail of the popover box
+        background-color: ${(p) => `${p.backgroundColor}`};
+        content: '';
+        display: block;
+        height: ${size};
+        position: absolute;
+        transform: rotate(45deg);
+        width: ${size};
+        z-index: 1;
+        // dynamic values come from setPosition()
     }
 `;
 
 export default {
-    DivStyledArrow,
-    DivStyledChild,
-    DivStyledDropdown,
-    DivStyledFlex,
+    DivStyled,
+    ListStyled,
+    halfSize,
 };

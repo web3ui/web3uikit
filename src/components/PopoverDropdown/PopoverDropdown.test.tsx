@@ -1,48 +1,80 @@
 import React from 'react';
 import { composeStories } from '@storybook/testing-react';
-import {
-    fireEvent,
-    waitFor,
-    screen,
-    render,
-    cleanup,
-} from '@testing-library/react';
+import { screen, render } from '@testing-library/react';
 import * as stories from './PopoverDropdown.stories';
-import 'jest-styled-components';
+import styles from './PopoverDropdown.styles';
 
-const { PopoverSelection } = composeStories(stories);
+const { halfSize } = styles;
 
-describe('Default', () => {
-    let container: HTMLDivElement;
-    const dropdownParentId = 'dropdown-parent-test-id';
-    const dropdownElementId = 'element-test-id';
+const {
+    PopoverWithElements,
+    PopoverAnything,
+    PopoverBackgroundColor,
+    PopoverWidth,
+    PopoverPositionTop,
+    PopoverPositionRight,
+    PopoverPositionLeft,
+} = composeStories(stories);
 
-    beforeEach(() => {
-        container = document.createElement('div');
-        document.body.appendChild(container);
-        render(<PopoverSelection position={'bottom'} />, {
-            container: document.body.appendChild(container),
-        });
-    });
+const testId = 'test-popover-dropdown';
+const testIdList = 'test-popover-dropdown__list';
+const testIdChildren = 'test-popover-dropdown__child';
 
-    afterEach(() => {
-        cleanup();
-    });
+test('Renders Parent with correct children', () => {
+    render(<PopoverWithElements />);
+    const element = screen.getByTestId(testId);
+    expect(element).not.toBeNull();
 
-    it('should render the parent', () => {
-        const element = container.querySelector(
-            `[data-testid="${dropdownParentId}"]`,
-        );
-        expect(element).not.toBeNull();
-    });
+    const children = screen.getAllByTestId(testIdChildren);
+    expect(children.length).toBe(PopoverWithElements?.args?.children?.length);
+});
 
-    it('should display the menu on hover', async () => {
-        fireEvent.mouseOver(screen.getByTestId(dropdownParentId));
+test('Renders ID', () => {
+    render(<PopoverAnything />);
+    const element = screen.getByTestId(testId);
+    expect(element.id).toBe(PopoverAnything?.args?.id);
+});
 
-        await waitFor(() => screen.getByTestId(dropdownParentId));
-        expect(
-            container.querySelector(`[data-testid="${dropdownElementId}"]`)
-                ?.innerHTML,
-        ).not.toBeNull();
-    });
+test('Renders custom background color', () => {
+    render(<PopoverBackgroundColor />);
+    const list = screen.getByTestId(testIdList);
+    const styles = getComputedStyle(list);
+    expect(styles.backgroundColor).toBe(
+        PopoverBackgroundColor.args?.backgroundColor,
+    );
+});
+
+test('Renders custom width as min width', () => {
+    render(<PopoverWidth />);
+    const list = screen.getByTestId(testIdList);
+    const styles = getComputedStyle(list);
+    expect(styles.minWidth).toBe(PopoverWidth.args?.width);
+});
+
+test('Renders position bottom by default', () => {
+    render(<PopoverWithElements />);
+    const list = screen.getByTestId(testIdList);
+    const styles = getComputedStyle(list);
+    expect(styles.top).toBe(`calc(100% + ${halfSize})`);
+});
+
+test('Renders position top styles', () => {
+    render(<PopoverPositionTop />);
+    const list = screen.getByTestId(testIdList);
+    const styles = getComputedStyle(list);
+    expect(styles.bottom).toBe(`calc(100% + ${halfSize})`);
+});
+
+test('Renders position right styles', () => {
+    render(<PopoverPositionRight />);
+    const list = screen.getByTestId(testIdList);
+    const styles = getComputedStyle(list);
+    expect(styles.left).toBe(`calc(100% + ${halfSize})`);
+});
+
+test('Renders position left styles', () => {
+    render(<PopoverPositionLeft />);
+    const list = screen.getByTestId(testIdList);
+    const styles = getComputedStyle(list);
+    expect(styles.right).toBe(`calc(100% + ${halfSize})`);
 });

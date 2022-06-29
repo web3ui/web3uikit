@@ -1,50 +1,57 @@
-import React, { useState } from 'react';
-import { PopoverDropdownProps } from './types';
-import PopoverDropdownStyles from './PopoverDropdown.styles';
-const { DivStyledArrow, DivStyledFlex, DivStyledDropdown, DivStyledChild } =
-    PopoverDropdownStyles;
-const PopoverDropdown: React.FC<PopoverDropdownProps> = ({
+import React from 'react';
+import color from '../../styles/colors';
+import styles from './PopoverDropdown.styles';
+import depreciatedWarning from '../../utils/depreciationWarning';
+import { IPopoverDropdownProps } from './types';
+
+const { DivStyled, ListStyled } = styles;
+
+const PopoverDropdown: React.FC<IPopoverDropdownProps> = ({
+    backgroundColor = color.blueDark,
     children,
     id,
-    move = -50,
+    move,
+    moveBody,
     parent,
-    position,
-    moveBody = -50,
+    position = 'bottom',
+    width = '150px',
     ...props
 }) => {
-    const [showDropdown, setVisibility] = useState(false);
+    if (move) {
+        depreciatedWarning('move prop in PopoverDropdown');
+    }
+    if (moveBody) {
+        depreciatedWarning('moveBody prop in PopoverDropdown');
+    }
     return (
-        <DivStyledFlex
+        <DivStyled
+            aria-haspopup="true"
+            data-comp="PopoverDropdown"
+            data-testid="test-popover-dropdown"
             id={id}
-            onMouseEnter={() => setVisibility(true)}
-            onMouseLeave={() => setVisibility(false)}
             {...props}
         >
-            <div data-testid={'dropdown-parent-test-id'}>{parent}</div>
+            {parent}
 
-            {showDropdown && (
-                <>
-                    <DivStyledArrow
-                        position={position}
-                        move={move}
-                        moveBody={moveBody}
-                    />
-                    <DivStyledDropdown
-                        position={position}
-                        moveBody={moveBody}
-                        move={move}
-                    >
-                        {children.map((child, index) => {
-                            return (
-                                <div key={`dropdown-element-${index}`}>
-                                    <DivStyledChild>{child}</DivStyledChild>
-                                </div>
-                            );
-                        })}
-                    </DivStyledDropdown>
-                </>
-            )}
-        </DivStyledFlex>
+            <ListStyled
+                backgroundColor={backgroundColor}
+                data-testid="test-popover-dropdown__list"
+                position={position}
+                role="menu"
+                width={width}
+            >
+                {children.map((child, index) => {
+                    return (
+                        <li
+                            data-testid="test-popover-dropdown__child"
+                            key={`dropdown-element-${index}`}
+                        >
+                            {child}
+                        </li>
+                    );
+                })}
+            </ListStyled>
+        </DivStyled>
     );
 };
 

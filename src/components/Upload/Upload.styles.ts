@@ -6,7 +6,7 @@ import { DivStyledProps } from './types';
 const DivStyled = styled.div<DivStyledProps>`
     ${resetCSS};
     align-items: center;
-    background: transparent;
+    background: ${color.white};
     border-radius: 13px;
     border: 2px dashed ${color.blueSky};
     cursor: pointer;

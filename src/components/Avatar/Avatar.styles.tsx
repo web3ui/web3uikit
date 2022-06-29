@@ -30,11 +30,9 @@ const DivStyled = styled.div<TStyleProps>`
         #cee4f3 100%
     );
     color: ${(props) => props.textColor};
-    height: ${(props) => props.size}px;
     overflow: hidden;
     position: static;
     text-transform: uppercase;
-    width: ${(props) => props.size}px;
     word-break: break-all;
     display: flex;
     flex-direction: column;
@@ -45,14 +43,19 @@ const DivStyled = styled.div<TStyleProps>`
     span {
         display: none;
     }
-    border-radius: ${(p) =>
-        `${
-            p.isRounded
-                ? roundedEdgeValue
-                : p.borderRadius
-                ? `${p.borderRadius}px`
-                : `${0}px`
-        }`};
+    &,
+    & > svg {
+        height: ${(props) => props.size}px;
+        width: ${(props) => props.size}px;
+        border-radius: ${(p) =>
+            `${
+                p.isRounded
+                    ? roundedEdgeValue
+                    : p.borderRadius
+                    ? `${p.borderRadius}px`
+                    : `${0}px`
+            }`};
+    }
     background: ${(p) => p.avatarBackground};
     ${(p) => p.theme === 'image' && p.image && customBackgroundImage}
 `;

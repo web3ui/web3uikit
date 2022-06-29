@@ -45,11 +45,11 @@ const SpanStyledFlex = styled.span<TStyleProps>`
     flex-direction: ${({ iconLayout }) =>
         iconLayout === 'leading' ? 'row' : 'row-reverse'};
     margin: ${(p) =>
-        p.iconLayout === 'leading' ? '0 2px 0 4px' : '0 4px 0 2px'};
+        p.iconLayout === 'leading' ? 'auto 2px auto 4px' : 'auto 4px auto 2px'};
 
-    svg {
+    div {
         margin: ${(p) =>
-            p.iconLayout === 'leading' ? '0 4px 0 0' : '0 0 0 4px'};
+            p.iconLayout === 'leading' ? 'auto 4px auto 0' : 'auto 0 auto 4px'};
     }
 `;
 

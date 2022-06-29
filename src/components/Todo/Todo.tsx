@@ -62,7 +62,6 @@ const Todo: React.FC<TodoProps> = ({
                     size="large"
                     validation={{
                         regExp: pattern,
-                        required: true,
                     }}
                     key={key}
                     value={inputValue}

@@ -43,6 +43,7 @@ const Todo: React.FC<TodoProps> = ({
     };
 
     const addTodo = () => {
+        if (inputValue == '') return;
         setLists((prevTodo) => Array.from(new Set([...prevTodo, inputValue])));
         setInputValue('');
         const input: HTMLInputElement | null = document.querySelector(

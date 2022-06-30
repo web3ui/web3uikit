@@ -21,7 +21,7 @@ const ENSAvatar: React.FC<ENSAvatarprops> = (props) => {
 
             })
 
-            web3?.getAvatar(String(account)).then((r) => {
+            web3?.getAvatar(String(ensName)).then((r) => {
                 
                 setAvatarURI(String(r))
             })

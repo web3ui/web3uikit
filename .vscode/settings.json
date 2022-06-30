@@ -7,5 +7,6 @@
     },
     "eslint.rules.customizations": [{ "rule": "*", "severity": "error" }],
     "scss.lint.unknownAtRules": "ignore",
-    "emmet.excludeLanguages": ["typescriptreact"]
+    "emmet.excludeLanguages": ["typescriptreact"],
+    "cSpell.words": ["Blockie", "Blockies"]
 }

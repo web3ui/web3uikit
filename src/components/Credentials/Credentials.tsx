@@ -19,16 +19,16 @@ const {
 const Credentials: FC<ICredentialsProps> = ({
     hasCopyButton = true,
     hasHideButton = true,
-    title,
-    titleColor,
+    hiddenText = '•••••••••••••••••••••••••••••••',
     icon,
     iconColor,
     iconSize,
     isHidden = false,
     text,
     textColor = color.blueDark,
+    title,
+    titleColor,
     width = 'auto',
-    hiddenText = '•••••••••••••••••••••••••••••••',
     ...props
 }) => {
     const [isValueHidden, setIsValueHidden] = useState(isHidden);
@@ -44,26 +44,30 @@ const Credentials: FC<ICredentialsProps> = ({
     );
 
     return (
-        <CredentialsStyled width={width} data-testid="test-credentials">
+        <CredentialsStyled
+            data-testid="test-credentials"
+            width={width}
+            {...props}
+        >
             <CredentialsHeader
-                title={title}
-                titleColor={titleColor}
+                data-testid="test-credentials-header"
                 icon={icon}
                 iconColor={iconColor}
                 iconSize={iconSize}
-                {...props}
+                title={title}
+                titleColor={titleColor}
             />
-            <PreformattedStyled>
+            <PreformattedStyled data-testid="test-credentials-pre">
                 <DivWrapperStyled
                     isHidden={isValueHidden}
                     isMultiline={isMultiline}
                 >
                     <Typography
-                        monospace
                         color={isValueHidden ? color.grey : textColor}
-                        data-testid="cred-test-text"
-                        weight="400"
+                        data-testid="cred-test-new-comp-heading"
+                        monospace
                         variant={isValueHidden ? 'caption14' : 'body16'}
+                        weight="400"
                     >
                         {isValueHidden ? (
                             hiddenText
@@ -77,7 +81,7 @@ const Credentials: FC<ICredentialsProps> = ({
                         )}
                     </Typography>
                 </DivWrapperStyled>
-                <ToolsStyled>
+                <ToolsStyled data-testid="test-credentials-tools">
                     {hasHideButton && (
                         <HideButton
                             onToggle={() => setIsValueHidden(!isValueHidden)}

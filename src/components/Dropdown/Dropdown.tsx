@@ -59,12 +59,13 @@ const Dropdown: React.FC<IDropdown> = ({
         ) {
             return (
                 <DivStyledOptionsContainer
-                    width={width}
+                    data-testid="test-dropdown-container"
                     isOpen={isOpen}
+                    width={width}
                     {...props}
                 >
                     <DivInnerStyledOptionsContainer>
-                        <DivStyledNoData>
+                        <DivStyledNoData data-testid="test-dropdown-data">
                             <Illustration
                                 logo="looking"
                                 width={'100%'}
@@ -118,21 +119,22 @@ const Dropdown: React.FC<IDropdown> = ({
     return (
         <StyledSelectParentDiv
             width={width}
-            data-testid="popoverSelect"
+            data-testid="test-dropdown"
             isDisabled={isDisabled}
         >
             <DivStyledSelected
-                width={width}
+                data-testid="test-dropdown-wrap"
+                hasOutline={hasOutline}
+                isOpen={!!isOpen}
                 onClick={() => {
                     if (!isDisabled) {
                         setIsOpen(!isOpen);
                     }
                 }}
-                isOpen={!!isOpen}
-                hasOutline={hasOutline}
+                width={width}
             >
                 <div>
-                    <span>
+                    <span data-testid="test-dropdown-icon">
                         {icon && (
                             <Icon
                                 size={24}

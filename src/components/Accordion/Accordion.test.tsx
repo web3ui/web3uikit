@@ -10,9 +10,9 @@ const { Default, FullDemo, HasIcon, HasSubtitle, HasTag, ThemeColor } =
     composeStories(stories);
 
 const testId = 'test-accordion';
-const testTitle = 'test-accordion__title';
-const testSubtitle = 'test-accordion__subtitle';
-const testHeader = 'test-accordion__header';
+const testTitle = 'test-accordion-title';
+const testSubtitle = 'test-accordion-subtitle';
+const testHeader = 'test-accordion-header';
 
 test('Renders Default', () => {
     const titleText = Default?.args?.title;

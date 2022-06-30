@@ -17,7 +17,7 @@ const {
     Yellow,
 } = composeStories(stories);
 
-export const tagTestId = 'test-tag-id';
+export const tagTestId = 'test-tag';
 export const tagTestTextId = 'test-tag-text';
 
 type TestStoryProps = {

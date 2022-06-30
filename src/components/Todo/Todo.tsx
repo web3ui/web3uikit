@@ -28,8 +28,9 @@ const Todo: React.FC<TodoProps> = ({
 }) => {
     const key = useMemo(() => Math.random(), []);
     const [inputValue, setInputValue] = useState<string>('');
-    const [isInputVlaid, setIsInputValid] = useState<boolean>(false);
+    const [isInputValid, setIsInputValid] = useState<boolean>(false);
     const [lists, setLists] = useState<string[]>(todos);
+
     useEffect(() => onChange && onChange(lists), [lists]);
     useEffect(() => setLists(todos), [todos]);
     useEffect(() => {
@@ -49,7 +50,6 @@ const Todo: React.FC<TodoProps> = ({
         const input: HTMLInputElement | null = document.querySelector(
             `input[key="${key}"]`,
         );
-
         input?.focus();
     };
 
@@ -57,19 +57,19 @@ const Todo: React.FC<TodoProps> = ({
         <SectionStyled data-testid="test-todo" {...props}>
             <DivStyled>
                 <Input
+                    data-testid="test-todo-input"
                     id="todo-input"
+                    key={key}
                     label={label}
                     onChange={(e) => setInputValue(e.target.value)}
                     size="large"
-                    validation={{
-                        regExp: pattern,
-                    }}
-                    key={key}
+                    validation={{ regExp: pattern }}
                     value={inputValue}
                 />
 
                 <Button
-                    disabled={!isInputVlaid}
+                    data-testid="test-todo-button"
+                    disabled={!isInputValid}
                     icon="plus"
                     onClick={addTodo}
                     size="large"
@@ -79,7 +79,7 @@ const Todo: React.FC<TodoProps> = ({
             </DivStyled>
 
             <DivStyledContent
-                data-testid="test-todo_content"
+                data-testid="test-todo-content"
                 fullWidth={fullWidth}
             >
                 {lists.map((todo, i) => (

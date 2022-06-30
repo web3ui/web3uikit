@@ -7,10 +7,10 @@ import 'jest-styled-components';
 
 const { One, Two, Three, Four } = composeStories(stories);
 
-const olId = 'test-breadcrumbs__list';
+const olId = 'test-breadcrumbs-list';
 const navId = 'test-breadcrumbs';
-const separatorId = 'test-breadcrumbs__separator';
-const breadcrumbId = 'test-breadcrumb__item';
+const separatorId = 'test-breadcrumbs-separator';
+const breadcrumbId = 'test-breadcrumb-item';
 
 test('Renders - Breadcrumbs One', () => {
     render(<One />);

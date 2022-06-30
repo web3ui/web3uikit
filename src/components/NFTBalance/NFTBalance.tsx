@@ -61,7 +61,7 @@ const NFTBalance: React.FC<INFTBalance> = ({ address, chain, ...props }) => {
     }
 
     return (
-        <DivStyled gap={64} {...props}>
+        <DivStyled data-testid="test-nft-balance" gap={64} {...props}>
             <DivStyled gap={8}>
                 <Typography variant="h1">{getEllipsisTxt(address)}</Typography>
                 <Typography>

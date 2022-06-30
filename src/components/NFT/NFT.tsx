@@ -94,7 +94,7 @@ const NFT: React.FC<INFTProps> = ({
     }
 
     return (
-        <div>
+        <div data-testid="test-nft">
             <DivStyled id="nft">
                 {image(
                     (JSON.parse(String(data.metadata)) as TNFTMetadata)

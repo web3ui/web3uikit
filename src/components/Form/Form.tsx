@@ -232,9 +232,9 @@ const Form: React.FC<FormProps> = ({
 
     return (
         <FormStyled
-            onSubmit={formSubmitted}
-            id={id}
             data-testid="test-form"
+            id={id}
+            onSubmit={formSubmitted}
             {...props}
         >
             {title && (
@@ -256,11 +256,11 @@ const Form: React.FC<FormProps> = ({
                 <div className="customFooter">{customFooter}</div>
             ) : (
                 <Button
-                    {...buttonConfig}
                     disabled={isDisabled || isSubmitted}
                     id="form-submit"
                     text="Submit"
                     type="submit"
+                    {...buttonConfig}
                 />
             )}
         </FormStyled>

@@ -6,10 +6,10 @@ import * as stories from './Card.stories';
 const { Regular, RegularSelected, Disabled } = composeStories(stories);
 
 const cardId = 'test-card';
-const headerId = 'test-card__header';
-const checkmarkId = 'test-card__icon-check';
-const descriptionId = 'test-card__description';
-const titleId = 'test-card__title';
+const headerId = 'test-card-header';
+const checkmarkId = 'test-card-icon-check';
+const descriptionId = 'test-card-description';
+const titleId = 'test-card-title';
 
 test('Renders - Card Regular', () => {
     render(<Regular />);

@@ -42,11 +42,11 @@ const Card: React.FC<CardProps> = ({
             cursorType={cursorType}
             {...props}
         >
-            <HeaderStyled data-testid="test-card__header">
+            <HeaderStyled data-testid="test-card-header">
                 {isSelected && (
                     <AbsoluteIconStyled position="topL">
                         <Icon
-                            data-testid="test-card__icon-check"
+                            data-testid="test-card-icon-check"
                             fill={colors.green}
                             size={24}
                             svg={iconTypes.checkmark}
@@ -78,7 +78,7 @@ const Card: React.FC<CardProps> = ({
                     {title && (
                         <Typography
                             color={color.blue}
-                            data-testid="test-card__title"
+                            data-testid="test-card-title"
                             variant="subtitle2"
                         >
                             {title}
@@ -87,7 +87,7 @@ const Card: React.FC<CardProps> = ({
                     {description && (
                         <Typography
                             color={color.blue}
-                            data-testid="test-card__description"
+                            data-testid="test-card-description"
                             variant="caption14"
                         >
                             {description}

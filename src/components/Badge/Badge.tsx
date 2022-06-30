@@ -15,7 +15,7 @@ const Badge: React.FC<BadgeProps> = ({
         <DivStyled data-testid="test-badge" state={state} {...props}>
             <Typography
                 color="white"
-                data-testid="test-badge__text"
+                data-testid="test-badge-text"
                 variant={textVariant}
                 weight="bold"
             >

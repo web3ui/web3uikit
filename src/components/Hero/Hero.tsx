@@ -33,7 +33,7 @@ const Hero: React.FC<HeroProps> = ({
         >
             <Typography
                 color={textColor}
-                data-testid="test-hero_title"
+                data-testid="test-hero-title"
                 variant="h1"
             >
                 {title}
@@ -41,7 +41,7 @@ const Hero: React.FC<HeroProps> = ({
             {subTitle && (
                 <Typography
                     color={textColor}
-                    data-testid="test-hero_text"
+                    data-testid="test-hero-text"
                     variant="body16"
                     weight="regular"
                 >
@@ -58,7 +58,7 @@ const Hero: React.FC<HeroProps> = ({
             )}
 
             {children && (
-                <DivStyled data-testid="test-hero_child">{children}</DivStyled>
+                <DivStyled data-testid="test-hero-child">{children}</DivStyled>
             )}
         </SectionStyled>
     );

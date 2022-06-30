@@ -102,6 +102,14 @@ MailToLinkInTextIconAfter.args = {
     type: 'email',
 };
 
+export const NoIconLink = TemplateText.bind({});
+NoIconLink.args = {
+    address: 'hello@moralis.io',
+    text: 'Email Us',
+    type: 'email',
+    iconLayout: 'none',
+};
+
 export const InternalLink: ComponentStory<typeof LinkTo> = Template.bind({});
 InternalLink.decorators = [
     (Story) => (

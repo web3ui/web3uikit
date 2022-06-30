@@ -1,5 +1,4 @@
 import { Button } from '../Button';
-import { H2Styled } from '../../styles/StyledElements';
 import { Icon } from '../Icon';
 import { Loading } from '../Loading';
 import { StepperProps } from './types';

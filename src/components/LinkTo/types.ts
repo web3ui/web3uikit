@@ -1,4 +1,4 @@
-export const layoutState = ['leading', 'trailing'] as const;
+export const layoutState = ['leading', 'trailing', 'none'] as const;
 export type TLayoutState = typeof layoutState[number];
 
 export const typeState = ['email', 'external', 'internal'] as const;

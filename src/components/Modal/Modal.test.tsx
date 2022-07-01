@@ -28,8 +28,8 @@ const args: ModalProps = {
 
 const modalTestId = 'test-modal';
 const headerTestId = 'test-modal-header';
-const contentTestId = 'modal-content-test-id';
-const footerTestId = 'modal-footer-test-id';
+const contentTestId = 'test-modal-content';
+const footerTestId = 'test-modal-footer';
 
 test('Renders Modal', () => {
     render(<Modal {...args} />);

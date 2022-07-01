@@ -64,7 +64,7 @@ const Credentials: FC<ICredentialsProps> = ({
                 >
                     <Typography
                         color={isValueHidden ? color.grey : textColor}
-                        data-testid="cred-test-new-comp-heading"
+                        data-testid="test-cred-new-comp-heading"
                         monospace
                         variant={isValueHidden ? 'caption14' : 'body16'}
                         weight="400"

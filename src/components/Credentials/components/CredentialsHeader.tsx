@@ -28,7 +28,7 @@ const CredentialsHeader: FC<ICredentialsHeaderProps> = ({
                     svg={icon}
                     fill={`${iconColor}`}
                     size={iconSize}
-                    data-testid="cred-test-header-icon"
+                    data-testid="test-cred-header-icon"
                 />
             )}
             {title && (
@@ -36,7 +36,7 @@ const CredentialsHeader: FC<ICredentialsHeaderProps> = ({
                     variant="body16"
                     weight="600"
                     color={titleColor}
-                    data-testid="cred-test-header-text"
+                    data-testid="test-cred-header-text"
                 >
                     {title}
                 </Typography>

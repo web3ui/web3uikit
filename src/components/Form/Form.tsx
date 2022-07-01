@@ -245,7 +245,7 @@ const Form: React.FC<FormProps> = ({
                 <div
                     className="form-item"
                     data-testclass="form-ele"
-                    data-testid={`form-ele-${i}`}
+                    data-testid={`test-form-ele-${i}`}
                     key={`form-ele-${i}`}
                 >
                     {renderInputType(input, i)}

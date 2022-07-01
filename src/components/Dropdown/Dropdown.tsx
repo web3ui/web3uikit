@@ -82,7 +82,7 @@ const Dropdown: React.FC<IDropdown> = ({
         return (
             <DivStyledOptionsContainer
                 isOpen={isOpen}
-                data-testid="optionsContainer"
+                data-testid="test-dropdown-options-container"
                 width={width}
             >
                 <DivInnerStyledOptionsContainer>

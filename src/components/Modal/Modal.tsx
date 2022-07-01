@@ -96,32 +96,29 @@ const Modal: React.FC<ModalProps> = ({
                     </>
                 </HeaderStyled>
 
-                <DivStyledContent
-                    id={'content'}
-                    data-testid={'modal-content-test-id'}
-                >
+                <DivStyledContent id="content" data-testid="test-modal-content">
                     {children}
                 </DivStyledContent>
 
                 {hasFooter && !customFooter && (
                     <FooterStyled
-                        data-testid={'modal-footer-test-id'}
+                        data-testid="test-modal-footer"
                         hasCancel={hasCancel}
                         fixedMode={fixedMode}
                     >
                         {hasCancel && (
                             <Button
                                 id="modal-cancel-button"
-                                data-testid={'modal-cancel-button-test-id'}
+                                data-testid="test-modal-button"
                                 disabled={isCancelDisabled}
                                 text={cancelText}
                                 onClick={onCancel ? onCancel : () => {}}
-                                theme={'outline'}
+                                theme="outline"
                             />
                         )}
                         <Button
                             color={okButtonColor}
-                            data-testid={'modal-ok-button-test-id'}
+                            data-testid="test-modal-ok-button"
                             disabled={isOkDisabled}
                             onClick={onOk ? onOk : () => {}}
                             text={okText}

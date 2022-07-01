@@ -162,7 +162,7 @@ const Select: React.FC<SelectProps> = ({
                                 i !== selectedOptionIndex && (
                                     <Option
                                         aria-label="select-option"
-                                        data-testid={`test-option-${i}`}
+                                        data-testid={`test-seclect-option-${i}`}
                                         id={option.id.toString()}
                                         key={option?.label}
                                         onClick={onOptionClicked(i)}
@@ -226,7 +226,7 @@ const Select: React.FC<SelectProps> = ({
                     (option, i) =>
                         i !== selectedOptionIndex && (
                             <option
-                                data-testid={`test-option-${i}`}
+                                data-testid={`test-seclect-option-${i}`}
                                 id={String(option?.id)}
                                 key={option?.id}
                             >

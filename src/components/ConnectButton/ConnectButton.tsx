@@ -106,7 +106,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         return (
             <WrapperStyled>
                 <ConnectButtonStyled
-                    data-testid="connect-button-button"
+                    data-testid="test-connect-button-button"
                     onClick={() => setIsConnectModalOpen(true)}
                 >
                     <TextStyled>Connect Wallet</TextStyled>
@@ -123,14 +123,14 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
     }
 
     return (
-        <WrapperStyled data-testid="connect-button-wrap" {...props}>
+        <WrapperStyled data-testid="test-connect-button-wrap" {...props}>
             <AccountInfoStyled>
-                <BalanceBlockStyled data-testid="connect-button-balance">
+                <BalanceBlockStyled data-testid="test-connect-button-balance">
                     <NativeBalance style={{ margin: '0 8px 0 12px' }} />
                 </BalanceBlockStyled>
                 <AddressStyled
                     onClick={() => disconnectWallet()}
-                    data-testid="connect-button-address"
+                    data-testid="test-connect-button-address"
                 >
                     <TextStyled style={{ marginRight: '8px' }}>
                         {account && getEllipsisTxt(account)}

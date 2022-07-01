@@ -6,8 +6,8 @@ import * as stories from './Tooltip.stories';
 
 const { Bottom, Top, Left, Right } = composeStories(stories);
 
-const toolTipContainer = 'tooltip-container-test-id';
-const toolTipContent = 'tooltip-content-test-id';
+const toolTipContainer = 'test-tooltip';
+const toolTipContent = 'test-tooltip-content';
 
 test('Tooltip - Bottom', async () => {
     render(<Bottom />);

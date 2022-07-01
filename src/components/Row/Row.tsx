@@ -26,6 +26,7 @@ export function Col({
         <ColDiv
             breakpointsConfig={breakpointsConfig}
             colGap={prov.colGap}
+            data-testid="test-row-col"
             isFullWidth={isFullWidth}
             lg={prov.lg}
             md={prov.md}
@@ -60,7 +61,7 @@ function Row({
             <RowDiv
                 alignItems={alignItems}
                 colGap={colGap}
-                data-testid="row"
+                data-testid="test-row"
                 justifyItems={justifyItems}
                 rowGap={rowGap}
                 width={width}

@@ -49,7 +49,7 @@ const Avatar: React.FC<AvatarProps> = ({
             {theme === 'image' ? (
                 !image && renderAvatarSVG()
             ) : (
-                <H4Styled data-testid="test-text" textColor={textColor}>
+                <H4Styled data-testid="test-avatar-title" textColor={textColor}>
                     {text && text.length > 1 ? `${text[0]}${text[1]}` : text}
                 </H4Styled>
             )}

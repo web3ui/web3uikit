@@ -12,7 +12,7 @@ const testValue = 'Test Value';
 const testPlaceholder = 'Type here field';
 const testTextAreaId = 'test-textarea';
 const testWrapperId = 'test-textarea-wrapper';
-const testLabelId = 'test-label';
+const testLabelId = 'test-textarea-label';
 const testEvent = jest.fn();
 
 test('TextArea - Default', async () => {

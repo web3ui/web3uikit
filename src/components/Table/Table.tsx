@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { TableProps } from '.';
 import color from '../../styles/colors';
 import getModuleAnimation from '../Card/Animations/animations';
@@ -132,14 +132,15 @@ const Table: React.FC<TableProps> = ({
         return (
             <>
                 {header.map((col, key) => (
-                    <>
+                    <Fragment key={`header-wrap-${key}`}>
                         <DivTableCell
-                            key={`header_${key}`}
-                            role="table-header"
-                            className="table_header"
                             alignCellItems={alignCellItems}
+                            className="table_header"
+                            data-testid="test-table-cell"
                             justifyCellItems={justifyCellItems}
+                            key={`header_${key}`}
                             onClick={() => handleSortingChange(key)}
+                            role="table-header"
                         >
                             {col}
                             {sortField === key && (
@@ -153,7 +154,7 @@ const Table: React.FC<TableProps> = ({
                                 />
                             )}
                         </DivTableCell>
-                    </>
+                    </Fragment>
                 ))}
                 <Divider />
             </>
@@ -236,9 +237,9 @@ const Table: React.FC<TableProps> = ({
             <Pagination>
                 <div>
                     <PaginationText
+                        data-testid="test-table-pagination-prev"
                         isActive={pageNum != 0}
                         onClick={handlePrev}
-                        data-testid="pagination-prev"
                     >
                         Prev
                     </PaginationText>
@@ -249,22 +250,24 @@ const Table: React.FC<TableProps> = ({
                         maxPages,
                     ).map((key) => (
                         <PaginationTag
-                            key={`pagination_${key}`}
                             active={key - 1 == pageNum}
+                            data-testid={`test-table-pagination-${
+                                key - 1 == pageNum
+                            }`}
+                            key={`pagination_${key}`}
                             onClick={() => handleSetPageNumber(key - 1)}
                             role="pagination-item"
-                            data-testid={`pagination_${key - 1 == pageNum}`}
                         >
                             <span>{key}</span>
                         </PaginationTag>
                     ))}
                     <PaginationText
+                        data-testid="test-table-pagination-next"
                         isActive={
                             pageNum + 1 <
                             Math.ceil(tableData?.length / pageSize)
                         }
                         onClick={handleNext}
-                        data-testid="pagination-next"
                     >
                         Next
                     </PaginationText>
@@ -294,7 +297,7 @@ const Table: React.FC<TableProps> = ({
     );
 
     return (
-        <TableParent data-testid="test-table-parent" {...props}>
+        <TableParent data-testid="test-table" {...props}>
             <TableGridContainer>
                 <TableGrid columns={columnsConfig}>
                     <RenderTableHeader />

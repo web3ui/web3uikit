@@ -75,17 +75,17 @@ const VerifyCode: FC<VerifyCodeProps> = ({
     };
 
     return (
-        <div className="VerifyCode" data-testid="test-VerifyCode">
+        <div className="VerifyCode" data-testid="test-verify-code">
             <Typography
+                color={color.black}
                 variant="subtitle2"
                 weight="semibold"
-                color={color.black}
             >
                 {label}
             </Typography>
             <DivStyledWrapper
                 className="verify-code"
-                data-testid="test-verify-code-id"
+                data-testid="test-verify-code-wrap"
             >
                 {code.map((num, idx) => (
                     <InputStyled
@@ -96,11 +96,11 @@ const VerifyCode: FC<VerifyCodeProps> = ({
                         key={idx}
                         maxLength={1}
                         onChange={(e) => processInput(e, idx)}
-                        onKeyUp={(e) => onKeyUp(e, idx)}
                         onKeyDown={(e) =>
                             ['e', 'E', '+', '-', '.'].includes(e.key) &&
                             e.preventDefault()
                         }
+                        onKeyUp={(e) => onKeyUp(e, idx)}
                         onPaste={(e) => onPaste(e)}
                         placeholder={placeholder[0]}
                         ref={inputRefs[idx]}
@@ -110,7 +110,9 @@ const VerifyCode: FC<VerifyCodeProps> = ({
                 ))}
             </DivStyledWrapper>
             {state === 'error' && errorMessage !== '' && (
-                <DivStyledTooltip>{errorMessage}</DivStyledTooltip>
+                <DivStyledTooltip data-testid="test-verify-code-error">
+                    {errorMessage}
+                </DivStyledTooltip>
             )}
         </div>
     );

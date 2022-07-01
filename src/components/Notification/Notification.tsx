@@ -86,29 +86,29 @@ const Notification: React.FC<NotificationProps> = ({
 
     return (
         <NotificationStyled
-            data-testid={'test-notification-id'}
+            data-testid="test-notification"
             id={id}
             isClosing={isClosing}
             onMouseEnter={pauseTimer}
             onMouseLeave={startTimer}
-            type={type}
             position={position}
+            type={type}
             {...props}
         >
-            <IconWrapperStyled data-testid={'test-notification-icon-wrapper'}>
+            <IconWrapperStyled data-testid="test-notification-icon-wrapper">
                 <Icon size={24} svg={getIcon()} fill={getIconColor(type)} />
             </IconWrapperStyled>
             <TextContentStyled>
-                <TitleStyled data-testid={'test-notification-title'}>
+                <TitleStyled data-testid="test-notification-title">
                     {title}
                 </TitleStyled>
                 <CloseWrapperStyled
                     onClick={closeNotification}
-                    data-testid={'test-notification-x'}
+                    data-testid="test-notification-x"
                 >
                     <Icon size={24} svg={iconTypes.x} fill={color.greyIcons} />
                 </CloseWrapperStyled>
-                <SpanStyled data-testid={'test-notification-message'}>
+                <SpanStyled data-testid="test-notification-message">
                     {message}
                 </SpanStyled>
             </TextContentStyled>

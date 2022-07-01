@@ -5,9 +5,9 @@ import { render, screen } from '@testing-library/react';
 
 const { Regular } = composeStories(stories);
 
-const cardId = 'card-test-id';
-const topicId = 'topic-test-id';
-const infoId = 'info-test-id';
+const cardId = 'test-info';
+const topicId = 'test-info-topic';
+const infoId = 'test-info-info';
 
 test('Renders - Information', () => {
     const topic = Regular?.args?.topic;

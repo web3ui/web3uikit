@@ -3,9 +3,9 @@ import { render, screen } from '@testing-library/react';
 import DatePicker from './DatePicker';
 
 const datePickerTestId = 'test-date-picker';
-const datePickerIcon = 'date-picker_icon';
-const datePickerInput = 'date-picker_input';
-const datePickerLabel = 'date-picker_label';
+const datePickerIcon = 'test-date-picker-icon';
+const datePickerInput = 'test-date-picker-input';
+const datePickerLabel = 'test-date-picker-label';
 
 test('Should load with default setup', () => {
     render(<DatePicker id="date-picker" label="test label" />);

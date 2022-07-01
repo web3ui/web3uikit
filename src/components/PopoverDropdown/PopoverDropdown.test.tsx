@@ -17,8 +17,8 @@ const {
 } = composeStories(stories);
 
 const testId = 'test-popover-dropdown';
-const testIdList = 'test-popover-dropdown__list';
-const testIdChildren = 'test-popover-dropdown__child';
+const testIdList = 'test-popover-dropdown-list';
+const testIdChildren = 'test-popover-dropdown-child';
 
 test('Renders Parent with correct children', () => {
     render(<PopoverWithElements />);

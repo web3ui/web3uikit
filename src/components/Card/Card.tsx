@@ -28,7 +28,7 @@ const Card: React.FC<CardProps> = ({
     return (
         <DivStyled
             aria-label={isSelected ? 'card not selected' : 'card selected'}
-            data-testid={'card-test-id'}
+            data-testid="test-card"
             id={id}
             onClick={() => {
                 if (isDisabled) return;
@@ -42,11 +42,11 @@ const Card: React.FC<CardProps> = ({
             cursorType={cursorType}
             {...props}
         >
-            <HeaderStyled data-testid={'header-test-id'}>
+            <HeaderStyled data-testid="test-card-header">
                 {isSelected && (
                     <AbsoluteIconStyled position="topL">
                         <Icon
-                            data-testid={'check-test-id'}
+                            data-testid="test-card-icon-check"
                             fill={colors.green}
                             size={24}
                             svg={iconTypes.checkmark}
@@ -56,12 +56,10 @@ const Card: React.FC<CardProps> = ({
                 {!isDisabled && tooltipText && (
                     <AbsoluteIconStyled position="topR">
                         <Tooltip
-                            position={'bottom'}
                             children={[
                                 <Icon
-                                    key="ttip-card"
-                                    data-testid={'help-test-id'}
                                     fill={colors.blue}
+                                    key="tip-card"
                                     size={22}
                                     svg={iconTypes.helpCircle}
                                 />,
@@ -69,6 +67,7 @@ const Card: React.FC<CardProps> = ({
                             content={tooltipText}
                             move={tooltipMove}
                             moveBody={tooltipMoveBody}
+                            position={'bottom'}
                         />
                     </AbsoluteIconStyled>
                 )}
@@ -78,18 +77,18 @@ const Card: React.FC<CardProps> = ({
                 <FooterStyled>
                     {title && (
                         <Typography
-                            variant="subtitle2"
-                            data-testid={'title-test-id'}
                             color={color.blue}
+                            data-testid="test-card-title"
+                            variant="subtitle2"
                         >
                             {title}
                         </Typography>
                     )}
                     {description && (
                         <Typography
-                            variant="caption14"
-                            data-testid={'desc-test-id'}
                             color={color.blue}
+                            data-testid="test-card-description"
+                            variant="caption14"
                         >
                             {description}
                         </Typography>

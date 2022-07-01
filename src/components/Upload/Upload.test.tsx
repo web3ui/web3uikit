@@ -8,9 +8,9 @@ import * as stories from './Upload.stories';
 const { TextOnly, WithIcon } = composeStories(stories);
 
 // setting my test IDs to match my tsx
-const uploadComp = 'div-upload-test-id';
-const inputTestId = 'input-upload-test-id';
-const iconTestId = 'icon-upload-test-id';
+const uploadComp = 'test-upload';
+const inputTestId = 'test-upload-input';
+const iconTestId = 'test-upload-icon';
 
 // Test Story 1
 describe('Render TextOnly', () => {

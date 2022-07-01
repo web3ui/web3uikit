@@ -9,7 +9,7 @@ import React from 'react';
 import CopyButton from './CopyButton';
 import { iconTypes } from '../Icon';
 
-const copyIconTestId = 'copy-icon';
+const copyIconTestId = 'test-copy-button';
 
 // Mocking clipboard for testing
 Object.defineProperty(navigator, 'clipboard', {

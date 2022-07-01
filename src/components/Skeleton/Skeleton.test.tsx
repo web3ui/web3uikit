@@ -6,10 +6,10 @@ import rgbToHex from '../../utils/rgbToHex';
 import * as stories from './Skeleton.stories';
 
 const { SkeletonImage } = composeStories(stories);
-const skeletonTestId = 'test-skeleton-id';
+const skeletonTestId = 'test-skeleton';
 
 describe('Skeleton - Image', () => {
-let container: HTMLDivElement;
+    let container: HTMLDivElement;
 
     beforeEach(() => {
         container = document.createElement('div');

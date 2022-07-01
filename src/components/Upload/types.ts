@@ -10,7 +10,7 @@ export interface UploadProps {
      * The callback function to be called onChange
      */
 
-    onChange: (file: Blob | null) => void;
+    onChange?: (file: Blob | null) => void;
 }
 
 export interface DivStyledProps {

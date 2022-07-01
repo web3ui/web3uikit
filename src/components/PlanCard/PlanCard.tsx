@@ -21,7 +21,7 @@ const PlanCard: React.FC<IPlanCardProps> = ({
     return (
         <DivStyled
             className="PlanCard"
-            data-testid="test-PlanCard"
+            data-testid="test-plan-card"
             isActive={isActive}
             {...props}
         >

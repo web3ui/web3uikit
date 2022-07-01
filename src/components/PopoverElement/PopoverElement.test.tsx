@@ -9,8 +9,8 @@ const testClickEvent = jest.fn();
 
 describe('Default', () => {
     let container: HTMLDivElement;
-    const dropdownElementId = 'dropdown-element-test-id';
-    const dropdownElementClickId = 'dropdown-element-click-test-id';
+    const dropdownElementId = 'test-dropdown-element';
+    const dropdownElementClickId = 'test-dropdown-element-click';
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -41,9 +41,9 @@ describe('Default', () => {
 
 describe('Custom', () => {
     let container: HTMLDivElement;
-    const dropdownElementId = 'dropdown-element-test-id';
-    const dropdownElementClickId = 'dropdown-element-click-test-id';
-    const dropdownElementTextId = 'dropdown-element-text-test-id';
+    const dropdownElementId = 'test-dropdown-element';
+    const dropdownElementClickId = 'test-dropdown-element-click';
+    const dropdownElementTextId = 'test-dropdown-element-text';
     const height = 50;
     const width = 100;
     const buttonText = 'Local Devchain Server';

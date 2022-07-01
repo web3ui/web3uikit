@@ -17,7 +17,7 @@ const Upload: React.FC<UploadProps> = ({ onChange, theme = 'withIcon' }) => {
     const [fileSelected, setFileSelected] = useState<Blob | null>(null);
     const inputFile = useRef<HTMLInputElement | null>(null);
 
-    useEffect(() => onChange(fileSelected), [fileSelected]);
+    useEffect(() => onChange && onChange(fileSelected), [fileSelected]);
 
     const onClickHandler = () => {
         inputFile.current && inputFile.current.click();
@@ -37,7 +37,7 @@ const Upload: React.FC<UploadProps> = ({ onChange, theme = 'withIcon' }) => {
 
     return (
         <DivStyled
-            data-testid={'div-upload-test-id'}
+            data-testid="test-upload"
             isFileSelected={Boolean(fileSelected)}
             onClick={onClickHandler}
             onDragOver={(e) => e.preventDefault()}
@@ -46,7 +46,7 @@ const Upload: React.FC<UploadProps> = ({ onChange, theme = 'withIcon' }) => {
             {fileSelected === null && (
                 <>
                     <InputStyled
-                        data-testid={'input-upload-test-id'}
+                        data-testid="test-upload-input"
                         id="file"
                         onChange={onChangeFile}
                         ref={inputFile}
@@ -55,7 +55,7 @@ const Upload: React.FC<UploadProps> = ({ onChange, theme = 'withIcon' }) => {
                     {theme === 'textOnly' && (
                         <>
                             <Typography variant="h4" weight="400">
-                                Drag & Drop File <br /> or
+                                Drag &amp; Drop File <br /> or
                             </Typography>
                             <Typography
                                 color={color.blue}
@@ -69,7 +69,7 @@ const Upload: React.FC<UploadProps> = ({ onChange, theme = 'withIcon' }) => {
                     {theme === 'withIcon' && (
                         <>
                             <Icon
-                                data-testid={'icon-upload-test-id'}
+                                data-testid="test-upload-icon"
                                 fill={color.blueSky}
                                 size={48}
                                 svg="image"
@@ -93,7 +93,12 @@ const Upload: React.FC<UploadProps> = ({ onChange, theme = 'withIcon' }) => {
                         src={URL.createObjectURL(fileSelected)}
                     />
                     <IconDivStyled onClick={() => setFileSelected(null)}>
-                        <Icon fill={color.blue} svg="bin" size={24} />
+                        <Icon
+                            data-testid="test-upload-icon"
+                            fill={color.blue}
+                            svg="bin"
+                            size={24}
+                        />
                     </IconDivStyled>
                 </>
             )}

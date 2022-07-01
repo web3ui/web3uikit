@@ -41,7 +41,7 @@ const DynamicText: FC<TypographyProps> = ({
 
     return (
         // @ts-ignore
-        <Tag {...props}>
+        <Tag data-testid="test-typography" {...props}>
             {children}
             {copyable && (
                 <CopyButton

@@ -7,7 +7,7 @@ import { render, screen } from '@testing-library/react';
 
 const { Default, HiddenState } = composeStories(stories);
 
-export const testCompId = 'test-hidebutton';
+export const testCompId = 'test-hide-button';
 
 test('Renders - HideButton Default', () => {
     render(<Default />);

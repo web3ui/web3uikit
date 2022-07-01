@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import color from '../../styles/colors';
 import { ModalProps } from './types';
 import Button from '../Button/Button';
 import { iconTypes } from '../Icon/collection';
@@ -14,27 +15,27 @@ const {
 } = styles;
 
 const Modal: React.FC<ModalProps> = ({
+    canOverflow = false,
     cancelText = 'Cancel',
     children,
-    headerHasBottomBorder = false,
+    closeButton,
+    customFooter,
     fixedMode = false,
     hasCancel = true,
     hasFooter = true,
+    headerHasBottomBorder = false,
     id = String(Date.now()),
     isCancelDisabled,
     isCentered = false,
     isOkDisabled,
     isVisible = true,
-    okText = 'Ok',
     okButtonColor,
+    okText = 'Ok',
     onCancel,
     onCloseButtonPressed,
     onOk,
     title,
     width = '70vw',
-    customFooter,
-    closeButton,
-    canOverflow = false,
     ...props
 }: ModalProps) => {
     const [visible, setVisible] = useState(isVisible);
@@ -59,7 +60,7 @@ const Modal: React.FC<ModalProps> = ({
 
     return (
         <DivStyled
-            data-testid="modal-test-id"
+            data-testid="test-modal"
             id={id}
             isCentered={isCentered}
             isVisible={visible}
@@ -67,7 +68,7 @@ const Modal: React.FC<ModalProps> = ({
         >
             <DivStyledWrap width={width} canOverflow={canOverflow}>
                 <HeaderStyled
-                    data-testid={'modal-header-test-id'}
+                    data-testid="test-modal-header"
                     title={title}
                     fixedMode={fixedMode}
                     headerHasBottomBorder={headerHasBottomBorder}
@@ -78,49 +79,46 @@ const Modal: React.FC<ModalProps> = ({
                             closeButton
                         ) : (
                             <Button
-                                iconColor={'#68738D'}
-                                theme={'secondary'}
-                                radius={100}
-                                id={'modal-close-button'}
-                                data-testid={'modal-close-test-id'}
+                                data-testid="test-modal-close"
                                 icon={iconTypes.x}
-                                iconLayout={'icon-only'}
+                                iconColor={color.grey}
+                                iconLayout="icon-only"
+                                id="modal-close-button"
                                 onClick={
                                     onCloseButtonPressed
                                         ? onCloseButtonPressed
                                         : toggleVisibility
                                 }
+                                radius={100}
+                                theme="secondary"
                             />
                         )}
                     </>
                 </HeaderStyled>
 
-                <DivStyledContent
-                    id={'content'}
-                    data-testid={'modal-content-test-id'}
-                >
+                <DivStyledContent id="content" data-testid="test-modal-content">
                     {children}
                 </DivStyledContent>
 
                 {hasFooter && !customFooter && (
                     <FooterStyled
-                        data-testid={'modal-footer-test-id'}
+                        data-testid="test-modal-footer"
                         hasCancel={hasCancel}
                         fixedMode={fixedMode}
                     >
                         {hasCancel && (
                             <Button
                                 id="modal-cancel-button"
-                                data-testid={'modal-cancel-button-test-id'}
+                                data-testid="test-modal-button"
                                 disabled={isCancelDisabled}
                                 text={cancelText}
                                 onClick={onCancel ? onCancel : () => {}}
-                                theme={'outline'}
+                                theme="outline"
                             />
                         )}
                         <Button
                             color={okButtonColor}
-                            data-testid={'modal-ok-button-test-id'}
+                            data-testid="test-modal-ok-button"
                             disabled={isOkDisabled}
                             onClick={onOk ? onOk : () => {}}
                             text={okText}

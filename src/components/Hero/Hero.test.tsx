@@ -21,7 +21,7 @@ describe('Hero - Demo', () => {
 
     it('renders the title', () => {
         render(<Hero title={testTitle} backgroundURL={testBgURL} />);
-        const title = screen.getByTestId('test-hero_title');
+        const title = screen.getByTestId('test-hero-title');
         expect(title).not.toBeNull();
         expect(title.textContent).toBe(testTitle);
 
@@ -57,7 +57,7 @@ describe('Hero - customized height', () => {
 
     it('renders the title', () => {
         render(<Hero title={testTitle} backgroundURL={testBgURL} />);
-        const title = screen.getByTestId('test-hero_title');
+        const title = screen.getByTestId('test-hero-title');
         expect(title).not.toBeNull();
         expect(title.textContent).toBe(testTitle);
     });
@@ -92,7 +92,7 @@ describe('Hero - customized height', () => {
                 subTitle={testSubTitle}
             />,
         );
-        const subTitle = screen.getByTestId('test-hero_text');
+        const subTitle = screen.getByTestId('test-hero-text');
         expect(subTitle).not.toBeNull();
         expect(subTitle.textContent).toBe(testSubTitle);
     });

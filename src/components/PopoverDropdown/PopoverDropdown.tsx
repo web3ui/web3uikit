@@ -35,7 +35,7 @@ const PopoverDropdown: React.FC<IPopoverDropdownProps> = ({
 
             <ListStyled
                 backgroundColor={backgroundColor}
-                data-testid="test-popover-dropdown__list"
+                data-testid="test-popover-dropdown-list"
                 position={position}
                 role="menu"
                 width={width}
@@ -43,7 +43,7 @@ const PopoverDropdown: React.FC<IPopoverDropdownProps> = ({
                 {children.map((child, index) => {
                     return (
                         <li
-                            data-testid="test-popover-dropdown__child"
+                            data-testid="test-popover-dropdown-child"
                             key={`dropdown-element-${index}`}
                         >
                             {child}

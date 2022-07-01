@@ -103,7 +103,7 @@ const ChainSelector: FC<IChainSelectorProps> = ({
     };
 
     return (
-        <div data-testid={'test-chain-selector'} {...props}>
+        <div data-testid="test-chain-selector" {...props}>
             {providers?.length > 0 ? (
                 <GridStyled>
                     {providers.map((option) => (

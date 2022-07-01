@@ -54,10 +54,12 @@ const WalletModal: FC<WalletModalProps> = ({
     if (!isOpened) return null;
 
     return (
-        <WrapperStyled {...props}>
+        <WrapperStyled data-testid="test-wallet-modal" {...props}>
             <ModalStyled>
-                <HeaderStyled>
-                    <TitleStyled>Connect Wallet</TitleStyled>
+                <HeaderStyled data-testid="test-wallet-modal-header">
+                    <TitleStyled data-testid="test-wallet-modal-title">
+                        Connect Wallet
+                    </TitleStyled>
                     <Button
                         icon={iconTypes.x}
                         iconLayout="icon-only"
@@ -65,18 +67,27 @@ const WalletModal: FC<WalletModalProps> = ({
                         onClick={() => setIsOpened(!isOpened)}
                     />
                 </HeaderStyled>
-                <GridStyled>
+                <GridStyled data-testid="test-wallet-modal-grid">
                     {connectors.map(({ title, icon, provider }, key) => (
                         <GridItemStyled key={key}>
                             <WalletCardStyled
+                                data-testid="test-wallet-modal-card"
                                 onClick={() =>
                                     connectWallet(
                                         provider as Moralis.Web3ProviderType,
                                     )
                                 }
                             >
-                                <WalletLogo>{icon()}</WalletLogo>
-                                <WalletNameStyled>{title}</WalletNameStyled>
+                                <WalletLogo
+                                    data-testid={`test-wallet-modal-logo-${title}`}
+                                >
+                                    {icon()}
+                                </WalletLogo>
+                                <WalletNameStyled
+                                    data-testid={`test-wallet-modal-title-${title}`}
+                                >
+                                    {title}
+                                </WalletNameStyled>
                             </WalletCardStyled>
                         </GridItemStyled>
                     ))}

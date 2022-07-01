@@ -10,18 +10,18 @@ const { InternalLinkStyled, LinkStyled, SpanStyledFlex, SpanStyledText } =
 
 const LinkTo: React.FC<LinkToProps> = ({
     address,
+    iconLayout = 'leading',
     text,
     type = 'external',
-    iconLayout = 'leading',
     ...props
 }) => {
     const renderContent = () => (
         <SpanStyledFlex iconLayout={iconLayout} data-testid="test-link-flex">
             {iconLayout !== 'none' && type !== 'internal' && (
                 <Icon
-                    svg={type === 'email' ? iconTypes.mail : iconTypes.link}
                     fill={color.blue}
                     size={14}
+                    svg={type === 'email' ? iconTypes.mail : iconTypes.link}
                 />
             )}
             <SpanStyledText data-testid="test-link-text">

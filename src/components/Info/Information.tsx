@@ -11,9 +11,9 @@ const Info: React.FC<InfoProps> = ({
     ...props
 }: InfoProps) => {
     return (
-        <DivStyled id={id} data-testid={'card-test-id'} {...props}>
-            <PStyledTopic data-testid={'topic-test-id'}>{topic}</PStyledTopic>
-            <PStyledInfo data-testid={'info-test-id'}>
+        <DivStyled id={id} data-testid="test-info" {...props}>
+            <PStyledTopic data-testid="test-info-topic">{topic}</PStyledTopic>
+            <PStyledInfo data-testid="test-info-info">
                 {information}
             </PStyledInfo>
         </DivStyled>

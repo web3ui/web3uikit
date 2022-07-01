@@ -8,7 +8,7 @@ import rgbToHex from '../../utils/rgbToHex';
 const { Standard, StandardWithButton, Warning, Error, Success } =
     composeStories(stories);
 
-const testId = 'banner-strip';
+const testId = 'test-banner-strip';
 
 test('Renders Standard', () => {
     const testText = 'Hey this is a notification you should check out';

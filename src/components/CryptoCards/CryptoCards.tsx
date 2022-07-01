@@ -26,7 +26,11 @@ const CryptoCards: React.FC<CryptoCardProps> = ({
     ...props
 }: CryptoCardProps) => {
     return (
-        <DivStyledCryptoCard color={bgColor} data-testid={'test-crypto-card'} {...props}>
+        <DivStyledCryptoCard
+            color={bgColor}
+            data-testid="test-crypto-card"
+            {...props}
+        >
             <DivStyledInfo>
                 <DivStyledImage>
                     <DivStyledLogo>
@@ -34,13 +38,15 @@ const CryptoCards: React.FC<CryptoCardProps> = ({
                     </DivStyledLogo>
                 </DivStyledImage>
                 <DivStyledNetworkInfo>
-                    <PStyledChainName data-testid={'test-chain-name'}>
+                    <PStyledChainName data-testid="test-crypto-card-name">
                         {`${chain.charAt(0).toUpperCase()}${chain.slice(1)}`}
                     </PStyledChainName>
-                    <PStyledNetwork>{chainType || 'Network'}</PStyledNetwork>
+                    <PStyledNetwork data-testid="test-crypto-card-network">
+                        {chainType || 'Network'}
+                    </PStyledNetwork>
                 </DivStyledNetworkInfo>
             </DivStyledInfo>
-            <DivStyledButton>
+            <DivStyledButton data-testid="test-crypto-card-button">
                 <Button
                     icon={settingsIcon || iconTypes.cog}
                     onClick={onClick}

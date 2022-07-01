@@ -65,22 +65,28 @@ const StyledIllustration = styled.div<
     Pick<IllustrationProps, 'width' | 'height'>
 >`
     ${resetCSS}
-    display: flex;
-    justify-content: center;
     align-items: center;
-    width: ${(props) => props.width};
+    display: flex;
     height: ${(props) => props.height};
+    justify-content: center;
+    width: ${(props) => props.width};
 `;
 
 const Illustration: React.FC<IllustrationProps> = ({
+    height,
     id = String(Date.now()),
     logo,
     width,
-    height,
     ...props
 }: IllustrationProps) => {
     return (
-        <StyledIllustration width={width} height={height} id={id} {...props}>
+        <StyledIllustration
+            data-testid="test-illustration"
+            height={height}
+            id={id}
+            width={width}
+            {...props}
+        >
             {getLogo(logo, width, height)}
         </StyledIllustration>
     );

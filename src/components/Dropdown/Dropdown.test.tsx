@@ -8,7 +8,7 @@ const { Default, ControlledState, NonFixedLabel, Iconless } =
 describe('default', () => {
     it('renders', () => {
         render(<Default />);
-        const element = screen.getByTestId('popoverSelect');
+        const element = screen.getByTestId('test-dropdown');
         expect(element).toBeDefined();
     });
 
@@ -21,10 +21,10 @@ describe('default', () => {
 
     it('toggles select', () => {
         const { rerender } = render(<Default />);
-        const element = screen.getByTestId('popoverSelect');
+        const element = screen.getByTestId('test-dropdown');
         fireEvent.click(element);
         rerender(<Default />);
-        const RenderOptions = screen.getByTestId('popoverSelect');
+        const RenderOptions = screen.getByTestId('test-dropdown');
         expect(RenderOptions).toBeDefined();
     });
 });
@@ -32,15 +32,15 @@ describe('default', () => {
 describe('Controlled State', () => {
     it('renders', () => {
         render(<ControlledState />);
-        const element = screen.getByTestId('popoverSelect');
+        const element = screen.getByTestId('test-dropdown');
         expect(element).toBeDefined();
     });
     it('toggles select', () => {
         const { rerender } = render(<ControlledState />);
-        const element = screen.getByTestId('popoverSelect');
+        const element = screen.getByTestId('test-dropdown');
         fireEvent.click(element);
         rerender(<ControlledState />);
-        const RenderOptions = screen.getByTestId('popoverSelect');
+        const RenderOptions = screen.getByTestId('test-dropdown');
         expect(RenderOptions).toBeDefined();
     });
 });
@@ -48,7 +48,7 @@ describe('Controlled State', () => {
 describe('NonFixedLabel', () => {
     it('renders', () => {
         render(<NonFixedLabel />);
-        const element = screen.getByTestId('popoverSelect');
+        const element = screen.getByTestId('test-dropdown');
         expect(element).toBeDefined();
     });
 
@@ -60,10 +60,10 @@ describe('NonFixedLabel', () => {
 
     it('toggles select', () => {
         const { rerender } = render(<NonFixedLabel />);
-        const element = screen.getByTestId('popoverSelect');
+        const element = screen.getByTestId('test-dropdown');
         fireEvent.click(element);
         rerender(<NonFixedLabel />);
-        const RenderOptions = screen.getByTestId('popoverSelect');
+        const RenderOptions = screen.getByTestId('test-dropdown');
         expect(RenderOptions).toBeDefined();
     });
 });
@@ -71,7 +71,7 @@ describe('NonFixedLabel', () => {
 describe('IconLess', () => {
     it('renders', () => {
         render(<Iconless />);
-        const element = screen.getByTestId('popoverSelect');
+        const element = screen.getByTestId('test-dropdown');
         expect(element).toBeDefined();
     });
 
@@ -83,10 +83,10 @@ describe('IconLess', () => {
 
     it('toggles select', () => {
         const { rerender } = render(<Iconless />);
-        const element = screen.getByTestId('popoverSelect');
+        const element = screen.getByTestId('test-dropdown');
         fireEvent.click(element);
         rerender(<Iconless />);
-        const RenderOptions = screen.getByTestId('popoverSelect');
+        const RenderOptions = screen.getByTestId('test-dropdown');
         expect(RenderOptions).toBeDefined();
     });
 });

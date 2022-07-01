@@ -27,41 +27,54 @@ const CreditCard: React.FC<CreditCardProps> = ({
     return (
         <DivStyledCreditCard
             brand={brand}
+            data-testid="test-credit-card"
             isExpired={isExpired}
             pressed={pressed}
             {...props}
         >
             <DivStyledFlexEnd>
                 <Tooltip
-                    position="bottom"
                     children={
                         <>
                             {(isRemovable || isExpired) && (
                                 <Button
-                                    onClick={() => onRemove && onRemove()}
-                                    isTransparent={true}
-                                    theme={'secondary'}
                                     icon={iconTypes.bin}
-                                    iconLayout={'icon-only'}
-                                    size={'small'}
                                     iconColor={'red'}
+                                    iconLayout={'icon-only'}
+                                    isTransparent={true}
+                                    onClick={() => onRemove && onRemove()}
+                                    size={'small'}
+                                    theme={'secondary'}
                                 />
                             )}
                         </>
                     }
                     content="Remove"
+                    position="bottom"
                 />
             </DivStyledFlexEnd>
-            <PStyledDigits>{`•••• ${lastDigits}`}</PStyledDigits>
+            <PStyledDigits data-testid="test-credit-card-digits">{`•••• ${lastDigits}`}</PStyledDigits>
             <DivStyledFlex>
                 <DivStyledFlexText>
-                    <PStyledText isExpired={false}>{name}</PStyledText>
-                    <PStyledText isExpired={isExpired}>
+                    <PStyledText
+                        data-testid="test-credit-card-name"
+                        isExpired={false}
+                    >
+                        {name}
+                    </PStyledText>
+                    <PStyledText
+                        data-testid="test-credit-card-exp"
+                        isExpired={isExpired}
+                    >
                         {`${expiresAt.month} / ${expiresAt.year}`}{' '}
                         {isExpired && '*expired'}
                     </PStyledText>
                 </DivStyledFlexText>
-                <Logo size="small" theme={brand} />
+                <Logo
+                    data-testid="test-credit-card-logo"
+                    size="small"
+                    theme={brand}
+                />
             </DivStyledFlex>
         </DivStyledCreditCard>
     );

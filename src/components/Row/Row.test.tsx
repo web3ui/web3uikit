@@ -11,7 +11,7 @@ const {
     OrderedColumns,
 } = composeStories(stories);
 
-const testRowId = 'row';
+const testRowId = 'test-row';
 
 type TestStoryProps = {
     name: string;

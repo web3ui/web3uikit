@@ -7,7 +7,7 @@ import { composeStories } from '@storybook/testing-react';
 
 const { Danger, Normal, Success, Warning } = composeStories(stories);
 
-const testId = 'test-badge-id';
+const testId = 'test-badge';
 const testText = 'test-badge-text';
 
 test('Renders Danger', () => {

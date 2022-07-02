@@ -50,7 +50,7 @@ const NewComp: React.FC<NewCompProps> = ({
 
     return (
         <SectionStyled data-testid="test-new-comp" bgColor={bgColor} {...props}>
-            <TitleStyled data-testid="test-title">
+            <TitleStyled data-testid="test-new-comp-title">
                 The Demo Component
             </TitleStyled>
             <SpanStyled>
@@ -63,12 +63,18 @@ const NewComp: React.FC<NewCompProps> = ({
                     fill={compState === 'greenLight' ? color.green : color.red}
                     size={30}
                 />
-                <HeadingStyled state={compState} data-testid="test-heading">
+                <HeadingStyled
+                    state={compState}
+                    data-testid="test-new-comp-heading"
+                >
                     {compState === 'greenLight' ? textOn : textOff}
                 </HeadingStyled>
             </SpanStyled>
             <Button onClick={toggleState} />
-            <TextStyled hasUnderline={hasUnderline} data-testid="test-text">
+            <TextStyled
+                hasUnderline={hasUnderline}
+                data-testid="test-new-comp-text"
+            >
                 Clicked: {count} times
             </TextStyled>
         </SectionStyled>

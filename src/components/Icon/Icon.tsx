@@ -26,7 +26,7 @@ const Icon: React.FC<IconProps> = ({
     };
 
     return (
-        <StyledIconDiv {...props} title={title}>
+        <StyledIconDiv data-testid="test-icon-wrap" title={title} {...props}>
             {getIcon(fill, size, svg, style)}
         </StyledIconDiv>
     );

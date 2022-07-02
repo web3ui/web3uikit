@@ -1,5 +1,4 @@
 import { Button } from '../Button';
-import { H2Styled } from '../../styles/StyledElements';
 import { Icon } from '../Icon';
 import { Loading } from '../Loading';
 import { StepperProps } from './types';
@@ -73,16 +72,18 @@ const Stepper: React.FC<StepperProps> = ({
 
     const renderPreloader = () => (
         <DivStyled>
-            <H2Styled id="stepper-load-title" data-testid="test-stepper_title">
-                <Typography children={'Just one sec...'} variant={'h2'} />
-            </H2Styled>
+            <Typography
+                children={'Just one sec...'}
+                data-testid="test-stepper-title"
+                variant={'h2'}
+            />
             <Loading size={20} spinnerColor={color.green} />
         </DivStyled>
     );
 
     const renderContent = () => (
         <DivStyled id={`step-${activeStep}`}>
-            <div id="stepper-title" data-testid="test-stepper_title">
+            <div id="stepper-title" data-testid="test-stepper-title">
                 {activeStep <= stepData.length ? (
                     <Typography
                         children={stepData[Number(activeStep - 1)].title || ''}
@@ -94,7 +95,7 @@ const Stepper: React.FC<StepperProps> = ({
             </div>
             <div
                 onClick={handleContentClick}
-                data-testid="test-stepper_content"
+                data-testid="test-stepper-content"
                 id="stepper-content"
             >
                 {activeStep <= stepData.length ? (
@@ -109,7 +110,7 @@ const Stepper: React.FC<StepperProps> = ({
     );
 
     const renderStepperNumbers = () => (
-        <OrderedListStyled data-testid="test-stepper_numbers">
+        <OrderedListStyled data-testid="test-stepper-numbers">
             {stepData.map((step, index) => (
                 <Fragment key={`step_${index}`}>
                     <ListItemStyled
@@ -149,7 +150,7 @@ const Stepper: React.FC<StepperProps> = ({
 
             <FooterStyled>
                 {hasNavButtons && (
-                    <NavStyled data-testid="test-stepper_nav">
+                    <NavStyled data-testid="test-stepper-nav">
                         <Button
                             disabled={activeStep === 0}
                             onClick={prevStep}
@@ -172,7 +173,7 @@ const Stepper: React.FC<StepperProps> = ({
                 )}
 
                 {helperContent && (
-                    <DivStyledHelper data-testid="test-stepper_helper">
+                    <DivStyledHelper data-testid="test-stepper-helper">
                         {helperContent}
                     </DivStyledHelper>
                 )}

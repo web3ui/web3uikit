@@ -15,21 +15,21 @@ const Widget: React.FC<IWidgetProps> = ({
     ...props
 }) => {
     return (
-        <DivStyled data-testid="widget-container" {...props}>
+        <DivStyled data-testid="test-widget" {...props}>
             <div>
                 <Typography
-                    data-testid="widget-title"
                     color={colors.blueDark}
+                    data-testid="test-widget-title"
                     variant="caption12"
                     weight="400"
                 >
                     {title}
                 </Typography>
                 <Typography
-                    data-testid="widget-info"
+                    color={colors.blueDark}
+                    data-testid="test-widget-info"
                     variant="h3"
                     weight="400"
-                    color={colors.blueDark}
                 >
                     {isLoading ? (
                         <Skeleton height="24px" width="100%" theme="subtitle" />

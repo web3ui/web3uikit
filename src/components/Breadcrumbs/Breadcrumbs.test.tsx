@@ -7,17 +7,17 @@ import 'jest-styled-components';
 
 const { One, Two, Three, Four } = composeStories(stories);
 
-const olId = 'breadcrumbs-ol-test-id';
-const navId = 'breadcrumbs-nav-test-id';
-const separatorId = 'breadcrumbs-separator-test-id';
-const breadcrumbId = 'breadcrumb-test-id';
+const olId = 'test-breadcrumbs-list';
+const navId = 'test-breadcrumbs';
+const separatorId = 'test-breadcrumbs-separator';
+const breadcrumbId = 'test-breadcrumb-item';
 
 test('Renders - Breadcrumbs One', () => {
     render(<One />);
     expect(screen.getByTestId(navId)).not.toBeNull();
     expect(screen.queryByTestId(separatorId)).toBeNull();
     expect(
-        screen.queryByTestId(breadcrumbId)?.querySelector('svg'),
+        screen.queryByTestId(`${breadcrumbId}-0`)?.querySelector('svg'),
     ).toBeDefined();
     expect(screen.queryByTestId(olId)).not.toBeNull();
 });
@@ -25,7 +25,7 @@ test('Renders - Breadcrumbs One', () => {
 xtest('Renders - Breadcrumbs One: Hover Test', async () => {
     render(<One />);
     // TODO: Hover/MouseOver Event does not work as expected so it passes. Need to Fix
-    const breadcrumbElement = screen.getByTestId(breadcrumbId);
+    const breadcrumbElement = screen.getByTestId(`${breadcrumbId}-0`);
     fireEvent.mouseOver(breadcrumbElement);
     await waitFor(() => breadcrumbElement);
     expect(breadcrumbElement).toHaveStyleRule(`background: ${color.grey}`);
@@ -36,7 +36,7 @@ test('Renders - Breadcrumbs Two', async () => {
     expect(screen.getByTestId(navId)).not.toBeNull();
     expect(screen.queryByTestId(separatorId)).not.toBeNull();
     expect(
-        screen.queryByTestId(breadcrumbId)?.querySelector('svg'),
+        screen.queryByTestId(`${breadcrumbId}-0`)?.querySelector('svg'),
     ).toBeDefined();
     expect(screen.queryByTestId(olId)).not.toBeNull();
 });
@@ -44,7 +44,7 @@ test('Renders - Breadcrumbs Two', async () => {
 xtest('Renders - Breadcrumbs Two: Hover Test', async () => {
     render(<Two />);
     // TODO: Hover Event does not work as expected so it passes. Need to Fix
-    const breadcrumbElement = screen.getByTestId(breadcrumbId);
+    const breadcrumbElement = screen.getByTestId(`${breadcrumbId}-0`);
     fireEvent.mouseOver(breadcrumbElement);
     await waitFor(() => breadcrumbElement);
     expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blueDark}`);
@@ -61,7 +61,7 @@ test('Renders - Breadcrumbs Three', () => {
         1,
     );
     expect(
-        screen.queryByTestId(breadcrumbId)?.querySelector('svg'),
+        screen.queryByTestId(`${breadcrumbId}-0`)?.querySelector('svg'),
     ).toBeDefined();
     expect(screen.queryByTestId(olId)).not.toBeNull();
 });
@@ -69,7 +69,7 @@ test('Renders - Breadcrumbs Three', () => {
 xtest('Renders - Breadcrumbs Three: Hover Test', async () => {
     render(<Three />);
     // TODO: Hover Event does not work as expected so it passes. Need to Fix
-    const breadcrumbElement = screen.getByTestId(breadcrumbId);
+    const breadcrumbElement = screen.getByTestId(`${breadcrumbId}-0`);
     fireEvent.mouseOver(breadcrumbElement);
     await waitFor(() => breadcrumbElement);
     expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blueDark}`);
@@ -91,7 +91,7 @@ test('Renders - Breadcrumbs Four', () => {
         1,
     );
     expect(
-        screen.queryByTestId(breadcrumbId)?.querySelector('svg'),
+        screen.queryByTestId(`${breadcrumbId}-0`)?.querySelector('svg'),
     ).toBeDefined();
     expect(screen.queryByTestId(olId)).not.toBeNull();
 });
@@ -99,7 +99,7 @@ test('Renders - Breadcrumbs Four', () => {
 xtest('Renders - Breadcrumbs Four: Hover Test', async () => {
     render(<Four />);
     // TODO: Hover Event does not work as expected so it passes. Need to Fix
-    const breadcrumbElement = screen.getByTestId(breadcrumbId);
+    const breadcrumbElement = screen.getByTestId(`${breadcrumbId}-0`);
     fireEvent.mouseOver(breadcrumbElement);
     await waitFor(() => breadcrumbElement);
     expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blueDark}`);

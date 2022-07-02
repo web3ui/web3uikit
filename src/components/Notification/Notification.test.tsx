@@ -8,11 +8,11 @@ const { Regular, Standard, CustomIcon } = composeStories(stories);
 describe('Notification - Standard - Active - Regular Text - Regular Icon', () => {
     let container: HTMLDivElement;
     const message = Standard.args?.message;
-    const messageId = 'test-notification-message';
-    const testId = 'test-notification-id';
     const closeId = 'test-notification-x';
-    const title = 'New Message';
     const iconId = 'test-notification-icon-wrapper';
+    const messageId = 'test-notification-message';
+    const testId = 'test-notification';
+    const title = 'New Message';
     const titleId = 'test-notification-title';
 
     beforeEach(() => {
@@ -65,7 +65,7 @@ describe('Notification - Standard - Active - Regular Text - Regular Icon', () =>
 
 describe('Notification - Regular - Active - Custom Text - Regular Icon', () => {
     let container: HTMLDivElement;
-    const testId = 'test-notification-id';
+    const testId = 'test-notification';
     const messageId = 'test-notification-message';
     const titleId = 'test-notification-title';
     const closeId = 'test-notification-x';
@@ -116,7 +116,7 @@ describe('Notification - Regular - Active - Custom Text - Regular Icon', () => {
 
 describe('Notification - Active - Custom Text - Custom Icon', () => {
     let container: HTMLDivElement;
-    const testId = 'test-notification-id';
+    const testId = 'test-notification';
     const messageId = 'test-notification-message';
     const titleId = 'test-notification-title';
     const closeId = 'test-notification-x';

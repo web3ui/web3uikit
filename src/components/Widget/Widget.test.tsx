@@ -5,9 +5,9 @@ import * as stories from './Widget.stories';
 
 const { Demo } = composeStories(stories);
 
-const container = 'widget-container';
-const titleId = 'widget-title';
-const infoId = 'widget-info';
+const container = 'test-widget';
+const titleId = 'test-widget-title';
+const infoId = 'test-widget-info';
 
 test('Widget Test', async () => {
     const demoInfoText = Demo.args?.info;

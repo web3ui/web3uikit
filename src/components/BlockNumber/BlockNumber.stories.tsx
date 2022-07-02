@@ -17,8 +17,6 @@ export default {
     },
 } as ComponentMeta<typeof BlockNumber>;
 
-const Template: ComponentStory<typeof BlockNumber> = (
-    
-) => <BlockNumber />;
+const Template: ComponentStory<typeof BlockNumber> = () => <BlockNumber />;
 
 export const Default = Template.bind({});

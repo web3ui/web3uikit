@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import fonts from '../../styles/fonts';
 
-
-
 const BNdiv = styled.span`
     ${fonts.semiBold}
     white-space: nowrap;

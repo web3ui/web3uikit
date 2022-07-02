@@ -6,12 +6,14 @@ const cartBagIcon = (
     style?: React.CSSProperties,
 ) => (
     <svg
-        width={size}
-        height={size}
-        viewBox="0 0 24 24"
         fill={fill}
+        height={size}
         style={style}
+        viewBox="0 0 24 24"
+        width={size}
         xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+        data-testid="test-icon"
     >
         <title>Cart Bag Icon</title>
         <path

@@ -262,7 +262,7 @@ test('Renders - Internal Link', () => {
     expect(screen.getByTestId(testTextWrap).textContent).toBe('Go Back');
 });
 
-test('Renders Email', () => {
+test('Renders No icon', () => {
     const testAddress = `mailto:${MailToLink?.args?.address}`;
     const testText = MailToLink?.args?.text;
 

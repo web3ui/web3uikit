@@ -110,6 +110,7 @@ NoIconLink.args = {
     address: 'hello@moralis.io',
     text: 'Email Us',
     type: 'email',
+    iconLayout: 'none',
 };
 
 export const InternalLink: ComponentStory<typeof LinkTo> = Template.bind({});

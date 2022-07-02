@@ -10,7 +10,7 @@ const LinkTo: React.FC<LinkToProps> = ({
     address,
     text,
     type = 'external',
-    iconLayout = 'none',
+    iconLayout = 'leading',
     ...props
 }) => {
     const renderContent = () => (
@@ -22,7 +22,7 @@ const LinkTo: React.FC<LinkToProps> = ({
                         title="mail icon"
                         titleId="linkto mail icon"
                         fill={color.blue}
-                        fontSize={24}
+                        fontSize={18}
                         style={{ marginTop: 'auto' }}
                     />
                 ) : (
@@ -30,7 +30,7 @@ const LinkTo: React.FC<LinkToProps> = ({
                         title="link icon"
                         titleId="linkto link icon"
                         fill={color.blue}
-                        fontSize={24}
+                        fontSize={18}
                         style={{ marginTop: 'auto' }}
                     />
                 ))}

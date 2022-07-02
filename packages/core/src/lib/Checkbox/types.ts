@@ -1,5 +1,3 @@
-
-
 export type ValidateCheckbox = {
     required?: boolean;
 };
@@ -43,7 +41,7 @@ export interface CheckboxProps {
     /**
      * a name attribute to group checkboxes
      */
-    name: string;
+    name?: string;
 
     /**
      * The normal onChange event

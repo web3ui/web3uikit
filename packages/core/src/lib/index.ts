@@ -42,5 +42,6 @@ export * from './TextArea';
 export * from './Todo';
 export * from './Tooltip';
 export * from './Typography';
+export * from './Upload';
 export * from './VerifyCode';
 export * from './Widget';

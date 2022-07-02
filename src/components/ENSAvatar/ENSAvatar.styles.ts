@@ -1,6 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import resetCSS from '../../styles/reset';
-
 
 const NonAvatarDiv = styled.div`
     ${resetCSS}
@@ -9,19 +8,13 @@ const NonAvatarDiv = styled.div`
     overflow: hidden;
 `;
 
-
-
-
 const AvatarImg = styled.img`
-    height : 100px;
-    width : 100px;
-    border-radius : 50%;
-
-`
-
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+`;
 
 export const ENSAvatarStyles = {
     NonAvatarDiv,
-    AvatarImg
-}
-
+    AvatarImg,
+};

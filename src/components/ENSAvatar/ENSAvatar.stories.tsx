@@ -17,8 +17,8 @@ export default {
     },
 } as ComponentMeta<typeof ENSAvatar>;
 
-const Template: ComponentStory<typeof ENSAvatar> = (
-    args: ENSAvatarprops,
-) => <ENSAvatar {...args} />;
+const Template: ComponentStory<typeof ENSAvatar> = (args: ENSAvatarprops) => (
+    <ENSAvatar {...args} />
+);
 
 export const Default = Template.bind({});

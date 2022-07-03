@@ -9,7 +9,7 @@ import { test, expect, describe } from 'vitest';
 
 import CopyButton from './CopyButton';
 
-const copyIconTestId = 'copy-icon';
+const copyIconTestId = 'test-copy-button';
 
 // Mocking clipboard for testing
 Object.defineProperty(navigator, 'clipboard', {

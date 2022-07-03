@@ -13,5 +13,6 @@
     "eslint.rules.customizations": [{ "rule": "*", "severity": "error" }],
     "scss.lint.unknownAtRules": "ignore",
     "typescript.tsdk": "./node_modules/typescript/lib",
-    "svg.preview.background": "dark-transparent"
+    "svg.preview.background": "dark-transparent",
+    "cSpell.words": ["blockie", "Blockies", "moralis", "testid"]
 }

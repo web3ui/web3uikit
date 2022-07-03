@@ -29,7 +29,7 @@ const Todo: React.FC<TodoProps> = ({
 }) => {
     const key = useMemo(() => Math.random(), []);
     const [inputValue, setInputValue] = useState<string>('');
-    const [isInputVlaid, setIsInputValid] = useState<boolean>(false);
+    const [isInputValid, setIsInputValid] = useState<boolean>(false);
     const [lists, setLists] = useState<string[]>(todos);
     useEffect(() => onChange && onChange(lists), [lists]);
     useEffect(() => setLists(todos), [todos]);
@@ -58,6 +58,7 @@ const Todo: React.FC<TodoProps> = ({
         <SectionStyled data-testid="test-todo" {...props}>
             <DivStyled>
                 <Input
+                    data-testid="test-todo-input"
                     id="todo-input"
                     label={label}
                     onChange={(e) => setInputValue(e.target.value)}
@@ -70,7 +71,8 @@ const Todo: React.FC<TodoProps> = ({
                 />
 
                 <Button
-                    disabled={!isInputVlaid}
+                    data-testid="test-todo-button"
+                    disabled={!isInputValid}
                     icon={<Plus title="plus icon" titleId="todo plus icon" />}
                     onClick={addTodo}
                     size="large"
@@ -80,7 +82,7 @@ const Todo: React.FC<TodoProps> = ({
             </DivStyled>
 
             <DivStyledContent
-                data-testid="test-todo_content"
+                data-testid="test-todo-content"
                 fullWidth={fullWidth}
             >
                 {lists.map((todo, i) => (

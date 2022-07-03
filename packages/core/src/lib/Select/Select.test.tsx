@@ -14,9 +14,9 @@ const {
     ErrorWithMessage,
 } = composeStories(stories);
 
-const testLabelId = 'test-label';
-const testWrapperId = 'test-wrapper';
-const testSelectedId = 'test-selected';
+const testLabelId = 'test-select-label';
+const testWrapperId = 'test-select';
+const testSelectedId = 'test-select-selected';
 const testTextContent = 'triangle down icon';
 
 test('Select - Default', async () => {

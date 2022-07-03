@@ -27,16 +27,18 @@ const NFTBalance: React.FC<INFTBalance> = ({ address, chain, ...props }) => {
     );
 
     if (!isInitialized && !isInitializing) {
-        return <div data-testid="no-moralis-instance" />;
+        return <div data-testid="test-no-moralis-instance" />;
     }
 
     if (!/^0x[a-fA-F0-9]{40}$/.test(address)) {
-        return <div data-testid="no-valid-address">Not a valid address</div>;
+        return (
+            <div data-testid="test-no-valid-address">Not a valid address</div>
+        );
     }
 
     if (error) {
         return (
-            <div data-testid="nft-balance-error">
+            <div data-testid="test-nft-balance-error">
                 <Typography>Couldn't get Nft Balance for {address}</Typography>
                 <Typography>{error.message}</Typography>
             </div>
@@ -44,7 +46,7 @@ const NFTBalance: React.FC<INFTBalance> = ({ address, chain, ...props }) => {
     }
     if (isLoading || isFetching) {
         return (
-            <DivStyled gap={8} data-testid="nft-balance-loading">
+            <DivStyled gap={8} data-testid="test-nft-balance-loading">
                 <Skeleton width="80%" height="60px" theme="text" />
                 <Skeleton width="40%" height="30px" theme="subtitle" />
             </DivStyled>
@@ -52,15 +54,15 @@ const NFTBalance: React.FC<INFTBalance> = ({ address, chain, ...props }) => {
     }
 
     if (!data) {
-        return <div data-testid="nft-balance-no-data">No response</div>;
+        return <div data-testid="test-nft-balance-no-data">No response</div>;
     }
 
     if (!data.result) {
-        return <div data-testid="nft-balance-no-result">No result</div>;
+        return <div data-testid="test-nft-balance-no-result">No result</div>;
     }
 
     return (
-        <DivStyled gap={64} {...props}>
+        <DivStyled data-testid="test-nft-balance" gap={64} {...props}>
             <DivStyled gap={8}>
                 <Typography variant="h1">{getEllipsisTxt(address)}</Typography>
                 <Typography>

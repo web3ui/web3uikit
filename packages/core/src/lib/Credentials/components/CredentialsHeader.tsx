@@ -15,8 +15,6 @@ const CredentialsHeader: FC<ICredentialsHeaderProps> = ({
     title,
     titleColor = color.blueDark,
     icon,
-    iconColor = color.grey,
-    iconSize = 24,
 }) => {
     if (!title && !icon) return null;
     return (
@@ -27,7 +25,7 @@ const CredentialsHeader: FC<ICredentialsHeaderProps> = ({
                     variant="body16"
                     weight="600"
                     color={titleColor}
-                    data-testid="cred-test-header-text"
+                    data-testid="test-cred-header-text"
                 >
                     {title}
                 </Typography>

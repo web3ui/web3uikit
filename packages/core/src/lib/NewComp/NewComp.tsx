@@ -49,31 +49,37 @@ const NewComp: React.FC<NewCompProps> = ({
 
     return (
         <SectionStyled data-testid="test-new-comp" bgColor={bgColor} {...props}>
-            <TitleStyled data-testid="test-title">
+            <TitleStyled data-testid="test-new-comp-title">
                 The Demo Component
             </TitleStyled>
             <SpanStyled>
                 {compState === 'greenLight' ? (
                     <Checkmark
                         title="checkmark icon"
-                        titleId="newcomp checkmark icon"
+                        titleId="new-comp checkmark icon"
                         fill={color.green}
                         fontSize={20}
                     />
                 ) : (
                     <Cross
                         title="cross icon"
-                        titleId="newcomp cross icon"
+                        titleId="new-comp cross icon"
                         fill={color.red}
                         fontSize={20}
                     />
                 )}
-                <HeadingStyled state={compState} data-testid="test-heading">
+                <HeadingStyled
+                    data-testid="test-new-comp-heading"
+                    state={compState}
+                >
                     {compState === 'greenLight' ? textOn : textOff}
                 </HeadingStyled>
             </SpanStyled>
             <Button onClick={toggleState} />
-            <TextStyled hasUnderline={hasUnderline} data-testid="test-text">
+            <TextStyled
+                data-testid="test-new-comp-text"
+                hasUnderline={hasUnderline}
+            >
                 Clicked: {count} times
             </TextStyled>
         </SectionStyled>

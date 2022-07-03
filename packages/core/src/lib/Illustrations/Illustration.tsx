@@ -1,4 +1,3 @@
-
 import { Chain, IllustrationProps, Logo, Size } from './types';
 import ethereum from './images/chains/ethereum';
 import binance from './images/chains/binance';
@@ -21,67 +20,75 @@ import styled from 'styled-components';
 import { resetCSS } from '@web3uikit/styles';
 
 const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
-  switch (logo) {
-    case 'ethereum':
-      return ethereum(width, height);
-    case 'binance':
-      return binance(width, height);
-    case 'polygon':
-      return polygon(width, height);
-    case 'avalanche':
-      return avalanche(width, height);
-    case 'fantom':
-      return fantom(width, height);
-    case 'arbitrum':
-      return arbitrum(width, height);
-    case 'cronos':
-      return cronos(width, height);
-    case 'comingSoon':
-      return comingSoon(width, height);
-    case 'confirmed':
-      return confirmed(width, height);
-    case 'looking':
-      return looking(width, height);
-    case 'servers':
-      return servers(width, height);
-    case 'token':
-      return token(width, height);
-    case 'lazyNft':
-      return lazyNft(width, height);
-    case 'pack':
-      return pack(width, height);
-    case 'marketplace':
-      return marketplace(width, height);
-    case 'chest':
-      return chest(width, height);
-    case 'bundle':
-      return bundle(width, height);
-    default:
-      return ethereum();
-  }
+    switch (logo) {
+        case 'ethereum':
+            return ethereum(width, height);
+        case 'binance':
+            return binance(width, height);
+        case 'polygon':
+            return polygon(width, height);
+        case 'avalanche':
+            return avalanche(width, height);
+        case 'fantom':
+            return fantom(width, height);
+        case 'arbitrum':
+            return arbitrum(width, height);
+        case 'cronos':
+            return cronos(width, height);
+        case 'comingSoon':
+            return comingSoon(width, height);
+        case 'confirmed':
+            return confirmed(width, height);
+        case 'looking':
+            return looking(width, height);
+        case 'servers':
+            return servers(width, height);
+        case 'token':
+            return token(width, height);
+        case 'lazyNft':
+            return lazyNft(width, height);
+        case 'pack':
+            return pack(width, height);
+        case 'marketplace':
+            return marketplace(width, height);
+        case 'chest':
+            return chest(width, height);
+        case 'bundle':
+            return bundle(width, height);
+        default:
+            return ethereum();
+    }
 };
 
-const StyledIllustration = styled.div<Pick<IllustrationProps, 'width' | 'height'>>`
-  ${resetCSS}
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
+const StyledIllustration = styled.div<
+    Pick<IllustrationProps, 'width' | 'height'>
+>`
+    ${resetCSS}
+    align-items: center;
+    display: flex;
+    height: ${(props) => props.height};
+    justify-content: center;
+    width: ${(props) => props.width};
 `;
 
 const Illustration: React.FC<IllustrationProps> = ({
-  id = String(Date.now()),
-  logo,
-  width,
-  height,
-  ...props
+    height,
+    id = String(Date.now()),
+    logo,
+    width,
+    ...props
 }: IllustrationProps) => {
-  return (
-    <StyledIllustration width={width} height={height} id={id} {...props}>
-      {getLogo(logo, width, height)}
-    </StyledIllustration>
-  );
+    return (
+        <StyledIllustration
+            data-testid="test-illustration"
+            height={height}
+            id={id}
+            width={width}
+            {...props}
+        >
+            {getLogo(logo, width, height)}
+        </StyledIllustration>
+    );
 };
 
 export default Illustration;

@@ -5,7 +5,7 @@ import { test, expect, describe } from 'vitest';
 
 const { Default, HiddenState } = composeStories(stories);
 
-export const testCompId = 'test-hidebutton';
+export const testCompId = 'test-hide-button';
 const iconTestId = 'test-icon';
 test('Renders - HideButton Default', () => {
     render(<Default />);

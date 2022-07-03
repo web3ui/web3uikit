@@ -28,25 +28,25 @@ const PopoverElement: React.FC<PopoverElementProps> = ({
     return (
         <DivContainerStyled
             backgroundColor={backgroundColor}
-            data-testid={'dropdown-element-test-id'}
+            data-testid="test-dropdown-element"
             icon={icon}
             iconColor={iconColor}
             id={id}
             {...props}
         >
             <DivStyled
-                data-testid={'dropdown-element-click-test-id'}
+                data-testid="test-dropdown-element-click"
                 height={height}
-                width={width}
                 onClick={() => {
                     {
                         onClick ? onClick() : '';
                     }
                 }}
+                width={width}
             >
                 {icon ? <DivImageStyled>{icon}</DivImageStyled> : ''}
                 <TextStyled
-                    data-testid={'dropdown-element-text-test-id'}
+                    data-testid="test-dropdown-element-text"
                     textColor={textColor}
                     textSize={textSize}
                 >

@@ -8,8 +8,8 @@ import InputStyles from '../Input/Input.styles';
 const { DivWrapperStyled, LabelStyled: LabelStyledTrad } = InputStyles;
 
 const {
-    DivStyledWrapper,
     DivStyledDescription,
+    DivStyledWrapper,
     DropDownIcon,
     ErrorLabel,
     LabelStyled,
@@ -29,15 +29,15 @@ const Select: React.FC<SelectProps> = ({
     disabled = false,
     errorMessage = '',
     id = String(Date.now()),
-    ref,
-    refTraditional,
     label,
+    onBlurTraditional,
     onChange,
     onChangeTraditional,
-    onBlurTraditional,
     options = [],
     prefixIcon,
     prefixText,
+    ref,
+    refTraditional,
     state = disabled ? 'disabled' : undefined,
     style,
     traditionalHTML5 = false,
@@ -90,7 +90,7 @@ const Select: React.FC<SelectProps> = ({
     const renderFancySelectMode = () => (
         <DivStyledWrapper
             aria-label="select"
-            data-testid="test-wrapper"
+            data-testid="test-select"
             id={id}
             ref={ref}
             state={state}
@@ -99,7 +99,7 @@ const Select: React.FC<SelectProps> = ({
         >
             <SelectedItem
                 aria-label="option-selected"
-                data-testid="test-selected"
+                data-testid="test-select-selected"
                 onClick={toggling}
                 state={state}
                 hasPrefixIcon={Boolean(prefixIcon)}
@@ -120,7 +120,7 @@ const Select: React.FC<SelectProps> = ({
                     </>
                 )}
 
-                <DropDownIcon>
+                <DropDownIcon data-testid="test-select-icon">
                     {isOpen ? (
                         <TriangleUp
                             title="triangle up icon"
@@ -138,7 +138,7 @@ const Select: React.FC<SelectProps> = ({
             </SelectedItem>
             {label && (
                 <LabelStyled
-                    data-testid="test-label"
+                    data-testid="test-select-label"
                     htmlFor={id}
                     hasSelectedIndex={
                         typeof selectedOptionIndex !== 'undefined'
@@ -149,17 +149,20 @@ const Select: React.FC<SelectProps> = ({
                 </LabelStyled>
             )}
             {isOpen && (
-                <Options aria-label="select-options" data-testid="test-options">
+                <Options
+                    aria-label="select-options"
+                    data-testid="test-select-options"
+                >
                     {options?.length ? (
                         options.map(
-                            (option, index) =>
-                                index !== selectedOptionIndex && (
+                            (option, i) =>
+                                i !== selectedOptionIndex && (
                                     <Option
-                                        id={option.id.toString()}
                                         aria-label="select-option"
-                                        data-testid="test-option"
+                                        data-testid={`test-seclect-option-${i}`}
+                                        id={option.id.toString()}
                                         key={option?.label}
-                                        onClick={onOptionClicked(index)}
+                                        onClick={onOptionClicked(i)}
                                     >
                                         {option.prefix && (
                                             <PrefixIcon>
@@ -196,8 +199,14 @@ const Select: React.FC<SelectProps> = ({
     );
 
     const renderTraditionalSelect = () => (
-        <DivWrapperStyled className="input_filled" style={{ ...style, width }}>
+        <DivWrapperStyled
+            className="input_filled"
+            data-testid="test-select"
+            style={{ ...style, width }}
+            {...props}
+        >
             <SelectStyled
+                data-testid="test-select-select"
                 defaultValue="Please choose"
                 id={id}
                 ref={refTraditional}
@@ -208,25 +217,34 @@ const Select: React.FC<SelectProps> = ({
                     onBlurTraditional && onBlurTraditional(event)
                 }
                 required={validation?.required}
-                {...props}
             >
                 <option disabled>Please choose</option>
                 {options.map(
-                    (option, index) =>
-                        index !== selectedOptionIndex && (
-                            <option id={String(option?.id)} key={option?.id}>
+                    (option, i) =>
+                        i !== selectedOptionIndex && (
+                            <option
+                                data-testid={`test-seclect-option-${i}`}
+                                id={String(option?.id)}
+                                key={option?.id}
+                            >
                                 {option?.label}
                             </option>
                         ),
                 )}
             </SelectStyled>
             {label && (
-                <LabelStyledTrad hasPrefix={false} htmlFor={id}>
+                <LabelStyledTrad
+                    data-testid="test-select-label"
+                    hasPrefix={false}
+                    htmlFor={id}
+                >
                     {label}
                 </LabelStyledTrad>
             )}
             {description && (
-                <DivStyledDescription>{description}</DivStyledDescription>
+                <DivStyledDescription data-testid="test-select-description">
+                    {description}
+                </DivStyledDescription>
             )}
         </DivWrapperStyled>
     );

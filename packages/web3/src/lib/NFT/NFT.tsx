@@ -42,7 +42,9 @@ const NFT: React.FC<INFTProps> = ({
     const [showTraits, setShowModal] = useState(false);
 
     if (!/^0x[a-fA-F0-9]{40}$/.test(address)) {
-        return <div data-testid="no-valid-address">No valid address</div>;
+        return (
+            <div data-testid="test-nft-no-valid-address">No valid address</div>
+        );
     }
 
     if (!fetchMetadata) {
@@ -50,12 +52,12 @@ const NFT: React.FC<INFTProps> = ({
     }
 
     if (!isInitialized && !isInitializing) {
-        return <div data-testid="no-moralis-instance" />;
+        return <div data-testid="test-nft-no-moralis-instance" />;
     }
 
     if (isLoading || isFetching) {
         return (
-            <div data-testid="nft-metadata-loading" {...props}>
+            <div data-testid="test-nft-metadata-loading" {...props}>
                 <DivStyled id="nft">
                     <Skeleton theme="text" width="100%" height="200px" />
                     <div id="information">
@@ -68,11 +70,11 @@ const NFT: React.FC<INFTProps> = ({
     }
 
     if (error) {
-        return <div data-testid="nft-metadata-error">{error.message}</div>;
+        return <div data-testid="test-nft-metadata-error">{error.message}</div>;
     }
 
     if (!data) {
-        return <div data-testid="nft-metadata-error">No response</div>;
+        return <div data-testid="test-nft-metadata-error">No response</div>;
     }
 
     if (!data?.metadata) {
@@ -91,7 +93,7 @@ const NFT: React.FC<INFTProps> = ({
     }
 
     return (
-        <div>
+        <div data-testid="test-nft">
             <DivStyled id="nft">
                 {image(
                     (JSON.parse(String(data.metadata)) as TNFTMetadata)

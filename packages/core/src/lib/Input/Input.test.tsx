@@ -26,9 +26,9 @@ const {
 let container: HTMLDivElement;
 const testValue = '';
 const testPlaceholder = '';
-const testInputId = 'test-input';
-const testLabelId = 'test-label';
-const testDivId = 'test-div';
+const testInputId = 'test-input-input';
+const testLabelId = 'test-input-label';
+const testDivId = 'test-input';
 const testEvent = vi.fn();
 
 test("should conditionally render 'empty / filled' className", () => {

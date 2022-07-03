@@ -20,9 +20,9 @@ const Notification: React.FC<NotificationProps> = ({
     icon,
     id,
     message,
+    position = 'topL',
     title = 'New Message',
     type = 'info',
-    position = 'topL',
     ...props
 }: NotificationProps) => {
     const [isClosing, setIsClosing] = useState(false);
@@ -105,25 +105,25 @@ const Notification: React.FC<NotificationProps> = ({
 
     return (
         <NotificationStyled
-            data-testid={'test-notification-id'}
+            data-testid="test-notification"
             id={id}
             isClosing={isClosing}
             onMouseEnter={pauseTimer}
             onMouseLeave={startTimer}
-            type={type}
             position={position}
+            type={type}
             {...props}
         >
-            <IconWrapperStyled data-testid={'test-notification-icon-wrapper'}>
+            <IconWrapperStyled data-testid="test-notification-icon-wrapper">
                 {getIcon()}
             </IconWrapperStyled>
             <TextContentStyled>
-                <TitleStyled data-testid={'test-notification-title'}>
+                <TitleStyled data-testid="test-notification-title">
                     {title}
                 </TitleStyled>
                 <CloseWrapperStyled
                     onClick={closeNotification}
-                    data-testid={'test-notification-x'}
+                    data-testid="test-notification-x"
                 >
                     <Cross
                         title="cross icon"
@@ -132,7 +132,7 @@ const Notification: React.FC<NotificationProps> = ({
                         fill={color.greyIcons}
                     />
                 </CloseWrapperStyled>
-                <SpanStyled data-testid={'test-notification-message'}>
+                <SpanStyled data-testid="test-notification-message">
                     {message}
                 </SpanStyled>
             </TextContentStyled>

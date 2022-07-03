@@ -12,7 +12,7 @@ const { Ethereum, Binance, Polygon, Avalanche, Fantom, Arbitrum } =
 const testClickEvent = vi.fn();
 const cryptoCardId = 'test-crypto-card';
 const buttonId = 'test-button';
-const chainNameId = 'test-chain-name';
+const chainNameId = 'test-crypto-card-name';
 
 test('Renders - Ethereum Card', () => {
     render(<Ethereum onClick={testClickEvent} bgColor={color.black} />);
@@ -26,7 +26,6 @@ test('Renders - Ethereum Card', () => {
     expect(testClickEvent).toHaveBeenCalled();
 
     expect(screen.getByTestId(chainNameId).textContent).toBe('Ethereum');
-    expect(screen.getByTestId('test-icon').textContent).toBe('cog icon');
 });
 
 test('Renders - Binance Card', () => {
@@ -40,7 +39,6 @@ test('Renders - Binance Card', () => {
     fireEvent.click(buttonElement);
     expect(testClickEvent).toHaveBeenCalled();
     expect(screen.getByTestId(chainNameId).textContent).toBe('Binance');
-    expect(screen.getByTestId('test-icon').textContent).toBe('cog icon');
 });
 
 test('Renders - Polygon Card', () => {
@@ -54,7 +52,6 @@ test('Renders - Polygon Card', () => {
     fireEvent.click(buttonElement);
     expect(testClickEvent).toHaveBeenCalled();
     expect(screen.getByTestId(chainNameId).textContent).toBe('Polygon');
-    expect(screen.getByTestId('test-icon').textContent).toBe('cog icon');
 });
 
 test('Renders - Avalanche Card', () => {
@@ -68,7 +65,6 @@ test('Renders - Avalanche Card', () => {
     fireEvent.click(buttonElement);
     expect(testClickEvent).toHaveBeenCalled();
     expect(screen.getByTestId(chainNameId).textContent).toBe('Avalanche');
-    expect(screen.getByTestId('test-icon').textContent).toBe('cog icon');
 });
 
 test('Renders - Fantom Card', () => {
@@ -82,7 +78,6 @@ test('Renders - Fantom Card', () => {
     fireEvent.click(buttonElement);
     expect(testClickEvent).toHaveBeenCalled();
     expect(screen.getByTestId(chainNameId).textContent).toBe('Fantom');
-    expect(screen.getByTestId('test-icon').textContent).toBe('cog icon');
 });
 
 test('Renders - Arbitrum Card', () => {
@@ -96,5 +91,4 @@ test('Renders - Arbitrum Card', () => {
     fireEvent.click(buttonElement);
     expect(testClickEvent).toHaveBeenCalled();
     expect(screen.getByTestId(chainNameId).textContent).toBe('Arbitrum');
-    expect(screen.getByTestId('test-icon').textContent).toBe('cog icon');
 });

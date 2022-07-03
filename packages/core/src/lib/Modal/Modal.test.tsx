@@ -25,10 +25,10 @@ const args: ModalProps = {
     isVisible: true,
 };
 
-const modalTestId = 'modal-test-id';
-const headerTestId = 'modal-header-test-id';
-const contentTestId = 'modal-content-test-id';
-const footerTestId = 'modal-footer-test-id';
+const modalTestId = 'test-modal';
+const headerTestId = 'test-modal-header';
+const contentTestId = 'test-modal-content';
+const footerTestId = 'test-modal-footer';
 
 test('Renders Modal', () => {
     render(<Modal {...args} />);

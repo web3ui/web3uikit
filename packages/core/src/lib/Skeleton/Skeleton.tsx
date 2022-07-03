@@ -1,4 +1,3 @@
-
 import { DivStyled } from './Skeleton.styles';
 import { SkeletonProps, Theme } from './types';
 
@@ -25,7 +24,7 @@ const Skeleton: React.FC<SkeletonProps> = ({
     return (
         <DivStyled
             borderRadius={borderRadius}
-            data-testid="test-skeleton-id"
+            data-testid="test-skeleton"
             height={height}
             theme={theme}
             width={width}

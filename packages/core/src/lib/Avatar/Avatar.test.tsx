@@ -15,7 +15,7 @@ const {
     CustomSizeAndFontSize,
 } = composeStories(stories);
 
-const testTextId = 'test-text';
+const testTextId = 'test-avatar-title';
 export const testAvatarId = 'test-avatar';
 
 test('Avatar - Default Guy', () => {

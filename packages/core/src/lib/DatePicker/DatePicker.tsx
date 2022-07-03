@@ -67,7 +67,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
             {...props}
         >
             <InputStyled
-                data-testid="date-picker_input"
+                data-testid="test-date-picker-input"
                 disabled={currentState == 'disabled'}
                 id={id}
                 max={validation?.max}
@@ -84,7 +84,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
 
             {label && (
                 <LabelStyled
-                    data-testid="date-picker_label"
+                    data-testid="test-date-picker-label"
                     hasPrefix={false}
                     htmlFor={id}
                     labelBgColor="white"
@@ -93,10 +93,10 @@ const DatePicker: React.FC<DatePickerProps> = ({
                 </LabelStyled>
             )}
 
-            <SpanStyled data-testid="date-picker_icon">
+            <SpanStyled data-testid="test-date-picker-icon">
                 <Calendar
                     title="calendar icon"
-                    titleId="datepicker calendar icon"
+                    titleId="date picker calendar icon"
                     fill={color.greyDark}
                     fontSize={24}
                 />
@@ -104,7 +104,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
 
             {currentState === 'error' && (
                 <StrongStyled
-                    data-testid="date-picker_feedback"
+                    data-testid="test-date-picker-feedback"
                     isError={false}
                 >
                     {invalidMessage}

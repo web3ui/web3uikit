@@ -7,11 +7,12 @@ import { test, expect, describe, vi } from 'vitest';
 const { Default } = composeStories(stories);
 const testClickEvent = vi.fn();
 
+const dropdownElementId = 'test-dropdown-element';
+const dropdownElementClickId = 'test-dropdown-element-click';
+const dropdownElementTextId = 'test-dropdown-element-text';
+
 describe('Default', () => {
     let container: HTMLDivElement;
-    const dropdownElementId = 'dropdown-element-test-id';
-    const dropdownElementClickId = 'dropdown-element-click-test-id';
-
     beforeEach(() => {
         container = document.createElement('div');
         render(<Default onClick={testClickEvent} />, {
@@ -41,9 +42,6 @@ describe('Default', () => {
 
 describe('Custom', () => {
     let container: HTMLDivElement;
-    const dropdownElementId = 'dropdown-element-test-id';
-    const dropdownElementClickId = 'dropdown-element-click-test-id';
-    const dropdownElementTextId = 'dropdown-element-text-test-id';
     const height = 50;
     const width = 100;
     const buttonText = 'Local Devchain Server';

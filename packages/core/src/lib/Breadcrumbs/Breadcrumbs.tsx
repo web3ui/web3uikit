@@ -29,9 +29,7 @@ function renderList(
         const crumb = (
             <ListItemStyled
                 key={`breadcrumb-${i}`}
-                data-testid={
-                    i == 0 ? 'breadcrumb-test-id' : `breadcrumb-test-id-${i}`
-                }
+                data-testid={`test-breadcrumb-item-${i}`}
             >
                 <Breadcrumb to={route.path}>
                     {route?.icon}
@@ -48,7 +46,7 @@ function renderList(
                 crumb,
                 <BreadcrumbsSeparator
                     key={`separator-${i}`}
-                    data-testid={'breadcrumbs-separator-test-id'}
+                    data-testid={'test-breadcrumbs-separator'}
                 >
                     {separator ?? (
                         <ChevronRight
@@ -76,12 +74,8 @@ const Breadcrumbs: IBreadcrumbs = ({
     ...props
 }) => {
     return (
-        <NavStyled
-            color={theme}
-            data-testid={'breadcrumbs-nav-test-id'}
-            {...props}
-        >
-            <ListStyled style={style} data-testid={'breadcrumbs-ol-test-id'}>
+        <NavStyled color={theme} data-testid={'test-breadcrumbs'} {...props}>
+            <ListStyled style={style} data-testid={'test-breadcrumbs-list'}>
                 {renderList(routes, separator, currentLocation)}
             </ListStyled>
         </NavStyled>

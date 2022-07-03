@@ -25,7 +25,7 @@ const Card: React.FC<CardProps> = ({
     return (
         <DivStyled
             aria-label={isSelected ? 'card not selected' : 'card selected'}
-            data-testid={'card-test-id'}
+            data-testid="test-card"
             id={id}
             onClick={() => {
                 if (isDisabled) return;
@@ -39,11 +39,11 @@ const Card: React.FC<CardProps> = ({
             cursorType={cursorType}
             {...props}
         >
-            <HeaderStyled data-testid={'header-test-id'}>
+            <HeaderStyled data-testid={'test-card-header'}>
                 {isSelected && (
                     <AbsoluteIconStyled position="topL">
                         <Checkmark
-                            data-testid={'check-test-id'}
+                            data-testid="test-card-icon-check"
                             title="checkmark icon"
                             titleId="card checkmark icon"
                             fill={color.green}
@@ -54,20 +54,19 @@ const Card: React.FC<CardProps> = ({
                 {!isDisabled && tooltipText && (
                     <AbsoluteIconStyled position="topR">
                         <Tooltip
-                            position={'bottom'}
                             children={[
                                 <HelpCircle
-                                    key="ttip-card"
-                                    title="help circle icon"
-                                    titleId="card help circle icon"
-                                    data-testid={'help-test-id'}
                                     fill={color.blue}
                                     fontSize={22}
+                                    key="tip-card"
+                                    title="help circle icon"
+                                    titleId="card help circle icon"
                                 />,
                             ]}
                             content={tooltipText}
                             move={tooltipMove}
                             moveBody={tooltipMoveBody}
+                            position={'bottom'}
                         />
                     </AbsoluteIconStyled>
                 )}
@@ -77,18 +76,18 @@ const Card: React.FC<CardProps> = ({
                 <FooterStyled>
                     {title && (
                         <Typography
-                            variant="subtitle2"
-                            data-testid={'title-test-id'}
                             color={color.blue}
+                            data-testid="test-card-title"
+                            variant="subtitle2"
                         >
                             {title}
                         </Typography>
                     )}
                     {description && (
                         <Typography
-                            variant="caption14"
-                            data-testid={'desc-test-id'}
                             color={color.blue}
+                            data-testid="test-card-description"
+                            variant="caption14"
                         >
                             {description}
                         </Typography>

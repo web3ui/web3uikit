@@ -69,7 +69,7 @@ const TextArea: React.FC<TextAreaProps> = ({
                 {...props}
             />
             {label && (
-                <LabelStyled data-testid="test-label" htmlFor={id}>
+                <LabelStyled data-testid="test-textarea-label" htmlFor={id}>
                     {label}
                 </LabelStyled>
             )}

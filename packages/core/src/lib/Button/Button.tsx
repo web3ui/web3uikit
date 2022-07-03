@@ -1,15 +1,8 @@
-import styled from 'styled-components';
 import { Loading } from '../Loading';
 import ButtonStyles from './Button.styles';
 import { ButtonProps } from './types';
 
 const { ButtonStyled } = ButtonStyles;
-
-const IconStyled = styled.div`
-    height: 24px;
-    weight: 24px;
-    overflow: hidden;
-`;
 
 const Button: React.FC<ButtonProps> = ({
     color,

@@ -10,11 +10,11 @@ const { Demo, PreLoadStep0, StepsWithFooter, StepsWithoutNav } =
 
 let container: HTMLDivElement;
 const stepperTestID = 'test-stepper';
-const stepperTestTitle = 'test-stepper_title';
-// const stepperTestContent = 'test-stepper_content';
-const stepperTestNav = 'test-stepper_nav';
-const stepperTestNumbers = 'test-stepper_numbers';
-const stepperTestHelper = 'test-stepper_helper';
+const stepperTestTitle = 'test-stepper-title';
+// const stepperTestContent = 'test-stepper-content';
+const stepperTestNav = 'test-stepper-nav';
+const stepperTestNumbers = 'test-stepper-numbers';
+const stepperTestHelper = 'test-stepper-helper';
 
 describe('Demo', () => {
     beforeEach(() => {

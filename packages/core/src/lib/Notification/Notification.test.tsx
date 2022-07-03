@@ -4,15 +4,16 @@ import { render, cleanup } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 const { Regular, Standard, CustomIcon } = composeStories(stories);
 
+const closeId = 'test-notification-x';
+const iconId = 'test-notification-icon-wrapper';
+const messageId = 'test-notification-message';
+const testId = 'test-notification';
+const titleId = 'test-notification-title';
+
 describe('Notification - Standard - Active - Regular Text - Regular Icon', () => {
     let container: HTMLDivElement;
     const message = Standard.args?.message;
-    const messageId = 'test-notification-message';
-    const testId = 'test-notification-id';
-    const closeId = 'test-notification-x';
     const title = 'New Message';
-    const iconId = 'test-notification-icon-wrapper';
-    const titleId = 'test-notification-title';
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -64,13 +65,9 @@ describe('Notification - Standard - Active - Regular Text - Regular Icon', () =>
 
 describe('Notification - Regular - Active - Custom Text - Regular Icon', () => {
     let container: HTMLDivElement;
-    const testId = 'test-notification-id';
-    const messageId = 'test-notification-message';
-    const titleId = 'test-notification-title';
-    const closeId = 'test-notification-x';
+
     const title = Regular?.args?.title;
     const message = Regular?.args?.message;
-    const iconId = 'test-notification-icon-wrapper';
 
     beforeEach(() => {
         container = document.createElement('div');
@@ -115,11 +112,6 @@ describe('Notification - Regular - Active - Custom Text - Regular Icon', () => {
 
 describe('Notification - Active - Custom Text - Custom Icon', () => {
     let container: HTMLDivElement;
-    const testId = 'test-notification-id';
-    const messageId = 'test-notification-message';
-    const titleId = 'test-notification-title';
-    const closeId = 'test-notification-x';
-    const iconId = 'test-notification-icon-wrapper';
     const title = CustomIcon?.args?.title;
     const message = CustomIcon?.args?.message;
 

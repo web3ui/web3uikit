@@ -21,7 +21,7 @@ const Tag: React.FC<TagProps> = ({
         <TagStyled
             active={active}
             color={color}
-            data-testid="test-tag-id"
+            data-testid="test-tag"
             fontSize={fontSize}
             id={id}
             role="status"

@@ -8,9 +8,9 @@ const { InternalLinkStyled, LinkStyled, SpanStyledFlex, SpanStyledText } =
 
 const LinkTo: React.FC<LinkToProps> = ({
     address,
+    iconLayout = 'leading',
     text,
     type = 'external',
-    iconLayout = 'leading',
     ...props
 }) => {
     const renderContent = () => (

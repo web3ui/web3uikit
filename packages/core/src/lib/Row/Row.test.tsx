@@ -12,7 +12,7 @@ const {
     OrderedColumns,
 } = composeStories(stories);
 
-const testRowId = 'row';
+const testRowId = 'test-row';
 
 type TestStoryProps = {
     name: string;
@@ -37,7 +37,7 @@ function testStory({
 
         if (checkStyles) {
             // renders row with correct styles
-            const style = row && getComputedStyle(row?.[0]);
+            const style = row && getComputedStyle(row?.[0] as Element);
 
             expect(style?.alignItems).toEqual('center');
             expect(style?.justifyContent).toEqual('center');
@@ -83,5 +83,5 @@ const data = [
 
 for (let index = 0; index < data.length; index++) {
     const element = data[index];
-    testStory({ ...element });
+    testStory({ ...element } as TestStoryProps);
 }

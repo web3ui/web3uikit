@@ -1,4 +1,4 @@
-export interface TableProps {
+export interface ITableProps {
     /**
      * A String Template that defines the table layout.
      * For more information please check https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout

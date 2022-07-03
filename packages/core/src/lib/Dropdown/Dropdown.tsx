@@ -21,6 +21,7 @@ import { Typography } from '../Typography';
 
 const Dropdown: React.FC<IDropdown> = ({
     defaultOptionIndex,
+    dropdownArrowType = 'normal',
     hasOutline = true,
     hideSelected = true,
     icon,
@@ -33,13 +34,11 @@ const Dropdown: React.FC<IDropdown> = ({
     selectedState,
     showSelected = true,
     width = '250px',
-    dropdownArrowType = 'normal',
     ...props
 }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedIndex, setSelectedIndex] = useState<number | undefined>(
-        defaultOptionIndex,
-    );
+    const [selectedIndex, setSelectedIndex] =
+        useState<number | undefined>(defaultOptionIndex);
     useEffect(() => {
         if (isDisabled) {
             setIsOpen(false);
@@ -65,12 +64,13 @@ const Dropdown: React.FC<IDropdown> = ({
         ) {
             return (
                 <DivStyledOptionsContainer
-                    width={width}
+                    data-testid="test-dropdown-container"
                     isOpen={isOpen}
+                    width={width}
                     {...props}
                 >
                     <DivInnerStyledOptionsContainer>
-                        <DivStyledNoData>
+                        <DivStyledNoData data-testid="test-dropdown-data">
                             <Illustration
                                 logo="looking"
                                 width={'100%'}
@@ -86,8 +86,8 @@ const Dropdown: React.FC<IDropdown> = ({
         }
         return (
             <DivStyledOptionsContainer
+                data-testid="test-dropdown-options-container"
                 isOpen={isOpen}
-                data-testid="optionsContainer"
                 width={width}
             >
                 <DivInnerStyledOptionsContainer>
@@ -123,22 +123,23 @@ const Dropdown: React.FC<IDropdown> = ({
 
     return (
         <StyledSelectParentDiv
-            width={width}
-            data-testid="popoverSelect"
+            data-testid="test-dropdown"
             isDisabled={isDisabled}
+            width={width}
         >
             <DivStyledSelected
-                width={width}
+                data-testid="test-dropdown-wrap"
+                hasOutline={hasOutline}
+                isOpen={!!isOpen}
                 onClick={() => {
                     if (!isDisabled) {
                         setIsOpen(!isOpen);
                     }
                 }}
-                isOpen={!!isOpen}
-                hasOutline={hasOutline}
+                width={width}
             >
                 <div>
-                    <span>
+                    <span data-testid="test-dropdown-icon">
                         {icon && icon}
                         {typeof selectedIndex == 'number' &&
                             options[selectedIndex]?.prefix &&

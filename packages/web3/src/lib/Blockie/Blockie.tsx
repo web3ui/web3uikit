@@ -1,24 +1,20 @@
 import { FC } from 'react';
 import Blockies from 'react-blockies';
-import { BlockieStyles } from './Blockie.styles';
+import styles from './Blockie.styles';
 import { BlockieProps } from './types';
 
-const { BlockieStyled } = BlockieStyles;
+const { DivStyled } = styles;
 /**
  * Shows a blockie image for the provided wallet address
  * @param {*} props
- * @returns <Blockies> JSX Elemenet
+ * @returns <Blockies> JSX Element
  */
 
-const Blockie: FC<BlockieProps> = (props) => {
+const Blockie: FC<BlockieProps> = ({ seed, ...props }) => {
     return (
-        <BlockieStyled data-testid="test-div">
-            <Blockies
-                {...props}
-                seed={props?.seed?.toLowerCase()}
-                className="identicon"
-            />
-        </BlockieStyled>
+        <DivStyled data-testid="test-blockie">
+            <Blockies {...props} seed={seed?.toLowerCase()} />
+        </DivStyled>
     );
 };
 

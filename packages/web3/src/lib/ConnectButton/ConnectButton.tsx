@@ -122,12 +122,15 @@ const ConnectButton: React.FC<IConnectButtonProps> = ({
     }
 
     return (
-        <WrapperStyled {...props}>
+        <WrapperStyled data-testid="test-connect-button-wrap" {...props}>
             <AccountInfoStyled>
-                <BalanceBlockStyled>
+                <BalanceBlockStyled data-testid="test-connect-button-balance">
                     <NativeBalance style={{ margin: '0 8px 0 12px' }} />
                 </BalanceBlockStyled>
-                <AddressStyled onClick={() => disconnectWallet()}>
+                <AddressStyled
+                    data-testid="test-connect-button-address"
+                    onClick={() => disconnectWallet()}
+                >
                     <TextStyled style={{ marginRight: '8px' }}>
                         {account && getEllipsisTxt(account)}
                     </TextStyled>

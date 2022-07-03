@@ -1,5 +1,4 @@
-
-import { color} from '@web3uikit/styles';
+import { color } from '@web3uikit/styles';
 import {
     DivStyledWaveLoader,
     StyledSpinnerDiv,
@@ -8,22 +7,22 @@ import {
 import { ILoadingProps } from './types';
 
 const Loading: React.FC<ILoadingProps> = ({
+    direction = 'bottom',
+    fontSize,
     size = 20,
     spinnerColor = color.white,
-    text,
-    direction = 'bottom',
     spinnerType = 'loader',
-    fontSize,
+    text,
     ...props
 }) => {
     return (
         <StyledSpinnerParent
             data-testid="test-loading"
             direction={direction}
+            fontSize={fontSize}
             role="spinner"
             size={size}
             spinnerColor={spinnerColor}
-            fontSize={fontSize}
             {...props}
         >
             {spinnerType == 'loader' ? (
@@ -44,6 +43,7 @@ const WaveLoader: React.FC<ILoadingProps> = ({
     <DivStyledWaveLoader
         aria-busy="true"
         aria-label="loading, please wait"
+        data-testid="test-loading"
         role="alert"
         size={size}
         spinnerColor={spinnerColor}

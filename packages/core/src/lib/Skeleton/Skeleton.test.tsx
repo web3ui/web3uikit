@@ -7,7 +7,7 @@ import * as stories from './Skeleton.stories';
 import { test, expect, describe } from 'vitest';
 
 const { SkeletonImage } = composeStories(stories);
-const skeletonTestId = 'test-skeleton-id';
+const skeletonTestId = 'test-skeleton';
 
 describe('Skeleton - Image', () => {
     let container: HTMLDivElement;

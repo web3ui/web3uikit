@@ -39,7 +39,7 @@ const HeaderStyled = styled.header<{
     fixedMode: boolean;
     headerHasBottomBorder: boolean;
 }>`
-    ${(p) => p.fixedMode && 'position: sticky;top: 0;background-color: white;'}
+    ${(p) => p.fixedMode && 'position: sticky; top: 0;background-color: white;'}
     ${(p) =>
         typeof p.title === 'string' &&
         `h3 {

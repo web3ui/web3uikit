@@ -1,4 +1,3 @@
-
 import { BadgeProps } from './types';
 import styles from './Badge.styles';
 import { Typography } from '../Typography';
@@ -12,7 +11,7 @@ const Badge: React.FC<BadgeProps> = ({
     ...props
 }) => {
     return (
-        <DivStyled data-testid="test-badge-id" state={state} {...props}>
+        <DivStyled data-testid="test-badge" state={state} {...props}>
             <Typography
                 color="white"
                 data-testid="test-badge-text"

@@ -8,10 +8,10 @@ const { DefaultTodo, WithInitialTodos, FullWidthTodos } =
     composeStories(stories);
 
 const todoTestId = 'test-todo';
-const todoLabelId = 'test-label';
-const todoButtonId = 'test-button';
-const todoElementId = 'test-tag-id';
-const todoContentId = 'test-todo_content';
+const todoLabelId = 'test-input-label';
+const todoButtonId = 'test-todo-button';
+const todoElementId = 'test-tag';
+const todoContentId = 'test-todo-content';
 
 export const testCompId = 'test-new-comp';
 

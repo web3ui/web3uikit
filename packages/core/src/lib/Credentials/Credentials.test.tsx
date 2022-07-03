@@ -6,11 +6,11 @@ import { test, expect, describe } from 'vitest';
 const { WithTitleAndIcon, WithTitle, OneLine } = composeStories(stories);
 
 export const testCompId = 'test-credentials';
-
-const testTitleIcon = 'cred-test-header-icon';
-const testTitleId = 'cred-test-header-text';
-const testTextId = 'cred-test-text';
+const testTitleIcon = 'test-cred-header-icon';
+const testTitleId = 'test-cred-header-text';
+const testTextId = 'test-cred-new-comp-heading';
 const iconTestId = 'test-icon';
+
 test('Renders - Credentials with Title and Icon', () => {
     render(<WithTitleAndIcon />);
     const testTitleText = WithTitleAndIcon?.args?.title;

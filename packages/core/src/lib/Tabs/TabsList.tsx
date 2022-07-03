@@ -75,7 +75,7 @@ function TabList({
         >
             <StyleTabBarParent
                 isVertical={isVertical}
-                data-testid="tabs_list_parent"
+                data-testid="test-tab-list"
                 {...props}
             >
                 <StyledTabBar
@@ -110,7 +110,7 @@ export function Tab({
         return (
             <BulbTab
                 role="tab-Item"
-                data-testid={`tab_item_${tabKey}_${
+                data-testid={`test-tab-item-${tabKey}_${
                     activeState ? activeState : tabKey == selectedKey
                 }`}
                 key={tabKey}
@@ -130,7 +130,7 @@ export function Tab({
         return (
             <StyledTab
                 role="tab-Item"
-                data-testid={`tab_item_${tabKey}_${
+                data-testid={`test-tab-item-${tabKey}_${
                     activeState ? activeState : tabKey == selectedKey
                 }`}
                 key={tabKey}
@@ -141,14 +141,18 @@ export function Tab({
                 lineHeight={lineHeight}
                 isDisabled={isDisabled}
             >
-                <span data-testid={`disabled_${isDisabled}_${tabKey}`}>
+                <span data-testid={`test-tab-disabled-${isDisabled}_${tabKey}`}>
                     {tabName}
                 </span>
             </StyledTab>
         );
     };
 
-    return <>{tabStyle == 'bar' ? <RenderBarTab /> : <RenderBulbTab />}</>;
+    return (
+        <span data-testid="test-tabs">
+            {tabStyle == 'bar' ? <RenderBarTab /> : <RenderBulbTab />}
+        </span>
+    );
 }
 TabList.Tab = Tab;
 

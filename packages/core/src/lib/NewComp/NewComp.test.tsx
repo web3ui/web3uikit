@@ -21,9 +21,9 @@ const { Default, InitializeRed, UnderLinedText } = composeStories(stories);
 
 // setting my test IDs to match my tsx
 export const testCompId = 'test-new-comp';
-const testTitle = 'test-title';
-const testHeading = 'test-heading';
-const testText = 'test-text';
+const testTitle = 'test-new-comp-title';
+const testHeading = 'test-new-comp-heading';
+const testText = 'test-new-comp-text';
 // NOTE: the main test ID is exported incase
 // it is needed for another components test
 
@@ -76,9 +76,9 @@ test('changes UI onClick of the button', () => {
 
     buttonElement && fireEvent.click(buttonElement);
 
-    const textElelement = screen.getByTestId(testText);
-    expect(textElelement).not.toBeNull();
-    expect(textElelement.textContent).toBe('Clicked: 1 times');
+    const textElement = screen.getByTestId(testText);
+    expect(textElement).not.toBeNull();
+    expect(textElement.textContent).toBe('Clicked: 1 times');
 
     const headingElement = screen.getByTestId(testHeading);
     expect(headingElement).not.toBeNull();
@@ -133,9 +133,9 @@ test('changes UI onClick of the button', () => {
     const buttonElement = screen.getByTestId(buttonTestId);
     buttonElement && fireEvent.click(buttonElement);
 
-    const textElelement = screen.getByTestId(testText);
-    expect(textElelement).not.toBeNull();
-    expect(textElelement.textContent).toBe('Clicked: 1 times');
+    const textElement = screen.getByTestId(testText);
+    expect(textElement).not.toBeNull();
+    expect(textElement.textContent).toBe('Clicked: 1 times');
 
     const headingElement = screen.getByTestId(testHeading);
     expect(headingElement).not.toBeNull();
@@ -189,9 +189,9 @@ test('changes UI onClick of the button', () => {
     const buttonElement = screen.getByTestId(buttonTestId);
     buttonElement && fireEvent.click(buttonElement);
 
-    const textElelement = screen.getByTestId(testText);
-    expect(textElelement).not.toBeNull();
-    expect(textElelement.textContent).toBe('Clicked: 1 times');
+    const textElement = screen.getByTestId(testText);
+    expect(textElement).not.toBeNull();
+    expect(textElement.textContent).toBe('Clicked: 1 times');
 
     const headingElement = screen.getByTestId(testHeading);
     expect(headingElement).not.toBeNull();

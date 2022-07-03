@@ -41,7 +41,6 @@ OneLine.args = {
 export const WithCustomColors = Template.bind({});
 WithCustomColors.args = {
     icon: <Windows fill={color.green} />,
-    iconColor: 'green',
     title: 'CLI API Key:',
     titleColor: 'blue',
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',

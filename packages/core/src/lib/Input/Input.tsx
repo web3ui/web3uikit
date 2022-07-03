@@ -126,11 +126,11 @@ const Input: React.FC<InputProps> = ({
 
     return (
         <DivWrapperStyled
-            state={currentState}
             className={`input input_${isInputEmpty ? 'filled' : 'empty'}`}
-            data-testid="test-div"
-            style={{ ...style, width }}
+            data-testid="test-input"
             size={size}
+            state={currentState}
+            style={{ ...style, width }}
         >
             {prefixIcon && iconPosition == 'front' && (
                 <DivStyled className="input_prefixIcon">{prefixIcon}</DivStyled>
@@ -141,7 +141,7 @@ const Input: React.FC<InputProps> = ({
                 autoComplete={`${autoComplete}`}
                 autoFocus={autoFocus}
                 customInput={customInput}
-                data-testid="test-input"
+                data-testid="test-input-input"
                 disabled={currentState == 'disabled'}
                 id={id}
                 max={type === 'number' ? validation?.numberMax : undefined}
@@ -172,7 +172,7 @@ const Input: React.FC<InputProps> = ({
 
             {label && (
                 <LabelStyled
-                    data-testid="test-label"
+                    data-testid="test-input-label"
                     htmlFor={id}
                     hasPrefix={
                         typeof prefixIcon !== 'undefined' &&
@@ -185,24 +185,19 @@ const Input: React.FC<InputProps> = ({
                 </LabelStyled>
             )}
             {currentState === 'error' && (
-                <StrongStyled
-                    data-testid="test-invalid-feedback"
-                    isError={true}
-                >
+                <StrongStyled data-testid="test-input-feedback" isError={true}>
                     {invalidMessage}
                 </StrongStyled>
             )}
             {description && !(currentState === 'error') && (
-                <StrongStyled
-                    data-testid="test-invalid-feedback"
-                    isError={false}
-                >
+                <StrongStyled data-testid="test-input-feedback" isError={false}>
                     {description}
                 </StrongStyled>
             )}
             {canToggleHideInput() && (
                 <VisibilityIcon
                     className="input_visibility"
+                    data-testid="test-input-icon-visibility"
                     onClick={() => toggleHideInput()}
                     type="button"
                 >
@@ -217,10 +212,15 @@ const Input: React.FC<InputProps> = ({
                 </VisibilityIcon>
             )}
             {prefixIcon && iconPosition == 'end' && (
-                <DivStyled className="input_prefixIcon">{prefixIcon}</DivStyled>
+                <DivStyled
+                    className="input_prefixIcon"
+                    data-testid="test-input-icon-prefix"
+                >
+                    {prefixIcon}
+                </DivStyled>
             )}
             {hasCopyButton && (
-                <CopyContainerStyled>
+                <CopyContainerStyled data-testid="test-input-copy">
                     <CopyButton text={currentValue} />
                 </CopyContainerStyled>
             )}

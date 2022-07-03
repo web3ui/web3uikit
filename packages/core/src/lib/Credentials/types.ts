@@ -54,17 +54,7 @@ export interface ICredentialsHeaderProps {
     /**
      * header Icon
      */
-    icon?: React.ReactElement; //Icon
-
-    /**
-     * header Icon color
-     */
-    iconColor?: string | typeof color;
-
-    /**
-     * header Icon size
-     */
-    iconSize?: number;
+    icon?: JSX.Element;
 }
 
 export interface ITruncateStringProps {

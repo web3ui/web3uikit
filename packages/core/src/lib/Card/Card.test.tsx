@@ -5,11 +5,12 @@ import { test, expect, describe } from 'vitest';
 
 const { Regular, RegularSelected, Disabled } = composeStories(stories);
 
-const cardId = 'card-test-id';
-const checkmarkId = 'check-test-id';
-const descriptionId = 'desc-test-id';
-const titleId = 'title-test-id';
-const headerId = 'header-test-id';
+const cardId = 'test-card';
+const headerId = 'test-card-header';
+const checkmarkId = 'test-card-icon-check';
+const descriptionId = 'test-card-description';
+const titleId = 'test-card-title';
+
 test('Renders - Card Regular', () => {
     render(<Regular />);
     const desc = Regular?.args?.description;

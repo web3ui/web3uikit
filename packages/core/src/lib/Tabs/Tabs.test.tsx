@@ -14,25 +14,28 @@ const {
     Disabled,
 } = composeStories(Stories);
 
+const tabsId = 'test-tab-list';
+const tabItemId = 'test-tab-item';
+
 describe('Tabs - Tab Bar', () => {
     const defaultSelectedKey = TabBar.args?.defaultActiveKey;
     it('Should Render', () => {
         render(<TabBar />);
-        const element = screen.getByTestId('tabs_list_parent');
+        const element = screen.getByTestId(tabsId);
         expect(element).toBeDefined();
     });
     it('Should set active key to default one', () => {
         render(<TabBar />);
         const element = screen.getByTestId(
-            `tab_item_${defaultSelectedKey}_true`,
+            `${tabItemId}-${defaultSelectedKey}_true`,
         );
         expect(element).toBeDefined();
     });
     it('Should change active key if new one is clicked', () => {
         render(<TabBar />);
-        const element = screen.getByTestId(`tab_item_2_false`);
+        const element = screen.getByTestId(`${tabItemId}-2_false`);
         fireEvent.click(element);
-        const el = screen.getByTestId(`tab_item_2_true`);
+        const el = screen.getByTestId(`${tabItemId}-2_true`);
         expect(el).toBeDefined();
     });
     it('Should Render Icons', () => {
@@ -46,13 +49,13 @@ describe('Tabs - Vertical Tab Bar', () => {
     const defaultSelectedKey = TabBar.args?.defaultActiveKey;
     it('Should Render', () => {
         render(<VerticalTabBar />);
-        const element = screen.getByTestId('tabs_list_parent');
+        const element = screen.getByTestId(tabsId);
         expect(element).toBeDefined();
     });
     it('Should set active key to default one', () => {
         render(<VerticalTabBar />);
         const element = screen.getByTestId(
-            `tab_item_${defaultSelectedKey}_true`,
+            `${tabItemId}-${defaultSelectedKey}_true`,
         );
         expect(element).toBeDefined();
     });
@@ -63,9 +66,9 @@ describe('Tabs - Vertical Tab Bar', () => {
     });
     it('Should change active key if new one is clicked', () => {
         render(<VerticalTabBar />);
-        const element = screen.getByTestId(`tab_item_2_false`);
+        const element = screen.getByTestId(`${tabItemId}-2_false`);
         fireEvent.click(element);
-        const el = screen.getByTestId(`tab_item_2_true`);
+        const el = screen.getByTestId(`${tabItemId}-2_true`);
         expect(el).toBeDefined();
     });
 });
@@ -74,13 +77,13 @@ describe('Tabs - Bulb', () => {
     const defaultSelectedKey = TabBar.args?.defaultActiveKey;
     it('Should Render', () => {
         render(<Bulb />);
-        const element = screen.getByTestId('tabs_list_parent');
+        const element = screen.getByTestId(tabsId);
         expect(element).toBeDefined();
     });
     it('Should set active key to default one', () => {
         render(<Bulb />);
         const element = screen.getByTestId(
-            `tab_item_${defaultSelectedKey}_true`,
+            `${tabItemId}-${defaultSelectedKey}_true`,
         );
         expect(element).toBeDefined();
     });
@@ -91,9 +94,9 @@ describe('Tabs - Bulb', () => {
     });
     it('Should change active key if new one is clicked', () => {
         render(<Bulb />);
-        const element = screen.getByTestId(`tab_item_2_false`);
+        const element = screen.getByTestId(`${tabItemId}-2_false`);
         fireEvent.click(element);
-        const el = screen.getByTestId(`tab_item_2_true`);
+        const el = screen.getByTestId(`${tabItemId}-2_true`);
         expect(el).toBeDefined();
     });
 });
@@ -102,13 +105,13 @@ describe('Tabs - Bulb With Icon', () => {
     const defaultSelectedKey = TabBar.args?.defaultActiveKey;
     it('Should Render', () => {
         render(<BulbWithIcon />);
-        const element = screen.getByTestId('tabs_list_parent');
+        const element = screen.getByTestId(tabsId);
         expect(element).toBeDefined();
     });
     it('Should set active key to default one', () => {
         render(<BulbWithIcon />);
         const element = screen.getByTestId(
-            `tab_item_${defaultSelectedKey}_true`,
+            `${tabItemId}-${defaultSelectedKey}_true`,
         );
         expect(element).toBeDefined();
     });
@@ -119,9 +122,9 @@ describe('Tabs - Bulb With Icon', () => {
     });
     it('Should change active key if new one is clicked', () => {
         render(<BulbWithIcon />);
-        const element = screen.getByTestId(`tab_item_2_false`);
+        const element = screen.getByTestId(`${tabItemId}-2_false`);
         fireEvent.click(element);
-        const el = screen.getByTestId(`tab_item_2_true`);
+        const el = screen.getByTestId(`${tabItemId}-2_true`);
         expect(el).toBeDefined();
     });
     it('Should Render Icons', () => {
@@ -135,13 +138,13 @@ describe('Tabs - Vertical', () => {
     const defaultSelectedKey = TabBar.args?.defaultActiveKey;
     it('Should Render', () => {
         render(<VerticalBulbs />);
-        const element = screen.getByTestId('tabs_list_parent');
+        const element = screen.getByTestId(tabsId);
         expect(element).toBeDefined();
     });
     it('Should set active key to default one', () => {
         render(<VerticalBulbs />);
         const element = screen.getByTestId(
-            `tab_item_${defaultSelectedKey}_true`,
+            `${tabItemId}-${defaultSelectedKey}_true`,
         );
         expect(element).toBeDefined();
     });
@@ -152,9 +155,9 @@ describe('Tabs - Vertical', () => {
     });
     it('Should change active key if new one is clicked', () => {
         render(<VerticalBulbs />);
-        const element = screen.getByTestId(`tab_item_2_false`);
+        const element = screen.getByTestId(`${tabItemId}-2_false`);
         fireEvent.click(element);
-        const el = screen.getByTestId(`tab_item_2_true`);
+        const el = screen.getByTestId(`${tabItemId}-2_true`);
         expect(el).toBeDefined();
     });
     it('Should Render Icons', () => {
@@ -168,13 +171,13 @@ describe('Tabs - Sepratated', () => {
     const defaultSelectedKey = TabBar.args?.defaultActiveKey;
     it('Should Render', () => {
         render(<Seperated />);
-        const element = screen.getByTestId('tabs_list_parent');
+        const element = screen.getByTestId(tabsId);
         expect(element).toBeDefined();
     });
     it('Should set active key to default one', () => {
         render(<Seperated />);
         const element = screen.getByTestId(
-            `tab_item_${defaultSelectedKey}_true`,
+            `${tabItemId}-${defaultSelectedKey}_true`,
         );
         expect(element).toBeDefined();
     });
@@ -185,9 +188,9 @@ describe('Tabs - Sepratated', () => {
     });
     it('Should change active key if new one is clicked', () => {
         render(<Seperated />);
-        const element = screen.getByTestId(`tab_item_2_false`);
+        const element = screen.getByTestId(`${tabItemId}-2_false`);
         fireEvent.click(element);
-        const el = screen.getByTestId(`tab_item_2_true`);
+        const el = screen.getByTestId(`${tabItemId}-2_true`);
         expect(el).toBeDefined();
     });
 });
@@ -196,13 +199,13 @@ describe('Tabs - Disabled', () => {
     const defaultSelectedKey = TabBar.args?.defaultActiveKey;
     it('Should Render', () => {
         render(<Disabled />);
-        const element = screen.getByTestId('tabs_list_parent');
+        const element = screen.getByTestId(tabsId);
         expect(element).toBeDefined();
     });
     it('Should set active key to default one', () => {
         render(<Disabled />);
         const element = screen.getByTestId(
-            `tab_item_${defaultSelectedKey}_true`,
+            `${tabItemId}-${defaultSelectedKey}_true`,
         );
         expect(element).toBeDefined();
     });
@@ -213,16 +216,16 @@ describe('Tabs - Disabled', () => {
     });
     it('Should change active key if new one is clicked', () => {
         render(<Disabled />);
-        const element = screen.getByTestId(`tab_item_3_false`);
+        const element = screen.getByTestId(`${tabItemId}-3_false`);
         fireEvent.click(element);
-        const el = screen.getByTestId(`tab_item_3_true`);
+        const el = screen.getByTestId(`${tabItemId}-3_true`);
         expect(el).toBeDefined();
     });
     it('Should not change active key if disabled one is clicked', () => {
         render(<Disabled />);
         const element = screen.getByText('Disabled');
         fireEvent.click(element);
-        const el = screen.getByTestId(`tab_item_1_true`);
+        const el = screen.getByTestId(`${tabItemId}-1_true`);
         expect(el).toBeDefined();
     });
 });

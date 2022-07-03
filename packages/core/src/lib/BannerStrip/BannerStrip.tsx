@@ -1,4 +1,3 @@
-
 import { BannerStripProps } from '.';
 import { Button } from '../Button';
 import styles from './BannerStrip.styles';
@@ -12,7 +11,7 @@ const BannerStrip: React.FC<BannerStripProps> = ({
     text,
     type = 'standard',
 }) => (
-    <SectionStyled type={type} height={height} data-testid="banner-strip">
+    <SectionStyled type={type} height={height} data-testid="test-banner-strip">
         <strong>{text}</strong>
         {buttonDisplayed && <Button {...buttonConfig} />}
     </SectionStyled>

@@ -11,8 +11,8 @@ const {
     RadiosWithLongText,
 } = composeStories(stories);
 
-const testFieldsetId = 'test-fieldset';
-const testLegendId = 'test-legend';
+const testFieldsetId = 'test-radios';
+const testLegendId = 'test-radios-legend';
 const testEvent = vi.fn();
 
 test('Radios - RadioGroup', async () => {

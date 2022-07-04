@@ -39,7 +39,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         Moralis,
     } = useMoralis();
 
-    const { name, isLoading, error } = useEnsAddress(String(account));
+    const { name } = useEnsAddress(String(account));
     const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
     const [web3Status, setWeb3Status] =
         useState<web3StatusType>('disconnected');

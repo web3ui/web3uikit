@@ -36,6 +36,7 @@ const PopoverDropdown: React.FC<IPopoverDropdownProps> = ({
             <ListStyled
                 backgroundColor={backgroundColor}
                 data-testid="test-popover-dropdown-list"
+                move={move}
                 position={position}
                 role="menu"
                 width={width}

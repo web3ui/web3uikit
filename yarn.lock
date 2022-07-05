@@ -18598,6 +18598,12 @@ worker-rpc@^0.1.0:
   dependencies:
     microevent.ts "~0.1.1"
 
+"wp5-cra-polyfill@github:oscario2/wp5-cra-polyfill#91431fa":
+  version "0.0.1"
+  resolved "https://codeload.github.com/oscario2/wp5-cra-polyfill/tar.gz/91431fa2c67aaa1247309e04799254a2e8a949d7"
+  dependencies:
+    node-polyfill-webpack-plugin "^1.1.4"
+
 wrap-ansi@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-3.0.1.tgz#288a04d87eda5c286e060dfe8f135ce8d007f8ba"

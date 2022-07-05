@@ -1,6 +1,6 @@
 import { default as MoralisType } from 'moralis/types';
 import React, { useEffect, useState } from 'react';
-import { useMoralis } from 'react-moralis';
+import { useMoralis, useEnsAddress } from 'react-moralis';
 import { getEllipsisTxt } from '../../web3utils';
 import { Blockie } from '../Blockie';
 import { NativeBalance } from '../NativeBalance';
@@ -39,6 +39,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         Moralis,
     } = useMoralis();
 
+    const { name } = useEnsAddress(String(account));
     const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
     const [web3Status, setWeb3Status] =
         useState<web3StatusType>('disconnected');
@@ -133,7 +134,9 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
                     data-testid="test-connect-button-address"
                 >
                     <TextStyled style={{ marginRight: '8px' }}>
-                        {account && getEllipsisTxt(account)}
+                        {name
+                            ? name && getEllipsisTxt(name)
+                            : account && getEllipsisTxt(account)}
                     </TextStyled>
                     <Blockie scale={2.5} seed={account} />
                 </AddressStyled>

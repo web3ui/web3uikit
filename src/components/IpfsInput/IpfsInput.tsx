@@ -1,35 +1,30 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 import { useMoralisFile } from 'react-moralis';
-import { IpfsInputStyles } from './IpfsInput.styles';
 import { IpfsInputprops } from './types';
+import { Upload } from '../Upload';
 
-
-/**
- * An Input buton to upload files to either IPFS or moralis
- * @param {*} props
- * @returns <IpfsInput> JSX Element
- */
-
-const { InputButton } = IpfsInputStyles;
-
-const IpfsInput: React.FC<IpfsInputprops> = (props) => {
-    const { moralisFile,saveFile,} = useMoralisFile();
+const IpfsInput: React.FC<IpfsInputprops> = ({
+    Theme = 'textOnly',
+    ...props
+}) => {
+    const { moralisFile, saveFile } = useMoralisFile();
 
     useEffect(() => {
-    //   moralisFile?.getData().then((e) => console.log(e))
-        
-        console.log(moralisFile)
-      
-    }, [moralisFile])
-    
+        console.log(moralisFile);
+    }, [moralisFile]);
 
     return (
         <>
-            <InputButton type="file" name="ipfs" onChange={(e) => {
-                console.log(e)
-                saveFile(String(props.FileName),
-                    e.target.files[0], { saveIPFS: props.SaveToIpfs,type: props.Type })
-            }} />
+            <Upload
+                theme={Theme}
+                onChange={(e) => {
+                    console.log(e);
+                    saveFile(String(props.FileName), e, {
+                        saveIPFS: props.SaveToIpfs,
+                        type: props.Type,
+                    });
+                }}
+            />
         </>
     );
 };

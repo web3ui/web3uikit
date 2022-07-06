@@ -4,7 +4,7 @@ import { IPopoverDropdownProps } from './types';
 
 type TStyleProps = Pick<
     IPopoverDropdownProps,
-    'backgroundColor' | 'move' | 'position' | 'width'
+    'backgroundColor' | 'moveBody' | 'position' | 'width'
 >;
 
 const sizeValue = 20;
@@ -23,10 +23,10 @@ const DivStyled = styled.div`
     }
 `;
 
-const positionBottomStyles = (move?: number) => css`
+const positionBottomStyles = (moveBody?: number) => css`
     left: 50%;
     top: calc(100% + ${halfSize});
-    transform: translateX(calc(-50% + ${move || 0}px));
+    transform: translateX(calc(-50% + ${moveBody || 0}px));
 
     &:before {
         height: ${halfSize};
@@ -36,15 +36,15 @@ const positionBottomStyles = (move?: number) => css`
     }
 
     &:after {
-        left: calc((50% - ${halfSize}) - ${move || 0}px);
+        left: calc((50% - ${halfSize}) - ${moveBody || 0}px);
         top: -6px;
     }
 `;
 
-const positionTopStyles = (move?: number) => css`
+const positionTopStyles = (moveBody?: number) => css`
     left: 50%;
     bottom: calc(100% + ${halfSize});
-    transform: translateX(calc(-50% + ${move || 0}px));
+    transform: translateX(calc(-50% + ${moveBody || 0}px));
 
     &:before {
         bottom: -${halfSize};
@@ -54,15 +54,15 @@ const positionTopStyles = (move?: number) => css`
     }
 
     &:after {
-        left: calc((50% - ${halfSize}) - ${move || 0}px);
+        left: calc((50% - ${halfSize}) - ${moveBody || 0}px);
         bottom: -6px;
     }
 `;
 
-const positionRightStyles = (move?: number) => css`
+const positionRightStyles = (moveBody?: number) => css`
     left: calc(100% + ${halfSize});
     top: 50%;
-    transform: translateY(calc(-50% + ${move || 0}px));
+    transform: translateY(calc(-50% + ${moveBody || 0}px));
 
     &:before {
         height: 100%;
@@ -72,15 +72,15 @@ const positionRightStyles = (move?: number) => css`
     }
 
     &:after {
-        top: calc((50% - ${halfSize}) - ${move || 0}px);
+        top: calc((50% - ${halfSize}) - ${moveBody || 0}px);
         left: -2px;
     }
 `;
 
-const positionLeftStyles = (move?: number) => css`
+const positionLeftStyles = (moveBody?: number) => css`
     right: calc(100% + ${halfSize});
     top: 50%;
-    transform: translateY(calc(-50% + ${move || 0}px));
+    transform: translateY(calc(-50% + ${moveBody || 0}px));
 
     &:before {
         height: 100%;
@@ -90,21 +90,21 @@ const positionLeftStyles = (move?: number) => css`
     }
 
     &:after {
-        top: calc((50% - ${halfSize}) - ${move || 0}px);
+        top: calc((50% - ${halfSize}) - ${moveBody || 0}px);
         right: -2px;
     }
 `;
 
-const setPosition = (position: string, move?: number) => {
+const setPosition = (position: string, moveBody?: number) => {
     switch (position) {
         case 'top':
-            return positionTopStyles(move);
+            return positionTopStyles(moveBody);
         case 'left':
-            return positionLeftStyles(move);
+            return positionLeftStyles(moveBody);
         case 'right':
-            return positionRightStyles(move);
+            return positionRightStyles(moveBody);
         default:
-            return positionBottomStyles(move);
+            return positionBottomStyles(moveBody);
     }
 };
 
@@ -117,7 +117,7 @@ const ListStyled = styled.ul<TStyleProps>`
     min-width: ${(p) => `${p.width}`};
     padding: 8px;
     position: absolute;
-    ${(p) => p.position && setPosition(p.position, p.move)}
+    ${(p) => p.position && setPosition(p.position, p.moveBody)}
 
     &:hover {
         display: block;

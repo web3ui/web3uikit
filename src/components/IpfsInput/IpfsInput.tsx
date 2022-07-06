@@ -27,8 +27,8 @@ const IpfsInput: React.FC<IpfsInputprops> = (props) => {
         <>
             <InputButton type="file" name="ipfs" onChange={(e) => {
                 console.log(e)
-                saveFile("e.target.value",
-                    e.target.files[0], { saveIPFS: props.SaveToIpfs })
+                saveFile(String(props.FileName),
+                    e.target.files[0], { saveIPFS: props.SaveToIpfs,type: props.Type })
             }} />
         </>
     );

@@ -4,7 +4,7 @@ import { IPopoverDropdownProps } from './types';
 
 type TStyleProps = Pick<
     IPopoverDropdownProps,
-    'backgroundColor' | 'position' | 'width'
+    'backgroundColor' | 'moveBody' | 'position' | 'width'
 >;
 
 const sizeValue = 20;
@@ -23,10 +23,10 @@ const DivStyled = styled.div`
     }
 `;
 
-const positionBottomStyles = css`
+const positionBottomStyles = (moveBody?: number) => css`
     left: 50%;
     top: calc(100% + ${halfSize});
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% + ${moveBody || 0}px));
 
     &:before {
         height: ${halfSize};
@@ -36,15 +36,15 @@ const positionBottomStyles = css`
     }
 
     &:after {
-        left: calc(50% - ${halfSize});
+        left: calc((50% - ${halfSize}) - ${moveBody || 0}px);
         top: -6px;
     }
 `;
 
-const positionTopStyles = css`
+const positionTopStyles = (moveBody?: number) => css`
     left: 50%;
     bottom: calc(100% + ${halfSize});
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% + ${moveBody || 0}px));
 
     &:before {
         bottom: -${halfSize};
@@ -54,15 +54,15 @@ const positionTopStyles = css`
     }
 
     &:after {
-        left: calc(50% - ${halfSize});
+        left: calc((50% - ${halfSize}) - ${moveBody || 0}px);
         bottom: -6px;
     }
 `;
 
-const positionRightStyles = css`
+const positionRightStyles = (moveBody?: number) => css`
     left: calc(100% + ${halfSize});
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(calc(-50% + ${moveBody || 0}px));
 
     &:before {
         height: 100%;
@@ -72,15 +72,15 @@ const positionRightStyles = css`
     }
 
     &:after {
-        top: calc(50% - ${halfSize});
+        top: calc((50% - ${halfSize}) - ${moveBody || 0}px);
         left: -2px;
     }
 `;
 
-const positionLeftStyles = css`
+const positionLeftStyles = (moveBody?: number) => css`
     right: calc(100% + ${halfSize});
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(calc(-50% + ${moveBody || 0}px));
 
     &:before {
         height: 100%;
@@ -90,23 +90,21 @@ const positionLeftStyles = css`
     }
 
     &:after {
-        top: calc(50% - ${halfSize});
+        top: calc((50% - ${halfSize}) - ${moveBody || 0}px);
         right: -2px;
     }
 `;
 
-const setPosition = (position: string) => {
+const setPosition = (position: string, moveBody?: number) => {
     switch (position) {
         case 'top':
-            return positionTopStyles;
-        case 'bottom':
-            return positionBottomStyles;
+            return positionTopStyles(moveBody);
         case 'left':
-            return positionLeftStyles;
+            return positionLeftStyles(moveBody);
         case 'right':
-            return positionRightStyles;
+            return positionRightStyles(moveBody);
         default:
-            return positionBottomStyles;
+            return positionBottomStyles(moveBody);
     }
 };
 
@@ -119,7 +117,7 @@ const ListStyled = styled.ul<TStyleProps>`
     min-width: ${(p) => `${p.width}`};
     padding: 8px;
     position: absolute;
-    ${(p) => p.position && setPosition(p.position)}
+    ${(p) => p.position && setPosition(p.position, p.moveBody)}
 
     &:hover {
         display: block;

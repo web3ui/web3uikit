@@ -10,7 +10,7 @@ const testOnComplete = jest.fn();
 describe('Test VerifyCode component', () => {
     test('renders the component', () => {
         render(<Default />);
-        const element = screen.getByTestId('test-VerifyCode');
+        const element = screen.getByTestId('test-verify-code');
         expect(element).not.toBeNull();
     });
     test('triggers the onComplete function', () => {

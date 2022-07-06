@@ -17,10 +17,10 @@ const Radios: React.FC<RadiosProps> = ({
     id,
     isRow = false,
     items,
-    ref,
-    onChange,
     onBlur,
+    onChange,
     onCreditCardRemoved,
+    ref,
     selectedState,
     setWhichIsChecked,
     suffix,
@@ -50,12 +50,11 @@ const Radios: React.FC<RadiosProps> = ({
     );
 
     return (
-        <FieldsetStyled
-            id={`${formattedID}`}
-            data-testid="test-fieldset"
-        >
+        <FieldsetStyled data-testid="test-radios" id={`${formattedID}`}>
             {title && (
-                <LegendStyled data-testid="test-legend">{title}</LegendStyled>
+                <LegendStyled data-testid="test-radios-legend">
+                    {title}
+                </LegendStyled>
             )}
             <DivWrapperStyled isRow={isRow}>
                 {(items as Array<CreditCardProps | string>).map(
@@ -66,7 +65,7 @@ const Radios: React.FC<RadiosProps> = ({
                         >
                             <RadioButtonStyled
                                 checked={i === whichIsChecked}
-                                data-testid={`test-input-${i}`}
+                                data-testid={`test-radios-input-${i}`}
                                 id={`${formattedID}_${i}`}
                                 ref={ref}
                                 name={`${formattedID}_group`}
@@ -86,7 +85,7 @@ const Radios: React.FC<RadiosProps> = ({
                                 {...props}
                             />
                             <LabelStyled
-                                data-testid={`test-label-${i}`}
+                                data-testid={`test-radios-label-${i}`}
                                 htmlFor={`${formattedID}_${i}`}
                                 isCreditCardMode={isCreditCards}
                                 role="label"
@@ -99,7 +98,9 @@ const Radios: React.FC<RadiosProps> = ({
                     ),
                 )}
 
-                {suffix && <>{suffix}</>}
+                {suffix && (
+                    <span data-testid="test-radios-suffix">{suffix}</span>
+                )}
             </DivWrapperStyled>
         </FieldsetStyled>
     );

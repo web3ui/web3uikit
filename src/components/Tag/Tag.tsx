@@ -24,7 +24,7 @@ const Tag: React.FC<TagProps> = ({
         <TagStyled
             active={active}
             color={color}
-            data-testid="test-tag-id"
+            data-testid="test-tag"
             fontSize={fontSize}
             id={id}
             role="status"
@@ -34,20 +34,12 @@ const Tag: React.FC<TagProps> = ({
             {...props}
         >
             {theme === 'status' && active && (
-                <Icon
-                    fill="inherit"
-                    size={16}
-                    svg={iconTypes.checkmark}
-                />
+                <Icon fill="inherit" size={16} svg={iconTypes.checkmark} />
             )}
             <strong data-testid="test-tag-text">{text}</strong>
             {hasCancel && (
                 <SpanStyled onClick={onCancelClick}>
-                    <Icon
-                        fill={colors.blue}
-                        size={16}
-                        svg="x"
-                    />
+                    <Icon fill={colors.blue} size={16} svg="x" />
                 </SpanStyled>
             )}
         </TagStyled>

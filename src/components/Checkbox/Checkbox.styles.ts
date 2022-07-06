@@ -7,8 +7,11 @@ import { CheckboxProps } from './types';
 
 const inputStyles = css`
     ${resetCSS};
+    height: 10px;
+    left: -12px;
     position: absolute;
-    top: -30px;
+    top: 0;
+    width: 10px;
 `;
 
 const labelStyles = css`
@@ -41,7 +44,7 @@ const boxStyles = css`
         left: 0;
         pointer-events: none;
         position: absolute;
-        top: 0;
+        top: 1px;
         transition: all 0.1s ease-out;
         width: 20px;
     }
@@ -58,7 +61,7 @@ const boxStyles = css`
         justify-content: center;
         left: 1px;
         opacity: 0;
-        top: 1px;
+        top: 2px;
         z-index: 1;
     }
 

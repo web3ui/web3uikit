@@ -30,7 +30,15 @@ const NativeBalance: React.FC<NativeBalanceProps> = ({ style, ...props }) => {
 
     if (!balance?.formatted || !account) return null;
 
-    return <BalanceStyled style={style} {...props}>{balance.formatted}</BalanceStyled>;
+    return (
+        <BalanceStyled
+            data-testid="test-native-balance"
+            style={style}
+            {...props}
+        >
+            {balance.formatted}
+        </BalanceStyled>
+    );
 };
 
 export default NativeBalance;

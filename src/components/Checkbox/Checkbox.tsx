@@ -14,7 +14,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     label,
     labelWhenChecked,
     layout = 'box',
-    name,
+    name = '',
     onChange,
     onBlur,
     validation,

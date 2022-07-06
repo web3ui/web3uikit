@@ -69,7 +69,7 @@ function TabList({
         >
             <StyleTabBarParent
                 isVertical={isVertical}
-                data-testid="tabs_list_parent"
+                data-testid="test-tab-list"
                 {...props}
             >
                 <StyledTabBar
@@ -103,18 +103,18 @@ export function Tab({
     const RenderBulbTab = () => {
         return (
             <BulbTab
-                role="tab-Item"
-                data-testid={`tab_item_${tabKey}_${
+                data-testid={`test-tab-item-${tabKey}_${
                     activeState ? activeState : tabKey == selectedKey
                 }`}
-                key={tabKey}
+                hasMargin={tabStyle == 'bulbSeperate'}
                 isActive={activeState ? activeState : tabKey == selectedKey}
+                isDisabled={isDisabled}
+                key={tabKey}
+                lineHeight={lineHeight}
                 onClick={() => {
                     handleTabClick(tabKey);
                 }}
-                hasMargin={tabStyle == 'bulbSeperate'}
-                lineHeight={lineHeight}
-                isDisabled={isDisabled}
+                role="tab-Item"
             >
                 <span>{tabName}</span>
             </BulbTab>
@@ -123,26 +123,30 @@ export function Tab({
     const RenderBarTab = () => {
         return (
             <StyledTab
-                role="tab-Item"
-                data-testid={`tab_item_${tabKey}_${
+                data-testid={`test-tab-item-${tabKey}_${
                     activeState ? activeState : tabKey == selectedKey
                 }`}
-                key={tabKey}
                 isActive={activeState ? activeState : tabKey == selectedKey}
+                isDisabled={isDisabled}
+                key={tabKey}
+                lineHeight={lineHeight}
                 onClick={() => {
                     handleTabClick(tabKey);
                 }}
-                lineHeight={lineHeight}
-                isDisabled={isDisabled}
+                role="tab-Item"
             >
-                <span data-testid={`disabled_${isDisabled}_${tabKey}`}>
+                <span data-testid={`test-tab-disabled-${isDisabled}-${tabKey}`}>
                     {tabName}
                 </span>
             </StyledTab>
         );
     };
 
-    return <>{tabStyle == 'bar' ? <RenderBarTab /> : <RenderBulbTab />}</>;
+    return (
+        <span data-testid="test-tabs">
+            {tabStyle == 'bar' ? <RenderBarTab /> : <RenderBulbTab />}
+        </span>
+    );
 }
 TabList.Tab = Tab;
 

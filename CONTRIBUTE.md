@@ -35,7 +35,7 @@ You want to get started? Follow these 3 simple steps
 
 -   Clone the web3uiKit repo https://github.com/web3ui/web3uikit
 -   Open a terminal window and `cd` to the project folder
--   Run `yarn` you may need to install Yarn globally first
+-   Run `yarn install` you may need to install Yarn globally first
 -   Make a new branch, see BRANCH NAMING
 -   Run `yarn storybook` and there you go, ready to code?
 -   Not sure where to start, lets look at `NewComp` we made it specially for you

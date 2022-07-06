@@ -20,9 +20,6 @@ const PopoverDropdown: React.FC<IPopoverDropdownProps> = ({
     if (move) {
         depreciatedWarning('move prop in PopoverDropdown');
     }
-    if (moveBody) {
-        depreciatedWarning('moveBody prop in PopoverDropdown');
-    }
     return (
         <DivStyled
             aria-haspopup="true"
@@ -35,7 +32,8 @@ const PopoverDropdown: React.FC<IPopoverDropdownProps> = ({
 
             <ListStyled
                 backgroundColor={backgroundColor}
-                data-testid="test-popover-dropdown__list"
+                data-testid="test-popover-dropdown-list"
+                moveBody={moveBody}
                 position={position}
                 role="menu"
                 width={width}
@@ -43,7 +41,7 @@ const PopoverDropdown: React.FC<IPopoverDropdownProps> = ({
                 {children.map((child, index) => {
                     return (
                         <li
-                            data-testid="test-popover-dropdown__child"
+                            data-testid="test-popover-dropdown-child"
                             key={`dropdown-element-${index}`}
                         >
                             {child}

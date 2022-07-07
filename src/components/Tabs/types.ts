@@ -19,6 +19,11 @@ export interface ITabList {
      * On Card Change
      */
     onChange?(selectedKey: number): void;
+
+    /**
+     * Width of whole tab
+     */
+    width?: string;
 }
 
 export interface ITab {

@@ -42,6 +42,7 @@ function TabList({
     isVertical = false,
     onChange,
     tabStyle = 'bar',
+    width = 'fit-content',
     ...props
 }: ITabList): JSX.Element {
     const [tabChildren, setTabChildren] = useState<any>(
@@ -75,6 +76,7 @@ function TabList({
                 <StyledTabBar
                     haveBackground={tabStyle == 'bulbUnion'}
                     isVertical={isVertical}
+                    width={width}
                 >
                     {children}
                 </StyledTabBar>

@@ -179,3 +179,21 @@ Disabled.args = {
         </>
     ),
 };
+
+export const BulbCustomHeightWidth = Template.bind({});
+BulbCustomHeightWidth.args = {
+    defaultActiveKey: 1,
+    children: (
+        <TabList tabStyle="bulbUnion" defaultActiveKey={1} width="100%">
+            <TabList.Tab tabName="Card 1" tabKey={1} lineHeight={80}>
+                <div>This is Card 1</div>
+            </TabList.Tab>
+            <TabList.Tab tabName="Card 2" tabKey={2} lineHeight={80}>
+                <div>This is Card 2</div>
+            </TabList.Tab>
+            <TabList.Tab tabName="Card 3" tabKey={3} lineHeight={80}>
+                <div>This is Card 3</div>
+            </TabList.Tab>
+        </TabList>
+    ),
+};

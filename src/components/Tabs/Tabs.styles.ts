@@ -15,6 +15,7 @@ interface IStyledTabBarParent {
 interface IStyledTabBar {
     haveBackground: boolean;
     isVertical: boolean;
+    width: string;
 }
 interface IStyledBulb extends IStyledTab {
     hasMargin: boolean;
@@ -33,13 +34,18 @@ export const StyleTabBarParent = styled.div<IStyledTabBarParent>`
 export const StyledTabBar = styled.div<IStyledTabBar>`
     display: flex;
     ${(props) => props.isVertical && 'flex-direction: column;'}
-    max-width: fit-content;
     max-height: fit-content;
+    min-width: fit-content;
+    width: ${(props) => props.width && props.width};
     ${(props) =>
         props.haveBackground &&
-        `
- background-color: ${color.blueCultured};
-    border-radius: 16px;`}
+        css`
+            background-color: ${color.blueCultured};
+            border-radius: 16px;
+        `};
+    & > span {
+        width: 100%;
+    }
 `;
 
 export const StyledTabContent = styled.div<IStyledTabBarParent>`
@@ -71,6 +77,7 @@ export const BulbTab = styled.div<IStyledBulb>`
     border-radius: 16px;
     padding: 8px 16px;
     display: flex;
+    justify-content: center;
     align-items: center;
     background-color: ${color.blueCultured};
     border: 2px solid transparent;
@@ -99,5 +106,6 @@ export const BulbTab = styled.div<IStyledBulb>`
     & > span {
         font-weight: 600;
         font-size: 14px;
+        text-align: center;
     }
 `;

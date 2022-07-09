@@ -65,6 +65,7 @@ import metamaskIcon from './icons/metamask';
 import metamaskLinedIcon from './icons/metamaskLined';
 import minimizeIcon from './icons/minimize';
 import minusIcon from './icons/minus';
+import minusCircleIcon from './icons/minusCircle';
 import monitorIcon from './icons/monitor';
 import moreIcon from './icons/more';
 import moreVertIcon from './icons/more-vert';
@@ -175,6 +176,7 @@ export const iconTypes = {
     messageCircle: 'messageCircle',
     minimize: 'minimize',
     minus: 'minus',
+    minusCircle: 'minusCircle',
     monitor: 'monitor',
     more: 'more',
     moreVert: 'moreVert',
@@ -284,6 +286,7 @@ const collection = {
     metamaskLinedIcon,
     minimizeIcon,
     minusIcon,
+    minusCircleIcon,
     monitorIcon,
     moreIcon,
     moreVertIcon,

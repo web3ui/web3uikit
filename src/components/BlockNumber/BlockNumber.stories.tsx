@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import BlockNumber from './BlockNumber';
 
 import { moralisContext } from '../../decorators';
+import { TypographyProps } from '../Typography';
 
 export default {
     title: '1.Web3/BlockNumber',
@@ -17,6 +18,6 @@ export default {
     },
 } as ComponentMeta<typeof BlockNumber>;
 
-const Template: ComponentStory<typeof BlockNumber> = () => <BlockNumber />;
+const Template: ComponentStory<typeof BlockNumber> = (args: TypographyProps) => <BlockNumber {...args} />;
 
 export const Default = Template.bind({});

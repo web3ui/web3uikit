@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useMoralis } from 'react-moralis';
-import { BNStyles } from './BlockNumber.styles';
+import { Typography } from '../Typography';
+import { TypographyProps } from '../Typography';
 
-const { BNdiv } = BNStyles;
 
-const BlockNumber: React.FC = () => {
+const BlockNumber: React.FC<TypographyProps> = (props) => {
     const { chainId, web3 } = useMoralis();
 
     const [{ chainID, block }, setChainBlock] = useState<{
@@ -61,8 +61,15 @@ const BlockNumber: React.FC = () => {
         [chainId, block, chainID],
     );
 
-    console.log(value);
-    return <BNdiv>{value.value}</BNdiv>;
+    
+
+    return (
+        <>
+            <Typography {...props} >{value.value}</Typography>
+            
+        </>
+        
+    )
 };
 
 export default BlockNumber;

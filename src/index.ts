@@ -1,5 +1,6 @@
 // Components
 /* PLOP_INJECT_EXPORT */
+export * from './components/SendTransaction';
 export * from './components/Accordion';
 export * from './components/Avatar';
 export * from './components/Badge';
@@ -52,5 +53,5 @@ export * from './components/Typography';
 export * from './components/VerifyCode';
 export * from './components/WalletModal';
 export * from './components/Widget';
-export * from './components/ENSAvatar'
+export * from './components/ENSAvatar';
 export * from './web3utils';

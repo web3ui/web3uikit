@@ -8,9 +8,6 @@ import * as stories from './Grid.stories';
 const { ResponsiveCardGrid, GridWithinGrid, GridPlayground } =
     composeStories(stories);
 
-// NOTE: the main test ID is exported incase
-// it is needed for another components test
-
 // /////////////////////////////////////////////////////
 // examples of basic tests of props, values and styles
 // /////////////////////////////////////////////////////

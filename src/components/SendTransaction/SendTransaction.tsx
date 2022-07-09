@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { INotificationConfigProps, SendTransactionProps } from './types';
 import { Button } from '../Button';
 import { useNotification } from '../Notification';
@@ -23,9 +23,11 @@ export const SendTransaction: React.FC<SendTransactionProps> = ({
     },
     onComplete,
 }) => {
+    const { disabled, ...restButtonProps } = buttonConfig;
     const dispatch = useNotification();
     const { Moralis, isInitialized, isInitializing } = useMoralis();
     const contractProcessor = useWeb3ExecuteFunction();
+    const [isTrxnLoading, setIsTrxnLoading] = useState(false);
 
     const handleTransactionNotification = (
         type: notifyType,
@@ -52,6 +54,7 @@ export const SendTransaction: React.FC<SendTransactionProps> = ({
             handleTransactionNotification('error', errorNotification);
             return;
         }
+        setIsTrxnLoading(true);
         await contractProcessor.fetch({
             params: contractOptions,
             onSuccess: (res: any) => {
@@ -61,6 +64,7 @@ export const SendTransaction: React.FC<SendTransactionProps> = ({
                 };
                 handleTransactionNotification('success', successOptions);
                 onComplete && onComplete(res);
+                setIsTrxnLoading(false);
             },
             onError: (error: any) => {
                 const errorOptions = {
@@ -69,6 +73,7 @@ export const SendTransaction: React.FC<SendTransactionProps> = ({
                 };
                 handleTransactionNotification('error', errorOptions);
                 console.log(error);
+                setIsTrxnLoading(false);
             },
         });
     };
@@ -77,8 +82,9 @@ export const SendTransaction: React.FC<SendTransactionProps> = ({
         <Button
             data-testid="test-send-transaction"
             onClick={() => handleSendTransaction()}
-            disabled={!isInitialized && !isInitializing}
-            {...buttonConfig}
+            disabled={(!isInitialized && !isInitializing) || disabled}
+            isLoading={isTrxnLoading}
+            {...restButtonProps}
         />
     );
 };

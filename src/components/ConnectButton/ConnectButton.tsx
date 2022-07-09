@@ -37,6 +37,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         isAuthenticating,
         authenticate,
         Moralis,
+        
     } = useMoralis();
 
     const { name } = useEnsAddress(String(account));
@@ -64,6 +65,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
                 chainId,
                 onSuccess: () => setWeb3Status('only_web3'),
             });
+            
         }
     }, [isWeb3Enabled, isWeb3EnableLoading, web3Status]);
 
@@ -83,6 +85,7 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
             web3Status === 'only_web3'
         ) {
             authenticate({ provider, chainId, signingMessage });
+            console.log("ksbvksfb")
         }
     }, [isAuthenticated, isInitialized, isWeb3Enabled, isAuthenticating]);
 

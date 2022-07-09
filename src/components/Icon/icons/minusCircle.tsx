@@ -15,6 +15,7 @@ const minusCircleIcon = (
         style={style}
         viewBox="0 0 32 32"
     >
+        <title>Minus Circle Icon</title>
         <path
             fillRule="evenodd"
             clipRule="evenodd"

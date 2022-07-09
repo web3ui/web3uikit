@@ -66,6 +66,48 @@ PopoverWithElements.args = {
     parent: <button>hover me!</button>,
 };
 
+export const PopoverWithMove = Template.bind({});
+PopoverWithMove.args = {
+    children: [
+        <PopoverElement
+            backgroundColor={'transparent'}
+            height={50}
+            icon={iconTypes.testnet}
+            iconSize={30}
+            key="0"
+            text={'Testnet Server'}
+            textColor={color.white}
+            textSize={20}
+            width={260}
+        />,
+        <PopoverElement
+            backgroundColor={'transparent'}
+            height={50}
+            icon={iconTypes.network}
+            iconSize={30}
+            key="1"
+            text={'Mainnet Server'}
+            textColor={color.white}
+            textSize={20}
+            width={260}
+        />,
+        <PopoverElement
+            backgroundColor={'transparent'}
+            height={50}
+            icon={iconTypes.server}
+            iconSize={30}
+            key="2"
+            text={'Local Devchain Server'}
+            textColor={color.white}
+            textSize={20}
+            width={260}
+        />,
+    ],
+    move: -80,
+    parent: <button>hover me!</button>,
+    position: 'bottom',
+};
+
 export const PopoverAnything = Template.bind({});
 PopoverAnything.args = {
     id: 'testing-the-id',

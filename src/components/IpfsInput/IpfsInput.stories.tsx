@@ -21,13 +21,20 @@ const Template: ComponentStory<typeof IpfsInput> = (args: IpfsInputprops) => (
     <IpfsInput {...args} />
 );
 
-
 export const TextOnly = Template.bind({});
 TextOnly.args = {
     Theme: 'textOnly',
+    OnFinish(value) {
+        console.log(value);
+    },
 };
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
     Theme: 'withIcon',
+    OnFinish(value) {
+        console.log(value);
+    },
 };
+
+

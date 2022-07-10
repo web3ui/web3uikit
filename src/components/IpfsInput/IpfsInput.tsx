@@ -1,25 +1,28 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useMoralisFile } from 'react-moralis';
 import { IpfsInputprops } from './types';
 import { Upload } from '../Upload';
 
 const IpfsInput: React.FC<IpfsInputprops> = ({
     Theme = 'textOnly',
+
     ...props
 }) => {
-    const { moralisFile, saveFile } = useMoralisFile();
+    const { saveFile } = useMoralisFile();
 
-    useEffect(() => {
-        console.log(moralisFile);
-    }, [moralisFile]);
+    // useEffect(() => {
+    //     console.log(moralisFile);
+    // }, [moralisFile]);
 
     return (
         <>
             <Upload
                 theme={Theme}
-                onChange={(e) => {
-                    console.log(e);
-                    saveFile(String(props.FileName), e, {
+                onChange={e => {
+                    saveFile(String(props.FileName), e as File, {
+                        onSuccess(result) {
+                            props.OnFinish(result);
+                        },
                         saveIPFS: props.SaveToIpfs,
                         type: props.Type,
                     });

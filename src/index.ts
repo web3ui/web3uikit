@@ -54,5 +54,5 @@ export * from './components/WalletModal';
 export * from './components/Widget';
 export * from './components/ENSAvatar';
 export * from './components/BlockNumber';
-export * from './components/IpfsInput';
+export * from './components/IPFSInput';
 export * from './web3utils';

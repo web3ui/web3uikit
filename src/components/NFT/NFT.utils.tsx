@@ -20,7 +20,10 @@ const image = (animation?: string, image?: string): React.ReactElement => {
     if (animation?.includes('.mp4') || image?.includes('.mp4')) {
         return (
             <video height={'210px'} width={'100%'} controls autoPlay loop muted>
-                <source src={animation || image} type="video/mp4" />
+                <source
+                    src={manipulateLink(animation || image || '')}
+                    type="video/mp4"
+                />
             </video>
         );
     }

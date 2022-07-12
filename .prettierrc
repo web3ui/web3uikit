@@ -5,5 +5,6 @@
     "trailingComma": "all",
     "singleQuote": true,
     "semi": true,
-    "quoteProps": "consistent"
+    "quoteProps": "consistent",
+    "arrowParens": "always"
 }

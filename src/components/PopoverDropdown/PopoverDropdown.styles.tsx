@@ -16,10 +16,8 @@ const DivStyled = styled.div`
     ${resetCSS};
     position: relative;
 
-    &:hover {
-        ul {
-            display: block;
-        }
+    &:hover > ul {
+        display: block;
     }
 `;
 
@@ -117,7 +115,7 @@ const ListStyled = styled.ul<TStyleProps>`
     min-width: ${(p) => `${p.width}`};
     padding: 8px;
     position: absolute;
-    ${(p) => p.position && setPosition(p.position, p.moveBody)}
+    ${(p) => p.position && setPosition(p.position, p.moveBody)};
 
     &:hover {
         display: block;

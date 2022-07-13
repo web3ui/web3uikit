@@ -37,8 +37,8 @@
         "@web3uikit/icons": "*",
         "@web3uikit/styles": "*",
         "react-blockies": "^1.4.1",
-        "react-moralis": "^1.3.5",
-        "moralis": "^1.8.0",
+        "react-moralis": "^1.4.0",
+        "moralis": "^1.8.1",
         "@walletconnect/web3-provider": "^1.7.8"
     }
 }

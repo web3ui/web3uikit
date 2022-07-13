@@ -124,7 +124,7 @@ importers:
       '@web3uikit/web3': link:../../packages/web3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-moralis: 1.4.0_63nvvkffkv7yotc6qt4lr43hbi
+      react-moralis: 1.4.0_o6v5z6xcse4cv6qevqjk2i76bi
       react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
       source-map-explorer: 2.5.2
     devDependencies:
@@ -197,12 +197,12 @@ importers:
       '@web3uikit/core': '*'
       '@web3uikit/icons': '*'
       '@web3uikit/styles': '*'
-      moralis: ^1.8.0
+      moralis: ^1.8.1
       react: ^18.0.0
       react-blockies: ^1.4.1
       react-dom: ^18.0.0
       react-is: ^18.1.0
-      react-moralis: ^1.3.5
+      react-moralis: ^1.4.0
       react-router-dom: ^6.3.0
       styled-components: ^5.3.5
     dependencies:
@@ -211,9 +211,9 @@ importers:
       '@web3uikit/core': link:../core
       '@web3uikit/icons': link:../icons
       '@web3uikit/styles': link:../styles
-      moralis: 1.8.0
+      moralis: 1.9.0
       react-blockies: 1.4.1_react@18.2.0
-      react-moralis: 1.4.0_63nvvkffkv7yotc6qt4lr43hbi
+      react-moralis: 1.4.0_o6v5z6xcse4cv6qevqjk2i76bi
     devDependencies:
       '@types/react-blockies': 1.4.1
       react: 18.2.0
@@ -13426,8 +13426,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: false
 
-  /moralis/1.8.0:
-    resolution: {integrity: sha512-p8V5Ur4oLymweySUh+TBuYmQVDeqnNO3+Lk+VfPorGJsmbcer6xVy6MHHNinl1zhhWiCJNpc+XWot5wAcMb4QA==}
+  /moralis/1.9.0:
+    resolution: {integrity: sha512-X/BScB1y5hgzfI4xG5Y4MWW8dzOiKJdYycb9D8lGh8ov3LcmQpzIuxnMyYvelzleuw3AuT9P4IUPRHF6tVk9Gw==}
     dependencies:
       '@babel/runtime': 7.16.7
       '@babel/runtime-corejs3': 7.16.8
@@ -15222,7 +15222,7 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: true
 
-  /react-moralis/1.4.0_63nvvkffkv7yotc6qt4lr43hbi:
+  /react-moralis/1.4.0_o6v5z6xcse4cv6qevqjk2i76bi:
     resolution: {integrity: sha512-NYt/LMARpWVLQ/giWQllu2lZxNHfq/EzKmGz7n5HQ7DQBQwfRpZUv8dwvx6phlC8yNdp6osMP8Y0vnh4+Sf2qQ==}
     engines: {node: '>=v12.22.0'}
     peerDependencies:
@@ -15232,7 +15232,7 @@ packages:
     dependencies:
       fast-deep-equal: 3.1.3
       immer: 9.0.15
-      moralis: 1.8.0
+      moralis: 1.9.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       use-immer: 0.6.0_immer@9.0.15+react@18.2.0

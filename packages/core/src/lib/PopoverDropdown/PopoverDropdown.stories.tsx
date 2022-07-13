@@ -78,6 +78,48 @@ PopoverWithElements.args = {
     parent: <HelpCircle key="3" fill={color.grey} fontSize={50} />,
 };
 
+export const PopoverWithMove = Template.bind({});
+PopoverWithMove.args = {
+    children: [
+        <PopoverElement
+            backgroundColor={'transparent'}
+            height={50}
+            icon={<Testnet fill={color.white} fontSize={20} />}
+            iconSize={30}
+            key="0"
+            text={'Testnet Server'}
+            textColor={color.white}
+            textSize={20}
+            width={260}
+        />,
+        <PopoverElement
+            backgroundColor={'transparent'}
+            height={50}
+            icon={<Server fill={color.white} fontSize={20} />}
+            iconSize={30}
+            key="1"
+            text={'Mainnet Server'}
+            textColor={color.white}
+            textSize={20}
+            width={260}
+        />,
+        <PopoverElement
+            backgroundColor={'transparent'}
+            height={50}
+            icon={<Server fill={color.white} fontSize={20} />}
+            iconSize={30}
+            key="2"
+            text={'Local Devchain Server'}
+            textColor={color.white}
+            textSize={20}
+            width={260}
+        />,
+    ],
+    moveBody: -80,
+    parent: <button>hover me!</button>,
+    position: 'bottom',
+};
+
 export const PopoverAnything = Template.bind({});
 PopoverAnything.args = {
     id: 'testing-the-id',
@@ -134,4 +176,81 @@ PopoverPositionLeft.args = {
     position: 'left',
     children: [<button>left position</button>, <button>works too!</button>],
     parent: <button>hover me!</button>,
+};
+
+export const PopoverDropdownInsidePopoverDropdown = Template.bind({});
+PopoverDropdownInsidePopoverDropdown.args = {
+    parent: <button>hover me!</button>,
+    position: 'bottom',
+    children: [
+        <PopoverDropdown
+            id="testing-the-id"
+            parent={
+                <PopoverElement
+                    key="0"
+                    backgroundColor="transparent"
+                    height={50}
+                    icon={<Testnet fill={color.white} fontSize={20} />}
+                    iconSize={30}
+                    text="Testnet Server"
+                    textColor="#FFFFFF"
+                    textSize={20}
+                    width={260}
+                />
+            }
+            position="left"
+            children={[
+                <PopoverElement
+                    backgroundColor="transparent"
+                    height={50}
+                    icon={<Network fill={color.white} fontSize={20} />}
+                    iconSize={30}
+                    text="This_is_a_long_text_without_spaces"
+                    textColor="#FFFFFF"
+                    textSize={20}
+                    width={260}
+                />,
+                <PopoverElement
+                    backgroundColor="transparent"
+                    height={50}
+                    icon={<Server fill={color.white} fontSize={20} />}
+                    iconSize={30}
+                    text="Local Devchain Server"
+                    textColor="#FFFFFF"
+                    textSize={20}
+                    width={260}
+                />,
+            ]}
+        ></PopoverDropdown>,
+        <PopoverElement
+            backgroundColor="transparent"
+            height={50}
+            icon={<Testnet fill={color.white} fontSize={20} />}
+            iconSize={30}
+            text="Testnet Server"
+            textColor="#FFFFFF"
+            textSize={20}
+            width={260}
+        />,
+        <PopoverElement
+            backgroundColor="transparent"
+            height={50}
+            icon={<Network fill={color.white} fontSize={20} />}
+            iconSize={30}
+            text="Mainnet Server"
+            textColor="#FFFFFF"
+            textSize={20}
+            width={260}
+        />,
+        <PopoverElement
+            backgroundColor="transparent"
+            height={50}
+            icon={<Server fill={color.white} fontSize={20} />}
+            iconSize={30}
+            text="Local Devchain Server"
+            textColor="#FFFFFF"
+            textSize={20}
+            width={260}
+        />,
+    ],
 };

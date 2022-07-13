@@ -11,11 +11,12 @@ const DivContainerStyled = styled.div<DropdownElementProps>`
 const DivStyled = styled.div<
     Pick<DropdownElementProps, 'width' | 'height' | 'onClick'>
 >`
+    align-items: center;
     display: flex;
     flex-direction: row;
-    height: ${(p) => (p.height ? `${p.height}px` : 'auto')};
     padding-left: 16px;
     padding-right: 16px;
+    height: ${(p) => (p.height ? `${p.height}px` : 'auto')};
     width: ${(p) => (p.width ? `${p.width}px` : 'auto')};
 `;
 
@@ -25,18 +26,18 @@ const DivImageStyled = styled.div`
     width: 24px;
     height: 24px;
     margin: auto 0;
-    padding-right: auto 8px auto 0;
+    padding-right: 8px;
 `;
 
 const TextStyled = styled.p<
     Pick<DropdownElementProps, 'textColor' | 'textSize'>
 >`
-    align-items: center;
-    color: ${(p) => (p.textColor ? p.textColor : color.white)};
-    display: flex;
-    font-size: ${(p) => (p.textSize ? `${p.textSize}px` : '')};
     ${fonts.openSans};
     ${fonts.textBold};
+    color: ${(p) => (p.textColor ? p.textColor : color.white)};
+    font-size: ${(p) => (p.textSize ? `${p.textSize}px` : '')};
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 export default {

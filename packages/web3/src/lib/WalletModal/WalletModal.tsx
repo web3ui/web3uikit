@@ -1,5 +1,5 @@
 import Moralis from 'moralis/types';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { useMoralis } from 'react-moralis';
 import { Button } from '@web3uikit/core';
 import connectors from './config';
@@ -21,7 +21,7 @@ const {
 
 const WalletModal: FC<IWalletModalProps> = ({
     chainId,
-    isOpened,
+    isOpened = true,
     moralisAuth,
     setIsOpened,
     signingMessage = 'Moralis Authentication',

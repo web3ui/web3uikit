@@ -11,9 +11,10 @@ const { DivStyled } = NFTStyles;
 const { image } = NFTUtils;
 
 const FetchedNFT: React.FC<{
+    contractType?: string;
     metadata?: TNFTMetadata;
     name?: string;
-}> = ({ metadata, name }) => {
+}> = ({ contractType, metadata, name }) => {
     const [showModal, setShowModal] = useState(false);
     return (
         <DivStyled id="nft">
@@ -26,7 +27,7 @@ const FetchedNFT: React.FC<{
                     <Typography variant="body16">
                         {metadata?.name || name}
                     </Typography>
-                    <Typography variant="caption12">ERC721</Typography>
+                    <Typography variant="caption12">{contractType}</Typography>
                 </div>
             </div>
             <div id="nft-footer">

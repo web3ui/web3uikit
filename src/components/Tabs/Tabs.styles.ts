@@ -15,10 +15,11 @@ interface IStyledTabBarParent {
 interface IStyledTabBar {
     haveBackground: boolean;
     isVertical: boolean;
-    width: string;
+    isWidthAuto?: boolean;
 }
 interface IStyledBulb extends IStyledTab {
     hasMargin: boolean;
+    tabStyle?: string;
 }
 
 // Styles
@@ -33,19 +34,43 @@ export const StyleTabBarParent = styled.div<IStyledTabBarParent>`
 
 export const StyledTabBar = styled.div<IStyledTabBar>`
     display: flex;
-    ${(props) => props.isVertical && 'flex-direction: column;'}
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     max-height: fit-content;
     min-width: fit-content;
-    width: ${(props) => props.width && props.width};
+    row-gap: 5px;
+    ${(props) => props.isVertical && 'flex-direction: column;'}
+
     ${(props) =>
         props.haveBackground &&
+        !props.isVertical &&
+        css`
+            & > span {
+                background-color: ${color.blueCultured};
+            }
+            & > span:first-child {
+                border-radius: 16px 0 0 16px;
+            }
+
+            & > span:last-child {
+                border-radius: 0 16px 16px 0;
+            }
+        `};
+    ${(props) =>
+        props.haveBackground &&
+        props.isVertical &&
         css`
             background-color: ${color.blueCultured};
             border-radius: 16px;
         `};
-    & > span {
-        width: 100%;
-    }
+    ${(props) =>
+        props.isWidthAuto &&
+        css`
+            & > span {
+                flex-grow: 1 !important;
+            }
+        `}
 `;
 
 export const StyledTabContent = styled.div<IStyledTabBarParent>`
@@ -61,6 +86,7 @@ export const StyledTab = styled.div<IStyledTab>`
     line-height: 24px;
     padding-bottom: 4px;
     margin-bottom: 11px;
+
     cursor: pointer;
     ${(props) => props.isActive && 'font-weight:600;'};
     ${(props) => props.isActive && 'border-bottom: 2px solid #21BF96;'};
@@ -83,6 +109,7 @@ export const BulbTab = styled.div<IStyledBulb>`
     border: 2px solid transparent;
     cursor: pointer;
     color: ${color.blue};
+    min-width: fit-content;
     ${({ isActive }) =>
         isActive &&
         css`
@@ -90,9 +117,9 @@ export const BulbTab = styled.div<IStyledBulb>`
             background: ${color.white};
         `};
     ${(props) => props.isDisabled && 'pointer-events: none;'};
-    ${(props) => props.hasMargin && 'margin-right:6px;'}
+    ${(props) => props.hasMargin && 'margin-right:6px;'};
     ${(props) =>
-        props.isDisabled && `opacity: 0.5; background-color: ${color.white};`}
+        props.isDisabled && `opacity: 0.5; background-color: ${color.white};`};
     line-height: ${(props) => props.lineHeight && `${props.lineHeight}px`};
     &:hover {
         background: ${color.blueLight2};

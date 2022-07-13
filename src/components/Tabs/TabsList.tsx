@@ -42,7 +42,7 @@ function TabList({
     isVertical = false,
     onChange,
     tabStyle = 'bar',
-    width = 'fit-content',
+    isWidthAuto = false,
     ...props
 }: ITabList): JSX.Element {
     const [tabChildren, setTabChildren] = useState<any>(
@@ -74,12 +74,13 @@ function TabList({
                 {...props}
             >
                 <StyledTabBar
-                    haveBackground={tabStyle == 'bulbUnion'}
+                    haveBackground={tabStyle === 'bulbUnion'}
                     isVertical={isVertical}
-                    width={width}
+                    isWidthAuto={isWidthAuto}
                 >
                     {children}
                 </StyledTabBar>
+
                 <StyledTabContent isVertical={isVertical}>
                     {tabChildren[selectedKey]}
                 </StyledTabContent>
@@ -108,6 +109,7 @@ export function Tab({
                 data-testid={`test-tab-item-${tabKey}_${
                     activeState ? activeState : tabKey == selectedKey
                 }`}
+                tabStyle={tabStyle}
                 hasMargin={tabStyle == 'bulbSeperate'}
                 isActive={activeState ? activeState : tabKey == selectedKey}
                 isDisabled={isDisabled}

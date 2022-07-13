@@ -21,9 +21,9 @@ export interface ITabList {
     onChange?(selectedKey: number): void;
 
     /**
-     * Width of whole tab
+     * Auto set width of tabs
      */
-    width?: string;
+    isWidthAuto?: boolean;
 }
 
 export interface ITab {

@@ -2,7 +2,7 @@ import { default as MoralisType } from 'moralis/types';
 import React, { useEffect, useState } from 'react';
 import { useMoralis, useEnsAddress } from 'react-moralis';
 import { getEllipsisTxt } from '../../web3utils';
-import { Blockie } from '../Blockie';
+import { ENSAvatar } from '../ENSAvatar';
 import { NativeBalance } from '../NativeBalance';
 import { WalletModal } from '../WalletModal';
 import ConnectButtonStyles from './ConnectButton.styles';
@@ -37,13 +37,13 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
         isAuthenticating,
         authenticate,
         Moralis,
-        
     } = useMoralis();
 
     const { name } = useEnsAddress(String(account));
     const [isConnectModalOpen, setIsConnectModalOpen] = useState(false);
-    const [web3Status, setWeb3Status] =
-        useState<web3StatusType>('disconnected');
+    const [web3Status, setWeb3Status] = useState<web3StatusType>(
+        'disconnected',
+    );
 
     useEffect(() => {
         // to avoid problems in Next.JS apps because of window object
@@ -65,7 +65,6 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
                 chainId,
                 onSuccess: () => setWeb3Status('only_web3'),
             });
-            
         }
     }, [isWeb3Enabled, isWeb3EnableLoading, web3Status]);
 
@@ -85,7 +84,6 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
             web3Status === 'only_web3'
         ) {
             authenticate({ provider, chainId, signingMessage });
-            console.log("ksbvksfb")
         }
     }, [isAuthenticated, isInitialized, isWeb3Enabled, isAuthenticating]);
 
@@ -138,10 +136,12 @@ const ConnectButton: React.FC<ConnectButtonProps> = ({
                 >
                     <TextStyled style={{ marginRight: '8px' }}>
                         {name
-                            ? name && getEllipsisTxt(name)
+                            ? name.length <= 15
+                                ? name
+                                : getEllipsisTxt(name)
                             : account && getEllipsisTxt(account)}
                     </TextStyled>
-                    <Blockie scale={2.5} seed={account} />
+                    <ENSAvatar address={account} size={25} />
                 </AddressStyled>
             </AccountInfoStyled>
         </WrapperStyled>

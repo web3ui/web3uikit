@@ -1,37 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { ENSAvatarprops } from './types';
+import { ENSAvatarProps } from './types';
 import { useMoralis } from 'react-moralis';
 import Blockies from 'react-blockies';
-import { ENSAvatarStyles } from './ENSAvatar.styles';
+import styles from './ENSAvatar.styles';
 
-const { NonAvatarDiv, AvatarImg } = ENSAvatarStyles;
+const { AvatarImg, DivStyled } = styles;
 
-const ENSAvatar: React.FC<ENSAvatarprops> = (props) => {
-    const { account, chainId, web3 } = useMoralis();
-    
-
-    const [AvatarURI, setAvatarURI] = useState<string | null>(null);
+const ENSAvatar: React.FC<ENSAvatarProps> = ({ address, size = 50 }) => {
+    const { chainId, web3 } = useMoralis();
+    const [avatarURI, setAvatarURI] = useState<string | null>(null);
 
     useEffect(() => {
-        if (account && chainId) {
-            web3?.getAvatar(account).then((r) => {
-                setAvatarURI(String(r));
-            });
+        if (address && chainId && web3) {
+            web3?.getAvatar(address)
+                .then((res) => {
+                    setAvatarURI(res ? String(res) : null);
+                })
+                .catch(() => setAvatarURI(null));
         }
-    }, [account, chainId]);
+    }, [address, chainId]);
 
-    return (
-        <>
-            {AvatarURI ? (
-                <div>
-                    <AvatarImg src={AvatarURI} />
-                </div>
-            ) : (
-                <NonAvatarDiv>
-                    <Blockies seed={props.seed} />
-                </NonAvatarDiv>
-            )}
-        </>
+    return avatarURI ? (
+        <DivStyled data-testid="test-ens-avatar">
+            <AvatarImg data-test-id src={avatarURI} size={size} />
+        </DivStyled>
+    ) : (
+        <DivStyled data-testid="test-no-ens-avatar">
+            <Blockies seed={address} size={size} scale={1} />
+        </DivStyled>
     );
 };
 

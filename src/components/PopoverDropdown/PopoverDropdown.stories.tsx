@@ -165,3 +165,80 @@ PopoverPositionLeft.args = {
     children: [<button>left position</button>, <button>works too!</button>],
     parent: <button>hover me!</button>,
 };
+
+export const PopoverDropdownInsidePopoverDropdown = Template.bind({});
+PopoverDropdownInsidePopoverDropdown.args = {
+    parent: <button>hover me!</button>,
+    position: 'bottom',
+    children: [
+        <PopoverDropdown
+            id="testing-the-id"
+            parent={
+                <PopoverElement
+                    key="0"
+                    backgroundColor="transparent"
+                    height={50}
+                    icon="testnet"
+                    iconSize={30}
+                    text="Testnet Server"
+                    textColor="#FFFFFF"
+                    textSize={20}
+                    width={260}
+                />
+            }
+            position="left"
+            children={[
+                <PopoverElement
+                    backgroundColor="transparent"
+                    height={50}
+                    icon="network"
+                    iconSize={30}
+                    text="This_is_a_long_text_without_spaces"
+                    textColor="#FFFFFF"
+                    textSize={20}
+                    width={260}
+                />,
+                <PopoverElement
+                    backgroundColor="transparent"
+                    height={50}
+                    icon="server"
+                    iconSize={30}
+                    text="Local Devchain Server"
+                    textColor="#FFFFFF"
+                    textSize={20}
+                    width={260}
+                />,
+            ]}
+        ></PopoverDropdown>,
+        <PopoverElement
+            backgroundColor="transparent"
+            height={50}
+            icon="testnet"
+            iconSize={30}
+            text="Testnet Server"
+            textColor="#FFFFFF"
+            textSize={20}
+            width={260}
+        />,
+        <PopoverElement
+            backgroundColor="transparent"
+            height={50}
+            icon="network"
+            iconSize={30}
+            text="Mainnet Server"
+            textColor="#FFFFFF"
+            textSize={20}
+            width={260}
+        />,
+        <PopoverElement
+            backgroundColor="transparent"
+            height={50}
+            icon="server"
+            iconSize={30}
+            text="Local Devchain Server"
+            textColor="#FFFFFF"
+            textSize={20}
+            width={260}
+        />,
+    ],
+};

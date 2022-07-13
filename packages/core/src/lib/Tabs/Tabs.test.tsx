@@ -10,7 +10,7 @@ const {
     Bulb,
     BulbWithIcon,
     VerticalBulbs,
-    Seperated,
+    Separated,
     Disabled,
 } = composeStories(Stories);
 
@@ -167,27 +167,27 @@ describe('Tabs - Vertical', () => {
     });
 });
 
-describe('Tabs - Sepratated', () => {
+describe('Tabs - Separated', () => {
     const defaultSelectedKey = TabBar.args?.defaultActiveKey;
     it('Should Render', () => {
-        render(<Seperated />);
+        render(<Separated />);
         const element = screen.getByTestId(tabsId);
         expect(element).toBeDefined();
     });
     it('Should set active key to default one', () => {
-        render(<Seperated />);
+        render(<Separated />);
         const element = screen.getByTestId(
             `${tabItemId}-${defaultSelectedKey}_true`,
         );
         expect(element).toBeDefined();
     });
     it('Should Render Text Associated with card', () => {
-        render(<Seperated />);
+        render(<Separated />);
         const element = screen.getAllByText('This is Card 1');
         expect(element).toBeDefined();
     });
     it('Should change active key if new one is clicked', () => {
-        render(<Seperated />);
+        render(<Separated />);
         const element = screen.getByTestId(`${tabItemId}-2_false`);
         fireEvent.click(element);
         const el = screen.getByTestId(`${tabItemId}-2_true`);

@@ -1,4 +1,3 @@
-// Importing React and its awesome hooks
 import {
     Children,
     createContext,
@@ -46,6 +45,7 @@ function TabList({
     children = <></>,
     defaultActiveKey = 1,
     isVertical = false,
+    isWidthAuto = false,
     onChange,
     tabStyle = 'bar',
     ...props
@@ -81,6 +81,7 @@ function TabList({
                 <StyledTabBar
                     haveBackground={tabStyle == 'bulbUnion'}
                     isVertical={isVertical}
+                    isWidthAuto={isWidthAuto}
                 >
                     {children}
                 </StyledTabBar>

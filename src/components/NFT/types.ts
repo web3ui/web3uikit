@@ -30,6 +30,11 @@ export interface INFTProps {
      * set metadata of NFT
      */
     metadata?: TNFTMetadata | undefined;
+
+    /**
+     * set contract type of NFT
+     */
+    contractType?: string;
 }
 
 /**

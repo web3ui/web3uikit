@@ -20,6 +20,7 @@ const { image } = NFTUtils;
 const NFT: React.FC<INFTProps> = ({
     address,
     chain,
+    contractType = 'ERC721',
     name,
     tokenId,
     fetchMetadata,
@@ -51,7 +52,13 @@ const NFT: React.FC<INFTProps> = ({
     }
 
     if (!fetchMetadata) {
-        return <FetchedNFT metadata={metadata} name={name} />;
+        return (
+            <FetchedNFT
+                contractType={contractType}
+                metadata={metadata}
+                name={name}
+            />
+        );
     }
 
     if (!isInitialized && !isInitializing) {
@@ -113,7 +120,7 @@ const NFT: React.FC<INFTProps> = ({
                                 ?.name || name}
                         </Typography>
                         <Typography variant="caption12">
-                            {data.contract_type || 'ERC721'}
+                            {data.contract_type || contractType}
                         </Typography>
                     </div>
                 </div>
@@ -128,16 +135,12 @@ const NFT: React.FC<INFTProps> = ({
                     {showTraits && (
                         <NFTModal
                             attributes={
-                                (
-                                    JSON.parse(
-                                        String(data.metadata),
-                                    ) as TNFTMetadata
-                                )?.traits ||
-                                (
-                                    JSON.parse(
-                                        String(data.metadata),
-                                    ) as TNFTMetadata
-                                )?.attributes
+                                (JSON.parse(
+                                    String(data.metadata),
+                                ) as TNFTMetadata)?.traits ||
+                                (JSON.parse(
+                                    String(data.metadata),
+                                ) as TNFTMetadata)?.attributes
                             }
                             setShowModal={setShowModal}
                         />

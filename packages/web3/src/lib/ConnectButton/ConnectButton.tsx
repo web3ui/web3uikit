@@ -109,7 +109,7 @@ const ConnectButton: React.FC<IConnectButtonProps> = ({
 
     if (!account || (moralisAuth && isInitialized && !isAuthenticated)) {
         return (
-            <WrapperStyled>
+            <WrapperStyled data-testid="test-connect-button-wrap" {...props}>
                 <ConnectButtonStyled
                     onClick={() => setIsConnectModalOpen(true)}
                 >

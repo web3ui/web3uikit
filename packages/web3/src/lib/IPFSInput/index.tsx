@@ -1,2 +1,2 @@
 export { default as IPFSInput } from './IPFSInput';
-export type { IPFSInputprops } from './types';
+export type { IPFSInputProps } from './types';

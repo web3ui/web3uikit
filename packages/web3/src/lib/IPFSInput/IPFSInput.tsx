@@ -1,29 +1,35 @@
 import React from 'react';
 import { useMoralisFile } from 'react-moralis';
-import { IPFSInputprops, defaultProps } from './types';
+import { IPFSInputProps } from './types';
 import { Upload } from '@web3uikit/core';
 
-const IPFSInput: React.FC<IPFSInputprops> = (props) => {
+const IPFSInput: React.FC<IPFSInputProps> = ({
+    type,
+    fileName,
+    onFinish,
+    saveToIPFS = true,
+    theme = 'textOnly',
+    ...props
+}) => {
     const { saveFile } = useMoralisFile();
-
     return (
-        <>
-            <Upload
-                theme={props.Theme}
-                onChange={(e) => {
-                    saveFile(String(props.fileName), e as File, {
-                        onSuccess(result) {
-                            props.onFinish?.(result);
-                        },
-                        saveIPFS: props.saveToIPFS,
-                        type: props.Type,
-                    });
-                }}
-            />
-        </>
+        <Upload
+            theme={theme}
+            onChange={(e) => {
+                saveFile(String(fileName), e as File, {
+                    onSuccess(result) {
+                        onFinish?.(result);
+                    },
+                    saveIPFS: saveToIPFS,
+                    type: type,
+                    onError(err) {
+                        console.log(err);
+                    },
+                });
+            }}
+            {...props}
+        />
     );
 };
-
-IPFSInput.defaultProps = defaultProps;
 
 export default IPFSInput;

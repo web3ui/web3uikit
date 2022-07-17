@@ -1,8 +1,8 @@
-export interface IPFSInputprops {
+export interface IPFSInputProps {
     /**
      * Set theme  either 'textOnly' or 'withIcon'
      */
-    Theme?: 'textOnly' | 'withIcon';
+    theme?: 'textOnly' | 'withIcon';
     /**
      * Set the nature of upload either ipfs or non-ipfs using boolean
      */
@@ -14,13 +14,9 @@ export interface IPFSInputprops {
     /**
      * Set the type of file for eg: "image/jpeg"
      */
-    Type?: string;
+    type?: string;
     /**
      * get back the information regarding upload and file data using onFinish()
      */
     onFinish?: (value: any) => void;
 }
-
-export const defaultProps: IPFSInputprops = {
-    Theme: 'textOnly',
-};

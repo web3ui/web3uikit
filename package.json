@@ -37,6 +37,7 @@
         "@nrwl/eslint-plugin-nx": "14.1.5",
         "@nrwl/js": "14.1.9",
         "@nrwl/linter": "14.1.5",
+        "@storybook/addon-docs": "^6.5.9",
         "@storybook/addon-essentials": "^6.4.22",
         "@storybook/addon-links": "^6.4.22",
         "@storybook/builder-vite": "^0.1.36",

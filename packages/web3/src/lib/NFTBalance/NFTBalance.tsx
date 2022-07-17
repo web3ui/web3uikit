@@ -80,6 +80,7 @@ const NFTBalance: React.FC<INFTBalance> = ({ address, chain, ...props }) => {
                         .map(
                             (
                                 {
+                                    contract_type,
                                     token_id: tokenId,
                                     name,
                                     metadata,
@@ -98,6 +99,7 @@ const NFTBalance: React.FC<INFTBalance> = ({ address, chain, ...props }) => {
                                         metadata={JSON.parse(
                                             metadata as string,
                                         )}
+                                        contractType={contract_type}
                                     />
                                 );
                             },

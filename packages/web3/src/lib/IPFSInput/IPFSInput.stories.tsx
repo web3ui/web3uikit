@@ -2,10 +2,9 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import IPFSInput from './IPFSInput';
 import { moralisContext } from '../../web3utils/decorators';
-import { IPFSInputprops } from './types';
 
 export default {
-    title: '1.Web3/IpfsInput',
+    title: '1.Web3/IPFSInput',
     component: IPFSInput,
     decorators: [moralisContext],
     parameters: {
@@ -23,8 +22,8 @@ const Template: ComponentStory<typeof IPFSInput> = (args) => (
 
 export const TextOnly = Template.bind({});
 TextOnly.args = {
-    Theme: 'textOnly',
-    onFinish: (val) => {
+    theme: 'textOnly',
+    onFinish: (val: any) => {
         console.log(val);
     },
     saveToIPFS: true,
@@ -32,8 +31,8 @@ TextOnly.args = {
 
 export const WithIcon = Template.bind({});
 WithIcon.args = {
-    Theme: 'withIcon',
-    onFinish: (val) => {
+    theme: 'withIcon',
+    onFinish: (val: any) => {
         console.log(val);
     },
 };

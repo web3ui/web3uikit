@@ -18,6 +18,7 @@ const color = {
     greenForestDark: '#3BC49D',
     greenForestLight: '#EBF9F5',
     greenLight: '#7AD9C0',
+    greenMint: '#33FFCC',
     grey: '#68738D',
     greyDark: '#333333',
     greyDisabled: '#D7DAE0',

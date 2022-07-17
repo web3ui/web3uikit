@@ -1,6 +1,28 @@
 import { ILoadingProps } from '../Loading';
 import React from 'react';
 
+type TButtonCustomConfig = {
+    /**
+     * Custom color, HEX or rgba is best
+     */
+    backgroundColor?: string;
+
+    /**
+     * Custom color, HEX or rgba is best
+     */
+    textColor?: string;
+
+    /**
+     * Custom size, number of px
+     */
+    fontSize?: number;
+
+    /**
+     * Lighten or darken the background on hover
+     */
+    onHover?: 'lighten' | 'darken';
+};
+
 export interface ButtonProps {
     /**
      * The button ID will generated if not assigned
@@ -20,7 +42,7 @@ export interface ButtonProps {
     /**
      * What size should the button be
      */
-    size?: 'small' | 'regular' | 'large';
+    size?: 'small' | 'regular' | 'large' | 'xl';
 
     /**
      * The text to display in the button
@@ -31,15 +53,14 @@ export interface ButtonProps {
      * Set the color to show its importance to the user
      */
     theme?:
-        | 'primary'
-        | 'outline'
-        | 'secondary'
         | 'colored'
-        | 'translucent'
-        | 'status'
-        | 'ghost'
+        | 'custom'
+        | 'link'
+        | 'outline'
+        | 'primary'
+        | 'secondary'
         | 'text'
-        | 'link';
+        | 'translucent';
 
     /**
      * If 'theme' is set to 'colored', you can choose the color from these options
@@ -95,4 +116,9 @@ export interface ButtonProps {
      * The background color is set to `transparent` and the hover effect is disabled
      */
     isTransparent?: boolean;
+
+    /**
+     * Customize the button
+     */
+    customize?: TButtonCustomConfig;
 }

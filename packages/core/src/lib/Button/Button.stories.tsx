@@ -1,5 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Plus, Cog } from '@web3uikit/icons';
+import { Plus } from '@web3uikit/icons';
+import { color } from '@web3uikit/styles';
 import Button from './Button';
 
 export default {
@@ -10,500 +11,114 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-    id: 'test-button-primary',
+export const DefaultButton = Template.bind({});
+DefaultButton.args = {
+    text: 'Button',
+};
+
+export const ThemePrimary = Template.bind({});
+ThemePrimary.args = {
     text: 'Primary Button',
     theme: 'primary',
-    type: 'button',
 };
 
-export const PrimaryLarge = Template.bind({});
-PrimaryLarge.args = {
-    id: 'test-button-primary-large',
-    text: 'Large Primary',
-    theme: 'primary',
-    type: 'button',
-    size: 'large',
-};
-
-export const PrimarySmall = Template.bind({});
-PrimarySmall.args = {
-    id: 'test-button-primary-small',
-    text: 'Small Primary',
-    theme: 'primary',
-    type: 'button',
-    size: 'small',
-};
-
-export const PrimaryWithIcon = Template.bind({});
-PrimaryWithIcon.args = {
-    id: 'test-button-primary-icon',
-    text: 'Primary with icon',
-    theme: 'primary',
-    type: 'button',
-    icon: (
-        <Plus fontSize="5px" height={'10px'} width={'10px'} title="plus icon" />
-    ),
-};
-
-export const PrimaryWithIconAfter = Template.bind({});
-PrimaryWithIconAfter.args = {
-    id: 'test-button-primary-icon-after',
-    text: 'Primary with icon',
-    theme: 'primary',
-    type: 'button',
-    icon: <Plus fontSize={2} />,
-    iconLayout: 'trailing',
-};
-
-export const PrimaryWithIconOnly = Template.bind({});
-PrimaryWithIconOnly.args = {
-    id: 'test-button-primary-icon-only',
-    text: 'Primary icon only',
-    theme: 'primary',
-    type: 'button',
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-};
-
-export const PrimaryWithIconOnlyLarge = Template.bind({});
-PrimaryWithIconOnlyLarge.args = {
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-    id: 'test-button-primary-icon-only',
-    size: 'large',
-    text: 'Primary icon only',
-    theme: 'primary',
-    type: 'button',
-};
-
-export const PrimaryWithIconOnlySmall = Template.bind({});
-PrimaryWithIconOnlySmall.args = {
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-    id: 'test-button-primary-icon-only',
-    size: 'small',
-    text: 'Primary icon only',
-    theme: 'primary',
-    type: 'button',
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-    id: 'test-button',
+export const ThemeSecondary = Template.bind({});
+ThemeSecondary.args = {
     text: 'Secondary Button',
     theme: 'secondary',
-    type: 'button',
 };
 
-export const SecondaryWithIcon = Template.bind({});
-SecondaryWithIcon.args = {
-    id: 'test-button-secondary-icon',
-    text: 'Secondary with icon',
-    theme: 'secondary',
-    type: 'button',
-    icon: <Plus />,
-};
-
-export const SecondaryWithIconAfter = Template.bind({});
-SecondaryWithIconAfter.args = {
-    id: 'test-button-secondary-icon-after',
-    text: 'Secondary with icon',
-    theme: 'secondary',
-    type: 'button',
-    icon: <Plus />,
-    iconLayout: 'trailing',
-};
-
-export const SecondaryIconOnly = Template.bind({});
-SecondaryIconOnly.args = {
-    id: 'test-button-secondary-icon-only',
-    text: 'Secondary icon only',
-    theme: 'secondary',
-    type: 'button',
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-};
-
-export const SecondaryIconOnlyLarge = Template.bind({});
-SecondaryIconOnlyLarge.args = {
-    id: 'test-button-secondary-icon-large',
-    text: 'Secondary icon large',
-    theme: 'secondary',
-    type: 'button',
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-    size: 'large',
-};
-
-export const SecondaryIconOnlySmall = Template.bind({});
-SecondaryIconOnlySmall.args = {
-    id: 'test-button-secondary-icon-small',
-    text: 'Secondary icon small',
-    theme: 'secondary',
-    type: 'button',
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-    size: 'small',
-};
-
-export const Outline = Template.bind({});
-Outline.args = {
-    id: 'test-button-outline',
+export const ThemeOutline = Template.bind({});
+ThemeOutline.args = {
     text: 'Outline Button',
     theme: 'outline',
-    type: 'button',
 };
 
-export const OutlineWithIcon = Template.bind({});
-OutlineWithIcon.args = {
-    id: 'test-button-outline-icon',
-    text: 'Outline with icon',
-    theme: 'outline',
-    type: 'button',
-    icon: <Plus />,
-};
-
-export const OutlineWithIconAfter = Template.bind({});
-OutlineWithIconAfter.args = {
-    id: 'test-button-outline-icon-after',
-    text: 'Outline with icon',
-    theme: 'outline',
-    type: 'button',
-    icon: <Plus />,
-    iconLayout: 'trailing',
-};
-
-export const OutlineIconOnly = Template.bind({});
-OutlineIconOnly.args = {
-    id: 'test-button-outline-icon-only',
-    text: 'Outline icon only',
-    theme: 'outline',
-    type: 'button',
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-};
-
-export const OutlineIconOnlyLarge = Template.bind({});
-OutlineIconOnlyLarge.args = {
-    id: 'test-button-outline-icon-only',
-    text: 'Outline icon only',
-    theme: 'outline',
-    icon: <Plus />,
-    type: 'button',
-    iconLayout: 'icon-only',
-    size: 'large',
-};
-
-export const OutlineIconOnlySmall = Template.bind({});
-OutlineIconOnlySmall.args = {
-    id: 'test-button-outline-icon-only',
-    text: 'Outline icon only',
-    theme: 'outline',
-    type: 'button',
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-    size: 'small',
-};
-
-export const StatusWarning = Template.bind({});
-StatusWarning.args = {
-    id: 'test-button-status-warning',
-    text: 'Warning',
-    theme: 'status',
-    type: 'button',
-};
-
-export const StatusDanger = Template.bind({});
-StatusDanger.args = {
-    id: 'test-button-status',
-    text: 'Error',
-    theme: 'status',
-    type: 'button',
-    color: 'red',
-};
-
-export const StatusSuccess = Template.bind({});
-StatusSuccess.args = {
-    id: 'test-button-status',
-    text: 'Success',
-    theme: 'status',
-    type: 'button',
-    color: 'green',
-};
-
-export const Ghost = Template.bind({});
-Ghost.args = {
-    id: 'test-button-ghost',
-    text: 'Ghost Button',
-    theme: 'ghost',
-    type: 'button',
-};
-
-export const Link = Template.bind({});
-Link.args = {
-    id: 'test-button-link',
-    text: 'Link Button',
-    theme: 'link',
-    type: 'button',
-};
-
-export const Text = Template.bind({});
-Text.args = {
-    id: 'test-button-Text',
-    text: 'Text Button',
-    theme: 'text',
-    type: 'button',
-};
-
-export const ColoredGreen = Template.bind({});
-ColoredGreen.args = {
-    id: 'test-button-colored-green',
-    text: 'Colored Green',
-    theme: 'colored',
-    type: 'button',
-    color: 'green',
-};
-
-export const ColoredRed = Template.bind({});
-ColoredRed.args = {
-    id: 'test-button-colored-red',
-    text: 'Colored Red',
-    theme: 'colored',
-    type: 'button',
-    color: 'red',
-};
-
-export const ColoredYellow = Template.bind({});
-ColoredYellow.args = {
-    id: 'test-button-colored-yellow',
-    text: 'Colored Yellow',
-    theme: 'colored',
-    type: 'button',
-    color: 'yellow',
-};
-
-export const ColoredBlue = Template.bind({});
-ColoredBlue.args = {
-    id: 'test-button-colored-blue',
-    text: 'Colored Blue',
-    theme: 'colored',
-    type: 'button',
-    color: 'blue',
-};
-
-export const ColoredLarge = Template.bind({});
-ColoredLarge.args = {
-    id: 'test-button-colored-large',
-    text: 'Colored Large',
-    theme: 'colored',
-    type: 'button',
-    color: 'blue',
-    size: 'large',
-};
-
-export const ColoredSmall = Template.bind({});
-ColoredSmall.args = {
-    id: 'test-button-colored-small',
-    text: 'Colored Small',
-    theme: 'colored',
-    type: 'button',
-    color: 'blue',
-    size: 'small',
-};
-
-export const ColoredIcon = Template.bind({});
-ColoredIcon.args = {
-    id: 'test-button-colored-icon',
-    text: 'Colored Icon',
-    theme: 'colored',
-    type: 'button',
-    color: 'blue',
-    icon: <Plus />,
-};
-
-export const ColoredIconAfter = Template.bind({});
-ColoredIconAfter.args = {
-    id: 'test-button-colored-icon-after',
-    text: 'Colored Icon',
-    theme: 'colored',
-    type: 'button',
-    color: 'blue',
-    icon: <Plus />,
-    iconLayout: 'trailing',
-};
-
-export const ColoredIconOnly = Template.bind({});
-ColoredIconOnly.args = {
-    id: 'test-button-colored-icon-only',
-    text: 'Colored Icon',
-    theme: 'colored',
-    type: 'button',
-    color: 'blue',
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-};
-
-export const DisabledPrimary = Template.bind({});
-DisabledPrimary.args = {
-    disabled: true,
-    id: 'test-button-disabled-primary',
-    text: 'Disabled Button',
-    theme: 'primary',
-    type: 'button',
-};
-
-export const DisabledSecondary = Template.bind({});
-DisabledSecondary.args = {
-    disabled: true,
-    id: 'test-button-disabled-secondary',
-    text: 'Disabled Button',
-    theme: 'secondary',
-    type: 'button',
-};
-
-export const DisabledOutline = Template.bind({});
-DisabledOutline.args = {
-    disabled: true,
-    id: 'test-button-disabled-outline',
-    text: 'Disabled Button',
-    theme: 'outline',
-    type: 'button',
-};
-
-export const DisabledColored = Template.bind({});
-DisabledColored.args = {
-    disabled: true,
-    id: 'test-button-disabled-colored',
-    text: 'Disabled Button',
-    theme: 'colored',
-    type: 'button',
-    color: 'red',
-};
-
-export const DisabledIcon = Template.bind({});
-DisabledIcon.args = {
-    disabled: true,
-    id: 'test-button-disabled-icon',
-    text: 'Disabled Button',
-    theme: 'colored',
-    type: 'button',
-    color: 'yellow',
-    icon: <Plus />,
-};
-
-export const DisabledIconAfter = Template.bind({});
-DisabledIconAfter.args = {
-    disabled: true,
-    id: 'test-button-disabled-icon-after',
-    text: 'Disabled Button',
-    theme: 'colored',
-    type: 'button',
-    color: 'green',
-    icon: <Plus />,
-    iconLayout: 'trailing',
-};
-
-export const DisabledIconOnly = Template.bind({});
-DisabledIconOnly.args = {
-    disabled: true,
-    id: 'test-button-disabled-icon-only',
-    text: 'Disabled Button',
-    theme: 'colored',
-    type: 'button',
-    color: 'blue',
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-};
-
-export const DisabledIconOnlyLarge = Template.bind({});
-DisabledIconOnlyLarge.args = {
-    disabled: true,
-    id: 'test-button-disabled-icon-only-large',
-    text: 'Disabled Button',
-    theme: 'colored',
-    type: 'button',
-    color: 'red',
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-    size: 'large',
-};
-
-export const DisabledIconOnlySmall = Template.bind({});
-DisabledIconOnlySmall.args = {
-    disabled: true,
-    id: 'test-button-disabled-icon-only-small',
-    text: 'Disabled Button',
-    theme: 'colored',
-    type: 'button',
-    color: 'yellow',
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-    size: 'small',
-};
-
-export const Translucent = Template.bind({});
-Translucent.args = {
-    id: 'test-button-translucent-icon-large',
-    text: 'Translucent',
+export const ThemeTranslucent = Template.bind({});
+ThemeTranslucent.args = {
+    text: 'Translucent Button',
     theme: 'translucent',
-    icon: <Cog />,
-    iconLayout: 'leading',
-    size: 'large',
 };
 
-export const LoadingButton = Template.bind({});
-LoadingButton.args = {
-    id: 'test-button-loading',
-    text: 'Loading Button',
-    theme: 'primary',
-    type: 'button',
-    isLoading: true,
+export const ThemeColoredGreen = Template.bind({});
+ThemeColoredGreen.args = {
+    text: 'Colored Button: Green',
+    theme: 'colored',
+    color: 'green',
 };
 
-export const LoadingButtonCustomProps = Template.bind({});
-LoadingButtonCustomProps.args = {
-    id: 'test-button-loading',
-    text: 'Loading Button',
-    theme: 'primary',
-    type: 'button',
-    isLoading: true,
-    loadingProps: {
-        size: 30,
-    },
+export const ThemeColoredYellow = Template.bind({});
+ThemeColoredYellow.args = {
+    text: 'Colored Button: Yellow',
+    theme: 'colored',
+    color: 'yellow',
 };
 
-export const PrimaryWithIconOnlyRound = Template.bind({});
-PrimaryWithIconOnlyRound.args = {
-    icon: <Plus />,
-    iconLayout: 'icon-only',
-    id: 'test-button-primary-icon-only',
+export const ThemeColoredRed = Template.bind({});
+ThemeColoredRed.args = {
+    text: 'Colored Button: Red',
     theme: 'colored',
     color: 'red',
-    type: 'button',
-    radius: 20,
 };
 
-export const TransparentButton = Template.bind({});
-TransparentButton.args = {
-    icon: <Plus />,
+export const ThemeColoredBlue = Template.bind({});
+ThemeColoredBlue.args = {
+    text: 'Colored Button: Blue',
+    theme: 'colored',
+    color: 'blue',
+};
+
+export const IconButton = Template.bind({});
+IconButton.args = {
+    icon: <Plus fontSize="5px" height="10px" title="plus icon" width="10px" />,
     iconLayout: 'icon-only',
-    id: 'test-button-primary-icon-only',
-    theme: 'secondary',
-    color: 'red',
-    type: 'button',
-    radius: 20,
-    isTransparent: true,
 };
 
-export const LargeOutlinedButton = Template.bind({});
-LargeOutlinedButton.args = {
-    icon: <Plus />,
-    text: 'Large outline button',
-    id: 'test-button-large-outline',
-    theme: 'outline',
-    color: 'red',
-    type: 'button',
+export const SizeSmall = Template.bind({});
+SizeSmall.args = {
+    text: 'Button',
+    size: 'small',
+};
+
+export const SizeLarge = Template.bind({});
+SizeLarge.args = {
+    text: 'Button',
     size: 'large',
+};
+
+export const SizeXL = Template.bind({});
+SizeXL.args = {
+    text: 'Button',
+    size: 'xl',
+};
+
+export const CustomButton = Template.bind({});
+CustomButton.args = {
+    customize: {
+        backgroundColor: color.blueSky,
+        fontSize: 20,
+        onHover: 'darken',
+        textColor: color.blueDark2,
+    },
+    text: 'Button',
+    theme: 'custom',
+};
+
+export const AllProps = Template.bind({});
+AllProps.args = {
+    color: 'blue',
+    disabled: false,
+    icon: <Plus fontSize="5px" height="10px" title="plus icon" width="10px" />,
+    iconColor: 'white',
+    iconLayout: 'icon-only',
+    id: 'all-props-button',
+    isFullWidth: false,
+    isLoading: false,
+    isTransparent: false,
+    loadingText: 'loading',
+    radius: 0,
+    size: 'regular',
+    text: 'all the props',
+    theme: 'colored',
+    type: 'button',
 };

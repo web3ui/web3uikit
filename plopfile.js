@@ -70,8 +70,12 @@ module.exports = (plop) => {
             ];
         },
     });
-    plop.setHelper('getInterface', (name) => `${name}Props`);
+    plop.setHelper('getInterface', (name) => `I${name}Props`);
     plop.setHelper('getSubDirectoryPath', (subDirectory) => {
         if (subDirectory) return `/${subDirectory}`;
+    });
+    plop.setHelper('getPackage', (name, subDirectory) => {
+        if (subDirectory === 'web3') return `@web3uikit/core`;
+        else return `../${name}`;
     });
 };

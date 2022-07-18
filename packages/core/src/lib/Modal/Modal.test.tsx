@@ -50,7 +50,7 @@ test('Renders Modal', () => {
 
     const closeButton = header?.lastChild;
     expect(closeButton).not.toBeNull();
-    expect(closeButton?.textContent).toBe('cross iconclick');
+    expect(closeButton?.textContent).toBe('clickcross icon');
 
     const cancelButton = footer?.firstChild;
     expect(cancelButton).not.toBeNull();

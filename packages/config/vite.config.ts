@@ -19,7 +19,7 @@ const config = (cwd: string, external?: string[]): UserConfigExport => {
             lib: {
                 entry: cwd + '/src/index.ts',
                 fileName: 'index',
-                formats: ['es', 'cjs'],
+                formats: ['es'],
             },
             outDir: cwd + '/dist',
             rollupOptions: {

@@ -33,10 +33,10 @@ jobs:
               run: pnpm install
 
             - name: Install Github Pages
-              run: pnpm add -D gh-pages
+              run: pnpm add -Dw gh-pages
 
             - name: Test
-              run: pnpm test:coverage
+              run: pnpm vitest --run --update
 
             - name: Check MORALIS_APP_ID
               run: echo "MORALIS_APP_ID=${{ secrets.MORALIS_APP_ID }}"
@@ -51,4 +51,4 @@ jobs:
               uses: peaceiris/actions-gh-pages@v3
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./storybook-static
+                  publish_dir: ./dist/storybook

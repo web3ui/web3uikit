@@ -32,7 +32,7 @@ jobs:
             # build the project
             - run: pnpm run build
             # run tests just in case
-            - run: pnpm test
+            - run: pnpm vitest --run
             - run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
 
             - name: publish to NPM as latest version

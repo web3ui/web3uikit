@@ -60,9 +60,20 @@ export const parameters = {
         },
     },
     options: {
-        storySort: (a, b) =>
-            a.title === b.title
-                ? 0
-                : a.id.localeCompare(b.id, undefined, { numeric: true }),
+        storySort: (a, b) => {
+            if (!Boolean(a?.title && b?.title)) {
+                // storyStoreV6 type sorting is used during build
+                return a[1]?.kind === b[1]?.kind
+                    ? 0
+                    : a[1].id.localeCompare(b[1].id, undefined, {
+                          numeric: true,
+                      });
+            } else {
+                // storyStoreV7 type sorting is used during dev
+                return a.title === b.title
+                    ? 0
+                    : a.id.localeCompare(b.id, undefined, { numeric: true });
+            }
+        },
     },
 };

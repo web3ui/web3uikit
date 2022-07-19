@@ -5,7 +5,7 @@ initialize({ onUnhandledRequest: 'bypass' });
 export const parameters = {
     actions: { argTypesRegex: '^on[A-Z].*' },
     backgrounds: {
-        default: 'twitter',
+        default: 'light',
         values: [
             {
                 name: 'white',

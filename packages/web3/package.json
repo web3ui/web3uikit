@@ -40,6 +40,7 @@
         "react-moralis": "^1.4.0",
         "moralis": "^1.8.1",
         "@walletconnect/web3-provider": "^1.7.8",
-        "@web3auth/web3auth": "^1.1.0"
+        "@web3auth/web3auth": "^1.1.0",
+        "wp5-cra-polyfill": "github:oscario2/wp5-cra-polyfill#91431fa"
     }
 }

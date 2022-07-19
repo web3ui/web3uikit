@@ -40,7 +40,7 @@
         "analyze": "nx run example:analyze",
         "icons:create": "nx run-many --target=icons:create --all --parallel",
         "new": "plop",
-        "size": "pnpm build && size-limit"
+        "size": "pnpm install && pnpm build && size-limit --json"
     },
     "dependencies": {
         "@babel/core": "^7.18.2",

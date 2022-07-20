@@ -3,7 +3,9 @@
     "version": "1.0.2",
     "main": "index.js",
     "license": "MIT",
-    "private": false,
+    "repository": "https://github.com/web3ui/web3uikit",
+    "homepage": "https://web3ui.github.io/web3uikit/",
+    "typings": "dist/index.d.ts",
     "workspaces": [
         "apps/*",
         "packages/*"

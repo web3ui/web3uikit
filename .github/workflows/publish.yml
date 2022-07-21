@@ -37,6 +37,7 @@ jobs:
 
             - name: publish to NPM as latest version
               if: '!github.event.release.prerelease'
+              run: cd packages/core
               run: npm publish --tag latest
               env:
                   # Use a token to publish to NPM. See below for how to set it up

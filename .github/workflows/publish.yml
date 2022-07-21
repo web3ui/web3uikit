@@ -35,10 +35,11 @@ jobs:
             - run: pnpm vitest --run
             - run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
 
-            - working-directory: ./packages/core
             - name: publish to NPM as latest version
               if: '!github.event.release.prerelease'
-              run: npm publish --tag latest
+              run: cd packages/core npm publish --tag latest
+              run: cd packages/icons npm publish --tag latest
+              run: cd packages/web3 npm publish --tag latest
               env:
                   # Use a token to publish to NPM. See below for how to set it up
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

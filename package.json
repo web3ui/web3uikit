@@ -42,8 +42,8 @@
         "icons:create": "nx run-many --target=icons:create --all --parallel",
         "new": "plop",
         "size": "pnpm install && pnpm build && size-limit --json",
-        "ci:version": "changeset version",
-        "ci:publish": "changeset publish"
+        "changeset": "changeset",
+        "release": "changeset publish"
     },
     "dependencies": {
         "@babel/core": "^7.18.2",

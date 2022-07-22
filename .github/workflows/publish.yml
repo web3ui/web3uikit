@@ -14,7 +14,11 @@ jobs:
         steps:
             - name: Checkout repo
               uses: actions/checkout@v2
-
+              with:
+                  # This makes action fetch all Git history so that Changesets can generate changelogs with the correct commits
+                  fetch-depth: 0
+                  
+              #Install pnpm
             - name: Install pnpm
               uses: pnpm/action-setup@v2.2.2
               with:
@@ -33,33 +37,24 @@ jobs:
 
             - name: Install
               run: pnpm install
-            # set up git since we will later push to the repo
+              env:
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
 
             - run: git config --global user.name "GitHub CD bot"
             - run: git config --global user.email "dmitrii@moralis.io"
-            # upgrade npm version in package.json to the tag used in the release.
-            # - run: npm version --force ${{ github.event.release.tag_name }}
-            # build the project
+
             - name: Build
               run: pnpm run build
+
             # run tests just in case
             - name: Test
               run: pnpm vitest --run
 
-            - name: Enter Alpha
-              if: 'github.event.release.prerelease'
-              run: pnpm changeset pre enter alpha
-
             - name: create and publish versions
               uses: changesets/action@v1
-              with:
-                  version: pnpm ci:version
-                  commit: 'chore: update versions'
-                  title: 'chore: update versions'
-                  publish: pnpm ci:release
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-            - name: Exit Alpha
-              if: 'github.event.release.prerelease'
-              run: pnpm changeset pre exit
+                  with:
+                      publish: pnpm run release
+                  env:
+                      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

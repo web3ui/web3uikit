@@ -31,10 +31,10 @@
         "react-is": "^18.1.0"
     },
     "dependencies": {
-        "@test_kit_3/config": "*",
-        "@test_kit_3/core": "*",
-        "@test_kit_3/icons": "*",
-        "@test_kit_3/styles": "*",
+        "@test_kit_3/config": "latest",
+        "@test_kit_3/core": "latest",
+        "@test_kit_3/icons": "latest",
+        "@test_kit_3/styles": "latest",
         "react-blockies": "^1.4.1",
         "react-moralis": "^1.4.0",
         "moralis": "^1.8.1",

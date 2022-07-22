@@ -24,19 +24,19 @@ If you need help with setting up the boilerplate or have other questions - don't
 ### 💿 Installation
 
 ```bash
-npm install @web3uikit/icons
+npm install @test_kit_3/icons
 ```
 
 or
 
 ```bash
-yarn add @web3uikit/icons
+yarn add @test_kit_3/icons
 ```
 
 ### 🧰 Usage
 
 ```jsx
-import { Metamask } from '@web3uikit/icons';
+import { Metamask } from '@test_kit_3/icons';
 
 const App = () => (
     <>

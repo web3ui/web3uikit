@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { TableProps } from '.';
-import { color, fonts, resetCSS } from '@web3uikit/styles';
+import { color, fonts, resetCSS } from '@test_kit_3/styles';
 
 export const TableParent = styled.div`
   display: flex;

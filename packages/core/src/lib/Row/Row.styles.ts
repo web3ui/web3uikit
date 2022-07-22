@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { IRowProps } from '.';
-import { fonts } from '@web3uikit/styles';
+import { fonts } from '@test_kit_3/styles';
 import { IColBreakpointsConfig } from './types';
 
 interface IColProps {

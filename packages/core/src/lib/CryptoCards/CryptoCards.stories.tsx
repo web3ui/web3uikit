@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Cog } from '@web3uikit/icons';
+import { Cog } from '@test_kit_3/icons';
 import CryptoCards from '../CryptoCards/CryptoCards';
 
 export default {

@@ -5,7 +5,7 @@ import {
     gradientColors,
     fonts,
     resetCSS,
-} from '@web3uikit/styles';
+} from '@test_kit_3/styles';
 import { creditCardBrands, CreditCardProps } from './types';
 
 type TStyleProps = Pick<CreditCardProps, 'isExpired' | 'pressed' | 'brand'>;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, resetCSS } from '@web3uikit/styles';
+import { color, resetCSS } from '@test_kit_3/styles';
 import { ICredentialsProps, TDivWrapper } from './types';
 
 const CredentialsStyled = styled.div<Pick<ICredentialsProps, 'width'>>`

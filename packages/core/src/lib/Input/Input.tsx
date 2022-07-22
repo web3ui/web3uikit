@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import { CopyButton } from '../CopyButton';
-import { Eye, EyeClosed } from '@web3uikit/icons';
+import { Eye, EyeClosed } from '@test_kit_3/icons';
 import InputStyles from './Input.styles';
 import type { InputProps } from './types';
 

@@ -1,8 +1,8 @@
 import styles from './PlanCard.styles';
 import { IPlanCardProps } from './types';
 import { Typography } from '../Typography';
-import { color } from '@web3uikit/styles';
-import { Check } from '@web3uikit/icons';
+import { color } from '@test_kit_3/styles';
+import { Check } from '@test_kit_3/icons';
 import YourPlanButton from './Components/YourPlanButton';
 
 const { DivStyled, DivStyledFeatures, DivStyledCardFooter } = styles;

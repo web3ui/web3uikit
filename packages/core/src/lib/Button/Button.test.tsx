@@ -1,7 +1,7 @@
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './Button.stories';
-import { color, rgbToHex } from '@web3uikit/styles';
+import { color, rgbToHex } from '@test_kit_3/styles';
 import { test, expect, describe, vi } from 'vitest';
 
 const { DefaultButton } = composeStories(stories);

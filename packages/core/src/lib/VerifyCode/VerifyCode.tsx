@@ -6,7 +6,7 @@ import {
     useMemo,
     useState,
 } from 'react';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import { Typography } from '../Typography';
 import { VerifyCodeProps } from './types';
 import styles from './VerifyCode.styles';

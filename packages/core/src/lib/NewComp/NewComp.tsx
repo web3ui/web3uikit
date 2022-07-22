@@ -1,12 +1,12 @@
 // Importing React and its awesome hooks
 import { useState, useEffect } from 'react';
-import { Checkmark, Cross } from '@web3uikit/icons';
+import { Checkmark, Cross } from '@test_kit_3/icons';
 
 // importing elements from the kit, never add more elements, improve what we have
 import { Button } from '../Button';
 
 // importing centralized colors
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 
 // importing props from the components TypeScript interface
 import { NewCompProps } from './types';

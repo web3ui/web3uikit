@@ -4,7 +4,7 @@ import { CryptoLogos } from '../CryptoLogos';
 import { Loading } from '../Loading';
 import { Typography } from '../Typography';
 import ChainSelectStyles, { getChainLogoName } from './ChainSelector.styles';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import { FC, useMemo } from 'react';
 
 const { GridStyled, CardContentStyled, GridElementStyled } = ChainSelectStyles;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, getShade, resetCSS, fonts } from '@web3uikit/styles';
+import { color, getShade, resetCSS, fonts } from '@test_kit_3/styles';
 import iconStyles from './styles/ButtonBaseIcon.styles';
 import sizeStyles from './styles/ButtonBaseSize.styles';
 import PropDisplayStyles from './styles/ButtonBaseTest.styles';

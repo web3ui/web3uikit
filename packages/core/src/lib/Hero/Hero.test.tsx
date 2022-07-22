@@ -2,7 +2,7 @@ import * as React from 'react';
 import { render, screen } from '@testing-library/react';
 import Hero from './Hero';
 import { Button } from '../Button';
-import { color, rgbToHex } from '@web3uikit/styles';
+import { color, rgbToHex } from '@test_kit_3/styles';
 import { test, expect, describe } from 'vitest';
 
 const testTitle = 'never test a Hero';

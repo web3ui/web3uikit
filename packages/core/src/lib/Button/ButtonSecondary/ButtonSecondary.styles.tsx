@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ButtonBase from '../ButtonBase/ButtonBase';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 
 const ButtonSecondaryStyled = styled(ButtonBase)`
     background-color: ${color.blueLight};

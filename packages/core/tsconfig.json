@@ -1,5 +1,5 @@
 {
-    "extends": "@web3uikit/config/tsconfig.ui.json",
+    "extends": "@test_kit_3/config/tsconfig.ui.json",
     "compilerOptions": {
         "rootDir": "src"
     },

@@ -4,7 +4,7 @@ import Notification from './Notification';
 import { Button } from '../Button';
 import NotificationProvider, { useNotification } from './NotificationProvider';
 import { IPosition, notifyType } from './types';
-import { Bell, Cloud } from '@web3uikit/icons';
+import { Bell, Cloud } from '@test_kit_3/icons';
 
 export default {
     title: '5.Popup/Notification',

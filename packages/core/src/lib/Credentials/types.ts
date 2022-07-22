@@ -1,4 +1,4 @@
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import React from 'react';
 import { Typography } from '../Typography';
 

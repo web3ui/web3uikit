@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, fonts } from '@web3uikit/styles';
+import { color, fonts } from '@test_kit_3/styles';
 import { BannerStripProps } from './types';
 
 const getBackgroundColor = (type: string) => {

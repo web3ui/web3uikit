@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color, getShade } from '@web3uikit/styles';
+import { color, getShade } from '@test_kit_3/styles';
 import ButtonBase from '../ButtonBase/ButtonBase';
 import { ButtonProps } from '../types';
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, gradientColors, resetCSS } from '@web3uikit/styles';
+import { color, gradientColors, resetCSS } from '@test_kit_3/styles';
 import { SkeletonProps } from './types';
 
 type TStyleProps = Pick<SkeletonProps, 'borderRadius' | 'height' | 'width'>;

@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Hero from './Hero';
 import { Button } from '../Button';
 import { ImageStyled } from './Hero.styles';
-import { ArrowCircleRight } from '@web3uikit/icons';
+import { ArrowCircleRight } from '@test_kit_3/icons';
 
 export default {
     title: '4.UI/Hero',

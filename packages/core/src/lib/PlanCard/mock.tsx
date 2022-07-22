@@ -1,5 +1,5 @@
 
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import { Button } from '../Button';
 import { IPlanCardProps } from './types';
 

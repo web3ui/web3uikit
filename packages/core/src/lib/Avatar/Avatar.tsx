@@ -2,7 +2,7 @@ import styles from './Avatar.styles';
 import { AvatarProps } from './types';
 
 import renderAvatarSVG from './images/guy';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 const { DivStyled, H4Styled } = styles;
 
 const avatarColors = ['#FEB7B7', '#E1B5F6', '#A7D6F9', '#AADCD6', '#F0DC7D'];

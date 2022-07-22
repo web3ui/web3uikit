@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ButtonBase from '../ButtonBase/ButtonBase';
-import { color, gradientColors } from '@web3uikit/styles';
+import { color, gradientColors } from '@test_kit_3/styles';
 
 const ButtonOutlineStyled = styled(ButtonBase)`
     background-color: ${color.white};

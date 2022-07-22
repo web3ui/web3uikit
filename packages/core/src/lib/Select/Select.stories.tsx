@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { color } from '@web3uikit/styles';
-import { Btc, Discord, Server, Testnet } from '@web3uikit/icons';
+import { color } from '@test_kit_3/styles';
+import { Btc, Discord, Server, Testnet } from '@test_kit_3/icons';
 import Select from './Select';
 
 export default {

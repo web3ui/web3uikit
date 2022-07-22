@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import LinkTo from './LinkTo';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
 export default {

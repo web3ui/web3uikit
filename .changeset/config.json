@@ -3,7 +3,7 @@
     "changelog": "@changesets/cli/changelog",
     "commit": false,
     "fixed": [],
-    "linked": [["@web3uikit/*"]],
+    "linked": [["@test_kit_3/*"]],
     "access": "public",
     "baseBranch": "master",
     "updateInternalDependencies": "patch",

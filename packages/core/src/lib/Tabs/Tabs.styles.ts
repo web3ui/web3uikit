@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color, gradientColors, fonts, resetCSS } from '@web3uikit/styles';
+import { color, gradientColors, fonts, resetCSS } from '@test_kit_3/styles';
 
 // Styling Interfaces
 interface IStyledTab {

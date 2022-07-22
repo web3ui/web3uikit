@@ -1,6 +1,6 @@
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import { CardProps } from './types';
-import { Checkmark, HelpCircle } from '@web3uikit/icons';
+import { Checkmark, HelpCircle } from '@test_kit_3/icons';
 import { Tooltip } from '../Tooltip';
 import styles from './Card.styles';
 import { Typography } from '../Typography';

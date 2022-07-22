@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Plus } from '@web3uikit/icons';
-import { color } from '@web3uikit/styles';
+import { Plus } from '@test_kit_3/icons';
+import { color } from '@test_kit_3/styles';
 import Button from './Button';
 
 export default {

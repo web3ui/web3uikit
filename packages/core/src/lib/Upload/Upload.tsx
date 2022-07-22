@@ -1,9 +1,9 @@
 import { Typography } from '../Typography';
 import { IUploadProps } from './types';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './Upload.styles';
-import { Bin, Image } from '@web3uikit/icons';
+import { Bin, Image } from '@test_kit_3/icons';
 
 const {
     DivStyled,

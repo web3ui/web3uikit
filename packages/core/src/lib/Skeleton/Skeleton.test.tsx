@@ -1,7 +1,7 @@
 import { composeStories } from '@storybook/testing-react';
 import { cleanup, render } from '@testing-library/react';
 
-import { color, rgbToHex } from '@web3uikit/styles';
+import { color, rgbToHex } from '@test_kit_3/styles';
 
 import * as stories from './Skeleton.stories';
 import { test, expect, describe } from 'vitest';

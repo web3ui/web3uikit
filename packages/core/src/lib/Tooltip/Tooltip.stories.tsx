@@ -1,7 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Tooltip from './Tooltip';
-import { HelpCircle } from '@web3uikit/icons';
-import { color } from '@web3uikit/styles';
+import { HelpCircle } from '@test_kit_3/icons';
+import { color } from '@test_kit_3/styles';
 
 export default {
     title: '5.Popup/Tooltip',

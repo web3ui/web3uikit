@@ -10,7 +10,7 @@ import {
 } from './CreditCard.styles';
 import { Tooltip } from '../Tooltip';
 import { Button } from '../Button';
-import { Bin } from '@web3uikit/icons';
+import { Bin } from '@test_kit_3/icons';
 
 const CreditCard: React.FC<CreditCardProps> = ({
     brand,

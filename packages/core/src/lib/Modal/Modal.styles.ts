@@ -1,7 +1,7 @@
 import { ModalProps } from './types';
 import styled from 'styled-components';
 
-import { color, fonts, HexToRgb } from '@web3uikit/styles';
+import { color, fonts, HexToRgb } from '@test_kit_3/styles';
 type TStyleProps = Pick<
     ModalProps,
     | 'canOverflow'

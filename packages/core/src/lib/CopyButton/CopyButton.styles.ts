@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, resetButtonCSS } from '@web3uikit/styles';
+import { color, resetButtonCSS } from '@test_kit_3/styles';
 import { CopyButtonProps } from './types';
 
 type TCopyButtonProps = Pick<CopyButtonProps, 'iconSize'>;

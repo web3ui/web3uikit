@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Windows } from '@web3uikit/icons';
-import { color } from '@web3uikit/styles';
+import { Windows } from '@test_kit_3/icons';
+import { color } from '@test_kit_3/styles';
 import { Credentials } from '.';
 
 export default {

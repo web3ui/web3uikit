@@ -1,6 +1,6 @@
 import { PopoverElementProps } from './types';
 import PopoverElementStyles from './PopoverElement.styles';
-import { Check } from '@web3uikit/icons';
+import { Check } from '@test_kit_3/icons';
 
 const { DivContainerStyled, DivStyled, DivImageStyled, TextStyled } =
     PopoverElementStyles;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useMoralisFile } from 'react-moralis';
 import { IPFSInputProps } from './types';
-import { Upload } from '@web3uikit/core';
+import { Upload } from '@test_kit_3/core';
 
 const IPFSInput: React.FC<IPFSInputProps> = ({
     type,

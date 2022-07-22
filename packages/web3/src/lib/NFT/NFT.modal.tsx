@@ -1,5 +1,5 @@
 import React from "react";
-import { Information, Modal, Typography } from "@web3uikit/core";
+import { Information, Modal, Typography } from "@test_kit_3/core";
 import styles from "./NFT.styles";
 const { DivModalStyled } = styles;
 interface INFTModal {

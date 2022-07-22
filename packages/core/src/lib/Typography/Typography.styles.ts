@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { color, fontBreakpoint } from '@web3uikit/styles';
+import { color, fontBreakpoint } from '@test_kit_3/styles';
 import type { TypographyProps, variantType, weightType } from './types';
 
 const openSans = css`

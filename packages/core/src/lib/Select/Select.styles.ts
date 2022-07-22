@@ -1,5 +1,5 @@
 import { LabelProps, SelectedItemProps, SelectProps } from './types';
-import { color, fonts, resetCSS } from '@web3uikit/styles';
+import { color, fonts, resetCSS } from '@test_kit_3/styles';
 import styled, { css } from 'styled-components';
 
 const DivStyledWrapper = styled.div<Pick<SelectProps, 'state'>>`

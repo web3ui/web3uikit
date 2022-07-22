@@ -1,9 +1,9 @@
 import { Input, useCopyToClipboard, useNotification } from '../lib/index';
-import * as Icons from '@web3uikit/icons';
+import * as Icons from '@test_kit_3/icons';
 import { IPosition, notifyType } from '../lib/Notification/types';
 import { useState } from 'react';
 import * as styles from './IconGallery.styles';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 const { StyledDivGallery, StyledDivGrid, StyledDivIcon } = styles;
 
 const IconsGallery = () => {
@@ -27,7 +27,7 @@ const IconsGallery = () => {
         icon?: React.ReactElement,
         position?: IPosition,
     ) => {
-        const text = `import {${message}} from \'@web3uikit/icons\'\n<${message} fontSize='50px'/>`;
+        const text = `import {${message}} from \'@test_kit_3/icons\'\n<${message} fontSize='50px'/>`;
         copy(text);
         dispatch({
             type,

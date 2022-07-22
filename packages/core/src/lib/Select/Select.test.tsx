@@ -2,7 +2,7 @@ import { composeStories } from '@storybook/testing-react';
 import { render, screen } from '@testing-library/react';
 import { test, expect, describe } from 'vitest';
 
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import * as stories from './Select.stories';
 
 const {

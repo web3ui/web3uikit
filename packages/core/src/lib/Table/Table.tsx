@@ -1,8 +1,8 @@
 import { Fragment, ReactNode, useEffect, useState } from 'react';
 import { ITableProps } from '.';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import getModuleAnimation from '../Card/Animations/animations';
-import { TriangleUp, TriangleDown } from '@web3uikit/icons';
+import { TriangleUp, TriangleDown } from '@test_kit_3/icons';
 import Loading from '../Loading/Loading';
 import { Typography } from '../Typography';
 import { paginate, getInnerText } from './Helper';

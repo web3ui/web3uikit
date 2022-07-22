@@ -24,13 +24,13 @@ If you need help with setting up the boilerplate or have other questions - don't
 ### 💿 Installation
 
 ```bash
-npm install @web3uikit/core
+npm install @test_kit_3/core
 ```
 
 or
 
 ```bash
-yarn add  @web3uikit/core
+yarn add  @test_kit_3/core
 ```
 
 ### 🧰 Usage

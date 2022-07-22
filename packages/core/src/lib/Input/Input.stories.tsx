@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Server } from '@web3uikit/icons';
+import { Server } from '@test_kit_3/icons';
 import { Input } from '.';
 import { validateRegExp } from '../../utils/const';
 

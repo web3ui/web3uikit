@@ -2,11 +2,16 @@ import { Route, Routes } from 'react-router-dom';
 import { lazily } from 'react-lazily';
 import { Suspense } from 'react';
 
-const { Button, Logo, Typography, Avatar, BannerStrip, VerifyCode } = lazily(
-    () => import('@web3uikit/core'),
-);
-import { Ada } from '@web3uikit/icons';
-const { ConnectWallet, NFT } = lazily(() => import('@web3uikit/web3'));
+const {
+    Button,
+    Logo,
+    Typography,
+    Avatar,
+    BannerStrip,
+    VerifyCode,
+} = lazily(() => import('@test_kit_3/core'));
+import { Ada } from '@test_kit_3/icons';
+const { ConnectWallet, NFT } = lazily(() => import('@test_kit_3/web3'));
 export const App = () => {
     console.log(Ada);
     return (

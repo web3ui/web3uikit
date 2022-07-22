@@ -1,4 +1,4 @@
-# @web3uikit/styles
+# @test_kit_3/styles
 
 ## 0.1.1
 
@@ -6,4 +6,4 @@
 
 -   release
 -   Updated dependencies
-    -   @web3uikit/config@0.1.1
+    -   @test_kit_3/config@0.1.1

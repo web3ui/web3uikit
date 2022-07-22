@@ -9,7 +9,7 @@ import { test, expect, describe } from 'vitest';
 // import { fireEvent } from '@testing-library/react';
 
 // importing color and a testing tool to convert RGB to HEX
-import { color, rgbToHex } from '@web3uikit/styles';
+import { color, rgbToHex } from '@test_kit_3/styles';
 
 // importing testID from button and icon
 import { buttonTestId } from '../Button/Button.test';

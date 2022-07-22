@@ -1,6 +1,6 @@
 import { IPopoverDropdownProps } from './types';
 import styles from './PopoverDropdown.styles';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import depreciatedWarning from '../../utils/depreciationWarning';
 
 const { DivStyled, ListStyled } = styles;

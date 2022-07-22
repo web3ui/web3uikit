@@ -24,13 +24,13 @@ If you need help with setting up the boilerplate or have other questions - don't
 ### 💿 Installation
 
 ```bash
-npm install @web3uikit/core @web3uikit/web3 @web3uikit/icons
+npm install @test_kit_3/core @test_kit_3/web3 @test_kit_3/icons
 ```
 
 or
 
 ```bash
-yarn add  @web3uikit/core @web3uikit/web3 @web3uikit/icons
+yarn add  @test_kit_3/core @test_kit_3/web3 @test_kit_3/icons
 ```
 
 ℹ️ Each package can be installed separately.
@@ -38,7 +38,7 @@ yarn add  @web3uikit/core @web3uikit/web3 @web3uikit/icons
 ### 🧰 Usage
 
 ```jsx
-import { CryptoCards, Button } from '@web3uikit/core';
+import { CryptoCards, Button } from '@test_kit_3/core';
 
 const App = () => (
     <>
@@ -65,7 +65,7 @@ If you are using `web3uikit` with Next.js, be sure to follow the [official guide
 -   [🤝 Need help](#-need-help)
 -   [🚀 Quick start](#-quick-start)
 -   [🧭 Table of Contents](#-table-of-contents)
-<!-- -   [👩‍🔬 Advanced setup](#-advanced-setup) -->
+    <!-- -   [👩‍🔬 Advanced setup](#-advanced-setup) -->
 -   [📦 Packages](#-packages)
     -   [Core module](#core-module)
     -   [Main modules](#main-modules)
@@ -82,25 +82,25 @@ It's possible to install all functionalities of web3uikit by installing `web3uik
 
 The core module contains all the basic ui components like button, input, dropdown etc
 
-| package                                      | Version | Changelog | Description                        |
-| -------------------------------------------- | ------- | --------- | ---------------------------------- |
-| [@web3uikit/core](./packages/core/README.md) | TODO    | TODO      | Contains all the basic UI elements |
+| package                                       | Version | Changelog | Description                        |
+| --------------------------------------------- | ------- | --------- | ---------------------------------- |
+| [@test_kit_3/core](./packages/core/README.md) | TODO    | TODO      | Contains all the basic UI elements |
 
 ## Icons module
 
 Create an issue with svg code to add more icons or feel free to raise a PR.
 
-| package                                        | Version | Changelog | Description            |
-| ---------------------------------------------- | ------- | --------- | ---------------------- |
-| [@web3uikit/icons](./packages/icons/README.md) | TODO    | TODO      | Contains various icons |
+| package                                         | Version | Changelog | Description            |
+| ----------------------------------------------- | ------- | --------- | ---------------------- |
+| [@test_kit_3/icons](./packages/icons/README.md) | TODO    | TODO      | Contains various icons |
 
 ## Web3 module
 
 These are components which have `moralis` and `react-moralis` dependency.
 
-| package                                      | Version | Changelog | Description                      |
-| -------------------------------------------- | ------- | --------- | -------------------------------- |
-| [@web3uikit/web3](./packages/web3/README.md) | TODO    | TODO      | Contains all the web3 components |
+| package                                       | Version | Changelog | Description                      |
+| --------------------------------------------- | ------- | --------- | -------------------------------- |
+| [@test_kit_3/web3](./packages/web3/README.md) | TODO    | TODO      | Contains all the web3 components |
 
 # 🚨 Breaking Changes
 

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Tag } from '../Tag';
-import { Plus, Minus, LockOpen, LockClosed } from '@web3uikit/icons';
+import { Plus, Minus, LockOpen, LockClosed } from '@test_kit_3/icons';
 import { AccordionProps } from './types';
 import styles from './Accordion.styles';
 

@@ -5,7 +5,7 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './Input.stories';
 import { test, expect, describe, vi } from 'vitest';
 
-import { color, rgbToHex } from '@web3uikit/styles';
+import { color, rgbToHex } from '@test_kit_3/styles';
 
 import Input from './Input';
 

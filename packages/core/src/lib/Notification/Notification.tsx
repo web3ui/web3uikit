@@ -1,9 +1,9 @@
 import { NotificationProps, notifyType } from './types';
 import { useEffect, useState } from 'react';
 import { getNotificationColor } from './themes/themes';
-import { Checkmark, Cross, Exclamation, Info } from '@web3uikit/icons';
+import { Checkmark, Cross, Exclamation, Info } from '@test_kit_3/icons';
 import NotificationStyles from './Notification.styles';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 
 const {
     BarStyled,

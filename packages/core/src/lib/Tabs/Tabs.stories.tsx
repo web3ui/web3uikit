@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import TabList from './TabsList';
-import { MessageCircle, Bell, List, Grid, Plus } from '@web3uikit/icons';
+import { MessageCircle, Bell, List, Grid, Plus } from '@test_kit_3/icons';
 import Button from '../Button/Button';
 import { Tab } from '.';
 

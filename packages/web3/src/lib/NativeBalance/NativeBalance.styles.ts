@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fonts } from "@web3uikit/styles";
+import { fonts } from "@test_kit_3/styles";
 
 const BalanceStyled = styled.span`
   ${fonts.semiBold}

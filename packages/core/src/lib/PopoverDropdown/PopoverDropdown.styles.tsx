@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { resetCSS } from '@web3uikit/styles';
+import { resetCSS } from '@test_kit_3/styles';
 import { IPopoverDropdownProps } from './types';
 
 type TStyleProps = Pick<

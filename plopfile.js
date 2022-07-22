@@ -1,4 +1,4 @@
-module.exports = (plop) => {
+module.exports = plop => {
     plop.setGenerator('create-new-component', {
         description: 'new component generator',
         prompts: [
@@ -42,13 +42,14 @@ module.exports = (plop) => {
                         value: false,
                     },
                     {
-                        name: "No, I'm a PRO Mage, leave the files with min code needed for start",
+                        name:
+                            "No, I'm a PRO Mage, leave the files with min code needed for start",
                         value: true,
                     },
                 ],
             },
         ],
-        actions: (data) => {
+        actions: data => {
             data.name = plop.getHelper('properCase')(data.name);
             const basePath = `.plop/plop-templates/${
                 data.isBlank ? 'with-no-code-examples' : 'with-code-examples'
@@ -70,12 +71,12 @@ module.exports = (plop) => {
             ];
         },
     });
-    plop.setHelper('getInterface', (name) => `I${name}Props`);
-    plop.setHelper('getSubDirectoryPath', (subDirectory) => {
+    plop.setHelper('getInterface', name => `I${name}Props`);
+    plop.setHelper('getSubDirectoryPath', subDirectory => {
         if (subDirectory) return `/${subDirectory}`;
     });
     plop.setHelper('getPackage', (name, subDirectory) => {
-        if (subDirectory === 'web3') return `@web3uikit/core`;
+        if (subDirectory === 'web3') return `@test_kit_3/core`;
         else return `../${name}`;
     });
 };

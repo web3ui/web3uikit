@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { CheckboxProps } from '.';
-import { Check } from '@web3uikit/icons';
+import { Check } from '@test_kit_3/icons';
 import styles from './Checkbox.styles';
 
 const { StyledInput, StyledLabel } = styles;

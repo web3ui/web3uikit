@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 
 const coloredGreen = css`
     background: ${color.greenForestLight};

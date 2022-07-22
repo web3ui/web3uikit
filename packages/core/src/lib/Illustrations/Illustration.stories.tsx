@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import Illustration from './Illustration';
 
 export default {

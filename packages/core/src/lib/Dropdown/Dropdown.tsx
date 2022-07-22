@@ -15,7 +15,7 @@ import {
     ChevronUp,
     TriangleDown,
     TriangleUp,
-} from '@web3uikit/icons';
+} from '@test_kit_3/icons';
 import { OptionProps } from '../Select';
 import { Typography } from '../Typography';
 

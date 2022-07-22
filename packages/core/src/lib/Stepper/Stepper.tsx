@@ -1,9 +1,9 @@
 import { Button } from '../Button';
-import { Check } from '@web3uikit/icons';
+import { Check } from '@test_kit_3/icons';
 import { Loading } from '../Loading';
 import { StepperProps } from './types';
 import { Typography } from '../Typography';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import HeaderStyles from './Stepper.styles';
 import { useEffect, useRef, useState, Fragment } from 'react';
 

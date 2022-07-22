@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, fonts, resetCSS } from '@web3uikit/styles';
+import { color, fonts, resetCSS } from '@test_kit_3/styles';
 import { Link } from 'react-router-dom';
 
 // types

@@ -2,8 +2,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Card from './Card';
 import { useState } from 'react';
 import getModuleAnimation from './Animations/animations';
-import { Checkmark } from '@web3uikit/icons';
-import { color } from '@web3uikit/styles';
+import { Checkmark } from '@test_kit_3/icons';
+import { color } from '@test_kit_3/styles';
 import { Button } from '../Button';
 
 /**

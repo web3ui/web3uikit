@@ -1,4 +1,4 @@
-import { Button } from '@web3uikit/core';
+import { Button } from '@test_kit_3/core';
 // import Moralis from '@moralisweb3/evm-wallet-connect-connector';
 // "@moralisweb3/evm-wallet-connect-connector": "2.0.0-alpha.1",
 export const ConnectButtonv2 = () => {

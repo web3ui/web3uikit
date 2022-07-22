@@ -1,4 +1,4 @@
-import { color, resetCSS, fonts } from '@web3uikit/styles';
+import { color, resetCSS, fonts } from '@test_kit_3/styles';
 import styled from 'styled-components';
 import { TextAreaProps } from './types';
 

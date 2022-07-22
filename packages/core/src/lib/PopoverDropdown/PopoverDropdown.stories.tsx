@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import PopoverDropdown from './PopoverDropdown';
 import PopoverElement from '../PopoverElement/PopoverElement';
 import {
@@ -10,7 +10,7 @@ import {
     Network,
     Server,
     Testnet,
-} from '@web3uikit/icons';
+} from '@test_kit_3/icons';
 
 export default {
     title: '5.Popup/Popover Dropdown',

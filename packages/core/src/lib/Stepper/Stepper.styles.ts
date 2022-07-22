@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, resetCSS, fonts } from '@web3uikit/styles';
+import { color, resetCSS, fonts } from '@test_kit_3/styles';
 import { StepNumberProps, StepperProps } from './types';
 
 type TStyleProps = Pick<StepNumberProps, 'activeStep' | 'thisStep' | 'stepTotal'>;

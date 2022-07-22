@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import { IPlanCardProps } from './types';
 
 type TDivStyle = Pick<IPlanCardProps, 'isActive'>;

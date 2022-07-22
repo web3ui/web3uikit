@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { AbsoluteIconStyledProps, CardProps } from './types';
-import { fonts, color, resetCSS } from '@web3uikit/styles';
+import { fonts, color, resetCSS } from '@test_kit_3/styles';
 
 const DivStyled = styled.div<Pick<CardProps, 'isSelected' | 'isDisabled' | 'cursorType'>>`
   ${resetCSS};

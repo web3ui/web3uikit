@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Calendar } from '@web3uikit/icons';
+import { Calendar } from '@test_kit_3/icons';
 import { SpanStyled } from './DatePicker.styles';
 import InputStyles from '../Input/Input.styles';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import { DatePickerProps } from './types';
 const { DivWrapperStyled, InputStyled, LabelStyled, StrongStyled } =
     InputStyles;

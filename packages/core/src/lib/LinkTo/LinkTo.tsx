@@ -1,5 +1,5 @@
-import { Link, Mail } from '@web3uikit/icons';
-import { color } from '@web3uikit/styles';
+import { Link, Mail } from '@test_kit_3/icons';
+import { color } from '@test_kit_3/styles';
 import { LinkToProps } from './types';
 import styles from './LinkTo.styles';
 

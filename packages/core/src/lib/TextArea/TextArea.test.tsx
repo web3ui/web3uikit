@@ -2,7 +2,7 @@ import { composeStories } from '@storybook/testing-react';
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import * as stories from './TextArea.stories';
 import { test, expect, describe, vi } from 'vitest';
 

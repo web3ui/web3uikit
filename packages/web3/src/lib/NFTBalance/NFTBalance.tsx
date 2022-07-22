@@ -7,9 +7,9 @@ import {
 } from 'react-moralis';
 import { NFT } from '../NFT';
 import styles from './NFTBalance.styles';
-import { Button, Typography, Skeleton } from '@web3uikit/core';
+import { Button, Typography, Skeleton } from '@test_kit_3/core';
 import { INFTBalance } from './types';
-import { ChevronDown } from '@web3uikit/icons';
+import { ChevronDown } from '@test_kit_3/icons';
 const { DivStyled, DivFlexStyled } = styles;
 
 const NFTBalance: React.FC<INFTBalance> = ({ address, chain, ...props }) => {

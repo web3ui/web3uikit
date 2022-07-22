@@ -17,7 +17,7 @@ import chest from './images/various/chest';
 import cronos from './images/chains/cronos';
 import bundle from './images/various/bundle';
 import styled from 'styled-components';
-import { resetCSS } from '@web3uikit/styles';
+import { resetCSS } from '@test_kit_3/styles';
 
 const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     switch (logo) {

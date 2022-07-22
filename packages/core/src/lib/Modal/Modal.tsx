@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ModalProps } from './types';
 import Button from '../Button/Button';
 import styles from './Modal.styles';
-import { Cross } from '@web3uikit/icons';
+import { Cross } from '@test_kit_3/icons';
 
 const {
     CustomFooterStyled,

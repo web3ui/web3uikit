@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Form from './Form';
 import { validateRegExp } from '../../utils/const';
 import { Button } from '../Button';
-import { ArrowCircleLeft, ArrowCircleRight } from '@web3uikit/icons';
+import { ArrowCircleLeft, ArrowCircleRight } from '@test_kit_3/icons';
 
 export default {
     title: '2.Forms/Form',

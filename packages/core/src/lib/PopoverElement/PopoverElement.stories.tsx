@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { LogOut } from '@web3uikit/icons';
-import { color } from '@web3uikit/styles';
+import { LogOut } from '@test_kit_3/icons';
+import { color } from '@test_kit_3/styles';
 import PopoverElement from './PopoverElement';
 
 export default {

@@ -12,7 +12,7 @@ import {
     maxPages,
 } from './MockData';
 import { Loading } from '../Loading';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 export default {
     title: '3.Layout/Table',
     component: Table,

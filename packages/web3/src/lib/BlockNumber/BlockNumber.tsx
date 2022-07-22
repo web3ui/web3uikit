@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useMoralis } from 'react-moralis';
-import { Typography, TypographyProps } from '@web3uikit/core';
+import { Typography, TypographyProps } from '@test_kit_3/core';
 
 const BlockNumber: React.FC<TypographyProps> = (props) => {
     const { chainId, web3 } = useMoralis();

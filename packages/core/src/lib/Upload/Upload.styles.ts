@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color, resetCSS } from '@web3uikit/styles';
+import { color, resetCSS } from '@test_kit_3/styles';
 import { DivStyledProps } from './types';
 
 const DivStyled = styled.div<DivStyledProps>`

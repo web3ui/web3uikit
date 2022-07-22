@@ -1,4 +1,4 @@
-import { Plus } from '@web3uikit/icons';
+import { Plus } from '@test_kit_3/icons';
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '../Button';
 import { Input } from '../Input';

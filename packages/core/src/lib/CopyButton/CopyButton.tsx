@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
-import { color } from '@web3uikit/styles';
-import { Check, Copy } from '@web3uikit/icons';
+import { color } from '@test_kit_3/styles';
+import { Check, Copy } from '@test_kit_3/icons';
 import { ButtonStyled } from './CopyButton.styles';
 import { CopiedValue, CopyButtonProps, CopyFn } from './types';
 

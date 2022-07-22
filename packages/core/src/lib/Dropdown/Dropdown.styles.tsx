@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color, resetCSS } from '@web3uikit/styles';
+import { color, resetCSS } from '@test_kit_3/styles';
 import { IDropdown } from './types';
 
 export const StyledSelectParentDiv = styled.div<Pick<IDropdown, 'width' | 'isDisabled'>>`

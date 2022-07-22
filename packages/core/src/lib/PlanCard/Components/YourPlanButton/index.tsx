@@ -1,5 +1,5 @@
 
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import { Typography } from '../../../Typography';
 import styles from './YourPlanButton.styles';
 

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import { Avatar } from '../Avatar';
 import { Button } from '../Button';
-import { Cross, MoreVert } from '@web3uikit/icons';
+import { Cross, MoreVert } from '@test_kit_3/icons';
 import { Tag } from '../Tag';
 import { Typography } from '../Typography';
 

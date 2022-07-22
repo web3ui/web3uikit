@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import * as stories from './LinkTo.stories';
 import { test, expect, describe } from 'vitest';
 
-import { color, rgbToHex } from '@web3uikit/styles';
+import { color, rgbToHex } from '@test_kit_3/styles';
 
 const {
     ExternalLink,

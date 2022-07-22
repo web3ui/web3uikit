@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color, fonts, resetCSS, resetButtonCSS } from '@web3uikit/styles';
+import { color, fonts, resetCSS, resetButtonCSS } from '@test_kit_3/styles';
 
 const flexBox = css`
     ${resetCSS};

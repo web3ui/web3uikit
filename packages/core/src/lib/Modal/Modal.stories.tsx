@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { color } from '@web3uikit/styles';
+import { color } from '@test_kit_3/styles';
 import Modal from './Modal';
 import {
     Cloud,
@@ -7,7 +7,7 @@ import {
     Edit,
     Mail,
     ArrowCircleRight,
-} from '@web3uikit/icons';
+} from '@test_kit_3/icons';
 import { Input } from '../Input';
 import { useArgs } from '@storybook/addons';
 import { Button } from '../Button';

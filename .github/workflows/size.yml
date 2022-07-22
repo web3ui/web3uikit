@@ -19,6 +19,9 @@ jobs:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
 
             - run: |
-                  cd packages/core pwd
-                  cd ../icons npm publish pwd
-                  cd ../web3 npm publish pwd
+                  cd packages/core 
+                  pwd
+                  cd ../icons
+                  pwd
+                  cd ../web3 
+                  pwd

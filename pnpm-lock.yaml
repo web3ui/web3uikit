@@ -199,10 +199,10 @@ importers:
 
   packages/web3:
     specifiers:
-      '@test_kit_3/config': '*'
-      '@test_kit_3/core': '*'
-      '@test_kit_3/icons': '*'
-      '@test_kit_3/styles': '*'
+      '@test_kit_3/config': latest
+      '@test_kit_3/core': latest
+      '@test_kit_3/icons': latest
+      '@test_kit_3/styles': latest
       '@types/react-blockies': ^1.4.1
       '@walletconnect/web3-provider': ^1.7.8
       '@web3auth/web3auth': ^1.1.0

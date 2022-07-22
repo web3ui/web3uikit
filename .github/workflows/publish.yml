@@ -33,7 +33,7 @@ jobs:
             - run: pnpm run build
             # run tests just in case
             - run: pnpm vitest --run
-            - run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"
+            - run: npm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}" --scope=@myco
 
             - name: publish to NPM as latest version
               if: '!github.event.release.prerelease'

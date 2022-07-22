@@ -37,9 +37,13 @@ jobs:
 
             - name: publish to NPM as latest version
               if: '!github.event.release.prerelease'
-              run: cd packages/core npm publish --tag latest
-              run: cd packages/icons npm publish --tag latest
-              run: cd packages/web3 npm publish --tag latest
+              run: |
+                  cd packages/core 
+                  npm publish --tag latest
+                  cd ../icons
+                  npm publish --tag latest
+                  cd ../web3 
+                  npm publish --tag latest
               env:
                   # Use a token to publish to NPM. See below for how to set it up
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

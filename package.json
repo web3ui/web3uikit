@@ -8,7 +8,7 @@
         "apps/*",
         "packages/*"
     ],
-    "private": "true",
+    "private": "false",
     "browser": {
         "http": false,
         "https": false,

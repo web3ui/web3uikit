@@ -17,7 +17,7 @@ jobs:
               with:
                   # This makes action fetch all Git history so that Changesets can generate changelogs with the correct commits
                   fetch-depth: 0
-                  
+
               #Install pnpm
             - name: Install pnpm
               uses: pnpm/action-setup@v2.2.2
@@ -40,9 +40,10 @@ jobs:
               env:
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-
-            - run: git config --global user.name "GitHub CD bot"
-            - run: git config --global user.email "dmitrii@moralis.io"
+            - name: Set Username
+              run: git config --global user.name "GitHub CD bot"
+            - name: Set Email
+              run: git config --global user.email "dmitrii@moralis.io"
 
             - name: Build
               run: pnpm run build
@@ -51,10 +52,14 @@ jobs:
             - name: Test
               run: pnpm vitest --run
 
+            # Publish using changeset
             - name: create and publish versions
               uses: changesets/action@v1
-                  with:
-                      publish: pnpm run release
-                  env:
-                      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+              with:
+                  version: pnpm ci:version
+                  commit: 'chore: update versions'
+                  title: 'chore: update versions'
+                  publish: pnpm ci:publish
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -1,0 +1,1 @@
+{"version":3,"file":"SourceMapper.d.ts","sourceRoot":"","sources":["../../src/collector/SourceMapper.ts"],"names":[],"mappings":"AAKA,OAAO,EAAE,wBAAwB,EAAE,MAAM,yBAAyB,CAAC;AAqBnE,qBAAa,YAAY;IAEvB,OAAO,CAAC,oBAAoB,CAAwE;IAGpG,OAAO,CAAC,uBAAuB,CAAwE;IAEvG;;;OAGG;IACI,6BAA6B,CAAC,OAAO,EAAE,wBAAwB,GAAG,IAAI;IAiJ7E,OAAO,CAAC,MAAM,CAAC,uBAAuB;IA+BtC,OAAO,CAAC,MAAM,CAAC,mBAAmB;CAOnC"}

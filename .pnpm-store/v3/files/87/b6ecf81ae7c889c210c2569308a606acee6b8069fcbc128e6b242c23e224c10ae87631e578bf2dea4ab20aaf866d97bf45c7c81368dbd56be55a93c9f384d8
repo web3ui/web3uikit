@@ -1,0 +1,71 @@
+{
+  "name": "@swc-node/register",
+  "version": "1.5.1",
+  "description": "SWC node register",
+  "keywords": [
+    "swc",
+    "babel",
+    "ts-node",
+    "napi-rs",
+    "uglify",
+    "node-rs",
+    "napi-rs",
+    "napi",
+    "n-api",
+    "esbuild",
+    "tsc",
+    "webpack"
+  ],
+  "author": "LongYinan <github@lyn.one>",
+  "homepage": "https://github.com/swc-project/swc-node",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib",
+    "README.md",
+    "LICENSE",
+    "*.d.ts"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swc-project/swc-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/swc-project/swc-node/issues"
+  },
+  "dependencies": {
+    "@swc-node/core": "^1.9.0",
+    "@swc-node/sourcemap-support": "^0.2.0",
+    "colorette": "^2.0.16",
+    "debug": "^4.3.4",
+    "pirates": "^4.0.5",
+    "tslib": "^2.4.0"
+  },
+  "peerDependencies": {
+    "typescript": ">= 4.3"
+  },
+  "devDependencies": {
+    "@swc/core": "^1.2.172",
+    "@types/debug": "^4.1.7",
+    "typescript": "^4.6.3"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Brooooooklyn"
+  },
+  "exports": {
+    ".": {
+      "node": "./index.js"
+    },
+    "./read-default-tsconfig": {
+      "node": "./lib/read-default-tsconfig.js"
+    },
+    "./register": "./lib/register.js"
+  },
+  "gitHead": "84de440a9f54f6881172a2a819d11cf3e2870c7b"
+}

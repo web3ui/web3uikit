@@ -1,0 +1,64 @@
+{
+  "name": "@microsoft/api-extractor",
+  "version": "7.24.2",
+  "description": "Analyze the exported API for a TypeScript library and generate reviews, documentation, and .d.ts rollups",
+  "keywords": [
+    "typescript",
+    "API",
+    "JSDoc",
+    "AEDoc",
+    "TSDoc",
+    "generate",
+    "documentation",
+    "declaration",
+    "dts",
+    ".d.ts",
+    "rollup",
+    "bundle",
+    "compiler",
+    "alpha",
+    "beta"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/rushstack.git",
+    "directory": "apps/api-extractor"
+  },
+  "homepage": "https://api-extractor.com",
+  "main": "lib/index.js",
+  "typings": "dist/rollup.d.ts",
+  "bin": {
+    "api-extractor": "./bin/api-extractor"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@microsoft/api-extractor-model": "7.17.3",
+    "@microsoft/tsdoc": "0.14.1",
+    "@microsoft/tsdoc-config": "~0.16.1",
+    "@rushstack/node-core-library": "3.45.5",
+    "@rushstack/rig-package": "0.3.11",
+    "@rushstack/ts-command-line": "4.11.0",
+    "colors": "~1.2.1",
+    "lodash": "~4.17.15",
+    "resolve": "~1.17.0",
+    "semver": "~7.3.0",
+    "source-map": "~0.6.1",
+    "typescript": "~4.6.3"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-config": "2.6.0",
+    "@rushstack/heft": "0.45.1",
+    "@rushstack/heft-node-rig": "1.9.2",
+    "@types/heft-jest": "1.0.1",
+    "@types/lodash": "4.14.116",
+    "@types/node": "12.20.24",
+    "@types/resolve": "1.17.1",
+    "@types/semver": "7.3.5"
+  },
+  "scripts": {
+    "build": "heft build --clean",
+    "_phase:build": "heft build --clean",
+    "_phase:test": "heft test --no-build"
+  },
+  "readme": "# @microsoft/api-extractor\n\n\n![API Extractor](https://github.com/microsoft/rushstack/raw/main/common/wiki-images/api-extractor-title.png?raw=true)\n<br />\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; https://api-extractor.com/\n\n<!-- ------------------------------------------------------------------ -->\n<!-- Text below this line should stay in sync with the web site content -->\n<!-- ------------------------------------------------------------------ -->\n\n**API Extractor** helps you build better [TypeScript](https://www.typescriptlang.org/) library packages.  Suppose for example that your company has published an NPM package called \"**awesome-widgets**\" that exports many classes and interfaces.  As developers start to depend on your library, you may encounter issues such as...\n\n- **Accidental breaks:**  People keep reporting that their code won't compile after a supposedly \"minor\" update.  To address this, you boldly propose that every **awesome-widgets** pull request must be approved by an experienced developer from your team.  But that proves unrealistic -- nobody has time to look at every single PR!  What you really need is a way to detect PRs that change API contracts, and flag them for review.  That would focus attention in the right place... but how to do that?\n\n- **Missing exports:** Suppose the **awesome-widgets** package exports an API function `AwesomeButton.draw()` that requires a parameter of type `DrawStyle`, but you forgot to export this enum.  Things seem fine at first, but when a developer tries to call that function, they discover that there's no way to specify the `DrawStyle`.  How to avoid these oversights?\n\n- **Accidental exports:** You meant for your `DrawHelper` class to be kept internal, but one day you realize it's being exported.  When you try to remove it, consumers complain that they're using it.  How do we avoid this in the future?\n\n- **Alpha/Beta graduation:**  You want to release previews of new APIs that are not ready for prime time yet.  But if you did a major SemVer bump every time these definitions evolve, the villagers would be after you with torches and pitchforks!  A better approach is to designate certain classes/members as **alpha** quality, then promote them to **beta** and finally to **public** as they mature.  But how to indicate this to your consumers?  (And how to detect scoping mistakes?  A **public** function should never return a **beta** result.)\n\n- **\\*.d.ts rollup:** You webpacked your library into a nice **\\*.js** bundle file -- so why ship your typings as a messy tree of **lib/\\*.d.ts** files full of private definitions?  Can't we consolidate them into a tidy **\\*.d.ts** rollup file?  And if you publish internal/beta/public releases, each release type should get its own **\\*.d.ts** file with appropriate trimming.  Developers building a production project don't want to see a bunch of **internal** and **beta** members in their VS Code IntelliSense!\n\n- **Online documentation:**  You have faithfully annotated each TypeScript member with nice [TSDoc](https://github.com/microsoft/tsdoc) descriptions.  Now that your library has shipped, it's time to set up [a nicely formatted](https://docs.microsoft.com/en-us/javascript/api/sp-http) API reference.  What tool to use?\n\n**API Extractor** provides an integrated, professional-quality solution for all these problems.  It is invoked at build time by your toolchain and leverages the TypeScript compiler engine to:\n\n- Detect a project's exported API surface\n- Capture the contracts in a concise report designed to facilitate review\n- Warn about common mistakes (e.g. missing exports, inconsistent visibility, etc.)\n- Generate \\*.d.ts rollups with trimming according to release type\n- Output API documentation in a portable format that's easy to integrate with your content pipeline\n\nBest of all, **API Extractor** is free and open source.  Join the community and create a pull request!\n\n<!-- ------------------------------------------------------------------ -->\n<!-- Text above this line should stay in sync with the web site content -->\n<!-- ------------------------------------------------------------------ -->\n\n## Getting Started\n\nFor more details and support resources, please visit: https://api-extractor.com/\n\n## Links\n\n- [CHANGELOG.md](\n  https://github.com/microsoft/rushstack/blob/main/apps/api-extractor/CHANGELOG.md) - Find\n  out what's new in the latest version\n- [API Reference](https://rushstack.io/pages/api/api-extractor/)\n\nAPI Extractor is part of the [Rush Stack](https://rushstack.io/) family of projects.\n"
+}

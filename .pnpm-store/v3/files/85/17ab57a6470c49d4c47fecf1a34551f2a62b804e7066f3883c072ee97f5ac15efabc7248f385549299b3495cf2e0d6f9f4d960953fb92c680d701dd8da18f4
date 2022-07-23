@@ -1,0 +1,88 @@
+{
+  "name": "@toruslabs/fetch-node-details",
+  "version": "7.0.2",
+  "description": "Fetches the node details from torus nodelist smart contract",
+  "main": "dist/fetchNodeDetails.cjs.js",
+  "module": "dist/fetchNodeDetails.esm.js",
+  "unpkg": "dist/fetchNodeDetails.umd.min.js",
+  "jsdelivr": "dist/fetchNodeDetails.umd.min.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "start": "torus-scripts start",
+    "build": "torus-scripts build",
+    "release": "torus-scripts release",
+    "prepack": "npm run build",
+    "test": "mocha",
+    "lint:ts": "eslint --fix 'src/**/*.ts'",
+    "prepare": "husky install"
+  },
+  "peerDependencies": {
+    "@babel/runtime": "7.x"
+  },
+  "dependencies": {
+    "web3-eth-contract": "^1.7.4",
+    "web3-utils": "^1.7.4"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.18.6",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@toruslabs/eslint-config-typescript": "^1.0.3",
+    "@toruslabs/torus-scripts": "^1.0.5",
+    "@types/mocha": "^9.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
+    "eslint": "^8.18.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-mocha": "^10.0.5",
+    "eslint-plugin-n": "^15.2.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.1.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-tsdoc": "^0.2.16",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "mocha": "^10.0.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "lint-staged": {
+    "!(*d).{js,ts}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.{json, md}": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torusresearch/fetch-node-details.git"
+  },
+  "keywords": [
+    "torus",
+    "nodes",
+    "torus-embed",
+    "torus-website",
+    "fetch-node-details",
+    "toruslabs"
+  ],
+  "author": "Chaitanya Potti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/torusresearch/fetch-node-details/issues"
+  },
+  "homepage": "https://github.com/torusresearch/fetch-node-details#readme",
+  "engines": {
+    "node": ">=14.17.0",
+    "npm": ">=6.x"
+  }
+}

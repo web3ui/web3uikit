@@ -1,0 +1,1 @@
+{"version":3,"file":"run-tasks-in-serial.js","sourceRoot":"","sources":["../../../../../packages/workspace/src/utilities/run-tasks-in-serial.ts"],"names":[],"mappings":";;;;AAEA,SAAgB,gBAAgB,CAC9B,GAAG,KAA0B;IAE7B,OAAO,GAAS,EAAE;QAChB,KAAK,MAAM,IAAI,IAAI,KAAK,EAAE;YACxB,MAAM,IAAI,EAAE,CAAC;SACd;IACH,CAAC,CAAA,CAAC;AACJ,CAAC;AARD,4CAQC"}

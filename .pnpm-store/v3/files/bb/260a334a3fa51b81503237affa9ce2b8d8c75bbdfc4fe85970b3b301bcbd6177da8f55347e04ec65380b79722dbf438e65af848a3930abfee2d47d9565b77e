@@ -1,0 +1,36 @@
+{
+  "executors": {
+    "version": {
+      "implementation": "./src/executors/version",
+      "schema": "./src/executors/version/schema.json",
+      "description": "Automate versioning and CHANGELOG generation."
+    },
+    "github": {
+      "implementation": "./src/executors/github/executor",
+      "schema": "./src/executors/github/schema.json",
+      "description": "github executor"
+    },
+    "gitlab": {
+      "implementation": "./src/executors/gitlab/executor",
+      "schema": "./src/executors/gitlab/schema.json",
+      "description": "gitlab executor"
+    }
+  },
+  "builders": {
+    "version": {
+      "implementation": "./src/executors/version/compat",
+      "schema": "./src/executors/version/schema.json",
+      "description": "Automate versioning and CHANGELOG generation."
+    },
+    "github": {
+      "implementation": "./src/executors/github/compat",
+      "schema": "./src/executors/github/schema.json",
+      "description": "github executor"
+    },
+    "gitlab": {
+      "implementation": "./src/executors/gitlab/compat",
+      "schema": "./src/executors/gitlab/schema.json",
+      "description": "gitlab executor"
+    }
+  }
+}

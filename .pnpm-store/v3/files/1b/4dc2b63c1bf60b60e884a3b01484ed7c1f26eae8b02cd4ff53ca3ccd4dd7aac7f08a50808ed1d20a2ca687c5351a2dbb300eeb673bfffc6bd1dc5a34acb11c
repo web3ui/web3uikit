@@ -1,0 +1,20 @@
+{
+  "name": "qr.js",
+  "version": "0.0.0",
+  "description": "qrcode encoding in javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shtylman/qr.js.git"
+  },
+  "keywords": [
+    "qrcode",
+    "qr"
+  ],
+  "author": "Roman Shtylman <shtylman@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md"
+}

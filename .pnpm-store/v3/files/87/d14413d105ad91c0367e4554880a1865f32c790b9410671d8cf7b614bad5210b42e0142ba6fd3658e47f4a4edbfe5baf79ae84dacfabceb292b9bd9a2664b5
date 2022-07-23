@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,6CAA2B;AAC3B,kDAAgC;AAChC,gDAA8B;AAC9B,oDAAkC;AAClC,8CAA4B","sourcesContent":["export * from './asStream';\nexport * from './ComposedStore';\nexport * from './MergedStore';\nexport * from './ObservableStore';\nexport * from './transform';\n"]}

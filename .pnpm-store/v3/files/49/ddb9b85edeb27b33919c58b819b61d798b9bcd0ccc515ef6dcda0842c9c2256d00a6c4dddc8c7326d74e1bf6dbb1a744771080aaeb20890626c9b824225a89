@@ -1,0 +1,49 @@
+{
+  "name": "msw-storybook-addon",
+  "description": "Mock API requests in Storybook with Mock Service Worker.",
+  "version": "1.6.3",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "dev": "yarn build --watch",
+    "build": "tsc",
+    "prepublishOnly": "yarn build"
+  },
+  "files": [
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mswjs/msw-storybook-addon.git",
+    "directory": "packages/msw-addon"
+  },
+  "keywords": [
+    "storybook-addon",
+    "msw",
+    "mocking",
+    "api",
+    "graphql",
+    "network",
+    "data-state"
+  ],
+  "author": "Aditya Agarwal (@dev__adi)",
+  "bugs": {
+    "url": "https://github.com/mswjs/msw-storybook-addon/issues"
+  },
+  "homepage": "https://msw-sb.vercel.app/",
+  "license": "MIT",
+  "dependencies": {
+    "@storybook/addons": "^6.0.0",
+    "is-node-process": "^1.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "msw": ">=0.35.0 <1.0.0"
+  },
+  "storybook": {
+    "displayName": "Mock Service Worker",
+    "icon": "https://user-images.githubusercontent.com/1671563/144888802-84346d8f-77c9-4377-98c7-4b0364797978.png"
+  }
+}

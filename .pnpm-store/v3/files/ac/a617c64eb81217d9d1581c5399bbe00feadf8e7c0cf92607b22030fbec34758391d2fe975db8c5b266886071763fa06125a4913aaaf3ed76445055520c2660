@@ -1,0 +1,24 @@
+{
+  "name": "wp5-cra-polyfill",
+  "version": "0.0.1",
+  "main": "index.js",
+  "module": "index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./index.js"
+    }
+  },
+  "scripts": {
+    "postinstall": "node index.js"
+  },
+  "dependencies": {
+    "node-polyfill-webpack-plugin": "^1.1.4"
+  },
+  "peerDependencies": {
+    "webpack": ">=5"
+  },
+  "devDependencies": {
+    "webpack": ">=5"
+  }
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"basePlugin.esm.js","sources":["../src/IPlugin.ts"],"sourcesContent":[null],"names":["PLUGIN_NAMESPACES","CHAIN_NAMESPACES","MULTICHAIN"],"mappings":";;;;;;AAEO,MAAMA,iBAAiB,GAAA,aAAA,CAAA,aAAA,CAAA,EAAA,EACzBC,gBADyB,CAAA,EAAA,EAAA,EAAA;AAE5BC,EAAAA,UAAU,EAAE,YAAA;AAFgB,CAAvB;;;;"}

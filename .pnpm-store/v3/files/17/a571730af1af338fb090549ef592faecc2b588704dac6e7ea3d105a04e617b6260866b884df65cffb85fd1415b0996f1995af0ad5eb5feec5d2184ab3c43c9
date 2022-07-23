@@ -1,0 +1,110 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.StaticRunManyTerminalOutputLifeCycle = void 0;
+const output_1 = require("../../utils/output");
+const utils_1 = require("../utils");
+/**
+ * The following life cycle's outputs are static, meaning no previous content
+ * is rewritten or modified as new outputs are added. It is therefore intended
+ * for use in CI environments.
+ *
+ * For the common case of a user executing a command on their local machine,
+ * the dynamic equivalent of this life cycle is usually preferable.
+ */
+class StaticRunManyTerminalOutputLifeCycle {
+    constructor(projectNames, tasks, args, taskOverrides) {
+        this.projectNames = projectNames;
+        this.tasks = tasks;
+        this.args = args;
+        this.taskOverrides = taskOverrides;
+        this.failedTasks = [];
+        this.cachedTasks = [];
+        this.allCompletedTasks = new Set();
+    }
+    startCommand() {
+        if (this.projectNames.length <= 0) {
+            let description = `with "${this.args.target}"`;
+            if (this.args.configuration) {
+                description += ` that are configured for "${this.args.configuration}"`;
+            }
+            output_1.output.logSingleLine(`No projects ${description} were run`);
+            return;
+        }
+        const bodyLines = this.projectNames.map((affectedProject) => ` ${output_1.output.dim('-')} ${affectedProject}`);
+        if (Object.keys(this.taskOverrides).length > 0) {
+            bodyLines.push('');
+            bodyLines.push(`${output_1.output.dim('With flags:')}`);
+            Object.entries(this.taskOverrides)
+                .map(([flag, value]) => `  --${flag}=${value}`)
+                .forEach((arg) => bodyLines.push(arg));
+        }
+        let title = `Running target ${output_1.output.bold(this.args.target)} for ${output_1.output.bold(this.projectNames.length)} project(s)`;
+        const dependentTasksCount = this.tasks.length - this.projectNames.length;
+        if (dependentTasksCount > 0) {
+            title += ` and ${output_1.output.bold(dependentTasksCount)} task(s) they depend on`;
+        }
+        title += ':';
+        output_1.output.log({
+            color: 'cyan',
+            title,
+            bodyLines,
+        });
+        output_1.output.addVerticalSeparatorWithoutNewLines('cyan');
+    }
+    endCommand() {
+        output_1.output.addNewline();
+        if (this.failedTasks.length === 0) {
+            output_1.output.addVerticalSeparatorWithoutNewLines('green');
+            const bodyLines = this.cachedTasks.length > 0
+                ? [
+                    output_1.output.dim(`Nx read the output from the cache instead of running the command for ${this.cachedTasks.length} out of ${this.tasks.length} tasks.`),
+                ]
+                : [];
+            output_1.output.success({
+                title: `Successfully ran target ${output_1.output.bold(this.args.target)} for ${output_1.output.bold(this.projectNames.length)} projects`,
+                bodyLines,
+            });
+        }
+        else {
+            output_1.output.addVerticalSeparatorWithoutNewLines('red');
+            const bodyLines = [];
+            const skippedTasks = this.skippedTasks();
+            if (skippedTasks.length > 0) {
+                bodyLines.push(output_1.output.dim('Tasks not run because their dependencies failed:'), '', ...skippedTasks.map((task) => `${output_1.output.dim('-')} ${task.id}`), '');
+            }
+            bodyLines.push(output_1.output.dim('Failed tasks:'), '', ...[...this.failedTasks.values()].map((task) => `${output_1.output.dim('-')} ${task.id}`));
+            output_1.output.error({
+                title: `Running target "${this.args.target}" failed`,
+                bodyLines,
+            });
+        }
+    }
+    skippedTasks() {
+        return this.tasks.filter((t) => !this.allCompletedTasks.has(t));
+    }
+    endTasks(taskResults) {
+        for (let t of taskResults) {
+            this.allCompletedTasks.add(t.task);
+            if (t.status === 'failure') {
+                this.failedTasks.push(t.task);
+            }
+            else if (t.status === 'local-cache') {
+                this.cachedTasks.push(t.task);
+            }
+            else if (t.status === 'local-cache-kept-existing') {
+                this.cachedTasks.push(t.task);
+            }
+            else if (t.status === 'remote-cache') {
+                this.cachedTasks.push(t.task);
+            }
+        }
+    }
+    printTaskTerminalOutput(task, cacheStatus, terminalOutput) {
+        const args = (0, utils_1.getPrintableCommandArgsForTask)(task);
+        output_1.output.logCommand(args.join(' '), cacheStatus);
+        output_1.output.addNewline();
+        process.stdout.write(terminalOutput);
+    }
+}
+exports.StaticRunManyTerminalOutputLifeCycle = StaticRunManyTerminalOutputLifeCycle;
+//# sourceMappingURL=static-run-many-terminal-output-life-cycle.js.map

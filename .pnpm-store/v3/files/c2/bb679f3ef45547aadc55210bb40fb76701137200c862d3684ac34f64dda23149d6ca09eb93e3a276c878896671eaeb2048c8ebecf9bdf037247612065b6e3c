@@ -1,0 +1,161 @@
+{
+  "name": "moralis",
+  "version": "1.9.0",
+  "description": "The Moralis JavaScript SDK",
+  "homepage": "https://docs.moralis.io",
+  "keywords": [
+    "cloud",
+    "mobile",
+    "api"
+  ],
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoralisWeb3/Moralis-JS-SDK.git"
+  },
+  "bugs": "https://github.com/MoralisWeb3/issue-tracker/issues",
+  "typings": "types",
+  "files": [
+    "index.js",
+    "node.js",
+    "node.d.ts",
+    "react-native.js",
+    "react-native.d.ts",
+    "weapp.js",
+    "weapp.d.ts",
+    "dist/",
+    "types/",
+    "lib/",
+    "LICENSE",
+    "PATENTS",
+    "README.md"
+  ],
+  "browser": {
+    "react-native": false
+  },
+  "dependencies": {
+    "@babel/runtime": "7.16.7",
+    "@babel/runtime-corejs3": "7.16.8",
+    "@metamask/detect-provider": "^1.2.0",
+    "axios": "0.26.1",
+    "ethers": "5.6.0",
+    "react-native-crypto-js": "1.0.0",
+    "uuid": "^8.3.2",
+    "ws": "^8.3.0",
+    "xmlhttprequest": "1.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/eslint-parser": "^7.16.5",
+    "@babel/plugin-proposal-class-properties": "^7.16.5",
+    "@babel/plugin-transform-flow-comments": "^7.16.5",
+    "@babel/plugin-transform-flow-strip-types": "^7.16.5",
+    "@babel/plugin-transform-runtime": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
+    "@parse/minami": "1.0.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.0.2",
+    "@semantic-release/npm": "^8.0.3",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "babel-jest": "^27.4.5",
+    "babel-plugin-inline-package-json": "2.0.0",
+    "babel-plugin-minify-dead-code-elimination": "0.5.1",
+    "babel-plugin-transform-inline-environment-variables": "0.4.3",
+    "browserify": "^17.0.0",
+    "codecov": "^3.8.3",
+    "core-js": "^3.20.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-flowtype": "^8.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "express": "^4.17.2",
+    "glob": "^7.2.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "8.0.0",
+    "gulp-derequire": "3.0.0",
+    "gulp-insert": "0.5.0",
+    "gulp-rename": "2.0.0",
+    "gulp-terser": "^2.1.0",
+    "gulp-watch": "^5.0.1",
+    "husky": "^7.0.4",
+    "jasmine": "^4.0.2",
+    "jasmine-reporters": "^2.5.0",
+    "jest": "^27.4.5",
+    "jest-environment-jsdom": "^27.4.4",
+    "lint-staged": "^12.1.2",
+    "merge-stream": "^2.0.0",
+    "metro-react-native-babel-preset": "0.66.2",
+    "openapi-typescript": "^4.5.0",
+    "parse-server": "git+https://git@github.com/parse-community/parse-server.git#alpha",
+    "prettier": "^2.5.1",
+    "regenerator-runtime": "^0.13.9",
+    "semantic-release": "^18.0.1",
+    "vinyl-source-stream": "2.0.0"
+  },
+  "optionalDependencies": {
+    "crypto-js": "4.1.1"
+  },
+  "scripts": {
+    "install:clean": "npm ci",
+    "build": "node scripts/build_releases.js",
+    "release": "npm publish",
+    "test": "cross-env PARSE_BUILD=node NODE_ENV=test jest",
+    "test:ci": "cross-env PARSE_BUILD=node NODE_ENV=test jest",
+    "lint": "eslint --cache src/ integration/",
+    "lint:ci": "eslint --output-file eslint_report.json --format json src/ integration/",
+    "lint:fix": "eslint --fix --cache src/ integration/",
+    "watch": "cross-env PARSE_BUILD=${PARSE_BUILD} gulp watch",
+    "watch:browser": "cross-env PARSE_BUILD=browser npm run watch",
+    "watch:node": "cross-env PARSE_BUILD=node npm run watch",
+    "watch:react-native": "cross-env PARSE_BUILD=react-native npm run watch",
+    "integration": "cross-env TESTING=1 jasmine --config=jasmine.json",
+    "gulp": "gulp",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "cross-env": "cross-env",
+    "generate-web3Api": "node scripts/genWeb3API && node scripts/generateWeb3ApiTypes",
+    "generate-solanaApi": "node scripts/genSolanaAPI && node scripts/generateSolanaApiTypes",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "{src,integration}/**/*.js": [
+      "eslint"
+    ],
+    "src/**/*.{js,ts,html,css,md,json}": [
+      "prettier --write"
+    ]
+  },
+  "jest": {
+    "automock": true,
+    "testRunner": "jest-jasmine2",
+    "testEnvironment": "jest-environment-jsdom",
+    "collectCoverage": true,
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "test_helpers/(.*).js"
+    ],
+    "roots": [
+      "src/"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/test_helpers/"
+    ],
+    "transform": {
+      ".*": "./babel-jest.js"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/",
+      "package.json"
+    ],
+    "setupFilesAfterEnv": [
+      "./setup-jest.js"
+    ]
+  }
+}

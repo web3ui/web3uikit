@@ -1,0 +1,14 @@
+{
+    "$schema": "https://unpkg.com/@changesets/config@2.1.0/schema.json",
+    "changelog": [
+        "@changesets/changelog-github",
+        { "repo": "web3ui/web3uikit" }
+    ],
+    "commit": false,
+    "fixed": [],
+    "linked": [["@web3uikit/*"]],
+    "access": "public",
+    "baseBranch": "master",
+    "updateInternalDependencies": "patch",
+    "ignore": []
+}

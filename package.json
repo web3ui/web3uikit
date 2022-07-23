@@ -1,15 +1,14 @@
 {
     "name": "web3uikit",
-    "version": "1.0.2",
-    "main": "index.js",
+    "version": "1.0.3",
     "license": "MIT",
     "repository": "https://github.com/web3ui/web3uikit",
     "homepage": "https://web3ui.github.io/web3uikit/",
-    "typings": "dist/index.d.ts",
     "workspaces": [
         "apps/*",
         "packages/*"
     ],
+    "private": "true",
     "browser": {
         "http": false,
         "https": false,
@@ -42,7 +41,9 @@
         "analyze": "nx run example:analyze",
         "icons:create": "nx run-many --target=icons:create --all --parallel",
         "new": "plop",
-        "size": "pnpm install && pnpm build && size-limit --json"
+        "size": "pnpm install && pnpm build && size-limit --json",
+        "ci:version": "changeset version",
+        "ci:publish": "changeset publish"
     },
     "dependencies": {
         "@babel/core": "^7.18.2",
@@ -53,6 +54,7 @@
         "tslib": "^2.3.0"
     },
     "devDependencies": {
+        "@changesets/cli": "^2.24.0",
         "@mdx-js/preact": "^2.1.2",
         "@mdx-js/react": "^2.1.1",
         "@nrwl/eslint-plugin-nx": "14.1.5",

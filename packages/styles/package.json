@@ -1,34 +1,33 @@
 {
-  "name": "@web3uikit/styles",
-  "version": "0.1.0",
-  "private": true,
-  "sideEffects": false,
-  "files": [
-    "package.json",
-    "dist"
-  ],
-  "main": "./dist/index.cjs.js",
-  "module": "./dist/index.es.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.es.js"
+    "name": "@web3uikit/styles",
+    "version": "0.1.1",
+    "sideEffects": false,
+    "files": [
+        "package.json",
+        "dist"
+    ],
+    "main": "./dist/index.cjs.js",
+    "module": "./dist/index.es.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "require": "./dist/index.cjs.js",
+            "import": "./dist/index.es.js"
+        }
+    },
+    "scripts": {
+        "build": "vite build"
+    },
+    "peerDependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+    },
+    "devDependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "styled-components": "^5.3.5"
+    },
+    "dependencies": {
+        "@web3uikit/config": "*"
     }
-  },
-  "scripts": {
-    "build": "vite build"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
-  },
-  "devDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "styled-components": "^5.3.5"
-  },
-  "dependencies": {
-    "@web3uikit/config": "*"
-  }
 }

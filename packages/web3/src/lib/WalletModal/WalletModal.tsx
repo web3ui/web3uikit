@@ -1,11 +1,11 @@
 import Moralis from 'moralis/types';
 import React, { FC } from 'react';
 import { useMoralis } from 'react-moralis';
-import { Button } from '@test_kit_3/core';
+import { Button } from '@test_kit_4/core';
 import connectors from './config';
 import { IWalletModalProps } from './types';
 import WalletModalStyles from './WalletModal.styles';
-import { Cross } from '@test_kit_3/icons';
+import { Cross } from '@test_kit_4/icons';
 
 const {
     GridItemStyled,

@@ -1,4 +1,4 @@
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import styled from 'styled-components';
 
 const StyledDivGallery = styled.div`

@@ -1,8 +1,8 @@
 import { Fragment, ReactNode, useEffect, useState } from 'react';
 import { ITableProps } from '.';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import getModuleAnimation from '../Card/Animations/animations';
-import { TriangleUp, TriangleDown } from '@test_kit_3/icons';
+import { TriangleUp, TriangleDown } from '@test_kit_4/icons';
 import Loading from '../Loading/Loading';
 import { Typography } from '../Typography';
 import { paginate, getInnerText } from './Helper';
@@ -199,15 +199,13 @@ const Table: React.FC<ITableProps> = ({
                                             key={`tr_${rowKey}_${colKey}`}
                                             data-key={`tr_${rowKey}_${colKey}`}
                                             role="table-item"
-                                            className={`${
-                                                colKey == 0 && 'firstCol'
-                                            } ${
-                                                colKey == rowData.length - 1 &&
-                                                'lastCol'
-                                            }`}
+                                            className={`${colKey == 0 &&
+                                                'firstCol'} ${colKey ==
+                                                rowData.length - 1 &&
+                                                'lastCol'}`}
                                             alignCellItems={alignCellItems}
                                             justifyCellItems={justifyCellItems}
-                                            onClick={(e) => {
+                                            onClick={e => {
                                                 if (
                                                     onRowClick &&
                                                     e.target === e.currentTarget
@@ -252,11 +250,10 @@ const Table: React.FC<ITableProps> = ({
                         pageNum,
                         pageSize,
                         maxPages,
-                    ).map((key) => (
+                    ).map(key => (
                         <PaginationTag
-                            data-testid={`test-table-pagination-${
-                                key - 1 == pageNum
-                            }`}
+                            data-testid={`test-table-pagination-${key - 1 ==
+                                pageNum}`}
                             active={key - 1 == pageNum}
                             key={`pagination_${key}`}
                             onClick={() => handleSetPageNumber(key - 1)}

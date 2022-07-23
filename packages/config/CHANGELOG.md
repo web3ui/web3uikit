@@ -1,4 +1,4 @@
-# @test_kit_3/config
+# @test_kit_4/config
 
 ## 0.1.1
 

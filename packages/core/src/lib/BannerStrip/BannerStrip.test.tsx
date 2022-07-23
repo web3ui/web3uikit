@@ -1,11 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './BannerStrip.stories';
-import { color, rgbToHex } from '@test_kit_3/styles';
+import { color, rgbToHex } from '@test_kit_4/styles';
 import { test, expect, describe } from 'vitest';
 
-const { Standard, StandardWithButton, Warning, Error, Success } =
-    composeStories(stories);
+const {
+    Standard,
+    StandardWithButton,
+    Warning,
+    Error,
+    Success,
+} = composeStories(stories);
 
 const testId = 'test-banner-strip';
 

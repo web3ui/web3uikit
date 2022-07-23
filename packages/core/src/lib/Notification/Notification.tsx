@@ -1,9 +1,9 @@
 import { NotificationProps, notifyType } from './types';
 import { useEffect, useState } from 'react';
 import { getNotificationColor } from './themes/themes';
-import { Checkmark, Cross, Exclamation, Info } from '@test_kit_3/icons';
+import { Checkmark, Cross, Exclamation, Info } from '@test_kit_4/icons';
 import NotificationStyles from './Notification.styles';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 
 const {
     BarStyled,
@@ -34,7 +34,7 @@ const Notification: React.FC<NotificationProps> = ({
     const startTimer = () => {
         if (isClosing) return;
         const idInt = setInterval(() => {
-            setBarWidth((prev) => {
+            setBarWidth(prev => {
                 if (prev < notificationWidth) return prev + 1;
 
                 clearInterval(idInt);

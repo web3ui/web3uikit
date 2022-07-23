@@ -1,12 +1,12 @@
 // Importing React and its awesome hooks
 import { useState, useEffect } from 'react';
-import { Checkmark, Cross } from '@test_kit_3/icons';
+import { Checkmark, Cross } from '@test_kit_4/icons';
 
 // importing elements from the kit, never add more elements, improve what we have
 import { Button } from '../Button';
 
 // importing centralized colors
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 
 // importing props from the components TypeScript interface
 import { NewCompProps } from './types';
@@ -14,8 +14,13 @@ import { NewCompProps } from './types';
 // importing CSS styles as styled components, sorted alphabetically
 import styles from './NewComp.styles';
 
-const { HeadingStyled, SectionStyled, SpanStyled, TextStyled, TitleStyled } =
-    styles;
+const {
+    HeadingStyled,
+    SectionStyled,
+    SpanStyled,
+    TextStyled,
+    TitleStyled,
+} = styles;
 
 // Normal boilerplate React functional component
 const NewComp: React.FC<NewCompProps> = ({

@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { ILoadingProps } from '.';
-import { fonts } from '@test_kit_3/styles';
+import { fonts } from '@test_kit_4/styles';
 
 const rotate = keyframes`
     from{
@@ -16,16 +16,16 @@ export const StyledSpinnerParent = styled.div<
 >`
     ${fonts.text}
     display: flex;
-    flex-direction: ${(props) =>
+    flex-direction: ${props =>
         props.direction == 'bottom' ? 'column' : 'row'};
     align-items: center;
     justify-content: center;
     max-width: fit-content;
     text-align: center;
     & > span {
-        color: ${(props) => props.spinnerColor};
+        color: ${props => props.spinnerColor};
         font-weight: 500;
-        font-size: ${(props) =>
+        font-size: ${props =>
             `${
                 props.fontSize ? props.fontSize : props.size && props.size / 2
             }px`};
@@ -37,10 +37,10 @@ export const StyledSpinnerParent = styled.div<
 export const StyledSpinnerDiv = styled.div<
     Pick<ILoadingProps, 'spinnerColor' | 'size'>
 >`
-    width: ${(props) => `${props.size}px`};
-    height: ${(props) => `${props.size}px`};
+    width: ${props => `${props.size}px`};
+    height: ${props => `${props.size}px`};
     box-sizing: border-box;
-    border: 2px solid ${(props) => props.spinnerColor};
+    border: 2px solid ${props => props.spinnerColor};
     border-bottom: transparent;
     border-right: transparent;
     border-radius: 50%;
@@ -71,7 +71,7 @@ export const DivStyledWaveLoader = styled.div<ILoadingProps>`
             animation-duration: 0.4s;
             animation-iteration-count: infinite;
             animation-name: ${waveAnim};
-            background-color: ${(props) => props.spinnerColor};
+            background-color: ${props => props.spinnerColor};
             border-radius: 50%;
             content: '';
             display: block;

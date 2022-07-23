@@ -117,26 +117,26 @@ importers:
 
   apps/example:
     specifiers:
-      '@test_kit_3/config': '*'
-      '@test_kit_3/core': '*'
-      '@test_kit_3/icons': '*'
-      '@test_kit_3/web3': '*'
+      '@test_kit_4/config': '*'
+      '@test_kit_4/core': '*'
+      '@test_kit_4/icons': '*'
+      '@test_kit_4/web3': '*'
       react: ^18.0.0
       react-dom: ^18.0.0
       react-moralis: ^1.3.5
       react-router-dom: ^6.3.0
       source-map-explorer: '*'
     dependencies:
-      '@test_kit_3/core': link:../../packages/core
-      '@test_kit_3/icons': link:../../packages/icons
-      '@test_kit_3/web3': link:../../packages/web3
+      '@test_kit_4/core': link:../../packages/core
+      '@test_kit_4/icons': link:../../packages/icons
+      '@test_kit_4/web3': link:../../packages/web3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-moralis: 1.4.0_o6v5z6xcse4cv6qevqjk2i76bi
       react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
       source-map-explorer: 2.5.2
     devDependencies:
-      '@test_kit_3/config': link:../../packages/config
+      '@test_kit_4/config': link:../../packages/config
 
   packages/config:
     specifiers:
@@ -152,17 +152,17 @@ importers:
 
   packages/core:
     specifiers:
-      '@test_kit_3/config': '*'
-      '@test_kit_3/icons': '*'
-      '@test_kit_3/styles': '*'
+      '@test_kit_4/config': '*'
+      '@test_kit_4/icons': '*'
+      '@test_kit_4/styles': '*'
       react: ^18.0.0
       react-dom: ^18.0.0
       react-router-dom: ^6.3.0
       styled-components: ^5.3.5
     dependencies:
-      '@test_kit_3/config': link:../config
-      '@test_kit_3/icons': link:../icons
-      '@test_kit_3/styles': link:../styles
+      '@test_kit_4/config': link:../config
+      '@test_kit_4/icons': link:../icons
+      '@test_kit_4/styles': link:../styles
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -171,27 +171,27 @@ importers:
 
   packages/icons:
     specifiers:
-      '@test_kit_3/config': '*'
-      '@test_kit_3/styles': '*'
+      '@test_kit_4/config': '*'
+      '@test_kit_4/styles': '*'
       react: ^18.0.0
       react-dom: ^18.0.0
       styled-components: ^5.3.5
     dependencies:
-      '@test_kit_3/config': link:../config
+      '@test_kit_4/config': link:../config
     devDependencies:
-      '@test_kit_3/styles': link:../styles
+      '@test_kit_4/styles': link:../styles
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
 
   packages/styles:
     specifiers:
-      '@test_kit_3/config': '*'
+      '@test_kit_4/config': '*'
       react: ^18.0.0
       react-dom: ^18.0.0
       styled-components: ^5.3.5
     dependencies:
-      '@test_kit_3/config': link:../config
+      '@test_kit_4/config': link:../config
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -199,10 +199,10 @@ importers:
 
   packages/web3:
     specifiers:
-      '@test_kit_3/config': latest
-      '@test_kit_3/core': latest
-      '@test_kit_3/icons': latest
-      '@test_kit_3/styles': latest
+      '@test_kit_4/config': latest
+      '@test_kit_4/core': latest
+      '@test_kit_4/icons': latest
+      '@test_kit_4/styles': latest
       '@types/react-blockies': ^1.4.1
       '@walletconnect/web3-provider': ^1.7.8
       '@web3auth/web3auth': ^1.1.0
@@ -216,10 +216,10 @@ importers:
       styled-components: ^5.3.5
       wp5-cra-polyfill: github:oscario2/wp5-cra-polyfill#91431fa
     dependencies:
-      '@test_kit_3/config': link:../config
-      '@test_kit_3/core': link:../core
-      '@test_kit_3/icons': link:../icons
-      '@test_kit_3/styles': link:../styles
+      '@test_kit_4/config': link:../config
+      '@test_kit_4/core': link:../core
+      '@test_kit_4/icons': link:../icons
+      '@test_kit_4/styles': link:../styles
       '@walletconnect/web3-provider': 1.7.8_@babel+core@7.18.5
       '@web3auth/web3auth': 1.1.1_6q6l43ixbnrc7bgejtmqcq6qmi
       moralis: 1.9.0

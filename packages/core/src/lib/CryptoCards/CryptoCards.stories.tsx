@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Cog } from '@test_kit_3/icons';
+import { Cog } from '@test_kit_4/icons';
 import CryptoCards from '../CryptoCards/CryptoCards';
 
 export default {
@@ -8,7 +8,7 @@ export default {
     argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof CryptoCards>;
 
-const Template: ComponentStory<typeof CryptoCards> = (args) => (
+const Template: ComponentStory<typeof CryptoCards> = args => (
     <CryptoCards {...args} />
 );
 

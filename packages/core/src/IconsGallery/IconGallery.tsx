@@ -1,9 +1,9 @@
 import { Input, useCopyToClipboard, useNotification } from '../lib/index';
-import * as Icons from '@test_kit_3/icons';
+import * as Icons from '@test_kit_4/icons';
 import { IPosition, notifyType } from '../lib/Notification/types';
 import { useState } from 'react';
 import * as styles from './IconGallery.styles';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 const { StyledDivGallery, StyledDivGrid, StyledDivIcon } = styles;
 
 const IconsGallery = () => {
@@ -27,7 +27,7 @@ const IconsGallery = () => {
         icon?: React.ReactElement,
         position?: IPosition,
     ) => {
-        const text = `import {${message}} from \'@test_kit_3/icons\'\n<${message} fontSize='50px'/>`;
+        const text = `import {${message}} from \'@test_kit_4/icons\'\n<${message} fontSize='50px'/>`;
         copy(text);
         dispatch({
             type,
@@ -41,7 +41,7 @@ const IconsGallery = () => {
         <StyledDivGallery>
             <Input
                 value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
+                onChange={e => setSearchText(e.target.value)}
                 type="text"
                 prefixIcon={<Icons.Search />}
                 style={{ margin: '50px' }}

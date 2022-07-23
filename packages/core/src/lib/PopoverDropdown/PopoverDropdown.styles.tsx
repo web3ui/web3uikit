@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { resetCSS } from '@test_kit_3/styles';
+import { resetCSS } from '@test_kit_4/styles';
 import { IPopoverDropdownProps } from './types';
 
 type TStyleProps = Pick<
@@ -108,14 +108,14 @@ const setPosition = (position: string, moveBody?: number) => {
 
 const ListStyled = styled.ul<TStyleProps>`
     ${resetCSS};
-    background-color: ${(p) => `${p.backgroundColor}`};
+    background-color: ${p => `${p.backgroundColor}`};
     border-radius: ${size};
     display: none;
     list-style: none;
-    min-width: ${(p) => `${p.width}`};
+    min-width: ${p => `${p.width}`};
     padding: 8px;
     position: absolute;
-    ${(p) => p.position && setPosition(p.position, p.moveBody)};
+    ${p => p.position && setPosition(p.position, p.moveBody)};
 
     &:hover {
         display: block;
@@ -140,7 +140,7 @@ const ListStyled = styled.ul<TStyleProps>`
 
     &:after {
         // the tail of the popover box
-        background-color: ${(p) => `${p.backgroundColor}`};
+        background-color: ${p => `${p.backgroundColor}`};
         content: '';
         display: block;
         height: ${size};

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { color } from '@test_kit_3/styles';
-import { TriangleDown, TriangleUp } from '@test_kit_3/icons';
+import { color } from '@test_kit_4/styles';
+import { TriangleDown, TriangleUp } from '@test_kit_4/icons';
 import { Illustration } from '../Illustrations';
 import SelectStyles from './Select.styles';
 import type { OptionProps, SelectProps } from './types';

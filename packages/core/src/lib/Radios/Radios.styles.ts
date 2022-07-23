@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { RadiosProps } from '.';
-import { color, fonts, resetCSS } from '@test_kit_3/styles';
+import { color, fonts, resetCSS } from '@test_kit_4/styles';
 import { TRadioLayouts } from './types';
 
 type TStyleProps = Pick<TRadioLayouts, 'isCreditCardMode'>;
@@ -24,14 +24,14 @@ const LegendStyled = styled.legend`
 `;
 
 const DivStyled = styled.div<Pick<RadiosProps, 'disabled'>>`
-    opacity: ${(props) => props.disabled && 0.5};
+    opacity: ${props => props.disabled && 0.5};
     position: relative;
 `;
 
 const DivWrapperStyled = styled.div<Pick<RadiosProps, 'isRow'>>`
     align-items: ${({ isRow }) => (isRow ? 'center' : 'flex-start')};
-    flex-direction: ${(p) => (p.isRow ? 'row' : 'column')};
-    gap: ${(p) => p.isRow && '12px'};
+    flex-direction: ${p => (p.isRow ? 'row' : 'column')};
+    gap: ${p => p.isRow && '12px'};
     display: flex;
     flex-wrap: wrap;
 `;
@@ -40,7 +40,7 @@ const LabelStyled = styled.label<TStyleProps>`
     ${resetCSS};
     /* ${fonts.heading} */
     ${fonts.text}
-    padding-left: ${(p) => (p.isCreditCardMode ? '0' : '28px')};
+    padding-left: ${p => (p.isCreditCardMode ? '0' : '28px')};
     align-content: center;
     color: ${color.greyDark};
     display: flex;
@@ -50,8 +50,8 @@ const LabelStyled = styled.label<TStyleProps>`
     width: fit-content;
 
     &:before {
-        left: ${(p) => (p.isCreditCardMode ? '20px' : '0')};
-        top: ${(p) => (p.isCreditCardMode ? '20px' : '0')};
+        left: ${p => (p.isCreditCardMode ? '20px' : '0')};
+        top: ${p => (p.isCreditCardMode ? '20px' : '0')};
         background-color: ${color.blueLight};
         border-radius: 50%;
         border: 1px solid ${color.blueSky};
@@ -64,8 +64,8 @@ const LabelStyled = styled.label<TStyleProps>`
     }
 
     &:after {
-        left: ${(p) => (p.isCreditCardMode ? '26px' : '6px')};
-        top: ${(p) => (p.isCreditCardMode ? '26px' : '6px')};
+        left: ${p => (p.isCreditCardMode ? '26px' : '6px')};
+        top: ${p => (p.isCreditCardMode ? '26px' : '6px')};
         background-color: ${color.white};
         border-radius: 50%;
         content: '';

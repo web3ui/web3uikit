@@ -1,4 +1,4 @@
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import { Skeleton } from '../Skeleton';
 import { Typography } from '../Typography';
 import { IWidgetProps } from './types';

@@ -5,7 +5,7 @@ import { composeStories } from '@storybook/testing-react';
 import * as stories from './Input.stories';
 import { test, expect, describe, vi } from 'vitest';
 
-import { color, rgbToHex } from '@test_kit_3/styles';
+import { color, rgbToHex } from '@test_kit_4/styles';
 
 import Input from './Input';
 
@@ -48,7 +48,7 @@ test("should conditionally render 'empty / filled' className", () => {
 });
 
 test('onChange event is returned, testEvent => event.target', () => {
-    render(<Input onChange={(e) => testEvent(e.target)} />);
+    render(<Input onChange={e => testEvent(e.target)} />);
     const div: HTMLDivElement = screen.getByTestId(testDivId);
     const input: HTMLInputElement = screen.getByTestId(testInputId);
 
@@ -63,7 +63,7 @@ test('onChange event is returned, testEvent => event.target', () => {
 });
 
 test('onBlur event is returned, testEvent => event.target', () => {
-    render(<Input onBlur={(e) => testEvent(e.target)} />);
+    render(<Input onBlur={e => testEvent(e.target)} />);
     const div: HTMLDivElement = screen.getByTestId(testDivId);
     const input: HTMLInputElement = screen.getByTestId(testInputId);
 

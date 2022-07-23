@@ -17,7 +17,7 @@ import chest from './images/various/chest';
 import cronos from './images/chains/cronos';
 import bundle from './images/various/bundle';
 import styled from 'styled-components';
-import { resetCSS } from '@test_kit_3/styles';
+import { resetCSS } from '@test_kit_4/styles';
 
 const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     switch (logo) {
@@ -66,9 +66,9 @@ const StyledIllustration = styled.div<
     ${resetCSS}
     align-items: center;
     display: flex;
-    height: ${(props) => props.height};
+    height: ${props => props.height};
     justify-content: center;
-    width: ${(props) => props.width};
+    width: ${props => props.width};
 `;
 
 const Illustration: React.FC<IllustrationProps> = ({

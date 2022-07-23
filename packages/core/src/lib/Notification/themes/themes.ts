@@ -1,5 +1,5 @@
 import { css, keyframes } from 'styled-components';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import { IPosition, notifyType } from '../types';
 
 const error = css`

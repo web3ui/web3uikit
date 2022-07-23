@@ -2,14 +2,14 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Hero from './Hero';
 import { Button } from '../Button';
 import { ImageStyled } from './Hero.styles';
-import { ArrowCircleRight } from '@test_kit_3/icons';
+import { ArrowCircleRight } from '@test_kit_4/icons';
 
 export default {
     title: '4.UI/Hero',
     component: Hero,
 } as ComponentMeta<typeof Hero>;
 
-const Template: ComponentStory<typeof Hero> = (args) => <Hero {...args} />;
+const Template: ComponentStory<typeof Hero> = args => <Hero {...args} />;
 
 export const Demo = Template.bind({});
 Demo.args = {
@@ -78,7 +78,8 @@ GradientHero.args = {
         />
     ),
     customImage: {
-        url: 'https://images.pexels.com/photos/9901406/pexels-photo-9901406.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
+        url:
+            'https://images.pexels.com/photos/9901406/pexels-photo-9901406.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
         styles: {
             width: '126.85px',
             height: '176.61px',
@@ -91,7 +92,8 @@ GradientHero.args = {
 
 export const DemoCustomImageAsChild = Template.bind({});
 DemoCustomImageAsChild.args = {
-    title: 'It is better to pass images to a Hero component this way. As a child component, styled as you wish.',
+    title:
+        'It is better to pass images to a Hero component this way. As a child component, styled as you wish.',
     height: '176px',
     rounded: '20px',
     align: 'left',

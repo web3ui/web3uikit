@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { resetCSS } from '@test_kit_3/styles';
+import { resetCSS } from '@test_kit_4/styles';
 import { ENSAvatarProps } from './types';
 
 const AvatarImg = styled.img<Pick<ENSAvatarProps, 'size'>>`

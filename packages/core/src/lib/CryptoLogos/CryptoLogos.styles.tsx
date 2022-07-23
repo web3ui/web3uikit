@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { resetCSS } from '@test_kit_3/styles';
+import { resetCSS } from '@test_kit_4/styles';
 import type { chainType, CryptoLogoProps, sizeType } from './types';
 import bgConfig from './bgConfig';
 

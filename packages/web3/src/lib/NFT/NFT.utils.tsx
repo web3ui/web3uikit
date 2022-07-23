@@ -1,5 +1,5 @@
 import React from 'react';
-import { Illustration } from '@test_kit_3/core';
+import { Illustration } from '@test_kit_4/core';
 
 const baseUrl = 'https://ipfs.io/ipfs/';
 

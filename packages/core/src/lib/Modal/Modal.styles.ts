@@ -1,7 +1,7 @@
 import { ModalProps } from './types';
 import styled from 'styled-components';
 
-import { color, fonts, HexToRgb } from '@test_kit_3/styles';
+import { color, fonts, HexToRgb } from '@test_kit_4/styles';
 type TStyleProps = Pick<
     ModalProps,
     | 'canOverflow'
@@ -24,13 +24,13 @@ const overflow = (): string => {
 };
 
 const DivStyledWrap = styled.div<TStyleProps>`
-    ${(p) => !p.canOverflow && overflow()}
+    ${p => !p.canOverflow && overflow()}
     ${fonts.text};
     background-color: ${color.white};
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     margin: 80px auto;
-    max-width: ${(p) => p.width};
+    max-width: ${p => p.width};
     width: 96%;
 `;
 
@@ -39,8 +39,8 @@ const HeaderStyled = styled.header<{
     fixedMode: boolean;
     headerHasBottomBorder: boolean;
 }>`
-    ${(p) => p.fixedMode && 'position: sticky; top: 0;background-color: white;'}
-    ${(p) =>
+    ${p => p.fixedMode && 'position: sticky; top: 0;background-color: white;'}
+    ${p =>
         typeof p.title === 'string' &&
         `h3 {
         color: ${color.blue};
@@ -51,8 +51,8 @@ const HeaderStyled = styled.header<{
     align-items: center;
     display: flex;
     padding: 24px 32px 20px;
-    justify-content: ${(p) => (p.title ? 'space-between' : 'flex-end')};
-    border-bottom: ${(p) =>
+    justify-content: ${p => (p.title ? 'space-between' : 'flex-end')};
+    border-bottom: ${p =>
         p.headerHasBottomBorder ? `1px solid ${color.paleBlue2}` : undefined};
 
     div {
@@ -75,13 +75,12 @@ const DivStyledContent = styled.div`
 `;
 
 const FooterStyled = styled.footer<TStyleProps>`
-    ${(p) =>
-        p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
+    ${p => p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
     border-top: 1px solid ${color.paleBlue2};
     display: flex;
     flex-wrap: wrap;
     padding: 24px 32px 32px;
-    justify-content: ${(p) => (p.hasCancel ? 'space-between' : 'flex-end')};
+    justify-content: ${p => (p.hasCancel ? 'space-between' : 'flex-end')};
 
     button {
         margin: 3px 0;
@@ -111,8 +110,7 @@ const DivStyled = styled.div<TStyleProps>`
 `;
 
 const CustomFooterStyled = styled.footer<TStyleProps>`
-    ${(p) =>
-        p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
+    ${p => p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
     border-top: 1px solid ${color.paleBlue2};
     display: flex;
     padding: 0px 32px 32px;

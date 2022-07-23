@@ -1,12 +1,16 @@
 import styled from 'styled-components';
-import { color, getShade, resetCSS, fonts } from '@test_kit_3/styles';
+import { color, getShade, resetCSS, fonts } from '@test_kit_4/styles';
 import iconStyles from './styles/ButtonBaseIcon.styles';
 import sizeStyles from './styles/ButtonBaseSize.styles';
 import PropDisplayStyles from './styles/ButtonBaseTest.styles';
 import { ButtonProps } from '../types';
 
-const { getIconColor, getIconLayoutStyles, largeIconResize, smallIconResize } =
-    iconStyles;
+const {
+    getIconColor,
+    getIconLayoutStyles,
+    largeIconResize,
+    smallIconResize,
+} = iconStyles;
 const { getSizeStyles } = sizeStyles;
 const { linkStyles, textStyles, transparentStyles } = PropDisplayStyles;
 
@@ -26,7 +30,7 @@ const BaseButtonStyled = styled.button<ButtonProps>`
     position: relative;
     text-align: center;
     transition: all 0.2s ease;
-    width: ${(p) => (p.isFullWidth ? '100%' : 'fit-content')};
+    width: ${p => (p.isFullWidth ? '100%' : 'fit-content')};
 
     :hover {
         background-color: ${getShade('light', 10)};

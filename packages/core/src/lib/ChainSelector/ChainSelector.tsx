@@ -4,7 +4,7 @@ import { CryptoLogos } from '../CryptoLogos';
 import { Loading } from '../Loading';
 import { Typography } from '../Typography';
 import ChainSelectStyles, { getChainLogoName } from './ChainSelector.styles';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import { FC, useMemo } from 'react';
 
 const { GridStyled, CardContentStyled, GridElementStyled } = ChainSelectStyles;
@@ -18,14 +18,14 @@ const ChainSelector: FC<IChainSelectorProps> = ({
     ...props
 }) => {
     const getChainNameById = (chainId: string) =>
-        providers.find((provider) => provider.chainId === chainId)?.chain;
+        providers.find(provider => provider.chainId === chainId)?.chain;
 
     const isAllSelected = useMemo(() => {
         let availableChains: (string | undefined)[] = [];
         if (!isCompatibilityChecked) {
-            availableChains = providers.map((o) => getChainNameById(o.chainId));
+            availableChains = providers.map(o => getChainNameById(o.chainId));
         } else {
-            providers.forEach((provider) => {
+            providers.forEach(provider => {
                 if (
                     isCompatibilityChecked &&
                     availableChains.includes(provider.chain)
@@ -34,25 +34,25 @@ const ChainSelector: FC<IChainSelectorProps> = ({
                 } else availableChains.push(provider.chain);
             });
         }
-        const selectedChains = values.map((o) => getChainNameById(o.chainId));
-        return availableChains.every((elem) => selectedChains.includes(elem));
+        const selectedChains = values.map(o => getChainNameById(o.chainId));
+        return availableChains.every(elem => selectedChains.includes(elem));
     }, [providers, values, isCompatibilityChecked]);
 
     const checkIncompatibleChains = (providerOption: OptionType) => {
         if (!isCompatibilityChecked) return;
         return !!providers
             .filter(
-                (o) =>
-                    values.map((x) => x.chainId).includes(o.chainId) &&
+                o =>
+                    values.map(x => x.chainId).includes(o.chainId) &&
                     o.chainId !== providerOption.chainId,
             )
-            .some((c) => c.chain === providerOption.chain);
+            .some(c => c.chain === providerOption.chain);
     };
 
     const toggleEvm = (chain: string) => {
-        if (values.map((x) => x.chainId).includes(chain)) {
+        if (values.map(x => x.chainId).includes(chain)) {
             // toggling same element
-            const newArray = values.filter((e) => e.chainId !== chain);
+            const newArray = values.filter(e => e.chainId !== chain);
             setValue(newArray);
         } else if (IsMultipleAllowed) {
             // adding if multiple elements are allowed
@@ -85,7 +85,7 @@ const ChainSelector: FC<IChainSelectorProps> = ({
                 maxRecordsPerCategory: number;
             }[] = [];
             const addedChains: (string | undefined)[] = [];
-            providers.forEach((provider) => {
+            providers.forEach(provider => {
                 if (
                     isCompatibilityChecked &&
                     addedChains.includes(provider.chain)
@@ -106,7 +106,7 @@ const ChainSelector: FC<IChainSelectorProps> = ({
         <div data-testid="test-chain-selector" {...props}>
             {providers?.length > 0 ? (
                 <GridStyled>
-                    {providers.map((option) => (
+                    {providers.map(option => (
                         <GridElementStyled
                             key={`crypto_card-${option.chainId}`}
                         >
@@ -115,7 +115,7 @@ const ChainSelector: FC<IChainSelectorProps> = ({
                                 description={option.name}
                                 onClick={() => toggleEvm(option.chainId)}
                                 isSelected={values
-                                    .map((x) => x.chainId)
+                                    .map(x => x.chainId)
                                     .includes(option.chainId)}
                                 isDisabled={checkIncompatibleChains(option)}
                             >

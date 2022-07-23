@@ -24,19 +24,19 @@ If you need help with setting up the boilerplate or have other questions - don't
 ### 💿 Installation
 
 ```bash
-npm install @test_kit_3/icons
+npm install @test_kit_4/icons
 ```
 
 or
 
 ```bash
-yarn add @test_kit_3/icons
+yarn add @test_kit_4/icons
 ```
 
 ### 🧰 Usage
 
 ```jsx
-import { Metamask } from '@test_kit_3/icons';
+import { Metamask } from '@test_kit_4/icons';
 
 const App = () => (
     <>

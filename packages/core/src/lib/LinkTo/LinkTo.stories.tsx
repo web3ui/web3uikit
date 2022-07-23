@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import LinkTo from './LinkTo';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
 export default {
@@ -15,8 +15,8 @@ export default {
     },
 } as ComponentMeta<typeof LinkTo>;
 
-const Template: ComponentStory<typeof LinkTo> = (args) => <LinkTo {...args} />;
-const TemplateText: ComponentStory<typeof LinkTo> = (args) => (
+const Template: ComponentStory<typeof LinkTo> = args => <LinkTo {...args} />;
+const TemplateText: ComponentStory<typeof LinkTo> = args => (
     <div
         style={{
             color: color.grey,
@@ -115,7 +115,7 @@ NoIconLink.args = {
 
 export const InternalLink: ComponentStory<typeof LinkTo> = Template.bind({});
 InternalLink.decorators = [
-    (Story) => (
+    Story => (
         <MemoryRouter>
             <Routes>
                 <Route path="/" element={<Story />} />

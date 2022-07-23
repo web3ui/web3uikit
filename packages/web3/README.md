@@ -24,13 +24,13 @@ If you need help with setting up the boilerplate or have other questions - don't
 ### 💿 Installation
 
 ```bash
-npm install @test_kit_3/web3
+npm install @test_kit_4/web3
 ```
 
 or
 
 ```bash
-yarn add @test_kit_3/web3
+yarn add @test_kit_4/web3
 ```
 
 ### 🧰 Usage
@@ -38,7 +38,7 @@ yarn add @test_kit_3/web3
 Follow [moralis docs](https://docs.moralis.io/moralis-dapp/connect-the-sdk/connect-with-react) to start your server and connect to SDK. This required to use components in this package.
 
 ```jsx
-import { NFT } from '@test_kit_3/web3';
+import { NFT } from '@test_kit_4/web3';
 
 const App = () => (
     <>

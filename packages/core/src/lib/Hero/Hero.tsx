@@ -1,5 +1,5 @@
 import { Typography } from '../Typography';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import { SectionStyled, DivStyled } from './Hero.styles';
 import { HeroProps } from './types';
 

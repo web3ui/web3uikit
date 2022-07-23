@@ -1,6 +1,6 @@
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import { CardProps } from './types';
-import { Checkmark, HelpCircle } from '@test_kit_3/icons';
+import { Checkmark, HelpCircle } from '@test_kit_4/icons';
 import { Tooltip } from '../Tooltip';
 import styles from './Card.styles';
 import { Typography } from '../Typography';

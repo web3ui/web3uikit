@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Button, Typography } from '@test_kit_3/core';
+import { Button, Typography } from '@test_kit_4/core';
 import NFTStyles from './NFT.styles';
 import NFTUtils from './NFT.utils';
 import { TNFTMetadata } from './types';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import NFTModal from './NFT.modal';
-import { Info } from '@test_kit_3/icons';
+import { Info } from '@test_kit_4/icons';
 
 const { DivStyled } = NFTStyles;
 const { image } = NFTUtils;

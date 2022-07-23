@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import TabList from './TabsList';
-import { MessageCircle, Bell, List, Grid, Plus } from '@test_kit_3/icons';
+import { MessageCircle, Bell, List, Grid, Plus } from '@test_kit_4/icons';
 import Button from '../Button/Button';
 import { Tab } from '.';
 
@@ -12,7 +12,7 @@ export default {
 
 <List fill="black" fontSize={16} />;
 
-export const TabBar: ComponentStory<typeof TabList> = (args) => (
+export const TabBar: ComponentStory<typeof TabList> = args => (
     <TabList {...args}>
         <Tab
             tabName={
@@ -58,7 +58,7 @@ TabBar.args = {
     isVertical: false,
 };
 
-export const VerticalTabBar: ComponentStory<typeof TabList> = (args) => (
+export const VerticalTabBar: ComponentStory<typeof TabList> = args => (
     <TabList {...args}>
         <TabList.Tab tabName="Card 1" tabKey={1}>
             <div>This is Card 1</div>
@@ -77,7 +77,7 @@ VerticalTabBar.args = {
     isVertical: true,
 };
 
-export const Bulb: ComponentStory<typeof TabList> = (args) => (
+export const Bulb: ComponentStory<typeof TabList> = args => (
     <TabList {...args}>
         <TabList.Tab tabName="Card 1" tabKey={1}>
             <div>This is Card 1</div>
@@ -95,7 +95,7 @@ Bulb.args = {
     tabStyle: 'bulbUnion',
 };
 
-export const BulbWithIcon: ComponentStory<typeof TabList> = (args) => (
+export const BulbWithIcon: ComponentStory<typeof TabList> = args => (
     <TabList {...args}>
         <TabList.Tab
             tabName={<Grid fill="black" fontSize={16} />}
@@ -118,7 +118,7 @@ BulbWithIcon.args = {
     tabStyle: 'bulbUnion',
 };
 
-export const VerticalBulbs: ComponentStory<typeof TabList> = (args) => (
+export const VerticalBulbs: ComponentStory<typeof TabList> = args => (
     <TabList {...args}>
         <TabList.Tab
             tabName={<Grid fill="black" fontSize={16} />}
@@ -142,7 +142,7 @@ VerticalBulbs.args = {
     isVertical: true,
 };
 
-export const Separated: ComponentStory<typeof TabList> = (args) => (
+export const Separated: ComponentStory<typeof TabList> = args => (
     <TabList {...args}>
         <TabList.Tab tabName="Card 1" tabKey={1}>
             <div>This is Card 1</div>
@@ -160,7 +160,7 @@ Separated.args = {
     tabStyle: 'bulbSeperate',
 };
 
-export const Disabled: ComponentStory<typeof TabList> = (args) => (
+export const Disabled: ComponentStory<typeof TabList> = args => (
     <TabList {...args}>
         <TabList.Tab tabName="Card 1" tabKey={1}>
             <div>This is Card 1</div>
@@ -177,7 +177,7 @@ Disabled.args = {
     tabStyle: 'bulbUnion',
 };
 
-export const BulbCustomHeightWidth: ComponentStory<typeof TabList> = (args) => (
+export const BulbCustomHeightWidth: ComponentStory<typeof TabList> = args => (
     <TabList {...args}>
         <TabList.Tab tabName="Card 1" tabKey={1} lineHeight={30}>
             <div>This is Card 1</div>
@@ -195,7 +195,7 @@ BulbCustomHeightWidth.args = {
     isWidthAuto: true,
 };
 
-export const BulbOverflow: ComponentStory<typeof TabList> = (args) => (
+export const BulbOverflow: ComponentStory<typeof TabList> = args => (
     <TabList {...args}>
         <TabList.Tab tabName="Card 1" tabKey={1}>
             <div>This is Card 1</div>

@@ -4,11 +4,12 @@ import '@testing-library/jest-dom';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { test, expect, describe } from 'vitest';
 
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import * as stories from './CodeArea.stories';
 
-const { MultipleLines, OneLine, WithHeader, MaxHeight } =
-    composeStories(stories);
+const { MultipleLines, OneLine, WithHeader, MaxHeight } = composeStories(
+    stories,
+);
 
 const testHeaderId = 'test-codearea-header';
 const testLineNumbers = 'test-codearea-linenumbers';

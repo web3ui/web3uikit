@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 
 const coloredGreen = css`
     background: ${color.greenForestLight};

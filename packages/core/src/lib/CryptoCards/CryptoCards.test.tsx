@@ -1,13 +1,19 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './CryptoCards.stories';
-import { color, rgbToHex } from '@test_kit_3/styles';
+import { color, rgbToHex } from '@test_kit_4/styles';
 
 import '@testing-library/jest-dom/extend-expect';
 import { test, expect, describe, vi } from 'vitest';
 
-const { Ethereum, Binance, Polygon, Avalanche, Fantom, Arbitrum } =
-    composeStories(stories);
+const {
+    Ethereum,
+    Binance,
+    Polygon,
+    Avalanche,
+    Fantom,
+    Arbitrum,
+} = composeStories(stories);
 
 const testClickEvent = vi.fn();
 const cryptoCardId = 'test-crypto-card';

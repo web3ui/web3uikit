@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import Illustration from './Illustration';
 
 export default {
@@ -7,13 +7,11 @@ export default {
     component: Illustration,
 } as ComponentMeta<typeof Illustration>;
 
-const Template: ComponentStory<typeof Illustration> = (args) => (
+const Template: ComponentStory<typeof Illustration> = args => (
     <Illustration {...args} />
 );
 
-const BackgroundColoredTemplate: ComponentStory<typeof Illustration> = (
-    args,
-) => (
+const BackgroundColoredTemplate: ComponentStory<typeof Illustration> = args => (
     <div
         style={{
             width: '90vw',

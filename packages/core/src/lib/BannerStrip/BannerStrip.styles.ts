@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, fonts } from '@test_kit_3/styles';
+import { color, fonts } from '@test_kit_4/styles';
 import { BannerStripProps } from './types';
 
 const getBackgroundColor = (type: string) => {
@@ -29,7 +29,7 @@ const SectionStyled = styled.section<Pick<BannerStripProps, 'type' | 'height'>>`
     top: 0;
     width: 100vw;
     z-index: 10001;
-    background-color: ${(p) => p.type && getBackgroundColor(p.type)};
+    background-color: ${p => p.type && getBackgroundColor(p.type)};
     height: ${({ height }) => height};
 
     button {

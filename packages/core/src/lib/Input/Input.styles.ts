@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color, fonts, resetCSS, resetButtonCSS } from '@test_kit_3/styles';
+import { color, fonts, resetCSS, resetButtonCSS } from '@test_kit_4/styles';
 import { InputProps, LabelProps } from './types';
 
 const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
@@ -26,11 +26,11 @@ const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
     }};
 
     & > * > * > * {
-        ${(p) => p.state === 'disabled' && ` fill: ${color.greyDisabled};`};
+        ${p => p.state === 'disabled' && ` fill: ${color.greyDisabled};`};
     }
 
     &:hover {
-        outline-color: ${(p) => p.state !== 'disabled' && color.blue};
+        outline-color: ${p => p.state !== 'disabled' && color.blue};
 
         strong {
             overflow: visible;
@@ -40,7 +40,7 @@ const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
     }
 
     &:hover > .input_prefixIcon > svg {
-        fill: ${(p) => !p?.state && color.blue};
+        fill: ${p => !p?.state && color.blue};
     }
 
     input {
@@ -61,11 +61,13 @@ const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
     }
 
     &:hover {
-        ${(p) => p.state === 'error' && `outline-color: ${color.red};`}
-        ${(p) => p.state === 'confirmed' && `outline-color: ${color.green};`}
+        ${p => p.state === 'error' && `outline-color: ${color.red};`}
+        ${p =>
+            p.state === 'confirmed' &&
+            `outline-color: ${color.green};`}
 
         label {
-            ${(p) => !p?.state && `color: ${color.blue};`}
+            ${p => !p?.state && `color: ${color.blue};`}
         }
     }
 
@@ -81,11 +83,11 @@ const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
 
         label {
             font-weight: 600;
-            ${(p) => !p?.state && `color: ${color.blue};`}
+            ${p => !p?.state && `color: ${color.blue};`}
         }
 
-        ${(p) => p.state === 'error' && `outline-color: ${color.red};`}
-        ${(p) => p.state === 'confirmed' && `outline-color: ${color.green};`}
+        ${p => p.state === 'error' && `outline-color: ${color.red};`}
+        ${p => p.state === 'confirmed' && `outline-color: ${color.green};`}
     }
 
     ${({ size }) => {
@@ -130,7 +132,7 @@ const InputStyled = styled.input<Pick<InputProps, 'customInput'>>`
     overflow: hidden;
     transition: all 0.1s ease-out;
     width: 100%;
-    ${(p) => p.customInput && 'width: 0px; height:0px;'}
+    ${p => p.customInput && 'width: 0px; height:0px;'}
 
     &:focus,
     &:placeholder-shown,
@@ -223,7 +225,7 @@ const StrongStyled = styled.strong<IStrongStyledProps>`
     ${resetCSS}
     ${fonts.text}
     bottom: -23px;
-    color: ${(props) => (props.isError ? color.red : color.grey)};
+    color: ${props => (props.isError ? color.red : color.grey)};
     font-size: 12px;
     height: 24px;
     left: 16px;

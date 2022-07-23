@@ -2,7 +2,7 @@ import { Button } from '../Button';
 import Illustration from '../Illustrations/Illustration';
 import { CryptoCardProps } from './types';
 import styles from './CryptoCards.styles';
-import { Cog } from '@test_kit_3/icons';
+import { Cog } from '@test_kit_4/icons';
 
 const {
     DivStyledCryptoCard,

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import { Typography } from '../../Typography';
 import { ICredentialsHeaderProps } from '../types';
 

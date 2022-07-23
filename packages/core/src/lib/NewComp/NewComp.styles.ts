@@ -2,7 +2,7 @@
 import styled, { css } from 'styled-components';
 
 // importing centralized styles
-import { color, resetCSS, fonts } from '@test_kit_3/styles';
+import { color, resetCSS, fonts } from '@test_kit_4/styles';
 
 // import our types to conditionally render CSS
 import type { NewCompProps } from './types';

@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Server } from '@test_kit_3/icons';
+import { Server } from '@test_kit_4/icons';
 import { Breadcrumbs } from '.';
 import { BrowserRouter as Router } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ export default {
     component: Breadcrumbs,
 } as ComponentMeta<typeof Breadcrumbs>;
 
-const Template: ComponentStory<typeof Breadcrumbs> = (args) => (
+const Template: ComponentStory<typeof Breadcrumbs> = args => (
     <Router>
         <Breadcrumbs {...args} />
     </Router>

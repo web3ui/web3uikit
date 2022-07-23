@@ -4,13 +4,13 @@ import Notification from './Notification';
 import { Button } from '../Button';
 import NotificationProvider, { useNotification } from './NotificationProvider';
 import { IPosition, notifyType } from './types';
-import { Bell, Cloud } from '@test_kit_3/icons';
+import { Bell, Cloud } from '@test_kit_4/icons';
 
 export default {
     title: '5.Popup/Notification',
     component: Notification,
     decorators: [
-        (Story) => (
+        Story => (
             <NotificationProvider>
                 <Story />
             </NotificationProvider>
@@ -18,7 +18,7 @@ export default {
     ],
 } as ComponentMeta<typeof Notification>;
 
-const Template: ComponentStory<typeof Notification> = (args) => (
+const Template: ComponentStory<typeof Notification> = args => (
     <Notification {...args} />
 );
 

@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import Modal from './Modal';
-import { Cloud } from '@test_kit_3/icons';
-import { color } from '@test_kit_3/styles';
+import { Cloud } from '@test_kit_4/icons';
+import { color } from '@test_kit_4/styles';
 import { ModalProps } from './types';
 import { test, expect, describe, vi } from 'vitest';
 

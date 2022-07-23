@@ -1,4 +1,4 @@
-# @test_kit_3/styles
+# @test_kit_4/styles
 
 ## 0.1.1
 
@@ -6,4 +6,4 @@
 
 -   release
 -   Updated dependencies
-    -   @test_kit_3/config@0.1.1
+    -   @test_kit_4/config@0.1.1

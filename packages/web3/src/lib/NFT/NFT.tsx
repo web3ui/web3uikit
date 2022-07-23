@@ -5,9 +5,9 @@ import {
     useMoralisWeb3ApiCall,
 } from 'react-moralis';
 import styles from './NFT.styles';
-import { color } from '@test_kit_3/styles';
-import { Button, Skeleton, Typography, Tooltip } from '@test_kit_3/core';
-import { Info } from '@test_kit_3/icons';
+import { color } from '@test_kit_4/styles';
+import { Button, Skeleton, Typography, Tooltip } from '@test_kit_4/core';
+import { Info } from '@test_kit_4/icons';
 import NFTModal from './NFT.modal';
 import { INFTProps, TNFTMetadata } from './types';
 import NFTUtils from './NFT.utils';
@@ -132,16 +132,12 @@ const NFT: React.FC<INFTProps> = ({
                     {showTraits && (
                         <NFTModal
                             attributes={
-                                (
-                                    JSON.parse(
-                                        String(data.metadata),
-                                    ) as TNFTMetadata
-                                )?.traits ||
-                                (
-                                    JSON.parse(
-                                        String(data.metadata),
-                                    ) as TNFTMetadata
-                                )?.attributes
+                                (JSON.parse(
+                                    String(data.metadata),
+                                ) as TNFTMetadata)?.traits ||
+                                (JSON.parse(
+                                    String(data.metadata),
+                                ) as TNFTMetadata)?.attributes
                             }
                             setShowModal={setShowModal}
                         />

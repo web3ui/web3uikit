@@ -2,23 +2,23 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Form from './Form';
 import { validateRegExp } from '../../utils/const';
 import { Button } from '../Button';
-import { ArrowCircleLeft, ArrowCircleRight } from '@test_kit_3/icons';
+import { ArrowCircleLeft, ArrowCircleRight } from '@test_kit_4/icons';
 
 export default {
     title: '2.Forms/Form',
     component: Form,
 } as ComponentMeta<typeof Form>;
 
-const Template: ComponentStory<typeof Form> = (args) => <Form {...args} />;
+const Template: ComponentStory<typeof Form> = args => <Form {...args} />;
 
 export const DemoForm = Template.bind({});
 DemoForm.args = {
     title: 'Test form',
     buttonConfig: {
-        onClick: (e) => e.preventDefault,
+        onClick: e => e.preventDefault,
         theme: 'primary',
     },
-    onSubmit: (e) => console.log(e),
+    onSubmit: e => console.log(e),
     data: [
         {
             name: 'first name',
@@ -120,7 +120,7 @@ LoginForm.args = {
             },
         },
     ],
-    onSubmit: (e) => console.log(e),
+    onSubmit: e => console.log(e),
 };
 
 export const CreditCardForm = Template.bind({});
@@ -128,10 +128,10 @@ CreditCardForm.args = {
     title: 'Credit Card Form',
     id: 'cc-form',
     buttonConfig: {
-        onClick: (e) => e.preventDefault,
+        onClick: e => e.preventDefault,
         theme: 'primary',
     },
-    onSubmit: (e) => console.log(e),
+    onSubmit: e => console.log(e),
     data: [
         {
             name: 'creditCards',
@@ -195,10 +195,10 @@ export const BirthdayForm = Template.bind({});
 BirthdayForm.args = {
     title: 'Test form',
     buttonConfig: {
-        onClick: (e) => e.preventDefault,
+        onClick: e => e.preventDefault,
         theme: 'primary',
     },
-    onSubmit: (e) => console.log(e),
+    onSubmit: e => console.log(e),
     data: [
         {
             name: 'first name',
@@ -218,10 +218,10 @@ export const SelectForm = Template.bind({});
 SelectForm.args = {
     title: 'Select thing',
     buttonConfig: {
-        onClick: (e) => e.preventDefault,
+        onClick: e => e.preventDefault,
         theme: 'primary',
     },
-    onSubmit: (e) => console.log(e),
+    onSubmit: e => console.log(e),
     data: [
         {
             name: 'Best pie',
@@ -266,7 +266,7 @@ CustomFooter.args = {
             />
         </div>
     ),
-    onSubmit: (e) => console.log(e),
+    onSubmit: e => console.log(e),
     data: [
         {
             name: 'Best pie',
@@ -321,5 +321,5 @@ DisabledFrom.args = {
             },
         },
     ],
-    onSubmit: (e) => console.log(e),
+    onSubmit: e => console.log(e),
 };

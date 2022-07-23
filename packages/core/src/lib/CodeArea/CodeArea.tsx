@@ -3,7 +3,7 @@ import CodeAreaStyles from './CodeArea.styles';
 import { Button } from '../Button';
 import { ICodeAreaProps } from './types';
 import LineNumbers from './LineNumbers';
-import { Maximize, Minimize } from '@test_kit_3/icons';
+import { Maximize, Minimize } from '@test_kit_4/icons';
 
 const {
     ContentStyled,

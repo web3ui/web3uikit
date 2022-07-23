@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import PopoverDropdown from './PopoverDropdown';
 import PopoverElement from '../PopoverElement/PopoverElement';
 import {
@@ -10,7 +10,7 @@ import {
     Network,
     Server,
     Testnet,
-} from '@test_kit_3/icons';
+} from '@test_kit_4/icons';
 
 export default {
     title: '5.Popup/Popover Dropdown',
@@ -19,7 +19,7 @@ export default {
     argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof PopoverDropdown>;
 
-const Template: ComponentStory<typeof PopoverDropdown> = (args) => (
+const Template: ComponentStory<typeof PopoverDropdown> = args => (
     <div
         data-note="do not copy this div, its only for display purpose in Storybook"
         style={{

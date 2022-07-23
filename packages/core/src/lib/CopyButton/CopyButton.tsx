@@ -1,13 +1,13 @@
 import { FC, useState } from 'react';
-import { color } from '@test_kit_3/styles';
-import { Check, Copy } from '@test_kit_3/icons';
+import { color } from '@test_kit_4/styles';
+import { Check, Copy } from '@test_kit_4/icons';
 import { ButtonStyled } from './CopyButton.styles';
 import { CopiedValue, CopyButtonProps, CopyFn } from './types';
 
 export const useCopyToClipboard = (): [CopiedValue, CopyFn] => {
     const [copiedText, setCopiedText] = useState<CopiedValue>(null);
 
-    const copy: CopyFn = async (text) => {
+    const copy: CopyFn = async text => {
         if (!navigator?.clipboard) {
             console.warn('Clipboard not supported');
             return false;
@@ -49,7 +49,7 @@ const CopyButton: FC<CopyButtonProps> = ({
             className="input_copy"
             data-testid="test-copy-button"
             iconSize={iconSize}
-            onClick={(e) => {
+            onClick={e => {
                 onCopy(e);
                 copyToClipboard();
             }}

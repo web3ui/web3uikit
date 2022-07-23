@@ -1,60 +1,70 @@
-import { color, resetCSS, fonts } from '@test_kit_3/styles';
+import { color, resetCSS, fonts } from '@test_kit_4/styles';
 import styled from 'styled-components';
 import { TextAreaProps } from './types';
 
 type TStyleProps = Pick<TextAreaProps, 'state' | 'width'>;
 
 const TextAreaWrapper = styled.div<TStyleProps>`
-  ${resetCSS};
-  background-color: ${color.white};
-  border-radius: 16px;
-  border: 1px solid ${color.greyLight};
-  display: inline-block;
-  max-width: 100%;
-  padding: 12px;
-  position: relative;
-  transition: all 0.1s linear;
-  width: ${(p) => (p.width ? p.width : '294px')};
-
-  &:hover {
-    border-color: ${(p) => (p.state === 'disabled' ? color.greyLight : color.blue)};
-  }
-
-  &:focus {
-    border-color: ${color.blue};
-
-    + label {
-      color: ${color.blue};
-    }
-  }
-
-  ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-  ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
+    ${resetCSS};
+    background-color: ${color.white};
+    border-radius: 16px;
+    border: 1px solid ${color.greyLight};
+    display: inline-block;
+    max-width: 100%;
+    padding: 12px;
+    position: relative;
+    transition: all 0.1s linear;
+    width: ${p => (p.width ? p.width : '294px')};
 
     &:hover {
-    ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-    ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
+        border-color: ${p =>
+            p.state === 'disabled' ? color.greyLight : color.blue};
+    }
+
+    &:focus {
+        border-color: ${color.blue};
+
+        + label {
+            color: ${color.blue};
+        }
+    }
+
+    ${p => p.state === 'error' && `border-color: ${color.red};`}
+    ${p =>
+        p.state === 'confirmed' && `border-color: ${color.green};`}
+
+    &:hover {
+        ${p => p.state === 'error' && `border-color: ${color.red};`}
+        ${p =>
+            p.state === 'confirmed' &&
+            `border-color: ${color.green};`}
 
         label {
-      ${(p) => p.state !== 'error' && p.state !== 'confirmed' && p.state !== 'disabled' && `color: ${color.blue};`}
+            ${p =>
+                p.state !== 'error' &&
+                p.state !== 'confirmed' &&
+                p.state !== 'disabled' &&
+                `color: ${color.blue};`}
+        }
     }
-  }
 
-  &:focus {
-    ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-    ${(p) => p.state === 'confirmed' && `border-color: ${color.green};`}
+    &:focus {
+        ${p => p.state === 'error' && `border-color: ${color.red};`}
+        ${p =>
+            p.state === 'confirmed' &&
+            `border-color: ${color.green};`}
         & + label {
-      ${(p) => p.state === 'error' && `color: ${color.red};`}
-      ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
+            ${p => p.state === 'error' && `color: ${color.red};`}
+            ${p => p.state === 'confirmed' && `color: ${color.green};`}
+        }
     }
-  }
 
-  textarea {
-    & + label {
-      ${(p) => p.state === 'error' && `color: ${color.red};`}
-      ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
+    textarea {
+        & + label {
+            ${p => p.state === 'error' && `color: ${color.red};`}
+            ${p => p.state === 'confirmed' && `color: ${color.green};`}
+        }
     }
-  }
 `;
 
 const LabelStyled = styled.label`
@@ -71,41 +81,41 @@ const LabelStyled = styled.label`
 `;
 
 const TextAreaStyled = styled.textarea<TStyleProps>`
-  ${resetCSS}
-  ${fonts.text}
+    ${resetCSS}
+    ${fonts.text}
     background-color: transparent;
-  display: block;
-  max-width: 100%;
-  min-height: 128px;
-  overflow: hidden;
-  padding: 2px;
-  width: 100%;
+    display: block;
+    max-width: 100%;
+    min-height: 128px;
+    overflow: hidden;
+    padding: 2px;
+    width: 100%;
 
-  &::placeholder {
-    opacity: 0;
-  }
-
-  &:focus,
-  .filled & {
-    + label {
-      font-size: 14px;
-      height: 18px;
-      line-height: 1;
-      padding: 2px 4px;
-      top: -10px;
-    }
-  }
-
-  &:focus {
     &::placeholder {
-      opacity: 1;
-      color: ${color.grey};
+        opacity: 0;
     }
-  }
+
+    &:focus,
+    .filled & {
+        + label {
+            font-size: 14px;
+            height: 18px;
+            line-height: 1;
+            padding: 2px 4px;
+            top: -10px;
+        }
+    }
+
+    &:focus {
+        &::placeholder {
+            opacity: 1;
+            color: ${color.grey};
+        }
+    }
 `;
 
 export default {
-  TextAreaStyled,
-  LabelStyled,
-  TextAreaWrapper
+    TextAreaStyled,
+    LabelStyled,
+    TextAreaWrapper,
 };

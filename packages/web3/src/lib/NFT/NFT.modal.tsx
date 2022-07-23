@@ -1,61 +1,68 @@
-import React from "react";
-import { Information, Modal, Typography } from "@test_kit_3/core";
-import styles from "./NFT.styles";
+import React from 'react';
+import { Information, Modal, Typography } from '@test_kit_4/core';
+import styles from './NFT.styles';
 const { DivModalStyled } = styles;
 interface INFTModal {
-  /**
-   * attributes / traits metadata
-   */
-  attributes?: Array<any>;
+    /**
+     * attributes / traits metadata
+     */
+    attributes?: Array<any>;
 
-  /**
-   * toggle modal visibility
-   */
-  setShowModal: (e: boolean) => void;
+    /**
+     * toggle modal visibility
+     */
+    setShowModal: (e: boolean) => void;
 }
 
 const NFTModal: React.FC<INFTModal> = ({ attributes, setShowModal }) => {
-  return (
-    <Modal
-      isVisible
-      hasFooter={false}
-      headerHasBottomBorder={false}
-      title={"Information"}
-      onCloseButtonPressed={() => setShowModal(false)}
-    >
-      <div>
-        <Typography variant="h3">Traits</Typography>
-        <DivModalStyled>
-          {attributes && attributes.length > 0 ? (
-            attributes.map((attribute, index) => {
-              if (typeof attribute === "string") {
-                return (
-                  <div key={`${index}-attribute`} id="widget-row">
-                    <Information
-                      topic={`#${index}`}
-                      information={String(attribute)}
-                      key={`attr-${index}`}
-                    />
-                  </div>
-                );
-              }
-              return (
-                <div key={`${index}-attribute`} id="widget-row">
-                  <Information
-                    topic={attribute.trait_type || `#${index}`}
-                    information={attribute.value || `#${index}`}
-                    key={`attr-${index}`}
-                  />
-                </div>
-              );
-            })
-          ) : (
-            <Typography>No attributes found</Typography>
-          )}
-        </DivModalStyled>
-      </div>
-    </Modal>
-  );
+    return (
+        <Modal
+            isVisible
+            hasFooter={false}
+            headerHasBottomBorder={false}
+            title={'Information'}
+            onCloseButtonPressed={() => setShowModal(false)}
+        >
+            <div>
+                <Typography variant="h3">Traits</Typography>
+                <DivModalStyled>
+                    {attributes && attributes.length > 0 ? (
+                        attributes.map((attribute, index) => {
+                            if (typeof attribute === 'string') {
+                                return (
+                                    <div
+                                        key={`${index}-attribute`}
+                                        id="widget-row"
+                                    >
+                                        <Information
+                                            topic={`#${index}`}
+                                            information={String(attribute)}
+                                            key={`attr-${index}`}
+                                        />
+                                    </div>
+                                );
+                            }
+                            return (
+                                <div key={`${index}-attribute`} id="widget-row">
+                                    <Information
+                                        topic={
+                                            attribute.trait_type || `#${index}`
+                                        }
+                                        information={
+                                            attribute.value || `#${index}`
+                                        }
+                                        key={`attr-${index}`}
+                                    />
+                                </div>
+                            );
+                        })
+                    ) : (
+                        <Typography>No attributes found</Typography>
+                    )}
+                </DivModalStyled>
+            </div>
+        </Modal>
+    );
 };
 
 export default NFTModal;

@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Plus } from '@test_kit_3/icons';
-import { color } from '@test_kit_3/styles';
+import { Plus } from '@test_kit_4/icons';
+import { color } from '@test_kit_4/styles';
 import Button from './Button';
 
 export default {
@@ -9,7 +9,7 @@ export default {
     argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = args => <Button {...args} />;
 
 export const DefaultButton = Template.bind({});
 DefaultButton.args = {

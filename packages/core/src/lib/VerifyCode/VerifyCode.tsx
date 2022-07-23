@@ -6,7 +6,7 @@ import {
     useMemo,
     useState,
 } from 'react';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import { Typography } from '../Typography';
 import { VerifyCodeProps } from './types';
 import styles from './VerifyCode.styles';
@@ -43,7 +43,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
         if (idx !== length - 1) {
             inputRefs[idx + 1]?.current?.focus();
         }
-        if (newCode.every((num) => num !== '')) {
+        if (newCode.every(num => num !== '')) {
             onCompleted(newCode.join(''));
         }
     };
@@ -95,13 +95,13 @@ const VerifyCode: FC<VerifyCodeProps> = ({
                         inputMode="numeric"
                         key={idx}
                         maxLength={1}
-                        onChange={(e) => processInput(e, idx)}
-                        onKeyDown={(e) =>
+                        onChange={e => processInput(e, idx)}
+                        onKeyDown={e =>
                             ['e', 'E', '+', '-', '.'].includes(e.key) &&
                             e.preventDefault()
                         }
-                        onKeyUp={(e) => onKeyUp(e, idx)}
-                        onPaste={(e) => onPaste(e)}
+                        onKeyUp={e => onKeyUp(e, idx)}
+                        onPaste={e => onPaste(e)}
                         placeholder={placeholder[0]}
                         ref={inputRefs[idx]}
                         type="number"

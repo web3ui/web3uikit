@@ -2,8 +2,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Card from './Card';
 import { useState } from 'react';
 import getModuleAnimation from './Animations/animations';
-import { Checkmark } from '@test_kit_3/icons';
-import { color } from '@test_kit_3/styles';
+import { Checkmark } from '@test_kit_4/icons';
+import { color } from '@test_kit_4/styles';
 import { Button } from '../Button';
 
 /**
@@ -16,7 +16,7 @@ export default {
     component: Card,
 } as ComponentMeta<typeof Card>;
 
-const Template: ComponentStory<typeof Card> = (args) => {
+const Template: ComponentStory<typeof Card> = args => {
     const [isSelected, setIsSelected] = useState(false);
     return (
         <div style={{ width: '250px' }}>

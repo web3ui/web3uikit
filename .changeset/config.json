@@ -3,7 +3,7 @@
     "changelog": "@changesets/cli/changelog",
     "commit": false,
     "fixed": [],
-    "linked": [["@test_kit_3/*"]],
+    "linked": [["@test_kit_4/*"]],
     "access": "public",
     "baseBranch": "master",
     "updateInternalDependencies": "patch",

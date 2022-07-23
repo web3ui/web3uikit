@@ -7,8 +7,8 @@
             "executor": "@jscutlery/semver:version",
             "options": {
                 "postTargets": [
-                    "@test_kit_3/icons:publish",
-                    "@test_kit_3/icons:github"
+                    "@test_kit_4/icons:publish",
+                    "@test_kit_4/icons:github"
                 ]
             },
             "projects": "dependencies"

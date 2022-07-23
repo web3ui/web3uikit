@@ -15,7 +15,7 @@ import {
     ChevronUp,
     TriangleDown,
     TriangleUp,
-} from '@test_kit_3/icons';
+} from '@test_kit_4/icons';
 import { OptionProps } from '../Select';
 import { Typography } from '../Typography';
 
@@ -37,8 +37,9 @@ const Dropdown: React.FC<IDropdown> = ({
     ...props
 }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedIndex, setSelectedIndex] =
-        useState<number | undefined>(defaultOptionIndex);
+    const [selectedIndex, setSelectedIndex] = useState<number | undefined>(
+        defaultOptionIndex,
+    );
     useEffect(() => {
         if (isDisabled) {
             setIsOpen(false);
@@ -93,11 +94,11 @@ const Dropdown: React.FC<IDropdown> = ({
                 <DivInnerStyledOptionsContainer>
                     {options
                         .filter(
-                            (optionItem) =>
+                            optionItem =>
                                 options.indexOf(optionItem) != selectedIndex ||
                                 !hideSelected,
                         )
-                        .map((option) => (
+                        .map(option => (
                             <DivStyledOptionItem
                                 onClick={() => {
                                     handleSelectOptionClick(option);

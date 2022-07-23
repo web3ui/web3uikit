@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { LogOut } from '@test_kit_3/icons';
-import { color } from '@test_kit_3/styles';
+import { LogOut } from '@test_kit_4/icons';
+import { color } from '@test_kit_4/styles';
 import PopoverElement from './PopoverElement';
 
 export default {
@@ -9,7 +9,7 @@ export default {
     argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof PopoverElement>;
 
-const Template: ComponentStory<typeof PopoverElement> = (args) => (
+const Template: ComponentStory<typeof PopoverElement> = args => (
     <PopoverElement {...args} />
 );
 

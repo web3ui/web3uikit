@@ -1,5 +1,5 @@
-import { color } from '@test_kit_3/styles';
-import { ChevronRight } from '@test_kit_3/icons';
+import { color } from '@test_kit_4/styles';
+import { ChevronRight } from '@test_kit_4/icons';
 import styles from './Breadcrumbs.styles';
 import { IBreadcrumbs, Route } from './types';
 

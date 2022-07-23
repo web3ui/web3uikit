@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, fonts, resetCSS } from '@test_kit_3/styles';
+import { color, fonts, resetCSS } from '@test_kit_4/styles';
 
 // types
 import type { AccordionProps } from './types';

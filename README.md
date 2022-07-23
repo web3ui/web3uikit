@@ -24,13 +24,13 @@ If you need help with setting up the boilerplate or have other questions - don't
 ### 💿 Installation
 
 ```bash
-npm install @test_kit_3/core @test_kit_3/web3 @test_kit_3/icons
+npm install @test_kit_4/core @test_kit_4/web3 @test_kit_4/icons
 ```
 
 or
 
 ```bash
-yarn add  @test_kit_3/core @test_kit_3/web3 @test_kit_3/icons
+yarn add  @test_kit_4/core @test_kit_4/web3 @test_kit_4/icons
 ```
 
 ℹ️ Each package can be installed separately.
@@ -38,7 +38,7 @@ yarn add  @test_kit_3/core @test_kit_3/web3 @test_kit_3/icons
 ### 🧰 Usage
 
 ```jsx
-import { CryptoCards, Button } from '@test_kit_3/core';
+import { CryptoCards, Button } from '@test_kit_4/core';
 
 const App = () => (
     <>
@@ -84,7 +84,7 @@ The core module contains all the basic ui components like button, input, dropdow
 
 | package                                       | Version | Changelog | Description                        |
 | --------------------------------------------- | ------- | --------- | ---------------------------------- |
-| [@test_kit_3/core](./packages/core/README.md) | TODO    | TODO      | Contains all the basic UI elements |
+| [@test_kit_4/core](./packages/core/README.md) | TODO    | TODO      | Contains all the basic UI elements |
 
 ## Icons module
 
@@ -92,7 +92,7 @@ Create an issue with svg code to add more icons or feel free to raise a PR.
 
 | package                                         | Version | Changelog | Description            |
 | ----------------------------------------------- | ------- | --------- | ---------------------- |
-| [@test_kit_3/icons](./packages/icons/README.md) | TODO    | TODO      | Contains various icons |
+| [@test_kit_4/icons](./packages/icons/README.md) | TODO    | TODO      | Contains various icons |
 
 ## Web3 module
 
@@ -100,7 +100,7 @@ These are components which have `moralis` and `react-moralis` dependency.
 
 | package                                       | Version | Changelog | Description                      |
 | --------------------------------------------- | ------- | --------- | -------------------------------- |
-| [@test_kit_3/web3](./packages/web3/README.md) | TODO    | TODO      | Contains all the web3 components |
+| [@test_kit_4/web3](./packages/web3/README.md) | TODO    | TODO      | Contains all the web3 components |
 
 # 🚨 Breaking Changes
 

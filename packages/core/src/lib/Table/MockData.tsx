@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import { Avatar } from '../Avatar';
 import { Button } from '../Button';
-import { Cross, MoreVert } from '@test_kit_3/icons';
+import { Cross, MoreVert } from '@test_kit_4/icons';
 import { Tag } from '../Tag';
 import { Typography } from '../Typography';
 

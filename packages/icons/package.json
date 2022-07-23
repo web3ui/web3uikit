@@ -1,5 +1,5 @@
 {
-    "name": "@test_kit_3/icons",
+    "name": "@test_kit_4/icons",
     "version": "0.1.1",
     "sideEffects": false,
     "files": [
@@ -26,10 +26,10 @@
     "devDependencies": {
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
-        "@test_kit_3/styles": "*",
+        "@test_kit_4/styles": "*",
         "styled-components": "^5.3.5"
     },
     "dependencies": {
-        "@test_kit_3/config": "*"
+        "@test_kit_4/config": "*"
     }
 }

@@ -1,4 +1,4 @@
-import { Plus } from '@test_kit_3/icons';
+import { Plus } from '@test_kit_4/icons';
 import { useEffect, useMemo, useState } from 'react';
 import { Button } from '../Button';
 import { Input } from '../Input';
@@ -39,13 +39,13 @@ const Todo: React.FC<TodoProps> = ({
     }, [inputValue]);
 
     const removeTodo = (id: number) => {
-        const updatedList = lists.filter((item) => item !== lists[id]);
+        const updatedList = lists.filter(item => item !== lists[id]);
         setLists([...updatedList]);
     };
 
     const addTodo = () => {
         if (inputValue == '') return;
-        setLists((prevTodo) => Array.from(new Set([...prevTodo, inputValue])));
+        setLists(prevTodo => Array.from(new Set([...prevTodo, inputValue])));
         setInputValue('');
         const input: HTMLInputElement | null = document.querySelector(
             `input[key="${key}"]`,
@@ -61,7 +61,7 @@ const Todo: React.FC<TodoProps> = ({
                     data-testid="test-todo-input"
                     id="todo-input"
                     label={label}
-                    onChange={(e) => setInputValue(e.target.value)}
+                    onChange={e => setInputValue(e.target.value)}
                     size="large"
                     validation={{
                         regExp: pattern,

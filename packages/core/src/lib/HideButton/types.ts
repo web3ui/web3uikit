@@ -1,23 +1,23 @@
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 
 export interface IHideButtonProps {
-  /**
-   * The color of hide icon
-   */
-  iconColor?: string | typeof color;
+    /**
+     * The color of hide icon
+     */
+    iconColor?: string | typeof color;
 
-  /**
-   * The size of hide icon
-   */
-  iconSize?: number;
+    /**
+     * The size of hide icon
+     */
+    iconSize?: number;
 
-  /**
-   * The hidden state info
-   */
-  isHidden?: boolean;
+    /**
+     * The hidden state info
+     */
+    isHidden?: boolean;
 
-  /**
-   * Callback on toggle
-   */
-  onToggle: () => void;
+    /**
+     * Callback on toggle
+     */
+    onToggle: () => void;
 }

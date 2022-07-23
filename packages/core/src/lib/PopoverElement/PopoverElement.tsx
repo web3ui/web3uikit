@@ -1,9 +1,13 @@
 import { PopoverElementProps } from './types';
 import PopoverElementStyles from './PopoverElement.styles';
-import { Check } from '@test_kit_3/icons';
+import { Check } from '@test_kit_4/icons';
 
-const { DivContainerStyled, DivStyled, DivImageStyled, TextStyled } =
-    PopoverElementStyles;
+const {
+    DivContainerStyled,
+    DivStyled,
+    DivImageStyled,
+    TextStyled,
+} = PopoverElementStyles;
 
 const PopoverElement: React.FC<PopoverElementProps> = ({
     backgroundColor = 'transparent',

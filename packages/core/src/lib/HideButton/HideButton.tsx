@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { color, resetButtonCSS } from '@test_kit_3/styles';
-import { Eye, EyeClosed } from '@test_kit_3/icons';
+import { color, resetButtonCSS } from '@test_kit_4/styles';
+import { Eye, EyeClosed } from '@test_kit_4/icons';
 import { IHideButtonProps } from './types';
 
 const HideButtonStyled = styled.button`

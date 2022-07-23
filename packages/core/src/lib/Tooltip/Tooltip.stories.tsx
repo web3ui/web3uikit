@@ -1,14 +1,14 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Tooltip from './Tooltip';
-import { HelpCircle } from '@test_kit_3/icons';
-import { color } from '@test_kit_3/styles';
+import { HelpCircle } from '@test_kit_4/icons';
+import { color } from '@test_kit_4/styles';
 
 export default {
     title: '5.Popup/Tooltip',
     component: Tooltip,
 } as ComponentMeta<typeof Tooltip>;
 
-const Template: ComponentStory<typeof Tooltip> = (args) => (
+const Template: ComponentStory<typeof Tooltip> = args => (
     <div
         style={{
             display: 'flex',

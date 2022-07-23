@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Windows } from '@test_kit_3/icons';
-import { color } from '@test_kit_3/styles';
+import { Windows } from '@test_kit_4/icons';
+import { color } from '@test_kit_4/styles';
 import { Credentials } from '.';
 
 export default {
@@ -8,7 +8,7 @@ export default {
     component: Credentials,
 } as ComponentMeta<typeof Credentials>;
 
-const Template: ComponentStory<typeof Credentials> = (args) => (
+const Template: ComponentStory<typeof Credentials> = args => (
     <Credentials {...args} />
 );
 

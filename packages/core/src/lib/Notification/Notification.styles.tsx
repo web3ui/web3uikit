@@ -1,4 +1,4 @@
-import { color, fonts, resetCSS } from '@test_kit_3/styles';
+import { color, fonts, resetCSS } from '@test_kit_4/styles';
 import styled from 'styled-components';
 import { INotificationContainer, INotificationStyled } from './types';
 import {
@@ -12,7 +12,7 @@ const NotificationContainerStyled = styled.div<INotificationContainer>`
     position: fixed;
     z-index: 30;
 
-    ${(p) => getNotificationPosition(p.position)}
+    ${p => getNotificationPosition(p.position)}
 `;
 
 const IconWrapperStyled = styled.div`
@@ -81,13 +81,13 @@ const NotificationStyled = styled.div<INotificationStyled>`
     overflow: hidden;
     z-index: 9999;
 
-    ${(p) => getNotificationAnimation(p.position, p.isClosing)}
+    ${p => getNotificationAnimation(p.position, p.isClosing)}
 
     & > ${IconWrapperStyled} {
-        ${(p) => getNotificationTheme(p.type)}
+        ${p => getNotificationTheme(p.type)}
     }
     & > ${TextContentStyled} > ${TitleStyled} {
-        color: ${(p) => getNotificationColor(p.type)};
+        color: ${p => getNotificationColor(p.type)};
     }
 `;
 

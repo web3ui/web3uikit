@@ -1,5 +1,5 @@
 {
-    "name": "@test_kit_3/styles",
+    "name": "@test_kit_4/styles",
     "version": "0.1.1",
     "sideEffects": false,
     "files": [
@@ -28,6 +28,6 @@
         "styled-components": "^5.3.5"
     },
     "dependencies": {
-        "@test_kit_3/config": "*"
+        "@test_kit_4/config": "*"
     }
 }

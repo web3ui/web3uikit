@@ -24,13 +24,13 @@ If you need help with setting up the boilerplate or have other questions - don't
 ### 💿 Installation
 
 ```bash
-npm install @test_kit_3/core
+npm install @test_kit_4/core
 ```
 
 or
 
 ```bash
-yarn add  @test_kit_3/core
+yarn add  @test_kit_4/core
 ```
 
 ### 🧰 Usage

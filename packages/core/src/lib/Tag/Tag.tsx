@@ -1,7 +1,7 @@
-import { Checkmark, Cross } from '@test_kit_3/icons';
+import { Checkmark, Cross } from '@test_kit_4/icons';
 import styles from './Tag.styles';
 import { TagProps } from './types';
-import { color as colors } from '@test_kit_3/styles';
+import { color as colors } from '@test_kit_4/styles';
 const { TagStyled, SpanStyled } = styles;
 
 const Tag: React.FC<TagProps> = ({

@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import { AbsoluteIconStyledProps, CardProps } from './types';
-import { fonts, color, resetCSS } from '@test_kit_3/styles';
+import { fonts, color, resetCSS } from '@test_kit_4/styles';
 
-const DivStyled = styled.div<Pick<CardProps, 'isSelected' | 'isDisabled' | 'cursorType'>>`
+const DivStyled = styled.div<
+    Pick<CardProps, 'isSelected' | 'isDisabled' | 'cursorType'>
+>`
   ${resetCSS};
   ${fonts.text};
   outline: 2px solid transparent;
@@ -14,10 +16,10 @@ const DivStyled = styled.div<Pick<CardProps, 'isSelected' | 'isDisabled' | 'curs
   position: relative;
   transition: all 0.2s ease;
   width: 100%;
-  ${(p) =>
-    p.isDisabled
-      ? 'opacity:70%;'
-      : `&:hover {
+  ${p =>
+      p.isDisabled
+          ? 'opacity:70%;'
+          : `&:hover {
         background: radial-gradient(
             102.8% 102.8% at 3.14% -9.06%,
             #e9fffc 0%,
@@ -27,23 +29,23 @@ const DivStyled = styled.div<Pick<CardProps, 'isSelected' | 'isDisabled' | 'curs
             #e0ecf3 100%
         );
     }`}
-  ${(p) => p.cursorType === 'pointer' && 'cursor: pointer;'}
-    ${(p) => p.isSelected && `outline-color: ${color.green};`}
+  ${p => p.cursorType === 'pointer' && 'cursor: pointer;'}
+    ${p => p.isSelected && `outline-color: ${color.green};`}
 `;
 
 const AbsoluteIconStyled = styled.div<AbsoluteIconStyledProps>`
-  position: absolute;
-  top: -2px;
-  ${(p) => (p.position === 'topL' ? 'left: -2px;' : 'right: -2px;')}
+    position: absolute;
+    top: -2px;
+    ${p => (p.position === 'topL' ? 'left: -2px;' : 'right: -2px;')}
 `;
 
 const FooterStyled = styled.footer`
-  display: grid;
-  text-align: center;
+    display: grid;
+    text-align: center;
 `;
 
 const HeaderStyled = styled.div`
-  position: relative;
+    position: relative;
 `;
 
 export default { AbsoluteIconStyled, DivStyled, FooterStyled, HeaderStyled };

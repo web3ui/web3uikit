@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color, fonts, resetCSS } from '@test_kit_3/styles';
+import { color, fonts, resetCSS } from '@test_kit_4/styles';
 
 import { CheckboxProps } from './types';
 
@@ -150,11 +150,11 @@ const StyledLabel = styled.label<
     Pick<CheckboxProps, 'layout' | 'checked' | 'disabled'>
 >`
     ${labelStyles}
-    ${(p) => p.disabled && labelDisabled}
-    ${(p) => p.layout === 'box' && boxStyles}
-    ${(p) => p.layout === 'box' && p.checked && boxCheckedStyles}
-    ${(p) => p.layout === 'switch' && switchStyles}
-    ${(p) => p.layout === 'switch' && p.checked && switchOnStyles}
+    ${p => p.disabled && labelDisabled}
+    ${p => p.layout === 'box' && boxStyles}
+    ${p => p.layout === 'box' && p.checked && boxCheckedStyles}
+    ${p => p.layout === 'switch' && switchStyles}
+    ${p => p.layout === 'switch' && p.checked && switchOnStyles}
 `;
 
 export default { StyledInput, StyledLabel };

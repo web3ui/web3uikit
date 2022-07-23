@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 import { Typography } from '../Typography';
 import styles from './Credentials.styles';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import { ICredentialsProps } from './types';
 import CredentialsHeader from './components/CredentialsHeader';
 import { HideButton } from '../HideButton';
@@ -36,10 +36,9 @@ const Credentials: FC<ICredentialsProps> = ({
 
     useEffect(() => setIsValueHidden(isHidden), [isHidden]);
 
-    useEffect(
-        () => setIsMultiline((text.match(/\n/g) || []).length > 0),
-        [text],
-    );
+    useEffect(() => setIsMultiline((text.match(/\n/g) || []).length > 0), [
+        text,
+    ]);
 
     return (
         <CredentialsStyled

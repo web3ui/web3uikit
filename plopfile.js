@@ -76,7 +76,7 @@ module.exports = plop => {
         if (subDirectory) return `/${subDirectory}`;
     });
     plop.setHelper('getPackage', (name, subDirectory) => {
-        if (subDirectory === 'web3') return `@test_kit_3/core`;
+        if (subDirectory === 'web3') return `@test_kit_4/core`;
         else return `../${name}`;
     });
 };

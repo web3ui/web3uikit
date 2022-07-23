@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Server } from '@test_kit_3/icons';
+import { Server } from '@test_kit_4/icons';
 import { Input } from '.';
 import { validateRegExp } from '../../utils/const';
 
@@ -13,8 +13,8 @@ export default {
     },
 } as ComponentMeta<typeof Input>;
 
-const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
-const FilledTemplate: ComponentStory<typeof Input> = (args) => (
+const Template: ComponentStory<typeof Input> = args => <Input {...args} />;
+const FilledTemplate: ComponentStory<typeof Input> = args => (
     <div className="input_filled">
         <Input {...args} />
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useMoralisFile } from 'react-moralis';
 import { IPFSInputProps } from './types';
-import { Upload } from '@test_kit_3/core';
+import { Upload } from '@test_kit_4/core';
 
 const IPFSInput: React.FC<IPFSInputProps> = ({
     type,
@@ -15,7 +15,7 @@ const IPFSInput: React.FC<IPFSInputProps> = ({
     return (
         <Upload
             theme={theme}
-            onChange={(e) => {
+            onChange={e => {
                 saveFile(String(fileName), e as File, {
                     onSuccess(result) {
                         onFinish?.(result);

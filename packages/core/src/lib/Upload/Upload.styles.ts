@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color, resetCSS } from '@test_kit_3/styles';
+import { color, resetCSS } from '@test_kit_4/styles';
 import { DivStyledProps } from './types';
 
 const DivStyled = styled.div<DivStyledProps>`
@@ -20,7 +20,7 @@ const DivStyled = styled.div<DivStyledProps>`
     text-align: center;
     user-select: none;
     width: 100%;
-    ${(props) =>
+    ${props =>
         !props.isFileSelected &&
         css`
             &:hover {
@@ -35,7 +35,7 @@ const DivStyled = styled.div<DivStyledProps>`
             }
         `}
 
-    ${(props) =>
+    ${props =>
         !props.isFileSelected &&
         css`
             &:active {

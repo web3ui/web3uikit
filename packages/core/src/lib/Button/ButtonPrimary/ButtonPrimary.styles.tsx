@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ButtonBase from '../ButtonBase/ButtonBase';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 
 const ButtonPrimaryStyled = styled(ButtonBase)`
     background-color: ${color.green};

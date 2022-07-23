@@ -12,7 +12,7 @@ import {
     maxPages,
 } from './MockData';
 import { Loading } from '../Loading';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 export default {
     title: '3.Layout/Table',
     component: Table,
@@ -22,7 +22,7 @@ export default {
     },
 } as ComponentMeta<typeof Table>;
 
-const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
+const Template: ComponentStory<typeof Table> = args => <Table {...args} />;
 
 export const DefaultTable = Template.bind({});
 

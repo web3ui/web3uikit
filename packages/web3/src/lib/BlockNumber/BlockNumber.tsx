@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useMoralis } from 'react-moralis';
-import { Typography, TypographyProps } from '@test_kit_3/core';
+import { Typography, TypographyProps } from '@test_kit_4/core';
 
-const BlockNumber: React.FC<TypographyProps> = (props) => {
+const BlockNumber: React.FC<TypographyProps> = props => {
     const { chainId, web3 } = useMoralis();
 
     const [{ chainID, block }, setChainBlock] = useState<{
@@ -12,7 +12,7 @@ const BlockNumber: React.FC<TypographyProps> = (props) => {
 
     const onBlock = useCallback(
         (block: number) => {
-            setChainBlock((chainBlock) => {
+            setChainBlock(chainBlock => {
                 if (chainBlock.chainID === chainId) {
                     if (!chainBlock.block || chainBlock.block < block) {
                         return { chainID: chainId, block };
@@ -26,7 +26,7 @@ const BlockNumber: React.FC<TypographyProps> = (props) => {
 
     useEffect(() => {
         if (chainId && web3) {
-            setChainBlock((chainBlock) =>
+            setChainBlock(chainBlock =>
                 chainBlock.chainID === chainId
                     ? chainBlock
                     : { chainID: chainId },
@@ -34,7 +34,7 @@ const BlockNumber: React.FC<TypographyProps> = (props) => {
 
             web3?.getBlockNumber()
                 .then(onBlock)
-                .catch((error) => {
+                .catch(error => {
                     console.error(
                         `Failed to get block number for chainId ${chainId}`,
                         error,

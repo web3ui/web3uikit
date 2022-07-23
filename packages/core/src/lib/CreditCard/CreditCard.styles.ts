@@ -5,7 +5,7 @@ import {
     gradientColors,
     fonts,
     resetCSS,
-} from '@test_kit_3/styles';
+} from '@test_kit_4/styles';
 import { creditCardBrands, CreditCardProps } from './types';
 
 type TStyleProps = Pick<CreditCardProps, 'isExpired' | 'pressed' | 'brand'>;
@@ -84,7 +84,7 @@ export const PStyledDigits = styled.p`
 
 export const PStyledText = styled.p<TStyleExpired>`
     ${fonts.semiBold}
-    color: ${(p) => (p.isExpired ? color.red : color.white)};
+    color: ${p => (p.isExpired ? color.red : color.white)};
     font-size: 12px;
     line-height: 16px;
     margin: 0 0 0 5px;

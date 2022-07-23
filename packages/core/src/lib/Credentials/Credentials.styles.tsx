@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, resetCSS } from '@test_kit_3/styles';
+import { color, resetCSS } from '@test_kit_4/styles';
 import { ICredentialsProps, TDivWrapper } from './types';
 
 const CredentialsStyled = styled.div<Pick<ICredentialsProps, 'width'>>`
@@ -9,7 +9,7 @@ const CredentialsStyled = styled.div<Pick<ICredentialsProps, 'width'>>`
     flex-direction: column;
     padding: 16px;
     position: relative;
-    width: ${(p) => p.width};
+    width: ${p => p.width};
 
     @media (max-width: 600px) {
         padding: 16px 8px;
@@ -49,7 +49,7 @@ const DividerStyled = styled.div`
 
 const DivWrapperStyled = styled.div<TDivWrapper>`
     ${resetCSS};
-    overflow-x: ${(p) => (p.isHidden ? 'hidden' : p.isMultiline && 'auto')};
+    overflow-x: ${p => (p.isHidden ? 'hidden' : p.isMultiline && 'auto')};
     width: 90%;
 
     @media (max-width: 600px) {

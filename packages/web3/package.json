@@ -1,5 +1,5 @@
 {
-    "name": "@test_kit_3/web3",
+    "name": "@test_kit_4/web3",
     "version": "0.1.1",
     "sideEffects": false,
     "files": [
@@ -31,10 +31,10 @@
         "react-is": "^18.1.0"
     },
     "dependencies": {
-        "@test_kit_3/config": "latest",
-        "@test_kit_3/core": "latest",
-        "@test_kit_3/icons": "latest",
-        "@test_kit_3/styles": "latest",
+        "@test_kit_4/config": "latest",
+        "@test_kit_4/core": "latest",
+        "@test_kit_4/icons": "latest",
+        "@test_kit_4/styles": "latest",
         "react-blockies": "^1.4.1",
         "react-moralis": "^1.4.0",
         "moralis": "^1.8.1",

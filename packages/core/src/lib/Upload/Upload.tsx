@@ -1,9 +1,9 @@
 import { Typography } from '../Typography';
 import { IUploadProps } from './types';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import React, { useEffect, useRef, useState } from 'react';
 import styles from './Upload.styles';
-import { Bin, Image } from '@test_kit_3/icons';
+import { Bin, Image } from '@test_kit_4/icons';
 
 const {
     DivStyled,
@@ -14,8 +14,9 @@ const {
 } = styles;
 
 const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
-    const [fileSelected, setFileSelected] =
-        useState<Blob | undefined | null>(null);
+    const [fileSelected, setFileSelected] = useState<Blob | undefined | null>(
+        null,
+    );
     const inputFile = useRef<HTMLInputElement | null>(null);
 
     useEffect(() => onChange && onChange(fileSelected), [fileSelected]);
@@ -41,7 +42,7 @@ const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
             data-testid="test-upload"
             isFileSelected={Boolean(fileSelected)}
             onClick={onClickHandler}
-            onDragOver={(e) => e.preventDefault()}
+            onDragOver={e => e.preventDefault()}
             onDrop={onDropHandler}
         >
             {fileSelected === null && (

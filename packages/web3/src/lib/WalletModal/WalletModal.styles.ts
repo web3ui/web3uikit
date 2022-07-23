@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { color, fonts } from '@test_kit_3/styles';
+import { color, fonts } from '@test_kit_4/styles';
 
 const WrapperStyled = styled.div`
     align-items: center;

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import { color, fonts } from '@test_kit_3/styles';
+import { color, fonts } from '@test_kit_4/styles';
 import DropdownElementProps from './types';
 
 const DivContainerStyled = styled.div<DropdownElementProps>`
-    background: ${(p) => (p.backgroundColor ? p.backgroundColor : '')};
+    background: ${p => (p.backgroundColor ? p.backgroundColor : '')};
     cursor: pointer;
     display: inline-block;
 `;
@@ -16,8 +16,8 @@ const DivStyled = styled.div<
     flex-direction: row;
     padding-left: 16px;
     padding-right: 16px;
-    height: ${(p) => (p.height ? `${p.height}px` : 'auto')};
-    width: ${(p) => (p.width ? `${p.width}px` : 'auto')};
+    height: ${p => (p.height ? `${p.height}px` : 'auto')};
+    width: ${p => (p.width ? `${p.width}px` : 'auto')};
 `;
 
 const DivImageStyled = styled.div`
@@ -34,8 +34,8 @@ const TextStyled = styled.p<
 >`
     ${fonts.openSans};
     ${fonts.textBold};
-    color: ${(p) => (p.textColor ? p.textColor : color.white)};
-    font-size: ${(p) => (p.textSize ? `${p.textSize}px` : '')};
+    color: ${p => (p.textColor ? p.textColor : color.white)};
+    font-size: ${p => (p.textSize ? `${p.textSize}px` : '')};
     overflow: hidden;
     text-overflow: ellipsis;
 `;

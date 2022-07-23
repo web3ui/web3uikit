@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import ButtonBase from '../ButtonBase/ButtonBase';
-import { color, getShade } from '@test_kit_3/styles';
+import { color, getShade } from '@test_kit_4/styles';
 
 const ButtonTranslucentStyled = styled(ButtonBase)`
     background-color: ${getShade('dark', 20)};

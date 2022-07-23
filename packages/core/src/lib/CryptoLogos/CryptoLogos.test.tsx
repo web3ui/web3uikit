@@ -1,13 +1,19 @@
 import { composeStories } from '@storybook/testing-react';
 import * as stories from './CryptoLogos.stories';
-import { color, rgbToHex } from '@test_kit_3/styles';
+import { color, rgbToHex } from '@test_kit_4/styles';
 import { test, expect, describe } from 'vitest';
 
 import '@testing-library/jest-dom/extend-expect';
 import { render, screen } from '@testing-library/react';
 
-const { Ethereum, Binance, Polygon, Avalanche, Fantom, Arbitrum } =
-    composeStories(stories);
+const {
+    Ethereum,
+    Binance,
+    Polygon,
+    Avalanche,
+    Fantom,
+    Arbitrum,
+} = composeStories(stories);
 
 const cryptoLogoId = 'test-crypto-logo';
 

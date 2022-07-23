@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { color } from '@test_kit_3/styles';
+import { color } from '@test_kit_4/styles';
 import Modal from './Modal';
 import {
     Cloud,
@@ -7,7 +7,7 @@ import {
     Edit,
     Mail,
     ArrowCircleRight,
-} from '@test_kit_3/icons';
+} from '@test_kit_4/icons';
 import { Input } from '../Input';
 import { useArgs } from '@storybook/addons';
 import { Button } from '../Button';
@@ -23,11 +23,11 @@ export default {
     title: '5.Popup/Modal',
     component: Modal,
     decorators: [
-        (storyFn) => <div style={hasPositionAbsoluteFix}>{storyFn()}</div>,
+        storyFn => <div style={hasPositionAbsoluteFix}>{storyFn()}</div>,
     ],
 } as ComponentMeta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = (args) => {
+const Template: ComponentStory<typeof Modal> = args => {
     const [{}, updateArgs] = useArgs();
 
     return (
@@ -164,7 +164,7 @@ OneButtonDisabled.args = {
             <Mail fontSize={64} fill={color.blueDark2} />
             <Input
                 key={0}
-                onChange={(e) => console.log(e.target.value)}
+                onChange={e => console.log(e.target.value)}
                 placeholder={'E-Mail Address'}
                 type={'email'}
             />

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color, gradientColors, fonts, resetCSS } from '@test_kit_3/styles';
+import { color, gradientColors, fonts, resetCSS } from '@test_kit_4/styles';
 
 // Styling Interfaces
 interface IStyledTab {
@@ -26,7 +26,7 @@ export const StyleTabBarParent = styled.div<IStyledTabBarParent>`
     min-height: fit-content;
     display: flex;
     flex-direction: row;
-    ${(props) => !props.isVertical && 'flex-direction:column'}
+    ${props => !props.isVertical && 'flex-direction:column'}
 `;
 
 export const StyledTabBar = styled.div<IStyledTabBar>`
@@ -37,9 +37,9 @@ export const StyledTabBar = styled.div<IStyledTabBar>`
     max-height: fit-content;
     min-width: fit-content;
     row-gap: 5px;
-    ${(props) => props.isVertical && 'flex-direction: column;'}
+    ${props => props.isVertical && 'flex-direction: column;'}
 
-    ${(props) =>
+    ${props =>
         props.haveBackground &&
         !props.isVertical &&
         css`
@@ -54,14 +54,14 @@ export const StyledTabBar = styled.div<IStyledTabBar>`
                 border-radius: 0 16px 16px 0;
             }
         `};
-    ${(props) =>
+    ${props =>
         props.haveBackground &&
         props.isVertical &&
         css`
             background-color: ${color.blueCultured};
             border-radius: 16px;
         `};
-    ${(props) =>
+    ${props =>
         props.isWidthAuto &&
         css`
             & > span {
@@ -71,7 +71,7 @@ export const StyledTabBar = styled.div<IStyledTabBar>`
 `;
 
 export const StyledTabContent = styled.div<IStyledTabBarParent>`
-    padding: ${(props) => (props.isVertical ? '0px 11px' : '11px 0px')};
+    padding: ${props => (props.isVertical ? '0px 11px' : '11px 0px')};
 `;
 
 export const StyledTab = styled.div<IStyledTab>`
@@ -85,13 +85,12 @@ export const StyledTab = styled.div<IStyledTab>`
     margin-bottom: 11px;
 
     cursor: pointer;
-    ${(props) => props.isActive && 'font-weight:600;'};
-    ${(props) => props.isActive && 'border-bottom: 2px solid #21BF96;'};
-    ${(props) =>
-        (props.isActive || props.isDisabled) && 'pointer-events: none;'};
-    ${(props) => !props.isActive && `color:${color.greyIcons};`};
-    line-height: ${(props) => props.lineHeight && `${props.lineHeight}px`};
-    ${(props) => props.isDisabled && `color:${color.greyDisabled};`}
+    ${props => props.isActive && 'font-weight:600;'};
+    ${props => props.isActive && 'border-bottom: 2px solid #21BF96;'};
+    ${props => (props.isActive || props.isDisabled) && 'pointer-events: none;'};
+    ${props => !props.isActive && `color:${color.greyIcons};`};
+    line-height: ${props => props.lineHeight && `${props.lineHeight}px`};
+    ${props => props.isDisabled && `color:${color.greyDisabled};`}
 `;
 
 export const BulbTab = styled.div<IStyledBulb>`
@@ -113,11 +112,11 @@ export const BulbTab = styled.div<IStyledBulb>`
             border-color: ${color.blueSky};
             background: ${color.white};
         `};
-    ${(props) => props.isDisabled && 'pointer-events: none;'};
-    ${(props) => props.hasMargin && 'margin-right:6px;'};
-    ${(props) =>
+    ${props => props.isDisabled && 'pointer-events: none;'};
+    ${props => props.hasMargin && 'margin-right:6px;'};
+    ${props =>
         props.isDisabled && `opacity: 0.5; background-color: ${color.white};`};
-    line-height: ${(props) => props.lineHeight && `${props.lineHeight}px`};
+    line-height: ${props => props.lineHeight && `${props.lineHeight}px`};
     &:hover {
         background: ${color.blueLight2};
         ${({ isActive }) =>

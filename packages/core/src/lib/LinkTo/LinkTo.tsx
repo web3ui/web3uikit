@@ -1,10 +1,14 @@
-import { Link, Mail } from '@test_kit_3/icons';
-import { color } from '@test_kit_3/styles';
+import { Link, Mail } from '@test_kit_4/icons';
+import { color } from '@test_kit_4/styles';
 import { LinkToProps } from './types';
 import styles from './LinkTo.styles';
 
-const { InternalLinkStyled, LinkStyled, SpanStyledFlex, SpanStyledText } =
-    styles;
+const {
+    InternalLinkStyled,
+    LinkStyled,
+    SpanStyledFlex,
+    SpanStyledText,
+} = styles;
 
 const LinkTo: React.FC<LinkToProps> = ({
     address,

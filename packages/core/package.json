@@ -1,17 +1,16 @@
 {
-    "name": "@test_kit_3/core",
+    "name": "@test_kit_4/core",
     "version": "0.1.1",
     "sideEffects": false,
     "files": [
         "package.json",
         "dist"
     ],
-    "main": "./dist/index.cjs.js",
+    "main": "./dist/index.es.js",
     "module": "./dist/index.es.js",
     "types": "./dist/index.d.ts",
     "exports": {
         ".": {
-            "require": "./dist/index.cjs.js",
             "import": "./dist/index.es.js"
         }
     },
@@ -32,8 +31,8 @@
         "styled-components": "^5.3.5"
     },
     "dependencies": {
-        "@test_kit_3/config": "*",
-        "@test_kit_3/styles": "*",
-        "@test_kit_3/icons": "*"
+        "@test_kit_4/config": "*",
+        "@test_kit_4/styles": "*",
+        "@test_kit_4/icons": "*"
     }
 }

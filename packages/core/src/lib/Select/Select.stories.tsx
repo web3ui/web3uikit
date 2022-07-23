@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { color } from '@test_kit_3/styles';
-import { Btc, Discord, Server, Testnet } from '@test_kit_3/icons';
+import { color } from '@test_kit_4/styles';
+import { Btc, Discord, Server, Testnet } from '@test_kit_4/icons';
 import Select from './Select';
 
 export default {
@@ -9,7 +9,7 @@ export default {
     component: Select,
 } as ComponentMeta<typeof Select>;
 
-const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
+const Template: ComponentStory<typeof Select> = args => <Select {...args} />;
 
 const onTestOptionChange = (e: any) => {
     console.log(e);

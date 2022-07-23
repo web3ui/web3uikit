@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import * as Icons from '@test_kit_3/icons';
+import * as Icons from '@test_kit_4/icons';
 import { test, expect } from 'vitest';
 import React from 'react';
 const testIconId = 'test-icon';

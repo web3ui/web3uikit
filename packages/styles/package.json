@@ -1,6 +1,6 @@
 {
     "name": "@test_kit_4/styles",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "sideEffects": false,
     "files": [
         "package.json",

@@ -1,6 +1,6 @@
 {
     "name": "@test_kit_4/web3",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "sideEffects": false,
     "files": [
         "package.json",
@@ -31,10 +31,10 @@
         "react-is": "^18.1.0"
     },
     "dependencies": {
-        "@test_kit_4/config": "latest",
-        "@test_kit_4/core": "latest",
-        "@test_kit_4/icons": "latest",
-        "@test_kit_4/styles": "latest",
+        "@test_kit_4/config": "*",
+        "@test_kit_4/core": "*",
+        "@test_kit_4/icons": "*",
+        "@test_kit_4/styles": "*",
         "react-blockies": "^1.4.1",
         "react-moralis": "^1.4.0",
         "moralis": "^1.8.1",

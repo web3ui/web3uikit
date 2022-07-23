@@ -43,13 +43,16 @@ jobs:
             - run: git config --global user.name "GitHub CD bot"
             - run: git config --global user.email "pikachu1748@gmail.com"
 
-            - name: Install
+            - name: Build
               run: pnpm run build
 
             - name: create and publish versions
               uses: changesets/action@v1
               with:
-                  publish: pnpm run release
+                  version: pnpm ci:version
+                  commit: 'chore: update versions'
+                  title: 'chore: update versions'
+                  publish: pnpm ci:publish
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
                   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

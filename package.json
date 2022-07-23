@@ -8,7 +8,7 @@
         "apps/*",
         "packages/*"
     ],
-    "private": "true",
+    "private": "false",
     "browser": {
         "http": false,
         "https": false,
@@ -43,7 +43,7 @@
         "new": "plop",
         "size": "pnpm install && pnpm build && size-limit --json",
         "ci:version": "changeset version",
-        "release": "changeset publish"
+        "ci:release": "changeset publish"
     },
     "dependencies": {
         "@babel/core": "^7.18.2",

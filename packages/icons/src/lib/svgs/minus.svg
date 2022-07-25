@@ -1,4 +1,1 @@
-<svg width="12" height="2" viewBox="0 0 12 2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-<path d="M5 0H7V2H5V0Z" />
-<path d="M12 4.76837e-07V2L0 2L1.19209e-07 0L12 4.76837e-07Z" />
-</svg>
+<svg width="12" height="2" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M5 0h2v2H5V0z"/><path d="M12 0v2H0V0h12z"/></svg>

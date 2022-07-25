@@ -11,7 +11,6 @@ const SvgMinus = ({
     <svg
         width="1em"
         height="1em"
-        viewBox="0 0 12 2"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         data-testid="test-icon"
@@ -20,8 +19,8 @@ const SvgMinus = ({
         {...props}
     >
         {title ? <title id={titleId}>{title}</title> : null}
-        <path d="M5 0h2v2H5V0Z" />
-        <path d="M12 0v2H0V0h12Z" />
+        <path d="M5 0h2v2H5V0z" />
+        <path d="M12 0v2H0V0h12z" />
     </svg>
 );
 

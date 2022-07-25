@@ -11,7 +11,7 @@ const SvgOff = ({
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="none"
+        fill="currentColor"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -20,14 +20,8 @@ const SvgOff = ({
         {...props}
     >
         {title ? <title id={titleId}>{title}</title> : null}
-        <path
-            d="M11.615 12h.77c.307 0 .615-.417.615-.833V2.833c-.077-.416-.308-.833-.615-.833h-.77c-.384 0-.615.417-.615.833V11.063c0 .52.23.937.615.937Z"
-            fill="currentColor"
-        />
-        <path
-            d="M9 3.512A9 9 0 1 0 21 12a9.004 9.004 0 0 0-6-8.488v2.162a7 7 0 1 1-6 0V3.512Z"
-            fill="currentColor"
-        />
+        <path d="M11.615 12h.77c.307 0 .615-.417.615-.833V2.833c-.077-.416-.308-.833-.615-.833h-.77c-.384 0-.615.417-.615.833v8.23c0 .52.23.937.615.937z" />
+        <path d="M9 3.512A9 9 0 1 0 21 12a9.004 9.004 0 0 0-6-8.488v2.162a7 7 0 1 1-6 0V3.512z" />
     </svg>
 );
 

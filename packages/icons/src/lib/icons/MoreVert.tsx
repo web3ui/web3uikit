@@ -11,7 +11,7 @@ const SvgMoreVert = ({
     <svg
         aria-hidden="true"
         data-testid="test-icon"
-        fill="none"
+        fill="currentColor"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
@@ -21,8 +21,9 @@ const SvgMoreVert = ({
     >
         {title ? <title id={titleId}>{title}</title> : null}
         <path
-            d="M12 14a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM12 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4ZM12 21a2 2 0 1 1 0-4 2 2 0 0 1 0 4Z"
-            fill="currentColor"
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M12 14a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0-7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 14a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
         />
     </svg>
 );

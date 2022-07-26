@@ -129,7 +129,7 @@ export type Chain =
     | AvalancheChain
     | AvalancheTestChain;
 
-const chainToHex = {
+export const chainToHex = {
     'eth': '0x1',
     'ropsten': '0x3',
     'rinkeby': '0x4',

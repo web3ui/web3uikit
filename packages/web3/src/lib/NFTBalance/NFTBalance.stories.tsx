@@ -2,6 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import NFTBalance from './NFTBalance';
 import { moralisContext } from '../../web3utils/decorators';
+import { chainToHex } from '../../web3utils';
 
 export default {
     title: '1.Web3/NFT Balance',
@@ -19,6 +20,13 @@ export default {
             source: {
                 excludeDecorators: true,
             },
+        },
+    },
+    // Fix: Storybook does not display dropdown to select chain
+    argTypes: {
+        chain: {
+            options: [...Object.keys(chainToHex)],
+            control: { type: 'select' },
         },
     },
 } as ComponentMeta<typeof NFTBalance>;

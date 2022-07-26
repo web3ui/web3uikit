@@ -108,11 +108,12 @@ const NFTBalance: React.FC<INFTBalance> = ({ address, chain, ...props }) => {
                 {data.result.length > limit && (
                     <Button
                         text="Show more"
-                        icon={<ChevronDown fontSize={10} />}
+                        icon={<ChevronDown fontSize={20} />}
                         iconLayout="trailing"
                         theme="translucent"
                         onClick={() => setLimit(limit + 5)}
                         size="large"
+                        isFullWidth={true}
                     />
                 )}
             </DivStyled>

@@ -18,7 +18,6 @@ const iconTrailing = css`
 `;
 const iconOnly = css`
     align-items: center;
-    border-radius: 12px;
     border-width: 0;
     display: flex;
     height: 32px;

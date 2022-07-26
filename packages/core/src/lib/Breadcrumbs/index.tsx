@@ -1,2 +1,2 @@
 export { default as Breadcrumbs } from './Breadcrumbs';
-export type { BreadcrumbsProps } from './types';
+export type { BreadcrumbsProps, Route } from './types';

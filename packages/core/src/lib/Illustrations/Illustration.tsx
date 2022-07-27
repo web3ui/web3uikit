@@ -1,21 +1,22 @@
 import { Chain, IllustrationProps, Logo, Size } from './types';
-import ethereum from './images/chains/ethereum';
-import binance from './images/chains/binance';
-import polygon from './images/chains/polygon';
-import avalanche from './images/chains/avalanche';
-import fantom from './images/chains/fantom';
 import arbitrum from './images/chains/arbitrum';
+import avalanche from './images/chains/avalanche';
+import binance from './images/chains/binance';
+import bundle from './images/various/bundle';
+import chest from './images/various/chest';
 import comingSoon from './images/various/comingSoon';
 import confirmed from './images/various/confirmed';
+import cronos from './images/chains/cronos';
+import coinbaseLogo from './images/chains/coinbase';
+import ethereum from './images/chains/ethereum';
+import fantom from './images/chains/fantom';
+import lazyNft from './images/various/lazyNft';
 import looking from './images/various/looking';
+import marketplace from './images/various/marketplace';
+import pack from './images/various/pack';
+import polygon from './images/chains/polygon';
 import servers from './images/various/servers';
 import token from './images/various/token';
-import lazyNft from './images/various/lazyNft';
-import pack from './images/various/pack';
-import marketplace from './images/various/marketplace';
-import chest from './images/various/chest';
-import cronos from './images/chains/cronos';
-import bundle from './images/various/bundle';
 import styled from 'styled-components';
 import { resetCSS } from '@web3uikit/styles';
 
@@ -33,6 +34,8 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
             return fantom(width, height);
         case 'arbitrum':
             return arbitrum(width, height);
+        case 'coinbase':
+            return coinbaseLogo(width, height);
         case 'cronos':
             return cronos(width, height);
         case 'comingSoon':

@@ -1,4 +1,5 @@
 /* PLOP_INJECT_EXPORT */
+export * from './SendTransaction';
 export * from './BlockNumber';
 export * from './Blockie';
 export * from './ConnectButton';

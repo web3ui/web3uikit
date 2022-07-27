@@ -1,5 +1,13 @@
 # @web3uikit/icons
 
+## 0.1.3
+
+### Patch Changes
+
+-   cronos logo added in chain selector
+    send transaction button added
+    other minor changes
+
 ## 0.1.2
 
 ### Patch Changes

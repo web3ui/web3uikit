@@ -19,9 +19,10 @@ export type chainType =
     | 'arbitrum'
     | 'avalanche'
     | 'binance'
+    | 'coinbase'
+    | 'cronos'
     | 'ethereum'
     | 'fantom'
-    | 'polygon'
-    | 'cronos';
+    | 'polygon';
 
 export type sizeType = string | number;

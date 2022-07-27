@@ -18,26 +18,96 @@ const Template: ComponentStory<typeof ChainSelector> = (args) => {
 };
 
 const providers = [
-    { name: 'Mainnet', network: 'mainnet', chainId: '0x1', chain: 'Eth' },
-    { name: 'Ropsten', network: 'testnet', chainId: '0x3', chain: 'Eth' },
-    { name: 'Goerli', network: 'testnet', chainId: '0x5', chain: 'Eth' },
-    { name: 'Kovan', network: 'testnet', chainId: '0x2a', chain: 'Eth' },
     {
-        name: 'LocalDevChain',
-        network: 'localdevchain',
-        chainId: '0x539',
+        chainId: '0x1',
         chain: 'Eth',
+        name: 'Mainnet',
+        network: 'mainnet',
     },
-    { name: 'Mainnet', network: 'mainnet', chainId: '0x89', chain: 'Polygon' },
     {
-        name: 'Mumbai',
+        chainId: '0x89',
+        chain: 'Polygon',
+        name: 'Mainnet',
+        network: 'mainnet',
+    },
+    {
+        chainId: '0x38',
+        chain: 'Bsc',
+        name: 'Mainnet',
+        network: 'mainnet',
+    },
+    {
+        chainId: '0xa86a',
+        chain: 'Avax',
+        name: 'Mainnet',
+        network: 'mainnet',
+    },
+    {
+        chainId: '0xfa',
+        chain: 'Fantom',
+        name: 'Mainnet',
+        network: 'mainnet',
+    },
+    {
+        chainId: '0x19',
+        chain: 'Cronos',
+        name: 'Mainnet',
+        network: 'mainnet',
+    },
+    {
+        chainId: '0x3',
+        chain: 'Eth',
+        name: 'Ropsten',
         network: 'testnet',
+    },
+    {
+        chainId: '0x5',
+        chain: 'Eth',
+        name: 'Goerli',
+        network: 'testnet',
+    },
+    {
+        chainId: '0x2a',
+        chain: 'Eth',
+        name: 'Kovan',
+        network: 'testnet',
+    },
+    {
         chainId: '0x13881',
         chain: 'Polygon',
+        name: 'Mumbai',
+        network: 'testnet',
     },
-    { name: 'Mainnet', network: 'mainnet', chainId: '0x38', chain: 'Bsc' },
-    { name: 'Testnet', network: 'testnet', chainId: '0x61', chain: 'Bsc' },
-    { name: 'Mainnet', network: 'mainnet', chainId: '0xa86a', chain: 'Avax' },
+    {
+        chainId: '0x61',
+        chain: 'Bsc',
+        name: 'Testnet',
+        network: 'testnet',
+    },
+    {
+        chainId: '0xa869',
+        chain: 'Avax',
+        name: 'Testnet',
+        network: 'testnet',
+    },
+    {
+        chainId: '0x4',
+        chain: 'Eth',
+        name: 'Rinkeby',
+        network: 'testnet',
+    },
+    {
+        chainId: '0x152',
+        chain: 'Cronos',
+        name: 'Testnet',
+        network: 'testnet',
+    },
+    {
+        chainId: '0x539',
+        chain: 'Ganache',
+        name: 'LocalDevChain',
+        network: 'ganache',
+    },
 ];
 
 export const EthMainnetSelected = Template.bind({});

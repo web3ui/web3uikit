@@ -9,7 +9,7 @@ const providers = [
     { name: 'Goerli', network: 'testnet', chainId: '0x5', chain: 'Eth' },
 ];
 
-test('renders sucessful', async () => {
+test('renders successful', async () => {
     render(
         <ChainSelector
             IsMultipleAllowed={true}

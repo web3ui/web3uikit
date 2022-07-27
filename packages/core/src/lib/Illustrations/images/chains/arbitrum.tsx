@@ -1,13 +1,12 @@
-
 import type { Size } from '../../types';
 
 const arbitrum = (width: Size = '120', height: Size = '160') => {
     return (
         <svg
-            width={width}
+            fill="none"
             height={height}
             viewBox="0,0,120,160"
-            fill="none"
+            width={width}
             xmlns="http://www.w3.org/2000/svg"
         >
             <path

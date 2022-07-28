@@ -1,26 +1,27 @@
 export const chainState = [
-    'ethereum',
-    'binance',
-    'polygon',
     'arbitrum',
     'avalanche',
-    'fantom',
-    'cronos',
+    'binance',
     'coinbase',
+    'coinbase',
+    'cronos',
+    'ethereum',
+    'fantom',
+    'polygon',
 ] as const;
 export type Chain = typeof chainState[number];
 
 export const logoState = [
-    'comingSoon',
-    'confirmed',
-    'looking',
-    'servers',
-    'token',
-    'lazyNft',
-    'pack',
     'bundle',
     'chest',
+    'comingSoon',
+    'confirmed',
+    'lazyNft',
+    'looking',
     'marketplace',
+    'pack',
+    'servers',
+    'token',
 ] as const;
 export type Logo = typeof logoState[number];
 export type Size = number | string;

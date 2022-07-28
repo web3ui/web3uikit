@@ -55,6 +55,11 @@ Arbitrum.args = {
     logo: 'arbitrum',
 };
 
+export const Coinbase = BackgroundColoredTemplate.bind({});
+Coinbase.args = {
+    logo: 'coinbase',
+};
+
 export const Cronos = BackgroundColoredTemplate.bind({});
 Cronos.args = {
     logo: 'cronos',

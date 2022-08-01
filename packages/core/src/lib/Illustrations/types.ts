@@ -24,6 +24,7 @@ export const logoState = [
     'pack',
     'servers',
     'token',
+    'wizard',
 ] as const;
 export type Logo = typeof logoState[number];
 export type Size = number | string;

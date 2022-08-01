@@ -131,3 +131,8 @@ export const Discord = Template.bind({});
 Discord.args = {
     logo: 'discord',
 };
+
+export const Wizard = Template.bind({});
+Wizard.args = {
+    logo: 'wizard',
+};

@@ -21,6 +21,7 @@ import servers from './images/various/servers';
 import token from './images/various/token';
 import styled from 'styled-components';
 import { resetCSS } from '@web3uikit/styles';
+import wizard from './images/various/wizard';
 
 const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     switch (logo) {
@@ -64,6 +65,8 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
             return documentation(width, height);
         case 'discord':
             return discord(width, height);
+        case 'wizard':
+            return wizard(width, height);
         default:
             return ethereum();
     }

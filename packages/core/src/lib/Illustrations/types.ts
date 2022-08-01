@@ -16,6 +16,8 @@ export const logoState = [
     'chest',
     'comingSoon',
     'confirmed',
+    'discord',
+    'documentation',
     'lazyNft',
     'looking',
     'marketplace',

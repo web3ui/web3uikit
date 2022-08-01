@@ -121,3 +121,18 @@ CustomSizing.args = {
     width: '150px',
     height: '150px',
 };
+
+export const Documentation = Template.bind({});
+Documentation.args = {
+    logo: 'documentation',
+};
+
+export const Discord = Template.bind({});
+Discord.args = {
+    logo: 'discord',
+};
+
+export const Wizard = Template.bind({});
+Wizard.args = {
+    logo: 'wizard',
+};

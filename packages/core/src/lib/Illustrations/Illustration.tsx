@@ -8,6 +8,8 @@ import comingSoon from './images/various/comingSoon';
 import confirmed from './images/various/confirmed';
 import cronos from './images/chains/cronos';
 import coinbaseLogo from './images/chains/coinbase';
+import discord from './images/various/discord';
+import documentation from './images/various/documentation';
 import ethereum from './images/chains/ethereum';
 import fantom from './images/chains/fantom';
 import lazyNft from './images/various/lazyNft';
@@ -19,6 +21,7 @@ import servers from './images/various/servers';
 import token from './images/various/token';
 import styled from 'styled-components';
 import { resetCSS } from '@web3uikit/styles';
+import wizard from './images/various/wizard';
 
 const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     switch (logo) {
@@ -58,6 +61,12 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
             return chest(width, height);
         case 'bundle':
             return bundle(width, height);
+        case 'documentation':
+            return documentation(width, height);
+        case 'discord':
+            return discord(width, height);
+        case 'wizard':
+            return wizard(width, height);
         default:
             return ethereum();
     }

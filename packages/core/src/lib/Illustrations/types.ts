@@ -16,12 +16,15 @@ export const logoState = [
     'chest',
     'comingSoon',
     'confirmed',
+    'discord',
+    'documentation',
     'lazyNft',
     'looking',
     'marketplace',
     'pack',
     'servers',
     'token',
+    'wizard',
 ] as const;
 export type Logo = typeof logoState[number];
 export type Size = number | string;

@@ -87,7 +87,7 @@ const Modal: React.FC<ModalProps> = ({
                                     <Cross
                                         title="cross icon"
                                         titleId="modal cross icon"
-                                        fontSize={12}
+                                        fontSize={24}
                                     />
                                 }
                                 iconLayout="icon-only"

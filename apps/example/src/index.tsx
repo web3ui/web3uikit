@@ -6,7 +6,7 @@ const { Button, Logo, Typography, Avatar, BannerStrip, VerifyCode } = lazily(
     () => import('@web3uikit/core'),
 );
 import { Ada } from '@web3uikit/icons';
-const { ConnectWallet, NFT } = lazily(() => import('@web3uikit/web3'));
+const { ConnectButton, NFT } = lazily(() => import('@web3uikit/web3'));
 export const App = () => {
     console.log(Ada);
     return (
@@ -40,7 +40,7 @@ export const App = () => {
                             />
                             <VerifyCode />
                         </div>
-                        <ConnectWallet />
+                        <ConnectButton />
                         <NFT
                             address="0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
                             chain="eth"

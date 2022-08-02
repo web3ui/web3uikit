@@ -93,7 +93,7 @@ const Notification: React.FC<NotificationProps> = ({
             <Checkmark
                 title="checkmark icon"
                 titleId="notification checkmark icon"
-                fontSize={20}
+                fontSize={24}
                 fill={getIconColor(type)}
             />
         );

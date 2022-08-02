@@ -140,7 +140,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -172,7 +172,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -204,7 +204,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -236,7 +236,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -268,7 +268,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -300,7 +300,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -332,7 +332,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -364,7 +364,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -396,7 +396,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -428,7 +428,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -460,7 +460,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -492,7 +492,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -524,7 +524,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],
@@ -556,7 +556,7 @@ export const syncData = [
                 disabled
                 iconLayout="icon-only"
                 iconColor="red"
-                icon={<Cross />}
+                icon={<Cross fontSize={24} />}
             />
         </>,
     ],

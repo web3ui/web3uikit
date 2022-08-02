@@ -61,7 +61,13 @@ const WalletModal: FC<IWalletModalProps> = ({
                         Connect Wallet
                     </TitleStyled>
                     <Button
-                        icon={<Cross />}
+                        icon={
+                            <Cross
+                                fontSize={24}
+                                title="cross icon"
+                                titleId="wallet modal cross icon"
+                            />
+                        }
                         iconLayout="icon-only"
                         theme="outline"
                         onClick={() => setIsOpened(!isOpened)}

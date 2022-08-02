@@ -1,0 +1,100 @@
+{
+  "name": "nx",
+  "version": "14.1.5",
+  "description": "Smart, Fast and Extensible Build System",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nrwl/nx.git",
+    "directory": "packages/nx"
+  },
+  "scripts": {
+    "postinstall": "node ./bin/init"
+  },
+  "keywords": [
+    "Monorepo",
+    "Angular",
+    "React",
+    "Web",
+    "Node",
+    "Nest",
+    "Jest",
+    "Cypress",
+    "CLI"
+  ],
+  "bin": {
+    "nx": "./bin/nx.js"
+  },
+  "author": "Victor Savkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nrwl/nx/issues"
+  },
+  "homepage": "https://nx.dev",
+  "dependencies": {
+    "@swc/core": "^1.2.173",
+    "@swc-node/register": "^1.4.2",
+    "fast-glob": "3.2.7",
+    "jsonc-parser": "3.0.0",
+    "rxjs-for-await": "0.0.2",
+    "tsconfig-paths": "^3.9.0",
+    "v8-compile-cache": "2.3.0",
+    "@parcel/watcher": "2.0.4",
+    "chokidar": "^3.5.1",
+    "cli-cursor": "3.1.0",
+    "cli-spinners": "2.6.1",
+    "fs-extra": "^10.1.0",
+    "dotenv": "~10.0.0",
+    "figures": "3.2.0",
+    "glob": "7.1.4",
+    "ignore": "^5.0.4",
+    "npm-run-path": "^4.0.1",
+    "open": "^8.4.0",
+    "rxjs": "^6.5.4",
+    "semver": "7.3.4",
+    "tar-stream": "~2.2.0",
+    "tmp": "~0.2.1",
+    "yargs": "^17.4.0",
+    "yargs-parser": "21.0.1",
+    "cliui": "^7.0.2",
+    "string-width": "^4.2.3",
+    "chalk": "4.1.0",
+    "flat": "^5.0.2",
+    "minimatch": "3.0.4",
+    "enquirer": "~2.3.6",
+    "tslib": "^2.3.0",
+    "@nrwl/cli": "14.1.5",
+    "@nrwl/tao": "14.1.5"
+  },
+  "nx-migrations": {
+    "migrations": "./migrations.json",
+    "packageGroup": [
+      "@nrwl/workspace",
+      "@nrwl/angular",
+      "@nrwl/cypress",
+      "@nrwl/devkit",
+      "@nrwl/eslint-plugin-nx",
+      "@nrwl/express",
+      "@nrwl/jest",
+      "@nrwl/linter",
+      "@nrwl/nest",
+      "@nrwl/next",
+      "@nrwl/node",
+      "@nrwl/nx-plugin",
+      "@nrwl/react",
+      "@nrwl/storybook",
+      "@nrwl/web",
+      "@nrwl/js",
+      "@nrwl/cli",
+      "@nrwl/tao",
+      {
+        "package": "@nrwl/nx-cloud",
+        "version": "latest"
+      },
+      "@nrwl/react-native",
+      "@nrwl/detox"
+    ]
+  },
+  "executors": "./executors.json",
+  "main": "./bin/nx.js",
+  "typings": "./bin/nx.d.ts"
+}

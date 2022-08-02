@@ -1,0 +1,64 @@
+{
+  "name": "@toruslabs/base-controllers",
+  "version": "2.2.1",
+  "homepage": "https://github.com/torusresearch/controllers#readme",
+  "license": "ISC",
+  "main": "dist/baseControllers.cjs.js",
+  "module": "dist/baseControllers.esm.js",
+  "unpkg": "dist/baseControllers.umd.min.js",
+  "jsdelivr": "dist/baseControllers.umd.min.js",
+  "types": "dist/types/index.d.ts",
+  "author": "Torus Labs",
+  "scripts": {
+    "test": "mocha --config ../../.mocharc.json test/**/*test.ts",
+    "test-debugger": "mocha --config ../../.mocharc.json --inspect-brk test/**.ts",
+    "dev": "rimraf dist/ && cross-env NODE_ENV=development torus-scripts start",
+    "build": "rimraf dist/ && cross-env NODE_ENV=production torus-scripts build",
+    "lint": "eslint --fix 'src/**/*.ts'",
+    "prepack": "yarn run build",
+    "pre-commit": "lint-staged --cwd ."
+  },
+  "dependencies": {
+    "@toruslabs/broadcast-channel": "^6.0.0",
+    "@toruslabs/http-helpers": "^3.0.0",
+    "@toruslabs/openlogin-jrpc": "^2.1.0",
+    "async-mutex": "^0.3.2",
+    "bignumber.js": "^9.0.2",
+    "bowser": "^2.11.0",
+    "eth-rpc-errors": "^4.0.3",
+    "ethereumjs-util": "^7.1.5",
+    "json-rpc-random-id": "^1.0.1",
+    "lodash": "^4.17.21",
+    "loglevel": "^1.8.0"
+  },
+  "devDependencies": {
+    "@types/json-rpc-random-id": "^1.0.1",
+    "@types/lodash": "^4.14.182",
+    "@types/readable-stream": "^2.3.13"
+  },
+  "peerDependencies": {
+    "@babel/runtime": "7.x"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "lint-staged": {
+    "!(*d).ts": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torusresearch/controllers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/torusresearch/controllers/issues"
+  },
+  "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "429c66237b8165e0b28f15c1177ddff8238cba28"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "tinyspy",
+  "version": "0.3.3",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aslemammad/tinyspy.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aslemammad/tinyspy/issues"
+  },
+  "homepage": "https://github.com/aslemammad/tinyspy#readme",
+  "keywords": [
+    "spy",
+    "mock",
+    "typescript",
+    "method"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

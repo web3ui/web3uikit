@@ -1,0 +1,95 @@
+{
+  "name": "@toruslabs/metadata-helpers",
+  "version": "3.0.0",
+  "description": "Helper methods for metadata",
+  "main": "dist/metadataHelpers.cjs.js",
+  "module": "dist/metadataHelpers.esm.js",
+  "unpkg": "dist/metadataHelpers.umd.min.js",
+  "jsdelivr": "dist/metadataHelpers.umd.min.js",
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "start": "torus-scripts start",
+    "build": "torus-scripts build",
+    "release": "torus-scripts release",
+    "lint:ts": "eslint --fix 'src/**/*.ts'",
+    "prepack": "npm run build",
+    "test": "mocha ./test/test.ts",
+    "prepare": "husky install"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "peerDependencies": {
+    "@babel/runtime": "7.x"
+  },
+  "dependencies": {
+    "@toruslabs/eccrypto": "^1.1.8",
+    "@toruslabs/http-helpers": "^3.0.0",
+    "elliptic": "^6.5.4",
+    "json-stable-stringify": "^1.0.1",
+    "keccak": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/register": "^7.17.7",
+    "@toruslabs/eslint-config-typescript": "^1.0.0",
+    "@toruslabs/torus-scripts": "^1.0.2",
+    "@types/elliptic": "^6.4.14",
+    "@types/json-stable-stringify": "^1.0.34",
+    "@types/keccak": "^3.0.1",
+    "@types/mocha": "^9.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "assert": "^2.0.0",
+    "atob": "^2.1.2",
+    "btoa": "^1.2.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.15.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-mocha": "^10.0.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-tsdoc": "^0.2.16",
+    "husky": "^8.0.1",
+    "jsdom": "^19.0.0",
+    "lint-staged": "^12.4.1",
+    "mocha": "^10.0.0",
+    "node-fetch": "^2.6.7",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  },
+  "author": "Torus Labs",
+  "license": "MIT",
+  "lint-staged": {
+    "!(*d).{js,ts}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torusresearch/metadata-helpers.git"
+  },
+  "bugs": {
+    "url": "https://github.com/torusresearch/metadata-helpers/issues"
+  },
+  "homepage": "https://github.com/torusresearch/metadata-helpers#readme",
+  "keywords": [
+    "metadata-helpers",
+    "torus-direct-auth",
+    "torus nodes",
+    "torus-embed",
+    "direct auth"
+  ],
+  "engines": {
+    "node": ">=14.17.0",
+    "npm": ">=6.x"
+  }
+}

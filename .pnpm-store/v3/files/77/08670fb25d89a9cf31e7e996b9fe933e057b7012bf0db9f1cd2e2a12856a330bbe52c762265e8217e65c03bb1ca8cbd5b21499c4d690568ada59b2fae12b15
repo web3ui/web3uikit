@@ -1,0 +1,26 @@
+{
+  "name": "@size-limit/esbuild",
+  "version": "7.0.8",
+  "description": "esbuild plugin for Size Limit",
+  "keywords": [
+    "size-limit",
+    "plugin",
+    "performance",
+    "budget",
+    "performance budget",
+    "esbuild"
+  ],
+  "author": "Andrey Sitnik <andrey@sitnik.ru>",
+  "license": "MIT",
+  "repository": "ai/size-limit",
+  "engines": {
+    "node": "^12.0.0 || ^14.0.0 || >=16.0.0"
+  },
+  "peerDependencies": {
+    "size-limit": "7.0.8"
+  },
+  "dependencies": {
+    "esbuild": "^0.14.18",
+    "nanoid": "^3.2.0"
+  }
+}

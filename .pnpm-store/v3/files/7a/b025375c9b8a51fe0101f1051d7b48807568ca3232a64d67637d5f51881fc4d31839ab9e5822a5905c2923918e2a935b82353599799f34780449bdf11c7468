@@ -1,0 +1,22 @@
+{
+  "implicitDependencies": {
+    "package.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "nx/tasks-runners/default",
+      "options": {
+        "cacheableOperations": []
+      }
+    }
+  },
+  "workspaceLayout": {
+    "libsDir": "packages",
+    "appsDir": "packages"
+  },
+  "pluginsConfig": {
+    "@nrwl/js": {
+      "analyzeSourceFiles": false
+    }
+  }
+}

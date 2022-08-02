@@ -1,0 +1,25 @@
+{
+  "name": "react-blockies",
+  "version": "1.4.1",
+  "description": "Ethereum Style Identicons for React",
+  "main": "dist/main.js",
+  "repository": "git@github.com:stephensprinkle/react-blockies.git",
+  "author": "Stephen Sprinkle",
+  "license": "MIT",
+  "scripts": {
+    "build": "npx babel src/main.jsx > dist/main.js"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
+  "peerDependencies": {
+    "react": ">=15.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "6.24.1",
+    "babel-plugin-transform-object-rest-spread": "6.23.0",
+    "babel-plugin-transform-react-jsx": "6.24.1",
+    "babel-preset-es2015": "6.24.1",
+    "react": "15.5.4"
+  }
+}

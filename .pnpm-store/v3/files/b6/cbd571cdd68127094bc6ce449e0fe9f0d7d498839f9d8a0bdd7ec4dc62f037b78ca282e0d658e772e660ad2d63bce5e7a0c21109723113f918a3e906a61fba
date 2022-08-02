@@ -1,0 +1,15 @@
+{
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "targetDependencies": {
+    "build": ["^build"]
+  },
+  "workspaceLayout": {
+    "libsDir": "packages"
+  }
+}

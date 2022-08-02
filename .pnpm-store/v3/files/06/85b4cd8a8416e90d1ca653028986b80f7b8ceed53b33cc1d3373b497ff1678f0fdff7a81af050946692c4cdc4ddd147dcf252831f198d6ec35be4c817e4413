@@ -1,0 +1,1 @@
+{"version":3,"file":"get-project-configuration-path.js","sourceRoot":"","sources":["../../../../../../../packages/workspace/src/generators/convert-to-nx-project/utils/get-project-configuration-path.ts"],"names":[],"mappings":";;;AACA,+BAA4B;AAE5B,SAAgB,2BAA2B,CACzC,aAAmC;IAEnC,OAAO,IAAA,WAAI,EAAC,aAAa,CAAC,IAAI,EAAE,cAAc,CAAC,CAAC;AAClD,CAAC;AAJD,kEAIC"}

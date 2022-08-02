@@ -1,0 +1,63 @@
+{
+  "name": "@toruslabs/openlogin-jrpc",
+  "version": "2.1.0",
+  "homepage": "https://github.com/torusresearch/OpenLoginSdk#readme",
+  "license": "ISC",
+  "main": "dist/openloginJrpc.cjs.js",
+  "module": "dist/openloginJrpc.esm.js",
+  "unpkg": "dist/openloginJrpc.umd.min.js",
+  "jsdelivr": "dist/openloginJrpc.umd.min.js",
+  "types": "dist/types/index.d.ts",
+  "author": "Torus Labs",
+  "scripts": {
+    "start": "cross-env FORCE_COLOR=1 torus-scripts start",
+    "test": "mocha --config ../../.mocharc.json test/**.ts",
+    "test-debugger": "mocha --config ../../.mocharc.json --inspect-brk test/**.ts",
+    "dev": "rimraf dist/ && cross-env NODE_ENV=development torus-scripts build",
+    "build": "torus-scripts build",
+    "lint": "eslint --fix 'src/**/*.ts'",
+    "prepack": "yarn run build",
+    "pre-commit": "lint-staged --cwd ."
+  },
+  "dependencies": {
+    "@toruslabs/openlogin-utils": "^2.1.0",
+    "end-of-stream": "^1.4.4",
+    "eth-rpc-errors": "^4.0.3",
+    "events": "^3.3.0",
+    "fast-safe-stringify": "^2.1.1",
+    "once": "^1.4.0",
+    "pump": "^3.0.0",
+    "readable-stream": "^3.6.0"
+  },
+  "devDependencies": {
+    "@types/end-of-stream": "^1.4.1",
+    "@types/once": "^1.4.0",
+    "@types/pump": "^1.1.1",
+    "@types/readable-stream": "^2.3.13"
+  },
+  "peerDependencies": {
+    "@babel/runtime": "7.x"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "lint-staged": {
+    "!(*d).ts": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torusresearch/OpenLoginSdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/torusresearch/OpenLoginSdk/issues"
+  },
+  "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "49e7d748e15601a8e032cce52e7609ccca9d5df7"
+}

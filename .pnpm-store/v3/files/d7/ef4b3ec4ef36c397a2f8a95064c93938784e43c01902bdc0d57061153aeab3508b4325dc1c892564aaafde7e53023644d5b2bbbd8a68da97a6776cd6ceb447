@@ -1,0 +1,56 @@
+{
+  "name": "@metamask/detect-provider",
+  "version": "1.2.0",
+  "description": "A tiny utility for detecting the MetaMask Ethereum provider, or any EIP 1193-compliant provider.",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "engines": {
+    "node": ">= 10"
+  },
+  "scripts": {
+    "pretest": "yarn build",
+    "test": "node test/*",
+    "lint": "eslint . --ext ts,js,json",
+    "lint:fix": "yarn lint --fix",
+    "build": "./build.sh",
+    "prepare": "yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MetaMask/detect-provider.git"
+  },
+  "author": "Erik Marks <rekmarks@protonmail.com>",
+  "license": "ISC",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "ethereum",
+    "provider",
+    "metamask",
+    "web3"
+  ],
+  "bugs": {
+    "url": "https://github.com/MetaMask/detect-provider/issues"
+  },
+  "homepage": "https://github.com/MetaMask/detect-provider#readme",
+  "devDependencies": {
+    "@metamask/eslint-config": "^4.1.0",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "browserify": "^16.5.1",
+    "eslint": "^7.7.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-json": "^2.1.1",
+    "eslint-plugin-node": "^11.1.0",
+    "sinon": "^9.0.2",
+    "tape": "^5.0.0",
+    "tinyify": "^3.0.0",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {}
+}

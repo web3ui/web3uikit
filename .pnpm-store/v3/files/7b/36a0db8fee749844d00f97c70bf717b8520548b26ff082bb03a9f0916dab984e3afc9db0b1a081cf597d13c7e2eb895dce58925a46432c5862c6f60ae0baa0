@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "title": "@jscutlery/semver:gitlab",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "tag": {
+      "type": "string",
+      "description": "The tag the release will be created from [$CI_COMMIT_TAG]"
+    },
+    "ref": {
+      "type": "string",
+      "description": "If tag_name doesn’t exist, the release will be created from ref; it can be a commit SHA, another tag name, or a branch name [$CI_COMMIT_SHA]"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "URL of the asset."
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the asset."
+          }
+        }
+      },
+      "description": "JSON string representation of an asset link (or an array of asset links)"
+    },
+    "description": {
+      "type": "string",
+      "description": "The description of the release; you can use Markdown. A file can be used to read the description contents, must exist inside the working directory; if it contains any whitespace, it will be treated as a string"
+    },
+    "releasedAt": {
+      "type": "string",
+      "description": "The date when the release will be/was ready; defaults to the current time; expected in ISO 8601 format (2019-03-15T08:00:00Z)"
+    },
+    "name": {
+      "type": "string",
+      "description": "The release name"
+    },
+    "milestone": {
+      "type": "array",
+      "description": "List of the titles of each milestone the release is associated with (e.g. --milestone v1.0 --milestone v1.0-rc); each milestone needs to exist"
+    }
+  },
+  "required": ["tag"]
+}

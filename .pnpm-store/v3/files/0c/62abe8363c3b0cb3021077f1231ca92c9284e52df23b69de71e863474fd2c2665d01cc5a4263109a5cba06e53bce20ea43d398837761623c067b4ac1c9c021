@@ -1,0 +1,62 @@
+{
+  "name": "@toruslabs/eccrypto",
+  "version": "1.1.8",
+  "description": "JavaScript Elliptic curve cryptography library, includes fix to browser.js so that encrypt/decrypt works",
+  "main": "index.js",
+  "browser": "browser.js",
+  "types": "types.d.ts",
+  "scripts": {
+    "install": "node-gyp rebuild || exit 0",
+    "test": "ECCRYPTO_NO_FALLBACK=1 mocha && xvfb-run -a karma start && jshint .",
+    "m": "mocha",
+    "k": "xvfb-run -a karma start",
+    "kc": "xvfb-run -a karma start --browsers Chromium",
+    "kf": "xvfb-run -a karma start --browsers Firefox",
+    "j": "jshint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/torusresearch/eccrypto.git"
+  },
+  "keywords": [
+    "ecc",
+    "ecdsa",
+    "ecdh",
+    "ecies",
+    "crypto",
+    "cryptography",
+    "secp256k1",
+    "K-256",
+    "elliptic",
+    "curve"
+  ],
+  "author": "Torus Labs",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/torusresearch/eccrypto/issues"
+  },
+  "homepage": "https://github.com/torusresearch/eccrypto",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "buffer-equal": "^1.0.0",
+    "chai": "^4.3.4",
+    "jshint": "^2.13.0",
+    "karma": "^6.3.4",
+    "karma-browserify": "^8.0.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-cli": "^2.0.0",
+    "karma-firefox-launcher": "^2.1.1",
+    "karma-mocha": "^2.0.1",
+    "karma-mocha-reporter": "^2.2.5",
+    "mocha": "^9.0.2"
+  },
+  "dependencies": {
+    "acorn": "^8.4.1",
+    "elliptic": "^6.5.4",
+    "es6-promise": "^4.2.8",
+    "nan": "^2.14.2"
+  },
+  "optionalDependencies": {
+    "secp256k1": "^3.8.0"
+  }
+}

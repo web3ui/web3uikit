@@ -1,0 +1,82 @@
+{
+  "name": "react-qr-code",
+  "version": "2.0.7",
+  "description": "A QR code generator for React and React Native.",
+  "keywords": [
+    "react",
+    "react-native",
+    "qr",
+    "code",
+    "generator"
+  ],
+  "author": {
+    "name": "Ross Khanas",
+    "email": "rtkhanas@gmail.com"
+  },
+  "scripts": {
+    "demo-web-watch": "babel ./src --out-dir=./demo/src/lib --watch",
+    "demo": "cd demo && yarn start",
+    "demo:build": "cd demo && yarn build",
+    "demo:deploy": "gh-pages -d demo/build",
+    "storybook-native-watch": "babel ./src --out-dir=./storybooks/native/lib --watch",
+    "storybook-mobile-start": "cd ./storybooks/native && yarn start",
+    "storybook-ios": "cd ./storybooks/native && yarn ios",
+    "storybook-android": "cd ./storybooks/native && yarn android",
+    "clean": "rimraf lib",
+    "lint": "eslint src",
+    "test": "mocha --recursive --require babel-core/register",
+    "build": "yarn clean && babel src --out-dir lib"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rosskhanas/react-qr-code.git"
+  },
+  "files": [
+    "lib",
+    "types"
+  ],
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "qr.js": "0.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.x || ^17.x || ^18.x",
+    "react-native-svg": "*"
+  },
+  "peerDependenciesMeta": {
+    "react-native-svg": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.23.0",
+    "chai": "^4.3.4",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "gh-pages": "^3.2.3",
+    "jsdom": "^18.0.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^9.1.3",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-native-svg": "^12.1.1",
+    "react-test-renderer": "^17.0.1",
+    "rimraf": "^3.0.2"
+  }
+}

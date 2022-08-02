@@ -11,6 +11,7 @@ import {
 import { Tooltip } from '../Tooltip';
 import { Button } from '../Button';
 import { Bin } from '@web3uikit/icons';
+import { color } from '@web3uikit/styles';
 
 const CreditCard: React.FC<CreditCardProps> = ({
     brand,
@@ -37,13 +38,14 @@ const CreditCard: React.FC<CreditCardProps> = ({
                         <>
                             {(isRemovable || isExpired) && (
                                 <Button
-                                    icon={<Bin fontSize={20} />}
-                                    iconColor={'red'}
+                                    icon={
+                                        <Bin fontSize={20} fill={color.red} />
+                                    }
                                     iconLayout={'icon-only'}
                                     isTransparent={true}
                                     onClick={() => onRemove && onRemove()}
                                     size={'small'}
-                                    theme={'secondary'}
+                                    theme={'colored'}
                                 />
                             )}
                         </>

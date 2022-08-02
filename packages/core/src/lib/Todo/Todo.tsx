@@ -73,7 +73,13 @@ const Todo: React.FC<TodoProps> = ({
                 <Button
                     data-testid="test-todo-button"
                     disabled={!isInputValid}
-                    icon={<Plus title="plus icon" titleId="todo plus icon" />}
+                    icon={
+                        <Plus
+                            title="plus icon"
+                            titleId="todo plus icon"
+                            fontSize={24}
+                        />
+                    }
                     onClick={addTodo}
                     size="large"
                     text={buttonText}

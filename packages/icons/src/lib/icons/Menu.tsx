@@ -3,7 +3,7 @@
 // Do not edit
 import { SVGProps } from 'react';
 import { SVGRProps } from '../type';
-const SvgMinus = ({
+const SvgMenu = ({
     title,
     titleId,
     ...props
@@ -19,9 +19,12 @@ const SvgMinus = ({
         {...props}
     >
         {title ? <title id={titleId}>{title}</title> : null}
-        <path d="M11 11h2v2h-2v-2z" />
-        <path d="M18 11v2H6v-2h12z" />
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M2 12a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1zm0-6a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1zm0 12a1 1 0 0 1 1-1h18a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1z"
+        />
     </svg>
 );
 
-export default SvgMinus;
+export default SvgMenu;

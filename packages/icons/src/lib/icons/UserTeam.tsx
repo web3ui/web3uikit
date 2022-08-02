@@ -3,7 +3,7 @@
 // Do not edit
 import { SVGProps } from 'react';
 import { SVGRProps } from '../type';
-const SvgCheckmark = ({
+const SvgUserTeam = ({
     title,
     titleId,
     ...props
@@ -22,9 +22,9 @@ const SvgCheckmark = ({
         <path
             fillRule="evenodd"
             clipRule="evenodd"
-            d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm4.84-13.346.947.948c.165.165.165.494 0 .7l-3.563 3.522-3.563 3.522a.474.474 0 0 1-.7 0l-3.748-3.79c-.165-.165-.165-.494 0-.7l.947-.906a.474.474 0 0 1 .7 0l2.472 2.471 5.808-5.767c.206-.205.535-.205.7 0z"
+            d="M1.464 15.98A5 5 0 0 1 5 14.514h8a5 5 0 0 1 5 5v2a1 1 0 1 1-2 0v-2a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v2a1 1 0 1 1-2 0v-2a5 5 0 0 1 1.464-3.536zM9 4.515a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0zm15.032 7.88a1 1 0 0 1 1.218-.719A5 5 0 0 1 24 19.514v2a1 1 0 1 1-2 0v-1.999a3 3 0 0 0-2.25-2.902 1 1 0 0 1-.718-1.218zM15.031 3.397a1 1 0 0 1 1.217-.721 5 5 0 0 1 0 9.687 1 1 0 1 1-.496-1.937 3 3 0 0 0 0-5.813 1 1 0 0 1-.72-1.216z"
         />
     </svg>
 );
 
-export default SvgCheckmark;
+export default SvgUserTeam;

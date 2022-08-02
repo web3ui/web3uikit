@@ -1,5 +1,13 @@
 # @web3uikit/core
 
+## 0.1.4
+
+### Patch Changes
+
+-   8deb77f7: New icons, Illustrations and fix icon sizes in components
+-   Updated dependencies [8deb77f7]
+    -   @web3uikit/icons@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes

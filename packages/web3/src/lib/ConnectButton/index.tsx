@@ -1,2 +1,2 @@
-export { default as ConnectWallet } from './ConnectButton';
-export type { IConnectWalletProps } from './types';
+export { default as ConnectButton } from './ConnectButton';
+export type { IConnectButtonProps } from './types';

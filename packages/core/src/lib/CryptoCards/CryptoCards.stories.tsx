@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Cog } from '@web3uikit/icons';
 import CryptoCards from '../CryptoCards/CryptoCards';
+import bgConfig from '../CryptoLogos/bgConfig';
 
 export default {
     title: '4.UI/Crypto Cards',
@@ -16,8 +17,7 @@ export const Ethereum = Template.bind({});
 Ethereum.args = {
     chain: 'ethereum',
     chainType: 'Network',
-    bgColor:
-        'black linear-gradient(113.54deg, rgba(117, 183, 251, 0.531738) 14.91%, rgba(215, 38, 243, 0.6) 42.57%, rgba(252, 84, 255, 0.336) 45.98%, rgba(209, 103, 255, 0.03) 55.76%), linear-gradient(160.75deg, #AB42CB 41.37%, #45FFFF 98.29%)',
+    bgColor: bgConfig.ethereum,
     btnText: 'View Endpoints',
 };
 
@@ -63,5 +63,20 @@ Arbitrum.args = {
     chainType: 'Network',
     bgColor:
         'linear-gradient(113.54deg, rgba(60, 87, 140, 0.5) 14.91%, rgba(70, 86, 169, 0.5) 43.21%, rgba(125, 150, 217, 0.345) 44.27%, rgba(129, 161, 225, 0.185) 55.76%), linear-gradient(151.07deg, #141659 33.25%, #4152A7 98.24%)',
+    btnText: 'View Endpoints',
+};
+
+export const Cronos = Template.bind({});
+Cronos.args = {
+    chain: 'cronos',
+    chainType: 'Network',
+    bgColor: bgConfig.cronos,
+    btnText: 'View Endpoints',
+};
+export const Coinbase = Template.bind({});
+Coinbase.args = {
+    chain: 'coinbase',
+    chainType: 'Network',
+    bgColor: bgConfig.coinbase,
     btnText: 'View Endpoints',
 };

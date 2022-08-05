@@ -88,6 +88,7 @@ export { default as Pulse } from './Pulse';
 export { default as Reddit } from './Reddit';
 export { default as Reload } from './Reload';
 export { default as Roadmap } from './Roadmap';
+export { default as Rocket } from './Rocket';
 export { default as Sandbox } from './Sandbox';
 export { default as Sandbox2 } from './Sandbox2';
 export { default as Search } from './Search';

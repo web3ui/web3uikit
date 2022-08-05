@@ -77,7 +77,7 @@ const Todo: React.FC<TodoProps> = ({
                         <Plus
                             title="plus icon"
                             titleId="todo plus icon"
-                            fontSize={24}
+                            fontSize={18}
                         />
                     }
                     onClick={addTodo}

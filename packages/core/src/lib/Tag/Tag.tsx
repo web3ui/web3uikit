@@ -44,8 +44,7 @@ const Tag: React.FC<TagProps> = ({
                     <Cross
                         title="cross icon"
                         titleId="tag cross icon"
-                        fill={colors.blue}
-                        fontSize={64}
+                        fill={colors.grey}
                     />
                 </SpanStyled>
             )}

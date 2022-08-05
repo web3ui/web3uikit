@@ -43,7 +43,7 @@ export const TabBar: ComponentStory<typeof TabList> = (args) => (
             tabKey={2}
         >
             <Button
-                icon={<Plus fontSize={24} />}
+                icon={<Plus fontSize={16} />}
                 text="Add New Alert"
                 theme="primary"
                 type="button"

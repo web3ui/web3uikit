@@ -126,12 +126,14 @@ const Select: React.FC<SelectProps> = ({
                             title="triangle up icon"
                             titleId="select triangle up icon"
                             fill={color.grey}
+                            fontSize={20}
                         />
                     ) : (
                         <TriangleDown
                             title="triangle down icon"
                             titleId="select triangle down icon"
                             fill={color.grey}
+                            fontSize={20}
                         />
                     )}
                 </DropDownIcon>

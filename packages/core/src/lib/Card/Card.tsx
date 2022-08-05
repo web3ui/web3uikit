@@ -47,7 +47,7 @@ const Card: React.FC<CardProps> = ({
                             title="checkmark icon"
                             titleId="card checkmark icon"
                             fill={color.green}
-                            fontSize={24}
+                            fontSize={20}
                         />
                     </AbsoluteIconStyled>
                 )}

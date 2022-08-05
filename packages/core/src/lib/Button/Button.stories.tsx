@@ -70,7 +70,7 @@ ThemeColoredBlue.args = {
 
 export const IconButton = Template.bind({});
 IconButton.args = {
-    icon: <Plus fontSize="24px" title="plus icon" />,
+    icon: <Plus title="plus icon" />,
     iconLayout: 'icon-only',
 };
 
@@ -108,7 +108,7 @@ export const AllProps = Template.bind({});
 AllProps.args = {
     color: 'blue',
     disabled: false,
-    icon: <Plus height="24px" title="plus icon" width="24px" />,
+    icon: <Plus title="plus icon" />,
     iconColor: 'white',
     iconLayout: 'icon-only',
     id: 'all-props-button',

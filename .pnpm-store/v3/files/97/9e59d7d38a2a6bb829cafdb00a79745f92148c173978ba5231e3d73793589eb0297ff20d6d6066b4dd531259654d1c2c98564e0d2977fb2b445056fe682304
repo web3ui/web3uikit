@@ -1,1 +1,0 @@
-export declare const OPENLOGIN_PROVIDERS: ("google" | "facebook" | "reddit" | "discord" | "twitch" | "apple" | "line" | "github" | "kakao" | "linkedin" | "twitter" | "weibo" | "wechat" | "email_passwordless" | "webauthn" | "jwt")[];

@@ -1,4 +1,0 @@
-export declare const nxVersion: any;
-export declare const swcCoreVersion = "~1.2.143";
-export declare const swcCliVersion = "~0.1.55";
-export declare const swcHelpersVersion = "~0.3.3";

@@ -1,2 +1,0 @@
-import n,{freeze as r}from"immer";import{useState as t,useCallback as o,useMemo as f,useReducer as u}from"react";function i(f){var u=t(function(){return r("function"==typeof f?f():f,!0)}),i=u[1];return[u[0],o(function(t){i("function"==typeof t?n(t):r(t))},[])]}function e(r,t,o){var i=f(function(){return n(r)},[r]);return u(i,t,o)}export{i as useImmer,e as useImmerReducer};
-//# sourceMappingURL=use-immer.module.js.map

@@ -1,2 +1,0 @@
-var e,r=require("immer"),u=(e=r)&&"object"==typeof e&&"default"in e?e.default:e,t=require("react");exports.useImmer=function(e){var n=t.useState(function(){return r.freeze("function"==typeof e?e():e,!0)}),f=n[1];return[n[0],t.useCallback(function(e){f("function"==typeof e?u(e):r.freeze(e))},[])]},exports.useImmerReducer=function(e,r,n){var f=t.useMemo(function(){return u(e)},[e]);return t.useReducer(f,r,n)};
-//# sourceMappingURL=use-immer.js.map

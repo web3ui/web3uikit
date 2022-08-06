@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.1.5
+
+### Patch Changes
+
+-   5b8efeda2: Add new rocket icon, cronos and coinbase crypto cards, icons size fixes
+
 ## 0.1.4
 
 ### Patch Changes

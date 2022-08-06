@@ -1,7 +1,8 @@
 name: PNPM publish
 on:
-    release:
-        types: [published]
+    push:
+        branches:
+            - master
 env:
     CI: true
     PNPM_CACHE_FOLDER: .pnpm-store
@@ -49,9 +50,6 @@ jobs:
             - name: create and publish versions
               uses: changesets/action@v1
               with:
-                  version: pnpm ci:version
-                  commit: 'chore: update versions'
-                  title: 'chore: update versions'
                   publish: pnpm ci:publish
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

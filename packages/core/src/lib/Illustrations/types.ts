@@ -3,7 +3,6 @@ export const chainState = [
     'avalanche',
     'binance',
     'coinbase',
-    'coinbase',
     'cronos',
     'ethereum',
     'fantom',

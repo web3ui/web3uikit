@@ -75,7 +75,6 @@ const Notification: React.FC<NotificationProps> = ({
                 <Exclamation
                     title="exclamation icon"
                     titleId="notification exclamation icon"
-                    fontSize={20}
                     fill={getIconColor(type)}
                 />
             );
@@ -85,7 +84,6 @@ const Notification: React.FC<NotificationProps> = ({
                 <Info
                     title="info icon"
                     titleId="notification info icon"
-                    fontSize={20}
                     fill={getIconColor(type)}
                 />
             );
@@ -93,7 +91,6 @@ const Notification: React.FC<NotificationProps> = ({
             <Checkmark
                 title="checkmark icon"
                 titleId="notification checkmark icon"
-                fontSize={24}
                 fill={getIconColor(type)}
             />
         );

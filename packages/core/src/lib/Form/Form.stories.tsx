@@ -252,13 +252,13 @@ CustomFooter.args = {
     customFooter: (
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <Button
-                icon={<ArrowCircleLeft />}
+                icon={<ArrowCircleLeft fontSize={24} />}
                 text={'Cancel Install'}
                 theme={'secondary'}
                 size="regular"
             />
             <Button
-                icon={<ArrowCircleRight />}
+                icon={<ArrowCircleRight fontSize={24} />}
                 text={'Confirm'}
                 theme={'primary'}
                 type="submit"

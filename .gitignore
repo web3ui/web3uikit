@@ -5,3 +5,4 @@
 .env
 /storybook-static/
 **/coverage
+**/.pnpm-store

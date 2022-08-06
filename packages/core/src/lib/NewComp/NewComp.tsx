@@ -63,14 +63,12 @@ const NewComp: React.FC<NewCompProps> = ({
                         title="checkmark icon"
                         titleId="new-comp checkmark icon"
                         fill={color.green}
-                        fontSize={24}
                     />
                 ) : (
                     <Cross
                         title="cross icon"
                         titleId="new-comp cross icon"
                         fill={color.red}
-                        fontSize={24}
                     />
                 )}
                 <HeadingStyled

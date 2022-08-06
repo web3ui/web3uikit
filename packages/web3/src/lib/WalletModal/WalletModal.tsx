@@ -63,7 +63,6 @@ const WalletModal: FC<IWalletModalProps> = ({
                     <Button
                         icon={
                             <Cross
-                                fontSize={24}
                                 title="cross icon"
                                 titleId="wallet modal cross icon"
                             />

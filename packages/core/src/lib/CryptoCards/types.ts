@@ -20,7 +20,9 @@ export interface CryptoCardProps {
         | 'binance'
         | 'ethereum'
         | 'fantom'
-        | 'polygon';
+        | 'polygon'
+        | 'cronos'
+        | 'coinbase';
 
     /**
      * The type of the chain / a subtitle below the chain name

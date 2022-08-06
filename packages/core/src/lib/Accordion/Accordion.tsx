@@ -65,14 +65,12 @@ const Accordion: React.FC<AccordionProps> = ({
                             title="minus icon"
                             titleId="accordion minus icon"
                             fill={getThemeColor(theme)}
-                            fontSize="24px"
                         />
                     ) : (
                         <Plus
                             title="plus icon"
                             titleId="accordion plus icon"
                             fill={getThemeColor(theme)}
-                            fontSize="24px"
                         />
                     )}
 

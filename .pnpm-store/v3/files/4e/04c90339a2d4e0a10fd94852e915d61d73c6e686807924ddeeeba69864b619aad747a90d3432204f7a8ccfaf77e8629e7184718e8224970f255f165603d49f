@@ -1,0 +1,50 @@
+{
+  "name": "@toruslabs/openlogin-ed25519",
+  "version": "2.0.0",
+  "homepage": "https://github.com/torusresearch/OpenLoginSdk#readme",
+  "license": "ISC",
+  "main": "dist/openloginEd25519.cjs.js",
+  "module": "dist/openloginEd25519.esm.js",
+  "unpkg": "dist/openloginEd25519.umd.min.js",
+  "jsdelivr": "dist/openloginEd25519.umd.min.js",
+  "types": "dist/types/index.d.ts",
+  "author": "Torus Labs",
+  "scripts": {
+    "start": "cross-env FORCE_COLOR=1 torus-scripts start",
+    "test": "mocha --config ../../.mocharc.json test/**.ts",
+    "test-debugger": "mocha --config ../../.mocharc.json --inspect-brk test/**.ts",
+    "dev": "rimraf dist/ && cross-env NODE_ENV=development torus-scripts build",
+    "build": "torus-scripts build",
+    "lint": "eslint --fix 'src/**/*.ts'",
+    "prepack": "yarn run build",
+    "pre-commit": "lint-staged --cwd ."
+  },
+  "dependencies": {
+    "@toruslabs/tweetnacl-js": "^1.0.3"
+  },
+  "peerDependencies": {
+    "@babel/runtime": "7.x"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "lint-staged": {
+    "!(*d).ts": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torusresearch/OpenLoginSdk.git"
+  },
+  "bugs": {
+    "url": "https://github.com/torusresearch/OpenLoginSdk/issues"
+  },
+  "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "6db88a245e11afe5fc1a21fd58835155e157471b"
+}

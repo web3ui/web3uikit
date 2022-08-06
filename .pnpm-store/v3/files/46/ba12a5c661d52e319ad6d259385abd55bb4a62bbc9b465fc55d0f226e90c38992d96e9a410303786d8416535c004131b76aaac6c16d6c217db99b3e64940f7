@@ -1,0 +1,8 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.swcHelpersVersion = exports.swcCliVersion = exports.swcCoreVersion = exports.nxVersion = void 0;
+exports.nxVersion = require('../../package.json').version;
+exports.swcCoreVersion = '~1.2.143';
+exports.swcCliVersion = '~0.1.55';
+exports.swcHelpersVersion = '~0.3.3';
+//# sourceMappingURL=versions.js.map

@@ -1,0 +1,89 @@
+{
+  "name": "@web3auth/ui",
+  "version": "1.1.1",
+  "description": "Ui modal for web3Auth",
+  "keywords": [
+    "web3Auth/ui",
+    "web3Auth",
+    "multichainWallet",
+    "blockchain",
+    "ethereum",
+    "solana"
+  ],
+  "main": "dist/ui.cjs.js",
+  "module": "dist/ui.esm.js",
+  "unpkg": "dist/ui.umd.min.js",
+  "jsdelivr": "dist/ui.umd.min.js",
+  "types": "dist/types/index.d.ts",
+  "author": "Torus Labs",
+  "homepage": "https://github.com/Web3Auth/Web3Auth/tree/main/packages/ui#readme",
+  "license": "ISC",
+  "scripts": {
+    "test": "mocha --config ../../.mocharc.json test/**.ts",
+    "test-debugger": "mocha --config ../../.mocharc.json --inspect-brk test/**.ts",
+    "dev": "torus-scripts start",
+    "build": "torus-scripts build",
+    "lint": "eslint --fix 'src/**/*.ts'",
+    "prepack": "yarn run build",
+    "pre-commit": "lint-staged --cwd .",
+    "serve:ui": "live-server public/"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "peerDependencies": {
+    "@babel/runtime": "^7.x"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.18.6",
+    "@svgr/rollup": "^6.2.1",
+    "@svgr/webpack": "^6.2.1",
+    "@toruslabs/eslint-config-react": "^1.0.3",
+    "@types/lodash.clonedeep": "^4.5.7",
+    "@types/lodash.merge": "^4.6.7",
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
+    "css-loader": "^6.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.0",
+    "eslint-plugin-react": "^7.30.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "live-server": "^1.2.2",
+    "postcss": "^8.4.14",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-url": "^3.0.1",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1"
+  },
+  "dependencies": {
+    "@toruslabs/openlogin": "^2.3.0",
+    "@toruslabs/openlogin-jrpc": "^2.1.0",
+    "@web3auth/base": "^1.1.1",
+    "bowser": "^2.11.0",
+    "classnames": "^2.3.1",
+    "lodash.clonedeep": "^4.5.0",
+    "lodash.merge": "^4.6.2",
+    "react": "^17",
+    "react-dom": "^17",
+    "react-qr-code": "^2.0.7"
+  },
+  "lint-staged": {
+    "!(*d).ts": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Web3Auth/Web3Auth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Web3Auth/Web3Auth/issues"
+  },
+  "gitHead": "2ab39b9cc6e98ff4bb11f0461c83631079b35356"
+}

@@ -1,0 +1,49 @@
+{
+  "name": "recrawl-sync",
+  "version": "2.2.2",
+  "main": "lib/recrawl.js",
+  "license": "MIT",
+  "homepage": "https://github.com/aleclarson/recrawl/tree/sync",
+  "repository": "https://github.com/aleclarson/recrawl.git",
+  "prettier": "@alloc/prettier-config",
+  "scripts": {
+    "build": "tsc -p .",
+    "prepare": "yarn build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@cush/relative": "^1.0.0",
+    "glob-regex": "^0.3.0",
+    "slash": "^3.0.0",
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "@alloc/prettier-config": "^1.0.0",
+    "@sucrase/jest-plugin": "^2.0.0",
+    "@types/jest": "^24.0.15",
+    "@types/node": "^10.12.9",
+    "jest": "^24.8.0",
+    "prettier": "^2.6.0",
+    "typescript": "^4.6.2"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "keywords": [
+    "fs",
+    "crawl",
+    "crawler",
+    "directory",
+    "readdir",
+    "glob",
+    "globby",
+    "recrawl",
+    "tiny"
+  ],
+  "jest": {
+    "transform": {
+      ".(js|jsx|ts|tsx)": "@sucrase/jest-plugin"
+    }
+  }
+}

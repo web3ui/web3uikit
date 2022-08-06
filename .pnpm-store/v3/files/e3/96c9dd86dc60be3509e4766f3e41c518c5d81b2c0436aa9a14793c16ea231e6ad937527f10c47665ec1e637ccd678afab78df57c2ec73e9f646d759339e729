@@ -1,0 +1,76 @@
+import NodeDetailManager from "@toruslabs/fetch-node-details";
+import { ObjectMultiplex } from "@toruslabs/openlogin-jrpc";
+import TorusJs from "@toruslabs/torus.js";
+import TorusInpageProvider from "./inpage-provider";
+import { BUTTON_POSITION_TYPE, EMBED_TRANSLATION_ITEM, PAYMENT_PROVIDER_TYPE, PaymentParams, TorusCtorArgs, TorusLoginParams, TorusParams, TorusPublicKey, UserInfo, VerifierArgs, WALLET_PATH, WhiteLabelParams } from "./interfaces";
+declare class Torus {
+    buttonPosition: BUTTON_POSITION_TYPE;
+    torusUrl: string;
+    torusIframe: HTMLIFrameElement;
+    styleLink: HTMLLinkElement;
+    isLoggedIn: boolean;
+    isInitialized: boolean;
+    torusWidgetVisibility: boolean;
+    torusAlert: HTMLDivElement;
+    nodeDetailManager: NodeDetailManager;
+    torusJs: TorusJs;
+    apiKey: string;
+    modalZIndex: number;
+    alertZIndex: number;
+    torusAlertContainer: HTMLDivElement;
+    isIframeFullScreen: boolean;
+    whiteLabel: WhiteLabelParams;
+    requestedVerifier: string;
+    currentVerifier: string;
+    embedTranslations: EMBED_TRANSLATION_ITEM;
+    ethereum: TorusInpageProvider;
+    provider: TorusInpageProvider;
+    communicationMux: ObjectMultiplex;
+    isLoginCallback: () => void;
+    dappStorageKey: string;
+    paymentProviders: {
+        rampnetwork: import("./interfaces").IPaymentProvider;
+        moonpay: import("./interfaces").IPaymentProvider;
+        wyre: import("./interfaces").IPaymentProvider;
+        xanpool: import("./interfaces").IPaymentProvider;
+        mercuryo: import("./interfaces").IPaymentProvider;
+        transak: import("./interfaces").IPaymentProvider;
+    };
+    private loginHint;
+    private useWalletConnect;
+    constructor({ buttonPosition, modalZIndex, apiKey }?: TorusCtorArgs);
+    init({ buildEnv, enableLogging, enabledVerifiers, network, loginConfig, showTorusButton, integrity, whiteLabel, skipTKey, useLocalStorage, useWalletConnect, }?: TorusParams): Promise<void>;
+    login({ verifier, login_hint: loginHint }?: TorusLoginParams): Promise<string[]>;
+    logout(): Promise<void>;
+    cleanUp(): Promise<void>;
+    clearInit(): void;
+    hideTorusButton(): void;
+    showTorusButton(): void;
+    setProvider({ host, chainId, networkName, ...rest }?: {
+        host?: string;
+        chainId?: any;
+        networkName?: string;
+    }): Promise<void>;
+    showWallet(path: WALLET_PATH, params?: Record<string, string>): void;
+    getPublicAddress({ verifier, verifierId, isExtended }: VerifierArgs): Promise<string | TorusPublicKey>;
+    getUserInfo(message: string): Promise<UserInfo>;
+    initiateTopup(provider: PAYMENT_PROVIDER_TYPE, params: PaymentParams): Promise<boolean>;
+    loginWithPrivateKey(loginParams: {
+        privateKey: string;
+        userInfo: Omit<UserInfo, "isNewUser">;
+    }): Promise<void>;
+    showWalletConnectScanner(): Promise<void>;
+    protected _handleWindow(preopenInstanceId: string, { url, target, features }?: {
+        url?: string;
+        target?: string;
+        features?: string;
+    }): void;
+    protected _setEmbedWhiteLabel(element: HTMLElement): void;
+    protected _getLogoUrl(): string;
+    protected _sendWidgetVisibilityStatus(status: boolean): void;
+    protected _displayIframe(isFull?: boolean): void;
+    protected _setupWeb3(): void;
+    protected _showLoginPopup(calledFromEmbed: boolean, resolve: (a: string[]) => void, reject: (err: Error) => void): void;
+    protected _createPopupBlockAlert(preopenInstanceId: string, url: string): void;
+}
+export default Torus;

@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "ng-add",
+  "title": "@jscutlery/semver install generator",
+  "type": "object",
+  "cli": "nx",
+  "properties": {
+    "syncVersions": {
+      "description": "Lock/sync versions between packages",
+      "type": "boolean",
+      "default": false
+    },
+    "projects": {
+      "description": "Which projects should be versioned independently",
+      "type": "array"
+    },
+    "baseBranch": {
+      "description": "Configure base branch",
+      "type": "string"
+    },
+    "commitMessageFormat": {
+      "description": "A string to be used to format the auto-generated release commit message.",
+      "type": "string"
+    },
+    "enforceConventionalCommits": {
+      "description": "Install & configure commitlint and husky.",
+      "type": "boolean",
+      "default": true,
+      "x-prompt": "Would you want to enforce conventional commits?"
+    },
+    "preset": {
+      "description": "Customize CHANGELOG generation and lint rules.",
+      "type": "string",
+      "enum": ["angular", "conventional"],
+      "default": "angular",
+      "x-prompt": {
+        "message": "Which preset would you want to use?",
+        "type": "list",
+        "items": [
+          {
+            "value": "angular",
+            "label": "Angular      [ https://github.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-format ]"
+          },
+          {
+            "value": "conventional",
+            "label": "Conventional [ https://www.conventionalcommits.org/en/v1.0.0-beta.4                                  ]"
+          }
+        ]
+      }
+    },
+    "skipInstall": {
+      "description": "Skip install dependencies",
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": []
+}

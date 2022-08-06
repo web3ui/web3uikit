@@ -1,0 +1,65 @@
+{
+  "name": "@web3auth/web3auth",
+  "version": "1.1.1",
+  "homepage": "https://github.com/Web3Auth/Web3Auth#readme",
+  "license": "ISC",
+  "main": "dist/web3auth.cjs.js",
+  "module": "dist/web3auth.esm.js",
+  "unpkg": "dist/web3auth.umd.min.js",
+  "jsdelivr": "dist/web3auth.umd.min.js",
+  "types": "dist/types/index.d.ts",
+  "author": "Torus Labs",
+  "scripts": {
+    "test": "mocha --config ../../.mocharc.json test/**.ts",
+    "test-debugger": "mocha --config ../../.mocharc.json --inspect-brk test/**.ts",
+    "dev": "torus-scripts start",
+    "build": "torus-scripts build",
+    "lint": "eslint --fix 'src/**/*.ts'",
+    "prepack": "yarn run build",
+    "pre-commit": "lint-staged --cwd ."
+  },
+  "dependencies": {
+    "@web3auth/base": "^1.1.1",
+    "@web3auth/core": "^1.1.1",
+    "@web3auth/metamask-adapter": "^1.1.1",
+    "@web3auth/openlogin-adapter": "^1.1.1",
+    "@web3auth/phantom-adapter": "^1.1.1",
+    "@web3auth/torus-evm-adapter": "^1.1.1",
+    "@web3auth/torus-solana-adapter": "^1.1.1",
+    "@web3auth/ui": "^1.1.1",
+    "@web3auth/wallet-connect-v1-adapter": "^1.1.1"
+  },
+  "devDependencies": {
+    "@svgr/webpack": "^6.2.1",
+    "@toruslabs/openlogin": "^2.3.0",
+    "@types/node": "^16",
+    "css-loader": "^6.7.1",
+    "style-loader": "^3.3.1",
+    "url-loader": "^4.1.1"
+  },
+  "peerDependencies": {
+    "@babel/runtime": "7.x"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "lint-staged": {
+    "!(*d).ts": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Web3Auth/Web3Auth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Web3Auth/Web3Auth/issues"
+  },
+  "keywords": [],
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "2ab39b9cc6e98ff4bb11f0461c83631079b35356"
+}

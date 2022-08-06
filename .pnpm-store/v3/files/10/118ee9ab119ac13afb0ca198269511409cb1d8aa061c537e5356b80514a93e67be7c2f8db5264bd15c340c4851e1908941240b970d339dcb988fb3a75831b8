@@ -1,0 +1,58 @@
+{
+  "name": "vite-tsconfig-paths",
+  "version": "3.5.0",
+  "description": "Vite resolver for TypeScript compilerOptions.paths",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "author": "aleclarson",
+  "repository": "aleclarson/vite-tsconfig-paths",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "dev": "yarn bundle --watch",
+    "build": "yarn clean && yarn bundle",
+    "bundle": "tsup src/index.ts --sourcemap --dts --format cjs,esm",
+    "prepare": "yarn build",
+    "test": "jest"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "globrex": "^0.1.2",
+    "recrawl-sync": "^2.0.3",
+    "tsconfig-paths": "^4.0.0"
+  },
+  "devDependencies": {
+    "@alloc/fast-rimraf": "^1.0.8",
+    "@types/debug": "^4.1.5",
+    "@types/globrex": "^0.1.0",
+    "@types/jest": "^26.0.22",
+    "@types/node": "^14.0.27",
+    "esbuild": "^0.11.12",
+    "esbuild-jest": "npm:@alloc/esbuild-jest@^0.3.6",
+    "jest": "^26.6.3",
+    "klona": "^2.0.4",
+    "prettier": "^2.0.5",
+    "rollup": "^2.45.2",
+    "tsup": "^4.10.1",
+    "typescript": "^4.2.4",
+    "vite": "*",
+    "vite-tsconfig-paths": "link:."
+  },
+  "peerDependencies": {
+    "vite": ">2.0.0-0"
+  },
+  "keywords": [
+    "vite",
+    "resolver",
+    "tsconfig",
+    "paths"
+  ],
+  "files": [
+    "src",
+    "dist"
+  ]
+}

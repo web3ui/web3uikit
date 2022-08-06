@@ -1,0 +1,50 @@
+{
+  "name": "@nrwl/jest",
+  "version": "14.1.9",
+  "description": "The Nx Plugin for Jest contains executors and generators allowing your workspace to use the powerful Jest testing capabilities.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nrwl/nx.git",
+    "directory": "packages/jest"
+  },
+  "keywords": [
+    "Monorepo",
+    "Angular",
+    "React",
+    "Web",
+    "Node",
+    "Nest",
+    "Jest",
+    "Unit Testing",
+    "CLI"
+  ],
+  "main": "./index.js",
+  "typings": "./index.d.ts",
+  "author": "Victor Savkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nrwl/nx/issues"
+  },
+  "homepage": "https://nx.dev",
+  "schematics": "./generators.json",
+  "builders": "./executors.json",
+  "ng-update": {
+    "requirements": {},
+    "migrations": "./migrations.json"
+  },
+  "dependencies": {
+    "@jest/reporters": "27.5.1",
+    "@jest/test-result": "27.5.1",
+    "@nrwl/devkit": "14.1.9",
+    "@phenomnomnominal/tsquery": "4.1.1",
+    "chalk": "4.1.0",
+    "identity-obj-proxy": "3.0.0",
+    "jest-config": "27.5.1",
+    "jest-resolve": "27.5.1",
+    "jest-util": "27.5.1",
+    "resolve.exports": "1.1.0",
+    "rxjs": "^6.5.4",
+    "tslib": "^2.3.0"
+  },
+  "gitHead": "7c49c14ce0bb3866b8142ab1220d663fa6d40591"
+}

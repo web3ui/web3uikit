@@ -1,0 +1,400 @@
+// Vitest Snapshot v1
+
+exports[`adds component to docgen collection 1`] = `
+{
+  "code": "import * as React from \\"react\\";
+
+interface SimpleComponentProps {
+  /** Button color. */
+  color: \\"blue\\" | \\"green\\";
+}
+
+/**
+ * A simple component.
+ */
+export const SimpleComponent: React.FC<SimpleComponentProps> = (props) => (
+  <button style={{ backgroundColor: props.color }}>{props.children}</button>
+);
+try {
+    // @ts-ignore
+    SimpleComponent.displayName = \\"SimpleComponent\\";
+    // @ts-ignore
+    SimpleComponent.__docgenInfo = { \\"description\\": \\"A simple component.\\", \\"displayName\\": \\"SimpleComponent\\", \\"props\\": { \\"color\\": { \\"defaultValue\\": null, \\"description\\": \\"Button color.\\", \\"name\\": \\"color\\", \\"required\\": true, \\"type\\": { \\"name\\": \\"\\\\\\"blue\\\\\\" | \\\\\\"green\\\\\\"\\" } } } };
+    // @ts-ignore
+    if (typeof STORYBOOK_REACT_CLASSES !== \\"undefined\\")
+        // @ts-ignore
+        STORYBOOK_REACT_CLASSES[\\"Simple.tsx#SimpleComponent\\"] = { docgenInfo: SimpleComponent.__docgenInfo, name: \\"SimpleComponent\\", path: \\"Simple.tsx#SimpleComponent\\" };
+}
+catch (__react_docgen_typescript_loader_error) { }",
+  "map": SourceMap {
+    "file": null,
+    "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;",
+    "names": [],
+    "sources": [
+      null,
+    ],
+    "sourcesContent": [
+      null,
+    ],
+    "version": 3,
+  },
+}
+`;
+
+exports[`component fixture > DefaultPropValue.tsx has code block generated 1`] = `
+{
+  "code": "import * as React from \\"react\\";
+
+interface DefaultPropValueComponentProps {
+  /**
+   * Button color.
+   *
+   * @default blue
+   **/
+  color: \\"blue\\" | \\"green\\";
+
+  /**
+   * Button counter.
+   */
+  counter: number;
+
+  /**
+   * Button disabled.
+   */
+  disabled: boolean;
+}
+
+/**
+ * Component with a prop with a default value.
+ */
+export const DefaultPropValueComponent: React.FC<
+  DefaultPropValueComponentProps
+> = (props) => (
+  <button disabled={props.disabled} style={{ backgroundColor: props.color }}>
+    {props.counter}
+    {props.children}
+  </button>
+);
+
+DefaultPropValueComponent.defaultProps = {
+  counter: 123,
+  disabled: false,
+};
+try {
+    // @ts-ignore
+    DefaultPropValueComponent.displayName = \\"DefaultPropValueComponent\\";
+    // @ts-ignore
+    DefaultPropValueComponent.__docgenInfo = { \\"description\\": \\"Component with a prop with a default value.\\", \\"displayName\\": \\"DefaultPropValueComponent\\", \\"props\\": { \\"color\\": { \\"defaultValue\\": { value: \\"blue\\" }, \\"description\\": \\"Button color.\\", \\"name\\": \\"color\\", \\"required\\": true, \\"type\\": { \\"name\\": \\"\\\\\\"blue\\\\\\" | \\\\\\"green\\\\\\"\\" } }, \\"counter\\": { \\"defaultValue\\": { value: 123 }, \\"description\\": \\"Button counter.\\", \\"name\\": \\"counter\\", \\"required\\": false, \\"type\\": { \\"name\\": \\"number\\" } }, \\"disabled\\": { \\"defaultValue\\": { value: false }, \\"description\\": \\"Button disabled.\\", \\"name\\": \\"disabled\\", \\"required\\": false, \\"type\\": { \\"name\\": \\"boolean\\" } } } };
+}
+catch (__react_docgen_typescript_loader_error) { }",
+  "map": SourceMap {
+    "file": null,
+    "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;",
+    "names": [],
+    "sources": [
+      null,
+    ],
+    "sourcesContent": [
+      null,
+    ],
+    "version": 3,
+  },
+}
+`;
+
+exports[`component fixture > HyphenatedPropName.tsx has code block generated 1`] = `
+{
+  "code": "import * as React from \\"react\\";
+
+interface HyphenatedPropNameProps {
+  /** Button color. */
+  \\"button-color\\": \\"blue\\" | \\"green\\";
+}
+
+/**
+ * A component with a hyphenated prop name.
+ */
+export const HyphenatedPropNameComponent: React.FC<HyphenatedPropNameProps> = (
+  props
+) => (
+  <button style={{ backgroundColor: props[\\"button-color\\"] }}>
+    {props.children}
+  </button>
+);
+try {
+    // @ts-ignore
+    HyphenatedPropNameComponent.displayName = \\"HyphenatedPropNameComponent\\";
+    // @ts-ignore
+    HyphenatedPropNameComponent.__docgenInfo = { \\"description\\": \\"A component with a hyphenated prop name.\\", \\"displayName\\": \\"HyphenatedPropNameComponent\\", \\"props\\": { \\"button-color\\": { \\"defaultValue\\": null, \\"description\\": \\"Button color.\\", \\"name\\": \\"button-color\\", \\"required\\": true, \\"type\\": { \\"name\\": \\"\\\\\\"blue\\\\\\" | \\\\\\"green\\\\\\"\\" } } } };
+}
+catch (__react_docgen_typescript_loader_error) { }",
+  "map": SourceMap {
+    "file": null,
+    "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;",
+    "names": [],
+    "sources": [
+      null,
+    ],
+    "sourcesContent": [
+      null,
+    ],
+    "version": 3,
+  },
+}
+`;
+
+exports[`component fixture > MultiProps.tsx has code block generated 1`] = `
+{
+  "code": "import * as React from \\"react\\";
+
+interface MultiPropsComponentProps {
+  /** Button color. */
+  color: \\"blue\\" | \\"green\\";
+
+  /** Button size. */
+  size: \\"small\\" | \\"large\\";
+}
+
+/**
+ * This is a component with multiple props.
+ */
+export const MultiPropsComponent: React.FC<MultiPropsComponentProps> = (
+  props
+) => <button style={{ backgroundColor: props.color }}>{props.children}</button>;
+try {
+    // @ts-ignore
+    MultiPropsComponent.displayName = \\"MultiPropsComponent\\";
+    // @ts-ignore
+    MultiPropsComponent.__docgenInfo = { \\"description\\": \\"This is a component with multiple props.\\", \\"displayName\\": \\"MultiPropsComponent\\", \\"props\\": { \\"color\\": { \\"defaultValue\\": null, \\"description\\": \\"Button color.\\", \\"name\\": \\"color\\", \\"required\\": true, \\"type\\": { \\"name\\": \\"\\\\\\"blue\\\\\\" | \\\\\\"green\\\\\\"\\" } }, \\"size\\": { \\"defaultValue\\": null, \\"description\\": \\"Button size.\\", \\"name\\": \\"size\\", \\"required\\": true, \\"type\\": { \\"name\\": \\"\\\\\\"small\\\\\\" | \\\\\\"large\\\\\\"\\" } } } };
+}
+catch (__react_docgen_typescript_loader_error) { }",
+  "map": SourceMap {
+    "file": null,
+    "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;",
+    "names": [],
+    "sources": [
+      null,
+    ],
+    "sourcesContent": [
+      null,
+    ],
+    "version": 3,
+  },
+}
+`;
+
+exports[`component fixture > MultilineDescription.tsx has code block generated 1`] = `
+{
+  "code": "import * as React from \\"react\\";
+
+interface MultilineDescriptionProps {
+  /** Button color. */
+  color: \\"blue\\" | \\"green\\";
+}
+
+/**
+ * A component with a multiline description.
+ *
+ * Second line.
+ */
+export const MultilineDescriptionComponent: React.FC<
+  MultilineDescriptionProps
+> = (props) => (
+  <button style={{ backgroundColor: props.color }}>{props.children}</button>
+);
+try {
+    // @ts-ignore
+    MultilineDescriptionComponent.displayName = \\"MultilineDescriptionComponent\\";
+    // @ts-ignore
+    MultilineDescriptionComponent.__docgenInfo = { \\"description\\": \\"A component with a multiline description.\\\\n\\\\nSecond line.\\", \\"displayName\\": \\"MultilineDescriptionComponent\\", \\"props\\": { \\"color\\": { \\"defaultValue\\": null, \\"description\\": \\"Button color.\\", \\"name\\": \\"color\\", \\"required\\": true, \\"type\\": { \\"name\\": \\"\\\\\\"blue\\\\\\" | \\\\\\"green\\\\\\"\\" } } } };
+}
+catch (__react_docgen_typescript_loader_error) { }",
+  "map": SourceMap {
+    "file": null,
+    "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;",
+    "names": [],
+    "sources": [
+      null,
+    ],
+    "sourcesContent": [
+      null,
+    ],
+    "version": 3,
+  },
+}
+`;
+
+exports[`component fixture > MultilinePropDescription.tsx has code block generated 1`] = `
+{
+  "code": "import * as React from \\"react\\";
+
+interface MultilinePropDescriptionComponentProps {
+  /**
+   * This is a multiline prop description.
+   *
+   * Second line.
+   */
+  color: \\"blue\\" | \\"green\\";
+}
+
+/**
+ * A component with multiline prop description.
+ */
+export const MultilinePropDescriptionComponent: React.FC<
+  MultilinePropDescriptionComponentProps
+> = (props) => (
+  <button style={{ backgroundColor: props.color }}>{props.children}</button>
+);
+try {
+    // @ts-ignore
+    MultilinePropDescriptionComponent.displayName = \\"MultilinePropDescriptionComponent\\";
+    // @ts-ignore
+    MultilinePropDescriptionComponent.__docgenInfo = { \\"description\\": \\"A component with multiline prop description.\\", \\"displayName\\": \\"MultilinePropDescriptionComponent\\", \\"props\\": { \\"color\\": { \\"defaultValue\\": null, \\"description\\": \\"This is a multiline prop description.\\\\n\\\\nSecond line.\\", \\"name\\": \\"color\\", \\"required\\": true, \\"type\\": { \\"name\\": \\"\\\\\\"blue\\\\\\" | \\\\\\"green\\\\\\"\\" } } } };
+}
+catch (__react_docgen_typescript_loader_error) { }",
+  "map": SourceMap {
+    "file": null,
+    "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;",
+    "names": [],
+    "sources": [
+      null,
+    ],
+    "sourcesContent": [
+      null,
+    ],
+    "version": 3,
+  },
+}
+`;
+
+exports[`component fixture > Simple.tsx has code block generated 1`] = `
+{
+  "code": "import * as React from \\"react\\";
+
+interface SimpleComponentProps {
+  /** Button color. */
+  color: \\"blue\\" | \\"green\\";
+}
+
+/**
+ * A simple component.
+ */
+export const SimpleComponent: React.FC<SimpleComponentProps> = (props) => (
+  <button style={{ backgroundColor: props.color }}>{props.children}</button>
+);
+try {
+    // @ts-ignore
+    SimpleComponent.displayName = \\"SimpleComponent\\";
+    // @ts-ignore
+    SimpleComponent.__docgenInfo = { \\"description\\": \\"A simple component.\\", \\"displayName\\": \\"SimpleComponent\\", \\"props\\": { \\"color\\": { \\"defaultValue\\": null, \\"description\\": \\"Button color.\\", \\"name\\": \\"color\\", \\"required\\": true, \\"type\\": { \\"name\\": \\"\\\\\\"blue\\\\\\" | \\\\\\"green\\\\\\"\\" } } } };
+}
+catch (__react_docgen_typescript_loader_error) { }",
+  "map": SourceMap {
+    "file": null,
+    "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;",
+    "names": [],
+    "sources": [
+      null,
+    ],
+    "sourcesContent": [
+      null,
+    ],
+    "version": 3,
+  },
+}
+`;
+
+exports[`component fixture > TextOnlyComponent.tsx has code block generated 1`] = `
+{
+  "code": "import * as React from \\"react\\";
+
+/**
+ * A component with only text content wrapped in a div.
+ *
+ * Ref: https://github.com/strothj/react-docgen-typescript-loader/issues/7
+ */
+export const SimpleComponent: React.FC<{}> = () => (
+  <div>Test only component</div>
+);
+try {
+    // @ts-ignore
+    SimpleComponent.displayName = \\"SimpleComponent\\";
+    // @ts-ignore
+    SimpleComponent.__docgenInfo = { \\"description\\": \\"A component with only text content wrapped in a div.\\\\n\\\\nRef: https://github.com/strothj/react-docgen-typescript-loader/issues/7\\", \\"displayName\\": \\"SimpleComponent\\", \\"props\\": {} };
+}
+catch (__react_docgen_typescript_loader_error) { }",
+  "map": SourceMap {
+    "file": null,
+    "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;",
+    "names": [],
+    "sources": [
+      null,
+    ],
+    "sourcesContent": [
+      null,
+    ],
+    "version": 3,
+  },
+}
+`;
+
+exports[`generates value info for enums 1`] = `
+{
+  "code": "import * as React from \\"react\\";
+
+interface DefaultPropValueComponentProps {
+  /**
+   * Button color.
+   *
+   * @default blue
+   **/
+  color: \\"blue\\" | \\"green\\";
+
+  /**
+   * Button counter.
+   */
+  counter: number;
+
+  /**
+   * Button disabled.
+   */
+  disabled: boolean;
+}
+
+/**
+ * Component with a prop with a default value.
+ */
+export const DefaultPropValueComponent: React.FC<
+  DefaultPropValueComponentProps
+> = (props) => (
+  <button disabled={props.disabled} style={{ backgroundColor: props.color }}>
+    {props.counter}
+    {props.children}
+  </button>
+);
+
+DefaultPropValueComponent.defaultProps = {
+  counter: 123,
+  disabled: false,
+};
+try {
+    // @ts-ignore
+    DefaultPropValueComponent.displayName = \\"DefaultPropValueComponent\\";
+    // @ts-ignore
+    DefaultPropValueComponent.__docgenInfo = { \\"description\\": \\"Component with a prop with a default value.\\", \\"displayName\\": \\"DefaultPropValueComponent\\", \\"props\\": { \\"color\\": { \\"defaultValue\\": { value: \\"blue\\" }, \\"description\\": \\"Button color.\\", \\"name\\": \\"color\\", \\"required\\": true, \\"type\\": { \\"name\\": \\"enum\\", \\"value\\": [{ \\"value\\": \\"\\\\\\"blue\\\\\\"\\" }, { \\"value\\": \\"\\\\\\"green\\\\\\"\\" }] } }, \\"counter\\": { \\"defaultValue\\": { value: 123 }, \\"description\\": \\"Button counter.\\", \\"name\\": \\"counter\\", \\"required\\": false, \\"type\\": { \\"name\\": \\"number\\" } }, \\"disabled\\": { \\"defaultValue\\": { value: false }, \\"description\\": \\"Button disabled.\\", \\"name\\": \\"disabled\\", \\"required\\": false, \\"type\\": { \\"name\\": \\"boolean\\" } } } };
+}
+catch (__react_docgen_typescript_loader_error) { }",
+  "map": SourceMap {
+    "file": null,
+    "mappings": "AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;",
+    "names": [],
+    "sources": [
+      null,
+    ],
+    "sourcesContent": [
+      null,
+    ],
+    "version": 3,
+  },
+}
+`;

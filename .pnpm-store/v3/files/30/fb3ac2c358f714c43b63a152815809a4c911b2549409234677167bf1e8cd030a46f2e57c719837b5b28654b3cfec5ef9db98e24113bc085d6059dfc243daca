@@ -1,0 +1,54 @@
+name: CI
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  all:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # https://docs.github.com/en/free-pro-team@latest/actions/guides/caching-dependencies-to-speed-up-workflows
+      - name: Reuse npm cache folder
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          # reuse the npm-cache and some node_modules folders
+          path: |
+            ~/.npm
+            ./node_modules
+          # invalidate cache when any package.json changes
+          key: ${{ runner.os }}-npm-${{ env.cache-name }}-${{ hashFiles('**/package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-${{ env.cache-name }}-
+            ${{ runner.os }}-npm-
+            ${{ runner.os }}-
+
+      # install
+      - name: install node modules
+        run: npm install
+
+      - name: build
+        run: npm run build
+
+      - name: test:node
+        run: npm run test:node
+
+      - name: test browser
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          working-directory: ./ #optional
+          run: npm run test:browser
+
+      - name: test:tryings
+        run: npm run test:typings
+
+      - name: lint
+        run: npm run lint

@@ -1,0 +1,33 @@
+{
+  "name": "@nrwl/cli",
+  "version": "14.1.9",
+  "description": "Smart, Fast and Extensible Build System",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nrwl/nx.git",
+    "directory": "packages/cli"
+  },
+  "keywords": [
+    "Monorepo",
+    "Angular",
+    "React",
+    "Web",
+    "Node",
+    "Nest",
+    "Jest",
+    "Cypress",
+    "CLI"
+  ],
+  "author": "Victor Savkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nrwl/nx/issues"
+  },
+  "homepage": "https://nx.dev",
+  "dependencies": {
+    "nx": "14.1.9"
+  },
+  "main": "./bin/nx.js",
+  "typings": "./bin/nx.d.ts",
+  "gitHead": "7c49c14ce0bb3866b8142ab1220d663fa6d40591"
+}

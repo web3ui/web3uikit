@@ -1,0 +1,10 @@
+import { UserConfig } from 'vite';
+import type { ExtendedOptions } from './types';
+export declare function getOptimizeDeps(config: UserConfig & {
+    configFile: false;
+    root: string;
+}, options: ExtendedOptions): Promise<{
+    entries: string[];
+    include: string[];
+    exclude: string[];
+}>;

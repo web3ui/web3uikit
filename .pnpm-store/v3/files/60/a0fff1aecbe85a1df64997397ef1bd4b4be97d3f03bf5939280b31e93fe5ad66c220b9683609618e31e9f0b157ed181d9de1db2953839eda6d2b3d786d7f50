@@ -1,0 +1,88 @@
+{
+  "name": "async-mutex",
+  "version": "0.3.2",
+  "description": "A mutex for guarding async workflows",
+  "scripts": {
+    "lint": "eslint src/**/*.ts test/**/*.ts",
+    "build": "tsc && tsc -p tsconfig.es6.json && tsc -p tsconfig.mjs.json && rollup -o index.mjs mjs/index.js",
+    "prepublishOnly": "yarn test && yarn build",
+    "test": "yarn lint && nyc --reporter=text --reporter=html --reporter=lcov mocha test/*.ts",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
+  },
+  "author": "Christian Speckner <cnspeckn@googlemail.com> (https://github.com/DirtyHairy/)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DirtyHairy/async-mutex"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "tabWidth": 4,
+    "singleQuote": true,
+    "parser": "typescript"
+  },
+  "importSort": {
+    ".js, .jsx, .ts, .tsx": {
+      "style": "eslint",
+      "parser": "typescript"
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "eqeqeq": "error",
+      "@typescript-eslint/no-namespace": "off",
+      "no-async-promise-executor": "off"
+    }
+  },
+  "keywords": [
+    "mutex",
+    "async"
+  ],
+  "files": [
+    "lib",
+    "es6",
+    "index.mjs"
+  ],
+  "devDependencies": {
+    "@sinonjs/fake-timers": "^7.1.2",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.7.8",
+    "@types/sinonjs__fake-timers": "^6.0.3",
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "coveralls": "^3.1.1",
+    "eslint": "^7.32.0",
+    "import-sort-style-eslint": "^6.0.0",
+    "mocha": "^9.1.1",
+    "nyc": "^15.1.0",
+    "prettier": "^2.3.2",
+    "prettier-plugin-import-sort": "^0.0.7",
+    "rollup": "^2.56.3",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.2"
+  },
+  "main": "lib/index.js",
+  "module": "es6/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./lib/index.js",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "tslib": "^2.3.1"
+  }
+}

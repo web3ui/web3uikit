@@ -2,7 +2,7 @@ name: PNPM publish
 on:
     push:
         branches:
-            - master
+            - test
 env:
     CI: true
     PNPM_CACHE_FOLDER: .pnpm-store

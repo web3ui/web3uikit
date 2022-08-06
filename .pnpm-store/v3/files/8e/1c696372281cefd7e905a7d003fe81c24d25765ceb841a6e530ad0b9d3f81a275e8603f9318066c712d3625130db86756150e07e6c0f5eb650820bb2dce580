@@ -1,0 +1,15 @@
+{
+  "title": "Example/Header",
+  "parameters": {
+    "server": { "id": "header" }
+  },
+  "stories": [
+    {
+      "name": "LoggedIn",
+      "args": { "user": {} }
+    },
+    {
+      "name": "LoggedOut"
+    }
+  ]
+}

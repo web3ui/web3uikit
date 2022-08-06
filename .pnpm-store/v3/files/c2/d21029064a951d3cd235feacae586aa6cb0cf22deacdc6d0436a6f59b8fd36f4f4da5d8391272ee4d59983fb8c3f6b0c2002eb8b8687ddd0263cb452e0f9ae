@@ -1,0 +1,197 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports._isInitialVersion = exports._isNewVersion = exports._getDependencyVersions = exports._manualBump = exports._semverBump = exports.tryBump = exports.getProjectVersion = void 0;
+const tslib_1 = require("tslib");
+const conventionalRecommendedBump = require("conventional-recommended-bump");
+const conventionalCommitsParser = require("conventional-commits-parser");
+const rxjs_1 = require("rxjs");
+const operators_1 = require("rxjs/operators");
+const semver = require("semver");
+const util_1 = require("util");
+const get_last_version_1 = require("./get-last-version");
+const git_1 = require("./git");
+const logger_1 = require("./logger");
+const tag_1 = require("./tag");
+const initialVersion = '0.0.0';
+function getProjectVersion({ tagPrefix, projectRoot, releaseType, since, projectName, }) {
+    const lastVersion$ = (0, get_last_version_1.getLastVersion)({
+        tagPrefix,
+        includePrerelease: releaseType === 'prerelease',
+    }).pipe((0, operators_1.catchError)(() => {
+        (0, logger_1._logStep)({
+            step: 'warning',
+            level: 'warn',
+            message: `No previous version tag found, fallback to version 0.0.0.
+        New version will be calculated based on all changes since first commit.
+        If your project is already versioned, please tag the latest release commit with ${tagPrefix}x.y.z and run this command again.`,
+            projectName,
+        });
+        return (0, rxjs_1.of)(initialVersion);
+    }), (0, operators_1.shareReplay)({
+        refCount: true,
+        bufferSize: 1,
+    }));
+    const lastVersionGitRef$ = lastVersion$.pipe(
+    /** If lastVersion equals 0.0.0 it means no tag exist,
+     * then get the first commit ref to compute the initial version. */
+    (0, operators_1.switchMap)((lastVersion) => (0, rxjs_1.iif)(() => _isInitialVersion({ lastVersion }), (0, git_1.getFirstCommitRef)(), (0, rxjs_1.of)((0, tag_1.formatTag)({ tagPrefix, version: lastVersion })))));
+    const commits$ = lastVersionGitRef$.pipe((0, operators_1.switchMap)((lastVersionGitRef) => {
+        return (0, git_1.getCommits)({
+            projectRoot,
+            since: since !== null && since !== void 0 ? since : lastVersionGitRef,
+        });
+    }));
+    return {
+        lastVersion$,
+        commits$,
+        lastVersionGitRef$,
+    };
+}
+exports.getProjectVersion = getProjectVersion;
+/**
+ * Return new version or null if nothing changed.
+ */
+function tryBump({ preset, projectRoot, tagPrefix, dependencyRoots = [], releaseType, preid, versionTagPrefix, syncVersions, allowEmptyRelease, skipCommitTypes, projectName, }) {
+    const { lastVersion$, commits$, lastVersionGitRef$ } = getProjectVersion({
+        tagPrefix,
+        projectRoot,
+        releaseType,
+        projectName,
+    });
+    return (0, rxjs_1.forkJoin)([lastVersion$, commits$, lastVersionGitRef$]).pipe((0, operators_1.switchMap)(([lastVersion, commits, lastVersionGitRef]) => {
+        /* If release type is manually specified,
+         * we just release even if there are no changes. */
+        if (releaseType !== undefined) {
+            return _manualBump({
+                since: lastVersion,
+                releaseType: releaseType,
+                preid: preid,
+            }).pipe((0, operators_1.map)((version) => ({ version, dependencyUpdates: [] })));
+        }
+        const dependencyVersions$ = _getDependencyVersions({
+            lastVersionGitRef,
+            dependencyRoots,
+            preset,
+            releaseType,
+            versionTagPrefix,
+            skipCommitTypes,
+            syncVersions,
+            projectName,
+        });
+        const projectBump$ = _semverBump({
+            since: lastVersion,
+            preset,
+            projectRoot,
+            tagPrefix,
+        }).pipe((0, operators_1.map)((version) => ({ type: 'project', version })));
+        return (0, rxjs_1.forkJoin)([projectBump$, dependencyVersions$]).pipe((0, operators_1.switchMap)(([projectVersion, dependencyVersions]) => {
+            const dependencyUpdates = dependencyVersions.filter(_isNewVersion);
+            const newVersion = {
+                version: projectVersion.version || lastVersion,
+                dependencyUpdates,
+            };
+            /* bump patch version if dependency updates are available */
+            if (projectVersion.version === null && dependencyUpdates.length) {
+                return _manualBump({
+                    since: lastVersion,
+                    releaseType: 'patch',
+                    preid: preid,
+                }).pipe((0, operators_1.map)((version) => (Object.assign(Object.assign({}, newVersion), { version: version || lastVersion }))));
+            }
+            const filteredCommits = commits.filter((commit) => shouldCommitBeCalculated({ commit, skipCommitTypes }));
+            /* No commits since last release & no dependency updates so don't bump if the `releastAtLeast` flag is not present. */
+            if (!dependencyUpdates.length &&
+                !filteredCommits.length &&
+                !allowEmptyRelease) {
+                return (0, rxjs_1.of)(null);
+            }
+            return (0, rxjs_1.of)(newVersion);
+        }));
+    }));
+}
+exports.tryBump = tryBump;
+function _semverBump({ since, preset, projectRoot, tagPrefix, }) {
+    return (0, rxjs_1.defer)(() => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const recommended = (yield (0, util_1.promisify)(conventionalRecommendedBump)({
+            path: projectRoot,
+            preset,
+            tagPrefix,
+        }));
+        const { releaseType } = recommended;
+        return semver.inc(since, releaseType);
+    }));
+}
+exports._semverBump = _semverBump;
+function _manualBump({ since, releaseType, preid, }) {
+    return (0, rxjs_1.defer)(() => {
+        const hasPreid = ['premajor', 'preminor', 'prepatch', 'prerelease'].includes(releaseType) && preid !== null;
+        const semverArgs = [
+            since,
+            releaseType,
+            ...(hasPreid ? [preid] : []),
+        ];
+        return (0, rxjs_1.of)(semver.inc(...semverArgs));
+    });
+}
+exports._manualBump = _manualBump;
+function shouldCommitBeCalculated({ commit, skipCommitTypes, }) {
+    const { type } = conventionalCommitsParser.sync(commit, {});
+    const shouldSkip = skipCommitTypes.some((typeToSkip) => typeToSkip === type);
+    return !shouldSkip;
+}
+function _getDependencyVersions({ preset, dependencyRoots, releaseType, versionTagPrefix, syncVersions, lastVersionGitRef, skipCommitTypes, projectName, }) {
+    return (0, rxjs_1.forkJoin)(dependencyRoots.map(({ path: projectRoot, name: dependencyName }) => {
+        /* Get dependency version changes since last project version */
+        const tagPrefix = (0, tag_1.formatTagPrefix)({
+            versionTagPrefix,
+            projectName: dependencyName,
+            syncVersions,
+        });
+        const { lastVersion$, commits$ } = getProjectVersion({
+            tagPrefix,
+            projectRoot,
+            releaseType,
+            since: lastVersionGitRef,
+            projectName,
+        });
+        return (0, rxjs_1.forkJoin)([lastVersion$, commits$]).pipe((0, operators_1.switchMap)(([dependencyLastVersion, commits]) => {
+            const filteredCommits = commits.filter((commit) => shouldCommitBeCalculated({ commit, skipCommitTypes }));
+            if (filteredCommits.length === 0) {
+                return (0, rxjs_1.of)({
+                    type: 'dependency',
+                    version: null,
+                    dependencyName: dependencyName,
+                });
+            }
+            /* Dependency has changes but has no tagged version */
+            if (_isInitialVersion({ lastVersion: dependencyLastVersion })) {
+                return _semverBump({
+                    since: dependencyLastVersion,
+                    preset,
+                    projectRoot,
+                    tagPrefix,
+                }).pipe((0, operators_1.map)((version) => ({
+                    type: 'dependency',
+                    version,
+                    dependencyName: dependencyName,
+                })));
+            }
+            /* Return the changed version of dependency since last commit within project */
+            return (0, rxjs_1.of)({
+                type: 'dependency',
+                version: dependencyLastVersion,
+                dependencyName: dependencyName,
+            });
+        }));
+    })).pipe((0, operators_1.defaultIfEmpty)([]));
+}
+exports._getDependencyVersions = _getDependencyVersions;
+function _isNewVersion(version) {
+    return version.version !== null && version.version !== initialVersion;
+}
+exports._isNewVersion = _isNewVersion;
+function _isInitialVersion({ lastVersion, }) {
+    return lastVersion === initialVersion;
+}
+exports._isInitialVersion = _isInitialVersion;
+//# sourceMappingURL=try-bump.js.map

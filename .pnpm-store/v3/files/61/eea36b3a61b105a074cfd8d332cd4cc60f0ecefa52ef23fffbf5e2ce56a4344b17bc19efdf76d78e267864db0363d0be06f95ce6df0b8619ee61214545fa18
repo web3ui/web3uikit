@@ -1,0 +1,94 @@
+{
+  "name": "@nrwl/workspace",
+  "version": "14.1.9",
+  "description": "Smart, Fast and Extensible Build System.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nrwl/nx.git",
+    "directory": "packages/workspace"
+  },
+  "keywords": [
+    "Monorepo",
+    "Angular",
+    "React",
+    "Web",
+    "Node",
+    "Nest",
+    "Jest",
+    "Cypress",
+    "CLI"
+  ],
+  "main": "./index.js",
+  "typings": "./index.d.ts",
+  "author": "Victor Savkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nrwl/nx/issues"
+  },
+  "homepage": "https://nx.dev",
+  "schematics": "./generators.json",
+  "builders": "./executors.json",
+  "ng-update": {
+    "requirements": {},
+    "migrations": "./migrations.json",
+    "packageGroup": {
+      "@nrwl/angular": "14.1.9",
+      "@nrwl/cypress": "14.1.9",
+      "@nrwl/devkit": "14.1.9",
+      "@nrwl/eslint-plugin-nx": "14.1.9",
+      "@nrwl/express": "14.1.9",
+      "@nrwl/jest": "14.1.9",
+      "@nrwl/linter": "14.1.9",
+      "@nrwl/nest": "14.1.9",
+      "@nrwl/next": "14.1.9",
+      "@nrwl/node": "14.1.9",
+      "@nrwl/nx-plugin": "14.1.9",
+      "@nrwl/react": "14.1.9",
+      "@nrwl/storybook": "14.1.9",
+      "@nrwl/web": "14.1.9",
+      "@nrwl/js": "14.1.9",
+      "@nrwl/cli": "14.1.9",
+      "@nrwl/tao": "14.1.9",
+      "@nrwl/nx-cloud": "latest",
+      "@nrwl/react-native": "14.1.9",
+      "@nrwl/detox": "14.1.9",
+      "nx": "14.1.9"
+    }
+  },
+  "peerDependencies": {
+    "prettier": "^2.5.1"
+  },
+  "peerDependenciesMeta": {
+    "prettier": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@nrwl/devkit": "14.1.9",
+    "@nrwl/jest": "14.1.9",
+    "@nrwl/linter": "14.1.9",
+    "@parcel/watcher": "2.0.4",
+    "chalk": "4.1.0",
+    "chokidar": "^3.5.1",
+    "cli-cursor": "3.1.0",
+    "cli-spinners": "2.6.1",
+    "dotenv": "~10.0.0",
+    "enquirer": "~2.3.6",
+    "figures": "3.2.0",
+    "flat": "^5.0.2",
+    "fs-extra": "^10.1.0",
+    "glob": "7.1.4",
+    "ignore": "^5.0.4",
+    "minimatch": "3.0.4",
+    "npm-run-path": "^4.0.1",
+    "nx": "14.1.9",
+    "open": "^8.4.0",
+    "rxjs": "^6.5.4",
+    "semver": "7.3.4",
+    "tmp": "~0.2.1",
+    "tslib": "^2.3.0",
+    "yargs": "^17.4.0",
+    "yargs-parser": "21.0.1"
+  },
+  "gitHead": "7c49c14ce0bb3866b8142ab1220d663fa6d40591"
+}

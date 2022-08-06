@@ -1,0 +1,40 @@
+{
+  "name": "@nrwl/devkit",
+  "version": "14.1.9",
+  "description": "Smart, Fast and Extensible Build System",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nrwl/nx.git",
+    "directory": "packages/devkit"
+  },
+  "keywords": [
+    "Monorepo",
+    "Angular",
+    "React",
+    "Web",
+    "Node",
+    "Nest",
+    "Jest",
+    "Cypress",
+    "CLI"
+  ],
+  "main": "./index.js",
+  "typings": "./index.d.ts",
+  "author": "Victor Savkin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nrwl/nx/issues"
+  },
+  "homepage": "https://nx.dev",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "ignore": "^5.0.4",
+    "rxjs": "^6.5.4",
+    "semver": "7.3.4",
+    "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "nx": ">= 13.10 <= 15"
+  },
+  "gitHead": "7c49c14ce0bb3866b8142ab1220d663fa6d40591"
+}

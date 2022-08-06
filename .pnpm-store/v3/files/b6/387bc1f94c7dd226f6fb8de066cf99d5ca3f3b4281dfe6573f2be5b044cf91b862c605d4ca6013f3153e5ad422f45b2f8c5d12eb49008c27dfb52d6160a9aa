@@ -1,0 +1,109 @@
+{
+  "name": "@toruslabs/torus-embed",
+  "version": "1.27.1",
+  "description": "Embed script for Torus",
+  "main": "dist/torus.cjs.js",
+  "module": "dist/torus.esm.js",
+  "unpkg": "dist/torus.umd.min.js",
+  "jsdelivr": "dist/torus.umd.min.js",
+  "types": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torusresearch/torus-embed.git"
+  },
+  "scripts": {
+    "start": "torus-scripts start --name=torus",
+    "build": "torus-scripts build --name=torus",
+    "release": "torus-scripts release",
+    "prepack": "npm run build",
+    "lint:ts": "eslint --fix 'src/**/*.ts'",
+    "prepare": "husky install"
+  },
+  "peerDependencies": {
+    "@babel/runtime": "7.x"
+  },
+  "dependencies": {
+    "@metamask/obs-store": "^7.0.0",
+    "@toruslabs/fetch-node-details": "^7.0.2",
+    "@toruslabs/http-helpers": "^3.1.0",
+    "@toruslabs/openlogin-jrpc": "^2.1.0",
+    "@toruslabs/torus.js": "^6.1.0",
+    "create-hash": "^1.2.0",
+    "end-of-stream": "^1.4.4",
+    "eth-rpc-errors": "^4.0.3",
+    "events": "^3.3.0",
+    "fast-deep-equal": "^3.1.3",
+    "is-stream": "^2.0.1",
+    "lodash.merge": "^4.6.2",
+    "loglevel": "^1.8.0",
+    "once": "^1.4.0",
+    "pump": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/runtime": "^7.18.6",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-replace": "^4.0.0",
+    "@toruslabs/eslint-config-typescript": "^1.0.3",
+    "@toruslabs/torus-scripts": "^1.0.5",
+    "@types/create-hash": "^1.2.2",
+    "@types/lodash.merge": "^4.6.7",
+    "@types/node": "^16",
+    "@types/once": "^1.4.0",
+    "@types/readable-stream": "^2.3.13",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "@typescript-eslint/parser": "^5.30.6",
+    "cross-env": "^7.0.3",
+    "empty-module": "0.0.2",
+    "eslint": "^8.19.0",
+    "eslint-plugin-import": "~2.26.0",
+    "eslint-plugin-mocha": "^10.0.5",
+    "eslint-plugin-n": "^15.2.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-tsdoc": "^0.2.16",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "mocha": "^10.0.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4"
+  },
+  "mocha": {
+    "timeout": 0
+  },
+  "keywords": [
+    "torus",
+    "wallet",
+    "ERC20",
+    "Ethereum",
+    "embed",
+    "login",
+    "OAuth",
+    "crypto"
+  ],
+  "author": "Torus Labs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/torusresearch/torus-embed/issues"
+  },
+  "homepage": "https://github.com/torusresearch/torus-embed#readme",
+  "lint-staged": {
+    "!(*d).{js,ts}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ],
+    "*.{json, md}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=14.17.0",
+    "npm": ">=6.x"
+  }
+}

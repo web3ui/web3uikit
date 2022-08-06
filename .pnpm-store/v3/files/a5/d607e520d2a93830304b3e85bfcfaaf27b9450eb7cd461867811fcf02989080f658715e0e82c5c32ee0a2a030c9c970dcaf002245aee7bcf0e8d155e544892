@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "jscutlery-semver-version",
+  "title": "JSCutlery Version builder",
+  "description": "Automate versioning and CHANGELOG generation.",
+  "type": "object",
+  "cli": "nx",
+  "properties": {
+    "dryRun": {
+      "description": "See what commands would be run, without committing to git or updating files.",
+      "type": "boolean",
+      "default": false
+    },
+    "noVerify": {
+      "description": "Bypass pre-commit or commit-msg git hooks during the commit phase.",
+      "type": "boolean",
+      "default": false
+    },
+    "changelogHeader": {
+      "description": "Generates changelog with custom header.",
+      "type": "string"
+    },
+    "push": {
+      "description": "Pushes to the git remote.",
+      "type": "boolean",
+      "default": false
+    },
+    "remote": {
+      "description": "Pushes against git remote repository.",
+      "type": "string",
+      "default": "origin"
+    },
+    "baseBranch": {
+      "description": "Pushes against git base branch.",
+      "type": "string",
+      "default": "main"
+    },
+    "syncVersions": {
+      "description": "Sync all package versions.",
+      "type": "boolean",
+      "default": false
+    },
+    "skipRootChangelog": {
+      "description": "Skip root CHANGELOG generation containing all monorepo changes (only with sync mode).",
+      "type": "boolean",
+      "default": false
+    },
+    "skipProjectChangelog": {
+      "description": "Skip project CHANGELOG generation (only with sync mode).",
+      "type": "boolean",
+      "default": false
+    },
+    "version": {
+      "description": "(Deprecated) Manually increment the version by that keyword.",
+      "type": "string"
+    },
+    "releaseAs": {
+      "description": "Manually increment the version by that keyword.",
+      "type": "string"
+    },
+    "preid": {
+      "description": "Use the next semantic prerelease version with a specific prerelease identifier.",
+      "type": "string"
+    },
+    "tagPrefix": {
+      "description": "Version tag prefix. Default is 'v' with the sync mode and '${projectName}-' independent mode.",
+      "oneOf": [{ "type": "string" }, { "type": "null" }]
+    },
+    "versionTagPrefix": {
+      "description": "(Deprecated) Version tag prefix. Default is 'v' with the sync mode and '${projectName}-' independent mode.",
+      "oneOf": [{ "type": "string" }, { "type": "null" }]
+    },
+    "postTargets": {
+      "description": "Specify the targets to run after a new version was successfully created.",
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "string",
+        "description": "The target to run."
+      }
+    },
+    "trackDeps": {
+      "description": "Includes the project's dependencies in calculating a recommended version bump.",
+      "type": "boolean",
+      "default": false
+    },
+    "allowEmptyRelease": {
+      "description": "Allow bumping versions even if there are no changes in the library.",
+      "type": "boolean",
+      "default": false
+    },
+    "skipCommitTypes": {
+      "description": " Specify array of commit types to be ignored when calculating next version bump",
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "string",
+        "description": "Type to ignore"
+      }
+    },
+    "commitMessageFormat": {
+      "description": "A string to be used to format the auto-generated release commit message.",
+      "type": "string",
+      "default": "chore(${projectName}): release version ${version}"
+    },
+    "preset": {
+      "description": "Customize CHANGELOG generation.",
+      "type": "string",
+      "enum": ["angular", "conventional"],
+      "default": "angular"
+    }
+  },
+
+  "required": []
+}

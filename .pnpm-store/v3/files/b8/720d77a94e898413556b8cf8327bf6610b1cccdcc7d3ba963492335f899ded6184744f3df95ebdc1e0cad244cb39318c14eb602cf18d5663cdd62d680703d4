@@ -1,0 +1,41 @@
+{
+  "name": "@rushstack/node-core-library",
+  "version": "3.45.5",
+  "description": "Core libraries that every NodeJS toolchain project should use",
+  "main": "lib/index.js",
+  "typings": "dist/node-core-library.d.ts",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/microsoft/rushstack.git",
+    "type": "git",
+    "directory": "libraries/node-core-library"
+  },
+  "dependencies": {
+    "@types/node": "12.20.24",
+    "colors": "~1.2.1",
+    "fs-extra": "~7.0.1",
+    "import-lazy": "~4.0.0",
+    "jju": "~1.4.0",
+    "resolve": "~1.17.0",
+    "semver": "~7.3.0",
+    "timsort": "~0.3.0",
+    "z-schema": "~5.0.2"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-config": "2.6.0",
+    "@rushstack/heft": "0.45.1",
+    "@rushstack/heft-node-rig": "1.9.2",
+    "@types/fs-extra": "7.0.0",
+    "@types/heft-jest": "1.0.1",
+    "@types/jju": "1.4.1",
+    "@types/resolve": "1.17.1",
+    "@types/semver": "7.3.5",
+    "@types/timsort": "0.3.0"
+  },
+  "scripts": {
+    "build": "heft build --clean",
+    "_phase:build": "heft build --clean",
+    "_phase:test": "heft test --no-build"
+  },
+  "readme": "# @rushstack/node-core-library\n\nThis library provides a conservative set of \"core\" NodeJS utilities whose\npurpose is to standardize how we solve common problems across our tooling\nprojects.  In order to be considered \"core\", the class must meet ALL of\nthese criteria:\n\n- small and self-contained (i.e. quick to install)\n\n- solves a ubiquitous problem (i.e. having one standardized approach is better\n  than allowing each developer to use their favorite library)\n\n- broad enough applicability to justify imposing it as a dependency for\n  nearly every NodeJS project\n\n- code is design reviewed, API approved, and documented\n\nExamples of \"core\" functionality that meets this criteria:\n\n- basic file/folder manipulation\n- JSON file loader/saver/validator\n- package.json parser\n- build performance timers\n- executing shell commands\n\nThis package is NOT intended to be a dumping ground for arbitrary utilities\nthat seem like they might be useful.  Code should start somewhere else, and\nthen graduate to **node-core-library** after its value has already been\ndemonstrated.  If in doubt, create your own NPM package.\n\n## Links\n\n- [CHANGELOG.md](\n  https://github.com/microsoft/rushstack/blob/main/libraries/node-core-library/CHANGELOG.md) - Find\n  out what's new in the latest version\n- [API Reference](https://rushstack.io/pages/api/node-core-library/)\n\n`@rushstack/node-core-library` is part of the [Rush Stack](https://rushstack.io/) family of projects.\n"
+}

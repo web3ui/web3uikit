@@ -1,0 +1,10 @@
+{
+  "name": "engine.io-client",
+  "type": "commonjs",
+  "browser": {
+    "ws": false,
+    "./transports/xmlhttprequest.js": "./transports/xmlhttprequest.browser.js",
+    "./transports/websocket-constructor.js": "./transports/websocket-constructor.browser.js",
+    "./globalThis.js": "./globalThis.browser.js"
+  }
+}

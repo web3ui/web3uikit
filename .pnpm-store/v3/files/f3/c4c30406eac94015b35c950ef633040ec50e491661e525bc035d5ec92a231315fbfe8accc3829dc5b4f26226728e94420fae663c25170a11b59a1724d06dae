@@ -1,0 +1,17 @@
+{
+  "schematics": {
+    "migration-2-0-0": {
+      "version": "2.0.0",
+      "description": "Update @jscutlery/semver to version 2.0.0",
+      "factory": "./src/migrations/update-2-0-0/compat"
+    }
+  },
+  "generators": {
+    "migration-2-0-0": {
+      "version": "2.0.0",
+      "description": "Update @jscutlery/semver to version 2.0.0",
+      "factory": "./src/migrations/update-2-0-0",
+      "cli": "nx"
+    }
+  }
+}

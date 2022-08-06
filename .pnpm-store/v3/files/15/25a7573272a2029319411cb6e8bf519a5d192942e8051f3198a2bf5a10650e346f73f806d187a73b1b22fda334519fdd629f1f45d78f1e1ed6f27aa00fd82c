@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "title": "@jscutlery/semver:github",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "tag": {
+      "type": "string",
+      "description": "Create a new release from given tag."
+    },
+    "target": {
+      "type": "string",
+      "description": "Target branch or full commit SHA (default: main branch)."
+    },
+    "files": {
+      "type": "array",
+      "description": "A list of asset files may be given to upload to the new release."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Release notes."
+    },
+    "notesFile": {
+      "type": "string",
+      "description": "Read release notes from file."
+    },
+    "draft": {
+      "type": "boolean",
+      "description": "Save the release as a draft instead of publishing it"
+    },
+    "title": {
+      "type": "string",
+      "description": "Release title"
+    },
+    "prerelease": {
+      "type": "boolean",
+      "description": "Mark the release as a prerelease"
+    },
+    "discussion-category": {
+      "type": "string",
+      "description": "Start a discussion of the specified category"
+    },
+    "repo": {
+      "type": "string",
+      "description": "Select another repository using the [HOST/]OWNER/REPO format"
+    },
+    "generateNotes": {
+      "type": "boolean",
+      "description": "Automatically generate title and notes for the release"
+    }
+  },
+  "required": ["tag"]
+}

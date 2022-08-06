@@ -1,0 +1,1 @@
+{"version":3,"file":"add-swc-dependencies.js","sourceRoot":"","sources":["../../../../../../packages/js/src/utils/swc/add-swc-dependencies.ts"],"names":[],"mappings":";;;AAAA,yCAAkE;AAClE,0CAA+E;AAE/E,SAAgB,kBAAkB,CAAC,IAAU;IAC3C,IAAA,qCAA4B,EAC1B,IAAI,EACJ;QACE,cAAc,EAAE,4BAAiB;KAClC,EACD;QACE,WAAW,EAAE,yBAAc;QAC3B,UAAU,EAAE,wBAAa;KAC1B,CACF,CAAC;AACJ,CAAC;AAXD,gDAWC"}

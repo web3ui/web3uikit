@@ -1,0 +1,52 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.reactDocgen = void 0;
+const path_1 = __importDefault(require("path"));
+const pluginutils_1 = require("@rollup/pluginutils");
+const react_docgen_1 = require("react-docgen");
+const magic_string_1 = __importDefault(require("magic-string"));
+const actualNameHandler_1 = __importDefault(require("./docgen-handlers/actualNameHandler"));
+// TODO: None of these are able to be overridden, so `default` is aspirational here.
+const defaultHandlers = Object.values(react_docgen_1.handlers).map((handler) => handler);
+const defaultResolver = react_docgen_1.resolver.findAllExportedComponentDefinitions;
+const defaultImporter = react_docgen_1.importers.makeFsImporter();
+const handlers = [...defaultHandlers, actualNameHandler_1.default];
+function reactDocgen({ include = /\.(mjs|tsx?|jsx?)$/, exclude = [/node_modules\/.*/] } = {}) {
+    const cwd = process.cwd();
+    const filter = (0, pluginutils_1.createFilter)(include, exclude);
+    return {
+        name: 'react-docgen',
+        enforce: 'pre',
+        async transform(src, id) {
+            const relPath = path_1.default.relative(cwd, id);
+            if (!filter(relPath))
+                return;
+            try {
+                // Since we're using `findAllExportedComponentDefinitions`, this will always be an array.
+                const docgenResults = (0, react_docgen_1.parse)(src, defaultResolver, handlers, { importer: defaultImporter, filename: id });
+                const s = new magic_string_1.default(src);
+                docgenResults.forEach((info) => {
+                    const { actualName, ...docgenInfo } = info;
+                    if (actualName) {
+                        const docNode = JSON.stringify(docgenInfo);
+                        s.append(`;${actualName}.__docgenInfo=${docNode}`);
+                    }
+                });
+                return {
+                    code: s.toString(),
+                    map: s.generateMap(),
+                };
+            }
+            catch (e) {
+                // Usually this is just an error from react-docgen that it couldn't find a component
+                // Only uncomment for troubleshooting
+                // console.error(e);
+            }
+        },
+    };
+}
+exports.reactDocgen = reactDocgen;
+//# sourceMappingURL=react-docgen.js.map

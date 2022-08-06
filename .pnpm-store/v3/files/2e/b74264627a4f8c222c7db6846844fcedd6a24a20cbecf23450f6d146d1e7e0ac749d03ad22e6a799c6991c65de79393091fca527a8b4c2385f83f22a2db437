@@ -1,0 +1,10 @@
+export declare const nxVersion: any;
+export declare const angularCliVersion = "~14.0.0";
+export declare const typescriptVersion = "~4.7.2";
+export declare const prettierVersion = "^2.6.2";
+export declare const tslintVersion = "~6.1.0";
+export declare const typescriptESLintVersion = "~5.24.0";
+export declare const eslintVersion = "~8.15.0";
+export declare const eslintConfigPrettierVersion = "8.1.0";
+export declare const swcNodeVersion = "^1.4.2";
+export declare const swcCoreVersion = "^1.2.173";

@@ -1,0 +1,1 @@
+{"version":3,"file":"envs-raw.type.js","sourceRoot":"","sources":["../../types/envs-raw.type.ts"],"names":[],"mappings":"","sourcesContent":["export type EnvsRaw = Record<string, string>;\n"]}

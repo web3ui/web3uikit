@@ -1,0 +1,107 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const schematics_1 = require("@angular-devkit/schematics");
+const workspace_1 = require("@nrwl/workspace");
+/**
+ * We want to update the JSON in such a way that we:
+ * - translate the config to use overrides
+ * - don't break existing setups
+ *
+ * In order to achieve the second point we need to assume
+ * that any existing top level rules/plugins etc are intended
+ * to be run on all source files.
+ */
+function updateRootESLintConfig(host) {
+    return host.exists('.eslintrc.json')
+        ? (0, workspace_1.updateJsonInTree)('.eslintrc.json', (json) => {
+            /**
+             * If the user already has overrides specified it is likely they have "forged their own path"
+             * when it comes to their ESLint setup, so we do nothing.
+             */
+            if (Array.isArray(json.overrides)) {
+                return json;
+            }
+            let normalizedExtends = undefined;
+            if (json.extends) {
+                if (typeof json.extends === 'string') {
+                    normalizedExtends = [json.extends];
+                }
+                else if (Array.isArray(json.extends)) {
+                    normalizedExtends = json.extends;
+                }
+            }
+            json.overrides = [
+                /**
+                 * This configuration is intended to apply to all "source code" (but not
+                 * markup like HTML, or other custom file types like GraphQL).
+                 *
+                 * This is where we will apply any top-level config that the user currently
+                 * has to ensure that it behaves the same before and after the migration.
+                 */
+                {
+                    files: ['*.ts', '*.tsx', '*.js', '*.jsx'],
+                    extends: undefinedIfEmptyArr(normalizedExtends
+                        ? normalizedExtends.filter((e) => e !== 'plugin:@nrwl/nx/typescript')
+                        : normalizedExtends),
+                    env: json.env,
+                    settings: json.settings,
+                    parser: json.parser,
+                    parserOptions: json.parserOptions,
+                    plugins: undefinedIfEmptyArr(json.plugins.filter((p) => p !== '@nrwl/nx') // remains at top-level, used everywhere
+                    ),
+                    rules: json.rules || {},
+                },
+                /**
+                 * This configuration is intended to apply to all TypeScript source files.
+                 * See the eslint-plugin-nx package for what is in the referenced shareable config.
+                 */
+                {
+                    files: ['*.ts', '*.tsx'],
+                    extends: ['plugin:@nrwl/nx/typescript'],
+                    parserOptions: { project: './tsconfig.*?.json' },
+                    /**
+                     * Having an empty rules object present makes it more obvious to the user where they would
+                     * extend things from if they needed to
+                     */
+                    rules: {},
+                },
+                /**
+                 * This configuration is intended to apply to all JavaScript source files.
+                 * See the eslint-plugin-nx package for what is in the referenced shareable config.
+                 */
+                {
+                    files: ['*.js', '*.jsx'],
+                    extends: ['plugin:@nrwl/nx/javascript'],
+                    /**
+                     * Having an empty rules object present makes it more obvious to the user where they would
+                     * extend things from if they needed to
+                     */
+                    rules: {},
+                },
+            ];
+            /**
+             * Clean up after copying config to main override
+             */
+            json.plugins = ['@nrwl/nx'];
+            delete json.rules;
+            delete json.extends;
+            delete json.env;
+            delete json.settings;
+            delete json.globals;
+            delete json.parser;
+            delete json.parserOptions;
+            return json;
+        })
+        : (0, schematics_1.noop)();
+}
+function undefinedIfEmptyArr(possibleArr) {
+    if (Array.isArray(possibleArr) && possibleArr.length === 0) {
+        return undefined;
+    }
+    return possibleArr;
+}
+function default_1() {
+    return (0, schematics_1.chain)([updateRootESLintConfig, (0, workspace_1.formatFiles)()]);
+}
+exports.default = default_1;
+//# sourceMappingURL=update-root-eslint-config-to-use-overrides.js.map

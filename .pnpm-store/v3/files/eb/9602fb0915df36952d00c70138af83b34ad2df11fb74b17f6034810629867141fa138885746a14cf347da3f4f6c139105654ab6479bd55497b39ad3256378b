@@ -1,0 +1,1 @@
+{"version":3,"file":"read-environment.js","sourceRoot":"","sources":["../../../../../packages/nx/src/command-line/read-environment.ts"],"names":[],"mappings":";;;AAAA,4DAA4E;AAc5E,SAAgB,eAAe;IAC7B,MAAM,MAAM,GAAG,IAAA,uBAAU,GAAE,CAAC;IAC5B,MAAM,aAAa,GAAG,IAAA,8BAAiB,GAAE,CAAC;IAC1C,OAAO,EAAE,MAAM,EAAE,aAAa,EAAE,gBAAgB,EAAE,IAAI,EAAS,CAAC;AAClE,CAAC;AAJD,0CAIC"}

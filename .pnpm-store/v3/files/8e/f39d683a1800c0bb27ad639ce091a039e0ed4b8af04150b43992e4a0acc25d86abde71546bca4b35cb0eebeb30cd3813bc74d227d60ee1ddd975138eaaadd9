@@ -1,0 +1,119 @@
+cmd_Release/obj.target/ecdh/ecdh.o := g++ -o Release/obj.target/ecdh/ecdh.o ../ecdh.cc '-DNODE_GYP_MODULE_NAME=ecdh' '-DUSING_UV_SHARED=1' '-DUSING_V8_SHARED=1' '-DV8_DEPRECATION_WARNINGS=1' '-DV8_DEPRECATION_WARNINGS' '-DV8_IMMINENT_DEPRECATION_WARNINGS' '-D_GLIBCXX_USE_CXX11_ABI=1' '-D_LARGEFILE_SOURCE' '-D_FILE_OFFSET_BITS=64' '-D__STDC_FORMAT_MACROS' '-DOPENSSL_NO_PINSHARED' '-DOPENSSL_THREADS' '-DBUILDING_NODE_EXTENSION' -I/home/runner/.cache/node-gyp/16.16.0/include/node -I/home/runner/.cache/node-gyp/16.16.0/src -I/home/runner/.cache/node-gyp/16.16.0/deps/openssl/config -I/home/runner/.cache/node-gyp/16.16.0/deps/openssl/openssl/include -I/home/runner/.cache/node-gyp/16.16.0/deps/uv/include -I/home/runner/.cache/node-gyp/16.16.0/deps/zlib -I/home/runner/.cache/node-gyp/16.16.0/deps/v8/include -I../../../../../nan@2.16.0/node_modules/nan -I/home/runner/.cache/node-gyp/16.16.0/deps/openssl/config/k8  -fPIC -pthread -Wall -Wextra -Wno-unused-parameter -m64 -Wall -O2 -O3 -fno-omit-frame-pointer -fno-rtti -fno-exceptions -std=gnu++14 -MMD -MF ./Release/.deps/Release/obj.target/ecdh/ecdh.o.d.raw   -c
+Release/obj.target/ecdh/ecdh.o: ../ecdh.cc \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/node.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/v8.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/cppgc/common.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/v8config.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/v8-internal.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/v8-version.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/v8config.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/v8-platform.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/node_version.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/node_version.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/uv.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/uv/errno.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/uv/version.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/uv/unix.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/uv/threadpool.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/uv/linux.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/node_buffer.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/node.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/node_object_wrap.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_callbacks.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_callbacks_12_inl.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_maybe_43_inl.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_converters.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_converters_43_inl.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_new.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_implementation_12_inl.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_persistent_12_inl.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_weak.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_object_wrap.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_private.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_typedarray_contents.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_json.h \
+ ../../../../../nan@2.16.0/node_modules/nan/nan_scriptorigin.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/evp.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/opensslconf.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/./opensslconf_asm.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/././archs/linux-x86_64/asm/include/openssl/opensslconf.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/opensslv.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/ossl_typ.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/e_os2.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/symhacks.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/bio.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/crypto.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/safestack.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/stack.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/cryptoerr.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/bioerr.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/evperr.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/objects.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/obj_mac.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/asn1.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/asn1err.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/bn.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/bnerr.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/objectserr.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/ec.h \
+ /home/runner/.cache/node-gyp/16.16.0/include/node/openssl/ecerr.h
+../ecdh.cc:
+/home/runner/.cache/node-gyp/16.16.0/include/node/node.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/v8.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/cppgc/common.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/v8config.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/v8-internal.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/v8-version.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/v8config.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/v8-platform.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/node_version.h:
+../../../../../nan@2.16.0/node_modules/nan/nan.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/node_version.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/uv.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/uv/errno.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/uv/version.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/uv/unix.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/uv/threadpool.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/uv/linux.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/node_buffer.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/node.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/node_object_wrap.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_callbacks.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_callbacks_12_inl.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_maybe_43_inl.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_converters.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_converters_43_inl.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_new.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_implementation_12_inl.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_persistent_12_inl.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_weak.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_object_wrap.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_private.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_typedarray_contents.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_json.h:
+../../../../../nan@2.16.0/node_modules/nan/nan_scriptorigin.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/evp.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/opensslconf.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/./opensslconf_asm.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/././archs/linux-x86_64/asm/include/openssl/opensslconf.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/opensslv.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/ossl_typ.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/e_os2.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/symhacks.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/bio.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/crypto.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/safestack.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/stack.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/cryptoerr.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/bioerr.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/evperr.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/objects.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/obj_mac.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/asn1.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/asn1err.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/bn.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/bnerr.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/objectserr.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/ec.h:
+/home/runner/.cache/node-gyp/16.16.0/include/node/openssl/ecerr.h:

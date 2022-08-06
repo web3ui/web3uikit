@@ -1,0 +1,27 @@
+{
+    "name": "@types/react-blockies",
+    "version": "1.4.1",
+    "description": "TypeScript definitions for react-blockies",
+    "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/react-blockies",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Martin Triay",
+            "url": "https://github.com/martriay",
+            "githubUsername": "martriay"
+        }
+    ],
+    "main": "",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
+        "directory": "types/react-blockies"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/react": "*"
+    },
+    "typesPublisherContentHash": "925455b4d149e680e6783723b4141e6113bee3a4a47c3221e8a2a2057124b15e",
+    "typeScriptVersion": "3.6"
+}

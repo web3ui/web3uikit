@@ -1,0 +1,11 @@
+import { Rule, Tree } from '@angular-devkit/schematics';
+import { TestingArchitectHost } from '@angular-devkit/architect/testing';
+import { Architect } from '@angular-devkit/architect';
+import { MockBuilderContext } from './testing-utils';
+export declare function runExternalSchematic<T = any>(collectionName: string, schematicName: string, options: T, tree: Tree): Promise<import("@angular-devkit/schematics/testing").UnitTestTree>;
+export declare function runSchematic<T = any>(schematicName: string, options: T, tree: Tree): Promise<import("@angular-devkit/schematics/testing").UnitTestTree>;
+export declare function callRule(rule: Rule, tree: Tree): Promise<import("@angular-devkit/schematics/src/tree/interface").Tree>;
+export declare function runMigration(migrationName: string, options: any, tree: Tree): Promise<import("@angular-devkit/schematics/testing").UnitTestTree>;
+export declare function createLibWithTests(tree: Tree, libName: string, testBuilder: string, testSetupFile: string): Promise<Tree>;
+export declare function getTestArchitect(): Promise<[Architect, TestingArchitectHost]>;
+export declare function getMockContext(): Promise<MockBuilderContext>;

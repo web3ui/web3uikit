@@ -43,7 +43,7 @@
         "new": "plop",
         "size": "pnpm install && pnpm build && size-limit --json",
         "ci:version": "changeset version",
-        "ci:publish": "changeset publish"
+        "ci:publish": "pnpm build && changeset publish"
     },
     "dependencies": {
         "@babel/core": "^7.18.2",
@@ -54,6 +54,7 @@
         "tslib": "^2.3.0"
     },
     "devDependencies": {
+        "@changesets/changelog-github": "^0.4.6",
         "@changesets/cli": "^2.24.0",
         "@mdx-js/preact": "^2.1.2",
         "@mdx-js/react": "^2.1.1",

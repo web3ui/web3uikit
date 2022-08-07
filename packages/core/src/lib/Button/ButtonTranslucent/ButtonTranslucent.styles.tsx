@@ -4,11 +4,10 @@ import { color, getShade } from '@web3uikit/styles';
 
 const ButtonTranslucentStyled = styled(ButtonBase)`
     background-color: ${getShade('dark', 20)};
-    border-style: inset;
     color: ${color.white};
 
     :active {
-        border: none;
+        border: 2px solid transparent;
     }
 
     :focus {

@@ -1,8 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Hero from './Hero';
 import { Button } from '../Button';
-import { ImageStyled } from './Hero.styles';
 import { ArrowCircleRight } from '@web3uikit/icons';
+import { color, gradientColors } from '@web3uikit/styles';
+import { Typography } from '../Typography';
+//@ts-ignore
+import wizard from './wizard.svg';
 
 export default {
     title: '4.UI/Hero',
@@ -11,33 +14,50 @@ export default {
 
 const Template: ComponentStory<typeof Hero> = (args) => <Hero {...args} />;
 
+export const DemoWithImage = Template.bind({});
+DemoWithImage.args = {
+    rounded: '20px',
+    align: 'right',
+    textColor: '#fff',
+    backgroundColor: color.blueLight4,
+    height: '200px',
+    padding: '40px',
+    children: (
+        <>
+            <Typography variant="h3">Need Help?</Typography>
+            <Typography variant="h1">Looking to get started?</Typography>
+            <Button
+                text="Book a demo"
+                icon={<ArrowCircleRight fill={color.white} fontSize={24} />}
+                theme="outline"
+                isTransparent={true}
+                iconLayout="trailing"
+                //@ts-ignore
+                style={{
+                    border: '1px solid white',
+                    background: 'transparent',
+                }}
+            />
+        </>
+    ),
+    customImage: {
+        url: wizard as string,
+    },
+};
+
 export const Demo = Template.bind({});
 Demo.args = {
     title: 'web3uiKit, my hero!',
+    subTitle: 'Need Help?',
+    padding: '40px',
     backgroundURL:
         'https://moralis.io/wp-content/uploads/2021/06/blue-blob-background-2.svg',
-};
-
-export const SubTitle = Template.bind({});
-SubTitle.args = {
-    title: 'you are my hero Ferris',
-    backgroundURL:
-        'https://moralis.io/wp-content/uploads/2021/06/blue-blob-background-2.svg',
-    subTitle:
-        "life moves fast, if you don't stop and look around once in a while you might miss it",
-};
-
-export const WithChild = Template.bind({});
-WithChild.args = {
-    title: 'Hero, hero!',
-    backgroundURL:
-        'https://moralis.io/wp-content/uploads/2021/06/blue-blob-background-2.svg',
-    children: <Button text="so PAMP it" theme="primary" />,
 };
 
 export const CustomHeight = Template.bind({});
 CustomHeight.args = {
     title: '200px height hero',
+    linearGradient: gradientColors.purpleToPink,
     backgroundURL:
         'https://moralis.io/wp-content/uploads/2021/06/blue-blob-background-2.svg',
     height: '200px',
@@ -58,47 +78,5 @@ DappHero.args = {
             icon={<ArrowCircleRight />}
             theme="primary"
         />
-    ),
-};
-
-export const GradientHero = Template.bind({});
-GradientHero.args = {
-    title: 'We’ll help with everything you need',
-    height: '176px',
-    rounded: '20px',
-    align: 'left',
-    textColor: '#fff',
-    linearGradient:
-        'linear-gradient(113.54deg, rgba(60, 87, 140, 0.5) 14.91%, rgba(70, 86, 169, 0.5) 43.21%, rgba(125, 150, 217, 0.345) 44.27%, rgba(129, 161, 225, 0.185) 55.76%), linear-gradient(151.07deg, #141659 33.25%, #4152A7 98.24%)',
-    children: (
-        <Button
-            text="Submit a ticket"
-            icon={<ArrowCircleRight />}
-            theme="primary"
-        />
-    ),
-    customImage: {
-        url: 'https://images.pexels.com/photos/9901406/pexels-photo-9901406.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500',
-        styles: {
-            width: '126.85px',
-            height: '176.61px',
-            position: 'absolute',
-            right: '84px',
-            top: '22px',
-        },
-    },
-};
-
-export const DemoCustomImageAsChild = Template.bind({});
-DemoCustomImageAsChild.args = {
-    title: 'It is better to pass images to a Hero component this way. As a child component, styled as you wish.',
-    height: '176px',
-    rounded: '20px',
-    align: 'left',
-    textColor: '#fff',
-    linearGradient:
-        'linear-gradient(113.54deg, rgba(60, 87, 140, 0.5) 14.91%, rgba(70, 86, 169, 0.5) 43.21%, rgba(125, 150, 217, 0.345) 44.27%, rgba(129, 161, 225, 0.185) 55.76%), linear-gradient(151.07deg, #141659 33.25%, #4152A7 98.24%)',
-    children: (
-        <ImageStyled src="https://images.pexels.com/photos/9901406/pexels-photo-9901406.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500" />
     ),
 };

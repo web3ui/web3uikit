@@ -2,13 +2,21 @@ import { Route, Routes } from 'react-router-dom';
 import { lazily } from 'react-lazily';
 import { Suspense } from 'react';
 
-const { Button, Logo, Typography, Avatar, BannerStrip, VerifyCode } = lazily(
-    () => import('@web3uikit/core'),
-);
+const {
+    Button,
+    Logo,
+    Typography,
+    Avatar,
+    BannerStrip,
+    VerifyCode,
+} = lazily(() => import('@web3uikit/core'));
 import { Ada } from '@web3uikit/icons';
-const { ConnectButton, NFT } = lazily(() => import('@web3uikit/web3'));
+import { useNotification } from '@web3uikit/core';
+const { ConnectButton, NFT, SendTransaction } = lazily(() =>
+    import('@web3uikit/web3'),
+);
 export const App = () => {
-    console.log(Ada);
+    const dispatch = useNotification();
     return (
         <Routes>
             <Route
@@ -23,7 +31,10 @@ export const App = () => {
                             }}
                         >
                             <Ada
-                                style={{ fontSize: '100px', color: 'black' }}
+                                style={{
+                                    fontSize: '100px',
+                                    color: 'black',
+                                }}
                             />
                             <Logo theme="default" color="white" />
                             <Button
@@ -47,10 +58,128 @@ export const App = () => {
                             fetchMetadata
                             tokenId="1"
                         />
+                        <SendTransaction
+                            chainId="0x4"
+                            contractOptions={{
+                                abi: contractData['abi'],
+                                contractAddress:
+                                    contractData['contractAddress'],
+                                functionName: 'purchaseCandy',
+                                params: {
+                                    _amount: 1,
+                                },
+                                msgValue: 1000000000000000000,
+                            }}
+                            buttonConfig={{
+                                text: 'Send',
+                                theme: 'primary',
+                            }}
+                            notificationConfig={{ dispatch }}
+                        />
+                        <SendTransaction
+                            chainId="0x1"
+                            contractOptions={{
+                                abi: contractData['abi'],
+                                contractAddress:
+                                    contractData['contractAddress'],
+                                functionName: 'purchaseCandy',
+                                params: {
+                                    _amount: 1,
+                                },
+                                msgValue: 1000000000000000000,
+                            }}
+                            buttonConfig={{
+                                text: 'Send',
+                                theme: 'primary',
+                            }}
+                            notificationConfig={{ dispatch }}
+                        />
                     </Suspense>
                 }
             />
             <Route path="*" element={<>Not found...</>}></Route>
         </Routes>
     );
+};
+
+const contractData = {
+    contractAddress: '0xDd6141fb76828957ba5b9628E72728f62EC291dA',
+    abi: [
+        {
+            inputs: [],
+            stateMutability: 'nonpayable',
+            type: 'constructor',
+        },
+        {
+            inputs: [
+                {
+                    internalType: 'address',
+                    name: '',
+                    type: 'address',
+                },
+            ],
+            name: 'candyBalances',
+            outputs: [
+                {
+                    internalType: 'uint256',
+                    name: '',
+                    type: 'uint256',
+                },
+            ],
+            stateMutability: 'view',
+            type: 'function',
+        },
+        {
+            inputs: [],
+            name: 'getVendingMachineBalance',
+            outputs: [
+                {
+                    internalType: 'uint256',
+                    name: '',
+                    type: 'uint256',
+                },
+            ],
+            stateMutability: 'view',
+            type: 'function',
+        },
+        {
+            inputs: [],
+            name: 'owner',
+            outputs: [
+                {
+                    internalType: 'address',
+                    name: '',
+                    type: 'address',
+                },
+            ],
+            stateMutability: 'view',
+            type: 'function',
+        },
+        {
+            inputs: [
+                {
+                    internalType: 'uint256',
+                    name: '_amount',
+                    type: 'uint256',
+                },
+            ],
+            name: 'purchaseCandy',
+            outputs: [],
+            stateMutability: 'payable',
+            type: 'function',
+        },
+        {
+            inputs: [
+                {
+                    internalType: 'uint256',
+                    name: '_amount',
+                    type: 'uint256',
+                },
+            ],
+            name: 'restockVendingMachine',
+            outputs: [],
+            stateMutability: 'nonpayable',
+            type: 'function',
+        },
+    ],
 };

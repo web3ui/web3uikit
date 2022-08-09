@@ -6,14 +6,16 @@ let MORALIS_APP_ID: string | null | undefined = null;
 let MORALIS_SERVER_URL: string | null | undefined = null;
 
 if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
+    //@ts-ignore
     MORALIS_APP_ID = import.meta.env.STORYBOOK_MORALIS_APPLICATION_ID;
+    //@ts-ignore
     MORALIS_SERVER_URL = import.meta.env.STORYBOOK_MORALIS_SERVER_URL;
 } else {
     MORALIS_APP_ID = process.env.STORYBOOK_MORALIS_APPLICATION_ID;
     MORALIS_SERVER_URL = process.env.STORYBOOK_MORALIS_SERVER_URL;
 }
 
-export const moralisContext: DecoratorFn = (Story) => {
+export const moralisContext: DecoratorFn = (storyFn) => {
     const Web3Initialize = () => {
         const {
             enableWeb3,
@@ -48,7 +50,7 @@ export const moralisContext: DecoratorFn = (Story) => {
                     appId={MORALIS_APP_ID}
                     serverUrl={MORALIS_SERVER_URL}
                 >
-                    <Story />
+                    {storyFn()}
                     <Web3Initialize />
                 </MoralisProvider>
             ) : (

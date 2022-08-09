@@ -1,6 +1,6 @@
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Checkbox from './Checkbox';
+import { useArgs } from '@storybook/addons';
 
 export default {
     title: '2.Forms/Checkbox & Switch',
@@ -12,9 +12,19 @@ export default {
     },
 } as ComponentMeta<typeof Checkbox>;
 
-const Template: ComponentStory<typeof Checkbox> = (args) => (
-    <Checkbox {...args} />
-);
+const Template: ComponentStory<typeof Checkbox> = (args) => {
+    const [_, updateArgs] = useArgs();
+    return (
+        <Checkbox
+            {...args}
+            onChange={(value) => {
+                updateArgs({
+                    checked: value.target.checked,
+                });
+            }}
+        />
+    );
+};
 
 export const Box = Template.bind({});
 Box.args = {

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { CheckboxProps } from '.';
 import { Check } from '@web3uikit/icons';
 import styles from './Checkbox.styles';
@@ -19,19 +18,14 @@ const Checkbox: React.FC<CheckboxProps> = ({
     validation,
     ...props
 }) => {
-    const [isChecked, setIsChecked] = useState(Boolean(checked));
-
     const valueChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (disabled) return;
-        setIsChecked(Boolean(event.target.checked));
         onChange && onChange(event);
     };
 
-    useEffect(() => setIsChecked(Boolean(checked)), [checked]);
-
     return (
         <StyledLabel
-            checked={isChecked}
+            checked={checked}
             data-layout={layout}
             data-testid="test-checkbox-label"
             disabled={disabled}
@@ -49,7 +43,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
 
             <StyledInput
                 data-testid="test-checkbox-input"
-                defaultChecked={isChecked}
+                defaultChecked={checked}
                 disabled={disabled}
                 id={id}
                 ref={ref}
@@ -61,11 +55,11 @@ const Checkbox: React.FC<CheckboxProps> = ({
                 }
                 required={validation?.required}
                 type="checkbox"
-                value={`${isChecked}`}
+                value={`${checked}`}
                 {...props}
             />
             <span data-testid="test-checkbox-text">
-                {isChecked ? labelWhenChecked || label : label}
+                {checked ? labelWhenChecked || label : label}
             </span>
         </StyledLabel>
     );

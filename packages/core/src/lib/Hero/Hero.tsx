@@ -62,8 +62,8 @@ const Hero: React.FC<IHeroProps> = ({
                 )}
                 {children && children}
             </LeftContainerDiv>
-            <RightContainerDiv>
-                {customImage?.url && (
+            {customImage?.url && (
+                <RightContainerDiv>
                     <ImageStyled
                         align={align}
                         loading="lazy"
@@ -71,8 +71,8 @@ const Hero: React.FC<IHeroProps> = ({
                         alt="Hero-image"
                         style={customImage?.styles}
                     />
-                )}
-            </RightContainerDiv>
+                </RightContainerDiv>
+            )}
         </SectionStyled>
     );
 };

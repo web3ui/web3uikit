@@ -1,9 +1,10 @@
-import styled from 'styled-components';
-import { HeroProps } from './types';
+import { breakpoints, color, resetCSS } from '@web3uikit/styles';
+import styled, { css } from 'styled-components';
+import { IHeroProps, TAlignValues } from './types';
 
 // styles
 type TStyleProps = Pick<
-    HeroProps,
+    IHeroProps,
     | 'align'
     | 'backgroundColor'
     | 'backgroundURL'
@@ -11,84 +12,94 @@ type TStyleProps = Pick<
     | 'linearGradient'
     | 'rounded'
     | 'padding'
+    | 'textColor'
 >;
 
-enum Position {
-    'left' = 'flex-start',
-    'right' = 'flex-end',
-    'center' = 'center',
-}
+const setImageAlign = (align: TAlignValues) => {
+    switch (align) {
+        case 'center':
+            return css`
+                margin: auto;
+            `;
+        case 'left':
+            return css`
+                margin-right: auto;
+            `;
+        case 'right':
+            return css`
+                margin-left: auto;
+            `;
+    }
+};
 
-export const SectionStyled = styled.section<TStyleProps>`
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    
-    align-items: ${({ align = 'center' }) =>
-        Position?.[align] || Position.center};
-    border-radius: ${(p) => p.rounded || '0px'};
+const SectionStyled = styled.section<TStyleProps>`
+    ${resetCSS};
     background-color: ${(p) => p.backgroundColor};
     background-image: ${({ backgroundURL, linearGradient = '' }) =>
         backgroundURL
-        ? `${linearGradient && linearGradient + ', '} url(${backgroundURL})`
-        : linearGradient};
-    height: ${({ height }) => height || '80vh'};
-    max-height: ${({ height }) => height || '80vh'};
-    padding: ${({ padding }) => padding || '20px'} 0;
+            ? `${linearGradient && linearGradient + ', '} url(${backgroundURL})`
+            : linearGradient};
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: ${(p) => p.rounded || '0px'};
+    display: flex;
+    justify-content: space-between;
+    height: ${({ height }) => height || '100%'};
+    max-width: 100%;
+    overflow: hidden;
 
-    h1 {
-        padding: 0px 40px;
-        z-index: 1;
-    }
-
-    > span {
-        padding: 20px 40px 0px;
-        z-index: 1;
-    }
     * {
-        z-index: 0;
+        color: ${(p) => p.textColor || color.white} !important;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: ${breakpoints.sm}) {
         align-items: center;
-        height: fit-content;
-        max-height: fit-content;
         text-align: center;
-
-        h1 {
-            font-size: 18px;
-            line-height: unset;
-            padding: unset;
-            text-align: center;
-        }
-
-        > span {
-            font-size: 14px;
-            line-height: unset;
-            
-            padding: 20px 40px 0px;
-            z-index: 1;
-        }
+        flex-direction: column;
+        gap: 20px;
+        height: fit-content;
     }
 `;
 
-export const DivStyled = styled.div`
-    padding: 20px 40px 0px;
+const LeftContainerDiv = styled.div<TStyleProps>`
+    display: flex;
+    flex-grow: 1;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    padding: ${(p) => p.padding || '20px'};
+    @media (max-width: ${breakpoints.sm}) {
+        padding: 20px;
+        width: 100%;
+        align-items: center;
+    }
 `;
 
-export const ImageStyled = styled.img`
-    width: 126.85px;
-    height: 176.61px;
-    max-height: calc(100% - 44px);
-    position: absolute;
-    right: 84px;
-    top: 22px;
-    bottom: 22px;
+const RightContainerDiv = styled.div`
+    display: flex;
+    flex-grow: 1;
+    width: 50%;
+    @media (max-width: ${breakpoints.sm}) {
+        width: 100%;
+    }
 `;
+
+const ImageStyled = styled.img<TStyleProps>`
+    block-size: auto;
+    height: 100%;
+    max-inline-size: 100%;
+    object-fit: contain;
+    ${(p) => setImageAlign(p.align || 'center')};
+    @media (max-width: ${breakpoints.sm}) {
+        margin: auto;
+    }
+`;
+
+export default {
+    ImageStyled,
+    LeftContainerDiv,
+    RightContainerDiv,
+    SectionStyled,
+};

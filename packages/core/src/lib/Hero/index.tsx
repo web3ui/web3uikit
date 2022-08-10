@@ -1,2 +1,2 @@
 export { default as Hero } from './Hero';
-export type { HeroProps } from './types';
+export type { IHeroProps } from './types';

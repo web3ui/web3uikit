@@ -1,16 +1,18 @@
 import { CSSProperties } from 'styled-components';
 
+export type TAlignValues = 'left' | 'right' | 'center';
+
 type customImageProps = {
     url: string;
     styles?: CSSProperties;
 };
 
-export interface HeroProps {
+export interface IHeroProps {
     /**
      * this is used to set the position for the content of the hero
      * the default is center
      */
-    align?: 'left' | 'right' | 'center';
+    align?: TAlignValues;
 
     /**
      * the URL of a background image is needed
@@ -56,7 +58,7 @@ export interface HeroProps {
     /**
      * every hero needs to make a statement
      */
-    title: string;
+    title?: string;
 
     /**
      * pass a color HEX or the text will be light grey

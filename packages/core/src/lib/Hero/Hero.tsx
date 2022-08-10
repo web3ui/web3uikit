@@ -1,18 +1,29 @@
 import { Typography } from '../Typography';
 import { color } from '@web3uikit/styles';
-import { SectionStyled, DivStyled } from './Hero.styles';
-import { HeroProps } from './types';
+import styles from './Hero.styles';
+import { IHeroProps } from './types';
 
-const Hero: React.FC<HeroProps> = ({
+const {
+    ImageStyled,
+    LeftContainerDiv,
+    RightContainerDiv,
+    SectionStyled,
+} = styles;
+
+const Hero: React.FC<IHeroProps> = ({
     align = 'center',
     backgroundColor = `${color.greyLight}`,
     backgroundURL = '',
     children,
-    customImage = null,
-    height = '80vh',
+    customImage = {
+        url: null,
+        align: 'center',
+        styles: {},
+    },
+    height = '100%',
     linearGradient,
     padding,
-    rounded,
+    rounded = '20px',
     subTitle,
     textColor = `${color.greyDark}`,
     title,
@@ -26,38 +37,41 @@ const Hero: React.FC<HeroProps> = ({
             data-testid="test-hero"
             height={height}
             rounded={rounded}
-            align={align}
-            padding={padding}
+            textColor={textColor}
             {...props}
         >
-            <Typography
-                color={textColor}
-                data-testid="test-hero-title"
-                variant="h1"
-            >
-                {title}
-            </Typography>
-            {subTitle && (
-                <Typography
-                    color={textColor}
-                    data-testid="test-hero-text"
-                    variant="body16"
-                    weight="regular"
-                >
-                    <strong>{subTitle}</strong>
-                </Typography>
-            )}
-
+            <LeftContainerDiv padding={padding}>
+                {title && (
+                    <Typography
+                        color={textColor}
+                        data-testid="test-hero-title"
+                        variant="h1"
+                    >
+                        {title}
+                    </Typography>
+                )}
+                {subTitle && (
+                    <Typography
+                        color={textColor}
+                        data-testid="test-hero-text"
+                        variant="body16"
+                        weight="regular"
+                    >
+                        <strong>{subTitle}</strong>
+                    </Typography>
+                )}
+                {children && children}
+            </LeftContainerDiv>
             {customImage?.url && (
-                <img
-                    src={customImage.url}
-                    alt="Hero-image"
-                    style={customImage?.styles}
-                />
-            )}
-
-            {children && (
-                <DivStyled data-testid="test-hero-child">{children}</DivStyled>
+                <RightContainerDiv>
+                    <ImageStyled
+                        align={align}
+                        loading="lazy"
+                        src={customImage.url}
+                        alt="Hero-image"
+                        style={customImage?.styles}
+                    />
+                </RightContainerDiv>
             )}
         </SectionStyled>
     );

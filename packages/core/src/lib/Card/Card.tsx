@@ -59,7 +59,6 @@ const Card: React.FC<CardProps> = ({
                                     fill={color.blue}
                                     fontSize={22}
                                     key="tip-card"
-                                    title="help circle icon"
                                     titleId="card help circle icon"
                                 />,
                             ]}

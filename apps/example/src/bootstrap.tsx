@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from '.';
 import { MoralisProvider } from 'react-moralis';
+import { NotificationProvider } from '@web3uikit/core';
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Failed to find the root element');
 const MORALIS_APP_ID = 'Ee6dXw6BMrIwvZCToiliDH2qZaIipi1RIN2ODI3v';
@@ -12,9 +13,11 @@ const root = createRoot(rootElement);
 root.render(
     <StrictMode>
         <MoralisProvider appId={MORALIS_APP_ID} serverUrl={MORALIS_SERVER_URL}>
-            <BrowserRouter basename="/">
-                <App />
-            </BrowserRouter>
+            <NotificationProvider>
+                <BrowserRouter basename="/">
+                    <App />
+                </BrowserRouter>
+            </NotificationProvider>
         </MoralisProvider>
     </StrictMode>,
 );

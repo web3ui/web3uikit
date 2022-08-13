@@ -1,0 +1,7 @@
+{
+    "extends": "@test_kit_4/config/tsconfig.ui.json",
+    "compilerOptions": {
+        "rootDir": "src"
+    },
+    "include": ["src"]
+}

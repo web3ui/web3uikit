@@ -1,0 +1,27 @@
+{
+    "root": "packages/test_kit_4",
+    "sourceRoot": "packages/test_kit_4/src",
+    "projectType": "library",
+    "targets": {
+        "version": {
+            "executor": "@jscutlery/semver:version",
+            "options": {
+                "postTargets": ["test_kit_4:publish", "test_kit_4:github"]
+            },
+            "projects": "dependencies"
+        },
+        "github": {
+            "executor": "@jscutlery/semver:github",
+            "options": {
+                "tag": "${tag}",
+                "notes": "${notes}"
+            }
+        },
+        "publish": {
+            "executor": "ngx-deploy-npm:deploy",
+            "options": {
+                "access": "public"
+            }
+        }
+    }
+}

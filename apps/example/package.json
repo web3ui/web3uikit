@@ -16,9 +16,10 @@
         "@test_kit_4/web3": "*",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
-        "react-moralis": "^1.3.5",
+        "react-moralis": "^1.4.0",
         "react-router-dom": "^6.3.0",
-        "source-map-explorer": "*"
+        "source-map-explorer": "*",
+        "test_kit_4": "*"
     },
     "devDependencies": {
         "@test_kit_4/config": "*"

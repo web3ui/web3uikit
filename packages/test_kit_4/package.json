@@ -1,0 +1,41 @@
+{
+    "name": "test_kit_4",
+    "version": "0.1.3",
+    "sideEffects": false,
+    "files": [
+        "package.json",
+        "dist"
+    ],
+    "main": "./dist/index.es.js",
+    "module": "./dist/index.es.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.es.js"
+        }
+    },
+    "scripts": {
+        "build": "vite build"
+    },
+    "peerDependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+    },
+    "devDependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "styled-components": "^5.3.5"
+    },
+    "dependencies": {
+        "@test_kit_4/config": "*",
+        "@test_kit_4/core": "*",
+        "@test_kit_4/icons": "*",
+        "@test_kit_4/styles": "*",
+        "@test_kit_4/web3": "*",
+        "ts-node": "9.1.1",
+        "typescript": "^4.6.3",
+        "react-moralis": "^1.4.0",
+        "moralis": "^1.8.1",
+        "wp5-cra-polyfill": "github:oscario2/wp5-cra-polyfill#91431fa"
+    }
+}

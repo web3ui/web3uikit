@@ -1,8 +1,10 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-
 import { color } from '@web3uikit/styles';
 import { Btc, Discord, Server, Testnet } from '@web3uikit/icons';
 import Select from './Select';
+import { useState } from 'react';
+import { callCodeData } from './SelectBeta/mockData';
+import { Typography } from '../Typography';
 
 export default {
     title: '2.Forms/Select',
@@ -61,27 +63,27 @@ const optionsList = [
     },
     {
         label: 'Discord',
-        id: 'discord',
+        id: 'discord1',
         prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Discord',
-        id: 'discord',
+        id: 'discord2',
         prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Discord',
-        id: 'discord',
+        id: 'discord3',
         prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Discord',
-        id: 'discord',
+        id: 'discord4',
         prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Discord',
-        id: 'discord',
+        id: 'discord5',
         prefix: <Discord fill={color.grey} />,
     },
 ];
@@ -92,6 +94,7 @@ Default.args = {
     onChange: onTestOptionChange,
     label: 'Label Text',
     defaultOptionIndex: 0,
+    id: 'Select',
 };
 
 export const NoDefaultIndexOption = Template.bind({});
@@ -150,13 +153,13 @@ export const PrefixIcon = Template.bind({});
 PrefixIcon.args = {
     options: [
         {
-            label: 'Mainnet',
+            label: 'Testnet',
             id: 'Testnet',
             prefix: <Server fill={color.grey} />,
         },
         {
             label: 'Mainnet',
-            id: 'Testnet',
+            id: 'Mainnet',
             prefix: <Testnet fill={color.grey} />,
         },
         {
@@ -223,4 +226,78 @@ Description.args = {
     label: 'Label Text',
     defaultOptionIndex: 0,
     description: 'Much Needed',
+};
+
+const TemplateBeta: ComponentStory<typeof Select> = (args) => {
+    const [select, setSelect] = useState<string[]>([]);
+
+    return (
+        <form
+            onSubmit={(evt) => {
+                // console.log(evt.target?.demo.value);
+                evt.preventDefault();
+            }}
+        >
+            <Select
+                tryBeta={true}
+                {...args}
+                value={select}
+                onChange={(val) => setSelect(val as string[])}
+            />
+            <br />
+            <button type="submit" style={{ marginTop: '10px' }}>
+                Submit
+            </button>
+            <br />
+            <Typography>Submitted Value: {select.toString()}</Typography>
+        </form>
+    );
+};
+
+export const DefaultBeta = TemplateBeta.bind({});
+DefaultBeta.args = {
+    // options: callCodeData.map((item) => ({
+    //     label: `${item.name}(${item.dialCode})`,
+    //     prefix: (
+    //         <img
+    //             src={`https://countryflagsapi.com/png/${item.isoCode}`}
+    //             loading="lazy"
+    //         />
+    //     ),
+    //     id: `${item.dialCode},${item.isoCode}`,
+    // })),
+    options: [
+        {
+            label: 'Discord',
+            id: 'discord',
+            prefix: <Discord fill={color.grey} />,
+        },
+        {
+            label: 'Emoji',
+            id: 'emoji',
+            prefix: '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
+        },
+        {
+            label: 'TXT',
+            id: 'txt',
+            prefix: 'TXT',
+        },
+        {
+            label: 'dApp',
+            id: 'dapp',
+            prefix: <Server fill={color.grey} />,
+        },
+        {
+            label: 'dApp1',
+            id: 'dapp1',
+            prefix: <Server fill={color.grey} />,
+        },
+    ],
+    name: 'Demo-a-big-name',
+    isMulti: true,
+    isSearch: true,
+    disabled: true,
+    max: 3,
+    width: '16em',
+    placeholder: 'Something big name',
 };

@@ -1,5 +1,10 @@
 import React, { RefObject } from 'react';
-export interface SelectProps {
+export interface ISelectProps {
+    max?: number;
+    isMulti?: boolean;
+    name: string;
+    isSearch?: boolean;
+    placeholder?: string;
     /**
      * it is best to set a unique ID for each select component to verify change events
      */
@@ -13,7 +18,7 @@ export interface SelectProps {
     /**
      * Id of the Option that you want the Select to have. Use to control the value of the option
      */
-    value?: string;
+    value?: string[] | string;
 
     /**
      * ref object for fancy select
@@ -28,7 +33,7 @@ export interface SelectProps {
     /**
      * onChange that returns OptionProps typed data if not using traditional HTML5 mode
      */
-    onChange?: (option: OptionProps) => void;
+    onChange?: (option: string[] | OptionProps) => void;
 
     /**
      * standard onBlur that returns the entire event, as normal you can access event.target
@@ -106,6 +111,8 @@ export interface SelectProps {
      * Optional description under select component
      */
     description?: string;
+
+    tryBeta?: boolean;
 }
 
 export interface OptionProps {
@@ -148,4 +155,14 @@ export interface SelectedItemProps {
      * duplicate of state
      */
     state?: 'error' | 'confirmed' | 'disabled';
+}
+
+export enum KEY {
+    DOWN = 'ArrowDown',
+    END = 'End',
+    ENTER = 'Enter',
+    ESC = 'Escape',
+    HOME = 'Home',
+    TAB = 'Tab',
+    UP = 'ArrowUp',
 }

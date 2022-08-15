@@ -230,11 +230,14 @@ Description.args = {
 
 const TemplateBeta: ComponentStory<typeof Select> = (args) => {
     const [select, setSelect] = useState<string[]>([]);
+    const [formData, setFormData] = useState<string[]>();
 
     return (
         <form
             onSubmit={(evt) => {
-                // console.log(evt.target?.demo.value);
+                //@ts-ignore
+                // demo - is passed as name in this story
+                setFormData(evt.target?.demo?.value);
                 evt.preventDefault();
             }}
         >
@@ -249,54 +252,54 @@ const TemplateBeta: ComponentStory<typeof Select> = (args) => {
                 Submit
             </button>
             <br />
-            <Typography>Submitted Value: {select.toString()}</Typography>
+            <Typography>Submitted Value: {formData?.toString()}</Typography>
         </form>
     );
 };
 
-export const DefaultBeta = TemplateBeta.bind({});
-DefaultBeta.args = {
-    // options: callCodeData.map((item) => ({
-    //     label: `${item.name}(${item.dialCode})`,
-    //     prefix: (
-    //         <img
-    //             src={`https://countryflagsapi.com/png/${item.isoCode}`}
-    //             loading="lazy"
-    //         />
-    //     ),
-    //     id: `${item.dialCode},${item.isoCode}`,
-    // })),
-    options: [
-        {
-            label: 'Discord',
-            id: 'discord',
-            prefix: <Discord fill={color.grey} />,
-        },
-        {
-            label: 'Emoji',
-            id: 'emoji',
-            prefix: '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
-        },
-        {
-            label: 'TXT',
-            id: 'txt',
-            prefix: 'TXT',
-        },
-        {
-            label: 'dApp',
-            id: 'dapp',
-            prefix: <Server fill={color.grey} />,
-        },
-        {
-            label: 'dApp1',
-            id: 'dapp1',
-            prefix: <Server fill={color.grey} />,
-        },
-    ],
-    name: 'Demo-a-big-name',
+export const BetaSelect = TemplateBeta.bind({});
+BetaSelect.args = {
+    options: callCodeData.map((item) => ({
+        label: `${item.name}(${item.dialCode})`,
+        prefix: (
+            <img
+                src={`https://countryflagsapi.com/png/${item.isoCode}`}
+                loading="lazy"
+            />
+        ),
+        id: `${item.dialCode},${item.isoCode}`,
+    })),
+    name: 'demo',
+    isMulti: true,
+    isSearch: true,
+    disabled: false,
+    label: 'Select Country',
+    max: 3,
+    width: '16em',
+    placeholder: 'Something big name',
+};
+
+export const BetaSelectDisabled = TemplateBeta.bind({});
+BetaSelectDisabled.args = {
+    options: optionsList,
+    name: 'demo',
     isMulti: true,
     isSearch: true,
     disabled: true,
+    label: 'Select',
+    max: 3,
+    width: '16em',
+    placeholder: 'Something big name',
+};
+
+export const BetaSelectNoSearch = TemplateBeta.bind({});
+BetaSelectNoSearch.args = {
+    options: optionsList,
+    name: 'demo',
+    isMulti: true,
+    isSearch: false,
+    disabled: false,
+    label: 'Select Country',
     max: 3,
     width: '16em',
     placeholder: 'Something big name',

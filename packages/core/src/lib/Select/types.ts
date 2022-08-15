@@ -1,10 +1,30 @@
 import React, { RefObject } from 'react';
 export interface ISelectProps {
+    /**
+     * Maximum number of items that can be selected when isMulti is set to true
+     */
     max?: number;
+
+    /**
+     * For Multiple Selection of items
+     */
     isMulti?: boolean;
+
+    /**
+     * Name of the component
+     */
     name: string;
+
+    /**
+     * For showing a search box
+     */
     isSearch?: boolean;
+
+    /**
+     * Placeholder value
+     */
     placeholder?: string;
+
     /**
      * it is best to set a unique ID for each select component to verify change events
      */
@@ -112,7 +132,17 @@ export interface ISelectProps {
      */
     description?: string;
 
+    /**
+     * Beta version of select component - *Breaking changes*
+     */
     tryBeta?: boolean;
+}
+
+export interface ISelectExtendedProps extends ISelectProps {
+    isOpen: boolean;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    elId: (component: string) => string | undefined;
+    addItem: (option: string | undefined) => void;
 }
 
 export interface OptionProps {

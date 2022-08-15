@@ -194,7 +194,7 @@ const InputStyledSearch = styled.input`
 
     &[aria-hidden='true'] {
         position: absolute;
-        right: 100vw;
+        display: none;
 
         & + .w3uik__search-icon {
             display: none;
@@ -376,11 +376,12 @@ const CheckmarkIconStyled = styled(Checkmark)`
     color: ${color.green};
     margin-left: auto;
     display: none;
+    height: 12px;
+    width: 12px;
     &[aria-selected='true'] {
         display: block;
     }
 `;
-
 // -------------
 
 export default {

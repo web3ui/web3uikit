@@ -19,6 +19,29 @@ const testUpIcon = 'triangle up icon';
 const testDownIcon = 'triangle down icon';
 const testSearchInput = 'test-select-search-input';
 
+const testSelectClick = (
+    disabled: boolean,
+    id: string,
+    element: HTMLButtonElement,
+    isOpen = true,
+) => {
+    const startIcon = isOpen ? testDownIcon : testUpIcon;
+    const endIcon = isOpen ? testUpIcon : testDownIcon;
+    expect(screen.getByTestId(id).textContent).toBe(startIcon);
+    fireEvent.click(element);
+    expect(screen.getByTestId(id).textContent).toBe(
+        disabled ? startIcon : endIcon,
+    );
+    const dropdownList = container.querySelector(
+        `[data-testid="test-select-options"]`,
+    );
+    if (!disabled) {
+        expect(dropdownList).not.toBeNull();
+    } else {
+        expect(dropdownList).toBeNull();
+    }
+};
+
 describe('Renders - Select Beta', () => {
     const labelText = BetaSelect?.args?.label;
 
@@ -52,34 +75,14 @@ describe('Renders - Select Beta', () => {
         const element = container.querySelector(
             `[data-testid="${testSelectButton}"]`,
         );
-        expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
-            testDownIcon,
-        );
-        fireEvent.click(element as HTMLButtonElement);
-        expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
-            testUpIcon,
-        );
-        const dropdownList = container.querySelector(
-            `[data-testid="test-select-options"]`,
-        );
-        expect(dropdownList).not.toBeNull();
+        testSelectClick(false, testSelectButton, element as HTMLButtonElement);
     });
 
     it('renders search box', () => {
         const element = container.querySelector(
             `[data-testid="${testSelectButton}"]`,
         );
-        expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
-            testDownIcon,
-        );
-        fireEvent.click(element as HTMLButtonElement);
-        expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
-            testUpIcon,
-        );
-        const dropdownList = container.querySelector(
-            `[data-testid="${testSelectOptions}"]`,
-        );
-        expect(dropdownList).not.toBeNull();
+        testSelectClick(false, testSelectButton, element as HTMLButtonElement);
         const searchInput = container.querySelector(
             `[data-testid="${testSearchInput}"]`,
         );
@@ -116,38 +119,18 @@ describe('Renders - Select Beta Disabled', () => {
         expect(element?.textContent).toBe(labelText);
     });
 
-    it('renders dropdown list', () => {
+    it('renders no dropdown list', () => {
         const element = container.querySelector(
             `[data-testid="${testSelectButton}"]`,
         );
-        expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
-            testDownIcon,
-        );
-        fireEvent.click(element as HTMLButtonElement);
-        expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
-            testDownIcon,
-        );
-        const dropdownList = container.querySelector(
-            `[data-testid="test-select-options"]`,
-        );
-        expect(dropdownList).toBeNull();
+        testSelectClick(true, testSelectButton, element as HTMLButtonElement);
     });
 
     it('renders search box', () => {
         const element = container.querySelector(
             `[data-testid="${testSelectButton}"]`,
         );
-        expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
-            testDownIcon,
-        );
-        fireEvent.click(element as HTMLButtonElement);
-        expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
-            testDownIcon,
-        );
-        const dropdownList = container.querySelector(
-            `[data-testid="${testSelectOptions}"]`,
-        );
-        expect(dropdownList).toBeNull();
+        testSelectClick(true, testSelectButton, element as HTMLButtonElement);
         const searchInput = container.querySelector(
             `[data-testid="${testSearchInput}"]`,
         );
@@ -189,34 +172,14 @@ describe('Renders - Select Beta No Search', () => {
         const element = container.querySelector(
             `[data-testid="${testSelectButton}"]`,
         );
-        expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
-            testDownIcon,
-        );
-        fireEvent.click(element as HTMLButtonElement);
-        expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
-            testUpIcon,
-        );
-        const dropdownList = container.querySelector(
-            `[data-testid="test-select-options"]`,
-        );
-        expect(dropdownList).not.toBeNull();
+        testSelectClick(false, testSelectButton, element as HTMLButtonElement);
     });
 
     it('renders search box', () => {
         const element = container.querySelector(
             `[data-testid="${testSelectButton}"]`,
         );
-        expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
-            testDownIcon,
-        );
-        fireEvent.click(element as HTMLButtonElement);
-        expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
-            testUpIcon,
-        );
-        const dropdownList = container.querySelector(
-            `[data-testid="${testSelectOptions}"]`,
-        );
-        expect(dropdownList).not.toBeNull();
+        testSelectClick(false, testSelectButton, element as HTMLButtonElement);
         const searchInput = container.querySelector(
             `[data-testid="${testSearchInput}"]`,
         );

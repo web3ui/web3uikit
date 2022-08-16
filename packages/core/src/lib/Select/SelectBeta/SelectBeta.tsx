@@ -52,7 +52,8 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     function elId(component: string) {
         if (component === undefined) return;
         // Replace all space with '-' : to fix no scroll issue
-        return `w3uik-${name.replaceAll(' ', '-')}-${component}`;
+        const newName = name.replace(/ /g, '-');
+        return `w3uik-${newName}-${component}`;
     }
 
     function addItem(option: string | undefined) {

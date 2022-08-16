@@ -20,6 +20,7 @@ const {
 
 const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
     isSearch = true,
+    isMulti,
     options = [],
     value = [],
     max,
@@ -164,8 +165,9 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                 )}
                 <ListStyledDropdown ref={listRef}>
                     {visibleOptions.map((option, index) => {
-                        const isSelected =
-                            value.indexOf(option.id as string) !== -1;
+                        const isSelected = isMulti
+                            ? value.indexOf(option.id as string) !== -1
+                            : value === option.id;
                         let ariaSelected: boolean | undefined = isSelected;
                         if (ariaSelected === false && isMaxed === true) {
                             ariaSelected = undefined;

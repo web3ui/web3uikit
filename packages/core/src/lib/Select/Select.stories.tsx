@@ -4,7 +4,7 @@ import { Btc, Discord, Server, Testnet } from '@web3uikit/icons';
 import Select from './Select';
 import { useState } from 'react';
 import { callCodeData } from './SelectBeta/mockData';
-import { Typography } from '../Typography';
+import { OptionProps } from './types';
 
 export default {
     title: '2.Forms/Select',
@@ -228,36 +228,19 @@ Description.args = {
     description: 'Much Needed',
 };
 
-const TemplateBeta: ComponentStory<typeof Select> = (args) => {
-    const [select, setSelect] = useState<string[]>([]);
-    const [formData, setFormData] = useState<string[]>();
-
+const TemplateBetaSingle: ComponentStory<typeof Select> = (args) => {
+    const [select, setSelect] = useState<string>();
     return (
-        <form
-            onSubmit={(evt) => {
-                //@ts-ignore
-                // demo - is passed as name in this story
-                setFormData(evt.target?.demo?.value);
-                evt.preventDefault();
-            }}
-        >
-            <Select
-                tryBeta={true}
-                {...args}
-                value={select}
-                onChange={(val) => setSelect(val as string[])}
-            />
-            <br />
-            <button type="submit" style={{ marginTop: '10px' }}>
-                Submit
-            </button>
-            <br />
-            <Typography>Submitted Value: {formData?.toString()}</Typography>
-        </form>
+        <Select
+            tryBeta={true}
+            {...args}
+            value={select}
+            onChange={(val) => setSelect((val as OptionProps).id as string)}
+        />
     );
 };
 
-export const BetaSelect = TemplateBeta.bind({});
+export const BetaSelect = TemplateBetaSingle.bind({});
 BetaSelect.args = {
     options: callCodeData.map((item) => ({
         label: `${item.name}(${item.dialCode})`,
@@ -267,10 +250,10 @@ BetaSelect.args = {
                 loading="lazy"
             />
         ),
-        id: `${item.dialCode},${item.isoCode}`,
+        id: `${item.dialCode}-${item.isoCode}`,
     })),
     name: 'demo',
-    isMulti: true,
+    isMulti: false,
     isSearch: true,
     disabled: false,
     label: 'Select Country',
@@ -279,7 +262,19 @@ BetaSelect.args = {
     placeholder: 'Something big name',
 };
 
-export const BetaSelectDisabled = TemplateBeta.bind({});
+const TemplateBetaMulti: ComponentStory<typeof Select> = (args) => {
+    const [select, setSelect] = useState<string[]>();
+    return (
+        <Select
+            tryBeta={true}
+            {...args}
+            value={select}
+            onChange={(val) => setSelect(val as string[])}
+        />
+    );
+};
+
+export const BetaSelectDisabled = TemplateBetaMulti.bind({});
 BetaSelectDisabled.args = {
     options: optionsList,
     name: 'demo',
@@ -292,14 +287,27 @@ BetaSelectDisabled.args = {
     placeholder: 'Something big name',
 };
 
-export const BetaSelectNoSearch = TemplateBeta.bind({});
+export const BetaSelectMulti = TemplateBetaMulti.bind({});
+BetaSelectMulti.args = {
+    options: optionsList,
+    name: 'demo',
+    isMulti: true,
+    isSearch: true,
+    disabled: false,
+    label: 'Select',
+    max: 3,
+    width: '16em',
+    placeholder: 'Something big name',
+};
+
+export const BetaSelectNoSearch = TemplateBetaMulti.bind({});
 BetaSelectNoSearch.args = {
     options: optionsList,
     name: 'demo',
     isMulti: true,
     isSearch: false,
     disabled: false,
-    label: 'Select Country',
+    label: 'Select Item',
     max: 3,
     width: '16em',
     placeholder: 'Something big name',

@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ISelectProps, KEY, OptionProps } from '../types';
 import styles from './SelectBeta.styles';
-import { ColorProps } from '../../Todo/types';
 import SelectMenuList from './components/SelectMenuList';
 import SelectedItemsList from './components/SelectedItemsList';
 
@@ -14,16 +13,6 @@ const {
     TriangleDownIconStyled,
     TriangleUpIconStyled,
 } = styles;
-
-const colors: ColorProps[] = [
-    'blue',
-    'green',
-    'grey',
-    'yellow',
-    'purple',
-    'blueLight',
-    'pink',
-];
 
 const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     defaultOptionIndex,
@@ -43,13 +32,17 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     ...props
 }) => {
     const {
+        customNoDataText,
+        description,
+        errorMessage,
         onBlurTraditional,
         onChangeTraditional,
-        traditionalHTML5,
-        refTraditional,
-        validation,
         prefixIcon,
         prefixText,
+        refTraditional,
+        state,
+        traditionalHTML5,
+        validation,
         ...rest
     } = props;
     const triggerRef = useRef<HTMLButtonElement>(null);
@@ -107,7 +100,9 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     aria-haspopup="listbox"
                     data-testid="test-select-button"
                     disabled={disabled}
-                    onClick={() => setIsOpen(true)}
+                    onClick={() => {
+                        if (!disabled) setIsOpen(true);
+                    }}
                     onKeyDown={(e) => {
                         if (e.key === KEY.DOWN) {
                             setIsOpen(true);
@@ -139,6 +134,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     max={max}
                     name={name}
                     options={options}
+                    placeholder={placeholder}
                     setIsOpen={setIsOpen}
                     value={value}
                 />
@@ -158,6 +154,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                         max={max}
                         name={name}
                         options={options}
+                        placeholder={placeholder}
                         setIsOpen={setIsOpen}
                         value={value}
                     />
@@ -166,9 +163,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             <input
                 name={name}
                 type="hidden"
-                value={
-                    Array.isArray(value) ? (value as string[]).join(',') : value
-                }
+                value={isMulti ? (value as string[]).join(',') : value}
             />
         </DivStyledWrapper>
     );

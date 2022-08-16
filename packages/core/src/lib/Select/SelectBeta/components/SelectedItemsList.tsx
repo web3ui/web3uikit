@@ -1,5 +1,5 @@
 import React from 'react';
-import { ISelectExtendedProps } from '../../types';
+import { ISelectExtendedProps, OptionProps } from '../../types';
 import styles from '../SelectBeta.styles';
 import { Tag } from '../../../Tag';
 import { ColorProps } from '../../../Todo/types';
@@ -36,7 +36,7 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
             aria-disabled={disabled}
             aria-label="options-selected"
             data-testid="test-select-selected-items"
-            onClick={(e) => {
+            onClick={() => {
                 if (!disabled) setIsOpen((prev) => !prev);
             }}
         >
@@ -47,7 +47,11 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
                         onClick={(e) => e.stopPropagation()}
                     >
                         <Tag
-                            text={option}
+                            text={
+                                (options.find(
+                                    (curr) => curr.id === option,
+                                ) as OptionProps)?.label as string
+                            }
                             theme="chips"
                             tone="light"
                             color={
@@ -82,7 +86,7 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
         </ListStyledSelected>
     ) : (
         <DivStyledPlaceholder>
-            {placeholder || `Select ${name}`}
+            {placeholder ?? `Select ${name}`}
         </DivStyledPlaceholder>
     );
 };

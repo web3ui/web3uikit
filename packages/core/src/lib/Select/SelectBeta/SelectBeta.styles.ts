@@ -335,6 +335,27 @@ const SpanStyledNoResults = styled.span`
     text-align: center;
 `;
 
+const DivStyledDesc = styled.div`
+    color: ${color.grey};
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    overflow: hidden;
+    padding: 4px 12px;
+    position: absolute;
+    text-overflow: ellipsis;
+    top: 100%;
+    white-space: nowrap;
+    width: 80%;
+    &:hover {
+        overflow: visible;
+        white-space: normal;
+    }
+    &[aria-invalid='true'] {
+        color: ${color.red};
+    }
+`;
+
 // --------Icons
 
 const SearchIconStyled = styled(Search)`
@@ -388,6 +409,7 @@ export default {
     ButtonStyledListItem,
     ButtonStyledSelect,
     CheckmarkIconStyled,
+    DivStyledDesc,
     DivStyledDropdown,
     DivStyledOverlay,
     DivStyledPlaceholder,

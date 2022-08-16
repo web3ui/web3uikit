@@ -6,6 +6,7 @@ import SelectedItemsList from './components/SelectedItemsList';
 
 const {
     ButtonStyledSelect,
+    DivStyledDesc,
     DivStyledOverlay,
     DivStyledSelectWrapper,
     DivStyledWrapper,
@@ -101,7 +102,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     data-testid="test-select-button"
                     disabled={disabled}
                     onClick={() => {
-                        if (!disabled) setIsOpen(true);
+                        if (!disabled) setIsOpen((prev) => !prev);
                     }}
                     onKeyDown={(e) => {
                         if (e.key === KEY.DOWN) {
@@ -138,6 +139,13 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     setIsOpen={setIsOpen}
                     value={value}
                 />
+                {(description || errorMessage) && (
+                    <DivStyledDesc aria-invalid={state === 'error'}>
+                        {state === 'error'
+                            ? errorMessage
+                            : description && description}
+                    </DivStyledDesc>
+                )}
             </DivStyledSelectWrapper>
             {!disabled && (
                 <>
@@ -150,6 +158,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                         addItem={addItem}
                         elId={elId}
                         isOpen={isOpen}
+                        isMulti={isMulti}
                         isSearch={isSearch}
                         max={max}
                         name={name}

@@ -252,63 +252,66 @@ BetaSelect.args = {
         ),
         id: `${item.dialCode}-${item.isoCode}`,
     })),
-    name: 'demo',
+    description: 'select the country your card belongs to',
+    disabled: false,
     isMulti: false,
     isSearch: true,
-    disabled: false,
     label: 'Select Country',
     max: 3,
-    width: '16em',
+    name: 'demo',
     placeholder: 'Something big name',
+    width: '16em',
 };
 
 const TemplateBetaMulti: ComponentStory<typeof Select> = (args) => {
     const [select, setSelect] = useState<string[]>();
     return (
-        <Select
-            tryBeta={true}
-            {...args}
-            value={select}
-            onChange={(val) => setSelect(val as string[])}
-        />
+        <>
+            <Select
+                tryBeta={true}
+                {...args}
+                value={select}
+                onChange={(val) => setSelect(val as string[])}
+            />
+        </>
     );
 };
 
 export const BetaSelectDisabled = TemplateBetaMulti.bind({});
 BetaSelectDisabled.args = {
-    options: optionsList,
-    name: 'demo',
+    disabled: true,
     isMulti: true,
     isSearch: true,
-    disabled: true,
     label: 'Select',
     max: 3,
-    width: '16em',
+    name: 'demo',
+    options: optionsList,
     placeholder: 'Something big name',
+    width: '16em',
 };
 
 export const BetaSelectMulti = TemplateBetaMulti.bind({});
 BetaSelectMulti.args = {
-    options: optionsList,
-    name: 'demo',
+    disabled: false,
     isMulti: true,
     isSearch: true,
-    disabled: false,
     label: 'Select',
     max: 3,
-    width: '16em',
+    name: 'demo',
+    options: optionsList,
     placeholder: 'Something big name',
+    width: '16em',
 };
 
 export const BetaSelectNoSearch = TemplateBetaMulti.bind({});
 BetaSelectNoSearch.args = {
-    options: optionsList,
-    name: 'demo',
+    disabled: false,
     isMulti: true,
     isSearch: false,
-    disabled: false,
     label: 'Select Item',
     max: 3,
-    width: '16em',
+    name: 'demo',
+    options: optionsList,
     placeholder: 'Something big name',
+    width: '16em',
 };

@@ -49,7 +49,7 @@ const optionsList = [
     {
         label: 'Emoji',
         id: 'emoji',
-        prefix: '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
+        prefix: '😃',
     },
     {
         label: 'TXT',
@@ -277,10 +277,10 @@ const TemplateBetaMulti: ComponentStory<typeof Select> = (args) => {
     );
 };
 
-export const BetaSelectDisabled = TemplateBetaMulti.bind({});
+export const BetaSelectDisabled = TemplateBetaSingle.bind({});
 BetaSelectDisabled.args = {
     disabled: true,
-    isMulti: true,
+    isMulti: false,
     isSearch: true,
     label: 'Select',
     max: 3,
@@ -309,9 +309,18 @@ BetaSelectNoSearch.args = {
     isMulti: true,
     isSearch: false,
     label: 'Select Item',
-    max: 3,
     name: 'demo',
     options: optionsList,
     placeholder: 'Something big name',
     width: '16em',
+};
+
+export const BetaNoData = TemplateBetaSingle.bind({});
+BetaSelectNoSearch.args = {
+    disabled: false,
+    isMulti: false,
+    isSearch: true,
+    label: 'Select Item',
+    name: 'demo',
+    placeholder: 'Something big name',
 };

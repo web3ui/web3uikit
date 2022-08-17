@@ -16,6 +16,7 @@ const {
 } = styles;
 
 const SelectBeta: React.FunctionComponent<ISelectProps> = ({
+    customNoDataText = 'No Data',
     defaultOptionIndex,
     disabled = false,
     id,
@@ -33,7 +34,6 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     ...props
 }) => {
     const {
-        customNoDataText,
         description,
         errorMessage,
         onBlurTraditional,
@@ -49,18 +49,18 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     const triggerRef = useRef<HTMLButtonElement>(null);
     const [isOpen, setIsOpen] = useState(false);
 
-    function elId(component: string) {
+    const elementId = (component: string) => {
         if (component === undefined) return;
         // Replace all space with '-' : to fix no scroll issue
         const newName = name.replace(/ /g, '-');
         return `w3uik-${newName}-${component}`;
-    }
+    };
 
-    function addItem(option: string | undefined) {
+    const addItem = (option: string | undefined) => {
         if (!option) return;
         // multi selection
         if (isMulti === true) {
-            let selected = [...value];
+            const selected = [...value];
             const index = selected.findIndex((item) => item === option);
             if (index !== -1) {
                 selected.splice(index, 1); // if existing, remove
@@ -75,13 +75,12 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
         // single selection
         onChange?.(options.find((item) => item.id === option) as OptionProps);
         setIsOpen(false);
-    }
-
+    };
     return (
         <DivStyledWrapper
             aria-expanded={isOpen === true}
             aria-label="select"
-            className="w3uik"
+            className="w3uik-select-component"
             data-testid="test-select"
             id={id}
             role="listbox"
@@ -97,7 +96,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     {label}
                 </LabelStyled>
                 <ButtonStyledSelect
-                    aria-controls={elId('menu')}
+                    aria-controls={elementId('menu')}
                     aria-expanded={isOpen === true}
                     aria-haspopup="listbox"
                     data-testid="test-select-button"
@@ -129,7 +128,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                 </ButtonStyledSelect>
                 <SelectedItemsList
                     addItem={addItem}
-                    elId={elId}
+                    elementId={elementId}
                     isMulti={isMulti}
                     isOpen={isOpen}
                     isSearch={isSearch}
@@ -157,7 +156,8 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     />
                     <SelectMenuList
                         addItem={addItem}
-                        elId={elId}
+                        customNoDataText={customNoDataText}
+                        elementId={elementId}
                         isOpen={isOpen}
                         isMulti={isMulti}
                         isSearch={isSearch}

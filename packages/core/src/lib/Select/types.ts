@@ -36,7 +36,7 @@ export interface ISelectProps {
     label?: string;
 
     /**
-     * Id of the Option that you want the Select to have. Use to control the value of the option
+     * Id of the Option that you want the Select to have. Use to control the value of the option. (Should be a react state variable)
      */
     value?: string[] | string;
 
@@ -51,7 +51,7 @@ export interface ISelectProps {
     refTraditional?: RefObject<HTMLSelectElement>;
 
     /**
-     * onChange that returns OptionProps typed data if not using traditional HTML5 mode
+     * onChange that returns OptionProps typed data if not using traditional HTML5 mode. Remember to update value state in this function
      */
     onChange?: (option: string[] | OptionProps) => void;
 
@@ -141,7 +141,7 @@ export interface ISelectProps {
 export interface ISelectExtendedProps extends ISelectProps {
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-    elId: (component: string) => string | undefined;
+    elementId: (element: string) => string | undefined;
     addItem: (option: string | undefined) => void;
 }
 

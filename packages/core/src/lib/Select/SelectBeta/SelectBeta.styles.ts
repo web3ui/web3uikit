@@ -121,6 +121,9 @@ const ListItemStyledTag = styled.li`
     display: flex;
     z-index: -10;
     align-items: center;
+    width: 100%;
+    padding-right: calc(var(--arrow-width) + 0.5em);
+    line-break: loose;
 `;
 
 const DivStyledPlaceholder = styled.div`
@@ -264,16 +267,24 @@ const ListItemStyledDropdown = styled.li`
 `;
 
 const SpanStyledItemIcon = styled.span`
-    display: flex;
-    padding: 0 5px;
     align-items: center;
+    display: flex;
     height: 24px;
+    justify-content: center;
+    margin: 0 4px;
+    padding: 0 5px;
     width: 24px;
-    margin-right: 6px;
+    // Any component(svg/img) used as icon will have a common width
     * {
-        width: 32px;
         height: 100%;
+        object-fit: contain;
+        width: 24px !important;
     }
+`;
+
+const SpanStyledItemText = styled.span`
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 
 const ButtonStyledListItem = styled.button`
@@ -341,12 +352,12 @@ const DivStyledDesc = styled.div`
     font-style: normal;
     font-weight: 400;
     overflow: hidden;
-    padding: 4px 12px;
+    padding: 4px 4px;
     position: absolute;
     text-overflow: ellipsis;
     top: 100%;
     white-space: nowrap;
-    width: 80%;
+    width: 90%;
     &:hover {
         overflow: visible;
         white-space: normal;
@@ -424,6 +435,7 @@ export default {
     MenuStyledWrapper,
     SearchIconStyled,
     SpanStyledItemIcon,
+    SpanStyledItemText,
     SpanStyledNoResults,
     TriangleDownIconStyled,
     TriangleUpIconStyled,

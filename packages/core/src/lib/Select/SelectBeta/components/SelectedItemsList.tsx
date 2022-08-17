@@ -9,6 +9,7 @@ const {
     ListItemStyledTag,
     ListStyledSelected,
     SpanStyledItemIcon,
+    SpanStyledItemText,
 } = styles;
 
 const colors: ColorProps[] = [
@@ -76,11 +77,12 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
                     <SpanStyledItemIcon>
                         {options.find((option) => option.id === value)?.prefix}
                     </SpanStyledItemIcon>
-
-                    {
-                        options.find((option) => option.id === value)
-                            ?.label as string
-                    }
+                    <SpanStyledItemText>
+                        {
+                            options.find((option) => option.id === value)
+                                ?.label as string
+                        }
+                    </SpanStyledItemText>
                 </ListItemStyledTag>
             )}
         </ListStyledSelected>

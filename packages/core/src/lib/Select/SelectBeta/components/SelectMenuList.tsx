@@ -19,15 +19,16 @@ const {
 } = styles;
 
 const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
-    isSearch = true,
-    isMulti,
-    options = [],
-    value = [],
-    max,
-    isOpen,
-    setIsOpen,
-    elId,
     addItem,
+    customNoDataText,
+    elementId,
+    isMulti,
+    isOpen,
+    isSearch = true,
+    max,
+    options = [],
+    setIsOpen,
+    value = [],
 }) => {
     const listRef = useRef<HTMLUListElement>(null);
     const searchRef = useRef<HTMLInputElement>(null);
@@ -54,21 +55,21 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
     const isMaxed = value.length === max;
 
     //-----For Scrolling listbox on Key press-----
-    function optionId(option: number | undefined) {
+    const optionId = (option: number | undefined) => {
         if (option === undefined) return;
-        return elId(`option-${option}`);
-    }
+        return elementId(`option-${option}`);
+    };
 
-    function scrollTo(wrapper: HTMLElement | null, selector: string): void {
+    const scrollTo = (wrapper: HTMLElement | null, selector: string): void => {
         if (wrapper) {
             const el = wrapper.querySelector(selector);
             if (el) {
                 el.scrollIntoView(false);
             }
         }
-    }
+    };
 
-    function onKeyDown(evt: React.KeyboardEvent<HTMLInputElement>): void {
+    const onKeyDown = (evt: React.KeyboardEvent<HTMLInputElement>): void => {
         const first = visibleIndices[0];
         const last = visibleIndices[visibleIndices.length - 1];
 
@@ -120,7 +121,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                 }
                 break;
         }
-    }
+    };
     //--------------------------------
 
     // effect 1. maintain focus
@@ -139,7 +140,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
 
     return (
         <MenuStyledWrapper
-            id={elId('menu')}
+            id={elementId('menu')}
             className="w3uik__dropdown-wrapper"
             aria-label="select-options"
             data-testid="test-select-options"
@@ -210,7 +211,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                             />
                             <SpanStyledNoResults>
                                 {options.length === 0
-                                    ? 'No Data'
+                                    ? customNoDataText
                                     : `No results for “${searchTerm}”`}
                             </SpanStyledNoResults>
                         </>

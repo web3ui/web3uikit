@@ -18,7 +18,9 @@ const {
 const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     customNoDataText = 'No Data',
     defaultOptionIndex,
+    description,
     disabled = false,
+    errorMessage,
     id,
     isMulti = false,
     isSearch = true,
@@ -28,14 +30,14 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     onChange,
     options = [],
     placeholder,
+    ref,
     style,
     value = [],
     width = '100%',
     ...props
 }) => {
+    //unused variables that are not need to be passed to div
     const {
-        description,
-        errorMessage,
         onBlurTraditional,
         onChangeTraditional,
         prefixIcon,
@@ -44,6 +46,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
         state,
         traditionalHTML5,
         validation,
+        tryBeta,
         ...rest
     } = props;
     const triggerRef = useRef<HTMLButtonElement>(null);
@@ -76,6 +79,19 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
         onChange?.(options.find((item) => item.id === option) as OptionProps);
         setIsOpen(false);
     };
+
+    // to set default value from options at first render
+    useEffect(() => {
+        if (
+            defaultOptionIndex &&
+            options &&
+            defaultOptionIndex >= 0 &&
+            defaultOptionIndex < options?.length
+        ) {
+            addItem(options[defaultOptionIndex]?.id as string);
+        }
+    }, []);
+
     return (
         <DivStyledWrapper
             aria-expanded={isOpen === true}
@@ -83,6 +99,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             className="w3uik-select-component"
             data-testid="test-select"
             id={id}
+            ref={ref}
             role="listbox"
             style={{ ...style, width }}
             {...rest}

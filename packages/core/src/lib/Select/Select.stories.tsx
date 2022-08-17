@@ -1,8 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { useArgs } from '@storybook/addons';
+import { action } from '@storybook/addon-actions';
 import { color } from '@web3uikit/styles';
 import { Btc, Discord, Server, Testnet } from '@web3uikit/icons';
 import Select from './Select';
-import { useState } from 'react';
 import { callCodeData } from './SelectBeta/mockData';
 import { OptionProps } from './types';
 
@@ -229,13 +230,17 @@ Description.args = {
 };
 
 const TemplateBetaSingle: ComponentStory<typeof Select> = (args) => {
-    const [select, setSelect] = useState<string>();
+    const [_, updateArgs] = useArgs();
+    const handleChange = (val: OptionProps) => {
+        action('value changed=> new id')(val.id);
+        updateArgs({ value: val.id });
+    };
+
     return (
         <Select
             tryBeta={true}
             {...args}
-            value={select}
-            onChange={(val) => setSelect((val as OptionProps).id as string)}
+            onChange={(val) => handleChange(val as OptionProps)}
         />
     );
 };
@@ -264,14 +269,17 @@ BetaSelect.args = {
 };
 
 const TemplateBetaMulti: ComponentStory<typeof Select> = (args) => {
-    const [select, setSelect] = useState<string[]>();
+    const [_, updateArgs] = useArgs();
+    const handleChange = (val: string[]) => {
+        action('value changed')(val);
+        updateArgs({ value: val });
+    };
     return (
         <>
             <Select
                 tryBeta={true}
                 {...args}
-                value={select}
-                onChange={(val) => setSelect(val as string[])}
+                onChange={(val) => handleChange(val as string[])}
             />
         </>
     );

@@ -65,11 +65,11 @@ If you are using `web3uikit` with Next.js, be sure to follow the [official guide
 -   [🤝 Need help](#-need-help)
 -   [🚀 Quick start](#-quick-start)
 -   [🧭 Table of Contents](#-table-of-contents)
-<!-- -   [👩‍🔬 Advanced setup](#-advanced-setup) -->
+    <!-- -   [👩‍🔬 Advanced setup](#-advanced-setup) -->
 -   [📦 Packages](#-packages)
     -   [Core module](#core-module)
-    -   [Main modules](#main-modules)
-    -   [API modules](#api-modules)
+    -   [Icons module](#icons-module)
+    -   [Web3 module](#web3-module)
 -   [🧙‍♂️ Community](#️-community)
 
 <!-- # 👩‍🔬 Advanced setup

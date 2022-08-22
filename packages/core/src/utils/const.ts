@@ -7,3 +7,7 @@ export const validateRegExp = {
     numbersOnly: '[0-9]',
     telephoneNumber: '^(+d{1,2}s)?(?d{3})?[s.-]?d{3}[s.-]?d{4}$',
 };
+
+export function escapeRegex(val: string) {
+    return val.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+}

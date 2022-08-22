@@ -1,8 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-
+import { useArgs } from '@storybook/addons';
+import { action } from '@storybook/addon-actions';
 import { color } from '@web3uikit/styles';
 import { Btc, Discord, Server, Testnet } from '@web3uikit/icons';
 import Select from './Select';
+import { callCodeData } from './SelectBeta/mockData';
+import { OptionProps } from './types';
 
 export default {
     title: '2.Forms/Select',
@@ -47,7 +50,7 @@ const optionsList = [
     {
         label: 'Emoji',
         id: 'emoji',
-        prefix: '🏴󠁧󠁢󠁷󠁬󠁳󠁿',
+        prefix: '😃',
     },
     {
         label: 'TXT',
@@ -61,27 +64,27 @@ const optionsList = [
     },
     {
         label: 'Discord',
-        id: 'discord',
+        id: 'discord1',
         prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Discord',
-        id: 'discord',
+        id: 'discord2',
         prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Discord',
-        id: 'discord',
+        id: 'discord3',
         prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Discord',
-        id: 'discord',
+        id: 'discord4',
         prefix: <Discord fill={color.grey} />,
     },
     {
         label: 'Discord',
-        id: 'discord',
+        id: 'discord5',
         prefix: <Discord fill={color.grey} />,
     },
 ];
@@ -92,6 +95,7 @@ Default.args = {
     onChange: onTestOptionChange,
     label: 'Label Text',
     defaultOptionIndex: 0,
+    id: 'Select',
 };
 
 export const NoDefaultIndexOption = Template.bind({});
@@ -150,13 +154,13 @@ export const PrefixIcon = Template.bind({});
 PrefixIcon.args = {
     options: [
         {
-            label: 'Mainnet',
+            label: 'Testnet',
             id: 'Testnet',
             prefix: <Server fill={color.grey} />,
         },
         {
             label: 'Mainnet',
-            id: 'Testnet',
+            id: 'Mainnet',
             prefix: <Testnet fill={color.grey} />,
         },
         {
@@ -223,4 +227,108 @@ Description.args = {
     label: 'Label Text',
     defaultOptionIndex: 0,
     description: 'Much Needed',
+};
+
+const TemplateBetaSingle: ComponentStory<typeof Select> = (args) => {
+    const [_, updateArgs] = useArgs();
+    const handleChange = (val: OptionProps) => {
+        action('value changed=> new id')(val.id);
+        updateArgs({ value: val.id });
+    };
+
+    return (
+        <Select
+            tryBeta={true}
+            {...args}
+            onChange={(val) => handleChange(val as OptionProps)}
+        />
+    );
+};
+
+export const BetaSelect = TemplateBetaSingle.bind({});
+BetaSelect.args = {
+    options: callCodeData.map((item) => ({
+        label: `${item.name}(${item.dialCode})`,
+        prefix: (
+            <img
+                src={`https://countryflagsapi.com/png/${item.isoCode}`}
+                loading="lazy"
+            />
+        ),
+        id: `${item.dialCode}-${item.isoCode}`,
+    })),
+    description: 'select the country your card belongs to',
+    disabled: false,
+    isMulti: false,
+    isSearch: true,
+    label: 'Select Country',
+    max: 3,
+    name: 'demo',
+    placeholder: 'Something big name',
+    width: '16em',
+};
+
+const TemplateBetaMulti: ComponentStory<typeof Select> = (args) => {
+    const [_, updateArgs] = useArgs();
+    const handleChange = (val: string[]) => {
+        action('value changed')(val);
+        updateArgs({ value: val });
+    };
+    return (
+        <>
+            <Select
+                tryBeta={true}
+                {...args}
+                onChange={(val) => handleChange(val as string[])}
+            />
+        </>
+    );
+};
+
+export const BetaSelectDisabled = TemplateBetaSingle.bind({});
+BetaSelectDisabled.args = {
+    disabled: true,
+    isMulti: false,
+    isSearch: true,
+    label: 'Select',
+    max: 3,
+    name: 'demo',
+    options: optionsList,
+    placeholder: 'Something big name',
+    width: '16em',
+};
+
+export const BetaSelectMulti = TemplateBetaMulti.bind({});
+BetaSelectMulti.args = {
+    disabled: false,
+    isMulti: true,
+    isSearch: true,
+    label: 'Select',
+    max: 3,
+    name: 'demo',
+    options: optionsList,
+    placeholder: 'Something big name',
+    width: '16em',
+};
+
+export const BetaSelectNoSearch = TemplateBetaMulti.bind({});
+BetaSelectNoSearch.args = {
+    disabled: false,
+    isMulti: true,
+    isSearch: false,
+    label: 'Select Item',
+    name: 'demo',
+    options: optionsList,
+    placeholder: 'Something big name',
+    width: '16em',
+};
+
+export const BetaNoData = TemplateBetaSingle.bind({});
+BetaSelectNoSearch.args = {
+    disabled: false,
+    isMulti: false,
+    isSearch: true,
+    label: 'Select Item',
+    name: 'demo',
+    placeholder: 'Something big name',
 };

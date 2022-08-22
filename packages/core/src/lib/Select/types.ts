@@ -1,5 +1,30 @@
 import React, { RefObject } from 'react';
-export interface SelectProps {
+export interface ISelectProps {
+    /**
+     * Maximum number of items that can be selected when isMulti is set to true
+     */
+    max?: number;
+
+    /**
+     * For Multiple Selection of items
+     */
+    isMulti?: boolean;
+
+    /**
+     * Name of the component
+     */
+    name: string;
+
+    /**
+     * For showing a search box
+     */
+    isSearch?: boolean;
+
+    /**
+     * Placeholder value
+     */
+    placeholder?: string;
+
     /**
      * it is best to set a unique ID for each select component to verify change events
      */
@@ -11,9 +36,9 @@ export interface SelectProps {
     label?: string;
 
     /**
-     * Id of the Option that you want the Select to have. Use to control the value of the option
+     * Id of the Option that you want the Select to have. Use to control the value of the option. (Should be a react state variable)
      */
-    value?: string;
+    value?: string[] | string;
 
     /**
      * ref object for fancy select
@@ -26,9 +51,9 @@ export interface SelectProps {
     refTraditional?: RefObject<HTMLSelectElement>;
 
     /**
-     * onChange that returns OptionProps typed data if not using traditional HTML5 mode
+     * onChange that returns OptionProps typed data if not using traditional HTML5 mode. Remember to update value state in this function
      */
-    onChange?: (option: OptionProps) => void;
+    onChange?: (option: string[] | OptionProps) => void;
 
     /**
      * standard onBlur that returns the entire event, as normal you can access event.target
@@ -106,6 +131,18 @@ export interface SelectProps {
      * Optional description under select component
      */
     description?: string;
+
+    /**
+     * Beta version of select component - *Breaking changes*
+     */
+    tryBeta?: boolean;
+}
+
+export interface ISelectExtendedProps extends ISelectProps {
+    isOpen: boolean;
+    setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    elementId: (element: string) => string | undefined;
+    addItem: (option: string | undefined) => void;
 }
 
 export interface OptionProps {
@@ -148,4 +185,14 @@ export interface SelectedItemProps {
      * duplicate of state
      */
     state?: 'error' | 'confirmed' | 'disabled';
+}
+
+export enum KEY {
+    DOWN = 'ArrowDown',
+    END = 'End',
+    ENTER = 'Enter',
+    ESC = 'Escape',
+    HOME = 'Home',
+    TAB = 'Tab',
+    UP = 'ArrowUp',
 }

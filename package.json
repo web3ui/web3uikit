@@ -25,6 +25,9 @@
         },
         {
             "path": "packages/web3/dist/index.js"
+        },
+        {
+            "path": "packages/web3uikit/dist/index.js"
         }
     ],
     "scripts": {

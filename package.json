@@ -1,6 +1,6 @@
 {
-    "name": "web3uikit",
-    "version": "1.0.26",
+    "name": "web3uikit_monorepo",
+    "version": "1.0.0",
     "license": "MIT",
     "repository": "https://github.com/web3ui/web3uikit",
     "homepage": "https://web3ui.github.io/web3uikit/",

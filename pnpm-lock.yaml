@@ -120,23 +120,19 @@ importers:
   apps/example:
     specifiers:
       '@web3uikit/config': '*'
-      '@web3uikit/core': '*'
-      '@web3uikit/icons': '*'
-      '@web3uikit/web3': '*'
       react: ^18.0.0
       react-dom: ^18.0.0
       react-moralis: ^1.3.5
       react-router-dom: ^6.3.0
       source-map-explorer: '*'
+      web3uikit: '*'
     dependencies:
-      '@web3uikit/core': link:../../packages/core
-      '@web3uikit/icons': link:../../packages/icons
-      '@web3uikit/web3': link:../../packages/web3
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-moralis: 1.4.0_o6v5z6xcse4cv6qevqjk2i76bi
       react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
       source-map-explorer: 2.5.2
+      web3uikit: link:../../packages/web3uikit
     devDependencies:
       '@web3uikit/config': link:../../packages/config
 
@@ -234,6 +230,27 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       react-is: 18.2.0
       react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
+      styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
+
+  packages/web3uikit:
+    specifiers:
+      '@web3uikit/config': '*'
+      '@web3uikit/core': '*'
+      '@web3uikit/icons': '*'
+      '@web3uikit/styles': '*'
+      '@web3uikit/web3': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@web3uikit/config': link:../config
+      '@web3uikit/core': link:../core
+      '@web3uikit/icons': link:../icons
+      '@web3uikit/styles': link:../styles
+      '@web3uikit/web3': link:../web3
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
 
 packages:

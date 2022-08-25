@@ -11,9 +11,7 @@
         "analyze": "source-map-explorer 'dist/assets/*.js'"
     },
     "dependencies": {
-        "@web3uikit/core": "*",
-        "@web3uikit/icons": "*",
-        "@web3uikit/web3": "*",
+        "web3uikit": "*",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
         "react-moralis": "^1.3.5",

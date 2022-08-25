@@ -1,20 +1,19 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazily } from 'react-lazily';
 import { Suspense } from 'react';
-
-const {
+import {
+    Ada,
     Button,
     Logo,
     Typography,
     Avatar,
     BannerStrip,
+    useNotification,
+    ConnectButton,
+    NFT,
+    SendTransaction,
     VerifyCode,
-} = lazily(() => import('@web3uikit/core'));
-import { Ada } from '@web3uikit/icons';
-import { useNotification } from '@web3uikit/core';
-const { ConnectButton, NFT, SendTransaction } = lazily(() =>
-    import('@web3uikit/web3'),
-);
+} from 'web3uikit';
 export const App = () => {
     const dispatch = useNotification();
     return (

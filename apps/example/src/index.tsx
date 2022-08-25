@@ -10,17 +10,34 @@ const {
     BannerStrip,
     VerifyCode,
 } = lazily(() => import('@web3uikit/core'));
-import { Ada } from '@web3uikit/icons';
-import { useNotification } from '@web3uikit/core';
+import { Ada, Reload } from '@web3uikit/icons';
+import { Breadcrumbs, useNotification } from '@web3uikit/core';
 const { ConnectButton, NFT, SendTransaction } = lazily(() =>
     import('@web3uikit/web3'),
 );
+
+const MockBreadCrumbs = [
+    {
+        breadcrumb: 'Syncs',
+        icon: <Reload fontSize={20} fill="currentColor" />,
+        path: '/',
+    },
+    {
+        breadcrumb: 'Smart Contract Events',
+        path: '/',
+    },
+    {
+        breadcrumb: 'Add New Token Erc20',
+        path: '/',
+    },
+];
+
 export const App = () => {
     const dispatch = useNotification();
     return (
         <Routes>
             <Route
-                path="/"
+                path="*"
                 element={
                     <Suspense fallback={<>Loading...</>}>
                         <div
@@ -30,6 +47,7 @@ export const App = () => {
                                 margin: '20px',
                             }}
                         >
+                            <Breadcrumbs routes={MockBreadCrumbs} />
                             <Ada
                                 style={{
                                     fontSize: '100px',

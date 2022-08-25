@@ -8,5 +8,7 @@ export default defineConfig({
         'react-router-dom',
         'moralis',
         'react-moralis',
+        '@walletconnect/web3-provider',
+        '@web3auth/web3auth',
     ]),
 });

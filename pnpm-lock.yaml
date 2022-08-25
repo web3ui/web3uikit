@@ -165,10 +165,10 @@ importers:
       '@web3uikit/config': link:../config
       '@web3uikit/icons': link:../icons
       '@web3uikit/styles': link:../styles
+      react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
 
   packages/icons:

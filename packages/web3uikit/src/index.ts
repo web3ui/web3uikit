@@ -1,3 +1,4 @@
+import * as React from 'react';
 export * from '@web3uikit/core';
 export * from '@web3uikit/icons';
 export * from '@web3uikit/styles';

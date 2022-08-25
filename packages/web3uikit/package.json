@@ -31,6 +31,11 @@
         "@web3uikit/core": "*",
         "@web3uikit/icons": "*",
         "@web3uikit/styles": "*",
-        "@web3uikit/web3": "*"
+        "@web3uikit/web3": "*",
+        "ts-node": "9.1.1",
+        "typescript": "^4.6.3",
+        "react-moralis": "^1.4.0",
+        "moralis": "^1.8.1",
+        "wp5-cra-polyfill": "github:oscario2/wp5-cra-polyfill#91431fa"
     }
 }

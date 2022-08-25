@@ -4,6 +4,7 @@ import { Suspense } from 'react';
 import {
     Ada,
     Button,
+    Breadcrumbs,
     Logo,
     Typography,
     Avatar,
@@ -14,12 +15,28 @@ import {
     SendTransaction,
     VerifyCode,
 } from 'web3uikit';
+
+const MockBreadCrumbs = [
+    {
+        breadcrumb: 'Syncs',
+        path: '/',
+    },
+    {
+        breadcrumb: 'Smart Contract Events',
+        path: '/',
+    },
+    {
+        breadcrumb: 'Add New Token Erc20',
+        path: '/',
+    },
+];
+
 export const App = () => {
     const dispatch = useNotification();
     return (
         <Routes>
             <Route
-                path="/"
+                path="*"
                 element={
                     <Suspense fallback={<>Loading...</>}>
                         <div
@@ -29,6 +46,7 @@ export const App = () => {
                                 margin: '20px',
                             }}
                         >
+                            <Breadcrumbs routes={MockBreadCrumbs} />
                             <Ada
                                 style={{
                                     fontSize: '100px',

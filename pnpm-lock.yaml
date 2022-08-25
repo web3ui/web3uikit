@@ -243,6 +243,7 @@ importers:
       react: ^18.0.0
       react-dom: ^18.0.0
       react-moralis: ^1.4.0
+      react-router-dom: ^6.3.0
       styled-components: ^5.3.5
       ts-node: 9.1.1
       typescript: ^4.6.3
@@ -255,6 +256,7 @@ importers:
       '@web3uikit/web3': link:../web3
       moralis: 1.9.0
       react-moralis: 1.4.0_o6v5z6xcse4cv6qevqjk2i76bi
+      react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
       ts-node: 9.1.1_typescript@4.7.4
       typescript: 4.7.4
       wp5-cra-polyfill: github.com/oscario2/wp5-cra-polyfill/91431fa_webpack@5.73.0

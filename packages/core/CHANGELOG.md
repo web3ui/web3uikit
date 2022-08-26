@@ -1,5 +1,16 @@
 # @web3uikit/core
 
+## 0.1.6
+
+### Patch Changes
+
+-   [#777](https://github.com/web3ui/web3uikit/pull/777) [`fdd83f9a1`](https://github.com/web3ui/web3uikit/commit/fdd83f9a1ccdf4215de9b07fa6b2137eb2a51c80) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Fix breadcrumb issue due to react-router-dom
+
+*   [#774](https://github.com/web3ui/web3uikit/pull/774) [`66e7c6151`](https://github.com/web3ui/web3uikit/commit/66e7c6151269aac9cfad19e8b828e9b4db0396e6) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - New Select Component Added in Beta version
+
+*   Updated dependencies [[`66e7c6151`](https://github.com/web3ui/web3uikit/commit/66e7c6151269aac9cfad19e8b828e9b4db0396e6)]:
+    -   @web3uikit/styles@0.1.6
+
 ## 0.1.5
 
 ### Patch Changes

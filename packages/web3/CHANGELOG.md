@@ -1,5 +1,15 @@
 # @web3uikit/web3
 
+## 0.1.6
+
+### Patch Changes
+
+-   [#779](https://github.com/web3ui/web3uikit/pull/779) [`74f406e42`](https://github.com/web3ui/web3uikit/commit/74f406e421a7b298a9d5cf0b9ac1880768ab7992) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Fix send transaction button moralis dependency
+
+-   Updated dependencies [[`fdd83f9a1`](https://github.com/web3ui/web3uikit/commit/fdd83f9a1ccdf4215de9b07fa6b2137eb2a51c80), [`66e7c6151`](https://github.com/web3ui/web3uikit/commit/66e7c6151269aac9cfad19e8b828e9b4db0396e6)]:
+    -   @web3uikit/core@0.1.6
+    -   @web3uikit/styles@0.1.6
+
 ## 0.1.5
 
 ### Patch Changes

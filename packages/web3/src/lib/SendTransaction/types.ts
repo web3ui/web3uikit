@@ -10,7 +10,7 @@ export interface ISendTransactionProps {
     /**
      * Add your deployed contract address, contract abi, function name, function parameters, and message value - eth,matic.... you want to send
      */
-    contractOptions: Web3ExecuteFunctionParameters | undefined;
+    contractOptions: Web3ExecuteFunctionParameters;
 
     /**
      * Options to configure the button

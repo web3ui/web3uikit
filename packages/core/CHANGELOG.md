@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.1.7
+
+### Patch Changes
+
+-   [#783](https://github.com/web3ui/web3uikit/pull/783) [`b396b9ba1`](https://github.com/web3ui/web3uikit/commit/b396b9ba15e0b928c5e7f1253d44540a3a4ed466) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - fix LinkTo margin top
+
 ## 0.1.6
 
 ### Patch Changes

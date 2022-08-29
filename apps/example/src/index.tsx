@@ -1,25 +1,24 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazily } from 'react-lazily';
 import { Suspense } from 'react';
-
-const {
+import {
+    Ada,
     Button,
+    Breadcrumbs,
     Logo,
     Typography,
     Avatar,
     BannerStrip,
+    useNotification,
+    ConnectButton,
+    NFT,
+    SendTransaction,
     VerifyCode,
-} = lazily(() => import('@web3uikit/core'));
-import { Ada, Reload } from '@web3uikit/icons';
-import { Breadcrumbs, useNotification } from '@web3uikit/core';
-const { ConnectButton, NFT, SendTransaction } = lazily(() =>
-    import('@web3uikit/web3'),
-);
+} from 'web3uikit';
 
 const MockBreadCrumbs = [
     {
         breadcrumb: 'Syncs',
-        icon: <Reload fontSize={20} fill="currentColor" />,
         path: '/',
     },
     {

@@ -1,0 +1,42 @@
+{
+    "name": "web3uikit",
+    "version": "1.0.3",
+    "sideEffects": false,
+    "files": [
+        "package.json",
+        "dist"
+    ],
+    "main": "./dist/index.es.js",
+    "module": "./dist/index.es.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.es.js"
+        }
+    },
+    "scripts": {
+        "build": "vite build"
+    },
+    "peerDependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0"
+    },
+    "devDependencies": {
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "styled-components": "^5.3.5"
+    },
+    "dependencies": {
+        "@web3uikit/config": "*",
+        "@web3uikit/core": "*",
+        "@web3uikit/icons": "*",
+        "@web3uikit/styles": "*",
+        "@web3uikit/web3": "*",
+        "react-router-dom": "^6.3.0",
+        "ts-node": "9.1.1",
+        "typescript": "^4.6.3",
+        "react-moralis": "^1.4.0",
+        "moralis": "^1.8.1",
+        "wp5-cra-polyfill": "github:oscario2/wp5-cra-polyfill#91431fa"
+    }
+}

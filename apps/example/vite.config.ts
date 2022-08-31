@@ -25,7 +25,7 @@ export default defineConfig({
             input: {
                 main: resolve(__dirname, 'index.html'),
             },
-            external: ['react-moralis'],
+            external: ['react-moralis', 'react-router-dom'],
             output: {
                 manualChunks: {
                     vendor,

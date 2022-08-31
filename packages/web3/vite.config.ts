@@ -5,6 +5,7 @@ export default defineConfig({
     ...(config(__dirname, [
         'react',
         'react-dom',
+        'react-router-dom',
         'moralis',
         'react-moralis',
     ]) as UserConfigExport),

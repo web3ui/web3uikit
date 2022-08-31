@@ -1,5 +1,4 @@
 import { Route, Routes } from 'react-router-dom';
-import { lazily } from 'react-lazily';
 import { Suspense } from 'react';
 import {
     Ada,

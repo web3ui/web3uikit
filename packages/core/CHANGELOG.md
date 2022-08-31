@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.1.8
+
+### Patch Changes
+
+-   [#787](https://github.com/web3ui/web3uikit/pull/787) [`ab0b1b967`](https://github.com/web3ui/web3uikit/commit/ab0b1b967d687f32905c043ff22fdb836f2191b7) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - chore: notification message fix
+
 ## 0.1.7
 
 ### Patch Changes

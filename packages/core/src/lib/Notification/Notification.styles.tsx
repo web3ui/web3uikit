@@ -37,6 +37,7 @@ const SpanStyled = styled.span`
     ${fonts.ibm}
     color: ${color.grey};
     display: inline-block;
+    white-space: pre-wrap;
     word-break: break-word;
 `;
 

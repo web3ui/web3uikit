@@ -24,7 +24,7 @@ const DivStyledWrapper = styled.div<TStyleProps>`
     border-radius: 15px;
     border: 2px solid rgba(153, 211, 255, 0.5);
     display: flex;
-    gap: 24px;
+    gap: 20px;
     justify-content: flex-start;
     padding: 8px 16px;
     border-color: ${({ isExpired, pressed }) =>
@@ -47,6 +47,7 @@ const DivStyledIcon = styled.div<{
     box-sizing: border-box;
     color: white;
     display: flex;
+    flex-grow: 1;
     height: 32px;
     justify-content: center;
     object-fit: cover;

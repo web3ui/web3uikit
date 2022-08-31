@@ -23,9 +23,12 @@ const LegendStyled = styled.legend`
     margin-bottom: 4px;
 `;
 
-const DivStyled = styled.div<Pick<RadiosProps, 'disabled'>>`
+const DivStyled = styled.div<
+    Pick<RadiosProps, 'disabled' | 'isRow'> & { isSmall: boolean }
+>`
     opacity: ${(props) => props.disabled && 0.5};
     position: relative;
+    margin-bottom: 12px;
 `;
 
 const DivWrapperStyled = styled.div<Pick<RadiosProps, 'isRow'>>`
@@ -36,22 +39,25 @@ const DivWrapperStyled = styled.div<Pick<RadiosProps, 'isRow'>>`
     flex-wrap: wrap;
 `;
 
-const LabelStyled = styled.label<TStyleProps>`
+const LabelStyled = styled.label<TStyleProps & { isSmall: boolean }>`
     ${resetCSS};
-    /* ${fonts.heading} */
     ${fonts.text}
     padding-left: ${(p) => (p.isCreditCardMode ? '0' : '28px')};
     align-content: center;
     color: ${color.greyDark};
     display: flex;
     line-height: 20px;
-    margin-bottom: 12px;
     position: relative;
     width: fit-content;
 
     &:before {
         left: ${(p) => (p.isCreditCardMode ? '20px' : '0')};
-        top: ${(p) => (p.isCreditCardMode ? '20px' : '0')};
+        top: ${(p) =>
+            p.isCreditCardMode
+                ? p.isSmall
+                    ? 'calc(50% - 9px)'
+                    : '20px'
+                : '0'};
         background-color: ${color.blueLight};
         border-radius: 50%;
         border: 1px solid ${color.blueSky};
@@ -65,7 +71,12 @@ const LabelStyled = styled.label<TStyleProps>`
 
     &:after {
         left: ${(p) => (p.isCreditCardMode ? '26px' : '6px')};
-        top: ${(p) => (p.isCreditCardMode ? '26px' : '6px')};
+        top: ${(p) =>
+            p.isCreditCardMode
+                ? p.isSmall
+                    ? 'calc(50% - 3px)'
+                    : '26px'
+                : '6px'};
         background-color: ${color.white};
         border-radius: 50%;
         content: '';
@@ -88,11 +99,13 @@ const LabelStyled = styled.label<TStyleProps>`
             filter: brightness(90%);
         }
     }
+
+    
 `;
 
 const RadioButtonStyled = styled.input`
     position: absolute;
-
+    display: none;
     &:checked {
         & + label {
             &:before {

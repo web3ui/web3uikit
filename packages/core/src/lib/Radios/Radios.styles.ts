@@ -24,17 +24,18 @@ const LegendStyled = styled.legend`
 `;
 
 const DivStyled = styled.div<
-    Pick<RadiosProps, 'disabled' | 'isRow'> & { isSmall: boolean }
+    Pick<RadiosProps, 'disabled' | 'isRow'> & { isSmall?: boolean }
 >`
     opacity: ${(props) => props.disabled && 0.5};
     position: relative;
-    margin-bottom: 12px;
+    ${(p) => p.isSmall && 'width: 100%'};
+    max-width: ${(p) => (p.isRow && p.isSmall ? '584px' : '100%')};
 `;
 
 const DivWrapperStyled = styled.div<Pick<RadiosProps, 'isRow'>>`
     align-items: ${({ isRow }) => (isRow ? 'center' : 'flex-start')};
     flex-direction: ${(p) => (p.isRow ? 'row' : 'column')};
-    gap: ${(p) => p.isRow && '12px'};
+    gap: 12px;
     display: flex;
     flex-wrap: wrap;
 `;
@@ -48,7 +49,6 @@ const LabelStyled = styled.label<TStyleProps & { isSmall: boolean }>`
     display: flex;
     line-height: 20px;
     position: relative;
-    width: fit-content;
 
     &:before {
         left: ${(p) => (p.isCreditCardMode ? '20px' : '0')};
@@ -99,13 +99,11 @@ const LabelStyled = styled.label<TStyleProps & { isSmall: boolean }>`
             filter: brightness(90%);
         }
     }
-
-    
 `;
 
 const RadioButtonStyled = styled.input`
     position: absolute;
-    display: none;
+    opacity: 0;
     &:checked {
         & + label {
             &:before {
@@ -115,6 +113,12 @@ const RadioButtonStyled = styled.input`
             &:after {
                 opacity: 1;
             }
+        }
+    }
+    &:focus {
+        & + label {
+            box-shadow: 0 0 4px ${color.blueSky};
+            border-radius: 20px;
         }
     }
 `;

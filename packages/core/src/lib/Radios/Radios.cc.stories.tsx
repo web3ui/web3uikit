@@ -1,6 +1,10 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { CreditCard2, Plus } from '@web3uikit/icons';
+import { color } from '@web3uikit/styles';
+import styled from 'styled-components';
 
 import { Button } from '../Button';
+import { Typography } from '../Typography';
 import Radios from './Radios';
 
 export default {
@@ -135,6 +139,21 @@ CreditCardSelectorSuffix.args = {
     title: 'How would you like pay for that?',
 };
 
+// For storybook use only
+const ButtonStyled = styled.button`
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border: 2px solid rgba(153, 211, 255, 0.5);
+    padding: 16px;
+    border-radius: 16px;
+    width: 584px;
+    background: transparent;
+    @media screen and (max-width: 600px) {
+        width: 300px;
+    }
+`;
+
 export const CreditCardSmall = Template.bind({});
 CreditCardSmall.args = {
     id: 'radios',
@@ -193,5 +212,15 @@ CreditCardSmall.args = {
             },
         },
     ],
+    suffix: (
+        <ButtonStyled style={{}} onClick={() => alert('Card Added!')}>
+            <Plus fill={color.blue} fontSize={18} />
+            <CreditCard2 width={42} height={32} />
+            {/* @ts-ignore */}
+            <Typography style={{ color: color.blue }} variant="caption14">
+                Add payment method
+            </Typography>
+        </ButtonStyled>
+    ),
     title: 'How would you like pay for that?',
 };

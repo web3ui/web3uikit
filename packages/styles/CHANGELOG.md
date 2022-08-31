@@ -1,5 +1,11 @@
 # @web3uikit/styles
 
+## 0.1.6
+
+### Patch Changes
+
+-   [#774](https://github.com/web3ui/web3uikit/pull/774) [`66e7c6151`](https://github.com/web3ui/web3uikit/commit/66e7c6151269aac9cfad19e8b828e9b4db0396e6) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - New Select Component Added in Beta version
+
 ## 0.1.3
 
 ### Patch Changes

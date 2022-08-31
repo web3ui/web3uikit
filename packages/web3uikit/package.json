@@ -1,6 +1,6 @@
 {
-    "name": "@web3uikit/core",
-    "version": "0.1.7",
+    "name": "web3uikit",
+    "version": "1.0.4",
     "sideEffects": false,
     "files": [
         "package.json",
@@ -15,10 +15,7 @@
         }
     },
     "scripts": {
-        "build": "vite build",
-        "test": "vitest run",
-        "test:coverage": "vitest run --coverage -u",
-        "test:ui": "vitest --ui"
+        "build": "vite build"
     },
     "peerDependencies": {
         "react": "^18.0.0",
@@ -31,8 +28,15 @@
     },
     "dependencies": {
         "@web3uikit/config": "*",
-        "@web3uikit/styles": "*",
+        "@web3uikit/core": "*",
         "@web3uikit/icons": "*",
-        "react-router-dom": "^6.3.0"
+        "@web3uikit/styles": "*",
+        "@web3uikit/web3": "*",
+        "react-router-dom": "^6.3.0",
+        "ts-node": "9.1.1",
+        "typescript": "^4.6.3",
+        "react-moralis": "^1.4.0",
+        "moralis": "^1.8.1",
+        "wp5-cra-polyfill": "github:oscario2/wp5-cra-polyfill#91431fa"
     }
 }

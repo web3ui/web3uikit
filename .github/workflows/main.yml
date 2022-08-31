@@ -31,4 +31,4 @@ jobs:
               run: pnpm build
 
             - name: Test
-              run: pnpm test:coverage
+              run: pnpm vitest --run

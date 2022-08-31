@@ -19,7 +19,7 @@ const testWrapperId = 'test-select';
 const testSelectedId = 'test-select-selected';
 const testTextContent = 'triangle down icon';
 
-test('Select - Default', async () => {
+test('Select - Default', () => {
     const testLabel = Default?.args?.label;
 
     render(<Default />);
@@ -47,7 +47,7 @@ test('Select - Default', async () => {
     expect(label?.textContent).toBe(testLabel);
 });
 
-test('Select - NoDefaultIndexOption', async () => {
+test('Select - NoDefaultIndexOption', () => {
     const testLabel = NoDefaultIndexOption?.args?.label;
 
     render(<NoDefaultIndexOption />);
@@ -75,7 +75,7 @@ test('Select - NoDefaultIndexOption', async () => {
     expect(label?.textContent).toBe(testLabel);
 });
 
-test('Select - Error', async () => {
+test('Select - Error', () => {
     const testLabel = Error?.args?.label;
     const testOptions = Error?.args?.options;
 
@@ -105,7 +105,7 @@ test('Select - Error', async () => {
     expect(label?.textContent).toBe(testLabel);
 });
 
-test('Select - ErrorWithMessage', async () => {
+test('Select - ErrorWithMessage', () => {
     const testLabel = ErrorWithMessage?.args?.label;
     const testOptions = ErrorWithMessage?.args?.options;
 
@@ -135,7 +135,7 @@ test('Select - ErrorWithMessage', async () => {
     expect(label?.textContent).toBe(testLabel);
 });
 
-test('Select - Confirmed', async () => {
+test('Select - Confirmed', () => {
     const testLabel = Confirmed?.args?.label;
     const testOptions = Confirmed?.args?.options;
 
@@ -165,7 +165,7 @@ test('Select - Confirmed', async () => {
     expect(label?.textContent).toBe(testLabel);
 });
 
-test('Select - Disabled', async () => {
+test('Select - Disabled', () => {
     const testLabel = Disabled?.args?.label;
     const testOptions = Disabled?.args?.options;
 

@@ -14,11 +14,11 @@ const LinkStyled = styled.a`
     align-items: center;
     color: ${color.blue};
     display: inline-block;
-    margin-top: auto;
     font-weight: 600;
+    height: fit-content;
     max-width: 100%;
     width: fit-content;
-    height: fit-content;
+
     &:hover {
         filter: brightness(0.7);
     }

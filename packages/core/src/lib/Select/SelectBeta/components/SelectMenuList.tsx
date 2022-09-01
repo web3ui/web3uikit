@@ -15,6 +15,7 @@ const {
     MenuStyledWrapper,
     SearchIconStyled,
     SpanStyledItemIcon,
+    SpanStyledItemText,
     SpanStyledNoResults,
 } = styles;
 
@@ -26,6 +27,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
     isOpen,
     isSearch = true,
     max,
+    menuHeight = '200px',
     options = [],
     setIsOpen,
     value = [],
@@ -164,7 +166,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                         fill={color.blue}
                     />
                 )}
-                <ListStyledDropdown ref={listRef}>
+                <ListStyledDropdown ref={listRef} height={menuHeight}>
                     {visibleOptions.map((option, index) => {
                         const isSelected = isMulti
                             ? value.indexOf(option.id as string) !== -1
@@ -191,10 +193,16 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                                     role="option"
                                     type="button"
                                 >
-                                    <SpanStyledItemIcon>
-                                        {option.prefix}
-                                    </SpanStyledItemIcon>
-                                    <span>{option.label}</span>
+                                    {option.prefix && (
+                                        <SpanStyledItemIcon>
+                                            {option.prefix}
+                                        </SpanStyledItemIcon>
+                                    )}
+                                    <SpanStyledItemText
+                                        noPrefix={!Boolean(option.prefix)}
+                                    >
+                                        {option.label}
+                                    </SpanStyledItemText>
                                     <CheckmarkIconStyled
                                         aria-selected={ariaSelected}
                                     />

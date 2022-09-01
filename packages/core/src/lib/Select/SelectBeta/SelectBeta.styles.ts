@@ -23,12 +23,12 @@ const DivStyledWrapper = styled.div`
     }
 `;
 
-const DivStyledSelectWrapper = styled.div`
+const DivStyledSelectWrapper = styled.div<{ height: string }>`
     background-color: ${color.white};
     border-radius: 16px;
     cursor: pointer;
     display: flex;
-    min-height: 2.75em;
+    min-height: ${(p) => p.height ?? '40px'};
     padding: 8px 20px 8px 10px;
     position: relative;
     transition: all 0.1s linear;
@@ -64,7 +64,6 @@ const ButtonStyledSelect = styled.button`
     font-size: 1em;
     height: 100%;
     left: 0;
-    min-height: 2.75em;
     padding: 0;
     position: absolute;
     flex-grow: 1;
@@ -106,7 +105,6 @@ const ListStyledSelected = styled.ul`
     max-width: calc(100% - var(--arrow-width));
     padding-bottom: 2px;
     padding-left: 0;
-    padding-right: calc(var(--arrow-width) + 0.5em);
     padding-top: 2px;
     position: relative;
     z-index: 10;
@@ -122,7 +120,6 @@ const ListItemStyledTag = styled.li`
     z-index: -10;
     align-items: center;
     width: 100%;
-    padding-right: calc(var(--arrow-width) + 0.5em);
     line-break: loose;
 `;
 
@@ -138,7 +135,6 @@ const DivStyledPlaceholder = styled.div`
     max-width: calc(100% - var(--arrow-width));
     padding-bottom: 0;
     padding-left: 0;
-    padding-right: calc(var(--arrow-width) + 0.5em);
     padding-top: 0;
     position: relative;
     top: 0.5em;
@@ -210,7 +206,7 @@ const InputStyledSearch = styled.input`
 
 // ------ Option List
 
-const ListStyledDropdown = styled.ul`
+const ListStyledDropdown = styled.ul<{ height: string }>`
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     box-shadow: 0 4px 8px rgba(248, 174, 174, 0.1);
@@ -219,7 +215,7 @@ const ListStyledDropdown = styled.ul`
     justify-content: stretch;
     list-style: none;
     margin: 0;
-    max-height: 13em;
+    max-height: ${(p) => p.height ?? '200px'};
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: 0;
@@ -282,8 +278,13 @@ const SpanStyledItemIcon = styled.span`
     }
 `;
 
-const SpanStyledItemText = styled.span`
+const SpanStyledItemText = styled.span<{ noPrefix: boolean }>`
+    margin-left: ${(p) => (p.noPrefix ? '10px' : '0px')};
+`;
+
+const SpanStyledItemSelected = styled.span`
     overflow: hidden;
+    white-space: pre;
     text-overflow: ellipsis;
 `;
 
@@ -294,9 +295,8 @@ const ButtonStyledListItem = styled.button`
     border: none;
     color: ${color.blueDark};
     display: flex;
-    font-size: 1em;
     padding-bottom: 0.375em;
-    padding-left: 0;
+    padding-left: 0.5em;
     padding-right: 0.5em;
     padding-top: 0.375em;
     text-align: left;
@@ -310,7 +310,6 @@ const ButtonStyledListItem = styled.button`
         display: flex;
         height: 3em;
         justify-content: center;
-        /* width: var(--checkbox-width); */
     }
 
     // Option Selected Styles
@@ -407,6 +406,7 @@ const TriangleUpIconStyled = styled(TriangleUp)`
 const CheckmarkIconStyled = styled(Checkmark)`
     color: ${color.green};
     margin-left: auto;
+    flex-shrink: 0;
     display: none;
     height: 12px;
     width: 12px;
@@ -435,6 +435,7 @@ export default {
     MenuStyledWrapper,
     SearchIconStyled,
     SpanStyledItemIcon,
+    SpanStyledItemSelected,
     SpanStyledItemText,
     SpanStyledNoResults,
     TriangleDownIconStyled,

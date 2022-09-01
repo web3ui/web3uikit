@@ -9,7 +9,7 @@ const {
     ListItemStyledTag,
     ListStyledSelected,
     SpanStyledItemIcon,
-    SpanStyledItemText,
+    SpanStyledItemSelected,
 } = styles;
 
 const colors: ColorProps[] = [
@@ -32,6 +32,53 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
     setIsOpen,
     addItem,
 }) => {
+    const MultiSelection = () => {
+        return (value as string[]).map((option, i) => (
+            <ListItemStyledTag
+                key={option}
+                onClick={(e) => e.stopPropagation()}
+            >
+                <Tag
+                    text={
+                        (options.find(
+                            (curr) => curr.id === option,
+                        ) as OptionProps)?.label as string
+                    }
+                    theme="chips"
+                    tone="light"
+                    color={
+                        i < colors.length
+                            ? colors[i]
+                            : colors[i % colors.length]
+                    }
+                    onCancelClick={() => {
+                        if (!disabled) addItem(option);
+                    }}
+                    active={false}
+                    hasCancel={isMulti}
+                />
+            </ListItemStyledTag>
+        ));
+    };
+
+    const SingleSelection = () => {
+        const currItem = options.find((option) => option.id === value);
+        return currItem ? (
+            <ListItemStyledTag
+                aria-label="option-selected"
+                data-testid="test-select-selected"
+                style={{ margin: 'auto' }}
+            >
+                {currItem?.prefix && (
+                    <SpanStyledItemIcon>{currItem?.prefix}</SpanStyledItemIcon>
+                )}
+                <SpanStyledItemSelected>
+                    {currItem?.label as string}
+                </SpanStyledItemSelected>
+            </ListItemStyledTag>
+        ) : null;
+    };
+
     return value.length > 0 ? (
         <ListStyledSelected
             aria-disabled={disabled}
@@ -41,50 +88,7 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
                 if (!disabled) setIsOpen((prev) => !prev);
             }}
         >
-            {isMulti ? (
-                (value as string[]).map((option, i) => (
-                    <ListItemStyledTag
-                        key={option}
-                        onClick={(e) => e.stopPropagation()}
-                    >
-                        <Tag
-                            text={
-                                (options.find(
-                                    (curr) => curr.id === option,
-                                ) as OptionProps)?.label as string
-                            }
-                            theme="chips"
-                            tone="light"
-                            color={
-                                i < colors.length
-                                    ? colors[i]
-                                    : colors[i % colors.length]
-                            }
-                            onCancelClick={() => {
-                                if (!disabled) addItem(option);
-                            }}
-                            active={false}
-                            hasCancel={isMulti}
-                        />
-                    </ListItemStyledTag>
-                ))
-            ) : (
-                <ListItemStyledTag
-                    aria-label="option-selected"
-                    data-testid="test-select-selected"
-                    style={{ margin: 'auto' }}
-                >
-                    <SpanStyledItemIcon>
-                        {options.find((option) => option.id === value)?.prefix}
-                    </SpanStyledItemIcon>
-                    <SpanStyledItemText>
-                        {
-                            options.find((option) => option.id === value)
-                                ?.label as string
-                        }
-                    </SpanStyledItemText>
-                </ListItemStyledTag>
-            )}
+            {isMulti ? MultiSelection() : <SingleSelection />}
         </ListStyledSelected>
     ) : (
         <DivStyledPlaceholder>

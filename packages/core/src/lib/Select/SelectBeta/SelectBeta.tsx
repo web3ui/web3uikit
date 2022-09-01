@@ -3,6 +3,7 @@ import { ISelectProps, KEY, OptionProps } from '../types';
 import styles from './SelectBeta.styles';
 import SelectMenuList from './components/SelectMenuList';
 import SelectedItemsList from './components/SelectedItemsList';
+import { color } from '@web3uikit/styles';
 
 const {
     ButtonStyledSelect,
@@ -21,11 +22,13 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     description,
     disabled = false,
     errorMessage,
+    height = '40px',
     id,
     isMulti = false,
     isSearch = true,
     label = 'Select',
     max = Infinity,
+    menuHeight = '200px',
     name = 'options',
     onChange,
     options = [],
@@ -104,7 +107,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             style={{ ...style, width }}
             {...rest}
         >
-            <DivStyledSelectWrapper className="w3uik_container">
+            <DivStyledSelectWrapper className="w3uik_container" height={height}>
                 <LabelStyled
                     aria-disabled={disabled}
                     data-testid="test-select-label"
@@ -116,6 +119,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     aria-controls={elementId('menu')}
                     aria-expanded={isOpen === true}
                     aria-haspopup="listbox"
+                    aria-selected={value.length > 0}
                     data-testid="test-select-button"
                     disabled={disabled}
                     onClick={() => {
@@ -133,12 +137,14 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                         <TriangleUpIconStyled
                             data-testid="test-select-icon"
                             fontSize="20px"
+                            fill={color.blue}
                             title="triangle up icon"
                         />
                     ) : (
                         <TriangleDownIconStyled
                             data-testid="test-select-icon"
                             fontSize="20px"
+                            fill={color.blue}
                             title="triangle down icon"
                         />
                     )}
@@ -179,6 +185,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                         isMulti={isMulti}
                         isSearch={isSearch}
                         max={max}
+                        menuHeight={menuHeight}
                         name={name}
                         options={options}
                         placeholder={placeholder}

@@ -136,6 +136,16 @@ export interface ISelectProps {
      * Beta version of select component - *Breaking changes*
      */
     tryBeta?: boolean;
+
+    /**
+     * Min Height of the select box
+     */
+    height?: string;
+
+    /**
+     * Max Height of the menu list.
+     */
+    menuHeight?: string;
 }
 
 export interface ISelectExtendedProps extends ISelectProps {

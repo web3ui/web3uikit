@@ -167,10 +167,10 @@ importers:
       '@web3uikit/config': link:../config
       '@web3uikit/icons': link:../icons
       '@web3uikit/styles': link:../styles
-      react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
     devDependencies:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
 
   packages/icons:
@@ -3648,7 +3648,7 @@ packages:
       - encoding
     dev: false
 
-  /@react-native-community/cli-plugin-metro/8.0.0:
+  /@react-native-community/cli-plugin-metro/8.0.0_@babel+core@7.18.5:
     resolution: {integrity: sha512-eIowV2ZRbzIWL3RIKVUUSahntXTuAeKzBSsFuhffLZphsV+UdKdtg5ATR9zbq7nsKap4ZseO5DkVqZngUkC7iQ==}
     dependencies:
       '@react-native-community/cli-server-api': 8.0.0
@@ -3657,11 +3657,12 @@ packages:
       metro: 0.70.3
       metro-config: 0.70.3
       metro-core: 0.70.3
-      metro-react-native-babel-transformer: 0.70.3
+      metro-react-native-babel-transformer: 0.70.3_@babel+core@7.18.5
       metro-resolver: 0.70.3
       metro-runtime: 0.70.3
       readline: 1.3.0
     transitivePeerDependencies:
+      - '@babel/core'
       - bufferutil
       - encoding
       - supports-color
@@ -3709,7 +3710,7 @@ packages:
       joi: 17.6.0
     dev: false
 
-  /@react-native-community/cli/8.0.3_react-native@0.69.1:
+  /@react-native-community/cli/8.0.3_jiki5o7iwcyk3g4r2vwv3s6c7i:
     resolution: {integrity: sha512-7gY7QCEdpYDbvbdZBt6w64YPExLoiUpH/lVRaR4tKl6JalqXzrUotOJnBOS/qEC4q0nk0WXsiC5EkuiSliKS5Q==}
     engines: {node: '>=12'}
     hasBin: true
@@ -3721,7 +3722,7 @@ packages:
       '@react-native-community/cli-debugger-ui': 8.0.0
       '@react-native-community/cli-doctor': 8.0.3
       '@react-native-community/cli-hermes': 8.0.2
-      '@react-native-community/cli-plugin-metro': 8.0.0
+      '@react-native-community/cli-plugin-metro': 8.0.0_@babel+core@7.18.5
       '@react-native-community/cli-server-api': 8.0.0
       '@react-native-community/cli-tools': 8.0.0
       '@react-native-community/cli-types': 8.0.0
@@ -3735,9 +3736,10 @@ packages:
       lodash: 4.17.21
       minimist: 1.2.6
       prompts: 2.4.2
-      react-native: 0.69.1_27wpj6te4dzakyna6ilyljc3vq
+      react-native: 0.69.1_gmv6tzkhtuvb6qsrwaoqjy7cza
       semver: 6.3.0
     transitivePeerDependencies:
+      - '@babel/core'
       - bufferutil
       - encoding
       - supports-color
@@ -8528,7 +8530,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1_bluebird@3.7.2
+      promise-inflight: 1.0.1
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -15175,8 +15177,10 @@ packages:
       uglify-es: 3.3.9
     dev: false
 
-  /metro-react-native-babel-preset/0.70.3:
+  /metro-react-native-babel-preset/0.70.3_@babel+core@7.18.5:
     resolution: {integrity: sha512-4Nxc1zEiHEu+GTdEMEsHnRgfaBkg8f/Td3+FcQ8NTSvs+xL3LBrQy6N07idWSQZHIdGFf+tTHvRfSIWLD8u8Tg==}
+    peerDependencies:
+      '@babel/core': '*'
     dependencies:
       '@babel/core': 7.18.5
       '@babel/plugin-proposal-async-generator-functions': 7.17.12_@babel+core@7.18.5
@@ -15221,14 +15225,16 @@ packages:
       - supports-color
     dev: false
 
-  /metro-react-native-babel-transformer/0.70.3:
+  /metro-react-native-babel-transformer/0.70.3_@babel+core@7.18.5:
     resolution: {integrity: sha512-WKBU6S/G50j9cfmFM4k4oRYprd8u3qjleD4so1E2zbTNILg+gYla7ZFGCAvi2G0ZcqS2XuGCR375c2hF6VVvwg==}
+    peerDependencies:
+      '@babel/core': '*'
     dependencies:
       '@babel/core': 7.18.5
       babel-preset-fbjs: 3.4.0_@babel+core@7.18.5
       hermes-parser: 0.6.0
       metro-babel-transformer: 0.70.3
-      metro-react-native-babel-preset: 0.70.3
+      metro-react-native-babel-preset: 0.70.3_@babel+core@7.18.5
       metro-source-map: 0.70.3
       nullthrows: 1.1.1
     transitivePeerDependencies:
@@ -15348,7 +15354,7 @@ packages:
       metro-hermes-compiler: 0.70.3
       metro-inspector-proxy: 0.70.3
       metro-minify-uglify: 0.70.3
-      metro-react-native-babel-preset: 0.70.3
+      metro-react-native-babel-preset: 0.70.3_@babel+core@7.18.5
       metro-resolver: 0.70.3
       metro-runtime: 0.70.3
       metro-source-map: 0.70.3
@@ -17045,17 +17051,6 @@ packages:
         optional: true
     dev: true
 
-  /promise-inflight/1.0.1_bluebird@3.7.2:
-    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
-    peerDependencies:
-      bluebird: '*'
-    peerDependenciesMeta:
-      bluebird:
-        optional: true
-    dependencies:
-      bluebird: 3.7.2
-    dev: true
-
   /promise-to-callback/1.0.0:
     resolution: {integrity: sha512-uhMIZmKM5ZteDMfLgJnoSq9GCwsNKrYau73Awf1jIy6/eUcuuZ3P+CD9zUv0kJsIUbU+x6uLNIhXhLHDs1pNPA==}
     engines: {node: '>=0.10.0'}
@@ -17505,11 +17500,11 @@ packages:
     peerDependencies:
       react-native: '*'
     dependencies:
-      react-native: 0.69.1_27wpj6te4dzakyna6ilyljc3vq
+      react-native: 0.69.1_gmv6tzkhtuvb6qsrwaoqjy7cza
       whatwg-url-without-unicode: 8.0.0-3
     dev: false
 
-  /react-native/0.69.1_27wpj6te4dzakyna6ilyljc3vq:
+  /react-native/0.69.1_gmv6tzkhtuvb6qsrwaoqjy7cza:
     resolution: {integrity: sha512-585NmzSuYUfday8YsfqgreFAZbXRI/kxKsiuaShwGHgkwdtmE5qA7WfGItgxZBOZD6g/Hm1YBUqSwIm07tPa6A==}
     engines: {node: '>=14'}
     hasBin: true
@@ -17517,7 +17512,7 @@ packages:
       react: 18.0.0
     dependencies:
       '@jest/create-cache-key-function': 27.5.1
-      '@react-native-community/cli': 8.0.3_react-native@0.69.1
+      '@react-native-community/cli': 8.0.3_jiki5o7iwcyk3g4r2vwv3s6c7i
       '@react-native-community/cli-platform-android': 8.0.2
       '@react-native-community/cli-platform-ios': 8.0.2
       '@react-native/assets': 1.0.0
@@ -17531,7 +17526,7 @@ packages:
       invariant: 2.2.4
       jsc-android: 250230.2.1
       memoize-one: 5.2.1
-      metro-react-native-babel-transformer: 0.70.3
+      metro-react-native-babel-transformer: 0.70.3_@babel+core@7.18.5
       metro-runtime: 0.70.3
       metro-source-map: 0.70.3
       mkdirp: 0.5.6
@@ -17551,6 +17546,7 @@ packages:
       whatwg-fetch: 3.6.2
       ws: 6.2.2
     transitivePeerDependencies:
+      - '@babel/core'
       - '@babel/preset-env'
       - bufferutil
       - encoding

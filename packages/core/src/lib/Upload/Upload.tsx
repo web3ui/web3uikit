@@ -14,11 +14,10 @@ const {
 } = styles;
 
 const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
-    const [fileSelected, setFileSelected] =
-        useState<Blob | undefined | null>(null);
+    const [fileSelected, setFileSelected] = useState<Blob | undefined | null>(
+        null,
+    );
     const inputFile = useRef<HTMLInputElement | null>(null);
-
-    useEffect(() => onChange && onChange(fileSelected), [fileSelected]);
 
     const onClickHandler = () => {
         inputFile.current && inputFile.current.click();
@@ -28,6 +27,7 @@ const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
         event.preventDefault();
         const file = event.target.files && event.target.files[0];
         setFileSelected(file);
+        onChange && onChange(file);
     };
 
     const onDropHandler = (event: React.DragEvent<HTMLDivElement>) => {

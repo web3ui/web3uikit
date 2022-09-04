@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ISliderProps } from './types';
 import styles from './Slider.styles';
 
-const { sliderDiv, sliderInput, sliderLabel, sliderP } = styles;
+const { DivStyled, LabelStyled, PStyled, InputStyled } = styles;
 
 const Slider: React.FC<ISliderProps> = ({
     rangeId,
@@ -19,14 +19,14 @@ const Slider: React.FC<ISliderProps> = ({
     };
 
     return (
-        <styles.sliderDiv>
-            <styles.sliderLabel htmlFor={rangeId}>
+        <styles.DivStyled>
+            <styles.LabelStyled htmlFor={rangeId}>
                 {rangeLabel}
-            </styles.sliderLabel>
-            <styles.sliderP>
+            </styles.LabelStyled>
+            <styles.PStyled>
                 {currentValue} of {rangeMax}
-            </styles.sliderP>
-            <styles.sliderInput
+            </styles.PStyled>
+            <styles.InputStyled
                 id={rangeId}
                 max={rangeMax}
                 min={rangeMin}
@@ -34,7 +34,7 @@ const Slider: React.FC<ISliderProps> = ({
                 type="range"
                 value={currentValue}
             />
-        </styles.sliderDiv>
+        </styles.DivStyled>
     );
 };
 

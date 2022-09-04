@@ -3,14 +3,14 @@ import {color, fonts, resetCSS} from '@web3uikit/styles';
 
 
 
-const sliderDiv = styled.div`
+const DivStyled = styled.div`
     
     ${resetCSS};
     position : block;
 
     `
 
-const sliderLabel = styled.label`
+const LabelStyled = styled.label`
 
     ${resetCSS};
     font-size: 1.2rem;
@@ -20,7 +20,7 @@ const sliderLabel = styled.label`
 `
 
 
-const sliderP = styled.p`
+const PStyled = styled.p`
 
     font-size: 0.8rem;
     margin: 4px 0;
@@ -28,7 +28,7 @@ const sliderP = styled.p`
 `
 
 
-const sliderInput = styled.input`
+const InputStyled = styled.input`
 
     display: block;
     width: 100%;
@@ -36,8 +36,8 @@ const sliderInput = styled.input`
 
 
 export default {
-    sliderDiv,
-    sliderInput,
-    sliderLabel,
-    sliderP
+    DivStyled,
+    LabelStyled,
+    PStyled,
+    InputStyled
 };

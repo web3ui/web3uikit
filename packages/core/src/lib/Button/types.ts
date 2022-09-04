@@ -1,7 +1,7 @@
 import { ILoadingProps } from '../Loading';
 import React from 'react';
 
-type TButtonCustomConfig = {
+export type TButtonCustomConfig = {
     /**
      * Custom color, HEX or rgba is best
      */

@@ -26,20 +26,23 @@
         "@types/react-blockies": "^1.4.1",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
+        "react-is": "^18.1.0",
         "react-router-dom": "^6.3.0",
-        "styled-components": "^5.3.5",
-        "react-is": "^18.1.0"
+        "styled-components": "^5.3.5"
     },
     "dependencies": {
+        "@walletconnect/web3-provider": "^1.7.8",
+        "@web3auth/web3auth": "^1.1.0",
         "@web3uikit/config": "*",
         "@web3uikit/core": "*",
         "@web3uikit/icons": "*",
         "@web3uikit/styles": "*",
+        "axios": "^0.27.2",
+        "ethers": "^5.7.0",
+        "moralis": "^2.1.1",
         "react-blockies": "^1.4.1",
         "react-moralis": "^1.4.0",
-        "moralis": "^1.8.1",
-        "@walletconnect/web3-provider": "^1.7.8",
-        "@web3auth/web3auth": "^1.1.0",
+        "wagmi": "^0.6.4",
         "wp5-cra-polyfill": "github:oscario2/wp5-cra-polyfill#91431fa"
     }
 }

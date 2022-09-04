@@ -19,14 +19,14 @@ const Slider: React.FC<ISliderProps> = ({
     };
 
     return (
-        <styles.DivStyled>
-            <styles.LabelStyled htmlFor={rangeId}>
+        <DivStyled>
+            <LabelStyled htmlFor={rangeId}>
                 {rangeLabel}
-            </styles.LabelStyled>
-            <styles.PStyled>
+            </LabelStyled>
+            <PStyled>
                 {currentValue} of {rangeMax}
-            </styles.PStyled>
-            <styles.InputStyled
+            </PStyled>
+            <InputStyled
                 id={rangeId}
                 max={rangeMax}
                 min={rangeMin}
@@ -34,7 +34,7 @@ const Slider: React.FC<ISliderProps> = ({
                 type="range"
                 value={currentValue}
             />
-        </styles.DivStyled>
+        </DivStyled>
     );
 };
 

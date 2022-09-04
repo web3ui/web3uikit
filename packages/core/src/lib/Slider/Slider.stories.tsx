@@ -9,7 +9,6 @@ export default {
 
 const Template: ComponentStory<typeof Slider> = (args) => <Slider {...args} />;
 
-// Story 1 Default
 export const Default = Template.bind({});
 Default.args = {
     rangeMax: 100,

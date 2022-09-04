@@ -1,0 +1,23 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": "/home/escavalier/Music/moralis/web3uikit"
+  },
+  "1 error pnpm": {
+    "code": "ELIFECYCLE",
+    "errno": "ENOENT",
+    "syscall": "spawn",
+    "file": "sh",
+    "pkgid": "web3uikit_monorepo@1.0.0",
+    "stage": "storybook",
+    "script": "start-storybook -p 6006",
+    "pkgname": "web3uikit_monorepo",
+    "err": {
+      "name": "pnpm",
+      "message": "web3uikit_monorepo@1.0.0 storybook: `start-storybook -p 6006`\nspawn ENOENT",
+      "code": "ELIFECYCLE",
+      "stack": "pnpm: web3uikit_monorepo@1.0.0 storybook: `start-storybook -p 6006`\nspawn ENOENT\n    at ChildProcess.<anonymous> (/home/escavalier/.nvm/versions/node/v16.15.0/lib/node_modules/pnpm/dist/pnpm.cjs:93455:22)\n    at ChildProcess.emit (node:events:527:28)\n    at maybeClose (node:internal/child_process:1092:16)\n    at Process.ChildProcess._handle.onexit (node:internal/child_process:302:5)"
+    }
+  },
+  "2 warn pnpm:global": " Local package.json exists, but node_modules missing, did you mean to install?"
+}

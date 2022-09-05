@@ -35,5 +35,4 @@ WithIcon.args = {
     onFinish: (val: any) => {
         console.log(val);
     },
-    saveToIPFS: true,
 };

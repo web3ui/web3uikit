@@ -65,6 +65,11 @@ Cronos.args = {
     logo: 'cronos',
 };
 
+export const Crypto = BackgroundColoredTemplate.bind({});
+Crypto.args = {
+    logo: 'cryptoweb',
+};
+
 export const ComingSoon = Template.bind({});
 ComingSoon.args = {
     logo: 'comingSoon',

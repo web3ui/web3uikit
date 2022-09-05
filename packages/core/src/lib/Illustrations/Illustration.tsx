@@ -6,8 +6,9 @@ import bundle from './images/various/bundle';
 import chest from './images/various/chest';
 import comingSoon from './images/various/comingSoon';
 import confirmed from './images/various/confirmed';
-import cronos from './images/chains/cronos';
 import coinbaseLogo from './images/chains/coinbase';
+import cronos from './images/chains/cronos';
+import cryptoLogo from './images/chains/cryptoweb';
 import discord from './images/various/discord';
 import documentation from './images/various/documentation';
 import ethereum from './images/chains/ethereum';
@@ -37,6 +38,8 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
             return fantom(width, height);
         case 'arbitrum':
             return arbitrum(width, height);
+        case 'cryptoweb':
+            return cryptoLogo(width, height);
         case 'coinbase':
             return coinbaseLogo(width, height);
         case 'cronos':

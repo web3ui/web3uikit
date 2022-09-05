@@ -4,6 +4,7 @@ export const chainState = [
     'binance',
     'coinbase',
     'cronos',
+    'cryptoweb',
     'ethereum',
     'fantom',
     'polygon',

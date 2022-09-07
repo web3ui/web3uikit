@@ -53,6 +53,7 @@ const Table: React.FC<ITableProps> = ({
 
     useEffect(() => {
         setTableData(data);
+        setPageNum(0);
     }, [data]);
 
     useEffect(() => {
@@ -199,12 +200,10 @@ const Table: React.FC<ITableProps> = ({
                                             key={`tr_${rowKey}_${colKey}`}
                                             data-key={`tr_${rowKey}_${colKey}`}
                                             role="table-item"
-                                            className={`${
-                                                colKey == 0 && 'firstCol'
-                                            } ${
-                                                colKey == rowData.length - 1 &&
-                                                'lastCol'
-                                            }`}
+                                            className={`${colKey == 0 &&
+                                                'firstCol'} ${colKey ==
+                                                rowData.length - 1 &&
+                                                'lastCol'}`}
                                             alignCellItems={alignCellItems}
                                             justifyCellItems={justifyCellItems}
                                             onClick={(e) => {
@@ -254,9 +253,8 @@ const Table: React.FC<ITableProps> = ({
                         maxPages,
                     ).map((key) => (
                         <PaginationTag
-                            data-testid={`test-table-pagination-${
-                                key - 1 == pageNum
-                            }`}
+                            data-testid={`test-table-pagination-${key - 1 ==
+                                pageNum}`}
                             active={key - 1 == pageNum}
                             key={`pagination_${key}`}
                             onClick={() => handleSetPageNumber(key - 1)}

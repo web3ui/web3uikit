@@ -108,13 +108,6 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             {...rest}
         >
             <DivStyledSelectWrapper className="w3uik_container" height={height}>
-                <LabelStyled
-                    aria-disabled={disabled}
-                    data-testid="test-select-label"
-                    htmlFor={name}
-                >
-                    {label}
-                </LabelStyled>
                 <ButtonStyledSelect
                     aria-controls={elementId('menu')}
                     aria-expanded={isOpen === true}
@@ -133,6 +126,15 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     ref={triggerRef}
                     type="button"
                 >
+                    {label && (
+                        <LabelStyled
+                            aria-disabled={disabled}
+                            data-testid="test-select-label"
+                            htmlFor={name}
+                        >
+                            {label}
+                        </LabelStyled>
+                    )}
                     {isOpen ? (
                         <TriangleUpIconStyled
                             data-testid="test-select-icon"
@@ -151,6 +153,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                 </ButtonStyledSelect>
                 <SelectedItemsList
                     addItem={addItem}
+                    disabled={disabled}
                     elementId={elementId}
                     isMulti={isMulti}
                     isOpen={isOpen}
@@ -180,9 +183,10 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     <SelectMenuList
                         addItem={addItem}
                         customNoDataText={customNoDataText}
+                        disabled={disabled}
                         elementId={elementId}
-                        isOpen={isOpen}
                         isMulti={isMulti}
+                        isOpen={isOpen}
                         isSearch={isSearch}
                         max={max}
                         menuHeight={menuHeight}

@@ -6,11 +6,12 @@ const DivStyledWrapper = styled.div`
     ${resetCSS};
     --arrow-width: 2.5em;
     --checkbox-width: 2em;
-    display: inline-block;
+    display: block;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
         sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     font-size: 0.88em;
     line-height: 1;
+    margin-bottom: 5px;
     &[aria-expanded='true'] {
         border-color: ${color.blueSky};
         & .w3uik__dropdown-wrapper {
@@ -37,7 +38,7 @@ const DivStyledSelectWrapper = styled.div<{ height: string }>`
 const LabelStyled = styled.label`
     ${resetCSS};
     background-color: ${color.white};
-    color: ${color.blue};
+    color: ${color.grey};
     font-weight: 500;
     font-size: 14px;
     height: 24px;
@@ -74,17 +75,23 @@ const ButtonStyledSelect = styled.button`
     z-index: 3;
 
     &[aria-expanded='true'],
-    &:focus {
+    &:focus:enabled {
         border-color: ${color.blueSky};
         outline: none;
         /* On Tab - set box shadow */
         -webkit-box-shadow: 0px 0px 0px 2px ${color.blueSky};
         -moz-box-shadow: 0px 0px 0px 2px ${color.blueSky};
         box-shadow: 0px 0px 0px 2px ${color.blueSky};
+        label {
+            color: ${color.blue};
+        }
     }
 
     &:hover:enabled {
         border-color: ${color.blueSky};
+        label {
+            color: ${color.blue};
+        }
     }
 
     :disabled {
@@ -124,6 +131,7 @@ const ListItemStyledTag = styled.li`
 `;
 
 const DivStyledPlaceholder = styled.div`
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     font-family: inherit;
@@ -133,16 +141,13 @@ const DivStyledPlaceholder = styled.div`
     list-style: none;
     margin: 0;
     max-width: calc(100% - var(--arrow-width));
+    opacity: 0.6;
     padding-bottom: 0;
     padding-left: 0;
     padding-top: 0;
-    position: relative;
-    top: 0.5em;
-    z-index: 10;
-    line-height: 1.75em;
-    min-height: 1.75em;
-    opacity: 0.6;
     pointer-events: none;
+    position: relative;
+    z-index: 10;
 `;
 
 const DivStyledOverlay = styled.div`
@@ -192,9 +197,9 @@ const InputStyledSearch = styled.input`
     width: 100%;
 
     &[aria-hidden='true'] {
+        // Use position to hide input - this helps to make arrow keys functional
         position: absolute;
-        display: none;
-
+        right: 200vw;
         & + .w3uik__search-icon {
             display: none;
         }
@@ -239,19 +244,20 @@ const ListStyledDropdown = styled.ul<{ height: string }>`
         background-color: transparent;
     }
 
-    // For Last option in list
-    :last-child,
-    :last-child:hover,
-    :last-child:focus {
-        border-bottom-left-radius: 16px;
-        border-bottom-right-radius: 16px;
-    }
     // For 1st option in list - first child is input so select 2nd child
     :nth-child(2),
     :nth-child(2):hover,
     :nth-child(2):focus {
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
+    }
+
+    // For Last option in list
+    :last-child,
+    :last-child:hover,
+    :last-child:focus {
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
     }
 `;
 
@@ -286,6 +292,7 @@ const SpanStyledItemSelected = styled.span`
     overflow: hidden;
     white-space: pre;
     text-overflow: ellipsis;
+    color: ${color.grey};
 `;
 
 const ButtonStyledListItem = styled.button`
@@ -325,7 +332,7 @@ const ButtonStyledListItem = styled.button`
         background: ${color.beauBlue};
     }
 
-    &[data-highlighted],
+    &[data-highlighted='true'],
     &:focus {
         background: ${color.beauBlue};
         outline: none;

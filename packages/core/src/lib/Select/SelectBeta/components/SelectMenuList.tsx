@@ -159,7 +159,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                     value={searchTerm}
                     data-testid="test-select-search-input"
                 />
-                {isSearch && (
+                {shouldDisplaySearch && (
                     <SearchIconStyled
                         className="w3uik__search-icon"
                         fontSize={22}

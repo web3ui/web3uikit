@@ -1,0 +1,30 @@
+{
+    "root": "packages/web3api",
+    "sourceRoot": "packages/web3api/src",
+    "projectType": "library",
+    "targets": {
+        "version": {
+            "executor": "@jscutlery/semver:version",
+            "options": {
+                "postTargets": [
+                    "@web3uikit/web3api:publish",
+                    "@web3uikit/web3api:github"
+                ]
+            },
+            "projects": "dependencies"
+        },
+        "github": {
+            "executor": "@jscutlery/semver:github",
+            "options": {
+                "tag": "${tag}",
+                "notes": "${notes}"
+            }
+        },
+        "publish": {
+            "executor": "ngx-deploy-npm:deploy",
+            "options": {
+                "access": "public"
+            }
+        }
+    }
+}

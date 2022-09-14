@@ -91,7 +91,7 @@ const Stepper: React.FC<StepperProps> = ({
                         variant={'h2'}
                     />
                 ) : (
-                    completeTitle
+                    <Typography variant={'h2'}>{completeTitle}</Typography>
                 )}
             </div>
             <div

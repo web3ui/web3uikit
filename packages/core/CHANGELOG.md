@@ -1,5 +1,13 @@
 # @web3uikit/core
 
+## 0.1.10
+
+### Patch Changes
+
+-   [#804](https://github.com/web3ui/web3uikit/pull/804) [`ce475807a`](https://github.com/web3ui/web3uikit/commit/ce475807a2ca00f8597a6e7d59f6a86d2a19a3a0) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Stepper): complete title is H2
+
+*   [#801](https://github.com/web3ui/web3uikit/pull/801) [`61d2d16de`](https://github.com/web3ui/web3uikit/commit/61d2d16de749d2d91a449212832e83d7a51c532b) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - [Select Beta]: fix beta component styles
+
 ## 0.1.9
 
 ### Patch Changes

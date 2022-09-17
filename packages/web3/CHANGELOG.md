@@ -1,5 +1,14 @@
 # @web3uikit/web3
 
+## 0.1.9
+
+### Patch Changes
+
+-   [#790](https://github.com/web3ui/web3uikit/pull/790) [`4f9f35c71`](https://github.com/web3ui/web3uikit/commit/4f9f35c714471f9d6716533450026a83d81fd3a1) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Upload component fix and select styles fix
+
+-   Updated dependencies [[`5027698fa`](https://github.com/web3ui/web3uikit/commit/5027698fac29d5d00a257dd0eb97e353d7db6bda), [`4f9f35c71`](https://github.com/web3ui/web3uikit/commit/4f9f35c714471f9d6716533450026a83d81fd3a1)]:
+    -   @web3uikit/core@0.1.9
+
 ## 0.1.6
 
 ### Patch Changes

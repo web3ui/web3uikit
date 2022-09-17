@@ -1,5 +1,21 @@
 # @web3uikit/core
 
+## 0.1.10
+
+### Patch Changes
+
+-   [#804](https://github.com/web3ui/web3uikit/pull/804) [`ce475807a`](https://github.com/web3ui/web3uikit/commit/ce475807a2ca00f8597a6e7d59f6a86d2a19a3a0) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Stepper): complete title is H2
+
+*   [#801](https://github.com/web3ui/web3uikit/pull/801) [`61d2d16de`](https://github.com/web3ui/web3uikit/commit/61d2d16de749d2d91a449212832e83d7a51c532b) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - [Select Beta]: fix beta component styles
+
+## 0.1.9
+
+### Patch Changes
+
+-   [#798](https://github.com/web3ui/web3uikit/pull/798) [`5027698fa`](https://github.com/web3ui/web3uikit/commit/5027698fac29d5d00a257dd0eb97e353d7db6bda) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Table search fix for admin
+
+*   [#790](https://github.com/web3ui/web3uikit/pull/790) [`4f9f35c71`](https://github.com/web3ui/web3uikit/commit/4f9f35c714471f9d6716533450026a83d81fd3a1) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Upload component fix and select styles fix
+
 ## 0.1.8
 
 ### Patch Changes

@@ -11,6 +11,7 @@ export default {
     ethereum:
         'linear-gradient(113.54deg, rgba(117, 183, 251, 0.531738) 14.91%, rgba(215, 38, 243, 0.6) 42.57%, rgba(252, 84, 255, 0.336) 45.98%, rgba(209, 103, 255, 0.03) 55.76%), linear-gradient(160.75deg, #AB42CB 41.37%, #45FFFF 98.29%)',
     cronos: '#012d74',
-    coinbase:
+    coinbase: '#333dfb',
+    cryptoweb:
         'linear-gradient(113.54deg, rgba(45, 91, 104, 0.531738) 14.91%, rgba(0, 4, 48, 0.6) 42.57%, rgba(45, 91, 104, 0.336) 45.98%, rgba(0, 4, 48, 0.03) 55.76%), linear-gradient(160.75deg, #000430 41.37%, #223F47 98.29%), linear-gradient(113.54deg, rgba(117, 183, 251, 0.531738) 14.91%, rgba(10, 41, 255, 0.6) 42.57%, rgba(25, 105, 255, 0.336) 45.98%, rgba(25, 105, 255, 0.03) 55.76%), linear-gradient(160.75deg, #071AFF 41.37%, #45D4FF 98.29%)',
 };

@@ -54,6 +54,12 @@ Cronos.args = {
     size: '48px',
 };
 
+export const Crypto = Template.bind({});
+Crypto.args = {
+    chain: 'cryptoweb',
+    size: '48px',
+};
+
 export const Coinbase = Template.bind({});
 Coinbase.args = {
     chain: 'coinbase',

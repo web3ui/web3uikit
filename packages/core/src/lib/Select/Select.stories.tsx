@@ -266,6 +266,8 @@ BetaSelect.args = {
     name: 'demo',
     placeholder: 'Something big name',
     width: '16em',
+    menuHeight: '300px',
+    height: '40px',
 };
 
 const TemplateBetaMulti: ComponentStory<typeof Select> = (args) => {
@@ -324,7 +326,7 @@ BetaSelectNoSearch.args = {
 };
 
 export const BetaNoData = TemplateBetaSingle.bind({});
-BetaSelectNoSearch.args = {
+BetaNoData.args = {
     disabled: false,
     isMulti: false,
     isSearch: true,

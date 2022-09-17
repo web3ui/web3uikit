@@ -1,7 +1,8 @@
 {
-    "name": "@web3uikit/web3",
-    "version": "0.1.9",
+    "name": "@web3uikit/web3api",
+    "version": "0.1.0",
     "sideEffects": false,
+    "private": "true",
     "files": [
         "package.json",
         "dist"
@@ -23,23 +24,14 @@
         "react-dom": "^18.0.0"
     },
     "devDependencies": {
-        "@types/react-blockies": "^1.4.1",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
-        "react-router-dom": "^6.3.0",
-        "styled-components": "^5.3.5",
-        "react-is": "^18.1.0"
+        "styled-components": "^5.3.5"
     },
     "dependencies": {
         "@web3uikit/config": "*",
         "@web3uikit/core": "*",
-        "@web3uikit/icons": "*",
         "@web3uikit/styles": "*",
-        "react-blockies": "^1.4.1",
-        "react-moralis": "^1.4.0",
-        "moralis": "^1.8.1",
-        "@walletconnect/web3-provider": "^1.7.8",
-        "@web3auth/web3auth": "^1.1.0",
-        "wp5-cra-polyfill": "github:oscario2/wp5-cra-polyfill#91431fa"
+        "@web3uikit/icons": "*"
     }
 }

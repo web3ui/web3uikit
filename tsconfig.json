@@ -4,6 +4,8 @@
         { "path": "packages/core" },
         { "path": "packages/styles" },
         { "path": "packages/web3" },
-        { "path": "packages/icons" }
+        { "path": "packages/icons" },
+        { "path": "packages/web3uikit" },
+        { "path": "packages/web3api" }
     ]
 }

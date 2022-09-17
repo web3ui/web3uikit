@@ -82,7 +82,7 @@ importers:
       '@storybook/addon-essentials': 6.5.9_2uxawm53r6elrx7r5vtz2b2j5u
       '@storybook/addon-links': 6.5.9_biqbaboplfbrettd7655fr4n2y
       '@storybook/addons': 6.5.10_biqbaboplfbrettd7655fr4n2y
-      '@storybook/builder-vite': 0.1.36_62aajsx73jgcfrkuxhrnrmlqd4
+      '@storybook/builder-vite': 0.1.36_mf2a33chifhiu4rckfgwwbek44
       '@storybook/builder-webpack5': 6.5.9_ovrksfez5ftddoeuyb7xadvr4e
       '@storybook/manager-webpack5': 6.5.9_ovrksfez5ftddoeuyb7xadvr4e
       '@storybook/react': 6.5.9_sytijwwry2j6xtehuc5bwj2mka
@@ -234,6 +234,25 @@ importers:
       react-dom: 18.2.0_react@18.2.0
       react-is: 18.2.0
       react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
+      styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
+
+  packages/web3api:
+    specifiers:
+      '@web3uikit/config': '*'
+      '@web3uikit/core': '*'
+      '@web3uikit/icons': '*'
+      '@web3uikit/styles': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+      styled-components: ^5.3.5
+    dependencies:
+      '@web3uikit/config': link:../config
+      '@web3uikit/core': link:../core
+      '@web3uikit/icons': link:../icons
+      '@web3uikit/styles': link:../styles
+    devDependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
       styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
 
   packages/web3uikit:
@@ -3646,7 +3665,7 @@ packages:
       - encoding
     dev: false
 
-  /@react-native-community/cli-plugin-metro/8.0.0:
+  /@react-native-community/cli-plugin-metro/8.0.0_@babel+core@7.18.5:
     resolution: {integrity: sha512-eIowV2ZRbzIWL3RIKVUUSahntXTuAeKzBSsFuhffLZphsV+UdKdtg5ATR9zbq7nsKap4ZseO5DkVqZngUkC7iQ==}
     dependencies:
       '@react-native-community/cli-server-api': 8.0.0
@@ -3655,11 +3674,12 @@ packages:
       metro: 0.70.3
       metro-config: 0.70.3
       metro-core: 0.70.3
-      metro-react-native-babel-transformer: 0.70.3
+      metro-react-native-babel-transformer: 0.70.3_@babel+core@7.18.5
       metro-resolver: 0.70.3
       metro-runtime: 0.70.3
       readline: 1.3.0
     transitivePeerDependencies:
+      - '@babel/core'
       - bufferutil
       - encoding
       - supports-color
@@ -3707,7 +3727,7 @@ packages:
       joi: 17.6.0
     dev: false
 
-  /@react-native-community/cli/8.0.3_react-native@0.69.1:
+  /@react-native-community/cli/8.0.3_jiki5o7iwcyk3g4r2vwv3s6c7i:
     resolution: {integrity: sha512-7gY7QCEdpYDbvbdZBt6w64YPExLoiUpH/lVRaR4tKl6JalqXzrUotOJnBOS/qEC4q0nk0WXsiC5EkuiSliKS5Q==}
     engines: {node: '>=12'}
     hasBin: true
@@ -3719,7 +3739,7 @@ packages:
       '@react-native-community/cli-debugger-ui': 8.0.0
       '@react-native-community/cli-doctor': 8.0.3
       '@react-native-community/cli-hermes': 8.0.2
-      '@react-native-community/cli-plugin-metro': 8.0.0
+      '@react-native-community/cli-plugin-metro': 8.0.0_@babel+core@7.18.5
       '@react-native-community/cli-server-api': 8.0.0
       '@react-native-community/cli-tools': 8.0.0
       '@react-native-community/cli-types': 8.0.0
@@ -3733,9 +3753,10 @@ packages:
       lodash: 4.17.21
       minimist: 1.2.6
       prompts: 2.4.2
-      react-native: 0.69.1_27wpj6te4dzakyna6ilyljc3vq
+      react-native: 0.69.1_gmv6tzkhtuvb6qsrwaoqjy7cza
       semver: 6.3.0
     transitivePeerDependencies:
+      - '@babel/core'
       - bufferutil
       - encoding
       - supports-color
@@ -4386,11 +4407,12 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
-  /@storybook/builder-vite/0.1.36_62aajsx73jgcfrkuxhrnrmlqd4:
+  /@storybook/builder-vite/0.1.36_mf2a33chifhiu4rckfgwwbek44:
     resolution: {integrity: sha512-08g3NfPDAlBFIR0Axo30cgT0RT7NLICel4FVJBlJZKvxwA6Go1wi3IoO93DPJsVjAAQTfxoBiQ6/gkDBlhZE5w==}
     peerDependencies:
       '@storybook/core-common': '>=6.4.3 || >=6.5.0-alpha.0'
       '@storybook/node-logger': '>=6.4.3 || >=6.5.0-alpha.0'
+      '@storybook/source-loader': '>=6.4.3 || >=6.5.0-alpha.0'
       vite: '>=2.6.7'
     dependencies:
       '@joshwooding/vite-plugin-react-docgen-typescript': 0.0.4_7cpjn634l2rivqteikpnhkjm2a
@@ -4412,8 +4434,6 @@ packages:
       vite-plugin-mdx: 3.5.10_ywwgxu3gd3ozxshfwjcjlap47u
     transitivePeerDependencies:
       - '@storybook/mdx2-csf'
-      - react
-      - react-dom
       - supports-color
       - typescript
     dev: true
@@ -9318,8 +9338,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
-      is-text-path: 1.0.1
       JSONStream: 1.3.5
+      is-text-path: 1.0.1
       lodash: 4.17.21
       meow: 8.1.2
       split2: 3.2.2
@@ -13634,13 +13654,13 @@ packages:
       '@types/lodash': 4.14.182
       '@types/node': 12.20.24
       '@types/ws': 7.4.7
+      JSONStream: 1.3.5
       commander: 2.20.3
       delay: 5.0.0
       es6-promisify: 5.0.0
       eyes: 0.1.8
       isomorphic-ws: 4.0.1_ws@7.5.8
       json-stringify-safe: 5.0.1
-      JSONStream: 1.3.5
       lodash: 4.17.21
       uuid: 8.3.2
       ws: 7.5.8
@@ -15126,8 +15146,10 @@ packages:
       uglify-es: 3.3.9
     dev: false
 
-  /metro-react-native-babel-preset/0.70.3:
+  /metro-react-native-babel-preset/0.70.3_@babel+core@7.18.5:
     resolution: {integrity: sha512-4Nxc1zEiHEu+GTdEMEsHnRgfaBkg8f/Td3+FcQ8NTSvs+xL3LBrQy6N07idWSQZHIdGFf+tTHvRfSIWLD8u8Tg==}
+    peerDependencies:
+      '@babel/core': '*'
     dependencies:
       '@babel/core': 7.18.5
       '@babel/plugin-proposal-async-generator-functions': 7.17.12_@babel+core@7.18.5
@@ -15172,14 +15194,16 @@ packages:
       - supports-color
     dev: false
 
-  /metro-react-native-babel-transformer/0.70.3:
+  /metro-react-native-babel-transformer/0.70.3_@babel+core@7.18.5:
     resolution: {integrity: sha512-WKBU6S/G50j9cfmFM4k4oRYprd8u3qjleD4so1E2zbTNILg+gYla7ZFGCAvi2G0ZcqS2XuGCR375c2hF6VVvwg==}
+    peerDependencies:
+      '@babel/core': '*'
     dependencies:
       '@babel/core': 7.18.5
       babel-preset-fbjs: 3.4.0_@babel+core@7.18.5
       hermes-parser: 0.6.0
       metro-babel-transformer: 0.70.3
-      metro-react-native-babel-preset: 0.70.3
+      metro-react-native-babel-preset: 0.70.3_@babel+core@7.18.5
       metro-source-map: 0.70.3
       nullthrows: 1.1.1
     transitivePeerDependencies:
@@ -15299,7 +15323,7 @@ packages:
       metro-hermes-compiler: 0.70.3
       metro-inspector-proxy: 0.70.3
       metro-minify-uglify: 0.70.3
-      metro-react-native-babel-preset: 0.70.3
+      metro-react-native-babel-preset: 0.70.3_@babel+core@7.18.5
       metro-resolver: 0.70.3
       metro-runtime: 0.70.3
       metro-source-map: 0.70.3
@@ -17445,11 +17469,11 @@ packages:
     peerDependencies:
       react-native: '*'
     dependencies:
-      react-native: 0.69.1_27wpj6te4dzakyna6ilyljc3vq
+      react-native: 0.69.1_gmv6tzkhtuvb6qsrwaoqjy7cza
       whatwg-url-without-unicode: 8.0.0-3
     dev: false
 
-  /react-native/0.69.1_27wpj6te4dzakyna6ilyljc3vq:
+  /react-native/0.69.1_gmv6tzkhtuvb6qsrwaoqjy7cza:
     resolution: {integrity: sha512-585NmzSuYUfday8YsfqgreFAZbXRI/kxKsiuaShwGHgkwdtmE5qA7WfGItgxZBOZD6g/Hm1YBUqSwIm07tPa6A==}
     engines: {node: '>=14'}
     hasBin: true
@@ -17457,7 +17481,7 @@ packages:
       react: 18.0.0
     dependencies:
       '@jest/create-cache-key-function': 27.5.1
-      '@react-native-community/cli': 8.0.3_react-native@0.69.1
+      '@react-native-community/cli': 8.0.3_jiki5o7iwcyk3g4r2vwv3s6c7i
       '@react-native-community/cli-platform-android': 8.0.2
       '@react-native-community/cli-platform-ios': 8.0.2
       '@react-native/assets': 1.0.0
@@ -17471,7 +17495,7 @@ packages:
       invariant: 2.2.4
       jsc-android: 250230.2.1
       memoize-one: 5.2.1
-      metro-react-native-babel-transformer: 0.70.3
+      metro-react-native-babel-transformer: 0.70.3_@babel+core@7.18.5
       metro-runtime: 0.70.3
       metro-source-map: 0.70.3
       mkdirp: 0.5.6
@@ -17491,6 +17515,7 @@ packages:
       whatwg-fetch: 3.6.2
       ws: 6.2.2
     transitivePeerDependencies:
+      - '@babel/core'
       - '@babel/preset-env'
       - bufferutil
       - encoding
@@ -19884,6 +19909,7 @@ packages:
   /unified/9.2.0:
     resolution: {integrity: sha512-vx2Z0vY+a3YoTj8+pttM3tiJHCwY5UFbYdiWrwBEbHmK8pvsPj2rtAX2BFfgXen8T39CJWblWRDT4L5WGXtDdg==}
     dependencies:
+      '@types/unist': 2.0.6
       bail: 1.0.5
       extend: 3.0.2
       is-buffer: 2.0.5
@@ -19895,6 +19921,7 @@ packages:
   /unified/9.2.2:
     resolution: {integrity: sha512-Sg7j110mtefBD+qunSLO1lqOEKdrwBFBrR6Qd8f4uwkhWNlbkaqwHse6e7QvD3AP/MNoJdEDLaf8OxYyoWgorQ==}
     dependencies:
+      '@types/unist': 2.0.6
       bail: 1.0.5
       extend: 3.0.2
       is-buffer: 2.0.5

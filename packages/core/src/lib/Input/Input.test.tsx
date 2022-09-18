@@ -78,7 +78,7 @@ test('onBlur event is returned, testEvent => event.target', () => {
 });
 
 describe('Input - Text', () => {
-    const testLabel = DefaultInput?.args?.label;
+    const testLabel = DefaultInput?.args.label;
     const testName = DefaultInput?.args?.name;
 
     beforeEach(() => {

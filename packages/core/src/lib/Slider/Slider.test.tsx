@@ -1,202 +1,181 @@
-// importing boilerplate stuff
-import React from 'react';
-import { composeStories } from '@storybook/testing-react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import Slider from './Slider';
 import * as stories from './Slider.stories';
+import { composeStories } from '@storybook/testing-react';
+import { test, expect, describe, vi } from 'vitest';
+import { cleanup, render, screen, fireEvent } from '@testing-library/react';
 
-// // importing fire event from RTL to mock a click event
-// import { fireEvent } from '@testing-library/react';
+const { Default, Step, Disabled } = composeStories(stories);
 
-// importing color and a testing tool to convert RGB to HEX
-import {color,rgbToHex} from '@web3uikit/styles';
+let container: HTMLDivElement;
+const testEvent = vi.fn();
+const testRangeId = 'test';
+const testRangeMin = 0;
+const testRangeMax = 100;
+const testDisValue = true;
+const baseTestValue = 22;
+const testInputId = 'test-input-input';
+const testLabelId = 'test-input-label';
+const testDivId = 'test-input';
+const testStepValue = 100;
 
-// importing testID from button and icon
-import { buttonTestId } from '../Button/Button.test';
+test('onChange event is returned, testEvent => event.target', () => {
+    render(
+        <Slider
+            rangeMin={testRangeMin}
+            rangeMax={testRangeMax}
+            rangeId={testRangeId}
+            onChanges={(e) => testEvent(e.target)}
+        />,
+    );
+    const div: HTMLDivElement = screen.getByTestId(testDivId);
+    const input: HTMLInputElement = screen.getByTestId(testInputId);
 
-const iconTestId = 'test-icon';
+    expect(div.classList.contains('filled')).toBeFalsy;
+    expect(div.classList.contains('empty')).toBeTruthy;
 
-// importing my stories to test
-const { Default, InitializeRed, UnderLinedText } = composeStories(stories);
+    input.focus();
+    fireEvent.change(input, { target: { value: 22  } });
 
-// setting my test IDs to match my tsx
-export const testCompId = 'test-new-comp';
-const testTitle = 'test-title';
-const testHeading = 'test-heading';
-const testText = 'test-text';
-// NOTE: the main test ID is exported incase
-// it is needed for another components test
-
-// /////////////////////////////////////////////////////
-// examples of basic tests of props, values and styles
-// /////////////////////////////////////////////////////
-
-// Test Story 1: Default
-test('Renders Default component', () => {
-    const testTextOn = Default?.args?.textOn;
-
-    render(<Default />);
-
-    const component = screen.getByTestId(testCompId);
-    expect(component).not.toBeNull();
-
-    const icon = screen.getByTestId(iconTestId);
-    expect(icon).not.toBeNull();
-
-    const title = screen.getByTestId(testTitle);
-    expect(title).not.toBeNull();
-    expect(title.textContent).toBe('The Demo Component');
-
-    const heading = screen.getByTestId(testHeading);
-    expect(heading).not.toBeNull();
-    expect(heading.textContent).toBe(testTextOn);
-
-    const styles = heading && getComputedStyle(heading);
-    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.green);
-
-    const text = screen.getByTestId(testText);
-    expect(text).not.toBeNull();
-    expect(text.textContent).toBe('Clicked: 0 times');
-
-    const textWithoutUnderline = screen.getByTestId(testText);
-    expect(textWithoutUnderline).not.toBeNull();
-    const twlStyles =
-        textWithoutUnderline && getComputedStyle(textWithoutUnderline);
-    expect(twlStyles?.textDecoration).toBe('none');
+    expect(Number(input.value)).toBe((22));
+    expect(testEvent).toHaveBeenCalledWith(input);
 });
 
-// Test Story 2: Button Click
-test('changes UI onClick of the button', () => {
-    const testTextOff = Default?.args?.textOff;
 
-    render(<Default />);
+describe('Slider - Default', () => {
 
-    const buttonElement = screen.getByTestId(buttonTestId);
+    const testLabel = Default?.args?.rangeLabel;
 
-    buttonElement && fireEvent.click(buttonElement);
+    beforeEach(() => {
+        container = document.createElement('div');
 
-    const textElelement = screen.getByTestId(testText);
-    expect(textElelement).not.toBeNull();
-    expect(textElelement.textContent).toBe('Clicked: 1 times');
+        render(
+            <Default
+                onChanges={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            {
+                container: document.body.appendChild(container),
+            },
+        );
+    });
 
-    const headingElement = screen.getByTestId(testHeading);
-    expect(headingElement).not.toBeNull();
-    expect(headingElement.textContent).toBe(testTextOff);
+    afterEach(() => {
+        cleanup();
+    });
 
-    const styles = headingElement && getComputedStyle(headingElement);
-    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.red);
-});
+    it('renders the component', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input).not.toBeNull();
+    });
 
-// Test Story 3: InitializeRed
-test('Renders InitializeRed', () => {
-    const testTextOff = InitializeRed?.args?.textOff;
+    it('renders input with the rangeValue passed', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input).not.toBeNull();
+        input && expect(Number(input.value)).toBe(baseTestValue);
+        
+    });
 
-    render(<InitializeRed />);
+    it('renders the correct type of input', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input).not.toBeNull();
+        input && expect(input.type).toBe('range');
+    });
 
-    const component = screen.getByTestId(testCompId);
-    expect(component).not.toBeNull();
+    it('renders label text', () => {
+        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
+        expect(label).not.toBeNull();
+        expect(label?.textContent).toBe(testLabel);
+    });
 
-    const icon = screen.getByTestId(iconTestId);
-    expect(icon).not.toBeNull();
+})
 
-    const title = screen.getByTestId(testTitle);
-    expect(title).not.toBeNull();
-    expect(title.textContent).toBe('The Demo Component');
+describe('Slider - Step', () => {
 
-    const heading = screen.getByTestId(testHeading);
-    expect(heading).not.toBeNull();
-    expect(heading.textContent).toBe(testTextOff);
+    const testLabel = Default?.args?.rangeLabel;
 
-    const styles = heading && getComputedStyle(heading);
-    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.red);
+    beforeEach(() => {
+        container = document.createElement('div');
 
-    const text = screen.getByTestId(testText);
-    expect(text).not.toBeNull();
-    expect(text.textContent).toBe('Clicked: 0 times');
+        render(
+            <Step
+                onChanges={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            {
+                container: document.body.appendChild(container),
+            },
+        );
+    });
 
-    const textWithoutUnderline = screen.getByTestId(testText);
-    expect(textWithoutUnderline).not.toBeNull();
-    const twlStyles =
-        textWithoutUnderline && getComputedStyle(textWithoutUnderline);
-    expect(twlStyles?.textDecoration).toBe('none');
-});
+    afterEach(() => {
+        cleanup();
+    });
 
-// Test Story 3: Button click
-test('changes UI onClick of the button', () => {
-    const testTextOn = InitializeRed?.args?.textOn;
+    it('renders the component', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input).not.toBeNull();
+    });
 
-    render(<InitializeRed />);
+    it('renders the component with step value passed', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input?.step).not.toBeNull();
+        expect(input?.step).toBe(testStepValue)
+    });
 
-    const buttonElement = screen.getByTestId(buttonTestId);
-    buttonElement && fireEvent.click(buttonElement);
+    
 
-    const textElelement = screen.getByTestId(testText);
-    expect(textElelement).not.toBeNull();
-    expect(textElelement.textContent).toBe('Clicked: 1 times');
+})
 
-    const headingElement = screen.getByTestId(testHeading);
-    expect(headingElement).not.toBeNull();
-    expect(headingElement.textContent).toBe(testTextOn);
+describe('Slider - Step', () => {
 
-    const styles = headingElement && getComputedStyle(headingElement);
-    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.green);
-});
+    const testLabel = Default?.args?.rangeLabel;
 
-// Test Story 4: UnderLinedText
-test('Renders UnderLinedText', () => {
-    const testTextOn = UnderLinedText?.args?.textOn;
+    beforeEach(() => {
+        container = document.createElement('div');
 
-    render(<UnderLinedText />);
+        render(
+            <Disabled
+                onChanges={(event: React.ChangeEvent<HTMLInputElement>) =>
+                    testEvent(event.target)
+                }
+            />,
+            {
+                container: document.body.appendChild(container),
+            },
+        );
+    });
 
-    const component = screen.getByTestId(testCompId);
-    expect(component).not.toBeNull();
+    afterEach(() => {
+        cleanup();
+    });
 
-    const icon = screen.getByTestId(iconTestId);
-    expect(icon).not.toBeNull();
+    it('renders the component', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input).not.toBeNull();
+    });
 
-    const title = screen.getByTestId(testTitle);
-    expect(title).not.toBeNull();
-    expect(title.textContent).toBe('The Demo Component');
+    it('renders the component with disabled bool passed', () => {
+        const input: HTMLInputElement | null = container.querySelector(
+            `[data-testid="${testInputId}"]`,
+        );
+        expect(input?.disabled).not.toBeNull();
+        expect(input?.disabled).toBe(testDisValue)
+    });
 
-    const heading = screen.getByTestId(testHeading);
-    expect(heading).not.toBeNull();
-    expect(heading.textContent).toBe(testTextOn);
+    
 
-    const styles = heading && getComputedStyle(heading);
-    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.green);
-
-    const text = screen.getByTestId(testText);
-    expect(text).not.toBeNull();
-    expect(text.textContent).toBe('Clicked: 0 times');
-
-    const textWithoutUnderline = screen.queryByTestId(testText);
-    expect(textWithoutUnderline).not.toBeNull();
-    const twlStyles =
-        textWithoutUnderline && getComputedStyle(textWithoutUnderline);
-    expect(twlStyles?.textDecoration).toBe('underline');
-});
-
-test('changes UI onClick of the button', () => {
-    const testTextOff = UnderLinedText?.args?.textOff;
-
-    render(<UnderLinedText />);
-
-    const buttonElement = screen.getByTestId(buttonTestId);
-    buttonElement && fireEvent.click(buttonElement);
-
-    const textElelement = screen.getByTestId(testText);
-    expect(textElelement).not.toBeNull();
-    expect(textElelement.textContent).toBe('Clicked: 1 times');
-
-    const headingElement = screen.getByTestId(testHeading);
-    expect(headingElement).not.toBeNull();
-    expect(headingElement.textContent).toBe(testTextOff);
-
-    const styles = headingElement && getComputedStyle(headingElement);
-    const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.red);
-});
+})

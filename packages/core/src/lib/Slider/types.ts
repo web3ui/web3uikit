@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface ISliderProps {
     /**
      * pass id for html input component
@@ -16,7 +18,23 @@ export interface ISliderProps {
      */
     rangeMin: number;
     /**
-     * Pass for setting CurrentValue 
+     * Pass for setting current value 
      */
     rangeValue?: number;
+    /**
+     * Pass for setting Changed event 
+     */
+    onChanges?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    /**
+     * A label to show the top
+     */
+    currentLabel?: string | JSX.Element;
+    /**
+     * A boolean for working or not
+     */
+    disabled?: boolean;
+    /**
+     * Set the discrete step size of the element
+     */
+    Step?: number;
 }

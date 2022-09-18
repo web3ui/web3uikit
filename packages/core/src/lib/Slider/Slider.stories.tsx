@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Slider from './Slider';
 
@@ -9,19 +9,33 @@ export default {
 
 const Template: ComponentStory<typeof Slider> = (args) => <Slider {...args} />;
 
+
+
 export const Default = Template.bind({});
 Default.args = {
     rangeMax: 100,
     rangeMin: 0,
     rangeLabel: 'Storybook Label',
     rangeId: 'one',
-    rangeValue: 22
+    rangeValue: 22,
+    disabled: false, 
     
 };
 
-export const ExampleTwo = Template.bind({});
-ExampleTwo.args = {
+export const Step = Template.bind({});
+Step.args = {
     rangeMax: 1000,
     rangeMin: 0,
-    rangeLabel: 'Storybook2 Label'
+    rangeLabel: 'Stepped Slider',
+    rangeValue: 42,
+    Step:100
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+    rangeMax: 1000,
+    rangeMin: 0,
+    rangeLabel: 'Disabled',
+    disabled: true,
+    rangeValue: 22,
 };

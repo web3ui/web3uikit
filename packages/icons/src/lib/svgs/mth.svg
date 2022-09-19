@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="2000 0 500 500" style="enable-background:new 2000 0 500 500;" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="2049.4797" y1="1408.7294" x2="2049.4797" y2="1082.7316" gradientTransform="matrix(1.25 0 0 -1.25 -500 1815)">
+	<stop  offset="0" style="stop-color:#16ED8C"/>
+	<stop  offset="1" style="stop-color:#0767FC"/>
+</linearGradient>
+<path style="fill:url(#SVGID_1_);" d="M2003.971,345.829c0,63.918,51.814,115.756,115.756,115.756V54.088h-115.756V345.829z"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="2350.5007" y1="1408.7294" x2="2350.5007" y2="1082.7316" gradientTransform="matrix(1.25 0 0 -1.25 -500 1815)">
+	<stop  offset="0" style="stop-color:#16ED8C"/>
+	<stop  offset="1" style="stop-color:#0767FC"/>
+</linearGradient>
+<path style="fill:url(#SVGID_2_);" d="M2496.004,345.829c0,63.943-51.838,115.756-115.757,115.756V54.088h115.757V345.829z"/>
+<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="2003.1771" y1="1290.5465" x2="2246.3716" y2="1290.5465" gradientTransform="matrix(1.25 0 0 -1.25 -500 1815)">
+	<stop  offset="0" style="stop-color:#0B46AA"/>
+	<stop  offset="1" style="stop-color:#1455E1"/>
+</linearGradient>
+<path style="fill:url(#SVGID_3_);" d="M2162.094,96.577c-31.959-55.381-102.766-74.35-158.123-42.391l149.364,258.724
+	c20.716,31.369,56.267,52.06,96.665,52.06c18.034,0.025,35.822-4.182,51.937-12.277l6.028-3.469L2162.094,96.577z"/>
+<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="2153.6284" y1="1290.7437" x2="2396.823" y2="1290.7437" gradientTransform="matrix(1.25 0 0 -1.25 -500 1815)">
+	<stop  offset="0" style="stop-color:#0B46AA"/>
+	<stop  offset="1" style="stop-color:#1455E1"/>
+</linearGradient>
+<path style="fill:url(#SVGID_4_);" d="M2337.906,96.307c31.959-55.356,102.766-74.325,158.123-42.366l-149.364,258.724
+	c-20.716,31.369-56.267,52.06-96.665,52.06c-18.034,0.025-35.822-4.182-51.937-12.277l-6.028-3.469L2337.906,96.307L2337.906,96.307
+	z"/>
+</svg>

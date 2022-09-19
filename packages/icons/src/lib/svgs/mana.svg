@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="mana" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_2_);}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#FC9965;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#FF2D55;}
+	.st5{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_3_);}
+	.st6{fill-rule:evenodd;clip-rule:evenodd;fill:#FFBC5B;}
+	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:#FFC95B;}
+</style>
+<g>
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-386.9644" y1="762.1606" x2="-387.8407" y2="761.2844" gradientTransform="matrix(400 0 0 -400 155211 304939)">
+		<stop  offset="0" style="stop-color:#FF2D55"/>
+		<stop  offset="1" style="stop-color:#FFBC5B"/>
+	</linearGradient>
+	<circle class="st0" cx="250" cy="250" r="247.9"/>
+	
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-384.9799" y1="761.0383" x2="-384.9799" y2="759.7991" gradientTransform="matrix(125 0 0 -150 48377.6992 114319)">
+		<stop  offset="0" style="stop-color:#A524B3"/>
+		<stop  offset="1" style="stop-color:#FF2D55"/>
+	</linearGradient>
+	<path class="st1" d="M177.7,163.3v185.9h154.9L177.7,163.3z"/>
+	<path class="st2" d="M22.8,349.1h154.9V163.3L22.8,349.1z"/>
+	<path class="st3" d="M51.7,398.7c14.1,18.7,30.9,35.4,49.6,49.6h297.4c18.7-14.1,35.4-30.9,49.6-49.6H51.7z"/>
+	<path class="st4" d="M101.3,448.3c41.4,31.1,92.9,49.6,148.7,49.6s107.3-18.5,148.7-49.6H101.3z"/>
+	
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="-383.4148" y1="760.151" x2="-383.4148" y2="758.9117" gradientTransform="matrix(91.7 0 0 -110 35550.5977 83879)">
+		<stop  offset="0" style="stop-color:#A524B3"/>
+		<stop  offset="1" style="stop-color:#FF2D55"/>
+	</linearGradient>
+	<path class="st5" d="M334.6,262.4v136.3h113.6L334.6,262.4z"/>
+	<path class="st6" d="M334.6,349.1H22.8c7.7,17.7,17.5,34.3,28.9,49.6h283.1v-49.6H334.6z"/>
+	<path class="st2" d="M221.1,398.7h113.5V262.4L221.1,398.7z"/>
+	<circle class="st7" cx="334.6" cy="163.3" r="62"/>
+	<circle class="st7" cx="177.7" cy="95.1" r="31"/>
+</g>
+</svg>

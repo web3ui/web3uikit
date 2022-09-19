@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="btmx" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
+</style>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="126.4721" y1="497.168" x2="126.4721" y2="78.7707">
+	<stop  offset="0" style="stop-color:#5397D1"/>
+	<stop  offset="1" style="stop-color:#98D5F4"/>
+</linearGradient>
+<path class="st0" d="M249.7,78.8v418.4H3.3c0,0,52-186.5,111.3-292.6S226.5,82.1,249.7,78.8z"/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="322.908" y1="497.168" x2="322.908" y2="2.592">
+	<stop  offset="0" style="stop-color:#4280C2"/>
+	<stop  offset="1" style="stop-color:#6BBFEB"/>
+</linearGradient>
+<path class="st1" d="M495.8,2.6v494.6H150c0,0,92.6-242.6,175.8-368S480.5,3.8,495.8,2.6z"/>
+</svg>

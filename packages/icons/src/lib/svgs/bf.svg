@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="BF" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:url(#Fill-5-Copy-4_2_);}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:url(#Fill-5-Copy_1_);}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:url(#Fill-5-Copy-4_3_);}
+</style>
+<linearGradient id="Fill-5-Copy-4_2_" gradientUnits="userSpaceOnUse" x1="8.6634" y1="491.8745" x2="25.838" y2="486.9852" gradientTransform="matrix(19.6506 0 0 -23.9409 0.4763 11995.3857)">
+	<stop  offset="0" style="stop-color:#00FFC8"/>
+	<stop  offset="1" style="stop-color:#00758C"/>
+</linearGradient>
+<path id="Fill-5-Copy-4" class="st0" d="M316,292.9c0,35.9-29.3,65.1-65.2,65.1c-36,0-65.2-29.2-65.2-65.1v-68.2H316V292.9z
+	 M376.3,165.6v-53.2H316v112.4H185.5V112.4h-60.3v53.2v59.2v68.2c0,69.1,56.3,125.3,125.5,125.3c69.2,0,125.5-56.2,125.5-125.3
+	v-68.2V165.6z"/>
+<linearGradient id="Fill-5-Copy_1_" gradientUnits="userSpaceOnUse" x1="0.4872" y1="481.9495" x2="13.2633" y2="481.9495" gradientTransform="matrix(39.1355 0 0 -8.7967 -19.0678 4408.1504)">
+	<stop  offset="0" style="stop-color:#00FFC8"/>
+	<stop  offset="1" style="stop-color:#00959A"/>
+</linearGradient>
+<path id="Fill-5-Copy" class="st1" d="M439.2,112.4c0,29.6-23.9,53.2-53.3,53.2H374h-60.3H183.3H123h-9.2
+	c-29.4,0-53.3-23.9-53.3-53.2H0C0,177,49.9,224.8,114.5,224.8h8.4H374h12.6c64.7,0,113.3-47.6,113.3-112.4H439.2z"/>
+<linearGradient id="Fill-5-Copy-4_3_" gradientUnits="userSpaceOnUse" x1="6.3484" y1="489.9593" x2="19.1245" y2="489.9593" gradientTransform="matrix(19.6506 0 0 -23.9409 0.4763 11995.3857)">
+	<stop  offset="0" style="stop-color:#00FFC8"/>
+	<stop  offset="1" style="stop-color:#00BBAB"/>
+</linearGradient>
+<path id="Fill-5-Copy-4_1_" class="st2" d="M316,292.9c0,35.9-29.3,65.1-65.2,65.1c-36,0-65.2-29.2-65.2-65.1v-68.2H316V292.9z
+	 M316,224.8H185.5V112.4h-60.3v53.2v59.2v68.2c0,69.1,56.3,125.3,125.5,125.3c69.2,0,125.5-56.2,125.5-125.3v-68.2H316z"/>
+</svg>

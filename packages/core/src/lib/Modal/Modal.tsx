@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ModalProps } from './types';
 import Button from '../Button/Button';
 import styles from './Modal.styles';
@@ -73,11 +73,16 @@ const Modal: React.FC<ModalProps> = ({
                     headerHasBottomBorder={headerHasBottomBorder}
                 >
                     <>
-                        {typeof title == 'string' ? <h3>{title}</h3> : title}
-                        {closeButton ? (
-                            closeButton
+                        {typeof title == 'string' ? (
+                            <h3 key="modal-header-title">{title}</h3>
                         ) : (
+                            <React.Fragment key="modal-header-title">
+                                {title}
+                            </React.Fragment>
+                        )}
+                        {closeButton && (
                             <Button
+                                key="modal-header-close-button"
                                 iconColor="#68738D"
                                 theme="secondary"
                                 radius={100}
@@ -96,6 +101,7 @@ const Modal: React.FC<ModalProps> = ({
                                         ? onCloseButtonPressed
                                         : toggleVisibility
                                 }
+                                {...closeButton}
                             />
                         )}
                     </>

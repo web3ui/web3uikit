@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 import { ModalProps } from './types';
 import Button from '../Button/Button';
 import styles from './Modal.styles';
@@ -80,7 +80,11 @@ const Modal: React.FC<ModalProps> = ({
                                 {title}
                             </React.Fragment>
                         )}
-                        {closeButton && (
+                        {closeButton ? (
+                            <React.Fragment key="modal-header-close-button">
+                                {closeButton as ReactNode}
+                            </React.Fragment>
+                        ) : (
                             <Button
                                 key="modal-header-close-button"
                                 iconColor="#68738D"
@@ -101,7 +105,6 @@ const Modal: React.FC<ModalProps> = ({
                                         ? onCloseButtonPressed
                                         : toggleVisibility
                                 }
-                                {...closeButton}
                             />
                         )}
                     </>

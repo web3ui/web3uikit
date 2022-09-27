@@ -6,7 +6,7 @@ import {
     fonts,
     resetCSS,
 } from '@web3uikit/styles';
-import { creditCardBrands, CreditCardProps } from './types';
+import { creditCardBrands, CreditCardProps } from '../types';
 
 type TStyleProps = Pick<CreditCardProps, 'isExpired' | 'pressed' | 'brand'>;
 type TStyleExpired = Pick<CreditCardProps, 'isExpired'>;

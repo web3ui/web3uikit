@@ -1,6 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import CreditCard from './CreditCard';
-
+import { CreditCard } from '.';
 
 export default {
     title: '4.UI/CreditCard',
@@ -121,4 +120,19 @@ DinersExpired.args = {
         month: '11',
         year: '21',
     },
+};
+export const VisaSmall = Template.bind({});
+VisaSmall.args = {
+    id: 'marty-mc-fly-cc-id',
+    fingerprint: 'foo-bar-diners',
+    isExpired: true,
+    name: 'Marty McFly',
+    brand: 'diners',
+    lastDigits: '1177',
+    expiresAt: {
+        month: '11',
+        year: '21',
+    },
+    size: 'small',
+    pressed: true,
 };

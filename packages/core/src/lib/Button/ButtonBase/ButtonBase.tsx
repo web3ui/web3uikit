@@ -1,6 +1,7 @@
 import { Loading } from '../../Loading';
 import styles from './ButtonBase.styles';
 import { ButtonProps } from '../types';
+import React from 'react';
 
 const { BaseButtonStyled } = styles;
 
@@ -46,8 +47,16 @@ const ButtonBase: React.FC<ButtonProps> = ({
                     </>
                 ) : (
                     <>
-                        {text}
-                        {icon && icon}
+                        {text && (
+                            <React.Fragment key={`button-text-${id}`}>
+                                {text}
+                            </React.Fragment>
+                        )}
+                        {icon && (
+                            <React.Fragment key={`button-icon-${id}`}>
+                                {icon}
+                            </React.Fragment>
+                        )}
                     </>
                 )}
             </span>

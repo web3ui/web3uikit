@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.1.11
+
+### Patch Changes
+
+-   [#789](https://github.com/web3ui/web3uikit/pull/789) [`0a1aa35e9`](https://github.com/web3ui/web3uikit/commit/0a1aa35e9ca40077b6ff3beeaa85c466eb43f0b1) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add new small credit card and new credit card icon
+
 ## 0.1.5
 
 ### Patch Changes

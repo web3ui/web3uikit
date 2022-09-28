@@ -13,7 +13,9 @@ import {
     ConnectButton,
     NFT,
     SendTransaction,
+    Modal,
     VerifyCode,
+    Edit,
 } from 'web3uikit';
 
 const MockBreadCrumbs = [
@@ -69,30 +71,43 @@ export const App = () => {
                             <VerifyCode />
                         </div>
                         <ConnectButton />
-                        <NFT
-                            address="0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
-                            chain="eth"
-                            fetchMetadata
-                            tokenId="1"
-                        />
-                        <SendTransaction
-                            chainId="0x4"
-                            contractOptions={{
-                                abi: contractData['abi'],
-                                contractAddress:
-                                    contractData['contractAddress'],
-                                functionName: 'purchaseCandy',
-                                params: {
-                                    _amount: 1,
-                                },
-                                msgValue: 1000000000000000000,
-                            }}
-                            buttonConfig={{
-                                text: 'Send',
-                                theme: 'primary',
-                            }}
-                            notificationConfig={{ dispatch }}
-                        />
+                        <Modal
+                            isVisible={true}
+                            title={
+                                <div>
+                                    <Edit key="icon" />
+                                    <Typography>Edit Heading</Typography>{' '}
+                                </div>
+                            }
+                            hasFooter={false}
+                            headerHasBottomBorder={false}
+                        >
+                            <NFT
+                                address="0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+                                chain="eth"
+                                fetchMetadata
+                                tokenId="1"
+                            />
+
+                            <SendTransaction
+                                chainId="0x4"
+                                contractOptions={{
+                                    abi: contractData['abi'],
+                                    contractAddress:
+                                        contractData['contractAddress'],
+                                    functionName: 'purchaseCandy',
+                                    params: {
+                                        _amount: 1,
+                                    },
+                                    msgValue: 1000000000000000000,
+                                }}
+                                buttonConfig={{
+                                    text: 'Send',
+                                    theme: 'primary',
+                                }}
+                                notificationConfig={{ dispatch }}
+                            />
+                        </Modal>
                         <SendTransaction
                             chainId="0x1"
                             contractOptions={{

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { RadiosProps } from './';
 import { CreditCard, CreditCardProps } from '../CreditCard';
 import styles from './Radios.styles';
+import styled from 'styled-components';
 
 const {
     DivStyled,
@@ -11,6 +12,15 @@ const {
     LegendStyled,
     RadioButtonStyled,
 } = styles;
+
+const StyledCreditCard = styled(CreditCard)`
+    ${(p) =>
+        p.size === 'small' &&
+        `
+            padding-left: 50px;
+            width: 100%;
+        `}
+`;
 
 const Radios: React.FC<RadiosProps> = ({
     disabled = false,
@@ -41,8 +51,9 @@ const Radios: React.FC<RadiosProps> = ({
     }, [selectedState]);
 
     const renderCreditCard = (item: CreditCardProps, arrayIndex: number) => (
-        <CreditCard
+        <StyledCreditCard
             {...item}
+            pressed={arrayIndex === whichIsChecked}
             onRemove={() =>
                 onCreditCardRemoved && onCreditCardRemoved(arrayIndex)
             }
@@ -61,7 +72,13 @@ const Radios: React.FC<RadiosProps> = ({
                     (item: CreditCardProps | string, i: number) => (
                         <DivStyled
                             key={`${formattedID}_${i}`}
+                            isRow={isRow === true}
                             disabled={disabled}
+                            isSmall={
+                                typeof item !== 'string'
+                                    ? item.size === 'small'
+                                    : false
+                            }
                         >
                             <RadioButtonStyled
                                 checked={i === whichIsChecked}
@@ -88,6 +105,11 @@ const Radios: React.FC<RadiosProps> = ({
                                 data-testid={`test-radios-label-${i}`}
                                 htmlFor={`${formattedID}_${i}`}
                                 isCreditCardMode={isCreditCards}
+                                isSmall={
+                                    typeof item !== 'string'
+                                        ? item.size === 'small'
+                                        : false
+                                }
                                 role="label"
                             >
                                 {typeof item === 'string'

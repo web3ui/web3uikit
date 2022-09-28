@@ -28,6 +28,7 @@ export { default as Cloud } from './Cloud';
 export { default as Cog } from './Cog';
 export { default as Copy } from './Copy';
 export { default as CreditCard } from './CreditCard';
+export { default as CreditCard2 } from './CreditCard2';
 export { default as CrossCircle } from './CrossCircle';
 export { default as Cross } from './Cross';
 export { default as Cube } from './Cube';

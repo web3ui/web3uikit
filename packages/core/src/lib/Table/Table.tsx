@@ -21,6 +21,7 @@ import {
 
 const Table: React.FC<ITableProps> = ({
     alignCellItems = 'start',
+    columnGapSize = 11,
     columnsConfig,
     customLoadingContent,
     customNoDataComponent,
@@ -30,12 +31,14 @@ const Table: React.FC<ITableProps> = ({
     header,
     isColumnSortable = [],
     isLoading = false,
+    isScrollableOnOverflow = true,
     justifyCellItems = 'start',
     maxPages,
     noPagination,
     onPageNumberChanged,
     onRowClick,
     pageSize,
+    tableBackgroundColor = 'white',
     ...props
 }) => {
     const [pageNum, setPageNum] = useState<number>(
@@ -300,8 +303,12 @@ const Table: React.FC<ITableProps> = ({
 
     return (
         <TableParent data-testid="test-table" {...props}>
-            <TableGridContainer>
-                <TableGrid columns={columnsConfig}>
+            <TableGridContainer isScrollableOnOverflow={isScrollableOnOverflow}>
+                <TableGrid
+                    columns={columnsConfig}
+                    columnGapSize={columnGapSize}
+                    tableBackgroundColor={tableBackgroundColor}
+                >
                     <RenderTableHeader />
                     {isLoading ? <Loader /> : <RenderTable />}
                 </TableGrid>

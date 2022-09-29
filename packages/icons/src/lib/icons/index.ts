@@ -81,6 +81,7 @@ export { default as Network } from './Network';
 export { default as Off } from './Off';
 export { default as Oneinch } from './Oneinch';
 export { default as Paperclip } from './Paperclip';
+export { default as Pause } from './Pause';
 export { default as Phone } from './Phone';
 export { default as Pin } from './Pin';
 export { default as Plug } from './Plug';

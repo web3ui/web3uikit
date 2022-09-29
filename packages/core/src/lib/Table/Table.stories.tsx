@@ -155,7 +155,7 @@ export const CustomTable: ComponentStory<typeof Table> = (args) => (
 CustomTable.args = {
     columnsConfig,
     header,
-    pageSize,
+    pageSize: 1,
     maxPages,
     isColumnSortable: [false, true, false, false],
     data: customTableMockData,

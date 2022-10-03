@@ -1,5 +1,14 @@
 # @web3uikit/core
 
+## 0.1.12
+
+### Patch Changes
+
+-   [#813](https://github.com/web3ui/web3uikit/pull/813) [`683b7cdc0`](https://github.com/web3ui/web3uikit/commit/683b7cdc0609d5c5f7aae9103990d19d70d015a8) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Fix popover component z index, table component custom styles, add pause icon
+
+-   Updated dependencies [[`683b7cdc0`](https://github.com/web3ui/web3uikit/commit/683b7cdc0609d5c5f7aae9103990d19d70d015a8)]:
+    -   @web3uikit/icons@0.1.12
+
 ## 0.1.11
 
 ### Patch Changes

@@ -108,6 +108,7 @@ const setPosition = (position: string, moveBody?: number) => {
 
 const ListStyled = styled.ul<TStyleProps>`
     ${resetCSS};
+    z-index: 1;
     background-color: ${(p) => `${p.backgroundColor}`};
     border-radius: ${size};
     display: none;

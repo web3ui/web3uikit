@@ -37,10 +37,23 @@ You want to get started? Follow these 3 simple steps
 -   Open a terminal window and `cd` to the project folder
 -   Run `pnpm install` you may need to install pnpm globally first
 -   Make a new branch, see BRANCH NAMING
+-   Run `pnpm build`
 -   Run `pnpm storybook` and there you go, ready to code?
 -   Not sure where to start, lets look at `NewComp` we made it specially for you
 -   Want to create a new component? run `pnpm new` to create boilerplate code.
 -   Still stuck? Checkout the onboarding video (bottom of this page)
+
+&nbsp;
+
+# Getting error while doing above project setup 
+
+-   You can download nvm to switch between the node versions. Try to be at node version 16. [`nvm install 16` then `nvm use 16` check
+    it using `node -v`, make sure it is node version 16].
+-   Facing access denied issue from nvm then open the terminal as run by administrator then try running above commands.
+-   Now follow three simple steps again -
+     1) Run `pnpm install`
+     2) Run `pnpm build`
+     3) Run `pnpm storybook` and there you go, ready to code !
 
 &nbsp;
 

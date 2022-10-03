@@ -4,83 +4,72 @@ import { ICodeAreaProps } from './types';
 
 const TextAreaStyled = styled.textarea`
   ${resetCSS};
-  ${fonts.ibmMono};
+  ${fonts.robotoMono};
   ${fonts.textSmall}
-  background: ${color.blueLight};
-  overflow-x: auto;
-  padding: 16px 8px;
-  position: relative;
-  width: 100vw;
-
+  background: ${color.white};
   color: ${color.blueDark};
   font-style: italic;
+  overflow-x: auto;
   overflow-y: hidden;
-  white-space: pre;
+  padding: 16px 8px;
+  position: relative;
   resize: none;
+  white-space: pre;
+  width: 100%;
 `;
 
-const ContentStyled = styled.div`
-  display: flex;
+const ContentStyled = styled.div<
+    Pick<ICodeAreaProps, 'maxHeight' | 'maxWidth' | 'isMaximized'>
+>`
+    ${(p) => p.maxHeight && !p.isMaximized && `max-height:${p.maxHeight}`};
+    display: flex;
+    overflow: auto;
 `;
 
 const DivStyledButtonWrap = styled.div`
-  margin: 19px;
-  position: absolute;
-  right: 0;
-`;
-
-const SideStyled = styled.div`
-  background: ${color.blueLight2};
-  overflow: hidden;
-  padding: 16px 8px 0px 23px;
+    margin: 10px 19px 0px 0px;
+    position: absolute;
+    right: 0;
 `;
 
 const StyledUl = styled.ul`
-  ${resetCSS};
-  list-style: none;
-  text-align: right;
+    ${resetCSS};
+    background-color: ${color.blueLight5};
+    list-style: none;
+    padding: 16px 8px 16px 16px;
+    text-align: right;
 `;
 
 const WrapperStyled = styled.div`
-  border-radius: 16px;
-  border: 2px solid ${color.paleBlue2};
-  display: flex;
-  max-height: 100%;
-  max-width: fit-content;
-  overflow: hidden;
-  position: relative;
-  flex-direction: column;
+    border-radius: 16px;
+    border: 2px solid ${color.paleBlue2};
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    overflow: auto;
+    position: relative;
 `;
 
-const notExpanded = css`
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
-  box-shadow: 0px 8px 5px -2px ${color.blueSky};
-  overflow: hidden;
-`;
-
-const WidthWrapperStyled = styled.div<Pick<ICodeAreaProps, 'maxHeight' | 'maxWidth' | 'isMaximized'>>`
-  border-bottom: 2px solid ${color.paleBlue2};
-  max-height: ${(p) => p.maxHeight};
-  max-width: ${(p) => p.maxWidth};
-
-  ${(p) => p.maxHeight && !p.isMaximized && notExpanded};
+const WidthWrapperStyled = styled.div<
+    Pick<ICodeAreaProps, 'maxHeight' | 'maxWidth'>
+>`
+    max-height: ${(p) => p.maxHeight};
+    max-width: ${(p) => p.maxWidth};
 `;
 
 const HeaderStyled = styled.div`
-  padding: 8px 16px;
-  border-bottom: 1px solid ${color.paleBlue2};
+    border-bottom: 1px solid ${color.paleBlue2};
+    padding: 8px 16px;
 `;
 
 const CodeAreaStyles = {
-  WidthWrapperStyled,
-  SideStyled,
-  StyledUl,
-  TextAreaStyled,
-  WrapperStyled,
-  ContentStyled,
-  HeaderStyled,
-  DivStyledButtonWrap
+    ContentStyled,
+    DivStyledButtonWrap,
+    HeaderStyled,
+    StyledUl,
+    TextAreaStyled,
+    WidthWrapperStyled,
+    WrapperStyled,
 };
 
 export default CodeAreaStyles;

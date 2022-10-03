@@ -11,6 +11,7 @@ const color = {
     blueLight2: '#E5EDFF',
     blueLight3: '#E6EDFF',
     blueLight4: '#57A5FF',
+    blueLight5: '#DCEEFE',
     blueSky: '#9ECCEA',
     blueSkyDark: '#51A5DA',
     blueSkyLight: '#E8EAED',

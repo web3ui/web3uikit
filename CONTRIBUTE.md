@@ -50,7 +50,6 @@ You want to get started? Follow these 3 simple steps
 -   You can download nvm to switch between the node versions. Try to be at node version 16. [`nvm install 16` then `nvm use 16` check
     it using `node -v`, make sure it is node version 16].
 -   Facing access denied issue from nvm then open the terminal as run by administrator then try running above commands.
--   Now follow those three simple steps again
 
 &nbsp;
 

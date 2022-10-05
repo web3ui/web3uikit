@@ -131,6 +131,11 @@ const ibmMono = css`
     font-size: 14px;
 `;
 
+const robotoMono = css`
+    font-family: 'Roboto Mono', IBM Plex Mono, 'Lucida Console', monospace;
+    font-size: 14px;
+`;
+
 const text = css`
     -webkit-font-smoothing: antialiased;
     color: ${color.grey};
@@ -188,6 +193,7 @@ const fonts = {
     semiBold,
     textBold500,
     openSans,
+    robotoMono,
 };
 
 export default fonts;

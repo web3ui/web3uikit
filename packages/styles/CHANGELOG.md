@@ -1,5 +1,11 @@
 # @web3uikit/styles
 
+## 0.1.13
+
+### Patch Changes
+
+-   [#816](https://github.com/web3ui/web3uikit/pull/816) [`ef3600a04`](https://github.com/web3ui/web3uikit/commit/ef3600a04a888e081e0e05697e77620eaf3cd4b6) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Code Area styles updated
+
 ## 0.1.6
 
 ### Patch Changes

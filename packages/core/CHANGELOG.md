@@ -1,5 +1,14 @@
 # @web3uikit/core
 
+## 0.1.13
+
+### Patch Changes
+
+-   [#816](https://github.com/web3ui/web3uikit/pull/816) [`ef3600a04`](https://github.com/web3ui/web3uikit/commit/ef3600a04a888e081e0e05697e77620eaf3cd4b6) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Code Area styles updated
+
+-   Updated dependencies [[`ef3600a04`](https://github.com/web3ui/web3uikit/commit/ef3600a04a888e081e0e05697e77620eaf3cd4b6)]:
+    -   @web3uikit/styles@0.1.13
+
 ## 0.1.12
 
 ### Patch Changes

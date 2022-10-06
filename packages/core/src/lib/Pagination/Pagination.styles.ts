@@ -5,11 +5,11 @@ import { IPaginationStyleProps } from './types';
 const DivStyledPagination = styled.div`
     ${resetCSS}
     ${fonts.text}
-    display: flex;
     align-items: center;
     color: ${color.blueDark3};
-    font-weight: 550;
+    display: flex;
     font-size: 14px;
+    font-weight: 550;
     line-height: 24px;
     :first-child {
         margin-left: 0px;
@@ -18,9 +18,9 @@ const DivStyledPagination = styled.div`
 
 const DivStyledPaginationText = styled.div<IPaginationStyleProps>`
     ${resetCSS}
+    cursor: ${(props) => (props.isActive ? 'pointer' : 'cursor')};
     font-size: 16px;
     margin: 0px 8px;
-    cursor: ${(props) => (props.isActive ? 'pointer' : 'cursor')};
     opacity: ${(props) => (props.isActive ? 1 : 0.5)};
 `;
 
@@ -33,7 +33,6 @@ const DivStyledPaginationTag = styled.div<IPaginationStyleProps>`
         ${(props) => (props.isActive ? color.paleCerulean : 'transparent')};
     cursor: ${(props) => !props.isActive && !props.isDot && 'pointer'};
     display: flex;
-
     margin: 0px 8px;
     min-height: 32px;
     min-width: 32px;

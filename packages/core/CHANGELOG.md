@@ -1,5 +1,16 @@
 # @web3uikit/core
 
+## 0.1.14
+
+### Patch Changes
+
+-   [#820](https://github.com/web3ui/web3uikit/pull/820) [`139333b0e`](https://github.com/web3ui/web3uikit/commit/139333b0ee5bda331be400458c74cf09922fd125) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - [Code Area]: Fix Component hidden on Maximized state
+
+*   [#822](https://github.com/web3ui/web3uikit/pull/822) [`8f4fa610c`](https://github.com/web3ui/web3uikit/commit/8f4fa610c00a7705c8f532e7584be5ed1cd092fb) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - [Feat]: Pagination component
+
+*   Updated dependencies [[`8f4fa610c`](https://github.com/web3ui/web3uikit/commit/8f4fa610c00a7705c8f532e7584be5ed1cd092fb)]:
+    -   @web3uikit/styles@0.1.14
+
 ## 0.1.13
 
 ### Patch Changes

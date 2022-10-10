@@ -4,7 +4,7 @@ import { Typography } from '../Typography';
 import CodeAreaStyles from './CodeArea.styles';
 import { ILineNumbersProps } from './types';
 
-const { StyledUl } = CodeAreaStyles;
+const { DivStyledSideNumber, StyledUl } = CodeAreaStyles;
 
 const LineNumbers: FC<ILineNumbersProps> = ({ currentValue }) => {
     const rowNumbers = useMemo(() => {
@@ -28,11 +28,11 @@ const LineNumbers: FC<ILineNumbersProps> = ({ currentValue }) => {
     }, [currentValue]);
 
     return (
-        <div>
+        <DivStyledSideNumber>
             <StyledUl data-testid="test-codearea-linenumbers">
                 {rowNumbers}
             </StyledUl>
-        </div>
+        </DivStyledSideNumber>
     );
 };
 

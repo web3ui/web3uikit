@@ -51,9 +51,9 @@ const WrapperStyled = styled.div`
 `;
 
 const WidthWrapperStyled = styled.div<
-    Pick<ICodeAreaProps, 'maxHeight' | 'maxWidth'>
+    Pick<ICodeAreaProps, 'maxHeight' | 'maxWidth' | 'isMaximized'>
 >`
-    max-height: ${(p) => p.maxHeight};
+    ${(p) => p.maxHeight && !p.isMaximized && `max-height:${p.maxHeight}`};
     max-width: ${(p) => p.maxWidth};
 `;
 
@@ -62,9 +62,14 @@ const HeaderStyled = styled.div`
     padding: 8px 16px;
 `;
 
+const DivStyledSideNumber = styled.div`
+    background-color: ${color.blueLight5};
+`;
+
 const CodeAreaStyles = {
     ContentStyled,
     DivStyledButtonWrap,
+    DivStyledSideNumber,
     HeaderStyled,
     StyledUl,
     TextAreaStyled,

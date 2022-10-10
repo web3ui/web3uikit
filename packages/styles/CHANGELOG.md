@@ -1,5 +1,11 @@
 # @web3uikit/styles
 
+## 0.1.14
+
+### Patch Changes
+
+-   [#822](https://github.com/web3ui/web3uikit/pull/822) [`8f4fa610c`](https://github.com/web3ui/web3uikit/commit/8f4fa610c00a7705c8f532e7584be5ed1cd092fb) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - [Feat]: Pagination component
+
 ## 0.1.13
 
 ### Patch Changes

@@ -163,7 +163,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                     <SearchIconStyled
                         className="w3uik__search-icon"
                         fontSize={22}
-                        fill={color.blue}
+                        fill={color.navy40}
                     />
                 )}
                 <ListStyledDropdown ref={listRef} height={menuHeight}>

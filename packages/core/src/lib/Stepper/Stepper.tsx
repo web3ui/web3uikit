@@ -78,7 +78,7 @@ const Stepper: React.FC<StepperProps> = ({
                 variant="h2"
             />
 
-            <Loading size={20} spinnerColor={color.green} />
+            <Loading size={20} spinnerColor={color.mint40} />
         </DivStyled>
     );
 
@@ -126,7 +126,7 @@ const Stepper: React.FC<StepperProps> = ({
                             <Check
                                 title="check icon"
                                 titleId="stepper check icon"
-                                fill={color.green}
+                                fill={color.mint40}
                                 fontSize={15}
                             />
                         )}

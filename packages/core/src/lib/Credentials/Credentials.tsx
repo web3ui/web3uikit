@@ -23,7 +23,7 @@ const Credentials: FC<ICredentialsProps> = ({
     icon,
     isHidden = false,
     text,
-    textColor = color.blueDark,
+    textColor = color.blue70,
     title,
     titleColor,
     width = 'auto',
@@ -60,7 +60,7 @@ const Credentials: FC<ICredentialsProps> = ({
                     isMultiline={isMultiline}
                 >
                     <Typography
-                        color={isValueHidden ? color.grey : textColor}
+                        color={isValueHidden ? color.blueGray50 : textColor}
                         data-testid="test-cred-new-comp-heading"
                         monospace
                         variant={isValueHidden ? 'caption14' : 'body16'}

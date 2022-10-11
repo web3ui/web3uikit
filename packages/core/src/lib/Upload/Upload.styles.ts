@@ -7,7 +7,7 @@ const DivStyled = styled.div<DivStyledProps>`
     align-items: center;
     background: ${color.white};
     border-radius: 13px;
-    border: 2px dashed ${color.blueSky};
+    border: 2px dashed ${color.navy30};
     cursor: pointer;
     display: flex;
     flex-direction: column;

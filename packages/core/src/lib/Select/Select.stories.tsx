@@ -22,7 +22,7 @@ const smallOptionsList = [
     {
         label: 'Discord',
         id: 'discord',
-        prefix: <Discord fill={color.grey} />,
+        prefix: <Discord fill={color.blueGray50} />,
     },
     {
         label: 'Emoji',
@@ -37,7 +37,7 @@ const smallOptionsList = [
     {
         label: 'dApp',
         id: 'dapp',
-        prefix: <Server fill={color.grey} />,
+        prefix: <Server fill={color.blueGray50} />,
     },
 ];
 
@@ -45,7 +45,7 @@ const optionsList = [
     {
         label: 'Discord',
         id: 'discord',
-        prefix: <Discord fill={color.grey} />,
+        prefix: <Discord fill={color.blueGray50} />,
     },
     {
         label: 'Emoji',
@@ -60,32 +60,32 @@ const optionsList = [
     {
         label: 'dApp',
         id: 'dapp',
-        prefix: <Server fill={color.grey} />,
+        prefix: <Server fill={color.blueGray50} />,
     },
     {
         label: 'Discord',
         id: 'discord1',
-        prefix: <Discord fill={color.grey} />,
+        prefix: <Discord fill={color.blueGray50} />,
     },
     {
         label: 'Discord',
         id: 'discord2',
-        prefix: <Discord fill={color.grey} />,
+        prefix: <Discord fill={color.blueGray50} />,
     },
     {
         label: 'Discord',
         id: 'discord3',
-        prefix: <Discord fill={color.grey} />,
+        prefix: <Discord fill={color.blueGray50} />,
     },
     {
         label: 'Discord',
         id: 'discord4',
-        prefix: <Discord fill={color.grey} />,
+        prefix: <Discord fill={color.blueGray50} />,
     },
     {
         label: 'Discord',
         id: 'discord5',
-        prefix: <Discord fill={color.grey} />,
+        prefix: <Discord fill={color.blueGray50} />,
     },
 ];
 
@@ -156,21 +156,21 @@ PrefixIcon.args = {
         {
             label: 'Testnet',
             id: 'Testnet',
-            prefix: <Server fill={color.grey} />,
+            prefix: <Server fill={color.blueGray50} />,
         },
         {
             label: 'Mainnet',
             id: 'Mainnet',
-            prefix: <Testnet fill={color.grey} />,
+            prefix: <Testnet fill={color.blueGray50} />,
         },
         {
             label: 'Local Dev Chain',
             id: 'LocalDevChain',
-            prefix: <Btc fill={color.grey} />,
+            prefix: <Btc fill={color.blueGray50} />,
         },
     ],
     onChange: onTestOptionChange,
-    prefixIcon: <Server fill={color.grey} fontSize={20} />,
+    prefixIcon: <Server fill={color.blueGray50} fontSize={20} />,
     width: '100%',
     label: 'Select Server',
 };

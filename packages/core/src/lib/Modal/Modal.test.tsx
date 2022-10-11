@@ -18,7 +18,7 @@ const args: ModalProps = {
                 flexDirection: 'column',
             }}
         >
-            <Cloud fontSize={64} fill={color.blueDark2} />
+            <Cloud fontSize={64} fill={color.blue40} />
             <p>Proceed uploading?</p>
         </div>,
     ],

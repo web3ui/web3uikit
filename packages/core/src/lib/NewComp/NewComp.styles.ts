@@ -15,10 +15,10 @@ type TStyleProps = Pick<NewCompProps, 'state' | 'hasUnderline' | 'bgColor'>;
 // CSS Props should be sorted alphabetically
 // //////////////////
 const greenColor = css`
-  color: ${color.green};
+    color: ${color.mint40};
 `;
 const redColor = css`
-  color: ${color.red};
+    color: ${color.red40};
 `;
 
 // //////////////////
@@ -26,42 +26,42 @@ const redColor = css`
 // CSS Props should be sorted alphabetically
 // //////////////////
 const SectionStyled = styled.section<TStyleProps>`
-  border-bottom: 5px solid ${color.green};
-  border-top: 5px solid ${color.yellow};
-  padding: 12px 24px;
-  background-color: ${(p) => p.bgColor && color[p.bgColor]};
+    border-bottom: 5px solid ${color.mint40};
+    border-top: 5px solid ${color.yellow50};
+    padding: 12px 24px;
+    background-color: ${(p) => p.bgColor && color[p.bgColor]};
 `;
 
 const SpanStyled = styled.span`
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 
-  svg {
-    margin-right: 8px;
-  }
+    svg {
+        margin-right: 8px;
+    }
 `;
 
 const TitleStyled = styled.h1<TStyleProps>`
-  ${resetCSS};
-  ${fonts.heading};
-  ${fonts.h1};
-  margin-bottom: 12px;
+    ${resetCSS};
+    ${fonts.heading};
+    ${fonts.h1};
+    margin-bottom: 12px;
 `;
 
 const HeadingStyled = styled.h2<TStyleProps>`
-  ${resetCSS};
-  ${fonts.heading};
-  ${fonts.h2};
-  margin-bottom: 12px;
-  ${(p) => (p.state === 'greenLight' ? greenColor : redColor)};
+    ${resetCSS};
+    ${fonts.heading};
+    ${fonts.h2};
+    margin-bottom: 12px;
+    ${(p) => (p.state === 'greenLight' ? greenColor : redColor)};
 `;
 
 const TextStyled = styled.p<TStyleProps>`
-  ${resetCSS};
-  ${fonts.heading};
-  ${fonts.text};
-  margin-top: 12px;
-  text-decoration: ${(p) => (p.hasUnderline ? 'underline' : 'none')}; ;
+    ${resetCSS};
+    ${fonts.heading};
+    ${fonts.text};
+    margin-top: 12px;
+    text-decoration: ${(p) => (p.hasUnderline ? 'underline' : 'none')}; ;
 `;
 
 // CSS ORDERING
@@ -74,11 +74,11 @@ const TextStyled = styled.p<TStyleProps>`
 // each should be sorted alphabetically as best as possible
 
 export default {
-  HeadingStyled,
-  SectionStyled,
-  SpanStyled,
-  TextStyled,
-  TitleStyled,
-  greenColor,
-  redColor
+    HeadingStyled,
+    SectionStyled,
+    SpanStyled,
+    TextStyled,
+    TitleStyled,
+    greenColor,
+    redColor,
 };

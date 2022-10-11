@@ -59,7 +59,7 @@ const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
                                 Drag &amp; Drop File <br /> or
                             </Typography>
                             <Typography
-                                color={color.blue}
+                                color={color.navy40}
                                 variant="body16"
                                 weight="500"
                             >
@@ -71,11 +71,14 @@ const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
                         <>
                             <Image
                                 data-testid="test-upload-icon"
-                                fill={color.blueSky}
+                                fill={color.navy30}
                                 fontSize={48}
                             />
                             <TextContentStyled>
-                                <Typography color={color.blue} variant="body16">
+                                <Typography
+                                    color={color.navy40}
+                                    variant="body16"
+                                >
                                     Click or Drag File to Upload
                                 </Typography>
                                 <Typography variant="caption12" weight="400">
@@ -95,7 +98,7 @@ const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
                     <IconDivStyled onClick={() => setFileSelected(null)}>
                         <Bin
                             data-testid="test-upload-icon"
-                            fill={color.blue}
+                            fill={color.navy40}
                             fontSize={24}
                         />
                     </IconDivStyled>

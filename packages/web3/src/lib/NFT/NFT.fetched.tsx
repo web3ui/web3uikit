@@ -34,7 +34,7 @@ const FetchedNFT: React.FC<{
                 <Button
                     icon={<Info fontSize={20} />}
                     isTransparent
-                    iconColor={color.grey}
+                    iconColor={color.blueGray50}
                     iconLayout="icon-only"
                     onClick={() => setShowModal(true)}
                 />

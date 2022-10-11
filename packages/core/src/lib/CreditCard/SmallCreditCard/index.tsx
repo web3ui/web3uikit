@@ -7,12 +7,8 @@ import { Logo } from '../../Logo';
 import { Typography } from '../../Typography';
 import { color } from '@web3uikit/styles';
 
-const {
-    DivStyledContent,
-    DivStyledWrapper,
-    DivStyledIcon,
-    SpanStyledValue,
-} = styles;
+const { DivStyledContent, DivStyledWrapper, DivStyledIcon, SpanStyledValue } =
+    styles;
 
 const SmallCreditCard: React.FC<CreditCardProps> = ({
     brand,
@@ -62,7 +58,7 @@ const SmallCreditCard: React.FC<CreditCardProps> = ({
                     icon={
                         <Bin
                             fontSize={22}
-                            fill={isExpired ? color.redDark : color.red}
+                            fill={isExpired ? color.red60 : color.red40}
                         />
                     }
                     iconLayout="icon-only"

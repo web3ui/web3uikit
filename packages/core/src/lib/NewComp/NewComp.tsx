@@ -14,13 +14,8 @@ import { NewCompProps } from './types';
 // importing CSS styles as styled components, sorted alphabetically
 import styles from './NewComp.styles';
 
-const {
-    HeadingStyled,
-    SectionStyled,
-    SpanStyled,
-    TextStyled,
-    TitleStyled,
-} = styles;
+const { HeadingStyled, SectionStyled, SpanStyled, TextStyled, TitleStyled } =
+    styles;
 
 // Normal boilerplate React functional component
 const NewComp: React.FC<NewCompProps> = ({
@@ -62,13 +57,13 @@ const NewComp: React.FC<NewCompProps> = ({
                     <Checkmark
                         title="checkmark icon"
                         titleId="new-comp checkmark icon"
-                        fill={color.green}
+                        fill={color.mint40}
                     />
                 ) : (
                     <Cross
                         title="cross icon"
                         titleId="new-comp cross icon"
-                        fill={color.red}
+                        fill={color.red40}
                     />
                 )}
                 <HeadingStyled

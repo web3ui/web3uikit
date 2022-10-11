@@ -18,8 +18,8 @@ Default.args = {};
 
 export const Logout = Template.bind({});
 Logout.args = {
-    icon: <LogOut fill={color.red} />,
-    iconColor: color.red,
+    icon: <LogOut fill={color.red40} />,
+    iconColor: color.red40,
     text: 'Logout',
-    textColor: color.red,
+    textColor: color.red40,
 };

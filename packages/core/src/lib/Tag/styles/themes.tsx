@@ -20,27 +20,27 @@ const initialStyles = css`
 `;
 
 const regular = css`
-    background: ${color.blueLight};
+    background: ${color.aero10};
 `;
 
 const activeStatus = css`
-    background: ${color.greenForestLight};
-    color: ${color.green};
+    background: ${color.mint05};
+    color: ${color.mint40};
     display: flex;
 
     svg {
-        fill: ${color.green};
+        fill: ${color.mint40};
         padding-right: 5px;
     }
 `;
 
 const inactiveStatus = css`
-    background: ${color.blueLight};
+    background: ${color.aero10};
 `;
 
 const discount = css<TStyleProps>`
     align-items: center;
-    background: ${color.green};
+    background: ${color.mint40};
     border-radius: 30px;
     color: ${color.white};
     display: flex;
@@ -53,7 +53,7 @@ const discount = css<TStyleProps>`
 
 const chips = css<TStyleProps>`
     align-items: center;
-    background: ${color.green};
+    background: ${color.mint40};
     border-left: 5px solid;
     border-radius: 5px;
     color: ${color.white};

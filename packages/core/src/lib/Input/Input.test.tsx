@@ -136,9 +136,7 @@ describe('Input - Text', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(
-            color.greyLight,
-        );
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(color.gray30);
     });
 
     it('renders label text', () => {
@@ -207,7 +205,7 @@ describe('Input - Text Error', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(color.red);
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(color.red40);
     });
 
     it('renders label text', () => {
@@ -276,7 +274,7 @@ describe('Input - Text Confirmed', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(color.green);
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(color.mint40);
     });
 
     it('renders label text', () => {
@@ -346,9 +344,7 @@ describe('Input - Number', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(
-            color.greyLight,
-        );
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(color.gray30);
     });
 
     it('renders label text', () => {
@@ -427,9 +423,7 @@ describe('Input - Password', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(
-            color.greyLight,
-        );
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(color.gray30);
     });
 
     it('renders label text', () => {
@@ -499,9 +493,7 @@ describe('Input - Email', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(
-            color.greyLight,
-        );
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(color.gray30);
     });
 
     it('renders label text', () => {
@@ -571,9 +563,7 @@ describe('Input - Tel', () => {
             `[data-testid="${testDivId}"]`,
         );
         const styles = input && getComputedStyle(input);
-        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(
-            color.greyLight,
-        );
+        expect(rgbToHex(styles?.outlineColor).toUpperCase()).toBe(color.gray30);
     });
 
     it('renders label text', () => {

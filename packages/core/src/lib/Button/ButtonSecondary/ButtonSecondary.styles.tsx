@@ -3,20 +3,20 @@ import ButtonBase from '../ButtonBase/ButtonBase';
 import { color } from '@web3uikit/styles';
 
 const ButtonSecondaryStyled = styled(ButtonBase)`
-    background-color: ${color.blueLight};
-    border-color: ${color.blueLight};
-    color: ${color.blue};
+    background-color: ${color.aero10};
+    border-color: ${color.aero10};
+    color: ${color.navy40};
 
     :active {
-        border-color: ${color.blue};
+        border-color: ${color.navy40};
     }
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
+        box-shadow: 0px 0px 0px 2px ${color.navy30};
     }
 
     svg {
-        fill: ${color.blue};
+        fill: ${color.navy40};
     }
 `;
 

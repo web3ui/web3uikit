@@ -3,8 +3,8 @@ import ButtonBase from '../ButtonBase/ButtonBase';
 import { color } from '@web3uikit/styles';
 
 const ButtonPrimaryStyled = styled(ButtonBase)`
-    background-color: ${color.green};
-    border-color: ${color.greenLight};
+    background-color: ${color.mint40};
+    border-color: ${color.mint20};
     color: ${color.white};
 
     :hover {
@@ -17,7 +17,7 @@ const ButtonPrimaryStyled = styled(ButtonBase)`
     }
 
     :active {
-        border-color: ${color.greenLight};
+        border-color: ${color.mint20};
         background: linear-gradient(
                 83.64deg,
                 #aadcd6 -9.46%,
@@ -30,7 +30,7 @@ const ButtonPrimaryStyled = styled(ButtonBase)`
     }
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.blue};
+        box-shadow: 0px 0px 0px 2px ${color.navy40};
     }
 
     svg {

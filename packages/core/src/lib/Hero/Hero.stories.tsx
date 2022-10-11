@@ -19,7 +19,7 @@ DemoWithImage.args = {
     rounded: '20px',
     align: 'right',
     textColor: '#fff',
-    backgroundColor: color.blueLight4,
+    backgroundColor: color.blue40,
     height: '200px',
     padding: '40px',
     children: (

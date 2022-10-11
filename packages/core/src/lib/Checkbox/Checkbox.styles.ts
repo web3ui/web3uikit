@@ -15,7 +15,7 @@ const inputStyles = css`
 const labelStyles = css`
     ${resetCSS};
     ${fonts.text};
-    color: ${color.blueDark};
+    color: ${color.blue70};
     cursor: pointer;
     display: block;
     font-size: 18px;
@@ -48,8 +48,8 @@ const boxStyles = css`
     }
 
     &:before {
-        background-color: ${color.blueLight};
-        border: 1px solid ${color.blueSky};
+        background-color: ${color.aero10};
+        border: 1px solid ${color.navy30};
         z-index: 0;
     }
 
@@ -78,8 +78,8 @@ const boxStyles = css`
 
 const boxCheckedStyles = css`
     &:before {
-        background-color: ${color.green};
-        border-color: ${color.greenLight};
+        background-color: ${color.mint40};
+        border-color: ${color.mint20};
     }
     .after {
         opacity: 1;
@@ -90,7 +90,7 @@ const switchStyles = css`
     padding-left: 48px;
 
     &:before {
-        background-color: ${color.greyLight};
+        background-color: ${color.gray30};
         border-radius: 7px;
         content: '';
         display: block;
@@ -104,9 +104,9 @@ const switchStyles = css`
     }
 
     &:after {
-        background-color: ${color.blueLight};
+        background-color: ${color.aero10};
         border-radius: 50%;
-        border: 1px solid ${color.blue};
+        border: 1px solid ${color.navy40};
         content: '';
         display: block;
         height: 20px;
@@ -132,12 +132,12 @@ const switchStyles = css`
 
 const switchOnStyles = css`
     &:before {
-        background-color: ${color.green};
+        background-color: ${color.mint40};
     }
 
     &:after {
-        background-color: ${color.green};
-        border: 1px solid ${color.green};
+        background-color: ${color.mint40};
+        border: 1px solid ${color.mint40};
         left: 18px;
     }
 `;

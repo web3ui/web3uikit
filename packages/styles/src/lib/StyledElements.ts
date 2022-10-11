@@ -31,7 +31,7 @@ export const PStyled = styled.p`
 
     span {
         ${fonts.textBold};
-        color: ${color.blue};
+        color: ${color.navy40};
     }
 
     &:last-of-type {

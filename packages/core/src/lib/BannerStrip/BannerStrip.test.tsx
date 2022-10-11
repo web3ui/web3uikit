@@ -20,7 +20,7 @@ test('Renders Standard', () => {
     const styles = element && getComputedStyle(element);
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(backgroundColorHex).toBe(color.blue);
+    expect(backgroundColorHex).toBe(color.navy40);
 });
 
 test('Renders Standard with Button', () => {
@@ -34,7 +34,7 @@ test('Renders Standard with Button', () => {
     const styles = element && getComputedStyle(element);
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(backgroundColorHex).toBe(color.blue);
+    expect(backgroundColorHex).toBe(color.navy40);
 });
 
 test('Renders Warning', () => {
@@ -48,7 +48,7 @@ test('Renders Warning', () => {
     const styles = element && getComputedStyle(element);
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(backgroundColorHex).toBe(color.yellow);
+    expect(backgroundColorHex).toBe(color.yellow50);
 });
 
 test('Renders Error', () => {
@@ -62,7 +62,7 @@ test('Renders Error', () => {
     const styles = element && getComputedStyle(element);
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(backgroundColorHex).toBe(color.red);
+    expect(backgroundColorHex).toBe(color.red40);
 });
 
 test('Renders Success', () => {
@@ -76,5 +76,5 @@ test('Renders Success', () => {
     const styles = element && getComputedStyle(element);
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(backgroundColorHex).toBe(color.green);
+    expect(backgroundColorHex).toBe(color.mint40);
 });

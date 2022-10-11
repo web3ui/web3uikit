@@ -7,13 +7,13 @@ type TStyleProps = Pick<BadgeProps, 'state'>;
 const getBackgroundColor = (type: colorState) => {
     switch (type) {
         case 'danger':
-            return color.red;
+            return color.red40;
         case 'success':
-            return color.green;
+            return color.mint40;
         case 'warning':
-            return color.yellow;
+            return color.yellow50;
         default:
-            return color.blue;
+            return color.navy40;
     }
 };
 

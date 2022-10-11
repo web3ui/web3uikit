@@ -13,7 +13,7 @@ const DivStyledWrapper = styled.div`
     line-height: 1;
     margin-bottom: 5px;
     &[aria-expanded='true'] {
-        border-color: ${color.blueSky};
+        border-color: ${color.navy30};
         & .w3uik__dropdown-wrapper {
             display: block;
         }
@@ -38,7 +38,7 @@ const DivStyledSelectWrapper = styled.div<{ height: string }>`
 const LabelStyled = styled.label`
     ${resetCSS};
     background-color: ${color.white};
-    color: ${color.grey};
+    color: ${color.blueGray50};
     font-weight: 500;
     font-size: 14px;
     height: 24px;
@@ -51,14 +51,14 @@ const LabelStyled = styled.label`
     transition: all 0.1s ease-out;
     z-index: 10;
     &[aria-disabled='true'] {
-        color: ${color.greyLight};
+        color: ${color.gray30};
     }
 `;
 
 const ButtonStyledSelect = styled.button`
     appearance: none;
     background: none;
-    border: 1px solid ${color.greyLight};
+    border: 1px solid ${color.gray30};
     border-radius: 16px;
     box-sizing: border-box;
     color: black;
@@ -76,21 +76,21 @@ const ButtonStyledSelect = styled.button`
 
     &[aria-expanded='true'],
     &:focus:enabled {
-        border-color: ${color.blueSky};
+        border-color: ${color.navy30};
         outline: none;
         /* On Tab - set box shadow */
-        -webkit-box-shadow: 0px 0px 0px 2px ${color.blueSky};
-        -moz-box-shadow: 0px 0px 0px 2px ${color.blueSky};
-        box-shadow: 0px 0px 0px 2px ${color.blueSky};
+        -webkit-box-shadow: 0px 0px 0px 2px ${color.navy30};
+        -moz-box-shadow: 0px 0px 0px 2px ${color.navy30};
+        box-shadow: 0px 0px 0px 2px ${color.navy30};
         label {
-            color: ${color.blue};
+            color: ${color.navy40};
         }
     }
 
     &:hover:enabled {
-        border-color: ${color.blueSky};
+        border-color: ${color.navy30};
         label {
-            color: ${color.blue};
+            color: ${color.navy40};
         }
     }
 
@@ -170,23 +170,23 @@ const MenuStyledWrapper = styled.menu`
 `;
 
 const DivStyledDropdown = styled.div`
-    background: ${color.blueLight};
+    background: ${color.aero10};
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 20;
-    border: 2px solid ${color.blueSky};
+    border: 2px solid ${color.navy30};
     border-radius: 16px;
 `;
 
 const InputStyledSearch = styled.input`
-    background-color: ${color.blueLight};
+    background-color: ${color.aero10};
     appearance: none;
     border: 0;
-    border-bottom: 1px solid ${color.paleBlue2};
+    border-bottom: 1px solid ${color.navy20};
     border-radius: 16px 16px 0 0;
-    color: ${color.blueDark};
+    color: ${color.blue70};
     display: block;
     font-family: inherit;
     font-size: 1em;
@@ -233,7 +233,7 @@ const ListStyledDropdown = styled.ul<{ height: string }>`
     }
     &::-webkit-scrollbar-thumb {
         background-clip: padding-box;
-        background-color: ${color.greyIcons};
+        background-color: ${color.gray40};
         border-radius: 30px;
         border: 4px solid transparent;
     }
@@ -292,7 +292,7 @@ const SpanStyledItemSelected = styled.span`
     overflow: hidden;
     white-space: pre;
     text-overflow: ellipsis;
-    color: ${color.grey};
+    color: ${color.blueGray50};
 `;
 
 const ButtonStyledListItem = styled.button`
@@ -300,7 +300,7 @@ const ButtonStyledListItem = styled.button`
     appearance: none;
     background: none;
     border: none;
-    color: ${color.blueDark};
+    color: ${color.blue70};
     display: flex;
     padding-bottom: 0.375em;
     padding-left: 0.5em;
@@ -321,7 +321,7 @@ const ButtonStyledListItem = styled.button`
 
     // Option Selected Styles
     &[aria-selected='true'] {
-        color: ${color.blueDark2};
+        color: ${color.blue40};
         &::before {
             background-size: contain;
             content: '';
@@ -329,17 +329,17 @@ const ButtonStyledListItem = styled.button`
     }
 
     &:hover {
-        background: ${color.beauBlue};
+        background: ${color.navy20};
     }
 
     &[data-highlighted='true'],
     &:focus {
-        background: ${color.beauBlue};
+        background: ${color.navy20};
         outline: none;
     }
 
     &[disabled] {
-        color: ${color.grey};
+        color: ${color.blueGray50};
         cursor: not-allowed;
     }
 `;
@@ -347,13 +347,13 @@ const ButtonStyledListItem = styled.button`
 
 const SpanStyledNoResults = styled.span`
     display: block;
-    color: ${color.grey};
+    color: ${color.blueGray50};
     padding: 1em;
     text-align: center;
 `;
 
 const DivStyledDesc = styled.div`
-    color: ${color.grey};
+    color: ${color.blueGray50};
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -369,7 +369,7 @@ const DivStyledDesc = styled.div`
         white-space: normal;
     }
     &[aria-invalid='true'] {
-        color: ${color.red};
+        color: ${color.red40};
     }
 `;
 
@@ -411,7 +411,7 @@ const TriangleUpIconStyled = styled(TriangleUp)`
 `;
 
 const CheckmarkIconStyled = styled(Checkmark)`
-    color: ${color.green};
+    color: ${color.mint40};
     margin-left: auto;
     flex-shrink: 0;
     display: none;

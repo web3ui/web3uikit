@@ -1,5 +1,45 @@
 # @web3uikit/core
 
+## 0.1.14
+
+### Patch Changes
+
+-   [#820](https://github.com/web3ui/web3uikit/pull/820) [`139333b0e`](https://github.com/web3ui/web3uikit/commit/139333b0ee5bda331be400458c74cf09922fd125) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - [Code Area]: Fix Component hidden on Maximized state
+
+*   [#822](https://github.com/web3ui/web3uikit/pull/822) [`8f4fa610c`](https://github.com/web3ui/web3uikit/commit/8f4fa610c00a7705c8f532e7584be5ed1cd092fb) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - [Feat]: Pagination component
+
+*   Updated dependencies [[`8f4fa610c`](https://github.com/web3ui/web3uikit/commit/8f4fa610c00a7705c8f532e7584be5ed1cd092fb)]:
+    -   @web3uikit/styles@0.1.14
+
+## 0.1.13
+
+### Patch Changes
+
+-   [#816](https://github.com/web3ui/web3uikit/pull/816) [`ef3600a04`](https://github.com/web3ui/web3uikit/commit/ef3600a04a888e081e0e05697e77620eaf3cd4b6) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Code Area styles updated
+
+-   Updated dependencies [[`ef3600a04`](https://github.com/web3ui/web3uikit/commit/ef3600a04a888e081e0e05697e77620eaf3cd4b6)]:
+    -   @web3uikit/styles@0.1.13
+
+## 0.1.12
+
+### Patch Changes
+
+-   [#813](https://github.com/web3ui/web3uikit/pull/813) [`683b7cdc0`](https://github.com/web3ui/web3uikit/commit/683b7cdc0609d5c5f7aae9103990d19d70d015a8) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Fix popover component z index, table component custom styles, add pause icon
+
+-   Updated dependencies [[`683b7cdc0`](https://github.com/web3ui/web3uikit/commit/683b7cdc0609d5c5f7aae9103990d19d70d015a8)]:
+    -   @web3uikit/icons@0.1.12
+
+## 0.1.11
+
+### Patch Changes
+
+-   [#789](https://github.com/web3ui/web3uikit/pull/789) [`0a1aa35e9`](https://github.com/web3ui/web3uikit/commit/0a1aa35e9ca40077b6ff3beeaa85c466eb43f0b1) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add new small credit card and new credit card icon
+
+*   [#806](https://github.com/web3ui/web3uikit/pull/806) [`276c6e564`](https://github.com/web3ui/web3uikit/commit/276c6e56436060c0c52f9c3caed0ca6e67498f6e) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - [Button]: fix unique key warning in react
+
+*   Updated dependencies [[`0a1aa35e9`](https://github.com/web3ui/web3uikit/commit/0a1aa35e9ca40077b6ff3beeaa85c466eb43f0b1)]:
+    -   @web3uikit/icons@0.1.11
+
 ## 0.1.10
 
 ### Patch Changes

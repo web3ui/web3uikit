@@ -10,9 +10,11 @@ import {
     syncData,
     pageSize,
     maxPages,
+    customTableMockData,
 } from './MockData';
 import { Loading } from '../Loading';
 import { color } from '@web3uikit/styles';
+import styled from 'styled-components';
 export default {
     title: '3.Layout/Table',
     component: Table,
@@ -143,3 +145,35 @@ SyncTableExample.args = {
     alignCellItems: 'center',
     isColumnSortable: [false, true, true, false],
 };
+
+export const CustomTable: ComponentStory<typeof Table> = (args) => (
+    <DivStyled>
+        <Table {...args} />
+    </DivStyled>
+);
+
+CustomTable.args = {
+    columnsConfig,
+    header,
+    pageSize: 1,
+    maxPages,
+    isColumnSortable: [false, true, false, false],
+    data: customTableMockData,
+    columnGapSize: 0,
+    tableBackgroundColor: 'lightblue',
+    isScrollableOnOverflow: false,
+};
+
+const DivStyled = styled.div`
+    height: 350px;
+    overflow-x: auto;
+    div[role='table-header'] {
+        &:nth-child(1) {
+            border-top-left-radius: 19px;
+        }
+        &:nth-child(5) {
+            border-top-right-radius: 19px;
+        }
+        background-color: white;
+    }
+`;

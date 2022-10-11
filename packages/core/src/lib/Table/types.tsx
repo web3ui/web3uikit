@@ -84,4 +84,19 @@ export interface ITableProps {
      * For Date Value, format should be DD-MM-YYYY
      */
     isColumnSortable?: boolean[];
+
+    /**
+     * This stops table from overflow on small screen and make it scrollable
+     */
+    isScrollableOnOverflow?: boolean;
+
+    /**
+     * gap between each column
+     */
+    columnGapSize?: number;
+
+    /**
+     * background color of the table; remember to use 0px gap size for proper effect
+     */
+    tableBackgroundColor?: string;
 }

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { TableProps } from '.';
+import styled, { css } from 'styled-components';
+import { ITableProps } from '.';
 import { color, fonts, resetCSS } from '@web3uikit/styles';
 
 export const TableParent = styled.div`
@@ -59,7 +59,7 @@ export const PaginationText = styled.div<PaginationTextProps>`
 `;
 
 export const DivTableCell = styled.div<
-    Pick<TableProps, 'alignCellItems' | 'justifyCellItems'>
+    Pick<ITableProps, 'alignCellItems' | 'justifyCellItems'>
 >`
     align-items: ${(props) => props.alignCellItems};
     justify-content: ${(props) => props.justifyCellItems};
@@ -69,18 +69,19 @@ export const DivTableCell = styled.div<
 
 export const TableGrid = styled.div.attrs((props: any) => ({
     columns: props.columns,
+    columnGapSize: props.columnGapSize,
+    tableBackgroundColor: props.tableBackgroundColor,
 }))`
     ${resetCSS}
     ${fonts.text}
     padding-bottom: 11px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
-    background-color: white;
+    background-color: ${(props) => props.tableBackgroundColor ?? 'white'};
     display: grid;
     grid-template-columns: ${(props) => props.columns};
     // row-gap: 22px;
-    column-gap: 11px;
-    overflow: hidden;
+    column-gap: ${(props) => props.columnGapSize + 'px' ?? '11px'};
     min-height: fit-content;
     min-width: fit-content;
     & > .firstCol {
@@ -99,7 +100,9 @@ export const TableGrid = styled.div.attrs((props: any) => ({
     }
 `;
 
-export const TableGridContainer = styled.div`
+export const TableGridContainer = styled.div<{
+    isScrollableOnOverflow: boolean;
+}>`
     background: radial-gradient(
         106.45% 108.64% at 32.33% -4.84%,
         #ecf5fc 0.52%,
@@ -107,13 +110,17 @@ export const TableGridContainer = styled.div`
     );
     border-radius: 20px;
     padding: 1px;
-    position: relative;
-    overflow-x: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+    /* position: relative; */
+    ${(props) =>
+        props.isScrollableOnOverflow &&
+        css`
+            overflow-x: scroll;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        `}
 `;
 
 interface PaginationTag {
@@ -129,7 +136,7 @@ export const PaginationTag = styled.div<PaginationTag>`
     align-items: center;
     justify-content: center;
     border-color: ${(props) => props.active && color.navy40};
-    background-color: ${(props) => !props.active && '#EBEFF9'};
+    background-color: ${(props) => !props.active && color.navy10};
     cursor: ${(props) => !props.active && 'pointer'};
 `;
 

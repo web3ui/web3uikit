@@ -1,43 +1,42 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { color, fonts, resetCSS } from '@web3uikit/styles';
 import { ICodeAreaProps } from './types';
 
 const TextAreaStyled = styled.textarea`
     ${resetCSS};
-    ${fonts.ibmMono};
+    ${fonts.robotoMono};
     ${fonts.textSmall}
-    background: ${color.aero10};
-    overflow-x: auto;
-    padding: 16px 8px;
-    position: relative;
-    width: 100vw;
-
+    background: ${color.white};
     color: ${color.blue70};
     font-style: italic;
+    overflow-x: auto;
     overflow-y: hidden;
-    white-space: pre;
+    padding: 16px 8px;
+    position: relative;
     resize: none;
+    white-space: pre;
+    width: 100%;
 `;
 
-const ContentStyled = styled.div`
+const ContentStyled = styled.div<
+    Pick<ICodeAreaProps, 'maxHeight' | 'maxWidth' | 'isMaximized'>
+>`
+    ${(p) => p.maxHeight && !p.isMaximized && `max-height:${p.maxHeight}`};
     display: flex;
+    overflow: auto;
 `;
 
 const DivStyledButtonWrap = styled.div`
-    margin: 19px;
+    margin: 10px 19px 0px 0px;
     position: absolute;
     right: 0;
 `;
 
-const SideStyled = styled.div`
-    background: ${color.aero20};
-    overflow: hidden;
-    padding: 16px 8px 0px 23px;
-`;
-
 const StyledUl = styled.ul`
     ${resetCSS};
+    background-color: ${color.aero20};
     list-style: none;
+    padding: 16px 8px 16px 16px;
     text-align: right;
 `;
 
@@ -45,44 +44,37 @@ const WrapperStyled = styled.div`
     border-radius: 16px;
     border: 2px solid ${color.navy20};
     display: flex;
-    max-height: 100%;
-    max-width: fit-content;
-    overflow: hidden;
-    position: relative;
     flex-direction: column;
-`;
-
-const notExpanded = css`
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-    box-shadow: 0px 8px 5px -2px ${color.navy30};
-    overflow: hidden;
+    max-width: 100%;
+    overflow: auto;
+    position: relative;
 `;
 
 const WidthWrapperStyled = styled.div<
     Pick<ICodeAreaProps, 'maxHeight' | 'maxWidth' | 'isMaximized'>
 >`
-    border-bottom: 2px solid ${color.navy20};
-    max-height: ${(p) => p.maxHeight};
+    ${(p) => p.maxHeight && !p.isMaximized && `max-height:${p.maxHeight}`};
     max-width: ${(p) => p.maxWidth};
-
-    ${(p) => p.maxHeight && !p.isMaximized && notExpanded};
 `;
 
 const HeaderStyled = styled.div`
-    padding: 8px 16px;
     border-bottom: 1px solid ${color.navy20};
+    padding: 8px 16px;
+`;
+
+const DivStyledSideNumber = styled.div`
+    background-color: ${color.aero20};
 `;
 
 const CodeAreaStyles = {
-    WidthWrapperStyled,
-    SideStyled,
+    ContentStyled,
+    DivStyledButtonWrap,
+    DivStyledSideNumber,
+    HeaderStyled,
     StyledUl,
     TextAreaStyled,
+    WidthWrapperStyled,
     WrapperStyled,
-    ContentStyled,
-    HeaderStyled,
-    DivStyledButtonWrap,
 };
 
 export default CodeAreaStyles;

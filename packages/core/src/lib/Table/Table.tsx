@@ -6,10 +6,13 @@ import { TriangleUp, TriangleDown } from '@web3uikit/icons';
 import Loading from '../Loading/Loading';
 import { Typography } from '../Typography';
 import { paginate, getInnerText } from './Helper';
-import {
-    Divider,
+import styles from './Table.styles';
+
+const {
     DivSpinnerLoaderParent,
+    DivStyledCustomData,
     DivTableCell,
+    Divider,
     NoData,
     Pagination,
     PaginationTag,
@@ -17,12 +20,13 @@ import {
     TableGrid,
     TableGridContainer,
     TableParent,
-} from './Table.styles';
+} = styles;
 
 const Table: React.FC<ITableProps> = ({
     alignCellItems = 'start',
     columnGapSize = 11,
     columnsConfig,
+    customDataComponent,
     customLoadingContent,
     customNoDataComponent,
     customNoDataText = 'No Data',
@@ -311,6 +315,11 @@ const Table: React.FC<ITableProps> = ({
                 >
                     <RenderTableHeader />
                     {isLoading ? <Loader /> : <RenderTable />}
+                    {customDataComponent && (
+                        <DivStyledCustomData>
+                            {customDataComponent}
+                        </DivStyledCustomData>
+                    )}
                 </TableGrid>
             </TableGridContainer>
             <RenderPagination />

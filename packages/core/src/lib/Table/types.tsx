@@ -99,4 +99,9 @@ export interface ITableProps {
      * background color of the table; remember to use 0px gap size for proper effect
      */
     tableBackgroundColor?: string;
+
+    /**
+     * Show a custom component on all pages
+     */
+    customDataComponent?: React.ReactNode;
 }

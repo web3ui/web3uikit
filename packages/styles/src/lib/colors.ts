@@ -1,34 +1,49 @@
 const color = {
     aero10: '#F0F8FF',
     aero20: '#DCEEFE',
+    aero30: '#BBDBF7',
     blue05: '#E8EAED',
+    blue10: '#DCEFFD',
+    blue20: '#99D3FF',
     blue30: '#52ABFF',
     blue40: '#0F7FFF',
+    blue50: '#005AC2',
+    blue60: '#003470',
     blue70: '#041836',
     blueGray50: '#68738D',
+    fuchsia10: '#FCF0FB',
+    fuchsia40: '#E156D0',
     gray30: '#CACFD3',
     gray40: '#A8AFB7',
+    lavender40: '#8F7DFF',
+    lime10: '#F6FFCC',
     mint05: '#E8FCF9',
+    mint10: '#D1FFF0',
     mint20: '#A1FFE0',
     mint30: '#00D1AE',
     mint40: '#00D1AE',
     mint50: '#00AD96',
+    mint60: '#00856E',
     navy10: '#E9F2FA',
     navy20: '#BCD7F0',
     navy30: '#9EC7EA',
     navy40: '#0B72C4',
+    navy80: '#00006B',
     purple10: '#F3EEFB',
+    purple20: '#E9C4FF',
     purple50: '#9B22FF',
     red10: '#FDF0F0',
+    red30: '#FF6969',
     red40: '#E95557',
-    red60: '#FF0000',
+    red50: '#FF0000',
+    red60: '#AE0000',
+    sky40: '#01C0F4',
     white: '#FFFFFF',
     yellow10: '#FEFAED',
     yellow20: '#F9EDBA',
     yellow50: '#EBBB00',
-    fuchsia40: '#E156D0',
-    fuchsia10: '#FCF0FB',
-};
+    yellow60: '#D69700',
+} as const;
 
 export const gradientColors = {
     beauBlue:
@@ -105,6 +120,6 @@ export const legacyColor = {
     yellowDark: '#F1A90E',
     yellowLight: '#FEF9EE',
     yellowHover: '#FAE7BC',
-};
+} as const;
 
 export default color;

@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.1.15
+
+### Patch Changes
+
+-   [#827](https://github.com/web3ui/web3uikit/pull/827) [`364721f9e`](https://github.com/web3ui/web3uikit/commit/364721f9eff9ed46d06a863e025860c16e44e8b6) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Custom Data component added
+
 ## 0.1.14
 
 ### Patch Changes

@@ -26,7 +26,9 @@ test.skip('Renders - Breadcrumbs One: Hover Test', async () => {
     const breadcrumbElement = screen.getByTestId(`${breadcrumbId}-0`);
     fireEvent.mouseOver(breadcrumbElement);
     await waitFor(() => breadcrumbElement);
-    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.grey}`);
+    expect(breadcrumbElement).toHaveStyleRule(
+        `background: ${color.blueGray50}`,
+    );
 });
 
 test('Renders - Breadcrumbs Two', async () => {
@@ -45,11 +47,13 @@ test.skip('Renders - Breadcrumbs Two: Hover Test', async () => {
     const breadcrumbElement = screen.getByTestId(`${breadcrumbId}-0`);
     fireEvent.mouseOver(breadcrumbElement);
     await waitFor(() => breadcrumbElement);
-    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blueDark}`);
+    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blue70}`);
     const breadcrumbElement1 = screen.getByTestId(`${breadcrumbId}-1`);
     fireEvent.mouseOver(breadcrumbElement1);
     await waitFor(() => breadcrumbElement1);
-    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.grey}`);
+    expect(breadcrumbElement).toHaveStyleRule(
+        `background: ${color.blueGray50}`,
+    );
 });
 
 test('Renders - Breadcrumbs Three', () => {
@@ -70,16 +74,18 @@ test.skip('Renders - Breadcrumbs Three: Hover Test', async () => {
     const breadcrumbElement = screen.getByTestId(`${breadcrumbId}-0`);
     fireEvent.mouseOver(breadcrumbElement);
     await waitFor(() => breadcrumbElement);
-    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blueDark}`);
+    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blue70}`);
     const breadcrumbElement1 = screen.getByTestId(`${breadcrumbId}-1`);
     fireEvent.mouseOver(breadcrumbElement1);
     await waitFor(() => breadcrumbElement1);
-    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blueDark}`);
+    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blue70}`);
     // third breadcrumb should not change color on hover
     const breadcrumbElement2 = screen.getByTestId(`${breadcrumbId}-2`);
     fireEvent.mouseOver(breadcrumbElement2);
     await waitFor(() => breadcrumbElement2);
-    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.grey}`);
+    expect(breadcrumbElement).toHaveStyleRule(
+        `background: ${color.blueGray50}`,
+    );
 });
 
 test('Renders - Breadcrumbs Four', () => {
@@ -100,19 +106,21 @@ test.skip('Renders - Breadcrumbs Four: Hover Test', async () => {
     const breadcrumbElement = screen.getByTestId(`${breadcrumbId}-0`);
     fireEvent.mouseOver(breadcrumbElement);
     await waitFor(() => breadcrumbElement);
-    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blueDark}`);
+    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blue70}`);
     const breadcrumbElement1 = screen.getByTestId(`${breadcrumbId}-1`);
     fireEvent.mouseOver(breadcrumbElement1);
     await waitFor(() => breadcrumbElement1);
-    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blueDark}`);
+    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blue70}`);
     // third breadcrumb should change color on hover
     const breadcrumbElement2 = screen.getByTestId(`${breadcrumbId}-2`);
     fireEvent.mouseOver(breadcrumbElement2);
     await waitFor(() => breadcrumbElement2);
-    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blueDark}`);
+    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.blue70}`);
     // third breadcrumb should not change color on hover
     const breadcrumbElement3 = screen.getByTestId(`${breadcrumbId}-3`);
     fireEvent.mouseOver(breadcrumbElement3);
     await waitFor(() => breadcrumbElement3);
-    expect(breadcrumbElement).toHaveStyleRule(`background: ${color.grey}`);
+    expect(breadcrumbElement).toHaveStyleRule(
+        `background: ${color.blueGray50}`,
+    );
 });

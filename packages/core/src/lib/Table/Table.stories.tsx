@@ -130,7 +130,7 @@ CustomLoader.args = {
     isLoading: true,
     customLoadingContent: (
         <div>
-            <Loading size={30} text="Fetching..." spinnerColor={color.blue} />
+            <Loading size={30} text="Fetching..." spinnerColor={color.navy40} />
         </div>
     ),
 };

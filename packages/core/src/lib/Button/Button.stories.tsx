@@ -95,10 +95,10 @@ SizeXL.args = {
 export const CustomButton = Template.bind({});
 CustomButton.args = {
     customize: {
-        backgroundColor: color.blueSky,
+        backgroundColor: color.navy30,
         fontSize: 20,
         onHover: 'darken',
-        textColor: color.blueDark2,
+        textColor: color.blue40,
     },
     text: 'Button',
     theme: 'custom',

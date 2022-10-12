@@ -135,7 +135,7 @@ const ChainSelector: FC<IChainSelectorProps> = ({
                                 <CardContentStyled>
                                     <Typography
                                         variant="subtitle2"
-                                        color={color.blue}
+                                        color={color.navy40}
                                     >
                                         {isAllSelected
                                             ? 'Deselect all'
@@ -147,7 +147,7 @@ const ChainSelector: FC<IChainSelectorProps> = ({
                     )}
                 </GridStyled>
             ) : (
-                <Loading spinnerColor={color.blue} />
+                <Loading spinnerColor={color.navy40} />
             )}
         </div>
     );

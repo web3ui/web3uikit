@@ -15,10 +15,10 @@ type TStyleProps = Pick<{{ getInterface name }}, 'state' | 'hasUnderline' | 'bgC
 // CSS Props should be sorted alphabetically
 // //////////////////
 const greenColor = css`
-    color: ${color.green};
+    color: ${color.mint40};
 `;
 const redColor = css`
-    color: ${color.red};
+    color: ${color.red40};
 `;
 
 // //////////////////
@@ -26,8 +26,8 @@ const redColor = css`
 // CSS Props should be sorted alphabetically
 // //////////////////
 const SectionStyled = styled.section<TStyleProps>`
-    border-bottom: 5px solid ${color.green};
-    border-top: 5px solid ${color.yellow};
+    border-bottom: 5px solid ${color.mint40};
+    border-top: 5px solid ${color.yellow50};
     padding: 12px 24px;
     background-color: ${(p) => p.bgColor && color[p.bgColor]};
 `;

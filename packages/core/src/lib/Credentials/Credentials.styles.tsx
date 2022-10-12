@@ -3,7 +3,7 @@ import { color, resetCSS } from '@web3uikit/styles';
 import { ICredentialsProps, TDivWrapper } from './types';
 
 const CredentialsStyled = styled.div<Pick<ICredentialsProps, 'width'>>`
-    background: ${color.blueLight};
+    background: ${color.aero10};
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -39,7 +39,7 @@ const DividerStyled = styled.div`
     position: relative;
     margin: 0 8px;
     &:before {
-        border-left: 2px solid ${color.paleBlue2};
+        border-left: 2px solid ${color.navy20};
         content: '';
         height: 24px;
         position: absolute;

@@ -15,12 +15,12 @@ const buttonId = 'test-button';
 const chainNameId = 'test-crypto-card-name';
 
 test('Renders - Ethereum Card', () => {
-    render(<Ethereum onClick={testClickEvent} bgColor={color.black} />);
+    render(<Ethereum onClick={testClickEvent} bgColor={color.blue70} />);
     const cryptoCardElement = screen.getByTestId(cryptoCardId);
     expect(cryptoCardElement).not.toBeNull();
     const styles = cryptoCardElement && getComputedStyle(cryptoCardElement);
     const bgColorHex = styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(bgColorHex).toBe(color.black);
+    expect(bgColorHex).toBe(color.blue70);
     const buttonElement = screen.getByTestId(buttonId);
     fireEvent.click(buttonElement);
     expect(testClickEvent).toHaveBeenCalled();
@@ -29,12 +29,12 @@ test('Renders - Ethereum Card', () => {
 });
 
 test('Renders - Binance Card', () => {
-    render(<Binance onClick={testClickEvent} bgColor={color.black} />);
+    render(<Binance onClick={testClickEvent} bgColor={color.blue70} />);
     const cryptoCardElement = screen.getByTestId(cryptoCardId);
     expect(cryptoCardElement).not.toBeNull();
     const styles = cryptoCardElement && getComputedStyle(cryptoCardElement);
     const bgColorHex = styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(bgColorHex).toBe(color.black);
+    expect(bgColorHex).toBe(color.blue70);
     const buttonElement = screen.getByTestId(buttonId);
     fireEvent.click(buttonElement);
     expect(testClickEvent).toHaveBeenCalled();
@@ -42,12 +42,12 @@ test('Renders - Binance Card', () => {
 });
 
 test('Renders - Polygon Card', () => {
-    render(<Polygon onClick={testClickEvent} bgColor={color.black} />);
+    render(<Polygon onClick={testClickEvent} bgColor={color.blue70} />);
     const cryptoCardElement = screen.getByTestId(cryptoCardId);
     expect(cryptoCardElement).not.toBeNull();
     const styles = cryptoCardElement && getComputedStyle(cryptoCardElement);
     const bgColorHex = styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(bgColorHex).toBe(color.black);
+    expect(bgColorHex).toBe(color.blue70);
     const buttonElement = screen.getByTestId(buttonId);
     fireEvent.click(buttonElement);
     expect(testClickEvent).toHaveBeenCalled();
@@ -55,12 +55,12 @@ test('Renders - Polygon Card', () => {
 });
 
 test('Renders - Avalanche Card', () => {
-    render(<Avalanche onClick={testClickEvent} bgColor={color.black} />);
+    render(<Avalanche onClick={testClickEvent} bgColor={color.blue70} />);
     const cryptoCardElement = screen.getByTestId(cryptoCardId);
     expect(cryptoCardElement).not.toBeNull();
     const styles = cryptoCardElement && getComputedStyle(cryptoCardElement);
     const bgColorHex = styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(bgColorHex).toBe(color.black);
+    expect(bgColorHex).toBe(color.blue70);
     const buttonElement = screen.getByTestId(buttonId);
     fireEvent.click(buttonElement);
     expect(testClickEvent).toHaveBeenCalled();
@@ -68,12 +68,12 @@ test('Renders - Avalanche Card', () => {
 });
 
 test('Renders - Fantom Card', () => {
-    render(<Fantom onClick={testClickEvent} bgColor={color.black} />);
+    render(<Fantom onClick={testClickEvent} bgColor={color.blue70} />);
     const cryptoCardElement = screen.getByTestId(cryptoCardId);
     expect(cryptoCardElement).not.toBeNull();
     const styles = cryptoCardElement && getComputedStyle(cryptoCardElement);
     const bgColorHex = styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(bgColorHex).toBe(color.black);
+    expect(bgColorHex).toBe(color.blue70);
     const buttonElement = screen.getByTestId(buttonId);
     fireEvent.click(buttonElement);
     expect(testClickEvent).toHaveBeenCalled();
@@ -81,12 +81,12 @@ test('Renders - Fantom Card', () => {
 });
 
 test('Renders - Arbitrum Card', () => {
-    render(<Arbitrum onClick={testClickEvent} bgColor={color.black} />);
+    render(<Arbitrum onClick={testClickEvent} bgColor={color.blue70} />);
     const cryptoCardElement = screen.getByTestId(cryptoCardId);
     expect(cryptoCardElement).not.toBeNull();
     const styles = cryptoCardElement && getComputedStyle(cryptoCardElement);
     const bgColorHex = styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(bgColorHex).toBe(color.black);
+    expect(bgColorHex).toBe(color.blue70);
     const buttonElement = screen.getByTestId(buttonId);
     fireEvent.click(buttonElement);
     expect(testClickEvent).toHaveBeenCalled();

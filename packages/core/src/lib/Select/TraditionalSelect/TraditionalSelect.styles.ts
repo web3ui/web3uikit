@@ -26,7 +26,7 @@ const DivStyledDescription = styled.div`
     ${resetCSS};
     ${fonts.text};
     bottom: -23px;
-    color: ${color.grey};
+    color: ${color.blueGray50};
     font-size: 12px;
     height: 24px;
     left: 16px;

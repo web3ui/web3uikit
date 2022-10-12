@@ -7,7 +7,7 @@ import { Fragment } from 'react';
 const { DivStyled, ListStyled } = styles;
 
 const PopoverDropdown: React.FC<IPopoverDropdownProps> = ({
-    backgroundColor = color.blueDark,
+    backgroundColor = color.blue70,
     children,
     id,
     move,

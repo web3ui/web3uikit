@@ -164,12 +164,12 @@ LabelLess.args = {
         {
             label: 'Api Key',
             id: 'Api Key',
-            prefix: <Cog fill={color.blue} />,
+            prefix: <Cog fill={color.navy40} />,
         },
         {
             label: 'Testnet',
             id: 'Testnet',
-            prefix: <Server fill={color.blue} />,
+            prefix: <Server fill={color.navy40} />,
         },
     ],
     label: 'Server: ',

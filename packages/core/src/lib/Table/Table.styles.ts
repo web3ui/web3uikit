@@ -55,7 +55,7 @@ interface PaginationTextProps {
 }
 const PaginationText = styled.div<PaginationTextProps>`
     cursor: ${(props) => (props.isActive ? 'pointer' : 'cursor')};
-    color: ${(props) => (props.isActive ? color.blue : color.greyLight)};
+    color: ${(props) => (props.isActive ? color.navy40 : color.gray30)};
 `;
 
 const DivTableCell = styled.div<
@@ -135,8 +135,8 @@ const PaginationTag = styled.div<PaginationTag>`
     display: grid;
     align-items: center;
     justify-content: center;
-    border-color: ${(props) => props.active && color.blue};
-    background-color: ${(props) => !props.active && '#EBEFF9'};
+    border-color: ${(props) => props.active && color.navy40};
+    background-color: ${(props) => !props.active && color.navy10};
     cursor: ${(props) => !props.active && 'pointer'};
 `;
 

@@ -118,15 +118,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2017, 12, 11, 6, 24).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392112
         </Typography>,
         <>
@@ -150,15 +150,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2022, 4, 1, 16, 24).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392114
         </Typography>,
         <>
@@ -182,15 +182,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2020, 1, 21, 12, 27).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392118
         </Typography>,
         <>
@@ -214,15 +214,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2019, 5, 6, 13, 24).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392119
         </Typography>,
         <>
@@ -246,15 +246,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2018, 12, 11, 15, 4).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392120
         </Typography>,
         <>
@@ -278,15 +278,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2020, 4, 8, 16, 24).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392122
         </Typography>,
         <>
@@ -310,15 +310,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2020, 5, 21, 16, 24).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392124
         </Typography>,
         <>
@@ -342,15 +342,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2022, 4, 3, 16, 24).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392125
         </Typography>,
         <>
@@ -374,15 +374,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2022, 2, 18, 16, 24).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392126
         </Typography>,
         <>
@@ -406,15 +406,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2018, 1, 30, 18, 24).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392127
         </Typography>,
         <>
@@ -438,15 +438,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2022, 4, 21, 16, 24).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392128
         </Typography>,
         <>
@@ -470,15 +470,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2021, 7, 11, 16, 24).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392129
         </Typography>,
         <>
@@ -502,15 +502,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2019, 10, 10, 16, 24).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392130
         </Typography>,
         <>
@@ -534,15 +534,15 @@ export const syncData = [
         <>
             <Avatar theme="image" isRounded={true} size={36} />
             <div style={{ marginLeft: '16px' }}>
-                <Typography variant="body16" color={color.blueDark}>
+                <Typography variant="body16" color={color.blue70}>
                     Moralis Magi
                 </Typography>
             </div>
         </>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             {new Date(2022, 9, 8, 16, 24).toLocaleString()}
         </Typography>,
-        <Typography variant="body16" color={color.grey}>
+        <Typography variant="body16" color={color.blueGray50}>
             120392131
         </Typography>,
         <>

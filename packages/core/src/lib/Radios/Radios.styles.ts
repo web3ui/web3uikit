@@ -18,7 +18,7 @@ const LegendStyled = styled.legend`
     ${resetCSS};
     ${fonts.heading}
     ${fonts.h3}
-    color: ${color.grey};
+    color: ${color.blueGray50};
     display: block;
     margin-bottom: 4px;
 `;
@@ -45,7 +45,7 @@ const LabelStyled = styled.label<TStyleProps & { isSmall: boolean }>`
     ${fonts.text}
     padding-left: ${(p) => (p.isCreditCardMode ? '0' : '28px')};
     align-content: center;
-    color: ${color.greyDark};
+    color: ${color.blueGray50};
     display: flex;
     line-height: 20px;
     position: relative;
@@ -58,9 +58,9 @@ const LabelStyled = styled.label<TStyleProps & { isSmall: boolean }>`
                     ? 'calc(50% - 9px)'
                     : '20px'
                 : '0'};
-        background-color: ${color.blueLight};
+        background-color: ${color.aero10};
         border-radius: 50%;
-        border: 1px solid ${color.blueSky};
+        border: 1px solid ${color.navy30};
         content: '';
         display: block;
         height: 18px;
@@ -107,8 +107,8 @@ const RadioButtonStyled = styled.input`
     &:checked {
         & + label {
             &:before {
-                background-color: ${color.green};
-                border-color: ${color.greenLight};
+                background-color: ${color.mint40};
+                border-color: ${color.mint20};
             }
             &:after {
                 opacity: 1;
@@ -117,7 +117,7 @@ const RadioButtonStyled = styled.input`
     }
     &:focus {
         & + label {
-            box-shadow: 0 0 4px ${color.blueSky};
+            box-shadow: 0 0 4px ${color.navy30};
             border-radius: 20px;
         }
     }

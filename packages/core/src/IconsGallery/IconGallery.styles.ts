@@ -24,7 +24,7 @@ const StyledDivIcon = styled.div`
     border-radius: 20px;
     transition: all 0.1s linear;
     &:hover {
-        background-color: ${color.blueCloud};
+        background-color: ${color.aero10};
     }
 `;
 

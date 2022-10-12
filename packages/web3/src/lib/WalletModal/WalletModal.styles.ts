@@ -31,7 +31,7 @@ const ModalStyled = styled.div`
 
 const TitleStyled = styled.span`
     ${fonts.semiBold};
-    color: ${color.blue};
+    color: ${color.navy40};
     font-size: 22px;
 `;
 
@@ -55,7 +55,7 @@ const GridStyled = styled.div`
     }
     &::-webkit-scrollbar-thumb {
         background-clip: padding-box;
-        background-color: ${color.greyIcons};
+        background-color: ${color.gray40};
         border-radius: 30px;
         border: 3px solid transparent;
     }
@@ -81,11 +81,11 @@ const WalletCardStyled = styled.div`
     }
 
     &:hover {
-        background-color: ${color.blueLight};
+        background-color: ${color.aero10};
     }
 
     &:active {
-        background-color: ${color.blueLight2};
+        background-color: ${color.aero20};
     }
 `;
 
@@ -104,7 +104,7 @@ const WalletLogo = styled.div`
 
 const WalletNameStyled = styled.span`
     ${fonts.semiBold};
-    color: ${color.blue};
+    color: ${color.navy40};
     font-size: 18px;
 `;
 

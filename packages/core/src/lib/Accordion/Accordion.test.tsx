@@ -81,14 +81,14 @@ test('Renders colors', () => {
     render(<Default />);
     const element = screen.getByTestId(testId);
     const styles = element && getComputedStyle(element);
-    expect(styles.border).toBe(`1px solid ${color.blue}`.toLowerCase());
+    expect(styles.border).toBe(`1px solid ${color.navy40}`.toLowerCase());
 });
 
 test('Renders theme colors', () => {
     render(<ThemeColor />);
     const element = screen.getByTestId(testId);
     const styles = element && getComputedStyle(element);
-    expect(styles.border).toBe(`1px solid ${color.green}`.toLowerCase());
+    expect(styles.border).toBe(`1px solid ${color.mint40}`.toLowerCase());
 });
 
 test('Renders HasSubtitle', () => {

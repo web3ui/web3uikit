@@ -6,7 +6,7 @@ const DivStyledPagination = styled.div`
     ${resetCSS}
     ${fonts.text}
     align-items: center;
-    color: ${color.blueDark3};
+    color: ${color.blue70};
     display: flex;
     font-size: 14px;
     font-weight: 550;
@@ -27,10 +27,10 @@ const DivStyledPaginationText = styled.div<IPaginationStyleProps>`
 const DivStyledPaginationTag = styled.div<IPaginationStyleProps>`
     ${resetCSS}
     align-items: center;
-    background-color: ${(props) => !props.isActive && color.blueLight6};
+    background-color: ${(props) => !props.isActive && color.blue40};
     border-radius: 12px;
     border: 2px solid
-        ${(props) => (props.isActive ? color.paleCerulean : 'transparent')};
+        ${(props) => (props.isActive ? color.navy30 : 'transparent')};
     cursor: ${(props) => !props.isActive && !props.isDot && 'pointer'};
     display: flex;
     margin: 0px 8px;
@@ -41,7 +41,7 @@ const DivStyledPaginationTag = styled.div<IPaginationStyleProps>`
         !props.isDot &&
         css`
             :hover {
-                background-color: ${color.blueLight7};
+                background-color: ${color.aero20};
             }
         `};
     div {

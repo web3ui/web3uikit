@@ -17,7 +17,7 @@ const Widget: React.FC<IWidgetProps> = ({
         <DivStyled data-testid="test-widget" {...props}>
             <div>
                 <Typography
-                    color={color.blueDark}
+                    color={color.blue70}
                     data-testid="test-widget-title"
                     variant="caption12"
                     weight="400"
@@ -25,7 +25,7 @@ const Widget: React.FC<IWidgetProps> = ({
                     {title}
                 </Typography>
                 <Typography
-                    color={color.blueDark}
+                    color={color.blue70}
                     data-testid="test-widget-info"
                     variant="h3"
                     weight="400"

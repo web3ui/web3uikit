@@ -16,7 +16,7 @@ const LineNumbers: FC<ILineNumbersProps> = ({ currentValue }) => {
                     <Typography
                         variant="caption14"
                         monospace
-                        color={color.grey}
+                        color={color.blueGray50}
                         italic
                     >
                         {i}

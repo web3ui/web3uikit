@@ -13,7 +13,7 @@ const HeaderStyled = styled.div`
 
 const CredentialsHeader: FC<ICredentialsHeaderProps> = ({
     title,
-    titleColor = color.blueDark,
+    titleColor = color.blue70,
     icon,
 }) => {
     if (!title && !icon) return null;

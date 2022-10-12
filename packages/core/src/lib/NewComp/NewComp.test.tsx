@@ -53,7 +53,7 @@ test('Renders Default component', () => {
 
     const styles = heading && getComputedStyle(heading);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.green);
+    expect(colorHex).toBe(color.mint40);
 
     const text = screen.getByTestId(testText);
     expect(text).not.toBeNull();
@@ -86,7 +86,7 @@ test('changes UI onClick of the button', () => {
 
     const styles = headingElement && getComputedStyle(headingElement);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.red);
+    expect(colorHex).toBe(color.red40);
 });
 
 // Test Story 3: InitializeRed
@@ -111,7 +111,7 @@ test('Renders InitializeRed', () => {
 
     const styles = heading && getComputedStyle(heading);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.red);
+    expect(colorHex).toBe(color.red40);
 
     const text = screen.getByTestId(testText);
     expect(text).not.toBeNull();
@@ -143,7 +143,7 @@ test('changes UI onClick of the button', () => {
 
     const styles = headingElement && getComputedStyle(headingElement);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.green);
+    expect(colorHex).toBe(color.mint40);
 });
 
 // Test Story 4: UnderLinedText
@@ -168,7 +168,7 @@ test('Renders UnderLinedText', () => {
 
     const styles = heading && getComputedStyle(heading);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.green);
+    expect(colorHex).toBe(color.mint40);
 
     const text = screen.getByTestId(testText);
     expect(text).not.toBeNull();
@@ -199,5 +199,5 @@ test('changes UI onClick of the button', () => {
 
     const styles = headingElement && getComputedStyle(headingElement);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.red);
+    expect(colorHex).toBe(color.red40);
 });

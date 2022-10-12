@@ -3,27 +3,27 @@ import { color } from '@web3uikit/styles';
 import { IPosition, notifyType } from '../types';
 
 const error = css`
-    border-color: ${color.red};
+    border-color: ${color.red40};
     & > svg {
-        fill: ${color.red};
+        fill: ${color.red40};
     }
 `;
 const info = css`
-    border-color: ${color.blue};
+    border-color: ${color.navy40};
     & > svg {
-        fill: ${color.blue};
+        fill: ${color.navy40};
     }
 `;
 const success = css`
-    border-color: ${color.green};
+    border-color: ${color.mint40};
     & > svg {
-        fill: ${color.green};
+        fill: ${color.mint40};
     }
 `;
 const warning = css`
-    border-color: ${color.yellow};
+    border-color: ${color.yellow50};
     & > svg {
-        fill: ${color.yellow};
+        fill: ${color.yellow50};
     }
 `;
 
@@ -110,14 +110,14 @@ export const getNotificationPosition = (position: IPosition) => {
 export const getNotificationColor = (type: notifyType) => {
     switch (type) {
         case 'error':
-            return color.red;
+            return color.red40;
         case 'success':
-            return color.green;
+            return color.mint40;
         case 'warning':
-            return color.yellow;
+            return color.yellow50;
         case 'info':
         default:
-            return color.blue;
+            return color.navy40;
     }
 };
 

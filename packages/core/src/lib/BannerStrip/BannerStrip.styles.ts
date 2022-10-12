@@ -5,13 +5,13 @@ import { BannerStripProps } from './types';
 const getBackgroundColor = (type: string) => {
     switch (type) {
         case 'success':
-            return color.green;
+            return color.mint40;
         case 'warning':
-            return color.yellow;
+            return color.yellow50;
         case 'error':
-            return color.red;
+            return color.red40;
         default:
-            return color.blue;
+            return color.navy40;
     }
 };
 

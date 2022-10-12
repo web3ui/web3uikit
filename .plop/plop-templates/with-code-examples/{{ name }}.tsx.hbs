@@ -56,10 +56,10 @@ const {{ name }}: React.FC<{{ getInterface name }}> = ({
             </TitleStyled>
             <SpanStyled>
                 {compState?<Checkmark
-                    fill={color.green}
+                    fill={color.mint40}
                     fontSize={30}
                 />:<Cross 
-                    fill={color.red}
+                    fill={color.red40}
                     fontSize={30}/>}
                 <HeadingStyled state={compState} data-testid="test-heading">
                     {compState === 'greenLight' ? textOn : textOff}

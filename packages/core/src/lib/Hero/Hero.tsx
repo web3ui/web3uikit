@@ -3,16 +3,12 @@ import { color } from '@web3uikit/styles';
 import styles from './Hero.styles';
 import { IHeroProps } from './types';
 
-const {
-    ImageStyled,
-    LeftContainerDiv,
-    RightContainerDiv,
-    SectionStyled,
-} = styles;
+const { ImageStyled, LeftContainerDiv, RightContainerDiv, SectionStyled } =
+    styles;
 
 const Hero: React.FC<IHeroProps> = ({
     align = 'center',
-    backgroundColor = `${color.greyLight}`,
+    backgroundColor = `${color.gray30}`,
     backgroundURL = '',
     children,
     customImage = {
@@ -25,7 +21,7 @@ const Hero: React.FC<IHeroProps> = ({
     padding,
     rounded = '20px',
     subTitle,
-    textColor = `${color.greyDark}`,
+    textColor = `${color.blueGray50}`,
     title,
     ...props
 }) => {

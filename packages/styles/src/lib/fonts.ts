@@ -72,8 +72,8 @@ export const fontBreakpoint = {
 
 const heading = css`
     -webkit-font-smoothing: antialiased;
-    color: ${color.grey};
-    fill: ${color.grey};
+    color: ${color.blueGray50};
+    fill: ${color.blueGray50};
     font-family: 'open-sans', sans-serif;
     font-size: ${fontSize.h1}px;
     font-style: normal;
@@ -138,8 +138,8 @@ const robotoMono = css`
 
 const text = css`
     -webkit-font-smoothing: antialiased;
-    color: ${color.grey};
-    fill: ${color.grey};
+    color: ${color.blueGray50};
+    fill: ${color.blueGray50};
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-style: normal;

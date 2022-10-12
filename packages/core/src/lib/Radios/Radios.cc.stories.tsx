@@ -214,10 +214,10 @@ CreditCardSmall.args = {
     ],
     suffix: (
         <ButtonStyled style={{}} onClick={() => alert('Card Added!')}>
-            <Plus fill={color.blue} fontSize={18} />
+            <Plus fill={color.navy40} fontSize={18} />
             <CreditCard2 width={42} height={32} />
             {/* @ts-ignore */}
-            <Typography style={{ color: color.blue }} variant="caption14">
+            <Typography style={{ color: color.navy40 }} variant="caption14">
                 Add payment method
             </Typography>
         </ButtonStyled>

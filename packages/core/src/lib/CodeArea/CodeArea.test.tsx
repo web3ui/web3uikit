@@ -31,7 +31,7 @@ test('Render - CodeArea Oneline', () => {
     // test border color
     const textareaWrapper = screen.getByTestId(testWrapperId) as HTMLDivElement;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.paleBlue2);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.navy20);
 });
 
 test('Renders - CodeArea Multiple Lines', () => {
@@ -48,7 +48,7 @@ test('Renders - CodeArea Multiple Lines', () => {
     // test border color
     const textareaWrapper = screen.getByTestId(testWrapperId) as HTMLDivElement;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.paleBlue2);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.navy20);
 });
 
 test('Renders - CodeArea with Header', () => {
@@ -68,7 +68,7 @@ test('Renders - CodeArea with Header', () => {
     // test border color
     const textareaWrapper = screen.getByTestId(testWrapperId) as HTMLDivElement;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.paleBlue2);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.navy20);
 });
 
 // skip for now as it is no longer change the size of the code area but its wrapper

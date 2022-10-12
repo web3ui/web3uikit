@@ -84,16 +84,16 @@ export const PStyledDigits = styled.p`
 
 export const PStyledText = styled.p<TStyleExpired>`
     ${fonts.semiBold}
-    color: ${(p) => (p.isExpired ? color.red : color.white)};
+    color: ${(p) => (p.isExpired ? color.red40 : color.white)};
     font-size: 12px;
     line-height: 16px;
     margin: 0 0 0 5px;
 `;
 
 const expiredStyles = css`
-    border-color: ${color.red};
+    border-color: ${color.red40};
 `;
 
 const pressedStyles = css`
-    border-color: ${color.green};
+    border-color: ${color.mint40};
 `;

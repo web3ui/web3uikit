@@ -46,7 +46,7 @@ test('Renders ExternalLink', () => {
     const colorLink = screen.getByTestId(testId);
     const styles = colorLink && getComputedStyle(colorLink);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.blue);
+    expect(colorHex).toBe(color.navy40);
 
     const inlineLink = screen.getByTestId(testId);
     const inlineLinkStyles = inlineLink && getComputedStyle(inlineLink);
@@ -82,7 +82,7 @@ test('Renders External Icon After', () => {
     const colorLink = screen.getByTestId(testId);
     const styles = colorLink && getComputedStyle(colorLink);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.blue);
+    expect(colorHex).toBe(color.navy40);
 
     const inlineLink = screen.getByTestId(testId);
     const inlineLinkStyles = inlineLink && getComputedStyle(inlineLink);
@@ -118,7 +118,7 @@ test('Renders Email', () => {
     const colorLink = screen.getByTestId(testId);
     const styles = colorLink && getComputedStyle(colorLink);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.blue);
+    expect(colorHex).toBe(color.navy40);
 
     const inlineLink = screen.getByTestId(testId);
     const inlineLinkStyles = inlineLink && getComputedStyle(inlineLink);
@@ -154,7 +154,7 @@ test('Renders External Icon After', () => {
     const colorLink = screen.getByTestId(testId);
     const styles = colorLink && getComputedStyle(colorLink);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.blue);
+    expect(colorHex).toBe(color.navy40);
 
     const inlineLink = screen.getByTestId(testId);
     const inlineLinkStyles = inlineLink && getComputedStyle(inlineLink);
@@ -189,7 +189,7 @@ test('Renders No text set for link', () => {
     const colorLink = screen.getByTestId(testId);
     const styles = colorLink && getComputedStyle(colorLink);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.blue);
+    expect(colorHex).toBe(color.navy40);
 
     const inlineLink = screen.getByTestId(testId);
     const inlineLinkStyles = inlineLink && getComputedStyle(inlineLink);
@@ -225,7 +225,7 @@ test('Renders link In text', () => {
     const colorLink = screen.getByTestId(testId);
     const styles = colorLink && getComputedStyle(colorLink);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.blue);
+    expect(colorHex).toBe(color.navy40);
 
     const inlineLink = screen.getByTestId(testId);
     const inlineLinkStyles = inlineLink && getComputedStyle(inlineLink);
@@ -254,7 +254,7 @@ test('Renders - Internal Link', () => {
     const colorLink = screen.getByTestId(testId);
     const styles = colorLink && getComputedStyle(colorLink);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.blue);
+    expect(colorHex).toBe(color.navy40);
 
     // after clicking on the link
     fireEvent.click(link);
@@ -286,7 +286,7 @@ test('Renders No icon', () => {
     const colorLink = screen.getByTestId(testId);
     const styles = colorLink && getComputedStyle(colorLink);
     const colorHex = styles && rgbToHex(styles.color).toUpperCase();
-    expect(colorHex).toBe(color.blue);
+    expect(colorHex).toBe(color.navy40);
 
     const inlineLink = screen.getByTestId(testId);
     const inlineLinkStyles = inlineLink && getComputedStyle(inlineLink);

@@ -39,16 +39,16 @@ export const getCSSWeight = (weight: weightType) => {
 
 const text = css`
     ${openSans};
-    color: ${color.grey};
-    fill: ${color.grey};
+    color: ${color.blueGray50};
+    fill: ${color.blueGray50};
     font-style: normal;
     letter-spacing: 0;
 `;
 
 const heading = css`
     ${openSans};
-    color: ${color.blueDark};
-    fill: ${color.blueDark};
+    color: ${color.blue70};
+    fill: ${color.blue70};
     font-style: normal;
     letter-spacing: 0;
 `;
@@ -89,8 +89,8 @@ const h4 = css`
 const subtitle1 = css`
     ${heading};
     font-weight: 600;
-    color: ${color.blueDark};
-    fill: ${color.blueDark};
+    color: ${color.blue70};
+    fill: ${color.blue70};
     font-size: 18px;
     line-height: 24px;
 `;
@@ -98,8 +98,8 @@ const subtitle1 = css`
 const subtitle2 = css`
     ${heading};
     font-weight: 600;
-    color: ${color.blueDark};
-    fill: ${color.blueDark};
+    color: ${color.blue70};
+    fill: ${color.blue70};
     font-size: 16px;
     line-height: 24px;
 `;

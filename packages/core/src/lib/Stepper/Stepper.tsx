@@ -27,6 +27,7 @@ const Stepper: React.FC<StepperProps> = ({
     completeTitle = 'all done, nice!',
     completeMessage = 'You should tell the user what to do next, or use the onComplete function to programmatically fire an event',
     onComplete = () => null,
+    onNext,
     headerWidth,
     ...props
 }) => {
@@ -60,6 +61,7 @@ const Stepper: React.FC<StepperProps> = ({
             return;
         }
         setStep(myStepRef.current + 1);
+        onNext && onNext(activeStep);
     };
 
     const handleContentClick = (event: React.MouseEvent<HTMLElement>) => {

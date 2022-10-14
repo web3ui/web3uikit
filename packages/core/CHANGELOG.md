@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.1
+
+### Patch Changes
+
+-   [#832](https://github.com/web3ui/web3uikit/pull/832) [`5931cc6dd`](https://github.com/web3ui/web3uikit/commit/5931cc6dd77613a7ff3db80256a5d53fd94e57a6) Thanks [@Maki44](https://github.com/Maki44)! - Version bump for stepper
+
 ## 0.2.0
 
 ### Minor Changes

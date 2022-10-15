@@ -2,12 +2,12 @@ import styled, { css } from 'styled-components';
 import { ITableProps } from '.';
 import { color, fonts, resetCSS } from '@web3uikit/styles';
 
-export const TableParent = styled.div`
+const TableParent = styled.div`
     display: flex;
     flex-direction: column;
 `;
 
-export const NoData = styled.div`
+const NoData = styled.div`
     ${resetCSS}
     ${fonts.text}
     display: grid;
@@ -24,7 +24,7 @@ export const NoData = styled.div`
     }
 `;
 
-export const Divider = styled.div`
+const Divider = styled.div`
     padding-top: 1px;
     background: radial-gradient(
         106.45% 108.64% at 32.33% -4.84%,
@@ -34,7 +34,7 @@ export const Divider = styled.div`
     grid-column: 1 / -1;
 `;
 
-export const Pagination = styled.div`
+const Pagination = styled.div`
     ${resetCSS}
     ${fonts.text}
     display: flex;
@@ -53,12 +53,12 @@ export const Pagination = styled.div`
 interface PaginationTextProps {
     isActive: boolean;
 }
-export const PaginationText = styled.div<PaginationTextProps>`
+const PaginationText = styled.div<PaginationTextProps>`
     cursor: ${(props) => (props.isActive ? 'pointer' : 'cursor')};
-    color: ${(props) => (props.isActive ? color.blue : color.greyLight)};
+    color: ${(props) => (props.isActive ? color.navy40 : color.gray30)};
 `;
 
-export const DivTableCell = styled.div<
+const DivTableCell = styled.div<
     Pick<ITableProps, 'alignCellItems' | 'justifyCellItems'>
 >`
     align-items: ${(props) => props.alignCellItems};
@@ -67,7 +67,7 @@ export const DivTableCell = styled.div<
     padding: 16px 0;
 `;
 
-export const TableGrid = styled.div.attrs((props: any) => ({
+const TableGrid = styled.div.attrs((props: any) => ({
     columns: props.columns,
     columnGapSize: props.columnGapSize,
     tableBackgroundColor: props.tableBackgroundColor,
@@ -100,7 +100,7 @@ export const TableGrid = styled.div.attrs((props: any) => ({
     }
 `;
 
-export const TableGridContainer = styled.div<{
+const TableGridContainer = styled.div<{
     isScrollableOnOverflow: boolean;
 }>`
     background: radial-gradient(
@@ -126,7 +126,7 @@ export const TableGridContainer = styled.div<{
 interface PaginationTag {
     active: boolean;
 }
-export const PaginationTag = styled.div<PaginationTag>`
+const PaginationTag = styled.div<PaginationTag>`
     width: 32px;
     height: 32px;
     border: 2px solid transparent;
@@ -135,12 +135,12 @@ export const PaginationTag = styled.div<PaginationTag>`
     display: grid;
     align-items: center;
     justify-content: center;
-    border-color: ${(props) => props.active && color.blue};
-    background-color: ${(props) => !props.active && '#EBEFF9'};
+    border-color: ${(props) => props.active && color.navy40};
+    background-color: ${(props) => !props.active && color.navy10};
     cursor: ${(props) => !props.active && 'pointer'};
 `;
 
-export const DivSpinnerLoaderParent = styled.div`
+const DivSpinnerLoaderParent = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -150,3 +150,23 @@ export const DivSpinnerLoaderParent = styled.div`
         margin-top: 29px;
     }
 `;
+
+const DivStyledCustomData = styled.div`
+    grid-column: 1/-1;
+    max-width: 100%;
+    overflow: hidden;
+`;
+
+export default {
+    DivSpinnerLoaderParent,
+    DivStyledCustomData,
+    DivTableCell,
+    Divider,
+    NoData,
+    Pagination,
+    PaginationTag,
+    PaginationText,
+    TableGrid,
+    TableGridContainer,
+    TableParent,
+};

@@ -6,10 +6,13 @@ import { TriangleUp, TriangleDown } from '@web3uikit/icons';
 import Loading from '../Loading/Loading';
 import { Typography } from '../Typography';
 import { paginate, getInnerText } from './Helper';
-import {
-    Divider,
+import styles from './Table.styles';
+
+const {
     DivSpinnerLoaderParent,
+    DivStyledCustomData,
     DivTableCell,
+    Divider,
     NoData,
     Pagination,
     PaginationTag,
@@ -17,12 +20,13 @@ import {
     TableGrid,
     TableGridContainer,
     TableParent,
-} from './Table.styles';
+} = styles;
 
 const Table: React.FC<ITableProps> = ({
     alignCellItems = 'start',
     columnGapSize = 11,
     columnsConfig,
+    customDataComponent,
     customLoadingContent,
     customNoDataComponent,
     customNoDataText = 'No Data',
@@ -152,13 +156,13 @@ const Table: React.FC<ITableProps> = ({
                                     <TriangleUp
                                         title="triangle up icon"
                                         titleId="table triangle up icon"
-                                        fill={color.grey}
+                                        fill={color.blueGray50}
                                     />
                                 ) : (
                                     <TriangleDown
                                         title="triangle down icon"
                                         titleId="table triangle down icon"
-                                        fill={color.grey}
+                                        fill={color.blueGray50}
                                     />
                                 ))}
                         </DivTableCell>
@@ -203,10 +207,12 @@ const Table: React.FC<ITableProps> = ({
                                             key={`tr_${rowKey}_${colKey}`}
                                             data-key={`tr_${rowKey}_${colKey}`}
                                             role="table-item"
-                                            className={`${colKey == 0 &&
-                                                'firstCol'} ${colKey ==
-                                                rowData.length - 1 &&
-                                                'lastCol'}`}
+                                            className={`${
+                                                colKey == 0 && 'firstCol'
+                                            } ${
+                                                colKey == rowData.length - 1 &&
+                                                'lastCol'
+                                            }`}
                                             alignCellItems={alignCellItems}
                                             justifyCellItems={justifyCellItems}
                                             onClick={(e) => {
@@ -256,8 +262,9 @@ const Table: React.FC<ITableProps> = ({
                         maxPages,
                     ).map((key) => (
                         <PaginationTag
-                            data-testid={`test-table-pagination-${key - 1 ==
-                                pageNum}`}
+                            data-testid={`test-table-pagination-${
+                                key - 1 == pageNum
+                            }`}
                             active={key - 1 == pageNum}
                             key={`pagination_${key}`}
                             onClick={() => handleSetPageNumber(key - 1)}
@@ -311,6 +318,11 @@ const Table: React.FC<ITableProps> = ({
                 >
                     <RenderTableHeader />
                     {isLoading ? <Loader /> : <RenderTable />}
+                    {customDataComponent && (
+                        <DivStyledCustomData>
+                            {customDataComponent}
+                        </DivStyledCustomData>
+                    )}
                 </TableGrid>
             </TableGridContainer>
             <RenderPagination />

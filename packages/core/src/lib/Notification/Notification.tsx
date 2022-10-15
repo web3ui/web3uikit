@@ -126,7 +126,7 @@ const Notification: React.FC<NotificationProps> = ({
                         title="cross icon"
                         titleId="notification cross icon"
                         fontSize={10}
-                        fill={color.greyIcons}
+                        fill={color.gray40}
                     />
                 </CloseWrapperStyled>
                 <SpanStyled data-testid="test-notification-message">

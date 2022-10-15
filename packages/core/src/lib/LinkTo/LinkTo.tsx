@@ -21,7 +21,7 @@ const LinkTo: React.FC<LinkToProps> = ({
                     <Mail
                         title="mail icon"
                         titleId="linkto mail icon"
-                        fill={color.blue}
+                        fill={color.navy40}
                         fontSize={18}
                         style={{ marginTop: 'auto' }}
                     />
@@ -29,7 +29,7 @@ const LinkTo: React.FC<LinkToProps> = ({
                     <Link
                         title="link icon"
                         titleId="linkto link icon"
-                        fill={color.blue}
+                        fill={color.navy40}
                         fontSize={18}
                         style={{ marginTop: 'auto' }}
                     />

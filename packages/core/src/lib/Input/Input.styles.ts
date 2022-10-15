@@ -15,22 +15,22 @@ const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
     outline-color: ${({ state }) => {
         switch (state) {
             case 'error':
-                return color.red;
+                return color.red40;
             case 'confirmed':
-                return color.green;
+                return color.mint40;
             case 'disabled':
-                return color.greyDisabled;
+                return color.gray30;
             default:
-                return color.greyLight;
+                return color.gray30;
         }
     }};
 
     & > * > * > * {
-        ${(p) => p.state === 'disabled' && ` fill: ${color.greyDisabled};`};
+        ${(p) => p.state === 'disabled' && ` fill: ${color.gray30};`};
     }
 
     &:hover {
-        outline-color: ${(p) => p.state !== 'disabled' && color.blue};
+        outline-color: ${(p) => p.state !== 'disabled' && color.navy40};
 
         strong {
             overflow: visible;
@@ -40,7 +40,7 @@ const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
     }
 
     &:hover > .input_prefixIcon > svg {
-        fill: ${(p) => !p?.state && color.blue};
+        fill: ${(p) => !p?.state && color.navy40};
     }
 
     input {
@@ -48,44 +48,44 @@ const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
             color: ${({ state }) => {
                 switch (state) {
                     case 'error':
-                        return color.red;
+                        return color.red40;
                     case 'confirmed':
-                        return color.green;
+                        return color.mint40;
                     case 'disabled':
-                        return color.greyDisabled;
+                        return color.gray30;
                     default:
-                        return color.grey;
+                        return color.blueGray50;
                 }
             }};
         }
     }
 
     &:hover {
-        ${(p) => p.state === 'error' && `outline-color: ${color.red};`}
-        ${(p) => p.state === 'confirmed' && `outline-color: ${color.green};`}
+        ${(p) => p.state === 'error' && `outline-color: ${color.red40};`}
+        ${(p) => p.state === 'confirmed' && `outline-color: ${color.mint40};`}
 
         label {
-            ${(p) => !p?.state && `color: ${color.blue};`}
+            ${(p) => !p?.state && `color: ${color.navy40};`}
         }
     }
 
     :not(&:focus-within) {
         &.input_filled {
-            outline-color: ${color.blueSky} !important;
+            outline-color: ${color.navy30} !important;
         }
     }
 
     &:focus-within,
     &.input_filled {
-        outline: 2px solid ${color.blue};
+        outline: 2px solid ${color.navy40};
 
         label {
             font-weight: 600;
-            ${(p) => !p?.state && `color: ${color.blue};`}
+            ${(p) => !p?.state && `color: ${color.navy40};`}
         }
 
-        ${(p) => p.state === 'error' && `outline-color: ${color.red};`}
-        ${(p) => p.state === 'confirmed' && `outline-color: ${color.green};`}
+        ${(p) => p.state === 'error' && `outline-color: ${color.red40};`}
+        ${(p) => p.state === 'confirmed' && `outline-color: ${color.mint40};`}
     }
 
     ${({ size }) => {
@@ -149,7 +149,7 @@ const InputStyled = styled.input<Pick<InputProps, 'customInput'>>`
         &::placeholder {
             display: none;
             visibility: visible;
-            color: ${color.grey};
+            color: ${color.blueGray50};
         }
     }
 
@@ -169,7 +169,7 @@ const inputIconStyle = css`
     width: 100%;
 
     & :first-child {
-        fill: ${color.grey};
+        fill: ${color.blueGray50};
         transition: fill 0.2s ease-out;
         width: 100%;
         height: 100%;
@@ -195,7 +195,7 @@ const CopyContainerStyled = styled.div`
     }
 
     &:before {
-        border-left: 1px solid ${color.paleBlue2};
+        border-left: 1px solid ${color.navy20};
         content: '';
         height: 24px;
         left: -12px;
@@ -211,7 +211,7 @@ const VisibilityIcon = styled.button`
     margin-left: 12px;
 
     &:hover > svg {
-        fill: ${color.blue};
+        fill: ${color.navy40};
     }
 `;
 
@@ -223,7 +223,7 @@ const StrongStyled = styled.strong<IStrongStyledProps>`
     ${resetCSS}
     ${fonts.text}
     bottom: -23px;
-    color: ${(props) => (props.isError ? color.red : color.grey)};
+    color: ${(props) => (props.isError ? color.red40 : color.blueGray50)};
     font-size: 12px;
     height: 24px;
     left: 16px;

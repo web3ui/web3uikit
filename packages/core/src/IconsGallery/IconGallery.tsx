@@ -14,7 +14,7 @@ const IconsGallery = () => {
                 key={Icon.name.slice(3)}
                 onClick={() => handleClick(Icon.name.slice(3), 'info')}
             >
-                <Icon fontSize={30} color={color.black} />
+                <Icon fontSize={30} color={color.blue70} />
             </StyledDivIcon>
         );
     });

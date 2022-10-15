@@ -16,6 +16,7 @@ import { Loading } from '../Loading';
 import { color } from '@web3uikit/styles';
 import styled from 'styled-components';
 import { Skeleton } from '../Skeleton';
+
 export default {
     title: '3.Layout/Table',
     component: Table,
@@ -130,7 +131,7 @@ CustomLoader.args = {
     isLoading: true,
     customLoadingContent: (
         <div>
-            <Loading size={30} text="Fetching..." spinnerColor={color.blue} />
+            <Loading size={30} text="Fetching..." spinnerColor={color.navy40} />
         </div>
     ),
 };
@@ -193,10 +194,23 @@ CustomTable.args = {
     columnGapSize: 0,
     tableBackgroundColor: 'lightblue',
     isScrollableOnOverflow: false,
+    customDataComponent: (
+        <div
+            style={{
+                background: 'white',
+                width: '100%',
+                height: '200px',
+                textAlign: 'center',
+                display: 'flex',
+            }}
+        >
+            <h1 style={{ margin: 'auto' }}>Some Cool Image</h1>
+        </div>
+    ),
 };
 
 const DivStyled = styled.div`
-    height: 350px;
+    height: 500px;
     overflow-x: auto;
     div[role='table-header'] {
         &:nth-child(1) {

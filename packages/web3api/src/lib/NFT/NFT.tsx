@@ -65,7 +65,7 @@ const NFT: React.FC<INFTProps> = ({
                 <Skeleton theme="text" width="100%" height="200px" />
                 <div id="information">
                     <Tooltip
-                        children={<Info fill={color.yellowDark} />}
+                        children={<Info fill={color.yellow50} />}
                         content={'There is no metadata'}
                         position={'top'}
                     />
@@ -87,7 +87,7 @@ const NFT: React.FC<INFTProps> = ({
                 )}
                 <div id="nft-info">
                     <div>
-                        <Typography variant="caption14" color={color.blueDark}>
+                        <Typography variant="caption14" color={color.blue70}>
                             {(JSON.parse(String(data.metadata)) as TNFTMetadata)
                                 ?.name || name}
                         </Typography>
@@ -98,21 +98,25 @@ const NFT: React.FC<INFTProps> = ({
                 </div>
                 <div id="nft-footer">
                     <Button
-                        icon={<Info fill={color.grey} fontSize={20} />}
+                        icon={<Info fill={color.blueGray50} fontSize={20} />}
                         isTransparent
-                        iconColor={color.grey}
+                        iconColor={color.blueGray50}
                         iconLayout="icon-only"
                         onClick={() => setShowModal(true)}
                     />
                     {showTraits && (
                         <NFTModal
                             attributes={
-                                (JSON.parse(
-                                    String(data.metadata),
-                                ) as TNFTMetadata)?.traits ||
-                                (JSON.parse(
-                                    String(data.metadata),
-                                ) as TNFTMetadata)?.attributes
+                                (
+                                    JSON.parse(
+                                        String(data.metadata),
+                                    ) as TNFTMetadata
+                                )?.traits ||
+                                (
+                                    JSON.parse(
+                                        String(data.metadata),
+                                    ) as TNFTMetadata
+                                )?.attributes
                             }
                             setShowModal={setShowModal}
                         />

@@ -75,7 +75,7 @@ PopoverWithElements.args = {
             onClick={() => alert('Local Devchain Server')}
         />,
     ],
-    parent: <HelpCircle key="3" fill={color.grey} fontSize={50} />,
+    parent: <HelpCircle key="3" fill={color.blueGray50} fontSize={50} />,
 };
 
 export const PopoverWithMove = Template.bind({});

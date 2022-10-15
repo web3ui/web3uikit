@@ -139,14 +139,14 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                         <TriangleUpIconStyled
                             data-testid="test-select-icon"
                             fontSize="20px"
-                            fill={color.blue}
+                            fill={color.navy40}
                             title="triangle up icon"
                         />
                     ) : (
                         <TriangleDownIconStyled
                             data-testid="test-select-icon"
                             fontSize="20px"
-                            fill={color.blue}
+                            fill={color.navy40}
                             title="triangle down icon"
                         />
                     )}

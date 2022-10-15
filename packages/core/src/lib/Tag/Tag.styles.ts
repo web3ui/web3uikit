@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import colorStyles from './styles/colors';
 import themeStyles from './styles/themes';
 import type { TagProps, Tone } from './types';
-import {color} from '@web3uikit/styles';
+import { color } from '@web3uikit/styles';
 const {
     activeStatus,
     discount,
@@ -10,7 +10,7 @@ const {
     initialStyles,
     regular,
     chips,
-} =themeStyles;
+} = themeStyles;
 
 const {
     coloredBlue,
@@ -76,9 +76,9 @@ const SpanStyled = styled.div<TStyleProps>`
     display: flex;
     margin-left: 8px;
     padding: auto;
-    &:hover{
-        svg{
-            fill: ${color.blue};
+    &:hover {
+        svg {
+            fill: ${color.navy40};
         }
     }
 `;

@@ -39,7 +39,7 @@ const LargeCreditCard: React.FC<CreditCardProps> = ({
                             {(isRemovable || isExpired) && (
                                 <Button
                                     icon={
-                                        <Bin fontSize={20} fill={color.red} />
+                                        <Bin fontSize={20} fill={color.red40} />
                                     }
                                     iconLayout={'icon-only'}
                                     isTransparent={true}

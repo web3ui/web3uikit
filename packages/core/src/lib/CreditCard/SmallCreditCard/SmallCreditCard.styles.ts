@@ -6,7 +6,7 @@ import { creditCardBrands, CreditCardProps } from '../types';
 export const getCardColor = (brand: creditCardBrands) => {
     switch (brand) {
         case 'amex':
-            return color.blueDark;
+            return color.blue70;
         case 'diners':
             return '#85B3DB';
         case 'mastercard':
@@ -28,13 +28,9 @@ const DivStyledWrapper = styled.div<TStyleProps>`
     justify-content: flex-start;
     padding: 8px 16px;
     border-color: ${({ isExpired, pressed }) =>
-        isExpired ? color.red : pressed ? color.green : ''};
+        isExpired ? color.red40 : pressed ? color.mint40 : ''};
     background-color: ${({ isExpired, pressed }) =>
-        isExpired
-            ? color.redLight
-            : pressed
-            ? color.greenForestLight
-            : 'transparent'};
+        isExpired ? color.red10 : pressed ? color.mint05 : 'transparent'};
 `;
 
 const DivStyledIcon = styled.div<{
@@ -57,7 +53,7 @@ const DivStyledIcon = styled.div<{
 
 const SpanStyledValue = styled.span`
     ${resetCSS};
-    color: ${color.blueDark};
+    color: ${color.blue70};
 `;
 
 const DivStyledContent = styled.div`

@@ -12,7 +12,10 @@ const parentWrapper = {
 export default {
     title: '3.Layout/Stepper',
     component: Stepper,
-    argTypes: { onComplete: { action: 'completed' } },
+    argTypes: {
+        onComplete: { action: 'completed' },
+        onNext: { action: 'Next Clicked' },
+    },
     decorators: [(storyFn) => <div style={parentWrapper}>{storyFn()}</div>],
 } as ComponentMeta<typeof Stepper>;
 

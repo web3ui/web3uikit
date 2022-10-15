@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 import styled from 'styled-components';
 import { color } from '@web3uikit/styles';
 import { Typography } from '../../Typography';
@@ -13,15 +13,16 @@ const HeaderStyled = styled.div`
 
 const CredentialsHeader: FC<ICredentialsHeaderProps> = ({
     title,
-    titleColor = color.blueDark,
+    titleColor = color.blue70,
     icon,
 }) => {
     if (!title && !icon) return null;
     return (
         <HeaderStyled>
-            {icon && icon}
+            {icon && <Fragment key="credentials-header-icon">{icon}</Fragment>}
             {title && (
                 <Typography
+                    key="credentials-header-text"
                     variant="body16"
                     weight="600"
                     color={titleColor}

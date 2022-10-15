@@ -27,7 +27,7 @@ describe('Hero - Demo', () => {
 
         const styles = title && getComputedStyle(title);
         const colorAsHex = rgbToHex(styles?.color);
-        expect(colorAsHex).toBe(color.greyDark.toLocaleLowerCase());
+        expect(colorAsHex).toBe(color.blueGray50.toLocaleLowerCase());
     });
 
     it('renders the background image and color', () => {
@@ -38,7 +38,7 @@ describe('Hero - Demo', () => {
         expect(styles?.backgroundImage).toBe(`url(${testBgURL})`);
 
         const colorAsHex = rgbToHex(styles?.backgroundColor);
-        expect(colorAsHex).toBe(color.greyLight.toLocaleLowerCase());
+        expect(colorAsHex).toBe(color.gray30.toLocaleLowerCase());
     });
 });
 

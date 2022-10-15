@@ -43,7 +43,7 @@ const HeaderStyled = styled.header<{
     ${(p) =>
         typeof p.title === 'string' &&
         `h3 {
-        color: ${color.blue};
+        color: ${color.navy40};
         padding-right: 8px;
         margin-block-start: 0;
         margin-block-end: 0;
@@ -53,10 +53,10 @@ const HeaderStyled = styled.header<{
     padding: 24px 32px 20px;
     justify-content: ${(p) => (p.title ? 'space-between' : 'flex-end')};
     border-bottom: ${(p) =>
-        p.headerHasBottomBorder ? `1px solid ${color.paleBlue2}` : undefined};
+        p.headerHasBottomBorder ? `1px solid ${color.navy20}` : undefined};
 
     div {
-        border-color: ${color.blue};
+        border-color: ${color.navy40};
         border-radius: 15px;
     }
 
@@ -65,7 +65,7 @@ const HeaderStyled = styled.header<{
     }
 
     #modal-close-button {
-        border: 3px solid ${color.paleBlue2};
+        border: 3px solid ${color.navy20};
         background-color: white;
     }
 `;
@@ -77,7 +77,7 @@ const DivStyledContent = styled.div`
 const FooterStyled = styled.footer<TStyleProps>`
     ${(p) =>
         p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
-    border-top: 1px solid ${color.paleBlue2};
+    border-top: 1px solid ${color.navy20};
     display: flex;
     flex-wrap: wrap;
     padding: 24px 32px 32px;
@@ -88,16 +88,16 @@ const FooterStyled = styled.footer<TStyleProps>`
     }
 
     #modal-cancel-button {
-        color: ${color.grey};
+        color: ${color.blueGray50};
         :hover {
-            color: ${color.black};
+            color: ${color.blue70};
         }
     }
 `;
 
 const DivStyled = styled.div<TStyleProps>`
     align-items: ${({ isCentered }) => (isCentered ? ' center' : 'flex-start')};
-    background: rgba(${HexToRgb(color.blueDark)}, 0.7);
+    background: rgba(${HexToRgb(color.blue70)}, 0.7);
     bottom: 0;
     display: ${({ isVisible }) => (isVisible ? ' flex' : 'none')};
     height: 100vh;
@@ -113,7 +113,7 @@ const DivStyled = styled.div<TStyleProps>`
 const CustomFooterStyled = styled.footer<TStyleProps>`
     ${(p) =>
         p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
-    border-top: 1px solid ${color.paleBlue2};
+    border-top: 1px solid ${color.navy20};
     display: flex;
     padding: 0px 32px 32px;
 `;

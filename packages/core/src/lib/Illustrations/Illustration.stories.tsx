@@ -18,7 +18,7 @@ const BackgroundColoredTemplate: ComponentStory<typeof Illustration> = (
         style={{
             width: '90vw',
             height: '90vh',
-            backgroundColor: `${color.blueSkyDark}`,
+            backgroundColor: `${color.blue30}`,
         }}
     >
         <Illustration {...args} />

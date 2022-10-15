@@ -1,5 +1,48 @@
 # @web3uikit/core
 
+## 0.2.1
+
+### Patch Changes
+
+-   [#832](https://github.com/web3ui/web3uikit/pull/832) [`5931cc6dd`](https://github.com/web3ui/web3uikit/commit/5931cc6dd77613a7ff3db80256a5d53fd94e57a6) Thanks [@Maki44](https://github.com/Maki44)! - Version bump for stepper
+
+## 0.2.0
+
+### Minor Changes
+
+-   [#824](https://github.com/web3ui/web3uikit/pull/824) [`35446096e`](https://github.com/web3ui/web3uikit/commit/35446096ea47f62cddf0b87b2710ba0391a47b5d) Thanks [@BillyG83](https://github.com/BillyG83)! - updated color system
+
+### Patch Changes
+
+-   Updated dependencies [[`35446096e`](https://github.com/web3ui/web3uikit/commit/35446096ea47f62cddf0b87b2710ba0391a47b5d)]:
+    -   @web3uikit/styles@0.2.0
+
+## 0.1.15
+
+### Patch Changes
+
+-   [#827](https://github.com/web3ui/web3uikit/pull/827) [`364721f9e`](https://github.com/web3ui/web3uikit/commit/364721f9eff9ed46d06a863e025860c16e44e8b6) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Custom Data component added
+
+## 0.1.14
+
+### Patch Changes
+
+-   [#820](https://github.com/web3ui/web3uikit/pull/820) [`139333b0e`](https://github.com/web3ui/web3uikit/commit/139333b0ee5bda331be400458c74cf09922fd125) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - [Code Area]: Fix Component hidden on Maximized state
+
+*   [#822](https://github.com/web3ui/web3uikit/pull/822) [`8f4fa610c`](https://github.com/web3ui/web3uikit/commit/8f4fa610c00a7705c8f532e7584be5ed1cd092fb) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - [Feat]: Pagination component
+
+*   Updated dependencies [[`8f4fa610c`](https://github.com/web3ui/web3uikit/commit/8f4fa610c00a7705c8f532e7584be5ed1cd092fb)]:
+    -   @web3uikit/styles@0.1.14
+
+## 0.1.13
+
+### Patch Changes
+
+-   [#816](https://github.com/web3ui/web3uikit/pull/816) [`ef3600a04`](https://github.com/web3ui/web3uikit/commit/ef3600a04a888e081e0e05697e77620eaf3cd4b6) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Code Area styles updated
+
+-   Updated dependencies [[`ef3600a04`](https://github.com/web3ui/web3uikit/commit/ef3600a04a888e081e0e05697e77620eaf3cd4b6)]:
+    -   @web3uikit/styles@0.1.13
+
 ## 0.1.12
 
 ### Patch Changes

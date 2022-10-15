@@ -24,7 +24,7 @@ const PlanCard: React.FC<IPlanCardProps> = ({
             isActive={isActive}
             {...props}
         >
-            <Typography variant="subtitle1" weight="600" color={color.blueDark}>
+            <Typography variant="subtitle1" weight="600" color={color.blue70}>
                 {subTitle}
             </Typography>
             <Typography>{title}</Typography>
@@ -32,7 +32,7 @@ const PlanCard: React.FC<IPlanCardProps> = ({
                 <Typography
                     variant="caption14"
                     weight="semibold"
-                    color={color.blueDark}
+                    color={color.blue70}
                 >
                     {descriptionTitle}
                 </Typography>
@@ -41,12 +41,12 @@ const PlanCard: React.FC<IPlanCardProps> = ({
                         <Check
                             title="check icon"
                             titleId="plan-card check icon"
-                            fill={color.green}
+                            fill={color.mint40}
                         />
                         <Typography
                             variant="caption14"
                             weight="semibold"
-                            color={color.grey}
+                            color={color.blueGray50}
                         >
                             {feature}
                         </Typography>

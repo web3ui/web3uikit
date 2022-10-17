@@ -4,7 +4,7 @@ import IPFSInput from './IPFSInput';
 import { moralisContext } from '../../web3utils/decorators';
 
 export default {
-    title: '1.Web3/IPFSInput',
+    title: '1.Web3-Parse/IPFSInput',
     component: IPFSInput,
     decorators: [moralisContext],
     parameters: {

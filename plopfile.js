@@ -23,7 +23,7 @@ module.exports = (plop) => {
                 message:
                     '🧙 : What category is the component in? (displayed in StoryBook)',
                 choices: [
-                    '1.Web3',
+                    '1.Web3-Parse',
                     '2.Forms',
                     '3.Layout',
                     '4.UI',

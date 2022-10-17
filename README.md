@@ -102,6 +102,8 @@ These are components which have `moralis` and `react-moralis` dependency.
 | -------------------------------------------- | ------- | --------- | -------------------------------- |
 | [@web3uikit/web3](./packages/web3/README.md) | TODO    | TODO      | Contains all the web3 components |
 
+‼️ Moralis servers will be deprecated soon. To continue using this package, self host your server by following the steps from [moralis docs](https://docs.moralis.io/docs/v1-server-self-hosting#next-steps)
+
 # 🚨 Breaking Changes
 
 -   `Icon` component does not exist anymore.

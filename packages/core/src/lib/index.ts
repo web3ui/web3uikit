@@ -1,5 +1,6 @@
 /* PLOP_INJECT_EXPORT */
 export * from './Pagination';
+export * from './Slider';
 export * from './Accordion';
 export * from './Avatar';
 export * from './Badge';

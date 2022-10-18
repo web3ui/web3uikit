@@ -13,18 +13,18 @@ const testRangeMin = 0;
 const testRangeMax = 100;
 const testDisValue = true;
 const baseTestValue = 22;
-const testInputId = 'test-input-input';
-const testLabelId = 'test-input-label';
-const testDivId = 'test-input';
+const testInputId = 'test-slider-input';
+const testDivId = 'test-slider';
 const testStepValue = 100;
 
-test('onChange event is returned, testEvent => event.target', () => {
+test('Slider onChange event is called', async () => {
     render(
         <Slider
-            rangeMin={testRangeMin}
-            rangeMax={testRangeMax}
-            rangeId={testRangeId}
-            onChanges={(e) => testEvent(e.target)}
+            min={testRangeMin}
+            max={testRangeMax}
+            id={testRangeId}
+            value={baseTestValue}
+            onChange={(currVal) => testEvent(currVal)}
         />,
     );
     const div: HTMLDivElement = screen.getByTestId(testDivId);
@@ -32,25 +32,21 @@ test('onChange event is returned, testEvent => event.target', () => {
 
     expect(div.classList.contains('filled')).toBeFalsy;
     expect(div.classList.contains('empty')).toBeTruthy;
+    expect(Number(input.value)).toBe(22);
 
     input.focus();
-    fireEvent.change(input, { target: { value: 22 } });
-
-    expect(Number(input.value)).toBe(22);
-    expect(testEvent).toHaveBeenCalledWith(input);
+    fireEvent.change(input, { target: { value: 42 } });
+    expect(testEvent).toHaveBeenCalled();
 });
 
 describe('Slider - Default', () => {
-    const testLabel = Default?.args?.rangeLabel;
-
     beforeEach(() => {
         container = document.createElement('div');
 
         render(
             <Default
-                onChanges={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
+                value={baseTestValue}
+                onChange={(currVal) => testEvent(currVal)}
             />,
             {
                 container: document.body.appendChild(container),
@@ -84,25 +80,16 @@ describe('Slider - Default', () => {
         expect(input).not.toBeNull();
         input && expect(input.type).toBe('range');
     });
-
-    it('renders label text', () => {
-        const label = container.querySelector(`[data-testid="${testLabelId}"]`);
-        expect(label).not.toBeNull();
-        expect(label?.textContent).toBe(testLabel);
-    });
 });
 
 describe('Slider - Step', () => {
-    const testLabel = Default?.args?.rangeLabel;
-
     beforeEach(() => {
         container = document.createElement('div');
 
         render(
             <Step
-                onChanges={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
+                value={baseTestValue}
+                onChange={(currVal) => testEvent(currVal)}
             />,
             {
                 container: document.body.appendChild(container),
@@ -130,22 +117,13 @@ describe('Slider - Step', () => {
     });
 });
 
-describe('Slider - Step', () => {
-    const testLabel = Default?.args?.rangeLabel;
-
+describe('Slider - Disabled', () => {
     beforeEach(() => {
         container = document.createElement('div');
 
-        render(
-            <Disabled
-                onChanges={(event: React.ChangeEvent<HTMLInputElement>) =>
-                    testEvent(event.target)
-                }
-            />,
-            {
-                container: document.body.appendChild(container),
-            },
-        );
+        render(<Disabled onChange={(currVal) => testEvent(currVal)} />, {
+            container: document.body.appendChild(container),
+        });
     });
 
     afterEach(() => {

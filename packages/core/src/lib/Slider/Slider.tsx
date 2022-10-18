@@ -1,47 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { ISliderProps } from './types';
 import styles from './Slider.styles';
+import { color } from '@web3uikit/styles';
 
-const { DivStyled, LabelStyled, PStyled, InputStyled } = styles;
+const { DivStyled, DivStyledTooltip, InputStyled, SpanStyled } = styles;
 
 const Slider: React.FC<ISliderProps> = ({
-    rangeId,
-    rangeLabel,
-    rangeMax,
-    rangeMin,
-    rangeValue,
-    onChanges,
-    currentLabel,
-    disabled,
-    Step
+    id,
+    max = 100,
+    min = 0,
+    value,
+    onChange,
+    disabled = false,
+    bgColor = color.mint40,
+    labelBgColor = color.mint40,
+    handleLabel,
+    step = 1,
+    ...props
 }) => {
-    const [currentValue, setCurrentValue] = useState(rangeValue);
-
-    const rangeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const newRangeValue = Number(event.currentTarget.value);
-        setCurrentValue(newRangeValue);
-        onChanges && onChanges(event);
-        console.log(currentValue);
-    };
-
     return (
-        <DivStyled data-testid="test-input">
-            <LabelStyled data-testid="test-input-label" htmlFor={rangeId}>{rangeLabel}</LabelStyled>
-            <PStyled>
-                {currentValue} of {rangeMax}
-            </PStyled>
+        <DivStyled data-testid="test-slider">
+            {!disabled && (
+                <DivStyledTooltip
+                    value={Number(((value - min) * 100) / (max - min))}
+                >
+                    <SpanStyled bgColor={labelBgColor}>
+                        {handleLabel?.(value) ?? value}
+                    </SpanStyled>
+                </DivStyledTooltip>
+            )}
             <InputStyled
-                data-testid="test-input-input"
-                id={rangeId}
-                max={rangeMax}
-                min={rangeMin}
+                $bgColor={bgColor}
+                data-testid="test-slider-input"
+                id={id}
+                max={max}
+                min={min}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    rangeChange(e);
+                    onChange?.(e.target.value);
                 }}
                 type="range"
-                value={currentValue}
+                value={value}
                 disabled={disabled}
-                step={Step}
+                step={step}
+                {...props}
             />
         </DivStyled>
     );

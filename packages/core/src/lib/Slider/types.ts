@@ -1,40 +1,53 @@
-import React from "react";
+import React from 'react';
 
 export interface ISliderProps {
     /**
      * pass id for html input component
      */
-    rangeId: string;
+    id: string;
+
     /**
-     * pass any Label for Slider
+     * background color of slider
      */
-    rangeLabel?: string;
+    bgColor?: string;
+
+    /**
+     * label background color
+     */
+    labelBgColor?: string;
+
+    /**
+     * change label value using current value
+     */
+    handleLabel?: (val: number) => string | number;
+
     /**
      * pass maximum Range for Slider
      */
-    rangeMax: number;
+    max?: number;
+
     /**
-     * pass minimum Range for Slider
+     * min value of slider
      */
-    rangeMin: number;
+    min?: number;
+
     /**
-     * Pass for setting current value 
+     * value of the slider
      */
-    rangeValue?: number;
+    value: number;
+
     /**
-     * Pass for setting Changed event 
+     * onChange callback event
      */
-    onChanges?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange: (value: string) => void;
+
     /**
-     * A label to show the top
-     */
-    currentLabel?: string | JSX.Element;
-    /**
-     * A boolean for working or not
+     * disables any interaction
      */
     disabled?: boolean;
+
     /**
-     * Set the discrete step size of the element
+     * set the discrete step size of the element
      */
-    Step?: number;
+    step?: number;
 }

@@ -34,15 +34,13 @@ test('onChange event is returned, testEvent => event.target', () => {
     expect(div.classList.contains('empty')).toBeTruthy;
 
     input.focus();
-    fireEvent.change(input, { target: { value: 22  } });
+    fireEvent.change(input, { target: { value: 22 } });
 
-    expect(Number(input.value)).toBe((22));
+    expect(Number(input.value)).toBe(22);
     expect(testEvent).toHaveBeenCalledWith(input);
 });
 
-
 describe('Slider - Default', () => {
-
     const testLabel = Default?.args?.rangeLabel;
 
     beforeEach(() => {
@@ -77,7 +75,6 @@ describe('Slider - Default', () => {
         );
         expect(input).not.toBeNull();
         input && expect(Number(input.value)).toBe(baseTestValue);
-        
     });
 
     it('renders the correct type of input', () => {
@@ -93,11 +90,9 @@ describe('Slider - Default', () => {
         expect(label).not.toBeNull();
         expect(label?.textContent).toBe(testLabel);
     });
-
-})
+});
 
 describe('Slider - Step', () => {
-
     const testLabel = Default?.args?.rangeLabel;
 
     beforeEach(() => {
@@ -131,15 +126,11 @@ describe('Slider - Step', () => {
             `[data-testid="${testInputId}"]`,
         );
         expect(input?.step).not.toBeNull();
-        expect(input?.step).toBe(testStepValue)
+        expect(input?.step).toBe(testStepValue.toString());
     });
-
-    
-
-})
+});
 
 describe('Slider - Step', () => {
-
     const testLabel = Default?.args?.rangeLabel;
 
     beforeEach(() => {
@@ -173,9 +164,6 @@ describe('Slider - Step', () => {
             `[data-testid="${testInputId}"]`,
         );
         expect(input?.disabled).not.toBeNull();
-        expect(input?.disabled).toBe(testDisValue)
+        expect(input?.disabled).toBe(testDisValue);
     });
-
-    
-
-})
+});

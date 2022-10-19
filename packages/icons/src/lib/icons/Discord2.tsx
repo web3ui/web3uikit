@@ -14,6 +14,7 @@ const SvgDiscord2 = ({
         viewBox="0 0 19 15"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        role="img"
         data-testid="test-icon"
         aria-hidden="true"
         aria-labelledby={titleId}
@@ -28,5 +29,4 @@ const SvgDiscord2 = ({
         <ellipse cx={12.667} cy={8.182} rx={1.915} ry={1.97} fill="#fff" />
     </svg>
 );
-
 export default SvgDiscord2;

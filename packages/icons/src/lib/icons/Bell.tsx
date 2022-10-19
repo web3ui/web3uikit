@@ -16,6 +16,7 @@ const SvgBell = ({
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -28,5 +29,4 @@ const SvgBell = ({
         <path d="M12 22c1.328 0 2.39-1.04 2.39-2.375H9.572C9.572 20.961 10.635 22 12 22z" />
     </svg>
 );
-
 export default SvgBell;

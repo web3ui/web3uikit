@@ -15,6 +15,7 @@ const SvgEth = ({
         viewBox="0 0 24 39.1"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -59,5 +60,4 @@ const SvgEth = ({
         </g>
     </svg>
 );
-
 export default SvgEth;

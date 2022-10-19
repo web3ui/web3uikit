@@ -14,6 +14,7 @@ const SvgCreditCard2 = ({
         viewBox="0 0 58 32"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        role="img"
         data-testid="test-icon"
         aria-hidden="true"
         aria-labelledby={titleId}
@@ -27,5 +28,4 @@ const SvgCreditCard2 = ({
         />
     </svg>
 );
-
 export default SvgCreditCard2;

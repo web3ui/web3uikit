@@ -16,6 +16,7 @@ const SvgTriangleUp = ({
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -23,5 +24,4 @@ const SvgTriangleUp = ({
         <path d="m11.646 9.354-4.792 4.792a.5.5 0 0 0 .353.854h9.586a.5.5 0 0 0 .353-.854l-4.792-4.792a.5.5 0 0 0-.708 0z" />
     </svg>
 );
-
 export default SvgTriangleUp;

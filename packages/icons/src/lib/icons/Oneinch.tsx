@@ -15,6 +15,7 @@ const SvgOneinch = ({
         viewBox="0 0 24 22.63"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -93,5 +94,4 @@ const SvgOneinch = ({
         </g>
     </svg>
 );
-
 export default SvgOneinch;

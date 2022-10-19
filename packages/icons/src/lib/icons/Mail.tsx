@@ -16,6 +16,7 @@ const SvgMail = ({
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -24,5 +25,4 @@ const SvgMail = ({
         <path d="M2.146 6.14a.815.815 0 0 1 1.12-.195L12 11.94l8.734-5.994a.815.815 0 0 1 1.12.194.779.779 0 0 1-.197 1.099l-9.196 6.31a.818.818 0 0 1-.922 0l-9.196-6.31a.779.779 0 0 1-.197-1.099z" />
     </svg>
 );
-
 export default SvgMail;

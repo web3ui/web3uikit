@@ -15,6 +15,7 @@ const SvgKey = ({
         data-testid="test-icon"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -29,5 +30,4 @@ const SvgKey = ({
         />
     </svg>
 );
-
 export default SvgKey;

@@ -16,6 +16,7 @@ const SvgOff = ({
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -24,5 +25,4 @@ const SvgOff = ({
         <path d="M9 3.512A9 9 0 1 0 21 12a9.004 9.004 0 0 0-6-8.488v2.162a7 7 0 1 1-6 0V3.512z" />
     </svg>
 );
-
 export default SvgOff;

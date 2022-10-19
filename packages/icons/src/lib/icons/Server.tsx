@@ -16,6 +16,7 @@ const SvgServer = ({
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -28,5 +29,4 @@ const SvgServer = ({
         <path d="M9.5 7.09c0 .453.366.82.818.82h.008a.818.818 0 0 0 0-1.637h-.008a.818.818 0 0 0-.818.818z" />
     </svg>
 );
-
 export default SvgServer;

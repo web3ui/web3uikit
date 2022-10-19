@@ -16,6 +16,7 @@ const SvgLogOut = ({
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -24,5 +25,4 @@ const SvgLogOut = ({
         <path d="M11.125 12c0-.483.392-.875.875-.875h9a.875.875 0 0 1 0 1.75h-9a.875.875 0 0 1-.875-.875z" />
     </svg>
 );
-
 export default SvgLogOut;

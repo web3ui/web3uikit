@@ -16,6 +16,7 @@ const SvgGoogle = ({
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -46,5 +47,4 @@ const SvgGoogle = ({
         />
     </svg>
 );
-
 export default SvgGoogle;

@@ -14,6 +14,7 @@ const SvgAda = ({
         viewBox="0 0 24 22.185"
         width="1em"
         height="1em"
+        role="img"
         data-testid="test-icon"
         aria-labelledby={titleId}
         {...props}
@@ -143,5 +144,4 @@ const SvgAda = ({
         </g>
     </svg>
 );
-
 export default SvgAda;

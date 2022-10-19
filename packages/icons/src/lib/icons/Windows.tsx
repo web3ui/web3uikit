@@ -16,6 +16,7 @@ const SvgWindows = ({
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -23,5 +24,4 @@ const SvgWindows = ({
         <path d="M4 4v7.679h7.679V4H4zm8.321 0v7.679H20V4h-7.679zM4 12.321V20h7.679v-7.679H4zm8.321 0V20H20v-7.679h-7.679z" />
     </svg>
 );
-
 export default SvgWindows;

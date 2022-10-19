@@ -14,6 +14,7 @@ const SvgCross = ({
         width="1em"
         height="1em"
         viewBox="0 0 24 24"
+        role="img"
         data-testid="test-icon"
         aria-hidden="true"
         aria-labelledby={titleId}
@@ -23,5 +24,4 @@ const SvgCross = ({
         <path d="m23 20.168-8.185-8.187L23 3.807 20.168 1l-8.182 8.179L3.81 1 1 3.81l8.186 8.196L1 20.19 3.81 23l8.203-8.192L20.193 23z" />
     </svg>
 );
-
 export default SvgCross;

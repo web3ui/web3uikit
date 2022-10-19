@@ -16,6 +16,7 @@ const SvgWeb3Api = ({
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -34,5 +35,4 @@ const SvgWeb3Api = ({
         <path d="M12.012 13.778c-1.448 0-2.38-.38-3.016-1.233a.804.804 0 0 1 1.288-.963c.229.305.595.587 1.728.587a1.573 1.573 0 0 0 0-3.145h-1.697a.805.805 0 1 1 0-1.609h1.697a3.182 3.182 0 1 1 0 6.363z" />
     </svg>
 );
-
 export default SvgWeb3Api;

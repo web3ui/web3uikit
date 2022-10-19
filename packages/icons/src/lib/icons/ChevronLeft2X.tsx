@@ -16,6 +16,7 @@ const SvgChevronLeft2X = ({
         xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -24,5 +25,4 @@ const SvgChevronLeft2X = ({
         <path d="M12.118 11.735a.357.357 0 0 0 0 .53l4.63 4.618c.126.156.378.156.535 0l.599-.624c.157-.125.157-.374 0-.53l-3.717-3.713 3.717-3.745a.357.357 0 0 0 0-.53l-.599-.624c-.157-.156-.409-.156-.535 0l-4.63 4.618z" />
     </svg>
 );
-
 export default SvgChevronLeft2X;

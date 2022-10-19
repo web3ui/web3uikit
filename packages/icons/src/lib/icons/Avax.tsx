@@ -15,6 +15,7 @@ const SvgAvax = ({
         viewBox="0 0 24 24"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -34,5 +35,4 @@ const SvgAvax = ({
         </g>
     </svg>
 );
-
 export default SvgAvax;

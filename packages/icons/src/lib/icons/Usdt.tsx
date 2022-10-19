@@ -15,6 +15,7 @@ const SvgUsdt = ({
         viewBox="0 0 24 20.87"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -33,5 +34,4 @@ const SvgUsdt = ({
         />
     </svg>
 );
-
 export default SvgUsdt;

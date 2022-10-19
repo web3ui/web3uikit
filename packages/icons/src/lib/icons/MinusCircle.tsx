@@ -16,6 +16,7 @@ const SvgMinusCircle = ({
         viewBox="0 0 32 32"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -27,5 +28,4 @@ const SvgMinusCircle = ({
         />
     </svg>
 );
-
 export default SvgMinusCircle;

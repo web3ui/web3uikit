@@ -15,6 +15,7 @@ const SvgXrp = ({
         viewBox="0 0 24 19.8"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -33,5 +34,4 @@ const SvgXrp = ({
         </g>
     </svg>
 );
-
 export default SvgXrp;

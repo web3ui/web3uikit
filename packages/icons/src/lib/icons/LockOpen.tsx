@@ -14,6 +14,7 @@ const SvgLockOpen = ({
         viewBox="0 0 19 18"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
+        role="img"
         data-testid="test-icon"
         aria-hidden="true"
         aria-labelledby={titleId}
@@ -27,5 +28,4 @@ const SvgLockOpen = ({
         />
     </svg>
 );
-
 export default SvgLockOpen;

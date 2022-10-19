@@ -15,6 +15,7 @@ const SvgUni = ({
         viewBox="0 0 24 27.643"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >
@@ -68,5 +69,4 @@ const SvgUni = ({
         />
     </svg>
 );
-
 export default SvgUni;

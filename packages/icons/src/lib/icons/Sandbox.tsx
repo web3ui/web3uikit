@@ -14,6 +14,7 @@ const SvgSandbox = ({
         viewBox="0 0 20 23"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
+        role="img"
         data-testid="test-icon"
         aria-hidden="true"
         aria-labelledby={titleId}
@@ -27,5 +28,4 @@ const SvgSandbox = ({
         />
     </svg>
 );
-
 export default SvgSandbox;

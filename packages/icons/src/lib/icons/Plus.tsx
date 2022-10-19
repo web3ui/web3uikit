@@ -14,6 +14,7 @@ const SvgPlus = ({
         width="1em"
         height="1em"
         viewBox="0 0 24 24"
+        role="img"
         data-testid="test-icon"
         aria-hidden="true"
         aria-labelledby={titleId}
@@ -23,5 +24,4 @@ const SvgPlus = ({
         <path d="M24 10H14V0h-4v10H0v4h10v10h4V14h10z" />
     </svg>
 );
-
 export default SvgPlus;

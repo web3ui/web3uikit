@@ -61,6 +61,11 @@ export interface IBannerStripProps {
      * to set position of the banner strip
      */
     position?: 'fixed' | 'absolute' | 'relative';
+
+    /**
+     * specify the number of days you want to hide the component after close button is clicked (Uses local storage)
+     */
+    noOfDaysToHide?: number;
 }
 
 export type TBannerStripTypes =

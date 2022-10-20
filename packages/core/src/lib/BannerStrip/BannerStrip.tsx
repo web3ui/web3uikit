@@ -7,26 +7,27 @@ import useLocalStorage from '../../hooks/useLocalStorage';
 const { SectionStyled, CrossStyled, DivStyledContainer } = styles;
 
 const BannerStrip: React.FC<IBannerStripProps> = ({
+    bgColor,
     borderRadius = '0px',
     buttonConfig,
     buttonDisplayed = false,
     height = 'auto',
     id = 'web3uikit-banner',
+    noOfDaysToHide = 1,
+    isCloseBtnVisible = true,
     onCloseBtnClick,
     position = 'fixed',
     text,
-    bgColor,
-    isCloseBtnVisible = true,
     type = 'standard',
     width,
     ...props
 }) => {
     depreciatedWarning('buttonConfig and buttonDisplayed props');
-    //persist the banner closed event for a day
+    //persist the banner closed event for a number of days - noOfDaysToHide
     const [isComponentVisible, setIsComponentVisible] = useLocalStorage(
         id,
         true,
-        1,
+        noOfDaysToHide,
     );
     if (!isComponentVisible) return null;
     return (

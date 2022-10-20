@@ -113,6 +113,7 @@ const ButtonColoredStyled = styled(ButtonBase)<ButtonProps>`
         transition: all 0.3s ease;
         width: 100%;
         z-index: 0;
+        border-radius: 10px;
     }
 
     ${({ color }) => color && getColored(color)}

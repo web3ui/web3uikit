@@ -1,48 +1,80 @@
 import styled from 'styled-components';
-import { color, fonts } from '@web3uikit/styles';
-import { BannerStripProps } from './types';
+import { color, fonts, resetCSS } from '@web3uikit/styles';
+import { IBannerStripProps, TBannerStripTypes } from './types';
+import { Cross } from '@web3uikit/icons';
 
-const getBackgroundColor = (type: string) => {
+// TODO : UPDATE ALL COLORS WITH NAMING SYSTEM ONCE IT IS FINALIZED
+const getColor = (type?: TBannerStripTypes) => {
     switch (type) {
         case 'success':
-            return color.mint40;
+            return {
+                bgColor: '#E8FCF9',
+                color: color.mint50,
+            };
         case 'warning':
-            return color.yellow50;
+            return {
+                bgColor: '#FEFAED',
+                color: color.yellow50,
+            };
         case 'error':
-            return color.red40;
+            return {
+                bgColor: '#FDF0F0',
+                color: color.red40,
+            };
         default:
-            return color.navy40;
+            return {
+                bgColor: color.aero20,
+                color: color.navy40,
+            };
     }
 };
 
-const SectionStyled = styled.section<Pick<BannerStripProps, 'type' | 'height'>>`
+type TSectionStyledProps = Pick<
+    IBannerStripProps,
+    'height' | 'width' | 'borderRadius' | 'type' | 'position' | 'bgColor'
+>;
+
+const SectionStyled = styled.section<TSectionStyledProps>`
+    ${resetCSS};
     ${fonts.text};
     align-items: center;
-    color: ${color.white};
     display: flex;
-    height: 40px;
+    font-size: 14px;
+    font-weight: 550;
     justify-content: center;
     left: 0;
+    line-height: 24px;
     max-width: 100%;
-    padding: 0;
-    position: fixed;
+    padding: 8px 0px;
+    text-align: center;
     top: 0;
-    width: 100vw;
+    width: 100%;
     z-index: 10001;
-    background-color: ${(p) => p.type && getBackgroundColor(p.type)};
-    height: ${({ height }) => height};
 
-    button {
-        padding: 0 8px;
-        margin: 2px 6px;
-        border: 0;
-    }
-
-    strong {
-        margin: 0 8px;
-        padding: 2px 8px;
-        line-height: 16px;
-    }
+    position: ${(props) => props.position && props.position};
+    border-radius: ${(props) => props.borderRadius && props.borderRadius};
+    height: ${(props) => props.height && props.height};
+    width: ${(props) => props.width && props.width};
+    background-color: ${(props) =>
+        props.type !== 'custom' ? getColor(props.type).bgColor : props.bgColor};
+    color: ${(p) => (p.type ? getColor(p.type).color : color.white)};
 `;
 
-export default { SectionStyled };
+const DivStyledContainer = styled.div`
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-right: 20px;
+`;
+
+const CrossStyled = styled(Cross)`
+    fill: ${color.gray40};
+    right: 14px;
+    top: 7px;
+    height: 11px;
+    width: 11px;
+    position: absolute;
+    cursor: pointer;
+`;
+
+export default { SectionStyled, CrossStyled, DivStyledContainer };

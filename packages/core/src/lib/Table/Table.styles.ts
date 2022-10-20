@@ -71,6 +71,8 @@ const TableGrid = styled.div.attrs((props: any) => ({
     columns: props.columns,
     columnGapSize: props.columnGapSize,
     tableBackgroundColor: props.tableBackgroundColor,
+    headerBgColor: props.headerBgColor,
+    headerTextColor: props.headerTextColor,
 }))`
     ${resetCSS}
     ${fonts.text}
@@ -93,6 +95,9 @@ const TableGrid = styled.div.attrs((props: any) => ({
     & > div.table_header {
         font-weight: 600;
         padding: 12px 0;
+        color: ${(props) => props.headerTextColor ?? 'white'};
+        background-color: ${(props) => props.headerBgColor ?? 'white'} !important;
+        box-shadow: -${(props) => props.headerBgColor ? ((props.columnGapSize + 'px 0px 0px 0px' + props.headerBgColor) ?? '11px'):('0px')}, ${(props) => props.headerBgColor ? ((props.columnGapSize + 'px 0px 0px 0px' + props.headerBgColor) ?? '11px'):('0px')}; // to fill the grip-gap with color
 
         &:first-of-type {
             padding-left: 22px;
@@ -107,7 +112,7 @@ const TableGridContainer = styled.div<{
         106.45% 108.64% at 32.33% -4.84%,
         #ecf5fc 0.52%,
         #cee4f3 100%
-    );
+    ) !important;
     border-radius: 20px;
     padding: 1px;
     /* position: relative; */

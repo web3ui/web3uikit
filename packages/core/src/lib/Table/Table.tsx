@@ -43,6 +43,8 @@ const Table: React.FC<ITableProps> = ({
     onRowClick,
     pageSize,
     tableBackgroundColor = 'white',
+    headerTextColor='',
+    headerBgColor='',
     ...props
 }) => {
     const [pageNum, setPageNum] = useState<number>(
@@ -212,7 +214,7 @@ const Table: React.FC<ITableProps> = ({
                                             } ${
                                                 colKey == rowData.length - 1 &&
                                                 'lastCol'
-                                            }`}
+                                            } table_item`}
                                             alignCellItems={alignCellItems}
                                             justifyCellItems={justifyCellItems}
                                             onClick={(e) => {
@@ -315,6 +317,8 @@ const Table: React.FC<ITableProps> = ({
                     columns={columnsConfig}
                     columnGapSize={columnGapSize}
                     tableBackgroundColor={tableBackgroundColor}
+                    headerTextColor={headerTextColor}
+                    headerBgColor={headerBgColor}
                 >
                     <RenderTableHeader />
                     {isLoading ? <Loader /> : <RenderTable />}

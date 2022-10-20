@@ -104,4 +104,14 @@ export interface ITableProps {
      * Show a custom component on all pages
      */
     customDataComponent?: React.ReactNode;
+
+    /**
+     * text color of the table header; remember to use 0px gap size for proper effect
+     */
+    headerTextColor?: string;
+
+    /**
+     * background color of the table header; remember to use 0px gap size for proper effect
+     */
+    headerBgColor?: string;
 }

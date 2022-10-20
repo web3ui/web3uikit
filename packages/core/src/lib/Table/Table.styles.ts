@@ -112,7 +112,7 @@ const TableGridContainer = styled.div<{
         106.45% 108.64% at 32.33% -4.84%,
         #ecf5fc 0.52%,
         #cee4f3 100%
-    ) !important;
+    );
     border-radius: 20px;
     padding: 1px;
     /* position: relative; */

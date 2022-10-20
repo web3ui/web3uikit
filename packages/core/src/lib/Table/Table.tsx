@@ -214,7 +214,7 @@ const Table: React.FC<ITableProps> = ({
                                             } ${
                                                 colKey == rowData.length - 1 &&
                                                 'lastCol'
-                                            } table_item`}
+                                            }`}
                                             alignCellItems={alignCellItems}
                                             justifyCellItems={justifyCellItems}
                                             onClick={(e) => {

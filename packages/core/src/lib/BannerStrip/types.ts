@@ -65,7 +65,7 @@ export interface IBannerStripProps {
     /**
      * specify the number of days you want to hide the component after close button is clicked (Uses local storage)
      */
-    noOfDaysToHide?: number;
+    noOfDaysToHide?: number | null;
 }
 
 export type TBannerStripTypes =

@@ -3,7 +3,7 @@ import { useState } from 'react';
 const useLocalStorage = (
     key: string,
     initialValue: any,
-    expiryInDays?: number,
+    expiryInDays?: number | null,
 ) => {
     const [storedValue, setStoredValue] = useState(() => {
         if (typeof window === 'undefined' || !window?.localStorage) {

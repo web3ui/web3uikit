@@ -80,3 +80,10 @@ Coinbase.args = {
     bgColor: bgConfig.coinbase,
     btnText: 'View Endpoints',
 };
+export const Ronin = Template.bind({});
+Ronin.args = {
+    chain: 'ronin',
+    chainType: 'Network',
+    bgColor: bgConfig.ronin,
+    btnText: 'View Endpoints',
+};

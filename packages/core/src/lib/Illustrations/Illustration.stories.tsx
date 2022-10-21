@@ -65,6 +65,11 @@ Cronos.args = {
     logo: 'cronos',
 };
 
+export const Ronin = BackgroundColoredTemplate.bind({});
+Ronin.args = {
+    logo: 'ronin',
+};
+
 export const Crypto = BackgroundColoredTemplate.bind({});
 Crypto.args = {
     logo: 'cryptoweb',

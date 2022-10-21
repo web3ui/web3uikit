@@ -65,3 +65,9 @@ Coinbase.args = {
     chain: 'coinbase',
     size: '48px',
 };
+
+export const Ronin = Template.bind({});
+Ronin.args = {
+    chain: 'ronin',
+    size: '48px',
+};

@@ -106,12 +106,12 @@ export interface ITableProps {
     customDataComponent?: React.ReactNode;
 
     /**
-     * text color of the table header; remember to use 0px gap size for proper effect
+     * text color of the table header;
      */
     headerTextColor?: string;
 
     /**
-     * background color of the table header; remember to use 0px gap size for proper effect
+     * background color of the table header;
      */
     headerBgColor?: string;
 }

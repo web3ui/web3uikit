@@ -67,6 +67,8 @@ const DivTableCell = styled.div<
     padding: 16px 0;
 `;
 
+const getBoxShadowValues = (props: any) => `${props.headerBgColor ? ((props.columnGapSize + 'px 0px 0px 0px' + props.headerBgColor) ?? '11px'):('0px')}`;
+
 const TableGrid = styled.div.attrs((props: any) => ({
     columns: props.columns,
     columnGapSize: props.columnGapSize,
@@ -79,7 +81,7 @@ const TableGrid = styled.div.attrs((props: any) => ({
     padding-bottom: 11px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
-    background-color: ${(props) => props.tableBackgroundColor ?? 'white'};
+    background-color: ${(props) => props.tableBackgroundColor ?? color.white};
     display: grid;
     grid-template-columns: ${(props) => props.columns};
     // row-gap: 22px;
@@ -95,9 +97,9 @@ const TableGrid = styled.div.attrs((props: any) => ({
     & > div.table_header {
         font-weight: 600;
         padding: 12px 0;
-        color: ${(props) => props.headerTextColor ?? 'white'};
-        background-color: ${(props) => props.headerBgColor ?? 'white'} !important;
-        box-shadow: -${(props) => props.headerBgColor ? ((props.columnGapSize + 'px 0px 0px 0px' + props.headerBgColor) ?? '11px'):('0px')}, ${(props) => props.headerBgColor ? ((props.columnGapSize + 'px 0px 0px 0px' + props.headerBgColor) ?? '11px'):('0px')}; // to fill the grip-gap with color
+        color: ${(props) => props.headerTextColor ?? color.white};
+        background-color: ${(props) => props.headerBgColor ?? color.white} !important;
+        box-shadow: -${(props) => getBoxShadowValues(props)}, ${(props) => getBoxShadowValues(props)}; //to fill the grip-gap with color
 
         &:first-of-type {
             padding-left: 22px;

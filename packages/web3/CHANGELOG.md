@@ -1,5 +1,15 @@
 # @web3uikit/web3
 
+## 0.2.2
+
+### Patch Changes
+
+-   [#839](https://github.com/web3ui/web3uikit/pull/839) [`3689f9220`](https://github.com/web3ui/web3uikit/commit/3689f92204fee4f356ec6d45276bf9ba901732e3) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Feat slider added component
+
+-   Updated dependencies [[`3689f9220`](https://github.com/web3ui/web3uikit/commit/3689f92204fee4f356ec6d45276bf9ba901732e3), [`e5254d251`](https://github.com/web3ui/web3uikit/commit/e5254d25181bb78d0de1e73bd69a7115bcf75951), [`194ed856e`](https://github.com/web3ui/web3uikit/commit/194ed856e7c47adb774a594d95ee9c4098121a81), [`262005b1b`](https://github.com/web3ui/web3uikit/commit/262005b1bee9239fa75915fd6e68902acce9e137)]:
+    -   @web3uikit/core@0.2.2
+    -   @web3uikit/icons@0.2.2
+
 ## 0.2.0
 
 ### Minor Changes

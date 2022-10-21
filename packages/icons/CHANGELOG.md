@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.2.2
+
+### Patch Changes
+
+-   [#844](https://github.com/web3ui/web3uikit/pull/844) [`262005b1b`](https://github.com/web3ui/web3uikit/commit/262005b1bee9239fa75915fd6e68902acce9e137) Thanks [@0xTijan](https://github.com/0xTijan)! - 843 pagination fix colors and add new icon
+
 ## 0.1.12
 
 ### Patch Changes

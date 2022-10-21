@@ -1,5 +1,20 @@
 # @web3uikit/core
 
+## 0.2.2
+
+### Patch Changes
+
+-   [#839](https://github.com/web3ui/web3uikit/pull/839) [`3689f9220`](https://github.com/web3ui/web3uikit/commit/3689f92204fee4f356ec6d45276bf9ba901732e3) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Feat slider added component
+
+*   [#850](https://github.com/web3ui/web3uikit/pull/850) [`e5254d251`](https://github.com/web3ui/web3uikit/commit/e5254d25181bb78d0de1e73bd69a7115bcf75951) Thanks [@0xTijan](https://github.com/0xTijan)! - fixed colored button overflow
+
+-   [#853](https://github.com/web3ui/web3uikit/pull/853) [`194ed856e`](https://github.com/web3ui/web3uikit/commit/194ed856e7c47adb774a594d95ee9c4098121a81) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add ronin logo
+
+*   [#844](https://github.com/web3ui/web3uikit/pull/844) [`262005b1b`](https://github.com/web3ui/web3uikit/commit/262005b1bee9239fa75915fd6e68902acce9e137) Thanks [@0xTijan](https://github.com/0xTijan)! - 843 pagination fix colors and add new icon
+
+*   Updated dependencies [[`262005b1b`](https://github.com/web3ui/web3uikit/commit/262005b1bee9239fa75915fd6e68902acce9e137)]:
+    -   @web3uikit/icons@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

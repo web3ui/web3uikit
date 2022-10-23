@@ -32,6 +32,8 @@
         "@web3uikit/config": "*",
         "@web3uikit/core": "*",
         "@web3uikit/styles": "*",
-        "@web3uikit/icons": "*"
+        "@web3uikit/icons": "*",
+        "ethers": "^5.7.2",
+        "wagmi": "^0.7.5"
     }
 }

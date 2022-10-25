@@ -38,4 +38,5 @@ const SvgNetwork = ({
         />
     </svg>
 );
+
 export default SvgNetwork;

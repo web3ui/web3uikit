@@ -783,4 +783,5 @@ const SvgDoge = ({
         </g>
     </svg>
 );
+
 export default SvgDoge;

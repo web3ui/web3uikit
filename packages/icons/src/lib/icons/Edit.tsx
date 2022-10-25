@@ -28,4 +28,5 @@ const SvgEdit = ({
         />
     </svg>
 );
+
 export default SvgEdit;

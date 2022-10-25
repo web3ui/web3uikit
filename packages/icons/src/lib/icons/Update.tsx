@@ -34,4 +34,5 @@ const SvgUpdate = ({
         />
     </svg>
 );
+
 export default SvgUpdate;

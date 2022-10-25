@@ -28,4 +28,5 @@ const SvgCamera = ({
         />
     </svg>
 );
+
 export default SvgCamera;

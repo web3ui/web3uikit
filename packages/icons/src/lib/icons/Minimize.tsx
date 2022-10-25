@@ -33,4 +33,5 @@ const SvgMinimize = ({
         />
     </svg>
 );
+
 export default SvgMinimize;

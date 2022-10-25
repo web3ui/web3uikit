@@ -37,4 +37,5 @@ const SvgUsdc = ({
         />
     </svg>
 );
+
 export default SvgUsdc;

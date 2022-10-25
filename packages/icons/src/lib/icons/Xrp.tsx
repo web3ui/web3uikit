@@ -34,4 +34,5 @@ const SvgXrp = ({
         </g>
     </svg>
 );
+
 export default SvgXrp;

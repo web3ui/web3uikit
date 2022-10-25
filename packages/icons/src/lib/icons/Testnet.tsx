@@ -28,4 +28,5 @@ const SvgTestnet = ({
         />
     </svg>
 );
+
 export default SvgTestnet;

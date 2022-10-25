@@ -28,4 +28,5 @@ const SvgCheck = ({
         />
     </svg>
 );
+
 export default SvgCheck;

@@ -28,4 +28,5 @@ const SvgCreditCard2 = ({
         />
     </svg>
 );
+
 export default SvgCreditCard2;

@@ -60,4 +60,5 @@ const SvgEth = ({
         </g>
     </svg>
 );
+
 export default SvgEth;

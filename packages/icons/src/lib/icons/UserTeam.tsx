@@ -28,4 +28,5 @@ const SvgUserTeam = ({
         />
     </svg>
 );
+
 export default SvgUserTeam;

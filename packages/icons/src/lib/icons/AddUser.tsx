@@ -33,4 +33,5 @@ const SvgAddUser = ({
         />
     </svg>
 );
+
 export default SvgAddUser;

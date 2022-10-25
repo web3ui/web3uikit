@@ -33,4 +33,5 @@ const SvgPin = ({
         />
     </svg>
 );
+
 export default SvgPin;

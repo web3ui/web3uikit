@@ -36,4 +36,5 @@ const SvgRocket = ({
         </defs>
     </svg>
 );
+
 export default SvgRocket;

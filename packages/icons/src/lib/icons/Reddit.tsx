@@ -27,4 +27,5 @@ const SvgReddit = ({
         />
     </svg>
 );
+
 export default SvgReddit;

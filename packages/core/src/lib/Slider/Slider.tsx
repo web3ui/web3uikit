@@ -3,7 +3,7 @@ import { ISliderProps } from './types';
 import styles from './Slider.styles';
 import { color } from '@web3uikit/styles';
 
-const { DivStyled, DivStyledTooltip, InputStyled, SpanStyled } = styles;
+const { DivStyled, DivStyledTooltip, InputStyled, OutputStyled } = styles;
 
 const Slider: React.FC<ISliderProps> = ({
     id,
@@ -21,12 +21,14 @@ const Slider: React.FC<ISliderProps> = ({
     return (
         <DivStyled data-testid="test-slider">
             {!disabled && (
-                <DivStyledTooltip
-                    value={Number(((value - min) * 100) / (max - min))}
-                >
-                    <SpanStyled bgColor={labelBgColor}>
+                <DivStyledTooltip value={value} min={min} max={max}>
+                    <OutputStyled
+                        id="output"
+                        htmlFor={id}
+                        bgColor={labelBgColor}
+                    >
                         {handleLabel?.(value) ?? value}
-                    </SpanStyled>
+                    </OutputStyled>
                 </DivStyledTooltip>
             )}
             <InputStyled

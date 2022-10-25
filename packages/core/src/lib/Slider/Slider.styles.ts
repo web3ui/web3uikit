@@ -1,7 +1,15 @@
 import styled, { css } from 'styled-components';
-import { color, fonts, resetCSS } from '@web3uikit/styles';
+import { color, fonts, resetCSS, colorPercentage } from '@web3uikit/styles';
 
-const tooltipHeight = '45px';
+const tooltipHeight = '48px';
+
+const calculateNewPositionStyleValue = (props: any) => {
+    const newValue = Number(
+        ((props.value - props.min) * 100) / (props.max - props.min),
+    );
+    const newPosition = 16 - newValue * 0.32;
+    return `calc(${newValue}% + (${newPosition}px))`;
+};
 
 const DivStyled = styled.div`
     ${resetCSS};
@@ -12,15 +20,18 @@ const DivStyled = styled.div`
     margin-bottom: ${tooltipHeight};
 `;
 
-const DivStyledTooltip = styled.div<{ value: number }>`
+const DivStyledTooltip = styled.div<{
+    value: number;
+    min: number;
+    max: number;
+}>`
     ${resetCSS};
     position: absolute;
     top: -${tooltipHeight};
-    left: ${(props) =>
-        `calc(${props.value}% + (${16 - props.value * 0.32}px))`};
+    left: ${(props) => calculateNewPositionStyleValue(props)};
 `;
 
-const SpanStyled = styled.span<{ bgColor: string }>`
+const OutputStyled = styled.output<{ bgColor: string }>`
     ${resetCSS};
     ${fonts.text}
     position: absolute;
@@ -48,13 +59,17 @@ const SpanStyled = styled.span<{ bgColor: string }>`
     }
 `;
 
-const trackStyles = (bgColor: string) => css`
+const trackStyles = (props: any) => css`
     ${resetCSS};
     animation: 0.2s;
-    background: ${bgColor};
-    border-radius: 25px;
+    background: linear-gradient(
+        90deg,
+        ${props.$bgColor} ${calculateNewPositionStyleValue(props)},
+        ${color.white} ${calculateNewPositionStyleValue(props)}
+    );
+    border-radius: 10px;
     cursor: pointer;
-    height: 12px;
+    height: 18px;
     width: 100%;
 `;
 
@@ -63,12 +78,12 @@ const thumbStyles = (bgColor: string) => css`
     -webkit-appearance: none;
     background: ${color.white};
     border-radius: 50%;
-    border: 0.25rem solid ${bgColor};
+    border: 0.25rem solid ${colorPercentage(bgColor, 80)};
     box-shadow: 0 1px 3px ${color.white};
     cursor: pointer;
-    height: 24px;
-    transform: translateY(calc(-50% + 6px));
-    width: 24px;
+    height: 29px;
+    transform: translateY(calc(-50% + 8px));
+    width: 29px;
 `;
 
 const InputStyled = styled.input<{ $bgColor: string }>`
@@ -85,17 +100,17 @@ const InputStyled = styled.input<{ $bgColor: string }>`
     }
     // For webkit
     &::-webkit-slider-runnable-track {
-        ${(props) => trackStyles(props.$bgColor)}
+        ${(props) => trackStyles(props)}
     }
     &::-webkit-slider-thumb {
         ${(props) => thumbStyles(props.$bgColor)}
     }
-    &:focus::-webkit-slider-runnable-track {
+    /* &:focus::-webkit-slider-runnable-track {
         background: ${({ $bgColor }) => $bgColor};
-    }
+    } */
     //For mozilla
     &::-moz-range-track {
-        ${(props) => trackStyles(props.$bgColor)}
+        ${(props) => trackStyles(props)}
     }
     &::-moz-range-thumb {
         ${(props) => thumbStyles(props.$bgColor)}
@@ -112,7 +127,7 @@ const InputStyled = styled.input<{ $bgColor: string }>`
     }
     &::-ms-fill-lower,
     &::-ms-fill-upper {
-        ${(props) => trackStyles(props.$bgColor)}
+        ${(props) => trackStyles(props)}
     }
     &::-ms-thumb {
         ${(props) => thumbStyles(props.$bgColor)}
@@ -130,5 +145,5 @@ export default {
     DivStyled,
     DivStyledTooltip,
     InputStyled,
-    SpanStyled,
+    OutputStyled,
 };

@@ -33,4 +33,5 @@ const SvgHelpCircle = ({
         />
     </svg>
 );
+
 export default SvgHelpCircle;

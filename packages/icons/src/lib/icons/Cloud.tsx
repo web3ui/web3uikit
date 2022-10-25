@@ -30,4 +30,5 @@ const SvgCloud = ({
         />
     </svg>
 );
+
 export default SvgCloud;

@@ -32,4 +32,5 @@ const SvgMastercard = ({
         />
     </svg>
 );
+
 export default SvgMastercard;

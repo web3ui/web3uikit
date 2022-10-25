@@ -33,4 +33,5 @@ const SvgFile = ({
         />
     </svg>
 );
+
 export default SvgFile;

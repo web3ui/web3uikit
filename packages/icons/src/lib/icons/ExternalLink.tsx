@@ -33,4 +33,5 @@ const SvgExternalLink = ({
         />
     </svg>
 );
+
 export default SvgExternalLink;

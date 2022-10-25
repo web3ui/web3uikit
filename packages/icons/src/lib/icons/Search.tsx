@@ -33,4 +33,5 @@ const SvgSearch = ({
         />
     </svg>
 );
+
 export default SvgSearch;

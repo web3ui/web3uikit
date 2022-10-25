@@ -28,4 +28,5 @@ const SvgSandbox2 = ({
         />
     </svg>
 );
+
 export default SvgSandbox2;

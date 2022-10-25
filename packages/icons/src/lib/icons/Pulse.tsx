@@ -28,4 +28,5 @@ const SvgPulse = ({
         />
     </svg>
 );
+
 export default SvgPulse;

@@ -38,4 +38,5 @@ const SvgDownloadCloud = ({
         />
     </svg>
 );
+
 export default SvgDownloadCloud;

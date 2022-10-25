@@ -29,4 +29,5 @@ const SvgDiscord2 = ({
         <ellipse cx={12.667} cy={8.182} rx={1.915} ry={1.97} fill="#fff" />
     </svg>
 );
+
 export default SvgDiscord2;

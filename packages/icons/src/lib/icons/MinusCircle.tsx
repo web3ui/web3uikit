@@ -28,4 +28,5 @@ const SvgMinusCircle = ({
         />
     </svg>
 );
+
 export default SvgMinusCircle;

@@ -28,4 +28,5 @@ const SvgMoreVert = ({
         />
     </svg>
 );
+
 export default SvgMoreVert;

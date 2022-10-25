@@ -28,4 +28,5 @@ const SvgGrid = ({
         />
     </svg>
 );
+
 export default SvgGrid;

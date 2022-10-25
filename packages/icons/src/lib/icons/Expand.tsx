@@ -28,4 +28,5 @@ const SvgExpand = ({
         />
     </svg>
 );
+
 export default SvgExpand;

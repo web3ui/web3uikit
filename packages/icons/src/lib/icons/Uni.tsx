@@ -69,4 +69,5 @@ const SvgUni = ({
         />
     </svg>
 );
+
 export default SvgUni;

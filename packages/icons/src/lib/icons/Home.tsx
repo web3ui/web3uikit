@@ -28,4 +28,5 @@ const SvgHome = ({
         />
     </svg>
 );
+
 export default SvgHome;

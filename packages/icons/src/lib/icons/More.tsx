@@ -28,4 +28,5 @@ const SvgMore = ({
         />
     </svg>
 );
+
 export default SvgMore;

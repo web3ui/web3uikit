@@ -105,9 +105,6 @@ const InputStyled = styled.input<{ $bgColor: string }>`
     &::-webkit-slider-thumb {
         ${(props) => thumbStyles(props.$bgColor)}
     }
-    /* &:focus::-webkit-slider-runnable-track {
-        background: ${({ $bgColor }) => $bgColor};
-    } */
     //For mozilla
     &::-moz-range-track {
         ${(props) => trackStyles(props)}
@@ -132,12 +129,30 @@ const InputStyled = styled.input<{ $bgColor: string }>`
     &::-ms-thumb {
         ${(props) => thumbStyles(props.$bgColor)}
     }
-    &:focus::-ms-fill-lower,
-    &:focus::-ms-fill-upper {
-        background: ${(props) => props.$bgColor};
-    }
     &:disabled {
         opacity: 0.6;
+    }
+
+    // max and min Label styles
+    &::before,
+    &::after {
+        border-radius: 4px;
+        color: ${color.blueGray50};
+        font-size: 16px;
+        font-weight: 550;
+        line-height: 24px;
+        padding: 3px 5px;
+        position: absolute;
+        top: -30px;
+        z-index: -1;
+    }
+    &::before {
+        left: 0;
+        content: attr(min);
+    }
+    &::after {
+        right: 0;
+        content: attr(max);
     }
 `;
 

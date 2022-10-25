@@ -4,7 +4,7 @@ import ENSAvatar from './ENSAvatar';
 import { moralisContext } from '../../web3utils/decorators';
 
 export default {
-    title: '1.Web3/ENSAvatar',
+    title: '1.Web3-Parse/ENSAvatar',
     component: ENSAvatar,
     decorators: [moralisContext],
     parameters: {

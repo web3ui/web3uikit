@@ -4,7 +4,7 @@ import BlockNumber from './BlockNumber';
 import { moralisContext } from '../../web3utils/decorators';
 
 export default {
-    title: '1.Web3/BlockNumber',
+    title: '1.Web3-Parse/BlockNumber',
     component: BlockNumber,
     decorators: [moralisContext],
     parameters: {

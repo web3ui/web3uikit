@@ -9,7 +9,7 @@ const hasPositionAbsoluteFix = {
 };
 
 export default {
-    title: '1.Web3/WalletModal',
+    title: '1.Web3-Parse/WalletModal',
     component: WalletModal,
     decorators: [
         moralisContext,

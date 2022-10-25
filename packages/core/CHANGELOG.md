@@ -1,5 +1,15 @@
 # @web3uikit/core
 
+## 0.2.3
+
+### Patch Changes
+
+-   [#855](https://github.com/web3ui/web3uikit/pull/855) [`afeee8066`](https://github.com/web3ui/web3uikit/commit/afeee806687ad6329d596985522dcf93c82bc8a4) Thanks [@0xTijan](https://github.com/0xTijan)! - added upload component to the form component
+
+*   [#849](https://github.com/web3ui/web3uikit/pull/849) [`a710f57cc`](https://github.com/web3ui/web3uikit/commit/a710f57cc2bb45dd9680309c5aa84415ca195fdb) Thanks [@0xTijan](https://github.com/0xTijan)! - [Table]: added color props
+
+-   [#857](https://github.com/web3ui/web3uikit/pull/857) [`9436934f0`](https://github.com/web3ui/web3uikit/commit/9436934f06bfe65aa7f8ec6c7d26ff6401a5a3bb) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - change slider styles
+
 ## 0.2.2
 
 ### Patch Changes

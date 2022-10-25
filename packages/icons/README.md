@@ -63,4 +63,4 @@ If you are using `web3uikit` with Next.js, be sure to follow the [official guide
 
 ![IconsGallery](https://user-images.githubusercontent.com/35369843/176008215-7992fe52-27ff-433d-9317-1e95e28851e1.gif)
 
-Go to our live [storybook demo](#TODO) to view various icons present in the library.
+Go to our live [storybook demo](https://web3ui.github.io/web3uikit/?path=/story/8-icons-gallery--gallery) to view various icons present in the library.

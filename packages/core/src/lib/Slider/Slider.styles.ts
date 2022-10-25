@@ -65,7 +65,7 @@ const trackStyles = (props: any) => css`
     background: linear-gradient(
         90deg,
         ${props.$bgColor} ${calculateNewPositionStyleValue(props)},
-        ${color.white} ${calculateNewPositionStyleValue(props)}
+        ${color.navy10} ${calculateNewPositionStyleValue(props)}
     );
     border-radius: 10px;
     cursor: pointer;

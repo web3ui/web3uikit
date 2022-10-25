@@ -26,7 +26,7 @@ Default.args = {
     id: 'one',
     value: 22,
     disabled: false,
-    labelBgColor: color.blue30,
+    labelBgColor: color.blue60,
     bgColor: color.blue40,
     handleLabel: (val) => val + 'M',
 };

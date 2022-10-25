@@ -67,6 +67,11 @@ export interface ISliderProps {
     rangeControllerSuffix?: string;
 
     /**
+     * change label value using current value
+     */
+    handleTooltipLabel?: (val: number) => string | number;
+
+    /**
      * markers - make sure to pass correct amount based on step size, min and max
      */
     markers?: ReactNode[];

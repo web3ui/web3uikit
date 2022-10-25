@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 export interface ISliderProps {
     /**
@@ -19,7 +19,7 @@ export interface ISliderProps {
     /**
      * change label value using current value
      */
-    handleLabel?: (val: number) => string | number;
+    handleTooltipLabel?: (val: number) => string | number;
 
     /**
      * pass maximum Range for Slider
@@ -50,4 +50,19 @@ export interface ISliderProps {
      * set the discrete step size of the element
      */
     step?: number;
+
+    /**
+     * provide value for left label
+     */
+    leftLabel?: string;
+
+    /**
+     * provide value for right label
+     */
+    rightLabel?: string;
+
+    /**
+     * markers - make sure to pass correct amount based on step size, min and max
+     */
+    markers?: ReactNode[];
 }

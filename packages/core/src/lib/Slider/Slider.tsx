@@ -3,19 +3,28 @@ import { ISliderProps } from './types';
 import styles from './Slider.styles';
 import { color } from '@web3uikit/styles';
 
-const { DivStyled, DivStyledTooltip, InputStyled, OutputStyled } = styles;
+const {
+    DivStyled,
+    DivStyledTooltip,
+    InputStyled,
+    OutputStyled,
+    DivStyledMarker,
+} = styles;
 
 const Slider: React.FC<ISliderProps> = ({
-    id,
-    max = 100,
-    min = 0,
-    value,
-    onChange,
-    disabled = false,
     bgColor = color.mint40,
+    disabled = false,
+    handleTooltipLabel,
+    id,
     labelBgColor = color.mint40,
-    handleLabel,
+    leftLabel,
+    max = 100,
+    markers = [],
+    min = 0,
+    onChange,
+    rightLabel,
     step = 1,
+    value,
     ...props
 }) => {
     return (
@@ -27,7 +36,7 @@ const Slider: React.FC<ISliderProps> = ({
                         htmlFor={id}
                         bgColor={labelBgColor}
                     >
-                        {handleLabel?.(value) ?? value}
+                        {handleTooltipLabel?.(value) ?? value}
                     </OutputStyled>
                 </DivStyledTooltip>
             )}
@@ -44,8 +53,17 @@ const Slider: React.FC<ISliderProps> = ({
                 value={value}
                 disabled={disabled}
                 step={step}
+                $leftLabel={leftLabel}
+                $rightLabel={rightLabel}
                 {...props}
             />
+            {markers.length > 0 && (
+                <DivStyledMarker>
+                    {markers.map((marker) => (
+                        <p>{marker}</p>
+                    ))}
+                </DivStyledMarker>
+            )}
         </DivStyled>
     );
 };

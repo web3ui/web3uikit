@@ -86,7 +86,11 @@ const thumbStyles = (bgColor: string) => css`
     width: 29px;
 `;
 
-const InputStyled = styled.input<{ $bgColor: string }>`
+const InputStyled = styled.input<{
+    $bgColor: string;
+    $leftLabel?: string;
+    $rightLabel?: string;
+}>`
     ${resetCSS};
     -webkit-appearance: none;
     width: 100%;
@@ -143,16 +147,40 @@ const InputStyled = styled.input<{ $bgColor: string }>`
         line-height: 24px;
         padding: 3px 5px;
         position: absolute;
-        top: -30px;
+        top: -35px;
         z-index: -1;
     }
-    &::before {
-        left: 0;
-        content: attr(min);
-    }
-    &::after {
-        right: 0;
-        content: attr(max);
+    ${(props) =>
+        props.$leftLabel &&
+        css`
+            &::before {
+                left: 0;
+                content: '${props.$leftLabel}';
+            }
+        `};
+    ${(props) =>
+        props.$rightLabel &&
+        css`
+            &::after {
+                right: 0;
+                content: '${props.$rightLabel}';
+            }
+        `};
+`;
+
+const DivStyledMarker = styled.div`
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    p {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        max-width: 1px;
+        height: 10px;
+        line-height: 40px;
+        margin: 0 0 20px 0;
     }
 `;
 
@@ -161,4 +189,5 @@ export default {
     DivStyledTooltip,
     InputStyled,
     OutputStyled,
+    DivStyledMarker,
 };

@@ -28,4 +28,5 @@ const SvgMenu = ({
         />
     </svg>
 );
+
 export default SvgMenu;

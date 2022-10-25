@@ -30,4 +30,5 @@ const SvgKey = ({
         />
     </svg>
 );
+
 export default SvgKey;

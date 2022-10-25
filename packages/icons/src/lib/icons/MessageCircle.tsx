@@ -28,4 +28,5 @@ const SvgMessageCircle = ({
         />
     </svg>
 );
+
 export default SvgMessageCircle;

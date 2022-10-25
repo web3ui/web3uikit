@@ -47,4 +47,5 @@ const SvgGoogle = ({
         />
     </svg>
 );
+
 export default SvgGoogle;

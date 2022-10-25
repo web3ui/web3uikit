@@ -28,4 +28,5 @@ const SvgExclamation = ({
         />
     </svg>
 );
+
 export default SvgExclamation;

@@ -35,4 +35,5 @@ const SvgAvax = ({
         </g>
     </svg>
 );
+
 export default SvgAvax;

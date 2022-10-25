@@ -432,4 +432,5 @@ const SvgMetamask = ({
         </defs>
     </svg>
 );
+
 export default SvgMetamask;

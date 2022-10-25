@@ -25,4 +25,5 @@ const SvgMinus = ({
         <path d="M12 0v2H0V0h12Z" />
     </svg>
 );
+
 export default SvgMinus;

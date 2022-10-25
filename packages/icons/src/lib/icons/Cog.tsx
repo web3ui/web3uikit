@@ -28,4 +28,5 @@ const SvgCog = ({
         />
     </svg>
 );
+
 export default SvgCog;

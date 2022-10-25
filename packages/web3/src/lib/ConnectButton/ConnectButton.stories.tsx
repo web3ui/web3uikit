@@ -9,7 +9,7 @@ const centerLayout = {
 };
 
 export default {
-    title: '1.Web3/ConnectButton',
+    title: '1.Web3-Parse/ConnectButton',
     component: ConnectButton,
     decorators: [
         moralisContext,

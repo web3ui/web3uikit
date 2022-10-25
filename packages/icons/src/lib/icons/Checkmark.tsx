@@ -28,4 +28,5 @@ const SvgCheckmark = ({
         />
     </svg>
 );
+
 export default SvgCheckmark;

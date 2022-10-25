@@ -28,4 +28,5 @@ const SvgList = ({
         />
     </svg>
 );
+
 export default SvgList;

@@ -30,7 +30,7 @@ const dispatch = useNotification();
 `;
 
 export default {
-    title: '1.Web3/SendTransaction',
+    title: '1.Web3-Parse/SendTransaction',
     decorators: [moralisContext],
     parameters: {
         docs: {

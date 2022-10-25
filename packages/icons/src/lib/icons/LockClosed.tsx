@@ -28,4 +28,5 @@ const SvgLockClosed = ({
         />
     </svg>
 );
+
 export default SvgLockClosed;

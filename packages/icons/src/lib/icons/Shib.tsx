@@ -77,4 +77,5 @@ const SvgShib = ({
         />
     </svg>
 );
+
 export default SvgShib;

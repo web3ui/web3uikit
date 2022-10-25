@@ -144,4 +144,5 @@ const SvgAda = ({
         </g>
     </svg>
 );
+
 export default SvgAda;

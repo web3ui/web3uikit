@@ -28,4 +28,5 @@ const SvgBin = ({
         />
     </svg>
 );
+
 export default SvgBin;

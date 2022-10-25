@@ -28,4 +28,5 @@ const SvgCartBag = ({
         />
     </svg>
 );
+
 export default SvgCartBag;

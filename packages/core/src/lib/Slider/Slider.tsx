@@ -14,14 +14,15 @@ const {
 const Slider: React.FC<ISliderProps> = ({
     bgColor = color.mint40,
     disabled = false,
-    handleTooltipLabel,
     id,
     labelBgColor = color.mint40,
     leftLabel,
-    max = 100,
     markers = [],
+    max = 100,
     min = 0,
     onChange,
+    rangeControllerPrefix,
+    rangeControllerSuffix,
     rightLabel,
     step = 1,
     value,
@@ -36,7 +37,9 @@ const Slider: React.FC<ISliderProps> = ({
                         htmlFor={id}
                         bgColor={labelBgColor}
                     >
-                        {handleTooltipLabel?.(value) ?? value}
+                        {rangeControllerPrefix}
+                        {value}
+                        {rangeControllerSuffix}
                     </OutputStyled>
                 </DivStyledTooltip>
             )}

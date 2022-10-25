@@ -17,11 +17,6 @@ export interface ISliderProps {
     labelBgColor?: string;
 
     /**
-     * change label value using current value
-     */
-    handleTooltipLabel?: (val: number) => string | number;
-
-    /**
      * pass maximum Range for Slider
      */
     max?: number;
@@ -60,6 +55,16 @@ export interface ISliderProps {
      * provide value for right label
      */
     rightLabel?: string;
+
+    /**
+     * a prefix for the form controller EG: $ or €
+     */
+    rangeControllerPrefix?: string;
+
+    /**
+     * a prefix for the form controller EG: units
+     */
+    rangeControllerSuffix?: string;
 
     /**
      * markers - make sure to pass correct amount based on step size, min and max

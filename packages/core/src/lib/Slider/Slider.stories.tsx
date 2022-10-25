@@ -29,7 +29,7 @@ Default.args = {
     disabled: false,
     labelBgColor: color.blue60,
     bgColor: color.blue40,
-    handleTooltipLabel: (val) => val + 'M',
+    rangeControllerSuffix: ' M',
 };
 
 export const Step = Template.bind({});
@@ -40,7 +40,7 @@ Step.args = {
     step: 1,
     leftLabel: '0',
     rightLabel: '100M',
-    handleTooltipLabel: (val) => val + 'M',
+    rangeControllerPrefix: '$',
     markers: [
         '',
         <Typography>Starter</Typography>,

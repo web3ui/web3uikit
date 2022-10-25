@@ -41,11 +41,13 @@ const OutputStyled = styled.output<{ bgColor: string }>`
     line-height: 24px;
     padding: 5px 10px;
     color: ${color.white};
+    display: flex;
     border-radius: 4px;
     background: ${(props) => props.bgColor};
     font-size: 16px;
     left: 50%;
     transform: translate(-50%, 0);
+    white-space: nowrap;
     &::before {
         position: absolute;
         content: '';

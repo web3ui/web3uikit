@@ -4,6 +4,7 @@ import Slider from './Slider';
 import { useArgs } from '@storybook/addons';
 import { action } from '@storybook/addon-actions';
 import { color } from '@web3uikit/styles';
+import { Typography } from '../Typography';
 
 export default {
     title: '2.Forms/Slider',
@@ -26,17 +27,28 @@ Default.args = {
     id: 'one',
     value: 22,
     disabled: false,
-    labelBgColor: color.blue30,
-    bgColor: color.blue70,
-    handleLabel: (val) => val + 'M',
+    labelBgColor: color.blue60,
+    bgColor: color.blue40,
+    rangeControllerSuffix: ' M',
 };
 
 export const Step = Template.bind({});
 Step.args = {
-    max: 1000,
+    max: 5,
     min: 0,
-    value: 42,
-    step: 100,
+    value: 0,
+    step: 1,
+    leftLabel: '0',
+    rightLabel: '100M',
+    rangeControllerPrefix: '$',
+    markers: [
+        '',
+        <Typography>Starter</Typography>,
+        <Typography>Pro</Typography>,
+        <Typography>Business</Typography>,
+        <Typography>Enterprise</Typography>,
+        '',
+    ],
 };
 
 export const Disabled = Template.bind({});

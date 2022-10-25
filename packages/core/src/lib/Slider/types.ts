@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 export interface ISliderProps {
     /**
@@ -15,11 +15,6 @@ export interface ISliderProps {
      * label background color
      */
     labelBgColor?: string;
-
-    /**
-     * change label value using current value
-     */
-    handleLabel?: (val: number) => string | number;
 
     /**
      * pass maximum Range for Slider
@@ -50,4 +45,29 @@ export interface ISliderProps {
      * set the discrete step size of the element
      */
     step?: number;
+
+    /**
+     * provide value for left label
+     */
+    leftLabel?: string;
+
+    /**
+     * provide value for right label
+     */
+    rightLabel?: string;
+
+    /**
+     * a prefix for the form controller EG: $ or €
+     */
+    rangeControllerPrefix?: string;
+
+    /**
+     * a prefix for the form controller EG: units
+     */
+    rangeControllerSuffix?: string;
+
+    /**
+     * markers - make sure to pass correct amount based on step size, min and max
+     */
+    markers?: ReactNode[];
 }

@@ -3,30 +3,44 @@ import { ISliderProps } from './types';
 import styles from './Slider.styles';
 import { color } from '@web3uikit/styles';
 
-const { DivStyled, DivStyledTooltip, InputStyled, SpanStyled } = styles;
+const {
+    DivStyled,
+    DivStyledTooltip,
+    InputStyled,
+    OutputStyled,
+    DivStyledMarker,
+} = styles;
 
 const Slider: React.FC<ISliderProps> = ({
+    bgColor = color.mint40,
+    disabled = false,
     id,
+    labelBgColor = color.mint40,
+    leftLabel,
+    markers = [],
     max = 100,
     min = 0,
-    value,
     onChange,
-    disabled = false,
-    bgColor = color.mint40,
-    labelBgColor = color.mint40,
-    handleLabel,
+    rangeControllerPrefix,
+    rangeControllerSuffix,
+    rightLabel,
     step = 1,
+    value,
     ...props
 }) => {
     return (
         <DivStyled data-testid="test-slider">
             {!disabled && (
-                <DivStyledTooltip
-                    value={Number(((value - min) * 100) / (max - min))}
-                >
-                    <SpanStyled bgColor={labelBgColor}>
-                        {handleLabel?.(value) ?? value}
-                    </SpanStyled>
+                <DivStyledTooltip value={value} min={min} max={max}>
+                    <OutputStyled
+                        id="output"
+                        htmlFor={id}
+                        bgColor={labelBgColor}
+                    >
+                        {rangeControllerPrefix}
+                        {value}
+                        {rangeControllerSuffix}
+                    </OutputStyled>
                 </DivStyledTooltip>
             )}
             <InputStyled
@@ -42,8 +56,17 @@ const Slider: React.FC<ISliderProps> = ({
                 value={value}
                 disabled={disabled}
                 step={step}
+                $leftLabel={leftLabel}
+                $rightLabel={rightLabel}
                 {...props}
             />
+            {markers.length > 0 && (
+                <DivStyledMarker>
+                    {markers.map((marker) => (
+                        <p>{marker}</p>
+                    ))}
+                </DivStyledMarker>
+            )}
         </DivStyled>
     );
 };

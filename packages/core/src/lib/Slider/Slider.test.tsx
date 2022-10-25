@@ -15,7 +15,7 @@ const testDisValue = true;
 const baseTestValue = 22;
 const testInputId = 'test-slider-input';
 const testDivId = 'test-slider';
-const testStepValue = 100;
+const testStepValue = 1;
 
 test('Slider onChange event is called', async () => {
     render(

@@ -13,7 +13,7 @@ const BannerStrip: React.FC<IBannerStripProps> = ({
     buttonDisplayed = false,
     height = 'auto',
     id = 'web3uikit-banner',
-    noOfDaysToHide = 1,
+    noOfDaysToHide = null,
     isCloseBtnVisible = true,
     onCloseBtnClick,
     position = 'fixed',

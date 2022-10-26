@@ -1,5 +1,17 @@
 # @web3uikit/core
 
+## 0.2.4
+
+### Patch Changes
+
+-   [#860](https://github.com/web3ui/web3uikit/pull/860) [`ea866a53b`](https://github.com/web3ui/web3uikit/commit/ea866a53bc847e82190681f37f31b3428f57052c) Thanks [@BillyG83](https://github.com/BillyG83)! - bring back handleTooltipLabel
+
+*   [#857](https://github.com/web3ui/web3uikit/pull/857) [`053684151`](https://github.com/web3ui/web3uikit/commit/053684151a127018fe81aabb8025168b453682fe) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - change slider styles
+
+*   Updated dependencies [[`1bf136df9`](https://github.com/web3ui/web3uikit/commit/1bf136df99035557e42bc6291a1652c9f2314fd4), [`8ad02c4a4`](https://github.com/web3ui/web3uikit/commit/8ad02c4a467b117fa23c8f292f4c651295d98d1c)]:
+    -   @web3uikit/icons@0.2.4
+    -   @web3uikit/styles@0.2.4
+
 ## 0.2.3
 
 ### Patch Changes

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, CSSProperties } from 'react';
 export interface CardProps {
     /**
      * set the ID of Card
@@ -60,6 +60,11 @@ export interface CardProps {
      * Moves the tooltip body +/- up/down/left/right (use responsibly, arrow can move the the X / Y axis indefinitely)
      */
     tooltipMoveBody?: number;
+
+    /**
+     * Optional custom CSS
+     */
+    style?: CSSProperties;
 }
 
 export interface AbsoluteIconStyledProps {

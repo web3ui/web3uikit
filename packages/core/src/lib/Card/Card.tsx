@@ -20,6 +20,7 @@ const Card: React.FC<CardProps> = ({
     tooltipMove,
     tooltipMoveBody,
     tooltipText,
+    style,
     ...props
 }: CardProps) => {
     return (
@@ -37,6 +38,7 @@ const Card: React.FC<CardProps> = ({
             isSelected={isSelected}
             isDisabled={isDisabled}
             cursorType={cursorType}
+            style={style}
             {...props}
         >
             <HeaderStyled data-testid={'test-card-header'}>

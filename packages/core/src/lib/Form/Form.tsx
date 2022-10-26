@@ -10,6 +10,7 @@ import { TextArea } from '../TextArea';
 import styles from './Form.styles';
 const { H3Styled, H4Styled, FormStyled } = styles;
 import { FormProps, DataInput } from './types';
+import { Upload } from '../Upload';
 
 const Form: React.FC<FormProps> = ({
     buttonConfig,
@@ -201,6 +202,18 @@ const Form: React.FC<FormProps> = ({
         );
     };
 
+    const renderFileInput = (input: DataInput, index: number) => {
+        return(
+            <Fragment key={`${input.name}_${index}`}>
+                <H4Styled>{input.name}</H4Styled>
+                <Upload
+                    onChange={(e) => (data[index].value = e)}
+                    theme={input.theme}
+                />
+            </Fragment>
+        );
+    };
+
     const renderInputType = (input: DataInput, index: number) => {
         switch (input.type) {
             case 'text':
@@ -225,6 +238,8 @@ const Form: React.FC<FormProps> = ({
                 return renderTextArea(input, index);
             case 'date':
                 return renderDatePicker(input, 'date', index);
+            case 'file':
+                return renderFileInput(input, index)
             default:
                 return;
         }

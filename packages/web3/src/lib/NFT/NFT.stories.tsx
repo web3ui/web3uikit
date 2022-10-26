@@ -3,7 +3,7 @@ import NFT from './NFT';
 import { moralisContext } from '../../web3utils/decorators';
 import { chainToHex } from '../../web3utils';
 export default {
-    title: '1.Web3/NFT',
+    title: '1.Web3-Parse/NFT',
     component: NFT,
     decorators: [
         moralisContext,

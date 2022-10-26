@@ -24,6 +24,7 @@ export type chainType =
     | 'cryptoweb'
     | 'ethereum'
     | 'fantom'
-    | 'polygon';
+    | 'polygon'
+    | 'ronin';
 
 export type sizeType = string | number;

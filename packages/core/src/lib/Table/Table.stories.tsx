@@ -193,6 +193,8 @@ CustomTable.args = {
     data: customTableMockData,
     columnGapSize: 0,
     tableBackgroundColor: 'lightblue',
+    headerTextColor: 'orange',
+    headerBgColor: 'blue',
     isScrollableOnOverflow: false,
     customDataComponent: (
         <div

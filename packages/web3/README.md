@@ -79,9 +79,9 @@ The `<ConnectButton />` component allows you to make [web3 authenticating](https
 
 If you want to use this component with the connected server but without adding a user to Moralis Database you can add the `moralisAuth` prop <ConnectButton moralisAuth={false} />
 
-The ConnectButton component automatically adds to the local storage info about the connector user used and will automatically call enableWeb3() after rereshing the page. So if user was connected once it will automatically initialize web3 connection(No need anymore to add UseEffect hook for enableWeb3() after refrshing the page)
+The ConnectButton component automatically adds to the local storage info about the connector user used and will automatically call enableWeb3() after refreshing the page. So if user was connected once it will automatically initialize web3 connection(No need anymore to add UseEffect hook for enableWeb3() after refreshing the page)
 
-Try the `<ConnectButton />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/1-web3-connectbutton--default)
+Try the `<ConnectButton />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/1-web3-parse-connectbutton--default)
 
 ### `<NFT />`
 
@@ -91,7 +91,7 @@ The `<NFT />` component allows you to display a single NFT as Card. By clicking 
 
 If you want to use this component wrap your app with `<MoralisProvider appId={MORALIS_APP_ID} serverUrl={MORALIS_SERVER_URL} ></MoralisProvider >`. Read more about moralis [here](https://docs.moralis.io/introduction/readme)
 
-Try the `<NFT />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/1-web3-nft--crypto-punk-01)
+Try the `<NFT />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/story/1-web3-parse-nft--crypto-punk-01)
 
 ### `<NFTBalance />`
 
@@ -101,4 +101,4 @@ The `<NFTBalance />` component allows you to display all the NFT's an address ow
 
 If you want to use this component wrap your app with `<MoralisProvider appId={MORALIS_APP_ID} serverUrl={MORALIS_SERVER_URL} ></MoralisProvider >`. Read more about moralis [here](https://docs.moralis.io/introduction/readme)
 
-Try the `<NFTBalance />` component in the [interactive documentation](http://localhost:6006/?path=/docs/1-web3-nft-balance--default)
+Try the `<NFTBalance />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/1-web3-parse-nft-balance--default)

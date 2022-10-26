@@ -32,4 +32,5 @@ const SvgBtc = ({
         />
     </svg>
 );
+
 export default SvgBtc;

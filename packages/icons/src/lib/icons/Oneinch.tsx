@@ -94,4 +94,5 @@ const SvgOneinch = ({
         </g>
     </svg>
 );
+
 export default SvgOneinch;

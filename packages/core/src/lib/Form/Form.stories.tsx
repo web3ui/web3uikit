@@ -84,6 +84,12 @@ DemoForm.args = {
             options: ['charmander', 'squirtle', 'bulbasaur'],
         },
         {
+            name: 'Image',
+            type: 'file',
+            value: '',
+            inputWidth: '100%',
+        },
+        {
             name: 'Any more comments?',
             type: 'textarea',
             value: '',

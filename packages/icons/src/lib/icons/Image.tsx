@@ -33,4 +33,5 @@ const SvgImage = ({
         />
     </svg>
 );
+
 export default SvgImage;

@@ -1,5 +1,30 @@
 # @web3uikit/core
 
+## 0.2.3
+
+### Patch Changes
+
+-   [#855](https://github.com/web3ui/web3uikit/pull/855) [`afeee8066`](https://github.com/web3ui/web3uikit/commit/afeee806687ad6329d596985522dcf93c82bc8a4) Thanks [@0xTijan](https://github.com/0xTijan)! - added upload component to the form component
+
+*   [#849](https://github.com/web3ui/web3uikit/pull/849) [`a710f57cc`](https://github.com/web3ui/web3uikit/commit/a710f57cc2bb45dd9680309c5aa84415ca195fdb) Thanks [@0xTijan](https://github.com/0xTijan)! - [Table]: added color props
+
+-   [#857](https://github.com/web3ui/web3uikit/pull/857) [`9436934f0`](https://github.com/web3ui/web3uikit/commit/9436934f06bfe65aa7f8ec6c7d26ff6401a5a3bb) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - change slider styles
+
+## 0.2.2
+
+### Patch Changes
+
+-   [#839](https://github.com/web3ui/web3uikit/pull/839) [`3689f9220`](https://github.com/web3ui/web3uikit/commit/3689f92204fee4f356ec6d45276bf9ba901732e3) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Feat slider added component
+
+*   [#850](https://github.com/web3ui/web3uikit/pull/850) [`e5254d251`](https://github.com/web3ui/web3uikit/commit/e5254d25181bb78d0de1e73bd69a7115bcf75951) Thanks [@0xTijan](https://github.com/0xTijan)! - fixed colored button overflow
+
+-   [#853](https://github.com/web3ui/web3uikit/pull/853) [`194ed856e`](https://github.com/web3ui/web3uikit/commit/194ed856e7c47adb774a594d95ee9c4098121a81) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add ronin logo
+
+*   [#844](https://github.com/web3ui/web3uikit/pull/844) [`262005b1b`](https://github.com/web3ui/web3uikit/commit/262005b1bee9239fa75915fd6e68902acce9e137) Thanks [@0xTijan](https://github.com/0xTijan)! - 843 pagination fix colors and add new icon
+
+*   Updated dependencies [[`262005b1b`](https://github.com/web3ui/web3uikit/commit/262005b1bee9239fa75915fd6e68902acce9e137)]:
+    -   @web3uikit/icons@0.2.2
+
 ## 0.2.1
 
 ### Patch Changes

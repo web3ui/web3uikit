@@ -27,4 +27,5 @@ const SvgMatic = ({
         />
     </svg>
 );
+
 export default SvgMatic;

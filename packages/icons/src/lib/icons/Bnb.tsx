@@ -33,4 +33,5 @@ const SvgBnb = ({
         </g>
     </svg>
 );
+
 export default SvgBnb;

@@ -30,4 +30,5 @@ const SvgPhone = ({
         />
     </svg>
 );
+
 export default SvgPhone;

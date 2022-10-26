@@ -34,4 +34,5 @@ const SvgUsdt = ({
         />
     </svg>
 );
+
 export default SvgUsdt;

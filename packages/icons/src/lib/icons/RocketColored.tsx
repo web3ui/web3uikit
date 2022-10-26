@@ -183,4 +183,5 @@ const SvgRocketColored = ({
         </defs>
     </svg>
 );
+
 export default SvgRocketColored;

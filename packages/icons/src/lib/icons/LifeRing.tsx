@@ -28,4 +28,5 @@ const SvgLifeRing = ({
         />
     </svg>
 );
+
 export default SvgLifeRing;

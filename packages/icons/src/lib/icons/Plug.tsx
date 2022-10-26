@@ -25,4 +25,5 @@ const SvgPlug = ({
         <path d="M9 8H7v5h2V8zm5 6h-4v2h4v-2zm3-6h-2v5h2V8z" />
     </svg>
 );
+
 export default SvgPlug;

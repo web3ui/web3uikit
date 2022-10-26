@@ -24,4 +24,5 @@ const SvgChart = ({
         <path d="M4 4h1.684v16H4V4zm16 7.2V8.8H6.526v2.4H20zm-6.737-4V4.8H6.526v2.4h6.737zm4.211 5.6v2.4H6.526v-2.4h10.948zm-2.527 6.4v-2.4h-8.42v2.4h8.42z" />
     </svg>
 );
+
 export default SvgChart;

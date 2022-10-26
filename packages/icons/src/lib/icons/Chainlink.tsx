@@ -30,4 +30,5 @@ const SvgChainlink = ({
         </g>
     </svg>
 );
+
 export default SvgChainlink;

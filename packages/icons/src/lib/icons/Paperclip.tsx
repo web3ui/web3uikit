@@ -28,4 +28,5 @@ const SvgPaperclip = ({
         />
     </svg>
 );
+
 export default SvgPaperclip;

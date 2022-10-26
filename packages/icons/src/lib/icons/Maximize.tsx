@@ -33,4 +33,5 @@ const SvgMaximize = ({
         />
     </svg>
 );
+
 export default SvgMaximize;

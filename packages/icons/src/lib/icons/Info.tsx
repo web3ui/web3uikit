@@ -28,4 +28,5 @@ const SvgInfo = ({
         />
     </svg>
 );
+
 export default SvgInfo;

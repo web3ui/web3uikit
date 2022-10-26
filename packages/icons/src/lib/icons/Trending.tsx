@@ -33,4 +33,5 @@ const SvgTrending = ({
         />
     </svg>
 );
+
 export default SvgTrending;

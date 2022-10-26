@@ -1,5 +1,11 @@
 # @web3uikit/styles
 
+## 0.2.4
+
+### Patch Changes
+
+-   [#861](https://github.com/web3ui/web3uikit/pull/861) [`8ad02c4a4`](https://github.com/web3ui/web3uikit/commit/8ad02c4a467b117fa23c8f292f4c651295d98d1c) Thanks [@Maki44](https://github.com/Maki44)! - remove duplication
+
 ## 0.2.0
 
 ### Minor Changes

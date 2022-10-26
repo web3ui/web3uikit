@@ -20,7 +20,7 @@ const color = {
     mint05: '#E8FCF9',
     mint10: '#D1FFF0',
     mint20: '#A1FFE0',
-    mint30: '#00D1AE',
+    mint30: '#33FFCC',
     mint40: '#00D1AE',
     mint50: '#00AD96',
     mint60: '#00856E',

@@ -1,4 +1,3 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Upload from './Upload';
 
@@ -20,4 +19,12 @@ TextOnly.args = {
 export const WithIcon = Template.bind({});
 WithIcon.args = {
     theme: 'withIcon',
+};
+
+export const CustomText = Template.bind({});
+CustomText.args = {
+    theme: 'withIcon',
+    descriptionText: 'Only .jpeg files are accepted',
+    acceptedFiles: 'image/jpeg',
+    style: {}
 };

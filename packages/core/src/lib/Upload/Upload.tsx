@@ -1,9 +1,9 @@
 import { Typography } from '../Typography';
 import { IUploadProps } from './types';
 import { color } from '@web3uikit/styles';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './Upload.styles';
-import { Bin, Image } from '@web3uikit/icons';
+import { Bin, Image, File } from '@web3uikit/icons';
 
 const {
     DivStyled,
@@ -13,10 +13,17 @@ const {
     TextContentStyled,
 } = styles;
 
-const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
+const Upload: React.FC<IUploadProps> = ({
+    onChange,
+    theme = 'withIcon',
+    acceptedFiles,
+    descriptionText = 'Recommendation: minimum of 350px by 350px',
+    style
+}) => {
     const [fileSelected, setFileSelected] = useState<Blob | undefined | null>(
         null,
     );
+    const [fileName, setFileName] = useState<string | null>();
     const inputFile = useRef<HTMLInputElement | null>(null);
 
     const onClickHandler = () => {
@@ -26,6 +33,7 @@ const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
     const onChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {
         event.preventDefault();
         const file = event.target.files && event.target.files[0];
+        setFileName(file?.name);
         setFileSelected(file);
         onChange && onChange(file);
     };
@@ -43,6 +51,7 @@ const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
             onClick={onClickHandler}
             onDragOver={(e) => e.preventDefault()}
             onDrop={onDropHandler}
+            style={style}
         >
             {fileSelected === null && (
                 <>
@@ -52,6 +61,7 @@ const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
                         onChange={onChangeFile}
                         ref={inputFile}
                         type="file"
+                        accept={acceptedFiles}
                     />
                     {theme === 'textOnly' && (
                         <>
@@ -82,7 +92,7 @@ const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
                                     Click or Drag File to Upload
                                 </Typography>
                                 <Typography variant="caption12" weight="400">
-                                    Recommendation: minimum of 350px by 350px
+                                    {descriptionText}
                                 </Typography>
                             </TextContentStyled>
                         </>
@@ -91,10 +101,19 @@ const Upload: React.FC<IUploadProps> = ({ onChange, theme = 'withIcon' }) => {
             )}
             {fileSelected && (
                 <>
-                    <ImageStyled
-                        alt="image"
-                        src={URL.createObjectURL(fileSelected)}
-                    />
+                    {fileSelected.type.split("/")[0] === "image" ? (
+                        <ImageStyled
+                            alt="image"
+                            src={URL.createObjectURL(fileSelected)}
+                        />
+                    ):(
+                        <File
+                            data-testid="test-file-icon"
+                            fill={color.navy30}
+                            fontSize={88}
+                        />
+                    )}
+                    <Typography variant='caption14'>{fileName}</Typography>
                     <IconDivStyled onClick={() => setFileSelected(null)}>
                         <Bin
                             data-testid="test-upload-icon"

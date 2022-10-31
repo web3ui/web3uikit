@@ -15,6 +15,7 @@ export interface IUploadProps {
 
     /**
      * Accepted file types (default: all)
+     * Read more: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/accept#:~:text=The%20accept%20attribute%20takes%20as,removed%20in%20favor%20of%20file.
      */
     acceptedFiles?: string;
 

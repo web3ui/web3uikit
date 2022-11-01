@@ -12,6 +12,7 @@ const LinkTo: React.FC<LinkToProps> = ({
     text,
     type = 'external',
     underline = true,
+    textColor="",
     ...props
 }) => {
     const renderContent = () => (
@@ -22,7 +23,7 @@ const LinkTo: React.FC<LinkToProps> = ({
                     <Mail
                         title="mail icon"
                         titleId="linkto mail icon"
-                        fill={color.navy40}
+                        fill={textColor || color.navy40}
                         fontSize={18}
                         style={{ marginTop: 'auto' }}
                     />
@@ -30,7 +31,7 @@ const LinkTo: React.FC<LinkToProps> = ({
                     <Link
                         title="link icon"
                         titleId="linkto link icon"
-                        fill={color.navy40}
+                        fill={textColor || color.navy40}
                         fontSize={18}
                         style={{ marginTop: 'auto' }}
                     />
@@ -47,6 +48,7 @@ const LinkTo: React.FC<LinkToProps> = ({
             href={`${type === 'email' ? 'mailto:' : ''}${address}`}
             target={`${type === 'email' ? '_self' : '_blank'}`}
             underline={underline}
+            textColor={textColor}
             {...props}
         >
             {renderContent()}
@@ -56,6 +58,7 @@ const LinkTo: React.FC<LinkToProps> = ({
             data-testid="test-link-to"
             to={address}
             underline={underline}
+            textColor={textColor}
         >
             {renderContent()}
         </InternalLinkStyled>

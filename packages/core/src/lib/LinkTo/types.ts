@@ -28,5 +28,10 @@ export interface LinkToProps {
     /**
      * Is link underlined
      */
-    underline?: boolean
+    underline?: boolean;
+
+    /**
+     * custom color (text, icon and underline)
+     */
+    textColor?: string;
 }

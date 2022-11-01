@@ -7,13 +7,16 @@ import type { LinkToProps } from './types';
 
 // styles
 type TStyleProps = Pick<LinkToProps, 'iconLayout'>;
-type LinkStyledProps = Pick<LinkToProps, 'underline'>;
+interface LinkStyledProps {
+    underline: boolean;
+    textColor: string;
+}
 
 const LinkStyled = styled.a<LinkStyledProps>`
     ${resetCSS}
     ${fonts.text}
     align-items: center;
-    color: ${color.navy40};
+    color: ${({ textColor }) => textColor || color.navy40};
     display: inline-block;
     font-weight: 600;
     height: fit-content;
@@ -30,7 +33,7 @@ const InternalLinkStyled = styled(Link)<LinkStyledProps>`
     ${resetCSS}
     ${fonts.text}
     align-items: center;
-    color: ${color.navy40};
+    color: ${({ textColor }) => textColor || color.navy40};
     display: inline-block;
     font-weight: 600;
     max-width: 100%;

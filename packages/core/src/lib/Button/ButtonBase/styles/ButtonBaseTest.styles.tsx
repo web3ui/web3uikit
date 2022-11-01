@@ -28,6 +28,7 @@ const textStyles = css`
     background-color: transparent;
     border-width: 0px;
     color: ${color.navy40};
+    padding: 0px;
 
     svg {
         fill: ${color.navy40};

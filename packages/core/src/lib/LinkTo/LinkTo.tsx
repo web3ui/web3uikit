@@ -2,6 +2,7 @@ import { Link, Mail } from '@web3uikit/icons';
 import { color } from '@web3uikit/styles';
 import { LinkToProps } from './types';
 import styles from './LinkTo.styles';
+import { Typography } from '../Typography';
 
 const { InternalLinkStyled, LinkStyled, SpanStyledFlex, SpanStyledText } =
     styles;
@@ -36,9 +37,13 @@ const LinkTo: React.FC<LinkToProps> = ({
                         style={{ marginTop: 'auto' }}
                     />
                 ))}
-            <SpanStyledText data-testid="test-link-text">
+            <Typography
+                data-testid="test-link-text"
+                color={textColor || color.navy40}
+                {...props}
+            >
                 {text || address}
-            </SpanStyledText>
+            </Typography>
         </SpanStyledFlex>
     );
 
@@ -49,7 +54,6 @@ const LinkTo: React.FC<LinkToProps> = ({
             target={`${type === 'email' ? '_self' : '_blank'}`}
             underline={underline}
             textColor={textColor}
-            {...props}
         >
             {renderContent()}
         </LinkStyled>

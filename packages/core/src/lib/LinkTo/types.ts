@@ -1,10 +1,12 @@
+import { TypographyProps } from "../Typography";
+
 export const layoutState = ['leading', 'trailing', 'none'] as const;
 export type TLayoutState = typeof layoutState[number];
 
 export const typeState = ['email', 'external', 'internal'] as const;
 export type TTypeState = typeof typeState[number];
 
-export interface LinkToProps {
+export interface LinkToProps extends TypographyProps {
     /**
      * what is the address you are linking to
      */

@@ -11,6 +11,7 @@ const LinkTo: React.FC<LinkToProps> = ({
     iconLayout = 'leading',
     text,
     type = 'external',
+    underline = true,
     ...props
 }) => {
     const renderContent = () => (
@@ -45,12 +46,17 @@ const LinkTo: React.FC<LinkToProps> = ({
             data-testid="test-link-to"
             href={`${type === 'email' ? 'mailto:' : ''}${address}`}
             target={`${type === 'email' ? '_self' : '_blank'}`}
+            underline={underline}
             {...props}
         >
             {renderContent()}
         </LinkStyled>
     ) : (
-        <InternalLinkStyled data-testid="test-link-to" to={address}>
+        <InternalLinkStyled
+            data-testid="test-link-to"
+            to={address}
+            underline={underline}
+        >
             {renderContent()}
         </InternalLinkStyled>
     );

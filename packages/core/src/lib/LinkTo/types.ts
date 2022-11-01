@@ -24,4 +24,9 @@ export interface LinkToProps {
      * set the position of the icon, or icon only
      */
     iconLayout?: TLayoutState;
+
+    /**
+     * Is link underlined
+     */
+    underline?: boolean
 }

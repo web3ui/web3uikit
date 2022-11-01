@@ -13,7 +13,7 @@ const LinkTo: React.FC<LinkToProps> = ({
     text,
     type = 'external',
     underline = true,
-    textColor="",
+    textColor,
     ...props
 }) => {
     const renderContent = () => (

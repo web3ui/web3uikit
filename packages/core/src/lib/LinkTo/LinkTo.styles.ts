@@ -9,7 +9,7 @@ import type { LinkToProps } from './types';
 type TStyleProps = Pick<LinkToProps, 'iconLayout'>;
 interface LinkStyledProps {
     underline: boolean;
-    textColor: string;
+    textColor: string | undefined;
 }
 
 const LinkStyled = styled.a<LinkStyledProps>`

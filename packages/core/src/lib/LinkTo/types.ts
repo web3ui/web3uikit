@@ -30,7 +30,7 @@ export interface LinkToProps extends TypographyProps {
     /**
      * Is link underlined
      */
-    underline?: boolean;
+    isUnderlined?: boolean;
 
     /**
      * custom color (text, icon and underline)

@@ -3,7 +3,7 @@ import { CheckboxProps } from '.';
 import { Check } from '@web3uikit/icons';
 import styles from './Checkbox.styles';
 
-const { StyledInput, StyledLabel } = styles;
+const { StyledInput, StyledLabel, SpanStyled } = styles;
 
 const Checkbox: React.FC<CheckboxProps> = ({
     checked,
@@ -28,6 +28,8 @@ const Checkbox: React.FC<CheckboxProps> = ({
     };
 
     useEffect(() => setIsChecked(Boolean(checked)), [checked]);
+
+    const isLabelNull = !label || label.toString().length === 0;
 
     return (
         <StyledLabel
@@ -64,9 +66,14 @@ const Checkbox: React.FC<CheckboxProps> = ({
                 value={`${isChecked}`}
                 {...props}
             />
-            <span data-testid="test-checkbox-text">
-                {isChecked ? labelWhenChecked || label : label}
-            </span>
+            <SpanStyled data-testid="test-checkbox-text" isHidden={isLabelNull}>
+                {/* DO NOT REMOVE THIS LINE:
+                 * This helps to show only the box without any label
+                 * Value inside this span cannot be null since all the are dependent on this
+                 */}
+                {isLabelNull && '.'}
+                {isChecked && !isLabelNull ? labelWhenChecked || label : label}
+            </SpanStyled>
         </StyledLabel>
     );
 };

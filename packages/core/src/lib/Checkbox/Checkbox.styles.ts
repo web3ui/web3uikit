@@ -19,7 +19,6 @@ const labelStyles = css`
     cursor: pointer;
     display: block;
     font-size: 18px;
-    margin-bottom: 4px;
     overflow: hidden;
     position: relative;
     width: fit-content;
@@ -42,7 +41,8 @@ const boxStyles = css`
         left: 0;
         pointer-events: none;
         position: absolute;
-        top: 1px;
+        top: 50%;
+        transform: translateY(-50%);
         transition: all 0.1s ease-out;
         width: 20px;
     }
@@ -59,7 +59,6 @@ const boxStyles = css`
         justify-content: center;
         left: 1px;
         opacity: 0;
-        top: 2px;
         z-index: 1;
     }
 
@@ -98,7 +97,8 @@ const switchStyles = css`
         left: 3px;
         opacity: 0.4;
         position: absolute;
-        top: calc(50% - 7px);
+        top: calc(50%);
+        transform: translateY(-50%);
         transition: all 0.1s ease-out;
         width: 34px;
     }
@@ -112,7 +112,8 @@ const switchStyles = css`
         height: 20px;
         left: 0;
         position: absolute;
-        top: calc(50% - 11px);
+        top: calc(50%);
+        transform: translateY(-50%);
         transition: all 0.1s ease-out;
         width: 20px;
     }
@@ -154,7 +155,16 @@ const StyledLabel = styled.label<
     ${(p) => p.layout === 'box' && boxStyles}
     ${(p) => p.layout === 'box' && p.checked && boxCheckedStyles}
     ${(p) => p.layout === 'switch' && switchStyles}
-    ${(p) => p.layout === 'switch' && p.checked && switchOnStyles}
+    ${(p) => p.layout === 'switch' && p.checked && switchOnStyles};
+
 `;
 
-export default { StyledInput, StyledLabel };
+const SpanStyled = styled.span<{ isHidden: boolean }>`
+    ${(props) =>
+        props.isHidden &&
+        css`
+            visibility: collapse;
+        `}
+`;
+
+export default { StyledInput, StyledLabel, SpanStyled };

@@ -18,6 +18,7 @@ const DivStyled = styled.div`
     position: relative;
     margin-top: ${tooltipHeight};
     margin-bottom: ${tooltipHeight};
+    isolation: isolate;
 `;
 
 const DivStyledTooltip = styled.div<{

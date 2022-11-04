@@ -1,17 +1,17 @@
-import type { Size } from '../../types';
+import { Size } from '../../types';
 
 const arbitrum = (width: Size = '120', height: Size = '160') => {
     return (
         <svg
-            fill="none"
-            height={height}
-            viewBox="0,0,120,160"
             width={width}
+            height={height}
+            viewBox="0 0 120 160"
+            fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
             <path
                 opacity="0.3"
-                d="M9.09277 104.682V108.659L20.1229 115.042L24.4793 117.54L37.5487 125.033L53.1206 134.006C53.6767 134.283 54.1402 134.561 54.5109 134.746C55.0671 135.116 55.5305 135.301 55.6232 135.393C56.7355 135.948 58.3112 136.226 59.7943 136.226C61.0919 136.226 62.3896 135.948 63.5946 135.486L106.139 110.88C108.549 109.029 110.032 106.162 110.125 103.017V56.0242C110.032 52.6015 108.086 49.4564 105.212 47.6063L64.2434 24.1101C61.37 22.63 57.7551 22.63 54.8817 24.1101C54.5109 24.2951 15.0249 47.1437 15.0249 47.1437C14.4688 47.4213 13.9127 47.6988 13.4492 48.0688C10.8539 49.9189 9.27815 52.879 9.09277 56.0242L9.09277 104.682Z"
+                d="M9.0918 104.682V108.659L20.1219 115.042L24.4784 117.54L37.5477 125.033L53.1196 134.006C53.6758 134.283 54.1392 134.561 54.51 134.746C55.0661 135.116 55.5296 135.301 55.6222 135.393C56.7345 135.948 58.3103 136.226 59.7933 136.226C61.091 136.226 62.3886 135.948 63.5936 135.486L106.138 110.88C108.548 109.029 110.031 106.162 110.124 103.017V56.0242C110.031 52.6015 108.085 49.4564 105.211 47.6063L64.2424 24.1101C61.369 22.63 57.7541 22.63 54.8807 24.1101C54.51 24.2951 15.024 47.1437 15.024 47.1437C14.4678 47.4213 13.9117 47.6988 13.4482 48.0688C10.8529 49.9189 9.27718 52.879 9.0918 56.0242L9.0918 104.682Z"
                 fill="url(#paint0_linear_173_19021)"
             />
             <path
@@ -20,22 +20,22 @@ const arbitrum = (width: Size = '120', height: Size = '160') => {
             />
             <path
                 opacity="0.7"
-                d="M61.7406 96.3563L77.4052 120.87L91.8649 112.545L71.3804 80.168L61.7406 96.3563Z"
+                d="M61.7402 96.3563L77.4049 120.87L91.8645 112.545L71.38 80.168L61.7402 96.3563Z"
                 fill="url(#paint2_linear_173_19021)"
             />
             <path
                 opacity="0.7"
-                d="M105.027 102.647V95.9863L82.596 61.0195L74.2539 75.1727L95.9434 110.139L103.822 105.607C104.564 104.959 105.027 104.034 105.12 103.109L105.027 102.647Z"
+                d="M105.027 102.647V95.9863L82.596 61.0195L74.2539 75.1728L95.9434 110.14L103.822 105.607C104.564 104.959 105.027 104.034 105.12 103.109L105.027 102.647Z"
                 fill="url(#paint3_linear_173_19021)"
             />
             <path
-                d="M20.4935 113.007L56.0865 56.1168L50.8032 55.9318C45.4272 55.8393 39.6804 57.2269 37.0851 61.5746L16.1371 93.9512L10.5757 102.462V108.012"
+                d="M20.494 113.007L56.087 56.1168L50.8037 55.9318C45.4277 55.8393 39.6809 57.2269 37.0856 61.5746L16.1376 93.9512L10.5762 102.462V108.012"
                 fill="url(#paint4_linear_173_19021)"
             />
             <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M36.2359 61.0461C39.1281 56.221 45.3738 54.8382 50.8204 54.9319L50.8293 54.9321L57.8534 55.178L21.3413 113.538L19.6458 112.477L54.3196 57.0555L50.7772 56.9315C45.4807 56.842 40.2451 58.2318 37.9437 62.0871L37.9345 62.1026L16.9767 94.4944L16.9742 94.4983L11.5757 102.759V108.012H9.57568V102.164L15.2975 93.408L15.3 93.4042L36.2359 61.0461Z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M36.2364 61.0461C39.1286 56.221 45.3743 54.8382 50.8209 54.9319L50.8298 54.932L57.8539 55.178L21.3418 113.538L19.6463 112.477L54.3201 57.0555L50.7777 56.9314C45.4812 56.842 40.2456 58.2317 37.9442 62.0871L37.9349 62.1026L16.9772 94.4944L16.9747 94.4982L11.5762 102.759V108.012H9.57617V102.164L15.298 93.408L15.3005 93.4042L36.2364 61.0461Z"
                 fill="url(#paint5_linear_173_19021)"
             />
             <path
@@ -43,22 +43,22 @@ const arbitrum = (width: Size = '120', height: Size = '160') => {
                 fill="url(#paint6_linear_173_19021)"
             />
             <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M79.9985 55.1056L41.9336 119.525L41.9317 119.529L38.4114 125.538L36.6857 124.527L40.2079 118.515L40.2098 118.511L76.4805 57.1279L64.152 57.2058L26.255 118.068L24.5573 117.011L63.0369 55.2128L79.9985 55.1056Z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M79.9999 55.1055L41.935 119.525L41.9331 119.529L38.4127 125.538L36.687 124.527L40.2093 118.514L40.2112 118.511L76.4819 57.1277L64.1534 57.2056L26.2564 118.068L24.5586 117.011L63.0383 55.2126L79.9999 55.1055Z"
                 fill="url(#paint7_linear_173_19021)"
             />
             <defs>
                 <linearGradient
                     id="paint0_linear_173_19021"
-                    x1="9.09278"
+                    x1="9.0918"
                     y1="79.6129"
-                    x2="110.145"
+                    x2="110.144"
                     y2="79.6129"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stopColor="white" />
-                    <stop offset="1" stopColor="white" stopOpacity="0.3" />
+                    <stop stop-color="white" />
+                    <stop offset="1" stop-color="white" stop-opacity="0.3" />
                 </linearGradient>
                 <linearGradient
                     id="paint1_linear_173_19021"
@@ -68,19 +68,19 @@ const arbitrum = (width: Size = '120', height: Size = '160') => {
                     y2="136.226"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stopColor="white" stopOpacity="0.2" />
-                    <stop offset="0.348958" stopColor="white" />
+                    <stop stop-color="white" stop-opacity="0.2" />
+                    <stop offset="0.348958" stop-color="white" />
                 </linearGradient>
                 <linearGradient
                     id="paint2_linear_173_19021"
-                    x1="61.7842"
+                    x1="61.7838"
                     y1="100.517"
-                    x2="91.8902"
+                    x2="91.8898"
                     y2="100.517"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stopColor="white" />
-                    <stop offset="1" stopColor="white" stopOpacity="0.3" />
+                    <stop stop-color="white" />
+                    <stop offset="1" stop-color="white" stop-opacity="0.3" />
                 </linearGradient>
                 <linearGradient
                     id="paint3_linear_173_19021"
@@ -90,30 +90,30 @@ const arbitrum = (width: Size = '120', height: Size = '160') => {
                     y2="85.6105"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stopColor="white" />
-                    <stop offset="1" stopColor="white" stopOpacity="0.3" />
+                    <stop stop-color="white" />
+                    <stop offset="1" stop-color="white" stop-opacity="0.3" />
                 </linearGradient>
                 <linearGradient
                     id="paint4_linear_173_19021"
-                    x1="10.5592"
+                    x1="10.5597"
                     y1="84.4857"
-                    x2="56.0717"
+                    x2="56.0722"
                     y2="84.4857"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stopColor="white" />
-                    <stop offset="1" stopColor="white" stopOpacity="0.3" />
+                    <stop stop-color="white" />
+                    <stop offset="1" stop-color="white" stop-opacity="0.3" />
                 </linearGradient>
                 <linearGradient
                     id="paint5_linear_173_19021"
-                    x1="33.3311"
+                    x1="33.3316"
                     y1="55.9275"
-                    x2="33.3311"
+                    x2="33.3316"
                     y2="113.007"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stopColor="white" />
-                    <stop offset="1" stopColor="white" stopOpacity="0" />
+                    <stop stop-color="white" />
+                    <stop offset="1" stop-color="white" stop-opacity="0" />
                 </linearGradient>
                 <linearGradient
                     id="paint6_linear_173_19021"
@@ -123,19 +123,19 @@ const arbitrum = (width: Size = '120', height: Size = '160') => {
                     y2="90.5737"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stopColor="white" />
-                    <stop offset="1" stopColor="white" stopOpacity="0.3" />
+                    <stop stop-color="white" />
+                    <stop offset="1" stop-color="white" stop-opacity="0.3" />
                 </linearGradient>
                 <linearGradient
                     id="paint7_linear_173_19021"
-                    x1="51.8227"
-                    y1="56.1168"
-                    x2="51.8227"
+                    x1="51.8241"
+                    y1="56.1166"
+                    x2="51.8241"
                     y2="125.033"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stopColor="white" />
-                    <stop offset="1" stopColor="white" stopOpacity="0" />
+                    <stop stop-color="white" />
+                    <stop offset="1" stop-color="white" stop-opacity="0" />
                 </linearGradient>
             </defs>
         </svg>

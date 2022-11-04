@@ -69,6 +69,10 @@ export const Ronin = BackgroundColoredTemplate.bind({});
 Ronin.args = {
     logo: 'ronin',
 };
+export const Optimism = BackgroundColoredTemplate.bind({});
+Optimism.args = {
+    logo: 'optimism',
+};
 
 export const Crypto = BackgroundColoredTemplate.bind({});
 Crypto.args = {

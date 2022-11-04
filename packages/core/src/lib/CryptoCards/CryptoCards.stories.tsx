@@ -87,3 +87,11 @@ Ronin.args = {
     bgColor: bgConfig.ronin,
     btnText: 'View Endpoints',
 };
+
+export const Optimism = Template.bind({});
+Optimism.args = {
+    chain: 'optimism',
+    chainType: 'Network',
+    bgColor: bgConfig.optimism,
+    btnText: 'View Endpoints',
+};

@@ -24,6 +24,7 @@ import styled from 'styled-components';
 import { resetCSS } from '@web3uikit/styles';
 import wizard from './images/various/wizard';
 import roninLogo from './images/chains/ronin';
+import optimismLogo from './images/chains/optimism';
 
 const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     switch (logo) {
@@ -47,6 +48,8 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
             return cronos(width, height);
         case 'ronin':
             return roninLogo(width, height);
+        case 'optimism':
+            return optimismLogo(width, height);
         case 'comingSoon':
             return comingSoon(width, height);
         case 'confirmed':

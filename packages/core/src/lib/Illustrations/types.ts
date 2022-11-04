@@ -9,6 +9,7 @@ export const chainState = [
     'fantom',
     'polygon',
     'ronin',
+    'optimism',
 ] as const;
 export type Chain = typeof chainState[number];
 
@@ -27,6 +28,7 @@ export const logoState = [
     'token',
     'wizard',
 ] as const;
+
 export type Logo = typeof logoState[number];
 export type Size = number | string;
 

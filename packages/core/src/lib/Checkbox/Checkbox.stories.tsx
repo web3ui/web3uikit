@@ -1,4 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Illustration } from '../Illustrations';
+import { Typography } from '../Typography';
 import Checkbox from './Checkbox';
 
 export default {
@@ -77,13 +79,20 @@ SwitchingText.args = {
 export const CustomLabel = Template.bind({});
 CustomLabel.args = {
     label: (
-        <div>
-            This is Checkbox with custom label{' '}
-            <a href="https://ih1.redbubble.net/image.968162104.1958/st,small,507x507-pad,600x600,f8f8f8.jpg">
-                Click
-            </a>
+        <div style={{ display: 'flex', alignItems: 'center', height: '100px' }}>
+            <Illustration logo={'marketplace'} height={48} width={34} />
+            <div className="label-data">
+                <Typography variant="body16" weight="550">
+                    Contract Logs
+                </Typography>
+                <br />
+                <Typography variant="caption14" weight="400">
+                    To get all logs
+                </Typography>
+            </div>
         </div>
     ),
     name: 'Test checkbox input',
     id: 'test-checkbox',
+    align: 'center',
 };

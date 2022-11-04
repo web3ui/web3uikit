@@ -1,41 +1,53 @@
-
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta, DecoratorFn } from '@storybook/react';
 import BannerStrip from './BannerStrip';
+import { Typography } from '../Typography';
+import { Button } from '../Button';
+import { color } from '@web3uikit/styles';
+import { Loading } from '../Loading';
+import React, { useEffect } from 'react';
 
-const hasPositionAbsoluteFix = {
-    transform: 'scale(1)',
-    height: '60px',
+const HelperDecorator: DecoratorFn = (storyFn) => {
+    const [seed, setSeed] = React.useState(1);
+
+    return (
+        <div
+            key={seed}
+            style={{
+                transform: 'scale(1)',
+                display: 'flex',
+                flexDirection: 'column',
+            }}
+        >
+            {storyFn()}
+            {
+                <Button
+                    text="Show Banner"
+                    theme="outline"
+                    onClick={() => {
+                        window?.localStorage &&
+                            window.localStorage.removeItem('web3uikit-banner');
+                        setSeed(Math.random());
+                    }}
+                />
+            }
+        </div>
+    );
 };
 
 export default {
     title: '5.Popup/BannerStrip',
     component: BannerStrip,
-    decorators: [
-        (storyFn) => <div style={hasPositionAbsoluteFix}>{storyFn()}</div>,
-    ],
+    decorators: [HelperDecorator],
 } as ComponentMeta<typeof BannerStrip>;
 
-const testFunction = () => alert('banner button clicked');
-
-const Template: ComponentStory<typeof BannerStrip> = (args) => (
-    <BannerStrip {...args} />
-);
+const Template: ComponentStory<typeof BannerStrip> = (args) => {
+    return <BannerStrip {...args} />;
+};
 
 export const Standard = Template.bind({});
 Standard.args = {
     text: 'Hey this is a notification you should check out',
     type: 'standard',
-};
-
-export const StandardWithButton = Template.bind({});
-StandardWithButton.args = {
-    text: 'Hey this is a notification you should check out',
-    type: 'standard',
-    buttonDisplayed: true,
-    buttonConfig: {
-        text: 'Click me',
-        onClick: testFunction,
-    },
 };
 
 export const Warning = Template.bind({});
@@ -52,6 +64,29 @@ Error.args = {
 
 export const Success = Template.bind({});
 Success.args = {
-    text: 'Looking good',
+    text: '😉 Looking good ',
     type: 'success',
+};
+
+export const Custom = Template.bind({});
+Custom.args = {
+    text: (
+        <div
+            style={{
+                display: 'flex',
+                justifyContent: 'center',
+                gap: '10px',
+            }}
+        >
+            <Loading fontSize={12} size={12} spinnerType="loader" />
+            <Typography variant="caption14" color={color.white}>
+                Your Dapp is currently loading... Full Dapp settings will be
+                available shortly.
+            </Typography>
+        </div>
+    ),
+    bgColor: color.blue40,
+    type: 'custom',
+    position: 'relative',
+    borderRadius: '12px',
 };

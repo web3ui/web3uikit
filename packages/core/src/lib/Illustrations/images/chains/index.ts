@@ -1,50 +1,50 @@
 import { lazy } from 'react';
 import { ILogoImport } from '../../types';
-const arbitrum: ILogoImport = {
+const arbitrumLogo: ILogoImport = {
     name: 'arbitrum',
     component: lazy(() => import('./arbitrum')),
 };
-const avalanche: ILogoImport = {
+const avalancheLogo: ILogoImport = {
     name: 'avalanche',
     component: lazy(() => import('./avalanche')),
 };
-const binance: ILogoImport = {
+const binanceLogo: ILogoImport = {
     name: 'binance',
     component: lazy(() => import('./binance')),
 };
-const coinbase: ILogoImport = {
+const coinbaseLogo: ILogoImport = {
     name: 'coinbase',
     component: lazy(() => import('./coinbase')),
 };
-const cronos: ILogoImport = {
+const cronosLogo: ILogoImport = {
     name: 'cronos',
     component: lazy(() => import('./cronos')),
 };
-const ethereum: ILogoImport = {
+const ethereumLogo: ILogoImport = {
     name: 'ethereum',
     component: lazy(() => import('./ethereum')),
 };
-const fantom: ILogoImport = {
+const fantomLogo: ILogoImport = {
     name: 'fantom',
     component: lazy(() => import('./fantom')),
 };
-const polygon: ILogoImport = {
+const polygonLogo: ILogoImport = {
     name: 'polygon',
     component: lazy(() => import('./polygon')),
 };
-const ronin: ILogoImport = {
+const roninLogo: ILogoImport = {
     name: 'ronin',
     component: lazy(() => import('./ronin')),
 };
 
 export default {
-    arbitrum,
-    avalanche,
-    binance,
-    coinbase,
-    cronos,
-    ethereum,
-    fantom,
-    polygon,
-    ronin,
+    arbitrumLogo,
+    avalancheLogo,
+    binanceLogo,
+    coinbaseLogo,
+    cronosLogo,
+    ethereumLogo,
+    fantomLogo,
+    polygonLogo,
+    roninLogo,
 };

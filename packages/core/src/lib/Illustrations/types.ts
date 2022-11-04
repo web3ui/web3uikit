@@ -1,17 +1,7 @@
 import React from 'react';
+import { TChainNames } from '../../interfaces/logo';
 
-export const chainState = [
-    'arbitrum',
-    'avalanche',
-    'binance',
-    'coinbase',
-    'cronos',
-    'ethereum',
-    'fantom',
-    'polygon',
-    'ronin',
-] as const;
-export type Chain = typeof chainState[number];
+export type Chain = TChainNames;
 
 export const logoState = [
     'bundle',
@@ -29,6 +19,7 @@ export const logoState = [
     'token',
     'wizard',
 ] as const;
+
 export type Logo = typeof logoState[number];
 export type Size = number | string;
 

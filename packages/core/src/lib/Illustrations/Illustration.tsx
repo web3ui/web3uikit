@@ -18,7 +18,7 @@ import { resetCSS } from '@web3uikit/styles';
 import wizard from './images/various/wizard';
 import AllChains from './images/chains';
 import { Suspense } from 'react';
-import { Loading } from '../Loading';
+import { Skeleton } from '../Skeleton';
 
 const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     switch (logo) {
@@ -82,21 +82,25 @@ const Illustration: React.FC<IllustrationProps> = ({
     ...props
 }: IllustrationProps) => {
     return (
-        <Suspense
-            fallback={
-                <Loading size={typeof width === 'number' ? width : 120} />
-            }
+        <StyledIllustration
+            data-testid="test-illustration"
+            height={height}
+            id={id}
+            width={width}
+            {...props}
         >
-            <StyledIllustration
-                data-testid="test-illustration"
-                height={height}
-                id={id}
-                width={width}
-                {...props}
+            <Suspense
+                fallback={
+                    <Skeleton
+                        height={height as string}
+                        width={width as string}
+                        theme="image"
+                    />
+                }
             >
                 {getLogo(logo, width, height)}
-            </StyledIllustration>
-        </Suspense>
+            </Suspense>
+        </StyledIllustration>
     );
 };
 

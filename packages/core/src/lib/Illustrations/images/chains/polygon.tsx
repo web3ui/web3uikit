@@ -1,7 +1,7 @@
+import React from 'react';
+import type { ILogoProps } from '../../types';
 
-import type { Size } from '../../types';
-
-const polygonLogo = (width: Size = '120', height: Size = '160') => {
+const polygon:React.FC<ILogoProps> = ({width = '120', height = '160'}) => {
     return (
         <svg
             width={width}
@@ -38,4 +38,4 @@ const polygonLogo = (width: Size = '120', height: Size = '160') => {
     );
 };
 
-export default polygonLogo;
+export default polygon;

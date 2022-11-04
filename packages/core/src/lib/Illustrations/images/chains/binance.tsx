@@ -1,7 +1,7 @@
+import React from 'react';
+import type { ILogoProps } from '../../types';
 
-import type { Size } from '../../types';
-
-const binanceLogo = (width: Size = '120', height: Size = '160') => {
+const binance:React.FC<ILogoProps> = ({width = '120', height = '160'}) => {
     return (
         <svg
             width={width}
@@ -126,4 +126,4 @@ const binanceLogo = (width: Size = '120', height: Size = '160') => {
     );
 };
 
-export default binanceLogo;
+export default binance;

@@ -1,10 +1,11 @@
+import React from 'react';
+
 export const chainState = [
     'arbitrum',
     'avalanche',
     'binance',
     'coinbase',
     'cronos',
-    'cryptoweb',
     'ethereum',
     'fantom',
     'polygon',
@@ -17,6 +18,7 @@ export const logoState = [
     'chest',
     'comingSoon',
     'confirmed',
+    'cryptoweb',
     'discord',
     'documentation',
     'lazyNft',
@@ -47,4 +49,14 @@ export interface IllustrationProps {
      * Width of illustration
      */
     height?: Size;
+}
+
+export interface ILogoProps {
+    height?: Size;
+    width?: Size;
+}
+
+export interface ILogoImport {
+    name: Chain;
+    component: React.LazyExoticComponent<React.FC<ILogoProps>>;
 }

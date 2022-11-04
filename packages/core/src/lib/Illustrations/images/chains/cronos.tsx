@@ -1,7 +1,7 @@
 import React from 'react';
-import type { Size } from '../../types';
+import type { ILogoProps } from '../../types';
 
-const cronosLogo = (width: Size = '120', height: Size = '160') => {
+const cronos:React.FC<ILogoProps> = ({width = '120', height = '160'}) => {
     return (
         <svg
             fill="none"
@@ -58,4 +58,4 @@ const cronosLogo = (width: Size = '120', height: Size = '160') => {
     );
 };
 
-export default cronosLogo;
+export default cronos;

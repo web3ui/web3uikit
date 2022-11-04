@@ -1,7 +1,7 @@
+import React from 'react';
+import type { ILogoProps } from '../../types';
 
-import type { Size } from '../../types';
-
-const avalancheLogo = (width: Size = '120', height: Size = '160') => {
+const avalanche:React.FC<ILogoProps> = ({width = '120', height = '160'}) => {
     return (
         <svg
             width={width}
@@ -39,4 +39,4 @@ const avalancheLogo = (width: Size = '120', height: Size = '160') => {
     );
 };
 
-export default avalancheLogo;
+export default avalanche;

@@ -1,6 +1,7 @@
-import type { Size } from '../../types';
+import React from 'react';
+import type { ILogoProps } from '../../types';
 
-const arbitrum = (width: Size = '120', height: Size = '160') => {
+const arbitrum:React.FC<ILogoProps> = ({width = '120', height = '160'}) => {
     return (
         <svg
             fill="none"

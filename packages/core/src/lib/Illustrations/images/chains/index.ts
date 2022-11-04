@@ -1,5 +1,6 @@
 import { lazy } from 'react';
 import { ILogoImport } from '../../types';
+
 const arbitrumLogo: ILogoImport = {
     name: 'arbitrum',
     component: lazy(() => import('./arbitrum')),

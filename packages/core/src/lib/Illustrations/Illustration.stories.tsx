@@ -71,6 +71,8 @@ Ronin.args = {
     logo: 'ronin',
 };
 
+/* PLOP_INJECT_CHAIN */
+
 export const Crypto = BackgroundColoredTemplate.bind({});
 Crypto.args = {
     logo: 'cryptoweb',

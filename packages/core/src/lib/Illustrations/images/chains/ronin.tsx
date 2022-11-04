@@ -1,7 +1,7 @@
 import React from 'react';
-import type { ILogoProps } from '../../types';
+import { ILogoProps } from '../../types';
 
-const ronin:React.FC<ILogoProps> = ({width = '120', height = '160'}) => {
+const ronin: React.FC<ILogoProps> = ({ width = '120', height = '160' }) => {
     return (
         <svg
             width={width}

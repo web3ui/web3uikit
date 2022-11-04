@@ -42,6 +42,7 @@ export const chainLogoData = {
         color:
             'linear-gradient(113.54deg, rgba(114, 162, 255, 0.531738) 14.91%, rgba(18, 115, 233, 0.6) 42.57%, rgba(18, 115, 233, 0.336) 45.98%, rgba(18, 115, 233, 0.03) 55.76%), linear-gradient(160.75deg, #1273E9 41.37%, #72E6FF 98.29%)',
     },
+    /* PLOP_INJECT_CHAIN */
 } as const;
 
 const logoWalletColors = {

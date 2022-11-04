@@ -10,8 +10,8 @@ const roninLogo = (width: Size = '120', height: Size = '160') => {
             xmlns="http://www.w3.org/2000/svg"
         >
             <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M89.3265 22C94.6671 22 99 26.5179 99 31.9598V63.7902V64.0982C98.8992 70.567 92.5383 75.8008 86.1901 75.9034C92.5383 76.0061 98.8992 81.2455 99 87.7143V88.0223V107.942C99 110.817 97.7908 113.487 95.7755 115.335L71.3903 137V92.4375C71.3903 86.9955 67.0574 82.5804 61.7168 82.5804H47.5089V137L23.2245 115.129C21.1084 113.281 20 110.612 20 107.737V31.8571C20 26.4152 24.3329 22 29.6735 22H89.3265ZM71.3903 35.7589H47.5089V66.0491H61.7168C67.0574 66.0491 71.3903 61.6339 71.3903 56.192V35.7589Z"
                 fill="url(#paint0_linear_19829_44322)"
             />
@@ -28,8 +28,8 @@ const roninLogo = (width: Size = '120', height: Size = '160') => {
                     y2="13"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="white" stop-opacity="0.06" />
-                    <stop offset="1" stop-color="white" />
+                    <stop stopColor="white" stopOpacity="0.06" />
+                    <stop offset="1" stopColor="white" />
                 </linearGradient>
             </defs>
         </svg>

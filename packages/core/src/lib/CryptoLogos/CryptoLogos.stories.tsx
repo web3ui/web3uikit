@@ -65,3 +65,5 @@ Ronin.args = {
     chain: 'ronin',
     size: '48px',
 };
+
+/* PLOP_INJECT_CHAIN */

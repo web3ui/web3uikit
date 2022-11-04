@@ -1,5 +1,5 @@
 module.exports = (plop) => {
-    plop.setGenerator('create-new-component', {
+    plop.setGenerator('New Component', {
         description: 'new component generator',
         prompts: [
             {
@@ -42,7 +42,8 @@ module.exports = (plop) => {
                         value: false,
                     },
                     {
-                        name: "No, I'm a PRO Mage, leave the files with min code needed for start",
+                        name:
+                            "No, I'm a PRO Mage, leave the files with min code needed for start",
                         value: true,
                     },
                 ],
@@ -70,6 +71,71 @@ module.exports = (plop) => {
             ];
         },
     });
+    plop.setGenerator('New Chain Logo', {
+        description: 'new chain logo generator',
+        prompts: [
+            {
+                type: 'input',
+                name: 'name',
+                message: '🧙 : What is the chain name?',
+            },
+            {
+                type: 'input',
+                name: 'color',
+                message:
+                    '🧙 : What is the background color for your chain? (Optional)',
+            },
+        ],
+        actions: (data) => {
+            /* PLOP_INJECT_CHAIN */
+            const corePackagePath = 'packages/core/src';
+            const componentName = plop.getHelper('titleCase')(data.name);
+            return [
+                //Add chain to logo.ts file in core package/interface
+                {
+                    type: 'append',
+                    path: `${corePackagePath}/interfaces/logo.ts`,
+                    pattern: '/* PLOP_INJECT_CHAIN */',
+                    template: `     {{name}} : {\n        name:'{{name}}',\n      color:'{{color}}'\n     },`,
+                },
+                {
+                    type: 'add',
+                    path: `${corePackagePath}/lib/Illustrations/images/chains/{{name}}.tsx`,
+                    template: `import React from 'react';\nimport { ILogoProps } from '../../types';\n\nconst {{ name }}:React.FC<ILogoProps> = ({width = '120', height = '160'}) => {\n    return (<></>);\n};\nexport default {{ name }};`,
+                },
+                {
+                    type: 'append',
+                    path: `${corePackagePath}/lib/Illustrations/Illustration.stories.tsx`,
+                    pattern: '/* PLOP_INJECT_CHAIN */',
+                    template: `export const ${componentName} = BackgroundColoredTemplate.bind({});\n${componentName}.args = {\n   logo: '{{name}}',\n};`,
+                },
+                {
+                    type: 'append',
+                    path: `${corePackagePath}/lib/Illustrations/images/chains/index.ts`,
+                    pattern: '/* PLOP_INJECT_CHAIN_1 */',
+                    template: `const {{name}}Logo: ILogoImport = {\n    name: '{{name}}',\n    component: lazy(() => import('./{{name}}')),\n};`,
+                },
+                {
+                    type: 'append',
+                    path: `${corePackagePath}/lib/Illustrations/images/chains/index.ts`,
+                    pattern: '/* PLOP_INJECT_CHAIN_2 */',
+                    template: `    {{name}}Logo,`,
+                },
+                {
+                    type: 'append',
+                    path: `${corePackagePath}/lib/CryptoLogos/CryptoLogos.stories.tsx`,
+                    pattern: '/* PLOP_INJECT_CHAIN */',
+                    template: `export const ${componentName} = Template.bind({});\n${componentName}.args = {\n   logo: '{{name}}',\n    size: '48px'\n};`,
+                },
+                {
+                    type: 'append',
+                    path: `${corePackagePath}/lib/CryptoCards/CryptoCards.stories.tsx`,
+                    pattern: '/* PLOP_INJECT_CHAIN */',
+                    template: `export const ${componentName} = Template.bind({});\n${componentName}.args = {\n   logo: '{{name}}',\n    chainType: 'Network',\n    bgColor: chainLogoData['{{name}}'].color,,\n    btnText: 'View Endpoints',\n};`,
+                },
+            ];
+        },
+    });
     plop.setHelper('getInterface', (name) => `I${name}Props`);
     plop.setHelper('getSubDirectoryPath', (subDirectory) => {
         if (subDirectory) return `/${subDirectory}`;
@@ -78,4 +144,7 @@ module.exports = (plop) => {
         if (subDirectory === 'web3') return `@web3uikit/core`;
         else return `../${name}`;
     });
+    plop.setHelper('capitalize', (name) =>
+        name.length > 0 ? name.charAt(0).toUpperCase() + name.slice(1) : '',
+    );
 };

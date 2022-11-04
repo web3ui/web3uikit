@@ -37,6 +37,7 @@ const roninLogo: ILogoImport = {
     name: 'ronin',
     component: lazy(() => import('./ronin')),
 };
+/* PLOP_INJECT_CHAIN_1 */
 
 export default {
     arbitrumLogo,
@@ -48,4 +49,5 @@ export default {
     fantomLogo,
     polygonLogo,
     roninLogo,
+    /* PLOP_INJECT_CHAIN_2 */
 };

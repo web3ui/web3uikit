@@ -81,3 +81,5 @@ Ronin.args = {
     bgColor: chainLogoData['ronin'].color,
     btnText: 'View Endpoints',
 };
+
+/* PLOP_INJECT_CHAIN */

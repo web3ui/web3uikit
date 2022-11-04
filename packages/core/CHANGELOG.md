@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.7
+
+### Patch Changes
+
+-   [#874](https://github.com/web3ui/web3uikit/pull/874) [`17e795c3a`](https://github.com/web3ui/web3uikit/commit/17e795c3ad87f36de24f90fd13f65b87c756533d) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add New logo and update svgs
+
 ## 0.2.6
 
 ### Patch Changes

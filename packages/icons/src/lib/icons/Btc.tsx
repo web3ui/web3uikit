@@ -15,6 +15,7 @@ const SvgBtc = ({
         viewBox="0 0 24 24.003"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >

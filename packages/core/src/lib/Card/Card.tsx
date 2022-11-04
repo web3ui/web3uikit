@@ -20,6 +20,7 @@ const Card: React.FC<CardProps> = ({
     tooltipMove,
     tooltipMoveBody,
     tooltipText,
+    style,
     ...props
 }: CardProps) => {
     return (
@@ -37,6 +38,7 @@ const Card: React.FC<CardProps> = ({
             isSelected={isSelected}
             isDisabled={isDisabled}
             cursorType={cursorType}
+            style={style}
             {...props}
         >
             <HeaderStyled data-testid={'test-card-header'}>
@@ -46,7 +48,7 @@ const Card: React.FC<CardProps> = ({
                             data-testid="test-card-icon-check"
                             title="checkmark icon"
                             titleId="card checkmark icon"
-                            fill={color.green}
+                            fill={color.mint40}
                             fontSize={20}
                         />
                     </AbsoluteIconStyled>
@@ -56,7 +58,7 @@ const Card: React.FC<CardProps> = ({
                         <Tooltip
                             children={[
                                 <HelpCircle
-                                    fill={color.blue}
+                                    fill={color.navy40}
                                     fontSize={22}
                                     key="tip-card"
                                     titleId="card help circle icon"
@@ -75,7 +77,7 @@ const Card: React.FC<CardProps> = ({
                 <FooterStyled>
                     {title && (
                         <Typography
-                            color={color.blue}
+                            color={color.navy40}
                             data-testid="test-card-title"
                             variant="subtitle2"
                         >
@@ -84,7 +86,7 @@ const Card: React.FC<CardProps> = ({
                     )}
                     {description && (
                         <Typography
-                            color={color.blue}
+                            color={color.navy40}
                             data-testid="test-card-description"
                             variant="caption14"
                         >

@@ -9,19 +9,19 @@ const DivStyledWrapper = styled.div<Pick<ISelectProps, 'state'>>`
 `;
 
 const LabelStyled = styled.label<LabelProps>`
-  ${resetCSS}
-  ${fonts.text}
+    ${resetCSS}
+    ${fonts.text}
     background-color: ${color.white};
-  height: 24px;
-  left: ${({ hasPrefixIcon, hasSelectedIndex }) =>
-      hasPrefixIcon && !hasSelectedIndex ? 50 : 12}px;
-  line-height: 1;
-  pointer-events: none;
-  position: absolute;
-  padding: 0 4px;
-  transition: all 0.1s ease-out;
-  ${({ hasSelectedIndex }) =>
-      hasSelectedIndex ? 'top: -9px; font-size: 14px;' : 'top: 20px;'};
+    height: 24px;
+    left: ${({ hasPrefixIcon, hasSelectedIndex }) =>
+        hasPrefixIcon && !hasSelectedIndex ? 50 : 12}px;
+    line-height: 1;
+    pointer-events: none;
+    position: absolute;
+    padding: 0 4px;
+    transition: all 0.1s ease-out;
+    ${({ hasSelectedIndex }) =>
+        hasSelectedIndex ? 'top: -9px; font-size: 14px;' : 'top: 20px;'};
 `;
 
 const PrefixSpan = styled.span`
@@ -44,13 +44,13 @@ const SelectedItem = styled.div<SelectedItemProps>`
     border-color: ${({ state }) => {
         switch (state) {
             case 'error':
-                return color.red;
+                return color.red40;
             case 'confirmed':
-                return color.green;
+                return color.mint40;
             case 'disabled':
-                return color.greyDisabled;
+                return color.gray30;
             default:
-                return color.greyLight;
+                return color.gray30;
         }
     }};
 
@@ -58,39 +58,35 @@ const SelectedItem = styled.div<SelectedItemProps>`
 
     ${({ state }) =>
         state === 'disabled' &&
-        `& * {fill: ${color.greyDisabled};} color: ${color.greyDisabled} !important;`};
+        `& * {fill: ${color.gray30};} color: ${color.gray30} !important;`};
 
     &:hover {
-        border-color: ${(p) => p.state !== 'disabled' && color.blueSky};
+        border-color: ${(p) => p.state !== 'disabled' && color.navy30};
     }
 
     &:focus {
-        border-color: ${color.blue};
+        border-color: ${color.navy40};
 
         & + label {
-            color: ${color.blue};
+            color: ${color.navy40};
         }
     }
 
     &:hover {
-        ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-        ${(p) =>
-            p.state === 'confirmed' &&
-            `border-color: ${color.green};`}
+        ${(p) => p.state === 'error' && `border-color: ${color.red40};`}
+        ${(p) => p.state === 'confirmed' && `border-color: ${color.mint40};`}
 
         & + label {
-            ${(p) => !p?.state && `color: ${color.blue};`}
+            ${(p) => !p?.state && `color: ${color.navy40};`}
         }
     }
 
     &:focus {
-        ${(p) => p.state === 'error' && `border-color: ${color.red};`}
-        ${(p) =>
-            p.state === 'confirmed' &&
-            `border-color: ${color.green};`}
+        ${(p) => p.state === 'error' && `border-color: ${color.red40};`}
+        ${(p) => p.state === 'confirmed' && `border-color: ${color.mint40};`}
         & + label {
-            ${(p) => p.state === 'error' && `color: ${color.red};`}
-            ${(p) => p.state === 'confirmed' && `color: ${color.green};`}
+            ${(p) => p.state === 'error' && `color: ${color.red40};`}
+            ${(p) => p.state === 'confirmed' && `color: ${color.mint40};`}
         }
     }
 
@@ -98,13 +94,13 @@ const SelectedItem = styled.div<SelectedItemProps>`
         color: ${({ state }) => {
             switch (state) {
                 case 'error':
-                    return color.red;
+                    return color.red40;
                 case 'confirmed':
-                    return color.green;
+                    return color.mint40;
                 case 'disabled':
-                    return color.greyDisabled;
+                    return color.gray30;
                 default:
-                    return color.grey;
+                    return color.blueGray50;
             }
         }};
     }
@@ -139,7 +135,7 @@ const ErrorLabel = styled.label`
     ${resetCSS}
     ${fonts.text}
     bottom: -23px;
-    color: ${color.red};
+    color: ${color.red40};
     font-size: 12px;
     height: 24px;
     left: 16px;
@@ -148,37 +144,37 @@ const ErrorLabel = styled.label`
 `;
 
 const Options = styled.div`
-  ${resetCSS}
-  ${fonts.text}
-    background-color: ${color.blueLight};
-  border-radius: 16px;
-  border: 2px solid ${color.blueSky};
-  left: 0;
-  margin-top: 10px;
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  z-index: 10;
-  max-height: 265px;
-  overflow: auto;
+    ${resetCSS}
+    ${fonts.text}
+    background-color: ${color.aero10};
+    border-radius: 16px;
+    border: 2px solid ${color.navy30};
+    left: 0;
+    margin-top: 10px;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 10;
+    max-height: 265px;
+    overflow: auto;
 
-  &::-webkit-scrollbar {
-    background: none;
-    height: 0;
-    width: 20px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-clip: padding-box;
-    background-color: ${color.greyIcons};
-    border-radius: 30px;
-    border: 8px solid transparent;
-  }
-  &::-webkit-scrollbar-button {
-    display: none;
-  }
-  &::-webkit-scrollbar-corner {
-    background-color: transparent;
-  }
+    &::-webkit-scrollbar {
+        background: none;
+        height: 0;
+        width: 20px;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-clip: padding-box;
+        background-color: ${color.gray40};
+        border-radius: 30px;
+        border: 8px solid transparent;
+    }
+    &::-webkit-scrollbar-button {
+        display: none;
+    }
+    &::-webkit-scrollbar-corner {
+        background-color: transparent;
+    }
 `;
 
 const Option = styled.div`
@@ -210,7 +206,7 @@ const DivStyledDescription = styled.div`
     ${resetCSS};
     ${fonts.text};
     bottom: -23px;
-    color: ${color.grey};
+    color: ${color.blueGray50};
     font-size: 12px;
     height: 24px;
     left: 16px;

@@ -6,10 +6,13 @@ import { TriangleUp, TriangleDown } from '@web3uikit/icons';
 import Loading from '../Loading/Loading';
 import { Typography } from '../Typography';
 import { paginate, getInnerText } from './Helper';
-import {
-    Divider,
+import styles from './Table.styles';
+
+const {
     DivSpinnerLoaderParent,
+    DivStyledCustomData,
     DivTableCell,
+    Divider,
     NoData,
     Pagination,
     PaginationTag,
@@ -17,11 +20,13 @@ import {
     TableGrid,
     TableGridContainer,
     TableParent,
-} from './Table.styles';
+} = styles;
 
 const Table: React.FC<ITableProps> = ({
     alignCellItems = 'start',
+    columnGapSize = 11,
     columnsConfig,
+    customDataComponent,
     customLoadingContent,
     customNoDataComponent,
     customNoDataText = 'No Data',
@@ -30,12 +35,16 @@ const Table: React.FC<ITableProps> = ({
     header,
     isColumnSortable = [],
     isLoading = false,
+    isScrollableOnOverflow = true,
     justifyCellItems = 'start',
     maxPages,
     noPagination,
     onPageNumberChanged,
     onRowClick,
     pageSize,
+    tableBackgroundColor = 'white',
+    headerTextColor='',
+    headerBgColor='',
     ...props
 }) => {
     const [pageNum, setPageNum] = useState<number>(
@@ -53,6 +62,7 @@ const Table: React.FC<ITableProps> = ({
 
     useEffect(() => {
         setTableData(data);
+        setPageNum(0);
     }, [data]);
 
     useEffect(() => {
@@ -148,13 +158,13 @@ const Table: React.FC<ITableProps> = ({
                                     <TriangleUp
                                         title="triangle up icon"
                                         titleId="table triangle up icon"
-                                        fill={color.grey}
+                                        fill={color.blueGray50}
                                     />
                                 ) : (
                                     <TriangleDown
                                         title="triangle down icon"
                                         titleId="table triangle down icon"
-                                        fill={color.grey}
+                                        fill={color.blueGray50}
                                     />
                                 ))}
                         </DivTableCell>
@@ -302,10 +312,21 @@ const Table: React.FC<ITableProps> = ({
 
     return (
         <TableParent data-testid="test-table" {...props}>
-            <TableGridContainer>
-                <TableGrid columns={columnsConfig}>
+            <TableGridContainer isScrollableOnOverflow={isScrollableOnOverflow}>
+                <TableGrid
+                    columns={columnsConfig}
+                    columnGapSize={columnGapSize}
+                    tableBackgroundColor={tableBackgroundColor}
+                    headerTextColor={headerTextColor}
+                    headerBgColor={headerBgColor}
+                >
                     <RenderTableHeader />
                     {isLoading ? <Loader /> : <RenderTable />}
+                    {customDataComponent && (
+                        <DivStyledCustomData>
+                            {customDataComponent}
+                        </DivStyledCustomData>
+                    )}
                 </TableGrid>
             </TableGridContainer>
             <RenderPagination />

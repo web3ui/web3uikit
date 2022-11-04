@@ -10,7 +10,7 @@ const HideButtonStyled = styled.button`
 `;
 
 const HideButton: FC<IHideButtonProps> = ({
-    iconColor = color.blue,
+    iconColor = color.navy40,
     iconSize = 24,
     isHidden = false,
     onToggle,

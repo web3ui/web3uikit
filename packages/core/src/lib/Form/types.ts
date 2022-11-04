@@ -89,7 +89,8 @@ export type DataInput = {
         | 'switch'
         | 'tel'
         | 'text'
-        | 'textarea';
+        | 'textarea'
+        | 'file';
 
     /**
      * You pass a default value if you need to, this value will be returned when the form is submitted for strings
@@ -130,4 +131,9 @@ export type DataInput = {
      * You can set an input width
      */
     inputWidth?: string;
+
+    /**
+     * You can set a theme for a file input (default: 'withIcon')
+     */
+    theme?: 'textOnly' | 'withIcon'
 };

@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/13779759/160237628-381adb19-d439-4df6-98af-c3cb67ba5b5c.svg" width="500px" alt="web3uiKit logo" />
+<img src="https://user-images.githubusercontent.com/13779759/160237628-381adb19-d439-4df6-98af-c3cb67ba5b5c.svg" width="500px" alt="web3uiKit logo"/>
 
 # Web3UIKit!
 
@@ -101,6 +101,8 @@ These are components which have `moralis` and `react-moralis` dependency.
 | package                                      | Version | Changelog | Description                      |
 | -------------------------------------------- | ------- | --------- | -------------------------------- |
 | [@web3uikit/web3](./packages/web3/README.md) | TODO    | TODO      | Contains all the web3 components |
+
+‼️ Moralis servers will be deprecated soon. To continue using this package, self host your server by following the steps from [moralis docs](https://docs.moralis.io/docs/v1-server-self-hosting#next-steps)
 
 # 🚨 Breaking Changes
 

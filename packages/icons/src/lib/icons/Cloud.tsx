@@ -16,6 +16,7 @@ const SvgCloud = ({
         strokeWidth={2}
         width="1em"
         height="1em"
+        role="img"
         data-testid="test-icon"
         aria-hidden="true"
         aria-labelledby={titleId}

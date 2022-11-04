@@ -2,11 +2,12 @@ import { IPopoverDropdownProps } from './types';
 import styles from './PopoverDropdown.styles';
 import { color } from '@web3uikit/styles';
 import depreciatedWarning from '../../utils/depreciationWarning';
+import { Fragment } from 'react';
 
 const { DivStyled, ListStyled } = styles;
 
 const PopoverDropdown: React.FC<IPopoverDropdownProps> = ({
-    backgroundColor = color.blueDark,
+    backgroundColor = color.blue70,
     children,
     id,
     move,
@@ -27,9 +28,9 @@ const PopoverDropdown: React.FC<IPopoverDropdownProps> = ({
             id={id}
             {...props}
         >
-            {parent}
-
+            <Fragment key="popover-dropdown-parent">{parent}</Fragment>
             <ListStyled
+                key="popover-dropdown-children"
                 backgroundColor={backgroundColor}
                 data-testid="test-popover-dropdown-list"
                 moveBody={moveBody}

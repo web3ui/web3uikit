@@ -1,4 +1,3 @@
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import DatePicker from './DatePicker';
 
@@ -33,6 +32,13 @@ export const StaticDate = Template.bind({});
 StaticDate.args = {
     id: 'date-picker',
     value: '1999-12-31',
+};
+
+export const StaticMonth = Template.bind({});
+StaticMonth.args = {
+    id: 'date-picker',
+    type: 'month',
+    value: '2022-08',
 };
 
 export const Validation = Template.bind({});

@@ -29,7 +29,7 @@ export interface AvatarProps {
     avatarBackground?: string;
 
     /**
-     * avatarKey, computes background color off the key passed in here. Note AvatarBackground will overide this prop
+     * avatarKey, computes background color off the key passed in here. Note AvatarBackground will override this prop
      */
     avatarKey?: number;
 

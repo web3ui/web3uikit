@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof Credentials> = (args) => (
 
 export const WithTitleAndIcon = Template.bind({});
 WithTitleAndIcon.args = {
-    icon: <Windows fill={color.grey} />,
+    icon: <Windows fill={color.blueGray50} />,
     title: 'CLI API Key:',
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
 };
@@ -27,7 +27,7 @@ WithTitle.args = {
 
 export const WithCustomWidth = Template.bind({});
 WithCustomWidth.args = {
-    icon: <Windows fill={color.grey} />,
+    icon: <Windows fill={color.blueGray50} />,
     title: 'CLI API Key:',
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
     width: '700px',
@@ -40,7 +40,7 @@ OneLine.args = {
 
 export const WithCustomColors = Template.bind({});
 WithCustomColors.args = {
-    icon: <Windows fill={color.green} />,
+    icon: <Windows fill={color.mint40} />,
     title: 'CLI API Key:',
     titleColor: 'blue',
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',

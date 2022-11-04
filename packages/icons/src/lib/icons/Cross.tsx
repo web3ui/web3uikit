@@ -14,6 +14,7 @@ const SvgCross = ({
         width="1em"
         height="1em"
         viewBox="0 0 24 24"
+        role="img"
         data-testid="test-icon"
         aria-hidden="true"
         aria-labelledby={titleId}

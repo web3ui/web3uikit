@@ -22,64 +22,64 @@ const coloredShades = css`
 `;
 
 const coloredRed = css`
-    background-color: ${color.red};
-    border-color: ${color.red};
-    color: ${color.red};
+    background-color: ${color.red40};
+    border-color: ${color.red40};
+    color: ${color.red40};
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
+        box-shadow: 0px 0px 0px 2px ${color.navy30};
     }
 
     svg {
-        fill: ${color.red};
+        fill: ${color.red40};
     }
 
     ${coloredShades}
 `;
 
 const coloredGreen = css`
-    background-color: ${color.green};
-    border-color: ${color.green};
-    color: ${color.green};
+    background-color: ${color.mint40};
+    border-color: ${color.mint40};
+    color: ${color.mint40};
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
+        box-shadow: 0px 0px 0px 2px ${color.navy30};
     }
 
     svg {
-        fill: ${color.green};
+        fill: ${color.mint40};
     }
 
     ${coloredShades}
 `;
 
 const coloredBlue = css`
-    background-color: ${color.blue};
-    border-color: ${color.blue};
-    color: ${color.blue};
+    background-color: ${color.navy40};
+    border-color: ${color.navy40};
+    color: ${color.navy40};
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
+        box-shadow: 0px 0px 0px 2px ${color.navy30};
     }
 
     svg {
-        fill: ${color.blue};
+        fill: ${color.navy40};
     }
 
     ${coloredShades}
 `;
 
 const coloredYellow = css`
-    background-color: ${color.yellow};
-    border-color: ${color.yellow};
-    color: ${color.yellow};
+    background-color: ${color.yellow50};
+    border-color: ${color.yellow50};
+    color: ${color.yellow50};
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
+        box-shadow: 0px 0px 0px 2px ${color.navy30};
     }
 
     svg {
-        fill: ${color.yellow};
+        fill: ${color.yellow50};
     }
 
     ${coloredShades}
@@ -113,6 +113,7 @@ const ButtonColoredStyled = styled(ButtonBase)<ButtonProps>`
         transition: all 0.3s ease;
         width: 100%;
         z-index: 0;
+        border-radius: 10px;
     }
 
     ${({ color }) => color && getColored(color)}

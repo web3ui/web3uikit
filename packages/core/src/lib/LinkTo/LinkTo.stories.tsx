@@ -19,7 +19,7 @@ const Template: ComponentStory<typeof LinkTo> = (args) => <LinkTo {...args} />;
 const TemplateText: ComponentStory<typeof LinkTo> = (args) => (
     <div
         style={{
-            color: color.grey,
+            color: color.blueGray50,
             fontFamily: 'Open Sans, sans-serif',
             fontSize: '16px',
             fontStyle: 'normal',

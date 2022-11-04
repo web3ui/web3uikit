@@ -10,9 +10,13 @@ import {
     syncData,
     pageSize,
     maxPages,
+    customTableMockData,
 } from './MockData';
 import { Loading } from '../Loading';
 import { color } from '@web3uikit/styles';
+import styled from 'styled-components';
+import { Skeleton } from '../Skeleton';
+
 export default {
     title: '3.Layout/Table',
     component: Table,
@@ -127,7 +131,37 @@ CustomLoader.args = {
     isLoading: true,
     customLoadingContent: (
         <div>
-            <Loading size={30} text="Fetching..." spinnerColor={color.blue} />
+            <Loading size={30} text="Fetching..." spinnerColor={color.navy40} />
+        </div>
+    ),
+};
+export const CustomLoadingSkeleton = Template.bind({});
+const EmptyRowsForSkeletonTable = () => (
+    <div style={{ width: '100%', height: '100%' }}>
+        {[...Array(6)].map((el, i) => (
+            <Skeleton theme="subtitle" width="30%" />
+        ))}
+    </div>
+);
+CustomLoadingSkeleton.args = {
+    columnsConfig,
+    header,
+    data: data,
+    pageSize,
+    maxPages,
+    isLoading: true,
+    customLoadingContent: (
+        <div
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                width: '100%',
+                height: '100%',
+            }}
+        >
+            <EmptyRowsForSkeletonTable />
+            <EmptyRowsForSkeletonTable />
+            <EmptyRowsForSkeletonTable />
         </div>
     ),
 };
@@ -143,3 +177,50 @@ SyncTableExample.args = {
     alignCellItems: 'center',
     isColumnSortable: [false, true, true, false],
 };
+
+export const CustomTable: ComponentStory<typeof Table> = (args) => (
+    <DivStyled>
+        <Table {...args} />
+    </DivStyled>
+);
+
+CustomTable.args = {
+    columnsConfig,
+    header,
+    pageSize: 1,
+    maxPages,
+    isColumnSortable: [false, true, false, false],
+    data: customTableMockData,
+    columnGapSize: 0,
+    tableBackgroundColor: 'lightblue',
+    headerTextColor: 'orange',
+    headerBgColor: 'blue',
+    isScrollableOnOverflow: false,
+    customDataComponent: (
+        <div
+            style={{
+                background: 'white',
+                width: '100%',
+                height: '200px',
+                textAlign: 'center',
+                display: 'flex',
+            }}
+        >
+            <h1 style={{ margin: 'auto' }}>Some Cool Image</h1>
+        </div>
+    ),
+};
+
+const DivStyled = styled.div`
+    height: 500px;
+    overflow-x: auto;
+    div[role='table-header'] {
+        &:nth-child(1) {
+            border-top-left-radius: 19px;
+        }
+        &:nth-child(5) {
+            border-top-right-radius: 19px;
+        }
+        background-color: white;
+    }
+`;

@@ -16,7 +16,7 @@ const WrapperStyled = styled.div`
 
 const AccountInfoStyled = styled.div`
     ${flexBox};
-    background-color: ${color.blueLight};
+    background-color: ${color.aero10};
     border-radius: 16px;
     flex-direction: row;
     flex-wrap: wrap;
@@ -30,7 +30,7 @@ const AccountInfoStyled = styled.div`
 const ConnectButtonStyled = styled.button`
     ${resetButtonCSS};
     ${fonts.semiBold}
-    background-color: ${color.blueLight};
+    background-color: ${color.aero10};
     border-radius: 16px;
     border: 2px solid transparent;
     height: 100%;
@@ -38,7 +38,7 @@ const ConnectButtonStyled = styled.button`
     transition: all 0.1s ease-out;
 
     &:hover {
-        border-color: ${color.paleBlue2};
+        border-color: ${color.navy20};
     }
 `;
 
@@ -54,13 +54,13 @@ const AddressStyled = styled.div`
     transition: all 0.1s ease-out;
 
     &:hover {
-        border-color: ${color.paleBlue2};
+        border-color: ${color.navy20};
     }
 `;
 
 const TextStyled = styled.span`
     ${fonts.semiBold}
-    color: ${color.blue};
+    color: ${color.navy40};
 `;
 
 const BalanceBlockStyled = styled.div`

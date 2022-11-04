@@ -18,7 +18,7 @@ const BackgroundColoredTemplate: ComponentStory<typeof Illustration> = (
         style={{
             width: '90vw',
             height: '90vh',
-            backgroundColor: `${color.blueSkyDark}`,
+            backgroundColor: `${color.blue30}`,
         }}
     >
         <Illustration {...args} />
@@ -63,6 +63,16 @@ Coinbase.args = {
 export const Cronos = BackgroundColoredTemplate.bind({});
 Cronos.args = {
     logo: 'cronos',
+};
+
+export const Ronin = BackgroundColoredTemplate.bind({});
+Ronin.args = {
+    logo: 'ronin',
+};
+
+export const Crypto = BackgroundColoredTemplate.bind({});
+Crypto.args = {
+    logo: 'cryptoweb',
 };
 
 export const ComingSoon = Template.bind({});

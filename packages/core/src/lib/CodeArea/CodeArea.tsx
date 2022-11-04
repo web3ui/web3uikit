@@ -15,7 +15,7 @@ const {
 } = CodeAreaStyles;
 
 const CodeArea: FC<ICodeAreaProps> = ({
-    text,
+    text = '',
     maxWidth = '100%',
     onChange,
     headerComponent,
@@ -60,7 +60,11 @@ const CodeArea: FC<ICodeAreaProps> = ({
                         {headerComponent}
                     </HeaderStyled>
                 )}
-                <ContentStyled>
+                <ContentStyled
+                    maxHeight={maxHeight}
+                    maxWidth={maxWidth}
+                    isMaximized={isMaximized}
+                >
                     <LineNumbers currentValue={currentValue} />
                     <TextAreaStyled
                         data-testid="test-codearea"
@@ -71,7 +75,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
                         spellCheck={false}
                         value={currentValue}
                         disabled={disabled}
-                    ></TextAreaStyled>
+                    />
                     {hasMaxHeight && (
                         <DivStyledButtonWrap data-testid="test-codearea-maximize-button-wrapper">
                             <Button

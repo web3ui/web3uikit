@@ -6,13 +6,14 @@ const DivStyledWrapper = styled.div`
     ${resetCSS};
     --arrow-width: 2.5em;
     --checkbox-width: 2em;
-    display: inline-block;
+    display: block;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
         sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     font-size: 0.88em;
     line-height: 1;
+    margin-bottom: 5px;
     &[aria-expanded='true'] {
-        border-color: ${color.blueSky};
+        border-color: ${color.navy30};
         & .w3uik__dropdown-wrapper {
             display: block;
         }
@@ -23,12 +24,12 @@ const DivStyledWrapper = styled.div`
     }
 `;
 
-const DivStyledSelectWrapper = styled.div`
+const DivStyledSelectWrapper = styled.div<{ height: string }>`
     background-color: ${color.white};
     border-radius: 16px;
     cursor: pointer;
     display: flex;
-    min-height: 2.75em;
+    min-height: ${(p) => p.height ?? '40px'};
     padding: 8px 20px 8px 10px;
     position: relative;
     transition: all 0.1s linear;
@@ -37,7 +38,7 @@ const DivStyledSelectWrapper = styled.div`
 const LabelStyled = styled.label`
     ${resetCSS};
     background-color: ${color.white};
-    color: ${color.blue};
+    color: ${color.blueGray50};
     font-weight: 500;
     font-size: 14px;
     height: 24px;
@@ -50,21 +51,20 @@ const LabelStyled = styled.label`
     transition: all 0.1s ease-out;
     z-index: 10;
     &[aria-disabled='true'] {
-        color: ${color.greyLight};
+        color: ${color.gray30};
     }
 `;
 
 const ButtonStyledSelect = styled.button`
     appearance: none;
     background: none;
-    border: 1px solid ${color.greyLight};
+    border: 1px solid ${color.gray30};
     border-radius: 16px;
     box-sizing: border-box;
     color: black;
     font-size: 1em;
     height: 100%;
     left: 0;
-    min-height: 2.75em;
     padding: 0;
     position: absolute;
     flex-grow: 1;
@@ -75,17 +75,23 @@ const ButtonStyledSelect = styled.button`
     z-index: 3;
 
     &[aria-expanded='true'],
-    &:focus {
-        border-color: ${color.blueSky};
+    &:focus:enabled {
+        border-color: ${color.navy30};
         outline: none;
         /* On Tab - set box shadow */
-        -webkit-box-shadow: 0px 0px 0px 2px ${color.blueSky};
-        -moz-box-shadow: 0px 0px 0px 2px ${color.blueSky};
-        box-shadow: 0px 0px 0px 2px ${color.blueSky};
+        -webkit-box-shadow: 0px 0px 0px 2px ${color.navy30};
+        -moz-box-shadow: 0px 0px 0px 2px ${color.navy30};
+        box-shadow: 0px 0px 0px 2px ${color.navy30};
+        label {
+            color: ${color.navy40};
+        }
     }
 
     &:hover:enabled {
-        border-color: ${color.blueSky};
+        border-color: ${color.navy30};
+        label {
+            color: ${color.navy40};
+        }
     }
 
     :disabled {
@@ -106,7 +112,6 @@ const ListStyledSelected = styled.ul`
     max-width: calc(100% - var(--arrow-width));
     padding-bottom: 2px;
     padding-left: 0;
-    padding-right: calc(var(--arrow-width) + 0.5em);
     padding-top: 2px;
     position: relative;
     z-index: 10;
@@ -122,11 +127,11 @@ const ListItemStyledTag = styled.li`
     z-index: -10;
     align-items: center;
     width: 100%;
-    padding-right: calc(var(--arrow-width) + 0.5em);
     line-break: loose;
 `;
 
 const DivStyledPlaceholder = styled.div`
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     font-family: inherit;
@@ -136,17 +141,13 @@ const DivStyledPlaceholder = styled.div`
     list-style: none;
     margin: 0;
     max-width: calc(100% - var(--arrow-width));
+    opacity: 0.6;
     padding-bottom: 0;
     padding-left: 0;
-    padding-right: calc(var(--arrow-width) + 0.5em);
     padding-top: 0;
-    position: relative;
-    top: 0.5em;
-    z-index: 10;
-    line-height: 1.75em;
-    min-height: 1.75em;
-    opacity: 0.6;
     pointer-events: none;
+    position: relative;
+    z-index: 10;
 `;
 
 const DivStyledOverlay = styled.div`
@@ -169,23 +170,23 @@ const MenuStyledWrapper = styled.menu`
 `;
 
 const DivStyledDropdown = styled.div`
-    background: ${color.blueLight};
+    background: ${color.aero10};
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: 20;
-    border: 2px solid ${color.blueSky};
+    border: 2px solid ${color.navy30};
     border-radius: 16px;
 `;
 
 const InputStyledSearch = styled.input`
-    background-color: ${color.blueLight};
+    background-color: ${color.aero10};
     appearance: none;
     border: 0;
-    border-bottom: 1px solid ${color.paleBlue2};
+    border-bottom: 1px solid ${color.navy20};
     border-radius: 16px 16px 0 0;
-    color: ${color.blueDark};
+    color: ${color.blue70};
     display: block;
     font-family: inherit;
     font-size: 1em;
@@ -196,9 +197,9 @@ const InputStyledSearch = styled.input`
     width: 100%;
 
     &[aria-hidden='true'] {
+        // Use position to hide input - this helps to make arrow keys functional
         position: absolute;
-        display: none;
-
+        right: 200vw;
         & + .w3uik__search-icon {
             display: none;
         }
@@ -210,7 +211,7 @@ const InputStyledSearch = styled.input`
 
 // ------ Option List
 
-const ListStyledDropdown = styled.ul`
+const ListStyledDropdown = styled.ul<{ height: string }>`
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     box-shadow: 0 4px 8px rgba(248, 174, 174, 0.1);
@@ -219,7 +220,7 @@ const ListStyledDropdown = styled.ul`
     justify-content: stretch;
     list-style: none;
     margin: 0;
-    max-height: 13em;
+    max-height: ${(p) => p.height ?? '200px'};
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: 0;
@@ -232,7 +233,7 @@ const ListStyledDropdown = styled.ul`
     }
     &::-webkit-scrollbar-thumb {
         background-clip: padding-box;
-        background-color: ${color.greyIcons};
+        background-color: ${color.gray40};
         border-radius: 30px;
         border: 4px solid transparent;
     }
@@ -243,19 +244,20 @@ const ListStyledDropdown = styled.ul`
         background-color: transparent;
     }
 
-    // For Last option in list
-    :last-child,
-    :last-child:hover,
-    :last-child:focus {
-        border-bottom-left-radius: 16px;
-        border-bottom-right-radius: 16px;
-    }
     // For 1st option in list - first child is input so select 2nd child
     :nth-child(2),
     :nth-child(2):hover,
     :nth-child(2):focus {
         border-top-left-radius: 16px;
         border-top-right-radius: 16px;
+    }
+
+    // For Last option in list
+    :last-child,
+    :last-child:hover,
+    :last-child:focus {
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
     }
 `;
 
@@ -282,9 +284,15 @@ const SpanStyledItemIcon = styled.span`
     }
 `;
 
-const SpanStyledItemText = styled.span`
+const SpanStyledItemText = styled.span<{ noPrefix: boolean }>`
+    margin-left: ${(p) => (p.noPrefix ? '10px' : '0px')};
+`;
+
+const SpanStyledItemSelected = styled.span`
     overflow: hidden;
+    white-space: pre;
     text-overflow: ellipsis;
+    color: ${color.blueGray50};
 `;
 
 const ButtonStyledListItem = styled.button`
@@ -292,11 +300,10 @@ const ButtonStyledListItem = styled.button`
     appearance: none;
     background: none;
     border: none;
-    color: ${color.blueDark};
+    color: ${color.blue70};
     display: flex;
-    font-size: 1em;
     padding-bottom: 0.375em;
-    padding-left: 0;
+    padding-left: 0.5em;
     padding-right: 0.5em;
     padding-top: 0.375em;
     text-align: left;
@@ -310,12 +317,11 @@ const ButtonStyledListItem = styled.button`
         display: flex;
         height: 3em;
         justify-content: center;
-        /* width: var(--checkbox-width); */
     }
 
     // Option Selected Styles
     &[aria-selected='true'] {
-        color: ${color.blueDark2};
+        color: ${color.blue40};
         &::before {
             background-size: contain;
             content: '';
@@ -323,17 +329,17 @@ const ButtonStyledListItem = styled.button`
     }
 
     &:hover {
-        background: ${color.beauBlue};
+        background: ${color.navy20};
     }
 
-    &[data-highlighted],
+    &[data-highlighted='true'],
     &:focus {
-        background: ${color.beauBlue};
+        background: ${color.navy20};
         outline: none;
     }
 
     &[disabled] {
-        color: ${color.grey};
+        color: ${color.blueGray50};
         cursor: not-allowed;
     }
 `;
@@ -341,13 +347,13 @@ const ButtonStyledListItem = styled.button`
 
 const SpanStyledNoResults = styled.span`
     display: block;
-    color: ${color.grey};
+    color: ${color.blueGray50};
     padding: 1em;
     text-align: center;
 `;
 
 const DivStyledDesc = styled.div`
-    color: ${color.grey};
+    color: ${color.blueGray50};
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -363,7 +369,7 @@ const DivStyledDesc = styled.div`
         white-space: normal;
     }
     &[aria-invalid='true'] {
-        color: ${color.red};
+        color: ${color.red40};
     }
 `;
 
@@ -405,8 +411,9 @@ const TriangleUpIconStyled = styled(TriangleUp)`
 `;
 
 const CheckmarkIconStyled = styled(Checkmark)`
-    color: ${color.green};
+    color: ${color.mint40};
     margin-left: auto;
+    flex-shrink: 0;
     display: none;
     height: 12px;
     width: 12px;
@@ -435,6 +442,7 @@ export default {
     MenuStyledWrapper,
     SearchIconStyled,
     SpanStyledItemIcon,
+    SpanStyledItemSelected,
     SpanStyledItemText,
     SpanStyledNoResults,
     TriangleDownIconStyled,

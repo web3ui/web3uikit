@@ -11,7 +11,7 @@ const ButtonTranslucentStyled = styled(ButtonBase)`
     }
 
     :focus {
-        box-shadow: 0px 0px 0px 2px ${color.paleCerulean};
+        box-shadow: 0px 0px 0px 2px ${color.navy30};
     }
 
     svg {

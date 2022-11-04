@@ -5,7 +5,7 @@ import { moralisContext } from '../../web3utils/decorators';
 import { chainToHex } from '../../web3utils';
 
 export default {
-    title: '1.Web3/NFT Balance',
+    title: '1.Web3-Parse/NFT Balance',
     component: NFTBalance,
     decorators: [
         moralisContext,

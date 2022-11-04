@@ -60,7 +60,7 @@
         "@changesets/changelog-github": "^0.4.6",
         "@changesets/cli": "^2.24.0",
         "@mdx-js/preact": "^2.1.2",
-        "@mdx-js/react": "^2.1.1",
+        "@mdx-js/react": "^2.1.2",
         "@nrwl/eslint-plugin-nx": "14.1.5",
         "@nrwl/js": "14.1.9",
         "@nrwl/linter": "14.1.5",

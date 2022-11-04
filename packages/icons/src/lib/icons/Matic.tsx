@@ -15,6 +15,7 @@ const SvgMatic = ({
         viewBox="0 0 24 21.11"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >

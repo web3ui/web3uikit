@@ -37,6 +37,11 @@ export interface StepperProps {
     onComplete?: () => void;
 
     /**
+     * This event will fire when next button clicked
+     */
+    onNext?: (stepNumber: number) => void;
+
+    /**
      * Pass the step the user should start on
      * 0 = loading
      * 1 = start

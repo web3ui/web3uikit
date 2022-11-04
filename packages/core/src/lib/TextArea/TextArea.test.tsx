@@ -46,7 +46,7 @@ test('TextArea - Default', async () => {
         testWrapperId,
     ) as unknown as HTMLDivElement | null;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.gray30);
 
     // renders label text
     const label = screen.getByTestId(testLabelId);
@@ -92,7 +92,7 @@ test('TextArea - Error', async () => {
         testWrapperId,
     ) as unknown as HTMLDivElement | null;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.red);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.red40);
 
     // renders label text
     const label = screen.getByTestId(testLabelId);
@@ -138,7 +138,7 @@ test('TextArea - Confirmed', async () => {
         testWrapperId,
     ) as unknown as HTMLDivElement | null;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.green);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.mint40);
 
     // renders label text
     const label = screen.getByTestId(testLabelId);
@@ -184,7 +184,7 @@ test('TextArea - Disabled', async () => {
         testWrapperId,
     ) as unknown as HTMLDivElement | null;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.gray30);
 
     // renders label text
     const label = screen.getByTestId(testLabelId);
@@ -237,7 +237,7 @@ test('TextArea - CustomWidth', async () => {
         testWrapperId,
     ) as unknown as HTMLDivElement | null;
     const styles = textareaWrapper && getComputedStyle(textareaWrapper);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.gray30);
 
     // renders label text
     const label = screen.getByTestId(testLabelId);

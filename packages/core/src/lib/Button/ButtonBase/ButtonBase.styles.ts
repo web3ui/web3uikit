@@ -33,7 +33,7 @@ const BaseButtonStyled = styled.button<ButtonProps>`
     }
 
     :focus {
-        border-color: ${color.blue};
+        border-color: ${color.navy40};
     }
 
     :disabled {

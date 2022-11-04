@@ -94,7 +94,6 @@ const Select: React.FC<ISelectProps> = ({
             style={{ ...style, width }}
             {...props}
         >
-           
             <SelectedItem
                 aria-label="option-selected"
                 data-testid="test-select-selected"
@@ -123,13 +122,13 @@ const Select: React.FC<ISelectProps> = ({
                         <TriangleUp
                             title="triangle up icon"
                             titleId="select triangle up icon"
-                            fill={color.grey}
+                            fill={color.blueGray50}
                         />
                     ) : (
                         <TriangleDown
                             title="triangle down icon"
                             titleId="select triangle down icon"
-                            fill={color.grey}
+                            fill={color.blueGray50}
                         />
                     )}
                 </DropDownIcon>

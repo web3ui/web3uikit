@@ -27,9 +27,11 @@ const testSelectClick = (
 ) => {
     const startIcon = isOpen ? testDownIcon : testUpIcon;
     const endIcon = isOpen ? testUpIcon : testDownIcon;
-    expect(screen.getByTestId(id).textContent).toBe(startIcon);
+    expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
+        startIcon,
+    );
     fireEvent.click(element);
-    expect(screen.getByTestId(id).textContent).toBe(
+    expect(screen.getByTestId(testSelectDropdownIcon).textContent).toBe(
         disabled ? startIcon : endIcon,
     );
     const dropdownList = container.querySelector(

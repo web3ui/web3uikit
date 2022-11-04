@@ -21,8 +21,10 @@ export type chainType =
     | 'binance'
     | 'coinbase'
     | 'cronos'
+    | 'cryptoweb'
     | 'ethereum'
     | 'fantom'
-    | 'polygon';
+    | 'polygon'
+    | 'ronin';
 
 export type sizeType = string | number;

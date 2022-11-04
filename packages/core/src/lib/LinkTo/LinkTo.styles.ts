@@ -12,7 +12,7 @@ const LinkStyled = styled.a`
     ${resetCSS}
     ${fonts.text}
     align-items: center;
-    color: ${color.blue};
+    color: ${color.navy40};
     display: inline-block;
     font-weight: 600;
     height: fit-content;
@@ -28,7 +28,7 @@ const InternalLinkStyled = styled(Link)`
     ${resetCSS}
     ${fonts.text}
     align-items: center;
-    color: ${color.blue};
+    color: ${color.navy40};
     display: inline-block;
     font-weight: 600;
     max-width: 100%;

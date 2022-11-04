@@ -25,21 +25,21 @@ test('Select - Default', () => {
     render(<Default />);
 
     // renders the component
-    const select = (screen.getByTestId(
+    const select = screen.getByTestId(
         testWrapperId,
-    ) as unknown) as HTMLDivElement | null;
+    ) as unknown as HTMLDivElement | null;
     expect(select).not.toBeNull();
 
     // renders select without selected option 0 index
-    const selected = (screen.getByTestId(
+    const selected = screen.getByTestId(
         testSelectedId,
-    ) as unknown) as HTMLDivElement | null;
+    ) as unknown as HTMLDivElement | null;
     expect(selected).not.toBeNull();
     selected && expect(selected.textContent).toContain(testTextContent);
 
     //   renders select correct colors
     const styles = selected && getComputedStyle(selected);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.gray30);
 
     // renders label text
     const label = screen.getByTestId(testLabelId);
@@ -53,21 +53,21 @@ test('Select - NoDefaultIndexOption', () => {
     render(<NoDefaultIndexOption />);
 
     // renders the component
-    const select = (screen.getByTestId(
+    const select = screen.getByTestId(
         testWrapperId,
-    ) as unknown) as HTMLDivElement | null;
+    ) as unknown as HTMLDivElement | null;
     expect(select).not.toBeNull();
 
     // renders select without selected option 0 index
-    const selected = (screen.getByTestId(
+    const selected = screen.getByTestId(
         testSelectedId,
-    ) as unknown) as HTMLDivElement | null;
+    ) as unknown as HTMLDivElement | null;
     expect(selected).not.toBeNull();
     selected && expect(selected.textContent).toContain(testTextContent);
 
     //   renders select correct colors
     const styles = selected && getComputedStyle(selected);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.greyLight);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.gray30);
 
     // renders label text
     const label = screen.getByTestId(testLabelId);
@@ -82,22 +82,22 @@ test('Select - Error', () => {
     render(<Error />);
 
     // renders the component
-    const select = (screen.getByTestId(
+    const select = screen.getByTestId(
         testWrapperId,
-    ) as unknown) as HTMLDivElement | null;
+    ) as unknown as HTMLDivElement | null;
     expect(select).not.toBeNull();
 
     // renders select without selected option 0 index
-    const selected = (screen.getByTestId(
+    const selected = screen.getByTestId(
         testSelectedId,
-    ) as unknown) as HTMLDivElement | null;
+    ) as unknown as HTMLDivElement | null;
     expect(selected).not.toBeNull();
     selected &&
         expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
 
     //   renders select correct colors
     const styles = selected && getComputedStyle(selected);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.red);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.red40);
 
     // renders label text
     const label = screen.getByTestId(testLabelId);
@@ -112,22 +112,22 @@ test('Select - ErrorWithMessage', () => {
     render(<ErrorWithMessage />);
 
     // renders the component
-    const select = (screen.getByTestId(
+    const select = screen.getByTestId(
         testWrapperId,
-    ) as unknown) as HTMLDivElement | null;
+    ) as unknown as HTMLDivElement | null;
     expect(select).not.toBeNull();
 
     // renders select without selected option 0 index
-    const selected = (screen.getByTestId(
+    const selected = screen.getByTestId(
         testSelectedId,
-    ) as unknown) as HTMLDivElement | null;
+    ) as unknown as HTMLDivElement | null;
     expect(selected).not.toBeNull();
     selected &&
         expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
 
     //   renders select correct colors
     const styles = selected && getComputedStyle(selected);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.red);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.red40);
 
     // renders label text
     const label = screen.getByTestId(testLabelId);
@@ -142,22 +142,22 @@ test('Select - Confirmed', () => {
     render(<Confirmed />);
 
     // renders the component
-    const select = (screen.getByTestId(
+    const select = screen.getByTestId(
         testWrapperId,
-    ) as unknown) as HTMLDivElement | null;
+    ) as unknown as HTMLDivElement | null;
     expect(select).not.toBeNull();
 
     // renders select without selected option 0 index
-    const selected = (screen.getByTestId(
+    const selected = screen.getByTestId(
         testSelectedId,
-    ) as unknown) as HTMLDivElement | null;
+    ) as unknown as HTMLDivElement | null;
     expect(selected).not.toBeNull();
     selected &&
         expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
 
     //   renders select correct colors
     const styles = selected && getComputedStyle(selected);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.green);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.mint40);
 
     // renders label text
     const label = screen.getByTestId(testLabelId);
@@ -172,22 +172,22 @@ test('Select - Disabled', () => {
     render(<Disabled />);
 
     // renders the component
-    const select = (screen.getByTestId(
+    const select = screen.getByTestId(
         testWrapperId,
-    ) as unknown) as HTMLDivElement | null;
+    ) as unknown as HTMLDivElement | null;
     expect(select).not.toBeNull();
 
     // renders select without selected option 0 index
-    const selected = (screen.getByTestId(
+    const selected = screen.getByTestId(
         testSelectedId,
-    ) as unknown) as HTMLDivElement | null;
+    ) as unknown as HTMLDivElement | null;
     expect(selected).not.toBeNull();
     selected &&
         expect(selected.textContent).toContain(testOptions?.[0]?.['label']);
 
     //   renders select correct colors
     const styles = selected && getComputedStyle(selected);
-    expect(styles?.borderColor.toUpperCase()).toBe(color.greyDisabled);
+    expect(styles?.borderColor.toUpperCase()).toBe(color.gray30);
 
     // renders label text
     const label = screen.getByTestId(testLabelId);

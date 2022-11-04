@@ -4,7 +4,7 @@ import Blockie from './Blockie';
 import { BlockieProps } from './types';
 
 export default {
-  title: '1.Web3/Blockie',
+  title: '1.Web3-Parse/Blockie',
   component: Blockie
 } as ComponentMeta<typeof Blockie>;
 

@@ -79,7 +79,7 @@ const VerifyCode: FC<VerifyCodeProps> = ({
             <Typography
                 variant="subtitle2"
                 weight="semibold"
-                color={color.black}
+                color={color.blue70}
             >
                 {label}
             </Typography>

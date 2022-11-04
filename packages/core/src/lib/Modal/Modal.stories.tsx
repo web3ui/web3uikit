@@ -56,8 +56,8 @@ Regular.args = {
     id: 'regular',
     title: (
         <div style={{ display: 'flex', gap: 10 }}>
-            <Edit fontSize={28} fill={color.grey} />
-            <Typography variant="h3" color={color.grey}>
+            <Edit fontSize={28} fill={color.blueGray50} />
+            <Typography variant="h3" color={color.blueGray50}>
                 Edit Nickname
             </Typography>
         </div>
@@ -77,8 +77,8 @@ VerticalCenter.args = {
     id: 'v-center',
     title: (
         <div style={{ display: 'flex', gap: 10 }}>
-            <Edit fontSize={28} fill={color.grey} />
-            <Typography variant="h3" color={color.grey}>
+            <Edit fontSize={28} fill={color.blueGray50} />
+            <Typography variant="h3" color={color.blueGray50}>
                 Edit Nickname
             </Typography>
         </div>
@@ -103,7 +103,7 @@ BorderedHeader.args = {
                 placeItems: 'center',
             }}
         >
-            <Cloud fontSize={64} stroke={color.blueDark} />
+            <Cloud fontSize={64} stroke={color.blue70} />
             <p>
                 This is a demo on how to use <em>headerHasBottomBorder</em>{' '}
                 props?
@@ -131,7 +131,7 @@ ButtonsDisabled.args = {
                 flexDirection: 'column',
             }}
         >
-            <Download fontSize={64} fill={color.blueDark2} />
+            <Download fontSize={64} fill={color.blue40} />
             <p>Wait until the file is ready to be downloaded</p>
         </div>,
     ],
@@ -161,7 +161,7 @@ OneButtonDisabled.args = {
                 flexDirection: 'column',
             }}
         >
-            <Mail fontSize={64} fill={color.blueDark2} />
+            <Mail fontSize={64} fill={color.blue40} />
             <Input
                 key={0}
                 onChange={(e) => console.log(e.target.value)}
@@ -255,7 +255,7 @@ MaxHeight.args = {
                 flexDirection: 'column',
             }}
         >
-            <Cloud fontSize={64} stroke={color.blueDark} />
+            <Cloud fontSize={64} stroke={color.blue70} />
             <p>Moralis web3uiKit will be PAMP!</p>
             <p>Moralis web3uiKit will be PAMP!</p>
             <p>Moralis web3uiKit will be PAMP!</p>
@@ -322,7 +322,7 @@ CustomCloseButton.args = {
                 flexDirection: 'column',
             }}
         >
-            <Cloud fontSize={64} stroke={color.blueDark} />
+            <Cloud fontSize={64} stroke={color.blue70} />
             <p>Proceed uploading?</p>
         </div>,
     ],
@@ -355,7 +355,7 @@ CustomCloseRoundButton.args = {
                 flexDirection: 'column',
             }}
         >
-            <Cloud fontSize={64} stroke={color.blueDark} />
+            <Cloud fontSize={64} stroke={color.blue70} />
             <p>Proceed uploading?</p>
         </div>,
     ],
@@ -375,7 +375,7 @@ NoTitle.args = {
                 flexDirection: 'column',
             }}
         >
-            <Cloud fontSize={64} stroke={color.blueDark} />
+            <Cloud fontSize={64} stroke={color.blue70} />
             <p>Proceed uploading?</p>
         </div>,
     ],
@@ -442,7 +442,7 @@ NoOverflow.args = {
                 flexDirection: 'column',
             }}
         >
-            <Cloud fontSize={64} stroke={color.blueDark} />
+            <Cloud fontSize={64} stroke={color.blue70} />
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                 eu posuere tortor. Maecenas ac suscipit lacus. Fusce at enim

@@ -35,7 +35,7 @@ const TextContentStyled = styled.div`
 
 const SpanStyled = styled.span`
     ${fonts.ibm}
-    color: ${color.grey};
+    color: ${color.blueGray50};
     display: inline-block;
     white-space: pre-wrap;
     word-break: break-word;
@@ -73,7 +73,7 @@ const NotificationStyled = styled.div<INotificationStyled>`
     background-color: ${color.white};
     border-radius: 20px;
     box-shadow: 0px 4px 10px rgba(48, 71, 105, 0.1);
-    color: ${color.grey};
+    color: ${color.blueGray50};
     display: flex;
     margin: 18px;
     padding: 16px 48px 16px 16px;

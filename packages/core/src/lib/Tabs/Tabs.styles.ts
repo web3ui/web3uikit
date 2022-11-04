@@ -44,7 +44,7 @@ export const StyledTabBar = styled.div<IStyledTabBar>`
         !props.isVertical &&
         css`
             & > span {
-                background-color: ${color.blueCultured};
+                background-color: ${color.navy10};
             }
             & > span:first-child {
                 border-radius: 16px 0 0 16px;
@@ -58,7 +58,7 @@ export const StyledTabBar = styled.div<IStyledTabBar>`
         props.haveBackground &&
         props.isVertical &&
         css`
-            background-color: ${color.blueCultured};
+            background-color: ${color.navy10};
             border-radius: 16px;
         `};
     ${(props) =>
@@ -89,9 +89,9 @@ export const StyledTab = styled.div<IStyledTab>`
     ${(props) => props.isActive && 'border-bottom: 2px solid #21BF96;'};
     ${(props) =>
         (props.isActive || props.isDisabled) && 'pointer-events: none;'};
-    ${(props) => !props.isActive && `color:${color.greyIcons};`};
+    ${(props) => !props.isActive && `color:${color.gray40};`};
     line-height: ${(props) => props.lineHeight && `${props.lineHeight}px`};
-    ${(props) => props.isDisabled && `color:${color.greyDisabled};`}
+    ${(props) => props.isDisabled && `color:${color.gray30};`}
 `;
 
 export const BulbTab = styled.div<IStyledBulb>`
@@ -102,15 +102,15 @@ export const BulbTab = styled.div<IStyledBulb>`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: ${color.blueCultured};
+    background-color: ${color.navy10};
     border: 2px solid transparent;
     cursor: pointer;
-    color: ${color.blue};
+    color: ${color.navy40};
     min-width: fit-content;
     ${({ isActive }) =>
         isActive &&
         css`
-            border-color: ${color.blueSky};
+            border-color: ${color.navy30};
             background: ${color.white};
         `};
     ${(props) => props.isDisabled && 'pointer-events: none;'};
@@ -119,7 +119,7 @@ export const BulbTab = styled.div<IStyledBulb>`
         props.isDisabled && `opacity: 0.5; background-color: ${color.white};`};
     line-height: ${(props) => props.lineHeight && `${props.lineHeight}px`};
     &:hover {
-        background: ${color.blueLight2};
+        background: ${color.aero20};
         ${({ isActive }) =>
             isActive &&
             css`

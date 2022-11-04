@@ -4,12 +4,8 @@ import { SpanStyled } from './DatePicker.styles';
 import InputStyles from '../Input/Input.styles';
 import { color } from '@web3uikit/styles';
 import { DatePickerProps } from './types';
-const {
-    DivWrapperStyled,
-    InputStyled,
-    LabelStyled,
-    StrongStyled,
-} = InputStyles;
+const { DivWrapperStyled, InputStyled, LabelStyled, StrongStyled } =
+    InputStyles;
 const DatePicker: React.FC<DatePickerProps> = ({
     disabled = false,
     id,
@@ -101,7 +97,7 @@ const DatePicker: React.FC<DatePickerProps> = ({
                 <Calendar
                     title="calendar icon"
                     titleId="date picker calendar icon"
-                    fill={color.greyDark}
+                    fill={color.blueGray50}
                     fontSize={22}
                 />
             </SpanStyled>

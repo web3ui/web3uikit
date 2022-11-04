@@ -21,7 +21,7 @@ test('Renders Danger', () => {
     const styles = element && getComputedStyle(element);
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(backgroundColorHex).toBe(color.red);
+    expect(backgroundColorHex).toBe(color.red40);
 
     const text = screen.getByTestId(testText);
     expect(text).not.toBeNull();
@@ -38,7 +38,7 @@ test('Renders Normal', () => {
     const styles = element && getComputedStyle(element);
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(backgroundColorHex).toBe(color.blue);
+    expect(backgroundColorHex).toBe(color.navy40);
 
     const text = screen.getByTestId(testText);
     expect(text).not.toBeNull();
@@ -55,7 +55,7 @@ test('Renders Success', () => {
     const styles = element && getComputedStyle(element);
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(backgroundColorHex).toBe(color.green);
+    expect(backgroundColorHex).toBe(color.mint40);
 
     const text = screen.getByTestId(testText);
     expect(text).not.toBeNull();
@@ -72,7 +72,7 @@ test('Renders Warning', () => {
     const styles = element && getComputedStyle(element);
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(backgroundColorHex).toBe(color.yellow);
+    expect(backgroundColorHex).toBe(color.yellow50);
 
     const text = screen.getByTestId(testText);
     expect(text).not.toBeNull();

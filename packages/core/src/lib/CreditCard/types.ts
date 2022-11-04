@@ -58,6 +58,11 @@ export interface CreditCardProps {
      * default to true
      */
     isRemovable?: boolean;
+
+    /**
+     * Size of the component, Different design for each style
+     */
+    size?: 'large' | 'small';
 }
 
 export type creditCardBrands = 'mastercard' | 'visa' | 'amex' | 'diners';

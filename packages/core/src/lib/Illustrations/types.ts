@@ -4,9 +4,11 @@ export const chainState = [
     'binance',
     'coinbase',
     'cronos',
+    'cryptoweb',
     'ethereum',
     'fantom',
     'polygon',
+    'ronin',
 ] as const;
 export type Chain = typeof chainState[number];
 

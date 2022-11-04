@@ -119,7 +119,9 @@ ProPlan.args = {
         <div key={'0'}>
             <p>Pro Plan</p>
             <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
-                <span style={{ fontWeight: 600, color: color.black }}>$18</span>
+                <span style={{ fontWeight: 600, color: color.blue70 }}>
+                    $18
+                </span>
                 <span>per month</span>
             </div>
             <span>Everything in Starter, plus</span>
@@ -128,7 +130,7 @@ ProPlan.args = {
                     display: 'flex',
                     alignItems: 'center',
                     fontSize: '12px',
-                    color: color.grey,
+                    color: color.blueGray50,
                 }}
             >
                 <Checkmark fill="green" />
@@ -139,7 +141,7 @@ ProPlan.args = {
                     display: 'flex',
                     alignItems: 'center',
                     fontSize: '12px',
-                    color: color.grey,
+                    color: color.blueGray50,
                 }}
             >
                 <Checkmark fill="green" />
@@ -150,7 +152,7 @@ ProPlan.args = {
                     display: 'flex',
                     alignItems: 'center',
                     fontSize: '12px',
-                    color: color.grey,
+                    color: color.blueGray50,
                 }}
             >
                 <Checkmark fill="green" />
@@ -161,7 +163,7 @@ ProPlan.args = {
                     display: 'flex',
                     alignItems: 'center',
                     fontSize: '12px',
-                    color: color.grey,
+                    color: color.blueGray50,
                 }}
             >
                 <Checkmark fill="green" />
@@ -172,7 +174,7 @@ ProPlan.args = {
                     display: 'flex',
                     alignItems: 'center',
                     fontSize: '12px',
-                    color: color.grey,
+                    color: color.blueGray50,
                 }}
             >
                 <Checkmark fill="green" />

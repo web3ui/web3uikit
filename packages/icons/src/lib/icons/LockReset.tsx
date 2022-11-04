@@ -16,6 +16,7 @@ const SvgLockReset = ({
         fill="currentColor"
         width="1em"
         height="1em"
+        role="img"
         aria-labelledby={titleId}
         {...props}
     >

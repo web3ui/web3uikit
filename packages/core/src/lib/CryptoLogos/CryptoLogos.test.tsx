@@ -12,55 +12,55 @@ const { Ethereum, Binance, Polygon, Avalanche, Fantom, Arbitrum } =
 const cryptoLogoId = 'test-crypto-logo';
 
 test('Renders - Ethereum Logo', () => {
-    render(<Ethereum bgColor={color.black} />);
+    render(<Ethereum bgColor={color.blue70} />);
     const logoElement = screen.getByTestId(cryptoLogoId);
     expect(logoElement).not.toBeNull();
     const styles = logoElement && getComputedStyle(logoElement);
     const bgColorHex = styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(bgColorHex).toBe(color.black);
+    expect(bgColorHex).toBe(color.blue70);
 });
 
 test('Renders - Binance Logo', () => {
-    render(<Binance bgColor={color.black} />);
+    render(<Binance bgColor={color.blue70} />);
     const logoElement = screen.getByTestId(cryptoLogoId);
     expect(logoElement).not.toBeNull();
     const styles = logoElement && getComputedStyle(logoElement);
     const bgColorHex = styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(bgColorHex).toBe(color.black);
+    expect(bgColorHex).toBe(color.blue70);
 });
 
 test('Renders - Polygon Logo', () => {
-    render(<Polygon bgColor={color.black} />);
+    render(<Polygon bgColor={color.blue70} />);
     const logoElement = screen.getByTestId(cryptoLogoId);
     expect(logoElement).not.toBeNull();
     const styles = logoElement && getComputedStyle(logoElement);
     const bgColorHex = styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(bgColorHex).toBe(color.black);
+    expect(bgColorHex).toBe(color.blue70);
 });
 
 test('Renders - Avalanche Logo', () => {
-    render(<Avalanche bgColor={color.black} />);
+    render(<Avalanche bgColor={color.blue70} />);
     const logoElement = screen.getByTestId(cryptoLogoId);
     expect(logoElement).not.toBeNull();
     const styles = logoElement && getComputedStyle(logoElement);
     const bgColorHex = styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(bgColorHex).toBe(color.black);
+    expect(bgColorHex).toBe(color.blue70);
 });
 
 test('Renders - Fantom Logo', () => {
-    render(<Fantom bgColor={color.black} />);
+    render(<Fantom bgColor={color.blue70} />);
     const logoElement = screen.getByTestId(cryptoLogoId);
     expect(logoElement).not.toBeNull();
     const styles = logoElement && getComputedStyle(logoElement);
     const bgColorHex = styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(bgColorHex).toBe(color.black);
+    expect(bgColorHex).toBe(color.blue70);
 });
 
 test('Renders - Arbitrum Logo', () => {
-    render(<Arbitrum bgColor={color.black} />);
+    render(<Arbitrum bgColor={color.blue70} />);
     const logoElement = screen.getByTestId(cryptoLogoId);
     expect(logoElement).not.toBeNull();
     const styles = logoElement && getComputedStyle(logoElement);
     const bgColorHex = styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(bgColorHex).toBe(color.black);
+    expect(bgColorHex).toBe(color.blue70);
 });

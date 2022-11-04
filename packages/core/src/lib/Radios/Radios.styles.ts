@@ -18,43 +18,49 @@ const LegendStyled = styled.legend`
     ${resetCSS};
     ${fonts.heading}
     ${fonts.h3}
-    color: ${color.grey};
+    color: ${color.blueGray50};
     display: block;
     margin-bottom: 4px;
 `;
 
-const DivStyled = styled.div<Pick<RadiosProps, 'disabled'>>`
+const DivStyled = styled.div<
+    Pick<RadiosProps, 'disabled' | 'isRow'> & { isSmall?: boolean }
+>`
     opacity: ${(props) => props.disabled && 0.5};
     position: relative;
+    ${(p) => p.isSmall && 'width: 100%'};
+    max-width: ${(p) => (p.isRow && p.isSmall ? '584px' : '100%')};
 `;
 
 const DivWrapperStyled = styled.div<Pick<RadiosProps, 'isRow'>>`
     align-items: ${({ isRow }) => (isRow ? 'center' : 'flex-start')};
     flex-direction: ${(p) => (p.isRow ? 'row' : 'column')};
-    gap: ${(p) => p.isRow && '12px'};
+    gap: 12px;
     display: flex;
     flex-wrap: wrap;
 `;
 
-const LabelStyled = styled.label<TStyleProps>`
+const LabelStyled = styled.label<TStyleProps & { isSmall: boolean }>`
     ${resetCSS};
-    /* ${fonts.heading} */
     ${fonts.text}
     padding-left: ${(p) => (p.isCreditCardMode ? '0' : '28px')};
     align-content: center;
-    color: ${color.greyDark};
+    color: ${color.blueGray50};
     display: flex;
     line-height: 20px;
-    margin-bottom: 12px;
     position: relative;
-    width: fit-content;
 
     &:before {
         left: ${(p) => (p.isCreditCardMode ? '20px' : '0')};
-        top: ${(p) => (p.isCreditCardMode ? '20px' : '0')};
-        background-color: ${color.blueLight};
+        top: ${(p) =>
+            p.isCreditCardMode
+                ? p.isSmall
+                    ? 'calc(50% - 9px)'
+                    : '20px'
+                : '0'};
+        background-color: ${color.aero10};
         border-radius: 50%;
-        border: 1px solid ${color.blueSky};
+        border: 1px solid ${color.navy30};
         content: '';
         display: block;
         height: 18px;
@@ -65,7 +71,12 @@ const LabelStyled = styled.label<TStyleProps>`
 
     &:after {
         left: ${(p) => (p.isCreditCardMode ? '26px' : '6px')};
-        top: ${(p) => (p.isCreditCardMode ? '26px' : '6px')};
+        top: ${(p) =>
+            p.isCreditCardMode
+                ? p.isSmall
+                    ? 'calc(50% - 3px)'
+                    : '26px'
+                : '6px'};
         background-color: ${color.white};
         border-radius: 50%;
         content: '';
@@ -92,16 +103,22 @@ const LabelStyled = styled.label<TStyleProps>`
 
 const RadioButtonStyled = styled.input`
     position: absolute;
-
+    opacity: 0;
     &:checked {
         & + label {
             &:before {
-                background-color: ${color.green};
-                border-color: ${color.greenLight};
+                background-color: ${color.mint40};
+                border-color: ${color.mint20};
             }
             &:after {
                 opacity: 1;
             }
+        }
+    }
+    &:focus {
+        & + label {
+            box-shadow: 0 0 4px ${color.navy30};
+            border-radius: 20px;
         }
     }
 `;

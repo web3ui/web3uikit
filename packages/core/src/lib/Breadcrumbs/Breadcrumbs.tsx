@@ -66,7 +66,7 @@ function renderList(
 }
 
 const Breadcrumbs: IBreadcrumbs = ({
-    theme = color.greyIcons,
+    theme = color.gray40,
     style,
     routes,
     separator,

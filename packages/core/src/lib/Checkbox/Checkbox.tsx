@@ -6,6 +6,7 @@ import styles from './Checkbox.styles';
 const { StyledInput, StyledLabel, SpanStyled } = styles;
 
 const Checkbox: React.FC<CheckboxProps> = ({
+    align,
     checked,
     disabled = false,
     id,
@@ -38,6 +39,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
             data-testid="test-checkbox-label"
             disabled={disabled}
             layout={layout}
+            align={align}
         >
             {layout === 'box' && (
                 <span className="after">

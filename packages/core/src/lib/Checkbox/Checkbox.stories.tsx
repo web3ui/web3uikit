@@ -1,7 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import styled from 'styled-components';
 import { Illustration } from '../Illustrations';
-import { Tag } from '../Tag';
 import { Typography } from '../Typography';
 import Checkbox from './Checkbox';
 
@@ -81,7 +79,7 @@ SwitchingText.args = {
 export const CustomLabel = Template.bind({});
 CustomLabel.args = {
     label: (
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center', height: '100px' }}>
             <Illustration logo={'marketplace'} height={48} width={34} />
             <div className="label-data">
                 <Typography variant="body16" weight="550">
@@ -96,4 +94,5 @@ CustomLabel.args = {
     ),
     name: 'Test checkbox input',
     id: 'test-checkbox',
+    align: 'center',
 };

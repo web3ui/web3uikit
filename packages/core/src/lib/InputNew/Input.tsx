@@ -121,7 +121,6 @@ const Input: React.FC<InputProps> = ({
                 autoFocus={autoFocus}
                 customInput={customInput}
                 data-testid="test-input-input"
-                defaultValue={currentValue}
                 disabled={currentState == 'disabled'}
                 id={id}
                 max={type === 'number' ? validation?.numberMax : undefined}
@@ -129,6 +128,7 @@ const Input: React.FC<InputProps> = ({
                 min={type === 'number' ? validation?.numberMin : undefined}
                 minLength={validation?.characterMinLength}
                 name={name}
+                ref={ref}
                 onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
                     validate(event)
                 }
@@ -137,7 +137,6 @@ const Input: React.FC<InputProps> = ({
                 }
                 pattern={validation?.regExp}
                 placeholder={placeholder}
-                ref={ref}
                 required={validation?.required}
                 type={
                     mainType !== 'password'
@@ -146,6 +145,7 @@ const Input: React.FC<InputProps> = ({
                         ? 'password'
                         : 'text'
                 }
+                value={currentValue}
                 {...props}
             />
 

@@ -31,6 +31,9 @@ DefaultInputNumber.args = {
     label: 'Label text',
     name: 'Test text Input',
     value: 50,
+    validation: {
+        characterMaxLength: 3,
+    },
 };
 
 export const InputError = Template.bind({});

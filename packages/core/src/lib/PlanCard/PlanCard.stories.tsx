@@ -1,10 +1,9 @@
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import data from './mock';
 import PlanCard from './PlanCard';
 
 export default {
-    title: 'Ui/PlanCard',
+    title: '4.UI/PlanCard',
     component: PlanCard,
     argTypes: {
         onChange: {

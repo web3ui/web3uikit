@@ -1,7 +1,7 @@
 export interface IInputBaseProps {
     autoComplete?: boolean;
     autoFocus?: boolean;
-    defaultValue?: string;
+    defaultValue?: string | number;
     disabled?: boolean;
     id: string;
     max?: number;
@@ -23,6 +23,7 @@ export interface ILabelBaseProps {
     id: string;
     text?: string;
     required?: boolean;
+    testId: string;
 }
 
 export type TValidateInput = {

@@ -1,7 +1,6 @@
-import { type } from 'os';
 import React, { RefObject } from 'react';
 
-export interface InputProps {
+export interface IInputProps {
     /**
      * toggle browsers ability to auto complete the input
      */
@@ -70,7 +69,7 @@ export interface InputProps {
     /**
      * standard HTML value prop
      */
-    value?: string | number;
+    value?: string;
 
     /**
      * please give a descriptive name to the input, it help with accessibility
@@ -116,7 +115,7 @@ export interface InputProps {
      * You can validate your inputs
      * required, characterMinLength, characterMaxLength, numberMin, numberMax, regExp , regExpInvalidMessage
      */
-    validation?: ValidateInput;
+    validation?: TValidateInput;
 
     /**
      * size of input
@@ -131,7 +130,7 @@ export interface InputProps {
 
 export type TInputStates = 'initial' | 'error' | 'confirmed' | 'disabled';
 
-export interface LabelProps {
+export interface ILabelProps {
     /**
      * true if the label is defined
      */
@@ -143,7 +142,7 @@ export interface LabelProps {
     labelBgColor?: string;
 }
 
-export type ValidateInput = {
+export type TValidateInput = {
     /**
      * is the input required
      */

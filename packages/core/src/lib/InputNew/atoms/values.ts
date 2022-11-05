@@ -1,4 +1,4 @@
-import { IInputBaseProps, TValidateInput } from './types';
+import { IInputBaseProps, TValidateInput, ILabelBaseProps } from './types';
 
 export const inputBaseTestValidation: TValidateInput = {
     characterMaxLength: 10,
@@ -20,4 +20,11 @@ export const inputBaseTestValues: IInputBaseProps = {
     required: true,
     testId: 'test-input-base',
     type: 'email',
+} as const;
+
+export const labelBaseTestValues: ILabelBaseProps = {
+    id: 'label-base',
+    required: true,
+    testId: 'test-label-base',
+    text: 'Labels are good for accessibility and UX',
 } as const;

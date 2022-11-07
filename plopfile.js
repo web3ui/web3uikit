@@ -1,6 +1,7 @@
-const step1Template = `{{name}} : {
+const step1Template = `    
+    {{name}} : {
         name:'{{name}}',
-        color:'{{color}}'
+        color:'{{color}}',
     },
 `;
 
@@ -47,8 +48,8 @@ ${componentName}.args = {
 };`;
 
 module.exports = (plop) => {
-    plop.setGenerator('New Component', {
-        description: 'new component generator',
+    plop.setGenerator('Component', {
+        description: 'new core/web3 component generator',
         prompts: [
             {
                 type: 'input',
@@ -119,7 +120,7 @@ module.exports = (plop) => {
             ];
         },
     });
-    plop.setGenerator('New Chain Logo', {
+    plop.setGenerator('ChainLogo', {
         description: 'new chain logo generator',
         prompts: [
             {

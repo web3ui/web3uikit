@@ -1,4 +1,5 @@
 /* PLOP_INJECT_EXPORT */
+export * from './Grid';
 export * from './Pagination';
 export * from './Slider';
 export * from './Accordion';

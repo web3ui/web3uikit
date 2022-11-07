@@ -1,31 +1,27 @@
 import styled, { css } from 'styled-components';
-import { breakpoints, resetCSS } from '@web3uikit/styles';
-import { IGridProps, Spacing } from './types';
+import { breakpoints, resetCSS, color } from '@web3uikit/styles';
+import { IGridProps } from './types';
 
-const getSpacingStyles = (spacing?: Spacing) => {
-    switch (spacing) {
-        case 'sm':
-            return 8;
-        case 'md':
-            return 16;
-        case 'lg':
-            return 24;
-        default:
-            return 0;
-    }
-};
+const getStylesAtBreakpoint = (breakpoint: string, size?: number) =>
+    size
+        ? css`
+              @media screen and (min-width: ${breakpoint}) {
+                  flex-basis: ${(size / 12) * 100}%;
+              }
+          `
+        : null;
 
 type TStyleProps = Pick<
     IGridProps,
+    | 'alignItems'
+    | 'flexGrow'
+    | 'justifyContent'
+    | 'lg'
+    | 'md'
+    | 'sm'
+    | 'spacing'
     | 'type'
     | 'xs'
-    | 'sm'
-    | 'md'
-    | 'lg'
-    | 'spacing'
-    | 'isRulerVisible'
-    | 'justifyContent'
-    | 'alignItems'
 >;
 const DivStyled = styled.div<TStyleProps>`
     ${resetCSS};
@@ -43,8 +39,6 @@ const DivStyled = styled.div<TStyleProps>`
             css`
                 flex-basis: ${(props.xs / 12) * 100}%;
             `};
-
-        margin: -${getSpacingStyles(props.spacing)}px;
         ${props.justifyContent &&
             css`
                 justify-content: ${props.justifyContent};
@@ -53,28 +47,22 @@ const DivStyled = styled.div<TStyleProps>`
             css`
                 align-items: ${props.alignItems};
             `};
-        & > .grid-item {
-            padding: ${getSpacingStyles(props.spacing)}px;
-        }
+        ${props.flexGrow &&
+            css`
+                flex-grow: ${props.flexGrow};
+            `}
 
-        @media screen and (min-width: ${breakpoints.sm}) {
-            ${props.sm &&
-                css`
-                    flex-basis: ${(props.sm / 12) * 100}%;
-                `};
-        }
-        @media screen and (min-width: ${breakpoints.md}) {
-            ${props.md &&
-                css`
-                    flex-basis: ${(props.md / 12) * 100}%;
-                `};
-        }
-        @media screen and (min-width: ${breakpoints.lg}) {
-            ${props.lg &&
-                css`
-                    flex-basis: ${(props.lg / 12) * 100}%;
-                `};
-        }
+        ${props.spacing &&
+            css`
+                // This removes extra spacing around the boxes
+                margin: -${props.spacing}px;
+                & > .grid-item {
+                    padding: ${props.spacing}px;
+                }
+            `};
+        ${getStylesAtBreakpoint(breakpoints.sm, props.sm)};
+        ${getStylesAtBreakpoint(breakpoints.md, props.md)};
+        ${getStylesAtBreakpoint(breakpoints.lg, props.lg)};
     `}
 `;
 
@@ -85,11 +73,13 @@ DivStyled.displayName = 'Grid';
  */
 const DivStyledBox = styled.div`
     ${resetCSS};
-    background-color: red;
+    background-color: cornflowerblue;
     border-radius: 4px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    color: #fff;
+    color: ${color.white};
     font-weight: 700;
+    height: 100%;
+    width: 100%;
     padding: 16px;
     text-align: center;
 `;
@@ -103,10 +93,13 @@ const DivStyledRuler = styled.div<Pick<IGridProps, 'spacing'>>`
     & > div {
         background-color: rgba(0, 0, 0, 0.1);
     }
-    ${(props) => css`
-        gap: ${getSpacingStyles(props.spacing) * 2}px;
-    `}
+    ${(props) =>
+        props.spacing &&
+        css`
+            gap: ${props.spacing * 2}px;
+        `}
 `;
+//-------------
 
 export default {
     DivStyledBox,

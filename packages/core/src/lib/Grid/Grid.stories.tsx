@@ -12,27 +12,40 @@ export default {
 
 const Template: ComponentStory<typeof Grid> = (args) => <Grid {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
+const children = (
+    <>
+        <Grid type="item" xs={12} sm={6} md={4} lg={3}>
+            <DivStyledBox>Box 1</DivStyledBox>
+        </Grid>
+        <Grid type="item" xs={12} sm={6} md={4} lg={3}>
+            <DivStyledBox>Box 2</DivStyledBox>
+        </Grid>
+        <Grid type="item" xs={12} sm={6} md={4} lg={3}>
+            <DivStyledBox>Box 3</DivStyledBox>
+        </Grid>
+        <Grid type="item" xs={12} sm={6} md={4} lg={3}>
+            <DivStyledBox>Box 4</DivStyledBox>
+        </Grid>
+    </>
+);
+
+export const Basic = Template.bind({});
+Basic.args = {
     type: 'container',
-    spacing: 'sm',
-    isRulerVisible: true,
+    spacing: 12,
+    _isRulerVisible: false,
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
-    children: (
-        <>
-            <Grid type="item" xs={12} sm={6} md={4} lg={3}>
-                <DivStyledBox>Box 1</DivStyledBox>
-            </Grid>
-            <Grid type="item" xs={12} sm={6} md={4} lg={3}>
-                <DivStyledBox>Box 12</DivStyledBox>
-            </Grid>
-            <Grid type="item" xs={12} sm={6} md={4} lg={3}>
-                <DivStyledBox>Box 3</DivStyledBox>
-            </Grid>
-            <Grid type="item" xs={12} sm={6} md={4} lg={3}>
-                <DivStyledBox>Box 4</DivStyledBox>
-            </Grid>
-        </>
-    ),
+    children: children,
+    style: { height: '400px' },
+};
+
+export const BasicWithRuler = Template.bind({});
+BasicWithRuler.args = {
+    type: 'container',
+    spacing: 2,
+    _isRulerVisible: true,
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    children: children,
 };

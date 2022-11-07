@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 import { CSSProperties } from 'styled-components';
 
-type Cols = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-export type Spacing = 'sm' | 'md' | 'lg';
+type GridSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+export type Spacing = GridSize | 13 | 14 | 15 | 16;
 
 export interface IGridProps {
     /**
@@ -16,9 +16,14 @@ export interface IGridProps {
     children: ReactNode;
 
     /**
-     * display a ruler for testing purposes
+     * display a ruler for testing purposes only
      */
-    isRulerVisible?: boolean;
+    _isRulerVisible?: boolean;
+
+    /**
+     * flex grow property of a grid item
+     */
+    flexGrow?: CSSProperties['flexGrow'];
 
     /**
      * to justify content in a grid
@@ -26,19 +31,19 @@ export interface IGridProps {
     justifyContent?: CSSProperties['justifyContent'];
 
     /**
-     * size from 1025 - ...
+     * size for screens from => 1025 - ...
      */
-    lg?: Cols;
+    lg?: GridSize;
 
     /**
-     * size from 768px - 1025px
+     * size for screens from => 768px - 1025px
      */
-    md?: Cols;
+    md?: GridSize;
 
     /**
-     * size from 576px - 768px
+     * size for screens from => 576px - 768px
      */
-    sm?: Cols;
+    sm?: GridSize;
 
     /**
      * spacing between grid items
@@ -51,7 +56,7 @@ export interface IGridProps {
     type: 'container' | 'item';
 
     /**
-     * size from 0px - 576px
+     * for size for screens from => 0px - 576px
      */
-    xs?: Cols;
+    xs?: GridSize;
 }

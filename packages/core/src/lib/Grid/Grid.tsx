@@ -6,37 +6,20 @@ const { DivStyled, DivStyledRuler } = styles;
 
 export const Grid: React.FC<IGridProps &
     React.HTMLAttributes<HTMLDivElement>> = ({
+    _isRulerVisible = false,
     children,
-    type,
-    xs,
-    sm,
-    md,
-    lg,
-    spacing,
-    isRulerVisible = false,
-    justifyContent,
-    alignItems,
     ...props
 }) => {
     let className = '';
-    if (type) className += `grid-${type}`;
-    console.log(children);
-    if (isRulerVisible) {
+    if (props.type) className += `grid-${props.type}`;
+    // This is for testing purposes only for user
+    if (_isRulerVisible) {
         return (
             <div style={{ position: 'relative' }}>
-                <GridRuler spacing={spacing}></GridRuler>
+                <GridRuler spacing={props.spacing}></GridRuler>
                 <DivStyled
                     className={className}
                     data-testid="test-Grid"
-                    type={type}
-                    xs={xs}
-                    md={md}
-                    sm={sm}
-                    lg={lg}
-                    isRulerVisible={isRulerVisible}
-                    spacing={spacing}
-                    justifyContent={justifyContent}
-                    alignItems={alignItems}
                     {...props}
                 >
                     {children}
@@ -46,20 +29,7 @@ export const Grid: React.FC<IGridProps &
     }
 
     return (
-        <DivStyled
-            className={className}
-            data-testid="test-Grid"
-            type={type}
-            xs={xs}
-            md={md}
-            sm={sm}
-            lg={lg}
-            isRulerVisible={isRulerVisible}
-            spacing={spacing}
-            justifyContent={justifyContent}
-            alignItems={alignItems}
-            {...props}
-        >
+        <DivStyled className={className} data-testid="test-Grid" {...props}>
             {children}
         </DivStyled>
     );
@@ -67,7 +37,7 @@ export const Grid: React.FC<IGridProps &
 
 export const GridRuler: React.FC<{ spacing?: Spacing }> = ({ spacing }) => {
     return (
-        <DivStyledRuler spacing={spacing}>
+        <DivStyledRuler spacing={spacing} data-testid="test-GridRuler">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((number) => (
                 <div key={number} />
             ))}

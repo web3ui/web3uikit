@@ -41,6 +41,7 @@
         "start:dev": "nx run-many --target=start:dev --all --parallel",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook -o dist/storybook wp5",
+        "storybook-build": "pnpm build && pnpm storybook",
         "analyze": "nx run example:analyze",
         "icons:create": "nx run-many --target=icons:create --all --parallel",
         "new": "plop",

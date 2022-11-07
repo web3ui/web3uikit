@@ -6,8 +6,7 @@ const arbitrum: React.FC<ILogoProps> = ({ width = '120', height = '160' }) => {
         <svg
             width={width}
             height={height}
-            viewBox="0 0 120 160"
-            fill="none"
+            viewBox="0,0,120,160"
             xmlns="http://www.w3.org/2000/svg"
         >
             <path

@@ -82,4 +82,12 @@ Ronin.args = {
     btnText: 'View Endpoints',
 };
 
+export const Optimism = Template.bind({});
+Optimism.args = {
+    chain: 'optimism',
+    chainType: 'Network',
+    bgColor: chainLogoData['optimism'].color,
+    btnText: 'View Endpoints',
+};
+
 /* PLOP_INJECT_CHAIN */

@@ -19,7 +19,7 @@ const BackgroundColoredTemplate: ComponentStory<typeof Illustration> = (
         style={{
             width: '90vw',
             height: '90vh',
-            backgroundColor: `${color.blue30}`,
+            backgroundColor: `${color.navy80}`,
         }}
     >
         <Illustration {...args} />
@@ -69,6 +69,10 @@ Cronos.args = {
 export const Ronin = BackgroundColoredTemplate.bind({});
 Ronin.args = {
     logo: 'ronin',
+};
+export const Optimism = BackgroundColoredTemplate.bind({});
+Optimism.args = {
+    logo: 'optimism',
 };
 
 /* PLOP_INJECT_CHAIN */

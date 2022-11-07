@@ -66,4 +66,10 @@ Ronin.args = {
     size: '48px',
 };
 
+export const Optimism = Template.bind({});
+Optimism.args = {
+    chain: 'optimism',
+    size: '48px',
+};
+
 /* PLOP_INJECT_CHAIN */

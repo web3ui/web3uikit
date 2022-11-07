@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.2.6
+
+### Patch Changes
+
+-   [#847](https://github.com/web3ui/web3uikit/pull/847) [`63676305b`](https://github.com/web3ui/web3uikit/commit/63676305b1bfc894192de8e08c1b14d6d1eeff92) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - refactor banner strip
+
 ## 0.2.4
 
 ### Patch Changes

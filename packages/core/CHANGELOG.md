@@ -1,5 +1,22 @@
 # @web3uikit/core
 
+## 0.2.7
+
+### Patch Changes
+
+-   [#874](https://github.com/web3ui/web3uikit/pull/874) [`17e795c3a`](https://github.com/web3ui/web3uikit/commit/17e795c3ad87f36de24f90fd13f65b87c756533d) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add New logo and update svgs
+
+## 0.2.6
+
+### Patch Changes
+
+-   [#847](https://github.com/web3ui/web3uikit/pull/847) [`63676305b`](https://github.com/web3ui/web3uikit/commit/63676305b1bfc894192de8e08c1b14d6d1eeff92) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - refactor banner strip
+
+*   [#872](https://github.com/web3ui/web3uikit/pull/872) [`69db5c41b`](https://github.com/web3ui/web3uikit/commit/69db5c41b366b6ee855d7cde64d5986a29dcea9f) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Change checkbox styles
+
+*   Updated dependencies [[`63676305b`](https://github.com/web3ui/web3uikit/commit/63676305b1bfc894192de8e08c1b14d6d1eeff92)]:
+    -   @web3uikit/icons@0.2.6
+
 ## 0.2.5
 
 ### Patch Changes

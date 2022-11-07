@@ -95,6 +95,7 @@ const Illustration: React.FC<IllustrationProps> = ({
                         height={height as string}
                         width={width as string}
                         theme="image"
+                        borderRadius="100%"
                     />
                 }
             >

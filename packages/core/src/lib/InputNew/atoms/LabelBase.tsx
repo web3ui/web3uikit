@@ -1,21 +1,32 @@
 import { FC } from 'react';
 import { Typography } from '../../Typography';
 import { ILabelBaseProps } from './types';
+import styles from './styles';
+
+const { LabelStyled } = styles;
 
 const LabelBase: FC<ILabelBaseProps> = ({
     id,
-    testId,
+    position = 'relative',
+    testid,
     text,
     required,
+    state,
     ...props
 }) => {
     return (
-        <label data-testid={testId} htmlFor={id} {...props}>
-            <Typography>
+        <LabelStyled
+            data-testid={testid}
+            htmlFor={id}
+            position={position}
+            state={state}
+            {...props}
+        >
+            <Typography title={text}>
                 {text}
                 {required && ' *'}
             </Typography>
-        </label>
+        </LabelStyled>
     );
 };
 

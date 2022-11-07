@@ -49,6 +49,11 @@ export interface TypographyProps {
     onCopy?: (e?: React.BaseSyntheticEvent) => void;
 
     /**
+     * Can help with readability & accessibility if text spills over container or is truncated
+     */
+    title?: string;
+
+    /**
      * Optional custom CSS
      */
     style?: CSSProperties;

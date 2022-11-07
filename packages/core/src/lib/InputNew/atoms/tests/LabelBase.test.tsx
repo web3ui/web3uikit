@@ -1,4 +1,4 @@
-import * as stories from '../LabelBase.stories';
+import * as stories from '../stories/LabelBase.stories';
 import { expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';

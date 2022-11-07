@@ -1,60 +1,62 @@
 import styled, { css } from 'styled-components';
 import { color, fonts, resetCSS } from '@web3uikit/styles';
-import InputBase from './atoms/InputBase';
-import LabelBase from './atoms/LabelBase';
+import baseStyles from './atoms/styles';
 
-const inputFocusedOrFilled = css`
-    border-radius: 4px;
-    color: ${color.navy40};
-    left: 14px;
-    top: -12px;
+const { inputFocusedOrFilled } = baseStyles;
 
-    span {
-        font-size: 12px;
-        font-weight: 550;
-        padding: 0 4px;
-    }
+const inputDisabled = css`
+    filter: grayscale(1);
+    opacity: 0.7;
+    pointer-events: none;
 `;
 
-const InputStyled = styled(InputBase)`
-    ${resetCSS};
-    ${fonts.text}
-    background-color: ${color.white};
-    border-radius: 16px;
-    border: 1px solid ${color.gray30};
+const DivStyled = styled.div<{ disabled?: boolean }>`
     display: block;
-    padding: 18px;
-    width: 100%;
-
-    &:focus + label {
-        ${inputFocusedOrFilled}
-    }
-`;
-
-const LabelStyled = styled(LabelBase)`
-    background-color: ${color.white};
-    box-sizing: border-box;
-    color: ${color.blueGray50};
-    display: block;
-    height: 24px;
-    left: 18px;
-    position: absolute;
-    top: calc(50% - (24px / 2));
-    transition: all 0.1s ease-out;
-    z-index: 1;
-`;
-
-const DivStyled = styled.div`
-    display: block;
+    margin-top: 12px;
     position: relative;
 
     &.filled label {
         ${(filled) => filled && inputFocusedOrFilled};
     }
+
+    ${({ disabled }) => disabled && inputDisabled};
+`;
+
+const StrongStyledDescription = styled.strong`
+    ${resetCSS}
+    ${fonts.text}
+    color: ${color.blueGray50};
+    font-size: 12px;
+    padding: 0 16px;
+`;
+
+const StrongStyledFeedback = styled.strong`
+    ${resetCSS}
+    ${fonts.text}
+    background-color: ${color.red40};
+    border-radius: 8px;
+    top: calc(100% + 6px);
+    color: ${color.white};
+    font-size: 12px;
+    padding: 4px 6px;
+    left: 0;
+    position: absolute;
+
+    &::after {
+        background-color: ${color.red40};
+        content: '';
+        display: block;
+        height: 12px;
+        left: 20px;
+        position: absolute;
+        top: -2px;
+        transform: rotate(45deg);
+        width: 12px;
+    }
 `;
 
 export default {
     DivStyled,
-    InputStyled,
-    LabelStyled,
+    StrongStyledDescription,
+    StrongStyledFeedback,
 };

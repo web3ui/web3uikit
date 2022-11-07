@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import InputBase from './InputBase';
-import { inputBaseTestValues, inputBaseTestValidation } from './values';
+import InputBase from '../InputBase';
+import { inputBaseTestValues, inputBaseTestValidation } from '../values';
 
 const {
     autoComplete,

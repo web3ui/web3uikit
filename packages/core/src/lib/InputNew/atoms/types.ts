@@ -1,8 +1,12 @@
+import { type } from 'os';
+
 export interface IInputBaseProps {
     autoComplete?: boolean;
     autoFocus?: boolean;
+    backgroundColor?: string;
     defaultValue?: string | number;
     disabled?: boolean;
+    iconPosition?: 'front' | 'end';
     id: string;
     max?: number;
     maxLength?: number;
@@ -12,19 +16,26 @@ export interface IInputBaseProps {
     onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
     placeholder?: string;
+    prefixIcon?: TPrefixIcon;
     regExp?: string;
     required?: boolean;
-    testId: string;
+    state?: TInputStates;
+    testid?: string;
     type?: 'text' | 'number' | 'email' | 'tel' | 'password';
     validation?: TValidateInput;
 }
 
 export interface ILabelBaseProps {
+    backgroundColor?: string;
     id: string;
-    text?: string;
+    position?: 'relative' | 'absolute';
     required?: boolean;
-    testId: string;
+    state?: TInputStates;
+    testid?: string;
+    text?: string;
 }
+
+export type TInputStates = 'initial' | 'error' | 'confirmed' | 'disabled';
 
 export type TValidateInput = {
     /**
@@ -63,3 +74,17 @@ export type TValidateInput = {
      */
     regExpInvalidMessage?: string;
 };
+
+type TIconPosition = 'front' | 'end';
+type TPrefixIcon = React.ReactElement;
+
+export interface IVisibilityToggleProps {
+    isInputHidden: boolean;
+    onClick: () => void;
+}
+
+export interface IPrefixIconProps {
+    icon: TPrefixIcon;
+    isPasswordWithEndIcon: boolean;
+    position: TIconPosition;
+}

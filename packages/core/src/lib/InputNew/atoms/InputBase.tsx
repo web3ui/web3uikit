@@ -1,8 +1,10 @@
 import { FC } from 'react';
 import { IInputBaseProps } from './types';
 import { inputBaseTestValues } from './values';
+import styles from './styles';
 
-const { testId } = inputBaseTestValues;
+const { InputStyled } = styles;
+const { testid } = inputBaseTestValues;
 
 const InputBase: FC<IInputBaseProps> = ({
     autoComplete = true,
@@ -21,14 +23,15 @@ const InputBase: FC<IInputBaseProps> = ({
     minLength,
     regExp,
     required,
+    state,
     ...props
 }) => {
     return (
-        <input
+        <InputStyled
             autoComplete={`${autoComplete}`}
             autoFocus={autoFocus}
             disabled={disabled}
-            data-testid={testId}
+            data-testid={testid}
             defaultValue={defaultValue}
             id={id}
             max={type === 'number' ? max : undefined}
@@ -45,6 +48,7 @@ const InputBase: FC<IInputBaseProps> = ({
             pattern={regExp}
             placeholder={placeholder}
             required={required}
+            state={state}
             type={type}
             {...props}
         />

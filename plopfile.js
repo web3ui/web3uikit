@@ -1,3 +1,51 @@
+const step1Template = `{{name}} : {
+        name:'{{name}}',
+        color:'{{color}}'
+    },
+`;
+
+const step2Template = `import React from 'react';
+import { ILogoProps } from '../../types';
+
+const {{ name }}: React.FC<ILogoProps> = ({width = '120', height = '160'}) => {
+    return <></>;
+};
+export default {{ name }};
+`;
+
+const step3Template = `const {{name}}Logo: ILogoImport = {
+    name: '{{name}}',
+    component: lazy(() => import('./{{name}}')),
+};
+`;
+
+const step4Template = `    {{name}}Logo,`;
+
+const step5Template = (
+    componentName,
+) => `export const ${componentName} = BackgroundColoredTemplate.bind({});
+${componentName}.args = {
+    logo: '{{name}}',
+};`;
+
+const step6Template = (
+    componentName,
+) => `export const ${componentName} = Template.bind({});
+${componentName}.args = {
+    chain: '{{name}}',
+    size: '48px',
+};`;
+
+const step7Template = (
+    componentName,
+) => `export const ${componentName} = Template.bind({});
+${componentName}.args = {
+    chain: '{{name}}',
+    chainType: 'Network',
+    bgColor: chainLogoData['{{name}}'].color,
+    btnText: 'View Endpoints',
+};`;
+
 module.exports = (plop) => {
     plop.setGenerator('New Component', {
         description: 'new component generator',
@@ -91,53 +139,53 @@ module.exports = (plop) => {
             const corePackagePath = 'packages/core/src';
             const componentName = plop.getHelper('titleCase')(data.name);
             return [
-                //Add chain to logo.ts file in core package/interface
+                //1. Add chain to logo.ts file in core package/interface
                 {
                     type: 'append',
                     path: `${corePackagePath}/interfaces/logo.ts`,
                     pattern: '/* PLOP_INJECT_CHAIN */',
-                    template: `     {{name}} : {\n        name:'{{name}}',\n      color:'{{color}}'\n     },`,
+                    template: step1Template,
                 },
-                // add new tsx file to input svg => svg needs to be input manually
+                //2. add new tsx file to input svg => svg needs to be input manually
                 {
                     type: 'add',
                     path: `${corePackagePath}/lib/Illustrations/images/chains/{{name}}.tsx`,
-                    template: `import React from 'react';\nimport { ILogoProps } from '../../types';\n\nconst {{ name }}:React.FC<ILogoProps> = ({width = '120', height = '160'}) => {\n    return (<></>);\n};\nexport default {{ name }};`,
+                    template: step2Template,
                 },
-                // add new lazy import of chain
+                //3. add new lazy import of chain
                 {
                     type: 'append',
                     path: `${corePackagePath}/lib/Illustrations/images/chains/index.ts`,
                     pattern: '/* PLOP_INJECT_CHAIN_1 */',
-                    template: `const {{name}}Logo: ILogoImport = {\n    name: '{{name}}',\n    component: lazy(() => import('./{{name}}')),\n};`,
+                    template: step3Template,
                 },
-                // export this above import
+                //4. export this above import
                 {
                     type: 'append',
                     path: `${corePackagePath}/lib/Illustrations/images/chains/index.ts`,
                     pattern: '/* PLOP_INJECT_CHAIN_2 */',
-                    template: `    {{name}}Logo,`,
+                    template: step4Template,
                 },
-                // add new illustration story
+                //5. add new illustration story
                 {
                     type: 'append',
                     path: `${corePackagePath}/lib/Illustrations/Illustration.stories.tsx`,
                     pattern: '/* PLOP_INJECT_CHAIN */',
-                    template: `export const ${componentName} = BackgroundColoredTemplate.bind({});\n${componentName}.args = {\n    logo: '{{name}}',\n};`,
+                    template: step5Template(componentName),
                 },
-                // add new crypto logo story
+                //6. add new crypto logo story
                 {
                     type: 'append',
                     path: `${corePackagePath}/lib/CryptoLogos/CryptoLogos.stories.tsx`,
                     pattern: '/* PLOP_INJECT_CHAIN */',
-                    template: `export const ${componentName} = Template.bind({});\n${componentName}.args = {\n    chain: '{{name}}',\n    size: '48px'\n};`,
+                    template: step6Template(componentName),
                 },
-                // add new crypto card story
+                //7. add new crypto card story
                 {
                     type: 'append',
                     path: `${corePackagePath}/lib/CryptoCards/CryptoCards.stories.tsx`,
                     pattern: '/* PLOP_INJECT_CHAIN */',
-                    template: `export const ${componentName} = Template.bind({});\n${componentName}.args = {\n    chain: '{{name}}',\n    chainType: 'Network',\n    bgColor: chainLogoData['{{name}}'].color,\n    btnText: 'View Endpoints',\n};`,
+                    template: step7Template(componentName),
                 },
             ];
         },

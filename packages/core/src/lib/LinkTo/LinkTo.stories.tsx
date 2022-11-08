@@ -2,6 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import LinkTo from './LinkTo';
 import { color } from '@web3uikit/styles';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
+import { Youtube } from '@web3uikit/icons';
 
 export default {
     title: '4.UI/LinkTo',
@@ -13,6 +14,7 @@ export default {
             },
         },
     },
+    argTypes: { onClick: { action: 'clicked' } },
 } as ComponentMeta<typeof LinkTo>;
 
 const Template: ComponentStory<typeof LinkTo> = (args) => <LinkTo {...args} />;
@@ -112,7 +114,23 @@ NoIconLink.args = {
     type: 'email',
     iconLayout: 'none',
 };
-
+export const LinkWithNoUnderline = TemplateText.bind({});
+LinkWithNoUnderline.args = {
+    address: 'https://www.youtube.com/c/MoralisWeb3/featured',
+    iconLayout: 'trailing',
+    text: 'Moralis Youtube',
+    type: 'external',
+    isUnderlined: false,
+};
+export const LinkWithCustomIcon = TemplateText.bind({});
+LinkWithCustomIcon.args = {
+    icon: <Youtube fontSize={18} fill={color.navy40} />,
+    address: 'https://www.youtube.com/c/MoralisWeb3/featured',
+    iconLayout: 'trailing',
+    text: 'Moralis Youtube',
+    type: 'external',
+    isUnderlined: false,
+};
 export const InternalLink: ComponentStory<typeof LinkTo> = Template.bind({});
 InternalLink.decorators = [
     (Story) => (

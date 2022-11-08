@@ -9,7 +9,7 @@ import type { LinkToProps } from './types';
 type TStyleProps = Pick<LinkToProps, 'iconLayout'>;
 interface LinkStyledProps {
     isUnderlined: boolean;
-    textColor: string | undefined;
+    textColor?: typeof color | string;
 }
 
 const LinkStyled = styled.a<LinkStyledProps>`
@@ -22,7 +22,8 @@ const LinkStyled = styled.a<LinkStyledProps>`
     height: fit-content;
     max-width: 100%;
     width: fit-content;
-    text-decoration: ${({ isUnderlined }) => isUnderlined ? 'underline': 'none'};
+    text-decoration: ${({ isUnderlined }) =>
+        isUnderlined ? 'underline' : 'none'};
 
     &:hover {
         filter: brightness(0.7);
@@ -38,7 +39,8 @@ const InternalLinkStyled = styled(Link)<LinkStyledProps>`
     font-weight: 600;
     max-width: 100%;
     width: fit-content;
-    text-decoration: ${({ isUnderlined }) => isUnderlined ? 'underline': 'none'};
+    text-decoration: ${({ isUnderlined }) =>
+        isUnderlined ? 'underline' : 'none'};
 
     &:hover {
         filter: brightness(0.7);

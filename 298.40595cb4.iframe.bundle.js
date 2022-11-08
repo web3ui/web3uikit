@@ -1,1 +1,0 @@
-(self.webpackChunkweb3uikit_monorepo=self.webpackChunkweb3uikit_monorepo||[]).push([[298,873,201],{"?d360":()=>{},"?78b1":()=>{}}]);

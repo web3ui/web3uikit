@@ -1,0 +1,1 @@
+(self.webpackChunkweb3uikit_monorepo=self.webpackChunkweb3uikit_monorepo||[]).push([[2635],{"?b6e4":()=>{},"?61a6":()=>{}}]);

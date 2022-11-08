@@ -1,0 +1,1 @@
+(self.webpackChunkweb3uikit_monorepo=self.webpackChunkweb3uikit_monorepo||[]).push([[9201],{"?78b1":()=>{}}]);

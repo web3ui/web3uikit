@@ -1,3 +1,5 @@
+import { TChainNames, TWalletNames } from '../../interfaces/logo';
+
 export interface CryptoLogoProps {
     /**
      * The background color of the crypto logo
@@ -15,17 +17,6 @@ export interface CryptoLogoProps {
     size?: sizeType;
 }
 
-export type chainType =
-    | 'arbitrum'
-    | 'avalanche'
-    | 'binance'
-    | 'coinbase'
-    | 'cronos'
-    | 'cryptoweb'
-    | 'ethereum'
-    | 'fantom'
-    | 'polygon'
-    | 'ronin'
-    | 'optimism';
+export type chainType = TChainNames;
 
 export type sizeType = string | number;

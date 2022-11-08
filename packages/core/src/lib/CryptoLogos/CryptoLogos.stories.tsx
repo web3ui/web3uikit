@@ -54,12 +54,6 @@ Cronos.args = {
     size: '48px',
 };
 
-export const Crypto = Template.bind({});
-Crypto.args = {
-    chain: 'cryptoweb',
-    size: '48px',
-};
-
 export const Coinbase = Template.bind({});
 Coinbase.args = {
     chain: 'coinbase',
@@ -71,8 +65,11 @@ Ronin.args = {
     chain: 'ronin',
     size: '48px',
 };
+
 export const Optimism = Template.bind({});
 Optimism.args = {
     chain: 'optimism',
     size: '48px',
 };
+
+/* PLOP_INJECT_CHAIN */

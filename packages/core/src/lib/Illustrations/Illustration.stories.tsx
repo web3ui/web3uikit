@@ -2,10 +2,11 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { color } from '@web3uikit/styles';
 import Illustration from './Illustration';
 
-export default {
+const mainStory = {
     title: '6.Graphic/Illustration',
     component: Illustration,
 } as ComponentMeta<typeof Illustration>;
+export default mainStory;
 
 const Template: ComponentStory<typeof Illustration> = (args) => (
     <Illustration {...args} />
@@ -73,6 +74,8 @@ export const Optimism = BackgroundColoredTemplate.bind({});
 Optimism.args = {
     logo: 'optimism',
 };
+
+/* PLOP_INJECT_CHAIN */
 
 export const Crypto = BackgroundColoredTemplate.bind({});
 Crypto.args = {

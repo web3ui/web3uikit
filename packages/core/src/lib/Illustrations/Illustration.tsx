@@ -1,55 +1,29 @@
 import { Chain, IllustrationProps, Logo, Size } from './types';
-import arbitrum from './images/chains/arbitrum';
-import avalanche from './images/chains/avalanche';
-import binance from './images/chains/binance';
+import ethereum from './images/chains/ethereum';
 import bundle from './images/various/bundle';
 import chest from './images/various/chest';
 import comingSoon from './images/various/comingSoon';
 import confirmed from './images/various/confirmed';
-import coinbaseLogo from './images/chains/coinbase';
-import cronos from './images/chains/cronos';
-import cryptoLogo from './images/chains/cryptoweb';
+import cryptoLogo from './images/various/cryptoweb';
 import discord from './images/various/discord';
 import documentation from './images/various/documentation';
-import ethereum from './images/chains/ethereum';
-import fantom from './images/chains/fantom';
 import lazyNft from './images/various/lazyNft';
 import looking from './images/various/looking';
 import marketplace from './images/various/marketplace';
 import pack from './images/various/pack';
-import polygon from './images/chains/polygon';
 import servers from './images/various/servers';
 import token from './images/various/token';
 import styled from 'styled-components';
 import { resetCSS } from '@web3uikit/styles';
 import wizard from './images/various/wizard';
-import roninLogo from './images/chains/ronin';
-import optimismLogo from './images/chains/optimism';
+import AllChains from './images/chains';
+import { Suspense } from 'react';
+import { Skeleton } from '../Skeleton';
 
 const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     switch (logo) {
-        case 'ethereum':
-            return ethereum(width, height);
-        case 'binance':
-            return binance(width, height);
-        case 'polygon':
-            return polygon(width, height);
-        case 'avalanche':
-            return avalanche(width, height);
-        case 'fantom':
-            return fantom(width, height);
-        case 'arbitrum':
-            return arbitrum(width, height);
         case 'cryptoweb':
             return cryptoLogo(width, height);
-        case 'coinbase':
-            return coinbaseLogo(width, height);
-        case 'cronos':
-            return cronos(width, height);
-        case 'ronin':
-            return roninLogo(width, height);
-        case 'optimism':
-            return optimismLogo(width, height);
         case 'comingSoon':
             return comingSoon(width, height);
         case 'confirmed':
@@ -77,7 +51,15 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
         case 'wizard':
             return wizard(width, height);
         default:
-            return ethereum();
+            const chainLogos = Object.values(AllChains);
+            const ChainLogo = chainLogos.find(
+                (chainLogo) => chainLogo.name === logo,
+            );
+            const props = { width, height };
+            if (ChainLogo) return <ChainLogo.component {...props} />;
+            else {
+                ethereum({ width, height });
+            }
     }
 };
 
@@ -107,7 +89,18 @@ const Illustration: React.FC<IllustrationProps> = ({
             width={width}
             {...props}
         >
-            {getLogo(logo, width, height)}
+            <Suspense
+                fallback={
+                    <Skeleton
+                        height={height as string}
+                        width={width as string}
+                        theme="image"
+                        borderRadius="100%"
+                    />
+                }
+            >
+                {getLogo(logo, width, height)}
+            </Suspense>
         </StyledIllustration>
     );
 };

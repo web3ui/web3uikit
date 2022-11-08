@@ -1,7 +1,7 @@
 import React from 'react';
-import type { Size } from '../../types';
+import { ILogoProps } from '../../types';
 
-const coinbaseLogo = (width: Size = '120', height: Size = '160') => {
+const coinbase: React.FC<ILogoProps> = ({ width = '120', height = '160' }) => {
     return (
         <svg
             fill="none"
@@ -43,4 +43,4 @@ const coinbaseLogo = (width: Size = '120', height: Size = '160') => {
     );
 };
 
-export default coinbaseLogo;
+export default coinbase;

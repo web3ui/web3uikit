@@ -65,6 +65,7 @@ If you are using `web3uikit` with Next.js, be sure to follow the [official guide
 -   [🤝 Need help](#-need-help)
 -   [🚀 Quick start](#-quick-start)
 -   [🧭 Table of Contents](#-table-of-contents)
+-   [🏗️ New Components](#-new-components)
     <!-- -   [👩‍🔬 Advanced setup](#-advanced-setup) -->
 -   [📦 Packages](#-packages)
     -   [Core module](#core-module)
@@ -75,6 +76,31 @@ If you are using `web3uikit` with Next.js, be sure to follow the [official guide
 <!-- # 👩‍🔬 Advanced setup
 
 It's possible to install all functionalities of web3uikit by installing `web3uikit` as a dependency. But, you may choose to only install certain modules (as listed below). -->
+
+# 🏗️ New Components
+
+Remember to follow steps from [CONTRIBUTE.md](https://github.com/web3ui/web3uikit/blob/master/CONTRIBUTE.md) to setup your local environment.
+
+## Want to add new component ?
+
+-   run `pnpm new` in terminal and follow the interactive steps to generate templates for a new component.
+
+## Want to add new icon ?
+
+-   Add the svg file(s) to `web3uikit/packages/icons/src/lib/svgs/` (remember to give meaningful filename, as filename gets converted to icon name)
+-   run `pnpm run icons:create` in terminal and your icon is created. 🔥
+-   To verify your newly added icon run `pnpm storybook-build`. Once storybook is open, navigate to `8.ICONS/Gallery` and search for your icon.
+
+## Want to add a new Chain Logo ?
+
+-   run `pnpm plop "ChainLogo" -- --name "<CHAIN NAME HERE>" --color "<BACKGROUND COLOR HERE>"`
+
+    example => `pnpm plop "ChainLogo" -- --name "ethereum" --color "#396993"`
+
+-   Now in your code editor navigate to `web3uikit/packages/core/src/lib/Illustrations/images/chains`, here a new file must be created with your chain name, in this file replace `<></>` with your chain `svg code`.
+-   To verify your newly added chain logo run `pnpm storybook-build`. Once storybook is open:
+    -   navigate to `6.Graphic`, and your chain logo should be added to `Illustration` and `CryptoLogo` component.
+    -   navigate to `4.UI/CryptoCards`, and your chain logo should be added here as well. 😃
 
 # 📦 Packages
 

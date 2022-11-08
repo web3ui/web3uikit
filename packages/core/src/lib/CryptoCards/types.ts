@@ -1,4 +1,5 @@
 import React from 'react';
+import { TChainNames } from '../../interfaces/logo';
 
 export interface CryptoCardProps {
     /**
@@ -14,17 +15,7 @@ export interface CryptoCardProps {
     /**
      * The name of the blockchain
      */
-    chain:
-        | 'arbitrum'
-        | 'avalanche'
-        | 'binance'
-        | 'ethereum'
-        | 'fantom'
-        | 'polygon'
-        | 'cronos'
-        | 'coinbase'
-        | 'ronin'
-        | 'optimism';
+    chain: TChainNames;
 
     /**
      * The type of the chain / a subtitle below the chain name

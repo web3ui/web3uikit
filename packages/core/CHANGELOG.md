@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.9
+
+### Patch Changes
+
+-   [#877](https://github.com/web3ui/web3uikit/pull/877) [`cfc46dc6a`](https://github.com/web3ui/web3uikit/commit/cfc46dc6a1b3b029755f95277b93d3e81fcb960c) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add new grid element
+
 ## 0.2.8
 
 ### Patch Changes

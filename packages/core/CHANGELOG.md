@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.8
+
+### Patch Changes
+
+-   [#869](https://github.com/web3ui/web3uikit/pull/869) [`883dcea13`](https://github.com/web3ui/web3uikit/commit/883dcea13ac83a673a6741732f3b8c2c01efac2c) Thanks [@0xTijan](https://github.com/0xTijan)! - [LinkTo]: Add customization
+
 ## 0.2.7
 
 ### Patch Changes

@@ -57,4 +57,9 @@ export interface CheckboxProps {
      * You can validate your checkbox and switches
      */
     validation?: ValidateCheckbox;
+
+    /**
+     * to align vertical position of the checkbox
+     */
+    align?: 'center' | 'top' | 'bottom';
 }

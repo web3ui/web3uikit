@@ -23,7 +23,8 @@ export interface CryptoCardProps {
         | 'polygon'
         | 'cronos'
         | 'coinbase'
-        | 'ronin';
+        | 'ronin'
+        | 'optimism';
 
     /**
      * The type of the chain / a subtitle below the chain name

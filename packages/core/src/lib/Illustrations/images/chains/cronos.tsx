@@ -1,17 +1,17 @@
 import React from 'react';
-import type { Size } from '../../types';
+import { Size } from '../../types';
 
 const cronosLogo = (width: Size = '120', height: Size = '160') => {
     return (
         <svg
-            fill="none"
-            height={height}
-            viewBox="0,0,120,160"
             width={width}
+            height={height}
+            viewBox="0 0 120 160"
+            fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
             <path
-                d="M60.0166 23L59.975 23.0249V23L10 51.7417V109.258L59.975 138V137.975L60.0166 138L110 109.258V51.7583L60.0166 23ZM50.1448 115.29L24.8244 100.733V60.259L60.0166 40.0429V40.0594L95.1923 60.2839V100.741L60.0166 120.965L50.1448 115.298V115.29Z"
+                d="M60.0166 23L59.975 23.0249V23L10 51.7417V109.258L33.0648 122.515L59.975 138V137.975L60.0166 138L110 109.258V51.7583L60.0166 23ZM50.1448 115.29L24.8244 100.733V60.259L60.0166 40.0429V40.0594L95.1923 60.2839V100.741L60.0166 120.965L50.1448 115.298V115.29Z"
                 fill="url(#paint0_linear_15291_165803)"
             />
             <path
@@ -33,10 +33,10 @@ const cronosLogo = (width: Size = '120', height: Size = '160') => {
             <defs>
                 <linearGradient
                     id="paint0_linear_15291_165803"
-                    x1="48.1043"
-                    y1="96.0843"
-                    x2="92.1822"
-                    y2="62.5542"
+                    x1="34.5536"
+                    y1="113.871"
+                    x2="128.932"
+                    y2="42.0953"
                     gradientUnits="userSpaceOnUse"
                 >
                     <stop stopColor="white" stopOpacity="0.06" />

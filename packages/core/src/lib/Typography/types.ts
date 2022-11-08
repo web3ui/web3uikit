@@ -1,4 +1,5 @@
 import { color } from '@web3uikit/styles';
+import { CSSProperties } from 'react';
 
 export interface TypographyProps {
     /**
@@ -46,6 +47,11 @@ export interface TypographyProps {
      * On Clipboard copy if typography type is copyable
      */
     onCopy?: (e?: React.BaseSyntheticEvent) => void;
+
+    /**
+     * Optional custom CSS
+     */
+    style?: CSSProperties;
 }
 
 export type variantType =

@@ -121,4 +121,9 @@ export interface ButtonProps {
      * Customize the button
      */
     customize?: TButtonCustomConfig;
+
+    /**
+     * Optional custom CSS
+     */
+    style?: React.CSSProperties;
 }

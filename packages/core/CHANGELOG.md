@@ -1,5 +1,30 @@
 # @web3uikit/core
 
+## 0.2.7
+
+### Patch Changes
+
+-   [#874](https://github.com/web3ui/web3uikit/pull/874) [`17e795c3a`](https://github.com/web3ui/web3uikit/commit/17e795c3ad87f36de24f90fd13f65b87c756533d) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add New logo and update svgs
+
+## 0.2.6
+
+### Patch Changes
+
+-   [#847](https://github.com/web3ui/web3uikit/pull/847) [`63676305b`](https://github.com/web3ui/web3uikit/commit/63676305b1bfc894192de8e08c1b14d6d1eeff92) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - refactor banner strip
+
+*   [#872](https://github.com/web3ui/web3uikit/pull/872) [`69db5c41b`](https://github.com/web3ui/web3uikit/commit/69db5c41b366b6ee855d7cde64d5986a29dcea9f) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Change checkbox styles
+
+*   Updated dependencies [[`63676305b`](https://github.com/web3ui/web3uikit/commit/63676305b1bfc894192de8e08c1b14d6d1eeff92)]:
+    -   @web3uikit/icons@0.2.6
+
+## 0.2.5
+
+### Patch Changes
+
+-   [#866](https://github.com/web3ui/web3uikit/pull/866) [`1ad883ec7`](https://github.com/web3ui/web3uikit/commit/1ad883ec7fb6a8dc782401b450471f7d476a7831) Thanks [@0xTijan](https://github.com/0xTijan)! - Updated Upload Component
+
+*   [#870](https://github.com/web3ui/web3uikit/pull/870) [`dd18bd0cf`](https://github.com/web3ui/web3uikit/commit/dd18bd0cf84f25655d5915931053a1f27ff13028) Thanks [@Maki44](https://github.com/Maki44)! - add padding 0 to button theme text
+
 ## 0.2.4
 
 ### Patch Changes

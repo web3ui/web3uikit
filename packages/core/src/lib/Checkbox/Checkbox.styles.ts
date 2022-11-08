@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { color, fonts, resetCSS } from '@web3uikit/styles';
-
 import { CheckboxProps } from './types';
 
 const inputStyles = css`
@@ -19,7 +18,6 @@ const labelStyles = css`
     cursor: pointer;
     display: block;
     font-size: 18px;
-    margin-bottom: 4px;
     overflow: hidden;
     position: relative;
     width: fit-content;
@@ -30,9 +28,43 @@ const labelDisabled = css`
     pointer-events: none;
 `;
 
-const boxStyles = css`
-    padding-left: 28px;
+type TCheckboxStyles = Pick<CheckboxProps, 'align'>;
 
+const getBoxPositionStyles = ({ align }: TCheckboxStyles) => {
+    switch (align) {
+        case 'center':
+            return css`
+                &:before,
+                .after {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            `;
+        case 'bottom':
+            return css`
+                &:before {
+                    bottom: 0px;
+                }
+
+                .after {
+                    bottom: 1px;
+                }
+            `;
+        default:
+            return css`
+                &:before {
+                    top: 1px;
+                }
+
+                .after {
+                    top: 2px;
+                }
+            `;
+    }
+};
+
+const boxStyles = (props: TCheckboxStyles) => css`
+    padding-left: 28px;
     &:before,
     .after {
         border-radius: 5px;
@@ -42,7 +74,6 @@ const boxStyles = css`
         left: 0;
         pointer-events: none;
         position: absolute;
-        top: 1px;
         transition: all 0.1s ease-out;
         width: 20px;
     }
@@ -59,10 +90,9 @@ const boxStyles = css`
         justify-content: center;
         left: 1px;
         opacity: 0;
-        top: 2px;
         z-index: 1;
     }
-
+    ${getBoxPositionStyles(props)};
     &:hover {
         &:before {
             filter: brightness(95%);
@@ -86,7 +116,35 @@ const boxCheckedStyles = css`
     }
 `;
 
-const switchStyles = css`
+const getSwitchPositionStyles = ({ align }: TCheckboxStyles) => {
+    switch (align) {
+        case 'top':
+            return css`
+                &:before,
+                &:after {
+                    top: 14px;
+                }
+            `;
+
+        case 'bottom':
+            return css`
+                &:before,
+                &:after {
+                    top: calc(100% - 14px);
+                }
+            `;
+        default:
+            return css`
+                &:before,
+                &:after {
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+            `;
+    }
+};
+
+const switchStyles = (props: TCheckboxStyles) => css`
     padding-left: 48px;
 
     &:before {
@@ -98,7 +156,8 @@ const switchStyles = css`
         left: 3px;
         opacity: 0.4;
         position: absolute;
-        top: calc(50% - 7px);
+        top: calc(50%);
+        transform: translateY(-50%);
         transition: all 0.1s ease-out;
         width: 34px;
     }
@@ -112,11 +171,12 @@ const switchStyles = css`
         height: 20px;
         left: 0;
         position: absolute;
-        top: calc(50% - 11px);
+        top: calc(50%);
+        transform: translateY(-50%);
         transition: all 0.1s ease-out;
         width: 20px;
     }
-
+    ${getSwitchPositionStyles(props)}
     &:hover {
         &:after {
             filter: brightness(95%);
@@ -147,14 +207,23 @@ const StyledInput = styled.input<Pick<CheckboxProps, 'layout'>>`
 `;
 
 const StyledLabel = styled.label<
-    Pick<CheckboxProps, 'layout' | 'checked' | 'disabled'>
+    Pick<CheckboxProps, 'layout' | 'checked' | 'disabled' | 'align'>
 >`
     ${labelStyles}
     ${(p) => p.disabled && labelDisabled}
-    ${(p) => p.layout === 'box' && boxStyles}
+    ${(p) => p.layout === 'box' && boxStyles({ align: p.align })}
     ${(p) => p.layout === 'box' && p.checked && boxCheckedStyles}
-    ${(p) => p.layout === 'switch' && switchStyles}
-    ${(p) => p.layout === 'switch' && p.checked && switchOnStyles}
+    ${(p) => p.layout === 'switch' && switchStyles({ align: p.align })}
+    ${(p) => p.layout === 'switch' && p.checked && switchOnStyles};
+
 `;
 
-export default { StyledInput, StyledLabel };
+const SpanStyled = styled.span<{ isHidden: boolean }>`
+    ${(props) =>
+        props.isHidden &&
+        css`
+            visibility: collapse;
+        `}
+`;
+
+export default { StyledInput, StyledLabel, SpanStyled };

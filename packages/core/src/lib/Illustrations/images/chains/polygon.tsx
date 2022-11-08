@@ -1,12 +1,11 @@
-
-import type { Size } from '../../types';
+import { Size } from '../../types';
 
 const polygonLogo = (width: Size = '120', height: Size = '160') => {
     return (
         <svg
             width={width}
             height={height}
-            viewBox="0,0,120,160"
+            viewBox="0 0 120 160"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >

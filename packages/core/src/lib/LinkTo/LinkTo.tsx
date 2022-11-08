@@ -22,11 +22,8 @@ const LinkTo: React.FC<LinkToProps> = ({
 }) => {
     const renderContent = () => (
         <SpanStyledFlex iconLayout={iconLayout} data-testid="test-link-flex">
-            {iconLayout !== 'none' && icon ? (
-                <React.Fragment>{icon}</React.Fragment>
-            ) : (
-                type !== 'internal' &&
-                (type === 'email' ? (
+            {iconLayout !== 'none' && type !== 'internal' ? (
+                type === 'email' ? (
                     <Mail
                         title="mail icon"
                         titleId="linkto mail icon"
@@ -34,6 +31,8 @@ const LinkTo: React.FC<LinkToProps> = ({
                         fontSize={18}
                         style={{ marginTop: 'auto' }}
                     />
+                ) : icon ? (
+                    <React.Fragment>{icon}</React.Fragment>
                 ) : (
                     <Link
                         title="link icon"
@@ -42,7 +41,9 @@ const LinkTo: React.FC<LinkToProps> = ({
                         fontSize={18}
                         style={{ marginTop: 'auto' }}
                     />
-                ))
+                )
+            ) : (
+                icon && <React.Fragment>{icon}</React.Fragment>
             )}
             <Typography
                 data-testid="test-link-text"

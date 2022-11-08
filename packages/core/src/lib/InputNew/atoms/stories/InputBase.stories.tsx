@@ -19,7 +19,7 @@ const { numberMax, numberMin, characterMaxLength, characterMinLength } =
     inputBaseTestValidation;
 
 export default {
-    title: '2.Forms/InputNew/atoms/InputBase',
+    title: '2.Forms/atoms/InputBase',
     component: InputBase,
     parameters: {
         actions: {

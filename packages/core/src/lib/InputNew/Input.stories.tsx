@@ -6,8 +6,10 @@ import { validateRegExp } from '../../utils/const';
 export default {
     title: '2.Forms/InputNew',
     component: Input,
-    actions: {
-        handles: ['onChange', 'onBlur'],
+    parameters: {
+        actions: {
+            handles: ['onChange', 'onBlur'],
+        },
     },
 } as ComponentMeta<typeof Input>;
 

@@ -27,6 +27,7 @@ const Input: React.FC<IInputProps> = ({
     type = 'text',
     validation,
     value,
+    width,
     ...props
 }) => {
     const [currentValue, setCurrentValue] = useState(value);
@@ -85,7 +86,6 @@ const Input: React.FC<IInputProps> = ({
                     />
                 )}
 
-                {alert('custom input fun')}
                 {customInput && customInput}
 
                 <InputBase
@@ -105,6 +105,7 @@ const Input: React.FC<IInputProps> = ({
                     state={currentState}
                     testid="test-input-input"
                     type={inputType}
+                    width={width}
                 />
 
                 <LabelBase

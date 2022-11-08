@@ -223,7 +223,7 @@ importers:
       '@walletconnect/web3-provider': 1.7.8
       '@web3auth/web3auth': 1.1.1
       '@web3uikit/config': link:../config
-      '@web3uikit/core': link:../core
+      '@web3uikit/core': 0.2.7_biqbaboplfbrettd7655fr4n2y
       '@web3uikit/icons': link:../icons
       '@web3uikit/styles': link:../styles
       moralis: 1.9.0
@@ -249,7 +249,7 @@ importers:
       styled-components: ^5.3.5
     dependencies:
       '@web3uikit/config': link:../config
-      '@web3uikit/core': link:../core
+      '@web3uikit/core': 0.2.7_biqbaboplfbrettd7655fr4n2y
       '@web3uikit/icons': link:../icons
       '@web3uikit/styles': link:../styles
     devDependencies:
@@ -275,7 +275,7 @@ importers:
       wp5-cra-polyfill: github:oscario2/wp5-cra-polyfill#91431fa
     dependencies:
       '@web3uikit/config': link:../config
-      '@web3uikit/core': link:../core
+      '@web3uikit/core': 0.2.7_biqbaboplfbrettd7655fr4n2y
       '@web3uikit/icons': link:../icons
       '@web3uikit/styles': link:../styles
       '@web3uikit/web3': link:../web3
@@ -7019,6 +7019,46 @@ packages:
       - utf-8-validate
     dev: false
 
+  /@web3uikit/config/0.1.2:
+    resolution: {integrity: sha512-fOY0jxen7nEfivZc7BKm63WRcNEncidFhk+dIVR/0bj4tt5Xl0xyomPgyQqe38d3/PJ3RvqVTdupWFbWNJULkA==}
+    dev: false
+
+  /@web3uikit/core/0.2.7_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-pI6EYg8JwkkUN5MyiHtyoYqPwFnhnltQsD6gchNs4nQ9/RJI8SHqaM1BRF1+rrFewaXqa0s/NDI+nECCk9ikAQ==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@web3uikit/config': 0.1.2
+      '@web3uikit/icons': 0.2.6_biqbaboplfbrettd7655fr4n2y
+      '@web3uikit/styles': 0.2.4_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
+    dev: false
+
+  /@web3uikit/icons/0.2.6_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-Dn5P0C7VFt45ApMv0nub1P9aWU/i7o36ZttIJUgUNrc0c12yAGfCSXzoiahnRK04NcOjagopuTQe6LtwJ2wXhQ==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@web3uikit/config': 0.1.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /@web3uikit/styles/0.2.4_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-AR1t2nDeMiFjKGAnYtU7x7OrdHE0xLUy7dag2t4030gJi1OREuGjszzYR0WYtqWOi7ajREvivke44rc4m128cA==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    dependencies:
+      '@web3uikit/config': 0.1.2
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
+
   /@webassemblyjs/ast/1.11.1:
     resolution: {integrity: sha512-ukBh14qFLjxTQNTXocdyksN5QdM28S1CxHt2rdskFyL+xFV7VremuBLVbmCePj+URalXBENx/9Lm7lnhihtCSw==}
     dependencies:
@@ -8556,7 +8596,7 @@ packages:
       mississippi: 3.0.0
       mkdirp: 0.5.6
       move-concurrently: 1.0.1
-      promise-inflight: 1.0.1
+      promise-inflight: 1.0.1_bluebird@3.7.2
       rimraf: 2.7.1
       ssri: 6.0.2
       unique-filename: 1.1.1
@@ -16672,6 +16712,17 @@ packages:
     peerDependenciesMeta:
       bluebird:
         optional: true
+    dev: true
+
+  /promise-inflight/1.0.1_bluebird@3.7.2:
+    resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
+    peerDependencies:
+      bluebird: '*'
+    peerDependenciesMeta:
+      bluebird:
+        optional: true
+    dependencies:
+      bluebird: 3.7.2
     dev: true
 
   /promise-to-callback/1.0.0:

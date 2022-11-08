@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { color, fonts, resetCSS } from '@web3uikit/styles';
 import { IInputBaseProps, TInputStates, ILabelBaseProps } from './types';
 
-type TInputProps = Pick<IInputBaseProps, 'state' | 'type'>;
+type TInputProps = Pick<IInputBaseProps, 'state' | 'type' | 'width'>;
 type TLabelProps = Pick<
     ILabelBaseProps,
     'backgroundColor' | 'position' | 'state'
@@ -60,6 +60,7 @@ const InputStyled = styled.input<TInputProps>`
     border-radius: 16px;
     border: 1px solid ${color.gray30};
     display: block;
+    max-width: ${(p) => p.width || '100%'};
     padding: 18px;
     width: 100%;
 

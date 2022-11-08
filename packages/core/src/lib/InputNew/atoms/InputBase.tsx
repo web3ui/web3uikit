@@ -24,6 +24,7 @@ const InputBase: FC<IInputBaseProps> = ({
     regExp,
     required,
     state,
+    width,
     ...props
 }) => {
     return (
@@ -50,6 +51,7 @@ const InputBase: FC<IInputBaseProps> = ({
             required={required}
             state={state}
             type={type}
+            width={width}
             {...props}
         />
     );

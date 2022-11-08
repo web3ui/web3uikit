@@ -5,7 +5,7 @@ import { labelBaseTestValues } from '../values';
 const { id, required, testid, text } = labelBaseTestValues;
 
 export default {
-    title: '2.Forms/InputNew/atoms/LabelBase',
+    title: '2.Forms/atoms/LabelBase',
     component: LabelBase,
 } as ComponentMeta<typeof LabelBase>;
 

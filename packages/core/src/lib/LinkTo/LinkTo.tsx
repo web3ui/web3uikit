@@ -1,8 +1,9 @@
 import { Link, Mail } from '@web3uikit/icons';
-import { color } from '@web3uikit/styles';
+import { color as colorStyle } from '@web3uikit/styles';
 import { LinkToProps } from './types';
 import styles from './LinkTo.styles';
 import { Typography } from '../Typography';
+import React from 'react';
 
 const { InternalLinkStyled, LinkStyled, SpanStyledFlex, SpanStyledText } =
     styles;
@@ -13,18 +14,23 @@ const LinkTo: React.FC<LinkToProps> = ({
     text,
     type = 'external',
     isUnderlined = true,
-    textColor,
+    iconColor,
+    color,
+    onClick,
+    icon,
     ...props
 }) => {
     const renderContent = () => (
         <SpanStyledFlex iconLayout={iconLayout} data-testid="test-link-flex">
-            {iconLayout !== 'none' &&
+            {iconLayout !== 'none' && icon ? (
+                <React.Fragment>{icon}</React.Fragment>
+            ) : (
                 type !== 'internal' &&
                 (type === 'email' ? (
                     <Mail
                         title="mail icon"
                         titleId="linkto mail icon"
-                        fill={textColor || color.navy40}
+                        fill={iconColor || colorStyle.navy40}
                         fontSize={18}
                         style={{ marginTop: 'auto' }}
                     />
@@ -32,14 +38,15 @@ const LinkTo: React.FC<LinkToProps> = ({
                     <Link
                         title="link icon"
                         titleId="linkto link icon"
-                        fill={textColor || color.navy40}
+                        fill={iconColor || colorStyle.navy40}
                         fontSize={18}
                         style={{ marginTop: 'auto' }}
                     />
-                ))}
+                ))
+            )}
             <Typography
                 data-testid="test-link-text"
-                color={textColor || color.navy40}
+                color={color || colorStyle.navy40}
                 {...props}
             >
                 {text || address}
@@ -53,7 +60,8 @@ const LinkTo: React.FC<LinkToProps> = ({
             href={`${type === 'email' ? 'mailto:' : ''}${address}`}
             target={`${type === 'email' ? '_self' : '_blank'}`}
             isUnderlined={isUnderlined}
-            textColor={textColor}
+            textColor={color}
+            onClick={onClick}
         >
             {renderContent()}
         </LinkStyled>
@@ -62,7 +70,8 @@ const LinkTo: React.FC<LinkToProps> = ({
             data-testid="test-link-to"
             to={address}
             isUnderlined={isUnderlined}
-            textColor={textColor}
+            textColor={color}
+            onClick={onClick}
         >
             {renderContent()}
         </InternalLinkStyled>

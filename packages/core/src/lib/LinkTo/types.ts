@@ -1,4 +1,4 @@
-import { TypographyProps } from "../Typography";
+import { TypographyProps } from '../Typography';
 
 export const layoutState = ['leading', 'trailing', 'none'] as const;
 export type TLayoutState = typeof layoutState[number];
@@ -6,7 +6,12 @@ export type TLayoutState = typeof layoutState[number];
 export const typeState = ['email', 'external', 'internal'] as const;
 export type TTypeState = typeof typeState[number];
 
-export interface LinkToProps extends TypographyProps {
+type TTextProps = Pick<
+    TypographyProps,
+    'color' | 'variant' | 'italic' | 'monospace' | 'weight'
+>;
+
+export interface LinkToProps extends TTextProps {
     /**
      * what is the address you are linking to
      */
@@ -33,7 +38,18 @@ export interface LinkToProps extends TypographyProps {
     isUnderlined?: boolean;
 
     /**
-     * custom color (text, icon and underline)
+     * set the icon color
      */
-    textColor?: string;
+    iconColor?: string;
+
+    /**
+     * A function that will be called if the link is clicked
+     */
+
+    onClick?: (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+
+    /**
+     * set a custom icon
+     */
+    icon?: JSX.Element;
 }

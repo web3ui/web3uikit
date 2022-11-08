@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.10
+
+### Patch Changes
+
+-   [#876](https://github.com/web3ui/web3uikit/pull/876) [`23c684af6`](https://github.com/web3ui/web3uikit/commit/23c684af6438d19b057d752f93a1ed48b0c98fab) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add new svg for illustration and plop generator
+
 ## 0.2.9
 
 ### Patch Changes

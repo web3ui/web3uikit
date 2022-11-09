@@ -1,16 +1,33 @@
-import React, { RefObject } from 'react';
+import React from 'react';
+import { IInputBaseProps, TValidateInput } from './atoms/types';
 
-export interface IInputProps {
+export type TInputStates = 'initial' | 'error' | 'confirmed' | 'disabled';
+
+export type TResponse = {
     /**
-     * toggle browsers ability to auto complete the input
+     * a message that will be returned when validation is triggered
      */
-    autoComplete?: boolean;
+    message: string;
 
     /**
-     * Will automatically focus input on render
+     * the status of the validation check to set state
      */
-    autoFocus?: boolean;
+    result: TInputStates;
+};
 
+export type TSlots = {
+    /**
+     * pass elements to be rendered after (right of) this element
+     */
+    slotAfter?: JSX.Element[];
+
+    /**
+     * pass elements to be rendered before (left of) this element
+     */
+    slotBefore?: JSX.Element[];
+};
+
+export interface IInputProps extends IInputBaseProps {
     /**
      * Will replace input div with a JSX element
      */
@@ -22,14 +39,9 @@ export interface IInputProps {
     description?: string;
 
     /**
-     * it is best to set a unique ID for each input to verify change events
+     * error message
      */
-    id?: string;
-
-    /**
-     * ref object
-     */
-    ref?: RefObject<HTMLInputElement>;
+    errorMessage?: string;
 
     /**
      * please set a label, it really helps with accessibility
@@ -37,44 +49,24 @@ export interface IInputProps {
     label?: string;
 
     /**
-     * standard onChange that returns the entire event, as normal you can access event.target
+     * set the input label to be 'open' (label text above input)
      */
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    openByDefault?: boolean;
 
     /**
-     * standard onBlur that returns the entire event, it also checks validation rules
+     * if you use slots you'll need extra margin on your label
      */
-    onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+    setLabelMargin?: { left?: string; right?: string };
 
     /**
-     * a short piece of text to fill the input before the user interacts
+     * size of input
      */
-    placeholder?: string;
+    size?: 'regular' | 'large';
 
     /**
-     * Icon prefixIcon for the input field
+     * slot content in before of after this element
      */
-    prefixIcon?: React.ReactElement;
-
-    /**
-     * Icon prefixIcon for the input field
-     */
-    iconPosition?: 'front' | 'end';
-
-    /**
-     * types of input available
-     */
-    type?: 'text' | 'number' | 'email' | 'tel' | 'password';
-
-    /**
-     * standard HTML value prop
-     */
-    value?: string;
-
-    /**
-     * please give a descriptive name to the input, it help with accessibility
-     */
-    name?: string;
+    slots?: TSlots;
 
     /**
      * the input can use state to react to user interaction
@@ -87,100 +79,18 @@ export interface IInputProps {
     style?: React.CSSProperties;
 
     /**
-     * hides the input text when is true
-     */
-    inputHidden?: boolean;
-
-    /**
-     * input width
-     */
-    width?: string;
-
-    /**
-     * error message
-     */
-    errorMessage?: string;
-
-    /**
-     * shows copy icon
-     */
-    hasCopyButton?: boolean;
-
-    /**
-     * disables any interaction
-     */
-    disabled?: boolean;
-
-    /**
      * You can validate your inputs
      * required, characterMinLength, characterMaxLength, numberMin, numberMax, regExp , regExpInvalidMessage
      */
     validation?: TValidateInput;
 
     /**
-     * size of input
+     * standard HTML value prop
      */
-    size?: 'regular' | 'large';
+    value?: string;
 
     /**
-     * color of label background
+     * input width
      */
-    labelBgColor?: string;
+    width?: string;
 }
-
-export type TInputStates = 'initial' | 'error' | 'confirmed' | 'disabled';
-
-export interface ILabelProps {
-    /**
-     * true if the label is defined
-     */
-    hasPrefix: boolean;
-
-    /**
-     * color of label background
-     */
-    labelBgColor?: string;
-}
-
-export type TValidateInput = {
-    /**
-     * is the input required
-     */
-    required?: boolean;
-
-    /**
-     * min length of characters that can be entered
-     */
-    characterMinLength?: number;
-
-    /**
-     * max length of characters that can be entered
-     */
-    characterMaxLength?: number;
-
-    /**
-     * min number validation is only for number inputs
-     */
-    numberMin?: number;
-
-    /**
-     * max number validation is only for number inputs
-     */
-    numberMax?: number;
-
-    /**
-     * a RegExp for this input passed as a string
-     * EG: [A-Za-z] to only allow letters
-     */
-    regExp?: string;
-
-    /**
-     * user feedback text if the RegExp fails to pass
-     */
-    regExpInvalidMessage?: string;
-};
-
-export type TResponse = {
-    message: string;
-    result: TInputStates;
-};

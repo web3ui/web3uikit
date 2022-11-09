@@ -1,5 +1,6 @@
 import React from 'react';
-import type { TInputStates, TValidateInput, TResponse } from './types';
+import type { TResponse } from './types';
+import type { TInputStates, TValidateInput } from './atoms/types';
 
 export const inputValidation = (
     event: React.ChangeEvent<HTMLInputElement>,
@@ -30,8 +31,14 @@ export const inputValidation = (
         response.message = event?.target.validationMessage || errorMessage;
         response.result = 'error';
         return response;
-    } else {
+    }
+
+    // finally if all pass but the Input is in error state
+    if (currentState === 'error') {
+        response.message = '';
         response.result = 'confirmed';
         return response;
     }
+
+    return response;
 };

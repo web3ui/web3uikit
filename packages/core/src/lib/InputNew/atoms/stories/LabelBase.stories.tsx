@@ -1,11 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import LabelBase from '../LabelBase';
-import { labelBaseTestValues } from '../values';
-
-const { id, required, testid, text } = labelBaseTestValues;
+import { testLabelId } from '../tests/values';
 
 export default {
-    title: '2.Forms/atoms/LabelBase',
+    title: '2.Forms/InputNew/atoms/LabelBase',
     component: LabelBase,
 } as ComponentMeta<typeof LabelBase>;
 
@@ -15,18 +13,17 @@ const Template: ComponentStory<typeof LabelBase> = (args) => (
 
 export const LabelBaseDefault = Template.bind({});
 LabelBaseDefault.args = {
-    backgroundColor: 'transparent',
-    id: id,
-    testid: testid,
-    text: text,
+    id: 'label-base',
+    testid: testLabelId,
+    text: 'Labels are good for accessibility',
 };
 LabelBaseDefault.storyName = 'Label Base';
 
 export const LabelBaseRequired = Template.bind({});
 LabelBaseRequired.args = {
-    id: id,
-    required: required,
-    testid: testid,
-    text: text,
+    id: 'label-base',
+    required: true,
+    testid: testLabelId,
+    text: 'Required Label',
 };
-LabelBaseRequired.storyName = 'Label Base Required';
+LabelBaseRequired.storyName = 'Label Required';

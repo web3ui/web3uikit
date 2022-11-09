@@ -1,35 +1,24 @@
-import * as stories from '../InputBase.stories';
+import * as stories from '../stories/InputBase.stories';
 import { expect, test, vi } from 'vitest';
 import { fireEvent } from '@testing-library/react';
 import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
-import { inputBaseTestValues } from '../values';
-
-const {
-    autoComplete,
-    defaultValue,
-    disabled,
-    name,
-    placeholder,
-    required,
-    testId,
-    type,
-} = inputBaseTestValues;
+import { testInputId } from './values';
 
 const {
     InputBaseDefault,
-    InputBaseDisabled,
     InputBaseFocus,
-    InputBaseProps,
-    InputBaseNumber,
+    InputBasePassword,
+    InputBaseDisabled,
     InputBaseValidation,
+    InputBaseNumber,
 } = composeStories(stories);
 
 const testEvent = vi.fn();
 
 test('Renders Input Base', () => {
     render(<InputBaseDefault />);
-    const element: HTMLInputElement = screen.getByTestId(testId);
+    const element: HTMLInputElement = screen.getByTestId(testInputId);
     expect(element).not.toBeNull();
     expect(element.id).toBe(InputBaseDefault.args?.id);
 });
@@ -38,7 +27,7 @@ test('Renders Input Autofocus change & blur', () => {
     render(
         <InputBaseFocus onChange={(e) => testEvent(e.currentTarget.value)} />,
     );
-    const element: HTMLInputElement = screen.getByTestId(testId);
+    const element: HTMLInputElement = screen.getByTestId(testInputId);
     expect(element).not.toBeNull();
     // no need to focus() its already in focus
     fireEvent.change(element, { target: { value: 'foo' } });
@@ -48,26 +37,34 @@ test('Renders Input Autofocus change & blur', () => {
 });
 
 test('Renders Input Base Props', () => {
-    render(<InputBaseProps />);
-    const element: HTMLInputElement = screen.getByTestId(testId);
+    render(<InputBasePassword />);
+    const element: HTMLInputElement = screen.getByTestId(testInputId);
     expect(element).not.toBeNull();
-    expect(element.getAttribute('name')).toBe(name);
-    expect(element.getAttribute('type')).toBe(type);
-    expect(element.getAttribute('value')).toBe(defaultValue);
-    expect(element.hasAttribute('autoComplete')).toBe(autoComplete);
+    expect(element.getAttribute('name')).toBe(InputBasePassword.args?.name);
+    expect(element.getAttribute('type')).toBe(InputBasePassword.args?.type);
+    expect(element.getAttribute('value')).toBe(
+        InputBasePassword.args?.defaultValue,
+    );
+    expect(element.hasAttribute('autoComplete')).toBe(
+        InputBasePassword.args?.autoComplete,
+    );
 });
 
 test('Renders Input disabled & placeholder', () => {
     render(<InputBaseDisabled />);
-    const element: HTMLInputElement = screen.getByTestId(testId);
+    const element: HTMLInputElement = screen.getByTestId(testInputId);
     expect(element).not.toBeNull();
-    expect(element.getAttribute('placeholder')).toBe(placeholder);
-    expect(element.hasAttribute('disabled')).toBe(disabled);
+    expect(element.getAttribute('placeholder')).toBe(
+        InputBaseDisabled.args?.placeholder,
+    );
+    expect(element.hasAttribute('disabled')).toBe(
+        InputBaseDisabled.args?.disabled,
+    );
 });
 
 test('Renders Input type with min and max', () => {
     render(<InputBaseNumber />);
-    const element: HTMLInputElement = screen.getByTestId(testId);
+    const element: HTMLInputElement = screen.getByTestId(testInputId);
     expect(element).not.toBeNull();
     expect(element.getAttribute('type')).toBe(InputBaseNumber.args?.type);
     expect(element.getAttribute('max')).toBe(String(InputBaseNumber.args?.max));
@@ -76,7 +73,7 @@ test('Renders Input type with min and max', () => {
 
 test('Renders Input validation', () => {
     render(<InputBaseValidation />);
-    const element: HTMLInputElement = screen.getByTestId(testId);
+    const element: HTMLInputElement = screen.getByTestId(testInputId);
     expect(element).not.toBeNull();
     expect(element.getAttribute('maxlength')).toBe(
         String(InputBaseValidation.args?.maxLength),
@@ -88,5 +85,10 @@ test('Renders Input validation', () => {
         String(InputBaseValidation.args?.regExp),
     );
     expect(element.getAttribute('type')).toBe(InputBaseValidation.args?.type);
-    expect(element.hasAttribute('required')).toBe(required);
+    expect(element.getAttribute('pattern')).toBe(
+        InputBaseValidation.args?.regExp,
+    );
+    expect(element.hasAttribute('required')).toBe(
+        InputBaseValidation.args?.required,
+    );
 });

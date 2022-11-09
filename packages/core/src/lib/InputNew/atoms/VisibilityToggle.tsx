@@ -41,10 +41,7 @@ const DivStyled = styled.button`
     height: 100%;
     justify-content: center;
     max-width: 24px;
-    position: absolute;
-    right: 16px;
-    top: 0;
-    width: 100%;
+    width: 24px;
     z-index: 2;
 
     &:hover > svg {

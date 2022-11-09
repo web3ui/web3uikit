@@ -1,30 +1,28 @@
 import { FC } from 'react';
 import { IInputBaseProps } from './types';
-import { inputBaseTestValues } from './values';
 import styles from './styles';
 
 const { InputStyled } = styles;
-const { testid } = inputBaseTestValues;
 
 const InputBase: FC<IInputBaseProps> = ({
     autoComplete = true,
     autoFocus = false,
-    disabled = false,
+    characterMaxLength,
+    characterMinLength,
     defaultValue,
+    disabled = false,
     id,
     name,
+    numberMax,
+    numberMin,
     onBlur,
     onChange,
+    onFocus,
     placeholder,
-    type = 'text',
-    max,
-    min,
-    maxLength,
-    minLength,
     regExp,
     required,
-    state,
-    width,
+    testid,
+    type = 'text',
     ...props
 }) => {
     return (
@@ -34,11 +32,11 @@ const InputBase: FC<IInputBaseProps> = ({
             disabled={disabled}
             data-testid={testid}
             defaultValue={defaultValue}
-            id={id}
-            max={type === 'number' ? max : undefined}
-            maxLength={maxLength}
-            min={type === 'number' ? min : undefined}
-            minLength={minLength}
+            id={id || 'input-base'}
+            max={type === 'number' ? numberMax : undefined}
+            maxLength={characterMaxLength}
+            min={type === 'number' ? numberMin : undefined}
+            minLength={characterMinLength}
             name={name || type + ' input'}
             onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
                 onBlur && onBlur(event)
@@ -46,12 +44,13 @@ const InputBase: FC<IInputBaseProps> = ({
             onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                 onChange && onChange(event)
             }
+            onFocus={(event: React.FocusEvent<HTMLInputElement>) =>
+                onFocus && onFocus(event)
+            }
             pattern={regExp}
             placeholder={placeholder}
             required={required}
-            state={state}
             type={type}
-            width={width}
             {...props}
         />
     );

@@ -8,7 +8,7 @@ export default {
     component: Input,
     parameters: {
         actions: {
-            handles: ['onChange', 'onBlur'],
+            handles: ['onBlur', 'onChange', 'onFocus'],
         },
     },
 } as ComponentMeta<typeof Input>;
@@ -21,6 +21,14 @@ InputNew.args = {
     placeholder: 'try me',
 };
 InputNew.storyName = 'Input';
+
+export const InputOpen = Template.bind({});
+InputOpen.args = {
+    label: 'New Improved Input',
+    openByDefault: true,
+    placeholder: 'try me',
+};
+InputOpen.storyName = 'Input Open';
 
 export const InputNumber = Template.bind({});
 InputNumber.args = {
@@ -84,24 +92,51 @@ InputConfirmed.args = {
 };
 InputConfirmed.storyName = 'Input Confirmed';
 
-export const InputPrefix = Template.bind({});
-InputPrefix.args = {
-    iconPosition: 'end',
-    label: 'Label text',
-    name: 'Test text Input',
-    prefixIcon: <Server />,
-    type: 'text',
-};
-InputPrefix.storyName = 'Input Icon';
-
 export const InputDisabled = Template.bind({});
 InputDisabled.args = {
     disabled: true,
-    iconPosition: 'end',
     label: 'Label text',
     name: 'Test text Input',
-    prefixIcon: <Server />,
     type: 'password',
     value: 'MoralisToTheMoon',
 };
 InputDisabled.storyName = 'Input Disabled';
+
+export const InputSlots = Template.bind({});
+InputSlots.args = {
+    label: 'New Improved Input',
+    placeholder: 'try me',
+    type: 'password',
+    setLabelMargin: {
+        left: '120px',
+        right: '120px',
+    },
+    slots: {
+        slotAfter: [
+            <Server height={24} width={24}>
+                bye
+            </Server>,
+        ],
+        slotBefore: [<button>hi</button>, <span>there</span>],
+    },
+};
+InputSlots.storyName = 'Input Slots';
+
+export const InputCustom = Template.bind({});
+InputCustom.args = {
+    customInput: (
+        <input
+            style={{
+                border: 'none',
+                outline: 'none',
+                padding: '18px',
+                width: '100%',
+            }}
+            placeholder="i am a custom input"
+        />
+    ),
+    label: 'Rayyan needs this for Stripe',
+    name: 'Test text Input',
+    openByDefault: true,
+};
+InputCustom.storyName = 'Input Custom';

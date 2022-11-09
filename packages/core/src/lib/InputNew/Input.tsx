@@ -5,9 +5,13 @@ import { inputValidation } from './InputValidation';
 import InputBase from './atoms/InputBase';
 import LabelBase from './atoms/LabelBase';
 import VisibilityToggle from './atoms/VisibilityToggle';
-import PrefixIcon from './atoms/PrefixIcon';
 
-const { DivStyled, StrongStyledDescription, StrongStyledFeedback } = styles;
+const {
+    DivStyled,
+    DivStyledInner,
+    StrongStyledDescription,
+    StrongStyledFeedback,
+} = styles;
 
 const Input: React.FC<IInputProps> = ({
     autoComplete,
@@ -16,29 +20,29 @@ const Input: React.FC<IInputProps> = ({
     description,
     disabled,
     errorMessage = 'Sorry this is not valid',
-    iconPosition,
     id,
     label,
     onBlur,
     onChange,
+    onFocus,
+    openByDefault,
     placeholder,
-    prefixIcon,
+    setLabelMargin,
     state = disabled ? 'disabled' : undefined,
+    slots,
     type = 'text',
     validation,
     value,
     width,
     ...props
 }) => {
-    const [currentValue, setCurrentValue] = useState(value);
     const [currentState, setCurrentState] = useState(state);
-    const [invalidMessage, setInvalidMessage] = useState(errorMessage);
+    const [currentValue, setCurrentValue] = useState(value);
+    const [inputInFocus, setInputInFocus] = useState(autoFocus);
     const [inputType, setInputType] = useState(type);
+    const [invalidMessage, setInvalidMessage] = useState(errorMessage);
 
     const hasValidation = Boolean(validation);
-    const isPasswordWithEndIcon = Boolean(
-        prefixIcon && iconPosition === 'end' && type === 'password',
-    );
 
     const onValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setCurrentValue(event.currentTarget.value);
@@ -70,58 +74,86 @@ const Input: React.FC<IInputProps> = ({
         }
     };
 
+    const onBlurEvent = (event: React.FocusEvent<HTMLInputElement>) => {
+        validate(event);
+        setInputInFocus(false);
+    };
+
+    const onFocusEvent = (event: React.FocusEvent<HTMLInputElement>) => {
+        setInputInFocus(true);
+    };
+
     return (
         <>
             <DivStyled
-                className={Boolean(currentValue) ? 'filled' : 'blank'}
+                className={`${
+                    Boolean(currentValue || openByDefault) ? 'filled' : 'blank'
+                } ${Boolean(inputInFocus) ? 'focus' : 'blur'}`}
                 data-testid="test-input"
                 disabled={disabled}
+                setLabelMargin={setLabelMargin}
+                state={currentState}
+                width={width}
                 {...props}
             >
-                {prefixIcon && (
-                    <PrefixIcon
-                        position={iconPosition || 'front'}
-                        icon={prefixIcon}
-                        isPasswordWithEndIcon={isPasswordWithEndIcon}
+                {label && (
+                    <LabelBase
+                        id={id || 'web3uiKit-input'}
+                        testid="test-input-label"
+                        text={label}
                     />
                 )}
 
-                {customInput && customInput}
+                <DivStyledInner>
+                    {slots &&
+                        slots.slotBefore?.map((slotItem) => (
+                            <span className="slot slot-before">{slotItem}</span>
+                        ))}
 
-                <InputBase
-                    autoComplete={autoComplete}
-                    autoFocus={autoFocus}
-                    defaultValue={value}
-                    id={id || 'web3uiKit-input'}
-                    max={validation?.numberMax}
-                    maxLength={validation?.characterMaxLength}
-                    min={validation?.numberMin}
-                    minLength={validation?.characterMinLength}
-                    onBlur={(e) => validate(e)}
-                    onChange={(e) => onValueChange(e)}
-                    placeholder={placeholder}
-                    regExp={validation?.regExp}
-                    required={validation?.required}
-                    state={currentState}
-                    testid="test-input-input"
-                    type={inputType}
-                    width={width}
-                />
+                    {customInput && customInput}
 
-                <LabelBase
-                    id={id || 'web3uiKit-input'}
-                    position="absolute"
-                    state={currentState}
-                    testid="test-input-label"
-                    text={label}
-                />
-
-                {type === 'password' && (
-                    <VisibilityToggle
-                        isInputHidden={Boolean(inputType === 'password')}
-                        onClick={() => onToggleShowPassword()}
+                    <InputBase
+                        autoComplete={autoComplete}
+                        autoFocus={autoFocus}
+                        characterMaxLength={
+                            validation?.characterMaxLength ||
+                            props.characterMaxLength
+                        }
+                        characterMinLength={
+                            validation?.characterMinLength ||
+                            props.characterMinLength
+                        }
+                        defaultValue={value || props.defaultValue}
+                        disabled={disabled || state === 'disabled'}
+                        id={id || 'web3uiKit-input'}
+                        numberMax={validation?.numberMax || props.numberMax}
+                        numberMin={validation?.numberMin || props.numberMin}
+                        onBlur={(e) => onBlurEvent(e)}
+                        onChange={(e) => onValueChange(e)}
+                        onFocus={(e) => onFocusEvent(e)}
+                        placeholder={placeholder}
+                        regExp={validation?.regExp || props.regExp}
+                        required={validation?.required || props.required}
+                        testid="test-input-input"
+                        type={inputType}
                     />
-                )}
+
+                    {slots &&
+                        slots.slotAfter?.map((slotItem) => (
+                            <span className="slot slot-after">{slotItem}</span>
+                        ))}
+
+                    {type === 'password' && (
+                        <span className="slot slot-after">
+                            <VisibilityToggle
+                                isInputHidden={Boolean(
+                                    inputType === 'password',
+                                )}
+                                onClick={() => onToggleShowPassword()}
+                            />
+                        </span>
+                    )}
+                </DivStyledInner>
 
                 {currentState === 'error' && (
                     <StrongStyledFeedback data-testid="test-input-feedback">

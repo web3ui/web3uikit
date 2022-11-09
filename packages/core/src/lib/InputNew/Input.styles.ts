@@ -1,8 +1,11 @@
 import styled, { css } from 'styled-components';
 import { color, fonts, resetCSS } from '@web3uikit/styles';
-import baseStyles from './atoms/styles';
+import { IInputProps, TInputStates } from './types';
 
-const { inputFocusedOrFilled } = baseStyles;
+type TInputProps = Pick<
+    IInputProps,
+    'disabled' | 'setLabelMargin' | 'state' | 'width'
+>;
 
 const inputDisabled = css`
     filter: grayscale(1);
@@ -10,16 +13,123 @@ const inputDisabled = css`
     pointer-events: none;
 `;
 
-const DivStyled = styled.div<{ disabled?: boolean }>`
-    display: block;
-    margin-top: 12px;
-    position: relative;
+const getColorByState = (state: TInputStates, defaultColor: string) => {
+    switch (state) {
+        case 'error':
+            return color.red40;
+        case 'confirmed':
+            return color.mint40;
+        case 'disabled':
+            return color.gray30;
+        default:
+            return defaultColor;
+    }
+};
 
-    &.filled label {
-        ${(filled) => filled && inputFocusedOrFilled};
+const DivStyled = styled.div<TInputProps>`
+    ${resetCSS};
+    ${fonts.text}
+    background-color: ${color.white};
+    border-radius: 16px;
+    border: 1px solid
+        ${(p) => p.state && getColorByState(p.state, color.gray30)};
+    display: block;
+    max-width: ${(p) => p.width || '100%'};
+    position: relative;
+    width: 100%;
+
+    label {
+        background-color: white;
+        height: 24px;
+        left: ${(p) => p.setLabelMargin?.left || '18px'};
+        overflow: hidden;
+        position: absolute;
+        text-overflow: ellipsis;
+        top: calc(50% - (24px / 2));
+        transition: all 0.1s ease-out;
+        white-space: nowrap;
+        right: ${(p) => p.setLabelMargin?.right || '18px'};
+        z-index: 1;
     }
 
-    ${({ disabled }) => disabled && inputDisabled};
+    input + input {
+        display: none;
+    }
+
+    &.focus label,
+    &.filled label {
+        background-color: transparent;
+        border-radius: 4px;
+        left: 14px;
+        top: -14px;
+
+        span {
+            color: ${(p) => p.state && getColorByState(p.state, color.navy40)};
+            font-size: 12px;
+            font-weight: 550;
+            overflow: hidden;
+            padding: 2px 4px;
+            position: relative;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: calc(100% - (18px * 2));
+            z-index: 1;
+
+            &::before {
+                background-color: ${color.white};
+                content: '';
+                display: block;
+                height: 100%;
+                left: 0%;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        }
+    }
+
+    &.focus {
+        box-shadow: 0px 0px 0px 3px ${color.navy30};
+    }
+
+    &:hover {
+        border-color: ${color.navy30};
+    }
+
+    ${(p) => p.disabled && inputDisabled};
+`;
+
+const DivStyledInner = styled.div`
+    ${resetCSS};
+    align-items: stretch;
+    border-radius: 16px;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 100%;
+
+    .slot {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+        margin: 0;
+        padding: 10px;
+        position: relative;
+    }
+
+    .slot + .slot:before {
+        background-color: ${color.navy20};
+        content: '';
+        display: block;
+        height: 60%;
+        left: 0px;
+        position: absolute;
+        top: 20%;
+        width: 1px;
+    }
 `;
 
 const StrongStyledDescription = styled.strong`
@@ -57,6 +167,7 @@ const StrongStyledFeedback = styled.strong`
 
 export default {
     DivStyled,
+    DivStyledInner,
     StrongStyledDescription,
     StrongStyledFeedback,
 };

@@ -1,3 +1,4 @@
+import { color } from '@web3uikit/styles';
 export interface IPlanCardProps {
     /**
      * the description/features of the current plan
@@ -22,7 +23,7 @@ export interface IPlanCardProps {
     /**
      * the title component of the Card
      */
-    title: JSX.Element;
+    title?: JSX.Element;
 
     /**
      * the subtitle component of the Card
@@ -33,4 +34,25 @@ export interface IPlanCardProps {
      * the description title component of the Card
      */
     descriptionTitle: string;
+
+    /**
+     * a horizontal line on the top
+     */
+    horizontalLine: boolean;
+
+    /**
+     * border color
+     */
+    borderColor: typeof color | string;
+
+    /**
+     * Card background color
+     */
+    backgroundColor?: typeof color | string;
+
+    /**
+     * Custom icon for description list
+     */
+
+    icon?: JSX.Element;
 }

@@ -5,7 +5,7 @@ import { color } from '@web3uikit/styles';
 import { Check } from '@web3uikit/icons';
 import YourPlanButton from './Components/YourPlanButton';
 
-const { DivStyled, DivStyledFeatures, DivStyledCardFooter } = styles;
+const { DivStyled, DivStyledFeatures, DivStyledCardFooter, HrStyled } = styles;
 
 const PlanCard: React.FC<IPlanCardProps> = ({
     description,
@@ -15,6 +15,10 @@ const PlanCard: React.FC<IPlanCardProps> = ({
     title,
     isActive,
     isCurrentPlan,
+    horizontalLine = false,
+    borderColor = color.navy40,
+    backgroundColor = color.white,
+    icon,
     ...props
 }) => {
     return (
@@ -22,30 +26,40 @@ const PlanCard: React.FC<IPlanCardProps> = ({
             className="PlanCard"
             data-testid="test-plan-card"
             isActive={isActive}
+            borderColor={borderColor}
+            backgroundColor={backgroundColor}
             {...props}
         >
             <Typography variant="subtitle1" weight="600" color={color.blue70}>
                 {subTitle}
             </Typography>
-            <Typography>{title}</Typography>
+            {horizontalLine ? (
+                <HrStyled borderColor={borderColor} />
+            ) : (
+                <Typography>{title}</Typography>
+            )}
+            <Typography
+                variant="caption14"
+                weight="semibold"
+                color={color.blue70}
+                style={{ marginBottom: '16px' }}
+            >
+                {descriptionTitle}
+            </Typography>
             <DivStyledFeatures>
-                <Typography
-                    variant="caption14"
-                    weight="semibold"
-                    color={color.blue70}
-                >
-                    {descriptionTitle}
-                </Typography>
                 {description.map((feature, index) => (
                     <div key={index}>
-                        <Check
-                            title="check icon"
-                            titleId="plan-card check icon"
-                            fill={color.mint40}
-                        />
+                        {icon ? (
+                            <>{icon}</>
+                        ) : (
+                            <Check
+                                title="check icon"
+                                titleId="plan-card check icon"
+                                fill={color.mint40}
+                            />
+                        )}
                         <Typography
                             variant="caption14"
-                            weight="semibold"
                             color={color.blueGray50}
                         >
                             {feature}
@@ -54,6 +68,7 @@ const PlanCard: React.FC<IPlanCardProps> = ({
                 ))}
             </DivStyledFeatures>
             <DivStyledCardFooter>
+                {horizontalLine && <Typography>{title}</Typography>}
                 {isCurrentPlan ? <YourPlanButton /> : footer}
             </DivStyledCardFooter>
         </DivStyled>

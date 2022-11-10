@@ -2,7 +2,7 @@ import * as stories from '../stories/LabelBase.stories';
 import { expect, test } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
-import { testLabelId } from './values';
+import { testLabelId } from '../values';
 
 const { LabelBaseDefault, LabelBaseRequired } = composeStories(stories);
 

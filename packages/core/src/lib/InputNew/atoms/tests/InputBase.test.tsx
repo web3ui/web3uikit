@@ -3,7 +3,7 @@ import { expect, test, vi } from 'vitest';
 import { fireEvent } from '@testing-library/react';
 import { render, screen } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
-import { testInputId } from './values';
+import { testInputId } from '../values';
 
 const {
     InputBaseDefault,
@@ -82,12 +82,9 @@ test('Renders Input validation', () => {
         String(InputBaseValidation.args?.minLength),
     );
     expect(element.getAttribute('pattern')).toBe(
-        String(InputBaseValidation.args?.regExp),
+        String(InputBaseValidation.args?.pattern),
     );
     expect(element.getAttribute('type')).toBe(InputBaseValidation.args?.type);
-    expect(element.getAttribute('pattern')).toBe(
-        InputBaseValidation.args?.regExp,
-    );
     expect(element.hasAttribute('required')).toBe(
         InputBaseValidation.args?.required,
     );

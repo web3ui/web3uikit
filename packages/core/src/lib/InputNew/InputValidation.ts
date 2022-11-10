@@ -14,8 +14,8 @@ export const inputValidation = (
     };
 
     // check for the value passes the custom RegExp
-    if (validation?.regExp) {
-        const re = new RegExp(validation?.regExp);
+    if (validation?.pattern) {
+        const re = new RegExp(validation?.pattern);
         if (!re.test(event?.target.value)) {
             response.message = `${
                 validation?.regExpInvalidMessage ||

@@ -63,8 +63,8 @@ const Slider: React.FC<ISliderProps> = ({
             />
             {markers.length > 0 && (
                 <DivStyledMarker>
-                    {markers.map((marker) => (
-                        <p>{marker}</p>
+                    {markers.map((marker, i) => (
+                        <p key={`marker-${i}`}>{marker}</p>
                     ))}
                 </DivStyledMarker>
             )}

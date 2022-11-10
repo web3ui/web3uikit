@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import InputBase from '../InputBase';
-import { testInputId } from '../tests/values';
+import { testInputId } from '../values';
 import { validateRegExp } from '../../../../utils/const';
 
 export default {
@@ -14,13 +14,12 @@ export default {
 } as ComponentMeta<typeof InputBase>;
 
 const Template: ComponentStory<typeof InputBase> = (args) => (
-    <InputBase {...args} />
+    <InputBase {...args} testid={testInputId} />
 );
 
 export const InputBaseDefault = Template.bind({});
 InputBaseDefault.args = {
     id: 'input-base',
-    testid: testInputId,
 };
 InputBaseDefault.storyName = 'Input Base';
 
@@ -28,7 +27,6 @@ export const InputBaseFocus = Template.bind({});
 InputBaseFocus.args = {
     autoFocus: true,
     id: 'input-base',
-    testid: testInputId,
 };
 InputBaseFocus.storyName = 'Input Autofocus';
 
@@ -38,7 +36,6 @@ InputBasePassword.args = {
     defaultValue: 'default value',
     id: 'input-base',
     name: 'input base',
-    testid: testInputId,
     type: 'password',
 };
 InputBasePassword.storyName = 'Input Password';
@@ -48,7 +45,6 @@ InputBaseDisabled.args = {
     disabled: true,
     id: 'input-base',
     placeholder: 'Placeholder text',
-    testid: testInputId,
 };
 InputBaseDisabled.storyName = 'Input Disabled';
 
@@ -58,9 +54,8 @@ InputBaseValidation.args = {
     maxLength: 10,
     minLength: 0,
     placeholder: 'max 10 characters',
-    regExp: validateRegExp.lettersOnly,
+    pattern: validateRegExp.lettersOnly,
     required: true,
-    testid: testInputId,
     type: 'text',
 };
 InputBaseValidation.storyName = 'Input Validate Text';
@@ -71,7 +66,6 @@ InputBaseNumber.args = {
     max: 10,
     min: 0,
     placeholder: '0',
-    testid: testInputId,
     type: 'number',
 };
 InputBaseNumber.storyName = 'Input Validate Number';

@@ -15,12 +15,12 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const InputNew = Template.bind({});
-InputNew.args = {
+export const InputDefault = Template.bind({});
+InputDefault.args = {
     label: 'New Improved Input',
     placeholder: 'try me',
 };
-InputNew.storyName = 'Input';
+InputDefault.storyName = 'Input';
 
 export const InputOpen = Template.bind({});
 InputOpen.args = {
@@ -36,8 +36,8 @@ InputNumber.args = {
     placeholder: '10 out of 10?',
     type: 'number',
     validation: {
-        numberMin: 1,
-        numberMax: 10,
+        min: 1,
+        max: 10,
     },
 };
 InputNumber.storyName = 'Input Number';
@@ -46,10 +46,12 @@ export const InputEmail = Template.bind({});
 InputEmail.args = {
     label: 'Enter your email',
     placeholder: 'hello@moralis.io',
+    type: 'email',
     validation: {
         required: true,
-        characterMaxLength: 48,
-        regExp: validateRegExp.email,
+        maxLength: 48,
+        minLength: 1,
+        pattern: validateRegExp.email,
         regExpInvalidMessage: 'That is not a valid email address',
     },
 };
@@ -61,8 +63,8 @@ InputPassword.args = {
     type: 'password',
     value: 'moralis123',
     validation: {
-        characterMaxLength: 32,
-        characterMinLength: 8,
+        maxLength: 32,
+        minLength: 8,
     },
 };
 InputPassword.storyName = 'Input Password';

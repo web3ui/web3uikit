@@ -7,19 +7,19 @@ const { InputStyled } = styles;
 const InputBase: FC<IInputBaseProps> = ({
     autoComplete = true,
     autoFocus = false,
-    characterMaxLength,
-    characterMinLength,
+    maxLength,
+    minLength,
     defaultValue,
     disabled = false,
     id,
     name,
-    numberMax,
-    numberMin,
+    max,
+    min,
     onBlur,
     onChange,
     onFocus,
+    pattern,
     placeholder,
-    regExp,
     required,
     testid,
     type = 'text',
@@ -33,10 +33,10 @@ const InputBase: FC<IInputBaseProps> = ({
             data-testid={testid}
             defaultValue={defaultValue}
             id={id || 'input-base'}
-            max={type === 'number' ? numberMax : undefined}
-            maxLength={characterMaxLength}
-            min={type === 'number' ? numberMin : undefined}
-            minLength={characterMinLength}
+            max={type === 'number' ? max : undefined}
+            maxLength={maxLength}
+            min={type === 'number' ? min : undefined}
+            minLength={minLength}
             name={name || type + ' input'}
             onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
                 onBlur && onBlur(event)
@@ -47,7 +47,7 @@ const InputBase: FC<IInputBaseProps> = ({
             onFocus={(event: React.FocusEvent<HTMLInputElement>) =>
                 onFocus && onFocus(event)
             }
-            pattern={regExp}
+            pattern={pattern}
             placeholder={placeholder}
             required={required}
             type={type}

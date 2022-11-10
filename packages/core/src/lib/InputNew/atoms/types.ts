@@ -4,27 +4,27 @@ export type TValidateInput = {
     /**
      * validation, the maximum amount of characters allowed in an input
      */
-    characterMaxLength?: number;
+    maxLength?: number;
 
     /**
      * validation, the minimum amount of characters allowed in an input
      */
-    characterMinLength?: number;
+    minLength?: number;
 
     /**
      * validation, the maximum number value allowed in a number type input
      */
-    numberMax?: number;
+    max?: number;
 
     /**
      * validation, the minimum number value allowed in a number type input
      */
-    numberMin?: number;
+    min?: number;
 
     /**
      * validation, give the input regex the user must match
      */
-    regExp?: string;
+    pattern?: string;
 
     /**
      * user feedback text if the RegExp fails to pass

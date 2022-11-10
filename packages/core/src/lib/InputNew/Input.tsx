@@ -41,21 +41,7 @@ const Input: React.FC<IInputProps> = ({
     const [inputInFocus, setInputInFocus] = useState(autoFocus);
     const [inputType, setInputType] = useState(type);
     const [invalidMessage, setInvalidMessage] = useState(errorMessage);
-
     const hasValidation = Boolean(validation);
-
-    const onValueChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setCurrentValue(event.currentTarget.value);
-        onChange && onChange(event);
-    };
-
-    const onToggleShowPassword = () => {
-        if (inputType === 'password') {
-            setInputType('text');
-        } else {
-            setInputType('password');
-        }
-    };
 
     const validate = (event: React.FocusEvent<HTMLInputElement>) => {
         onBlur && onBlur(event);
@@ -74,13 +60,28 @@ const Input: React.FC<IInputProps> = ({
         }
     };
 
+    const onToggleShowPassword = () => {
+        if (inputType === 'password') {
+            setInputType('text');
+        } else {
+            setInputType('password');
+        }
+    };
+
+    const onChangeEvent = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setCurrentValue(event.currentTarget.value);
+        onChange && onChange(event);
+    };
+
     const onBlurEvent = (event: React.FocusEvent<HTMLInputElement>) => {
         validate(event);
         setInputInFocus(false);
+        onBlur && onBlur(event);
     };
 
     const onFocusEvent = (event: React.FocusEvent<HTMLInputElement>) => {
         setInputInFocus(true);
+        onFocus && onFocus(event);
     };
 
     return (
@@ -115,24 +116,18 @@ const Input: React.FC<IInputProps> = ({
                     <InputBase
                         autoComplete={autoComplete}
                         autoFocus={autoFocus}
-                        characterMaxLength={
-                            validation?.characterMaxLength ||
-                            props.characterMaxLength
-                        }
-                        characterMinLength={
-                            validation?.characterMinLength ||
-                            props.characterMinLength
-                        }
+                        maxLength={validation?.maxLength || props.maxLength}
+                        minLength={validation?.minLength || props.minLength}
                         defaultValue={value || props.defaultValue}
                         disabled={disabled || state === 'disabled'}
                         id={id || 'web3uiKit-input'}
-                        numberMax={validation?.numberMax || props.numberMax}
-                        numberMin={validation?.numberMin || props.numberMin}
+                        max={validation?.max || props.max}
+                        min={validation?.min || props.min}
                         onBlur={(e) => onBlurEvent(e)}
-                        onChange={(e) => onValueChange(e)}
+                        onChange={(e) => onChangeEvent(e)}
                         onFocus={(e) => onFocusEvent(e)}
                         placeholder={placeholder}
-                        regExp={validation?.regExp || props.regExp}
+                        pattern={validation?.pattern || props.pattern}
                         required={validation?.required || props.required}
                         testid="test-input-input"
                         type={inputType}

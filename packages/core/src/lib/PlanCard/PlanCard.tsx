@@ -8,8 +8,8 @@ import YourPlanButton from './Components/YourPlanButton';
 const { DivStyled, DivStyledFeatures, DivStyledCardFooter, HrStyled } = styles;
 
 const PlanCard: React.FC<IPlanCardProps> = ({
-    backgroundColor = color.white,
-    borderColor = color.navy40,
+    backgroundColor,
+    borderColor,
     description,
     descriptionTitle,
     footer,

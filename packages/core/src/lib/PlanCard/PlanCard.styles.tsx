@@ -14,19 +14,21 @@ type TDivStyle = Pick<
 type THrStyled = Pick<IPlanCardProps, 'borderColor'>;
 
 const DivStyled = styled.div<TDivStyle>`
-    background: ${(props) => props.backgroundColor};
+    background: ${(props) =>
+        props.backgroundColor ? props.backgroundColor : color.white};
     border-radius: 20px;
-    border: 2px solid ${(props) => props.borderColor};
+    border: 2px solid
+        ${(props) => (props.borderColor ? props.borderColor : '#C1D8E7')};
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: ${(props) => (props.height ? props.height : '448px')};
     max-width: ${(props) => (props.maxWidth ? props.maxWidth : '386.67px')};
     padding: 32px;
-    width: ${(props) => (props.width ? props.width : 'auto')}
-        ${(props) =>
-            props.isActive &&
-            `
+    width: ${(props) => (props.width ? props.width : 'auto')};
+    ${(props) =>
+        props.isActive &&
+        `
       border-color: ${color.mint40};
     `};
 `;

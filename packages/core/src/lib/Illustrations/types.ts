@@ -18,6 +18,8 @@ export const logoState = [
     'servers',
     'token',
     'wizard',
+    'data',
+    'plugins',
 ] as const;
 
 export type Logo = typeof logoState[number];

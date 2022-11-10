@@ -28,12 +28,12 @@ export interface IPlanCardProps {
     /**
      * the subtitle component of the Card
      */
-    subTitle: string;
+    subTitle: JSX.Element;
 
     /**
      * the description title component of the Card
      */
-    descriptionTitle: string;
+    descriptionTitle: JSX.Element;
 
     /**
      * a horizontal line on the top

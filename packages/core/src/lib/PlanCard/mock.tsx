@@ -1,5 +1,6 @@
 import { color } from '@web3uikit/styles';
 import { Button } from '../Button';
+import { Typography } from '../Typography';
 import { IPlanCardProps } from './types';
 
 export default {
@@ -18,8 +19,20 @@ export default {
                 <strong>FREE</strong>
             </h1>
         ),
-        subTitle: 'Starter Plan',
+        subTitle: (
+            <Typography variant="subtitle1" weight="600" color={color.blue70}>
+                Starter Plan
+            </Typography>
+        ),
         isActive: true,
-        descriptionTitle: 'Free Access To',
+        descriptionTitle: (
+            <Typography
+                variant="caption14"
+                weight="semibold"
+                color={color.blue70}
+            >
+                Free Access To
+            </Typography>
+        ),
     } as IPlanCardProps,
 };

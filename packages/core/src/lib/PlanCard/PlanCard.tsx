@@ -36,20 +36,13 @@ const PlanCard: React.FC<IPlanCardProps> = ({
             maxWidth={maxWidth}
             {...props}
         >
-            <Typography variant="subtitle1" weight="600" color={color.blue70}>
-                {subTitle}
-            </Typography>
+            <Typography>{subTitle}</Typography>
             {horizontalLine ? (
                 <HrStyled borderColor={borderColor} />
             ) : (
                 <Typography>{title}</Typography>
             )}
-            <Typography
-                variant="caption14"
-                weight="semibold"
-                color={color.blue70}
-                style={{ marginBottom: '16px' }}
-            >
+            <Typography style={{ marginBottom: '16px' }}>
                 {descriptionTitle}
             </Typography>
             <DivStyledFeatures>

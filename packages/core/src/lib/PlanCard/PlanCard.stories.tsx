@@ -4,6 +4,7 @@ import PlanCard from './PlanCard';
 import { color } from '@web3uikit/styles';
 import { Checkmark } from '@web3uikit/icons';
 import { Button } from '../Button';
+import { Typography } from '../Typography';
 
 export default {
     title: 'Ui/PlanCard',
@@ -50,8 +51,16 @@ IconCustomPlanStory.args = {
         'IPFS Gateway',
     ],
     footer: <Button text="Talk to Sales" theme="outline" isFullWidth={true} />,
-    subTitle: 'Enterprise',
-    descriptionTitle: 'Everything in Pro, plus',
+    subTitle: (
+        <Typography variant="h4" color={color.blue70} weight="600">
+            Enterprise
+        </Typography>
+    ),
+    descriptionTitle: (
+        <Typography color={color.blue70} weight="550" variant="caption14">
+            Everything in pro, plus
+        </Typography>
+    ),
     horizontalLine: true,
     borderColor: color.navy20,
     backgroundColor: 'transparent',

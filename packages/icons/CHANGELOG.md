@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.2.12
+
+### Patch Changes
+
+-   [#887](https://github.com/web3ui/web3uikit/pull/887) [`b34d13549`](https://github.com/web3ui/web3uikit/commit/b34d13549a73e7bd5641be378ba5672b8630410d) Thanks [@Maki44](https://github.com/Maki44)! - Add sleepyCat and firbaseLogo icons
+
 ## 0.2.6
 
 ### Patch Changes

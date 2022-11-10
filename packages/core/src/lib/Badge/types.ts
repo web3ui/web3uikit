@@ -1,8 +1,12 @@
-import { variantType } from '../Typography/types';
+import { TypographyProps, variantType } from '../Typography/types';
 
-export type colorState = 'normal' | 'success' | 'warning' | 'danger';
+export type colorState = 'normal' | 'success' | 'warning' | 'danger' | 'custom';
 
-export interface BadgeProps {
+type TTextProps = Pick<
+    TypographyProps,
+    'color' | 'italic' | 'monospace' | 'weight'
+>;
+export interface BadgeProps extends TTextProps {
     /**
      * Set the initial state for the Badge component
      */
@@ -15,4 +19,14 @@ export interface BadgeProps {
      * Variant of text style
      */
     textVariant?: variantType;
+
+    /**
+     * background color used when state is set to custom
+     */
+    bgColor?: string;
+
+    /**
+     * set custom radius of the badge
+     */
+    borderRadius?: number;
 }

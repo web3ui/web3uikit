@@ -11,7 +11,8 @@ const {
     DivStyledTooltipText,
 } = styles;
 
-const Tooltip: React.FC<TooltipProps> = ({
+const Tooltip: React.FC<TooltipProps &
+    React.HTMLAttributes<HTMLDivElement>> = ({
     children,
     content,
     maxWidth,

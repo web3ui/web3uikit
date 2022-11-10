@@ -55,4 +55,22 @@ export interface IPlanCardProps {
      */
 
     icon?: JSX.Element;
+
+    /**
+     * set custom height
+     */
+
+    height?: string;
+
+    /**
+     *  set custom width
+     */
+
+    width?: string;
+
+    /**
+     * set custom  max width
+     */
+
+    maxWidth?: string;
 }

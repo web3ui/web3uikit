@@ -8,17 +8,20 @@ import YourPlanButton from './Components/YourPlanButton';
 const { DivStyled, DivStyledFeatures, DivStyledCardFooter, HrStyled } = styles;
 
 const PlanCard: React.FC<IPlanCardProps> = ({
+    backgroundColor = color.white,
+    borderColor = color.navy40,
     description,
-    footer,
-    subTitle,
     descriptionTitle,
-    title,
+    footer,
+    height,
+    width,
+    maxWidth,
+    horizontalLine = false,
+    icon,
     isActive,
     isCurrentPlan,
-    horizontalLine = false,
-    borderColor = color.navy40,
-    backgroundColor = color.white,
-    icon,
+    subTitle,
+    title,
     ...props
 }) => {
     return (
@@ -28,6 +31,9 @@ const PlanCard: React.FC<IPlanCardProps> = ({
             isActive={isActive}
             borderColor={borderColor}
             backgroundColor={backgroundColor}
+            height={height}
+            width={width}
+            maxWidth={maxWidth}
             {...props}
         >
             <Typography variant="subtitle1" weight="600" color={color.blue70}>

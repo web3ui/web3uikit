@@ -4,7 +4,12 @@ import { IPlanCardProps } from './types';
 
 type TDivStyle = Pick<
     IPlanCardProps,
-    'isActive' | 'borderColor' | 'backgroundColor'
+    | 'isActive'
+    | 'borderColor'
+    | 'backgroundColor'
+    | 'height'
+    | 'width'
+    | 'maxWidth'
 >;
 type THrStyled = Pick<IPlanCardProps, 'borderColor'>;
 
@@ -15,12 +20,13 @@ const DivStyled = styled.div<TDivStyle>`
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: 448px;
-    max-width: 386.67px;
+    height: ${(props) => (props.height ? props.height : '448px')};
+    max-width: ${(props) => (props.maxWidth ? props.maxWidth : '386.67px')};
     padding: 32px;
-    ${(props) =>
-        props.isActive &&
-        `
+    width: ${(props) => (props.width ? props.width : 'auto')}
+        ${(props) =>
+            props.isActive &&
+            `
       border-color: ${color.mint40};
     `};
 `;

@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.13
+
+### Patch Changes
+
+-   [#889](https://github.com/web3ui/web3uikit/pull/889) [`b7d515deb`](https://github.com/web3ui/web3uikit/commit/b7d515debc82887ba4ea66eab4a93c47fc395bc4) Thanks [@Maki44](https://github.com/Maki44)! - Minor style Fix
+
 ## 0.2.11
 
 ### Patch Changes

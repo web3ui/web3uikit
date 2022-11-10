@@ -18,7 +18,10 @@ const defaultTriangleStyle = css`
     width: 0;
 `;
 
-type TTooltipPositioningProps = Pick<TooltipProps, 'move' | 'moveBody'>;
+type TTooltipPositioningProps = Pick<
+    TooltipProps,
+    'move' | 'moveBody' | 'bgColor'
+>;
 
 // Left Position comps
 const leftPositionPopover = css<IStyledHoverSpan>`
@@ -30,7 +33,7 @@ const leftPositionPopover = css<IStyledHoverSpan>`
 const leftPositionTriangle = css<TTooltipPositioningProps>`
     ${defaultTriangleStyle};
     border-bottom: 10px solid transparent;
-    border-left: 10px solid ${color.blue40};
+    border-left: 10px solid ${(props) => props.bgColor ?? color.blue40};
     border-top: 10px solid transparent;
     right: -10px;
     top: calc(${(p) => `${p.move}%`} - 10px);
@@ -46,7 +49,7 @@ const rightPositionPopover = css<IStyledHoverSpan>`
 const rightPositionTriangle = css<TTooltipPositioningProps>`
     ${defaultTriangleStyle};
     border-bottom: 10px solid transparent;
-    border-right: 10px solid ${color.blue40};
+    border-right: 10px solid ${(props) => props.bgColor ?? color.blue40};
     border-top: 10px solid transparent;
     left: -10px;
     top: calc(${(p) => `${p.move}%`} - 10px);
@@ -63,7 +66,7 @@ const topPositionTriangle = css<TTooltipPositioningProps>`
     ${defaultTriangleStyle};
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-top: 10px solid ${color.blue40};
+    border-top: 10px solid ${(props) => props.bgColor ?? color.blue40};
     left: calc(${(p) => `${p.move}%`} - 10px);
     top: 100%;
 `;
@@ -77,7 +80,7 @@ const bottomPositionPopover = css<IStyledHoverSpan>`
 
 const bottomPositionTriangle = css<TTooltipPositioningProps>`
     ${defaultTriangleStyle}
-    border-bottom: 10px solid ${color.blue40};
+    border-bottom: 10px solid ${(props) => props.bgColor ?? color.blue40};
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     left: calc(${(p) => `${p.move}%`} - 10px);
@@ -124,9 +127,9 @@ const DivStyledTooltipContent = styled.div`
 `;
 
 const DivStyledTooltipText = styled.div<
-    Pick<TooltipProps, 'maxWidth' | 'minWidth'>
+    Pick<TooltipProps, 'maxWidth' | 'minWidth' | 'bgColor'>
 >`
-    background-color: ${color.blue40};
+    background-color: ${(props) => props.bgColor ?? color.blue40};
     border-radius: 5px;
     color: white;
     display: flex;
@@ -139,7 +142,7 @@ const DivStyledTooltipText = styled.div<
 `;
 
 export const DivStyledArrow = styled.div<
-    Pick<TooltipProps, 'position' | 'move' | 'moveBody'>
+    Pick<TooltipProps, 'position' | 'move' | 'moveBody' | 'bgColor'>
 >`
     ${({ position }) => getTriangleComp[position]}
 `;

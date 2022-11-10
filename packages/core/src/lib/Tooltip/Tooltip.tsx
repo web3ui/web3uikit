@@ -1,3 +1,4 @@
+import { color } from '@web3uikit/styles';
 import { useEffect, useRef, useState } from 'react';
 import styles from './Tooltip.styles';
 import { TooltipProps } from './types';
@@ -18,6 +19,7 @@ const Tooltip: React.FC<TooltipProps> = ({
     move = 50,
     moveBody = -50,
     position = 'bottom',
+    bgColor = color.blue40,
     ...props
 }: TooltipProps) => {
     const parentRef = useRef(null);
@@ -66,6 +68,7 @@ const Tooltip: React.FC<TooltipProps> = ({
                 width={width}
             >
                 <DivStyledTooltipText
+                    bgColor={bgColor}
                     data-testid="test-tooltip-text"
                     maxWidth={maxWidth}
                     minWidth={minWidth}
@@ -73,6 +76,7 @@ const Tooltip: React.FC<TooltipProps> = ({
                     {content}
                 </DivStyledTooltipText>
                 <DivStyledArrow
+                    bgColor={bgColor}
                     data-testid="test-tooltip-arrow"
                     position={position}
                     move={move}

@@ -35,4 +35,9 @@ export interface TooltipProps {
      * Moves the body +/- up/down/left/right (use responsibly, arrow can move the the X / Y axis indefinitely)
      */
     moveBody?: number;
+
+    /**
+     * Set color of the tooltip content background
+     */
+    bgColor?: string;
 }

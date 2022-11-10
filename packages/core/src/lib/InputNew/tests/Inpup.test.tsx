@@ -43,7 +43,9 @@ test('Input blur event', () => {
         render(
             <InputDefault
                 autoFocus={true}
-                onBlur={(e) => testBlurEvent(e.target.value)}
+                onBlur={(e: React.FocusEvent<HTMLInputElement>) =>
+                    testBlurEvent(e.target.value)
+                }
             />,
         );
     });
@@ -57,7 +59,11 @@ test('Input blur event', () => {
 test('Input change event', () => {
     act(() => {
         render(
-            <InputDefault onChange={(e) => testChangeEvent(e.target.value)} />,
+            <InputDefault
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    testChangeEvent(e.target.value)
+                }
+            />,
         );
     });
     const element: HTMLDivElement = screen.getByTestId(inputWrapDivId);
@@ -71,7 +77,11 @@ test('Input change event', () => {
 test('Input focus event', () => {
     act(() => {
         render(
-            <InputDefault onFocus={(e) => testFocusEvent(e.target.value)} />,
+            <InputDefault
+                onFocus={(e: React.FocusEvent<HTMLInputElement>) =>
+                    testFocusEvent(e.target.value)
+                }
+            />,
         );
     });
     const element: HTMLDivElement = screen.getByTestId(inputWrapDivId);

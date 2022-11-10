@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.11
+
+### Patch Changes
+
+-   [#883](https://github.com/web3ui/web3uikit/pull/883) [`3beb5b93d`](https://github.com/web3ui/web3uikit/commit/3beb5b93d5f3a8e48ab5e1f9fbec9b4ab20f3d2d) Thanks [@Maki44](https://github.com/Maki44)! - Add new props to PlanCard component
+
 ## 0.2.10
 
 ### Patch Changes

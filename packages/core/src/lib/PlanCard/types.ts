@@ -38,12 +38,12 @@ export interface IPlanCardProps {
     /**
      * a horizontal line on the top
      */
-    horizontalLine: boolean;
+    horizontalLine?: boolean;
 
     /**
      * border color
      */
-    borderColor: typeof color | string;
+    borderColor?: typeof color | string;
 
     /**
      * Card background color

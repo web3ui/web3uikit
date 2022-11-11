@@ -158,13 +158,6 @@ const StrongStyledFeedback = styled.strong`
     width: 100%;
     z-index: 3;
 
-    .truncate-text {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        max-width: 90%;
-    }
-
     &::after {
         background-color: ${color.red40};
         content: '';
@@ -175,12 +168,6 @@ const StrongStyledFeedback = styled.strong`
         top: -2px;
         transform: rotate(45deg);
         width: 12px;
-    }
-
-    &:hover .truncate-text {
-        overflow: visible;
-        text-overflow: unset;
-        white-space: normal;
     }
 `;
 

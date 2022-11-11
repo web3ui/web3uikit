@@ -158,7 +158,7 @@ const Input: React.FC<IInputProps> = ({
 
                 {currentState === 'error' && (
                     <StrongStyledFeedback data-testid="test-input-feedback">
-                        <span className="truncate-text">{invalidMessage}</span>
+                        {invalidMessage}
                     </StrongStyledFeedback>
                 )}
             </DivStyled>

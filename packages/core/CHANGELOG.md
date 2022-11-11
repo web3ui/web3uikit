@@ -1,5 +1,13 @@
 # @web3uikit/core
 
+## 0.2.14
+
+### Patch Changes
+
+-   [#885](https://github.com/web3ui/web3uikit/pull/885) [`3ae1c3388`](https://github.com/web3ui/web3uikit/commit/3ae1c3388f44404eaf743115ee5066072b9e0921) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add bgColor to tooltip
+
+*   [#884](https://github.com/web3ui/web3uikit/pull/884) [`27866932c`](https://github.com/web3ui/web3uikit/commit/27866932cece569c63b3430a8a1eeb95de1e74fb) Thanks [@BillyG83](https://github.com/BillyG83)! - added InputNew
+
 ## 0.2.13
 
 ### Patch Changes

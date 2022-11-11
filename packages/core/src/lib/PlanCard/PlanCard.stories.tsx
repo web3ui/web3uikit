@@ -7,7 +7,7 @@ import { Button } from '../Button';
 import { Typography } from '../Typography';
 
 export default {
-    title: 'Ui/PlanCard',
+    title: '4.UI/PlanCard',
     component: PlanCard,
     argTypes: {
         onChange: {

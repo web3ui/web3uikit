@@ -25,6 +25,7 @@ export * from './HideButton';
 export * from './Illustrations';
 export * from './Info';
 export * from './Input';
+export * from './InputNew';
 export * from './LinkTo';
 export * from './Loading';
 export * from './Logo';

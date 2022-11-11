@@ -94,6 +94,7 @@ const DivStyled = styled.div<TInputProps>`
     }
 
     &.focus {
+        border-color: ${color.navy30};
         box-shadow: 0px 0px 0px 3px ${color.navy30};
     }
 
@@ -155,7 +156,6 @@ const StrongStyledFeedback = styled.strong`
     padding: 4px 6px;
     position: absolute;
     top: calc(100% + 6px);
-    width: 100%;
     z-index: 3;
 
     &::after {

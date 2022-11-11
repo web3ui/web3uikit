@@ -48,6 +48,10 @@ const Input: React.FC<IInputProps> = ({
         setCurrentState(state);
     }, [state]);
 
+    useEffect(() => {
+        setCurrentValue(value);
+    }, [value]);
+
     const validate = (event: React.FocusEvent<HTMLInputElement>) => {
         onBlur && onBlur(event);
         if (!hasValidation) return;

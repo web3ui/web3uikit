@@ -153,3 +153,13 @@ export const Wizard = Template.bind({});
 Wizard.args = {
     logo: 'wizard',
 };
+
+export const Plugins = Template.bind({});
+Plugins.args = {
+    logo: 'plugins',
+};
+
+export const Data = Template.bind({});
+Data.args = {
+    logo: 'data',
+};

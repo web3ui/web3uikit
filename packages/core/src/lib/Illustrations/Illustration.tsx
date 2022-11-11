@@ -19,6 +19,8 @@ import wizard from './images/various/wizard';
 import AllChains from './images/chains';
 import { Suspense } from 'react';
 import { Skeleton } from '../Skeleton';
+import plugins from './images/various/plugins';
+import data from './images/various/data';
 
 const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     switch (logo) {
@@ -50,6 +52,10 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
             return discord(width, height);
         case 'wizard':
             return wizard(width, height);
+        case 'plugins':
+            return plugins(width, height);
+        case 'data':
+            return data(width, height);
         default:
             const chainLogos = Object.values(AllChains);
             const ChainLogo = chainLogos.find(

@@ -50,4 +50,5 @@ Right.args = {
     position: 'right',
     content: <TooltipText />,
     children: [<HelpCircle key="4" fill={color.blueGray50} fontSize={50} />],
+    bgColor: color.red40,
 };

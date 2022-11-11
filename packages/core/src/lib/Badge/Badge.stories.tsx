@@ -1,5 +1,5 @@
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { color } from '@web3uikit/styles';
 import Badge from './Badge';
 
 export default {
@@ -61,4 +61,12 @@ export const Warning = Template.bind({});
 Warning.args = {
     text: 'New',
     state: 'warning',
+};
+
+export const Custom = Template.bind({});
+Custom.args = {
+    text: 'New',
+    state: 'custom',
+    bgColor: color.sky40,
+    borderRadius: 20,
 };

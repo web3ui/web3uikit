@@ -4,7 +4,7 @@ import { IInputProps, TInputStates } from './types';
 
 type TInputProps = Pick<
     IInputProps,
-    'disabled' | 'setLabelMargin' | 'state' | 'width'
+    'disabled' | 'setLabelMargin' | 'size' | 'state' | 'width'
 >;
 
 const inputDisabled = css`
@@ -50,6 +50,10 @@ const DivStyled = styled.div<TInputProps>`
         white-space: nowrap;
         right: ${(p) => p.setLabelMargin?.right || '18px'};
         z-index: 1;
+    }
+
+    input {
+        ${(p) => p.size === 'regular' && 'padding: 8px 18px'};
     }
 
     input + input {
@@ -145,12 +149,21 @@ const StrongStyledFeedback = styled.strong`
     ${fonts.text}
     background-color: ${color.red40};
     border-radius: 8px;
-    top: calc(100% + 6px);
     color: ${color.white};
     font-size: 12px;
-    padding: 4px 6px;
     left: 0;
+    padding: 4px 6px;
     position: absolute;
+    top: calc(100% + 6px);
+    width: 100%;
+    z-index: 3;
+
+    .truncate-text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 90%;
+    }
 
     &::after {
         background-color: ${color.red40};
@@ -162,6 +175,12 @@ const StrongStyledFeedback = styled.strong`
         top: -2px;
         transform: rotate(45deg);
         width: 12px;
+    }
+
+    &:hover .truncate-text {
+        overflow: visible;
+        text-overflow: unset;
+        white-space: normal;
     }
 `;
 

@@ -91,7 +91,7 @@ export interface IInputBaseProps extends TValidateInput {
     /**
      * test ID should be set for the input
      */
-    testid: string;
+    testid?: string;
 
     /**
      * the type of the HTML input: text | number | email | tel | password;

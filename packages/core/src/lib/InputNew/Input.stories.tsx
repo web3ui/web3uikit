@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Server } from '@web3uikit/icons';
-import { Input } from '.';
+import { InputNew as Input } from '.';
 import { validateRegExp } from '../../utils/const';
+import { TInputStates } from './atoms/types';
 
 export default {
     title: '2.Forms/InputNew',
@@ -74,6 +76,7 @@ InputValue.args = {
     description: 'A value was added for you',
     label: 'New Improved Input',
     value: 'try me',
+    size: 'regular',
 };
 InputValue.storyName = 'Input + Value';
 

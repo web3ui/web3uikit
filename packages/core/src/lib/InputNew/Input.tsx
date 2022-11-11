@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { IInputProps, TResponse } from './types';
 import styles from './Input.styles';
 import { inputValidation } from './InputValidation';
@@ -28,6 +28,7 @@ const Input: React.FC<IInputProps> = ({
     openByDefault,
     placeholder,
     setLabelMargin,
+    size,
     state = disabled ? 'disabled' : undefined,
     slots,
     type = 'text',
@@ -42,6 +43,10 @@ const Input: React.FC<IInputProps> = ({
     const [inputType, setInputType] = useState(type);
     const [invalidMessage, setInvalidMessage] = useState(errorMessage);
     const hasValidation = Boolean(validation);
+
+    useEffect(() => {
+        setCurrentState(state);
+    }, [state]);
 
     const validate = (event: React.FocusEvent<HTMLInputElement>) => {
         onBlur && onBlur(event);
@@ -93,6 +98,7 @@ const Input: React.FC<IInputProps> = ({
                 data-testid="test-input"
                 disabled={disabled}
                 setLabelMargin={setLabelMargin}
+                size={size}
                 state={currentState}
                 width={width}
                 {...props}
@@ -152,7 +158,7 @@ const Input: React.FC<IInputProps> = ({
 
                 {currentState === 'error' && (
                     <StrongStyledFeedback data-testid="test-input-feedback">
-                        {invalidMessage}
+                        <span className="truncate-text">{invalidMessage}</span>
                     </StrongStyledFeedback>
                 )}
             </DivStyled>

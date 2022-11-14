@@ -177,5 +177,5 @@ export const getTypographyStyle = (p: TypographyProps) => css`
     ${p?.color && `color: ${p.color}`};
     ${p?.italic && italicFont};
     ${p?.weight && getCSSWeight(p.weight)};
-    ${p?.fontSize && `fontSize: ${p.fontSize}`}
+    ${p?.fontSize && `size: ${p.fontSize}`}
 `;

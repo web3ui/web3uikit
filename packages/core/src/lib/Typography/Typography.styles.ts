@@ -176,5 +176,6 @@ export const getTypographyStyle = (p: TypographyProps) => css`
     ${p?.monospace && ibm};
     ${p?.color && `color: ${p.color}`};
     ${p?.italic && italicFont};
+    ${p?.fontSize && `font-size: ${p.fontSize}`};
     ${p?.weight && getCSSWeight(p.weight)};
 `;

@@ -77,6 +77,12 @@ Caption10.args = {
     variant: 'caption10',
 };
 
+export const CustomFontSize = Template.bind({});
+CustomFontSize.args = {
+    children: 'This is a custom fontsize',
+    fontSize: '32px',
+};
+
 export const Copyable = Template.bind({});
 Copyable.args = {
     children: 'Copyable Text to clipboard',

@@ -16,6 +16,7 @@ const {
     Caption12,
     Caption10,
     Copyable,
+    CustomFontSize,
 } = composeStories(stories);
 
 const testId = 'test-typography';
@@ -102,4 +103,11 @@ test('Renders Copyable', () => {
     const element = screen.getByTestId(testId);
     expect(element).not.toBeNull();
     expect(element.textContent).toBe(Copyable.args?.children + 'copy icon');
+});
+
+test('Renders Custom Font size', () => {
+    render(<CustomFontSize />);
+    const element = screen.getByTestId(testId);
+    expect(element).not.toBeNull();
+    expect(element.textContent).toBe(CustomFontSize.args?.children);
 });

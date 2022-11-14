@@ -3,6 +3,10 @@ import { CSSProperties } from 'react';
 
 export interface TypographyProps {
     /**
+     * Fontsize of the text, if provided it will override the native fontsize of the variant
+     */
+    fontSize?: string;
+    /**
      * Variant of text style
      */
 

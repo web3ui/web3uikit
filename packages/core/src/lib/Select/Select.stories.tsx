@@ -253,6 +253,8 @@ BetaSelect.args = {
             <img
                 src={`https://countryflagsapi.com/png/${item.isoCode}`}
                 loading="lazy"
+                width="24px"
+                height="24px"
             />
         ),
         id: `${item.dialCode}-${item.isoCode}`,

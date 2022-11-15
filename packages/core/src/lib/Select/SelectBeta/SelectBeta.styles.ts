@@ -127,6 +127,7 @@ const ListItemStyledTag = styled.li`
     z-index: -10;
     align-items: center;
     width: 100%;
+    gap: 5px;
     line-break: loose;
 `;
 
@@ -271,17 +272,7 @@ const ListItemStyledDropdown = styled.li`
 const SpanStyledItemIcon = styled.span`
     align-items: center;
     display: flex;
-    height: 24px;
     justify-content: center;
-    margin: 0 4px;
-    padding: 0 5px;
-    width: 24px;
-    // Any component(svg/img) used as icon will have a common width
-    * {
-        height: 100%;
-        object-fit: contain;
-        width: 24px !important;
-    }
 `;
 
 const SpanStyledItemText = styled.span<{ noPrefix: boolean }>`
@@ -302,10 +293,8 @@ const ButtonStyledListItem = styled.button`
     border: none;
     color: ${color.blue70};
     display: flex;
-    padding-bottom: 0.375em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-    padding-top: 0.375em;
+    padding: 5px 10px;
+    gap: 5px;
     text-align: left;
     transition-duration: 150ms;
     transition-property: background-color, color;

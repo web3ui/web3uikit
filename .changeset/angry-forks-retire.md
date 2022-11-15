@@ -2,4 +2,4 @@
 '@web3uikit/core': patch
 ---
 
-Added Fontsize prop for Typography
+Added Font Size prop for Typography

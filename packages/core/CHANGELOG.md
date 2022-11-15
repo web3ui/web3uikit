@@ -1,5 +1,15 @@
 # @web3uikit/core
 
+## 0.3.0
+
+### Minor Changes
+
+-   [#893](https://github.com/web3ui/web3uikit/pull/893) [`10e8578d1`](https://github.com/web3ui/web3uikit/commit/10e8578d11e9605caaa3538110ad33fdd847c3d4) Thanks [@rayyan224](https://github.com/rayyan224)! - Added Fontsize prop for Typography
+
+### Patch Changes
+
+-   [#895](https://github.com/web3ui/web3uikit/pull/895) [`6cba99237`](https://github.com/web3ui/web3uikit/commit/6cba99237b03cefefddcd77741908aa90035047d) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - NFT card and select component fix
+
 ## 0.2.14
 
 ### Patch Changes

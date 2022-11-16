@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { color } from '@web3uikit/styles';
 import { IPlanCardProps } from './types';
 
@@ -12,7 +12,42 @@ type TDivStyle = Pick<
     | 'maxWidth'
 >;
 type THrStyled = Pick<IPlanCardProps, 'borderColor'>;
+type TScrollStyled = Pick<
+    IPlanCardProps,
+    | 'scrollbarWidth'
+    | 'scrollbarBackground'
+    | 'scrollbarTrackBackground'
+    | 'scrollbarHoverBackground'
+>;
 
+const scrollStyled = (props: TScrollStyled) => css`
+    /* width  */
+    ::-webkit-scrollbar {
+        width: ${props.scrollbarWidth ? props.scrollbarWidth : '2px'};
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: ${props.scrollbarTrackBackground
+            ? props.scrollbarTrackBackground
+            : color.aero10};
+        opacity: 0.1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        background: ${props.scrollbarBackground
+            ? props.scrollbarBackground
+            : color.blue20};
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background: ${props.scrollbarHoverBackground
+            ? props.scrollbarHoverBackground
+            : color.blueGray50};
+    }
+`;
 const DivStyled = styled.div<TDivStyle>`
     background: ${(props) =>
         props.backgroundColor ? props.backgroundColor : color.white};
@@ -24,7 +59,7 @@ const DivStyled = styled.div<TDivStyle>`
     flex-direction: column;
     height: ${(props) => (props.height ? props.height : '448px')};
     max-width: ${(props) => (props.maxWidth ? props.maxWidth : '386.67px')};
-    padding: 32px;
+    padding: 32px 24px;
     width: ${(props) => (props.width ? props.width : 'auto')};
     ${(props) =>
         props.isActive &&
@@ -34,7 +69,7 @@ const DivStyled = styled.div<TDivStyle>`
 `;
 DivStyled.displayName = 'DivStyled';
 
-const DivStyledFeatures = styled.div`
+const DivStyledFeatures = styled.div<TScrollStyled>`
     display: flex;
     flex-direction: column;
     margin-bottom: 8px;
@@ -50,6 +85,11 @@ const DivStyledFeatures = styled.div`
             margin-top: 5px;
         }
     }
+    ${(props) =>
+        (props.scrollbarBackground ||
+            props.scrollbarWidth ||
+            props.scrollbarTrackBackground) &&
+        scrollStyled(props)}
 `;
 
 const DivStyledCardFooter = styled.div`

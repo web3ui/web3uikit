@@ -49,6 +49,14 @@ IconCustomPlanStory.args = {
         'Unlimited Plugins',
         'Community Support',
         'IPFS Gateway',
+        'Unlimited ideas',
+        'Unlimited Plugins',
+        'Community Support',
+        'IPFS Gateway',
+        'Unlimited ideas',
+        'Unlimited Plugins',
+        'Community Support',
+        'IPFS Gateway',
     ],
     footer: <Button text="Talk to Sales" theme="outline" isFullWidth={true} />,
     subTitle: (
@@ -65,4 +73,7 @@ IconCustomPlanStory.args = {
     borderColor: color.navy20,
     backgroundColor: 'transparent',
     icon: <Checkmark fill={color.mint40} />,
+    scrollbarWidth: '2px',
+    scrollbarBackground: color.blue20,
+    scrollbarTrackBackground: color.aero10,
 };

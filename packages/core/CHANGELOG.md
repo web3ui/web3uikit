@@ -1,5 +1,13 @@
 # @web3uikit/core
 
+## 0.2.16
+
+### Patch Changes
+
+-   [#901](https://github.com/web3ui/web3uikit/pull/901) [`30836f1aa`](https://github.com/web3ui/web3uikit/commit/30836f1aac54d62d1a5117dde64e45ecf8979fec) Thanks [@Maki44](https://github.com/Maki44)! - add custom props for scrollbar
+
+*   [#900](https://github.com/web3ui/web3uikit/pull/900) [`f3d583302`](https://github.com/web3ui/web3uikit/commit/f3d5833020ccf3d05e7cf2e5e7442e31e7b02467) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(BannerStrip): position relative should not use z-index, top or left
+
 ## 0.2.15
 
 ### Patch Changes

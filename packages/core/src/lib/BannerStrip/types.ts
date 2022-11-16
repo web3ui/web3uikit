@@ -1,4 +1,5 @@
 import React from 'react';
+import { CSSProperties } from 'styled-components';
 import { ButtonProps } from '../Button';
 
 export interface IBannerStripProps {
@@ -66,6 +67,11 @@ export interface IBannerStripProps {
      * specify the number of days you want to hide the component after close button is clicked (Uses local storage)
      */
     noOfDaysToHide?: number | null;
+
+    /**
+     * add CSS styles, good for margin
+     */
+    style?: CSSProperties;
 }
 
 export type TBannerStripTypes =

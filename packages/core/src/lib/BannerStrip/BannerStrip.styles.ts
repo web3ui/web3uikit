@@ -38,26 +38,25 @@ const SectionStyled = styled.section<TSectionStyledProps>`
     ${resetCSS};
     ${fonts.text};
     align-items: center;
+    background-color: ${(props) =>
+        props.type !== 'custom' ? getColor(props.type).bgColor : props.bgColor};
+    border-radius: ${(props) => props.borderRadius && props.borderRadius};
+    color: ${(p) => (p.type ? getColor(p.type).color : color.white)};
     display: flex;
     font-size: 14px;
     font-weight: 550;
+    height: ${(props) => props.height && props.height};
     justify-content: center;
-    left: 0;
+    left: ${(props) => (props.position === 'absolute' ? '0' : 'unset')};
     line-height: 24px;
     max-width: 100%;
     padding: 8px 0px;
-    text-align: center;
-    top: 0;
-    width: 100%;
-    z-index: 10001;
-
     position: ${(props) => props.position && props.position};
-    border-radius: ${(props) => props.borderRadius && props.borderRadius};
-    height: ${(props) => props.height && props.height};
+    text-align: center;
+    top: ${(props) => (props.position === 'absolute' ? '0' : 'unset')};
     width: ${(props) => props.width && props.width};
-    background-color: ${(props) =>
-        props.type !== 'custom' ? getColor(props.type).bgColor : props.bgColor};
-    color: ${(p) => (p.type ? getColor(p.type).color : color.white)};
+    width: 100%;
+    z-index: ${(props) => (props.position === 'absolute' ? '10001' : 'unset')};
 `;
 
 const DivStyledContainer = styled.div`

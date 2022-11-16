@@ -17,6 +17,7 @@ const BannerStrip: React.FC<IBannerStripProps> = ({
     isCloseBtnVisible = true,
     onCloseBtnClick,
     position = 'fixed',
+    style,
     text,
     type = 'standard',
     width,
@@ -32,11 +33,11 @@ const BannerStrip: React.FC<IBannerStripProps> = ({
     if (!isComponentVisible) return null;
     return (
         <SectionStyled
+            bgColor={bgColor}
             borderRadius={borderRadius}
             data-testid="test-banner-strip"
             height={height}
             position={position}
-            bgColor={bgColor}
             type={type}
             width={width}
             {...props}

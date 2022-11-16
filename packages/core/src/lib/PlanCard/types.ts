@@ -73,4 +73,28 @@ export interface IPlanCardProps {
      */
 
     maxWidth?: string;
+
+    /**
+     * set custom  scroll width
+     */
+
+    scrollbarWidth?: string;
+
+    /**
+     * set custom  scrollbar background
+     */
+
+    scrollbarBackground?: string;
+
+    /**
+     * set custom  scrollbar track background
+     */
+
+    scrollbarTrackBackground?: string;
+
+    /**
+     * set custom  scrollbar  background on hover
+     */
+
+    scrollbarHoverBackground?: string;
 }

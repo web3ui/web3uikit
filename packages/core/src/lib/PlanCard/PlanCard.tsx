@@ -22,6 +22,10 @@ const PlanCard: React.FC<IPlanCardProps> = ({
     isCurrentPlan,
     subTitle,
     title,
+    scrollbarWidth,
+    scrollbarBackground,
+    scrollbarTrackBackground,
+    scrollbarHoverBackground,
     ...props
 }) => {
     return (
@@ -45,7 +49,12 @@ const PlanCard: React.FC<IPlanCardProps> = ({
             <Typography style={{ marginBottom: '16px' }}>
                 {descriptionTitle}
             </Typography>
-            <DivStyledFeatures>
+            <DivStyledFeatures
+                scrollbarBackground={scrollbarBackground}
+                scrollbarWidth={scrollbarWidth}
+                scrollbarTrackBackground={scrollbarTrackBackground}
+                scrollbarHoverBackground={scrollbarHoverBackground}
+            >
                 {description.map((feature, index) => (
                     <div key={index}>
                         {icon ? (

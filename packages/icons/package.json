@@ -1,6 +1,6 @@
 {
     "name": "@web3uikit/icons",
-    "version": "0.2.12",
+    "version": "0.2.17",
     "sideEffects": false,
     "files": [
         "package.json",

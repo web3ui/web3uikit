@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.2.17
+
+### Patch Changes
+
+-   [#904](https://github.com/web3ui/web3uikit/pull/904) [`9888174c7`](https://github.com/web3ui/web3uikit/commit/9888174c7458aba58d0c32fc0fcf76add8174dd4) Thanks [@Maki44](https://github.com/Maki44)! - Add icons
+
 ## 0.2.12
 
 ### Patch Changes

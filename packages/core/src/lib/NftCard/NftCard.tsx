@@ -3,7 +3,8 @@ import { INftCardProps } from './types';
 import styles from './NftCard.styles';
 import { Typography } from '../Typography';
 import { color } from '@web3uikit/styles';
-import { image, getEllipsisTxt } from '../../utils/utils';
+import { image } from '../../utils/utils';
+import NftDetails from './NftDetail.helper';
 
 const { DivStyled, DivStyledContainer, FieldsetStyled } = styles;
 
@@ -57,44 +58,7 @@ const NFTCard: React.FC<INftCardProps &
                     {customDetails ? (
                         customDetails
                     ) : (
-                        <table>
-                            <tr>
-                                <th>Contract Address</th>
-                                <td className="address">
-                                    {getEllipsisTxt(data?.token_address, 4)}
-                                </td>
-                            </tr>
-                            {data?.owner_of && (
-                                <tr>
-                                    <th>Owner Address</th>
-                                    <td className="address">
-                                        {getEllipsisTxt(data.owner_of, 4)}
-                                    </td>
-                                </tr>
-                            )}
-                            <tr>
-                                <th>Token Id</th>
-                                <td className="card-text">{data?.token_id}</td>
-                            </tr>
-                            <tr>
-                                <th>Symbol</th>
-                                <td>{data.symbol}</td>
-                            </tr>
-                            <tr>
-                                <th>Chain</th>
-                                <td>{chain}</td>
-                            </tr>
-                            {data?.last_metadata_sync && (
-                                <tr>
-                                    <th>Last Synced</th>
-                                    <td>
-                                        {new Date(data?.last_metadata_sync)
-                                            .toLocaleDateString()
-                                            .toString()}
-                                    </td>
-                                </tr>
-                            )}
-                        </table>
+                        <NftDetails data={data} chain={chain} />
                     )}
                 </FieldsetStyled>
             </DivStyledContainer>

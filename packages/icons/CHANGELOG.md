@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.2.18
+
+### Patch Changes
+
+-   [#907](https://github.com/web3ui/web3uikit/pull/907) [`7176fa51a`](https://github.com/web3ui/web3uikit/commit/7176fa51abf163e4294b3a25ffd795afda7ab546) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - New icons for contracts
+
 ## 0.2.17
 
 ### Patch Changes

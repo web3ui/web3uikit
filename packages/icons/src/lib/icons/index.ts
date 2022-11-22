@@ -120,7 +120,7 @@ export { default as Stars } from './Stars';
 export { default as SushiSwap } from './SushiSwap';
 export { default as Telegram } from './Telegram';
 export { default as Testnet } from './Testnet';
-export { default as TokenWhite } from './TokenWhite';
+export { default as TokenColored } from './TokenColored';
 export { default as Token } from './Token';
 export { default as Trending } from './Trending';
 export { default as TriangleDown } from './TriangleDown';

@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export const theme = ['blue', 'green', 'red', 'yellow'] as const;
 export type TTheme = typeof theme[number];
 
@@ -10,7 +12,7 @@ export interface AccordionProps {
     /**
      * each accordion needs a title
      */
-    title: string;
+    title: string | JSX.Element;
 
     /**
      * each accordion needs a content
@@ -20,7 +22,7 @@ export interface AccordionProps {
     /**
      * you can pass a sub title
      */
-    subTitle?: string;
+    subTitle?: string | JSX.Element;
 
     /**
      * You can set the accordion to be open by default

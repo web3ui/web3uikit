@@ -74,15 +74,26 @@ const Accordion: React.FC<AccordionProps> = ({
                         />
                     )}
 
-                    <H4Styled data-testid="test-accordion-title">
-                        {title}
-                    </H4Styled>
+                    {typeof title === 'string' ? (
+                        <H4Styled data-testid="test-accordion-title">
+                            {title}
+                        </H4Styled>
+                    ) : (
+                        <span data-testid="test-accordion-title">{title}</span>
+                    )}
                 </DivStyled>
 
                 <DivStyled>
-                    {subTitle && (
-                        <p data-testid="test-accordion-subtitle">{subTitle}</p>
-                    )}
+                    {subTitle &&
+                        (typeof subTitle === 'string' ? (
+                            <p data-testid="test-accordion-subtitle">
+                                {subTitle}
+                            </p>
+                        ) : (
+                            <span data-testid="test-accordion-subtitle">
+                                {subTitle}
+                            </span>
+                        ))}
                     {hasLockIcon &&
                         (isOpen ? (
                             <LockOpen

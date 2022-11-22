@@ -59,15 +59,21 @@ const PaginationText = styled.div<PaginationTextProps>`
 `;
 
 const DivTableCell = styled.div<
-    Pick<ITableProps, 'alignCellItems' | 'justifyCellItems'>
+    Pick<ITableProps, 'alignCellItems' | 'justifyCellItems' | 'cellPadding'>
 >`
     align-items: ${(props) => props.alignCellItems};
     justify-content: ${(props) => props.justifyCellItems};
     display: flex;
-    padding: 16px 0;
+    padding: ${(props) => (props.cellPadding ? props.cellPadding : '16px 0')};
 `;
 
-const getBoxShadowValues = (props: any) => `${props.headerBgColor ? ((props.columnGapSize + 'px 0px 0px 0px' + props.headerBgColor) ?? '11px'):('0px')}`;
+const getBoxShadowValues = (props: any) =>
+    `${
+        props.headerBgColor
+            ? props.columnGapSize + 'px 0px 0px 0px' + props.headerBgColor ??
+              '11px'
+            : '0px'
+    }`;
 
 const TableGrid = styled.div.attrs((props: any) => ({
     columns: props.columns,
@@ -75,40 +81,46 @@ const TableGrid = styled.div.attrs((props: any) => ({
     tableBackgroundColor: props.tableBackgroundColor,
     headerBgColor: props.headerBgColor,
     headerTextColor: props.headerTextColor,
+    cellPadding: props.cellPadding,
 }))`
     ${resetCSS}
     ${fonts.text}
-    padding-bottom: 11px;
+    padding-bottom: ${(props) =>
+        props.cellPadding === '0px' ? '0px' : '11px'};
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     background-color: ${(props) => props.tableBackgroundColor ?? color.white};
     display: grid;
     grid-template-columns: ${(props) => props.columns};
-    // row-gap: 22px;
     column-gap: ${(props) => props.columnGapSize + 'px' ?? '11px'};
     min-height: fit-content;
     min-width: fit-content;
     & > .firstCol {
-        padding-left: 22px;
+        padding-left: ${(props) => props.cellPadding ?? '22px'};
     }
     & > .lastCol {
-        padding-right: 22px;
+        padding-right: ${(props) => props.cellPadding ?? '22px'};
     }
     & > div.table_header {
         font-weight: 600;
         padding: 12px 0;
         color: ${(props) => props.headerTextColor ?? color.white};
-        background-color: ${(props) => props.headerBgColor ?? color.white} !important;
-        box-shadow: -${(props) => getBoxShadowValues(props)}, ${(props) => getBoxShadowValues(props)}; //to fill the grip-gap with color
+        background-color: ${(props) =>
+            props.headerBgColor ?? color.white} !important;
+        box-shadow: -${(props) => getBoxShadowValues(props)},
+            ${(props) =>
+                getBoxShadowValues(props)}; //to fill the grip-gap with color
 
         &:first-of-type {
             padding-left: 22px;
         }
     }
+
 `;
 
 const TableGridContainer = styled.div<{
     isScrollableOnOverflow: boolean;
+    customTableBorder?: string;
 }>`
     background: radial-gradient(
         106.45% 108.64% at 32.33% -4.84%,
@@ -117,7 +129,6 @@ const TableGridContainer = styled.div<{
     );
     border-radius: 20px;
     padding: 1px;
-    /* position: relative; */
     ${(props) =>
         props.isScrollableOnOverflow &&
         css`
@@ -127,7 +138,9 @@ const TableGridContainer = styled.div<{
             &::-webkit-scrollbar {
                 display: none;
             }
-        `}
+        `};
+    ${(props) =>
+        props.customTableBorder && `border:${props.customTableBorder}`};
 `;
 
 interface PaginationTag {

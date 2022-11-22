@@ -224,3 +224,26 @@ const DivStyled = styled.div`
         background-color: white;
     }
 `;
+
+export const SingleColumnTable = Template.bind({});
+
+const TextStyled = styled.div`
+    width: 100%;
+    padding: 10px;
+    background-color: ${color.aero20};
+`;
+SingleColumnTable.args = {
+    columnsConfig: '1fr',
+    header: ['Address'],
+    data: [
+        [<TextStyled>0xe922879D89E3a8D2f2D51EC8590AEF13216f9E7a</TextStyled>],
+        [<TextStyled>0xe922879D89E3a8D2f2D51EC8590AEF13216f9E7a</TextStyled>],
+        [<TextStyled>0xe922879D89E3a8D2f2D51EC8590AEF13216f9E7a</TextStyled>],
+        [<TextStyled>0xe922879D89E3a8D2f2D51EC8590AEF13216f9E7a</TextStyled>],
+    ],
+    pageSize: 10,
+    noPagination: true,
+    columnGapSize: 0,
+    cellPadding: '0px',
+    customTableBorder: '1px solid black',
+};

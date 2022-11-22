@@ -24,6 +24,7 @@ const {
 
 const Table: React.FC<ITableProps> = ({
     alignCellItems = 'start',
+    cellPadding,
     columnGapSize = 11,
     columnsConfig,
     customDataComponent,
@@ -31,6 +32,7 @@ const Table: React.FC<ITableProps> = ({
     customNoDataComponent,
     customNoDataText = 'No Data',
     customPageNumber,
+    customTableBorder,
     data,
     header,
     isColumnSortable = [],
@@ -43,8 +45,8 @@ const Table: React.FC<ITableProps> = ({
     onRowClick,
     pageSize,
     tableBackgroundColor = 'white',
-    headerTextColor='',
-    headerBgColor='',
+    headerTextColor = '',
+    headerBgColor = '',
     ...props
 }) => {
     const [pageNum, setPageNum] = useState<number>(
@@ -151,6 +153,7 @@ const Table: React.FC<ITableProps> = ({
                             alignCellItems={alignCellItems}
                             justifyCellItems={justifyCellItems}
                             onClick={() => handleSortingChange(key)}
+                            cellPadding={cellPadding}
                         >
                             {col}
                             {sortField === key &&
@@ -209,14 +212,13 @@ const Table: React.FC<ITableProps> = ({
                                             key={`tr_${rowKey}_${colKey}`}
                                             data-key={`tr_${rowKey}_${colKey}`}
                                             role="table-item"
-                                            className={`${
-                                                colKey == 0 && 'firstCol'
-                                            } ${
-                                                colKey == rowData.length - 1 &&
-                                                'lastCol'
-                                            }`}
+                                            className={`${colKey == 0 &&
+                                                'firstCol'} ${colKey ==
+                                                rowData.length - 1 &&
+                                                'lastCol'}`}
                                             alignCellItems={alignCellItems}
                                             justifyCellItems={justifyCellItems}
+                                            cellPadding={cellPadding}
                                             onClick={(e) => {
                                                 if (
                                                     onRowClick &&
@@ -264,9 +266,8 @@ const Table: React.FC<ITableProps> = ({
                         maxPages,
                     ).map((key) => (
                         <PaginationTag
-                            data-testid={`test-table-pagination-${
-                                key - 1 == pageNum
-                            }`}
+                            data-testid={`test-table-pagination-${key - 1 ==
+                                pageNum}`}
                             active={key - 1 == pageNum}
                             key={`pagination_${key}`}
                             onClick={() => handleSetPageNumber(key - 1)}
@@ -312,13 +313,17 @@ const Table: React.FC<ITableProps> = ({
 
     return (
         <TableParent data-testid="test-table" {...props}>
-            <TableGridContainer isScrollableOnOverflow={isScrollableOnOverflow}>
+            <TableGridContainer
+                isScrollableOnOverflow={isScrollableOnOverflow}
+                customTableBorder={customTableBorder}
+            >
                 <TableGrid
                     columns={columnsConfig}
                     columnGapSize={columnGapSize}
                     tableBackgroundColor={tableBackgroundColor}
                     headerTextColor={headerTextColor}
                     headerBgColor={headerBgColor}
+                    cellPadding={cellPadding}
                 >
                     <RenderTableHeader />
                     {isLoading ? <Loader /> : <RenderTable />}

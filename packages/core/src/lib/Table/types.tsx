@@ -114,4 +114,14 @@ export interface ITableProps {
      * background color of the table header;
      */
     headerBgColor?: string;
+
+    /**
+     * custom cell padding for the table
+     */
+    cellPadding?: string;
+
+    /**
+     * custom border for the table
+     */
+    customTableBorder?: string;
 }

@@ -67,6 +67,7 @@ const FieldsetStyled = styled.fieldset`
         line-height: 24px;
     }
     td {
+        font-weight: 400;
         max-width: 140px;
         text-overflow: ellipsis;
     }

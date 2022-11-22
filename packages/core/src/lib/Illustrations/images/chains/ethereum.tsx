@@ -10,8 +10,8 @@ const ethereum: React.FC<ILogoProps> = ({ width = '120', height = '160' }) => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
-            <g clip-path="url(#clip0_30_8567)">
-                <g clip-path="url(#clip1_30_8567)">
+            <g clipPath="url(#clip0_30_8567)">
+                <g clipPath="url(#clip1_30_8567)">
                     <path
                         d="M59.4844 14.2109L59.5026 63.2303L100.185 81.7291L59.4844 14.2109Z"
                         fill="white"

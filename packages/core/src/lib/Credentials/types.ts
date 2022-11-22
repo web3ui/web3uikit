@@ -1,8 +1,13 @@
 import { color } from '@web3uikit/styles';
 import React from 'react';
 import { Typography } from '../Typography';
+import { CopyButtonProps } from '../CopyButton';
 
-export interface ICredentialsProps extends ICredentialsHeaderProps {
+type TCopyButtonProps = Pick<CopyButtonProps, 'onCopy'>;
+
+export interface ICredentialsProps
+    extends ICredentialsHeaderProps,
+        TCopyButtonProps {
     /**
      * if true displays Copy Button
      */
@@ -39,6 +44,11 @@ export interface ICredentialsProps extends ICredentialsHeaderProps {
      * default is "auto"
      */
     width?: string;
+
+    /**
+     * This event will fire when hideButton clicked to reveal hidden text only
+     */
+    onReveal?: () => void;
 }
 export interface ICredentialsHeaderProps {
     /**

@@ -6,6 +6,10 @@ import { Credentials } from '.';
 export default {
     title: '2.Forms/Credentials',
     component: Credentials,
+    argTypes: {
+        onCopy: { action: 'clicked' },
+        onReveal: { action: 'revealed' },
+    },
 } as ComponentMeta<typeof Credentials>;
 
 const Template: ComponentStory<typeof Credentials> = (args) => (

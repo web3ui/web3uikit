@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Tag } from '../Tag';
 import { Plus, Minus, LockOpen, LockClosed } from '@web3uikit/icons';
 import { AccordionProps } from './types';
@@ -22,6 +22,7 @@ const Accordion: React.FC<AccordionProps> = ({
     tagText,
     theme = 'blue',
     title,
+    style,
     ...props
 }) => {
     const [isOpen, setIsOpen] = useState(isExpanded);
@@ -47,7 +48,7 @@ const Accordion: React.FC<AccordionProps> = ({
             aria-label="Accordion item"
             data-testid="test-accordion"
             id={id}
-            style={{ opacity: opacity }}
+            style={{ opacity: opacity, ...style }}
             theme={theme}
             {...props}
         >

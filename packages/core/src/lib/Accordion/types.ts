@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactElement, ReactNode } from 'react';
 
 export const theme = ['blue', 'green', 'red', 'yellow'] as const;
 export type TTheme = typeof theme[number];
@@ -43,4 +43,9 @@ export interface AccordionProps {
      * Show a lock icon the opens with the accordion
      */
     hasLockIcon?: boolean;
+
+    /**
+     * Optional custom CSS
+     */
+    style?: React.CSSProperties;
 }

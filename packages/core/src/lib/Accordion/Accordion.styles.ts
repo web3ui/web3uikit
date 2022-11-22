@@ -40,7 +40,7 @@ const HeaderStyled = styled.header`
     padding: 8px 12px;
 
     &:hover {
-        background-color: ${color.navy20};
+        background-color: ${color.navy10};
     }
 `;
 

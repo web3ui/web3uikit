@@ -1,5 +1,18 @@
 # @web3uikit/core
 
+## 0.2.19
+
+### Patch Changes
+
+-   [#910](https://github.com/web3ui/web3uikit/pull/910) [`9dbae12c6`](https://github.com/web3ui/web3uikit/commit/9dbae12c63af90ab82b3454374c0eb260357b95e) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Copy button to NFT card details
+
+*   [#914](https://github.com/web3ui/web3uikit/pull/914) [`f8de81331`](https://github.com/web3ui/web3uikit/commit/f8de813316d9a2c59531e55aafb66d637be9e64c) Thanks [@Maki44](https://github.com/Maki44)! - Add callbacks to credentials
+
+-   [#912](https://github.com/web3ui/web3uikit/pull/912) [`42ed395b6`](https://github.com/web3ui/web3uikit/commit/42ed395b6d8b858726faadae73779d3647df8edc) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - add title and subtitle to accordion
+
+-   Updated dependencies [[`2d1456f49`](https://github.com/web3ui/web3uikit/commit/2d1456f499c793f5edc13631e4bdcebd0a6be12f)]:
+    -   @web3uikit/icons@0.2.19
+
 ## 0.2.16
 
 ### Patch Changes

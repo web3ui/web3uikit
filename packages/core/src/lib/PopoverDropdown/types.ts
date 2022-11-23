@@ -40,4 +40,9 @@ export interface IPopoverDropdownProps {
      * This prop has been depreciated and will be fully removed soon, do not use
      */
     moveBody?: number;
+
+    /**
+     * hide arrow
+     */
+    isArrowHidden?: boolean;
 }

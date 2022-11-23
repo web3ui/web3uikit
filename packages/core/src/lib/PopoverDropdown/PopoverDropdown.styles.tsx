@@ -4,7 +4,7 @@ import { IPopoverDropdownProps } from './types';
 
 type TStyleProps = Pick<
     IPopoverDropdownProps,
-    'backgroundColor' | 'moveBody' | 'position' | 'width'
+    'backgroundColor' | 'moveBody' | 'position' | 'width' | 'isArrowHidden'
 >;
 
 const sizeValue = 20;
@@ -130,27 +130,31 @@ const ListStyled = styled.ul<TStyleProps>`
         z-index: 2;
     }
 
-    &:before {
-        // dead-zone buffer to prevent off-hover bug
-        background-color: transparent;
-        content: '';
-        display: block;
-        position: absolute;
-        // dynamic values come from setPosition()
-    }
+    ${(props) =>
+        !props.isArrowHidden &&
+        css`
+            &:before {
+                // dead-zone buffer to prevent off-hover bug
+                background-color: transparent;
+                content: '';
+                display: block;
+                position: absolute;
+                // dynamic values come from setPosition()
+            }
 
-    &:after {
-        // the tail of the popover box
-        background-color: ${(p) => `${p.backgroundColor}`};
-        content: '';
-        display: block;
-        height: ${size};
-        position: absolute;
-        transform: rotate(45deg);
-        width: ${size};
-        z-index: 1;
-        // dynamic values come from setPosition()
-    }
+            &:after {
+                // the tail of the popover box
+                background-color: ${props.backgroundColor};
+                content: '';
+                display: block;
+                height: ${size};
+                position: absolute;
+                transform: rotate(45deg);
+                width: ${size};
+                z-index: 1;
+                // dynamic values come from setPosition()
+            }
+        `}
 `;
 
 export default {

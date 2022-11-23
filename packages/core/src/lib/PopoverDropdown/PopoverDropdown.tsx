@@ -10,6 +10,7 @@ const PopoverDropdown: React.FC<IPopoverDropdownProps> = ({
     backgroundColor = color.blue70,
     children,
     id,
+    isArrowHidden = false,
     move,
     moveBody,
     parent,
@@ -37,6 +38,7 @@ const PopoverDropdown: React.FC<IPopoverDropdownProps> = ({
                 position={position}
                 role="menu"
                 width={width}
+                isArrowHidden={isArrowHidden}
             >
                 {children.map((child, index) => {
                     return (

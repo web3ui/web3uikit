@@ -27,6 +27,8 @@ const Credentials: FC<ICredentialsProps> = ({
     title,
     titleColor,
     width = 'auto',
+    onCopy,
+    onReveal,
     ...props
 }) => {
     const [isValueHidden, setIsValueHidden] = useState(isHidden);
@@ -81,12 +83,17 @@ const Credentials: FC<ICredentialsProps> = ({
                 <ToolsStyled data-testid="test-credentials-tools">
                     {hasHideButton && (
                         <HideButton
-                            onToggle={() => setIsValueHidden(!isValueHidden)}
+                            onToggle={() => {
+                                setIsValueHidden(!isValueHidden);
+                                if (isValueHidden) onReveal && onReveal();
+                            }}
                             isHidden={isValueHidden}
                         />
                     )}
                     {hasHideButton && hasCopyButton && <DividerStyled />}
-                    {hasCopyButton && <CopyButton text={text} iconSize={24} />}
+                    {hasCopyButton && (
+                        <CopyButton text={text} iconSize={24} onCopy={onCopy} />
+                    )}
                 </ToolsStyled>
             </PreformattedStyled>
         </CredentialsStyled>

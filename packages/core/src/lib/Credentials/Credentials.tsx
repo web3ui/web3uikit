@@ -17,13 +17,14 @@ const {
 } = styles;
 
 const Credentials: FC<ICredentialsProps> = ({
+    customize,
     hasCopyButton = true,
     hasHideButton = true,
     hiddenText = '•••••••••••••••••••••••••••••••',
     icon,
     isHidden = false,
     text,
-    textColor = color.blue70,
+    textColor = customize?.color || color.blue70,
     title,
     titleColor,
     width = 'auto',
@@ -46,6 +47,7 @@ const Credentials: FC<ICredentialsProps> = ({
     return (
         <CredentialsStyled
             data-testid="test-credentials"
+            customize={customize}
             width={width}
             {...props}
         >
@@ -64,6 +66,7 @@ const Credentials: FC<ICredentialsProps> = ({
                     <Typography
                         color={isValueHidden ? color.blueGray50 : textColor}
                         data-testid="test-cred-new-comp-heading"
+                        fontSize={customize?.fontSize}
                         monospace
                         variant={isValueHidden ? 'caption14' : 'body16'}
                         weight="400"
@@ -92,7 +95,12 @@ const Credentials: FC<ICredentialsProps> = ({
                     )}
                     {hasHideButton && hasCopyButton && <DividerStyled />}
                     {hasCopyButton && (
-                        <CopyButton text={text} iconSize={24} onCopy={onCopy} />
+                        <CopyButton
+                            fill={customize?.color}
+                            iconSize={24}
+                            onCopy={onCopy}
+                            text={text}
+                        />
                     )}
                 </ToolsStyled>
             </PreformattedStyled>

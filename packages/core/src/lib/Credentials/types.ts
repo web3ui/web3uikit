@@ -1,5 +1,5 @@
 import { color } from '@web3uikit/styles';
-import React from 'react';
+import { TCustomize } from '../../interfaces/customize';
 import { Typography } from '../Typography';
 import { CopyButtonProps } from '../CopyButton';
 
@@ -8,6 +8,11 @@ type TCopyButtonProps = Pick<CopyButtonProps, 'onCopy'>;
 export interface ICredentialsProps
     extends ICredentialsHeaderProps,
         TCopyButtonProps {
+    /**
+     * Customize the credentials
+     */
+    customize?: TCustomize;
+
     /**
      * if true displays Copy Button
      */

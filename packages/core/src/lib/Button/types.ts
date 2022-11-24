@@ -1,27 +1,6 @@
-import { ILoadingProps } from '../Loading';
 import React from 'react';
-
-type TButtonCustomConfig = {
-    /**
-     * Custom color, HEX or rgba is best
-     */
-    backgroundColor?: string;
-
-    /**
-     * Custom color, HEX or rgba is best
-     */
-    textColor?: string;
-
-    /**
-     * Custom size, number of px
-     */
-    fontSize?: number;
-
-    /**
-     * Lighten or darken the background on hover
-     */
-    onHover?: 'lighten' | 'darken';
-};
+import { TCustomize } from '../../interfaces/customize';
+import { ILoadingProps } from '../Loading';
 
 export interface ButtonProps {
     /**
@@ -120,7 +99,7 @@ export interface ButtonProps {
     /**
      * Customize the button
      */
-    customize?: TButtonCustomConfig;
+    customize?: TCustomize;
 
     /**
      * Optional custom CSS

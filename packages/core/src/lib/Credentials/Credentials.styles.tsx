@@ -20,7 +20,8 @@ const CredentialsStyled = styled.div<TStyleProps>`
     width: ${(p) => p.width};
 
     @media (max-width: 600px) {
-        padding: 16px 8px;
+        padding: ${(p) =>
+            p.customize?.padding ? p.customize?.padding : '16px 8px'};
     }
 `;
 

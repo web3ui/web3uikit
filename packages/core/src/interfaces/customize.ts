@@ -27,5 +27,5 @@ export type TCustomize = {
     /**
      * Custom padding, EG 10px 20px
      */
-    padding?: number;
+    padding?: string;
 };

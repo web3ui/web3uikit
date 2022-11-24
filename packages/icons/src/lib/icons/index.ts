@@ -62,6 +62,7 @@ export { default as Github } from './Github';
 export { default as Google } from './Google';
 export { default as Grid } from './Grid';
 export { default as HandCoin } from './HandCoin';
+export { default as Heart } from './Heart';
 export { default as HelpCircle } from './HelpCircle';
 export { default as Home } from './Home';
 export { default as Image } from './Image';

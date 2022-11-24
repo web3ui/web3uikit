@@ -2,17 +2,26 @@ import styled from 'styled-components';
 import { color, resetCSS } from '@web3uikit/styles';
 import { ICredentialsProps, TDivWrapper } from './types';
 
-const CredentialsStyled = styled.div<Pick<ICredentialsProps, 'width'>>`
-    background: ${color.aero10};
-    border-radius: 16px;
+type TStyleProps = Pick<ICredentialsProps, 'customize' | 'width'>;
+
+const CredentialsStyled = styled.div<TStyleProps>`
+    background: ${(p) =>
+        p.customize?.backgroundColor
+            ? p.customize?.backgroundColor
+            : color.aero10};
+
+    border-radius: ${(p) =>
+        p.customize?.borderRadius ? p.customize?.borderRadius : '16px'};
+
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: ${(p) => (p.customize?.padding ? p.customize?.padding : '16px')};
     position: relative;
     width: ${(p) => p.width};
 
     @media (max-width: 600px) {
-        padding: 16px 8px;
+        padding: ${(p) =>
+            p.customize?.padding ? p.customize?.padding : '16px 8px'};
     }
 `;
 

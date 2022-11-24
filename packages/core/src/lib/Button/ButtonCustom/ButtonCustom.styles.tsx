@@ -5,14 +5,16 @@ import { ButtonProps } from '../types';
 
 const ButtonCustomStyled = styled(ButtonBase)<ButtonProps>`
     background-color: ${(p) => p.customize?.backgroundColor};
+    border-radius: ${(p) => p.customize?.borderRadius};
+    padding: ${(p) => p.customize?.padding};
 
     span {
-        color: ${(p) => p.customize?.textColor};
-        font-size: ${(p) => p.customize?.fontSize + 'px'};
+        color: ${(p) => p.customize?.color};
+        font-size: ${(p) => p.customize?.fontSize};
     }
 
     svg {
-        fill: ${(p) => p.customize?.textColor};
+        fill: ${(p) => p.customize?.color};
     }
 
     :after {

@@ -1,4 +1,5 @@
 export interface CopyButtonProps {
+    fill?: string;
     iconSize?: number;
     onCopy?: (e?: React.BaseSyntheticEvent) => void;
     revertIn?: number;

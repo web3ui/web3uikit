@@ -82,6 +82,11 @@ export interface StepperProps {
      * size(percentage) of stepper. Only works when orientation is vertical
      */
     stepperWidth?: number;
+
+    /**
+     * hide the last completed page
+     */
+    isCompletedPageHidden?: boolean;
 }
 
 /**

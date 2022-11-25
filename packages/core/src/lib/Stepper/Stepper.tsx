@@ -23,6 +23,7 @@ const Stepper: React.FC<StepperProps> = ({
     hasNavButtons = true,
     headerWidth,
     helperContent,
+    isCompletedPageHidden = false,
     onComplete = () => null,
     onNext,
     onPrev,
@@ -58,7 +59,10 @@ const Stepper: React.FC<StepperProps> = ({
     };
 
     const nextStep = () => {
-        if (activeStep === stepData.length + 1) {
+        if (
+            activeStep === stepData.length + 1 ||
+            (activeStep === stepData.length && isCompletedPageHidden)
+        ) {
             onComplete();
             return;
         }
@@ -196,7 +200,9 @@ const Stepper: React.FC<StepperProps> = ({
                                 disabled={activeStep === 0}
                                 onClick={nextStep}
                                 text={
-                                    activeStep === stepData.length + 1
+                                    activeStep === stepData.length + 1 ||
+                                    (activeStep === stepData.length &&
+                                        isCompletedPageHidden)
                                         ? 'Done!'
                                         : 'Next'
                                 }

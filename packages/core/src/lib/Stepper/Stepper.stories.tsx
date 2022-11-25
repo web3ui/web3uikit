@@ -104,4 +104,5 @@ VerticalStepperWithCustomWidth.args = {
     stepperWidth: 10,
     orientation: 'vertical',
     contentPadding: '100px',
+    isCompletedPageHidden: true,
 };

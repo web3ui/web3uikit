@@ -27,10 +27,11 @@ export const useCopyToClipboard = (): [CopiedValue, CopyFn] => {
 };
 
 const CopyButton: FC<CopyButtonProps> = ({
-    text,
+    fill,
     iconSize = 24,
     onCopy = () => {},
     revertIn = 3000,
+    text,
     ...props
 }) => {
     const [, copy] = useCopyToClipboard();
@@ -66,7 +67,7 @@ const CopyButton: FC<CopyButtonProps> = ({
                 <Copy
                     title="copy icon"
                     titleId="copybutton copy icon"
-                    fill={color.navy40}
+                    fill={fill || color.navy40}
                     fontSize={iconSize}
                 />
             )}

@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.2.20
+
+### Patch Changes
+
+-   [#919](https://github.com/web3ui/web3uikit/pull/919) [`b0943c883`](https://github.com/web3ui/web3uikit/commit/b0943c8831f7441e45716e68b1f1d183b07febfd) Thanks [@0xTijan](https://github.com/0xTijan)! - Heart Icon added
+
 ## 0.2.19
 
 ### Patch Changes

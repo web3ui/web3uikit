@@ -64,3 +64,15 @@ Multiline.args = {
     local_port = 8545
     custom_domains = onfkgi4pc9ld.moralis.io`,
 };
+
+export const Customize = Template.bind({});
+Customize.args = {
+    customize: {
+        backgroundColor: 'darkblue',
+        color: 'white',
+        fontSize: '12px',
+        padding: '8px 12px',
+    },
+    hasHideButton: false,
+    text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
+};

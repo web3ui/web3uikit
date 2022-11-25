@@ -8,6 +8,11 @@ export type Step = {
      * give the step a title
      */
     title?: string;
+
+    /**
+     * title used to display next to step in vertical orientation
+     */
+    stepTitle?: string;
 };
 
 export interface StepperProps {
@@ -42,6 +47,11 @@ export interface StepperProps {
     onNext?: (stepNumber: number) => void;
 
     /**
+     * This event will fire when prev button is clicked
+     */
+    onPrev?: (stepNumber: number) => void;
+
+    /**
      * Pass the step the user should start on
      * 0 = loading
      * 1 = start
@@ -57,6 +67,16 @@ export interface StepperProps {
      * header width pass an amount of pixels for responsive max width
      */
     headerWidth?: number;
+
+    /**
+     * position of the stepper
+     */
+    orientation?: 'horizontal' | 'vertical';
+
+    /**
+     * content padding
+     */
+    contentPadding?: string;
 }
 
 /**
@@ -66,4 +86,9 @@ export interface StepNumberProps {
     activeStep: number;
     stepTotal: number;
     thisStep: number;
+    orientation: 'horizontal' | 'vertical';
+}
+
+export interface IStepperNumberProps extends Partial<StepperProps> {
+    activeStep: number;
 }

@@ -1,7 +1,11 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Stepper } from '.';
 import { Button } from '../Button';
-import { testStepData, noNavTestStepData } from './testStepData';
+import {
+    testStepData,
+    noNavTestStepData,
+    verticalTestData,
+} from './testStepData';
 import { Avatar } from '../Avatar';
 
 const parentWrapper = {
@@ -83,4 +87,12 @@ SmallerStepperCount.args = {
     stepData: noNavTestStepData,
     hasNavButtons: false,
     headerWidth: 400,
+};
+
+export const VerticalStepper = Template.bind({});
+VerticalStepper.args = {
+    stepData: verticalTestData,
+    orientation: 'vertical',
+    step: 1,
+    contentPadding: '100px',
 };

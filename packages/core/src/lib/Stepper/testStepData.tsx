@@ -1,4 +1,8 @@
-
+import { CSSProperties } from 'styled-components';
+import { Credentials } from '../Credentials';
+import { Illustration } from '../Illustrations';
+import { LinkTo } from '../LinkTo';
+import { Typography } from '../Typography';
 
 const testCustomNavEvent = (direction: string) => {
     const event = new Event(direction, { bubbles: true });
@@ -157,5 +161,56 @@ export const noNavTestStepData = [
                 </p>
             </div>
         ),
+    },
+];
+
+const style: CSSProperties = {
+    width: '100%',
+    textAlign: 'left',
+    display: 'block',
+};
+
+export const verticalTestData = [
+    {
+        content: (
+            <div style={style}>
+                <Typography variant="h3">
+                    Take a look at the API reference
+                </Typography>
+                <LinkTo
+                    text="See more in our documentation"
+                    address=""
+                    iconLayout="none"
+                />
+                <Illustration logo="chest" />
+            </div>
+        ),
+        stepTitle: 'Take a look at the API reference',
+    },
+    {
+        content: (
+            <div style={style}>
+                <Typography variant="h3">
+                    Check our quickstart using JS SDK
+                </Typography>
+                <LinkTo
+                    text="See more in our documentation"
+                    address=""
+                    iconLayout="none"
+                />
+                <Illustration logo="lazyNft" />
+            </div>
+        ),
+        stepTitle: 'Check our quickstart using JS SDK',
+    },
+    {
+        content: (
+            <div style={style}>
+                <Typography variant="h3">Copy Project Api Key</Typography>
+                <Credentials text="some big secret" />
+                <Illustration logo="lazyNft" />
+            </div>
+        ),
+        stepTitle: 'Copy Project API Key',
     },
 ];

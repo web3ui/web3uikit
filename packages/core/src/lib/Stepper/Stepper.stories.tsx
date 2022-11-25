@@ -96,3 +96,12 @@ VerticalStepper.args = {
     step: 1,
     contentPadding: '100px',
 };
+
+export const VerticalStepperWithCustomWidth = Template.bind({});
+VerticalStepperWithCustomWidth.args = {
+    stepData: verticalTestData.map((item) => ({ content: item.content })),
+    step: 1,
+    stepperWidth: 10,
+    orientation: 'vertical',
+    contentPadding: '100px',
+};

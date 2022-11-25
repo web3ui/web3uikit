@@ -77,6 +77,11 @@ export interface StepperProps {
      * content padding
      */
     contentPadding?: string;
+
+    /**
+     * size(percentage) of stepper. Only works when orientation is vertical
+     */
+    stepperWidth?: number;
 }
 
 /**

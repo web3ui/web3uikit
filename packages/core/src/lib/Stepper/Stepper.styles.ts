@@ -56,7 +56,15 @@ const DivStyledHelper = styled.div`
     }
 `;
 
-const SectionStyled = styled.section<Pick<StepperProps, 'orientation'>>`
+const getParsedWidth = (width?: number) => {
+    if (!width) return 50;
+    else if (width >= 100) return 50;
+    else return width;
+};
+
+const SectionStyled = styled.section<
+    Pick<StepperProps, 'orientation' | 'stepperWidth'>
+>`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -66,9 +74,10 @@ const SectionStyled = styled.section<Pick<StepperProps, 'orientation'>>`
         props.orientation === 'vertical'
             ? css`
                   display: grid;
-                  grid-template-columns: 45% 55%;
+                  grid-template-columns: ${getParsedWidth(props.stepperWidth)}% ${100 -
+                          getParsedWidth(props.stepperWidth)}%;
                   @media screen and (max-width: ${breakpoints.md}) {
-                      grid-template-columns: 20% 70%;
+                      grid-template-columns: 10% 85%;
                   }
               `
             : css`

@@ -17,18 +17,19 @@ const {
 } = HeaderStyles;
 
 const Stepper: React.FC<StepperProps> = ({
-    step = 0,
-    stepData,
-    hasNavButtons = true,
-    helperContent,
-    completeTitle = 'all done, nice!',
     completeMessage = 'You should tell the user what to do next, or use the onComplete function to programmatically fire an event',
+    completeTitle = 'all done, nice!',
+    contentPadding = undefined,
+    hasNavButtons = true,
+    headerWidth,
+    helperContent,
     onComplete = () => null,
     onNext,
     onPrev,
-    headerWidth,
     orientation = 'horizontal',
-    contentPadding = undefined,
+    step = 0,
+    stepData,
+    stepperWidth = 50,
     ...props
 }) => {
     const [activeStep, setActiveStep] = useState(step);
@@ -90,6 +91,7 @@ const Stepper: React.FC<StepperProps> = ({
             id={`step-${activeStep}`}
             orientation={orientation}
             contentPadding={contentPadding}
+            className="web3uikit-stepper-children-container"
         >
             <div id="stepper-title" data-testid="test-stepper-title">
                 {activeStep <= stepData.length ? (
@@ -122,12 +124,14 @@ const Stepper: React.FC<StepperProps> = ({
             <SectionStyled
                 data-testid="test-stepper"
                 orientation={orientation}
+                stepperWidth={stepperWidth}
                 {...props}
             >
                 <HeaderStyled
                     headerWidth={headerWidth}
                     style={{ alignSelf: 'center' }}
                     orientation={orientation}
+                    className="web3uikit-stepper-container"
                 >
                     <StepperNumbers
                         stepData={stepData}

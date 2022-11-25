@@ -14,6 +14,7 @@ const color = {
     blueGray50: '#68738D',
     fuchsia10: '#FCF0FB',
     fuchsia40: '#E156D0',
+    gray20: '#F8F8F8',
     gray30: '#CACFD3',
     gray40: '#A8AFB7',
     lavender40: '#8F7DFF',

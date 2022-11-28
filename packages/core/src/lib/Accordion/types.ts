@@ -61,4 +61,9 @@ export interface AccordionProps {
      * position of the icon
      */
     iconLayout?: 'leading' | 'trailing' | 'none';
+
+    /**
+     * Height of the content, set it to max-content for auto growing content
+     */
+    contentMaxHeight?: string;
 }

@@ -3,6 +3,7 @@ import Accordion from './Accordion';
 import { NewComp } from '../NewComp';
 import { Typography } from '../Typography';
 import { ChevronDown, ChevronUp } from '@web3uikit/icons';
+import { useState } from 'react';
 
 export default {
     title: '3.Layout/Accordion',
@@ -72,9 +73,32 @@ ThemeColor.args = {
     title: 'Theme is green',
 };
 
+const TestComponent = () => {
+    const [content, setContent] = useState('');
+    return (
+        <div style={{ padding: '20px 40px' }}>
+            <p>{content}</p>
+            <button
+                onClick={() =>
+                    setContent(
+                        (prev) =>
+                            prev +
+                            `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore repudiandae incidunt sint. Voluptates similique corrupti aut, ab quos minima natus quidem unde officiis, placeat facilis necessitatibus molestias vitae cum! Mollitia!`,
+                    )
+                }
+            >
+                Click Here
+            </button>
+        </div>
+    );
+};
+
 export const CustomAccordion = Template.bind({});
 CustomAccordion.args = {
-    children: [<NewComp key={'unique-id'} textOn="hello" textOff="bye!" />],
+    children: [
+        <NewComp key={'unique-id'} textOn="hello" textOff="bye!" />,
+        <TestComponent />,
+    ],
     id: 'accordion',
     title: <Typography variant="h1">This is custom title</Typography>,
     subTitle: (
@@ -92,4 +116,5 @@ CustomAccordion.args = {
         close: <ChevronDown width={22} height={22} />,
     },
     iconLayout: 'trailing',
+    contentMaxHeight: 'max-content',
 };

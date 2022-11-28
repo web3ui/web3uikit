@@ -40,6 +40,7 @@ const Accordion: React.FC<AccordionProps> = ({
         ),
     },
     iconLayout = 'leading',
+    contentMaxHeight = null,
     ...props
 }) => {
     const [isOpen, setIsOpen] = useState(isExpanded);
@@ -56,7 +57,10 @@ const Accordion: React.FC<AccordionProps> = ({
     }, []);
 
     const toggleOpen = () => {
-        setHeight(isOpen ? '0px' : heightWhenOpen);
+        let currHeight = heightWhenOpen;
+        if (contentMaxHeight) currHeight = contentMaxHeight;
+        if (isOpen) currHeight = '0px';
+        setHeight(currHeight);
         setIsOpen(!isOpen);
     };
 
@@ -127,7 +131,9 @@ const Accordion: React.FC<AccordionProps> = ({
                 data-testid="test-accordion-content"
                 id={`content-${formattedID}`}
                 ref={divElement}
-                style={{ maxHeight: height }}
+                style={{
+                    maxHeight: height,
+                }}
             >
                 {children}
             </DivStyledContent>

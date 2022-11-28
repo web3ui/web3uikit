@@ -76,6 +76,10 @@ Optimism.args = {
 };
 
 /* PLOP_INJECT_CHAIN */
+export const Palm = BackgroundColoredTemplate.bind({});
+Palm.args = {
+    logo: 'palm',
+};
 
 export const Crypto = BackgroundColoredTemplate.bind({});
 Crypto.args = {

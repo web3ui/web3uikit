@@ -40,6 +40,12 @@ export const chainLogoData = {
         color: '#E95557',
     },
     /* PLOP_INJECT_CHAIN */
+    
+    palm : {
+        name:'palm',
+        color:'#6818AA',
+    },
+
 } as const;
 
 const logoWalletColors = {

@@ -1,5 +1,16 @@
 # @web3uikit/core
 
+## 0.2.21
+
+### Patch Changes
+
+-   [#923](https://github.com/web3ui/web3uikit/pull/923) [`5f0e1baad`](https://github.com/web3ui/web3uikit/commit/5f0e1baad6bcf0dbe36e10d614184e8368f59a02) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - New styles for stepper and new color
+
+*   [#924](https://github.com/web3ui/web3uikit/pull/924) [`d82aae775`](https://github.com/web3ui/web3uikit/commit/d82aae775ae901b01d005100a830e783a781621d) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add palm network logo
+
+*   Updated dependencies [[`5f0e1baad`](https://github.com/web3ui/web3uikit/commit/5f0e1baad6bcf0dbe36e10d614184e8368f59a02)]:
+    -   @web3uikit/styles@0.2.21
+
 ## 0.2.20
 
 ### Patch Changes

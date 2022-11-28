@@ -23,6 +23,23 @@ const Accordion: React.FC<AccordionProps> = ({
     theme = 'blue',
     title,
     style,
+    icon = {
+        open: (
+            <Minus
+                title="minus icon"
+                titleId="accordion minus icon"
+                fill={getThemeColor(theme ?? 'blue')}
+            />
+        ),
+        close: (
+            <Plus
+                title="plus icon"
+                titleId="accordion plus icon"
+                fill={getThemeColor(theme ?? 'blue')}
+            />
+        ),
+    },
+    iconLayout = 'leading',
     ...props
 }) => {
     const [isOpen, setIsOpen] = useState(isExpanded);
@@ -61,20 +78,8 @@ const Accordion: React.FC<AccordionProps> = ({
                 onClick={toggleOpen}
             >
                 <DivStyled>
-                    {isOpen ? (
-                        <Minus
-                            title="minus icon"
-                            titleId="accordion minus icon"
-                            fill={getThemeColor(theme)}
-                        />
-                    ) : (
-                        <Plus
-                            title="plus icon"
-                            titleId="accordion plus icon"
-                            fill={getThemeColor(theme)}
-                        />
-                    )}
-
+                    {iconLayout === 'leading' &&
+                        (isOpen ? icon.open : icon.close)}
                     {typeof title === 'string' ? (
                         <H4Styled data-testid="test-accordion-title">
                             {title}
@@ -112,6 +117,8 @@ const Accordion: React.FC<AccordionProps> = ({
                     {tagText && (
                         <Tag text={tagText} color={theme} tone="dark" />
                     )}
+                    {iconLayout === 'trailing' &&
+                        (isOpen ? icon.open : icon.close)}
                 </DivStyled>
             </HeaderStyled>
 

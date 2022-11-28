@@ -48,4 +48,17 @@ export interface AccordionProps {
      * Optional custom CSS
      */
     style?: React.CSSProperties;
+
+    /**
+     * type of open and close icon
+     */
+    icon?: {
+        open: JSX.Element;
+        close: JSX.Element;
+    };
+
+    /**
+     * position of the icon
+     */
+    iconLayout?: 'leading' | 'trailing' | 'none';
 }

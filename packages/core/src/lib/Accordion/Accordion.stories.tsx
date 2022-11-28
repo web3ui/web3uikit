@@ -2,6 +2,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Accordion from './Accordion';
 import { NewComp } from '../NewComp';
 import { Typography } from '../Typography';
+import { ChevronDown, ChevronUp } from '@web3uikit/icons';
 
 export default {
     title: '3.Layout/Accordion',
@@ -86,4 +87,9 @@ CustomAccordion.args = {
             </div>
         </div>
     ),
+    icon: {
+        open: <ChevronUp width={22} height={22} />,
+        close: <ChevronDown width={22} height={22} />,
+    },
+    iconLayout: 'trailing',
 };

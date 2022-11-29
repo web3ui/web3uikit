@@ -116,5 +116,4 @@ CustomAccordion.args = {
         close: <ChevronDown width={22} height={22} />,
     },
     iconLayout: 'trailing',
-    contentMaxHeight: 'max-content',
 };

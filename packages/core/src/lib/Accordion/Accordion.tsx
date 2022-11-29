@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Tag } from '../Tag';
 import { Plus, Minus, LockOpen, LockClosed } from '@web3uikit/icons';
 import { AccordionProps } from './types';
 import styles from './Accordion.styles';
+import AnimateHeight, { Height } from 'react-animate-height';
 
 const {
     SectionStyled,
@@ -40,28 +41,15 @@ const Accordion: React.FC<AccordionProps> = ({
         ),
     },
     iconLayout = 'leading',
-    contentMaxHeight = null,
     ...props
 }) => {
     const [isOpen, setIsOpen] = useState(isExpanded);
-    const [height, setHeight] = useState('');
-    const [opacity, setOpacity] = useState('0%');
-    const [heightWhenOpen, setHeightWhenOpen] = useState('');
+    const [height, setHeight] = useState(isExpanded ? 'auto' : 0);
     const formattedID = id.replace(/\s/g, '-');
-    const divElement = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        setHeightWhenOpen(`${divElement.current?.clientHeight}px`);
-        setHeight(isOpen ? heightWhenOpen : '0px');
-        setOpacity('100%');
-    }, []);
 
     const toggleOpen = () => {
-        let currHeight = heightWhenOpen;
-        if (contentMaxHeight) currHeight = contentMaxHeight;
-        if (isOpen) currHeight = '0px';
-        setHeight(currHeight);
-        setIsOpen(!isOpen);
+        setHeight(isOpen ? 0 : 'auto');
+        setIsOpen((prev) => !prev);
     };
 
     return (
@@ -69,7 +57,7 @@ const Accordion: React.FC<AccordionProps> = ({
             aria-label="Accordion item"
             data-testid="test-accordion"
             id={id}
-            style={{ opacity: opacity, ...style }}
+            style={{ ...style }}
             theme={theme}
             {...props}
         >
@@ -125,18 +113,19 @@ const Accordion: React.FC<AccordionProps> = ({
                         (isOpen ? icon.open : icon.close)}
                 </DivStyled>
             </HeaderStyled>
-
-            <DivStyledContent
-                aria-hidden={isOpen}
-                data-testid="test-accordion-content"
-                id={`content-${formattedID}`}
-                ref={divElement}
-                style={{
-                    maxHeight: height,
-                }}
+            <AnimateHeight
+                height={height as Height}
+                duration={300}
+                animateOpacity={true}
             >
-                {children}
-            </DivStyledContent>
+                <DivStyledContent
+                    aria-hidden={isOpen}
+                    data-testid="test-accordion-content"
+                    id={`content-${formattedID}`}
+                >
+                    {children}
+                </DivStyledContent>
+            </AnimateHeight>
         </SectionStyled>
     );
 };

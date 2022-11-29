@@ -5,8 +5,7 @@ import styles from './LinkTo.styles';
 import { Typography } from '../Typography';
 import React from 'react';
 
-const { InternalLinkStyled, LinkStyled, SpanStyledFlex, SpanStyledText } =
-    styles;
+const { InternalLinkStyled, LinkStyled, SpanStyledFlex } = styles;
 
 const LinkTo: React.FC<LinkToProps> = ({
     address,
@@ -60,8 +59,8 @@ const LinkTo: React.FC<LinkToProps> = ({
             data-testid="test-link-to"
             href={`${type === 'email' ? 'mailto:' : ''}${address}`}
             target={`${type === 'email' ? '_self' : '_blank'}`}
-            isUnderlined={isUnderlined}
-            textColor={color}
+            $isUnderlined={isUnderlined}
+            $textColor={color}
             onClick={onClick}
         >
             {renderContent()}
@@ -70,8 +69,8 @@ const LinkTo: React.FC<LinkToProps> = ({
         <InternalLinkStyled
             data-testid="test-link-to"
             to={address}
-            isUnderlined={isUnderlined}
-            textColor={color}
+            $isUnderlined={isUnderlined}
+            $textColor={color}
             onClick={onClick}
         >
             {renderContent()}

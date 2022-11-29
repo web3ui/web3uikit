@@ -18,6 +18,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
     text = '',
     maxWidth = '100%',
     onChange,
+    onBlur,
     headerComponent,
     disabled,
     minHeight,
@@ -73,6 +74,7 @@ const CodeArea: FC<ICodeAreaProps> = ({
                             event: React.ChangeEvent<HTMLTextAreaElement>,
                         ) => valueChanged(event)}
                         spellCheck={false}
+                        onBlur={onBlur}
                         value={currentValue}
                         disabled={disabled}
                     />

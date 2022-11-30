@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.22
+
+### Patch Changes
+
+-   [#926](https://github.com/web3ui/web3uikit/pull/926) [`284c3357e`](https://github.com/web3ui/web3uikit/commit/284c3357ee34c36046570eb561ce7c53ae619b9a) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add open and close customization to accordion
+
 ## 0.2.21
 
 ### Patch Changes

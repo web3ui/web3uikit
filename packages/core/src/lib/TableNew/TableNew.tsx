@@ -3,6 +3,7 @@ import { color } from '@web3uikit/styles';
 import { ITableNewProps } from './types';
 import styles from './TableNew.styles';
 import TableBase from './atoms/TableBase';
+import Pagination from './atoms/Pagination';
 
 const { TableParent } = styles;
 
@@ -54,6 +55,12 @@ const TableNew: React.FC<ITableNewProps> = ({
         handleSetPageNumber(customPageNumber ? customPageNumber : 0);
     }, [customPageNumber]);
 
+    useEffect(() => {
+        if (typeof onPageNumberChanged != 'undefined') {
+            onPageNumberChanged(pageNum);
+        }
+    }, [pageNum]);
+
     return (
         <TableParent>
             <TableBase
@@ -62,6 +69,14 @@ const TableNew: React.FC<ITableNewProps> = ({
                 noPagination={noPagination}
                 pageNum={pageNum}
                 pageSize={pageSize}
+            />
+            <Pagination
+                noPagination={noPagination}
+                pageSize={pageSize}
+                maxPages={maxPages}
+                tableData={tableData}
+                handleSetPageNumber={handleSetPageNumber}
+                pageNum={pageNum}
             />
         </TableParent>
     );

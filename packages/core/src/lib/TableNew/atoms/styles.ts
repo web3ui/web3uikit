@@ -8,7 +8,14 @@ interface PaginationTextProps {
     isActive: boolean;
 }
 
-const TableStyled = styled.table`
+const TableStyled = styled.table.attrs((props: any) => ({
+    tableBackgroundColor: props.tableBackgroundColor,
+}))`
+    ${resetCSS}
+    ${fonts.text}
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
+    background-color: ${(props) => props.tableBackgroundColor ?? color.white};
     border-collapse: collapse;
     width: 100%;
 
@@ -53,9 +60,39 @@ const PaginationTag = styled.div<PaginationTag>`
     cursor: ${(props) => !props.active && 'pointer'};
 `;
 
+const DivSpinnerLoaderParent = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / -1;
+    & > h3 {
+        margin-top: 29px;
+    }
+`;
+
+const NoDataStyle = styled.div`
+    ${resetCSS}
+    ${fonts.text}
+    display: grid;
+    min-height: fit-content;
+    align-items: flex-start;
+    justify-content: center;
+    grid-column: 1 / -1;
+    & > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
+`;
+
 export default {
     PaginationStyled,
     PaginationTag,
     PaginationText,
     TableStyled,
+    DivSpinnerLoaderParent,
+    NoDataStyle,
 };

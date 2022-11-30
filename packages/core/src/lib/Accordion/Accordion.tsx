@@ -1,8 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Tag } from '../Tag';
 import { Plus, Minus, LockOpen, LockClosed } from '@web3uikit/icons';
 import { AccordionProps } from './types';
 import styles from './Accordion.styles';
+import AnimateHeight, { Height } from 'react-animate-height';
 
 const {
     SectionStyled,
@@ -23,24 +24,32 @@ const Accordion: React.FC<AccordionProps> = ({
     theme = 'blue',
     title,
     style,
+    icon = {
+        open: (
+            <Minus
+                title="minus icon"
+                titleId="accordion minus icon"
+                fill={getThemeColor(theme ?? 'blue')}
+            />
+        ),
+        close: (
+            <Plus
+                title="plus icon"
+                titleId="accordion plus icon"
+                fill={getThemeColor(theme ?? 'blue')}
+            />
+        ),
+    },
+    iconLayout = 'leading',
     ...props
 }) => {
     const [isOpen, setIsOpen] = useState(isExpanded);
-    const [height, setHeight] = useState('');
-    const [opacity, setOpacity] = useState('0%');
-    const [heightWhenOpen, setHeightWhenOpen] = useState('');
+    const [height, setHeight] = useState(isExpanded ? 'auto' : 0);
     const formattedID = id.replace(/\s/g, '-');
-    const divElement = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        setHeightWhenOpen(`${divElement.current?.clientHeight}px`);
-        setHeight(isOpen ? heightWhenOpen : '0px');
-        setOpacity('100%');
-    }, []);
 
     const toggleOpen = () => {
-        setHeight(isOpen ? '0px' : heightWhenOpen);
-        setIsOpen(!isOpen);
+        setHeight(isOpen ? 0 : 'auto');
+        setIsOpen((prev) => !prev);
     };
 
     return (
@@ -48,7 +57,7 @@ const Accordion: React.FC<AccordionProps> = ({
             aria-label="Accordion item"
             data-testid="test-accordion"
             id={id}
-            style={{ opacity: opacity, ...style }}
+            style={{ ...style }}
             theme={theme}
             {...props}
         >
@@ -61,20 +70,8 @@ const Accordion: React.FC<AccordionProps> = ({
                 onClick={toggleOpen}
             >
                 <DivStyled>
-                    {isOpen ? (
-                        <Minus
-                            title="minus icon"
-                            titleId="accordion minus icon"
-                            fill={getThemeColor(theme)}
-                        />
-                    ) : (
-                        <Plus
-                            title="plus icon"
-                            titleId="accordion plus icon"
-                            fill={getThemeColor(theme)}
-                        />
-                    )}
-
+                    {iconLayout === 'leading' &&
+                        (isOpen ? icon.open : icon.close)}
                     {typeof title === 'string' ? (
                         <H4Styled data-testid="test-accordion-title">
                             {title}
@@ -112,18 +109,23 @@ const Accordion: React.FC<AccordionProps> = ({
                     {tagText && (
                         <Tag text={tagText} color={theme} tone="dark" />
                     )}
+                    {iconLayout === 'trailing' &&
+                        (isOpen ? icon.open : icon.close)}
                 </DivStyled>
             </HeaderStyled>
-
-            <DivStyledContent
-                aria-hidden={isOpen}
-                data-testid="test-accordion-content"
-                id={`content-${formattedID}`}
-                ref={divElement}
-                style={{ maxHeight: height }}
+            <AnimateHeight
+                height={height as Height}
+                duration={300}
+                animateOpacity={true}
             >
-                {children}
-            </DivStyledContent>
+                <DivStyledContent
+                    aria-hidden={isOpen}
+                    data-testid="test-accordion-content"
+                    id={`content-${formattedID}`}
+                >
+                    {children}
+                </DivStyledContent>
+            </AnimateHeight>
         </SectionStyled>
     );
 };

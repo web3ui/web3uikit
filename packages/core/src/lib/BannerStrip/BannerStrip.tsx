@@ -23,7 +23,8 @@ const BannerStrip: React.FC<IBannerStripProps> = ({
     width,
     ...props
 }) => {
-    depreciatedWarning('buttonConfig and buttonDisplayed props');
+    if (buttonConfig || buttonDisplayed)
+        depreciatedWarning('buttonConfig and buttonDisplayed props');
     //persist the banner closed event for a number of days - noOfDaysToHide
     const [isComponentVisible, setIsComponentVisible] = useLocalStorage(
         id,

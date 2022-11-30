@@ -151,4 +151,5 @@ InternalLink.args = {
     type: 'internal',
     address: '/home',
     text: 'Go to Home',
+    fontSize: '24px',
 };

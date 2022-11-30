@@ -8,7 +8,13 @@ export type TTypeState = typeof typeState[number];
 
 type TTextProps = Pick<
     TypographyProps,
-    'color' | 'variant' | 'italic' | 'monospace' | 'weight'
+    | 'color'
+    | 'variant'
+    | 'italic'
+    | 'monospace'
+    | 'weight'
+    | 'fontSize'
+    | 'style'
 >;
 
 export interface LinkToProps extends TTextProps {

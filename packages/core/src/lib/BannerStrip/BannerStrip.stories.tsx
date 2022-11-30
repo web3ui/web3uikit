@@ -8,7 +8,6 @@ import React, { useEffect } from 'react';
 
 const HelperDecorator: DecoratorFn = (storyFn) => {
     const [seed, setSeed] = React.useState(1);
-
     return (
         <div
             key={seed}
@@ -21,13 +20,14 @@ const HelperDecorator: DecoratorFn = (storyFn) => {
             {storyFn()}
             {
                 <Button
-                    text="Show Banner"
+                    text="Click to Show Banner(if hidden)"
                     theme="outline"
                     onClick={() => {
                         window?.localStorage &&
                             window.localStorage.removeItem('web3uikit-banner');
                         setSeed(Math.random());
                     }}
+                    style={{ marginTop: '60px' }}
                 />
             }
         </div>

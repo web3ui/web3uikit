@@ -64,4 +64,5 @@ WithHeader.args = {
             <Button text="Discard" />
         </div>
     ),
+    onBlur: (e) => console.log(e.target.value),
 };

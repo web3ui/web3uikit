@@ -108,14 +108,12 @@ const TableGrid = styled.div.attrs((props: any) => ({
         background-color: ${(props) =>
             props.headerBgColor ?? color.white} !important;
         box-shadow: -${(props) => getBoxShadowValues(props)},
-            ${(props) =>
-                getBoxShadowValues(props)}; //to fill the grip-gap with color
+            ${(props) => getBoxShadowValues(props)}; //to fill the grip-gap with color
 
         &:first-of-type {
             padding-left: 22px;
         }
     }
-
 `;
 
 const TableGridContainer = styled.div<{
@@ -177,6 +175,12 @@ const DivStyledCustomData = styled.div`
     overflow: hidden;
 `;
 
+const DivRowStyled = styled.div`
+    :hover {
+        background-color: ${color.navy40};
+    }
+`;
+
 export default {
     DivSpinnerLoaderParent,
     DivStyledCustomData,
@@ -189,4 +193,5 @@ export default {
     TableGrid,
     TableGridContainer,
     TableParent,
+    DivRowStyled,
 };

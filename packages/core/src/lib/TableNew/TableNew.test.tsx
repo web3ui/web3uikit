@@ -5,8 +5,6 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import * as stories from './TableNew.stories';
 import { test, expect, describe } from 'vitest';
 
-const { Default, InitializeRed, UnderLinedText } = composeStories(stories);
-
 // setting my test IDs to match my tsx
 export const testCompId = 'test-new-comp';
 const testTitle = 'test-new-comp-title';

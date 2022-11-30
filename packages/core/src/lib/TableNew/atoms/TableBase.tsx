@@ -14,6 +14,15 @@ type TTableProps = Pick<
     | 'customNoDataText'
     | 'isLoading'
     | 'tableBackgroundColor'
+    | 'isScrollableOnOverflow'
+    | 'customTableBorder'
+    | 'alignCellItems'
+    | 'justifyCellItems'
+    | 'cellPadding'
+    | 'headerTextColor'
+    | 'headerBgColor'
+    | 'hover'
+    | 'hoverBackgroundColor'
 >;
 
 interface ITableProps extends TTableProps {
@@ -21,7 +30,7 @@ interface ITableProps extends TTableProps {
     tableData: (React.ReactNode | string)[][];
 }
 
-const { TableStyled } = styles;
+const { TableStyled, TableContainer, DivTableCell } = styles;
 const TableBase: React.FC<ITableProps> = ({
     customLoadingContent,
     customNoDataComponent,
@@ -33,6 +42,15 @@ const TableBase: React.FC<ITableProps> = ({
     pageSize,
     tableData,
     tableBackgroundColor,
+    isScrollableOnOverflow,
+    customTableBorder,
+    alignCellItems,
+    justifyCellItems,
+    cellPadding,
+    headerBgColor,
+    headerTextColor,
+    hover,
+    hoverBackgroundColor,
 }) => {
     const computeCurrentData = (): (string | React.ReactNode)[][] => {
         if (noPagination) {
@@ -43,43 +61,61 @@ const TableBase: React.FC<ITableProps> = ({
         return tableData?.slice(from, to);
     };
 
-    const RenderBody = (): JSX.Element => {
-        if (tableData && computeCurrentData().length == 0) {
-            return (
+    return (
+        <TableContainer
+            isScrollableOnOverflow={isScrollableOnOverflow}
+            customTableBorder={customTableBorder}
+        >
+            <TableStyled
+                tableBackgroundColor={tableBackgroundColor}
+                alignCellItems={alignCellItems}
+                headerTextColor={headerTextColor}
+                headerBgColor={headerBgColor}
+                hoverBackgroundColor={hoverBackgroundColor}
+            >
+                <thead>
+                    <tr>
+                        {header.map((head) => (
+                            <th>
+                                <DivTableCell
+                                    justifyCellItems={justifyCellItems}
+                                    cellPadding={cellPadding}
+                                >
+                                    {head}
+                                </DivTableCell>
+                            </th>
+                        ))}
+                    </tr>
+                </thead>
+                {!isLoading && (
+                    <tbody>
+                        {computeCurrentData().map((row) => (
+                            <tr className={`${hover && 'hover'}`}>
+                                {row.map((element) => (
+                                    <td>
+                                        <DivTableCell
+                                            justifyCellItems={justifyCellItems}
+                                            cellPadding={cellPadding}
+                                        >
+                                            {element}
+                                        </DivTableCell>
+                                    </td>
+                                ))}
+                            </tr>
+                        ))}
+                    </tbody>
+                )}
+            </TableStyled>
+            {tableData && computeCurrentData().length == 0 && (
                 <NoData
                     customNoDataComponent={customNoDataComponent}
                     customNoDataText={customNoDataText}
                 />
-            );
-        }
-        return (
-            <tbody>
-                {isLoading ? (
-                    <Loader customLoadingContent={customLoadingContent} />
-                ) : (
-                    computeCurrentData().map((row) => (
-                        <tr>
-                            {row.map((element) => (
-                                <td>{element}</td>
-                            ))}
-                        </tr>
-                    ))
-                )}
-            </tbody>
-        );
-    };
-
-    return (
-        <TableStyled tableBackgroundColor={tableBackgroundColor}>
-            <thead>
-                <tr>
-                    {header.map((head) => (
-                        <th>{head}</th>
-                    ))}
-                </tr>
-            </thead>
-            <RenderBody />
-        </TableStyled>
+            )}
+            {isLoading && (
+                <Loader customLoadingContent={customLoadingContent} />
+            )}
+        </TableContainer>
     );
 };
 

@@ -51,19 +51,21 @@ const Pagination: React.FC<IPaginationProps> = ({
                 >
                     Prev
                 </PaginationText>
-                {paginate(pageNum, pageSize, maxPages).map((key) => (
-                    <PaginationTag
-                        data-testid={`test-table-pagination-${
-                            key - 1 == pageNum
-                        }`}
-                        active={key - 1 == pageNum}
-                        key={`pagination_${key}`}
-                        onClick={() => handleSetPageNumber(key - 1)}
-                        role="pagination-item"
-                    >
-                        <span>{key}</span>
-                    </PaginationTag>
-                ))}
+                {paginate(tableData?.length, pageNum, pageSize, maxPages).map(
+                    (key) => (
+                        <PaginationTag
+                            data-testid={`test-table-pagination-${
+                                key - 1 == pageNum
+                            }`}
+                            active={key - 1 == pageNum}
+                            key={`pagination_${key}`}
+                            onClick={() => handleSetPageNumber(key - 1)}
+                            role="pagination-item"
+                        >
+                            <span>{key}</span>
+                        </PaginationTag>
+                    ),
+                )}
                 <PaginationText
                     data-testid="test-table-pagination-next"
                     isActive={

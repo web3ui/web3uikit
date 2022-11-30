@@ -8,10 +8,8 @@ import Pagination from './atoms/Pagination';
 const { TableParent } = styles;
 
 const TableNew: React.FC<ITableNewProps> = ({
-    alignCellItems = 'start',
+    alignCellItems = 'center',
     cellPadding,
-    columnGapSize = 11,
-    columnsConfig,
     customDataComponent,
     customLoadingContent,
     customNoDataComponent,
@@ -23,7 +21,7 @@ const TableNew: React.FC<ITableNewProps> = ({
     isColumnSortable = [],
     isLoading = false,
     isScrollableOnOverflow = true,
-    justifyCellItems = 'start',
+    justifyCellItems = 'center',
     maxPages,
     noPagination,
     onPageNumberChanged,
@@ -32,6 +30,8 @@ const TableNew: React.FC<ITableNewProps> = ({
     tableBackgroundColor = 'white',
     headerTextColor = '',
     headerBgColor = '',
+    hover = false,
+    hoverBackgroundColor,
     ...props
 }) => {
     const [pageNum, setPageNum] = useState<number>(
@@ -69,6 +69,20 @@ const TableNew: React.FC<ITableNewProps> = ({
                 noPagination={noPagination}
                 pageNum={pageNum}
                 pageSize={pageSize}
+                alignCellItems={alignCellItems}
+                justifyCellItems={justifyCellItems}
+                cellPadding={cellPadding}
+                headerTextColor={headerTextColor}
+                headerBgColor={headerBgColor}
+                isScrollableOnOverflow={isScrollableOnOverflow}
+                customTableBorder={customTableBorder}
+                tableBackgroundColor={tableBackgroundColor}
+                hover={hover}
+                hoverBackgroundColor={hoverBackgroundColor}
+                customNoDataText={customNoDataText}
+                isLoading={isLoading}
+                customLoadingContent={customLoadingContent}
+                {...props}
             />
             <Pagination
                 noPagination={noPagination}

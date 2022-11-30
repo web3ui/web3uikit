@@ -1,11 +1,5 @@
 export interface ITableNewProps {
     /**
-     * A String Template that defines the table layout.
-     * For more information please check https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout
-     */
-    columnsConfig: string;
-
-    /**
      * The header row of the table
      * For no header pass []
      */
@@ -25,7 +19,7 @@ export interface ITableNewProps {
     /**
      * To align the content within each table cell
      */
-    alignCellItems?: 'center' | 'start' | 'end';
+    alignCellItems?: 'center' | 'bottom' | 'top';
 
     /**
      * To Justify the content withing each table cell
@@ -91,11 +85,6 @@ export interface ITableNewProps {
     isScrollableOnOverflow?: boolean;
 
     /**
-     * gap between each column
-     */
-    columnGapSize?: number;
-
-    /**
      * background color of the table; remember to use 0px gap size for proper effect
      */
     tableBackgroundColor?: string;
@@ -124,4 +113,14 @@ export interface ITableNewProps {
      * custom border for the table
      */
     customTableBorder?: string;
+
+    /**
+     * hover effect on table rows controller
+     */
+    hover: boolean;
+
+    /**
+     * Table rows background color on hover effect
+     */
+    hoverBackgroundColor: string;
 }

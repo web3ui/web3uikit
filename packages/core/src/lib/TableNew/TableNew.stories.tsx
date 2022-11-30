@@ -1,47 +1,132 @@
-// importing boilerplate stuff for Storybook
-
+import * as React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-// importing your new component
-import NewComp from './TableNew';
+import {
+    columnsConfig,
+    syncColumnsConfig,
+    header,
+    syncHeader,
+    data,
+    syncData,
+    pageSize,
+    maxPages,
+    customTableMockData,
+} from './MockData';
+import { Loading } from '../Loading';
+import { color } from '@web3uikit/styles';
 
-// title: group / name in Storybook
-// component: your new component
-// argTypes: onClick is a 'Storybook Event' to simulate clicks
+import TableNew from './TableNew';
 export default {
-    title: '7.Demo/NewComp',
-    component: NewComp,
-    argTypes: { onClick: { action: 'clicked' } },
-} as ComponentMeta<typeof NewComp>;
+    title: 'Layout/TableNew',
+    component: TableNew,
+    argTypes: {
+        onPageNumberChanged: { action: 'Page Number Changed' },
+        onRowClick: { action: 'Row Clicked' },
+    },
+} as ComponentMeta<typeof TableNew>;
 
-// another boilerplate to set up your Storybook template with your new component
-const Template: ComponentStory<typeof NewComp> = (args) => (
-    <NewComp {...args} />
+const Template: ComponentStory<typeof TableNew> = (args) => (
+    <TableNew {...args} />
 );
 
-//////////////////////////////////////////////////////////////////////////////
-// NOTE please only include the min props needed for each render
-// this means the next dev using 'get code' in Storybook will not get confused
-//////////////////////////////////////////////////////////////////////////////
-
-// Story 1 Default
 export const Default = Template.bind({});
 Default.args = {
-    textOn: 'green light',
-    textOff: 'red light!',
+    header,
+    data: data,
+    pageSize,
+    maxPages,
 };
 
-// Story 2 InitializeRed
-export const InitializeRed = Template.bind({});
-InitializeRed.args = {
-    textOn: 'green light',
-    textOff: 'red light!',
-    state: 'redLight',
+export const NoPagination = Template.bind({});
+NoPagination.args = {
+    header,
+    data,
+    pageSize,
+    maxPages,
+    noPagination: true,
 };
 
-// Story 3 UnderLinedText
-export const UnderLinedText = Template.bind({});
-UnderLinedText.args = {
-    textOn: 'green light',
-    textOff: 'red light!',
-    hasUnderline: true,
+export const Scrolling = Template.bind({});
+Scrolling.args = {
+    header,
+    data,
+    pageSize,
+    maxPages,
+};
+
+export const NoData = Template.bind({});
+NoData.args = {
+    header,
+    data: [],
+    pageSize,
+    maxPages,
+};
+
+export const NoDataCustomText = Template.bind({});
+NoDataCustomText.args = {
+    header,
+    data: [],
+    pageSize,
+    maxPages,
+    customNoDataText: 'This is Custom Text',
+};
+
+export const NoDataCustomComponent = Template.bind({});
+NoDataCustomComponent.args = {
+    header,
+    data: [],
+    pageSize,
+    maxPages,
+    customNoDataComponent: <p>P tag passed as custom component</p>,
+};
+
+export const FrozenPageTable = Template.bind({});
+FrozenPageTable.args = {
+    header,
+    data: data,
+    pageSize,
+    maxPages,
+    customPageNumber: 1,
+};
+
+export const OutOfRangeFrozenTable = Template.bind({});
+OutOfRangeFrozenTable.args = {
+    header,
+    data: data,
+    pageSize,
+    maxPages,
+    customPageNumber: 6,
+};
+
+export const LoadingTable = Template.bind({});
+LoadingTable.args = {
+    header,
+    data: data,
+    pageSize,
+    maxPages,
+    isLoading: true,
+    isColumnSortable: [true, true],
+};
+
+export const CustomLoader = Template.bind({});
+CustomLoader.args = {
+    header,
+    data: data,
+    pageSize,
+    maxPages,
+    isLoading: true,
+    customLoadingContent: (
+        <div>
+            <Loading size={30} text="Fetching..." spinnerColor={color.navy40} />
+        </div>
+    ),
+};
+
+export const HighlightTableRow = Template.bind({});
+HighlightTableRow.args = {
+    header,
+    data: data,
+    pageSize,
+    maxPages,
+    hover: true,
+    hoverBackgroundColor: color.navy20,
 };

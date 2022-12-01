@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
-import { color } from '@web3uikit/styles';
 import { ITableNewProps } from './types';
 import styles from './TableNew.styles';
 import TableBase from './atoms/TableBase';
 import Pagination from './atoms/Pagination';
+import { getInnerText } from './Helper';
 
 const { TableParent } = styles;
 
@@ -38,6 +38,8 @@ const TableNew: React.FC<ITableNewProps> = ({
         customPageNumber ? customPageNumber : 0,
     );
     const [tableData, setTableData] = useState(data);
+    const [sortField, setSortField] = useState(-1);
+    const [order, setOrder] = useState('asc');
 
     const handleSetPageNumber = (state: number): void => {
         if (typeof customPageNumber == 'number') {
@@ -46,6 +48,47 @@ const TableNew: React.FC<ITableNewProps> = ({
             setPageNum(state);
         }
     };
+
+    const handleSortingChange = (fieldId: number) => {
+        if (
+            isColumnSortable.length !== 0 &&
+            isColumnSortable.length > fieldId &&
+            !isLoading &&
+            isColumnSortable[fieldId]
+        ) {
+            const sortOrder =
+                fieldId === sortField && order === 'asc' ? 'desc' : 'asc';
+            setSortField(fieldId);
+            setOrder(sortOrder);
+            handleSorting(fieldId, sortOrder);
+        }
+    };
+
+    const handleSorting = (fieldId: number, sortOrder: string) => {
+        const sorted = [...data].sort((a, b) => {
+            let x = getInnerText(a[fieldId]);
+            let y = getInnerText(b[fieldId]);
+            if (!x && !y) return 0;
+            if (!x) return 1;
+            if (!y) return -1;
+            const pattern = /(\d{2})\/(\d{2})\/(\d{4})(.*)/g;
+            // To handle date sort convert to YYYY-MM-DD format
+            if (pattern.test(x)) {
+                x = x.replace(pattern, '$3-$2-$1 $4');
+            }
+            if (pattern.test(y)) {
+                y = y.replace(pattern, '$3-$2-$1 $4');
+            }
+            return (
+                x.localeCompare(y, 'en', {
+                    numeric: true,
+                    sensitivity: 'base',
+                }) * (sortOrder === 'asc' ? 1 : -1)
+            );
+        });
+        setTableData(sorted);
+    };
+
     useEffect(() => {
         setTableData(data);
         setPageNum(0);
@@ -82,6 +125,9 @@ const TableNew: React.FC<ITableNewProps> = ({
                 customNoDataText={customNoDataText}
                 isLoading={isLoading}
                 customLoadingContent={customLoadingContent}
+                sortField={sortField}
+                order={order}
+                handleSortingChange={handleSortingChange}
                 {...props}
             />
             <Pagination

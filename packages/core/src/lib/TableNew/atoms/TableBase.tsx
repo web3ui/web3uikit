@@ -3,6 +3,8 @@ import { ITableNewProps } from '../types';
 import styles from './styles';
 import Loader from './Loader';
 import NoData from './NoData';
+import { TriangleUp, TriangleDown } from '@web3uikit/icons';
+import { color } from '@web3uikit/styles';
 
 type TTableProps = Pick<
     ITableNewProps,
@@ -28,6 +30,9 @@ type TTableProps = Pick<
 interface ITableProps extends TTableProps {
     pageNum: number;
     tableData: (React.ReactNode | string)[][];
+    sortField: number;
+    order: string;
+    handleSortingChange: (key: number) => void;
 }
 
 const { TableStyled, TableContainer, DivTableCell } = styles;
@@ -51,6 +56,9 @@ const TableBase: React.FC<ITableProps> = ({
     headerTextColor,
     hover,
     hoverBackgroundColor,
+    sortField,
+    order,
+    handleSortingChange,
 }) => {
     const computeCurrentData = (): (string | React.ReactNode)[][] => {
         if (noPagination) {
@@ -75,13 +83,28 @@ const TableBase: React.FC<ITableProps> = ({
             >
                 <thead>
                     <tr>
-                        {header.map((head) => (
+                        {header.map((head, key) => (
                             <th>
                                 <DivTableCell
                                     justifyCellItems={justifyCellItems}
                                     cellPadding={cellPadding}
+                                    onClick={() => handleSortingChange(key)}
                                 >
                                     {head}
+                                    {sortField === key &&
+                                        (order === 'asc' ? (
+                                            <TriangleUp
+                                                title="triangle up icon"
+                                                titleId="table triangle up icon"
+                                                fill={color.blueGray50}
+                                            />
+                                        ) : (
+                                            <TriangleDown
+                                                title="triangle down icon"
+                                                titleId="table triangle down icon"
+                                                fill={color.blueGray50}
+                                            />
+                                        ))}
                                 </DivTableCell>
                             </th>
                         ))}

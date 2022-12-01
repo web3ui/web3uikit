@@ -202,20 +202,6 @@ CustomTable.args = {
     ),
 };
 
-const DivStyled = styled.div`
-    height: 500px;
-    overflow-x: auto;
-    div[role='table-header'] {
-        &:nth-child(1) {
-            border-top-left-radius: 19px;
-        }
-        &:nth-child(5) {
-            border-top-right-radius: 19px;
-        }
-        background-color: white;
-    }
-`;
-
 export const SingleColumnTable = Template.bind({});
 
 const TextStyled = styled.div`

@@ -16,7 +16,6 @@ const TableStyled = styled.table.attrs((props: any) => ({
     headerTextColor: props.headerTextColor,
     hoverBackgroundColor: props.hoverBackgroundColor,
 }))`
-    ${resetCSS}
     ${fonts.text}
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
     background-color: ${(props) => props.tableBackgroundColor ?? color.white};
@@ -28,7 +27,7 @@ const TableStyled = styled.table.attrs((props: any) => ({
         vertical-align: ${(props) => props.alignCellItems};
     }
 
-    thead {
+    thead > tr {
         background-color: ${(props) => props.headerBgColor ?? color.white};
         color: ${(props) => props.headerTextColor ?? color.white};
     }
@@ -52,7 +51,7 @@ const TableContainer = styled.div<{
     background: ${color.white};
     border: 1px #cee4f3 solid;
     border-radius: 20px;
-    padding: 1px;
+    overflow: hidden;
     ${(props) =>
         props.isScrollableOnOverflow &&
         css`

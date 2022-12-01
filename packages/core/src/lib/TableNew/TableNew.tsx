@@ -21,7 +21,7 @@ const TableNew: React.FC<ITableNewProps> = ({
     isColumnSortable = [],
     isLoading = false,
     isScrollableOnOverflow = true,
-    justifyCellItems = 'center',
+    justifyCellItems = 'start',
     maxPages,
     noPagination,
     onPageNumberChanged,
@@ -105,7 +105,7 @@ const TableNew: React.FC<ITableNewProps> = ({
     }, [pageNum]);
 
     return (
-        <TableParent>
+        <TableParent data-testid="test-table" {...props}>
             <TableBase
                 tableData={tableData}
                 header={header}
@@ -128,7 +128,7 @@ const TableNew: React.FC<ITableNewProps> = ({
                 sortField={sortField}
                 order={order}
                 handleSortingChange={handleSortingChange}
-                {...props}
+                onRowClick={onRowClick}
             />
             <Pagination
                 noPagination={noPagination}

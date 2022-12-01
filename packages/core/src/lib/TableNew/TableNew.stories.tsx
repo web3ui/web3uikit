@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+
 import {
-    columnsConfig,
-    syncColumnsConfig,
     header,
     syncHeader,
     data,
@@ -13,6 +12,8 @@ import {
 } from './MockData';
 import { Loading } from '../Loading';
 import { color } from '@web3uikit/styles';
+import styled from 'styled-components';
+import { Skeleton } from '../Skeleton';
 
 import TableNew from './TableNew';
 export default {
@@ -28,8 +29,8 @@ const Template: ComponentStory<typeof TableNew> = (args) => (
     <TableNew {...args} />
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const DefaultTable = Template.bind({});
+DefaultTable.args = {
     header,
     data: data,
     pageSize,
@@ -129,4 +130,109 @@ HighlightTableRow.args = {
     maxPages,
     hover: true,
     hoverBackgroundColor: color.navy20,
+};
+
+export const CustomLoadingSkeleton = Template.bind({});
+const EmptyRowsForSkeletonTable = () => (
+    <div style={{ width: '100%', height: '100%' }}>
+        {[...Array(6)].map((el, i) => (
+            <Skeleton theme="subtitle" width="30%" />
+        ))}
+    </div>
+);
+CustomLoadingSkeleton.args = {
+    header,
+    data: data,
+    pageSize,
+    maxPages,
+    isLoading: true,
+    customLoadingContent: (
+        <div
+            style={{
+                display: 'flex',
+                flexDirection: 'column',
+                width: '100%',
+                height: '100%',
+            }}
+        >
+            <EmptyRowsForSkeletonTable />
+            <EmptyRowsForSkeletonTable />
+            <EmptyRowsForSkeletonTable />
+        </div>
+    ),
+};
+
+export const SyncTableExample = Template.bind({});
+
+SyncTableExample.args = {
+    header: syncHeader,
+    data: syncData,
+    pageSize,
+    maxPages,
+    alignCellItems: 'center',
+    isColumnSortable: [false, true, true, false],
+};
+
+export const CustomTable: ComponentStory<typeof TableNew> = (args) => (
+    <TableNew {...args} />
+);
+
+CustomTable.args = {
+    header,
+    pageSize: 5,
+    maxPages,
+    isColumnSortable: [false, true, false, false],
+    data: customTableMockData,
+    tableBackgroundColor: 'lightblue',
+    headerTextColor: 'orange',
+    headerBgColor: 'blue',
+    isScrollableOnOverflow: false,
+    customDataComponent: (
+        <div
+            style={{
+                background: 'white',
+                width: '100%',
+                height: '200px',
+                textAlign: 'center',
+                display: 'flex',
+            }}
+        >
+            <h1 style={{ margin: 'auto' }}>Some Cool Image</h1>
+        </div>
+    ),
+};
+
+const DivStyled = styled.div`
+    height: 500px;
+    overflow-x: auto;
+    div[role='table-header'] {
+        &:nth-child(1) {
+            border-top-left-radius: 19px;
+        }
+        &:nth-child(5) {
+            border-top-right-radius: 19px;
+        }
+        background-color: white;
+    }
+`;
+
+export const SingleColumnTable = Template.bind({});
+
+const TextStyled = styled.div`
+    width: 100%;
+    padding: 10px;
+    background-color: ${color.aero20};
+`;
+SingleColumnTable.args = {
+    header: ['Address'],
+    data: [
+        [<TextStyled>0xe922879D89E3a8D2f2D51EC8590AEF13216f9E7a</TextStyled>],
+        [<TextStyled>0xe922879D89E3a8D2f2D51EC8590AEF13216f9E7a</TextStyled>],
+        [<TextStyled>0xe922879D89E3a8D2f2D51EC8590AEF13216f9E7a</TextStyled>],
+        [<TextStyled>0xe922879D89E3a8D2f2D51EC8590AEF13216f9E7a</TextStyled>],
+    ],
+    pageSize: 10,
+    noPagination: true,
+    cellPadding: '0px',
+    customTableBorder: '1px solid black',
 };

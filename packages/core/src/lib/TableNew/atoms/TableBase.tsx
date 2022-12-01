@@ -25,6 +25,7 @@ type TTableProps = Pick<
     | 'headerBgColor'
     | 'hover'
     | 'hoverBackgroundColor'
+    | 'onRowClick'
 >;
 
 interface ITableProps extends TTableProps {
@@ -59,6 +60,7 @@ const TableBase: React.FC<ITableProps> = ({
     sortField,
     order,
     handleSortingChange,
+    onRowClick,
 }) => {
     const computeCurrentData = (): (string | React.ReactNode)[][] => {
         if (noPagination) {
@@ -84,11 +86,12 @@ const TableBase: React.FC<ITableProps> = ({
                 <thead>
                     <tr>
                         {header.map((head, key) => (
-                            <th>
+                            <th key={`tableHeader_${key}`}>
                                 <DivTableCell
                                     justifyCellItems={justifyCellItems}
                                     cellPadding={cellPadding}
                                     onClick={() => handleSortingChange(key)}
+                                    role="table-header"
                                 >
                                     {head}
                                     {sortField === key &&
@@ -112,13 +115,26 @@ const TableBase: React.FC<ITableProps> = ({
                 </thead>
                 {!isLoading && (
                     <tbody>
-                        {computeCurrentData().map((row) => (
+                        {computeCurrentData().map((row, rowKey) => (
                             <tr className={`${hover && 'hover'}`}>
-                                {row.map((element) => (
-                                    <td>
+                                {row.map((element, colKey) => (
+                                    <td key={`tableBody_${colKey}`}>
                                         <DivTableCell
+                                            role="table-item"
+                                            data-key={`tr_${rowKey}_${colKey}`}
                                             justifyCellItems={justifyCellItems}
                                             cellPadding={cellPadding}
+                                            onClick={(e) => {
+                                                if (
+                                                    onRowClick &&
+                                                    e.target === e.currentTarget
+                                                ) {
+                                                    onRowClick(
+                                                        rowKey +
+                                                            pageSize * pageNum,
+                                                    );
+                                                }
+                                            }}
                                         >
                                             {element}
                                         </DivTableCell>

@@ -8,7 +8,6 @@ import { Typography } from '../Typography';
 import { PopoverDropdown } from '../PopoverDropdown';
 import { PopoverElement } from '../PopoverElement';
 
-export const columnsConfig = '80px 3fr 2fr 2fr 80px';
 export const header = [
     '',
     <span>Name</span>,
@@ -105,7 +104,6 @@ export const data = [
 export const pageSize: number = 5;
 export const maxPages = 3;
 
-export const syncColumnsConfig = '3fr 2fr 2fr 0.7fr';
 export const syncHeader = [
     <span>Description</span>,
     <span>Last Synced</span>,

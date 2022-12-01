@@ -27,9 +27,9 @@ const TableStyled = styled.table.attrs((props: any) => ({
         border-bottom: 1px #cee4f3 solid;
         vertical-align: ${(props) => props.alignCellItems};
     }
-    th {
-        background-color: ${(props) =>
-            props.headerBgColor ?? color.white} !important;
+
+    thead {
+        background-color: ${(props) => props.headerBgColor ?? color.white};
         color: ${(props) => props.headerTextColor ?? color.white};
     }
     .hover:hover {

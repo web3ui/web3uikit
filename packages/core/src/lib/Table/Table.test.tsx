@@ -32,37 +32,37 @@ describe('Table - DefaultTable', () => {
         ? DefaultTable?.args?.maxPages
         : 0;
 
-    it('renders the component', () => {
+    test('renders the component', () => {
         render(<DefaultTable />);
         const element = screen.getByTestId(tableTestId);
         expect(element).not.toBeNull();
     });
 
-    it('Defines proper sub headings', () => {
+    test('Defines proper sub headings', () => {
         render(<DefaultTable />);
         const element = screen.getAllByRole('table-header');
         expect(element.length).toEqual(header?.length);
     });
 
-    it('Computes Correct Number of table items', () => {
+    test('Computes Correct Number of table items', () => {
         render(<DefaultTable />);
         const element = screen.getAllByRole('table-item');
         expect(element.length).toEqual(pageSize * header?.length);
     });
 
-    it('Computes Correct Number of Pagination', () => {
+    test('Computes Correct Number of Pagination', () => {
         render(<DefaultTable />);
         const element = screen.getAllByRole('pagination-item');
         expect(element.length).toBeLessThan(maxPages + 1);
     });
 
-    it('Always one pagination visible', () => {
+    test('Always one pagination visible', () => {
         render(<DefaultTable />);
         const element = screen.getByTestId(paginationId);
         expect(element).toBeDefined();
     });
 
-    it('Should call back on page change', () => {
+    test('Should call back on page change', () => {
         const { rerender } = render(
             <DefaultTable onPageNumberChanged={testOnChangeEvent} />,
         );
@@ -72,7 +72,7 @@ describe('Table - DefaultTable', () => {
         expect(testOnChangeEvent).toBeCalled();
     });
 
-    it('Should change pagination to next on Click', () => {
+    test('Should change pagination to next on Click', () => {
         const { rerender } = render(<DefaultTable />);
         let element: any = screen.getByTestId(paginationId);
         const next: HTMLElement = screen.getByTestId(paginationNextId);
@@ -95,7 +95,7 @@ describe('Table - DefaultTable', () => {
         );
     });
 
-    it('Should Disable Previous on Render', () => {
+    test('Should Disable Previous on Render', () => {
         const { rerender } = render(<DefaultTable />);
         let element = screen.getByTestId(paginationId)
             ? screen.getByTestId(paginationId)
@@ -119,7 +119,7 @@ describe('Table - DefaultTable', () => {
         );
     });
 
-    it('Should Navigate to new page on Tag Click', () => {
+    test('Should Navigate to new page on Tag Click', () => {
         const { rerender } = render(<DefaultTable />);
         let element = screen.getByTestId(paginationId) as any;
         const findTag: HTMLElement | undefined =
@@ -134,7 +134,7 @@ describe('Table - DefaultTable', () => {
         expect(newPagination).not.toEqual(currentPagination);
     });
 
-    it('Calls back on Row Click', () => {
+    test('Calls back on Row Click', () => {
         const rowClick = vi.fn();
         const { container } = render(<DefaultTable onRowClick={rowClick} />);
         const tableCell = container.querySelector('div[data-key="tr_0_0"]');
@@ -148,25 +148,25 @@ describe('Table - NoPagination', () => {
     const header = DefaultTable?.args?.header ? DefaultTable?.args?.header : [];
     const data = DefaultTable?.args?.data ? DefaultTable?.args?.data : [];
 
-    it('renders the component', () => {
+    test('renders the component', () => {
         render(<NoPagination />);
         const element = screen.getByTestId(tableTestId);
         expect(element).not.toBeNull();
     });
 
-    it('Defines proper sub headings', () => {
+    test('Defines proper sub headings', () => {
         render(<NoPagination />);
         const element = screen.getAllByRole('table-header');
         expect(element.length).toEqual(header?.length);
     });
 
-    it('Computes Correct Number of table items', () => {
+    test('Computes Correct Number of table items', () => {
         render(<NoPagination />);
         const element = screen.getAllByRole('table-item');
         expect(element.length).toEqual(data?.length * header?.length);
     });
 
-    it('Should Not Render Pagination', () => {
+    test('Should Not Render Pagination', () => {
         render(<NoPagination />);
         const prevElement = screen.queryAllByRole(paginationPrevId);
         const nextElement = screen.queryAllByRole(paginationNextId);
@@ -181,31 +181,31 @@ describe('Table - NoData', () => {
     // Arguments
     const header = DefaultTable?.args?.header;
 
-    it('renders the component', () => {
+    test('renders the component', () => {
         render(<NoData />);
         const element = screen.getByTestId(tableTestId);
         expect(element).not.toBeNull();
     });
 
-    it('Defines proper sub headings', () => {
+    test('Defines proper sub headings', () => {
         render(<NoData />);
         const element = screen.getAllByRole('table-header');
         expect(element.length).toEqual(header?.length);
     });
 
-    it('Should render no data', () => {
+    test('Should render no data', () => {
         render(<NoData />);
         const element = screen.queryAllByText('No Data');
         expect(element.length).toEqual(1);
     });
 
-    it('Should not have any items', () => {
+    test('Should not have any items', () => {
         render(<NoData />);
         const element = screen.queryAllByRole('table-item');
         expect(element.length).toEqual(0);
     });
 
-    it('Should Not Render Pagination', () => {
+    test('Should Not Render Pagination', () => {
         render(<NoData />);
         const prevElement = screen.queryAllByRole(paginationPrevId);
         const nextElement = screen.queryAllByRole(paginationNextId);
@@ -220,25 +220,25 @@ describe('Table - NoDataCustomComponent', () => {
     // Arguments
     const header = DefaultTable?.args?.header;
 
-    it('renders the component', () => {
+    test('renders the component', () => {
         render(<NoDataCustomComponent />);
         const element = screen.getByTestId(tableTestId);
         expect(element).not.toBeNull();
     });
 
-    it('Defines proper sub headings', () => {
+    test('Defines proper sub headings', () => {
         render(<NoDataCustomComponent />);
         const element = screen.getAllByRole('table-header');
         expect(element.length).toEqual(header?.length);
     });
 
-    it('Should not have any items', () => {
+    test('Should not have any items', () => {
         render(<NoDataCustomComponent />);
         const element = screen.queryAllByRole('table-item');
         expect(element.length).toEqual(0);
     });
 
-    it('Should Not Render Pagination', () => {
+    test('Should Not Render Pagination', () => {
         render(<NoDataCustomComponent />);
         const prevElement = screen.queryAllByRole(paginationPrevId);
         const nextElement = screen.queryAllByRole(paginationNextId);
@@ -256,31 +256,31 @@ describe('Table - NoDataCustomText', () => {
         ? DefaultTable?.args?.customNoDataText
         : '';
 
-    it('renders the component', () => {
+    test('renders the component', () => {
         render(<NoDataCustomText />);
         const element = screen.getByTestId(tableTestId);
         expect(element).not.toBeNull();
     });
 
-    it('Defines proper sub headings', () => {
+    test('Defines proper sub headings', () => {
         render(<NoDataCustomText />);
         const element = screen.getAllByRole('table-header');
         expect(element.length).toEqual(header?.length);
     });
 
-    it('Should render no data', () => {
+    test('Should render no data', () => {
         render(<NoDataCustomText />);
         const element = screen.queryAllByText(text);
         expect(element).toBeDefined();
     });
 
-    it('Should not have any items', () => {
+    test('Should not have any items', () => {
         render(<NoDataCustomText />);
         const element = screen.queryAllByRole('table-item');
         expect(element.length).toEqual(0);
     });
 
-    it('Should Not Render Pagination', () => {
+    test('Should Not Render Pagination', () => {
         render(<NoDataCustomText />);
         const prevElement = screen.queryAllByRole(paginationPrevId);
         const nextElement = screen.queryAllByRole(paginationNextId);
@@ -301,31 +301,31 @@ describe('Table - FrozenPage', () => {
         ? DefaultTable?.args?.maxPages
         : 0;
 
-    it('renders the component', () => {
+    test('renders the component', () => {
         render(<FrozenPageTable />);
         const element = screen.getByTestId(tableTestId);
         expect(element).not.toBeNull();
     });
 
-    it('Defines proper sub headings', () => {
+    test('Defines proper sub headings', () => {
         render(<FrozenPageTable />);
         const element = screen.getAllByRole('table-header');
         expect(element.length).toEqual(header?.length);
     });
 
-    it('Computes Correct Number of table items', () => {
+    test('Computes Correct Number of table items', () => {
         render(<FrozenPageTable />);
         const element = screen.getAllByRole('table-item');
         expect(element.length).toEqual(pageSize * header?.length);
     });
 
-    it('Computes Correct Number of Pagination', () => {
+    test('Computes Correct Number of Pagination', () => {
         render(<FrozenPageTable />);
         const element = screen.getAllByRole('pagination-item');
         expect(element.length).toBeLessThan(maxPages + 1);
     });
 
-    it('Should call back on page change', () => {
+    test('Should call back on page change', () => {
         const { rerender } = render(
             <DefaultTable onPageNumberChanged={testOnChangeEvent} />,
         );
@@ -335,7 +335,7 @@ describe('Table - FrozenPage', () => {
         expect(testOnChangeEvent).toBeCalled();
     });
 
-    it('Should not change pagination to next on Click', () => {
+    test('Should not change pagination to next on Click', () => {
         const { rerender } = render(<FrozenPageTable />);
         let element: any = screen.getByTestId(paginationId);
         const next: HTMLElement = screen.getByTestId(paginationNextId);
@@ -356,7 +356,7 @@ describe('Table - FrozenPage', () => {
         );
     });
 
-    it('Should not Navigate to new page on Tag Click', () => {
+    test('Should not Navigate to new page on Tag Click', () => {
         const { rerender } = render(<FrozenPageTable />);
         let element: any = screen.getByTestId(paginationId);
         const findTag: HTMLElement | undefined =
@@ -376,31 +376,31 @@ describe('Table - FrozenPageOutOfRange', () => {
     //Arguments
     const header = DefaultTable?.args?.header;
 
-    it('renders the component', () => {
+    test('renders the component', () => {
         render(<OutOfRangeFrozenTable />);
         const element = screen.getByTestId(tableTestId);
         expect(element).not.toBeNull();
     });
 
-    it('Defines proper sub headings', () => {
+    test('Defines proper sub headings', () => {
         render(<OutOfRangeFrozenTable />);
         const element = screen.getAllByRole('table-header');
         expect(element.length).toEqual(header?.length);
     });
 
-    it('Should render no data', () => {
+    test('Should render no data', () => {
         render(<OutOfRangeFrozenTable />);
         const element = screen.queryAllByText('No Data');
         expect(element.length).toEqual(1);
     });
 
-    it('Should not have any items', () => {
+    test('Should not have any items', () => {
         render(<OutOfRangeFrozenTable />);
         const element = screen.queryAllByRole('table-item');
         expect(element.length).toEqual(0);
     });
 
-    it('Should Still Render Pagination', () => {
+    test('Should Still Render Pagination', () => {
         render(<OutOfRangeFrozenTable />);
         const prevElement = screen.queryAllByTestId(paginationPrevId);
         const nextElement = screen.queryAllByTestId(paginationNextId);
@@ -412,7 +412,7 @@ describe('Table - FrozenPageOutOfRange', () => {
 });
 
 describe('Table- Table Loader', () => {
-    it('Should Render Loader', () => {
+    test('Should Render Loader', () => {
         render(<LoadingTable />);
         const element = screen.getByRole('spinner');
         expect(element).toBeDefined();

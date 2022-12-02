@@ -25,6 +25,11 @@ export type TUsePaginationProps = {
      * current active page
      */
     currentPage: number;
+
+    /**
+     * Max number of pagination tags that can be shown
+     */
+    maxPages?: number;
 };
 
 export interface IPaginationStyleProps {

@@ -3,11 +3,8 @@ import { IPaginationProps } from './types';
 import styles from './Pagination.styles';
 import { DOTS, usePagination } from './Helper';
 
-const {
-    DivStyledPagination,
-    DivStyledPaginationTag,
-    DivStyledPaginationText,
-} = styles;
+const { DivStyledPagination, DivStyledPaginationTag, DivStyledPaginationText } =
+    styles;
 
 export const Pagination: React.FC<IPaginationProps> = ({
     currentPage,
@@ -15,12 +12,14 @@ export const Pagination: React.FC<IPaginationProps> = ({
     pageSize,
     siblingCount = 2,
     totalCount,
+    maxPages,
 }) => {
     const paginationRange = usePagination({
         currentPage,
         totalCount,
         siblingCount,
         pageSize,
+        maxPages,
     });
 
     if (currentPage === 0 || !paginationRange || paginationRange?.length < 2) {

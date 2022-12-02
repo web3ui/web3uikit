@@ -18,6 +18,7 @@ export const usePagination = ({
     pageSize,
     siblingCount = 1,
     totalCount,
+    maxPages = Number.MAX_VALUE,
 }: TUsePaginationProps) => {
     const paginationRange = useMemo(() => {
         const totalPageCount = Math.ceil(totalCount / pageSize);
@@ -30,10 +31,34 @@ export const usePagination = ({
          * return the range [1..totalPageCount]
          * If this fails then component will show dots,numbers etc
          */
-        if (totalPageNumbers >= totalPageCount) {
+        if (totalPageNumbers >= totalPageCount && totalPageCount <= maxPages) {
             return range(1, totalPageCount);
         }
 
+        // If max pages specified
+
+        if (totalPageCount > maxPages && totalPageNumbers >= maxPages) {
+            // total pages more than max so calculate start and end pages
+            const maxPagesBeforeCurrentPage = Math.floor(maxPages / 2);
+            const maxPagesAfterCurrentPage = Math.ceil(maxPages / 2) - 1;
+            if (currentPage <= maxPagesBeforeCurrentPage) {
+                // current page near the start
+                return range(1, maxPages);
+            } else if (
+                currentPage + maxPagesAfterCurrentPage >=
+                totalPageCount
+            ) {
+                // current page near the end
+                const startPage = totalPageCount - maxPages + 1;
+                const endPage = totalPageCount;
+                return range(startPage, endPage);
+            } else {
+                // current page somewhere in the middle
+                const startPage = currentPage - maxPagesBeforeCurrentPage;
+                const endPage = currentPage + maxPagesAfterCurrentPage;
+                return range(startPage, endPage);
+            }
+        }
         /**
          * calculate left and right sibling index withing range of (1,totalPageCount)
          */

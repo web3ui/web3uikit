@@ -137,7 +137,8 @@ const TableNew: React.FC<ITableNewProps> = ({
                     pageSize={pageSize}
                     totalCount={tableData.length}
                     onPageChange={handleSetPageNumber}
-                    siblingCount={2}
+                    siblingCount={1}
+                    maxPages={maxPages}
                 />
             </PaginationStyled>
         </TableParent>

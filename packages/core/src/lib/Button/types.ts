@@ -39,7 +39,8 @@ export interface ButtonProps {
         | 'primary'
         | 'secondary'
         | 'text'
-        | 'translucent';
+        | 'translucent'
+        | 'moneyPrimary';
 
     /**
      * If 'theme' is set to 'colored', you can choose the color from these options

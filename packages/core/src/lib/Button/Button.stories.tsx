@@ -96,9 +96,9 @@ export const CustomButton = Template.bind({});
 CustomButton.args = {
     customize: {
         backgroundColor: color.navy30,
-        fontSize: 20,
+        fontSize: '20px',
         onHover: 'darken',
-        textColor: color.blue40,
+        color: color.blue40,
     },
     text: 'Button',
     theme: 'custom',
@@ -121,4 +121,10 @@ AllProps.args = {
     text: 'all the props',
     theme: 'colored',
     type: 'button',
+};
+
+export const ThemeMoneyPrimary = Template.bind({});
+ThemeMoneyPrimary.args = {
+    text: 'Primary Money Button',
+    theme: 'moneyPrimary',
 };

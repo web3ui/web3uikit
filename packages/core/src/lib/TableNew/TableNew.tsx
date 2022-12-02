@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { ITableNewProps } from './types';
 import styles from './TableNew.styles';
 import TableBase from './atoms/TableBase';
-import Pagination from './atoms/Pagination';
 import { getInnerText } from './Helper';
+import { Pagination } from '../Pagination';
 
-const { TableParent } = styles;
+const { TableParent, PaginationStyled } = styles;
 
 const TableNew: React.FC<ITableNewProps> = ({
     alignCellItems = 'center',
@@ -35,13 +35,14 @@ const TableNew: React.FC<ITableNewProps> = ({
     ...props
 }) => {
     const [pageNum, setPageNum] = useState<number>(
-        customPageNumber ? customPageNumber : 0,
+        customPageNumber ? customPageNumber : 1,
     );
     const [tableData, setTableData] = useState(data);
     const [sortField, setSortField] = useState(-1);
     const [order, setOrder] = useState('asc');
 
     const handleSetPageNumber = (state: number): void => {
+        console.log('state-number', state);
         if (typeof customPageNumber == 'number') {
             setPageNum(customPageNumber);
         } else {
@@ -91,11 +92,11 @@ const TableNew: React.FC<ITableNewProps> = ({
 
     useEffect(() => {
         setTableData(data);
-        setPageNum(0);
+        setPageNum(1);
     }, [data]);
 
     useEffect(() => {
-        handleSetPageNumber(customPageNumber ? customPageNumber : 0);
+        handleSetPageNumber(customPageNumber ? customPageNumber : 1);
     }, [customPageNumber]);
 
     useEffect(() => {
@@ -130,14 +131,15 @@ const TableNew: React.FC<ITableNewProps> = ({
                 handleSortingChange={handleSortingChange}
                 onRowClick={onRowClick}
             />
-            <Pagination
-                noPagination={noPagination}
-                pageSize={pageSize}
-                maxPages={maxPages}
-                tableData={tableData}
-                handleSetPageNumber={handleSetPageNumber}
-                pageNum={pageNum}
-            />
+            <PaginationStyled>
+                <Pagination
+                    currentPage={pageNum}
+                    pageSize={pageSize}
+                    totalCount={tableData.length}
+                    onPageChange={handleSetPageNumber}
+                    siblingCount={2}
+                />
+            </PaginationStyled>
         </TableParent>
     );
 };

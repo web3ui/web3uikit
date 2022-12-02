@@ -7,6 +7,15 @@ const TableParent = styled.div`
     flex-direction: column;
 `;
 
+const PaginationStyled = styled.div`
+    ${resetCSS}
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0px;
+`;
+
 export default {
     TableParent,
+    PaginationStyled,
 };

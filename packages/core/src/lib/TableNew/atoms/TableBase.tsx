@@ -66,7 +66,7 @@ const TableBase: React.FC<ITableProps> = ({
         if (noPagination) {
             return tableData;
         }
-        const from = pageNum * pageSize;
+        const from = (pageNum - 1) * pageSize;
         const to = from + pageSize;
         return tableData?.slice(from, to);
     };

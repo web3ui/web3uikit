@@ -115,12 +115,17 @@ export interface ITableNewProps {
     customTableBorder?: string;
 
     /**
-     * hover effect on table rows controller
-     */
-    hover: boolean;
-
-    /**
      * Table rows background color on hover effect
      */
     hoverBackgroundColor: string;
+
+    /**
+     * Table border width
+     */
+    rowsLineWidth?: string;
+
+    /**
+     * Table border color
+     */
+    rowsLineWidthColor?: string;
 }

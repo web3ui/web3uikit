@@ -3,6 +3,7 @@ import { ITableNewProps } from '../types';
 import { Typography } from '../../Typography';
 import { Loading } from '../../Loading';
 import styles from './styles';
+import { legacyColor } from '@web3uikit/styles';
 
 const { DivSpinnerLoaderParent } = styles;
 
@@ -17,11 +18,15 @@ const Loader: React.FC<TLoaderProps> = ({ customLoadingContent }) => {
                 <>
                     <Loading
                         spinnerType={'wave'}
-                        spinnerColor={'#B0B5BF'}
+                        spinnerColor={legacyColor.greyIcons}
                         size={6}
                     />
 
-                    <Typography weight="400" variant="h3" color={'#B0B5BF'}>
+                    <Typography
+                        weight="400"
+                        variant="h3"
+                        color={legacyColor.greyIcons}
+                    >
                         Loading Content
                     </Typography>
                 </>

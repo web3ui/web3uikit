@@ -17,7 +17,7 @@ import { Skeleton } from '../Skeleton';
 
 import TableNew from './TableNew';
 export default {
-    title: 'Layout/TableNew',
+    title: '3.Layout/TableNew',
     component: TableNew,
     argTypes: {
         onPageNumberChanged: { action: 'Page Number Changed' },
@@ -128,7 +128,6 @@ HighlightTableRow.args = {
     data: data,
     pageSize,
     maxPages,
-    hover: true,
     hoverBackgroundColor: color.navy20,
 };
 
@@ -187,6 +186,8 @@ CustomTable.args = {
     headerTextColor: 'orange',
     headerBgColor: 'blue',
     isScrollableOnOverflow: false,
+    rowsLineWidth: '2px',
+    rowsLineWidthColor: color.blue70,
     customDataComponent: (
         <div
             style={{

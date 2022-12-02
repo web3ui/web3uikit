@@ -8,6 +8,8 @@ const TableStyled = styled.table.attrs((props: any) => ({
     headerBgColor: props.headerBgColor,
     headerTextColor: props.headerTextColor,
     hoverBackgroundColor: props.hoverBackgroundColor,
+    rowsLineWidth: props.rowsLineWidth,
+    rowsLineWidthColor: props.rowsLineWidthColor,
 }))`
     ${fonts.text}
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
@@ -16,15 +18,17 @@ const TableStyled = styled.table.attrs((props: any) => ({
     width: 100%;
     td,
     th {
-        border-bottom: 1px #cee4f3 solid;
+        border-bottom-width: ${(props) => props.rowsLineWidth ?? '1px'};
+        border-bottom-color: ${(props) =>
+            props.rowsLineWidthColor ?? color.navy20};
+        border-bottom-style: solid;
         vertical-align: ${(props) => props.alignCellItems};
     }
-
     thead > tr {
         background-color: ${(props) => props.headerBgColor ?? color.white};
         color: ${(props) => props.headerTextColor ?? color.white};
     }
-    .hover:hover {
+    .web3uikit-table-row-hover:hover {
         background-color: ${(props) => props.hoverBackgroundColor};
     }
 `;
@@ -42,9 +46,8 @@ const TableContainer = styled.div<{
     customTableBorder?: string;
 }>`
     background: ${color.white};
-    border: 1px #cee4f3 solid;
+    border: 1px ${color.navy20} solid;
     border-radius: 20px;
-    overflow: hidden;
     ${(props) =>
         props.isScrollableOnOverflow &&
         css`

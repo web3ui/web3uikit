@@ -30,8 +30,9 @@ const TableNew: React.FC<ITableNewProps> = ({
     tableBackgroundColor = 'white',
     headerTextColor = '',
     headerBgColor = '',
-    hover = false,
     hoverBackgroundColor,
+    rowsLineWidth,
+    rowsLineWidthColor,
     ...props
 }) => {
     const [pageNum, setPageNum] = useState<number>(
@@ -121,7 +122,6 @@ const TableNew: React.FC<ITableNewProps> = ({
                 isScrollableOnOverflow={isScrollableOnOverflow}
                 customTableBorder={customTableBorder}
                 tableBackgroundColor={tableBackgroundColor}
-                hover={hover}
                 hoverBackgroundColor={hoverBackgroundColor}
                 customNoDataText={customNoDataText}
                 isLoading={isLoading}
@@ -130,17 +130,21 @@ const TableNew: React.FC<ITableNewProps> = ({
                 order={order}
                 handleSortingChange={handleSortingChange}
                 onRowClick={onRowClick}
+                rowsLineWidth={rowsLineWidth}
+                rowsLineWidthColor={rowsLineWidthColor}
             />
-            <PaginationStyled>
-                <Pagination
-                    currentPage={pageNum}
-                    pageSize={pageSize}
-                    totalCount={tableData.length}
-                    onPageChange={handleSetPageNumber}
-                    siblingCount={1}
-                    maxPages={maxPages}
-                />
-            </PaginationStyled>
+            {!noPagination && (
+                <PaginationStyled>
+                    <Pagination
+                        currentPage={pageNum}
+                        pageSize={pageSize}
+                        totalCount={tableData.length}
+                        onPageChange={handleSetPageNumber}
+                        siblingCount={1}
+                        maxPages={maxPages}
+                    />
+                </PaginationStyled>
+            )}
         </TableParent>
     );
 };

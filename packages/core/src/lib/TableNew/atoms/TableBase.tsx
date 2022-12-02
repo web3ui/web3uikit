@@ -23,9 +23,10 @@ type TTableProps = Pick<
     | 'cellPadding'
     | 'headerTextColor'
     | 'headerBgColor'
-    | 'hover'
     | 'hoverBackgroundColor'
     | 'onRowClick'
+    | 'rowsLineWidth'
+    | 'rowsLineWidthColor'
 >;
 
 interface ITableProps extends TTableProps {
@@ -55,12 +56,13 @@ const TableBase: React.FC<ITableProps> = ({
     cellPadding,
     headerBgColor,
     headerTextColor,
-    hover,
     hoverBackgroundColor,
     sortField,
     order,
     handleSortingChange,
     onRowClick,
+    rowsLineWidth,
+    rowsLineWidthColor,
 }) => {
     const computeCurrentData = (): (string | React.ReactNode)[][] => {
         if (noPagination) {
@@ -82,6 +84,8 @@ const TableBase: React.FC<ITableProps> = ({
                 headerTextColor={headerTextColor}
                 headerBgColor={headerBgColor}
                 hoverBackgroundColor={hoverBackgroundColor}
+                rowsLineWidth={rowsLineWidth}
+                rowsLineWidthColor={rowsLineWidthColor}
             >
                 <thead>
                     <tr>
@@ -116,7 +120,12 @@ const TableBase: React.FC<ITableProps> = ({
                 {!isLoading && (
                     <tbody>
                         {computeCurrentData().map((row, rowKey) => (
-                            <tr className={`${hover && 'hover'}`}>
+                            <tr
+                                className={`${
+                                    hoverBackgroundColor &&
+                                    'web3uikit-table-row-hover'
+                                }`}
+                            >
                                 {row.map((element, colKey) => (
                                     <td key={`tableBody_${colKey}`}>
                                         <DivTableCell

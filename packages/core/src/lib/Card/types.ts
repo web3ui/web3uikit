@@ -1,4 +1,5 @@
 import { ReactNode, CSSProperties } from 'react';
+import { TooltipProps } from '../Tooltip';
 export interface CardProps {
     /**
      * set the ID of Card
@@ -65,6 +66,11 @@ export interface CardProps {
      * Optional custom CSS
      */
     style?: CSSProperties;
+
+    /**
+     * Add position to card tooltip
+     */
+    tooltipPosition?: TooltipProps['position'];
 }
 
 export interface AbsoluteIconStyledProps {

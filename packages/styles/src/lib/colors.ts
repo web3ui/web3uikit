@@ -24,11 +24,9 @@ const color = {
     mint20: '#A1FFE0',
     mint30: '#33FFCC',
     mint40: '#00D1AE',
-
     mint50: '#00AD96',
     mint53: '#009D88',
     mint60: '#00856E',
-
     navy10: '#E9F2FA',
     navy20: '#BCD7F0',
     navy30: '#9EC7EA',

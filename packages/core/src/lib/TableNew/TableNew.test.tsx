@@ -16,10 +16,9 @@ const {
 } = composeStories(stories);
 
 const tableTestId = 'test-table';
-const paginationId = 'test-table-pagination-true';
-const paginationFalseId = 'test-table-pagination-false';
-const paginationNextId = 'test-table-pagination-next';
-const paginationPrevId = 'test-table-pagination-prev';
+const paginationId = 'test-Pagination';
+const paginationNextId = 'test-Pagination-Next';
+const paginationPrevId = 'test-Pagination-Prev';
 const testOnChangeEvent = vi.fn();
 
 describe('Table - DefaultTable', () => {
@@ -74,64 +73,24 @@ describe('Table - DefaultTable', () => {
 
     test('Should change pagination to next on Click', () => {
         const { rerender } = render(<DefaultTable />);
-        let element: any = screen.getByTestId(paginationId);
         const next: HTMLElement = screen.getByTestId(paginationNextId);
-        const keys: string[] = [...Object.keys(element)];
-        const firstPaginationKey: string = `${
-            element[keys[0] as string].return.key
-        }`;
+        expect(screen.getByTestId('test-tableBodyPage-1'));
         fireEvent.click(next);
         rerender(<DefaultTable />);
-        element = screen.getByTestId(paginationId);
-        const SKeys: any = [...Object.keys(element)];
-        const SecondPaginationKey: string = `${
-            (element[SKeys[0]] as any).return?.key
-        }`;
-        const getNumber = (state: string): number => {
-            return parseInt(state.charAt(state.length - 1));
-        };
-        expect(getNumber(firstPaginationKey) + 1).toEqual(
-            getNumber(SecondPaginationKey),
-        );
+        expect(screen.getByTestId('test-tableBodyPage-2'));
     });
 
-    test('Should Disable Previous on Render', () => {
+    test('Should change to Previous page on previous click', () => {
         const { rerender } = render(<DefaultTable />);
-        let element = screen.getByTestId(paginationId)
-            ? screen.getByTestId(paginationId)
-            : ({} as any);
-        const next: HTMLElement = screen.getByTestId(paginationPrevId);
-        const keys: string[] = [...Object.keys(element)];
-        const firstPaginationKey: string = `${
-            (element[keys[0] as string] as any).return.key
-        }`;
+        const prev: HTMLElement = screen.getByTestId(paginationPrevId);
+        const next: HTMLElement = screen.getByTestId(paginationNextId);
+        expect(screen.getByTestId('test-tableBodyPage-1'));
         fireEvent.click(next);
         rerender(<DefaultTable />);
-        element = screen.getByTestId(paginationId);
-        const SKeys = Object.keys(element);
-        const SecondPaginationKey: string =
-            element[SKeys[0] as string].return.key;
-        const getNumber = (state: string): number => {
-            return parseInt(state.charAt(state.length - 1));
-        };
-        expect(getNumber(firstPaginationKey)).toEqual(
-            getNumber(SecondPaginationKey),
-        );
-    });
-
-    test('Should Navigate to new page on Tag Click', () => {
-        const { rerender } = render(<DefaultTable />);
-        let element = screen.getByTestId(paginationId) as any;
-        const findTag: HTMLElement | undefined =
-            screen.getAllByTestId(paginationFalseId)[0];
-        const currentPagination: string =
-            element[Object.keys(element)[0] as string].return.key;
-        fireEvent.click(findTag as Element);
+        expect(screen.getByTestId('test-tableBodyPage-2'));
+        fireEvent.click(prev);
         rerender(<DefaultTable />);
-        element = screen.getByTestId(paginationId);
-        const newPagination: string =
-            element[Object.keys(element)[0] as string].return.key;
-        expect(newPagination).not.toEqual(currentPagination);
+        expect(screen.getByTestId('test-tableBodyPage-1'));
     });
 
     test('Calls back on Row Click', () => {
@@ -337,30 +296,19 @@ describe('Table - FrozenPage', () => {
 
     test('Should not change pagination to next on Click', () => {
         const { rerender } = render(<FrozenPageTable />);
-        let element: any = screen.getByTestId(paginationId);
         const next: HTMLElement = screen.getByTestId(paginationNextId);
-        const keys = Object.keys(element);
-        const firstPaginationKey: string =
-            element[keys[0] as string].return.key;
+        expect(screen.getByTestId('test-tableBodyPage-1'));
         fireEvent.click(next);
         rerender(<FrozenPageTable />);
-        element = screen.getByTestId(paginationId);
-        const SKeys = Object.keys(element);
-        const SecondPaginationKey: string =
-            element[SKeys[0] as string].return.key;
-        const getNumber = (state: string): number => {
-            return parseInt(state.charAt(state.length - 1));
-        };
-        expect(getNumber(firstPaginationKey)).toEqual(
-            getNumber(SecondPaginationKey),
-        );
+        expect(screen.getByTestId('test-tableBodyPage-1'));
     });
 
     test('Should not Navigate to new page on Tag Click', () => {
         const { rerender } = render(<FrozenPageTable />);
         let element: any = screen.getByTestId(paginationId);
-        const findTag: HTMLElement | undefined =
-            screen.getAllByTestId(paginationFalseId)[0];
+        const findTag: HTMLElement | undefined = screen.getAllByTestId(
+            paginationId,
+        )[0];
         const currentPagination: string =
             element[Object.keys(element)[0] as string].return.key;
         fireEvent.click(findTag as Element);

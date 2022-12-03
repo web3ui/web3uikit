@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface ICodeAreaProps {
     /**
      * width of component
@@ -41,6 +43,11 @@ export interface ICodeAreaProps {
      * standard prop for textarea
      */
     disabled?: boolean;
+
+    /**
+     * onBlur callback event
+     */
+    onBlur?: (event: React.FocusEvent<HTMLTextAreaElement, Element>) => void;
 }
 
 export interface ILineNumbersProps {

@@ -26,10 +26,7 @@ const SectionStyled = styled.section<TStyleProps>`
     background-color: ${color.white};
     border: 1px solid ${(p) => getThemeColor(p.theme)};
     border-radius: 20px;
-    opacity: 0%;
     overflow: hidden;
-    transition-delay: 0.3s;
-    transition: opacity 0.3s ease-out;
 `;
 
 const HeaderStyled = styled.header`
@@ -81,7 +78,6 @@ const DivStyled = styled.div`
 
 const DivStyledContent = styled.div`
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
 `;
 
 export default {

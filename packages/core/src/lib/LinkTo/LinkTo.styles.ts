@@ -8,22 +8,22 @@ import type { LinkToProps } from './types';
 // styles
 type TStyleProps = Pick<LinkToProps, 'iconLayout'>;
 interface LinkStyledProps {
-    isUnderlined: boolean;
-    textColor?: typeof color | string;
+    $isUnderlined: boolean;
+    $textColor?: typeof color | string;
 }
 
 const LinkStyled = styled.a<LinkStyledProps>`
     ${resetCSS}
     ${fonts.text}
     align-items: center;
-    color: ${({ textColor }) => textColor || color.navy40};
+    color: ${({ $textColor }) => $textColor || color.navy40};
     display: inline-block;
     font-weight: 600;
     height: fit-content;
     max-width: 100%;
     width: fit-content;
-    text-decoration: ${({ isUnderlined }) =>
-        isUnderlined ? 'underline' : 'none'};
+    text-decoration: ${({ $isUnderlined }) =>
+        $isUnderlined ? 'underline' : 'none'};
 
     &:hover {
         filter: brightness(0.7);
@@ -34,13 +34,13 @@ const InternalLinkStyled = styled(Link)<LinkStyledProps>`
     ${resetCSS}
     ${fonts.text}
     align-items: center;
-    color: ${({ textColor }) => textColor || color.navy40};
+    color: ${({ $textColor }) => $textColor || color.navy40};
     display: inline-block;
     font-weight: 600;
     max-width: 100%;
     width: fit-content;
-    text-decoration: ${({ isUnderlined }) =>
-        isUnderlined ? 'underline' : 'none'};
+    text-decoration: ${({ $isUnderlined }) =>
+        $isUnderlined ? 'underline' : 'none'};
 
     &:hover {
         filter: brightness(0.7);

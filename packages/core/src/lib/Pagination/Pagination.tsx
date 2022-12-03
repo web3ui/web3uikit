@@ -3,8 +3,11 @@ import { IPaginationProps } from './types';
 import styles from './Pagination.styles';
 import { DOTS, usePagination } from './Helper';
 
-const { DivStyledPagination, DivStyledPaginationTag, DivStyledPaginationText } =
-    styles;
+const {
+    DivStyledPagination,
+    DivStyledPaginationTag,
+    DivStyledPaginationText,
+} = styles;
 
 export const Pagination: React.FC<IPaginationProps> = ({
     currentPage,
@@ -44,13 +47,20 @@ export const Pagination: React.FC<IPaginationProps> = ({
             <DivStyledPaginationText
                 isActive={currentPage !== 1}
                 onClick={onPreviousClick}
+                data-testid="test-Pagination-Prev"
             >
                 Previous
             </DivStyledPaginationText>
-            {paginationRange.map((pageNumber) => {
+            {paginationRange.map((pageNumber, index) => {
                 if (pageNumber === DOTS) {
                     return (
-                        <DivStyledPaginationTag isActive={false} isDot={true}>
+                        <DivStyledPaginationTag
+                            isActive={false}
+                            isDot={true}
+                            role="pagination-item"
+                            key={`pagination-${index}`}
+                            data-testid={`test-Pagination-Item-${index}`}
+                        >
                             {/* HTML code for 3 dots */}
                             <div>&#8230;</div>
                         </DivStyledPaginationTag>
@@ -58,7 +68,10 @@ export const Pagination: React.FC<IPaginationProps> = ({
                 }
                 return (
                     <DivStyledPaginationTag
+                        key={`pagination-${index}`}
+                        data-testid={`test-Pagination-Item-${index}`}
                         isActive={pageNumber === currentPage}
+                        role="pagination-item"
                         onClick={() => onPageChange(Number(pageNumber))}
                     >
                         <div>{pageNumber}</div>
@@ -68,6 +81,7 @@ export const Pagination: React.FC<IPaginationProps> = ({
             <DivStyledPaginationText
                 isActive={currentPage !== lastPage}
                 onClick={onNextClick}
+                data-testid="test-Pagination-Next"
             >
                 Next
             </DivStyledPaginationText>

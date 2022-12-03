@@ -47,10 +47,14 @@ export const Pagination: React.FC<IPaginationProps> = ({
             >
                 Previous
             </DivStyledPaginationText>
-            {paginationRange.map((pageNumber) => {
+            {paginationRange.map((pageNumber, key) => {
                 if (pageNumber === DOTS) {
                     return (
-                        <DivStyledPaginationTag isActive={false} isDot={true}>
+                        <DivStyledPaginationTag
+                            isActive={false}
+                            isDot={true}
+                            key={key}
+                        >
                             {/* HTML code for 3 dots */}
                             <div>&#8230;</div>
                         </DivStyledPaginationTag>
@@ -60,6 +64,7 @@ export const Pagination: React.FC<IPaginationProps> = ({
                     <DivStyledPaginationTag
                         isActive={pageNumber === currentPage}
                         onClick={() => onPageChange(Number(pageNumber))}
+                        key={key}
                     >
                         <div>{pageNumber}</div>
                     </DivStyledPaginationTag>

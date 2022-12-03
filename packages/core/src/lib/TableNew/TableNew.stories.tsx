@@ -86,7 +86,7 @@ FrozenPageTable.args = {
     data: data,
     pageSize,
     maxPages,
-    customPageNumber: 1,
+    customPageNumber: 2,
 };
 
 export const OutOfRangeFrozenTable = Template.bind({});

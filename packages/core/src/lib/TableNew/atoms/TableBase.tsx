@@ -125,6 +125,7 @@ const TableBase: React.FC<ITableProps> = ({
                                     hoverBackgroundColor &&
                                     'web3uikit-table-row-hover'
                                 }`}
+                                key={rowKey}
                             >
                                 {row.map((element, colKey) => (
                                     <td key={`tableBody_${colKey}`}>

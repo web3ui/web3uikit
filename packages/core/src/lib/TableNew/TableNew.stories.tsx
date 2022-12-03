@@ -186,8 +186,7 @@ CustomTable.args = {
     headerTextColor: 'orange',
     headerBgColor: 'blue',
     isScrollableOnOverflow: false,
-    rowsLineWidth: '2px',
-    rowsLineWidthColor: color.blue70,
+    rowsLineStyle: `2px solid ${color.blue70}`,
     customDataComponent: (
         <div
             style={{

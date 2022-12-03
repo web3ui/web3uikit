@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { ITableNewProps } from '../types';
 import styles from './styles';
 import Loader from './Loader';
@@ -25,8 +25,7 @@ type TTableProps = Pick<
     | 'headerBgColor'
     | 'hoverBackgroundColor'
     | 'onRowClick'
-    | 'rowsLineWidth'
-    | 'rowsLineWidthColor'
+    | 'rowsLineStyle'
 >;
 
 interface ITableProps extends TTableProps {
@@ -37,7 +36,13 @@ interface ITableProps extends TTableProps {
     handleSortingChange: (key: number) => void;
 }
 
-const { TableStyled, TableContainer, DivTableCell } = styles;
+const {
+    TableStyled,
+    TableContainer,
+    DivTableCell,
+    TableDataOrHeadStyled,
+} = styles;
+
 const TableBase: React.FC<ITableProps> = ({
     customLoadingContent,
     customNoDataComponent,
@@ -61,22 +66,22 @@ const TableBase: React.FC<ITableProps> = ({
     order,
     handleSortingChange,
     onRowClick,
-    rowsLineWidth,
-    rowsLineWidthColor,
+    rowsLineStyle,
 }) => {
-    const computeCurrentData = (): (string | React.ReactNode)[][] => {
+    const computeCurrentData = useMemo((): (string | React.ReactNode)[][] => {
         if (noPagination) {
             return tableData;
         }
         const from = (pageNum - 1) * pageSize;
         const to = from + pageSize;
         return tableData?.slice(from, to);
-    };
+    }, [noPagination, pageNum, pageSize, tableData]);
 
     return (
         <TableContainer
             isScrollableOnOverflow={isScrollableOnOverflow}
             customTableBorder={customTableBorder}
+            tableBackgroundColor={tableBackgroundColor}
         >
             <TableStyled
                 tableBackgroundColor={tableBackgroundColor}
@@ -84,18 +89,25 @@ const TableBase: React.FC<ITableProps> = ({
                 headerTextColor={headerTextColor}
                 headerBgColor={headerBgColor}
                 hoverBackgroundColor={hoverBackgroundColor}
-                rowsLineWidth={rowsLineWidth}
-                rowsLineWidthColor={rowsLineWidthColor}
+                rowsLineStyle={rowsLineStyle}
             >
                 <thead>
                     <tr>
                         {header.map((head, key) => (
-                            <th key={`tableHeader_${key}`}>
+                            <TableDataOrHeadStyled
+                                key={`tableHeader_${key}`}
+                                as="th"
+                                isLastRowCell={false}
+                                rowsLineStyle={rowsLineStyle}
+                                alignCellItems={alignCellItems}
+                                flexBasis={(1 / header.length) * 100}
+                            >
                                 <DivTableCell
                                     justifyCellItems={justifyCellItems}
                                     cellPadding={cellPadding}
                                     onClick={() => handleSortingChange(key)}
                                     role="table-header"
+                                    flexBasis={(1 / header.length) * 100}
                                 >
                                     {head}
                                     {sortField === key &&
@@ -113,26 +125,32 @@ const TableBase: React.FC<ITableProps> = ({
                                             />
                                         ))}
                                 </DivTableCell>
-                            </th>
+                            </TableDataOrHeadStyled>
                         ))}
                     </tr>
                 </thead>
                 {!isLoading && (
-                    <tbody>
-                        {computeCurrentData().map((row, rowKey) => (
-                            <tr
-                                className={`${
-                                    hoverBackgroundColor &&
-                                    'web3uikit-table-row-hover'
-                                }`}
-                            >
+                    <tbody data-testid={`test-tableBodyPage-${pageNum}`}>
+                        {computeCurrentData.map((row, rowKey) => (
+                            <tr key={`table-row-${rowKey}`}>
                                 {row.map((element, colKey) => (
-                                    <td key={`tableBody_${colKey}`}>
+                                    <TableDataOrHeadStyled
+                                        as="td"
+                                        key={`tableBody_${colKey}`}
+                                        rowsLineStyle={rowsLineStyle}
+                                        alignCellItems={alignCellItems}
+                                        flexBasis={(1 / row.length) * 100}
+                                        isLastRowCell={
+                                            computeCurrentData.length ===
+                                            rowKey + 1
+                                        }
+                                    >
                                         <DivTableCell
                                             role="table-item"
                                             data-key={`tr_${rowKey}_${colKey}`}
                                             justifyCellItems={justifyCellItems}
                                             cellPadding={cellPadding}
+                                            flexBasis={(1 / row.length) * 100}
                                             onClick={(e) => {
                                                 if (
                                                     onRowClick &&
@@ -140,21 +158,22 @@ const TableBase: React.FC<ITableProps> = ({
                                                 ) {
                                                     onRowClick(
                                                         rowKey +
-                                                            pageSize * pageNum,
+                                                            pageSize *
+                                                                (pageNum - 1),
                                                     );
                                                 }
                                             }}
                                         >
                                             {element}
                                         </DivTableCell>
-                                    </td>
+                                    </TableDataOrHeadStyled>
                                 ))}
                             </tr>
                         ))}
                     </tbody>
                 )}
             </TableStyled>
-            {tableData && computeCurrentData().length == 0 && (
+            {tableData && computeCurrentData.length == 0 && (
                 <NoData
                     customNoDataComponent={customNoDataComponent}
                     customNoDataText={customNoDataText}

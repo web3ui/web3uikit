@@ -2,52 +2,76 @@ import styled, { css } from 'styled-components';
 import { color, resetCSS, fonts } from '@web3uikit/styles';
 import { ITableNewProps } from '../types';
 
+const borderRadius = '20px';
+
 const TableStyled = styled.table.attrs((props: any) => ({
     tableBackgroundColor: props.tableBackgroundColor,
     alignCellItems: props.alignCellItems,
     headerBgColor: props.headerBgColor,
     headerTextColor: props.headerTextColor,
     hoverBackgroundColor: props.hoverBackgroundColor,
-    rowsLineWidth: props.rowsLineWidth,
-    rowsLineWidthColor: props.rowsLineWidthColor,
+    rowsLineStyle: props.rowsLineStyle,
 }))`
+    ${resetCSS};
     ${fonts.text}
-    box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
-    background-color: ${(props) => props.tableBackgroundColor ?? color.white};
     border-collapse: collapse;
     width: 100%;
-    td,
-    th {
-        border-bottom-width: ${(props) => props.rowsLineWidth ?? '1px'};
-        border-bottom-color: ${(props) =>
-            props.rowsLineWidthColor ?? color.navy20};
-        border-bottom-style: solid;
-        vertical-align: ${(props) => props.alignCellItems};
-    }
-    thead > tr {
+    thead {
         background-color: ${(props) => props.headerBgColor ?? color.white};
         color: ${(props) => props.headerTextColor ?? color.white};
+        tr > th:first-child {
+            border-top-left-radius: ${borderRadius};
+        }
+        tr > th:last-child {
+            border-top-right-radius: ${borderRadius};
+        }
     }
-    .web3uikit-table-row-hover:hover {
-        background-color: ${(props) => props.hoverBackgroundColor};
+    tbody {
+        tr:hover {
+            background-color: ${(props) => props.hoverBackgroundColor};
+        }
+        // Adds border radius to the last two cells of the table
+        tr:last-child:hover {
+            td:first-child {
+                border-bottom-left-radius: ${borderRadius};
+            }
+            td:last-child {
+                border-bottom-right-radius: ${borderRadius};
+            }
+        }
     }
 `;
 
-const DivTableCell = styled.div<
-    Pick<ITableNewProps, 'justifyCellItems' | 'cellPadding'>
->`
+type TStyleProps = Partial<ITableNewProps> & {
+    isLastRowCell?: boolean;
+    flexBasis: number;
+};
+
+const DivTableCell = styled.div<TStyleProps>`
     justify-content: ${(props) => props.justifyCellItems};
+    align-items: ${(props) => props.alignCellItems};
     display: flex;
     padding: ${(props) => (props.cellPadding ? props.cellPadding : '16px 8px')};
+`;
+
+const TableDataOrHeadStyled = styled.div<TStyleProps>`
+    ${(props) =>
+        !props.isLastRowCell &&
+        css`
+            border-bottom: ${props.rowsLineStyle ??
+                `1px solid ${color.navy20}`};
+        `}
+    vertical-align: ${(props) => props.alignCellItems};
 `;
 
 const TableContainer = styled.div<{
     isScrollableOnOverflow?: boolean;
     customTableBorder?: string;
+    tableBackgroundColor?: string;
 }>`
-    background: ${color.white};
-    border: 1px ${color.navy20} solid;
-    border-radius: 20px;
+    width: 100%;
+    background-color: ${(props) => props.tableBackgroundColor ?? color.white};
+    border-radius: ${borderRadius};
     ${(props) =>
         props.isScrollableOnOverflow &&
         css`
@@ -59,7 +83,7 @@ const TableContainer = styled.div<{
             }
         `};
     ${(props) =>
-        props.customTableBorder && `border:${props.customTableBorder}`};
+        props.customTableBorder && `border: ${props.customTableBorder}`};
 `;
 
 const DivSpinnerLoaderParent = styled.div`
@@ -94,4 +118,5 @@ export default {
     NoDataStyle,
     TableContainer,
     DivTableCell,
+    TableDataOrHeadStyled,
 };

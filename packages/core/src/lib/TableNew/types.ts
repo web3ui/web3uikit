@@ -120,12 +120,7 @@ export interface ITableNewProps {
     hoverBackgroundColor: string;
 
     /**
-     * Table border width
+     * Table row bottom border style example - 1px solid red
      */
-    rowsLineWidth?: string;
-
-    /**
-     * Table border color
-     */
-    rowsLineWidthColor?: string;
+    rowsLineStyle?: string;
 }

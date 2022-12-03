@@ -17,7 +17,7 @@ export const header = [
 ];
 export const data = [
     [
-        <Avatar theme="image" isRounded={true} size={36} />,
+        <Avatar theme="image" isRounded={true} fontSize={36} />,
         'Moralis Magi',
         <Tag text="Nft Collection" color="blue" />,
         '0x18...130e',

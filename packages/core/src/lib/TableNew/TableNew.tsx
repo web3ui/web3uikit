@@ -31,8 +31,7 @@ const TableNew: React.FC<ITableNewProps> = ({
     headerTextColor = '',
     headerBgColor = '',
     hoverBackgroundColor,
-    rowsLineWidth,
-    rowsLineWidthColor,
+    rowsLineStyle,
     ...props
 }) => {
     const [pageNum, setPageNum] = useState<number>(
@@ -43,7 +42,6 @@ const TableNew: React.FC<ITableNewProps> = ({
     const [order, setOrder] = useState('asc');
 
     const handleSetPageNumber = (state: number): void => {
-        console.log('state-number', state);
         if (typeof customPageNumber == 'number') {
             setPageNum(customPageNumber);
         } else {
@@ -130,8 +128,7 @@ const TableNew: React.FC<ITableNewProps> = ({
                 order={order}
                 handleSortingChange={handleSortingChange}
                 onRowClick={onRowClick}
-                rowsLineWidth={rowsLineWidth}
-                rowsLineWidthColor={rowsLineWidthColor}
+                rowsLineStyle={rowsLineStyle}
             />
             {!noPagination && (
                 <PaginationStyled>

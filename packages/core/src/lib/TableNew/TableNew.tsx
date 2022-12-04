@@ -104,6 +104,24 @@ const TableNew: React.FC<ITableNewProps> = ({
         }
     }, [pageNum]);
 
+    const RenderPagination = (): JSX.Element => {
+        if (noPagination || tableData?.length == 0) {
+            return <></>;
+        }
+        return (
+            <PaginationStyled data-testid="test-table-pagination">
+                <Pagination
+                    currentPage={pageNum}
+                    pageSize={pageSize}
+                    totalCount={tableData.length}
+                    onPageChange={handleSetPageNumber}
+                    siblingCount={1}
+                    maxPages={maxPages}
+                />
+            </PaginationStyled>
+        );
+    };
+
     return (
         <TableParent data-testid="test-table" {...props}>
             <TableBase
@@ -130,18 +148,7 @@ const TableNew: React.FC<ITableNewProps> = ({
                 onRowClick={onRowClick}
                 rowsLineStyle={rowsLineStyle}
             />
-            {!noPagination && (
-                <PaginationStyled>
-                    <Pagination
-                        currentPage={pageNum}
-                        pageSize={pageSize}
-                        totalCount={tableData.length}
-                        onPageChange={handleSetPageNumber}
-                        siblingCount={1}
-                        maxPages={maxPages}
-                    />
-                </PaginationStyled>
-            )}
+            <RenderPagination />
         </TableParent>
     );
 };

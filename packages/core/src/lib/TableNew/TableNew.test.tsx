@@ -163,16 +163,6 @@ describe('Table - NoData', () => {
         const element = screen.queryAllByRole('table-item');
         expect(element.length).toEqual(0);
     });
-
-    test('Should Not Render Pagination', () => {
-        render(<NoData />);
-        const prevElement = screen.queryAllByRole(paginationPrevId);
-        const nextElement = screen.queryAllByRole(paginationNextId);
-        const paginationTag = screen.queryAllByRole('pagination-item');
-        expect(prevElement).toEqual([]);
-        expect(nextElement).toEqual([]);
-        expect(paginationTag).toEqual([]);
-    });
 });
 
 describe('Table - NoDataCustomComponent', () => {
@@ -195,16 +185,6 @@ describe('Table - NoDataCustomComponent', () => {
         render(<NoDataCustomComponent />);
         const element = screen.queryAllByRole('table-item');
         expect(element.length).toEqual(0);
-    });
-
-    test('Should Not Render Pagination', () => {
-        render(<NoDataCustomComponent />);
-        const prevElement = screen.queryAllByRole(paginationPrevId);
-        const nextElement = screen.queryAllByRole(paginationNextId);
-        const paginationTag = screen.queryAllByRole('pagination-item');
-        expect(prevElement).toEqual([]);
-        expect(nextElement).toEqual([]);
-        expect(paginationTag).toEqual([]);
     });
 });
 
@@ -237,16 +217,6 @@ describe('Table - NoDataCustomText', () => {
         render(<NoDataCustomText />);
         const element = screen.queryAllByRole('table-item');
         expect(element.length).toEqual(0);
-    });
-
-    test('Should Not Render Pagination', () => {
-        render(<NoDataCustomText />);
-        const prevElement = screen.queryAllByRole(paginationPrevId);
-        const nextElement = screen.queryAllByRole(paginationNextId);
-        const paginationTag = screen.queryAllByRole('pagination-item');
-        expect(prevElement).toEqual([]);
-        expect(nextElement).toEqual([]);
-        expect(paginationTag).toEqual([]);
     });
 });
 
@@ -345,16 +315,6 @@ describe('Table - FrozenPageOutOfRange', () => {
         render(<OutOfRangeFrozenTable />);
         const element = screen.queryAllByRole('table-item');
         expect(element.length).toEqual(0);
-    });
-
-    test('Should Still Render Pagination', () => {
-        render(<OutOfRangeFrozenTable />);
-        const prevElement = screen.queryAllByTestId(paginationPrevId);
-        const nextElement = screen.queryAllByTestId(paginationNextId);
-        const paginationTag = screen.queryAllByRole('pagination-item');
-        expect(prevElement).not.toEqual([]);
-        expect(nextElement).not.toEqual([]);
-        expect(paginationTag).not.toEqual([]);
     });
 });
 

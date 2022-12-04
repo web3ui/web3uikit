@@ -34,7 +34,7 @@ const TableStyled = styled.table.attrs((props: any) => ({
             background-color: ${(props) =>
                 props.tableBackgroundColor ?? color.white};
         }
-        tr:hover {
+        tr:hover > td {
             background-color: ${(props) => props.hoverBackgroundColor};
         }
         // Adds border radius to the last two cells of the table

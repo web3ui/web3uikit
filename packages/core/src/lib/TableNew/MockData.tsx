@@ -102,7 +102,6 @@ export const data = [
     ],
 ];
 export const pageSize: number = 5;
-export const maxPages = 3;
 
 export const syncHeader = [
     <span>Description</span>,

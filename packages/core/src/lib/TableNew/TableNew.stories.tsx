@@ -7,7 +7,6 @@ import {
     data,
     syncData,
     pageSize,
-    maxPages,
     customTableMockData,
 } from './MockData';
 import { Loading } from '../Loading';
@@ -34,7 +33,6 @@ DefaultTable.args = {
     header,
     data: data,
     pageSize,
-    maxPages,
 };
 
 export const NoPagination = Template.bind({});
@@ -42,7 +40,7 @@ NoPagination.args = {
     header,
     data,
     pageSize,
-    maxPages,
+
     noPagination: true,
 };
 
@@ -51,7 +49,6 @@ Scrolling.args = {
     header,
     data,
     pageSize,
-    maxPages,
 };
 
 export const NoData = Template.bind({});
@@ -59,7 +56,6 @@ NoData.args = {
     header,
     data: [],
     pageSize,
-    maxPages,
 };
 
 export const NoDataCustomText = Template.bind({});
@@ -67,7 +63,7 @@ NoDataCustomText.args = {
     header,
     data: [],
     pageSize,
-    maxPages,
+
     customNoDataText: 'This is Custom Text',
 };
 
@@ -76,7 +72,7 @@ NoDataCustomComponent.args = {
     header,
     data: [],
     pageSize,
-    maxPages,
+
     customNoDataComponent: <p>P tag passed as custom component</p>,
 };
 
@@ -85,7 +81,7 @@ FrozenPageTable.args = {
     header,
     data: data,
     pageSize,
-    maxPages,
+
     customPageNumber: 1,
 };
 
@@ -94,7 +90,7 @@ OutOfRangeFrozenTable.args = {
     header,
     data: data,
     pageSize,
-    maxPages,
+
     customPageNumber: 6,
 };
 
@@ -103,7 +99,7 @@ LoadingTable.args = {
     header,
     data: data,
     pageSize,
-    maxPages,
+
     isLoading: true,
     isColumnSortable: [true, true],
 };
@@ -113,7 +109,7 @@ CustomLoader.args = {
     header,
     data: data,
     pageSize,
-    maxPages,
+
     isLoading: true,
     customLoadingContent: (
         <div>
@@ -127,7 +123,7 @@ HighlightTableRow.args = {
     header,
     data: data,
     pageSize,
-    maxPages,
+
     hoverBackgroundColor: color.navy20,
 };
 
@@ -143,7 +139,7 @@ CustomLoadingSkeleton.args = {
     header,
     data: data,
     pageSize,
-    maxPages,
+
     isLoading: true,
     customLoadingContent: (
         <div
@@ -167,7 +163,7 @@ SyncTableExample.args = {
     header: syncHeader,
     data: syncData,
     pageSize,
-    maxPages,
+
     alignCellItems: 'center',
     isColumnSortable: [false, true, true, false],
 };
@@ -179,7 +175,7 @@ export const CustomTable: ComponentStory<typeof TableNew> = (args) => (
 CustomTable.args = {
     header,
     pageSize: 5,
-    maxPages,
+
     isColumnSortable: [false, true, false, false],
     data: customTableMockData,
     tableBackgroundColor: 'lightblue',

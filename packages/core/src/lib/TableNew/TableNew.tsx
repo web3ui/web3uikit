@@ -23,7 +23,7 @@ const TableNew: React.FC<ITableNewProps> = ({
     isLoading = false,
     isScrollableOnOverflow = true,
     justifyCellItems = 'start',
-    maxPages,
+
     noPagination,
     onPageNumberChanged,
     onRowClick,
@@ -117,7 +117,6 @@ const TableNew: React.FC<ITableNewProps> = ({
                     totalCount={tableData.length}
                     onPageChange={handleSetPageNumber}
                     siblingCount={1}
-                    maxPages={maxPages}
                 />
             </PaginationStyled>
         );

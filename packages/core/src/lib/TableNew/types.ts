@@ -38,11 +38,6 @@ export interface ITableNewProps {
     customLoadingContent?: JSX.Element;
 
     /**
-     * Max number of pagination tags that can be shown
-     */
-    maxPages?: number;
-
-    /**
      * Will render all data elements
      */
     noPagination?: boolean;

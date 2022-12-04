@@ -27,9 +27,6 @@ describe('Table - DefaultTable', () => {
     const pageSize = DefaultTable?.args?.pageSize
         ? DefaultTable?.args?.pageSize
         : 0;
-    const maxPages = DefaultTable?.args?.maxPages
-        ? DefaultTable?.args?.maxPages
-        : 0;
 
     test('renders the component', () => {
         render(<DefaultTable />);
@@ -47,12 +44,6 @@ describe('Table - DefaultTable', () => {
         render(<DefaultTable />);
         const element = screen.getAllByRole('table-item');
         expect(element.length).toEqual(pageSize * header?.length);
-    });
-
-    test('Computes Correct Number of Pagination', () => {
-        render(<DefaultTable />);
-        const element = screen.getAllByRole('pagination-item');
-        expect(element.length).toBeLessThan(maxPages + 1);
     });
 
     test('Always one pagination visible', () => {
@@ -227,9 +218,6 @@ describe('Table - FrozenPage', () => {
     const pageSize = DefaultTable?.args?.pageSize
         ? DefaultTable?.args?.pageSize
         : 0;
-    const maxPages = DefaultTable?.args?.maxPages
-        ? DefaultTable?.args?.maxPages
-        : 0;
 
     test('renders the component', () => {
         render(<FrozenPageTable />);
@@ -247,12 +235,6 @@ describe('Table - FrozenPage', () => {
         render(<FrozenPageTable />);
         const element = screen.getAllByRole('table-item');
         expect(element.length).toEqual(pageSize * header?.length);
-    });
-
-    test('Computes Correct Number of Pagination', () => {
-        render(<FrozenPageTable />);
-        const element = screen.getAllByRole('pagination-item');
-        expect(element.length).toBeLessThan(maxPages + 1);
     });
 
     test('Should call back on page change', () => {
@@ -277,9 +259,8 @@ describe('Table - FrozenPage', () => {
     test('Should not Navigate to new page on Tag Click', () => {
         const { rerender } = render(<FrozenPageTable />);
         let element: any = screen.getByTestId(paginationId);
-        const findTag: HTMLElement | undefined = screen.getAllByTestId(
-            paginationId,
-        )[0];
+        const findTag: HTMLElement | undefined =
+            screen.getAllByTestId(paginationId)[0];
         const currentPagination: string =
             element[Object.keys(element)[0] as string].return.key;
         fireEvent.click(findTag as Element);

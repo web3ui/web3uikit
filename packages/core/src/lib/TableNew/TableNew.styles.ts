@@ -1,6 +1,5 @@
-import styled, { css } from 'styled-components';
-import { color, resetCSS, fonts } from '@web3uikit/styles';
-import type { ITableNewProps } from './types';
+import styled from 'styled-components';
+import { resetCSS } from '@web3uikit/styles';
 
 const TableParent = styled.div`
     display: flex;

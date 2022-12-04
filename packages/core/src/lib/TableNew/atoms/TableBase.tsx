@@ -59,8 +59,8 @@ const TableBase: React.FC<ITableProps> = ({
     alignCellItems,
     justifyCellItems,
     cellPadding,
-    headerBgColor,
-    headerTextColor,
+    headerBgColor = color.white,
+    headerTextColor = color.blue70,
     hoverBackgroundColor,
     sortField,
     order,
@@ -77,6 +77,7 @@ const TableBase: React.FC<ITableProps> = ({
         return tableData?.slice(from, to);
     }, [noPagination, pageNum, pageSize, tableData]);
 
+    console.log(headerTextColor, headerBgColor);
     return (
         <TableContainer
             isScrollableOnOverflow={isScrollableOnOverflow}

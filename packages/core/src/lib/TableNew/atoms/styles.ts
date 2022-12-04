@@ -19,6 +19,9 @@ const TableStyled = styled.table.attrs((props: any) => ({
     thead {
         background-color: ${(props) => props.headerBgColor ?? color.white};
         color: ${(props) => props.headerTextColor ?? color.white};
+        th {
+            background-color: ${(props) => props.headerBgColor ?? color.white};
+        }
         tr > th:first-child {
             border-top-left-radius: ${borderRadius};
         }
@@ -27,10 +30,15 @@ const TableStyled = styled.table.attrs((props: any) => ({
         }
     }
     tbody {
+        td {
+            background-color: ${(props) =>
+                props.tableBackgroundColor ?? color.white};
+        }
         tr:hover {
             background-color: ${(props) => props.hoverBackgroundColor};
         }
         // Adds border radius to the last two cells of the table
+        tr:last-child,
         tr:last-child:hover {
             td:first-child {
                 border-bottom-left-radius: ${borderRadius};
@@ -69,9 +77,8 @@ const TableContainer = styled.div<{
     customTableBorder?: string;
     tableBackgroundColor?: string;
 }>`
-    width: 100%;
-    background-color: ${(props) => props.tableBackgroundColor ?? color.white};
     border-radius: ${borderRadius};
+    width: 100%;
     ${(props) =>
         props.isScrollableOnOverflow &&
         css`
@@ -87,6 +94,7 @@ const TableContainer = styled.div<{
 `;
 
 const DivSpinnerLoaderParent = styled.div`
+    background-color: ${color.white};
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -99,6 +107,7 @@ const DivSpinnerLoaderParent = styled.div`
 const NoDataStyle = styled.div`
     ${resetCSS}
     ${fonts.text}
+    background-color: ${color.white};
     display: grid;
     min-height: fit-content;
     align-items: flex-start;

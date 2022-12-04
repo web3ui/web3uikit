@@ -4,6 +4,7 @@ import styles from './TableNew.styles';
 import TableBase from './atoms/TableBase';
 import { getInnerText } from './Helper';
 import { Pagination } from '../Pagination';
+import { color } from '@web3uikit/styles';
 
 const { TableParent, PaginationStyled } = styles;
 
@@ -28,8 +29,8 @@ const TableNew: React.FC<ITableNewProps> = ({
     onRowClick,
     pageSize,
     tableBackgroundColor = 'white',
-    headerTextColor = '',
-    headerBgColor = '',
+    headerTextColor = color.blue70,
+    headerBgColor = color.white,
     hoverBackgroundColor,
     rowsLineStyle,
     ...props

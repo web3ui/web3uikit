@@ -74,23 +74,24 @@ describe('Table - DefaultTable', () => {
     test('Should change pagination to next on Click', () => {
         const { rerender } = render(<DefaultTable />);
         const next: HTMLElement = screen.getByTestId(paginationNextId);
-        expect(screen.getByTestId('test-tableBodyPage-1'));
+        expect(screen.getByTestId('test-tableBodyPage-1')).toBeDefined();
         fireEvent.click(next);
         rerender(<DefaultTable />);
-        expect(screen.getByTestId('test-tableBodyPage-2'));
+        expect(screen.getByTestId('test-tableBodyPage-2')).toBeDefined();
     });
 
-    test('Should change to Previous page on previous click', () => {
-        const { rerender } = render(<DefaultTable />);
+    test('Should change to Previous page on previous click', async () => {
+        const { rerender } = render(
+            <DefaultTable
+                onPageNumberChanged={testOnChangeEvent}
+                customPageNumber={2}
+            />,
+        );
         const prev: HTMLElement = screen.getByTestId(paginationPrevId);
-        const next: HTMLElement = screen.getByTestId(paginationNextId);
-        expect(screen.getByTestId('test-tableBodyPage-1'));
-        fireEvent.click(next);
-        rerender(<DefaultTable />);
-        expect(screen.getByTestId('test-tableBodyPage-2'));
+        expect(screen.getByTestId('test-tableBodyPage-2')).toBeDefined();
         fireEvent.click(prev);
-        rerender(<DefaultTable />);
-        expect(screen.getByTestId('test-tableBodyPage-1'));
+        rerender(<DefaultTable onPageNumberChanged={testOnChangeEvent} />);
+        expect(screen.getByTestId('test-tableBodyPage-1')).toBeDefined();
     });
 
     test('Calls back on Row Click', () => {

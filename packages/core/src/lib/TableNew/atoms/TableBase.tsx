@@ -77,7 +77,6 @@ const TableBase: React.FC<ITableProps> = ({
         return tableData?.slice(from, to);
     }, [noPagination, pageNum, pageSize, tableData]);
 
-    console.log(headerTextColor, headerBgColor);
     return (
         <TableContainer
             isScrollableOnOverflow={isScrollableOnOverflow}
@@ -101,14 +100,12 @@ const TableBase: React.FC<ITableProps> = ({
                                 isLastRowCell={false}
                                 rowsLineStyle={rowsLineStyle}
                                 alignCellItems={alignCellItems}
-                                flexBasis={(1 / header.length) * 100}
                             >
                                 <DivTableCell
                                     justifyCellItems={justifyCellItems}
                                     cellPadding={cellPadding}
                                     onClick={() => handleSortingChange(key)}
                                     role="table-header"
-                                    flexBasis={(1 / header.length) * 100}
                                 >
                                     {head}
                                     {sortField === key &&
@@ -140,7 +137,6 @@ const TableBase: React.FC<ITableProps> = ({
                                         key={`tableBody_${colKey}`}
                                         rowsLineStyle={rowsLineStyle}
                                         alignCellItems={alignCellItems}
-                                        flexBasis={(1 / row.length) * 100}
                                         isLastRowCell={
                                             computeCurrentData.length ===
                                             rowKey + 1
@@ -151,7 +147,6 @@ const TableBase: React.FC<ITableProps> = ({
                                             data-key={`tr_${rowKey}_${colKey}`}
                                             justifyCellItems={justifyCellItems}
                                             cellPadding={cellPadding}
-                                            flexBasis={(1 / row.length) * 100}
                                             onClick={(e) => {
                                                 if (
                                                     onRowClick &&

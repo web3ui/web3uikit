@@ -52,7 +52,6 @@ const TableStyled = styled.table.attrs((props: any) => ({
 
 type TStyleProps = Partial<ITableNewProps> & {
     isLastRowCell?: boolean;
-    flexBasis: number;
 };
 
 const DivTableCell = styled.div<TStyleProps>`

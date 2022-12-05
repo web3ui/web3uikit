@@ -1,5 +1,17 @@
 # @web3uikit/core
 
+## 0.2.23
+
+### Patch Changes
+
+-   [#932](https://github.com/web3ui/web3uikit/pull/932) [`5cec2a7c9`](https://github.com/web3ui/web3uikit/commit/5cec2a7c97429e498d1a6b8bb1529866d9970b5c) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - added money primary button at mint53 color
+
+*   [#931](https://github.com/web3ui/web3uikit/pull/931) [`420680ffc`](https://github.com/web3ui/web3uikit/commit/420680ffc15486e24bf1d7b1887ddfc2e1633360) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - A tooltip position to card element
+
+*   Updated dependencies [[`5cec2a7c9`](https://github.com/web3ui/web3uikit/commit/5cec2a7c97429e498d1a6b8bb1529866d9970b5c), [`db5deafec`](https://github.com/web3ui/web3uikit/commit/db5deafece4c371f1f6eb04dc3f74be0a3f40e88), [`ff60d2018`](https://github.com/web3ui/web3uikit/commit/ff60d20185e78ee780a07cea06d414cebc3b2cf3)]:
+    -   @web3uikit/styles@0.2.23
+    -   @web3uikit/icons@0.2.23
+
 ## 0.2.22
 
 ### Patch Changes

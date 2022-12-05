@@ -1,5 +1,11 @@
 # @web3uikit/styles
 
+## 0.2.23
+
+### Patch Changes
+
+-   [#932](https://github.com/web3ui/web3uikit/pull/932) [`5cec2a7c9`](https://github.com/web3ui/web3uikit/commit/5cec2a7c97429e498d1a6b8bb1529866d9970b5c) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - added money primary button at mint53 color
+
 ## 0.2.21
 
 ### Patch Changes

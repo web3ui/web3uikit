@@ -1,5 +1,13 @@
 # @web3uikit/icons
 
+## 0.2.23
+
+### Patch Changes
+
+-   [#935](https://github.com/web3ui/web3uikit/pull/935) [`db5deafec`](https://github.com/web3ui/web3uikit/commit/db5deafece4c371f1f6eb04dc3f74be0a3f40e88) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add playground icon
+
+*   [#934](https://github.com/web3ui/web3uikit/pull/934) [`ff60d2018`](https://github.com/web3ui/web3uikit/commit/ff60d20185e78ee780a07cea06d414cebc3b2cf3) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - [Icons]: New icons
+
 ## 0.2.20
 
 ### Patch Changes

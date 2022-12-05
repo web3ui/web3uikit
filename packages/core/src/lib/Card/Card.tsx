@@ -20,6 +20,7 @@ const Card: React.FC<CardProps> = ({
     tooltipMove,
     tooltipMoveBody,
     tooltipText,
+    tooltipPosition = 'bottom',
     style,
     ...props
 }: CardProps) => {
@@ -67,7 +68,7 @@ const Card: React.FC<CardProps> = ({
                             content={tooltipText}
                             move={tooltipMove}
                             moveBody={tooltipMoveBody}
-                            position={'bottom'}
+                            position={tooltipPosition}
                         />
                     </AbsoluteIconStyled>
                 )}

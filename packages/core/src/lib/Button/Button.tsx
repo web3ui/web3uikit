@@ -6,6 +6,7 @@ const ButtonColored = lazy(() => import('./ButtonColored/ButtonColored'));
 const ButtonCustom = lazy(() => import('./ButtonCustom/ButtonCustom'));
 const ButtonOutline = lazy(() => import('./ButtonOutline/ButtonOutline'));
 const ButtonPrimary = lazy(() => import('./ButtonPrimary/ButtonPrimary'));
+const ButtonMoneyPrimary = lazy(() => import('./ButtonMoneyPrimary/ButtonMoneyPrimary'));
 const ButtonSecondary = lazy(() => import('./ButtonSecondary/ButtonSecondary'));
 const ButtonTranslucent = lazy(
     () => import('./ButtonTranslucent/ButtonTranslucent'),
@@ -21,6 +22,8 @@ const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
                     switch (props.theme) {
                         case 'primary':
                             return <ButtonPrimary {...props} />;
+                        case 'moneyPrimary':
+                            return <ButtonMoneyPrimary {...props} />;
                         case 'secondary':
                             return <ButtonSecondary {...props} />;
                         case 'outline':

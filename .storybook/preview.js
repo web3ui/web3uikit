@@ -51,6 +51,10 @@ export const parameters = {
                 name: 'pink',
                 value: '#DA51BE',
             },
+            {
+                name: 'navy',
+                value: '#0D243F',
+            },
         ],
     },
     controls: {

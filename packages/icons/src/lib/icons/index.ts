@@ -101,6 +101,7 @@ export { default as Pause } from './Pause';
 export { default as Phone } from './Phone';
 export { default as Pin } from './Pin';
 export { default as Play } from './Play';
+export { default as Playground } from './Playground';
 export { default as Plug } from './Plug';
 export { default as Plus } from './Plus';
 export { default as Pulse } from './Pulse';

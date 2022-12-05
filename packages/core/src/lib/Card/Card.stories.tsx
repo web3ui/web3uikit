@@ -94,6 +94,7 @@ NftCollection.args = {
     children: [<div key={'0'}>{getModuleAnimation('NFT Collection')}</div>],
     title: 'NFT Collection',
     description: 'Create and publish your own NFT Collection',
+    tooltipPosition: 'right',
 };
 
 export const Disabled = Template.bind({});

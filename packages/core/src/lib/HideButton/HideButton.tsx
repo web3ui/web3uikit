@@ -18,6 +18,7 @@ const HideButton: FC<IHideButtonProps> = ({
 }) => {
     return (
         <HideButtonStyled
+            type="button"
             onClick={onToggle}
             data-testid="test-hide-button"
             {...props}

@@ -23,7 +23,7 @@ const Modal: React.FC<ModalProps> = ({
     hasCancel = true,
     hasFooter = true,
     headerHasBottomBorder = false,
-    id = String(Date.now()),
+    id,
     isCancelDisabled,
     isCentered = false,
     isOkDisabled,

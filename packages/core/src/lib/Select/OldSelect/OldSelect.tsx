@@ -25,7 +25,7 @@ const Select: React.FC<ISelectProps> = ({
     description,
     disabled = false,
     errorMessage = '',
-    id = String(Date.now()),
+    id,
     label,
     onBlurTraditional,
     onChange,

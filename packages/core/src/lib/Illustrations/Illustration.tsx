@@ -82,7 +82,7 @@ const StyledIllustration = styled.div<
 
 const Illustration: React.FC<IllustrationProps> = ({
     height,
-    id = String(Date.now()),
+    id,
     logo,
     width,
     ...props

@@ -6,7 +6,7 @@ const { TextAreaStyled, LabelStyled, TextAreaWrapper } = styles;
 
 const TextArea: React.FC<TextAreaProps> = ({
     autoComplete = true,
-    id = String(Date.now()),
+    id,
     label,
     name,
     ref,

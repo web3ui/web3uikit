@@ -11,7 +11,7 @@ const TraditionalSelect: React.FC<SelectProps> = ({
     description,
     disabled = false,
     errorMessage = '',
-    id = String(Date.now()),
+    id,
     label,
     onBlurTraditional,
     onChange,
@@ -29,9 +29,8 @@ const TraditionalSelect: React.FC<SelectProps> = ({
     width = '200px',
     ...props
 }: SelectProps) => {
-    const [selectedOptionIndex, setSelectedOptionIndex] = useState(
-        defaultOptionIndex,
-    );
+    const [selectedOptionIndex, setSelectedOptionIndex] =
+        useState(defaultOptionIndex);
 
     useEffect(() => {
         if (value) {

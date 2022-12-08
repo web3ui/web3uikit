@@ -39,10 +39,9 @@ const Credentials: FC<ICredentialsProps> = ({
 
     useEffect(() => setIsValueHidden(isHidden), [isHidden]);
 
-    useEffect(
-        () => setIsMultiline((text.match(/\n/g) || []).length > 0),
-        [text],
-    );
+    useEffect(() => setIsMultiline((text.match(/\n/g) || []).length > 0), [
+        text,
+    ]);
 
     return (
         <CredentialsStyled
@@ -64,7 +63,7 @@ const Credentials: FC<ICredentialsProps> = ({
                     isMultiline={isMultiline}
                 >
                     <Typography
-                        color={isValueHidden ? color.blueGray50 : textColor}
+                        color={textColor ?? customize?.color ?? color.blue70}
                         data-testid="test-cred-new-comp-heading"
                         fontSize={customize?.fontSize}
                         monospace
@@ -79,6 +78,12 @@ const Credentials: FC<ICredentialsProps> = ({
                             <TruncateString
                                 text={text}
                                 percentageOfCharsAfterTrunc={55}
+                                textColor={
+                                    textColor ??
+                                    customize?.color ??
+                                    color.blue70
+                                }
+                                fontSize={customize?.fontSize ?? '16px'}
                             />
                         )}
                     </Typography>

@@ -46,6 +46,7 @@ export * from './Tag';
 export * from './TextArea';
 export * from './Todo';
 export * from './Tooltip';
+export * from './Credentials/components/TruncateString';
 export * from './Typography';
 export * from './Upload';
 export * from './VerifyCode';

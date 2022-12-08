@@ -75,4 +75,5 @@ Customize.args = {
     },
     hasHideButton: false,
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
+    textColor: 'white',
 };

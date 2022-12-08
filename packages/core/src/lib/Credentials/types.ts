@@ -42,7 +42,7 @@ export interface ICredentialsProps
     /**
      * color of the text
      */
-    textColor?: string | typeof color;
+    textColor?: string;
 
     /**
      * width of component
@@ -85,6 +85,16 @@ export interface ITruncateStringProps {
      * Percentage of characters(approx) to remain after truncate
      */
     percentageOfCharsAfterTrunc?: number;
+
+    /**
+     * color of text
+     */
+    textColor: string;
+
+    /**
+     * size of font
+     */
+    fontSize: string;
 }
 
 export type TStringTruncate = {

@@ -49,6 +49,7 @@ const CopyButton: FC<CopyButtonProps> = ({
         <ButtonStyled
             className="input_copy"
             data-testid="test-copy-button"
+            type="button"
             iconSize={iconSize}
             onClick={(e) => {
                 onCopy(e);

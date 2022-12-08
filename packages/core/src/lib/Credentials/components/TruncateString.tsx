@@ -36,7 +36,7 @@ const truncateString = ({
     }
 };
 
-const TruncateString: FC<ITruncateStringProps> = ({
+export const TruncateString: FC<ITruncateStringProps> = ({
     fontSize = '16px',
     percentageOfCharsAfterTrunc = 50,
     replaceString = '...',

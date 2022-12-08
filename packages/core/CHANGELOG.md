@@ -1,5 +1,13 @@
 # @web3uikit/core
 
+## 0.2.24
+
+### Patch Changes
+
+-   [#937](https://github.com/web3ui/web3uikit/pull/937) [`5221897c7`](https://github.com/web3ui/web3uikit/commit/5221897c798bba52be3296db26bd64f69265db73) Thanks [@BillyG83](https://github.com/BillyG83)! - removeing dateNow ids that cause nextJS errors
+
+*   [#936](https://github.com/web3ui/web3uikit/pull/936) [`7869ffbdf`](https://github.com/web3ui/web3uikit/commit/7869ffbdfc66436a81f2ee8ac32440d735d3372c) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Fix Hide and copy buttons
+
 ## 0.2.23
 
 ### Patch Changes

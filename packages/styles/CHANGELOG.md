@@ -1,5 +1,11 @@
 # @web3uikit/styles
 
+## 0.2.25
+
+### Patch Changes
+
+-   [#940](https://github.com/web3ui/web3uikit/pull/940) [`afa21110e`](https://github.com/web3ui/web3uikit/commit/afa21110e5d319697630ef16825b2a2a7e16cc18) Thanks [@BillyG83](https://github.com/BillyG83)! - InputNew, Button, Cred: new cusomize props
+
 ## 0.2.23
 
 ### Patch Changes

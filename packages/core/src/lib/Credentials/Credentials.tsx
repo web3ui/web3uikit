@@ -39,9 +39,10 @@ const Credentials: FC<ICredentialsProps> = ({
 
     useEffect(() => setIsValueHidden(isHidden), [isHidden]);
 
-    useEffect(() => setIsMultiline((text.match(/\n/g) || []).length > 0), [
-        text,
-    ]);
+    useEffect(
+        () => setIsMultiline((text.match(/\n/g) || []).length > 0),
+        [text],
+    );
 
     return (
         <CredentialsStyled
@@ -68,7 +69,7 @@ const Credentials: FC<ICredentialsProps> = ({
                         fontSize={customize?.fontSize}
                         monospace
                         variant={isValueHidden ? 'caption14' : 'body16'}
-                        weight="400"
+                        weight={customize?.fontWeight}
                     >
                         {isValueHidden ? (
                             hiddenText

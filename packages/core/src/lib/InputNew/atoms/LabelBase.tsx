@@ -6,15 +6,23 @@ import styles from './styles';
 const { LabelStyled } = styles;
 
 const LabelBase: FC<ILabelBaseProps> = ({
+    color,
     id,
+    required,
     testid,
     text,
-    required,
+    typographyFontWeight,
+    typographyVariant,
     ...props
 }) => {
     return (
         <LabelStyled data-testid={testid} htmlFor={id} {...props}>
-            <Typography title={text}>
+            <Typography
+                color={color}
+                title={text}
+                variant={typographyVariant}
+                weight={typographyFontWeight}
+            >
                 {text}
                 {required && '*'}
             </Typography>

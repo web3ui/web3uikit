@@ -17,6 +17,7 @@ const Input: React.FC<IInputProps> = ({
     autoComplete,
     autoFocus,
     customInput,
+    customize,
     description,
     disabled,
     errorMessage = 'Sorry this is not valid',
@@ -29,8 +30,8 @@ const Input: React.FC<IInputProps> = ({
     placeholder,
     setLabelMargin,
     size,
-    state = disabled ? 'disabled' : undefined,
     slots,
+    state = disabled ? 'disabled' : undefined,
     type = 'text',
     validation,
     value,
@@ -96,6 +97,7 @@ const Input: React.FC<IInputProps> = ({
     return (
         <>
             <DivStyled
+                customize={customize}
                 className={`${
                     Boolean(currentValue || openByDefault) ? 'filled' : 'blank'
                 } ${Boolean(inputInFocus) ? 'focus' : 'blur'}`}
@@ -109,6 +111,8 @@ const Input: React.FC<IInputProps> = ({
             >
                 {label && (
                     <LabelBase
+                        color={customize?.color}
+                        typographyFontWeight={customize?.fontWeight}
                         id={id || 'web3uiKit-input'}
                         testid="test-input-label"
                         text={label}

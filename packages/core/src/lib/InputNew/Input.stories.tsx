@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Server } from '@web3uikit/icons';
+import { Search, Server } from '@web3uikit/icons';
 import { InputNew as Input } from '.';
 import { validateRegExp } from '../../utils/const';
-import { TInputStates } from './atoms/types';
 
 export default {
     title: '2.Forms/InputNew',
@@ -145,3 +143,25 @@ InputCustom.args = {
     openByDefault: true,
 };
 InputCustom.storyName = 'Input Custom';
+
+export const InputCustomStyle = Template.bind({});
+InputCustomStyle.args = {
+    customize: {
+        backgroundColor: '#213853',
+        border: '1px solid #99D3FF',
+        borderRadius: '16px',
+        color: '#99D3FF',
+        fontSize: '16px,',
+        onHover: 'lighten',
+        padding: '16px 10px',
+    },
+    label: 'Search by Wallet Address',
+    placeholder: '0x...',
+    slots: {
+        slotBefore: [<Search color="#99D3FF" />],
+    },
+    setLabelMargin: {
+        left: '40px',
+    },
+};
+InputCustomStyle.storyName = 'Input Custom Style';

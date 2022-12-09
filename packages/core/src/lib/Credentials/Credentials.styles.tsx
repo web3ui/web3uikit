@@ -9,10 +9,9 @@ const CredentialsStyled = styled.div<TStyleProps>`
         p.customize?.backgroundColor
             ? p.customize?.backgroundColor
             : color.aero10};
-
+    border: ${(p) => p.customize?.border};
     border-radius: ${(p) =>
         p.customize?.borderRadius ? p.customize?.borderRadius : '16px'};
-
     display: flex;
     flex-direction: column;
     padding: ${(p) => (p.customize?.padding ? p.customize?.padding : '16px')};

@@ -1,3 +1,5 @@
+import { variantType, TStandardWeight } from '../../Typography';
+
 export type TInputStates = 'initial' | 'error' | 'confirmed' | 'disabled';
 
 export type TValidateInput = {
@@ -101,6 +103,11 @@ export interface IInputBaseProps extends TValidateInput {
 
 export interface ILabelBaseProps {
     /**
+     * set the color of the label text
+     */
+    color?: string;
+
+    /**
      * label needs match ID to relate to its input
      */
     id: string;
@@ -119,6 +126,16 @@ export interface ILabelBaseProps {
      * the text rendered in the label
      */
     text?: string;
+
+    /**
+     * the text font weight
+     */
+    typographyFontWeight?: TStandardWeight;
+
+    /**
+     * the text font size
+     */
+    typographyVariant?: variantType;
 }
 
 export interface IVisibilityToggleProps {

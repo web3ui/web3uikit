@@ -1,4 +1,5 @@
 import React from 'react';
+import { TCustomize } from '../../interfaces/customize';
 import { IInputBaseProps, TValidateInput } from './atoms/types';
 
 export type TInputStates = 'initial' | 'error' | 'confirmed' | 'disabled';
@@ -32,6 +33,11 @@ export interface IInputProps extends IInputBaseProps {
      * Will replace input div with a JSX element
      */
     customInput?: JSX.Element;
+
+    /**
+     * Control style settings, for better or worse
+     */
+    customize?: TCustomize;
 
     /**
      * Description of input, Error state message overrides

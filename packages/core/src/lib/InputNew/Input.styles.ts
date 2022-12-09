@@ -4,7 +4,7 @@ import { IInputProps, TInputStates } from './types';
 
 type TInputProps = Pick<
     IInputProps,
-    'disabled' | 'setLabelMargin' | 'size' | 'state' | 'width'
+    'customize' | 'disabled' | 'setLabelMargin' | 'size' | 'state' | 'width'
 >;
 
 const inputDisabled = css`
@@ -29,7 +29,7 @@ const getColorByState = (state: TInputStates, defaultColor: string) => {
 const DivStyled = styled.div<TInputProps>`
     ${resetCSS};
     ${fonts.text}
-    background-color: ${color.white};
+    background-color: ${(p) => p.customize?.backgroundColor || color.white};
     border-radius: 16px;
     border: 1px solid
         ${(p) => p.state && getColorByState(p.state, color.gray30)};
@@ -39,7 +39,7 @@ const DivStyled = styled.div<TInputProps>`
     width: 100%;
 
     label {
-        background-color: white;
+        background-color: ${(p) => p.customize?.backgroundColor || color.white};
         height: 24px;
         left: ${(p) => p.setLabelMargin?.left || '18px'};
         overflow: hidden;
@@ -50,12 +50,19 @@ const DivStyled = styled.div<TInputProps>`
         white-space: nowrap;
         right: ${(p) => p.setLabelMargin?.right || '18px'};
         z-index: 1;
+
+        &::placeholder {
+            color: ${(p) => p.customize?.color};
+        }
     }
 
+    // custom input overwrites
     input {
+        background-color: ${(p) => p.customize?.backgroundColor || color.white};
+        color: ${(p) => p.customize?.color};
         ${(p) => p.size === 'regular' && 'padding: 8px 18px'};
+        ${(p) => p.customize?.padding && `padding: ${p.customize?.padding}`};
     }
-
     input + input {
         display: none;
     }
@@ -80,7 +87,9 @@ const DivStyled = styled.div<TInputProps>`
             z-index: 1;
 
             &::before {
-                background-color: ${color.white};
+                background-color: ${(p) =>
+                    p.customize?.backgroundColor || color.white};
+                border-radius: 4px;
                 content: '';
                 display: block;
                 height: 100%;
@@ -100,6 +109,10 @@ const DivStyled = styled.div<TInputProps>`
 
     &:hover {
         border-color: ${color.navy30};
+        ${(p) =>
+            p.customize?.onHover && p.customize?.onHover === 'lighten'
+                ? 'filter: brightness(1.1)'
+                : 'filter: brightness(10%)'};
     }
 
     ${(p) => p.disabled && inputDisabled};

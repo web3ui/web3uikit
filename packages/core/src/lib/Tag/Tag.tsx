@@ -11,6 +11,7 @@ const Tag: React.FC<TagProps> = ({
     hasCancel = false,
     id,
     onCancelClick,
+    padding,
     text = 'Tag',
     theme = 'regular',
     tone = 'light',

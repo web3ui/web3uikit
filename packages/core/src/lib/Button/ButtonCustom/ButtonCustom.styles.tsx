@@ -6,6 +6,9 @@ import { ButtonProps } from '../types';
 const ButtonCustomStyled = styled(ButtonBase)<ButtonProps>`
     background-color: ${(p) => p.customize?.backgroundColor};
     border-radius: ${(p) => p.customize?.borderRadius};
+    border: ${(p) => p.customize?.border};
+    font-size: ${(p) => p.customize?.fontSize};
+    font-weight: ${(p) => p.customize?.fontWeight};
     padding: ${(p) => p.customize?.padding};
 
     span {

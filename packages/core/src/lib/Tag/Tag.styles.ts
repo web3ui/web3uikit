@@ -1,8 +1,8 @@
 import styled from 'styled-components';
+import { color } from '@web3uikit/styles';
 import colorStyles from './styles/colors';
 import themeStyles from './styles/themes';
 import type { TagProps, Tone } from './types';
-import { color } from '@web3uikit/styles';
 
 const {
     activeStatus,

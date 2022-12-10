@@ -112,7 +112,7 @@ const DivStyled = styled.div<TInputProps>`
         ${(p) =>
             p.customize?.onHover && p.customize?.onHover === 'lighten'
                 ? 'filter: brightness(1.1)'
-                : 'filter: brightness(10%)'};
+                : 'filter: brightness(0.9)'};
     }
 
     ${(p) => p.disabled && inputDisabled};

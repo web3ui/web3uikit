@@ -1,10 +1,12 @@
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import Tag from './Tag';
 
 export default {
     title: '4.UI/Tag',
     component: Tag,
+    argTypes: {
+        onCancelClick: { action: 'onCancelClick function called' },
+    },
 } as ComponentMeta<typeof Tag>;
 
 const Template: ComponentStory<typeof Tag> = (args) => <Tag {...args} />;
@@ -16,6 +18,7 @@ export const Discount = Template.bind({});
 Discount.args = {
     text: '-35%',
     theme: 'discount',
+    padding: '20px',
 };
 
 export const ActiveStatus = Template.bind({});
@@ -121,4 +124,18 @@ PinkDark.args = {
     color: 'pink',
     text: 'Pink',
     tone: 'dark',
+};
+
+export const AllProps = Template.bind({});
+AllProps.args = {
+    active: true,
+    color: 'pink',
+    fontSize: '20px',
+    hasCancel: true,
+    id: 'tag-props',
+    padding: '20px 40px',
+    text: 'All the props',
+    theme: 'regular',
+    tone: 'dark',
+    width: 'fit-content',
 };

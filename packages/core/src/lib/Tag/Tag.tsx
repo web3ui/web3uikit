@@ -1,7 +1,7 @@
 import { Checkmark, Cross } from '@web3uikit/icons';
+import { color as colors } from '@web3uikit/styles';
 import styles from './Tag.styles';
 import { TagProps } from './types';
-import { color as colors } from '@web3uikit/styles';
 const { TagStyled, SpanStyled } = styles;
 
 const Tag: React.FC<TagProps> = ({
@@ -25,6 +25,7 @@ const Tag: React.FC<TagProps> = ({
             data-testid="test-tag"
             fontSize={fontSize}
             id={id}
+            padding={padding}
             role="status"
             theme={theme}
             tone={tone}
@@ -45,7 +46,7 @@ const Tag: React.FC<TagProps> = ({
                     <Cross
                         title="cross icon"
                         titleId="tag cross icon"
-                        fill={colors.grey}
+                        fill={colors.gray40}
                     />
                 </SpanStyled>
             )}

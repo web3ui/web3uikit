@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { color } from '@web3uikit/styles';
 import colorStyles from './styles/colors';
 import themeStyles from './styles/themes';
 import type { TagProps, Tone } from './types';
-import { color } from '@web3uikit/styles';
+
 const {
     activeStatus,
     discount,
@@ -32,7 +33,7 @@ const {
 
 type TStyleProps = Pick<
     TagProps,
-    'active' | 'fontSize' | 'theme' | 'tone' | 'width'
+    'active' | 'fontSize' | 'padding' | 'theme' | 'tone' | 'width'
 >;
 
 const getTheme = (theme: string, active?: boolean) => {
@@ -99,6 +100,7 @@ const TagStyled = styled.div<TStyleProps>`
         theme === 'chips' && tone === 'dark' && 'border: 0px;'};
 
     ${({ fontSize }) => Boolean(fontSize) && `font-size: ${fontSize}`};
+    ${({ padding }) => Boolean(padding) && `padding: ${padding}`};
 `;
 
 export default {

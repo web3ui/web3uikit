@@ -110,9 +110,13 @@ const DivStyled = styled.div<TInputProps>`
     &:hover {
         border-color: ${color.navy30};
         ${(p) =>
-            p.customize?.onHover && p.customize?.onHover === 'lighten'
-                ? 'filter: brightness(1.1)'
-                : 'filter: brightness(10%)'};
+            p.customize?.onHover &&
+            p.customize?.onHover === 'lighten' &&
+            'filter: brightness(1.1)'}
+        ${(p) =>
+            p.customize?.onHover &&
+            p.customize?.onHover === 'darken' &&
+            'filter: brightness(0.9)'}
     }
 
     ${(p) => p.disabled && inputDisabled};

@@ -59,4 +59,9 @@ export interface TagProps {
      * an onclick action that's dispatched when the cancel button is pressed
      */
     onCancelClick?: () => void;
+
+    /**
+     * set custom passing
+     */
+    padding?: string;
 }

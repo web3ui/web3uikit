@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import TraditionalSelectStyles from './TraditionalSelect.styles';
-import { SelectProps } from '../types';
+import { ISelectProps } from '../types';
 import InputStyles from '../../Input/Input.styles';
 const { DivWrapperStyled, LabelStyled: LabelStyledTrad } = InputStyles;
 const { DivStyledDescription, SelectStyled } = TraditionalSelectStyles;
 
-const TraditionalSelect: React.FC<SelectProps> = ({
+const TraditionalSelect: React.FC<ISelectProps> = ({
     customNoDataText = 'No Data',
     defaultOptionIndex,
     description,
@@ -17,6 +17,7 @@ const TraditionalSelect: React.FC<SelectProps> = ({
     onChange,
     onChangeTraditional,
     options = [],
+    placeholder,
     prefixIcon,
     prefixText,
     ref,
@@ -28,7 +29,7 @@ const TraditionalSelect: React.FC<SelectProps> = ({
     value,
     width = '200px',
     ...props
-}: SelectProps) => {
+}: ISelectProps) => {
     const [selectedOptionIndex, setSelectedOptionIndex] =
         useState(defaultOptionIndex);
 
@@ -52,7 +53,7 @@ const TraditionalSelect: React.FC<SelectProps> = ({
         >
             <SelectStyled
                 data-testid="test-select-select"
-                defaultValue="Please choose"
+                defaultValue={placeholder || 'Please choose'}
                 id={id}
                 ref={refTraditional}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
@@ -68,7 +69,7 @@ const TraditionalSelect: React.FC<SelectProps> = ({
                     (option, i) =>
                         i !== selectedOptionIndex && (
                             <option
-                                data-testid={`test-seclect-option-${i}`}
+                                data-testid={`test-select-option-${i}`}
                                 id={String(option?.id)}
                                 key={option?.id}
                             >

@@ -1,6 +1,6 @@
 {
     "name": "@web3uikit/core",
-    "version": "0.2.26",
+    "version": "0.2.27",
     "sideEffects": false,
     "files": [
         "package.json",

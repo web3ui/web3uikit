@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.27
+
+### Patch Changes
+
+-   [#944](https://github.com/web3ui/web3uikit/pull/944) [`59b121539`](https://github.com/web3ui/web3uikit/commit/59b1215396b3d88e86ab3e60bfd35bd9c31dd7b3) Thanks [@BillyG83](https://github.com/BillyG83)! - Select: traditional placholder prop used
+
 ## 0.2.26
 
 ### Patch Changes

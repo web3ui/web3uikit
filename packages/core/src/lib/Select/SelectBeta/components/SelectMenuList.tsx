@@ -155,12 +155,13 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                     aria-activedescendant={optionId(activeDescendantIndex)}
                     aria-hidden={shouldDisplaySearch === false || undefined}
                     aria-label="Filter Options"
+                    customize={customize}
+                    data-testid="test-select-search-input"
                     onChange={(e) => setSearchTerm(e.target.value)}
                     onKeyDown={onKeyDown}
                     ref={searchRef}
                     type="search"
                     value={searchTerm}
-                    data-testid="test-select-search-input"
                 />
                 {shouldDisplaySearch && (
                     <SearchIconStyled
@@ -186,6 +187,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                             >
                                 <ButtonStyledListItem
                                     aria-selected={ariaSelected}
+                                    customize={customize}
                                     data-highlighted={
                                         activeDescendantIndex ===
                                             visibleIndices[index] || undefined
@@ -220,7 +222,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                                 logo="servers"
                                 width="100%"
                             />
-                            <SpanStyledNoResults>
+                            <SpanStyledNoResults customize={customize}>
                                 {options.length === 0
                                     ? customNoDataText
                                     : `No results for “${searchTerm}”`}

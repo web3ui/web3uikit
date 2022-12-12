@@ -1,17 +1,30 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { color, resetCSS } from '@web3uikit/styles';
 import { TriangleDown, TriangleUp, Search, Checkmark } from '@web3uikit/icons';
+import { ISelectProps } from '../types';
 
-const DivStyledWrapper = styled.div`
+const hoverStyles = css<Pick<ISelectProps, 'customize'>>`
+    ${(p) =>
+        p.customize?.onHover &&
+        p.customize?.onHover === 'lighten' &&
+        'filter: brightness(1.1)'}
+    ${(p) =>
+        p.customize?.onHover &&
+        p.customize?.onHover === 'darken' &&
+        'filter: brightness(0.9)'}
+`;
+
+const DivStyledWrapper = styled.div<Pick<ISelectProps, 'customize'>>`
     ${resetCSS};
     --arrow-width: 51px;
     --checkbox-width: 42px;
     display: block;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
         sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    font-size: 14px;
+    font-size: ${(props) => props.customize?.fontSize ?? '14px'};
     line-height: 24px;
     margin-bottom: 5px;
+    color: ${(props) => props.customize?.color ?? color.blue70};
     &[aria-expanded='true'] {
         border-color: ${color.navy30};
         & .w3uik__dropdown-wrapper {
@@ -22,11 +35,10 @@ const DivStyledWrapper = styled.div`
             display: block;
         }
     }
-    /* isolation: isolate; */
 `;
 
-const DivStyledSelectWrapper = styled.div<{ height: string }>`
-    background-color: ${color.white};
+const DivStyledSelectWrapper = styled.div<Partial<ISelectProps>>`
+    background-color: ${(p) => p.customize?.backgroundColor ?? color.white};
     border-radius: 16px;
     cursor: pointer;
     display: flex;
@@ -36,13 +48,13 @@ const DivStyledSelectWrapper = styled.div<{ height: string }>`
     transition: all 0.1s linear;
 `;
 
-const LabelStyled = styled.label`
+const LabelStyled = styled.label<Partial<ISelectProps>>`
     ${resetCSS};
-    background-color: ${color.white};
-    color: ${color.blueGray50};
+    background-color: ${(p) => p.customize?.backgroundColor ?? color.white};
+    color: ${(p) => p.customize?.color ?? color.blueGray50};
     font-weight: 500;
     font-size: 14px;
-    height: 24px;
+    height: max-content;
     left: 12px;
     padding: 0 4px;
     pointer-events: none;
@@ -55,11 +67,11 @@ const LabelStyled = styled.label`
     }
 `;
 
-const ButtonStyledSelect = styled.button`
+const ButtonStyledSelect = styled.button<Pick<ISelectProps, 'customize'>>`
     appearance: none;
     background: none;
-    border: 1px solid ${color.gray30};
-    border-radius: 16px;
+    border: ${(p) => p.customize?.border ?? `1px solid ${color.gray30}`};
+    border-radius: 15px;
     box-sizing: border-box;
     height: 100%;
     left: 0;
@@ -89,6 +101,7 @@ const ButtonStyledSelect = styled.button`
         label {
             color: ${color.navy40};
         }
+        ${hoverStyles};
     }
 
     :disabled {
@@ -174,13 +187,13 @@ const DivStyledDropdown = styled.div`
     border-radius: 16px;
 `;
 
-const InputStyledSearch = styled.input`
-    background-color: ${color.aero10};
+const InputStyledSearch = styled.input<Pick<ISelectProps, 'customize'>>`
     appearance: none;
+    background-color: ${(p) => p.customize?.menuBgColor ?? color.aero10};
     border: 0;
     border-bottom: 1px solid ${color.navy20};
     border-radius: 13px 13px 0 0;
-    color: ${color.blue70};
+    color: ${(p) => p.customize?.menuColor ?? color.blue70};
     display: block;
     font-family: inherit;
     font-size: inherit;
@@ -275,11 +288,12 @@ const SpanStyledItemSelected = styled.span`
     padding: 1px 0;
 `;
 
-const ButtonStyledListItem = styled.button`
+const ButtonStyledListItem = styled.button<Pick<ISelectProps, 'customize'>>`
     align-items: center;
     appearance: none;
     background: none;
     border: none;
+    color: ${(p) => p.customize?.menuColor ?? color.blue40};
     display: flex;
     padding: 5px 10px;
     gap: 5px;
@@ -298,7 +312,7 @@ const ButtonStyledListItem = styled.button`
 
     // Option Selected Styles
     &[aria-selected='true'] {
-        color: ${color.blue40};
+        color: ${(p) => p.customize?.menuColor ?? color.blue40};
         &::before {
             background-size: contain;
             content: '';
@@ -306,12 +320,15 @@ const ButtonStyledListItem = styled.button`
     }
 
     &:hover {
-        background: ${color.navy20};
+        background: ${(p) =>
+            p.customize?.menuItemBgColorOnHover ?? color.navy20};
+        ${hoverStyles};
     }
 
     &[data-highlighted='true'],
     &:focus {
-        background: ${color.navy20};
+        background: ${(p) =>
+            p.customize?.menuItemBgColorOnHover ?? color.navy20};
         outline: none;
     }
 
@@ -322,9 +339,9 @@ const ButtonStyledListItem = styled.button`
 `;
 // ------------------
 
-const SpanStyledNoResults = styled.span`
+const SpanStyledNoResults = styled.span<Pick<ISelectProps, 'customize'>>`
     display: block;
-    color: ${color.blueGray50};
+    color: ${(p) => p.customize?.color ?? color.blueGray50};
     padding: 14px;
     text-align: center;
 `;

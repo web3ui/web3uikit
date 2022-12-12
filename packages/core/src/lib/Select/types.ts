@@ -149,10 +149,12 @@ export interface ISelectProps {
     menuHeight?: string;
 
     /**
-     * extra customizations
+     * extra customizations and select specific customizations
      */
     customize?: TCustomize & {
+        menuColor?: string;
         menuBgColor?: string;
+        menuItemBgColorOnHover?: string;
     };
 }
 

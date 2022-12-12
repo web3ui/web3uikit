@@ -101,19 +101,25 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             aria-expanded={isOpen === true}
             aria-label="select"
             className="w3uik-select-component"
+            customize={customize}
             data-testid="test-select"
             id={id}
             ref={ref}
             role="listbox"
-            style={{ ...style, width, color: customize?.color }}
+            style={{ ...style, width }}
             {...rest}
         >
-            <DivStyledSelectWrapper className="w3uik_container" height={height}>
+            <DivStyledSelectWrapper
+                className="w3uik_container"
+                height={height}
+                customize={customize}
+            >
                 <ButtonStyledSelect
                     aria-controls={elementId('menu')}
                     aria-expanded={isOpen === true}
                     aria-haspopup="listbox"
                     aria-selected={value.length > 0}
+                    customize={customize}
                     data-testid="test-select-button"
                     disabled={disabled}
                     onClick={() => {
@@ -130,6 +136,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     {label && (
                         <LabelStyled
                             aria-disabled={disabled}
+                            customize={customize}
                             data-testid="test-select-label"
                             htmlFor={name}
                         >
@@ -140,14 +147,14 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                         <TriangleUpIconStyled
                             data-testid="test-select-icon"
                             fontSize="20px"
-                            fill={color.navy40}
+                            fill={customize?.color ?? color.navy40}
                             title="triangle up icon"
                         />
                     ) : (
                         <TriangleDownIconStyled
                             data-testid="test-select-icon"
                             fontSize="20px"
-                            fill={color.navy40}
+                            fill={customize?.color ?? color.navy40}
                             title="triangle down icon"
                         />
                     )}

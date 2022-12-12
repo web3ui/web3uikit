@@ -1,5 +1,13 @@
 # @web3uikit/core
 
+## 0.2.28
+
+### Patch Changes
+
+-   [#946](https://github.com/web3ui/web3uikit/pull/946) [`e87fdbd28`](https://github.com/web3ui/web3uikit/commit/e87fdbd28f8a3b77520f84fd97e18094978f5535) Thanks [@BillyG83](https://github.com/BillyG83)! - Select: traditional placholder prop used
+
+*   [#946](https://github.com/web3ui/web3uikit/pull/946) [`e87fdbd28`](https://github.com/web3ui/web3uikit/commit/e87fdbd28f8a3b77520f84fd97e18094978f5535) Thanks [@BillyG83](https://github.com/BillyG83)! - fix: TraditionSelect Placeholder value as option
+
 ## 0.2.27
 
 ### Patch Changes

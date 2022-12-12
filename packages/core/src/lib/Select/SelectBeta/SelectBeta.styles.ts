@@ -4,13 +4,13 @@ import { TriangleDown, TriangleUp, Search, Checkmark } from '@web3uikit/icons';
 
 const DivStyledWrapper = styled.div`
     ${resetCSS};
-    --arrow-width: 2.5em;
-    --checkbox-width: 2em;
+    --arrow-width: 51px;
+    --checkbox-width: 42px;
     display: block;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
         sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    font-size: 0.88em;
-    line-height: 1;
+    font-size: 14px;
+    line-height: 24px;
     margin-bottom: 5px;
     &[aria-expanded='true'] {
         border-color: ${color.navy30};
@@ -22,6 +22,7 @@ const DivStyledWrapper = styled.div`
             display: block;
         }
     }
+    /* isolation: isolate; */
 `;
 
 const DivStyledSelectWrapper = styled.div<{ height: string }>`
@@ -43,13 +44,12 @@ const LabelStyled = styled.label`
     font-size: 14px;
     height: 24px;
     left: 12px;
-    line-height: 1;
     padding: 0 4px;
     pointer-events: none;
     position: absolute;
     top: -9px;
     transition: all 0.1s ease-out;
-    z-index: 10;
+
     &[aria-disabled='true'] {
         color: ${color.gray30};
     }
@@ -61,8 +61,6 @@ const ButtonStyledSelect = styled.button`
     border: 1px solid ${color.gray30};
     border-radius: 16px;
     box-sizing: border-box;
-    color: black;
-    font-size: 1em;
     height: 100%;
     left: 0;
     padding: 0;
@@ -72,7 +70,6 @@ const ButtonStyledSelect = styled.button`
     top: 0;
     transition: border-color 150ms linear;
     width: 100%;
-    z-index: 3;
 
     &[aria-expanded='true'],
     &:focus:enabled {
@@ -105,8 +102,8 @@ const ListStyledSelected = styled.ul`
     flex-wrap: wrap;
     font-family: inherit;
     grid-auto-flow: column;
-    grid-gap: 0.5em;
-    left: 0.5em;
+    gap: 4px;
+    left: 8px;
     list-style: none;
     margin: 0;
     max-width: calc(100% - var(--arrow-width));
@@ -114,7 +111,7 @@ const ListStyledSelected = styled.ul`
     padding-left: 0;
     padding-top: 2px;
     position: relative;
-    z-index: 10;
+
     &[aria-disabled='true'] {
         cursor: not-allowed;
         opacity: 0.5;
@@ -124,7 +121,6 @@ const ListStyledSelected = styled.ul`
 // ----Tag Styles
 const ListItemStyledTag = styled.li`
     display: flex;
-    z-index: -10;
     align-items: center;
     width: 100%;
     gap: 5px;
@@ -137,8 +133,7 @@ const DivStyledPlaceholder = styled.div`
     flex-wrap: wrap;
     font-family: inherit;
     grid-auto-flow: column;
-    grid-gap: 0.5em;
-    left: 0.5em;
+    left: 8px;
     list-style: none;
     margin: 0;
     max-width: calc(100% - var(--arrow-width));
@@ -148,7 +143,6 @@ const DivStyledPlaceholder = styled.div`
     padding-top: 0;
     pointer-events: none;
     position: relative;
-    z-index: 10;
 `;
 
 const DivStyledOverlay = styled.div`
@@ -158,7 +152,7 @@ const DivStyledOverlay = styled.div`
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 `;
 
 const MenuStyledWrapper = styled.menu`
@@ -167,7 +161,7 @@ const MenuStyledWrapper = styled.menu`
     margin-top: 5px;
     padding: 0;
     position: relative;
-    z-index: 3;
+    z-index: 2;
 `;
 
 const DivStyledDropdown = styled.div`
@@ -176,7 +170,6 @@ const DivStyledDropdown = styled.div`
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 20;
     border: 2px solid ${color.navy30};
     border-radius: 16px;
 `;
@@ -186,17 +179,13 @@ const InputStyledSearch = styled.input`
     appearance: none;
     border: 0;
     border-bottom: 1px solid ${color.navy20};
-    border-radius: 16px 16px 0 0;
+    border-radius: 13px 13px 0 0;
     color: ${color.blue70};
     display: block;
     font-family: inherit;
-    font-size: 1em;
-    padding-bottom: 1em;
-    padding-left: 3em;
-    padding-right: 0.5em;
-    padding-top: 1em;
+    font-size: inherit;
+    padding: 14px 12px 14px 42px;
     width: 100%;
-
     &[aria-hidden='true'] {
         // Use position to hide input - this helps to make arrow keys functional
         position: absolute;
@@ -213,8 +202,8 @@ const InputStyledSearch = styled.input`
 // ------ Option List
 
 const ListStyledDropdown = styled.ul<{ height: string }>`
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
+    border-bottom-left-radius: 13px;
+    border-bottom-right-radius: 13px;
     box-shadow: 0 4px 8px rgba(248, 174, 174, 0.1);
     display: flex;
     flex-direction: column;
@@ -225,7 +214,7 @@ const ListStyledDropdown = styled.ul<{ height: string }>`
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: 0;
-
+    z-index: 2;
     // Scrollbar in options
     &::-webkit-scrollbar {
         background: none;
@@ -249,16 +238,16 @@ const ListStyledDropdown = styled.ul<{ height: string }>`
     :nth-child(2),
     :nth-child(2):hover,
     :nth-child(2):focus {
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
+        border-top-left-radius: 13px;
+        border-top-right-radius: 13px;
     }
 
     // For Last option in list
     :last-child,
     :last-child:hover,
     :last-child:focus {
-        border-bottom-left-radius: 16px;
-        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: 13px;
+        border-bottom-right-radius: 13px;
     }
 `;
 
@@ -283,7 +272,7 @@ const SpanStyledItemSelected = styled.span`
     overflow: hidden;
     white-space: pre;
     text-overflow: ellipsis;
-    color: ${color.blueGray50};
+    padding: 1px 0;
 `;
 
 const ButtonStyledListItem = styled.button`
@@ -291,7 +280,6 @@ const ButtonStyledListItem = styled.button`
     appearance: none;
     background: none;
     border: none;
-    color: ${color.blue70};
     display: flex;
     padding: 5px 10px;
     gap: 5px;
@@ -304,7 +292,7 @@ const ButtonStyledListItem = styled.button`
     &::before {
         content: '';
         display: flex;
-        height: 3em;
+        height: 40px;
         justify-content: center;
     }
 
@@ -337,13 +325,14 @@ const ButtonStyledListItem = styled.button`
 const SpanStyledNoResults = styled.span`
     display: block;
     color: ${color.blueGray50};
-    padding: 1em;
+    padding: 14px;
     text-align: center;
 `;
 
 const DivStyledDesc = styled.div`
     color: ${color.blueGray50};
     font-size: 12px;
+    line-height: 12px;
     font-style: normal;
     font-weight: 400;
     overflow: hidden;
@@ -366,13 +355,13 @@ const DivStyledDesc = styled.div`
 
 const SearchIconStyled = styled(Search)`
     background-size: contain;
-    height: 1em;
+    height: 24px;
     pointer-events: none;
     position: absolute;
-    left: 0.5em;
-    top: 1em;
+    left: 8px;
+    top: 22px;
     transform: translateY(-50%);
-    width: 1em;
+    width: 24px;
 `;
 
 const TriangleDownIconStyled = styled(TriangleDown)`

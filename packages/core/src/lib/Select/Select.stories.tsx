@@ -237,11 +237,19 @@ const TemplateBetaSingle: ComponentStory<typeof Select> = (args) => {
     };
 
     return (
-        <Select
-            tryBeta={true}
-            {...args}
-            onChange={(val) => handleChange(val as OptionProps)}
-        />
+        <>
+            <Select
+                tryBeta={true}
+                {...args}
+                onChange={(val) => handleChange(val as OptionProps)}
+            />
+            <Select
+                tryBeta={true}
+                {...args}
+                style={{ marginTop: '160px' }}
+                onChange={(val) => handleChange(val as OptionProps)}
+            />
+        </>
     );
 };
 
@@ -300,6 +308,9 @@ BetaSelectDisabled.args = {
     options: optionsList,
     placeholder: 'Something big name',
     width: '16em',
+    customize: {
+        color: color.red50,
+    },
 };
 
 export const BetaSelectMulti = TemplateBetaMulti.bind({});

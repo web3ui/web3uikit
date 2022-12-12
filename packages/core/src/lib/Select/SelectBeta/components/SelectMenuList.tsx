@@ -22,6 +22,7 @@ const {
 const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
     addItem,
     customNoDataText,
+    customize,
     elementId,
     isMulti,
     isOpen,
@@ -147,7 +148,9 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
             aria-label="select-options"
             data-testid="test-select-options"
         >
-            <DivStyledDropdown>
+            <DivStyledDropdown
+                style={{ backgroundColor: customize?.menuBgColor }}
+            >
                 <InputStyledSearch
                     aria-activedescendant={optionId(activeDescendantIndex)}
                     aria-hidden={shouldDisplaySearch === false || undefined}

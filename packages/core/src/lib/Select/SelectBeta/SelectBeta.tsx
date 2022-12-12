@@ -18,6 +18,7 @@ const {
 
 const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     customNoDataText = 'No Data',
+    customize,
     defaultOptionIndex,
     description,
     disabled = false,
@@ -104,7 +105,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             id={id}
             ref={ref}
             role="listbox"
-            style={{ ...style, width }}
+            style={{ ...style, width, color: customize?.color }}
             {...rest}
         >
             <DivStyledSelectWrapper className="w3uik_container" height={height}>
@@ -182,6 +183,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     />
                     <SelectMenuList
                         addItem={addItem}
+                        customize={customize}
                         customNoDataText={customNoDataText}
                         disabled={disabled}
                         elementId={elementId}

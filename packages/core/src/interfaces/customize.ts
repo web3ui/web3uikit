@@ -40,4 +40,9 @@ export type TCustomize = {
      * Custom padding, EG 10px 20px
      */
     padding?: string;
+
+    /**
+     * Custom margin, EG 10px 20px
+     */
+    margin?: string;
 };

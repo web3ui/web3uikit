@@ -23,6 +23,7 @@ const StyledCreditCard = styled(CreditCard)`
 `;
 
 const Radios: React.FC<RadiosProps> = ({
+    customize,
     disabled = false,
     id,
     isRow = false,
@@ -102,6 +103,7 @@ const Radios: React.FC<RadiosProps> = ({
                                 {...props}
                             />
                             <LabelStyled
+                                customize={customize}
                                 data-testid={`test-radios-label-${i}`}
                                 htmlFor={`${formattedID}_${i}`}
                                 isCreditCardMode={isCreditCards}

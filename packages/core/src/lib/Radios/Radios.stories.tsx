@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { color } from '@web3uikit/styles';
 
 import Radios from './Radios';
 
@@ -51,4 +52,17 @@ RadiosSetParticular.args = {
     items: ['Charmander', 'Squirtle', 'Bulbasaur', 'Pikachu'],
     title: "Who's that Pokemon?",
     setWhichIsChecked: 2,
+};
+
+export const RadiosCustom = Template.bind({});
+RadiosCustom.args = {
+    id: 'radios',
+    items: ['Charmander', 'Squirtle', 'Bulbasaur', 'Pikachu'],
+    title: "Who's that Pokemon?",
+    setWhichIsChecked: 2,
+    customize: {
+        color: color.blue40,
+        fontSize: '24px',
+        fontWeight: '550',
+    },
 };

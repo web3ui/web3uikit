@@ -156,7 +156,7 @@ export interface ISelectProps {
     /**
      * style customizations for menu
      */
-    menuCustomize?: TCustomize & {
+    menuCustomize?: Omit<TCustomize, 'onHover'> & {
         bgColorOnHover?: string;
         scrollbarColor?: string;
     };

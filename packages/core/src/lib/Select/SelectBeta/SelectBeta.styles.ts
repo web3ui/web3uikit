@@ -1,68 +1,81 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { color, resetCSS } from '@web3uikit/styles';
 import { TriangleDown, TriangleUp, Search, Checkmark } from '@web3uikit/icons';
+import { ISelectProps } from '../types';
 
-const DivStyledWrapper = styled.div`
+const hoverStyles = css<Pick<ISelectProps, 'customize'>>`
+    ${(p) =>
+        p.customize?.onHover &&
+        p.customize?.onHover === 'lighten' &&
+        'filter: brightness(1.1)'}
+    ${(p) =>
+        p.customize?.onHover &&
+        p.customize?.onHover === 'darken' &&
+        'filter: brightness(0.9)'}
+`;
+
+const DivStyledWrapper = styled.div<Pick<ISelectProps, 'customize'>>`
     ${resetCSS};
-    --arrow-width: 2.5em;
-    --checkbox-width: 2em;
+    --arrow-width: 51px;
+    --checkbox-width: 42px;
     display: block;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
         sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    font-size: 0.88em;
-    line-height: 1;
-    margin-bottom: 5px;
+    font-size: ${(props) => props.customize?.fontSize ?? '14px'};
+    line-height: 24px;
+    color: ${(props) => props.customize?.color ?? color.blue70};
     &[aria-expanded='true'] {
         border-color: ${color.navy30};
-        & .w3uik__dropdown-wrapper {
+        & .w3uik-dropdown-wrapper {
             display: block;
         }
 
-        .w3uik__select-overlay {
+        .w3uik-select-overlay {
             display: block;
         }
     }
+    ${(p) =>
+        p.customize?.margin
+            ? `margin: ${p.customize.margin}`
+            : `margin-bottom: 5px`}
 `;
 
-const DivStyledSelectWrapper = styled.div<{ height: string }>`
-    background-color: ${color.white};
-    border-radius: 16px;
+const DivStyledSelectWrapper = styled.div<Partial<ISelectProps>>`
+    background-color: ${(p) => p.customize?.backgroundColor ?? color.white};
+    border-radius: ${(p) => p.customize?.borderRadius ?? '15px'};
     cursor: pointer;
     display: flex;
-    min-height: ${(p) => p.height ?? '40px'};
+    min-height: ${(p) => p.height ?? '56px'};
     padding: 8px 20px 8px 10px;
     position: relative;
     transition: all 0.1s linear;
 `;
 
-const LabelStyled = styled.label`
+const LabelStyled = styled.label<Partial<ISelectProps>>`
     ${resetCSS};
-    background-color: ${color.white};
-    color: ${color.blueGray50};
+    background-color: ${(p) => p.customize?.backgroundColor ?? color.white};
+    color: ${(p) => p.customize?.color ?? color.blueGray50};
     font-weight: 500;
     font-size: 14px;
-    height: 24px;
+    height: max-content;
     left: 12px;
-    line-height: 1;
     padding: 0 4px;
     pointer-events: none;
     position: absolute;
     top: -9px;
     transition: all 0.1s ease-out;
-    z-index: 10;
+
     &[aria-disabled='true'] {
         color: ${color.gray30};
     }
 `;
 
-const ButtonStyledSelect = styled.button`
+const ButtonStyledSelect = styled.button<Pick<ISelectProps, 'customize'>>`
     appearance: none;
     background: none;
-    border: 1px solid ${color.gray30};
-    border-radius: 16px;
+    border: ${(p) => p.customize?.border ?? `1px solid ${color.gray30}`};
+    border-radius: ${(p) => p.customize?.borderRadius ?? '15px'};
     box-sizing: border-box;
-    color: black;
-    font-size: 1em;
     height: 100%;
     left: 0;
     padding: 0;
@@ -72,7 +85,6 @@ const ButtonStyledSelect = styled.button`
     top: 0;
     transition: border-color 150ms linear;
     width: 100%;
-    z-index: 3;
 
     &[aria-expanded='true'],
     &:focus:enabled {
@@ -92,6 +104,7 @@ const ButtonStyledSelect = styled.button`
         label {
             color: ${color.navy40};
         }
+        ${hoverStyles};
     }
 
     :disabled {
@@ -105,8 +118,8 @@ const ListStyledSelected = styled.ul`
     flex-wrap: wrap;
     font-family: inherit;
     grid-auto-flow: column;
-    grid-gap: 0.5em;
-    left: 0.5em;
+    gap: 4px;
+    left: 8px;
     list-style: none;
     margin: 0;
     max-width: calc(100% - var(--arrow-width));
@@ -114,7 +127,6 @@ const ListStyledSelected = styled.ul`
     padding-left: 0;
     padding-top: 2px;
     position: relative;
-    z-index: 10;
     &[aria-disabled='true'] {
         cursor: not-allowed;
         opacity: 0.5;
@@ -124,7 +136,6 @@ const ListStyledSelected = styled.ul`
 // ----Tag Styles
 const ListItemStyledTag = styled.li`
     display: flex;
-    z-index: -10;
     align-items: center;
     width: 100%;
     gap: 5px;
@@ -137,8 +148,7 @@ const DivStyledPlaceholder = styled.div`
     flex-wrap: wrap;
     font-family: inherit;
     grid-auto-flow: column;
-    grid-gap: 0.5em;
-    left: 0.5em;
+    left: 8px;
     list-style: none;
     margin: 0;
     max-width: calc(100% - var(--arrow-width));
@@ -148,7 +158,9 @@ const DivStyledPlaceholder = styled.div`
     padding-top: 0;
     pointer-events: none;
     position: relative;
-    z-index: 10;
+    &[aria-disabled='true'] {
+        opacity: 0.5;
+    }
 `;
 
 const DivStyledOverlay = styled.div`
@@ -158,50 +170,50 @@ const DivStyledOverlay = styled.div`
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 1;
+    z-index: 2;
 `;
 
-const MenuStyledWrapper = styled.menu`
+const MenuStyledWrapper = styled.menu<Pick<ISelectProps, 'menuCustomize'>>`
     display: none;
     margin: 0;
-    margin-top: 5px;
     padding: 0;
     position: relative;
-    z-index: 3;
+    z-index: 2;
+    ${(p) =>
+        p.menuCustomize?.margin
+            ? `margin:${p.menuCustomize.margin}`
+            : 'margin-top: 5px'}
 `;
 
-const DivStyledDropdown = styled.div`
-    background: ${color.aero10};
+type TStyleProps = Pick<ISelectProps, 'customize' | 'menuCustomize'>;
+const DivStyledDropdown = styled.div<TStyleProps>`
+    background: ${(p) => p.menuCustomize?.backgroundColor ?? color.aero10};
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: 20;
-    border: 2px solid ${color.navy30};
-    border-radius: 16px;
+    border: ${(p) => p.menuCustomize?.border ?? `2px solid ${color.navy30}`};
+    border-radius: ${(p) => p.menuCustomize?.borderRadius ?? '16px'};
 `;
 
-const InputStyledSearch = styled.input`
-    background-color: ${color.aero10};
+const InputStyledSearch = styled.input<TStyleProps>`
     appearance: none;
+    background-color: ${(p) =>
+        p.menuCustomize?.backgroundColor ?? color.aero10};
     border: 0;
     border-bottom: 1px solid ${color.navy20};
-    border-radius: 16px 16px 0 0;
-    color: ${color.blue70};
+    border-radius: 14px 14px 0 0;
+    color: ${(p) => p.menuCustomize?.color ?? color.blue70};
     display: block;
     font-family: inherit;
-    font-size: 1em;
-    padding-bottom: 1em;
-    padding-left: 3em;
-    padding-right: 0.5em;
-    padding-top: 1em;
+    font-size: inherit;
+    padding: 14px 12px 14px 42px;
     width: 100%;
-
     &[aria-hidden='true'] {
         // Use position to hide input - this helps to make arrow keys functional
         position: absolute;
         right: 200vw;
-        & + .w3uik__search-icon {
+        & + .w3uik-search-icon {
             display: none;
         }
     }
@@ -211,10 +223,12 @@ const InputStyledSearch = styled.input`
 `;
 
 // ------ Option List
-
-const ListStyledDropdown = styled.ul<{ height: string }>`
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
+type IListProps = Pick<ISelectProps, 'height' | 'customize' | 'menuCustomize'>;
+const ListStyledDropdown = styled.ul<IListProps>`
+    border-bottom-left-radius: ${(p) =>
+        p.menuCustomize?.borderRadius ?? '14px'};
+    border-bottom-right-radius: ${(p) =>
+        p.menuCustomize?.borderRadius ?? '14px'};
     box-shadow: 0 4px 8px rgba(248, 174, 174, 0.1);
     display: flex;
     flex-direction: column;
@@ -224,19 +238,20 @@ const ListStyledDropdown = styled.ul<{ height: string }>`
     max-height: ${(p) => p.height ?? '200px'};
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 0;
-
+    padding: ${(p) => p.menuCustomize?.padding ?? '0px'};
+    z-index: 2;
     // Scrollbar in options
     &::-webkit-scrollbar {
         background: none;
         height: 0;
-        width: 10px;
+        width: 8px;
     }
     &::-webkit-scrollbar-thumb {
         background-clip: padding-box;
-        background-color: ${color.gray40};
+        background-color: ${(p) =>
+            p.menuCustomize?.scrollbarColor ?? color.gray40};
         border-radius: 30px;
-        border: 4px solid transparent;
+        border: 2.5px solid transparent;
     }
     &::-webkit-scrollbar-button {
         display: none;
@@ -249,16 +264,20 @@ const ListStyledDropdown = styled.ul<{ height: string }>`
     :nth-child(2),
     :nth-child(2):hover,
     :nth-child(2):focus {
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
+        border-top-left-radius: ${(p) =>
+            p.menuCustomize?.borderRadius ?? '14px'};
+        border-top-right-radius: ${(p) =>
+            p.menuCustomize?.borderRadius ?? '14px'};
     }
 
     // For Last option in list
     :last-child,
     :last-child:hover,
     :last-child:focus {
-        border-bottom-left-radius: 16px;
-        border-bottom-right-radius: 16px;
+        border-bottom-left-radius: ${(p) =>
+            p.menuCustomize?.borderRadius ?? '14px'};
+        border-bottom-right-radius: ${(p) =>
+            p.menuCustomize?.borderRadius ?? '14px'};
     }
 `;
 
@@ -283,15 +302,15 @@ const SpanStyledItemSelected = styled.span`
     overflow: hidden;
     white-space: pre;
     text-overflow: ellipsis;
-    color: ${color.blueGray50};
+    padding: 1px 0;
 `;
 
-const ButtonStyledListItem = styled.button`
+const ButtonStyledListItem = styled.button<TStyleProps>`
     align-items: center;
     appearance: none;
     background: none;
     border: none;
-    color: ${color.blue70};
+    color: ${(p) => p.menuCustomize?.color ?? color.blue70};
     display: flex;
     padding: 5px 10px;
     gap: 5px;
@@ -304,13 +323,13 @@ const ButtonStyledListItem = styled.button`
     &::before {
         content: '';
         display: flex;
-        height: 3em;
+        height: 40px;
         justify-content: center;
     }
 
     // Option Selected Styles
     &[aria-selected='true'] {
-        color: ${color.blue40};
+        color: ${(p) => p.menuCustomize?.color ?? color.blue40};
         &::before {
             background-size: contain;
             content: '';
@@ -318,12 +337,12 @@ const ButtonStyledListItem = styled.button`
     }
 
     &:hover {
-        background: ${color.navy20};
+        background: ${(p) => p.menuCustomize?.bgColorOnHover ?? color.navy20};
     }
 
     &[data-highlighted='true'],
     &:focus {
-        background: ${color.navy20};
+        background: ${(p) => p.menuCustomize?.bgColorOnHover ?? color.navy20};
         outline: none;
     }
 
@@ -334,16 +353,17 @@ const ButtonStyledListItem = styled.button`
 `;
 // ------------------
 
-const SpanStyledNoResults = styled.span`
+const SpanStyledNoResults = styled.span<Pick<ISelectProps, 'menuCustomize'>>`
     display: block;
-    color: ${color.blueGray50};
-    padding: 1em;
+    color: ${(p) => p.menuCustomize?.color ?? color.blueGray50};
+    padding: 14px;
     text-align: center;
 `;
 
 const DivStyledDesc = styled.div`
     color: ${color.blueGray50};
     font-size: 12px;
+    line-height: 12px;
     font-style: normal;
     font-weight: 400;
     overflow: hidden;
@@ -366,13 +386,13 @@ const DivStyledDesc = styled.div`
 
 const SearchIconStyled = styled(Search)`
     background-size: contain;
-    height: 1em;
+    height: 24px;
     pointer-events: none;
     position: absolute;
-    left: 0.5em;
-    top: 1em;
+    left: 8px;
+    top: 22px;
     transform: translateY(-50%);
-    width: 1em;
+    width: 24px;
 `;
 
 const TriangleDownIconStyled = styled(TriangleDown)`

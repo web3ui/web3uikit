@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { useArgs } from '@storybook/addons';
 import { action } from '@storybook/addon-actions';
 import { color } from '@web3uikit/styles';
-import { Btc, Discord, Server, Testnet } from '@web3uikit/icons';
+import { Btc, Check, Discord, Server, Testnet } from '@web3uikit/icons';
 import Select from './Select';
 import { callCodeData } from './SelectBeta/mockData';
 import { OptionProps } from './types';
@@ -272,6 +272,57 @@ BetaSelect.args = {
     height: '40px',
 };
 
+export const BetaSelectCustomLight = TemplateBetaSingle.bind({});
+BetaSelectCustomLight.args = {
+    isMulti: false,
+    isSearch: true,
+    label: '',
+    name: 'demo',
+    prefixIcon: <Check height={22} width={22} fill={color.mint40} />,
+    customize: {
+        color: color.navy40,
+        backgroundColor: color.white,
+        borderRadius: '24px',
+        border: `2px solid ${color.mint40}`,
+    },
+    menuCustomize: {
+        backgroundColor: color.white,
+        color: color.blue70,
+    },
+    options: optionsList,
+    placeholder: 'Something big name',
+    width: '16em',
+    height: '40px',
+};
+export const BetaSelectCustomDark = TemplateBetaSingle.bind({});
+BetaSelectCustomDark.args = {
+    isMulti: false,
+    isSearch: true,
+    label: 'Select',
+    name: 'demo',
+    customize: {
+        color: '#99D3FF',
+        backgroundColor: '#213853',
+        border: '2px solid #99D3FF',
+        onHover: 'lighten',
+        margin: '20px',
+    },
+    menuCustomize: {
+        borderRadius: '8px',
+        backgroundColor: '#213853',
+        border: '2px solid #99D3FF',
+        color: '#99D3FF',
+        margin: '0 0 0 0',
+        bgColorOnHover: color.navy10,
+        scrollbarColor: '#99D3FF',
+        padding: '2px',
+    },
+    options: optionsList,
+    placeholder: 'Something big name',
+    width: '16em',
+    height: '40px',
+};
+
 const TemplateBetaMulti: ComponentStory<typeof Select> = (args) => {
     const [_, updateArgs] = useArgs();
     const handleChange = (val: string[]) => {
@@ -300,6 +351,7 @@ BetaSelectDisabled.args = {
     options: optionsList,
     placeholder: 'Something big name',
     width: '16em',
+    height: '40px',
 };
 
 export const BetaSelectMulti = TemplateBetaMulti.bind({});

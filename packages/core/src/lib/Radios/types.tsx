@@ -1,4 +1,5 @@
 
+import { TCustomize } from '../../interfaces/customize';
 import { CreditCardProps } from '../CreditCard';
 
 type ValidateRadios = {
@@ -74,6 +75,11 @@ interface RadiosProps {
    * an element that'll be added at the end of the radios items
    */
   suffix?: JSX.Element;
+
+  /**
+   * Control style settings, for better or worse
+   */
+  customize?: TCustomize;
 }
 
 export type { ValidateRadios, TRadioLayouts, RadiosProps };

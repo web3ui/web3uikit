@@ -154,6 +154,7 @@ InputCustomStyle.args = {
         fontSize: '16px,',
         onHover: 'lighten',
         padding: '16px 10px',
+        margin: '20px 0px',
     },
     label: 'Search by Wallet Address',
     placeholder: '0x...',

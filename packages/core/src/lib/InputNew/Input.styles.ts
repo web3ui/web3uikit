@@ -37,7 +37,7 @@ const DivStyled = styled.div<TInputProps>`
     max-width: ${(p) => p.width || '100%'};
     position: relative;
     width: 100%;
-
+    margin: ${(p) => p.customize?.margin ?? '0px'};
     label {
         background-color: ${(p) => p.customize?.backgroundColor || color.white};
         height: 24px;

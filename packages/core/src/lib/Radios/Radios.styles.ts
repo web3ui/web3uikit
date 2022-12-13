@@ -40,12 +40,18 @@ const DivWrapperStyled = styled.div<Pick<RadiosProps, 'isRow'>>`
     flex-wrap: wrap;
 `;
 
-const LabelStyled = styled.label<TStyleProps & { isSmall: boolean }>`
+type TLabelStyle = TStyleProps & { isSmall: boolean } & Pick<
+        RadiosProps,
+        'customize'
+    >;
+const LabelStyled = styled.label<TLabelStyle>`
     ${resetCSS};
     ${fonts.text}
     padding-left: ${(p) => (p.isCreditCardMode ? '0' : '28px')};
     align-content: center;
-    color: ${color.blueGray50};
+    color: ${(p) => p.customize?.color ?? color.blueGray50};
+    font-size: ${(p) => p.customize?.fontSize ?? '16px'};
+    font-weight: ${(p) => p.customize?.fontWeight ?? 400};
     display: flex;
     line-height: 20px;
     position: relative;

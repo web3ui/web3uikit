@@ -1,4 +1,5 @@
 import React, { RefObject } from 'react';
+import { TCustomize } from '../../interfaces/customize';
 export interface ISelectProps {
     /**
      * Maximum number of items that can be selected when isMulti is set to true
@@ -146,6 +147,19 @@ export interface ISelectProps {
      * Max Height of the menu list.
      */
     menuHeight?: string;
+
+    /**
+     * style customizations
+     */
+    customize?: TCustomize;
+
+    /**
+     * style customizations for menu
+     */
+    menuCustomize?: Omit<TCustomize, 'onHover'> & {
+        bgColorOnHover?: string;
+        scrollbarColor?: string;
+    };
 }
 
 export interface ISelectExtendedProps extends ISelectProps {

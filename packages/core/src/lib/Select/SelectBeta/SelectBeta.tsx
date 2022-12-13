@@ -18,21 +18,24 @@ const {
 
 const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     customNoDataText = 'No Data',
+    customize,
     defaultOptionIndex,
     description,
     disabled = false,
     errorMessage,
-    height = '40px',
+    height = '56px',
     id,
     isMulti = false,
     isSearch = true,
     label = 'Select',
     max = Infinity,
     menuHeight = '200px',
+    menuCustomize,
     name = 'options',
     onChange,
     options = [],
     placeholder,
+    prefixIcon,
     ref,
     style,
     value = [],
@@ -43,7 +46,6 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     const {
         onBlurTraditional,
         onChangeTraditional,
-        prefixIcon,
         prefixText,
         refTraditional,
         state,
@@ -100,6 +102,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             aria-expanded={isOpen === true}
             aria-label="select"
             className="w3uik-select-component"
+            customize={customize}
             data-testid="test-select"
             id={id}
             ref={ref}
@@ -107,12 +110,18 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             style={{ ...style, width }}
             {...rest}
         >
-            <DivStyledSelectWrapper className="w3uik_container" height={height}>
+            <DivStyledSelectWrapper
+                className="w3uik-container"
+                height={height}
+                customize={customize}
+                menuCustomize={menuCustomize}
+            >
                 <ButtonStyledSelect
                     aria-controls={elementId('menu')}
                     aria-expanded={isOpen === true}
                     aria-haspopup="listbox"
                     aria-selected={value.length > 0}
+                    customize={customize}
                     data-testid="test-select-button"
                     disabled={disabled}
                     onClick={() => {
@@ -129,6 +138,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     {label && (
                         <LabelStyled
                             aria-disabled={disabled}
+                            customize={customize}
                             data-testid="test-select-label"
                             htmlFor={name}
                         >
@@ -139,14 +149,14 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                         <TriangleUpIconStyled
                             data-testid="test-select-icon"
                             fontSize="20px"
-                            fill={color.navy40}
+                            fill={customize?.color ?? color.navy40}
                             title="triangle up icon"
                         />
                     ) : (
                         <TriangleDownIconStyled
                             data-testid="test-select-icon"
                             fontSize="20px"
-                            fill={color.navy40}
+                            fill={customize?.color ?? color.navy40}
                             title="triangle down icon"
                         />
                     )}
@@ -162,6 +172,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     name={name}
                     options={options}
                     placeholder={placeholder}
+                    prefixIcon={prefixIcon}
                     setIsOpen={setIsOpen}
                     value={value}
                 />
@@ -177,11 +188,12 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                 <>
                     <DivStyledOverlay
                         aria-label="Close Dropdown"
-                        className="w3uik__select-overlay"
+                        className="w3uik-select-overlay"
                         onClick={() => setIsOpen(false)}
                     />
                     <SelectMenuList
                         addItem={addItem}
+                        customize={customize}
                         customNoDataText={customNoDataText}
                         disabled={disabled}
                         elementId={elementId}
@@ -189,6 +201,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                         isOpen={isOpen}
                         isSearch={isSearch}
                         max={max}
+                        menuCustomize={menuCustomize}
                         menuHeight={menuHeight}
                         name={name}
                         options={options}

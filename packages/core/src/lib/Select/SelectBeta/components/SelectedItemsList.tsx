@@ -23,14 +23,15 @@ const colors: ColorProps[] = [
 ];
 
 const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
+    addItem,
+    disabled = false,
     isMulti = false,
     name = 'select',
-    disabled = false,
     options = [],
     placeholder,
-    value = [],
+    prefixIcon,
     setIsOpen,
-    addItem,
+    value = [],
 }) => {
     const MultiSelection = () => {
         return (value as string[]).map((option, i) => (
@@ -69,6 +70,9 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
                 data-testid="test-select-selected"
                 style={{ margin: 'auto' }}
             >
+                {prefixIcon && (
+                    <SpanStyledItemIcon>{prefixIcon}</SpanStyledItemIcon>
+                )}
                 {currItem?.prefix && (
                     <SpanStyledItemIcon>{currItem?.prefix}</SpanStyledItemIcon>
                 )}
@@ -91,7 +95,7 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
             {isMulti ? MultiSelection() : <SingleSelection />}
         </ListStyledSelected>
     ) : (
-        <DivStyledPlaceholder>
+        <DivStyledPlaceholder aria-disabled={disabled}>
             {placeholder ?? `Select ${name}`}
         </DivStyledPlaceholder>
     );

@@ -42,7 +42,7 @@ const DivStyledSelectWrapper = styled.div<Partial<ISelectProps>>`
     border-radius: ${(p) => p.customize?.borderRadius ?? '15px'};
     cursor: pointer;
     display: flex;
-    min-height: ${(p) => p.height ?? '40px'};
+    min-height: ${(p) => p.height ?? '56px'};
     padding: 8px 20px 8px 10px;
     position: relative;
     transition: all 0.1s linear;

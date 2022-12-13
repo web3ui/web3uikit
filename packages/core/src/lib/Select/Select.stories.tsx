@@ -290,6 +290,7 @@ BetaSelectCustomLight.args = {
     options: optionsList,
     placeholder: 'Something big name',
     width: '16em',
+    height: '40px',
 };
 export const BetaSelectCustomDark = TemplateBetaSingle.bind({});
 BetaSelectCustomDark.args = {
@@ -311,6 +312,7 @@ BetaSelectCustomDark.args = {
     options: optionsList,
     placeholder: 'Something big name',
     width: '16em',
+    height: '40px',
 };
 
 const TemplateBetaMulti: ComponentStory<typeof Select> = (args) => {
@@ -341,6 +343,7 @@ BetaSelectDisabled.args = {
     options: optionsList,
     placeholder: 'Something big name',
     width: '16em',
+    height: '40px',
 };
 
 export const BetaSelectMulti = TemplateBetaMulti.bind({});

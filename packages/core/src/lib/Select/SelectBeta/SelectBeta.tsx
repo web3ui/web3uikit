@@ -23,7 +23,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     description,
     disabled = false,
     errorMessage,
-    height = '40px',
+    height = '56px',
     id,
     isMulti = false,
     isSearch = true,

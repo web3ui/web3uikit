@@ -281,7 +281,7 @@ BetaSelectCustomLight.args = {
     customize: {
         color: color.navy40,
         backgroundColor: color.white,
-        borderRadius: '56px',
+        borderRadius: '24px',
         border: '2px solid #99D3FF',
         menuBgColor: color.white,
         menuColor: color.blue70,
@@ -300,12 +300,13 @@ BetaSelectCustomDark.args = {
     customize: {
         color: '#99D3FF',
         backgroundColor: '#213853',
-        borderRadius: '56px',
+        menuBorderRadius: '8px',
         border: '2px solid #99D3FF',
         onHover: 'lighten',
         menuBgColor: '#213853',
         menuColor: '#99D3FF',
         menuItemBgColorOnHover: color.aero50,
+        menuScrollBarColor: '#99D3FF',
     },
     options: optionsList,
     placeholder: 'Something big name',

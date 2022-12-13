@@ -144,13 +144,11 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
     return (
         <MenuStyledWrapper
             id={elementId('menu')}
-            className="w3uik__dropdown-wrapper"
+            className="w3uik-dropdown-wrapper"
             aria-label="select-options"
             data-testid="test-select-options"
         >
-            <DivStyledDropdown
-                style={{ backgroundColor: customize?.menuBgColor }}
-            >
+            <DivStyledDropdown customize={customize}>
                 <InputStyledSearch
                     aria-activedescendant={optionId(activeDescendantIndex)}
                     aria-hidden={shouldDisplaySearch === false || undefined}
@@ -162,15 +160,20 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                     ref={searchRef}
                     type="search"
                     value={searchTerm}
+                    placeholder="Search"
                 />
                 {shouldDisplaySearch && (
                     <SearchIconStyled
-                        className="w3uik__search-icon"
+                        className="w3uik-search-icon"
                         fontSize={22}
-                        fill={color.navy40}
+                        fill={customize?.menuColor ?? color.navy40}
                     />
                 )}
-                <ListStyledDropdown ref={listRef} height={menuHeight}>
+                <ListStyledDropdown
+                    ref={listRef}
+                    height={menuHeight}
+                    customize={customize}
+                >
                     {visibleOptions.map((option, index) => {
                         const isSelected = isMulti
                             ? value.indexOf(option.id as string) !== -1

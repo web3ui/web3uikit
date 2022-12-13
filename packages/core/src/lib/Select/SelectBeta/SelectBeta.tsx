@@ -110,7 +110,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             {...rest}
         >
             <DivStyledSelectWrapper
-                className="w3uik_container"
+                className="w3uik-container"
                 height={height}
                 customize={customize}
             >
@@ -185,7 +185,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                 <>
                     <DivStyledOverlay
                         aria-label="Close Dropdown"
-                        className="w3uik__select-overlay"
+                        className="w3uik-select-overlay"
                         onClick={() => setIsOpen(false)}
                     />
                     <SelectMenuList

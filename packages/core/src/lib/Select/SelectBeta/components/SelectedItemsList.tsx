@@ -23,14 +23,14 @@ const colors: ColorProps[] = [
 ];
 
 const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
+    addItem,
+    disabled = false,
     isMulti = false,
     name = 'select',
-    disabled = false,
     options = [],
     placeholder,
-    value = [],
     setIsOpen,
-    addItem,
+    value = [],
 }) => {
     const MultiSelection = () => {
         return (value as string[]).map((option, i) => (
@@ -91,7 +91,7 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
             {isMulti ? MultiSelection() : <SingleSelection />}
         </ListStyledSelected>
     ) : (
-        <DivStyledPlaceholder>
+        <DivStyledPlaceholder aria-disabled={disabled}>
             {placeholder ?? `Select ${name}`}
         </DivStyledPlaceholder>
     );

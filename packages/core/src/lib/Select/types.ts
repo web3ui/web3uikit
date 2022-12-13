@@ -154,7 +154,9 @@ export interface ISelectProps {
     customize?: TCustomize & {
         menuColor?: string;
         menuBgColor?: string;
+        menuBorderRadius?: string;
         menuItemBgColorOnHover?: string;
+        menuScrollBarColor?: string;
     };
 }
 

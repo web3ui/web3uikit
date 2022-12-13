@@ -27,11 +27,11 @@ const DivStyledWrapper = styled.div<Pick<ISelectProps, 'customize'>>`
     color: ${(props) => props.customize?.color ?? color.blue70};
     &[aria-expanded='true'] {
         border-color: ${color.navy30};
-        & .w3uik__dropdown-wrapper {
+        & .w3uik-dropdown-wrapper {
             display: block;
         }
 
-        .w3uik__select-overlay {
+        .w3uik-select-overlay {
             display: block;
         }
     }
@@ -39,7 +39,7 @@ const DivStyledWrapper = styled.div<Pick<ISelectProps, 'customize'>>`
 
 const DivStyledSelectWrapper = styled.div<Partial<ISelectProps>>`
     background-color: ${(p) => p.customize?.backgroundColor ?? color.white};
-    border-radius: 16px;
+    border-radius: ${(p) => p.customize?.borderRadius ?? '15px'};
     cursor: pointer;
     display: flex;
     min-height: ${(p) => p.height ?? '40px'};
@@ -71,7 +71,7 @@ const ButtonStyledSelect = styled.button<Pick<ISelectProps, 'customize'>>`
     appearance: none;
     background: none;
     border: ${(p) => p.customize?.border ?? `1px solid ${color.gray30}`};
-    border-radius: 15px;
+    border-radius: ${(p) => p.customize?.borderRadius ?? '15px'};
     box-sizing: border-box;
     height: 100%;
     left: 0;
@@ -124,7 +124,6 @@ const ListStyledSelected = styled.ul`
     padding-left: 0;
     padding-top: 2px;
     position: relative;
-
     &[aria-disabled='true'] {
         cursor: not-allowed;
         opacity: 0.5;
@@ -156,6 +155,9 @@ const DivStyledPlaceholder = styled.div`
     padding-top: 0;
     pointer-events: none;
     position: relative;
+    &[aria-disabled='true'] {
+        opacity: 0.5;
+    }
 `;
 
 const DivStyledOverlay = styled.div`
@@ -177,14 +179,14 @@ const MenuStyledWrapper = styled.menu`
     z-index: 2;
 `;
 
-const DivStyledDropdown = styled.div`
-    background: ${color.aero10};
+const DivStyledDropdown = styled.div<Pick<ISelectProps, 'customize'>>`
+    background: ${(p) => p.customize?.menuBgColor ?? color.aero10};
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
     border: 2px solid ${color.navy30};
-    border-radius: 16px;
+    border-radius: ${(p) => p.customize?.menuBorderRadius ?? '16px'};
 `;
 
 const InputStyledSearch = styled.input<Pick<ISelectProps, 'customize'>>`
@@ -192,7 +194,7 @@ const InputStyledSearch = styled.input<Pick<ISelectProps, 'customize'>>`
     background-color: ${(p) => p.customize?.menuBgColor ?? color.aero10};
     border: 0;
     border-bottom: 1px solid ${color.navy20};
-    border-radius: 13px 13px 0 0;
+    border-radius: 14px 14px 0 0;
     color: ${(p) => p.customize?.menuColor ?? color.blue70};
     display: block;
     font-family: inherit;
@@ -203,7 +205,7 @@ const InputStyledSearch = styled.input<Pick<ISelectProps, 'customize'>>`
         // Use position to hide input - this helps to make arrow keys functional
         position: absolute;
         right: 200vw;
-        & + .w3uik__search-icon {
+        & + .w3uik-search-icon {
             display: none;
         }
     }
@@ -213,8 +215,8 @@ const InputStyledSearch = styled.input<Pick<ISelectProps, 'customize'>>`
 `;
 
 // ------ Option List
-
-const ListStyledDropdown = styled.ul<{ height: string }>`
+type IListProps = Pick<ISelectProps, 'height' | 'customize'>;
+const ListStyledDropdown = styled.ul<IListProps>`
     border-bottom-left-radius: 13px;
     border-bottom-right-radius: 13px;
     box-shadow: 0 4px 8px rgba(248, 174, 174, 0.1);
@@ -232,13 +234,14 @@ const ListStyledDropdown = styled.ul<{ height: string }>`
     &::-webkit-scrollbar {
         background: none;
         height: 0;
-        width: 10px;
+        width: 8px;
     }
     &::-webkit-scrollbar-thumb {
         background-clip: padding-box;
-        background-color: ${color.gray40};
+        background-color: ${(p) =>
+            p.customize?.menuScrollBarColor ?? color.gray40};
         border-radius: 30px;
-        border: 4px solid transparent;
+        border: 2.5px solid transparent;
     }
     &::-webkit-scrollbar-button {
         display: none;
@@ -251,16 +254,20 @@ const ListStyledDropdown = styled.ul<{ height: string }>`
     :nth-child(2),
     :nth-child(2):hover,
     :nth-child(2):focus {
-        border-top-left-radius: 13px;
-        border-top-right-radius: 13px;
+        border-top-left-radius: ${(p) =>
+            p.customize?.menuBorderRadius ?? '14px'};
+        border-top-right-radius: ${(p) =>
+            p.customize?.menuBorderRadius ?? '14px'};
     }
 
     // For Last option in list
     :last-child,
     :last-child:hover,
     :last-child:focus {
-        border-bottom-left-radius: 13px;
-        border-bottom-right-radius: 13px;
+        border-bottom-left-radius: ${(p) =>
+            p.customize?.menuBorderRadius ?? '14px'};
+        border-bottom-right-radius: ${(p) =>
+            p.customize?.menuBorderRadius ?? '14px'};
     }
 `;
 
@@ -293,7 +300,7 @@ const ButtonStyledListItem = styled.button<Pick<ISelectProps, 'customize'>>`
     appearance: none;
     background: none;
     border: none;
-    color: ${(p) => p.customize?.menuColor ?? color.blue40};
+    color: ${(p) => p.customize?.menuColor ?? color.blue70};
     display: flex;
     padding: 5px 10px;
     gap: 5px;

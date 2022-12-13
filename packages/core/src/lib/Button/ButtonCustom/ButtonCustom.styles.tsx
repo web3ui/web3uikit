@@ -10,6 +10,7 @@ const ButtonCustomStyled = styled(ButtonBase)<ButtonProps>`
     font-size: ${(p) => p.customize?.fontSize};
     font-weight: ${(p) => p.customize?.fontWeight};
     padding: ${(p) => p.customize?.padding};
+    margin: ${(p) => p.customize?.margin};
 
     span {
         color: ${(p) => p.customize?.color};

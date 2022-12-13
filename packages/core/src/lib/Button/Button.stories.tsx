@@ -102,6 +102,7 @@ CustomButton.args = {
         fontWeight: '700',
         onHover: 'darken',
         padding: '8px 12px',
+        margin: '20px',
     },
     text: 'Button',
     theme: 'custom',

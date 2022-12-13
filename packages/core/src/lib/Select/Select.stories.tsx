@@ -308,6 +308,7 @@ BetaSelectCustomDark.args = {
         menuColor: '#99D3FF',
         menuItemBgColorOnHover: color.aero50,
         menuScrollBarColor: '#99D3FF',
+        margin: '20px',
     },
     options: optionsList,
     placeholder: 'Something big name',

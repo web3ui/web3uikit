@@ -23,7 +23,6 @@ const DivStyledWrapper = styled.div<Pick<ISelectProps, 'customize'>>`
         sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     font-size: ${(props) => props.customize?.fontSize ?? '14px'};
     line-height: 24px;
-    margin-bottom: 5px;
     color: ${(props) => props.customize?.color ?? color.blue70};
     &[aria-expanded='true'] {
         border-color: ${color.navy30};
@@ -35,6 +34,10 @@ const DivStyledWrapper = styled.div<Pick<ISelectProps, 'customize'>>`
             display: block;
         }
     }
+    ${(p) =>
+        p.customize?.margin
+            ? `margin: ${p.customize.margin}`
+            : `margin-bottom: 5px`}
 `;
 
 const DivStyledSelectWrapper = styled.div<Partial<ISelectProps>>`

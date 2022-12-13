@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.29
+
+### Patch Changes
+
+-   [#948](https://github.com/web3ui/web3uikit/pull/948) [`e07578089`](https://github.com/web3ui/web3uikit/commit/e07578089cbe21949834117ccfc90b3ab56d3be2) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Beta Select style fixes and customize added
+
 ## 0.2.28
 
 ### Patch Changes

@@ -17,6 +17,7 @@ const CredentialsStyled = styled.div<TStyleProps>`
     padding: ${(p) => (p.customize?.padding ? p.customize?.padding : '16px')};
     position: relative;
     width: ${(p) => p.width};
+    ${(p) => p.customize?.margin && `margin:${p.customize.margin}`};
 
     @media (max-width: 600px) {
         padding: ${(p) =>

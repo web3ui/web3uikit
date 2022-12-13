@@ -72,6 +72,7 @@ Customize.args = {
         color: 'white',
         fontSize: '12px',
         padding: '8px 12px',
+        margin: '20px',
     },
     hasHideButton: false,
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',

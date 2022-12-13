@@ -29,6 +29,7 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
     name = 'select',
     options = [],
     placeholder,
+    prefixIcon,
     setIsOpen,
     value = [],
 }) => {
@@ -69,6 +70,9 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
                 data-testid="test-select-selected"
                 style={{ margin: 'auto' }}
             >
+                {prefixIcon && (
+                    <SpanStyledItemIcon>{prefixIcon}</SpanStyledItemIcon>
+                )}
                 {currItem?.prefix && (
                     <SpanStyledItemIcon>{currItem?.prefix}</SpanStyledItemIcon>
                 )}

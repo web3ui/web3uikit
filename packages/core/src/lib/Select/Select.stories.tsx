@@ -2,7 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { useArgs } from '@storybook/addons';
 import { action } from '@storybook/addon-actions';
 import { color } from '@web3uikit/styles';
-import { Btc, Discord, Server, Testnet } from '@web3uikit/icons';
+import { Btc, Check, Discord, Server, Testnet } from '@web3uikit/icons';
 import Select from './Select';
 import { callCodeData } from './SelectBeta/mockData';
 import { OptionProps } from './types';
@@ -276,13 +276,14 @@ export const BetaSelectCustomLight = TemplateBetaSingle.bind({});
 BetaSelectCustomLight.args = {
     isMulti: false,
     isSearch: true,
-    label: 'Select',
+    label: '',
     name: 'demo',
+    prefixIcon: <Check height={22} width={22} fill={color.mint40} />,
     customize: {
         color: color.navy40,
         backgroundColor: color.white,
         borderRadius: '24px',
-        border: '2px solid #99D3FF',
+        border: `2px solid ${color.mint40}`,
         menuBgColor: color.white,
         menuColor: color.blue70,
         menuItemBgColorOnHover: color.aero20,

@@ -34,6 +34,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     onChange,
     options = [],
     placeholder,
+    prefixIcon,
     ref,
     style,
     value = [],
@@ -44,7 +45,6 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     const {
         onBlurTraditional,
         onChangeTraditional,
-        prefixIcon,
         prefixText,
         refTraditional,
         state,
@@ -170,6 +170,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     name={name}
                     options={options}
                     placeholder={placeholder}
+                    prefixIcon={prefixIcon}
                     setIsOpen={setIsOpen}
                     value={value}
                 />

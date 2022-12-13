@@ -64,7 +64,7 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
                 }
                 required={validation?.required}
             >
-                <option disabled>Please choose</option>
+                <option disabled>{placeholder || 'Please choose'}</option>
                 {options.map(
                     (option, i) =>
                         i !== selectedOptionIndex && (

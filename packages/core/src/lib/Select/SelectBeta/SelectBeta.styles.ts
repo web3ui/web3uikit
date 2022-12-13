@@ -173,32 +173,37 @@ const DivStyledOverlay = styled.div`
     z-index: 2;
 `;
 
-const MenuStyledWrapper = styled.menu`
+const MenuStyledWrapper = styled.menu<Pick<ISelectProps, 'menuCustomize'>>`
     display: none;
     margin: 0;
-    margin-top: 5px;
     padding: 0;
     position: relative;
     z-index: 2;
+    ${(p) =>
+        p.menuCustomize?.margin
+            ? `margin:${p.menuCustomize.margin}`
+            : 'margin-top: 5px'}
 `;
 
-const DivStyledDropdown = styled.div<Pick<ISelectProps, 'customize'>>`
-    background: ${(p) => p.customize?.menuBgColor ?? color.aero10};
+type TStyleProps = Pick<ISelectProps, 'customize' | 'menuCustomize'>;
+const DivStyledDropdown = styled.div<TStyleProps>`
+    background: ${(p) => p.menuCustomize?.backgroundColor ?? color.aero10};
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
-    border: 2px solid ${color.navy30};
-    border-radius: ${(p) => p.customize?.menuBorderRadius ?? '16px'};
+    border: ${(p) => p.menuCustomize?.border ?? `2px solid ${color.navy30}`};
+    border-radius: ${(p) => p.menuCustomize?.borderRadius ?? '16px'};
 `;
 
-const InputStyledSearch = styled.input<Pick<ISelectProps, 'customize'>>`
+const InputStyledSearch = styled.input<TStyleProps>`
     appearance: none;
-    background-color: ${(p) => p.customize?.menuBgColor ?? color.aero10};
+    background-color: ${(p) =>
+        p.menuCustomize?.backgroundColor ?? color.aero10};
     border: 0;
     border-bottom: 1px solid ${color.navy20};
     border-radius: 14px 14px 0 0;
-    color: ${(p) => p.customize?.menuColor ?? color.blue70};
+    color: ${(p) => p.menuCustomize?.color ?? color.blue70};
     display: block;
     font-family: inherit;
     font-size: inherit;
@@ -218,10 +223,12 @@ const InputStyledSearch = styled.input<Pick<ISelectProps, 'customize'>>`
 `;
 
 // ------ Option List
-type IListProps = Pick<ISelectProps, 'height' | 'customize'>;
+type IListProps = Pick<ISelectProps, 'height' | 'customize' | 'menuCustomize'>;
 const ListStyledDropdown = styled.ul<IListProps>`
-    border-bottom-left-radius: 13px;
-    border-bottom-right-radius: 13px;
+    border-bottom-left-radius: ${(p) =>
+        p.menuCustomize?.borderRadius ?? '14px'};
+    border-bottom-right-radius: ${(p) =>
+        p.menuCustomize?.borderRadius ?? '14px'};
     box-shadow: 0 4px 8px rgba(248, 174, 174, 0.1);
     display: flex;
     flex-direction: column;
@@ -231,7 +238,7 @@ const ListStyledDropdown = styled.ul<IListProps>`
     max-height: ${(p) => p.height ?? '200px'};
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 0;
+    padding: ${(p) => p.menuCustomize?.padding ?? '0px'};
     z-index: 2;
     // Scrollbar in options
     &::-webkit-scrollbar {
@@ -242,7 +249,7 @@ const ListStyledDropdown = styled.ul<IListProps>`
     &::-webkit-scrollbar-thumb {
         background-clip: padding-box;
         background-color: ${(p) =>
-            p.customize?.menuScrollBarColor ?? color.gray40};
+            p.menuCustomize?.scrollbarColor ?? color.gray40};
         border-radius: 30px;
         border: 2.5px solid transparent;
     }
@@ -258,9 +265,9 @@ const ListStyledDropdown = styled.ul<IListProps>`
     :nth-child(2):hover,
     :nth-child(2):focus {
         border-top-left-radius: ${(p) =>
-            p.customize?.menuBorderRadius ?? '14px'};
+            p.menuCustomize?.borderRadius ?? '14px'};
         border-top-right-radius: ${(p) =>
-            p.customize?.menuBorderRadius ?? '14px'};
+            p.menuCustomize?.borderRadius ?? '14px'};
     }
 
     // For Last option in list
@@ -268,9 +275,9 @@ const ListStyledDropdown = styled.ul<IListProps>`
     :last-child:hover,
     :last-child:focus {
         border-bottom-left-radius: ${(p) =>
-            p.customize?.menuBorderRadius ?? '14px'};
+            p.menuCustomize?.borderRadius ?? '14px'};
         border-bottom-right-radius: ${(p) =>
-            p.customize?.menuBorderRadius ?? '14px'};
+            p.menuCustomize?.borderRadius ?? '14px'};
     }
 `;
 
@@ -298,12 +305,12 @@ const SpanStyledItemSelected = styled.span`
     padding: 1px 0;
 `;
 
-const ButtonStyledListItem = styled.button<Pick<ISelectProps, 'customize'>>`
+const ButtonStyledListItem = styled.button<TStyleProps>`
     align-items: center;
     appearance: none;
     background: none;
     border: none;
-    color: ${(p) => p.customize?.menuColor ?? color.blue70};
+    color: ${(p) => p.menuCustomize?.color ?? color.blue70};
     display: flex;
     padding: 5px 10px;
     gap: 5px;
@@ -322,7 +329,7 @@ const ButtonStyledListItem = styled.button<Pick<ISelectProps, 'customize'>>`
 
     // Option Selected Styles
     &[aria-selected='true'] {
-        color: ${(p) => p.customize?.menuColor ?? color.blue40};
+        color: ${(p) => p.menuCustomize?.color ?? color.blue40};
         &::before {
             background-size: contain;
             content: '';
@@ -330,15 +337,12 @@ const ButtonStyledListItem = styled.button<Pick<ISelectProps, 'customize'>>`
     }
 
     &:hover {
-        background: ${(p) =>
-            p.customize?.menuItemBgColorOnHover ?? color.navy20};
-        ${hoverStyles};
+        background: ${(p) => p.menuCustomize?.bgColorOnHover ?? color.navy20};
     }
 
     &[data-highlighted='true'],
     &:focus {
-        background: ${(p) =>
-            p.customize?.menuItemBgColorOnHover ?? color.navy20};
+        background: ${(p) => p.menuCustomize?.bgColorOnHover ?? color.navy20};
         outline: none;
     }
 
@@ -349,9 +353,9 @@ const ButtonStyledListItem = styled.button<Pick<ISelectProps, 'customize'>>`
 `;
 // ------------------
 
-const SpanStyledNoResults = styled.span<Pick<ISelectProps, 'customize'>>`
+const SpanStyledNoResults = styled.span<Pick<ISelectProps, 'menuCustomize'>>`
     display: block;
-    color: ${(p) => p.customize?.color ?? color.blueGray50};
+    color: ${(p) => p.menuCustomize?.color ?? color.blueGray50};
     padding: 14px;
     text-align: center;
 `;

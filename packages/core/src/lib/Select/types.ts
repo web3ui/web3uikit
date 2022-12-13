@@ -151,12 +151,14 @@ export interface ISelectProps {
     /**
      * style customizations
      */
-    customize?: TCustomize & {
-        menuColor?: string;
-        menuBgColor?: string;
-        menuBorderRadius?: string;
-        menuItemBgColorOnHover?: string;
-        menuScrollBarColor?: string;
+    customize?: TCustomize;
+
+    /**
+     * style customizations for menu
+     */
+    menuCustomize?: TCustomize & {
+        bgColorOnHover?: string;
+        scrollbarColor?: string;
     };
 }
 

@@ -29,6 +29,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
     isSearch = true,
     max,
     menuHeight = '200px',
+    menuCustomize,
     options = [],
     setIsOpen,
     value = [],
@@ -147,13 +148,18 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
             className="w3uik-dropdown-wrapper"
             aria-label="select-options"
             data-testid="test-select-options"
+            menuCustomize={menuCustomize}
         >
-            <DivStyledDropdown customize={customize}>
+            <DivStyledDropdown
+                customize={customize}
+                menuCustomize={menuCustomize}
+            >
                 <InputStyledSearch
                     aria-activedescendant={optionId(activeDescendantIndex)}
                     aria-hidden={shouldDisplaySearch === false || undefined}
                     aria-label="Filter Options"
                     customize={customize}
+                    menuCustomize={menuCustomize}
                     data-testid="test-select-search-input"
                     onChange={(e) => setSearchTerm(e.target.value)}
                     onKeyDown={onKeyDown}
@@ -166,13 +172,14 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                     <SearchIconStyled
                         className="w3uik-search-icon"
                         fontSize={22}
-                        fill={customize?.menuColor ?? color.navy40}
+                        fill={menuCustomize?.color ?? color.navy40}
                     />
                 )}
                 <ListStyledDropdown
                     ref={listRef}
                     height={menuHeight}
                     customize={customize}
+                    menuCustomize={menuCustomize}
                 >
                     {visibleOptions.map((option, index) => {
                         const isSelected = isMulti
@@ -197,6 +204,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                                     }
                                     disabled={isMaxed && !isSelected}
                                     id={optionId(visibleIndices[index])}
+                                    menuCustomize={menuCustomize}
                                     onClick={() => addItem(option.id as string)}
                                     role="option"
                                     type="button"
@@ -225,7 +233,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
                                 logo="servers"
                                 width="100%"
                             />
-                            <SpanStyledNoResults customize={customize}>
+                            <SpanStyledNoResults menuCustomize={menuCustomize}>
                                 {options.length === 0
                                     ? customNoDataText
                                     : `No results for “${searchTerm}”`}

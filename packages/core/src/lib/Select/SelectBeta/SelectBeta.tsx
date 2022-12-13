@@ -30,6 +30,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     label = 'Select',
     max = Infinity,
     menuHeight = '200px',
+    menuCustomize,
     name = 'options',
     onChange,
     options = [],
@@ -113,6 +114,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                 className="w3uik-container"
                 height={height}
                 customize={customize}
+                menuCustomize={menuCustomize}
             >
                 <ButtonStyledSelect
                     aria-controls={elementId('menu')}
@@ -199,6 +201,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                         isOpen={isOpen}
                         isSearch={isSearch}
                         max={max}
+                        menuCustomize={menuCustomize}
                         menuHeight={menuHeight}
                         name={name}
                         options={options}

@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.2.30
+
+### Patch Changes
+
+-   [#950](https://github.com/web3ui/web3uikit/pull/950) [`c3a4e6c5e`](https://github.com/web3ui/web3uikit/commit/c3a4e6c5e5648d81d69352df869d48de947d8701) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - Added multiple UI icons, yellow bean and blue bean
+
 ## 0.2.23
 
 ### Patch Changes

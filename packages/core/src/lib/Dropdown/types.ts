@@ -3,63 +3,63 @@ import { OptionProps } from '../Select';
 
 export interface IDropdown {
     /**
-     * Option items for the picker
+     * Index of selected option by default
      */
-    options: OptionProps[];
+    defaultOptionIndex?: number;
     /**
-     * Picker Label
+     * Dropdown arrow type
      */
-    label?: string;
+    dropdownArrowType?: 'normal' | 'filled';
     /**
-     * To remove the label if an option is picked
+     * If true will render border outline
      */
-    isLabelFixed?: boolean;
-    /**
-     * To show the current selected value in the main select
-     */
-    showSelected?: boolean;
+    hasOutline?: boolean;
     /**
      * To hide the currently selected option from the option menu
      */
     hideSelected?: boolean;
     /**
+     * Name of the prefix Icon
+     */
+    icon?: React.ReactElement;
+    /**
+     * Whether or not the elements in the dropdown are centered
+     */
+    isContentCentered?: boolean;
+    /**
      * To control the value of the selected item of the select
-     */
-    selectedState?: number;
-    /**
-     * Name of the prefix Icon
-     */
-    icon?: React.ReactElement; //Icon
-    /**
-     * Name of the prefix Icon
      */
     isDisabled?: boolean;
     /**
-     * Width of the picker
+     * To remove the label if an option is picked
      */
-    width?: string;
+    isLabelFixed?: boolean;
+    /**
+     * If true will render label
+     */
+    isLabelVisible?: boolean;
+    /**
+     * Picker Label
+     */
+    label?: string;
     /**
      * Callback for on change
      */
     onChange(selectedOption: OptionProps): void;
-
     /**
-     * if true will render border outline
+     * Option items for the picker
      */
-    hasOutline?: boolean;
-
+    options: OptionProps[];
     /**
-     * index of selected option by default
+     * To control the value of the selected item of the select
      */
-    defaultOptionIndex?: number;
-
+    selectedState?: number;
     /**
-     * if true will render label
+     * To show the current selected value in the main select
      */
-    isLabelVisible?: boolean;
-
+    showSelected?: boolean;
     /**
-     * Dropdown arrow type
+     * Width of the picker
      */
-    dropdownArrowType?: 'normal' | 'filled';
+    width?: string;
 }

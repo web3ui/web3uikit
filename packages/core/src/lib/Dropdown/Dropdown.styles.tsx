@@ -15,10 +15,27 @@ export const StyledSelectParentDiv = styled.div<
     ${(props) => props.isDisabled && 'opacity: 50%;'}
 `;
 
+interface IContentCenteredDiv {
+    isContentCentered: boolean;
+}
+
+export const DivIconAndTextStyled = styled.div<IContentCenteredDiv>`
+
+    ${(props) =>
+        props.isContentCentered &&
+        css`
+            display: flex;
+            justify-content: center;
+            margin-left: auto;
+        `
+    };
+`;
+
 interface IStyledSelectedDiv {
     isOpen: boolean;
     width: string;
     hasOutline: boolean;
+    hasLabelAndIcon: boolean;
 }
 
 export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
@@ -33,14 +50,18 @@ export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
     transition: all 0.3s ease;
     width: ${(props) => props.width};
     & > div {
-        align-items: center;
+        ${(props) => props.hasLabelAndIcon ? undefined : 'align-items: center'};
         color: inherit;
         display: flex;
-        gap: 2px;
         padding: 8px;
         transition: all 0.3s ease;
+        & :nth-child(1) {
+            display: flex;
+            gap: 2px;
+            align-items: center;
+        }
         & :nth-child(2) {
-            margin-right: auto;
+            margin-left: auto;
             white-space: nowrap;
         }
         & :nth-child(3) {
@@ -62,7 +83,7 @@ export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
         `};
 `;
 
-interface IDivStyledOptionsContainer extends Pick<IDropdown, 'width'> {
+interface IDivStyledOptionsContainer extends Pick<IDropdown, 'width'>{
     isOpen: boolean;
 }
 
@@ -86,7 +107,7 @@ export const DivInnerStyledOptionsContainer = styled.div`
     padding: 8px;
 `;
 
-export const DivStyledOptionItem = styled.div`
+export const DivStyledOptionItem = styled.div<IContentCenteredDiv>`
     color: #041836;
     cursor: pointer;
     display: flex;
@@ -97,6 +118,13 @@ export const DivStyledOptionItem = styled.div`
         border-radius: 8px;
         background-color: #ebeff9;
     }
+    ${(props) =>
+        props.isContentCentered &&
+        css`
+            align-items: center;
+            justify-content: center;
+        `
+    };
 `;
 
 export const DivStyledNoData = styled.div`

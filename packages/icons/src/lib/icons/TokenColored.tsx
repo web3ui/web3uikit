@@ -42,4 +42,5 @@ const SvgTokenColored = ({
         </defs>
     </svg>
 );
+
 export default SvgTokenColored;

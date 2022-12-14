@@ -42,4 +42,5 @@ const SvgAirdrop = ({
         </defs>
     </svg>
 );
+
 export default SvgAirdrop;

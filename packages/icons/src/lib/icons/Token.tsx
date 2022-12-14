@@ -41,4 +41,5 @@ const SvgToken = ({
         </defs>
     </svg>
 );
+
 export default SvgToken;

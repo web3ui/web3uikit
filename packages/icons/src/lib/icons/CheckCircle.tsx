@@ -9,20 +9,30 @@ const SvgCheckCircle = ({
     ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
-        aria-hidden="true"
-        data-testid="test-icon"
-        fill="currentColor"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
         width="1em"
         height="1em"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
         role="img"
+        data-testid="test-icon"
+        aria-hidden="true"
         aria-labelledby={titleId}
         {...props}
     >
         {title ? <title id={titleId}>{title}</title> : null}
-        <path fillRule="evenodd" clipRule="evenodd" d="M19.3636 12C19.3636 7.93318 16.0668 4.63636 12 4.63636C7.93318 4.63636 4.63636 7.93318 4.63636 12C4.63636 16.0668 7.93318 19.3636 12 19.3636C16.0668 19.3636 19.3636 16.0668 19.3636 12ZM12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z" fill="black" />
-        <path fillRule="evenodd" clipRule="evenodd" d="M15.8731 9C16.2205 9.34666 16.2205 9.90871 15.8731 10.2554L11.3731 14.746C11.2063 14.9125 10.98 15.006 10.7441 15.006C10.5082 15.006 10.2819 14.9125 10.1151 14.746L8.12675 12.7618C7.77936 12.4151 7.77936 11.8531 8.12675 11.5064C8.47413 11.1597 9.03736 11.1597 9.38474 11.5064L10.7441 12.863L14.6151 9C14.9625 8.65334 15.5257 8.65334 15.8731 9Z" fill="black" />
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M19.364 12a7.364 7.364 0 1 0-14.728 0 7.364 7.364 0 0 0 14.728 0ZM12 3a9 9 0 1 1 0 18 9 9 0 0 1 0-18Z"
+            fill="#000"
+        />
+        <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M15.873 9a.886.886 0 0 1 0 1.255l-4.5 4.491a.89.89 0 0 1-1.258 0l-1.988-1.984a.886.886 0 0 1 0-1.256.89.89 0 0 1 1.258 0l1.36 1.357L14.614 9a.89.89 0 0 1 1.258 0Z"
+            fill="#000"
+        />
     </svg>
 );
 

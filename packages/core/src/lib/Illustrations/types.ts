@@ -20,6 +20,13 @@ export const logoState = [
     'wizard',
     'data',
     'plugins',
+    'beanBoyFront',
+    'beanBoyUpLeft',
+    'beanBoyStepOne',
+    'beanBoyStepTwo',
+    'beanBoyStepThree',
+    'beanBoyStepFour',
+    'beanBoyStepFive',
 ] as const;
 
 export type Logo = typeof logoState[number];

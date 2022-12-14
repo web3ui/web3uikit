@@ -21,6 +21,13 @@ import { Suspense } from 'react';
 import { Skeleton } from '../Skeleton';
 import plugins from './images/various/plugins';
 import data from './images/various/data';
+import beanBoyFront from './images/various/beanBoyFront';
+import beanBoyUpLeft from './images/various/beanBoyUpLeft';
+import beanBoyStepOne from './images/various/beanBoyStepOne';
+import beanBoyStepTwo from './images/various/beanBoyStepTwo';
+import beanBoyStepThree from './images/various/beanBoyStepThree';
+import beanBoyStepFour from './images/various/beanBoyStepFour';
+import beanBoyStepFive from './images/various/beanBoyStepFive';
 
 const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     switch (logo) {
@@ -56,6 +63,20 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
             return plugins(width, height);
         case 'data':
             return data(width, height);
+        case 'beanBoyFront':
+            return beanBoyFront(width, height);
+        case 'beanBoyUpLeft':
+            return beanBoyUpLeft(width, height);
+        case 'beanBoyStepOne':
+            return beanBoyStepOne(width, height);
+        case 'beanBoyStepTwo':
+            return beanBoyStepTwo(width, height);
+        case 'beanBoyStepThree':
+            return beanBoyStepThree(width, height);
+        case 'beanBoyStepFour':
+            return beanBoyStepFour(width, height);
+        case 'beanBoyStepFive':
+            return beanBoyStepFive(width, height);
         default:
             const chainLogos = Object.values(AllChains);
             const ChainLogo = chainLogos.find(

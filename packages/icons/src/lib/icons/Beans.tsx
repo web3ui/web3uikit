@@ -270,4 +270,5 @@ const SvgBeans = ({
         </defs>
     </svg>
 );
+
 export default SvgBeans;

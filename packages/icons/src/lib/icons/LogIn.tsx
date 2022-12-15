@@ -3,7 +3,7 @@
 // Do not edit
 import { SVGProps } from 'react';
 import { SVGRProps } from '../type';
-const SvgTokenColored = ({
+const SvgLogIn = ({
     title,
     titleId,
     ...props
@@ -22,25 +22,21 @@ const SvgTokenColored = ({
     >
         {title ? <title id={titleId}>{title}</title> : null}
         <g
-            clipPath="url(#token-colored_svg__a)"
-            strokeWidth={1.7}
-            strokeLinejoin="round"
+            clipPath="url(#log-in_svg__a)"
+            fillRule="evenodd"
+            clipRule="evenodd"
+            fill="#000"
         >
-            <path
-                d="M12.483 1.425a.532.532 0 0 1 .532 0L21.808 6.5c.165.095.266.271.266.461v10.154c0 .19-.101.365-.266.46l-8.793 5.077a.533.533 0 0 1-.532 0L3.69 17.577a.532.532 0 0 1-.266-.462V6.963c0-.19.102-.366.266-.46l8.793-5.077Z"
-                stroke="#F0C800"
-            />
-            <path
-                d="M12.293 7.54a.532.532 0 0 1 .913 0l2.535 4.225a.532.532 0 0 1 0 .548l-2.535 4.225a.532.532 0 0 1-.913 0l-2.535-4.225a.532.532 0 0 1 0-.548l2.535-4.225Z"
-                stroke="#D69700"
-            />
+            <path d="M14 3a1 1 0 0 1 1-1h4a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3h-4a1 1 0 1 1 0-2h4a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-4a1 1 0 0 1-1-1Z" />
+            <path d="M9.293 6.293a1 1 0 0 1 1.414 0l5 5a1 1 0 0 1 0 1.414l-5 5a1 1 0 0 1-1.414-1.414L13.586 12 9.293 7.707a1 1 0 0 1 0-1.414Z" />
+            <path d="M2 12a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H3a1 1 0 0 1-1-1Z" />
         </g>
         <defs>
-            <clipPath id="token-colored_svg__a">
+            <clipPath id="log-in_svg__a">
                 <path fill="#fff" d="M0 0h24v24H0z" />
             </clipPath>
         </defs>
     </svg>
 );
 
-export default SvgTokenColored;
+export default SvgLogIn;

@@ -40,4 +40,5 @@ const SvgDai = ({
         </defs>
     </svg>
 );
+
 export default SvgDai;

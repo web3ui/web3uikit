@@ -67,4 +67,5 @@ const SvgNftCat = ({
         </defs>
     </svg>
 );
+
 export default SvgNftCat;

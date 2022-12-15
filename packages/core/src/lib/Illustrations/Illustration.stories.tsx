@@ -167,3 +167,38 @@ export const Data = Template.bind({});
 Data.args = {
     logo: 'data',
 };
+
+export const BeanBoyFront = Template.bind({});
+BeanBoyFront.args = {
+    logo: 'beanBoyFront',
+};
+
+export const BeanBoyUpLeft = Template.bind({});
+BeanBoyUpLeft.args = {
+    logo: 'beanBoyUpLeft',
+};
+
+export const BeanBoyStepOne = Template.bind({});
+BeanBoyStepOne.args = {
+    logo: 'beanBoyStepOne',
+};
+
+export const BeanBoyStepTwo = Template.bind({});
+BeanBoyStepTwo.args = {
+    logo: 'beanBoyStepTwo',
+};
+
+export const BeanBoyStepThree = Template.bind({});
+BeanBoyStepThree.args = {
+    logo: 'beanBoyStepThree',
+};
+
+export const BeanBoyStepFour = Template.bind({});
+BeanBoyStepFour.args = {
+    logo: 'beanBoyStepFour',
+};
+
+export const BeanBoyStepFive = Template.bind({});
+BeanBoyStepFive.args = {
+    logo: 'beanBoyStepFive',
+};

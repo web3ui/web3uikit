@@ -1,5 +1,15 @@
 # @web3uikit/core
 
+## 0.2.31
+
+### Patch Changes
+
+-   [#955](https://github.com/web3ui/web3uikit/pull/955) [`f3bfaf645`](https://github.com/web3ui/web3uikit/commit/f3bfaf645382f580f6f90ca53fd7ae94a3bd4223) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add checkmark icon position prop to card
+
+*   [#953](https://github.com/web3ui/web3uikit/pull/953) [`86c98ce42`](https://github.com/web3ui/web3uikit/commit/86c98ce42420d5ec56a7cfdbc15af5c6241af81d) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - Added bean boy illustrations (front, upleft, and animation steps 1-5)
+
+-   [#954](https://github.com/web3ui/web3uikit/pull/954) [`488a2d16c`](https://github.com/web3ui/web3uikit/commit/488a2d16c5acfe53a28c14d75416b2da7e786b15) Thanks [@dani69654](https://github.com/dani69654)! - enable center align for dropdown content + fix alignment
+
 ## 0.2.29
 
 ### Patch Changes

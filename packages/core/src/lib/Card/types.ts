@@ -71,6 +71,11 @@ export interface CardProps {
      * Add position to card tooltip
      */
     tooltipPosition?: TooltipProps['position'];
+
+    /**
+     * check mark icon position, tooltip position will be opposite of this
+     */
+    checkMarkPosition?: 'left' | 'right';
 }
 
 export interface AbsoluteIconStyledProps {

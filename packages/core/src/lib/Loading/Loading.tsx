@@ -13,6 +13,7 @@ const Loading: React.FC<ILoadingProps> = ({
     spinnerColor = color.white,
     spinnerType = 'loader',
     text,
+    waveSize,
     ...props
 }) => {
     return (
@@ -28,7 +29,11 @@ const Loading: React.FC<ILoadingProps> = ({
             {spinnerType == 'loader' ? (
                 <StyledSpinnerDiv spinnerColor={spinnerColor} size={size} />
             ) : (
-                <WaveLoader size={size} spinnerColor={spinnerColor} />
+                <WaveLoader
+                    size={size}
+                    spinnerColor={spinnerColor}
+                    waveSize={waveSize}
+                />
             )}
             {text && <span>{text}</span>}
         </StyledSpinnerParent>
@@ -38,6 +43,7 @@ const Loading: React.FC<ILoadingProps> = ({
 const WaveLoader: React.FC<ILoadingProps> = ({
     size,
     spinnerColor,
+    waveSize,
     ...props
 }) => (
     <DivStyledWaveLoader
@@ -47,6 +53,7 @@ const WaveLoader: React.FC<ILoadingProps> = ({
         role="alert"
         size={size}
         spinnerColor={spinnerColor}
+        waveSize={waveSize}
         {...props}
     >
         <span aria-hidden="true" id="anim-delay1"></span>

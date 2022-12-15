@@ -1,5 +1,7 @@
 import { useCallback } from 'react';
 import {
+    DivDropdownArrowStyled,
+    DivIconAndTextStyled,
     DivInnerStyledOptionsContainer,
     DivStyledNoData,
     DivStyledOptionItem,
@@ -25,6 +27,7 @@ const Dropdown: React.FC<IDropdown> = ({
     hasOutline = true,
     hideSelected = true,
     icon,
+    isContentCentered,
     isDisabled = false,
     isLabelFixed = true,
     isLabelVisible = true,
@@ -99,6 +102,7 @@ const Dropdown: React.FC<IDropdown> = ({
                         )
                         .map((option) => (
                             <DivStyledOptionItem
+                                isContentCentered={!!isContentCentered}
                                 onClick={() => {
                                     handleSelectOptionClick(option);
                                 }}
@@ -129,6 +133,7 @@ const Dropdown: React.FC<IDropdown> = ({
         >
             <DivStyledSelected
                 data-testid="test-dropdown-wrap"
+                hasLabelAndIcon={!!label && !!icon}
                 hasOutline={hasOutline}
                 isOpen={!!isOpen}
                 onClick={() => {
@@ -139,62 +144,69 @@ const Dropdown: React.FC<IDropdown> = ({
                 width={width}
             >
                 <div>
-                    <span data-testid="test-dropdown-icon">
-                        {icon && icon}
-                        {typeof selectedIndex == 'number' &&
-                            options[selectedIndex]?.prefix &&
-                            options[selectedIndex]?.prefix}
-                    </span>
-                    {isLabelVisible && (
-                        <Typography variant="caption14" weight="400">
-                            {(isLabelFixed ||
-                                typeof selectedIndex != 'number') &&
-                                label}
-                            {typeof selectedIndex === 'number' &&
-                                showSelected &&
-                                options[selectedIndex]?.label}
-                        </Typography>
-                    )}
+                    <DivIconAndTextStyled isContentCentered={!!isContentCentered}>
+                        <span data-testid="test-dropdown-icon">
+                            {icon && icon}
+                            {typeof selectedIndex == 'number' &&
+                                options[selectedIndex]?.prefix &&
+                                options[selectedIndex]?.prefix}
+                        </span>
+                        {isLabelVisible && (
+                            <div>
+                            <Typography variant="caption14" weight="400">
+                                {(isLabelFixed ||
+                                    typeof selectedIndex != 'number') &&
+                                    label}
+                                {typeof selectedIndex === 'number' &&
+                                    showSelected &&
+                                    options[selectedIndex]?.label}
+                            </Typography>
+                            </div>
+                        )}
+                    </DivIconAndTextStyled>
 
-                    {dropdownArrowType === 'normal' ? (
-                        isOpen ? (
-                            <ChevronUp
-                                title="chevron up icon"
-                                titleId="dropdown chevron up icon"
+                 
+                    <DivDropdownArrowStyled isContentCentered={!!isContentCentered}>
+                        {dropdownArrowType === 'normal' ? (
+                            isOpen ? (
+                                <ChevronUp
+                                    title="chevron up icon"
+                                    titleId="dropdown chevron up icon"
+                                    fontSize={24}
+                                    style={{
+                                        fill: 'currentColor',
+                                    }}
+                                />
+                            ) : (
+                                <ChevronDown
+                                    fontSize={24}
+                                    title="chevron down icon"
+                                    titleId="dropdown chevron down icon"
+                                    style={{
+                                        fill: 'currentColor',
+                                    }}
+                                />
+                            )
+                        ) : isOpen ? (
+                            <TriangleUp
+                                title="triangle up icon"
+                                titleId="dropdown triangle up icon"
                                 fontSize={24}
                                 style={{
                                     fill: 'currentColor',
                                 }}
                             />
                         ) : (
-                            <ChevronDown
+                            <TriangleDown
+                                title="triangle down icon"
+                                titleId="dropdown triangle down icon"
                                 fontSize={24}
-                                title="chevron down icon"
-                                titleId="dropdown chevron down icon"
                                 style={{
                                     fill: 'currentColor',
                                 }}
                             />
-                        )
-                    ) : isOpen ? (
-                        <TriangleUp
-                            title="triangle up icon"
-                            titleId="dropdown triangle up icon"
-                            fontSize={24}
-                            style={{
-                                fill: 'currentColor',
-                            }}
-                        />
-                    ) : (
-                        <TriangleDown
-                            title="triangle down icon"
-                            titleId="dropdown triangle down icon"
-                            fontSize={24}
-                            style={{
-                                fill: 'currentColor',
-                            }}
-                        />
-                    )}
+                        )}
+                        </DivDropdownArrowStyled>
                 </div>
             </DivStyledSelected>
             <RenderOptions />

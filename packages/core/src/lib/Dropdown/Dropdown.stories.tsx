@@ -177,3 +177,26 @@ LabelLess.args = {
     width: 'fit-content',
     defaultOptionIndex: 0,
 };
+
+export const ContentCentered = Template.bind({});
+ContentCentered.args = {
+    options: [
+        {
+            label: 'Api Key',
+            id: 'Api Key',
+        },
+        {
+            label: 'Testnet',
+            id: 'Testnet',
+            prefix: <Server fill={color.navy40} />,
+        },
+        {
+            label: 'Mainent',
+            id: 'Mainent',
+        },
+    ],
+    label: 'Server: ',
+    icon: <Download fontSize={24} />,
+    isDisabled: false,
+    isContentCentered: true,
+}

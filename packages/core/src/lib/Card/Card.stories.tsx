@@ -111,7 +111,7 @@ ComingSoon.args = {
     children: [<div key={'0'}>{getModuleAnimation('Lazy NFT')}</div>],
     title: 'NFT Collection',
     description: 'Coming Soon',
-    isDisabled: true,
+    checkMarkPosition: 'right',
 };
 
 export const ProPlan = Template.bind({});

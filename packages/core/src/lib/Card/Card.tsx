@@ -9,6 +9,7 @@ const { AbsoluteIconStyled, DivStyled, FooterStyled, HeaderStyled } = styles;
 
 const Card: React.FC<CardProps> = ({
     children,
+    checkMarkPosition = 'left',
     cursorType = 'pointer',
     description,
     id,
@@ -44,7 +45,11 @@ const Card: React.FC<CardProps> = ({
         >
             <HeaderStyled data-testid={'test-card-header'}>
                 {isSelected && (
-                    <AbsoluteIconStyled position="topL">
+                    <AbsoluteIconStyled
+                        position={
+                            checkMarkPosition === 'left' ? 'topL' : 'topR'
+                        }
+                    >
                         <Checkmark
                             data-testid="test-card-icon-check"
                             title="checkmark icon"
@@ -55,7 +60,11 @@ const Card: React.FC<CardProps> = ({
                     </AbsoluteIconStyled>
                 )}
                 {!isDisabled && tooltipText && (
-                    <AbsoluteIconStyled position="topR">
+                    <AbsoluteIconStyled
+                        position={
+                            checkMarkPosition === 'left' ? 'topR' : 'topL'
+                        }
+                    >
                         <Tooltip
                             children={[
                                 <HelpCircle

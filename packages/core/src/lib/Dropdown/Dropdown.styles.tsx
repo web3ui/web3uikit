@@ -20,13 +20,22 @@ interface IContentCenteredDiv {
 }
 
 export const DivIconAndTextStyled = styled.div<IContentCenteredDiv>`
-
     ${(props) =>
         props.isContentCentered &&
         css`
             display: flex;
             justify-content: center;
             margin-left: auto;
+        `
+    };
+`;
+
+export const DivDropdownArrowStyled = styled.div<IContentCenteredDiv>`
+    ${(props) =>
+        props.isContentCentered &&
+        css`
+            margin-right: auto !important;
+            margin-left: 0 !important;
         `
     };
 `;
@@ -63,9 +72,6 @@ export const DivStyledSelected = styled.div<IStyledSelectedDiv>`
         & :nth-child(2) {
             margin-left: auto;
             white-space: nowrap;
-        }
-        & :nth-child(3) {
-            margin-left: auto;
         }
     }
     &:hover {

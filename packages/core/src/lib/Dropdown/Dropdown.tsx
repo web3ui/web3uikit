@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import {
+    DivDropdownArrowStyled,
     DivIconAndTextStyled,
     DivInnerStyledOptionsContainer,
     DivStyledNoData,
@@ -164,45 +165,48 @@ const Dropdown: React.FC<IDropdown> = ({
                         )}
                     </DivIconAndTextStyled>
 
-                    {dropdownArrowType === 'normal' ? (
-                        isOpen ? (
-                            <ChevronUp
-                                title="chevron up icon"
-                                titleId="dropdown chevron up icon"
+                 
+                    <DivDropdownArrowStyled isContentCentered={!!isContentCentered}>
+                        {dropdownArrowType === 'normal' ? (
+                            isOpen ? (
+                                <ChevronUp
+                                    title="chevron up icon"
+                                    titleId="dropdown chevron up icon"
+                                    fontSize={24}
+                                    style={{
+                                        fill: 'currentColor',
+                                    }}
+                                />
+                            ) : (
+                                <ChevronDown
+                                    fontSize={24}
+                                    title="chevron down icon"
+                                    titleId="dropdown chevron down icon"
+                                    style={{
+                                        fill: 'currentColor',
+                                    }}
+                                />
+                            )
+                        ) : isOpen ? (
+                            <TriangleUp
+                                title="triangle up icon"
+                                titleId="dropdown triangle up icon"
                                 fontSize={24}
                                 style={{
                                     fill: 'currentColor',
                                 }}
                             />
                         ) : (
-                            <ChevronDown
+                            <TriangleDown
+                                title="triangle down icon"
+                                titleId="dropdown triangle down icon"
                                 fontSize={24}
-                                title="chevron down icon"
-                                titleId="dropdown chevron down icon"
                                 style={{
                                     fill: 'currentColor',
                                 }}
                             />
-                        )
-                    ) : isOpen ? (
-                        <TriangleUp
-                            title="triangle up icon"
-                            titleId="dropdown triangle up icon"
-                            fontSize={24}
-                            style={{
-                                fill: 'currentColor',
-                            }}
-                        />
-                    ) : (
-                        <TriangleDown
-                            title="triangle down icon"
-                            titleId="dropdown triangle down icon"
-                            fontSize={24}
-                            style={{
-                                fill: 'currentColor',
-                            }}
-                        />
-                    )}
+                        )}
+                        </DivDropdownArrowStyled>
                 </div>
             </DivStyledSelected>
             <RenderOptions />

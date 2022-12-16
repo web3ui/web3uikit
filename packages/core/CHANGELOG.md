@@ -1,5 +1,13 @@
 # @web3uikit/core
 
+## 0.2.32
+
+### Patch Changes
+
+-   [#959](https://github.com/web3ui/web3uikit/pull/959) [`eb593873f`](https://github.com/web3ui/web3uikit/commit/eb593873f187378739f1f4fe26dfc9a7ca00074d) Thanks [@dani69654](https://github.com/dani69654)! - Add useOusideAlerter hook. Modify Dropdown component to use the new hook, which now closes the dropdown on outside click
+
+*   [#957](https://github.com/web3ui/web3uikit/pull/957) [`d16cca9a0`](https://github.com/web3ui/web3uikit/commit/d16cca9a025691b87628baa4b796ba1ae6f0cc54) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Custom size for wave loader
+
 ## 0.2.31
 
 ### Patch Changes

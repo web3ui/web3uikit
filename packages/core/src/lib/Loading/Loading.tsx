@@ -9,12 +9,13 @@ import { ILoadingProps } from './types';
 const Loading: React.FC<ILoadingProps> = ({
     direction = 'bottom',
     fontSize,
-    size = 20,
+    size,
     spinnerColor = color.white,
     spinnerType = 'loader',
     text,
     ...props
 }) => {
+    if (!size) size = spinnerType === 'loader' ? 20 : 7;
     return (
         <StyledSpinnerParent
             data-testid="test-loading"

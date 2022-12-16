@@ -49,9 +49,15 @@ export const StyledSpinnerDiv = styled.div<
 
 // const DivStyledWaveLoader = styled.div<Pick<ILoadingProps, 'size' | 'spinnerColor'>>`
 
-const waveAnim = keyframes`
-    from {height: 2px; width: 2px;}
-    to {height: 7px;width: 7px;}
+const waveAnim = (size?: number) => keyframes`
+    from {
+        height: ${size ? Math.ceil(size / 4) + 'px' : '2px'}; 
+        width: ${size ? Math.ceil(size / 4) + 'px' : '2px'};
+    }
+    to {
+        height: ${size ? size + 'px' : '7px'};
+        width: ${size ? size + 'px' : '7px'};
+    }
 `;
 
 export const DivStyledWaveLoader = styled.div<ILoadingProps>`
@@ -62,15 +68,15 @@ export const DivStyledWaveLoader = styled.div<ILoadingProps>`
     span {
         align-items: center;
         display: flex;
-        height: 10px;
+        height: ${(p) => (p.size ? `${p.size + 3}px` : '10px')};
         justify-content: center;
-        width: 10px;
+        width: ${(p) => (p.size ? `${p.size + 3}px` : '10px')};
 
         &:before {
             animation-direction: alternate;
             animation-duration: 0.4s;
             animation-iteration-count: infinite;
-            animation-name: ${waveAnim};
+            animation-name: ${(p) => waveAnim(p.size)};
             background-color: ${(props) => props.spinnerColor};
             border-radius: 50%;
             content: '';

@@ -9,13 +9,13 @@ import { ILoadingProps } from './types';
 const Loading: React.FC<ILoadingProps> = ({
     direction = 'bottom',
     fontSize,
-    size = 20,
+    size,
     spinnerColor = color.white,
     spinnerType = 'loader',
     text,
-    waveSize,
     ...props
 }) => {
+    if (!size) size = spinnerType === 'loader' ? 20 : 7;
     return (
         <StyledSpinnerParent
             data-testid="test-loading"
@@ -29,11 +29,7 @@ const Loading: React.FC<ILoadingProps> = ({
             {spinnerType == 'loader' ? (
                 <StyledSpinnerDiv spinnerColor={spinnerColor} size={size} />
             ) : (
-                <WaveLoader
-                    size={size}
-                    spinnerColor={spinnerColor}
-                    waveSize={waveSize}
-                />
+                <WaveLoader size={size} spinnerColor={spinnerColor} />
             )}
             {text && <span>{text}</span>}
         </StyledSpinnerParent>
@@ -43,7 +39,6 @@ const Loading: React.FC<ILoadingProps> = ({
 const WaveLoader: React.FC<ILoadingProps> = ({
     size,
     spinnerColor,
-    waveSize,
     ...props
 }) => (
     <DivStyledWaveLoader
@@ -53,7 +48,6 @@ const WaveLoader: React.FC<ILoadingProps> = ({
         role="alert"
         size={size}
         spinnerColor={spinnerColor}
-        waveSize={waveSize}
         {...props}
     >
         <span aria-hidden="true" id="anim-delay1"></span>

@@ -54,10 +54,3 @@ WaveLoaderWithText.args = {
     text: 'Loading...',
     fontSize: 12,
 };
-
-export const WaveLoaderCustomSize = Template.bind({});
-WaveLoaderCustomSize.args = {
-    spinnerType: 'wave',
-    spinnerColor: '#2E7DAF',
-    waveSize: 50,
-};

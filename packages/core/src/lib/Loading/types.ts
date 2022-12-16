@@ -16,7 +16,4 @@ export interface ILoadingProps {
 
     // To load text with spinner
     text?: string;
-
-    // The size of the wave loader
-    waveSize?: number;
 }

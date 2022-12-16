@@ -68,15 +68,15 @@ export const DivStyledWaveLoader = styled.div<ILoadingProps>`
     span {
         align-items: center;
         display: flex;
-        height: ${(p) => (p.waveSize ? `${p.waveSize + 3}px` : '10px')};
+        height: ${(p) => (p.size ? `${p.size + 3}px` : '10px')};
         justify-content: center;
-        width: ${(p) => (p.waveSize ? `${p.waveSize + 3}px` : '10px')};
+        width: ${(p) => (p.size ? `${p.size + 3}px` : '10px')};
 
         &:before {
             animation-direction: alternate;
             animation-duration: 0.4s;
             animation-iteration-count: infinite;
-            animation-name: ${(p) => waveAnim(p.waveSize)};
+            animation-name: ${(p) => waveAnim(p.size)};
             background-color: ${(props) => props.spinnerColor};
             border-radius: 50%;
             content: '';

@@ -41,17 +41,17 @@ const Dropdown: React.FC<IDropdown> = ({
     ...props
 }) => {
     const {
-        ref,
-        isComponentVisible,
-        setIsComponentVisible
+        outsideAlerterRef,
+        isInsideElementClick: isDropdownOpen,
+        setIsInsideElementClick: setIsDropdownOpen
       } = useOutsideAlerter(false);
     const [selectedIndex, setSelectedIndex] =
         useState<number | undefined>(defaultOptionIndex);
     useEffect(() => {
         if (isDisabled) {
-            setIsComponentVisible(false);
+            setIsDropdownOpen(false);
         }
-    }, [isDisabled, isComponentVisible]);
+    }, [isDisabled, isDropdownOpen]);
     useEffect(() => {
         if (typeof selectedState == 'number') {
             setSelectedIndex(selectedState);
@@ -59,7 +59,7 @@ const Dropdown: React.FC<IDropdown> = ({
     }, [selectedState, selectedIndex]);
 
     const handleSelectOptionClick = (selectedOption: OptionProps) => {
-        setIsComponentVisible(false);
+        setIsDropdownOpen(false);
         const indexOf = options.indexOf(selectedOption);
         setSelectedIndex(indexOf);
         onChange(selectedOption);
@@ -73,7 +73,7 @@ const Dropdown: React.FC<IDropdown> = ({
             return (
                 <DivStyledOptionsContainer
                     data-testid="test-dropdown-container"
-                    isOpen={isComponentVisible}
+                    isOpen={isDropdownOpen}
                     width={width}
                     {...props}
                 >
@@ -95,7 +95,7 @@ const Dropdown: React.FC<IDropdown> = ({
         return (
             <DivStyledOptionsContainer
                 data-testid="test-dropdown-options-container"
-                isOpen={isComponentVisible}
+                isOpen={isDropdownOpen}
                 width={width}
             >
                 <DivInnerStyledOptionsContainer>
@@ -128,23 +128,23 @@ const Dropdown: React.FC<IDropdown> = ({
                 </DivInnerStyledOptionsContainer>
             </DivStyledOptionsContainer>
         );
-    }, [isComponentVisible]);
+    }, [isDropdownOpen]);
 
     return (
         <StyledSelectParentDiv
             data-testid="test-dropdown"
             isDisabled={isDisabled}
             width={width}
-            ref={ref}
+            ref={outsideAlerterRef}
         >
             <DivStyledSelected
                 data-testid="test-dropdown-wrap"
                 hasLabelAndIcon={!!label && !!icon}
                 hasOutline={hasOutline}
-                isOpen={!!isComponentVisible}
+                isOpen={!!isDropdownOpen}
                 onClick={() => {
                     if (!isDisabled) {
-                        setIsComponentVisible(!isComponentVisible);
+                        setIsDropdownOpen(!isDropdownOpen);
                     }
                 }}
                 width={width}
@@ -174,7 +174,7 @@ const Dropdown: React.FC<IDropdown> = ({
                  
                     <DivDropdownArrowStyled isContentCentered={!!isContentCentered}>
                         {dropdownArrowType === 'normal' ? (
-                            isComponentVisible ? (
+                            isDropdownOpen ? (
                                 <ChevronUp
                                     title="chevron up icon"
                                     titleId="dropdown chevron up icon"
@@ -193,7 +193,7 @@ const Dropdown: React.FC<IDropdown> = ({
                                     }}
                                 />
                             )
-                        ) : isComponentVisible ? (
+                        ) : isDropdownOpen ? (
                             <TriangleUp
                                 title="triangle up icon"
                                 titleId="dropdown triangle up icon"

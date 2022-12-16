@@ -1,20 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 
-export function useOutsideAlerter(initialIsVisible: boolean) {
-  const [isComponentVisible, setIsComponentVisible] = useState(
-    initialIsVisible
+export function useOutsideAlerter(defaultValue: boolean) {
+  const [isInsideElementClick, setIsInsideElementClick] = useState(
+    defaultValue
   );
-  const ref = useRef<HTMLDivElement>(null);
+  const outsideAlerterRef = useRef<HTMLDivElement>(null);
 
   const handleHideDropdown = (event: KeyboardEvent) => {
     if (event.key === "Escape") {
-      setIsComponentVisible(false);
+      setIsInsideElementClick(false);
     }
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (ref.current && !ref.current.contains(event.target as HTMLDivElement)) {
-      setIsComponentVisible(false);
+    if (outsideAlerterRef.current && !outsideAlerterRef.current.contains(event.target as HTMLDivElement)) {
+      setIsInsideElementClick(false);
     }
   };
 
@@ -27,5 +27,5 @@ export function useOutsideAlerter(initialIsVisible: boolean) {
     };
   });
 
-  return { ref, isComponentVisible, setIsComponentVisible };
+  return { outsideAlerterRef, isInsideElementClick, setIsInsideElementClick };
 }

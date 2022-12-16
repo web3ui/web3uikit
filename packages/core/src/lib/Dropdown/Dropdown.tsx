@@ -20,6 +20,7 @@ import {
 } from '@web3uikit/icons';
 import { OptionProps } from '../Select';
 import { Typography } from '../Typography';
+import { useOutsideAlerter } from '../../hooks/useOutsideAlerter';
 
 const Dropdown: React.FC<IDropdown> = ({
     defaultOptionIndex,
@@ -39,14 +40,18 @@ const Dropdown: React.FC<IDropdown> = ({
     width = '250px',
     ...props
 }) => {
-    const [isOpen, setIsOpen] = useState(false);
+    const {
+        outsideAlerterRef,
+        isInsideElementClick: isDropdownOpen,
+        setIsInsideElementClick: setIsDropdownOpen
+      } = useOutsideAlerter(false);
     const [selectedIndex, setSelectedIndex] =
         useState<number | undefined>(defaultOptionIndex);
     useEffect(() => {
         if (isDisabled) {
-            setIsOpen(false);
+            setIsDropdownOpen(false);
         }
-    }, [isDisabled, isOpen]);
+    }, [isDisabled, isDropdownOpen]);
     useEffect(() => {
         if (typeof selectedState == 'number') {
             setSelectedIndex(selectedState);
@@ -54,7 +59,7 @@ const Dropdown: React.FC<IDropdown> = ({
     }, [selectedState, selectedIndex]);
 
     const handleSelectOptionClick = (selectedOption: OptionProps) => {
-        setIsOpen(false);
+        setIsDropdownOpen(false);
         const indexOf = options.indexOf(selectedOption);
         setSelectedIndex(indexOf);
         onChange(selectedOption);
@@ -68,7 +73,7 @@ const Dropdown: React.FC<IDropdown> = ({
             return (
                 <DivStyledOptionsContainer
                     data-testid="test-dropdown-container"
-                    isOpen={isOpen}
+                    isOpen={isDropdownOpen}
                     width={width}
                     {...props}
                 >
@@ -90,7 +95,7 @@ const Dropdown: React.FC<IDropdown> = ({
         return (
             <DivStyledOptionsContainer
                 data-testid="test-dropdown-options-container"
-                isOpen={isOpen}
+                isOpen={isDropdownOpen}
                 width={width}
             >
                 <DivInnerStyledOptionsContainer>
@@ -101,7 +106,7 @@ const Dropdown: React.FC<IDropdown> = ({
                                 !hideSelected,
                         )
                         .map((option) => (
-                            <DivStyledOptionItem
+                            <DivStyledOptionItem   
                                 isContentCentered={!!isContentCentered}
                                 onClick={() => {
                                     handleSelectOptionClick(option);
@@ -123,22 +128,23 @@ const Dropdown: React.FC<IDropdown> = ({
                 </DivInnerStyledOptionsContainer>
             </DivStyledOptionsContainer>
         );
-    }, [isOpen]);
+    }, [isDropdownOpen]);
 
     return (
         <StyledSelectParentDiv
             data-testid="test-dropdown"
             isDisabled={isDisabled}
             width={width}
+            ref={outsideAlerterRef}
         >
             <DivStyledSelected
                 data-testid="test-dropdown-wrap"
                 hasLabelAndIcon={!!label && !!icon}
                 hasOutline={hasOutline}
-                isOpen={!!isOpen}
+                isOpen={!!isDropdownOpen}
                 onClick={() => {
                     if (!isDisabled) {
-                        setIsOpen(!isOpen);
+                        setIsDropdownOpen(!isDropdownOpen);
                     }
                 }}
                 width={width}
@@ -168,7 +174,7 @@ const Dropdown: React.FC<IDropdown> = ({
                  
                     <DivDropdownArrowStyled isContentCentered={!!isContentCentered}>
                         {dropdownArrowType === 'normal' ? (
-                            isOpen ? (
+                            isDropdownOpen ? (
                                 <ChevronUp
                                     title="chevron up icon"
                                     titleId="dropdown chevron up icon"
@@ -187,7 +193,7 @@ const Dropdown: React.FC<IDropdown> = ({
                                     }}
                                 />
                             )
-                        ) : isOpen ? (
+                        ) : isDropdownOpen ? (
                             <TriangleUp
                                 title="triangle up icon"
                                 titleId="dropdown triangle up icon"

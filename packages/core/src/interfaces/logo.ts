@@ -41,6 +41,12 @@ export const chainLogoData = {
     },
     /* PLOP_INJECT_CHAIN */
     
+    UnknownChain : {
+        name:'UnknownChain',
+        color:'#BBDBF7',
+    },
+
+    
     palm : {
         name:'palm',
         color:'#6818AA',

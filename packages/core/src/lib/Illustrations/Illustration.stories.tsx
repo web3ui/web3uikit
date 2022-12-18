@@ -75,7 +75,11 @@ Optimism.args = {
     logo: 'optimism',
 };
 
-/* PLOP_INJECT_CHAIN */
+export const UnknownChain = BackgroundColoredTemplate.bind({});
+UnknownChain.args = {
+    logo: 'UnknownChain',
+};
+
 export const Palm = BackgroundColoredTemplate.bind({});
 Palm.args = {
     logo: 'palm',
@@ -202,3 +206,5 @@ export const BeanBoyStepFive = Template.bind({});
 BeanBoyStepFive.args = {
     logo: 'beanBoyStepFive',
 };
+
+/* PLOP_INJECT_CHAIN */

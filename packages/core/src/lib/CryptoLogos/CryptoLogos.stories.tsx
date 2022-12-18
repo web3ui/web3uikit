@@ -73,6 +73,11 @@ Optimism.args = {
 };
 
 /* PLOP_INJECT_CHAIN */
+export const UnknownChain = Template.bind({});
+UnknownChain.args = {
+    chain: 'UnknownChain',
+    size: '48px',
+};
 export const Palm = Template.bind({});
 Palm.args = {
     chain: 'palm',

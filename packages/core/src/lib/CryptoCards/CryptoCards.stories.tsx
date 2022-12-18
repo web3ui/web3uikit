@@ -91,6 +91,13 @@ Optimism.args = {
 };
 
 /* PLOP_INJECT_CHAIN */
+export const UnknownChain = Template.bind({});
+UnknownChain.args = {
+    chain: 'UnknownChain',
+    chainType: 'Network',
+    bgColor: chainLogoData['UnknownChain'].color,
+    btnText: 'View Endpoints',
+};
 export const Palm = Template.bind({});
 Palm.args = {
     chain: 'palm',

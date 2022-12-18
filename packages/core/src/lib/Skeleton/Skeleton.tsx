@@ -15,6 +15,8 @@ const getDefault = (theme: Theme) => {
 };
 
 const Skeleton: React.FC<SkeletonProps> = ({
+    animationColor,
+    backgroundColor,
     borderRadius = '10px',
     theme,
     height = getDefault(theme).height,
@@ -23,6 +25,8 @@ const Skeleton: React.FC<SkeletonProps> = ({
 }) => {
     return (
         <DivStyled
+            animationColor={animationColor}
+            backgroundColor={backgroundColor}
             borderRadius={borderRadius}
             data-testid="test-skeleton"
             height={height}

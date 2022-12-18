@@ -1,5 +1,5 @@
-
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { color } from '@web3uikit/styles';
 import Skeleton from './Skeleton';
 import { SkeletonProps } from './types';
 
@@ -36,4 +36,13 @@ const Template: ComponentStory<typeof Skeleton> = (args: SkeletonProps) => (
 export const SkeletonImage = Template.bind({});
 SkeletonImage.args = {
     theme: 'image',
+};
+
+export const Customized = Template.bind({});
+Customized.args = {
+    animationColor: color.blue40,
+    backgroundColor: color.blue60,
+    height: '400px',
+    theme: 'image',
+    width: '300px',
 };

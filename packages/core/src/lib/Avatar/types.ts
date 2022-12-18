@@ -14,9 +14,14 @@ export interface AvatarProps {
     isRounded?: boolean;
 
     /**
-     * pass two letters, like the users initials, BG for example
+     * pass any string and it will show the first two characters
      */
     text?: string;
+
+    /**
+     * specify how many characters you want the text trimmed to
+     */
+    characterAmount?: number;
 
     /**
      * pass a valid url for an image

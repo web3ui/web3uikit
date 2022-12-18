@@ -1,4 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { color } from '@web3uikit/styles';
 
 import Avatar from '../Avatar/Avatar';
 
@@ -24,6 +25,15 @@ export const AvatarLetters = Template.bind({});
 AvatarLetters.args = {
     theme: 'letters',
     text: 'DM',
+};
+
+export const CharacterAmount = Template.bind({});
+CharacterAmount.args = {
+    avatarBackground: color.blue60,
+    characterAmount: 3,
+    isRounded: true,
+    text: 'Ethereum',
+    theme: 'letters',
 };
 
 export const RoundedAvatarImageDefault = Template.bind({});

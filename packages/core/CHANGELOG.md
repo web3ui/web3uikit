@@ -1,5 +1,13 @@
 # @web3uikit/core
 
+## 0.2.33
+
+### Patch Changes
+
+-   [#963](https://github.com/web3ui/web3uikit/pull/963) [`9e9401c3e`](https://github.com/web3ui/web3uikit/commit/9e9401c3e0e511b744f699898f8a63aa92514cb5) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(Skeleton): added bg color props
+
+*   [#961](https://github.com/web3ui/web3uikit/pull/961) [`9ae5ddaf6`](https://github.com/web3ui/web3uikit/commit/9ae5ddaf642c6efa636f381e4bae15be6baea574) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(Avatar): characterAmount added
+
 ## 0.2.32
 
 ### Patch Changes

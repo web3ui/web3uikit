@@ -10,6 +10,7 @@ const avatarColors = ['#FEB7B7', '#E1B5F6', '#A7D6F9', '#AADCD6', '#F0DC7D'];
 const Avatar: React.FC<AvatarProps> = ({
     avatarBackground,
     borderRadius,
+    characterAmount = 2,
     fontSize = 15,
     image,
     isRounded = false,
@@ -31,6 +32,11 @@ const Avatar: React.FC<AvatarProps> = ({
         return avatarColors[pos - 1] || '#FEB7B7';
     };
 
+    const truncateText = (fullText: string): string => {
+        const trimmedText = fullText.slice(0, characterAmount);
+        return trimmedText;
+    };
+
     return (
         <DivStyled
             aria-label="users avatar"
@@ -50,7 +56,7 @@ const Avatar: React.FC<AvatarProps> = ({
                 !image && renderAvatarSVG()
             ) : (
                 <H4Styled data-testid="test-avatar-title" textColor={textColor}>
-                    {text && text.length > 1 ? `${text[0]}${text[1]}` : text}
+                    {text && truncateText(text)}
                 </H4Styled>
             )}
         </DivStyled>

@@ -1,4 +1,4 @@
-import { Input, useCopyToClipboard, useNotification } from '../lib/index';
+import { Input, Row, useCopyToClipboard, useNotification } from '../lib/index';
 import * as Icons from '@web3uikit/icons';
 import { IPosition, notifyType } from '../lib/Notification/types';
 import { useState } from 'react';
@@ -7,6 +7,7 @@ import { color } from '@web3uikit/styles';
 const { StyledDivGallery, StyledDivGrid, StyledDivIcon } = styles;
 
 const IconsGallery = () => {
+    const [iconColor, setIconColor] = useState<string>(color.blue70);
     const AllIcons = Object.values(Icons);
     const AllCustomStyledIcons = AllIcons.map((Icon, index) => {
         return (
@@ -14,7 +15,7 @@ const IconsGallery = () => {
                 key={Icon.name.slice(3)}
                 onClick={() => handleClick(Icon.name.slice(3), 'info')}
             >
-                <Icon fontSize={30} color={color.blue70} />
+                <Icon fontSize={30} fill={iconColor} />
             </StyledDivIcon>
         );
     });
@@ -39,13 +40,19 @@ const IconsGallery = () => {
 
     return (
         <StyledDivGallery>
-            <Input
-                value={searchText}
-                onChange={(e) => setSearchText(e.target.value)}
-                type="text"
-                prefixIcon={<Icons.Search />}
-                style={{ margin: '50px' }}
-            />
+            <Row alignItems="center">
+                <Input
+                    value={searchText}
+                    onChange={(e) => setSearchText(e.target.value)}
+                    type="text"
+                    prefixIcon={<Icons.Search />}
+                    style={{ margin: '50px' }}
+                />
+                <input
+                    type="color"
+                    onChange={(e) => setIconColor(e.target.value)}
+                />
+            </Row>
             <StyledDivGrid>
                 {AllCustomStyledIcons.filter((Icon: JSX.Element) =>
                     Icon.key

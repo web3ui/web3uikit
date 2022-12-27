@@ -2,22 +2,30 @@ import styled, { css } from 'styled-components';
 import { breakpoints, color, resetCSS } from '@web3uikit/styles';
 import { INftCardProps } from './types';
 
-const DivStyled = styled.div`
+const DivStyled = styled.div<Partial<INftCardProps>>`
     overflow: auto;
     padding-bottom: 10px;
+    ${(p) =>
+        p.customize &&
+        css`
+            margin: ${p.customize.margin};
+        `}
 `;
 
 const DivStyledContainer = styled.div<Partial<INftCardProps>>`
     ${resetCSS};
-    background-color: ${color.white};
-    border-radius: 20px;
-    box-shadow: 0px 4px 10px rgba(48, 71, 105, 0.1);
+    background-color: ${(props) =>
+        props.customize?.backgroundColor ?? color.white};
+    border: ${(props) => props?.customize?.border ?? 'none'};
+    border-radius: ${(props) => props?.customize?.borderRadius ?? '20px'};
+    color: ${(props) => props.customize?.color ?? color.blue70};
+    font-size: ${(props) => props.customize?.fontSize ?? '16px'};
+    font-weight: ${(props) => props.customize?.fontWeight ?? '550'};
     height: min(830px, auto);
     margin: auto;
     overflow: auto;
-    padding: 24px 35px 50px;
+    padding: ${(props) => props?.customize?.padding ?? '32px'};
     text-align: center;
-
     .nft-image > * {
         border-radius: 20px;
         margin-bottom: 16px;
@@ -30,9 +38,6 @@ const DivStyledContainer = styled.div<Partial<INftCardProps>>`
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-    @media screen and (max-width: ${breakpoints.lg}) {
-        padding: 20px;
-    }
     ${(props) =>
         props.width &&
         css`
@@ -40,17 +45,15 @@ const DivStyledContainer = styled.div<Partial<INftCardProps>>`
         `}
 `;
 
-const FieldsetStyled = styled.fieldset`
-    border: 2px solid ${color.navy30};
-    border-radius: 16px;
+const FieldsetStyled = styled.fieldset<Partial<INftCardProps>>`
     margin-top: 40px;
-    padding: 12px 24px;
     text-align: left;
     legend {
-        color: ${color.navy40};
-        font-size: 14px;
-        font-weight: 550;
-        line-height: 24px;
+        color: ${color.blue70};
+        font-family: inherit;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
     }
     table,
     tr {
@@ -74,6 +77,21 @@ const FieldsetStyled = styled.fieldset`
     .address {
         color: ${color.navy40};
     }
+    ${(p) =>
+        p.detailsBorder !== 'none'
+            ? css`
+                  border: ${p.detailsBorder ?? `2px solid ${color.navy30}`};
+                  border-radius: 16px;
+                  padding: 12px 24px;
+                  legend {
+                      color: ${color.navy40};
+                      font-family: inherit;
+                      font-size: 14px;
+                      font-weight: 550;
+                      line-height: 24px;
+                  }
+              `
+            : 'border:none'}
 `;
 
 export default {

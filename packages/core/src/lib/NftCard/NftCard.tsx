@@ -5,13 +5,16 @@ import { Typography } from '../Typography';
 import { color } from '@web3uikit/styles';
 import { image } from '../../utils/utils';
 import NftDetails from './NftDetail.helper';
+import TruncateString from '../Credentials/components/TruncateString';
 
 const { DivStyled, DivStyledContainer, FieldsetStyled } = styles;
 
 const NFTCard: React.FC<INftCardProps &
     React.HTMLAttributes<HTMLDivElement>> = ({
+    backgroundColor = color.white,
     chain,
     customDetails,
+    detailsBorder,
     moralisApiResult: data,
     width = '400px',
     ...props
@@ -33,19 +36,15 @@ const NFTCard: React.FC<INftCardProps &
 
     return (
         <DivStyled className="NftCard" data-testid="test-NftCard" {...props}>
-            <DivStyledContainer width={width}>
-                <Typography
-                    variant="h3"
-                    weight="600"
-                    color={color.blueGray50}
-                    style={{ marginBottom: '52px' }}
-                >
-                    {data?.name}
-                </Typography>
+            <DivStyledContainer backgroundColor={backgroundColor} width={width}>
                 <div className="nft-image">{getImage()}</div>
                 <div className="nft-card-text">
-                    <Typography variant="h4" weight="500">
-                        {data?.token_id}
+                    <Typography variant="h4" weight="500" fontSize="20px">
+                        <TruncateString
+                            text={`${data.name} #${data?.token_id}`}
+                            fontSize="20px"
+                            textColor={color.blue70}
+                        />
                     </Typography>
                 </div>
                 {data.contract_type && (
@@ -53,7 +52,7 @@ const NFTCard: React.FC<INftCardProps &
                         {data.contract_type}
                     </Typography>
                 )}
-                <FieldsetStyled>
+                <FieldsetStyled detailsBorder={detailsBorder}>
                     <legend>Details</legend>
                     {customDetails ? (
                         customDetails

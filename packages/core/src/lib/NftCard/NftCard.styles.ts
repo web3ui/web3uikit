@@ -9,13 +9,13 @@ const DivStyled = styled.div`
 
 const DivStyledContainer = styled.div<Partial<INftCardProps>>`
     ${resetCSS};
-    background-color: ${color.white};
+    background-color: ${(props) => props.backgroundColor ?? color.white};
     border-radius: 20px;
     box-shadow: 0px 4px 10px rgba(48, 71, 105, 0.1);
     height: min(830px, auto);
     margin: auto;
     overflow: auto;
-    padding: 24px 35px 50px;
+    padding: 32px;
     text-align: center;
 
     .nft-image > * {
@@ -40,17 +40,15 @@ const DivStyledContainer = styled.div<Partial<INftCardProps>>`
         `}
 `;
 
-const FieldsetStyled = styled.fieldset`
-    border: 2px solid ${color.navy30};
-    border-radius: 16px;
+const FieldsetStyled = styled.fieldset<Partial<INftCardProps>>`
     margin-top: 40px;
-    padding: 12px 24px;
     text-align: left;
     legend {
-        color: ${color.navy40};
-        font-size: 14px;
-        font-weight: 550;
-        line-height: 24px;
+        color: ${color.blue70};
+        font-family: inherit;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 28px;
     }
     table,
     tr {
@@ -74,6 +72,21 @@ const FieldsetStyled = styled.fieldset`
     .address {
         color: ${color.navy40};
     }
+    ${(p) =>
+        p.detailsBorder !== 'none'
+            ? css`
+                  border: ${p.detailsBorder ?? `2px solid ${color.navy30}`};
+                  border-radius: 16px;
+                  padding: 12px 24px;
+                  legend {
+                      color: ${color.navy40};
+                      font-family: inherit;
+                      font-size: 14px;
+                      font-weight: 550;
+                      line-height: 24px;
+                  }
+              `
+            : 'border:none'}
 `;
 
 export default {

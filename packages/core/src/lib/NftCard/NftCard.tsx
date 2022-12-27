@@ -11,10 +11,10 @@ const { DivStyled, DivStyledContainer, FieldsetStyled } = styles;
 
 const NFTCard: React.FC<INftCardProps &
     React.HTMLAttributes<HTMLDivElement>> = ({
-    backgroundColor = color.white,
     chain,
     customDetails,
-    detailsBorder,
+    customize,
+    detailsBorder = `2px solid ${color.navy30}`,
     moralisApiResult: data,
     width = '400px',
     ...props
@@ -35,8 +35,13 @@ const NFTCard: React.FC<INftCardProps &
     };
 
     return (
-        <DivStyled className="NftCard" data-testid="test-NftCard" {...props}>
-            <DivStyledContainer backgroundColor={backgroundColor} width={width}>
+        <DivStyled
+            className="NftCard"
+            customize={customize}
+            data-testid="test-NftCard"
+            {...props}
+        >
+            <DivStyledContainer customize={customize} width={width}>
                 <div className="nft-image">{getImage()}</div>
                 <div className="nft-card-text">
                     <Typography variant="h4" weight="500" fontSize="20px">

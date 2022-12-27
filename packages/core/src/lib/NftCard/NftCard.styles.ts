@@ -2,22 +2,30 @@ import styled, { css } from 'styled-components';
 import { breakpoints, color, resetCSS } from '@web3uikit/styles';
 import { INftCardProps } from './types';
 
-const DivStyled = styled.div`
+const DivStyled = styled.div<Partial<INftCardProps>>`
     overflow: auto;
     padding-bottom: 10px;
+    ${(p) =>
+        p.customize &&
+        css`
+            margin: ${p.customize.margin};
+        `}
 `;
 
 const DivStyledContainer = styled.div<Partial<INftCardProps>>`
     ${resetCSS};
-    background-color: ${(props) => props.backgroundColor ?? color.white};
-    border-radius: 20px;
-    box-shadow: 0px 4px 10px rgba(48, 71, 105, 0.1);
+    background-color: ${(props) =>
+        props.customize?.backgroundColor ?? color.white};
+    border: ${(props) => props?.customize?.border ?? 'none'};
+    border-radius: ${(props) => props?.customize?.borderRadius ?? '20px'};
+    color: ${(props) => props.customize?.color ?? color.blue70};
+    font-size: ${(props) => props.customize?.fontSize ?? '16px'};
+    font-weight: ${(props) => props.customize?.fontWeight ?? '550'};
     height: min(830px, auto);
     margin: auto;
     overflow: auto;
-    padding: 32px;
+    padding: ${(props) => props?.customize?.padding ?? '32px'};
     text-align: center;
-
     .nft-image > * {
         border-radius: 20px;
         margin-bottom: 16px;
@@ -29,9 +37,6 @@ const DivStyledContainer = styled.div<Partial<INftCardProps>>`
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
-    }
-    @media screen and (max-width: ${breakpoints.lg}) {
-        padding: 20px;
     }
     ${(props) =>
         props.width &&

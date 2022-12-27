@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { TCustomize } from '../../interfaces/customize';
 
 export interface INftCardProps {
     /**
@@ -40,12 +41,12 @@ export interface INftCardProps {
     customDetails?: ReactNode;
 
     /**
-     * set card background color
-     */
-    backgroundColor?: string;
-
-    /**
      * set border for details section
      */
-    detailsBorder?: string | 'none';
+    detailsBorder?: string;
+
+    /**
+     * customize style
+     */
+    customize: TCustomize;
 }

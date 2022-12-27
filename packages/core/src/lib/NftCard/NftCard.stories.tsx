@@ -35,7 +35,6 @@ Default.args = {
         minter_address: '0x8be13ff71224ad525f0474553aa7f8621b856bd4',
     },
     chain: 'Ethereum',
-    backgroundColor: color.aero10,
 };
 
 export const Custom = Template.bind({});
@@ -72,6 +71,14 @@ Custom.args = {
         },
     },
     chain: 'Polygon',
-    backgroundColor: color.aero10,
+    customize: {
+        backgroundColor: color.aero10,
+        borderRadius: '10px',
+        border: '2px solid black',
+        margin: '50px',
+        padding: '20px',
+        fontSize: '16px',
+        fontWeight: '700',
+    },
     detailsBorder: 'none',
 };

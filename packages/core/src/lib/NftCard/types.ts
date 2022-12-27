@@ -37,15 +37,15 @@ export interface INftCardProps {
     /**
      * custom details component
      */
-    customDetails: ReactNode;
+    customDetails?: ReactNode;
 
     /**
      * set card background color
      */
-    backgroundColor: string;
+    backgroundColor?: string;
 
     /**
      * set border for details section
      */
-    detailsBorder: string | 'none';
+    detailsBorder?: string | 'none';
 }

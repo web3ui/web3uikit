@@ -48,5 +48,5 @@ export interface INftCardProps {
     /**
      * customize style
      */
-    customize: TCustomize;
+    customize?: TCustomize;
 }

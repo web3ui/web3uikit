@@ -28,6 +28,10 @@ import beanBoyStepTwo from './images/various/beanBoyStepTwo';
 import beanBoyStepThree from './images/various/beanBoyStepThree';
 import beanBoyStepFour from './images/various/beanBoyStepFour';
 import beanBoyStepFive from './images/various/beanBoyStepFive';
+import binaryTriangle from './images/various/binaryTriangle';
+import cat from './images/various/cat';
+import checklist from './images/various/checklist';
+import wallet from './images/various/wallet';
 
 const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
     switch (logo) {
@@ -77,6 +81,14 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
             return beanBoyStepFour(width, height);
         case 'beanBoyStepFive':
             return beanBoyStepFive(width, height);
+        case 'wallet':
+            return wallet(width, height);
+        case 'cat':
+            return cat(width, height);
+        case 'checklist':
+            return checklist(width, height);
+        case 'binaryTriangle':
+            return binaryTriangle(width, height);
         default:
             const chainLogos = Object.values(AllChains);
             const ChainLogo = chainLogos.find(

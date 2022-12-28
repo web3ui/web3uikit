@@ -1,5 +1,13 @@
 # @web3uikit/core
 
+## 0.2.34
+
+### Patch Changes
+
+-   [#969](https://github.com/web3ui/web3uikit/pull/969) [`5a3b0fbef`](https://github.com/web3ui/web3uikit/commit/5a3b0fbef71431f64c46eab3fc8db97b47e15112) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add styles for nft card
+
+*   [#971](https://github.com/web3ui/web3uikit/pull/971) [`c394fe0f7`](https://github.com/web3ui/web3uikit/commit/c394fe0f73af2d06e0138af7a3dd9c90bea5bc58) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - New illustrations
+
 ## 0.2.33
 
 ### Patch Changes

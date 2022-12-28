@@ -202,3 +202,23 @@ export const BeanBoyStepFive = Template.bind({});
 BeanBoyStepFive.args = {
     logo: 'beanBoyStepFive',
 };
+
+export const Wallet = Template.bind({});
+Wallet.args = {
+    logo: 'wallet',
+};
+
+export const Cat = Template.bind({});
+Cat.args = {
+    logo: 'cat',
+};
+
+export const BinaryTriangle = Template.bind({});
+BinaryTriangle.args = {
+    logo: 'binaryTriangle',
+};
+
+export const Checklist = Template.bind({});
+Checklist.args = {
+    logo: 'checklist',
+};

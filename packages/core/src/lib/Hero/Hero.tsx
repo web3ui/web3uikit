@@ -45,7 +45,9 @@ const Hero: React.FC<IHeroProps> = ({
             <LeftContainerDiv padding={padding} customize={customize}>
                 {title && (
                     <Typography
-                        color={textColor ?? customize?.color}
+                        color={
+                            textColor ?? customize?.color ?? color.blueGray50
+                        }
                         data-testid="test-hero-title"
                         variant="h1"
                     >
@@ -54,7 +56,9 @@ const Hero: React.FC<IHeroProps> = ({
                 )}
                 {subTitle && (
                     <Typography
-                        color={textColor ?? customize?.color}
+                        color={
+                            textColor ?? customize?.color ?? color.blueGray50
+                        }
                         data-testid="test-hero-text"
                         variant="body16"
                         weight="regular"

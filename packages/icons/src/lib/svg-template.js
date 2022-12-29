@@ -7,12 +7,21 @@ const importStatements = `
 import { SVGProps } from 'react';
 import { SVGRProps } from '../type';
 `;
+
+const props = `({
+  title,
+  titleId,
+  isResponsive=false,
+  style,
+  ...props
+}: SVGProps<SVGSVGElement> & SVGRProps)`;
+
 const template = (variables, { tpl }) => {
     return tpl`
 ${comments}
 ${importStatements}
 
-const ${variables.componentName} = (${variables.props}) => (
+const ${variables.componentName} = (${props}) => (
   ${variables.jsx}
 );
 ${variables.exports};

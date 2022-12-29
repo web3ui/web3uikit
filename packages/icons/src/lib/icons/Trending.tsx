@@ -6,6 +6,8 @@ import { SVGRProps } from '../type';
 const SvgTrending = ({
     title,
     titleId,
+    isResponsive = false,
+    style,
     ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
@@ -17,6 +19,14 @@ const SvgTrending = ({
         height="1em"
         role="img"
         aria-hidden="true"
+        style={
+            isResponsive
+                ? style
+                : {
+                      flex: 'none',
+                      ...style,
+                  }
+        }
         aria-labelledby={titleId}
         {...props}
     >

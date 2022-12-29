@@ -6,6 +6,8 @@ import { SVGRProps } from '../type';
 const SvgArrowCircleLeft = ({
     title,
     titleId,
+    isResponsive = false,
+    style,
     ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
@@ -17,6 +19,14 @@ const SvgArrowCircleLeft = ({
         width="1em"
         height="1em"
         role="img"
+        style={
+            isResponsive
+                ? style
+                : {
+                      flex: 'none',
+                      ...style,
+                  }
+        }
         aria-labelledby={titleId}
         {...props}
     >

@@ -6,6 +6,8 @@ import { SVGRProps } from '../type';
 const SvgCat = ({
     title,
     titleId,
+    isResponsive = false,
+    style,
     ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
@@ -17,6 +19,14 @@ const SvgCat = ({
         role="img"
         data-testid="test-icon"
         aria-hidden="true"
+        style={
+            isResponsive
+                ? style
+                : {
+                      flex: 'none',
+                      ...style,
+                  }
+        }
         aria-labelledby={titleId}
         {...props}
     >

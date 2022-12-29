@@ -47,11 +47,7 @@ const SectionStyled = styled.section<TStyleProps>`
     height: ${({ height }) => height || '100%'};
     max-width: 100%;
     overflow: hidden;
-
-    * {
-        color: ${(p) => p.textColor || color.white} !important;
-    }
-
+    color: ${(p) => p.textColor || color.white};
     @media (max-width: ${breakpoints.sm}) {
         align-items: center;
         text-align: center;

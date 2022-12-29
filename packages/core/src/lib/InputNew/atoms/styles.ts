@@ -18,7 +18,7 @@ const InputStyled = styled.input`
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
     &:-webkit-autofill:active {
-        transition: background-color 5000s ease-in-out 0s;
+        transition: all 5000s ease-in-out 0s;
     }
 `;
 

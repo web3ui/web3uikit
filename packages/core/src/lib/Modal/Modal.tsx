@@ -19,6 +19,7 @@ const Modal: React.FC<ModalProps> = ({
     children,
     closeButton,
     customFooter,
+    customize,
     fixedMode = false,
     hasCancel = true,
     hasFooter = true,
@@ -35,6 +36,7 @@ const Modal: React.FC<ModalProps> = ({
     onOk,
     title,
     width = '70vw',
+    zIndex = 5,
     ...props
 }: ModalProps) => {
     const [visible, setVisible] = useState(isVisible);
@@ -59,18 +61,25 @@ const Modal: React.FC<ModalProps> = ({
 
     return (
         <DivStyled
+            customize={customize}
             data-testid="test-modal"
             id={id}
             isCentered={isCentered}
             isVisible={visible}
+            zIndex={zIndex}
             {...props}
         >
-            <DivStyledWrap width={width} canOverflow={canOverflow}>
+            <DivStyledWrap
+                canOverflow={canOverflow}
+                customize={customize}
+                width={width}
+            >
                 <HeaderStyled
+                    customize={customize}
                     data-testid="test-modal-header"
-                    title={title}
                     fixedMode={fixedMode}
                     headerHasBottomBorder={headerHasBottomBorder}
+                    title={title}
                 >
                     <>
                         {typeof title == 'string' ? (
@@ -110,7 +119,11 @@ const Modal: React.FC<ModalProps> = ({
                     </>
                 </HeaderStyled>
 
-                <DivStyledContent id="content" data-testid="test-modal-content">
+                <DivStyledContent
+                    customize={customize}
+                    data-testid="test-modal-content"
+                    id="content"
+                >
                     {children}
                 </DivStyledContent>
 

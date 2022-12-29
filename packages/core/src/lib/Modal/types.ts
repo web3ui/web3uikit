@@ -1,4 +1,5 @@
 
+import { TCustomize } from '../../interfaces/customize';
 import type { ButtonProps } from '../Button';
 
 export interface ModalProps {
@@ -108,4 +109,14 @@ export interface ModalProps {
      * Whether the content of the modal can overflow.
      */
     canOverflow?: boolean;
+
+    /**
+     * set a custom z-index to the modal
+     */
+    zIndex?: number;
+
+    /**
+     * set custom styles
+     */
+    customize?: TCustomize
 }

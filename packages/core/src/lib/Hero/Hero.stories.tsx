@@ -64,6 +64,7 @@ CustomHeight.args = {
     backgroundURL:
         'https://moralis.io/wp-content/uploads/2021/06/blue-blob-background-2.svg',
     height: '200px',
+    textColor: color.white,
 };
 
 export const DappHero = Template.bind({});
@@ -82,4 +83,19 @@ DappHero.args = {
             theme="primary"
         />
     ),
+};
+
+export const CustomHero = Template.bind({});
+CustomHero.args = {
+    title: 'Custom hero title',
+    subTitle: 'Custom hero subtitle',
+    height: '200px',
+    customize: {
+        backgroundColor: color.blue70,
+        color: color.white,
+        borderRadius: '5px',
+        border: '1px solid black',
+        padding: '24px',
+        margin: '20px',
+    },
 };

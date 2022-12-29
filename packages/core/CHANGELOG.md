@@ -1,5 +1,14 @@
 # @web3uikit/core
 
+## 0.2.36
+
+### Patch Changes
+
+-   [#979](https://github.com/web3ui/web3uikit/pull/979) [`cf9e9bda4`](https://github.com/web3ui/web3uikit/commit/cf9e9bda4ef481065181a17861ecb015ef5b232d) Thanks [@BillyG83](https://github.com/BillyG83)! - InputNew - autofill text color fix
+
+-   Updated dependencies [[`2736b39f9`](https://github.com/web3ui/web3uikit/commit/2736b39f9667f840b050071af053ac2eda67d16e)]:
+    -   @web3uikit/styles@0.2.36
+
 ## 0.2.35
 
 ### Patch Changes

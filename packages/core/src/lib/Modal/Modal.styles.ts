@@ -2,6 +2,7 @@ import { ModalProps } from './types';
 import styled from 'styled-components';
 
 import { color, fonts, HexToRgb } from '@web3uikit/styles';
+
 type TStyleProps = Pick<
     ModalProps,
     | 'canOverflow'
@@ -10,6 +11,7 @@ type TStyleProps = Pick<
     | 'isCentered'
     | 'isVisible'
     | 'width'
+    | 'zIndex'
 >;
 ``;
 const overflow = (): string => {
@@ -107,7 +109,7 @@ const DivStyled = styled.div<TStyleProps>`
     position: fixed;
     right: 0;
     top: 0;
-    z-index: 5;
+    z-index: ${({ zIndex }) => zIndex};
 `;
 
 const CustomFooterStyled = styled.footer<TStyleProps>`

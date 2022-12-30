@@ -1,4 +1,5 @@
 import { CSSProperties } from 'styled-components';
+import { TCustomize } from '../../interfaces/customize';
 
 export type TAlignValues = 'left' | 'right' | 'center';
 
@@ -69,4 +70,9 @@ export interface IHeroProps {
      *  optional padding
      */
     padding?: string;
+
+    /**
+     * set custom styles
+     */
+    customize?: TCustomize;
 }

@@ -127,7 +127,7 @@ const DivStyled = styled.div<TStyleProps>`
     position: fixed;
     right: 0;
     top: 0;
-    z-index: ${(p) => p.zIndex ?? 5};
+    z-index: ${({ zIndex }) => zIndex};
 `;
 
 const CustomFooterStyled = styled.footer<TStyleProps>`

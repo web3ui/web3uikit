@@ -8,6 +8,7 @@ type TStyleProps = Pick<
     | 'align'
     | 'backgroundColor'
     | 'backgroundURL'
+    | 'customize'
     | 'height'
     | 'linearGradient'
     | 'rounded'
@@ -34,24 +35,25 @@ const setImageAlign = (align: TAlignValues) => {
 
 const SectionStyled = styled.section<TStyleProps>`
     ${resetCSS};
-    background-color: ${(p) => p.backgroundColor};
+    background-color: ${(p) =>
+        p.backgroundColor ?? p.customize?.backgroundColor ?? color.gray30};
     background-image: ${({ backgroundURL, linearGradient = '' }) =>
         backgroundURL
             ? `${linearGradient && linearGradient + ', '} url(${backgroundURL})`
             : linearGradient};
     background-repeat: no-repeat;
     background-size: contain;
-    border-radius: ${(p) => p.rounded || '0px'};
+    border: ${(p) => p.customize?.border ?? 'none'};
+    border-radius: ${(p) => p.rounded ?? p.customize?.borderRadius ?? '20px'};
+    color: ${(p) => p.textColor ?? p.customize?.color ?? color.white};
     display: flex;
-    justify-content: space-between;
+    font-size: ${(p) => p.customize?.fontSize ?? '16px'};
+    font-weight: ${(p) => p.customize?.fontWeight ?? '400'};
     height: ${({ height }) => height || '100%'};
+    justify-content: space-between;
+    margin: ${(p) => p.customize?.margin ?? '0px'};
     max-width: 100%;
     overflow: hidden;
-
-    * {
-        color: ${(p) => p.textColor || color.white} !important;
-    }
-
     @media (max-width: ${breakpoints.sm}) {
         align-items: center;
         text-align: center;
@@ -69,7 +71,7 @@ const LeftContainerDiv = styled.div<TStyleProps>`
     justify-content: center;
     align-items: flex-start;
     gap: 10px;
-    padding: ${(p) => p.padding || '20px'};
+    padding: ${(p) => p.padding ?? p.customize?.padding ?? '20px'};
     @media (max-width: ${breakpoints.sm}) {
         padding: 20px;
         width: 100%;

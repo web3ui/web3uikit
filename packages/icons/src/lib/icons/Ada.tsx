@@ -6,6 +6,8 @@ import { SVGRProps } from '../type';
 const SvgAda = ({
     title,
     titleId,
+    isResponsive = false,
+    style,
     ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
@@ -16,6 +18,14 @@ const SvgAda = ({
         height="1em"
         role="img"
         data-testid="test-icon"
+        style={
+            isResponsive
+                ? style
+                : {
+                      flex: 'none',
+                      ...style,
+                  }
+        }
         aria-labelledby={titleId}
         {...props}
     >

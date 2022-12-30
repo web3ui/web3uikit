@@ -111,10 +111,9 @@ export interface ModalProps {
     canOverflow?: boolean;
 
     /**
-     * set a custom z-index to the modal
+     * set z-index of modal. EG: 'auto', 10
      */
-    zIndex?: number;
-
+    zIndex?: string | number;
     /**
      * set custom styles
      */

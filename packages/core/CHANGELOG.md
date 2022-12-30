@@ -1,5 +1,23 @@
 # @web3uikit/core
 
+## 0.2.36
+
+### Patch Changes
+
+-   [#979](https://github.com/web3ui/web3uikit/pull/979) [`cf9e9bda4`](https://github.com/web3ui/web3uikit/commit/cf9e9bda4ef481065181a17861ecb015ef5b232d) Thanks [@BillyG83](https://github.com/BillyG83)! - InputNew - autofill text color fix
+
+-   Updated dependencies [[`2736b39f9`](https://github.com/web3ui/web3uikit/commit/2736b39f9667f840b050071af053ac2eda67d16e)]:
+    -   @web3uikit/styles@0.2.36
+
+## 0.2.35
+
+### Patch Changes
+
+-   [#972](https://github.com/web3ui/web3uikit/pull/972) [`50b96e5a4`](https://github.com/web3ui/web3uikit/commit/50b96e5a45d547c5a26e8f8012dcff50ab017e9c) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Fix hero component text color and add customize prop
+
+-   Updated dependencies [[`b132e1655`](https://github.com/web3ui/web3uikit/commit/b132e1655fcf45331b49a25934638597276c6918), [`12e63f3de`](https://github.com/web3ui/web3uikit/commit/12e63f3def663d9a37c98e76f1ab8d878245a68a)]:
+    -   @web3uikit/icons@0.2.35
+
 ## 0.2.34
 
 ### Patch Changes

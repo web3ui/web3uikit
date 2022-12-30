@@ -1,3 +1,4 @@
+export { default as NftCat } from './NftCat';
 export { default as Ada } from './Ada';
 export { default as AddUser } from './AddUser';
 export { default as Airdrop } from './Airdrop';
@@ -101,7 +102,6 @@ export { default as Monitor } from './Monitor';
 export { default as MoreVert } from './MoreVert';
 export { default as More } from './More';
 export { default as Network } from './Network';
-export { default as NftCat } from './NftCat';
 export { default as Off } from './Off';
 export { default as Oneinch } from './Oneinch';
 export { default as Opensea } from './Opensea';

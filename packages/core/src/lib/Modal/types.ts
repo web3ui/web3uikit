@@ -1,4 +1,3 @@
-
 import type { ButtonProps } from '../Button';
 
 export interface ModalProps {
@@ -108,4 +107,9 @@ export interface ModalProps {
      * Whether the content of the modal can overflow.
      */
     canOverflow?: boolean;
+
+    /**
+     * set z-index of modal. EG: 'auto', 10
+     */
+    zIndex?: string | number;
 }

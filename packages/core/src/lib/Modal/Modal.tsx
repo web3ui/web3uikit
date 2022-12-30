@@ -35,6 +35,7 @@ const Modal: React.FC<ModalProps> = ({
     onOk,
     title,
     width = '70vw',
+    zIndex = 5,
     ...props
 }: ModalProps) => {
     const [visible, setVisible] = useState(isVisible);
@@ -63,6 +64,7 @@ const Modal: React.FC<ModalProps> = ({
             id={id}
             isCentered={isCentered}
             isVisible={visible}
+            zIndex={zIndex}
             {...props}
         >
             <DivStyledWrap width={width} canOverflow={canOverflow}>

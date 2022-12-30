@@ -3,12 +3,16 @@ import { color } from '@web3uikit/styles';
 import styles from './Hero.styles';
 import { IHeroProps } from './types';
 
-const { ImageStyled, LeftContainerDiv, RightContainerDiv, SectionStyled } =
-    styles;
+const {
+    ImageStyled,
+    LeftContainerDiv,
+    RightContainerDiv,
+    SectionStyled,
+} = styles;
 
 const Hero: React.FC<IHeroProps> = ({
     align = 'center',
-    backgroundColor = `${color.gray30}`,
+    backgroundColor,
     backgroundURL = '',
     children,
     customImage = {
@@ -16,12 +20,13 @@ const Hero: React.FC<IHeroProps> = ({
         align: 'center',
         styles: {},
     },
+    customize,
     height = '100%',
     linearGradient,
     padding,
-    rounded = '20px',
+    rounded,
     subTitle,
-    textColor = `${color.blueGray50}`,
+    textColor,
     title,
     ...props
 }) => {
@@ -30,16 +35,19 @@ const Hero: React.FC<IHeroProps> = ({
             backgroundColor={backgroundColor}
             linearGradient={linearGradient}
             backgroundURL={backgroundURL}
+            customize={customize}
             data-testid="test-hero"
             height={height}
             rounded={rounded}
             textColor={textColor}
             {...props}
         >
-            <LeftContainerDiv padding={padding}>
+            <LeftContainerDiv padding={padding} customize={customize}>
                 {title && (
                     <Typography
-                        color={textColor}
+                        color={
+                            textColor ?? customize?.color ?? color.blueGray50
+                        }
                         data-testid="test-hero-title"
                         variant="h1"
                     >
@@ -48,7 +56,9 @@ const Hero: React.FC<IHeroProps> = ({
                 )}
                 {subTitle && (
                     <Typography
-                        color={textColor}
+                        color={
+                            textColor ?? customize?.color ?? color.blueGray50
+                        }
                         data-testid="test-hero-text"
                         variant="body16"
                         weight="regular"

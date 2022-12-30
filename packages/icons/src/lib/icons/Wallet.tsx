@@ -6,6 +6,8 @@ import { SVGRProps } from '../type';
 const SvgWallet = ({
     title,
     titleId,
+    isResponsive = false,
+    style,
     ...props
 }: SVGProps<SVGSVGElement> & SVGRProps) => (
     <svg
@@ -18,6 +20,14 @@ const SvgWallet = ({
         role="img"
         data-testid="test-icon"
         aria-hidden="true"
+        style={
+            isResponsive
+                ? style
+                : {
+                      flex: 'none',
+                      ...style,
+                  }
+        }
         aria-labelledby={titleId}
         {...props}
     >

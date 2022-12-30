@@ -18,24 +18,27 @@ export const DemoWithImage = Template.bind({});
 DemoWithImage.args = {
     rounded: '20px',
     align: 'right',
-    textColor: '#fff',
     backgroundColor: color.blue40,
     height: '200px',
     padding: '40px',
     children: (
         <>
-            <Typography variant="h3">Need Help?</Typography>
-            <Typography variant="h1">Looking to get started?</Typography>
+            <Typography variant="h3" color={color.white}>
+                Need Help?
+            </Typography>
+            <Typography variant="h1" color={color.white}>
+                Looking to get started?
+            </Typography>
             <Button
                 text="Book a demo"
                 icon={<ArrowCircleRight fill={color.white} fontSize={24} />}
-                theme="outline"
+                theme="custom"
                 isTransparent={true}
                 iconLayout="trailing"
-                //@ts-ignore
-                style={{
+                customize={{
+                    backgroundColor: 'transparent',
                     border: '1px solid white',
-                    background: 'transparent',
+                    color: color.white,
                 }}
             />
         </>
@@ -61,6 +64,7 @@ CustomHeight.args = {
     backgroundURL:
         'https://moralis.io/wp-content/uploads/2021/06/blue-blob-background-2.svg',
     height: '200px',
+    textColor: color.white,
 };
 
 export const DappHero = Template.bind({});
@@ -79,4 +83,19 @@ DappHero.args = {
             theme="primary"
         />
     ),
+};
+
+export const CustomHero = Template.bind({});
+CustomHero.args = {
+    title: 'Custom hero title',
+    subTitle: 'Custom hero subtitle',
+    height: '200px',
+    customize: {
+        backgroundColor: color.blue70,
+        color: color.white,
+        borderRadius: '5px',
+        border: '1px solid black',
+        padding: '24px',
+        margin: '20px',
+    },
 };

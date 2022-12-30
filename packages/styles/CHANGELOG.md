@@ -1,5 +1,11 @@
 # @web3uikit/styles
 
+## 0.2.36
+
+### Patch Changes
+
+-   [#977](https://github.com/web3ui/web3uikit/pull/977) [`2736b39f9`](https://github.com/web3ui/web3uikit/commit/2736b39f9667f840b050071af053ac2eda67d16e) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add new color
+
 ## 0.2.26
 
 ### Patch Changes

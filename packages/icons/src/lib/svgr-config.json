@@ -6,6 +6,7 @@
     "replaceAttrValues": {},
     "svgProps": {
         "data-testid": "test-icon",
-        "aria-hidden": "true"
+        "aria-hidden": "true",
+        "style": "{isResponsive ? style : {flex:'none',...style} }"
     }
 }

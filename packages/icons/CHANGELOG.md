@@ -1,5 +1,13 @@
 # @web3uikit/icons
 
+## 0.2.35
+
+### Patch Changes
+
+-   [#976](https://github.com/web3ui/web3uikit/pull/976) [`b132e1655`](https://github.com/web3ui/web3uikit/commit/b132e1655fcf45331b49a25934638597276c6918) Thanks [@BillyG83](https://github.com/BillyG83)! - icons MessageSquare and CheckCircle use color
+
+*   [#974](https://github.com/web3ui/web3uikit/pull/974) [`12e63f3de`](https://github.com/web3ui/web3uikit/commit/12e63f3def663d9a37c98e76f1ab8d878245a68a) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Update all icons with isResponsive prop
+
 ## 0.2.30
 
 ### Patch Changes

@@ -1,6 +1,8 @@
+import { color } from '@web3uikit/styles';
 import React from 'react';
 import { getEllipsisTxt } from '../../utils/utils';
 import { CopyButton } from '../CopyButton';
+import TruncateString from '../Credentials/components/TruncateString';
 import { INftCardProps } from './types';
 
 const NftDetails: React.FC<{
@@ -28,7 +30,13 @@ const NftDetails: React.FC<{
                 )}
                 <tr>
                     <th>Token Id</th>
-                    <td className="card-text">{data?.token_id}</td>
+                    <td className="card-text">
+                        <TruncateString
+                            text={data?.token_id}
+                            fontSize="16px"
+                            textColor={color.blueGray50}
+                        />
+                    </td>
                 </tr>
                 <tr>
                     <th>Symbol</th>

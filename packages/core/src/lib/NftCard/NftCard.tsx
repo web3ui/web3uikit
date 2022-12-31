@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { INftCardProps } from './types';
 import styles from './NftCard.styles';
 import { Typography } from '../Typography';
@@ -20,6 +20,8 @@ const NFTCard: React.FC<INftCardProps &
     width = '400px',
     ...props
 }) => {
+    const [isError, setIsError] = useState(false);
+
     if (!data || !data.metadata) return <DivStyled>No metadata</DivStyled>;
 
     const getImage = () => {
@@ -31,6 +33,7 @@ const NFTCard: React.FC<INftCardProps &
                     JSON.parse(String(data.metadata))?.image_url ||
                     JSON.parse(String(data.metadata))?.file,
                 JSON.parse(String(data.metadata))?.type,
+                () => setIsError(true),
             );
         } catch (error) {
             return <Illustration logo="lazyNft" />;
@@ -45,7 +48,9 @@ const NFTCard: React.FC<INftCardProps &
             {...props}
         >
             <DivStyledContainer customize={customize} width={width}>
-                <div className="nft-image">{getImage()}</div>
+                <div className="nft-image">
+                    {isError ? <Illustration logo="lazyNft" /> : getImage()}
+                </div>
                 <div className="nft-card-text">
                     <Typography variant="h4" weight="500" fontSize="20px">
                         <TruncateString

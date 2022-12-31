@@ -37,7 +37,7 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
     const listRef = useRef<HTMLUListElement>(null);
     const searchRef = useRef<HTMLInputElement>(null);
     // Active descendant. Numbers are easier to manipulate than element IDs.
-    const [activeDescendantIndex, setActiveDescendantIndex] = useState(0);
+    const [activeDescendantIndex, setActiveDescendantIndex] = useState(-1);
     const [searchTerm, setSearchTerm] = useState('');
 
     // computed
@@ -135,12 +135,16 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
         }
     });
 
-    // effect 2. active descendant
     useEffect(() => {
-        if (visibleIndices.indexOf(activeDescendantIndex) === -1) {
-            setActiveDescendantIndex(visibleIndices[0] ?? 0);
+        // remove active hovered element when select menu is closed
+        if (!isOpen) {
+            setActiveDescendantIndex(-1);
         }
-    }, [activeDescendantIndex, visibleIndices]);
+        // scroll to first element when there is no active hovered element
+        if (activeDescendantIndex === -1 && isOpen) {
+            scrollTo(listRef.current, `#${optionId(0)}`);
+        }
+    }, [isOpen]);
 
     return (
         <MenuStyledWrapper

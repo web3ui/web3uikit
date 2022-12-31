@@ -19,8 +19,13 @@ export const manipulateLink = (imgLink: string) => {
 export const image = (
     animation?: string,
     image?: string,
+    type?: string,
 ): React.ReactElement => {
-    if (animation?.includes('.mp4') || image?.includes('.mp4')) {
+    if (
+        animation?.includes('.mp4') ||
+        image?.includes('.mp4') ||
+        type?.includes('video')
+    ) {
         return (
             <video controls autoPlay loop muted>
                 <source

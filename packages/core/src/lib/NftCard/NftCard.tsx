@@ -6,6 +6,7 @@ import { color } from '@web3uikit/styles';
 import { image } from '../../utils/utils';
 import NftDetails from './NftDetail.helper';
 import TruncateString from '../Credentials/components/TruncateString';
+import { Illustration } from '../Illustrations';
 
 const { DivStyled, DivStyledContainer, FieldsetStyled } = styles;
 
@@ -27,10 +28,12 @@ const NFTCard: React.FC<INftCardProps &
             return image(
                 JSON.parse(String(data.metadata))?.animation_url,
                 JSON.parse(String(data.metadata))?.image ||
-                    JSON.parse(String(data.metadata))?.image_url,
+                    JSON.parse(String(data.metadata))?.image_url ||
+                    JSON.parse(String(data.metadata))?.file,
+                JSON.parse(String(data.metadata))?.type,
             );
         } catch (error) {
-            return null;
+            return <Illustration logo="lazyNft" />;
         }
     };
 

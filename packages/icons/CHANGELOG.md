@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.2.37
+
+### Patch Changes
+
+-   [#985](https://github.com/web3ui/web3uikit/pull/985) [`d9adcc1c8`](https://github.com/web3ui/web3uikit/commit/d9adcc1c8d91ddd091d4340351d531dc9de07c07) Thanks [@BillyG83](https://github.com/BillyG83)! - Icons added: Search Check Swap Target
+
 ## 0.2.35
 
 ### Patch Changes

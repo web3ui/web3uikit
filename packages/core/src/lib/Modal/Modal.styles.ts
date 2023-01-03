@@ -1,11 +1,11 @@
 import { ModalProps } from './types';
-import styled from 'styled-components';
-
+import styled, { css } from 'styled-components';
 import { color, fonts, HexToRgb } from '@web3uikit/styles';
 
 type TStyleProps = Pick<
     ModalProps,
     | 'canOverflow'
+    | 'customize'
     | 'fixedMode'
     | 'hasCancel'
     | 'isCentered'
@@ -14,6 +14,7 @@ type TStyleProps = Pick<
     | 'zIndex'
 >;
 ``;
+
 const overflow = (): string => {
     return `
             overflow: auto;
@@ -28,28 +29,40 @@ const overflow = (): string => {
 const DivStyledWrap = styled.div<TStyleProps>`
     ${(p) => !p.canOverflow && overflow()}
     ${fonts.text};
-    background-color: ${color.white};
-    border-radius: 20px;
+    background-color: ${(p) => p.customize?.backgroundColor ?? color.white};
+    border: ${(p) => p.customize?.border ?? 'none'};
+    border-radius: ${(p) => p.customize?.borderRadius ?? '20px'};
     box-shadow: 0 4px 10px rgba(48, 71, 105, 0.1);
-    margin: 80px auto;
+    margin: ${(p) => p.customize?.margin ?? '80px auto'};
     max-width: ${(p) => p.width};
     width: 96%;
 `;
 
-const HeaderStyled = styled.header<{
-    title: any;
-    fixedMode: boolean;
-    headerHasBottomBorder: boolean;
-}>`
-    ${(p) => p.fixedMode && 'position: sticky; top: 0;background-color: white;'}
+type THeaderStyles = Pick<
+    ModalProps,
+    'fixedMode' | 'headerHasBottomBorder' | 'customize'
+> & { title: any };
+
+const HeaderStyled = styled.header<THeaderStyles>`
+    ${(p) =>
+        p.fixedMode &&
+        css`
+            position: sticky;
+            top: 0;
+            background-color: white;
+        `};
     ${(p) =>
         typeof p.title === 'string' &&
-        `h3 {
-        color: ${color.navy40};
-        padding-right: 8px;
-        margin-block-start: 0;
-        margin-block-end: 0;
-    }`}
+        css`
+            h3 {
+                color: ${p.customize?.color ?? color.navy40};
+                font-size: ${p.customize?.fontSize};
+                font-weight: ${p.customize?.fontWeight};
+                margin-block-end: 0;
+                margin-block-start: 0;
+                padding-right: 8px;
+            }
+        `};
     align-items: center;
     display: flex;
     padding: 24px 32px 20px;
@@ -72,13 +85,18 @@ const HeaderStyled = styled.header<{
     }
 `;
 
-const DivStyledContent = styled.div`
-    padding: 0px 32px 0px;
+const DivStyledContent = styled.div<Pick<TStyleProps, 'customize'>>`
+    padding: ${(p) => p.customize?.padding ?? '0px 32px 0px'};
 `;
 
 const FooterStyled = styled.footer<TStyleProps>`
     ${(p) =>
-        p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
+        p.fixedMode &&
+        css`
+            position: sticky;
+            bottom: 0;
+            background-color: white;
+        `};
     border-top: 1px solid ${color.navy20};
     display: flex;
     flex-wrap: wrap;
@@ -114,7 +132,12 @@ const DivStyled = styled.div<TStyleProps>`
 
 const CustomFooterStyled = styled.footer<TStyleProps>`
     ${(p) =>
-        p.fixedMode && 'position: sticky;bottom: 0;background-color: white;'}
+        p.fixedMode &&
+        css`
+            position: sticky;
+            bottom: 0;
+            background-color: white;
+        `}
     border-top: 1px solid ${color.navy20};
     display: flex;
     padding: 0px 32px 32px;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import NftCard from './NftCard';
 import { color } from '@web3uikit/styles';
@@ -71,6 +71,79 @@ Custom.args = {
         },
     },
     chain: 'Polygon',
+    customize: {
+        backgroundColor: color.aero10,
+        borderRadius: '10px',
+        border: '2px solid black',
+        margin: '50px',
+        padding: '20px',
+        fontSize: '16px',
+        fontWeight: '700',
+    },
+    detailsBorder: 'none',
+};
+export const PalmNetworkNft = Template.bind({});
+PalmNetworkNft.args = {
+    moralisApiResult: {
+        block_number: '',
+        owner_of: '',
+        transfer_index: [],
+        token_address: '0x19d4f9a260af1d7e0e99a32dbe418956af875c25',
+        token_id:
+            '10082949885042994343756379319869424059266282382079623606537702675585376546605',
+        amount: '1',
+        token_hash: 'fffe8584415ba3cdc8f68d787bafe94e',
+        block_number_minted: '2118553',
+
+        contract_type: 'ERC1155',
+        name: 'DC COMICS',
+        symbol: 'DCD',
+        token_uri:
+            'https://ipfs.moralis.io:2053/ipfs/bafybeifnml5ackajmuz7ylmw6zxnpdydpuwiscxoi4kn2srgkrzjjglwiq',
+        metadata:
+            '{"name":"Val-Zod, Superman","type":"video","description":"With Kal-El brainwashed by Darkseid and now a malevolent supervillain, a brave champion must rise to face him - and that comes in the form of Val-Zod, the new Superman! In this extra-sized issue, Val-Zod finally accepts his role as the new Superman of Earth 2 as he faces the twisted, brutal original Superman.  Val-Zod\'s Superman graces a cover in Andy Kubert\'s 2014 cover of Earth 2 #25: Rise of a Superman.","image":"ipfs://bafybeidwamf4f2vtfs3ocbfvbvtlmelj2ysvn3vxx7pkxriktmtchqzpoy","properties":{"Character":"Superman","Tier":"Rare"}}',
+        last_token_uri_sync: '2022-11-12T08:23:40.884Z',
+        last_metadata_sync: '2022-11-12T08:24:27.705Z',
+        minter_address: "ERC1155 tokens don't have a single minter",
+    },
+    chain: 'Palm',
+    customize: {
+        backgroundColor: color.aero10,
+        borderRadius: '10px',
+        border: '2px solid black',
+        margin: '50px',
+        padding: '20px',
+        fontSize: '16px',
+        fontWeight: '700',
+    },
+    detailsBorder: 'none',
+};
+
+export const ErrorNft = Template.bind({});
+ErrorNft.args = {
+    moralisApiResult: {
+        block_number: '',
+        owner_of: '',
+        transfer_index: [],
+        token_address: '0x19d4f9a260af1d7e0e99a32dbe418956af875c25',
+        token_id:
+            '86275255655979606840825330240032284343267514139596198785629754523673095289802',
+        amount: '1',
+        token_hash: 'ffffd87563e6c69ee9873dc05ad15369',
+        block_number_minted: '2447532',
+
+        contract_type: 'ERC1155',
+        name: 'DC COMICS',
+        symbol: 'DCD',
+        token_uri:
+            'https://ipfs.moralis.io:2053/ipfs/bafybeifyobjq4m4ab2thdvk5cc67dtwcdwrysqaxiogkcq5pvu7fcqpk2a',
+        metadata:
+            '{"name":"Harley Quinn","type":"video","description":"Harley Quinn and her henchmen - the Quinntets - are anxious to score some moolah in 2001\'s Harley Quinn #6 Who Wants to Rob A Millionaire? With Cover by Terry Dodson. Harley finds that being the leader of the pack isn\'t all it\'s cracked up to be. She figures the best way to keep the puppies at bay is to rob someone very rich. Who better than Bruce Wayne?","image":"https://ipfs.io/ipfs/QmWVwD9MSprkmiPt3cFCWGtEiaLisMp8QcxCMHMURBai3e","properties":{"Character":"Harley Quinn","Tier":"Rare"}}',
+        last_token_uri_sync: '2022-12-30T11:53:47.083Z',
+        last_metadata_sync: '2022-12-30T11:53:49.222Z',
+        minter_address: "ERC1155 tokens don't have a single minter",
+    },
+    chain: 'Palm',
     customize: {
         backgroundColor: color.aero10,
         borderRadius: '10px',

@@ -36,6 +36,7 @@ const color = {
     purple10: '#F3EEFB',
     purple20: '#E9C4FF',
     purple50: '#9B22FF',
+    purple60: '#6012A1',
     red10: '#FDF0F0',
     red30: '#FF6969',
     red40: '#E95557',

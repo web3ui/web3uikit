@@ -1,3 +1,5 @@
+import { TCustomize } from '../../interfaces/customize';
+
 export type Position = 'top' | 'bottom' | 'left' | 'right';
 
 export interface TooltipProps {
@@ -40,4 +42,14 @@ export interface TooltipProps {
      * Set color of the tooltip content background
      */
     bgColor?: string;
+
+    /**
+     * to set the arrow size - use responsibly
+     */
+    arrowSize?: number;
+
+    /**
+     * set custom styles for tooltip
+     */
+    customize?: TCustomize;
 }

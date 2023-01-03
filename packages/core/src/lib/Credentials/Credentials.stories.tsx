@@ -78,3 +78,10 @@ Customize.args = {
     text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
     textColor: 'white',
 };
+
+export const IconWithTooltips = Template.bind({});
+IconWithTooltips.args = {
+    text: 'https://xj5hyiafwkhn.moralis.io:2053/servers',
+    hasIconTooltip: true,
+    hiddenText: ' **** '.repeat(8),
+};

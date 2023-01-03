@@ -37,11 +37,11 @@ const PreformattedStyled = styled.pre`
     }
 `;
 
-const ToolsStyled = styled.div`
+const ToolsStyled = styled.div<Pick<ICredentialsProps, 'hasIconTooltip'>>`
     align-self: flex-end;
     display: flex;
-    font-size: 24px;
     margin-left: 8px;
+    ${(props) => !props.hasIconTooltip && `font-size: 24px`};
 `;
 
 const DividerStyled = styled.div`

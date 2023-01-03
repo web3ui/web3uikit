@@ -54,6 +54,11 @@ export interface ICredentialsProps
      * This event will fire when hideButton clicked to reveal hidden text only
      */
     onReveal?: () => void;
+
+    /**
+     * credentials copy and hide icon has tooltips
+     */
+    hasIconTooltip?: boolean;
 }
 export interface ICredentialsHeaderProps {
     /**

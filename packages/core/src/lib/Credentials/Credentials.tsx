@@ -7,6 +7,7 @@ import CredentialsHeader from './components/CredentialsHeader';
 import { HideButton } from '../HideButton';
 import { CopyButton } from '../CopyButton';
 import TruncateString from './components/TruncateString';
+import { Tooltip } from '../Tooltip';
 
 const {
     CredentialsStyled,
@@ -30,6 +31,7 @@ const Credentials: FC<ICredentialsProps> = ({
     width = 'auto',
     onCopy,
     onReveal,
+    hasIconTooltip = false,
     ...props
 }) => {
     const [isValueHidden, setIsValueHidden] = useState(isHidden);
@@ -39,10 +41,9 @@ const Credentials: FC<ICredentialsProps> = ({
 
     useEffect(() => setIsValueHidden(isHidden), [isHidden]);
 
-    useEffect(
-        () => setIsMultiline((text.match(/\n/g) || []).length > 0),
-        [text],
-    );
+    useEffect(() => setIsMultiline((text.match(/\n/g) || []).length > 0), [
+        text,
+    ]);
 
     return (
         <CredentialsStyled
@@ -89,25 +90,72 @@ const Credentials: FC<ICredentialsProps> = ({
                         )}
                     </Typography>
                 </DivWrapperStyled>
-                <ToolsStyled data-testid="test-credentials-tools">
-                    {hasHideButton && (
-                        <HideButton
-                            onToggle={() => {
-                                setIsValueHidden(!isValueHidden);
-                                if (isValueHidden) onReveal && onReveal();
-                            }}
-                            isHidden={isValueHidden}
-                        />
-                    )}
+                <ToolsStyled
+                    data-testid="test-credentials-tools"
+                    hasIconTooltip={hasIconTooltip}
+                >
+                    {hasHideButton &&
+                        (hasIconTooltip ? (
+                            <Tooltip
+                                content={isValueHidden ? 'View' : 'Hide'}
+                                position="bottom"
+                                arrowSize={4}
+                                customize={{
+                                    fontSize: '12px',
+                                    fontWeight: '400',
+                                    margin: 'auto 0',
+                                    padding: '4px 8px',
+                                }}
+                                children={
+                                    <HideButton
+                                        onToggle={() => {
+                                            setIsValueHidden(!isValueHidden);
+                                            if (isValueHidden)
+                                                onReveal && onReveal();
+                                        }}
+                                        isHidden={isValueHidden}
+                                    />
+                                }
+                            />
+                        ) : (
+                            <HideButton
+                                onToggle={() => {
+                                    setIsValueHidden(!isValueHidden);
+                                    if (isValueHidden) onReveal && onReveal();
+                                }}
+                                isHidden={isValueHidden}
+                            />
+                        ))}
                     {hasHideButton && hasCopyButton && <DividerStyled />}
-                    {hasCopyButton && (
-                        <CopyButton
-                            fill={customize?.color}
-                            iconSize={24}
-                            onCopy={onCopy}
-                            text={text}
-                        />
-                    )}
+                    {hasCopyButton &&
+                        (hasIconTooltip ? (
+                            <Tooltip
+                                content={'Copy'}
+                                position="bottom"
+                                arrowSize={4}
+                                customize={{
+                                    fontSize: '12px',
+                                    fontWeight: '400',
+                                    margin: 'auto 0',
+                                    padding: '4px 8px',
+                                }}
+                                children={
+                                    <CopyButton
+                                        fill={customize?.color}
+                                        iconSize={24}
+                                        onCopy={onCopy}
+                                        text={text}
+                                    />
+                                }
+                            />
+                        ) : (
+                            <CopyButton
+                                fill={customize?.color}
+                                iconSize={24}
+                                onCopy={onCopy}
+                                text={text}
+                            />
+                        ))}
                 </ToolsStyled>
             </PreformattedStyled>
         </CredentialsStyled>

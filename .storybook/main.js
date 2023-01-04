@@ -39,6 +39,9 @@ module.exports = {
                 fs: require.resolve('rollup-plugin-node-builtins'),
             },
         };
+        config.optimizeDeps = {
+            include: ['msw-storybook-addon'],
+        };
         return config;
     },
     webpackFinal: async (config) => {

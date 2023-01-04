@@ -24,6 +24,11 @@ export interface ICredentialsProps
     hasHideButton?: boolean;
 
     /**
+     * credentials copy and hide icon has tooltips
+     */
+    hasIconTooltip?: boolean;
+
+    /**
      * replaced text in case if value is hidden
      * default is "•••••••••••••••••••••••••••••••"
      */
@@ -33,6 +38,11 @@ export interface ICredentialsProps
      * is hidden state
      */
     isHidden?: boolean;
+
+    /**
+     * This event will fire when hideButton clicked to reveal hidden text only
+     */
+    onReveal?: () => void;
 
     /**
      * displayable text
@@ -49,11 +59,6 @@ export interface ICredentialsProps
      * default is "auto"
      */
     width?: string;
-
-    /**
-     * This event will fire when hideButton clicked to reveal hidden text only
-     */
-    onReveal?: () => void;
 }
 export interface ICredentialsHeaderProps {
     /**

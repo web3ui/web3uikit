@@ -1,6 +1,17 @@
+import { TCustomize } from '../../interfaces/customize';
+
 export type Position = 'top' | 'bottom' | 'left' | 'right';
 
 export interface TooltipProps {
+    /**
+     * to set the arrow size - use responsibly
+     */
+    arrowSize?: number;
+
+    /**
+     * Set color of the tooltip content background
+     */
+    bgColor?: string;
     /**
      * Set children which should have a tooltip
      */
@@ -10,6 +21,11 @@ export interface TooltipProps {
      * Set element/text that will be shown within the tooltip
      */
     content: JSX.Element | string;
+
+    /**
+     * set custom styles for tooltip
+     */
+    customize?: TCustomize;
 
     /**
      * Set position of tooltip
@@ -35,9 +51,4 @@ export interface TooltipProps {
      * Moves the body +/- up/down/left/right (use responsibly, arrow can move the the X / Y axis indefinitely)
      */
     moveBody?: number;
-
-    /**
-     * Set color of the tooltip content background
-     */
-    bgColor?: string;
 }

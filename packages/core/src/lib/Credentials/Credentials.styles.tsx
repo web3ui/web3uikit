@@ -27,6 +27,7 @@ const CredentialsStyled = styled.div<TStyleProps>`
 
 const PreformattedStyled = styled.pre`
     ${resetCSS};
+    align-items: center;
     display: flex;
     height: max-content;
     justify-content: space-between;
@@ -66,8 +67,15 @@ const DivWrapperStyled = styled.div<TDivWrapper>`
     }
 `;
 
+const DivIconWrapperStyled = styled.div`
+    max-height: 24px;
+    max-width: 24px;
+    padding: 8px;
+`;
+
 export default {
     CredentialsStyled,
+    DivIconWrapperStyled,
     DivWrapperStyled,
     DividerStyled,
     PreformattedStyled,

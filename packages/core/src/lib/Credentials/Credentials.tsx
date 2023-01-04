@@ -4,10 +4,9 @@ import styles from './Credentials.styles';
 import { color } from '@web3uikit/styles';
 import { ICredentialsProps } from './types';
 import CredentialsHeader from './components/CredentialsHeader';
-import { HideButton } from '../HideButton';
-import { CopyButton } from '../CopyButton';
 import TruncateString from './components/TruncateString';
-import { Tooltip } from '../Tooltip';
+import CustomCopyButton from './components/CustomCopyButton';
+import CustomHideButton from './components/CustomHideButton';
 
 const {
     CredentialsStyled,
@@ -94,68 +93,27 @@ const Credentials: FC<ICredentialsProps> = ({
                     data-testid="test-credentials-tools"
                     hasIconTooltip={hasIconTooltip}
                 >
-                    {hasHideButton &&
-                        (hasIconTooltip ? (
-                            <Tooltip
-                                content={isValueHidden ? 'View' : 'Hide'}
-                                position="bottom"
-                                arrowSize={4}
-                                customize={{
-                                    fontSize: '12px',
-                                    fontWeight: '400',
-                                    margin: 'auto 0',
-                                    padding: '4px 8px',
-                                }}
-                                children={
-                                    <HideButton
-                                        onToggle={() => {
-                                            setIsValueHidden(!isValueHidden);
-                                            if (isValueHidden)
-                                                onReveal && onReveal();
-                                        }}
-                                        isHidden={isValueHidden}
-                                    />
-                                }
-                            />
-                        ) : (
-                            <HideButton
-                                onToggle={() => {
-                                    setIsValueHidden(!isValueHidden);
-                                    if (isValueHidden) onReveal && onReveal();
-                                }}
-                                isHidden={isValueHidden}
-                            />
-                        ))}
-                    {hasHideButton && hasCopyButton && <DividerStyled />}
-                    {hasCopyButton &&
-                        (hasIconTooltip ? (
-                            <Tooltip
-                                content={'Copy'}
-                                position="bottom"
-                                arrowSize={4}
-                                customize={{
-                                    fontSize: '12px',
-                                    fontWeight: '400',
-                                    margin: 'auto 0',
-                                    padding: '4px 8px',
-                                }}
-                                children={
-                                    <CopyButton
-                                        fill={customize?.color}
-                                        iconSize={24}
-                                        onCopy={onCopy}
-                                        text={text}
-                                    />
-                                }
-                            />
-                        ) : (
-                            <CopyButton
-                                fill={customize?.color}
-                                iconSize={24}
-                                onCopy={onCopy}
-                                text={text}
-                            />
-                        ))}
+                    {hasHideButton && (
+                        <CustomHideButton
+                            hasIconTooltip={hasIconTooltip}
+                            isValueHidden={isValueHidden}
+                            onHideToggle={() => {
+                                setIsValueHidden((prev) => !prev);
+                                if (isValueHidden) onReveal?.();
+                            }}
+                        />
+                    )}
+                    {hasHideButton && hasCopyButton && !hasIconTooltip && (
+                        <DividerStyled />
+                    )}
+                    {hasCopyButton && (
+                        <CustomCopyButton
+                            customize={customize}
+                            hasIconTooltip={hasIconTooltip}
+                            onCopy={onCopy}
+                            text={text}
+                        />
+                    )}
                 </ToolsStyled>
             </PreformattedStyled>
         </CredentialsStyled>

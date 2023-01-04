@@ -73,6 +73,11 @@ Optimism.args = {
 };
 
 /* PLOP_INJECT_CHAIN */
+export const Aptos = Template.bind({});
+Aptos.args = {
+    chain: 'aptos',
+    size: '48px',
+};
 export const Palm = Template.bind({});
 Palm.args = {
     chain: 'palm',

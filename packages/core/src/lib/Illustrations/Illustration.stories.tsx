@@ -76,6 +76,10 @@ Optimism.args = {
 };
 
 /* PLOP_INJECT_CHAIN */
+export const Aptos = BackgroundColoredTemplate.bind({});
+Aptos.args = {
+    logo: 'aptos',
+};
 export const Palm = BackgroundColoredTemplate.bind({});
 Palm.args = {
     logo: 'palm',

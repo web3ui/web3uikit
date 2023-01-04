@@ -91,6 +91,13 @@ Optimism.args = {
 };
 
 /* PLOP_INJECT_CHAIN */
+export const Aptos = Template.bind({});
+Aptos.args = {
+    chain: 'aptos',
+    chainType: 'Network',
+    bgColor: chainLogoData['aptos'].color,
+    btnText: 'View Endpoints',
+};
 export const Palm = Template.bind({});
 Palm.args = {
     chain: 'palm',

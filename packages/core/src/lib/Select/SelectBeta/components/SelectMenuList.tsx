@@ -140,10 +140,6 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
         if (!isOpen) {
             setActiveDescendantIndex(-1);
         }
-        // scroll to first element when there is no active hovered element
-        if (activeDescendantIndex === -1 && isOpen && listRef.current) {
-            scrollTo(listRef.current, `#${optionId(0)}`);
-        }
     }, [isOpen]);
 
     return (

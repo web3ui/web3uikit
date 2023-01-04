@@ -20,17 +20,17 @@ const Credentials: FC<ICredentialsProps> = ({
     customize,
     hasCopyButton = true,
     hasHideButton = true,
+    hasIconTooltip = false,
     hiddenText = '•••••••••••••••••••••••••••••••',
     icon,
     isHidden = false,
+    onCopy,
+    onReveal,
     text,
     textColor = customize?.color || color.blue70,
     title,
     titleColor,
     width = 'auto',
-    onCopy,
-    onReveal,
-    hasIconTooltip = false,
     ...props
 }) => {
     const [isValueHidden, setIsValueHidden] = useState(isHidden);
@@ -46,8 +46,8 @@ const Credentials: FC<ICredentialsProps> = ({
 
     return (
         <CredentialsStyled
-            data-testid="test-credentials"
             customize={customize}
+            data-testid="test-credentials"
             width={width}
             {...props}
         >
@@ -77,14 +77,14 @@ const Credentials: FC<ICredentialsProps> = ({
                             text
                         ) : (
                             <TruncateString
+                                fontSize={customize?.fontSize ?? '16px'}
                                 text={text}
-                                percentageOfCharsAfterTrunc={55}
                                 textColor={
                                     textColor ??
                                     customize?.color ??
                                     color.blue70
                                 }
-                                fontSize={customize?.fontSize ?? '16px'}
+                                percentageOfCharsAfterTrunc={55}
                             />
                         )}
                     </Typography>

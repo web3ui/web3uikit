@@ -9,19 +9,10 @@ const { DivIconWrapperStyled } = styles;
 const CustomHideButton: React.FC<Pick<ICredentialsProps, 'hasIconTooltip'> & {
     isValueHidden: boolean;
     onHideToggle: () => void;
-}> = ({ isValueHidden, onHideToggle, hasIconTooltip }) => {
+}> = ({ hasIconTooltip, isValueHidden, onHideToggle }) => {
     return hasIconTooltip ? (
         <Tooltip
-            content={isValueHidden ? 'View' : 'Hide'}
-            position="bottom"
             arrowSize={4}
-            customize={{
-                fontSize: '12px',
-                fontWeight: '400',
-                margin: 'auto 8px auto 0',
-                padding: '4px 8px',
-                onHover: 'lighten',
-            }}
             children={
                 <DivIconWrapperStyled>
                     <HideButton
@@ -32,13 +23,22 @@ const CustomHideButton: React.FC<Pick<ICredentialsProps, 'hasIconTooltip'> & {
                     />
                 </DivIconWrapperStyled>
             }
+            content={isValueHidden ? 'View' : 'Hide'}
+            customize={{
+                fontSize: '12px',
+                fontWeight: '400',
+                margin: 'auto 8px auto 0',
+                onHover: 'lighten',
+                padding: '4px 8px',
+            }}
+            position="bottom"
         />
     ) : (
         <HideButton
+            isHidden={isValueHidden}
             onToggle={() => {
                 onHideToggle();
             }}
-            isHidden={isValueHidden}
         />
     );
 };

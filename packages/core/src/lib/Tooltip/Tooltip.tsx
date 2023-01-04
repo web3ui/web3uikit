@@ -13,6 +13,7 @@ const {
 
 const Tooltip: React.FC<TooltipProps &
     React.HTMLAttributes<HTMLDivElement>> = ({
+    arrowSize,
     bgColor,
     children,
     content,
@@ -22,7 +23,6 @@ const Tooltip: React.FC<TooltipProps &
     move = 50,
     moveBody = -50,
     position = 'bottom',
-    arrowSize,
     ...props
 }: TooltipProps) => {
     const parentRef = useRef(null);
@@ -49,13 +49,13 @@ const Tooltip: React.FC<TooltipProps &
 
     return (
         <DivStyledTooltipParent
-            ref={parentRef}
             data-testid="test-tooltip"
+            ref={parentRef}
             {...props}
         >
             <DivStyledTooltipContent
-                customize={customize}
                 className="tooltip-content"
+                customize={customize}
                 data-testid="test-tooltip-content"
             >
                 {children}
@@ -76,20 +76,20 @@ const Tooltip: React.FC<TooltipProps &
                 <DivStyledTooltipText
                     arrowSize={arrowSize}
                     bgColor={bgColor ?? customize?.backgroundColor}
+                    customize={customize}
                     data-testid="test-tooltip-text"
                     maxWidth={maxWidth}
                     minWidth={minWidth}
-                    customize={customize}
                 >
                     {content}
                 </DivStyledTooltipText>
                 <DivStyledArrow
                     arrowSize={arrowSize}
                     bgColor={bgColor ?? customize?.backgroundColor}
-                    data-testid="test-tooltip-arrow"
-                    position={position}
                     customize={customize}
+                    data-testid="test-tooltip-arrow"
                     move={move}
+                    position={position}
                 />
             </DivStyled>
         </DivStyledTooltipParent>

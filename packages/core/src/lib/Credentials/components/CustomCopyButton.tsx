@@ -9,19 +9,10 @@ const { DivIconWrapperStyled } = styles;
 const CustomCopyButton: React.FC<Pick<
     ICredentialsProps,
     'customize' | 'hasIconTooltip' | 'text' | 'onCopy'
->> = ({ text, customize, hasIconTooltip, onCopy }) => {
+>> = ({ customize, hasIconTooltip, onCopy, text }) => {
     return hasIconTooltip ? (
         <Tooltip
-            content="Copy"
-            position="bottom"
             arrowSize={4}
-            customize={{
-                fontSize: '12px',
-                fontWeight: '400',
-                margin: 'auto 0',
-                padding: '4px 8px',
-                onHover: 'lighten',
-            }}
             children={
                 <DivIconWrapperStyled>
                     <CopyButton
@@ -32,6 +23,15 @@ const CustomCopyButton: React.FC<Pick<
                     />
                 </DivIconWrapperStyled>
             }
+            content="Copy"
+            customize={{
+                fontSize: '12px',
+                fontWeight: '400',
+                margin: 'auto 0',
+                onHover: 'lighten',
+                padding: '4px 8px',
+            }}
+            position="bottom"
         />
     ) : (
         <CopyButton

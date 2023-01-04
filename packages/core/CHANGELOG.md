@@ -1,5 +1,17 @@
 # @web3uikit/core
 
+## 0.2.38
+
+### Patch Changes
+
+-   [#995](https://github.com/web3ui/web3uikit/pull/995) [`b0574be95`](https://github.com/web3ui/web3uikit/commit/b0574be955bf1c0db5cc14b3e8b4b7afbc657da2) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Remove select scroll feature
+
+*   [#991](https://github.com/web3ui/web3uikit/pull/991) [`c15fdae30`](https://github.com/web3ui/web3uikit/commit/c15fdae3093e2b2f7b1e76e907f6546ecdf06857) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add tooltip arrowSize and customize prop, add tooltips to credentials icon
+
+-   [#986](https://github.com/web3ui/web3uikit/pull/986) [`6f0d7251e`](https://github.com/web3ui/web3uikit/commit/6f0d7251e25097d5a1d7d1880ea0e098766e0c6d) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - fix input enter key press password toggle issue
+
+*   [#993](https://github.com/web3ui/web3uikit/pull/993) [`14e867442`](https://github.com/web3ui/web3uikit/commit/14e867442284fd94fa9aa5509a445e36af767fe4) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add aptos network illustration, crypto logo, crypto card
+
 ## 0.2.37
 
 ### Patch Changes

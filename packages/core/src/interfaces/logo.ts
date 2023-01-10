@@ -41,6 +41,12 @@ export const chainLogoData = {
     },
     /* PLOP_INJECT_CHAIN */
     
+    aptos : {
+        name:'aptos',
+        color:'#041836',
+    },
+
+    
     palm : {
         name:'palm',
         color:'#6818AA',

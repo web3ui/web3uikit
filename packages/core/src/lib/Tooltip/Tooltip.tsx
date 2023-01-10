@@ -13,14 +13,16 @@ const {
 
 const Tooltip: React.FC<TooltipProps &
     React.HTMLAttributes<HTMLDivElement>> = ({
+    arrowSize,
+    bgColor,
     children,
     content,
+    customize,
     maxWidth,
     minWidth,
     move = 50,
     moveBody = -50,
     position = 'bottom',
-    bgColor = color.blue40,
     ...props
 }: TooltipProps) => {
     const parentRef = useRef(null);
@@ -47,17 +49,20 @@ const Tooltip: React.FC<TooltipProps &
 
     return (
         <DivStyledTooltipParent
-            ref={parentRef}
             data-testid="test-tooltip"
+            ref={parentRef}
             {...props}
         >
             <DivStyledTooltipContent
                 className="tooltip-content"
+                customize={customize}
                 data-testid="test-tooltip-content"
             >
                 {children}
             </DivStyledTooltipContent>
             <DivStyled
+                arrowSize={arrowSize}
+                customize={customize}
                 data-testid="test-tooltip-wrap"
                 height={height}
                 minWidth={minWidth as number}
@@ -69,7 +74,9 @@ const Tooltip: React.FC<TooltipProps &
                 width={width}
             >
                 <DivStyledTooltipText
-                    bgColor={bgColor}
+                    arrowSize={arrowSize}
+                    bgColor={bgColor ?? customize?.backgroundColor}
+                    customize={customize}
                     data-testid="test-tooltip-text"
                     maxWidth={maxWidth}
                     minWidth={minWidth}
@@ -77,10 +84,12 @@ const Tooltip: React.FC<TooltipProps &
                     {content}
                 </DivStyledTooltipText>
                 <DivStyledArrow
-                    bgColor={bgColor}
+                    arrowSize={arrowSize}
+                    bgColor={bgColor ?? customize?.backgroundColor}
+                    customize={customize}
                     data-testid="test-tooltip-arrow"
-                    position={position}
                     move={move}
+                    position={position}
                 />
             </DivStyled>
         </DivStyledTooltipParent>

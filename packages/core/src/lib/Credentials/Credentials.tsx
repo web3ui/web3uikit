@@ -4,9 +4,9 @@ import styles from './Credentials.styles';
 import { color } from '@web3uikit/styles';
 import { ICredentialsProps } from './types';
 import CredentialsHeader from './components/CredentialsHeader';
-import { HideButton } from '../HideButton';
-import { CopyButton } from '../CopyButton';
 import TruncateString from './components/TruncateString';
+import CustomCopyButton from './components/CustomCopyButton';
+import CustomHideButton from './components/CustomHideButton';
 
 const {
     CredentialsStyled,
@@ -20,16 +20,17 @@ const Credentials: FC<ICredentialsProps> = ({
     customize,
     hasCopyButton = true,
     hasHideButton = true,
+    hasIconTooltip = false,
     hiddenText = '•••••••••••••••••••••••••••••••',
     icon,
     isHidden = false,
+    onCopy,
+    onReveal,
     text,
     textColor = customize?.color || color.blue70,
     title,
     titleColor,
     width = 'auto',
-    onCopy,
-    onReveal,
     ...props
 }) => {
     const [isValueHidden, setIsValueHidden] = useState(isHidden);
@@ -39,15 +40,14 @@ const Credentials: FC<ICredentialsProps> = ({
 
     useEffect(() => setIsValueHidden(isHidden), [isHidden]);
 
-    useEffect(
-        () => setIsMultiline((text.match(/\n/g) || []).length > 0),
-        [text],
-    );
+    useEffect(() => setIsMultiline((text.match(/\n/g) || []).length > 0), [
+        text,
+    ]);
 
     return (
         <CredentialsStyled
-            data-testid="test-credentials"
             customize={customize}
+            data-testid="test-credentials"
             width={width}
             {...props}
         >
@@ -77,33 +77,39 @@ const Credentials: FC<ICredentialsProps> = ({
                             text
                         ) : (
                             <TruncateString
+                                fontSize={customize?.fontSize ?? '16px'}
                                 text={text}
-                                percentageOfCharsAfterTrunc={55}
                                 textColor={
                                     textColor ??
                                     customize?.color ??
                                     color.blue70
                                 }
-                                fontSize={customize?.fontSize ?? '16px'}
+                                percentageOfCharsAfterTrunc={55}
                             />
                         )}
                     </Typography>
                 </DivWrapperStyled>
-                <ToolsStyled data-testid="test-credentials-tools">
+                <ToolsStyled
+                    data-testid="test-credentials-tools"
+                    hasIconTooltip={hasIconTooltip}
+                >
                     {hasHideButton && (
-                        <HideButton
-                            onToggle={() => {
-                                setIsValueHidden(!isValueHidden);
-                                if (isValueHidden) onReveal && onReveal();
+                        <CustomHideButton
+                            hasIconTooltip={hasIconTooltip}
+                            isValueHidden={isValueHidden}
+                            onHideToggle={() => {
+                                setIsValueHidden((prev) => !prev);
+                                if (isValueHidden) onReveal?.();
                             }}
-                            isHidden={isValueHidden}
                         />
                     )}
-                    {hasHideButton && hasCopyButton && <DividerStyled />}
+                    {hasHideButton && hasCopyButton && !hasIconTooltip && (
+                        <DividerStyled />
+                    )}
                     {hasCopyButton && (
-                        <CopyButton
-                            fill={customize?.color}
-                            iconSize={24}
+                        <CustomCopyButton
+                            customize={customize}
+                            hasIconTooltip={hasIconTooltip}
                             onCopy={onCopy}
                             text={text}
                         />

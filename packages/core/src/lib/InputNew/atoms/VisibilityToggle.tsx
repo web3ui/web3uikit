@@ -12,6 +12,8 @@ const VisibilityToggle: React.FC<IVisibilityToggleProps> = ({
         className="input_visibility"
         data-testid="test-input-icon-visibility"
         onClick={() => onClick()}
+        tabIndex={-1}
+        type="button"
     >
         {isInputHidden ? (
             <EyeClosed

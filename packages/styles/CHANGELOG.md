@@ -1,5 +1,11 @@
 # @web3uikit/styles
 
+## 0.2.37
+
+### Patch Changes
+
+-   [#983](https://github.com/web3ui/web3uikit/pull/983) [`4958554d4`](https://github.com/web3ui/web3uikit/commit/4958554d4a0d581338fff47f9dfb75f30c5bb307) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Modal,NftCard,Select,InputNew - fix multiple bugs and add features, and add new color
+
 ## 0.2.36
 
 ### Patch Changes

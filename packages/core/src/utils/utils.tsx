@@ -1,5 +1,6 @@
 import React from 'react';
 import { Illustration } from '../lib';
+import lazyNft from '../lib/Illustrations/images/various/lazyNft';
 
 const baseUrl = 'https://ipfs.io/ipfs/';
 
@@ -19,28 +20,37 @@ export const manipulateLink = (imgLink: string) => {
 export const image = (
     animation?: string,
     image?: string,
+    type?: string,
+    onError?: () => void,
 ): React.ReactElement => {
-    if (animation?.includes('.mp4') || image?.includes('.mp4')) {
+    if (
+        animation?.includes('.mp4') ||
+        image?.includes('.mp4') ||
+        type?.includes('video')
+    ) {
         return (
             <video controls autoPlay loop muted>
                 <source
                     src={manipulateLink(animation || image || '')}
                     type="video/mp4"
+                    onError={() => onError?.()}
                 />
             </video>
         );
     }
     if (image) {
         if (image.includes('pinata')) {
-            return <img src={image} />;
+            return <img src={image} onError={() => onError?.()} />;
         }
-        return <img src={manipulateLink(image)} />;
+        return <img src={manipulateLink(image)} onError={() => onError?.()} />;
     }
     if (animation) {
         if (animation.includes('pinata')) {
-            return <img src={animation} />;
+            return <img src={animation} onError={() => onError?.()} />;
         }
-        return <img src={manipulateLink(animation)} />;
+        return (
+            <img src={manipulateLink(animation)} onError={() => onError?.()} />
+        );
     }
     return <Illustration logo="lazyNft" />;
 };

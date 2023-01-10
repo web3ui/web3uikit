@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components';
-import { color, fonts, resetCSS } from '@web3uikit/styles';
+import { color, colorPercentage, fonts, resetCSS } from '@web3uikit/styles';
 import { Position, TooltipProps } from './types';
 
-interface IStyledHoverSpan {
+interface IStyledHoverSpan
+    extends Pick<TooltipProps, 'customize' | 'arrowSize'> {
     height: number;
     popoverHeight: number;
     popoverWidth: number;
@@ -20,71 +21,86 @@ const defaultTriangleStyle = css`
 
 type TTooltipPositioningProps = Pick<
     TooltipProps,
-    'move' | 'moveBody' | 'bgColor'
+    'move' | 'moveBody' | 'bgColor' | 'arrowSize'
 >;
 
 // Left Position comps
 const leftPositionPopover = css<IStyledHoverSpan>`
-    right: ${(props) => props.width && `calc(${props.width}px + 10px)`};
+    right: ${(props) =>
+        props.height &&
+        `calc(${props.height}px + ${props?.arrowSize ?? 10}px)`};
     top: 50%;
     transform: translateY(${(p) => `${p.moveBody}%`});
 `;
 
 const leftPositionTriangle = css<TTooltipPositioningProps>`
     ${defaultTriangleStyle};
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid ${(props) => props.bgColor ?? color.blue40};
-    border-top: 10px solid transparent;
-    right: -10px;
-    top: calc(${(p) => `${p.move}%`} - 10px);
+    border-bottom: ${(props) =>
+        `${props?.arrowSize ?? 10}px solid transparent`};
+    border-left: ${(props) =>
+        `${props?.arrowSize ?? 10}px solid ${props.bgColor ?? color.blue40}`};
+    border-top: ${(props) => `${props?.arrowSize ?? 10}px solid transparent`};
+    right: -${(props) => (props?.arrowSize ?? 10) + 'px'};
+    top: calc(${(props) => `${props.move}% - ${props?.arrowSize ?? 10}px`});
 `;
 
 // Right position comps
 const rightPositionPopover = css<IStyledHoverSpan>`
-    left: ${(props) => props.width && `calc(${props.width}px + 10px)`};
+    left: ${(props) =>
+        props.height &&
+        `calc(${props.height}px + ${props?.arrowSize ?? 10}px)`};
     top: 50%;
     transform: translateY(${(p) => `${p.moveBody}%`});
 `;
 
 const rightPositionTriangle = css<TTooltipPositioningProps>`
     ${defaultTriangleStyle};
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid ${(props) => props.bgColor ?? color.blue40};
-    border-top: 10px solid transparent;
-    left: -10px;
-    top: calc(${(p) => `${p.move}%`} - 10px);
+    border-bottom: ${(props) =>
+        `${props?.arrowSize ?? 10}px solid transparent`};
+    border-right: ${(props) =>
+        `${props?.arrowSize ?? 10}px solid ${props.bgColor ?? color.blue40}`};
+    border-top: ${(props) => `${props?.arrowSize ?? 10}px solid transparent`};
+    left: -${(props) => (props?.arrowSize ?? 10) + 'px'};
+    top: calc(${(props) => `${props.move}% - ${props?.arrowSize ?? 10}px`});
 `;
 
 // Top Position Comps
 const topPositionPopover = css<IStyledHoverSpan>`
-    bottom: ${(props) => props.height && `calc(${props.height}px + 10px)`};
+    bottom: ${(props) =>
+        props.height &&
+        `calc(${props.height}px + ${props?.arrowSize ?? 10}px)`};
     left: 50%;
     transform: translateX(${(p) => `${p.moveBody}%`});
 `;
 
 const topPositionTriangle = css<TTooltipPositioningProps>`
     ${defaultTriangleStyle};
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-top: 10px solid ${(props) => props.bgColor ?? color.blue40};
-    left: calc(${(p) => `${p.move}%`} - 10px);
+    border-left: ${(props) => `${props?.arrowSize ?? 10}px solid transparent`};
+    border-right: ${(props) => `${props?.arrowSize ?? 10}px solid transparent`};
+    border-top: ${(props) =>
+        `${props?.arrowSize ?? 10}px solid ${props.bgColor ?? color.blue40}`};
+    left: calc(${(props) => `${props.move}% - ${props?.arrowSize ?? 10}px`});
     top: 100%;
 `;
 
 // bottom Position Comps
 const bottomPositionPopover = css<IStyledHoverSpan>`
     left: 50%;
-    top: ${(props) => props.height && `calc(${props.height}px + 10px)`};
+    top: ${(props) =>
+        props.height &&
+        `calc(${props.height}px + ${props?.arrowSize ?? 10}px)`};
     transform: translateX(${(p) => `${p.moveBody}%`});
 `;
 
 const bottomPositionTriangle = css<TTooltipPositioningProps>`
     ${defaultTriangleStyle}
-    border-bottom: 10px solid ${(props) => props.bgColor ?? color.blue40};
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    left: calc(${(p) => `${p.move}%`} - 10px);
-    top: -10px;
+    border-bottom: ${(props) =>
+        `${props?.arrowSize ?? 10}px solid ${props.bgColor ?? color.blue40}`};
+    border-left: ${(props) => `${props?.arrowSize ?? 10}px solid transparent`} ;
+    border-right: ${(props) =>
+        `${props?.arrowSize ?? 10}px solid transparent`} ;
+    left: calc(${(props) => `${props.move}% - ${props?.arrowSize ?? 10}px`});
+    top: -${(props) => (props?.arrowSize ?? 10) + 'px'};
 `;
 
 const getTriangleComp = {
@@ -109,15 +125,39 @@ const DivStyledTooltipParent = styled.div`
 `;
 
 const DivStyled = styled.div<IStyledHoverSpan>`
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-    z-index: 1;
+    border: ${(props) => props.customize?.border ?? 'none'};
     min-width: ${(props) => props.minWidth}px;
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+    z-index: 1;
     ${({ position }) => getPopoverComp[position]};
 `;
 
-const DivStyledTooltipContent = styled.div`
+const DivStyledTooltipContent = styled.div<Partial<TooltipProps>>`
+    margin: ${(props) => props.customize?.margin ?? '0px'};
+    &:hover {
+        ${(p) =>
+            p.customize?.onHover &&
+            p.customize?.onHover === 'lighten' &&
+            css`
+                background-color: ${colorPercentage(
+                    p.customize?.backgroundColor ?? color.blue40,
+                    10,
+                )};
+                border-radius: ${p.customize?.borderRadius ?? '5px'};
+            `}
+        ${(p) =>
+            p.customize?.onHover &&
+            p.customize?.onHover === 'darken' &&
+            css`
+                background-color: ${colorPercentage(
+                    p.customize?.backgroundColor ?? color.blue40,
+                    40,
+                )};
+                border-radius: ${p.customize?.borderRadius ?? '5px'};
+            `}
+    }
     &:hover + ${DivStyled} {
         opacity: 1;
         visibility: visible;
@@ -126,23 +166,26 @@ const DivStyledTooltipContent = styled.div`
     }
 `;
 
-const DivStyledTooltipText = styled.div<
-    Pick<TooltipProps, 'maxWidth' | 'minWidth' | 'bgColor'>
->`
+const DivStyledTooltipText = styled.div<Partial<TooltipProps>>`
     background-color: ${(props) => props.bgColor ?? color.blue40};
-    border-radius: 5px;
-    color: white;
+    border-radius: ${(props) => props.customize?.borderRadius ?? '5px'};
+    color: ${(props) => props.customize?.color ?? color.white};
     display: flex;
     flex-direction: column;
+    font-size: ${(props) => props.customize?.fontSize ?? '16px'};
+    font-weight: ${(props) => props.customize?.fontWeight ?? '16px'};
     justify-content: flex-start;
     max-width: ${(props) => props.maxWidth && `${props.maxWidth}px`};
     min-width: fit-content;
-    padding: 10px;
+    padding: ${(props) => props.customize?.padding ?? '10px'};
     transition: 0.5ms;
 `;
 
 export const DivStyledArrow = styled.div<
-    Pick<TooltipProps, 'position' | 'move' | 'moveBody' | 'bgColor'>
+    Pick<
+        TooltipProps,
+        'position' | 'move' | 'moveBody' | 'bgColor' | 'customize' | 'arrowSize'
+    >
 >`
     ${({ position }) => getTriangleComp[position]}
 `;

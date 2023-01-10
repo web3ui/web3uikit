@@ -1,5 +1,29 @@
 # @web3uikit/core
 
+## 0.2.38
+
+### Patch Changes
+
+-   [#995](https://github.com/web3ui/web3uikit/pull/995) [`b0574be95`](https://github.com/web3ui/web3uikit/commit/b0574be955bf1c0db5cc14b3e8b4b7afbc657da2) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Remove select scroll feature
+
+*   [#991](https://github.com/web3ui/web3uikit/pull/991) [`c15fdae30`](https://github.com/web3ui/web3uikit/commit/c15fdae3093e2b2f7b1e76e907f6546ecdf06857) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add tooltip arrowSize and customize prop, add tooltips to credentials icon
+
+-   [#986](https://github.com/web3ui/web3uikit/pull/986) [`6f0d7251e`](https://github.com/web3ui/web3uikit/commit/6f0d7251e25097d5a1d7d1880ea0e098766e0c6d) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - fix input enter key press password toggle issue
+
+*   [#993](https://github.com/web3ui/web3uikit/pull/993) [`14e867442`](https://github.com/web3ui/web3uikit/commit/14e867442284fd94fa9aa5509a445e36af767fe4) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add aptos network illustration, crypto logo, crypto card
+
+## 0.2.37
+
+### Patch Changes
+
+-   [#983](https://github.com/web3ui/web3uikit/pull/983) [`4958554d4`](https://github.com/web3ui/web3uikit/commit/4958554d4a0d581338fff47f9dfb75f30c5bb307) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Modal,NftCard,Select,InputNew - fix multiple bugs and add features, and add new color
+
+*   [#981](https://github.com/web3ui/web3uikit/pull/981) [`43ce90477`](https://github.com/web3ui/web3uikit/commit/43ce9047797bc57eae7a3c0dbc53e206a5efe272) Thanks [@SebastianLF](https://github.com/SebastianLF)! - Model: added zIndex prop
+
+*   Updated dependencies [[`d9adcc1c8`](https://github.com/web3ui/web3uikit/commit/d9adcc1c8d91ddd091d4340351d531dc9de07c07), [`4958554d4`](https://github.com/web3ui/web3uikit/commit/4958554d4a0d581338fff47f9dfb75f30c5bb307)]:
+    -   @web3uikit/icons@0.2.37
+    -   @web3uikit/styles@0.2.37
+
 ## 0.2.36
 
 ### Patch Changes

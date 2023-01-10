@@ -7,6 +7,7 @@ import {
     Edit,
     Mail,
     ArrowCircleRight,
+    Cross,
 } from '@web3uikit/icons';
 import { Input } from '../Input';
 import { useArgs } from '@storybook/addons';
@@ -487,6 +488,44 @@ NoOverflow.args = {
                 Mauris in tempor metus. Vivamus sagittis augue vel sapien
                 bibendum, nec gravida lectus vehicula.
             </p>
+        </div>,
+    ],
+};
+
+export const CustomModal = Template.bind({});
+CustomModal.args = {
+    id: 'regular',
+    isVisible: true,
+    zIndex: 9999,
+    title: 'Custom Modal',
+    customize: {
+        backgroundColor: color.blue70,
+        color: color.aero20,
+        fontSize: '32px',
+        fontWeight: '600',
+        padding: '24px',
+        borderRadius: '10px',
+        border: '1px solid white',
+        margin: '10px',
+    },
+    closeButton: (
+        <Button
+            icon={<Cross />}
+            iconLayout="icon-only"
+            radius={100}
+            theme="custom"
+            customize={{ backgroundColor: color.aero20 }}
+        />
+    ),
+    children: [
+        <div style={{ textAlign: 'center' }}>
+            <Typography variant="h4" weight="550" color={color.white}>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                eu posuere tortor. Maecenas ac suscipit lacus. Fusce at enim
+                sagittis justo accumsan pellentesque. Proin faucibus posuere
+                varius. Nam egestas, purus eget auctor aliquam, sem nisi iaculis
+                tortor, at posuere urna lorem vitae est. 🤫
+            </Typography>
         </div>,
     ],
 };

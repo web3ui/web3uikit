@@ -1,3 +1,5 @@
+
+import { TCustomize } from '../../interfaces/customize';
 import type { ButtonProps } from '../Button';
 
 export interface ModalProps {
@@ -112,4 +114,8 @@ export interface ModalProps {
      * set z-index of modal. EG: 'auto', 10
      */
     zIndex?: string | number;
+    /**
+     * set custom styles
+     */
+    customize?: TCustomize
 }

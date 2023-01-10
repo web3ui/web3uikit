@@ -2,6 +2,7 @@ import React from 'react';
 import { CSSProperties } from 'styled-components';
 import { TCustomize } from '../../interfaces/customize';
 import { ButtonProps } from '../Button';
+import { TSlots } from '../InputNew/types';
 
 export interface IBannerStripProps {
     /**
@@ -73,6 +74,11 @@ export interface IBannerStripProps {
      * specify the number of days you want to hide the component after close button is clicked (Uses local storage)
      */
     noOfDaysToHide?: number | null;
+
+    /**
+     * slot content in before of after this element
+     */
+    slots?: TSlots;
 
     /**
      * add CSS styles, good for margin

@@ -18,6 +18,7 @@ const BannerStrip: React.FC<IBannerStripProps> = ({
     isCloseBtnVisible = true,
     onCloseBtnClick,
     position = 'fixed',
+    slots,
     style,
     text,
     type = 'standard',
@@ -46,7 +47,18 @@ const BannerStrip: React.FC<IBannerStripProps> = ({
             {...props}
         >
             <DivStyledContainer>
+                {slots &&
+                    slots.slotBefore?.map((slotItem) => (
+                        <span className="slot slot-before">{slotItem}</span>
+                    ))}
+
                 <Fragment key="banner-strip-text">{text}</Fragment>
+
+                {slots &&
+                    slots.slotAfter?.map((slotItem) => (
+                        <span className="slot slot-after">{slotItem}</span>
+                    ))}
+
                 {isCloseBtnVisible && (
                     <CrossStyled
                         key="banner-strip-cross-button"

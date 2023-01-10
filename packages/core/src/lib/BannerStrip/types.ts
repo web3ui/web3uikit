@@ -1,8 +1,14 @@
 import React from 'react';
 import { CSSProperties } from 'styled-components';
+import { TCustomize } from '../../interfaces/customize';
 import { ButtonProps } from '../Button';
 
 export interface IBannerStripProps {
+    /**
+     * Customize the credentials
+     */
+    customize?: TCustomize;
+
     /**
      * @deprecated do you want to display a button
      */

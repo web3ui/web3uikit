@@ -31,7 +31,13 @@ const getColor = (type?: TBannerStripTypes) => {
 
 type TSectionStyledProps = Pick<
     IBannerStripProps,
-    'height' | 'width' | 'borderRadius' | 'type' | 'position' | 'bgColor'
+    | 'height'
+    | 'width'
+    | 'borderRadius'
+    | 'type'
+    | 'position'
+    | 'bgColor'
+    | 'customize'
 >;
 
 const SectionStyled = styled.section<TSectionStyledProps>`
@@ -39,18 +45,19 @@ const SectionStyled = styled.section<TSectionStyledProps>`
     ${fonts.text};
     align-items: center;
     background-color: ${(props) =>
-        props.type !== 'custom' ? getColor(props.type).bgColor : props.bgColor};
-    border-radius: ${(props) => props.borderRadius && props.borderRadius};
-    color: ${(p) => (p.type ? getColor(p.type).color : color.white)};
+        props.customize?.backgroundColor ?? getColor(props.type).bgColor};
+    border-radius: ${(p) => p.customize?.borderRadius ?? p.borderRadius};
+    color: ${(p) =>
+        p.customize?.color ?? (p.type ? getColor(p.type).color : color.white)};
     display: flex;
-    font-size: 14px;
-    font-weight: 550;
+    font-size: ${(p) => p.customize?.fontSize ?? '14px'};
+    font-weight: ${(p) => p.customize?.fontWeight ?? '550'};
     height: ${(props) => props.height && props.height};
     justify-content: center;
     left: ${(props) => (props.position === 'absolute' ? '0' : 'unset')};
     line-height: 24px;
     max-width: 100%;
-    padding: 8px 0px;
+    padding: ${(p) => p.customize?.padding ?? '8px 0px'};
     position: ${(props) => props.position && props.position};
     text-align: center;
     top: ${(props) => (props.position === 'absolute' ? '0' : 'unset')};

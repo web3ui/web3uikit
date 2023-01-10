@@ -7,6 +7,7 @@ import useLocalStorage from '../../hooks/useLocalStorage';
 const { SectionStyled, CrossStyled, DivStyledContainer } = styles;
 
 const BannerStrip: React.FC<IBannerStripProps> = ({
+    customize,
     bgColor,
     borderRadius = '0px',
     buttonConfig,
@@ -37,6 +38,7 @@ const BannerStrip: React.FC<IBannerStripProps> = ({
             bgColor={bgColor}
             borderRadius={borderRadius}
             data-testid="test-banner-strip"
+            customize={customize}
             height={height}
             position={position}
             type={type}

@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.2.40
+
+### Patch Changes
+
+-   [#1002](https://github.com/web3ui/web3uikit/pull/1002) [`795438989`](https://github.com/web3ui/web3uikit/commit/795438989b456b60990dc307112b23b324806b80) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - Fix: all icons now accept currentColor fill
+
 ## 0.2.39
 
 ### Patch Changes

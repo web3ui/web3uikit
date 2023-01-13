@@ -14,7 +14,7 @@ const SvgArrowDownRight = ({
         width="1em"
         height="1em"
         viewBox="0 0 24 24"
-        fill="none"
+        fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
         data-testid="test-icon"
@@ -35,7 +35,6 @@ const SvgArrowDownRight = ({
             fillRule="evenodd"
             clipRule="evenodd"
             d="M6.293 6.293a1 1 0 0 1 1.414 0L16 14.586V7a1 1 0 1 1 2 0v10a1 1 0 0 1-1 1H7a1 1 0 1 1 0-2h7.586L6.293 7.707a1 1 0 0 1 0-1.414Z"
-            fill="#000"
         />
     </svg>
 );

@@ -14,7 +14,7 @@ const SvgArrowUp = ({
         width="1em"
         height="1em"
         viewBox="0 0 24 25"
-        fill="none"
+        fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
         data-testid="test-icon"
@@ -35,7 +35,6 @@ const SvgArrowUp = ({
             fillRule="evenodd"
             clipRule="evenodd"
             d="M11.293 4.793a1 1 0 0 1 1.414 0l7 7a1 1 0 0 1-1.414 1.414L13 7.914V19.5a1 1 0 1 1-2 0V7.914l-5.293 5.293a1 1 0 0 1-1.414-1.414l7-7Z"
-            fill="#000"
         />
     </svg>
 );

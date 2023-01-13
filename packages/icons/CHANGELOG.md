@@ -1,5 +1,13 @@
 # @web3uikit/icons
 
+## 0.2.39
+
+### Patch Changes
+
+-   [#1001](https://github.com/web3ui/web3uikit/pull/1001) [`d0c7b6e6e`](https://github.com/web3ui/web3uikit/commit/d0c7b6e6e3dcd9eb136e9baeb90dcb74e8ee7835) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - Fix: wallet icon colour issue resolved
+
+*   [`097ec0e80`](https://github.com/web3ui/web3uikit/commit/097ec0e80a9e3a5a3d2b554fffb8b41867f99e14) - Added new icons for token history, plus some arrows and a compass icon
+
 ## 0.2.37
 
 ### Patch Changes

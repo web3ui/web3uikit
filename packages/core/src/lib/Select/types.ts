@@ -159,7 +159,15 @@ export interface ISelectProps {
     menuCustomize?: Omit<TCustomize, 'onHover'> & {
         bgColorOnHover?: string;
         scrollbarColor?: string;
+        height?: string;
+        width?: string;
     };
+
+    /**
+     * add custom select component, clicking on which will open the menu,
+     * Note: This hides the default select arrow and label
+     */
+    customSelect?: React.ReactNode;
 }
 
 export interface ISelectExtendedProps extends ISelectProps {

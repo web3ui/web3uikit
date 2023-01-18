@@ -19,6 +19,7 @@ const {
 const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     customNoDataText = 'No Data',
     customize,
+    customSelect,
     defaultOptionIndex,
     description,
     disabled = false,
@@ -135,34 +136,39 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     ref={triggerRef}
                     type="button"
                 >
-                    {label && (
-                        <LabelStyled
-                            aria-disabled={disabled}
-                            customize={customize}
-                            data-testid="test-select-label"
-                            htmlFor={name}
-                        >
-                            {label}
-                        </LabelStyled>
-                    )}
-                    {isOpen ? (
-                        <TriangleUpIconStyled
-                            data-testid="test-select-icon"
-                            fontSize="20px"
-                            fill={customize?.color ?? color.navy40}
-                            title="triangle up icon"
-                        />
-                    ) : (
-                        <TriangleDownIconStyled
-                            data-testid="test-select-icon"
-                            fontSize="20px"
-                            fill={customize?.color ?? color.navy40}
-                            title="triangle down icon"
-                        />
+                    {!customSelect && (
+                        <>
+                            {label && (
+                                <LabelStyled
+                                    aria-disabled={disabled}
+                                    customize={customize}
+                                    data-testid="test-select-label"
+                                    htmlFor={name}
+                                >
+                                    {label}
+                                </LabelStyled>
+                            )}
+                            {isOpen ? (
+                                <TriangleUpIconStyled
+                                    data-testid="test-select-icon"
+                                    fontSize="20px"
+                                    fill={customize?.color ?? color.navy40}
+                                    title="close menu"
+                                />
+                            ) : (
+                                <TriangleDownIconStyled
+                                    data-testid="test-select-icon"
+                                    fontSize="20px"
+                                    fill={customize?.color ?? color.navy40}
+                                    title="open menu"
+                                />
+                            )}
+                        </>
                     )}
                 </ButtonStyledSelect>
                 <SelectedItemsList
                     addItem={addItem}
+                    customSelect={customSelect}
                     disabled={disabled}
                     elementId={elementId}
                     isMulti={isMulti}

@@ -5,6 +5,7 @@ import { Tag } from '../../../Tag';
 import { ColorProps } from '../../../Todo/types';
 
 const {
+    DivStyledCustomSelect,
     DivStyledPlaceholder,
     ListItemStyledTag,
     ListStyledSelected,
@@ -24,6 +25,7 @@ const colors: ColorProps[] = [
 
 const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
     addItem,
+    customSelect,
     disabled = false,
     isMulti = false,
     name = 'select',
@@ -33,6 +35,17 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
     setIsOpen,
     value = [],
 }) => {
+    if (customSelect) {
+        return (
+            <DivStyledCustomSelect
+                onClick={() => {
+                    if (!disabled) setIsOpen((prev) => !prev);
+                }}
+            >
+                {customSelect}
+            </DivStyledCustomSelect>
+        );
+    }
     const MultiSelection = () => {
         return (value as string[]).map((option, i) => (
             <ListItemStyledTag

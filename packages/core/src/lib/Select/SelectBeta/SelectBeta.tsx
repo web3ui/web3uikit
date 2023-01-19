@@ -4,6 +4,7 @@ import styles from './SelectBeta.styles';
 import SelectMenuList from './components/SelectMenuList';
 import SelectedItemsList from './components/SelectedItemsList';
 import { color } from '@web3uikit/styles';
+import { useOutsideAlerter } from '../../../hooks/useOutsideAlerter';
 
 const {
     ButtonStyledSelect,
@@ -56,7 +57,11 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
         ...rest
     } = props;
     const triggerRef = useRef<HTMLButtonElement>(null);
-    const [isOpen, setIsOpen] = useState(false);
+    const {
+        isInsideElementClick: isOpen,
+        outsideAlerterRef,
+        setIsInsideElementClick: setIsOpen,
+    } = useOutsideAlerter(false);
 
     const elementId = (component: string) => {
         if (component === undefined) return;
@@ -112,6 +117,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             {...rest}
         >
             <DivStyledSelectWrapper
+                ref={!isMulti ? outsideAlerterRef : undefined}
                 className="w3uik-container"
                 height={height}
                 customize={customize}
@@ -192,11 +198,6 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             </DivStyledSelectWrapper>
             {!disabled && (
                 <>
-                    <DivStyledOverlay
-                        aria-label="Close Dropdown"
-                        className="w3uik-select-overlay"
-                        onClick={() => setIsOpen(false)}
-                    />
                     <SelectMenuList
                         addItem={addItem}
                         customize={customize}
@@ -210,6 +211,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                         menuCustomize={menuCustomize}
                         menuHeight={menuHeight}
                         name={name}
+                        ref={outsideAlerterRef}
                         options={options}
                         placeholder={placeholder}
                         setIsOpen={setIsOpen}

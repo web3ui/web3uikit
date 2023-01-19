@@ -38,6 +38,7 @@ const SelectedItemsList: React.FunctionComponent<ISelectExtendedProps> = ({
     if (customSelect) {
         return (
             <DivStyledCustomSelect
+                id="w3uik-custom-select-container"
                 onClick={() => {
                     if (!disabled) setIsOpen((prev) => !prev);
                 }}

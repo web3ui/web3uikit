@@ -258,7 +258,7 @@ BetaSelect.args = {
         label: `${item.name}(${item.dialCode})`,
         prefix: (
             <img
-                src={`https://countryflagsapi.com/png/${item.isoCode}`}
+                src={`https://flagcdn.com/h20/${item.isoCode?.toLowerCase()}.png`}
                 loading="lazy"
                 width="24px"
                 height="24px"
@@ -430,17 +430,16 @@ BetaCustomSelect.args = {
     isSearch: true,
     label: '',
     name: 'demo',
-    prefixIcon: <Check height={22} width={22} fill={color.mint40} />,
     customize: {
         color: color.navy40,
-        padding: '0',
-        backgroundColor: color.gray30,
+        padding: '0 10px',
+        backgroundColor: color.blue70,
         borderRadius: '14px',
         border: 'none',
     },
     menuCustomize: {
-        backgroundColor: color.white,
-        color: color.blue70,
+        backgroundColor: color.blue70,
+        color: color.white,
         width: 'max-content',
     },
     customSelect: (
@@ -455,7 +454,6 @@ BetaCustomSelect.args = {
         </div>
     ),
     options: optionsList,
-    description: 'just something',
     placeholder: 'Something big name',
     width: 'max-content',
     height: '40px',

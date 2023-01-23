@@ -18,6 +18,13 @@ const onTestOptionChange = (e: any) => {
     console.log(e);
 };
 
+const testOptionsHTML5 = [
+    { label: 'Hour', id: 'H' },
+    { label: 'Day', id: 'D' },
+    { label: 'Week', id: 'W' },
+    { label: 'Month', id: 'M' },
+];
+
 const smallOptionsList = [
     {
         label: 'Discord',
@@ -199,6 +206,15 @@ ControlledValue.args = {
     value: 'txt',
 };
 
+export const Description = Template.bind({});
+Description.args = {
+    options: smallOptionsList,
+    onChange: onTestOptionChange,
+    label: 'Label Text',
+    defaultOptionIndex: 0,
+    description: 'Much Needed',
+};
+
 export const HTML5Select = Template.bind({});
 HTML5Select.args = {
     label: 'Good old HTML5',
@@ -209,10 +225,11 @@ HTML5Select.args = {
     value: 'txt',
 };
 
-export const HTML5SelectWithDescription = Template.bind({});
-HTML5SelectWithDescription.args = {
+export const HTML5DescriptionAndPlaceholder = Template.bind({});
+HTML5DescriptionAndPlaceholder.args = {
     description: 'Much Needed',
     label: 'Good old HTML5',
+    placeholder: 'Select',
     onChangeTraditional: onTestOptionChange,
     options: smallOptionsList,
     traditionalHTML5: true,
@@ -220,13 +237,13 @@ HTML5SelectWithDescription.args = {
     value: 'txt',
 };
 
-export const Description = Template.bind({});
-Description.args = {
-    options: smallOptionsList,
-    onChange: onTestOptionChange,
-    label: 'Label Text',
-    defaultOptionIndex: 0,
-    description: 'Much Needed',
+export const HTML5SelectDefault = Template.bind({});
+HTML5SelectDefault.args = {
+    label: 'Good old HTML5',
+    onChangeTraditional: onTestOptionChange,
+    options: testOptionsHTML5,
+    traditionalHTML5: true,
+    defaultOptionIndex: 3,
 };
 
 const TemplateBetaSingle: ComponentStory<typeof Select> = (args) => {

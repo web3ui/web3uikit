@@ -19,10 +19,10 @@ const onTestOptionChange = (e: any) => {
 };
 
 const testOptionsHTML5 = [
-    { label: 'Hour', id: 'H' },
-    { label: 'Day', id: 'D' },
-    { label: 'Week', id: 'W' },
-    { label: 'Month', id: 'M' },
+    { label: 'H', id: 'Hour' },
+    { label: 'D', id: 'Day' },
+    { label: 'W', id: 'Week' },
+    { label: 'M', id: 'Month' },
 ];
 
 const smallOptionsList = [

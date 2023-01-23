@@ -37,8 +37,7 @@ const Tag: React.FC<TagProps> = ({
                     title="checkmark icon"
                     titleId="tag checkmark icon"
                     fill="inherit"
-                    width={'12px'}
-                    height={'12px'}
+                    fontSize={12}
                 />
             )}
             <strong data-testid="test-tag-text">{text}</strong>

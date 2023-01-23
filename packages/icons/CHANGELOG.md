@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.2.41
+
+### Patch Changes
+
+-   [#1006](https://github.com/web3ui/web3uikit/pull/1006) [`7180ae001`](https://github.com/web3ui/web3uikit/commit/7180ae0015e28dc1b126a5bc9ff57b0eacbbb70b) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add new styles to select component and add filter icon
+
 ## 0.2.40
 
 ### Patch Changes

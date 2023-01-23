@@ -54,9 +54,9 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
             <SelectStyled
                 data-testid="test-select-select"
                 defaultValue={
-                    defaultOptionIndex
-                        ? options[defaultOptionIndex]?.label
-                        : placeholder || 'Please choose'
+                    defaultOptionIndex === undefined
+                        ? placeholder || 'Please choose'
+                        : options[defaultOptionIndex]?.label
                 }
                 id={id}
                 ref={refTraditional}

@@ -1,5 +1,15 @@
 # @web3uikit/core
 
+## 0.2.42
+
+### Patch Changes
+
+-   [#1012](https://github.com/web3ui/web3uikit/pull/1012) [`9854449f9`](https://github.com/web3ui/web3uikit/commit/9854449f9c8720e21d7d16017e6135bf7607431e) Thanks [@rayyan224](https://github.com/rayyan224)! - Fix Checkbox prop checked, should be source of truth
+
+*   [#1014](https://github.com/web3ui/web3uikit/pull/1014) [`4878152fa`](https://github.com/web3ui/web3uikit/commit/4878152fa300ac7e077cb75be04e2fb50c61d652) Thanks [@rayyan224](https://github.com/rayyan224)! - Fix Icon Resizing for tags
+
+-   [#1015](https://github.com/web3ui/web3uikit/pull/1015) [`8e6898cae`](https://github.com/web3ui/web3uikit/commit/8e6898cae7ea93b5ff096175a2bd0a6ef1125a0e) Thanks [@BillyG83](https://github.com/BillyG83)! - Select: default index can be 0
+
 ## 0.2.41
 
 ### Patch Changes

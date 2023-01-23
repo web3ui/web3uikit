@@ -53,7 +53,11 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
         >
             <SelectStyled
                 data-testid="test-select-select"
-                defaultValue={placeholder || 'Please choose'}
+                defaultValue={
+                    defaultOptionIndex
+                        ? options[defaultOptionIndex]?.label
+                        : placeholder || 'Please choose'
+                }
                 id={id}
                 ref={refTraditional}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
@@ -65,18 +69,16 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
                 required={validation?.required}
             >
                 <option disabled>{placeholder || 'Please choose'}</option>
-                {options.map(
-                    (option, i) =>
-                        i !== selectedOptionIndex && (
-                            <option
-                                data-testid={`test-select-option-${i}`}
-                                id={String(option?.id)}
-                                key={option?.id}
-                            >
-                                {option?.label}
-                            </option>
-                        ),
-                )}
+
+                {options.map((option, i) => (
+                    <option
+                        data-testid={`test-select-option-${i}`}
+                        id={String(option?.id)}
+                        key={option?.id}
+                    >
+                        {option?.label}
+                    </option>
+                ))}
             </SelectStyled>
             {label && (
                 <LabelStyledTrad

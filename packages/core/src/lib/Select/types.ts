@@ -111,7 +111,7 @@ export interface ISelectProps {
     /**
      * index of selected option by default
      */
-    defaultOptionIndex?: number | undefined;
+    defaultOptionIndex?: number;
 
     /**
      * To replace no data text with a different text, but still keep image

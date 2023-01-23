@@ -1,5 +1,16 @@
 # @web3uikit/core
 
+## 0.2.41
+
+### Patch Changes
+
+-   [#1006](https://github.com/web3ui/web3uikit/pull/1006) [`7180ae001`](https://github.com/web3ui/web3uikit/commit/7180ae0015e28dc1b126a5bc9ff57b0eacbbb70b) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add new styles to select component and add filter icon
+
+*   [#1009](https://github.com/web3ui/web3uikit/pull/1009) [`ee7704f67`](https://github.com/web3ui/web3uikit/commit/ee7704f67db6dd278c1b0d6acc4b30b5ba356c30) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Select): HTML 5 default index & placeholder
+
+*   Updated dependencies [[`7180ae001`](https://github.com/web3ui/web3uikit/commit/7180ae0015e28dc1b126a5bc9ff57b0eacbbb70b)]:
+    -   @web3uikit/icons@0.2.41
+
 ## 0.2.38
 
 ### Patch Changes

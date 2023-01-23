@@ -6,6 +6,8 @@ import { Btc, Check, Discord, Server, Testnet } from '@web3uikit/icons';
 import Select from './Select';
 import { callCodeData } from './SelectBeta/mockData';
 import { OptionProps } from './types';
+import { Typography } from '../Typography';
+import { Input } from '../Input';
 
 export default {
     title: '2.Forms/Select',
@@ -83,6 +85,11 @@ const optionsList = [
         label: 'Discord',
         id: 'discord3',
         prefix: <Discord fill={color.blueGray50} />,
+    },
+    {
+        id: 'huge text',
+        label: 'A huge text to check width of select component',
+        prefix: '🤯',
     },
     {
         label: 'Discord',
@@ -268,7 +275,7 @@ BetaSelect.args = {
         label: `${item.name}(${item.dialCode})`,
         prefix: (
             <img
-                src={`https://countryflagsapi.com/png/${item.isoCode}`}
+                src={`https://flagcdn.com/h20/${item.isoCode?.toLowerCase()}.png`}
                 loading="lazy"
                 width="24px"
                 height="24px"
@@ -404,4 +411,67 @@ BetaNoData.args = {
     label: 'Select Item',
     name: 'demo',
     placeholder: 'Something big name',
+};
+
+const TemplateBetaCustom: ComponentStory<typeof Select> = (args) => {
+    const [_, updateArgs] = useArgs();
+    const handleChange = (val: OptionProps) => {
+        action('value changed=> new id')(val.id);
+        updateArgs({ value: val.id });
+    };
+
+    return (
+        <div
+            style={{
+                display: 'flex',
+                gap: '8px',
+            }}
+        >
+            <Select
+                tryBeta={true}
+                {...args}
+                onChange={(val) => handleChange(val as OptionProps)}
+            />
+            <Input
+                value={
+                    Array.isArray(args.value) ? args.value.join('') : args.value
+                }
+            />
+        </div>
+    );
+};
+
+export const BetaCustomSelect = TemplateBetaCustom.bind({});
+BetaCustomSelect.args = {
+    isMulti: false,
+    isSearch: true,
+    label: '',
+    name: 'demo',
+    customize: {
+        color: color.navy40,
+        padding: '0 10px',
+        backgroundColor: color.blue70,
+        borderRadius: '14px',
+        border: 'none',
+    },
+    menuCustomize: {
+        backgroundColor: color.blue70,
+        color: color.white,
+        width: 'max-content',
+    },
+    customSelect: (
+        <div style={{ width: '100%', height: '40px', display: 'flex' }}>
+            <Typography
+                style={{ margin: 'auto' }}
+                weight="600"
+                color={color.white}
+            >
+                Add filter
+            </Typography>
+        </div>
+    ),
+    options: optionsList,
+    placeholder: 'Something big name',
+    width: 'max-content',
+    height: '40px',
 };

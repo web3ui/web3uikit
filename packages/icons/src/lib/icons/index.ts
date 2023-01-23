@@ -73,6 +73,7 @@ export { default as EyeClosed } from './EyeClosed';
 export { default as Eye } from './Eye';
 export { default as Fil } from './Fil';
 export { default as File } from './File';
+export { default as Filter } from './Filter';
 export { default as FirebaseLogo } from './FirebaseLogo';
 export { default as GiftOpen } from './GiftOpen';
 export { default as Gift } from './Gift';

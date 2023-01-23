@@ -4,6 +4,7 @@ import styles from './SelectBeta.styles';
 import SelectMenuList from './components/SelectMenuList';
 import SelectedItemsList from './components/SelectedItemsList';
 import { color } from '@web3uikit/styles';
+import { useOutsideAlerter } from '../../../hooks/useOutsideAlerter';
 
 const {
     ButtonStyledSelect,
@@ -19,6 +20,7 @@ const {
 const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     customNoDataText = 'No Data',
     customize,
+    customSelect,
     defaultOptionIndex,
     description,
     disabled = false,
@@ -55,7 +57,11 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
         ...rest
     } = props;
     const triggerRef = useRef<HTMLButtonElement>(null);
-    const [isOpen, setIsOpen] = useState(false);
+    const {
+        isInsideElementClick: isOpen,
+        outsideAlerterRef,
+        setIsInsideElementClick: setIsOpen,
+    } = useOutsideAlerter(false);
 
     const elementId = (component: string) => {
         if (component === undefined) return;
@@ -111,6 +117,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             {...rest}
         >
             <DivStyledSelectWrapper
+                ref={!isMulti ? outsideAlerterRef : undefined}
                 className="w3uik-container"
                 height={height}
                 customize={customize}
@@ -135,34 +142,39 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                     ref={triggerRef}
                     type="button"
                 >
-                    {label && (
-                        <LabelStyled
-                            aria-disabled={disabled}
-                            customize={customize}
-                            data-testid="test-select-label"
-                            htmlFor={name}
-                        >
-                            {label}
-                        </LabelStyled>
-                    )}
-                    {isOpen ? (
-                        <TriangleUpIconStyled
-                            data-testid="test-select-icon"
-                            fontSize="20px"
-                            fill={customize?.color ?? color.navy40}
-                            title="triangle up icon"
-                        />
-                    ) : (
-                        <TriangleDownIconStyled
-                            data-testid="test-select-icon"
-                            fontSize="20px"
-                            fill={customize?.color ?? color.navy40}
-                            title="triangle down icon"
-                        />
+                    {!customSelect && (
+                        <>
+                            {label && (
+                                <LabelStyled
+                                    aria-disabled={disabled}
+                                    customize={customize}
+                                    data-testid="test-select-label"
+                                    htmlFor={name}
+                                >
+                                    {label}
+                                </LabelStyled>
+                            )}
+                            {isOpen ? (
+                                <TriangleUpIconStyled
+                                    data-testid="test-select-icon"
+                                    fontSize="20px"
+                                    fill={customize?.color ?? color.navy40}
+                                    title="close menu"
+                                />
+                            ) : (
+                                <TriangleDownIconStyled
+                                    data-testid="test-select-icon"
+                                    fontSize="20px"
+                                    fill={customize?.color ?? color.navy40}
+                                    title="open menu"
+                                />
+                            )}
+                        </>
                     )}
                 </ButtonStyledSelect>
                 <SelectedItemsList
                     addItem={addItem}
+                    customSelect={customSelect}
                     disabled={disabled}
                     elementId={elementId}
                     isMulti={isMulti}
@@ -186,11 +198,6 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
             </DivStyledSelectWrapper>
             {!disabled && (
                 <>
-                    <DivStyledOverlay
-                        aria-label="Close Dropdown"
-                        className="w3uik-select-overlay"
-                        onClick={() => setIsOpen(false)}
-                    />
                     <SelectMenuList
                         addItem={addItem}
                         customize={customize}
@@ -204,6 +211,7 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
                         menuCustomize={menuCustomize}
                         menuHeight={menuHeight}
                         name={name}
+                        ref={outsideAlerterRef}
                         options={options}
                         placeholder={placeholder}
                         setIsOpen={setIsOpen}

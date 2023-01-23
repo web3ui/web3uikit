@@ -1,5 +1,5 @@
 ---
-'@web3uikit/core': minor
+'@web3uikit/core': patch
 ---
 
-Fix Icon Resiizing for tags
+Fix Icon Resizing for tags

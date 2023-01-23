@@ -250,7 +250,7 @@ HTML5SelectDefault.args = {
     onChangeTraditional: onTestOptionChange,
     options: testOptionsHTML5,
     traditionalHTML5: true,
-    defaultOptionIndex: 3,
+    defaultOptionIndex: 0,
 };
 
 const TemplateBetaSingle: ComponentStory<typeof Select> = (args) => {

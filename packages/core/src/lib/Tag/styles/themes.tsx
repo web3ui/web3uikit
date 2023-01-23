@@ -30,7 +30,7 @@ const activeStatus = css`
 
     svg {
         fill: ${color.mint40};
-        padding-right: 5px;
+        margin-right: 5px;
     }
 `;
 

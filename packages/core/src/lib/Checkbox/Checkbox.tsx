@@ -66,6 +66,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
                 required={validation?.required}
                 type="checkbox"
                 value={`${isChecked}`}
+                checked={checked}
                 {...props}
             />
             <SpanStyled data-testid="test-checkbox-text" isHidden={isLabelNull}>

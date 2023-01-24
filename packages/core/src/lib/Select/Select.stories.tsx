@@ -229,7 +229,6 @@ HTML5Select.args = {
     options: smallOptionsList,
     traditionalHTML5: true,
     validation: { required: true },
-    value: 'txt',
 };
 
 export const HTML5DescriptionAndPlaceholder = Template.bind({});
@@ -241,7 +240,6 @@ HTML5DescriptionAndPlaceholder.args = {
     options: smallOptionsList,
     traditionalHTML5: true,
     validation: { required: true },
-    value: 'txt',
 };
 
 export const HTML5SelectDefault = Template.bind({});
@@ -251,6 +249,15 @@ HTML5SelectDefault.args = {
     options: testOptionsHTML5,
     traditionalHTML5: true,
     defaultOptionIndex: 0,
+};
+
+export const HTML5SelectValue = Template.bind({});
+HTML5SelectValue.args = {
+    label: 'Good old HTML5',
+    onChangeTraditional: onTestOptionChange,
+    options: testOptionsHTML5,
+    traditionalHTML5: true,
+    value: testOptionsHTML5[1]?.label,
 };
 
 const TemplateBetaSingle: ComponentStory<typeof Select> = (args) => {

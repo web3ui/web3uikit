@@ -30,20 +30,11 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
     width = '200px',
     ...props
 }: ISelectProps) => {
-    const [selectedOptionIndex, setSelectedOptionIndex] =
-        useState(defaultOptionIndex);
-
-    useEffect(() => {
-        if (value) {
-            const valueOptionItem = options.find(
-                (optionItem) => optionItem.id == value,
-            );
-            setSelectedOptionIndex(
-                valueOptionItem ? options.indexOf(valueOptionItem) : 0,
-            );
-        }
-    }, [selectedOptionIndex, value]);
-
+    const defaultValue =
+        (defaultOptionIndex && options[defaultOptionIndex]?.label) ||
+        value ||
+        placeholder ||
+        'Please choose';
     return (
         <DivWrapperStyled
             className="input_filled"
@@ -53,11 +44,7 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
         >
             <SelectStyled
                 data-testid="test-select-select"
-                defaultValue={
-                    defaultOptionIndex === undefined
-                        ? placeholder || 'Please choose'
-                        : options[defaultOptionIndex]?.label
-                }
+                defaultValue={defaultValue}
                 id={id}
                 ref={refTraditional}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>

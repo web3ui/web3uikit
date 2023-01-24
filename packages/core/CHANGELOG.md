@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.44
+
+### Patch Changes
+
+-   [#1021](https://github.com/web3ui/web3uikit/pull/1021) [`990729be7`](https://github.com/web3ui/web3uikit/commit/990729be7e868b747db6c1596b961ad374a3e385) Thanks [@rayyan224](https://github.com/rayyan224)! - Add Prefix for select
+
 ## 0.2.43
 
 ### Patch Changes

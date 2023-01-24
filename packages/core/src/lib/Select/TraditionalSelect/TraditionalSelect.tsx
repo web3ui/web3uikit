@@ -64,6 +64,7 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
                         id={String(option?.id)}
                         key={option?.id}
                     >
+                        {option?.prefix}
                         {option?.label}
                     </option>
                 ))}

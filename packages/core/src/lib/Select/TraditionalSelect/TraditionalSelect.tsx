@@ -31,7 +31,8 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
     ...props
 }: ISelectProps) => {
     const defaultValue =
-        (defaultOptionIndex && options[defaultOptionIndex]?.label) ||
+        (defaultOptionIndex !== undefined &&
+            options[defaultOptionIndex]?.label) ||
         value ||
         placeholder ||
         'Please choose';

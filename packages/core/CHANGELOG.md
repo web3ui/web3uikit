@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.43
+
+### Patch Changes
+
+-   [#1018](https://github.com/web3ui/web3uikit/pull/1018) [`379563d0c`](https://github.com/web3ui/web3uikit/commit/379563d0cf17b43e3ee70bf400ab3304a385527d) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Select): default value, index, placeholder and fallback
+
 ## 0.2.42
 
 ### Patch Changes

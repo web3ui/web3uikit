@@ -55,6 +55,7 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
                     onBlurTraditional && onBlurTraditional(event)
                 }
                 required={validation?.required}
+                value={value}
             >
                 <option disabled>{placeholder || 'Please choose'}</option>
 
@@ -63,6 +64,7 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
                         data-testid={`test-select-option-${i}`}
                         id={String(option?.id)}
                         key={option?.id}
+                        value={option?.id}
                     >
                         {option?.prefix}
                         {option?.label}

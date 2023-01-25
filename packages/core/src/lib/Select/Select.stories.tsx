@@ -231,6 +231,16 @@ HTML5Select.args = {
     validation: { required: true },
 };
 
+export const HTML5ValueBinded = Template.bind({});
+HTML5Select.args = {
+    label: 'Good old HTML5',
+    onChangeTraditional: onTestOptionChange,
+    options: smallOptionsList,
+    traditionalHTML5: true,
+    validation: { required: true },
+    value: 'dapp',
+};
+
 export const HTML5DescriptionAndPlaceholder = Template.bind({});
 HTML5DescriptionAndPlaceholder.args = {
     description: 'Much Needed',

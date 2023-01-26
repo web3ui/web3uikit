@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.45
+
+### Patch Changes
+
+-   [#1023](https://github.com/web3ui/web3uikit/pull/1023) [`834e9ac84`](https://github.com/web3ui/web3uikit/commit/834e9ac84a4d3cbeac7bbc19fa0a04141143e173) Thanks [@rayyan224](https://github.com/rayyan224)! - Add Value binding for html5 select
+
 ## 0.2.44
 
 ### Patch Changes

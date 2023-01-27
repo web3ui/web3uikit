@@ -9,7 +9,6 @@ import { useOutsideAlerter } from '../../../hooks/useOutsideAlerter';
 const {
     ButtonStyledSelect,
     DivStyledDesc,
-    DivStyledOverlay,
     DivStyledSelectWrapper,
     DivStyledWrapper,
     LabelStyled,
@@ -94,7 +93,8 @@ const SelectBeta: React.FunctionComponent<ISelectProps> = ({
     // to set default value from options at first render
     useEffect(() => {
         if (
-            defaultOptionIndex &&
+            defaultOptionIndex !== undefined &&
+            defaultOptionIndex !== null &&
             options &&
             defaultOptionIndex >= 0 &&
             defaultOptionIndex < options?.length

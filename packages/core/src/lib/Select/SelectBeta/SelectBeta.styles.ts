@@ -16,7 +16,7 @@ const hoverStyles = css<Pick<ISelectProps, 'customize'>>`
 
 const DivStyledWrapper = styled.div<Pick<ISelectProps, 'customize'>>`
     ${resetCSS};
-    --arrow-width: 51px;
+    --arrow-width: 42px;
     --checkbox-width: 42px;
     display: block;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
@@ -35,9 +35,10 @@ const DivStyledWrapper = styled.div<Pick<ISelectProps, 'customize'>>`
         }
     }
     ${(p) =>
-        p.customize?.margin
-            ? `margin: ${p.customize.margin}`
-            : `margin-bottom: 5px`}
+        p.customize?.margin &&
+        css`
+            margin: ${p.customize.margin};
+        `}
 `;
 
 const DivStyledSelectWrapper = styled.div<Partial<ISelectProps>>`
@@ -179,10 +180,6 @@ const MenuStyledWrapper = styled.menu<Pick<ISelectProps, 'menuCustomize'>>`
     padding: 0;
     position: relative;
     z-index: 2;
-    ${(p) =>
-        p.menuCustomize?.margin
-            ? `margin:${p.menuCustomize.margin}`
-            : 'margin-top: 5px'}
 `;
 
 type TStyleProps = Pick<ISelectProps, 'customize' | 'menuCustomize'>;
@@ -192,8 +189,15 @@ const DivStyledDropdown = styled.div<TStyleProps>`
     border: ${(p) => p.menuCustomize?.border ?? `2px solid ${color.navy30}`};
     left: 0;
     position: absolute;
-    top: 0;
     width: ${(p) => p.menuCustomize?.width ?? '100%'};
+    ${(p) =>
+        p.menuCustomize?.margin
+            ? css`
+                  margin: ${p.menuCustomize.margin};
+              `
+            : css`
+                  top: 5px;
+              `}
 `;
 
 const InputStyledSearch = styled.input<TStyleProps>`

@@ -5,9 +5,7 @@ import { StepNumberProps, StepperProps } from '../types';
 type TStyleProps = Pick<
     StepNumberProps,
     'activeStep' | 'thisStep' | 'stepTotal' | 'orientation'
-> & {
-    isVisible?: boolean;
-};
+>;
 
 const OrderedListStyled = styled.ol<Pick<StepperProps, 'orientation'>>`
     ${resetCSS};
@@ -25,15 +23,6 @@ const OrderedListStyled = styled.ol<Pick<StepperProps, 'orientation'>>`
             align-items: baseline;
             flex-direction: column;
         `}
-
-    @media screen and (max-width: ${breakpoints.md}) {
-        .step-title {
-            display: none !important;
-        }
-        .step-dash{
-            display: block !important;
-        }
-    }
 `;
 
 const ListItemStyled = styled.li<TStyleProps>`
@@ -70,7 +59,6 @@ const SpanStyled = styled.span<TStyleProps>`
     ${(props) =>
         props.orientation === 'horizontal'
             ? css`
-                  ${!props.isVisible && 'display:none'}
                   &:last-of-type {
                       display: none;
                   }

@@ -44,37 +44,13 @@ const StepperNumbers: React.FC<IStepperNumberProps> = ({
                             />
                         )}
                     </ListItemStyled>
-                    <span
-                        className="step-title"
-                        style={{
-                            display: stepData[index]?.stepTitle
-                                ? 'block'
-                                : 'none',
-                        }}
-                    >
-                        <Typography
-                            variant="body16"
-                            weight="550"
-                            fontSize="16px"
-                            style={{
-                                opacity: activeStep - 1 === index ? 1 : 0.5,
-                            }}
-                        >
-                            {stepData[index]?.stepTitle}
-                        </Typography>
-                    </span>
-                    {/* DASH shown in horizontal orientation */}
-                    {index < stepData.length - 1 && (
-                        <SpanStyled
-                            className="step-dash"
-                            isVisible={!stepData[index]?.stepTitle}
-                            activeStep={activeStep}
-                            stepTotal={stepData.length}
-                            thisStep={Number(index + 1)}
-                            aria-hidden="true"
-                            orientation={orientation}
-                        />
-                    )}
+                    <SpanStyled
+                        activeStep={activeStep}
+                        stepTotal={stepData.length}
+                        thisStep={Number(index + 1)}
+                        aria-hidden="true"
+                        orientation={orientation}
+                    />
                 </Fragment>
             ))}
         </OrderedListStyled>

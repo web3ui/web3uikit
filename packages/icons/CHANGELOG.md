@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.2.46
+
+### Patch Changes
+
+-   [#1026](https://github.com/web3ui/web3uikit/pull/1026) [`72a3b4406`](https://github.com/web3ui/web3uikit/commit/72a3b4406984b7f434aaf09fab392ef82d6fb1f0) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - Added various icons
+
 ## 0.2.41
 
 ### Patch Changes

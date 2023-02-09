@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, Ref, forwardRef } from 'react';
 import { color } from '@web3uikit/styles';
 import { ISelectExtendedProps, KEY, OptionProps } from '../../types';
 import styles from '../SelectBeta.styles';
@@ -19,21 +19,24 @@ const {
     SpanStyledNoResults,
 } = styles;
 
-const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
-    addItem,
-    customNoDataText,
-    customize,
-    elementId,
-    isMulti,
-    isOpen,
-    isSearch = true,
-    max,
-    menuHeight = '200px',
-    menuCustomize,
-    options = [],
-    setIsOpen,
-    value = [],
-}) => {
+const SelectMenuList = (
+    {
+        addItem,
+        customNoDataText,
+        customize,
+        elementId,
+        isMulti,
+        isOpen,
+        isSearch = true,
+        max,
+        menuHeight = '200px',
+        menuCustomize,
+        options = [],
+        setIsOpen,
+        value = [],
+    }: ISelectExtendedProps,
+    ref: Ref<HTMLDivElement>,
+) => {
     const listRef = useRef<HTMLUListElement>(null);
     const searchRef = useRef<HTMLInputElement>(null);
     // Active descendant. Numbers are easier to manipulate than element IDs.
@@ -68,7 +71,11 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
         if (wrapper) {
             const el = wrapper.querySelector(selector);
             if (el) {
-                el?.scrollIntoView?.(false);
+                el?.scrollIntoView({
+                    block: 'nearest',
+                    inline: 'nearest',
+                    behavior: 'smooth',
+                });
             }
         }
     };
@@ -246,4 +253,4 @@ const SelectMenuList: React.FunctionComponent<ISelectExtendedProps> = ({
     );
 };
 
-export default SelectMenuList;
+export default forwardRef(SelectMenuList);

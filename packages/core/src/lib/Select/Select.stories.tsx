@@ -27,6 +27,15 @@ const testOptionsHTML5 = [
     { label: 'Month', id: 'M' },
 ];
 
+const testDisabledOptions = [
+    { label: 'Product 1', id: 'p1' },
+    { label: 'Product 2', id: 'p2' },
+    { label: 'Product 3', id: 'p3' },
+    { label: 'Title 2', id: 'title', disabled: true },
+    { label: 'Product 4', id: 'p4' },
+    { label: 'Product 5', id: 'p5' },
+];
+
 const smallOptionsList = [
     {
         label: 'Discord',
@@ -268,6 +277,15 @@ HTML5SelectValue.args = {
     options: testOptionsHTML5,
     traditionalHTML5: true,
     value: testOptionsHTML5[1]?.label,
+};
+
+export const HTML5SelectDisabled = Template.bind({});
+HTML5SelectDisabled.args = {
+    label: 'Good old HTML5',
+    onChangeTraditional: onTestOptionChange,
+    options: testDisabledOptions,
+    placeholder: 'Title 1',
+    traditionalHTML5: true,
 };
 
 const TemplateBetaSingle: ComponentStory<typeof Select> = (args) => {

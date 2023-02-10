@@ -193,6 +193,11 @@ export interface OptionProps {
      * id of option. should be unique
      */
     id: string | number;
+
+    /**
+     * an option can be disabled / unselectable
+     */
+    disabled?: boolean;
 }
 
 export interface LabelProps {

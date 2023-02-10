@@ -65,6 +65,7 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
                         id={String(option?.id)}
                         key={option?.id}
                         value={option?.id}
+                        disabled={option.disabled || false}
                     >
                         {option?.prefix}
                         {option?.label}

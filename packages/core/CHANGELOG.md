@@ -1,5 +1,15 @@
 # @web3uikit/core
 
+## 0.2.47
+
+### Patch Changes
+
+-   [#1029](https://github.com/web3ui/web3uikit/pull/1029) [`a56ba8488`](https://github.com/web3ui/web3uikit/commit/a56ba8488c66123ae88d2bbda3e0ac578194716f) Thanks [@SidharthK2](https://github.com/SidharthK2)! - Changed Information component name
+
+*   [#1025](https://github.com/web3ui/web3uikit/pull/1025) [`967cb7bd4`](https://github.com/web3ui/web3uikit/commit/967cb7bd441fb9fabc69887ef325f2c19ed640c7) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - select beta bugs fixes
+
+-   [#1034](https://github.com/web3ui/web3uikit/pull/1034) [`70cdeccc5`](https://github.com/web3ui/web3uikit/commit/70cdeccc58721de97e8238e9ca0b79ceec0c5124) Thanks [@BillyG83](https://github.com/BillyG83)! - HTML5 Select can use disabled options
+
 ## 0.2.45
 
 ### Patch Changes

@@ -22,6 +22,11 @@ export interface TagProps {
     active?: boolean;
 
     /**
+     * To add a prefix icon, to the tag. Pass a react node
+     */
+    prefixIcon?: React.ReactNode;
+
+    /**
      * choose a color for the tag
      */
     color?:

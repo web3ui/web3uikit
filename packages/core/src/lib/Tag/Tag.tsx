@@ -16,6 +16,7 @@ const Tag: React.FC<TagProps> = ({
     theme = 'regular',
     tone = 'light',
     width = 'fit-content',
+    prefixIcon,
     ...props
 }: TagProps) => {
     return (
@@ -40,6 +41,7 @@ const Tag: React.FC<TagProps> = ({
                     fontSize={12}
                 />
             )}
+            {prefixIcon && prefixIcon}
             <strong data-testid="test-tag-text">{text}</strong>
             {hasCancel && (
                 <SpanStyled onClick={onCancelClick}>

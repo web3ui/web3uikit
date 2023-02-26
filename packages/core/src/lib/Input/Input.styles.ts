@@ -69,12 +69,6 @@ const DivWrapperStyled = styled.div<Pick<InputProps, 'state' | 'size'>>`
         }
     }
 
-    :not(&:focus-within) {
-        &.input_filled {
-            outline-color: ${color.navy30} !important;
-        }
-    }
-
     &:focus-within,
     &.input_filled {
         outline: 2px solid ${color.navy40};

@@ -234,20 +234,25 @@ Description.args = {
 export const HTML5Select = Template.bind({});
 HTML5Select.args = {
     label: 'Good old HTML5',
-    onChangeTraditional: onTestOptionChange,
     options: smallOptionsList,
     traditionalHTML5: true,
     validation: { required: true },
 };
 
-export const HTML5ValueBinded = Template.bind({});
-HTML5Select.args = {
+export const HTML5SelectValue = Template.bind({});
+HTML5SelectValue.args = {
     label: 'Good old HTML5',
-    onChangeTraditional: onTestOptionChange,
-    options: smallOptionsList,
+    options: testOptionsHTML5,
     traditionalHTML5: true,
-    validation: { required: true },
-    value: 'dapp',
+    value: testOptionsHTML5[1]?.label,
+};
+
+export const HTML5SelectDefault = Template.bind({});
+HTML5SelectDefault.args = {
+    label: 'Good old HTML5',
+    options: testOptionsHTML5,
+    traditionalHTML5: true,
+    defaultOptionIndex: 0,
 };
 
 export const HTML5DescriptionAndPlaceholder = Template.bind({});
@@ -255,34 +260,15 @@ HTML5DescriptionAndPlaceholder.args = {
     description: 'Much Needed',
     label: 'Good old HTML5',
     placeholder: 'Select',
-    onChangeTraditional: onTestOptionChange,
     options: smallOptionsList,
     traditionalHTML5: true,
     validation: { required: true },
 };
 
-export const HTML5SelectDefault = Template.bind({});
-HTML5SelectDefault.args = {
-    label: 'Good old HTML5',
-    onChangeTraditional: onTestOptionChange,
-    options: testOptionsHTML5,
-    traditionalHTML5: true,
-    defaultOptionIndex: 0,
-};
-
-export const HTML5SelectValue = Template.bind({});
-HTML5SelectValue.args = {
-    label: 'Good old HTML5',
-    onChangeTraditional: onTestOptionChange,
-    options: testOptionsHTML5,
-    traditionalHTML5: true,
-    value: testOptionsHTML5[1]?.label,
-};
-
 export const HTML5SelectDisabled = Template.bind({});
 HTML5SelectDisabled.args = {
+    disabled: true,
     label: 'Good old HTML5',
-    onChangeTraditional: onTestOptionChange,
     options: testDisabledOptions,
     placeholder: 'Title 1',
     traditionalHTML5: true,

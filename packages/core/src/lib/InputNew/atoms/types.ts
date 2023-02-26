@@ -58,7 +58,7 @@ export interface IInputBaseProps extends TValidateInput {
     /**
      * input needs an ID so it can relate to its label
      */
-    id?: string;
+    id: string;
 
     /**
      * name text for input accessibility

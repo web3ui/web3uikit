@@ -51,11 +51,6 @@ export interface IInputBaseProps extends TValidateInput {
     autoFocus?: boolean;
 
     /**
-     * pass a value to be rendered in the input
-     */
-    defaultValue?: string | number;
-
-    /**
      * disable the input so the user cannot interact with it
      */
     disabled?: boolean;
@@ -99,6 +94,11 @@ export interface IInputBaseProps extends TValidateInput {
      * the type of the HTML input: text | number | email | tel | password;
      */
     type?: 'text' | 'number' | 'email' | 'tel' | 'password';
+
+    /**
+     * pass a value to be rendered in the input
+     */
+    value?: string | number;
 }
 
 export interface ILabelBaseProps {

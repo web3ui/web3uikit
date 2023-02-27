@@ -11,7 +11,7 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
     description,
     disabled = false,
     errorMessage = '',
-    id,
+    id = 'web3uikit-select',
     label,
     onBlurTraditional,
     onChange,
@@ -30,48 +30,65 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
     width = '200px',
     ...props
 }: ISelectProps) => {
-    const defaultValue =
-        (defaultOptionIndex !== undefined &&
-            options[defaultOptionIndex]?.label) ||
-        value ||
-        placeholder ||
-        'Please choose';
+    const [currentValue, setCurrentValue] = useState<
+        string | number | string[]
+    >();
+
+    useEffect(() => {
+        if (!value) return;
+        setCurrentValue(value);
+    }, [value]);
+
+    useEffect(() => {
+        if (Number(defaultOptionIndex) < 0) return;
+        if (Number(defaultOptionIndex) > options.length) return;
+
+        setCurrentValue(options[Number(defaultOptionIndex)]?.label || '');
+    }, [defaultOptionIndex]);
+
+    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setCurrentValue(event.currentTarget.value);
+        onChangeTraditional && onChangeTraditional(event);
+    };
+
     return (
         <DivWrapperStyled
-            className="input_filled"
+            className="input_filled select"
             data-testid="test-select"
+            state={state}
             style={{ ...style, width }}
             {...props}
         >
             <SelectStyled
                 data-testid="test-select-select"
-                defaultValue={defaultValue}
+                disabled={disabled}
                 id={id}
                 ref={refTraditional}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
-                    onChangeTraditional && onChangeTraditional(event)
+                    handleChange(event)
                 }
                 onBlur={(event: React.FocusEvent<HTMLSelectElement>) =>
                     onBlurTraditional && onBlurTraditional(event)
                 }
                 required={validation?.required}
-                value={value}
+                value={currentValue || placeholder || 'Please choose'}
             >
                 <option disabled>{placeholder || 'Please choose'}</option>
 
                 {options.map((option, i) => (
                     <option
                         data-testid={`test-select-option-${i}`}
+                        disabled={option.disabled || false}
                         id={String(option?.id)}
                         key={option?.id}
-                        value={option?.id}
-                        disabled={option.disabled || false}
+                        value={option?.label}
                     >
                         {option?.prefix}
                         {option?.label}
                     </option>
                 ))}
             </SelectStyled>
+
             {label && (
                 <LabelStyledTrad
                     data-testid="test-select-label"

@@ -21,7 +21,7 @@ jobs:
             - name: Install pnpm
               uses: pnpm/action-setup@v2.2.2
               with:
-                  version: 7.11.0
+                  version: 7.28.0
 
             - name: Use Node ${{ matrix.node }}
               uses: actions/setup-node@v2

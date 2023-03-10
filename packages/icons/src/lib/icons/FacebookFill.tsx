@@ -3,7 +3,7 @@
 // Do not edit
 import { SVGProps } from 'react';
 import { SVGRProps } from '../type';
-const SvgContract = ({
+const SvgFacebookFill = ({
     title,
     titleId,
     isResponsive = false,
@@ -31,17 +31,8 @@ const SvgContract = ({
         {...props}
     >
         {title ? <title id={titleId}>{title}</title> : null}
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M2.732 2.732A2.5 2.5 0 0 1 4.5 2h15A2.5 2.5 0 0 1 22 4.5v15a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 19.5v-15a2.5 2.5 0 0 1 .732-1.768ZM4.5 4a.5.5 0 0 0-.5.5v15a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-15a.5.5 0 0 0-.5-.5h-15Z"
-        />
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6 7.5a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm0 4a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm11.625.22a1 1 0 0 1 .156 1.405l-4 5a1 1 0 0 1-1.406.156l-2.5-2a1 1 0 0 1 1.25-1.562l1.719 1.375 3.375-4.219a1 1 0 0 1 1.406-.156Z"
-        />
+        <path d="M18.29.517c.01 1.24.02 2.49.04 3.73h-1.3c-1.06-.01-1.23-.04-1.56.07-.13.05-.83.31-1.19 1.05-.18.37-.21.71-.22.9v2.97h4.09l-.65 4.27h-3.47v10.28H9.36c.01-3.43.02-6.85.04-10.28H5.71c-.01-1.44-.02-2.87-.04-4.31 1.27-.01 2.53-.02 3.8-.04-.04-1.19-.07-2.39-.11-3.58.01-.47.08-1.19.4-1.99.17-.43.78-1.92 2.32-2.75.8-.43 1.48-.49 2.53-.58.89-.08 2.17-.08 3.69.25l-.01.01Z" />
     </svg>
 );
 
-export default SvgContract;
+export default SvgFacebookFill;

@@ -3,7 +3,7 @@
 // Do not edit
 import { SVGProps } from 'react';
 import { SVGRProps } from '../type';
-const SvgContract = ({
+const SvgPauseCircle = ({
     title,
     titleId,
     isResponsive = false,
@@ -13,7 +13,7 @@ const SvgContract = ({
     <svg
         width="1em"
         height="1em"
-        viewBox="0 0 24 24"
+        viewBox="0 0 20 20"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
@@ -31,17 +31,8 @@ const SvgContract = ({
         {...props}
     >
         {title ? <title id={titleId}>{title}</title> : null}
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M2.732 2.732A2.5 2.5 0 0 1 4.5 2h15A2.5 2.5 0 0 1 22 4.5v15a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 19.5v-15a2.5 2.5 0 0 1 .732-1.768ZM4.5 4a.5.5 0 0 0-.5.5v15a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-15a.5.5 0 0 0-.5-.5h-15Z"
-        />
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6 7.5a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm0 4a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm11.625.22a1 1 0 0 1 .156 1.405l-4 5a1 1 0 0 1-1.406.156l-2.5-2a1 1 0 0 1 1.25-1.562l1.719 1.375 3.375-4.219a1 1 0 0 1 1.406-.156Z"
-        />
+        <path d="M7.813 6.25a.94.94 0 0 0-.938.938v5.625a.938.938 0 0 0 1.875 0V7.186a.938.938 0 0 0-.938-.937Zm4.375 0a.94.94 0 0 0-.938.938v5.625a.938.938 0 0 0 1.875 0V7.186a.938.938 0 0 0-.938-.937ZM10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0Zm0 18.125c-4.48 0-8.125-3.645-8.125-8.125S5.52 1.875 10 1.875 18.125 5.52 18.125 10 14.48 18.125 10 18.125Z" />
     </svg>
 );
 
-export default SvgContract;
+export default SvgPauseCircle;

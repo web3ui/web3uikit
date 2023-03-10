@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.2.48
+
+### Patch Changes
+
+-   [#1035](https://github.com/web3ui/web3uikit/pull/1035) [`7f140deff`](https://github.com/web3ui/web3uikit/commit/7f140deffacda769525f5cfccf0e755d019b91d7) Thanks [@rayyan224](https://github.com/rayyan224)! - Add Prefix icon for tag
+
 ## 0.2.47
 
 ### Patch Changes

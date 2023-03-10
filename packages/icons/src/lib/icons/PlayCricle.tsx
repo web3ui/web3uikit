@@ -3,7 +3,7 @@
 // Do not edit
 import { SVGProps } from 'react';
 import { SVGRProps } from '../type';
-const SvgContract = ({
+const SvgPlayCricle = ({
     title,
     titleId,
     isResponsive = false,
@@ -31,17 +31,8 @@ const SvgContract = ({
         {...props}
     >
         {title ? <title id={titleId}>{title}</title> : null}
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M2.732 2.732A2.5 2.5 0 0 1 4.5 2h15A2.5 2.5 0 0 1 22 4.5v15a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 19.5v-15a2.5 2.5 0 0 1 .732-1.768ZM4.5 4a.5.5 0 0 0-.5.5v15a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-15a.5.5 0 0 0-.5-.5h-15Z"
-        />
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6 7.5a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm0 4a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm11.625.22a1 1 0 0 1 .156 1.405l-4 5a1 1 0 0 1-1.406.156l-2.5-2a1 1 0 0 1 1.25-1.562l1.719 1.375 3.375-4.219a1 1 0 0 1 1.406-.156Z"
-        />
+        <path d="M9.355 7.746c.293-.168.657-.195.946.016l5.625 3.437c.277.172.449.473.449.801a.943.943 0 0 1-.45.8l-5.624 3.438a.931.931 0 0 1-.946.016.932.932 0 0 1-.48-.817v-6.91a.92.92 0 0 1 .48-.78ZM22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10ZM12 3.875A8.124 8.124 0 0 0 3.875 12 8.124 8.124 0 0 0 12 20.125 8.124 8.124 0 0 0 20.125 12 8.124 8.124 0 0 0 12 3.875Z" />
     </svg>
 );
 
-export default SvgContract;
+export default SvgPlayCricle;

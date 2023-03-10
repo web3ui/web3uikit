@@ -3,7 +3,7 @@
 // Do not edit
 import { SVGProps } from 'react';
 import { SVGRProps } from '../type';
-const SvgContract = ({
+const SvgSend = ({
     title,
     titleId,
     isResponsive = false,
@@ -31,17 +31,8 @@ const SvgContract = ({
         {...props}
     >
         {title ? <title id={titleId}>{title}</title> : null}
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M2.732 2.732A2.5 2.5 0 0 1 4.5 2h15A2.5 2.5 0 0 1 22 4.5v15a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 19.5v-15a2.5 2.5 0 0 1 .732-1.768ZM4.5 4a.5.5 0 0 0-.5.5v15a.5.5 0 0 0 .5.5h15a.5.5 0 0 0 .5-.5v-15a.5.5 0 0 0-.5-.5h-15Z"
-        />
-        <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M6 7.5a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm0 4a1 1 0 0 1 1-1h4a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1Zm11.625.22a1 1 0 0 1 .156 1.405l-4 5a1 1 0 0 1-1.406.156l-2.5-2a1 1 0 0 1 1.25-1.562l1.719 1.375 3.375-4.219a1 1 0 0 1 1.406-.156Z"
-        />
+        <path d="M22.83 12.85c.06-.07.11-.14.15-.22.01-.03.03-.06.04-.09.04-.11.07-.22.07-.35 0-.12-.03-.24-.07-.35-.01-.03-.03-.06-.04-.09a.855.855 0 0 0-.15-.22c-.02-.02-.03-.04-.05-.06a.806.806 0 0 0-.26-.18L3.43 2.1c-.37-.18-.81-.11-1.11.16-.3.28-.4.72-.25 1.1l3.4 8.83-3.4 8.84a1.01 1.01 0 0 0 .26 1.1c.3.28.74.34 1.11.17l19.09-9.19c.1-.05.18-.11.25-.18.02-.02.03-.04.05-.06v-.02ZM4.84 5l12.87 6.2H7.22L4.84 5Zm2.38 8.2h10.49L4.84 19.4l2.38-6.2Z" />
     </svg>
 );
 
-export default SvgContract;
+export default SvgSend;

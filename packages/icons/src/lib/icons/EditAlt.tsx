@@ -3,7 +3,7 @@
 // Do not edit
 import { SVGProps } from 'react';
 import { SVGRProps } from '../type';
-const SvgTv = ({
+const SvgEditAlt = ({
     title,
     titleId,
     isResponsive = false,
@@ -34,14 +34,14 @@ const SvgTv = ({
         <path
             fillRule="evenodd"
             clipRule="evenodd"
-            d="M4 8a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1H4ZM1 9a3 3 0 0 1 3-3h16a3 3 0 0 1 3 3v11a3 3 0 0 1-3 3H4a3 3 0 0 1-3-3V9Z"
+            d="M5.586 7A2 2 0 0 1 7 6.414h4.667a.667.667 0 0 1 0 1.334H7a.667.667 0 0 0-.667.666v9.333a.667.667 0 0 0 .667.667h9.333a.667.667 0 0 0 .667-.667v-4.666a.667.667 0 0 1 1.333 0v4.666a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V8.414A2 2 0 0 1 5.586 7Z"
         />
         <path
             fillRule="evenodd"
             clipRule="evenodd"
-            d="M6.293 1.293a1 1 0 0 1 1.414 0L12 5.586l4.293-4.293a1 1 0 1 1 1.414 1.414l-5 5a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 0-1.414Z"
+            d="M17.667 6.333a.748.748 0 0 0-.529.22l-6.203 6.202-.352 1.41 1.41-.353 6.202-6.203a.747.747 0 0 0-.528-1.276Zm-1.472-.724a2.08 2.08 0 1 1 2.943 2.943l-6.333 6.334a.666.666 0 0 1-.31.175l-2.667.667a.667.667 0 0 1-.808-.809l.667-2.667a.667.667 0 0 1 .175-.31l6.333-6.333Z"
         />
     </svg>
 );
 
-export default SvgTv;
+export default SvgEditAlt;

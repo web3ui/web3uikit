@@ -4,7 +4,7 @@ import Notification from './Notification';
 import { Button } from '../Button';
 import NotificationProvider, { useNotification } from './NotificationProvider';
 import { IPosition, notifyType } from './types';
-import { Bell, Cloud } from '@web3uikit/icons';
+import { Beans, Bell, Cloud } from '@web3uikit/icons';
 
 export default {
     title: '5.Popup/Notification',
@@ -150,9 +150,16 @@ const CustomContent = () => (
     </p>
 );
 
+export const CustomIcon = Template.bind({});
+CustomIcon.args = {
+    icon: <Cloud />,
+    message: 'TX: 0x2134...e82c5',
+    title: 'New Event Sync',
+};
+
 export const CustomNotification = Template.bind({});
 CustomNotification.args = {
-    icon: <Cloud color="pink" fill="pink" />,
+    icon: <Beans />,
     message: <CustomContent />,
     title: 'New Event Sync',
     customize: {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { TCustomize } from '../../interfaces/customize';
 
 export interface NotificationProps extends INotificationStyled {
     /**
@@ -12,9 +13,9 @@ export interface NotificationProps extends INotificationStyled {
     title?: string;
 
     /**
-     * The message to display in notification
+     * Set element/text that will be shown within the tooltip
      */
-    message?: string;
+    message: JSX.Element | string;
 
     /**
      * set an icon to show inside the notification
@@ -38,6 +39,11 @@ export interface INotificationStyled extends INotificationContainer {
      * starts close animation when true
      */
     isClosing?: boolean;
+
+    /**
+     * customize the heck out of it
+     */
+    customize?: TCustomize;
 }
 
 export interface INotificationContainer {

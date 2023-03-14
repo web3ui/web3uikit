@@ -136,9 +136,34 @@ Standard.args = {
     message: 'Kresimir: Thank you for sharin..',
 };
 
-export const CustomIcon = Template.bind({});
-CustomIcon.args = {
-    icon: <Cloud />,
-    message: 'TX: 0x2134...e82c5',
+const CustomContent = () => (
+    <p style={{ color: 'white' }}>
+        yooooo{' '}
+        <a
+            href="https://admin.moralis.io/"
+            target="_blank"
+            style={{ color: 'lightBlue' }}
+        >
+            Moralis
+        </a>{' '}
+        is awesome
+    </p>
+);
+
+export const CustomNotification = Template.bind({});
+CustomNotification.args = {
+    icon: <Cloud color="pink" fill="pink" />,
+    message: <CustomContent />,
     title: 'New Event Sync',
+    customize: {
+        backgroundColor: 'darkBlue',
+        border: '3px solid pink',
+        borderRadius: '10px',
+        color: 'green',
+        fontSize: '20px',
+        fontWeight: 'bold',
+        margin: '20px',
+        onHover: 'lighten',
+        padding: '30px',
+    },
 };

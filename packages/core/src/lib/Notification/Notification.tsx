@@ -16,6 +16,7 @@ const {
 } = NotificationStyles;
 
 const Notification: React.FC<NotificationProps> = ({
+    customize,
     dispatch,
     icon,
     id,
@@ -102,6 +103,7 @@ const Notification: React.FC<NotificationProps> = ({
 
     return (
         <NotificationStyled
+            customize={customize}
             data-testid="test-notification"
             id={id}
             isClosing={isClosing}
@@ -115,7 +117,10 @@ const Notification: React.FC<NotificationProps> = ({
                 {getIcon()}
             </IconWrapperStyled>
             <TextContentStyled>
-                <TitleStyled data-testid="test-notification-title">
+                <TitleStyled
+                    customize={customize}
+                    data-testid="test-notification-title"
+                >
                     {title}
                 </TitleStyled>
                 <CloseWrapperStyled

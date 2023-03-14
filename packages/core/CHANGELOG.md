@@ -1,5 +1,13 @@
 # @web3uikit/core
 
+## 0.3.1
+
+### Patch Changes
+
+-   [#1046](https://github.com/web3ui/web3uikit/pull/1046) [`6742166f1`](https://github.com/web3ui/web3uikit/commit/6742166f1b504e8e2ad828f8a24baccf030ddec8) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(Notification): extended to use TCustomize prop
+
+*   [#1045](https://github.com/web3ui/web3uikit/pull/1045) [`dabb1e676`](https://github.com/web3ui/web3uikit/commit/dabb1e676de77b248ebedb834b31f415275c4669) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(tolltip): added story to show custom
+
 ## 0.2.48
 
 ### Patch Changes

@@ -54,10 +54,18 @@ Right.args = {
     bgColor: color.red40,
 };
 
+const CustomContent = () => (
+    <p>
+        Link to{' '}
+        <a href="https://money.moralis.io/" target="_blank">
+            https://money.moralis.io/
+        </a>
+    </p>
+);
 export const Custom = Template.bind({});
 Custom.args = {
     position: 'bottom',
-    content: 'Hide',
+    content: <CustomContent />,
     children: [
         <div style={{ border: '1px solid black' }}>
             <HideButton onToggle={() => ({})} />
@@ -65,7 +73,7 @@ Custom.args = {
     ],
     arrowSize: 4,
     customize: {
-        backgroundColor: color.blue40,
+        backgroundColor: color.mint50,
         color: color.white,
         padding: '4px 8px',
         fontSize: '12px',

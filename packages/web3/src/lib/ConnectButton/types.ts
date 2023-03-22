@@ -1,4 +1,6 @@
-export interface IConnectButtonProps {
+import type { HTMLAttributes } from 'react';
+
+export interface IConnectButtonProps extends HTMLAttributes<HTMLDivElement> {
     /**
      * an optional chain id of the blockchain that the web3 wallet is connected to
      */

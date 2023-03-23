@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.3.2
+
+### Patch Changes
+
+-   [#1051](https://github.com/web3ui/web3uikit/pull/1051) [`b5a10b147`](https://github.com/web3ui/web3uikit/commit/b5a10b1478ae05a667550b555fb42e4e3d216c59) Thanks [@johanMoralis](https://github.com/johanMoralis)! - fix(Logo): added color option to visa and amex logos
+
 ## 0.3.1
 
 ### Patch Changes

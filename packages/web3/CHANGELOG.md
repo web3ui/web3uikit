@@ -1,5 +1,14 @@
 # @web3uikit/web3
 
+## 0.3.2
+
+### Patch Changes
+
+-   [#1049](https://github.com/web3ui/web3uikit/pull/1049) [`bdb89cb1c`](https://github.com/web3ui/web3uikit/commit/bdb89cb1ceb9adb5bb68762f3383cfeaec0e49ef) Thanks [@rayzr522](https://github.com/rayzr522)! - fix(ConnectButton): indicate that any div props can be passed
+
+-   Updated dependencies [[`b5a10b147`](https://github.com/web3ui/web3uikit/commit/b5a10b1478ae05a667550b555fb42e4e3d216c59)]:
+    -   @web3uikit/core@0.3.2
+
 ## 0.2.2
 
 ### Patch Changes

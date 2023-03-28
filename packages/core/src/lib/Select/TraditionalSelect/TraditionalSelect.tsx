@@ -30,20 +30,21 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
     width = '200px',
     ...props
 }: ISelectProps) => {
-    const [currentValue, setCurrentValue] = useState<
-        string | number | string[]
-    >();
+    const [currentValue, setCurrentValue] = useState('');
 
     useEffect(() => {
         if (!value) return;
-        setCurrentValue(value);
+        const dayObject = options.find((item) => item.label === value);
+        typeof dayObject?.label === 'string' &&
+            setCurrentValue(dayObject?.label);
     }, [value]);
 
     useEffect(() => {
         if (Number(defaultOptionIndex) < 0) return;
         if (Number(defaultOptionIndex) > options.length) return;
 
-        setCurrentValue(options[Number(defaultOptionIndex)]?.label || '');
+        const value = options[Number(defaultOptionIndex)]?.label;
+        typeof value === 'string' && setCurrentValue(value);
     }, [defaultOptionIndex]);
 
     const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {

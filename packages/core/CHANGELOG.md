@@ -1,5 +1,15 @@
 # @web3uikit/core
 
+## 0.4.0
+
+### Minor Changes
+
+-   [#1054](https://github.com/web3ui/web3uikit/pull/1054) [`cf79f769a`](https://github.com/web3ui/web3uikit/commit/cf79f769a89aac4d6e4bed0dec0f00b9d223f145) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(Toggle): component added
+
+### Patch Changes
+
+-   [#1053](https://github.com/web3ui/web3uikit/pull/1053) [`8d3ce2283`](https://github.com/web3ui/web3uikit/commit/8d3ce228355107aa5c574e0df701782e2647a5cc) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Select): html respects value passed
+
 ## 0.3.2
 
 ### Patch Changes

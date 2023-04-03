@@ -11,14 +11,14 @@ export interface IPlanCardProps {
     footer?: JSX.Element;
 
     /**
-     * the component can be set as disabled
-     */
-    isActive: boolean;
-
-    /**
-     * Is the plan the current users plan
+     * Is the active plan of the user
      */
     isCurrentPlan: boolean;
+
+    /**
+     * Is the active billing period of the plan, used for differentiating if multiple billing periods exists 
+     */
+    isCurrentBillingPeriod: boolean;
 
     /**
      * the title component of the Card
@@ -115,4 +115,14 @@ export interface IPlanCardProps {
      */
 
     ctaButton?: JSX.Element;
+
+    /**
+     * set the theme color of the planCard
+     */
+    themeColor?: typeof color | string;
+
+    /**
+     * set the color of the icons next to the features
+     */
+    featuresIconColor?: string;
 }

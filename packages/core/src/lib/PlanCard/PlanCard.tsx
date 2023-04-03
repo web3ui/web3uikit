@@ -2,9 +2,9 @@ import styles from './PlanCard.styles';
 import { IPlanCardProps } from './types';
 import { Typography } from '../Typography';
 import { color } from '@web3uikit/styles';
-import { CheckCircle } from '@web3uikit/icons';
+import { CheckCircleAlt } from '@web3uikit/icons';
 
-const { DivStyled, DivStyledFeatures, DivStyledCardFooter, DivStyledTopLabel, HrStyled } = styles;
+const { DivStyled, DivStyledFeatures, DivStyledTopLabel, HrStyled } = styles;
 
 const PlanCard: React.FC<IPlanCardProps> = ({
     backgroundColor,
@@ -14,11 +14,12 @@ const PlanCard: React.FC<IPlanCardProps> = ({
     height,
     horizontalLine = false,
     icon,
-    isActive,
     isCurrentPlan,
+    isCurrentBillingPeriod,
     maxWidth,
     description,
     features,
+    featuresIconColor,
     price,
     scrollbarBackground,
     scrollbarHoverBackground,
@@ -26,6 +27,7 @@ const PlanCard: React.FC<IPlanCardProps> = ({
     scrollbarWidth,
     subTitle,
     title,
+    themeColor,
     topLabel,
     width,
     ...props
@@ -34,8 +36,8 @@ const PlanCard: React.FC<IPlanCardProps> = ({
         <DivStyled
             className="PlanCard"
             data-testid="test-plan-card"
-            isActive={isActive}
-            borderColor={borderColor}
+            isCurrentPlan={isCurrentPlan}
+            borderColor={isCurrentPlan ? themeColor : color.navy20}
             backgroundColor={backgroundColor}
             height={height}
             width={width}
@@ -43,9 +45,11 @@ const PlanCard: React.FC<IPlanCardProps> = ({
             {...props}
         >
             <DivStyledTopLabel>
-                {topLabel}
+                {isCurrentBillingPeriod ? (
+                     <CheckCircleAlt style={{'width': 22, 'height': 22}} fontSize='22px' color={themeColor?.toString()}/>
+                ) : topLabel}
             </DivStyledTopLabel>
-            <Typography variant='h2' weight='550' style={{marginBottom: '16px'}}>{title}</Typography>
+            <Typography variant='h2' weight='550' style={{marginBottom: '16px', marginTop: '16px'}}>{title}</Typography>
             <Typography>{subTitle}</Typography>
             {price}
             {horizontalLine && (
@@ -66,10 +70,10 @@ const PlanCard: React.FC<IPlanCardProps> = ({
                         {icon ? (
                             <>{icon}</>
                         ) : (
-                            <CheckCircle
+                            <CheckCircleAlt
                                 title="CheckCircle icon"
                                 titleId="plan-card CheckCircle icon"
-                                fill={isActive ? color.blue30 : color.mint40}
+                                fill={featuresIconColor ? featuresIconColor : color.gray40}
                                 width="15px"
                             />
                         )}

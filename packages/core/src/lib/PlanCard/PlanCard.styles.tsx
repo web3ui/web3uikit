@@ -4,7 +4,7 @@ import { IPlanCardProps } from './types';
 
 type TDivStyle = Pick<
     IPlanCardProps,
-    | 'isActive'
+    | 'isCurrentPlan'
     | 'borderColor'
     | 'backgroundColor'
     | 'height'
@@ -59,11 +59,11 @@ const DivStyled = styled.div<TDivStyle>`
     max-width: ${(props) => (props.maxWidth ? props.maxWidth : '386.67px')};
     padding: 32px;
     width: ${(props) => (props.width ? props.width : 'auto')};
+    background-color: ${(props) => (props.backgroundColor)};
     ${(props) =>
-        props.isActive &&
+        props.isCurrentPlan &&
         `
-      background-color: ${color.white};
-      border-color: ${color.blue30};
+        background-color: ${color.white};
     `};
 `;
 DivStyled.displayName = 'DivStyled';
@@ -104,8 +104,10 @@ const HrStyled = styled.hr<THrStyled>`
 `;
 
 const DivStyledTopLabel = styled.div`
-  min-height: 30px;
+  min-height: 26px;
   text-align: right;
+  display:flex;
+  flex-direction: row-reverse;
 `;
 
 export default {

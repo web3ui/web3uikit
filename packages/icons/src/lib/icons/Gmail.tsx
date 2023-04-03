@@ -3,7 +3,7 @@
 // Do not edit
 import { SVGProps } from 'react';
 import { SVGRProps } from '../type';
-const SvgLearn = ({
+const SvgGmail = ({
     title,
     titleId,
     isResponsive = false,
@@ -14,7 +14,7 @@ const SvgLearn = ({
         width="1em"
         height="1em"
         viewBox="0 0 24 24"
-        fill="currentColor"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
         role="img"
         data-testid="test-icon"
@@ -32,16 +32,26 @@ const SvgLearn = ({
     >
         {title ? <title id={titleId}>{title}</title> : null}
         <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M11.233 3.179a1.735 1.735 0 0 1 1.534 0L22.989 8.2A1.83 1.83 0 0 1 24 9.847a1.83 1.83 0 0 1-1.01 1.648l-10.223 5.021a1.735 1.735 0 0 1-1.534 0L1.011 11.495A1.83 1.83 0 0 1 0 9.847 1.83 1.83 0 0 1 1.01 8.2L11.234 3.18ZM12 4.826l10.222 5.021L12 14.87 1.778 9.847 12 4.826Z"
+            d="M3.795 19.137h3.023v-7.34L2.5 8.556v9.285c0 .717.58 1.295 1.295 1.295Z"
+            fill="#4285F4"
         />
         <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M19.093 19.073a.916.916 0 0 1-.305.485c-4.01 3.305-10.272 3.313-14.258-.328a.92.92 0 0 1-.284-.518l-1.238-6.96 1.748-.328 1.182 6.642c3.25 2.761 8.222 2.774 11.509.25l1.74-6.955 1.722.455-1.816 7.257Z"
+            d="M17.182 19.137h3.022c.717 0 1.296-.58 1.296-1.295V8.558l-4.318 3.238"
+            fill="#34A853"
+        />
+        <path
+            d="M17.182 6.183v5.613L21.5 8.558V6.83c0-1.602-1.829-2.515-3.11-1.554"
+            fill="#FBBC04"
+        />
+        <path
+            d="M6.818 11.796V6.183L12 10.069l5.182-3.886v5.613L12 15.683"
+            fill="#EA4335"
+        />
+        <path
+            d="M2.5 6.83v1.728l4.318 3.238V6.183L5.61 5.276C4.327 4.315 2.5 5.228 2.5 6.83Z"
+            fill="#C5221F"
         />
     </svg>
 );
 
-export default SvgLearn;
+export default SvgGmail;

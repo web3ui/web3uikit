@@ -76,6 +76,20 @@ const coloredBlueLight = css`
     color: ${color.navy40};
 `;
 
+const coloredBorderBlue = css`
+    background: ${color.white};
+    color: ${color.blue30};
+    border: 1px solid ${color.blue30};
+    border-radius: 8px;
+`;
+
+const coloredBorderGreen = css`
+    background: ${color.white};
+    color: ${color.mint40};
+    border: 1px solid ${color.mint40};
+    border-radius: 8px;
+`;
+
 export default {
     coloredBlue,
     coloredBlueDark,
@@ -92,4 +106,6 @@ export default {
     coloredYellow,
     coloredYellowDark,
     coloredBlueLight,
+    coloredBorderBlue,
+    coloredBorderGreen,
 };

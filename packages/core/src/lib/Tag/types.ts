@@ -37,7 +37,9 @@ export interface TagProps {
         | 'blue'
         | 'blueLight'
         | 'purple'
-        | 'pink';
+        | 'pink'
+        | 'borderBlue'
+        | 'borderGreen';
 
     /**
      * choose a tone for the selected color

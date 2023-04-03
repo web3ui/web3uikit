@@ -29,6 +29,8 @@ const {
     coloredYellow,
     coloredYellowDark,
     coloredBlueLight,
+    coloredBorderBlue,
+    coloredBorderGreen,
 } = colorStyles;
 
 type TStyleProps = Pick<
@@ -67,6 +69,10 @@ const getColors = (color?: string, tone?: Tone) => {
             return tone === 'light' ? coloredPink : coloredPinkDark;
         case 'grey':
             return tone === 'light' ? coloredGrey : coloredGrayDark;
+        case 'borderBlue':
+            return coloredBorderBlue;  
+        case 'borderGreen':
+            return coloredBorderGreen;
         default:
             return coloredGrey;
     }

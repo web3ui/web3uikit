@@ -16,6 +16,8 @@ const {
     Purple,
     Red,
     Yellow,
+    borderGreen,
+    borderBlue,
 } = composeStories(stories);
 
 export const tagTestId = 'test-tag';
@@ -96,6 +98,16 @@ const data: TestStoryProps[] = [
         name: 'Tag - Pink',
         Component: Pink,
         expectedText: 'Pink',
+    },
+    {
+        name: 'Tag - Border Green',
+        Component: borderGreen,
+        expectedText: 'Green',
+    },
+    {
+        name: 'Tag - Border Blue',
+        Component: borderBlue,
+        expectedText: 'Blue',
     },
 ];
 

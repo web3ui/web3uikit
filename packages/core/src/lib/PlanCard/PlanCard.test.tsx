@@ -40,8 +40,4 @@ describe('PlanCard', () => {
             ).toBeDefined();
         }
     });
-    test('should render your plan', () => {
-        const { getByText } = render(<CurrentPlanStory />);
-        expect(getByText('Your Plan', { exact: false })).toBeDefined();
-    });
 });

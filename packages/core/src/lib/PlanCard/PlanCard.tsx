@@ -2,30 +2,32 @@ import styles from './PlanCard.styles';
 import { IPlanCardProps } from './types';
 import { Typography } from '../Typography';
 import { color } from '@web3uikit/styles';
-import { Check } from '@web3uikit/icons';
-import YourPlanButton from './Components/YourPlanButton';
+import { CheckCircle } from '@web3uikit/icons';
 
-const { DivStyled, DivStyledFeatures, DivStyledCardFooter, HrStyled } = styles;
+const { DivStyled, DivStyledFeatures, DivStyledCardFooter, DivStyledTopLabel, HrStyled } = styles;
 
 const PlanCard: React.FC<IPlanCardProps> = ({
     backgroundColor,
     borderColor,
-    description,
-    descriptionTitle,
+    ctaButton,
     footer,
     height,
-    width,
-    maxWidth,
     horizontalLine = false,
     icon,
     isActive,
     isCurrentPlan,
+    maxWidth,
+    description,
+    features,
+    price,
+    scrollbarBackground,
+    scrollbarHoverBackground,
+    scrollbarTrackBackground,
+    scrollbarWidth,
     subTitle,
     title,
-    scrollbarWidth,
-    scrollbarBackground,
-    scrollbarTrackBackground,
-    scrollbarHoverBackground,
+    topLabel,
+    width,
     ...props
 }) => {
     return (
@@ -40,14 +42,23 @@ const PlanCard: React.FC<IPlanCardProps> = ({
             maxWidth={maxWidth}
             {...props}
         >
-            <Typography>{subTitle}</Typography>
-            {horizontalLine ? (
-                <HrStyled borderColor={borderColor} />
-            ) : (
-                <Typography>{title}</Typography>
+            <DivStyledTopLabel>
+                {topLabel}
+            </DivStyledTopLabel>
+            <Typography variant='h2' weight='550' style={{marginBottom: '16px'}}>{title}</Typography>
+            {isCurrentPlan && (
+                <Typography color={color.blueGray50} weight="600" variant="body16">
+                    Your Current Plan
+                </Typography>
             )}
-            <Typography style={{ marginBottom: '16px' }}>
-                {descriptionTitle}
+            <Typography>{subTitle}</Typography>
+            {price}
+            {horizontalLine && (
+                <HrStyled borderColor={color.navy20} />
+            )}
+            {ctaButton}
+            <Typography weight='550' style={{marginTop: '16px'}}>
+                {description}
             </Typography>
             <DivStyledFeatures
                 scrollbarBackground={scrollbarBackground}
@@ -55,15 +66,16 @@ const PlanCard: React.FC<IPlanCardProps> = ({
                 scrollbarTrackBackground={scrollbarTrackBackground}
                 scrollbarHoverBackground={scrollbarHoverBackground}
             >
-                {description.map((feature, index) => (
+                {features.map((feature, index) => (
                     <div key={index}>
                         {icon ? (
                             <>{icon}</>
                         ) : (
-                            <Check
-                                title="check icon"
-                                titleId="plan-card check icon"
-                                fill={color.mint40}
+                            <CheckCircle
+                                title="CheckCircle icon"
+                                titleId="plan-card CheckCircle icon"
+                                fill={isActive ? color.blue30 : color.mint40}
+                                width="15px"
                             />
                         )}
                         <Typography
@@ -75,10 +87,7 @@ const PlanCard: React.FC<IPlanCardProps> = ({
                     </div>
                 ))}
             </DivStyledFeatures>
-            <DivStyledCardFooter>
-                {horizontalLine && <Typography>{title}</Typography>}
-                {isCurrentPlan ? <YourPlanButton /> : footer}
-            </DivStyledCardFooter>
+
         </DivStyled>
     );
 };

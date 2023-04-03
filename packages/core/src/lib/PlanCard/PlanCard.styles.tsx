@@ -49,22 +49,21 @@ const scrollStyled = (props: TScrollStyled) => css`
     }
 `;
 const DivStyled = styled.div<TDivStyle>`
-    background: ${(props) =>
-        props.backgroundColor ? props.backgroundColor : color.white};
     border-radius: 20px;
-    border: 2px solid
+    border: 3px solid
         ${(props) => (props.borderColor ? props.borderColor : '#C1D8E7')};
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     height: ${(props) => (props.height ? props.height : '448px')};
     max-width: ${(props) => (props.maxWidth ? props.maxWidth : '386.67px')};
-    padding: 32px 24px;
+    padding: 32px;
     width: ${(props) => (props.width ? props.width : 'auto')};
     ${(props) =>
         props.isActive &&
         `
-      border-color: ${color.mint40};
+      background-color: ${color.white};
+      border-color: ${color.blue30};
     `};
 `;
 DivStyled.displayName = 'DivStyled';
@@ -72,7 +71,7 @@ DivStyled.displayName = 'DivStyled';
 const DivStyledFeatures = styled.div<TScrollStyled>`
     display: flex;
     flex-direction: column;
-    margin-bottom: 8px;
+    margin-top: 16px;
     overflow-y: auto;
     row-gap: 8px;
     & > div {
@@ -101,12 +100,18 @@ const DivStyledCardFooter = styled.div`
 
 const HrStyled = styled.hr<THrStyled>`
     border-top: 1px solid ${(props) => props.borderColor};
-    margin: 16px 0px;
+    margin: 18px 0px;
+`;
+
+const DivStyledTopLabel = styled.div`
+  min-height: 30px;
+  text-align: right;
 `;
 
 export default {
     DivStyled,
     DivStyledFeatures,
     DivStyledCardFooter,
+    DivStyledTopLabel,
     HrStyled,
 };

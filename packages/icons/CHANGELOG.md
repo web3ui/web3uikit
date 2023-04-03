@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 0.4.1
+
+### Patch Changes
+
+-   [#1057](https://github.com/web3ui/web3uikit/pull/1057) [`9b94b8158`](https://github.com/web3ui/web3uikit/commit/9b94b8158572ea302c325c2160f9603a4f783ba2) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - Added gmail, etherscan, slack and learn icons
+
 ## 0.3.0
 
 ### Minor Changes

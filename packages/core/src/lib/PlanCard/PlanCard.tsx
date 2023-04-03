@@ -46,11 +46,6 @@ const PlanCard: React.FC<IPlanCardProps> = ({
                 {topLabel}
             </DivStyledTopLabel>
             <Typography variant='h2' weight='550' style={{marginBottom: '16px'}}>{title}</Typography>
-            {isCurrentPlan && (
-                <Typography color={color.blueGray50} weight="600" variant="body16">
-                    Your Current Plan
-                </Typography>
-            )}
             <Typography>{subTitle}</Typography>
             {price}
             {horizontalLine && (

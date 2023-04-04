@@ -139,8 +139,16 @@ borderBlue.args = {
     color: 'blue',
     text: 'Border Blue',
     tone: 'light',
-    customize: {border: "1px solid #52ABFF}"}
-
+    customize: {
+        border: "1px solid #52ABFF}",
+        backgroundColor: "#FFF",
+        borderRadius: "3px",
+        color: "#FA3",
+        fontSize: "20px",
+        fontWeight: "500",
+        padding: "8px 16px",
+        margin: "2px"
+    }
 };
 
 export const AllProps = Template.bind({});

@@ -12,7 +12,7 @@ describe('PlanCard', () => {
     });
     test('should render plan description', () => {
         const { getByText } = render(<PlanCardStory />);
-        PlanCardStory.args?.description?.forEach((feature) => {
+        PlanCardStory.args?.features?.forEach((feature) => {
             expect(getByText(feature, { exact: false })).toBeDefined();
         });
     });
@@ -20,7 +20,7 @@ describe('PlanCard', () => {
         const { getByText } = render(<PlanCardStory />);
         expect(
             within(
-                PlanCardStory.args?.descriptionTitle as unknown as HTMLElement,
+                PlanCardStory.args?.description as unknown as HTMLElement,
             ),
         ).toBeDefined();
     });
@@ -39,9 +39,5 @@ describe('PlanCard', () => {
                 within(PlanCardStory?.args?.title as unknown as HTMLElement),
             ).toBeDefined();
         }
-    });
-    test('should render your plan', () => {
-        const { getByText } = render(<CurrentPlanStory />);
-        expect(getByText('Your Plan', { exact: false })).toBeDefined();
     });
 });

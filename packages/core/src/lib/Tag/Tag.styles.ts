@@ -52,7 +52,7 @@ const {
 
 type TStyleProps = Pick<
     TagProps,
-    'active' | 'fontSize' | 'padding' | 'theme' | 'tone' | 'width' | 'backgroundColor'
+    'active' | 'fontSize' | 'padding' | 'theme' | 'tone' | 'width'
 >;
 
 const getTheme = (theme: string, active?: boolean) => {
@@ -145,7 +145,6 @@ const TagStyled = styled.div<TStyleProps>`
 
     ${({ fontSize }) => Boolean(fontSize) && `font-size: ${fontSize}`};
     ${({ padding }) => Boolean(padding) && `padding: ${padding}`};
-    ${({ backgroundColor }) => Boolean(backgroundColor) && `background-color: ${backgroundColor}`};
 `;
 
 export default {

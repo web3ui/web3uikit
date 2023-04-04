@@ -72,7 +72,7 @@ export interface TagProps {
     padding?: string;
 
     /**
-     * set custom passing
+     * Optional custom CSS
      */
-    backgroundColor?: typeof color | string;
+    style?: React.CSSProperties;
 }

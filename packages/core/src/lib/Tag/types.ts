@@ -1,3 +1,5 @@
+import { TCustomize } from '../../interfaces/customize';
+
 export type Tone = 'dark' | 'light';
 
 export interface TagProps {
@@ -69,4 +71,9 @@ export interface TagProps {
      * set custom passing
      */
     padding?: string;
+
+    /**
+     * Customize the credentials
+     */
+    customize?: TCustomize;
 }

@@ -33,7 +33,7 @@ const {
 
 type TStyleProps = Pick<
     TagProps,
-    'active' | 'fontSize' | 'padding' | 'theme' | 'tone' | 'width'
+    'active' | 'fontSize' | 'padding' | 'theme' | 'tone' | 'width' | 'customize'
 >;
 
 const getTheme = (theme: string, active?: boolean) => {
@@ -99,8 +99,27 @@ const TagStyled = styled.div<TStyleProps>`
     ${({ theme, tone }) =>
         theme === 'chips' && tone === 'dark' && 'border: 0px;'};
 
-    ${({ fontSize }) => Boolean(fontSize) && `font-size: ${fontSize}`};
-    ${({ padding }) => Boolean(padding) && `padding: ${padding}`};
+    ${({ fontSize, customize }) => (Boolean(fontSize) || customize?.fontSize) && `font-size: ${fontSize ?? customize?.fontSize};`}
+    ${({ padding, customize }) => (Boolean(padding) || customize?.padding) && `padding: ${padding ?? customize?.padding};`}
+
+    background: ${(p) =>
+        p.customize?.backgroundColor
+            ? p.customize?.backgroundColor
+            : ''};
+    border: ${(p) =>
+        p.customize?.border ? p.customize?.border : 'none'};
+
+    border-radius: ${(p) =>
+        p.customize?.borderRadius ? p.customize?.borderRadius : ''};
+
+    font-weight: ${(p) =>
+        p.customize?.fontWeight ? p.customize?.fontWeight : ''};
+
+    margin: ${(p) =>
+        p.customize?.margin ? p.customize?.margin : ''};
+    
+    color: ${(p) =>
+        p.customize?.color ? p.customize?.color : ''};
 `;
 
 export default {

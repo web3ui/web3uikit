@@ -17,11 +17,13 @@ const Tag: React.FC<TagProps> = ({
     tone = 'light',
     width = 'fit-content',
     prefixIcon,
+    customize,
     ...props
 }: TagProps) => {
     return (
         <TagStyled
             active={active}
+            customize={customize}
             color={color}
             data-testid="test-tag"
             fontSize={fontSize}

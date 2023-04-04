@@ -1,4 +1,4 @@
-import { color } from '@web3uikit/styles';
+import { TCustomize } from '../../interfaces/customize';
 
 export type Tone = 'dark' | 'light';
 
@@ -16,7 +16,7 @@ export interface TagProps {
     /**
      * set layout of the element
      */
-    theme?: 'regular' | 'status' | 'discount' | 'chips' | 'bordered';
+    theme?: 'regular' | 'status' | 'discount' | 'chips'
 
     /**
      * if theme = 'status', active can be set true, to show a tick icon
@@ -72,7 +72,7 @@ export interface TagProps {
     padding?: string;
 
     /**
-     * Optional custom CSS
+     * Customize the credentials
      */
-    style?: React.CSSProperties;
+    customize?: TCustomize;
 }

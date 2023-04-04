@@ -131,7 +131,7 @@ borderGreen.args = {
     color: 'green',
     text: 'Border Green',
     tone: 'light',
-    theme: 'bordered'
+    customize: {borderRadius: "8px", backgroundColor: "#FFF", border: "1px solid #00D1AE}"}
 };
 
 export const borderBlue = Template.bind({});
@@ -139,7 +139,8 @@ borderBlue.args = {
     color: 'blue',
     text: 'Border Blue',
     tone: 'light',
-    theme: 'bordered'
+    customize: {border: "1px solid #52ABFF}"}
+
 };
 
 export const AllProps = Template.bind({});

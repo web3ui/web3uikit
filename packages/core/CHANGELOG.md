@@ -1,5 +1,13 @@
 # @web3uikit/core
 
+## 0.4.2
+
+### Patch Changes
+
+-   [#1059](https://github.com/web3ui/web3uikit/pull/1059) [`48ac41ce9`](https://github.com/web3ui/web3uikit/commit/48ac41ce954231dd05294ced2f35f59c3762f38f) Thanks [@HolmJohan](https://github.com/HolmJohan)! - feat(plancard): updated plancard with new design and more flexability
+
+*   [#1060](https://github.com/web3ui/web3uikit/pull/1060) [`7e056841f`](https://github.com/web3ui/web3uikit/commit/7e056841f5a080347ff8e3ee576a64019e6daac7) Thanks [@HolmJohan](https://github.com/HolmJohan)! - feat(tag): added borderGreen and borderBlue tags
+
 ## 0.4.0
 
 ### Minor Changes

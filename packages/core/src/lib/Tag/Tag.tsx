@@ -17,6 +17,7 @@ const Tag: React.FC<TagProps> = ({
     tone = 'light',
     width = 'fit-content',
     prefixIcon,
+    backgroundColor,
     ...props
 }: TagProps) => {
     return (
@@ -31,6 +32,7 @@ const Tag: React.FC<TagProps> = ({
             theme={theme}
             tone={tone}
             width={width}
+            backgroundColor={backgroundColor}
             {...props}
         >
             {theme === 'status' && active && (

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { color } from '@web3uikit/styles';
 import colorStyles from './styles/colors';
 import themeStyles from './styles/themes';
+import borderStyles from './styles/borders';
 import type { TagProps, Tone } from './types';
 
 const {
@@ -29,13 +30,29 @@ const {
     coloredYellow,
     coloredYellowDark,
     coloredBlueLight,
-    coloredBorderBlue,
-    coloredBorderGreen,
 } = colorStyles;
+
+const {
+    coloredBorderBlue,
+    coloredBorderBlueDark,
+    coloredBorderGrayDark,
+    coloredBorderGreen,
+    coloredBorderGreenDark,
+    coloredBorderGrey,
+    coloredBorderPink,
+    coloredBorderPinkDark,
+    coloredBorderPurple,
+    coloredBorderPurpleDark,
+    coloredBorderRed,
+    coloredBorderRedDark,
+    coloredBorderYellow,
+    coloredBorderYellowDark,
+    coloredBorderBlueLight,
+} = borderStyles;
 
 type TStyleProps = Pick<
     TagProps,
-    'active' | 'fontSize' | 'padding' | 'theme' | 'tone' | 'width'
+    'active' | 'fontSize' | 'padding' | 'theme' | 'tone' | 'width' | 'backgroundColor'
 >;
 
 const getTheme = (theme: string, active?: boolean) => {
@@ -69,10 +86,29 @@ const getColors = (color?: string, tone?: Tone) => {
             return tone === 'light' ? coloredPink : coloredPinkDark;
         case 'grey':
             return tone === 'light' ? coloredGrey : coloredGrayDark;
-        case 'borderBlue':
-            return coloredBorderBlue;  
-        case 'borderGreen':
-            return coloredBorderGreen;
+        default:
+            return coloredGrey;
+    }
+};
+
+const getBorderColor = (color?: string, tone?: Tone) => {
+    switch (color) {
+        case 'green':
+            return tone === 'light' ? coloredBorderGreen : coloredBorderGreenDark;
+        case 'red':
+            return tone === 'light' ? coloredBorderRed : coloredBorderRedDark;
+        case 'yellow':
+            return tone === 'light' ? coloredBorderYellow : coloredBorderYellowDark;
+        case 'blue':
+            return tone === 'light' ? coloredBorderBlue : coloredBorderBlueDark;
+        case 'blueLight':
+            return coloredBorderBlueLight;
+        case 'purple':
+            return tone === 'light' ? coloredBorderPurple : coloredBorderPurpleDark;
+        case 'pink':
+            return tone === 'light' ? coloredBorderPink : coloredBorderPinkDark;
+        case 'grey':
+            return tone === 'light' ? coloredBorderGrey : coloredBorderGrayDark;
         default:
             return coloredGrey;
     }
@@ -101,12 +137,15 @@ const TagStyled = styled.div<TStyleProps>`
         theme === 'discount' &&
         Boolean(width) &&
         `height: ${width}; width: ${width}; border-radius: 50%;`};
+    
+    ${({ theme, color, tone }) => theme =='bordered' ? getBorderColor(color, tone) : ''}
 
     ${({ theme, tone }) =>
         theme === 'chips' && tone === 'dark' && 'border: 0px;'};
 
     ${({ fontSize }) => Boolean(fontSize) && `font-size: ${fontSize}`};
     ${({ padding }) => Boolean(padding) && `padding: ${padding}`};
+    ${({ backgroundColor }) => Boolean(backgroundColor) && `background-color: ${backgroundColor}`};
 `;
 
 export default {

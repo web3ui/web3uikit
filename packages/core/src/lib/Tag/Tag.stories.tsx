@@ -128,16 +128,18 @@ PinkDark.args = {
 
 export const borderGreen = Template.bind({});
 borderGreen.args = {
-    color: 'borderGreen',
-    text: 'Green',
-    tone: 'dark',
+    color: 'green',
+    text: 'Border Green',
+    tone: 'light',
+    theme: 'bordered'
 };
 
 export const borderBlue = Template.bind({});
 borderBlue.args = {
-    color: 'borderBlue',
-    text: 'Blue',
-    tone: 'dark',
+    color: 'blue',
+    text: 'Border Blue',
+    tone: 'light',
+    theme: 'bordered'
 };
 
 export const AllProps = Template.bind({});

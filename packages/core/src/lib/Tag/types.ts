@@ -1,3 +1,5 @@
+import { color } from '@web3uikit/styles';
+
 export type Tone = 'dark' | 'light';
 
 export interface TagProps {
@@ -14,7 +16,7 @@ export interface TagProps {
     /**
      * set layout of the element
      */
-    theme?: 'regular' | 'status' | 'discount' | 'chips';
+    theme?: 'regular' | 'status' | 'discount' | 'chips' | 'bordered';
 
     /**
      * if theme = 'status', active can be set true, to show a tick icon
@@ -38,9 +40,6 @@ export interface TagProps {
         | 'blueLight'
         | 'purple'
         | 'pink'
-        | 'borderBlue'
-        | 'borderGreen';
-
     /**
      * choose a tone for the selected color
      */
@@ -71,4 +70,9 @@ export interface TagProps {
      * set custom passing
      */
     padding?: string;
+
+    /**
+     * set custom passing
+     */
+    backgroundColor?: typeof color | string;
 }

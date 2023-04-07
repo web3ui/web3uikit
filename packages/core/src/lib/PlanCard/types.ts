@@ -16,11 +16,6 @@ export interface IPlanCardProps {
     isCurrentPlan: boolean;
 
     /**
-     * Is the active billing period of the plan, used for differentiating if multiple billing periods exists 
-     */
-    isCurrentBillingPeriod: boolean;
-
-    /**
      * the title component of the Card
      */
     title?: string;

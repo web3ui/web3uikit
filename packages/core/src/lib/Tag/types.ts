@@ -73,6 +73,11 @@ export interface TagProps {
     padding?: string;
 
     /**
+     * set line height
+     */
+    lineHeight?: string;
+
+    /**
      * Customize the credentials
      */
     customize?: TCustomize;

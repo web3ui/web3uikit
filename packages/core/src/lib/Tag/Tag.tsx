@@ -17,6 +17,7 @@ const Tag: React.FC<TagProps> = ({
     tone = 'light',
     width = 'fit-content',
     prefixIcon,
+    lineHeight,
     customize,
     ...props
 }: TagProps) => {
@@ -44,7 +45,7 @@ const Tag: React.FC<TagProps> = ({
                 />
             )}
             {prefixIcon && prefixIcon}
-            <strong data-testid="test-tag-text">{text}</strong>
+            <strong style={{ lineHeight: `${lineHeight}px` }} data-testid="test-tag-text">{text}</strong>
             {hasCancel && (
                 <SpanStyled onClick={onCancelClick}>
                     <Cross

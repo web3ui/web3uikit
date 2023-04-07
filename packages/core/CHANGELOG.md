@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 0.4.3
+
+### Patch Changes
+
+-   [#1063](https://github.com/web3ui/web3uikit/pull/1063) [`79f6d68b5`](https://github.com/web3ui/web3uikit/commit/79f6d68b59dc2436cbcb8f917c15741b8d58d013) Thanks [@johanMoralis](https://github.com/johanMoralis)! - fix(plancard): Added back footer and topLabel does no longer contain a condition check
+
 ## 0.4.2
 
 ### Patch Changes

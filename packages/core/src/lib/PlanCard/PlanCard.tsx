@@ -4,7 +4,7 @@ import { Typography } from '../Typography';
 import { color } from '@web3uikit/styles';
 import { CheckCircleAlt } from '@web3uikit/icons';
 
-const { DivStyled, DivStyledFeatures, DivStyledTopLabel, HrStyled } = styles;
+const { DivStyled, DivStyledFeatures, DivStyledTopLabel, HrStyled, DivStyledCardFooter } = styles;
 
 const PlanCard: React.FC<IPlanCardProps> = ({
     backgroundColor,
@@ -15,7 +15,6 @@ const PlanCard: React.FC<IPlanCardProps> = ({
     horizontalLine = false,
     icon,
     isCurrentPlan,
-    isCurrentBillingPeriod,
     maxWidth,
     description,
     features,
@@ -45,9 +44,7 @@ const PlanCard: React.FC<IPlanCardProps> = ({
             {...props}
         >
             <DivStyledTopLabel>
-                {isCurrentBillingPeriod ? (
-                     <CheckCircleAlt style={{'width': 22, 'height': 22}} fontSize='22px' color={themeColor?.toString()}/>
-                ) : topLabel}
+                {topLabel}
             </DivStyledTopLabel>
             <Typography variant='h2' weight='550' style={{marginBottom: '16px', marginTop: '16px'}}>{title}</Typography>
             <Typography>{subTitle}</Typography>
@@ -86,7 +83,9 @@ const PlanCard: React.FC<IPlanCardProps> = ({
                     </div>
                 ))}
             </DivStyledFeatures>
-
+            <DivStyledCardFooter>
+                {footer}
+            </DivStyledCardFooter>
         </DivStyled>
     );
 };

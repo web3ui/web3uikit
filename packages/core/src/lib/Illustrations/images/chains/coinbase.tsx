@@ -4,7 +4,7 @@ import { ILogoProps } from '../../types';
 const coinbase: React.FC<ILogoProps> = ({ width = '120', height = '160' }) => {
     return (
         <svg
-            fill="none"
+            fill="currentColor"
             height={height}
             width={width}
             xmlns="http://www.w3.org/2000/svg"
@@ -12,7 +12,6 @@ const coinbase: React.FC<ILogoProps> = ({ width = '120', height = '160' }) => {
         >
             <g
                 transform="translate(150.000000,1800.000000) scale(0.200000,-0.20000)"
-                fill="#ffffff"
                 stroke="none"
             >
                 <path

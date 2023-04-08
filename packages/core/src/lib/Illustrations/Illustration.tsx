@@ -103,7 +103,7 @@ const getLogo = (logo: Chain | Logo, width?: Size, height?: Size) => {
 };
 
 const StyledIllustration = styled.div<
-    Pick<IllustrationProps, 'width' | 'height'>
+    Pick<IllustrationProps, 'width' | 'height' | 'fill'>
 >`
     ${resetCSS}
     align-items: center;
@@ -111,6 +111,7 @@ const StyledIllustration = styled.div<
     height: ${(props) => props.height};
     justify-content: center;
     width: ${(props) => props.width};
+    color: ${(props) => props.fill};
 `;
 
 const Illustration: React.FC<IllustrationProps> = ({
@@ -118,6 +119,7 @@ const Illustration: React.FC<IllustrationProps> = ({
     id,
     logo,
     width,
+    fill = 'white',
     ...props
 }: IllustrationProps) => {
     return (
@@ -126,6 +128,7 @@ const Illustration: React.FC<IllustrationProps> = ({
             height={height}
             id={id}
             width={width}
+            fill={fill}
             {...props}
         >
             <Suspense

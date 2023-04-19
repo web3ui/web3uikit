@@ -1,5 +1,13 @@
 # @web3uikit/core
 
+## 0.4.4
+
+### Patch Changes
+
+-   [#1072](https://github.com/web3ui/web3uikit/pull/1072) [`7a1df53e4`](https://github.com/web3ui/web3uikit/commit/7a1df53e4c293d87de804da0e4c23a58c9dab98d) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Select): tradtion mode revest to best working version
+
+*   [#1066](https://github.com/web3ui/web3uikit/pull/1066) [`c457d5713`](https://github.com/web3ui/web3uikit/commit/c457d5713ab8cb86d1282a2a824c963c5fe3b5b1) Thanks [@niteshseram](https://github.com/niteshseram)! - fix#996: Add optional fill prop for Chain illustrations
+
 ## 0.4.3
 
 ### Patch Changes

@@ -10,7 +10,7 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
     description,
     disabled = false,
     errorMessage = '',
-    id,
+    id = 'web3uikit-select',
     label,
     onBlurTraditional,
     onChange,

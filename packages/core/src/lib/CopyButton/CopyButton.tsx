@@ -1,8 +1,14 @@
 import { FC, useState } from 'react';
+import { Tooltip } from '../Tooltip';
 import { color } from '@web3uikit/styles';
 import { Check, Copy } from '@web3uikit/icons';
 import { ButtonStyled } from './CopyButton.styles';
-import { CopiedValue, CopyButtonProps, CopyFn } from './types';
+import {
+    CopiedValue,
+    CopyButtonIconProps,
+    CopyButtonProps,
+    CopyFn,
+} from './types';
 
 export const useCopyToClipboard = (): [CopiedValue, CopyFn] => {
     const [copiedText, setCopiedText] = useState<CopiedValue>(null);
@@ -26,11 +32,33 @@ export const useCopyToClipboard = (): [CopiedValue, CopyFn] => {
     return [copiedText, copy];
 };
 
+const CopyButtonIcon: FC<CopyButtonIconProps> = ({
+    fill,
+    iconSize,
+    copied,
+}) =>
+    copied ? (
+        <Check
+            title="check icon"
+            titleId="copybutton check icon"
+            fill={color.mint40}
+            fontSize={iconSize}
+        />
+    ) : (
+        <Copy
+            title="copy icon"
+            titleId="copybutton copy icon"
+            fill={fill || color.navy40}
+            fontSize={iconSize}
+        />
+    );
+
 const CopyButton: FC<CopyButtonProps> = ({
     fill,
     iconSize = 24,
     onCopy = () => {},
     revertIn = 3000,
+    hasTooltip = false,
     text,
     ...props
 }) => {
@@ -57,19 +85,25 @@ const CopyButton: FC<CopyButtonProps> = ({
             }}
             {...props}
         >
-            {value ? (
-                <Check
-                    title="check icon"
-                    titleId="copybutton check icon"
-                    fill={color.mint40}
-                    fontSize={iconSize}
+            {hasTooltip ? (
+                <Tooltip
+                    arrowSize={4}
+                    children={
+                        <CopyButtonIcon
+                            fill={props.customize?.color}
+                            iconSize={iconSize}
+                            copied={value}
+                        />
+                    }
+                    content="Copy"
+                    customize={props.customize}
+                    position="bottom"
                 />
             ) : (
-                <Copy
-                    title="copy icon"
-                    titleId="copybutton copy icon"
-                    fill={fill || color.navy40}
-                    fontSize={iconSize}
+                <CopyButtonIcon
+                    fill={props.customize?.color}
+                    iconSize={iconSize}
+                    copied={value}
                 />
             )}
         </ButtonStyled>

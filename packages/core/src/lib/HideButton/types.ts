@@ -28,7 +28,7 @@ export interface IHideButtonProps {
   hasTooltip?: boolean
 
   /**
-   * Customize the button
+   * Customize the tooltip
    */
   customize?: TCustomize;
 }

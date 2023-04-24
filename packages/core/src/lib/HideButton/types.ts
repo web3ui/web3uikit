@@ -1,4 +1,5 @@
 import { color } from '@web3uikit/styles';
+import { TCustomize } from '../../interfaces/customize';
 
 export interface IHideButtonProps {
   /**
@@ -20,4 +21,20 @@ export interface IHideButtonProps {
    * Callback on toggle
    */
   onToggle: () => void;
+
+  /**
+   * Show tooltip on icon
+   */
+  hasTooltip?: boolean
+
+  /**
+   * Customize the tooltip
+   */
+  customize?: TCustomize;
+}
+
+export interface IHideButtonIconProps {
+    iconColor?: string | typeof color;
+    iconSize?: number;
+    isHidden?: boolean;
 }

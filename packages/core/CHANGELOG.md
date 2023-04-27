@@ -1,5 +1,14 @@
 # @web3uikit/core
 
+## 0.4.5
+
+### Patch Changes
+
+-   [#1073](https://github.com/web3ui/web3uikit/pull/1073) [`0f64f0bc9`](https://github.com/web3ui/web3uikit/commit/0f64f0bc9a1a4b5ecbc797e553f827217b0daa23) Thanks [@niteshseram](https://github.com/niteshseram)! - fix#994:
+    1. Add tooltip option for Hide and Copy Button.
+    2. Add TCustomize props to both Hide and Copy button
+    3. Remove the custom Hide and Copy button from Credentials component and replace with original Hide and Copy button
+
 ## 0.4.4
 
 ### Patch Changes

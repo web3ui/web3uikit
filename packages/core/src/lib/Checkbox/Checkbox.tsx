@@ -10,13 +10,13 @@ const Checkbox: React.FC<CheckboxProps> = ({
     checked,
     disabled = false,
     id,
-    ref,
     label,
     labelWhenChecked,
     layout = 'box',
     name = '',
-    onChange,
     onBlur,
+    onChange,
+    ref,
     validation,
     ...props
 }) => {
@@ -35,6 +35,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
     return (
         <StyledLabel
             checked={isChecked}
+            className="checkbox"
             data-layout={layout}
             data-testid="test-checkbox-label"
             disabled={disabled}
@@ -42,7 +43,7 @@ const Checkbox: React.FC<CheckboxProps> = ({
             align={align}
         >
             {layout === 'box' && (
-                <span className="after">
+                <span className="after checkbox-after-check">
                     <Check
                         title="check icon"
                         titleId="checkbox check icon"
@@ -53,12 +54,13 @@ const Checkbox: React.FC<CheckboxProps> = ({
 
             <StyledInput
                 data-testid="test-checkbox-input"
-                defaultChecked={isChecked}
+                className="checkbox-input"
+                checked={checked}
                 disabled={disabled}
                 id={id}
-                ref={ref}
                 layout={layout}
                 name={name}
+                ref={ref}
                 onChange={valueChanged}
                 onBlur={(event: React.FocusEvent<HTMLInputElement>) =>
                     onBlur && onBlur(event)
@@ -66,10 +68,13 @@ const Checkbox: React.FC<CheckboxProps> = ({
                 required={validation?.required}
                 type="checkbox"
                 value={`${isChecked}`}
-                checked={checked}
                 {...props}
             />
-            <SpanStyled data-testid="test-checkbox-text" isHidden={isLabelNull}>
+            <SpanStyled
+                className="checkbox-text"
+                data-testid="test-checkbox-text"
+                isHidden={isLabelNull}
+            >
                 {/* DO NOT REMOVE THIS LINE:
                  * This helps to show only the box without any label
                  * Value inside this span cannot be null since all the are dependent on this

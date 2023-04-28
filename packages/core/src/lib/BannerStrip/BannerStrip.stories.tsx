@@ -70,23 +70,32 @@ Success.args = {
 
 export const Custom = Template.bind({});
 Custom.args = {
-    text: (
-        <div
-            style={{
-                display: 'flex',
-                justifyContent: 'center',
-                gap: '10px',
-            }}
-        >
-            <Loading fontSize={12} size={12} spinnerType="loader" />
-            <Typography variant="caption14" color={color.white}>
-                Your Dapp is currently loading... Full Dapp settings will be
-                available shortly.
-            </Typography>
-        </div>
-    ),
-    bgColor: color.blue40,
-    type: 'custom',
+    customize: {
+        backgroundColor: color.fuchsia40,
+        borderRadius: '50px',
+        border: `4px solid ${color.sky40}`,
+        color: color.fuchsia10,
+        fontSize: '20px',
+        fontWeight: '700',
+        padding: '16px 12px',
+        margin: '20px',
+    },
     position: 'relative',
-    borderRadius: '12px',
+    text: 'You can make your banner very customized, with the standard "customize" prop',
+};
+
+export const Slots = Template.bind({});
+Slots.args = {
+    customize: {
+        backgroundColor: color.mint60,
+        color: color.mint10,
+        fontSize: '14px',
+        fontWeight: '700',
+        padding: '4px 12px',
+    },
+    slots: {
+        slotBefore: [<Loading spinnerColor={color.mint10} size={10} />],
+        slotAfter: [<>🤩</>, <>👌</>],
+    },
+    text: 'you can add content before and after the text in slots',
 };

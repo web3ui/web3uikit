@@ -1,5 +1,15 @@
 # @web3uikit/core
 
+## 0.5.0
+
+### Minor Changes
+
+-   [#999](https://github.com/web3ui/web3uikit/pull/999) [`9f833faa9`](https://github.com/web3ui/web3uikit/commit/9f833faa9064f0fc39f32b5fa36bf24e4bf1e29e) Thanks [@SebastianLF](https://github.com/SebastianLF)! - feat(BannerStrip): customize, slots, refactor. Removed buttonConfig, buttonDisplayed, height, width and type customise props
+
+### Patch Changes
+
+-   [#1078](https://github.com/web3ui/web3uikit/pull/1078) [`0b932dfd6`](https://github.com/web3ui/web3uikit/commit/0b932dfd6abffc2edf18dcdf4d73e625e69fafe1) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Checkbox): removed defaultCheck setting and cleanup props
+
 ## 0.4.5
 
 ### Patch Changes

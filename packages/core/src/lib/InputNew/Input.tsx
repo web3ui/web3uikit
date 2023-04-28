@@ -125,8 +125,13 @@ const Input: React.FC<IInputProps> = ({
 
                 <DivStyledInner>
                     {slots &&
-                        slots.slotBefore?.map((slotItem) => (
-                            <span className="slot slot-before">{slotItem}</span>
+                        slots.slotBefore?.map((slotItem, i) => (
+                            <span
+                                className="slot slot-before"
+                                key={`slot-before-${i}`}
+                            >
+                                {slotItem}
+                            </span>
                         ))}
 
                     {customInput && customInput}
@@ -152,8 +157,13 @@ const Input: React.FC<IInputProps> = ({
                     />
 
                     {slots &&
-                        slots.slotAfter?.map((slotItem) => (
-                            <span className="slot slot-after">{slotItem}</span>
+                        slots.slotAfter?.map((slotItem, i) => (
+                            <span
+                                className="slot slot-after"
+                                key={`slot-before-${i}`}
+                            >
+                                {slotItem}
+                            </span>
                         ))}
 
                     {type === 'password' && (

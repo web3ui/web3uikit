@@ -1,30 +1,24 @@
+import { Fragment } from 'react';
 import { IBannerStripProps } from '.';
 import styles from './BannerStrip.styles';
-import depreciatedWarning from '../../utils/depreciationWarning';
-import { Fragment, useEffect } from 'react';
 import useLocalStorage from '../../hooks/useLocalStorage';
+import { color } from '@web3uikit/styles';
 
 const { SectionStyled, CrossStyled, DivStyledContainer } = styles;
 
 const BannerStrip: React.FC<IBannerStripProps> = ({
-    bgColor,
-    borderRadius = '0px',
-    buttonConfig,
-    buttonDisplayed = false,
-    height = 'auto',
+    customize,
     id = 'web3uikit-banner',
     noOfDaysToHide = null,
     isCloseBtnVisible = true,
     onCloseBtnClick,
     position = 'fixed',
+    slots,
     style,
     text,
     type = 'standard',
-    width,
     ...props
 }) => {
-    if (buttonConfig || buttonDisplayed)
-        depreciatedWarning('buttonConfig and buttonDisplayed props');
     //persist the banner closed event for a number of days - noOfDaysToHide
     const [isComponentVisible, setIsComponentVisible] = useLocalStorage(
         id,
@@ -34,24 +28,49 @@ const BannerStrip: React.FC<IBannerStripProps> = ({
     if (!isComponentVisible) return null;
     return (
         <SectionStyled
-            bgColor={bgColor}
-            borderRadius={borderRadius}
             data-testid="test-banner-strip"
-            height={height}
+            className="banner-strip"
+            customize={customize}
             position={position}
             type={type}
-            width={width}
             {...props}
         >
-            <DivStyledContainer>
+            <DivStyledContainer
+                className="banner-strip-container"
+                isCloseBtnVisible={isCloseBtnVisible}
+            >
+                {slots &&
+                    slots.slotBefore?.map((slotItem, i) => (
+                        <span
+                            className="slot slot-before"
+                            key={`slot-before-${i}`}
+                        >
+                            {slotItem}
+                        </span>
+                    ))}
+
                 <Fragment key="banner-strip-text">{text}</Fragment>
+
+                {slots &&
+                    slots.slotAfter?.map((slotItem, i) => (
+                        <span
+                            className="slot slot-after"
+                            key={`slot-after-${i}`}
+                        >
+                            {slotItem}
+                        </span>
+                    ))}
+
                 {isCloseBtnVisible && (
                     <CrossStyled
+                        color={customize?.color || color.gray40}
+                        className="banner-strip-close"
                         key="banner-strip-cross-button"
                         onClick={() => {
                             setIsComponentVisible(false);
                             onCloseBtnClick?.();
                         }}
+                        role="button"
                     />
                 )}
             </DivStyledContainer>

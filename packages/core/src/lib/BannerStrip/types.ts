@@ -1,57 +1,29 @@
 import React from 'react';
 import { CSSProperties } from 'styled-components';
+import { TCustomize } from '../../interfaces/customize';
 import { ButtonProps } from '../Button';
+import { TSlots } from '../InputNew/types';
 
 export interface IBannerStripProps {
     /**
-     * @deprecated do you want to display a button
+     * customize the banner
      */
-    buttonDisplayed?: boolean;
+    customize?: TCustomize;
 
     /**
-     * @deprecated set Button props
-     */
-    buttonConfig?: ButtonProps;
-
-    /**
-     * set id to differentiate between different banner on your page
+     * set IDs to differentiate between different banners on your page
      */
     id: string;
-
-    /**
-     * set custom border radius
-     */
-    borderRadius: string;
-
-    /**
-     * set custom height
-     */
-    height?: string;
-
-    /**
-     * set custom width
-     */
-    width?: string;
-
-    /**
-     * please add the text or any custom component you want to show in the banner
-     */
-    text: React.ReactNode;
-
-    /**
-     * you can set the type of banner which changes its color
-     */
-    type?: TBannerStripTypes;
-
-    /**
-     * set custom color only when type = custom
-     */
-    bgColor?: string;
 
     /**
      * to display close button
      */
     isCloseBtnVisible?: boolean;
+
+    /**
+     * specify the number of days you want to hide the component after close button is clicked (Uses local storage)
+     */
+    noOfDaysToHide?: number | null;
 
     /**
      * close button callback function
@@ -64,19 +36,24 @@ export interface IBannerStripProps {
     position?: 'fixed' | 'absolute' | 'relative';
 
     /**
-     * specify the number of days you want to hide the component after close button is clicked (Uses local storage)
+     * slot content in, before or after this element
      */
-    noOfDaysToHide?: number | null;
+    slots?: TSlots;
 
     /**
-     * add CSS styles, good for margin
+     * add CSS styles to the outer container, good for margin
      */
     style?: CSSProperties;
+
+    /**
+     * please add the text or any custom component you want to show in the banner
+     */
+    text: string | React.ReactNode;
+
+    /**
+     * set the type of banner which changes its color
+     */
+    type?: TBannerStripTypes;
 }
 
-export type TBannerStripTypes =
-    | 'error'
-    | 'standard'
-    | 'success'
-    | 'warning'
-    | 'custom';
+export type TBannerStripTypes = 'error' | 'standard' | 'success' | 'warning';

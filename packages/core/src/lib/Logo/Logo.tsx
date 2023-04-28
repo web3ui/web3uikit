@@ -12,7 +12,7 @@ const Logo: React.FC<LogoProps> = ({ theme, color, size, ...props }: LogoProps) 
     case 'amex':
       return (
         <div data-testid='test-logo-amex' {...props}>
-          {getAmexLogo(size || 'regular')}
+          {getAmexLogo(size || 'regular', color || 'white')}
         </div>
       );
     case 'default':
@@ -42,7 +42,7 @@ const Logo: React.FC<LogoProps> = ({ theme, color, size, ...props }: LogoProps) 
     case 'visa':
       return (
         <div data-testid='test-logo-visa' {...props}>
-          {getVisaLogo(size || 'regular')}
+          {getVisaLogo(size || 'regular', color || 'white')}
         </div>
       );
   }

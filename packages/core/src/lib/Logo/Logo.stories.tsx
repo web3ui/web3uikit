@@ -30,12 +30,14 @@ export const VisaRegular = Template.bind({});
 VisaRegular.args = {
     theme: 'visa',
     size: 'regular',
+    color: 'blue',
 };
 
 export const VisaSmall = Template.bind({});
 VisaSmall.args = {
     theme: 'visa',
     size: 'small',
+    color: 'blue',
 };
 
 export const MastercardRegular = Template.bind({});
@@ -54,12 +56,14 @@ export const AmexRegular = Template.bind({});
 AmexRegular.args = {
     theme: 'amex',
     size: 'regular',
+    color: 'blue',
 };
 
 export const AmexSmall = Template.bind({});
 AmexSmall.args = {
     theme: 'amex',
     size: 'small',
+    color: 'blue',
 };
 
 export const DinersRegular = Template.bind({});

@@ -44,7 +44,6 @@ const StepperNumbers: React.FC<IStepperNumberProps> = ({
                             />
                         )}
                     </ListItemStyled>
-
                     <SpanStyled
                         activeStep={activeStep}
                         stepTotal={stepData.length}

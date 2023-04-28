@@ -16,7 +16,7 @@ export default {
     ],
 } as ComponentMeta<typeof CopyButton>;
 
-const Template: ComponentStory<typeof CopyButton> = () => {
+const Template: ComponentStory<typeof CopyButton> = (args) => {
     const notify = useNotification();
     return (
         <div>
@@ -32,9 +32,13 @@ const Template: ComponentStory<typeof CopyButton> = () => {
                         position: 'topR',
                     })
                 }
+                {...args}
             />
         </div>
     );
 };
 
 export const CopyButtonDefault = Template.bind({});
+
+export const WithTooltip = Template.bind({});
+WithTooltip.args = { hasTooltip: true };

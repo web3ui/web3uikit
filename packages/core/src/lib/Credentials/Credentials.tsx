@@ -1,12 +1,12 @@
 import { FC, useEffect, useState } from 'react';
 import { Typography } from '../Typography';
+import { HideButton } from '../HideButton';
+import { CopyButton } from '../CopyButton';
 import styles from './Credentials.styles';
 import { color } from '@web3uikit/styles';
 import { ICredentialsProps } from './types';
 import CredentialsHeader from './components/CredentialsHeader';
 import TruncateString from './components/TruncateString';
-import CustomCopyButton from './components/CustomCopyButton';
-import CustomHideButton from './components/CustomHideButton';
 
 const {
     CredentialsStyled,
@@ -14,6 +14,7 @@ const {
     DivWrapperStyled,
     PreformattedStyled,
     ToolsStyled,
+    DivIconWrapperStyled,
 } = styles;
 
 const Credentials: FC<ICredentialsProps> = ({
@@ -40,9 +41,10 @@ const Credentials: FC<ICredentialsProps> = ({
 
     useEffect(() => setIsValueHidden(isHidden), [isHidden]);
 
-    useEffect(() => setIsMultiline((text.match(/\n/g) || []).length > 0), [
-        text,
-    ]);
+    useEffect(
+        () => setIsMultiline((text.match(/\n/g) || []).length > 0),
+        [text],
+    );
 
     return (
         <CredentialsStyled
@@ -94,25 +96,30 @@ const Credentials: FC<ICredentialsProps> = ({
                     hasIconTooltip={hasIconTooltip}
                 >
                     {hasHideButton && (
-                        <CustomHideButton
-                            hasIconTooltip={hasIconTooltip}
-                            isValueHidden={isValueHidden}
-                            onHideToggle={() => {
-                                setIsValueHidden((prev) => !prev);
-                                if (isValueHidden) onReveal?.();
-                            }}
-                        />
+                        <DivIconWrapperStyled>
+                            <HideButton
+                                hasTooltip={hasIconTooltip}
+                                isHidden={isValueHidden}
+                                customize={customize}
+                                onToggle={() => {
+                                    setIsValueHidden((prev) => !prev);
+                                    if (isValueHidden) onReveal?.();
+                                }}
+                            />
+                        </DivIconWrapperStyled>
                     )}
                     {hasHideButton && hasCopyButton && !hasIconTooltip && (
                         <DividerStyled />
                     )}
                     {hasCopyButton && (
-                        <CustomCopyButton
-                            customize={customize}
-                            hasIconTooltip={hasIconTooltip}
-                            onCopy={onCopy}
-                            text={text}
-                        />
+                        <DivIconWrapperStyled>
+                            <CopyButton
+                                customize={customize}
+                                hasTooltip={hasIconTooltip}
+                                onCopy={onCopy}
+                                text={text}
+                            />
+                        </DivIconWrapperStyled>
                     )}
                 </ToolsStyled>
             </PreformattedStyled>

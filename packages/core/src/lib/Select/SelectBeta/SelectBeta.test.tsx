@@ -15,8 +15,8 @@ const testWrapperId = 'test-select';
 const testSelectButton = 'test-select-button';
 const testSelectOptions = 'test-select-options';
 const testSelectDropdownIcon = 'test-select-icon';
-const testUpIcon = 'triangle up icon';
-const testDownIcon = 'triangle down icon';
+const testUpIcon = 'close menu';
+const testDownIcon = 'open menu';
 const testSearchInput = 'test-select-search-input';
 
 const testSelectClick = (

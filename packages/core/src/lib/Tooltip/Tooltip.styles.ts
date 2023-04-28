@@ -96,9 +96,8 @@ const bottomPositionTriangle = css<TTooltipPositioningProps>`
     ${defaultTriangleStyle}
     border-bottom: ${(props) =>
         `${props?.arrowSize ?? 10}px solid ${props.bgColor ?? color.blue40}`};
-    border-left: ${(props) => `${props?.arrowSize ?? 10}px solid transparent`} ;
-    border-right: ${(props) =>
-        `${props?.arrowSize ?? 10}px solid transparent`} ;
+    border-left: ${(props) => `${props?.arrowSize ?? 10}px solid transparent`};
+    border-right: ${(props) => `${props?.arrowSize ?? 10}px solid transparent`};
     left: calc(${(props) => `${props.move}% - ${props?.arrowSize ?? 10}px`});
     top: -${(props) => (props?.arrowSize ?? 10) + 'px'};
 `;
@@ -124,6 +123,13 @@ const DivStyledTooltipParent = styled.div`
     position: relative;
 `;
 
+const showOnHoverStyles = css`
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+    transition-delay: 0.1s;
+`;
+
 const DivStyled = styled.div<IStyledHoverSpan>`
     border: ${(props) => props.customize?.border ?? 'none'};
     min-width: ${(props) => props.minWidth}px;
@@ -132,6 +138,10 @@ const DivStyled = styled.div<IStyledHoverSpan>`
     visibility: hidden;
     z-index: 1;
     ${({ position }) => getPopoverComp[position]};
+
+    &:hover {
+        ${showOnHoverStyles}
+    }
 `;
 
 const DivStyledTooltipContent = styled.div<Partial<TooltipProps>>`
@@ -159,10 +169,7 @@ const DivStyledTooltipContent = styled.div<Partial<TooltipProps>>`
             `}
     }
     &:hover + ${DivStyled} {
-        opacity: 1;
-        visibility: visible;
-        transition: 0.5s;
-        transition-delay: 0.1s;
+        ${showOnHoverStyles}
     }
 `;
 
@@ -181,13 +188,24 @@ const DivStyledTooltipText = styled.div<Partial<TooltipProps>>`
     transition: 0.5ms;
 `;
 
-export const DivStyledArrow = styled.div<
-    Pick<
-        TooltipProps,
-        'position' | 'move' | 'moveBody' | 'bgColor' | 'customize' | 'arrowSize'
-    >
->`
+type popupPos = Pick<
+    TooltipProps,
+    'position' | 'move' | 'moveBody' | 'bgColor' | 'customize' | 'arrowSize'
+>;
+export const DivStyledArrow = styled.div<popupPos>`
     ${({ position }) => getTriangleComp[position]}
+
+    // after is a buffer so the mouse does not need to be 100% accurate
+    &:after {
+        content: '';
+        display: block;
+        display: block;
+        height: 10px;
+        left: -25px;
+        position: absolute;
+        top: 0;
+        width: 50px;
+    }
 `;
 
 export default {

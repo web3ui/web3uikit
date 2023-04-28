@@ -3,7 +3,7 @@ import { InfoProps } from './types';
 
 const { DivStyled, PStyledTopic, PStyledInfo } = styles;
 
-const Info: React.FC<InfoProps> = ({
+const Information: React.FC<InfoProps> = ({
     id,
     information,
     topic,
@@ -19,4 +19,4 @@ const Info: React.FC<InfoProps> = ({
     );
 };
 
-export default Info;
+export default Information;

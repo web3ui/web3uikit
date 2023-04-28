@@ -7,14 +7,13 @@ const { InputStyled } = styles;
 const InputBase: FC<IInputBaseProps> = ({
     autoComplete = true,
     autoFocus = false,
-    maxLength,
-    minLength,
-    defaultValue,
     disabled = false,
     id,
-    name,
     max,
+    maxLength,
     min,
+    minLength,
+    name,
     onBlur,
     onChange,
     onFocus,
@@ -23,6 +22,7 @@ const InputBase: FC<IInputBaseProps> = ({
     required,
     testid,
     type = 'text',
+    value,
     ...props
 }) => {
     return (
@@ -31,7 +31,6 @@ const InputBase: FC<IInputBaseProps> = ({
             autoFocus={autoFocus}
             disabled={disabled}
             data-testid={testid}
-            defaultValue={defaultValue}
             id={id || 'input-base'}
             max={type === 'number' ? max : undefined}
             maxLength={maxLength}
@@ -51,6 +50,7 @@ const InputBase: FC<IInputBaseProps> = ({
             placeholder={placeholder}
             required={required}
             type={type}
+            value={value}
             {...props}
         />
     );

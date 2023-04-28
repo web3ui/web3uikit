@@ -1,5 +1,115 @@
 # @web3uikit/core
 
+## 0.4.5
+
+### Patch Changes
+
+-   [#1073](https://github.com/web3ui/web3uikit/pull/1073) [`0f64f0bc9`](https://github.com/web3ui/web3uikit/commit/0f64f0bc9a1a4b5ecbc797e553f827217b0daa23) Thanks [@niteshseram](https://github.com/niteshseram)! - fix#994:
+    1. Add tooltip option for Hide and Copy Button.
+    2. Add TCustomize props to both Hide and Copy button
+    3. Remove the custom Hide and Copy button from Credentials component and replace with original Hide and Copy button
+
+## 0.4.4
+
+### Patch Changes
+
+-   [#1072](https://github.com/web3ui/web3uikit/pull/1072) [`7a1df53e4`](https://github.com/web3ui/web3uikit/commit/7a1df53e4c293d87de804da0e4c23a58c9dab98d) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Select): tradtion mode revest to best working version
+
+*   [#1066](https://github.com/web3ui/web3uikit/pull/1066) [`c457d5713`](https://github.com/web3ui/web3uikit/commit/c457d5713ab8cb86d1282a2a824c963c5fe3b5b1) Thanks [@niteshseram](https://github.com/niteshseram)! - fix#996: Add optional fill prop for Chain illustrations
+
+## 0.4.3
+
+### Patch Changes
+
+-   [#1063](https://github.com/web3ui/web3uikit/pull/1063) [`79f6d68b5`](https://github.com/web3ui/web3uikit/commit/79f6d68b59dc2436cbcb8f917c15741b8d58d013) Thanks [@johanMoralis](https://github.com/johanMoralis)! - fix(plancard): Added back footer and topLabel does no longer contain a condition check
+
+## 0.4.2
+
+### Patch Changes
+
+-   [#1059](https://github.com/web3ui/web3uikit/pull/1059) [`48ac41ce9`](https://github.com/web3ui/web3uikit/commit/48ac41ce954231dd05294ced2f35f59c3762f38f) Thanks [@HolmJohan](https://github.com/HolmJohan)! - feat(plancard): updated plancard with new design and more flexability
+
+*   [#1060](https://github.com/web3ui/web3uikit/pull/1060) [`7e056841f`](https://github.com/web3ui/web3uikit/commit/7e056841f5a080347ff8e3ee576a64019e6daac7) Thanks [@HolmJohan](https://github.com/HolmJohan)! - feat(tag): added borderGreen and borderBlue tags
+
+## 0.4.0
+
+### Minor Changes
+
+-   [#1054](https://github.com/web3ui/web3uikit/pull/1054) [`cf79f769a`](https://github.com/web3ui/web3uikit/commit/cf79f769a89aac4d6e4bed0dec0f00b9d223f145) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(Toggle): component added
+
+### Patch Changes
+
+-   [#1053](https://github.com/web3ui/web3uikit/pull/1053) [`8d3ce2283`](https://github.com/web3ui/web3uikit/commit/8d3ce228355107aa5c574e0df701782e2647a5cc) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Select): html respects value passed
+
+## 0.3.2
+
+### Patch Changes
+
+-   [#1051](https://github.com/web3ui/web3uikit/pull/1051) [`b5a10b147`](https://github.com/web3ui/web3uikit/commit/b5a10b1478ae05a667550b555fb42e4e3d216c59) Thanks [@johanMoralis](https://github.com/johanMoralis)! - fix(Logo): added color option to visa and amex logos
+
+## 0.3.1
+
+### Patch Changes
+
+-   [#1046](https://github.com/web3ui/web3uikit/pull/1046) [`6742166f1`](https://github.com/web3ui/web3uikit/commit/6742166f1b504e8e2ad828f8a24baccf030ddec8) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(Notification): extended to use TCustomize prop
+
+*   [#1045](https://github.com/web3ui/web3uikit/pull/1045) [`dabb1e676`](https://github.com/web3ui/web3uikit/commit/dabb1e676de77b248ebedb834b31f415275c4669) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(tolltip): added story to show custom
+
+## 0.2.48
+
+### Patch Changes
+
+-   [#1035](https://github.com/web3ui/web3uikit/pull/1035) [`7f140deff`](https://github.com/web3ui/web3uikit/commit/7f140deffacda769525f5cfccf0e755d019b91d7) Thanks [@rayyan224](https://github.com/rayyan224)! - Add Prefix icon for tag
+
+## 0.2.47
+
+### Patch Changes
+
+-   [#1029](https://github.com/web3ui/web3uikit/pull/1029) [`a56ba8488`](https://github.com/web3ui/web3uikit/commit/a56ba8488c66123ae88d2bbda3e0ac578194716f) Thanks [@SidharthK2](https://github.com/SidharthK2)! - Changed Information component name
+
+*   [#1025](https://github.com/web3ui/web3uikit/pull/1025) [`967cb7bd4`](https://github.com/web3ui/web3uikit/commit/967cb7bd441fb9fabc69887ef325f2c19ed640c7) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - select beta bugs fixes
+
+-   [#1034](https://github.com/web3ui/web3uikit/pull/1034) [`70cdeccc5`](https://github.com/web3ui/web3uikit/commit/70cdeccc58721de97e8238e9ca0b79ceec0c5124) Thanks [@BillyG83](https://github.com/BillyG83)! - HTML5 Select can use disabled options
+
+## 0.2.45
+
+### Patch Changes
+
+-   [#1023](https://github.com/web3ui/web3uikit/pull/1023) [`834e9ac84`](https://github.com/web3ui/web3uikit/commit/834e9ac84a4d3cbeac7bbc19fa0a04141143e173) Thanks [@rayyan224](https://github.com/rayyan224)! - Add Value binding for html5 select
+
+## 0.2.44
+
+### Patch Changes
+
+-   [#1021](https://github.com/web3ui/web3uikit/pull/1021) [`990729be7`](https://github.com/web3ui/web3uikit/commit/990729be7e868b747db6c1596b961ad374a3e385) Thanks [@rayyan224](https://github.com/rayyan224)! - Add Prefix for select
+
+## 0.2.43
+
+### Patch Changes
+
+-   [#1018](https://github.com/web3ui/web3uikit/pull/1018) [`379563d0c`](https://github.com/web3ui/web3uikit/commit/379563d0cf17b43e3ee70bf400ab3304a385527d) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Select): default value, index, placeholder and fallback
+
+## 0.2.42
+
+### Patch Changes
+
+-   [#1012](https://github.com/web3ui/web3uikit/pull/1012) [`9854449f9`](https://github.com/web3ui/web3uikit/commit/9854449f9c8720e21d7d16017e6135bf7607431e) Thanks [@rayyan224](https://github.com/rayyan224)! - Fix Checkbox prop checked, should be source of truth
+
+*   [#1014](https://github.com/web3ui/web3uikit/pull/1014) [`4878152fa`](https://github.com/web3ui/web3uikit/commit/4878152fa300ac7e077cb75be04e2fb50c61d652) Thanks [@rayyan224](https://github.com/rayyan224)! - Fix Icon Resizing for tags
+
+-   [#1015](https://github.com/web3ui/web3uikit/pull/1015) [`8e6898cae`](https://github.com/web3ui/web3uikit/commit/8e6898cae7ea93b5ff096175a2bd0a6ef1125a0e) Thanks [@BillyG83](https://github.com/BillyG83)! - Select: default index can be 0
+
+## 0.2.41
+
+### Patch Changes
+
+-   [#1006](https://github.com/web3ui/web3uikit/pull/1006) [`7180ae001`](https://github.com/web3ui/web3uikit/commit/7180ae0015e28dc1b126a5bc9ff57b0eacbbb70b) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add new styles to select component and add filter icon
+
+*   [#1009](https://github.com/web3ui/web3uikit/pull/1009) [`ee7704f67`](https://github.com/web3ui/web3uikit/commit/ee7704f67db6dd278c1b0d6acc4b30b5ba356c30) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Select): HTML 5 default index & placeholder
+
+*   Updated dependencies [[`7180ae001`](https://github.com/web3ui/web3uikit/commit/7180ae0015e28dc1b126a5bc9ff57b0eacbbb70b)]:
+    -   @web3uikit/icons@0.2.41
+
 ## 0.2.38
 
 ### Patch Changes

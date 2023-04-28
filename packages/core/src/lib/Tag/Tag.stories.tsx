@@ -126,6 +126,31 @@ PinkDark.args = {
     tone: 'dark',
 };
 
+export const borderGreen = Template.bind({});
+borderGreen.args = {
+    color: 'green',
+    text: 'Border Green',
+    tone: 'light',
+    customize: {borderRadius: "8px", backgroundColor: "#FFF", border: "1px solid #00D1AE}"}
+};
+
+export const borderBlue = Template.bind({});
+borderBlue.args = {
+    color: 'blue',
+    text: 'Border Blue',
+    tone: 'light',
+    customize: {
+        border: "1px solid #52ABFF}",
+        backgroundColor: "#FFF",
+        borderRadius: "3px",
+        color: "#FA3",
+        fontSize: "20px",
+        fontWeight: "500",
+        padding: "8px 16px",
+        margin: "2px"
+    }
+};
+
 export const AllProps = Template.bind({});
 AllProps.args = {
     active: true,

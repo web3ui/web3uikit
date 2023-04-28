@@ -16,7 +16,7 @@ const hoverStyles = css<Pick<ISelectProps, 'customize'>>`
 
 const DivStyledWrapper = styled.div<Pick<ISelectProps, 'customize'>>`
     ${resetCSS};
-    --arrow-width: 51px;
+    --arrow-width: 42px;
     --checkbox-width: 42px;
     display: block;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
@@ -35,9 +35,10 @@ const DivStyledWrapper = styled.div<Pick<ISelectProps, 'customize'>>`
         }
     }
     ${(p) =>
-        p.customize?.margin
-            ? `margin: ${p.customize.margin}`
-            : `margin-bottom: 5px`}
+        p.customize?.margin &&
+        css`
+            margin: ${p.customize.margin};
+        `}
 `;
 
 const DivStyledSelectWrapper = styled.div<Partial<ISelectProps>>`
@@ -46,7 +47,7 @@ const DivStyledSelectWrapper = styled.div<Partial<ISelectProps>>`
     cursor: pointer;
     display: flex;
     min-height: ${(p) => p.height ?? '56px'};
-    padding: 8px 20px 8px 10px;
+    padding: ${(p) => p.customize?.padding ?? '8px 20px 8px 10px'};
     position: relative;
     transition: all 0.1s linear;
 `;
@@ -179,21 +180,24 @@ const MenuStyledWrapper = styled.menu<Pick<ISelectProps, 'menuCustomize'>>`
     padding: 0;
     position: relative;
     z-index: 2;
-    ${(p) =>
-        p.menuCustomize?.margin
-            ? `margin:${p.menuCustomize.margin}`
-            : 'margin-top: 5px'}
 `;
 
 type TStyleProps = Pick<ISelectProps, 'customize' | 'menuCustomize'>;
 const DivStyledDropdown = styled.div<TStyleProps>`
     background: ${(p) => p.menuCustomize?.backgroundColor ?? color.aero10};
+    border-radius: ${(p) => p.menuCustomize?.borderRadius ?? '16px'};
+    border: ${(p) => p.menuCustomize?.border ?? `2px solid ${color.navy30}`};
     left: 0;
     position: absolute;
-    top: 0;
-    width: 100%;
-    border: ${(p) => p.menuCustomize?.border ?? `2px solid ${color.navy30}`};
-    border-radius: ${(p) => p.menuCustomize?.borderRadius ?? '16px'};
+    width: ${(p) => p.menuCustomize?.width ?? '100%'};
+    ${(p) =>
+        p.menuCustomize?.margin
+            ? css`
+                  margin: ${p.menuCustomize.margin};
+              `
+            : css`
+                  top: 5px;
+              `}
 `;
 
 const InputStyledSearch = styled.input<TStyleProps>`
@@ -235,7 +239,7 @@ const ListStyledDropdown = styled.ul<IListProps>`
     justify-content: stretch;
     list-style: none;
     margin: 0;
-    max-height: ${(p) => p.height ?? '200px'};
+    max-height: ${(p) => p.menuCustomize?.height ?? p.height ?? '200px'};
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: ${(p) => p.menuCustomize?.padding ?? '0px'};
@@ -432,10 +436,17 @@ const CheckmarkIconStyled = styled(Checkmark)`
 `;
 // -------------
 
+const DivStyledCustomSelect = styled.div`
+    ${resetCSS};
+    height: 100%;
+    width: 100%;
+`;
+
 export default {
     ButtonStyledListItem,
     ButtonStyledSelect,
     CheckmarkIconStyled,
+    DivStyledCustomSelect,
     DivStyledDesc,
     DivStyledDropdown,
     DivStyledOverlay,

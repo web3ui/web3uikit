@@ -1,39 +1,34 @@
 import { color } from '@web3uikit/styles';
 export interface IPlanCardProps {
     /**
-     * the description/features of the current plan
+     * the features of the current plan
      */
-    description: string[];
+    features: string[];
 
     /**
      * The footer/button of the card
      */
-    footer: JSX.Element;
+    footer?: JSX.Element;
 
     /**
-     * the component can be set as disabled
-     */
-    isActive: boolean;
-
-    /**
-     * Is the plan the current users plan
+     * Is the active plan of the user
      */
     isCurrentPlan: boolean;
 
     /**
      * the title component of the Card
      */
-    title?: JSX.Element;
+    title?: string;
 
     /**
      * the subtitle component of the Card
      */
-    subTitle: JSX.Element;
+    subTitle?: JSX.Element;
 
     /**
-     * the description title component of the Card
+     * a shorter description of the plan in the Card
      */
-    descriptionTitle: JSX.Element;
+    description: JSX.Element;
 
     /**
      * a horizontal line on the top
@@ -97,4 +92,32 @@ export interface IPlanCardProps {
      */
 
     scrollbarHoverBackground?: string;
+
+    /**
+     * set label at the top of card
+     */
+
+    topLabel?: JSX.Element; 
+
+    /**
+     * set the price of the plan
+     */
+    
+    price: JSX.Element;
+
+    /**
+     * set the button of the planCard
+     */
+
+    ctaButton?: JSX.Element;
+
+    /**
+     * set the theme color of the planCard
+     */
+    themeColor?: typeof color | string;
+
+    /**
+     * set the color of the icons next to the features
+     */
+    featuresIconColor?: string;
 }

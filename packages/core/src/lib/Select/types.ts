@@ -111,7 +111,7 @@ export interface ISelectProps {
     /**
      * index of selected option by default
      */
-    defaultOptionIndex?: number | undefined;
+    defaultOptionIndex?: number;
 
     /**
      * To replace no data text with a different text, but still keep image
@@ -159,7 +159,15 @@ export interface ISelectProps {
     menuCustomize?: Omit<TCustomize, 'onHover'> & {
         bgColorOnHover?: string;
         scrollbarColor?: string;
+        height?: string;
+        width?: string;
     };
+
+    /**
+     * add custom select component, clicking on which will open the menu,
+     * Note: This hides the default select arrow and label
+     */
+    customSelect?: React.ReactNode;
 }
 
 export interface ISelectExtendedProps extends ISelectProps {
@@ -185,6 +193,11 @@ export interface OptionProps {
      * id of option. should be unique
      */
     id: string | number;
+
+    /**
+     * an option can be disabled / unselectable
+     */
+    disabled?: boolean;
 }
 
 export interface LabelProps {

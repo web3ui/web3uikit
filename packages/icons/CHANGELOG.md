@@ -1,5 +1,43 @@
 # @web3uikit/icons
 
+## 0.4.1
+
+### Patch Changes
+
+-   [#1057](https://github.com/web3ui/web3uikit/pull/1057) [`9b94b8158`](https://github.com/web3ui/web3uikit/commit/9b94b8158572ea302c325c2160f9603a4f783ba2) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - Added gmail, etherscan, slack and learn icons
+
+## 0.3.0
+
+### Minor Changes
+
+-   [#1041](https://github.com/web3ui/web3uikit/pull/1041) [`a2ab9f93f`](https://github.com/web3ui/web3uikit/commit/a2ab9f93f8c850804c95d3f21449cb25eb405d79) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - Added multiple new icons
+
+## 0.2.46
+
+### Patch Changes
+
+-   [#1026](https://github.com/web3ui/web3uikit/pull/1026) [`72a3b4406`](https://github.com/web3ui/web3uikit/commit/72a3b4406984b7f434aaf09fab392ef82d6fb1f0) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - Added various icons
+
+## 0.2.41
+
+### Patch Changes
+
+-   [#1006](https://github.com/web3ui/web3uikit/pull/1006) [`7180ae001`](https://github.com/web3ui/web3uikit/commit/7180ae0015e28dc1b126a5bc9ff57b0eacbbb70b) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add new styles to select component and add filter icon
+
+## 0.2.40
+
+### Patch Changes
+
+-   [#1002](https://github.com/web3ui/web3uikit/pull/1002) [`795438989`](https://github.com/web3ui/web3uikit/commit/795438989b456b60990dc307112b23b324806b80) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - Fix: all icons now accept currentColor fill
+
+## 0.2.39
+
+### Patch Changes
+
+-   [#1001](https://github.com/web3ui/web3uikit/pull/1001) [`d0c7b6e6e`](https://github.com/web3ui/web3uikit/commit/d0c7b6e6e3dcd9eb136e9baeb90dcb74e8ee7835) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - Fix: wallet icon colour issue resolved
+
+*   [`097ec0e80`](https://github.com/web3ui/web3uikit/commit/097ec0e80a9e3a5a3d2b554fffb8b41867f99e14) - Added new icons for token history, plus some arrows and a compass icon
+
 ## 0.2.37
 
 ### Patch Changes

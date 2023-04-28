@@ -17,3 +17,6 @@ Default.args = {};
 
 export const HiddenState = Template.bind({});
 HiddenState.args = { isHidden: true };
+
+export const WithTooltip = Template.bind({});
+WithTooltip.args = { hasTooltip: true };

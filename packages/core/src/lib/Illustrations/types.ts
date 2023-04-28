@@ -53,6 +53,11 @@ export interface IllustrationProps {
      * Width of illustration
      */
     height?: Size;
+
+    /**
+     * Will only work for web3 chain illustrations
+     */
+    fill?: string;
 }
 
 export interface ILogoProps {

@@ -134,21 +134,21 @@ const Input: React.FC<IInputProps> = ({
                     <InputBase
                         autoComplete={autoComplete}
                         autoFocus={autoFocus}
-                        maxLength={validation?.maxLength || props.maxLength}
-                        minLength={validation?.minLength || props.minLength}
-                        defaultValue={value || props.defaultValue}
                         disabled={disabled || state === 'disabled'}
                         id={id || 'web3uiKit-input'}
                         max={validation?.max || props.max}
+                        maxLength={validation?.maxLength || props.maxLength}
                         min={validation?.min || props.min}
+                        minLength={validation?.minLength || props.minLength}
                         onBlur={(e) => onBlurEvent(e)}
                         onChange={(e) => onChangeEvent(e)}
                         onFocus={(e) => onFocusEvent(e)}
-                        placeholder={placeholder}
                         pattern={validation?.pattern || props.pattern}
+                        placeholder={placeholder}
                         required={validation?.required || props.required}
                         testid="test-input-input"
                         type={inputType}
+                        value={currentValue}
                     />
 
                     {slots &&

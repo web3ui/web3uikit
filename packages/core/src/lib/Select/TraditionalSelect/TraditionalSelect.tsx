@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import TraditionalSelectStyles from './TraditionalSelect.styles';
 import { ISelectProps } from '../types';
 import InputStyles from '../../Input/Input.styles';
@@ -11,7 +10,7 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
     description,
     disabled = false,
     errorMessage = '',
-    id,
+    id = 'web3uikit-select',
     label,
     onBlurTraditional,
     onChange,
@@ -30,20 +29,12 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
     width = '200px',
     ...props
 }: ISelectProps) => {
-    const [selectedOptionIndex, setSelectedOptionIndex] =
-        useState(defaultOptionIndex);
-
-    useEffect(() => {
-        if (value) {
-            const valueOptionItem = options.find(
-                (optionItem) => optionItem.id == value,
-            );
-            setSelectedOptionIndex(
-                valueOptionItem ? options.indexOf(valueOptionItem) : 0,
-            );
-        }
-    }, [selectedOptionIndex, value]);
-
+    const defaultValue =
+        (defaultOptionIndex !== undefined &&
+            options[defaultOptionIndex]?.label) ||
+        value ||
+        placeholder ||
+        'Please choose';
     return (
         <DivWrapperStyled
             className="input_filled"
@@ -53,7 +44,7 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
         >
             <SelectStyled
                 data-testid="test-select-select"
-                defaultValue={placeholder || 'Please choose'}
+                defaultValue={defaultValue}
                 id={id}
                 ref={refTraditional}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
@@ -63,20 +54,22 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
                     onBlurTraditional && onBlurTraditional(event)
                 }
                 required={validation?.required}
+                value={value}
             >
                 <option disabled>{placeholder || 'Please choose'}</option>
-                {options.map(
-                    (option, i) =>
-                        i !== selectedOptionIndex && (
-                            <option
-                                data-testid={`test-select-option-${i}`}
-                                id={String(option?.id)}
-                                key={option?.id}
-                            >
-                                {option?.label}
-                            </option>
-                        ),
-                )}
+
+                {options.map((option, i) => (
+                    <option
+                        data-testid={`test-select-option-${i}`}
+                        id={String(option?.id)}
+                        key={option?.id}
+                        value={option?.id}
+                        disabled={option.disabled || false}
+                    >
+                        {option?.prefix}
+                        {option?.label}
+                    </option>
+                ))}
             </SelectStyled>
             {label && (
                 <LabelStyledTrad

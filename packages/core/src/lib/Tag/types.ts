@@ -1,3 +1,5 @@
+import { TCustomize } from '../../interfaces/customize';
+
 export type Tone = 'dark' | 'light';
 
 export interface TagProps {
@@ -20,6 +22,11 @@ export interface TagProps {
      * if theme = 'status', active can be set true, to show a tick icon
      */
     active?: boolean;
+
+    /**
+     * To add a prefix icon, to the tag. Pass a react node
+     */
+    prefixIcon?: React.ReactNode;
 
     /**
      * choose a color for the tag
@@ -64,4 +71,9 @@ export interface TagProps {
      * set custom passing
      */
     padding?: string;
+
+    /**
+     * Customize the credentials
+     */
+    customize?: TCustomize;
 }

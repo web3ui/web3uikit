@@ -2,7 +2,7 @@ import { composeStories } from '@storybook/testing-react';
 import { render, screen } from '@testing-library/react';
 
 import * as stories from './Tag.stories';
-import { test, expect, describe } from 'vitest';
+import { test, expect } from 'vitest';
 
 const {
     Regular,
@@ -16,6 +16,8 @@ const {
     Purple,
     Red,
     Yellow,
+    borderBlue,
+    borderGreen,
 } = composeStories(stories);
 
 export const tagTestId = 'test-tag';
@@ -96,6 +98,16 @@ const data: TestStoryProps[] = [
         name: 'Tag - Pink',
         Component: Pink,
         expectedText: 'Pink',
+    },
+    {
+        name: 'Tag - Border Green',
+        Component: borderGreen,
+        expectedText: 'Border Green',
+    },
+    {
+        name: 'Tag - Border Blue',
+        Component: borderBlue,
+        expectedText: 'Border Blue',
     },
 ];
 

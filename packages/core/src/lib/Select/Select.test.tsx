@@ -1,6 +1,6 @@
 import { composeStories } from '@storybook/testing-react';
 import { render, screen } from '@testing-library/react';
-import { test, expect, describe } from 'vitest';
+import { test, expect } from 'vitest';
 
 import { color } from '@web3uikit/styles';
 import * as stories from './Select.stories';

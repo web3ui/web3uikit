@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 1.0.0
+
+### Major Changes
+
+-   [#1082](https://github.com/web3ui/web3uikit/pull/1082) [`c91e0434d`](https://github.com/web3ui/web3uikit/commit/c91e0434dfb52f462aa0e6f02e7cae0e2e26d0e1) Thanks [@dani69654](https://github.com/dani69654)! - fix(Credentials) - Incorrect margins for divider div
+
 ## 0.5.0
 
 ### Minor Changes

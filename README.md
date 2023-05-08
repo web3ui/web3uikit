@@ -146,5 +146,5 @@ These are components which have `moralis` and `react-moralis` dependency.
 
 # 🧙‍♂️ Community
 
--   [Discord](https://discord.gg/moralis)
+-   [Discord](https://moralis.io/joindiscord)
 -   [Forum](https://forum.moralis.io)

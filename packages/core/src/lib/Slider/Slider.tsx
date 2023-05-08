@@ -13,6 +13,8 @@ const {
 
 const Slider: React.FC<ISliderProps> = ({
     bgColor = color.mint40,
+    bgColorTrack = color.navy10,
+    boxShadowOfThumb = `0 1px 3px ${color.white};`,
     disabled = false,
     handleTooltipLabel,
     id,
@@ -46,6 +48,8 @@ const Slider: React.FC<ISliderProps> = ({
             )}
             <InputStyled
                 $bgColor={bgColor}
+                $bgColorTrack={bgColorTrack}
+                $boxShadowOfThumb={boxShadowOfThumb}
                 data-testid="test-slider-input"
                 id={id}
                 max={max}

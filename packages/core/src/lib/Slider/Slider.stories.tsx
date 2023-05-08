@@ -51,6 +51,20 @@ Step.args = {
     ],
 };
 
+export const Custom = Template.bind({});
+Custom.args = {
+    max: 151,
+    min: 0,
+    id: 'one',
+    value: 75,
+    disabled: false,
+    labelBgColor: color.blueGray50,
+    bgColor: color.blue40,
+    bgColorTrack: color.fuchsia40,
+    boxShadowOfThumb: '0px 5px 5px rgba(0, 0, 0,  0.2)',
+    handleTooltipLabel: (val) => 'Caught ' + val + ' Pokemon',
+};
+
 export const Disabled = Template.bind({});
 Disabled.args = {
     max: 1000,

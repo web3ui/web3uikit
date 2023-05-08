@@ -68,7 +68,7 @@ const trackStyles = (props: any) => css`
     background: linear-gradient(
         90deg,
         ${props.$bgColor} ${calculateNewPositionStyleValue(props)},
-        ${color.navy10} ${calculateNewPositionStyleValue(props)}
+        ${props.$bgColorTrack} ${calculateNewPositionStyleValue(props)}
     );
     border-radius: 10px;
     cursor: pointer;
@@ -76,13 +76,13 @@ const trackStyles = (props: any) => css`
     width: 100%;
 `;
 
-const thumbStyles = (bgColor: string) => css`
+const thumbStyles = (bgColor: string, boxShadowOfThumb: string) => css`
     ${resetCSS};
     -webkit-appearance: none;
     background: ${color.white};
     border-radius: 50%;
     border: 0.25rem solid ${colorPercentage(bgColor, 80)};
-    box-shadow: 0 1px 3px ${color.white};
+    box-shadow: ${boxShadowOfThumb || `0 1px 3px ${color.white}`};
     cursor: pointer;
     height: 29px;
     transform: translateY(calc(-50% + 8px));
@@ -91,6 +91,8 @@ const thumbStyles = (bgColor: string) => css`
 
 const InputStyled = styled.input<{
     $bgColor: string;
+    $bgColorTrack: string;
+    $boxShadowOfThumb: string;
     $leftLabel?: string;
     $rightLabel?: string;
 }>`
@@ -110,14 +112,14 @@ const InputStyled = styled.input<{
         ${(props) => trackStyles(props)}
     }
     &::-webkit-slider-thumb {
-        ${(props) => thumbStyles(props.$bgColor)}
+        ${(props) => thumbStyles(props.$bgColor, props.$boxShadowOfThumb)}
     }
     //For mozilla
     &::-moz-range-track {
         ${(props) => trackStyles(props)}
     }
     &::-moz-range-thumb {
-        ${(props) => thumbStyles(props.$bgColor)}
+        ${(props) => thumbStyles(props.$bgColor, props.$boxShadowOfThumb)}
     }
     //For internet explorer
     &::-ms-track {
@@ -134,7 +136,7 @@ const InputStyled = styled.input<{
         ${(props) => trackStyles(props)}
     }
     &::-ms-thumb {
-        ${(props) => thumbStyles(props.$bgColor)}
+        ${(props) => thumbStyles(props.$bgColor, props.$boxShadowOfThumb)}
     }
     &:disabled {
         opacity: 0.6;

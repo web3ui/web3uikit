@@ -1,20 +1,50 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 export interface ISliderProps {
-    /**
-     * pass id for html input component
-     */
-    id: string;
-
     /**
      * background color of slider
      */
     bgColor?: string;
 
     /**
+     * background color of slider background track
+     */
+    bgColorTrack?: string;
+
+    /**
+     * box-shadow to be applied to the thumb
+     */
+    boxShadowOfThumb?: string;
+
+    /**
+     * disables any interaction
+     */
+    disabled?: boolean;
+
+    /**
+     * change label value using current value
+     */
+    handleTooltipLabel?: (val: number) => string | number;
+
+    /**
+     * pass id for html input component
+     */
+    id: string;
+
+    /**
      * label background color
      */
     labelBgColor?: string;
+
+    /**
+     * provide value for left label
+     */
+    leftLabel?: string;
+
+    /**
+     * markers - make sure to pass correct amount based on step size, min and max
+     */
+    markers?: ReactNode[];
 
     /**
      * pass maximum Range for Slider
@@ -27,34 +57,9 @@ export interface ISliderProps {
     min?: number;
 
     /**
-     * value of the slider
-     */
-    value: number;
-
-    /**
      * onChange callback event
      */
     onChange: (value: string) => void;
-
-    /**
-     * disables any interaction
-     */
-    disabled?: boolean;
-
-    /**
-     * set the discrete step size of the element
-     */
-    step?: number;
-
-    /**
-     * provide value for left label
-     */
-    leftLabel?: string;
-
-    /**
-     * provide value for right label
-     */
-    rightLabel?: string;
 
     /**
      * a prefix for the form controller EG: $ or €
@@ -67,12 +72,17 @@ export interface ISliderProps {
     rangeControllerSuffix?: string;
 
     /**
-     * change label value using current value
+     * provide value for right label
      */
-    handleTooltipLabel?: (val: number) => string | number;
+    rightLabel?: string;
 
     /**
-     * markers - make sure to pass correct amount based on step size, min and max
+     * set the discrete step size of the element
      */
-    markers?: ReactNode[];
+    step?: number;
+
+    /**
+     * value of the slider
+     */
+    value: number;
 }

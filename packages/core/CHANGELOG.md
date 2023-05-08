@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 1.0.1
+
+### Patch Changes
+
+-   [#1087](https://github.com/web3ui/web3uikit/pull/1087) [`2a2dc78c6`](https://github.com/web3ui/web3uikit/commit/2a2dc78c63e4775e10a50cb6a271222cebe9fad3) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(Slider): custom track bgColor and drop shadow props
+
 ## 1.0.0
 
 ### Major Changes

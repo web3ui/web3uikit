@@ -11,7 +11,7 @@ const Badge: React.FC<BadgeProps> = ({
     state = 'normal',
     text,
     textVariant = 'body16',
-    theme = colorTheme.light,
+    theme = 'light',
     weight = 'bold',
     ...props
 }) => {

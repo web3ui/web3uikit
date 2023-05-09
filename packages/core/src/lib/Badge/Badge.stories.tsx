@@ -38,6 +38,62 @@ export const All: ComponentStory<typeof Badge> = () => {
         </div>
     );
 };
+export const LightMode: ComponentStory<typeof Badge> = () => {
+    return (
+        <div>
+            <div style={{ display: 'flex', gap: '5px' }}>
+                <Badge text="Badge3" textVariant="h3" theme="light" />
+                <Badge
+                    text="Badge3"
+                    textVariant="h3"
+                    state="success"
+                    theme="light"
+                />
+                <Badge
+                    text="Badge3"
+                    textVariant="h3"
+                    state="warning"
+                    theme="light"
+                />
+                <Badge
+                    text="Badge3"
+                    textVariant="h3"
+                    state="danger"
+                    theme="light"
+                />
+            </div>
+        </div>
+    );
+};
+
+export const DarkMode: ComponentStory<typeof Badge> = () => {
+    return (
+        <div>
+            <div style={{ display: 'flex', gap: '5px' }}>
+                <Badge text="Badge3" textVariant="h3" theme="dark" />
+                <Badge
+                    text="Badge3"
+                    textVariant="h3"
+                    state="success"
+                    theme="dark"
+                />
+                <Badge
+                    text="Badge3"
+                    textVariant="h3"
+                    state="warning"
+                    theme="dark"
+                />
+                <Badge
+                    text="Badge3"
+                    textVariant="h3"
+                    state="danger"
+                    theme="dark"
+                />
+            </div>
+        </div>
+    );
+};
+
 const Template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;
 
 export const Normal = Template.bind({});

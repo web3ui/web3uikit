@@ -1,5 +1,5 @@
 import { TypographyProps, variantType } from '../Typography/types';
-import { TColorTheme } from '@web3uikit/styles';
+import { TThemeName } from '@web3uikit/styles';
 
 export type colorState = 'normal' | 'success' | 'warning' | 'danger' | 'custom';
 
@@ -36,5 +36,5 @@ export interface BadgeProps extends TTextProps {
     /**
      * set a theme for the component
      */
-    theme?: TColorTheme;
+    theme?: TThemeName;
 }

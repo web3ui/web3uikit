@@ -54,8 +54,7 @@ const color = {
 export const gradientColors = {
     beauBlue:
         'radial-gradient(106.45% 108.64% at 32.33% -4.84%, #ECF5FC 0.52%, #CEE4F3 100%)',
-    blue:
-        'linear-gradient(113.54deg, rgba(60, 87, 140, 0.5) 14.91%, rgba(70, 86, 169, 0.5) 30.39%, rgba(129, 161, 225, 0.185) 55.76%), linear-gradient(151.07deg, #145559 33.25%, #414FA7 98.24%)',
+    blue: 'linear-gradient(113.54deg, rgba(60, 87, 140, 0.5) 14.91%, rgba(70, 86, 169, 0.5) 30.39%, rgba(129, 161, 225, 0.185) 55.76%), linear-gradient(151.07deg, #145559 33.25%, #414FA7 98.24%)',
     goldShiny:
         'linear-gradient(113.54deg, rgba(199, 148, 37, 0.6) 14.91%, rgba(204, 147, 23, 0.6) 14.92%, rgba(181, 147, 24, 0) 45.98%, rgba(250, 228, 30, 0) 55.76%, rgba(219, 200, 26, 0) 55.76%), linear-gradient(147.17deg, #DBBB14 48.73%, #B38311 98.22%)',
     lightBlue:
@@ -128,5 +127,28 @@ export const legacyColor = {
     yellowLight: '#FEF9EE',
     yellowHover: '#FAE7BC',
 } as const;
+
+export const colorTheme = {
+    light: {
+        danger: color.red40,
+        primary: color.mint40,
+        success: color.mint40,
+        text: color.blueGray50,
+        warning: color.yellow50,
+    },
+    dark: {
+        danger: color.red60,
+        primary: color.navy40,
+        success: color.mint60,
+        text: color.white,
+        warning: color.yellow60,
+    },
+};
+
+// thanks chatGPT xD
+type ThemeType = keyof typeof colorTheme;
+export type TColorTheme = {
+    [K in ThemeType]: (typeof colorTheme)[K];
+}[ThemeType];
 
 export default color;

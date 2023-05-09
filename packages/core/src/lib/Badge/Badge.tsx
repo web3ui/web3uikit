@@ -1,21 +1,27 @@
 import { BadgeProps } from './types';
 import styles from './Badge.styles';
 import { Typography } from '../Typography';
-import { color as allColors } from '@web3uikit/styles';
+import { color as allColors, colorTheme } from '@web3uikit/styles';
 const { DivStyled } = styles;
 
 const Badge: React.FC<BadgeProps> = ({
-    state = 'normal',
-    text,
-    textVariant = 'body16',
     color = allColors.white,
     italic,
     monospace,
+    state = 'normal',
+    text,
+    textVariant = 'body16',
+    theme = colorTheme.light,
     weight = 'bold',
     ...props
 }) => {
     return (
-        <DivStyled data-testid="test-badge" state={state} {...props}>
+        <DivStyled
+            data-testid="test-badge"
+            state={state}
+            theme={theme}
+            {...props}
+        >
             <Typography
                 color={color}
                 italic={italic}

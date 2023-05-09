@@ -1,6 +1,6 @@
 {
     "name": "@web3uikit/styles",
-    "version": "0.2.37",
+    "version": "1.0.3",
     "sideEffects": false,
     "files": [
         "package.json",

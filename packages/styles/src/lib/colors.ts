@@ -146,9 +146,9 @@ export const colorTheme = {
 };
 
 // thanks chatGPT xD
-type ThemeType = keyof typeof colorTheme;
+export type TThemeName = keyof typeof colorTheme;
 export type TColorTheme = {
-    [K in ThemeType]: (typeof colorTheme)[K];
-}[ThemeType];
+    [K in TThemeName]: (typeof colorTheme)[K];
+}[TThemeName];
 
 export default color;

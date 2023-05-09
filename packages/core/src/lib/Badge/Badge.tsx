@@ -1,7 +1,7 @@
 import { BadgeProps } from './types';
 import styles from './Badge.styles';
 import { Typography } from '../Typography';
-import { color as allColors, colorTheme } from '@web3uikit/styles';
+import { color as allColors } from '@web3uikit/styles';
 const { DivStyled } = styles;
 
 const Badge: React.FC<BadgeProps> = ({
@@ -11,7 +11,7 @@ const Badge: React.FC<BadgeProps> = ({
     state = 'normal',
     text,
     textVariant = 'body16',
-    theme = colorTheme.light,
+    theme = 'light',
     weight = 'bold',
     ...props
 }) => {

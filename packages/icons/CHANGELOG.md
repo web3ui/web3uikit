@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 1.0.2
+
+### Patch Changes
+
+-   [#1089](https://github.com/web3ui/web3uikit/pull/1089) [`670a6727e`](https://github.com/web3ui/web3uikit/commit/670a6727e412e7f53cc474754ce576542adde544) Thanks [@KristamMoffett](https://github.com/KristamMoffett)! - added new social icons
+
 ## 0.4.1
 
 ### Patch Changes

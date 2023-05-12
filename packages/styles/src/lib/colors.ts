@@ -45,6 +45,7 @@ const color = {
     sky40: '#01C0F4',
     turquoise40: '#01CBD2',
     white: '#FFFFFF',
+    white10: '#F9FAFB',
     yellow10: '#FEFAED',
     yellow20: '#F9EDBA',
     yellow50: '#EBBB00',
@@ -78,6 +79,83 @@ export const colorPercentage = (color: string, percentage: string | number) => {
 
     return `rgba(${r},${g},${b},${Number(percentage) / 100})`;
 };
+
+export const colorTheme = {
+    dark: {
+        danger: color.red60,
+        primary: color.navy40,
+        success: color.mint60,
+        text: color.white,
+        warning: color.yellow60,
+
+        primary80: color.navy80,
+        primary70: color.white10,
+        primary60: color.blue60,
+        primary50: color.blue50,
+        primary40: color.blue40,
+        primary30: color.blue30,
+        primary20: color.blue20,
+        primary15: color.aero30,
+        primary10: color.aero20,
+        primary00: color.aero10,
+
+        default40: color.blueGray50,
+        default30: color.gray40,
+        default20: color.gray30,
+        default10: color.gray20,
+        default00: color.white,
+
+        positive60: color.mint60,
+        positive50: color.mint50,
+        positive40: color.mint40,
+        positive30: color.mint30,
+        positive20: color.mint20,
+        positive10: color.mint10,
+
+        destructive50: color.red30,
+        destructive40: color.red50,
+        destructive30: color.red40,
+        destructive20: color.red60,
+    },
+
+    light: {
+        danger: color.red40,
+        primary: color.mint40,
+        success: color.mint40,
+        text: color.blueGray50,
+        warning: color.yellow50,
+
+        primary80: color.navy80,
+        primary70: color.blue70,
+        primary60: color.blue60,
+        primary50: color.blue50,
+        primary40: color.blue40,
+        primary30: color.blue30,
+        primary20: color.blue20,
+        primary15: color.aero30,
+        primary10: color.aero20,
+        primary00: color.aero10,
+
+        default40: color.blueGray50,
+        default30: color.gray40,
+        default20: color.gray30,
+        default10: color.gray20,
+        default00: color.white,
+
+        positive60: color.mint60,
+        positive50: color.mint50,
+        positive40: color.mint40,
+        positive30: color.mint30,
+        positive20: color.mint20,
+        positive10: color.mint10,
+    },
+};
+
+// thanks chatGPT xD
+export type TThemeName = keyof typeof colorTheme;
+export type TColorTheme = {
+    [K in TThemeName]: (typeof colorTheme)[K];
+}[TThemeName];
 
 export const legacyColor = {
     beauBlue: '#CEE4F3',
@@ -127,28 +205,5 @@ export const legacyColor = {
     yellowLight: '#FEF9EE',
     yellowHover: '#FAE7BC',
 } as const;
-
-export const colorTheme = {
-    light: {
-        danger: color.red40,
-        primary: color.mint40,
-        success: color.mint40,
-        text: color.blueGray50,
-        warning: color.yellow50,
-    },
-    dark: {
-        danger: color.red60,
-        primary: color.navy40,
-        success: color.mint60,
-        text: color.white,
-        warning: color.yellow60,
-    },
-};
-
-// thanks chatGPT xD
-export type TThemeName = keyof typeof colorTheme;
-export type TColorTheme = {
-    [K in TThemeName]: (typeof colorTheme)[K];
-}[TThemeName];
 
 export default color;

@@ -1,5 +1,13 @@
 # @web3uikit/styles
 
+## 1.0.4
+
+### Patch Changes
+
+-   [#1093](https://github.com/web3ui/web3uikit/pull/1093) [`0eb0c61cd`](https://github.com/web3ui/web3uikit/commit/0eb0c61cd3bb3ab8c897c488b847c007058770ed) Thanks [@BillyG83](https://github.com/BillyG83)! - feat: dark mode test for Badge
+
+*   [#1093](https://github.com/web3ui/web3uikit/pull/1093) [`0eb0c61cd`](https://github.com/web3ui/web3uikit/commit/0eb0c61cd3bb3ab8c897c488b847c007058770ed) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(Badge): v1 theme demo ready
+
 ## 1.0.3
 
 ### Patch Changes

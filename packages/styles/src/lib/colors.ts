@@ -137,11 +137,6 @@ export const legacyColor = {
 
 export const colorTheme = {
     light: {
-        danger: color.red60,
-        primary: color.blue40,
-        success: color.mint60,
-        text: color.gray40,
-        warning: color.yellow60,
         default00: color.white,
         default10: color.gray30,
         default20: color.blueGray50,
@@ -180,11 +175,6 @@ export const colorTheme = {
     },
 
     dark: {
-        danger: color.red60,
-        primary: color.navy40,
-        success: color.mint60,
-        text: color.white,
-        warning: color.yellow60,
         default00: color.white10,
         default10: color.gray60,
         default20: color.blueGray50,

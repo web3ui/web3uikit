@@ -20,11 +20,11 @@ const getBackgroundColor = (
 ) => {
     switch (type) {
         case 'danger':
-            return colorTheme[theme].danger;
+            return colorTheme[theme].destructive30;
         case 'success':
-            return colorTheme[theme].success;
+            return colorTheme[theme].positive40;
         case 'warning':
-            return colorTheme[theme].warning;
+            return colorTheme[theme].warning40;
         case 'custom':
             return bgColor;
         default:

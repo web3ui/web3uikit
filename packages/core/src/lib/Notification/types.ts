@@ -1,5 +1,6 @@
 import React from 'react';
 import { TCustomize } from '../../interfaces/customize';
+import { TThemeName } from '@web3uikit/styles';
 
 export interface NotificationProps extends INotificationStyled {
     /**
@@ -31,9 +32,9 @@ export interface NotificationProps extends INotificationStyled {
 
 export interface INotificationStyled extends INotificationContainer {
     /**
-     * type
+     * customize the heck out of it
      */
-    type: notifyType;
+    customize?: TCustomize;
 
     /**
      * starts close animation when true
@@ -41,9 +42,14 @@ export interface INotificationStyled extends INotificationContainer {
     isClosing?: boolean;
 
     /**
-     * customize the heck out of it
+     * pick a color theme
      */
-    customize?: TCustomize;
+    theme?: TThemeName;
+
+    /**
+     * type
+     */
+    type: notifyType;
 }
 
 export interface INotificationContainer {
@@ -64,13 +70,14 @@ export type NotificationActionType = {
 };
 
 export type PayloadType = {
-    id?: string;
-    type: notifyType;
-    message?: string;
-    title?: string;
-    icon?: React.ReactElement; //Icon
-    position: IPosition;
+    icon?: React.ReactElement;
     iconColor?: string;
+    id?: string;
+    message?: string;
+    position: IPosition;
+    theme?: TThemeName;
+    title?: string;
+    type: notifyType;
 };
 
 export interface IToasts {

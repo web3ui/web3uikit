@@ -22,6 +22,7 @@ const Notification: React.FC<NotificationProps> = ({
     id,
     message,
     position = 'topL',
+    theme = 'light',
     title = 'New Message',
     type = 'info',
     ...props
@@ -98,7 +99,7 @@ const Notification: React.FC<NotificationProps> = ({
     };
 
     const getIconColor = (type: notifyType): string => {
-        return getNotificationColor(type);
+        return getNotificationColor(type, theme);
     };
 
     return (

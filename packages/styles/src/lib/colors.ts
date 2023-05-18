@@ -169,7 +169,7 @@ export const colorTheme = {
         purple50: color.purple50,
         sky40: color.sky40,
         turquoise40: color.turquoise40,
-        warning40: color.yellow50,
+        warning40: color.yellow40,
         warning50: color.yellow50,
         warning60: color.yellow60,
     },

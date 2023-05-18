@@ -38,7 +38,7 @@ test('Renders Normal', () => {
     const styles = element && getComputedStyle(element);
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(backgroundColorHex).toBe(color.navy40);
+    expect(backgroundColorHex).toBe(color.gray40);
 
     const text = screen.getByTestId(testText);
     expect(text).not.toBeNull();

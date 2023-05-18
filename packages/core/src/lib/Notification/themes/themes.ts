@@ -1,31 +1,6 @@
 import { css, keyframes } from 'styled-components';
-import { color } from '@web3uikit/styles';
+import { TThemeName, color, colorTheme } from '@web3uikit/styles';
 import { IPosition, notifyType } from '../types';
-
-const error = css`
-    border-color: ${color.red40};
-    & > svg {
-        fill: ${color.red40};
-    }
-`;
-const info = css`
-    border-color: ${color.navy40};
-    & > svg {
-        fill: ${color.navy40};
-    }
-`;
-const success = css`
-    border-color: ${color.mint40};
-    & > svg {
-        fill: ${color.mint40};
-    }
-`;
-const warning = css`
-    border-color: ${color.yellow50};
-    & > svg {
-        fill: ${color.yellow50};
-    }
-`;
 
 const openRight = keyframes` 
     0% {
@@ -67,17 +42,36 @@ const closeLeft = keyframes`
     }
 `;
 
-export const getNotificationTheme = (type: notifyType) => {
+export const getNotificationTheme = (type: notifyType, theme: TThemeName) => {
     switch (type) {
         case 'error':
-            return error;
+            return css`
+                border-color: ${colorTheme[theme].destructive30};
+                & > svg {
+                    fill: ${colorTheme[theme].destructive30};
+                }
+            `;
         case 'success':
-            return success;
+            return css`
+                border-color: ${colorTheme[theme].positive40};
+                & > svg {
+                    fill: ${colorTheme[theme].positive40};
+                }
+            `;
         case 'warning':
-            return warning;
-        case 'info':
+            return css`
+                border-color: ${colorTheme[theme].warning50};
+                & > svg {
+                    fill: ${colorTheme[theme].warning50};
+                }
+            `;
         default:
-            return info;
+            return css`
+                border-color: ${colorTheme[theme].default30};
+                & > svg {
+                    fill: ${colorTheme[theme].default30};
+                }
+            `;
     }
 };
 
@@ -107,17 +101,16 @@ export const getNotificationPosition = (position: IPosition) => {
     }
 };
 
-export const getNotificationColor = (type: notifyType) => {
+export const getNotificationColor = (type: notifyType, theme: TThemeName) => {
     switch (type) {
         case 'error':
-            return color.red40;
+            return colorTheme[theme].destructive30;
         case 'success':
-            return color.mint40;
+            return colorTheme[theme].positive40;
         case 'warning':
-            return color.yellow50;
-        case 'info':
+            return colorTheme[theme].warning50;
         default:
-            return color.navy40;
+            return colorTheme[theme].default30;
     }
 };
 

@@ -8,7 +8,7 @@ import {
     getNotificationTheme,
 } from './themes/themes';
 
-type TCustomStyles = Pick<INotificationStyled, 'customize'>;
+type TStyleProps = Pick<INotificationStyled, 'customize' | 'theme'>;
 
 const NotificationContainerStyled = styled.div<INotificationContainer>`
     position: fixed;
@@ -16,7 +16,7 @@ const NotificationContainerStyled = styled.div<INotificationContainer>`
     ${(p) => getNotificationPosition(p.position)}
 `;
 
-const IconWrapperStyled = styled.div<TCustomStyles>`
+const IconWrapperStyled = styled.div<TStyleProps>`
     ${resetCSS}
     align-items: center;
     border-radius: 100%;
@@ -27,12 +27,12 @@ const IconWrapperStyled = styled.div<TCustomStyles>`
     ${(p) => p.customize?.onHover && onHoverStylesForText};
 `;
 
-const onHoverStylesForText = css<TCustomStyles>`
+const onHoverStylesForText = css<TStyleProps>`
     position: relative;
     z-index: 2;
 `;
 
-const TextContentStyled = styled.div<TCustomStyles>`
+const TextContentStyled = styled.div<TStyleProps>`
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -49,7 +49,7 @@ const SpanStyled = styled.span`
     word-break: break-word;
 `;
 
-const TitleStyled = styled.h5<TCustomStyles>`
+const TitleStyled = styled.h5<TStyleProps>`
     ${fonts.h5};
     display: inline-block;
     font-weight: 700;
@@ -97,16 +97,17 @@ const NotificationStyled = styled.div<INotificationStyled>`
     ${(p) => getNotificationAnimation(p.position, p.isClosing)}
 
     & > ${IconWrapperStyled} {
-        ${(p) => p.customize?.color || getNotificationTheme(p.type)}
+        ${(p) => p.customize?.color || getNotificationTheme(p.type, p.theme)}
     }
     & > ${TextContentStyled} > ${TitleStyled} {
-        color: ${(p) => p.customize?.color || getNotificationColor(p.type)};
+        color: ${(p) =>
+            p.customize?.color || getNotificationColor(p.type, p.theme)};
     }
 
     ${(p) => p.customize?.onHover && onHoverStyled};
 `;
 
-const onHoverStyled = css<TCustomStyles>`
+const onHoverStyled = css<TStyleProps>`
     transition: all 0.1s ease-in-out;
     :hover {
         &:after {

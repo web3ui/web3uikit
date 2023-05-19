@@ -1,5 +1,11 @@
 # @web3uikit/styles
 
+## 1.0.5
+
+### Patch Changes
+
+-   [#1096](https://github.com/web3ui/web3uikit/pull/1096) [`655391c5c`](https://github.com/web3ui/web3uikit/commit/655391c5cf8c6100fbd0e35cb2d306467c34a8d9) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(color): added theme objects
+
 ## 1.0.4
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 1.0.5
+
+### Patch Changes
+
+-   [#1098](https://github.com/web3ui/web3uikit/pull/1098) [`ea5706512`](https://github.com/web3ui/web3uikit/commit/ea5706512544a1b1c1099cbc40b4494ad40325d6) Thanks [@dani69654](https://github.com/dani69654)! - add bean outline icon
+
 ## 1.0.2
 
 ### Patch Changes

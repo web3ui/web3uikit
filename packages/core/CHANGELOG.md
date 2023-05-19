@@ -1,5 +1,15 @@
 # @web3uikit/core
 
+## 1.0.5
+
+### Patch Changes
+
+-   [#1096](https://github.com/web3ui/web3uikit/pull/1096) [`655391c5c`](https://github.com/web3ui/web3uikit/commit/655391c5cf8c6100fbd0e35cb2d306467c34a8d9) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(color): added theme objects
+
+-   Updated dependencies [[`655391c5c`](https://github.com/web3ui/web3uikit/commit/655391c5cf8c6100fbd0e35cb2d306467c34a8d9), [`ea5706512`](https://github.com/web3ui/web3uikit/commit/ea5706512544a1b1c1099cbc40b4494ad40325d6)]:
+    -   @web3uikit/styles@1.0.5
+    -   @web3uikit/icons@1.0.5
+
 ## 1.0.4
 
 ### Patch Changes

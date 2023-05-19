@@ -6,7 +6,7 @@ import { color, rgbToHex } from '@web3uikit/styles';
 
 import { composeStories } from '@storybook/testing-react';
 
-const { Default } = composeStories(stories);
+const { Default, Custom } = composeStories(stories);
 
 const testId = 'test-progressBar';
 
@@ -15,27 +15,37 @@ const testProgressTotal = 'test-progressBar-progress';
 const testLabelValue = 'test-progressBar-label';
 const testLabelTotal = 'test-progressBar-label';
 
-test('Renders ProgressBar', () => {
-    //const progressValue = Default.args?.value;
-    //const progressTotal = Default.args?.total;
-
+test('Renders ProgressBar default', () => {
     render(<Default />);
-    const element = screen.getByTestId(testId);
-    expect(element).not.toBeNull();
+    const progressBar: HTMLProgressElement = screen.getByRole('progressbar');
+    expect(progressBar).not.toBeNull();
+    expect(progressBar.value).toBe(2200);
+    expect(progressBar.max).toBe(10000);
+    expect(progressBar.id).toBe('web3uiKit-progress');
 
-    const ProgressBarValue = screen.getByTestId(testProgressValue);
-    expect(ProgressBarValue).not.toBeNull();
-    //expect(ProgressBarValue.textContent).toBe(progressValue);
+    const progressBarBackground = screen.getByTestId('progress-bar-background');
+    const styles = getComputedStyle(progressBarBackground);
+    const backgroundColorHex =
+        styles && rgbToHex(styles.backgroundColor).toUpperCase();
+    expect(backgroundColorHex).toBe(color.blue40);
+});
 
-    const ProgressBarTotal = screen.getByTestId(testProgressTotal);
-    expect(ProgressBarTotal).not.toBeNull();
-    //expect(ProgressBarTotal.textContent).toBe(progressTotal);
+test('Renders ProgressBar custom', () => {
+    render(<Custom />);
+    const progressBar: HTMLProgressElement = screen.getByRole('progressbar');
+    expect(progressBar).not.toBeNull();
+    expect(progressBar.value).toBe(2200);
+    expect(progressBar.max).toBe(10000);
+    expect(progressBar.id).toBe('uniqueID');
 
-    const LabelBarValue = screen.getByTestId(testLabelValue);
-    expect(LabelBarValue).not.toBeNull();
-    //expect(LabelBarValue.textContent).toBe(progressValue);
+    const progressTitle: HTMLHeadingElement =
+        screen.getByTestId('progress-heading');
+    expect(progressTitle).not.toBeNull();
+    expect(progressTitle.textContent).toBe('Making Progress!');
 
-    const LabelBarTotal = screen.getByTestId(testLabelTotal);
-    expect(LabelBarTotal).not.toBeNull();
-    //expect(LabelBarTotal.textContent).toBe(progressTotal);
+    const progressBarBackground = screen.getByTestId('progress-bar-background');
+    const styles = getComputedStyle(progressBarBackground);
+    const backgroundColorHex =
+        styles && rgbToHex(styles.backgroundColor).toUpperCase();
+    expect(backgroundColorHex).toBe(color.blue60);
 });

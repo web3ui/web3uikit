@@ -4,6 +4,11 @@ export type ValidateCheckbox = {
 
 export interface CheckboxProps {
     /**
+     * to align vertical position of the checkbox
+     */
+    align?: 'center' | 'top' | 'bottom';
+
+    /**
      * The checkbox can be ticked by default
      */
     checked?: boolean;
@@ -17,11 +22,6 @@ export interface CheckboxProps {
      * you should assign an ID for your own validation
      */
     id?: string;
-
-    /**
-     * ref object
-     */
-    ref?: React.RefObject<HTMLInputElement>;
 
     /**
      * A label to show the boxes meaning
@@ -54,12 +54,12 @@ export interface CheckboxProps {
     onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 
     /**
+     * ref object
+     */
+    ref?: React.RefObject<HTMLInputElement>;
+
+    /**
      * You can validate your checkbox and switches
      */
     validation?: ValidateCheckbox;
-
-    /**
-     * to align vertical position of the checkbox
-     */
-    align?: 'center' | 'top' | 'bottom';
 }

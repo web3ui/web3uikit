@@ -47,7 +47,7 @@ const ToolsStyled = styled.div<Pick<ICredentialsProps, 'hasIconTooltip'>>`
 
 const DividerStyled = styled.div`
     position: relative;
-    margin: 0 8px;
+    margin: 8px 8px;
     &:before {
         border-left: 2px solid ${color.navy20};
         content: '';

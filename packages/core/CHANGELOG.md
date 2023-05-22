@@ -1,5 +1,74 @@
 # @web3uikit/core
 
+## 1.0.5
+
+### Patch Changes
+
+-   [#1096](https://github.com/web3ui/web3uikit/pull/1096) [`655391c5c`](https://github.com/web3ui/web3uikit/commit/655391c5cf8c6100fbd0e35cb2d306467c34a8d9) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(color): added theme objects
+
+-   Updated dependencies [[`655391c5c`](https://github.com/web3ui/web3uikit/commit/655391c5cf8c6100fbd0e35cb2d306467c34a8d9), [`ea5706512`](https://github.com/web3ui/web3uikit/commit/ea5706512544a1b1c1099cbc40b4494ad40325d6)]:
+    -   @web3uikit/styles@1.0.5
+    -   @web3uikit/icons@1.0.5
+
+## 1.0.4
+
+### Patch Changes
+
+-   [#1093](https://github.com/web3ui/web3uikit/pull/1093) [`0eb0c61cd`](https://github.com/web3ui/web3uikit/commit/0eb0c61cd3bb3ab8c897c488b847c007058770ed) Thanks [@BillyG83](https://github.com/BillyG83)! - feat: dark mode test for Badge
+
+*   [#1093](https://github.com/web3ui/web3uikit/pull/1093) [`0eb0c61cd`](https://github.com/web3ui/web3uikit/commit/0eb0c61cd3bb3ab8c897c488b847c007058770ed) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(Badge): v1 theme demo ready
+
+*   Updated dependencies [[`0eb0c61cd`](https://github.com/web3ui/web3uikit/commit/0eb0c61cd3bb3ab8c897c488b847c007058770ed), [`0eb0c61cd`](https://github.com/web3ui/web3uikit/commit/0eb0c61cd3bb3ab8c897c488b847c007058770ed)]:
+    -   @web3uikit/styles@1.0.4
+
+## 1.0.3
+
+### Patch Changes
+
+-   [#1091](https://github.com/web3ui/web3uikit/pull/1091) [`738570d34`](https://github.com/web3ui/web3uikit/commit/738570d349c9dd692041a1925c1d8e621d15925c) Thanks [@BillyG83](https://github.com/BillyG83)! - feat: dark mode test for Badge
+
+-   Updated dependencies [[`738570d34`](https://github.com/web3ui/web3uikit/commit/738570d349c9dd692041a1925c1d8e621d15925c)]:
+    -   @web3uikit/styles@1.0.3
+
+## 1.0.1
+
+### Patch Changes
+
+-   [#1087](https://github.com/web3ui/web3uikit/pull/1087) [`2a2dc78c6`](https://github.com/web3ui/web3uikit/commit/2a2dc78c63e4775e10a50cb6a271222cebe9fad3) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(Slider): custom track bgColor and drop shadow props
+
+## 1.0.0
+
+### Major Changes
+
+-   [#1082](https://github.com/web3ui/web3uikit/pull/1082) [`c91e0434d`](https://github.com/web3ui/web3uikit/commit/c91e0434dfb52f462aa0e6f02e7cae0e2e26d0e1) Thanks [@dani69654](https://github.com/dani69654)! - fix(Credentials) - Incorrect margins for divider div
+
+## 0.5.0
+
+### Minor Changes
+
+-   [#999](https://github.com/web3ui/web3uikit/pull/999) [`9f833faa9`](https://github.com/web3ui/web3uikit/commit/9f833faa9064f0fc39f32b5fa36bf24e4bf1e29e) Thanks [@SebastianLF](https://github.com/SebastianLF)! - feat(BannerStrip): customize, slots, refactor. Removed buttonConfig, buttonDisplayed, height, width and type customise props
+
+### Patch Changes
+
+-   [#1078](https://github.com/web3ui/web3uikit/pull/1078) [`0b932dfd6`](https://github.com/web3ui/web3uikit/commit/0b932dfd6abffc2edf18dcdf4d73e625e69fafe1) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Checkbox): removed defaultCheck setting and cleanup props
+
+## 0.4.5
+
+### Patch Changes
+
+-   [#1073](https://github.com/web3ui/web3uikit/pull/1073) [`0f64f0bc9`](https://github.com/web3ui/web3uikit/commit/0f64f0bc9a1a4b5ecbc797e553f827217b0daa23) Thanks [@niteshseram](https://github.com/niteshseram)! - fix#994:
+    1. Add tooltip option for Hide and Copy Button.
+    2. Add TCustomize props to both Hide and Copy button
+    3. Remove the custom Hide and Copy button from Credentials component and replace with original Hide and Copy button
+
+## 0.4.4
+
+### Patch Changes
+
+-   [#1072](https://github.com/web3ui/web3uikit/pull/1072) [`7a1df53e4`](https://github.com/web3ui/web3uikit/commit/7a1df53e4c293d87de804da0e4c23a58c9dab98d) Thanks [@BillyG83](https://github.com/BillyG83)! - fix(Select): tradtion mode revest to best working version
+
+*   [#1066](https://github.com/web3ui/web3uikit/pull/1066) [`c457d5713`](https://github.com/web3ui/web3uikit/commit/c457d5713ab8cb86d1282a2a824c963c5fe3b5b1) Thanks [@niteshseram](https://github.com/niteshseram)! - fix#996: Add optional fill prop for Chain illustrations
+
 ## 0.4.3
 
 ### Patch Changes

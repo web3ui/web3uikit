@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import TraditionalSelectStyles from './TraditionalSelect.styles';
 import { ISelectProps } from '../types';
 import InputStyles from '../../Input/Input.styles';
@@ -30,66 +29,48 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
     width = '200px',
     ...props
 }: ISelectProps) => {
-    const [currentValue, setCurrentValue] = useState('');
-
-    useEffect(() => {
-        if (!value) return;
-        const dayObject = options.find((item) => item.label === value);
-        typeof dayObject?.label === 'string' &&
-            setCurrentValue(dayObject?.label);
-    }, [value]);
-
-    useEffect(() => {
-        if (Number(defaultOptionIndex) < 0) return;
-        if (Number(defaultOptionIndex) > options.length) return;
-
-        const value = options[Number(defaultOptionIndex)]?.label;
-        typeof value === 'string' && setCurrentValue(value);
-    }, [defaultOptionIndex]);
-
-    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setCurrentValue(event.currentTarget.value);
-        onChangeTraditional && onChangeTraditional(event);
-    };
-
+    const defaultValue =
+        (defaultOptionIndex !== undefined &&
+            options[defaultOptionIndex]?.label) ||
+        value ||
+        placeholder ||
+        'Please choose';
     return (
         <DivWrapperStyled
-            className="input_filled select"
+            className="input_filled"
             data-testid="test-select"
-            state={state}
             style={{ ...style, width }}
             {...props}
         >
             <SelectStyled
                 data-testid="test-select-select"
-                disabled={disabled}
+                defaultValue={defaultValue}
                 id={id}
                 ref={refTraditional}
                 onChange={(event: React.ChangeEvent<HTMLSelectElement>) =>
-                    handleChange(event)
+                    onChangeTraditional && onChangeTraditional(event)
                 }
                 onBlur={(event: React.FocusEvent<HTMLSelectElement>) =>
                     onBlurTraditional && onBlurTraditional(event)
                 }
                 required={validation?.required}
-                value={currentValue || placeholder || 'Please choose'}
+                value={value}
             >
                 <option disabled>{placeholder || 'Please choose'}</option>
 
                 {options.map((option, i) => (
                     <option
                         data-testid={`test-select-option-${i}`}
-                        disabled={option.disabled || false}
                         id={String(option?.id)}
                         key={option?.id}
-                        value={option?.label}
+                        value={option?.id}
+                        disabled={option.disabled || false}
                     >
                         {option?.prefix}
                         {option?.label}
                     </option>
                 ))}
             </SelectStyled>
-
             {label && (
                 <LabelStyledTrad
                     data-testid="test-select-label"

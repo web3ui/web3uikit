@@ -32,7 +32,7 @@ const DivStyled = styled.div<TStyleProps>`
         font-weight: 400;
         margin-top: 8px;
         text-align: left;
-        span {
+        span.name {
             text-transform: capitalize;
         }
     }
@@ -40,7 +40,7 @@ const DivStyled = styled.div<TStyleProps>`
 
 const DivStyledProgress = styled.div<TStyleProps>`
     background-color: ${({ progressBarBgColor }) =>
-        progressBarBgColor ? progressBarBgColor : color.blue40};
+        progressBarBgColor ? progressBarBgColor : '#1A3656'};
     border-radius: 300px;
     height: 12px;
     overflow: hidden;
@@ -53,7 +53,7 @@ const DivStyledProgress = styled.div<TStyleProps>`
         animation-timing-function: ease-out;
         appearance: none;
         background-color: ${({ progressBarBgColor }) =>
-            progressBarBgColor ? progressBarBgColor : color.blue40};
+            progressBarBgColor ? progressBarBgColor : '#1A3656'};
         border: none;
         height: 12px;
         left: -100%;

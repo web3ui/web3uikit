@@ -38,8 +38,17 @@ const ProgressBar: FC<IProgressBarProps> = ({
                 />
             </DivStyledProgress>
 
-            <label htmlFor={id} data-testid="test-progressBar-label">
-                {value} of {total} <span>{name}</span>
+            <label htmlFor={id}>
+                <span className="value" data-testid="test-progressBar-value">
+                    {value}
+                </span>{' '}
+                of{' '}
+                <span className="total" data-testid="test-progressBar-total">
+                    {total}
+                </span>{' '}
+                <span className="name" data-testid="test-progressBar-name">
+                    {name}
+                </span>
             </label>
         </DivStyled>
     );

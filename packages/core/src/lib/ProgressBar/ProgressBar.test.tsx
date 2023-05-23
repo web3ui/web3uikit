@@ -8,12 +8,12 @@ import { composeStories } from '@storybook/testing-react';
 
 const { Default, Custom } = composeStories(stories);
 
-const testId = 'test-progressBar';
+//const testId = 'test-progressBar';
 
-const testProgressValue = 'test-progressBar-progress';
-const testProgressTotal = 'test-progressBar-progress';
-const testLabelValue = 'test-progressBar-label';
-const testLabelTotal = 'test-progressBar-label';
+//const testProgressValue = 'test-progressBar-progress';
+//const testProgressTotal = 'test-progressBar-progress';
+//const testLabelValue = 'test-progressBar-label';
+//const testLabelTotal = 'test-progressBar-label';
 
 test('Renders ProgressBar default', () => {
     render(<Default />);
@@ -48,4 +48,18 @@ test('Renders ProgressBar custom', () => {
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
     expect(backgroundColorHex).toBe(color.blue60);
+
+    const testProgressBarValue = screen.getByTestId('test-progressBar-value');
+    expect(testProgressBarValue).not.toBeNull();
+    expect(testProgressBarValue.textContent).toBe('2200');
+
+    const testProgressBarTotal = screen.getByTestId('test-progressBar-total');
+    expect(testProgressBarTotal).not.toBeNull();
+    expect(testProgressBarTotal.textContent).toBe('10000');
+
+    const testProgressBarName = screen.getByTestId('test-progressBar-name');
+    expect(testProgressBarName).not.toBeNull();
+    expect(testProgressBarName.textContent).toBe('beans');
+
+    screen.debug();
 });

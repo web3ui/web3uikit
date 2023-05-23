@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 1.0.6
+
+### Patch Changes
+
+-   [#1100](https://github.com/web3ui/web3uikit/pull/1100) [`99ebfb1c2`](https://github.com/web3ui/web3uikit/commit/99ebfb1c28b48c49824b6137897bbc684f622eef) Thanks [@AbhinavMV](https://github.com/AbhinavMV)! - Add new logos for pulse and harmony chains
+
 ## 1.0.5
 
 ### Patch Changes

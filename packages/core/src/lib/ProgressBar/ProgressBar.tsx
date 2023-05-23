@@ -14,6 +14,7 @@ const ProgressBar: FC<IProgressBarProps> = ({
     titleColor,
     total,
     value,
+    showInfo = 'false',
     ...props
 }) => {
     return (
@@ -23,7 +24,9 @@ const ProgressBar: FC<IProgressBarProps> = ({
             titleColor={titleColor}
             {...props}
         >
-            {title && title}
+            <h2 data-testid="test-typography" className="title">
+                {title}
+            </h2>
 
             <DivStyledProgress
                 data-testid="progress-bar-background"
@@ -38,18 +41,26 @@ const ProgressBar: FC<IProgressBarProps> = ({
                 />
             </DivStyledProgress>
 
-            <label htmlFor={id}>
-                <span className="value" data-testid="test-progressBar-value">
-                    {value}
-                </span>{' '}
-                of{' '}
-                <span className="total" data-testid="test-progressBar-total">
-                    {total}
-                </span>{' '}
-                <span className="name" data-testid="test-progressBar-name">
-                    {name}
-                </span>
-            </label>
+            {showInfo && (
+                <label htmlFor={id}>
+                    <span
+                        className="value"
+                        data-testid="test-progressBar-value"
+                    >
+                        {value}
+                    </span>{' '}
+                    of{' '}
+                    <span
+                        className="total"
+                        data-testid="test-progressBar-total"
+                    >
+                        {total}
+                    </span>{' '}
+                    <span className="name" data-testid="test-progressBar-name">
+                        {name}
+                    </span>
+                </label>
+            )}
         </DivStyled>
     );
 };

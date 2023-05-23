@@ -17,13 +17,20 @@ const DivStyled = styled.div<TStyleProps>`
     display: block;
     width: 100%;
     .title {
-        //align-items: center;
-        //display: flex;
-        //gap: 8px;
-        //justify-content: left;
         margin-bottom: 12px;
         margin-top: 0;
         color: ${({ titleColor }) => (titleColor ? titleColor : color.aero10)};
+        fill: rgb(4, 24, 54);
+        font-style: normal;
+        font-weight: 600;
+        letter-spacing: 0px;
+        font-size: 32px;
+        line-height: 36px;
+        position: relative;
+        @media screen and (max-width: 1200px) {
+            font-size: 26px;
+            line-height: 32px;
+        }
     }
     label {
         color: ${({ nameColor }) => (nameColor ? nameColor : color.aero10)};
@@ -46,6 +53,7 @@ const DivStyledProgress = styled.div<TStyleProps>`
     overflow: hidden;
     position: relative;
     width: 100%;
+    border: none;
     progress[value] {
         animation-duration: 3s;
         animation-fill-mode: forwards;

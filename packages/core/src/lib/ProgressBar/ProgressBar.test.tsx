@@ -8,13 +8,6 @@ import { composeStories } from '@storybook/testing-react';
 
 const { Default, Custom } = composeStories(stories);
 
-//const testId = 'test-progressBar';
-
-//const testProgressValue = 'test-progressBar-progress';
-//const testProgressTotal = 'test-progressBar-progress';
-//const testLabelValue = 'test-progressBar-label';
-//const testLabelTotal = 'test-progressBar-label';
-
 test('Renders ProgressBar default', () => {
     render(<Default />);
     const progressBar: HTMLProgressElement = screen.getByRole('progressbar');
@@ -27,7 +20,7 @@ test('Renders ProgressBar default', () => {
     const styles = getComputedStyle(progressBarBackground);
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
-    expect(backgroundColorHex).toBe(color.blue40);
+    expect(backgroundColorHex).toBe('#1A3656');
 });
 
 test('Renders ProgressBar custom', () => {
@@ -38,16 +31,20 @@ test('Renders ProgressBar custom', () => {
     expect(progressBar.max).toBe(10000);
     expect(progressBar.id).toBe('uniqueID');
 
-    const progressTitle: HTMLHeadingElement =
-        screen.getByTestId('progress-heading');
-    expect(progressTitle).not.toBeNull();
-    expect(progressTitle.textContent).toBe('Making Progress!');
+    //const progressTitle: HTMLHeadingElement =
+    //screen.getByTestId('progress-heading');
+    //expect(progressTitle).not.toBeNull();
+    //expect(progressTitle.textContent).toBe('Making Progress!');
 
     const progressBarBackground = screen.getByTestId('progress-bar-background');
     const styles = getComputedStyle(progressBarBackground);
     const backgroundColorHex =
         styles && rgbToHex(styles.backgroundColor).toUpperCase();
     expect(backgroundColorHex).toBe(color.blue60);
+
+    const testTitle = screen.getByTestId('test-typography');
+    expect(testTitle).not.toBeNull();
+    expect(testTitle.textContent).toBe('Headline');
 
     const testProgressBarValue = screen.getByTestId('test-progressBar-value');
     expect(testProgressBarValue).not.toBeNull();
@@ -61,5 +58,5 @@ test('Renders ProgressBar custom', () => {
     expect(testProgressBarName).not.toBeNull();
     expect(testProgressBarName.textContent).toBe('beans');
 
-    screen.debug();
+    //screen.debug();
 });

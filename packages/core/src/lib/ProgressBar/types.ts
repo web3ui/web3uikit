@@ -1,11 +1,12 @@
 export interface IProgressBarProps {
     id?: string;
-    title?: JSX.Element;
+    title?: string | JSX.Element;
     titleColor?: string;
     progressBarBgColor?: string;
     progressBarLineColor?: string;
     value: number;
     total: number;
+    showInfo?: boolean;
     name?: string;
     nameColor?: string;
 }

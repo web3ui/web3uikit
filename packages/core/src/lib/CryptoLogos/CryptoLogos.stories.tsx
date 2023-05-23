@@ -73,6 +73,16 @@ Optimism.args = {
 };
 
 /* PLOP_INJECT_CHAIN */
+export const Harmony = Template.bind({});
+Harmony.args = {
+    chain: 'harmony',
+    size: '48px',
+};
+export const Pulsechain = Template.bind({});
+Pulsechain.args = {
+    chain: 'pulsechain',
+    size: '48px',
+};
 export const Aptos = Template.bind({});
 Aptos.args = {
     chain: 'aptos',

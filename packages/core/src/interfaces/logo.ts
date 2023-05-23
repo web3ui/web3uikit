@@ -40,18 +40,28 @@ export const chainLogoData = {
         color: '#E95557',
     },
     /* PLOP_INJECT_CHAIN */
-    
-    aptos : {
-        name:'aptos',
-        color:'#041836',
+
+    harmony: {
+        name: 'harmony',
+        color:
+            'linear-gradient(45deg, #00AEE9 6.89%, #69FABD 93.89%), linear-gradient(211.94deg, #00EAFF 14.03%, #0080FF 32.21%, #8000FF 50.38%, #E619E6 68.56%, #FF0000 86.74%), #FFFFFF',
     },
 
-    
-    palm : {
-        name:'palm',
-        color:'#6818AA',
+    pulsechain: {
+        name: 'pulsechain',
+        color:
+            'linear-gradient(211.94deg, #00EAFF 14.03%, #0080FF 32.21%, #8000FF 50.38%, #E619E6 68.56%, #FF0000 86.74%), #FFFFFF',
     },
 
+    aptos: {
+        name: 'aptos',
+        color: '#041836',
+    },
+
+    palm: {
+        name: 'palm',
+        color: '#6818AA',
+    },
 } as const;
 
 const logoWalletColors = {

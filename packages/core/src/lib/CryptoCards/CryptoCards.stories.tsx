@@ -91,6 +91,20 @@ Optimism.args = {
 };
 
 /* PLOP_INJECT_CHAIN */
+export const Harmony = Template.bind({});
+Harmony.args = {
+    chain: 'harmony',
+    chainType: 'Network',
+    bgColor: chainLogoData['harmony'].color,
+    btnText: 'View Endpoints',
+};
+export const Pulsechain = Template.bind({});
+Pulsechain.args = {
+    chain: 'pulsechain',
+    chainType: 'Network',
+    bgColor: chainLogoData['pulsechain'].color,
+    btnText: 'View Endpoints',
+};
 export const Aptos = Template.bind({});
 Aptos.args = {
     chain: 'aptos',

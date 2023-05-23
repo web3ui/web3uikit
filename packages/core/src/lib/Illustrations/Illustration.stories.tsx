@@ -76,6 +76,14 @@ Optimism.args = {
 };
 
 /* PLOP_INJECT_CHAIN */
+export const Harmony = BackgroundColoredTemplate.bind({});
+Harmony.args = {
+    logo: 'harmony',
+};
+export const Pulsechain = BackgroundColoredTemplate.bind({});
+Pulsechain.args = {
+    logo: 'pulsechain',
+};
 export const Aptos = BackgroundColoredTemplate.bind({});
 Aptos.args = {
     logo: 'aptos',

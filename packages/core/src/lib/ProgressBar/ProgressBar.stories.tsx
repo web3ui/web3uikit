@@ -15,22 +15,22 @@ const Template: ComponentStory<typeof ProgressBar> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-    value: 2200,
-    total: 10000,
     showInfo: false,
+    total: 10000,
+    value: 2200,
 };
 
 export const Custom = Template.bind({});
 Custom.args = {
     id: 'uniqueID',
-    title: 'Headline',
-    titleColor: color.blue70,
+    name: 'beans',
+    nameColor: '#85B3DB',
     progressBarBgColor: color.blue60,
     progressBarLineColor:
         'linear-gradient(88.37deg, #0F7FFF 1.38%, #57A5FF 98.62%)',
-    value: 2200,
-    total: 10000,
     showInfo: true,
-    name: 'beans',
-    nameColor: '#85B3DB',
+    title: 'Headline',
+    titleColor: color.blue70,
+    total: 10000,
+    value: 2200,
 };

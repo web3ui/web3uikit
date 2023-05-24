@@ -17,15 +17,15 @@ const DivStyled = styled.div<TStyleProps>`
     display: block;
     width: 100%;
     .title {
-        margin-bottom: 12px;
-        margin-top: 0;
         color: ${({ titleColor }) => (titleColor ? titleColor : color.aero10)};
         fill: rgb(4, 24, 54);
+        font-size: 32px;
         font-style: normal;
         font-weight: 600;
         letter-spacing: 0px;
-        font-size: 32px;
         line-height: 36px;
+        margin-bottom: 12px;
+        margin-top: 0;
         position: relative;
         @media screen and (max-width: 1200px) {
             font-size: 26px;
@@ -49,11 +49,11 @@ const DivStyledProgress = styled.div<TStyleProps>`
     background-color: ${({ progressBarBgColor }) =>
         progressBarBgColor ? progressBarBgColor : '#1A3656'};
     border-radius: 300px;
+    border: none;
     height: 12px;
     overflow: hidden;
     position: relative;
     width: 100%;
-    border: none;
     progress[value] {
         animation-duration: 3s;
         animation-fill-mode: forwards;

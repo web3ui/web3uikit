@@ -31,11 +31,6 @@ test('Renders ProgressBar custom', () => {
     expect(progressBar.max).toBe(10000);
     expect(progressBar.id).toBe('uniqueID');
 
-    //const progressTitle: HTMLHeadingElement =
-    //screen.getByTestId('progress-heading');
-    //expect(progressTitle).not.toBeNull();
-    //expect(progressTitle.textContent).toBe('Making Progress!');
-
     const progressBarBackground = screen.getByTestId('progress-bar-background');
     const styles = getComputedStyle(progressBarBackground);
     const backgroundColorHex =
@@ -57,6 +52,4 @@ test('Renders ProgressBar custom', () => {
     const testProgressBarName = screen.getByTestId('test-progressBar-name');
     expect(testProgressBarName).not.toBeNull();
     expect(testProgressBarName.textContent).toBe('beans');
-
-    //screen.debug();
 });

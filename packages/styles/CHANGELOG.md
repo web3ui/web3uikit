@@ -1,5 +1,11 @@
 # @web3uikit/styles
 
+## 1.1.0
+
+### Patch Changes
+
+-   [#1103](https://github.com/web3ui/web3uikit/pull/1103) [`63feb2846`](https://github.com/web3ui/web3uikit/commit/63feb28462475bf8c449a54428d32c16c3ea9e6d) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(styles): new very large breakpoints
+
 ## 1.0.5
 
 ### Patch Changes

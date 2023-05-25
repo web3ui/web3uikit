@@ -1,5 +1,16 @@
 # @web3uikit/core
 
+## 1.1.0
+
+### Minor Changes
+
+-   [#1102](https://github.com/web3ui/web3uikit/pull/1102) [`0e149f2b5`](https://github.com/web3ui/web3uikit/commit/0e149f2b510c05035e9cb6af31412f66707bcbbc) Thanks [@mrdexters1](https://github.com/mrdexters1)! - feat(ProgressBar): new component added
+
+### Patch Changes
+
+-   Updated dependencies [[`63feb2846`](https://github.com/web3ui/web3uikit/commit/63feb28462475bf8c449a54428d32c16c3ea9e6d)]:
+    -   @web3uikit/styles@1.1.0
+
 ## 1.0.6
 
 ### Patch Changes

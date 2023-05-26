@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 1.1.1
+
+### Patch Changes
+
+-   [#1107](https://github.com/web3ui/web3uikit/pull/1107) [`d460edea0`](https://github.com/web3ui/web3uikit/commit/d460edea0fc32425f0b77660cdea18cf4c506488) Thanks [@dani69654](https://github.com/dani69654)! - add chest icon
+
 ## 1.0.5
 
 ### Patch Changes

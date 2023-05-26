@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 1.1.2
+
+### Patch Changes
+
+-   [#1109](https://github.com/web3ui/web3uikit/pull/1109) [`f0efff7b4`](https://github.com/web3ui/web3uikit/commit/f0efff7b4cc95136114c82069d9f17c46fcdf79a) Thanks [@dani69654](https://github.com/dani69654)! - fix broken chest svg
+
 ## 1.1.1
 
 ### Patch Changes

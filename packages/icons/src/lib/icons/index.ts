@@ -43,6 +43,7 @@ export { default as CheckCircle } from './CheckCircle';
 export { default as CheckSquare } from './CheckSquare';
 export { default as Check } from './Check';
 export { default as Checkmark } from './Checkmark';
+export { default as Chest } from './Chest';
 export { default as ChevronDown } from './ChevronDown';
 export { default as ChevronLeft2X } from './ChevronLeft2X';
 export { default as ChevronLeft } from './ChevronLeft';

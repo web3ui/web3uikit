@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 1.1.3
+
+### Patch Changes
+
+-   [#1111](https://github.com/web3ui/web3uikit/pull/1111) [`44e980985`](https://github.com/web3ui/web3uikit/commit/44e98098515eb94939a84a75cf0ddc9229b7689c) Thanks [@BillyG83](https://github.com/BillyG83)! - fix: illustraion plusechain svg clip-path
+
 ## 1.1.0
 
 ### Minor Changes

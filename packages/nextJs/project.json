@@ -1,14 +1,14 @@
 {
-    "root": "packages/web3api",
-    "sourceRoot": "packages/web3api/src",
+    "root": "packages/nextJs",
+    "sourceRoot": "packages/nextJs/src",
     "projectType": "library",
     "targets": {
         "version": {
             "executor": "@jscutlery/semver:version",
             "options": {
                 "postTargets": [
-                    "@web3uikit/web3api:publish",
-                    "@web3uikit/web3api:github"
+                    "@web3uikit/nextJs:publish",
+                    "@web3uikit/nextJs:github"
                 ]
             },
             "projects": "dependencies"

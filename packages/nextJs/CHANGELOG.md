@@ -1,4 +1,4 @@
-# @web3uikit/web3api
+# @web3uikit/nextJs
 
 ## 0.2.0
 

@@ -1,0 +1,9 @@
+.button {
+    background-color: pink;
+    padding: 10px 20px;
+    display: block;
+
+    &:hover {
+        background-color: blue;
+    }
+}

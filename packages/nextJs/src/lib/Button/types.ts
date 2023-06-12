@@ -5,6 +5,11 @@ export interface IButtonProps {
     children: JSX.Element[] | JSX.Element;
 
     /**
+     * content of the element
+     */
+    className?: string;
+
+    /**
      * set element to be noninteractive
      */
     disabled?: boolean;

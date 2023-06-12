@@ -1,0 +1,16 @@
+@use '../../../styles/modules/color' as color;
+
+.outline {
+    background-color: color.$color-white;
+    border-color: color.$color-primary60;
+    color: color.$color-primary30;
+    &:hover {
+        background-color: color.$color-primary70;
+    }
+    &:focus {
+        border-color: color.$color-primary30;
+    }
+    &:active {
+        background-color: color.$color-primary50;
+    }
+}

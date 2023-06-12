@@ -1,0 +1,67 @@
+@use '../../styles/modules/color' as color;
+@use '../../styles/modules/reset' as reset;
+@use '../../styles/modules/text' as text;
+
+.button {
+    @include reset.resetButtonCSS;
+    @include text.text;
+    align-items: center;
+    background-color: color.$color-default10;
+    color: color.$color-white;
+    background-origin: border-box;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+    overflow: hidden;
+    padding: 2px 4px;
+    position: relative;
+    text-align: center;
+    transition: all 0.2s ease;
+
+    &:hover {
+        background-color: lighten(color.$color-default10, 50);
+    }
+
+    &:focus {
+        border-color: color.$color-sky40;
+    }
+
+    &:disabled {
+        opacity: 50%;
+        pointer-events: none;
+    }
+
+    span {
+        align-items: center;
+        display: flex;
+        pointer-events: none;
+        z-index: 1;
+    }
+
+    svg {
+        pointer-events: none;
+        z-index: 1;
+    }
+}
+
+.buttonSmall {
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 0 16px;
+}
+
+.buttonRegular {
+    font-size: 14px;
+    padding: 4px 16px;
+}
+
+.buttonLarge {
+    padding: 8px 24px;
+}
+
+.buttonXL {
+    padding: 16px 24px;
+}

@@ -1,0 +1,17 @@
+{
+    "extends": "@web3uikit/config/tsconfig.ui.json",
+    "compilerOptions": {
+        "rootDir": "src",
+        "plugins": [{ "name": "typescript-plugin-css-modules" }],
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.scss",
+        "src/css-modules.d.ts"
+    ]
+}

@@ -1,0 +1,13 @@
+@use './color' as color;
+
+@mixin text {
+    -webkit-font-smoothing: antialiased;
+    color: color.$color-default30;
+    fill: color.$color-default30;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 24px;
+}

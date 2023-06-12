@@ -1,0 +1,11 @@
+@use '../../../styles/modules/color' as color;
+
+.primary {
+    background-color: color.$color-primary40;
+    &:hover {
+        background-color: color.$color-primary30;
+    }
+    &:focus {
+        border-color: color.$color-primary60;
+    }
+}

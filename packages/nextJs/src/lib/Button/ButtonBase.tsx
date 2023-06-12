@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { IButtonProps } from './types';
-import styles from './ButtonBase.module.scss';
+import styles from './styles.module.scss';
 
 const ButtonBase: FC<IButtonProps> = ({
     children,

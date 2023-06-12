@@ -192,28 +192,32 @@ importers:
 
   packages/nextJs:
     specifiers:
-      '@nrwl/nx': ^7.8.7
       '@types/node-sass': ^4.11.3
       '@vitejs/plugin-react': ^1.1.0
       '@vitejs/plugin-react-refresh': ^1.3.6
       '@web3uikit/config': '*'
+      css-loader: ^6.8.1
       eslint: ~8.12.0
       react: ^18.0.0
       react-dom: ^18.0.0
       sass: ^1.63.2
+      sass-loader: ^13.3.2
+      style-loader: ^3.3.3
       typescript-plugin-css-modules: ^5.0.1
       vite-plugin-css-modules: ^0.0.1
     dependencies:
       '@web3uikit/config': link:../config
     devDependencies:
-      '@nrwl/nx': 7.8.7
       '@types/node-sass': 4.11.3
       '@vitejs/plugin-react': 1.3.2
       '@vitejs/plugin-react-refresh': 1.3.6
+      css-loader: 6.8.1
       eslint: 8.12.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       sass: 1.63.2
+      sass-loader: 13.3.2_sass@1.63.2
+      style-loader: 3.3.3
       typescript-plugin-css-modules: 5.0.1
       vite-plugin-css-modules: 0.0.1
 
@@ -252,7 +256,7 @@ importers:
       '@walletconnect/web3-provider': 1.7.8
       '@web3auth/web3auth': 1.1.1
       '@web3uikit/config': link:../config
-      '@web3uikit/core': 1.1.3_biqbaboplfbrettd7655fr4n2y
+      '@web3uikit/core': link:../core
       '@web3uikit/icons': link:../icons
       '@web3uikit/styles': link:../styles
       moralis: 1.9.0
@@ -285,7 +289,7 @@ importers:
       wp5-cra-polyfill: github:oscario2/wp5-cra-polyfill#91431fa
     dependencies:
       '@web3uikit/config': link:../config
-      '@web3uikit/core': 1.1.3_biqbaboplfbrettd7655fr4n2y
+      '@web3uikit/core': link:../core
       '@web3uikit/icons': link:../icons
       '@web3uikit/styles': link:../styles
       '@web3uikit/web3': link:../web3
@@ -3037,7 +3041,7 @@ packages:
     resolution: {integrity: sha512-8KG5RD0GVP4ydEzRn/I4BNDuxDtqVbOdm8675T49OIG/NGhaK0pjPX7ZcDlvKYbA+ulvVK3ztfcF4uBdOxuJbQ==}
     dependencies:
       '@gar/promisify': 1.1.3
-      semver: 7.3.7
+      semver: 7.5.1
     dev: true
 
   /@npmcli/move-file/1.1.2:
@@ -3449,13 +3453,6 @@ packages:
       - typescript
       - utf-8-validate
     dev: false
-
-  /@nrwl/nx/7.8.7:
-    resolution: {integrity: sha512-a/pOozIT86IIWue6MSwN2EKO4grJ8My7QMl+g535/vrDg75riyBTkWF+nX6VM/JjGz40Y5nFZaX94924cZWt5g==}
-    deprecated: This package has been replaced by @nrwl/workspace. See https://github.com/nrwl/nx/blob/9.0.0/docs/angular/guides/nx7-to-nx8.md on how to upgrade.
-    peerDependencies:
-      jasmine-marbles: 0.4.0
-    dev: true
 
   /@nrwl/tao/14.1.5_typescript@4.7.4:
     resolution: {integrity: sha512-C30aBxnAJ/0r5uBl8hQKsfllGb+jtMl9sLKStHwP4WEpIO9A8NelL/bGXEKXUiTQ8zFOZmCeHMo0VPfb/xePEg==}
@@ -5361,7 +5358,7 @@ packages:
       fs-extra: 9.1.0
       global: 4.4.0
       isomorphic-unfetch: 3.1.0
-      nanoid: 3.3.4
+      nanoid: 3.3.6
       read-pkg-up: 7.0.1
       regenerator-runtime: 0.13.9
     transitivePeerDependencies:
@@ -6606,7 +6603,7 @@ packages:
       debug: 4.3.4
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.3.7
+      semver: 7.5.1
       tsutils: 3.21.0_typescript@4.7.4
       typescript: 4.7.4
     transitivePeerDependencies:
@@ -7070,46 +7067,6 @@ packages:
       - react-native-svg
       - supports-color
       - utf-8-validate
-    dev: false
-
-  /@web3uikit/config/0.1.2:
-    resolution: {integrity: sha512-fOY0jxen7nEfivZc7BKm63WRcNEncidFhk+dIVR/0bj4tt5Xl0xyomPgyQqe38d3/PJ3RvqVTdupWFbWNJULkA==}
-    dev: false
-
-  /@web3uikit/core/1.1.3_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-5vsBih94jJn9NSz0Ca7IfW7DWDax47Tow5MnbnV7Px4zIRevbXZxI7Wl2wUPpWpbiSmPyoG0+onKmRIYqlRYrQ==}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
-    dependencies:
-      '@web3uikit/config': 0.1.2
-      '@web3uikit/icons': 1.1.2_biqbaboplfbrettd7655fr4n2y
-      '@web3uikit/styles': 1.1.0_biqbaboplfbrettd7655fr4n2y
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-      react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
-    dev: false
-
-  /@web3uikit/icons/1.1.2_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-ewoHjawkrcWf2INUsOYS5Oa1f106dMyCoLj2mmjWaZYsds3ZkyfwNzq+hb5xavYL3DMIayVqzsUzBXjNAg8NuA==}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
-    dependencies:
-      '@web3uikit/config': 0.1.2
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
-
-  /@web3uikit/styles/1.1.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-a7SxX/kK81Q+htvFvyKNjc8RBFByLNNmFwqYn7kTipP+5BqhvNvPrSMyakA6cS7lxLNkKvRVe1XSMqXnx1RxNw==}
-    peerDependencies:
-      react: ^18.0.0
-      react-dom: ^18.0.0
-    dependencies:
-      '@web3uikit/config': 0.1.2
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@webassemblyjs/ast/1.11.1:
@@ -9729,17 +9686,33 @@ packages:
     peerDependencies:
       webpack: ^4.27.0 || ^5.0.0
     dependencies:
-      icss-utils: 5.1.0_postcss@8.4.14
+      icss-utils: 5.1.0_postcss@8.4.24
       loader-utils: 2.0.2
-      postcss: 8.4.14
-      postcss-modules-extract-imports: 3.0.0_postcss@8.4.14
-      postcss-modules-local-by-default: 4.0.0_postcss@8.4.14
-      postcss-modules-scope: 3.0.0_postcss@8.4.14
-      postcss-modules-values: 4.0.0_postcss@8.4.14
+      postcss: 8.4.24
+      postcss-modules-extract-imports: 3.0.0_postcss@8.4.24
+      postcss-modules-local-by-default: 4.0.3_postcss@8.4.24
+      postcss-modules-scope: 3.0.0_postcss@8.4.24
+      postcss-modules-values: 4.0.0_postcss@8.4.24
       postcss-value-parser: 4.2.0
       schema-utils: 3.1.1
-      semver: 7.3.7
+      semver: 7.5.1
       webpack: 5.73.0
+    dev: true
+
+  /css-loader/6.8.1:
+    resolution: {integrity: sha512-xDAXtEVGlD0gJ07iclwWVkLoZOpEvAWaSyf6W18S2pOC//K8+qUDIx8IIT3D+HjnmkJPQeesOPv5aiUaJsCM2g==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      icss-utils: 5.1.0_postcss@8.4.24
+      postcss: 8.4.24
+      postcss-modules-extract-imports: 3.0.0_postcss@8.4.24
+      postcss-modules-local-by-default: 4.0.3_postcss@8.4.24
+      postcss-modules-scope: 3.0.0_postcss@8.4.24
+      postcss-modules-values: 4.0.0_postcss@8.4.24
+      postcss-value-parser: 4.2.0
+      semver: 7.5.1
     dev: true
 
   /css-select/4.3.0:
@@ -11105,7 +11078,7 @@ packages:
       optionator: 0.9.1
       progress: 2.0.3
       regexpp: 3.2.0
-      semver: 7.3.7
+      semver: 7.5.1
       strip-ansi: 6.0.1
       strip-json-comments: 3.1.1
       text-table: 0.2.0
@@ -12035,7 +12008,7 @@ packages:
       memfs: 3.4.6
       minimatch: 3.1.2
       schema-utils: 2.7.0
-      semver: 7.3.7
+      semver: 7.5.1
       tapable: 1.1.3
       typescript: 4.7.4
       webpack: 5.73.0
@@ -12067,7 +12040,7 @@ packages:
       memfs: 3.4.6
       minimatch: 3.1.2
       schema-utils: 2.7.0
-      semver: 7.3.7
+      semver: 7.5.1
       tapable: 1.1.3
       typescript: 4.7.4
       webpack: 4.46.0
@@ -13019,15 +12992,6 @@ packages:
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
-    dev: true
-
-  /icss-utils/5.1.0_postcss@8.4.14:
-    resolution: {integrity: sha512-soFhflCVWLfRNOPU3iv5Z9VUdT44xFRbzjLsEzSr5AQmgqPMTHdU3PMT1Cf1ssx8fLNJDA1juftYl+PUcv3MqA==}
-    engines: {node: ^10 || ^12 || >= 14}
-    peerDependencies:
-      postcss: ^8.1.0
-    dependencies:
-      postcss: 8.4.14
     dev: true
 
   /icss-utils/5.1.0_postcss@8.4.24:
@@ -14206,7 +14170,7 @@ packages:
       jest-util: 27.5.1
       natural-compare: 1.4.0
       pretty-format: 27.5.1
-      semver: 7.3.7
+      semver: 7.5.1
     transitivePeerDependencies:
       - supports-color
 
@@ -15732,7 +15696,7 @@ packages:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.9.0
-      semver: 7.3.7
+      semver: 7.5.1
       validate-npm-package-license: 3.0.4
     dev: false
 
@@ -16671,7 +16635,7 @@ packages:
       loader-utils: 2.0.2
       postcss: 7.0.39
       schema-utils: 3.1.1
-      semver: 7.3.7
+      semver: 7.5.1
       webpack: 4.46.0
     dev: true
 
@@ -16687,15 +16651,6 @@ packages:
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
-    dev: true
-
-  /postcss-modules-extract-imports/3.0.0_postcss@8.4.14:
-    resolution: {integrity: sha512-bdHleFnP3kZ4NYDhuGlVK+CMrQ/pqUm8bx/oGL93K6gVwiclvX5x0n76fYMKuIGKzlABOy13zsvqjb0f92TEXw==}
-    engines: {node: ^10 || ^12 || >= 14}
-    peerDependencies:
-      postcss: ^8.1.0
-    dependencies:
-      postcss: 8.4.14
     dev: true
 
   /postcss-modules-extract-imports/3.0.0_postcss@8.4.24:
@@ -16717,8 +16672,20 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-modules-local-by-default/4.0.0:
+  /postcss-modules-local-by-default/4.0.0_postcss@8.4.24:
     resolution: {integrity: sha512-sT7ihtmGSF9yhm6ggikHdV0hlziDTX7oFoXtuVWeDd3hHObNkcHRo9V3yg7vCAY7cONyxJC/XXCmmiHHcvX7bQ==}
+    engines: {node: ^10 || ^12 || >= 14}
+    peerDependencies:
+      postcss: ^8.1.0
+    dependencies:
+      icss-utils: 5.1.0_postcss@8.4.24
+      postcss: 8.4.24
+      postcss-selector-parser: 6.0.10
+      postcss-value-parser: 4.2.0
+    dev: true
+
+  /postcss-modules-local-by-default/4.0.3:
+    resolution: {integrity: sha512-2/u2zraspoACtrbFRnTijMiQtb4GW4BvatjaG/bCjYQo8kLTdevCUlwuBHx2sCnSyrI3x3qj4ZK1j5LQBgzmwA==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
@@ -16728,20 +16695,8 @@ packages:
       postcss-value-parser: 4.2.0
     dev: true
 
-  /postcss-modules-local-by-default/4.0.0_postcss@8.4.14:
-    resolution: {integrity: sha512-sT7ihtmGSF9yhm6ggikHdV0hlziDTX7oFoXtuVWeDd3hHObNkcHRo9V3yg7vCAY7cONyxJC/XXCmmiHHcvX7bQ==}
-    engines: {node: ^10 || ^12 || >= 14}
-    peerDependencies:
-      postcss: ^8.1.0
-    dependencies:
-      icss-utils: 5.1.0_postcss@8.4.14
-      postcss: 8.4.14
-      postcss-selector-parser: 6.0.10
-      postcss-value-parser: 4.2.0
-    dev: true
-
-  /postcss-modules-local-by-default/4.0.0_postcss@8.4.24:
-    resolution: {integrity: sha512-sT7ihtmGSF9yhm6ggikHdV0hlziDTX7oFoXtuVWeDd3hHObNkcHRo9V3yg7vCAY7cONyxJC/XXCmmiHHcvX7bQ==}
+  /postcss-modules-local-by-default/4.0.3_postcss@8.4.24:
+    resolution: {integrity: sha512-2/u2zraspoACtrbFRnTijMiQtb4GW4BvatjaG/bCjYQo8kLTdevCUlwuBHx2sCnSyrI3x3qj4ZK1j5LQBgzmwA==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
@@ -16766,16 +16721,6 @@ packages:
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      postcss-selector-parser: 6.0.10
-    dev: true
-
-  /postcss-modules-scope/3.0.0_postcss@8.4.14:
-    resolution: {integrity: sha512-hncihwFA2yPath8oZ15PZqvWGkWf+XUfQgUGamS4LqoP1anQLOsOJw0vr7J7IwLpoY9fatA2qiGUGmuZL0Iqlg==}
-    engines: {node: ^10 || ^12 || >= 14}
-    peerDependencies:
-      postcss: ^8.1.0
-    dependencies:
-      postcss: 8.4.14
       postcss-selector-parser: 6.0.10
     dev: true
 
@@ -16805,14 +16750,14 @@ packages:
       icss-utils: 5.1.0
     dev: true
 
-  /postcss-modules-values/4.0.0_postcss@8.4.14:
+  /postcss-modules-values/4.0.0_postcss@8.4.24:
     resolution: {integrity: sha512-RDxHkAiEGI78gS2ofyvCsu7iycRv7oqw5xMWn9iMoR0N/7mf9D50ecQqUo5BZ9Zh2vH4bCUR/ktCqbB9m8vJjQ==}
     engines: {node: ^10 || ^12 || >= 14}
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
-      icss-utils: 5.1.0_postcss@8.4.14
-      postcss: 8.4.14
+      icss-utils: 5.1.0_postcss@8.4.24
+      postcss: 8.4.24
     dev: true
 
   /postcss-modules/4.3.1:
@@ -16824,7 +16769,7 @@ packages:
       icss-replace-symbols: 1.1.0
       lodash.camelcase: 4.3.0
       postcss-modules-extract-imports: 3.0.0
-      postcss-modules-local-by-default: 4.0.0
+      postcss-modules-local-by-default: 4.0.3
       postcss-modules-scope: 3.0.0
       postcss-modules-values: 4.0.0
       string-hash: 1.1.3
@@ -18166,6 +18111,29 @@ packages:
       - supports-color
     dev: true
 
+  /sass-loader/13.3.2_sass@1.63.2:
+    resolution: {integrity: sha512-CQbKl57kdEv+KDLquhC+gE3pXt74LEAzm+tzywcA0/aHZuub8wTErbjAoNI57rPUWRYRNC5WUnNl8eGJNbDdwg==}
+    engines: {node: '>= 14.15.0'}
+    peerDependencies:
+      fibers: '>= 3.1.0'
+      node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
+      sass: ^1.3.0
+      sass-embedded: '*'
+      webpack: ^5.0.0
+    peerDependenciesMeta:
+      fibers:
+        optional: true
+      node-sass:
+        optional: true
+      sass:
+        optional: true
+      sass-embedded:
+        optional: true
+    dependencies:
+      neo-async: 2.6.2
+      sass: 1.63.2
+    dev: true
+
   /sass/1.63.2:
     resolution: {integrity: sha512-u56TU0AIFqMtauKl/OJ1AeFsXqRHkgO7nCWmHaDwfxDo9GUMSqBA4NEh6GMuh1CYVM7zuROYtZrHzPc2ixK+ww==}
     engines: {node: '>=14.0.0'}
@@ -18315,6 +18283,14 @@ packages:
 
   /semver/7.3.7:
     resolution: {integrity: sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
+  /semver/7.5.1:
+    resolution: {integrity: sha512-Wvss5ivl8TMRZXXESstBA4uR5iXgEN/VC5/sOcuXdVLzcdkz4HWetIoRfG5gb5X+ij/G9rw9YoGn3QoQ8OCSpw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -18795,7 +18771,7 @@ packages:
       figures: 3.2.0
       find-up: 5.0.0
       git-semver-tags: 4.1.1
-      semver: 7.3.7
+      semver: 7.5.1
       stringify-package: 1.0.1
       yargs: 16.2.0
     dev: false
@@ -19102,6 +19078,13 @@ packages:
       loader-utils: 2.0.2
       schema-utils: 3.1.1
       webpack: 5.73.0
+    dev: true
+
+  /style-loader/3.3.3:
+    resolution: {integrity: sha512-53BiGLXAcll9maCYtZi2RCQZKa8NQQai5C4horqKyRmHj9H7QmcUyucrH+4KW/gBQbXM2AsB0axoEcFZPlfPcw==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
     dev: true
 
   /style-to-object/0.3.0:
@@ -20047,7 +20030,7 @@ packages:
       is-yarn-global: 0.3.0
       latest-version: 5.1.0
       pupa: 2.1.1
-      semver: 7.3.7
+      semver: 7.5.1
       semver-diff: 3.1.1
       xdg-basedir: 4.0.0
     dev: true

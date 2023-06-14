@@ -1,5 +1,11 @@
 # @web3uikit/core
 
+## 1.1.5
+
+### Patch Changes
+
+-   [#1114](https://github.com/web3ui/web3uikit/pull/1114) [`b3cea3def`](https://github.com/web3ui/web3uikit/commit/b3cea3def32151b6983902ca65125eaa9fa9ac34) Thanks [@johanMoralis](https://github.com/johanMoralis)! - fix(input,select): added name to element
+
 ## 1.1.3
 
 ### Patch Changes

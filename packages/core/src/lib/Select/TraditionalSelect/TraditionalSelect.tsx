@@ -12,6 +12,7 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
     errorMessage = '',
     id = 'web3uikit-select',
     label,
+    name,
     onBlurTraditional,
     onChange,
     onChangeTraditional,
@@ -55,6 +56,7 @@ const TraditionalSelect: React.FC<ISelectProps> = ({
                 }
                 required={validation?.required}
                 value={value}
+                name={name}
             >
                 <option disabled>{placeholder || 'Please choose'}</option>
 

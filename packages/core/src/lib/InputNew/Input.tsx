@@ -23,6 +23,7 @@ const Input: React.FC<IInputProps> = ({
     errorMessage = 'Sorry this is not valid',
     id,
     label,
+    name,
     onBlur,
     onChange,
     onFocus,
@@ -145,6 +146,7 @@ const Input: React.FC<IInputProps> = ({
                         maxLength={validation?.maxLength || props.maxLength}
                         min={validation?.min || props.min}
                         minLength={validation?.minLength || props.minLength}
+                        name={name}
                         onBlur={(e) => onBlurEvent(e)}
                         onChange={(e) => onChangeEvent(e)}
                         onFocus={(e) => onFocusEvent(e)}

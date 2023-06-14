@@ -1,5 +1,11 @@
 # @web3uikit/styles
 
+## 1.1.4
+
+### Patch Changes
+
+-   [#1113](https://github.com/web3ui/web3uikit/pull/1113) [`44d67b584`](https://github.com/web3ui/web3uikit/commit/44d67b5840f5388fb1081c5df72527b439ec81ee) Thanks [@BillyG83](https://github.com/BillyG83)! - feat(NextJs): added new slice for testing with Money repo
+
 ## 1.1.0
 
 ### Patch Changes

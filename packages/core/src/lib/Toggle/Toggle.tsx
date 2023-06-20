@@ -4,6 +4,7 @@ import ToggleStyles from './Toggle.styles';
 const { LabelStyled } = ToggleStyles;
 
 const Toggle: React.FC<IToggleProps> = ({
+    isChecked,
     customize,
     disabled = false,
     id = 'web3uiKit-toggle',
@@ -39,6 +40,7 @@ const Toggle: React.FC<IToggleProps> = ({
                 {labelOff}
             </span>
             <input
+                checked={isChecked}
                 data-testid="test-toggle-input"
                 disabled={disabled}
                 id={id}

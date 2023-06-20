@@ -6,6 +6,11 @@ export type ValidateCheckbox = {
 
 export interface IToggleProps {
     /**
+     * Whether the toggle is checked or not
+     */
+    isChecked?: boolean;
+
+    /**
      * Customize the element
      */
     customize?: TCustomize;

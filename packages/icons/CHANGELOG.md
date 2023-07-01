@@ -1,5 +1,11 @@
 # @web3uikit/icons
 
+## 1.1.6
+
+### Patch Changes
+
+-   [#1118](https://github.com/web3ui/web3uikit/pull/1118) [`644c84600`](https://github.com/web3ui/web3uikit/commit/644c84600d87a8a3249901d352b8eb793da2f51d) Thanks [@dani69654](https://github.com/dani69654)! - gas icon
+
 ## 1.1.2
 
 ### Patch Changes

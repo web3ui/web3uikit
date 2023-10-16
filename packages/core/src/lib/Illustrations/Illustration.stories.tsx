@@ -76,6 +76,14 @@ Optimism.args = {
 };
 
 /* PLOP_INJECT_CHAIN */
+export const Base = BackgroundColoredTemplate.bind({});
+Base.args = {
+    logo: 'base',
+};
+export const Gnosis = BackgroundColoredTemplate.bind({});
+Gnosis.args = {
+    logo: 'gnosis',
+};
 export const Harmony = BackgroundColoredTemplate.bind({});
 Harmony.args = {
     logo: 'harmony',

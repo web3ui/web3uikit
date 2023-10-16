@@ -91,6 +91,20 @@ Optimism.args = {
 };
 
 /* PLOP_INJECT_CHAIN */
+export const Base = Template.bind({});
+Base.args = {
+    chain: 'base',
+    chainType: 'Network',
+    bgColor: chainLogoData['base'].color,
+    btnText: 'View Endpoints',
+};
+export const Gnosis = Template.bind({});
+Gnosis.args = {
+    chain: 'gnosis',
+    chainType: 'Network',
+    bgColor: chainLogoData['gnosis'].color,
+    btnText: 'View Endpoints',
+};
 export const Harmony = Template.bind({});
 Harmony.args = {
     chain: 'harmony',

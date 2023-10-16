@@ -42,6 +42,16 @@ const optimismLogo: ILogoImport = {
     component: lazy(() => import('./optimism')),
 };
 /* PLOP_INJECT_CHAIN_1 */
+const baseLogo: ILogoImport = {
+    name: 'base',
+    component: lazy(() => import('./base')),
+};
+
+const gnosisLogo: ILogoImport = {
+    name: 'gnosis',
+    component: lazy(() => import('./gnosis')),
+};
+
 const harmonyLogo: ILogoImport = {
     name: 'harmony',
     component: lazy(() => import('./harmony')),
@@ -75,6 +85,8 @@ export default {
     roninLogo,
     optimismLogo,
     /* PLOP_INJECT_CHAIN_2 */
+    baseLogo,
+    gnosisLogo,
     harmonyLogo,
     pulsechainLogo,
     aptosLogo,

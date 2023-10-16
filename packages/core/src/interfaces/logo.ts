@@ -40,6 +40,18 @@ export const chainLogoData = {
         color: '#E95557',
     },
     /* PLOP_INJECT_CHAIN */
+    
+    base : {
+        name:'base',
+        color:'#ffffff',
+    },
+
+    
+    gnosis : {
+        name:'gnosis',
+        color:'#ffffff',
+    },
+
 
     harmony: {
         name: 'harmony',

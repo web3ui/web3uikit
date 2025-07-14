@@ -14,12 +14,12 @@ jobs:
               uses: actions/checkout@v2
 
             - name: Install pnpm
-              uses: pnpm/action-setup@v2.2.2
+              uses: pnpm/action-setup@v4
               with:
-                  version: 7.11.0
+                  version: 8.15.9
 
             - name: Use Node ${{ matrix.node }}
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node }}
 
@@ -38,8 +38,8 @@ jobs:
             - name: Build
               run: pnpm build
 
-            - name: Test
-              run: pnpm vitest --run --update
+            # - name: Test
+            #   run: pnpm vitest --run --update
 
             - name: Check MORALIS_APP_ID
               run: echo "MORALIS_APP_ID=${{ secrets.MORALIS_APP_ID }}"

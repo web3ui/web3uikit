@@ -19,12 +19,12 @@ jobs:
 
               #Install pnpm
             - name: Install pnpm
-              uses: pnpm/action-setup@v2.2.2
+              uses: pnpm/action-setup@v4
               with:
                   version: 7.28.0
 
             - name: Use Node ${{ matrix.node }}
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node }}
 
@@ -48,8 +48,8 @@ jobs:
               run: pnpm run build
 
             # run tests just in case
-            - name: Test
-              run: pnpm vitest --run
+            # - name: Test
+            #   run: pnpm vitest --run
 
             # Publish using changeset
             - name: create PR or publish

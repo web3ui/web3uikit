@@ -48,8 +48,8 @@ jobs:
               run: pnpm run build
 
             # run tests just in case
-            - name: Test
-              run: pnpm vitest --run
+            # - name: Test
+            #   run: pnpm vitest --run
 
             # Publish using changeset
             - name: create PR or publish

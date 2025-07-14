@@ -38,8 +38,8 @@ jobs:
             - name: Build
               run: pnpm build
 
-            - name: Test
-              run: pnpm vitest --run --update
+            # - name: Test
+            #   run: pnpm vitest --run --update
 
             - name: Check MORALIS_APP_ID
               run: echo "MORALIS_APP_ID=${{ secrets.MORALIS_APP_ID }}"

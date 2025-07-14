@@ -24,7 +24,7 @@ jobs:
                   version: 7.28.0
 
             - name: Use Node ${{ matrix.node }}
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node }}
 

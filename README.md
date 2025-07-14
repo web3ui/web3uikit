@@ -89,7 +89,7 @@ Remember to follow steps from [CONTRIBUTE.md](https://github.com/web3ui/web3uiki
 
 -   Add the svg file(s) to `web3uikit/packages/icons/src/lib/svgs/` (remember to give meaningful filename, as filename gets converted to icon name)
 -   run `pnpm run icons:create` in terminal and your icon is created. 🔥
--   To verify your newly added icon run `pnpm storybook-build`. Once storybook is open, navigate to `8.ICONS/Gallery` and search for your icon.
+-   To verify your newly added icon run `pnpm storybook-build`. Once storybook is open, navigate to `8.ICONS/Gallery` and search for your icon
 
 ## Want to add a new Chain Logo ?
 

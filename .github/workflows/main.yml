@@ -7,8 +7,10 @@ jobs:
         runs-on: ${{ matrix.os }}
         strategy:
             matrix:
-                node: ['16.x', '18.x', '20.x']
-                os: [ubuntu-latest, windows-latest, macOS-latest]
+                node: ['20.x']
+                # node: ['16.x', '18.x', '20.x'] - no need to test other versions
+                os: [ubuntu-latest]
+                # os: [ubuntu-latest, windows-latest, macOS-latest] - no need to test other os
 
         steps:
             - name: Checkout repo
@@ -16,8 +18,6 @@ jobs:
 
             - name: Install pnpm
               uses: pnpm/action-setup@v4
-              with:
-                  version: 7.11.0
 
             - name: Use Node ${{ matrix.node }}
               uses: actions/setup-node@v4

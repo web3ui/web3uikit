@@ -10,7 +10,7 @@ Thank you for taking an interest in contributing to what we aim to be the indust
 -   a fast and reliable kit that is easy to use for devs (**top DX**)
 -   a friendly user experience that has great accessibility (**topUX**)
 -   strict typed components to kill those bugs before they happen
--   building a community of front end mages who are passion about web3
+-   building a community of front end mages who are passionate about web3
 -   finding our next FrontEnd master to join our expanding international team (that could be you)
 
 &nbsp;
@@ -45,7 +45,7 @@ You want to get started? Follow these 3 simple steps
 
 &nbsp;
 
-# Getting error while doing above project setup 
+# Getting error while doing above project setup
 
 -   You can download nvm to switch between the node versions. Try to be at node version 16. [`nvm install 16` then `nvm use 16` check
     it using `node -v`, make sure it is node version 16].

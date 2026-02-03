@@ -14,7 +14,7 @@ about: A new pull request
 -->
 
 - [ ] I am not disclosing a [vulnerability](https://github.com/MoralisWeb3/Moralis-JS-SDK/blob/main/SECURITY.md).
-- [ ] My code is conform the [code style](https://github.com/web3ui/web3uikit/blob/master/CONTRIBUTE.md)
+- [ ] My code conforms to the [code style](https://github.com/web3ui/web3uikit/blob/master/CONTRIBUTE.md)
 - [ ] I have made corresponding changes to the documentation
 - [ ] I have updated Typescript definitions when needed
 

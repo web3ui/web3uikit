@@ -48,7 +48,7 @@ export const SendTransaction: React.FC<ISendTransactionProps> = ({
                         message: res?.hash,
                         title:
                             notificationConfig.success?.title ||
-                            'Transaction Successfull',
+                            'Transaction Successful',
                         type: 'success',
                         position:
                             notificationConfig.success?.position || 'topR',

@@ -36,7 +36,7 @@ yarn add  @web3uikit/core
 ### 🧰 Usage
 
 ```jsx
-import { CryptoCards, Button } from 'web3uikit';
+import { CryptoCards, Button } from '@web3uikit/core';
 
 const App = () => (
     <>
@@ -160,7 +160,7 @@ Try the `<Icon />` component in the [interactive documentation](https://web3ui.g
 
 ![Illustration2](https://user-images.githubusercontent.com/78314301/149967441-215e79db-54d7-4eec-856a-0335778a07a5.jpg)
 
-Try the <Illustration />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/6-graphic-illustration)
+Try the `<Illustration />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/6-graphic-illustration)
 
 ### `<Information />`
 
@@ -225,7 +225,7 @@ Example:
 ```jsx
 <NotificationProvider>
     <App />
-<NotificationProvider>
+</NotificationProvider>
 ```
 
 Try the `<Notification />` component in the [interactive documentation](https://web3ui.github.io/web3uikit/?path=/docs/5-popup-notification)
@@ -314,7 +314,7 @@ Try the `<TextArea />` component in the [interactive documentation](https://web3
 
 ### `<Modal />`
 
-Modal is a popup that can have arbitary elements and can be closed by clicking on the close or cancel buttons.
+Modal is a popup that can have arbitrary elements and can be closed by clicking on the close or cancel buttons.
 
 ![Modal2](https://user-images.githubusercontent.com/78314301/149968047-5844ac05-5ea0-484c-b1fd-137641824de0.gif)
 

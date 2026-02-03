@@ -35,7 +35,7 @@ yarn add @web3uikit/web3
 
 ### 🧰 Usage
 
-Follow [moralis docs](https://docs.moralis.io/moralis-dapp/connect-the-sdk/connect-with-react) to start your server and connect to SDK. This required to use components in this package.
+Follow [moralis docs](https://docs.moralis.io/moralis-dapp/connect-the-sdk/connect-with-react) to start your server and connect to SDK. This is required to use components in this package.
 
 ```jsx
 import { NFT } from '@web3uikit/web3';
@@ -87,7 +87,7 @@ Try the `<ConnectButton />` component in the [interactive documentation](https:/
 
 ![NFT](https://user-images.githubusercontent.com/35369843/163435770-2d639007-714c-4f83-99f9-39d7a9814138.gif)
 
-The `<NFT />` component allows you to display a single NFT as Card. By clicking on the card you can also view all the traits of the NFT.It uses hooks from [react-moralis](https://docs.moralis.io/moralis-dapp/web3-sdk/account) to fetch the NFT.
+The `<NFT />` component allows you to display a single NFT as Card. By clicking on the card you can also view all the traits of the NFT. It uses hooks from [react-moralis](https://docs.moralis.io/moralis-dapp/web3-sdk/account) to fetch the NFT.
 
 If you want to use this component wrap your app with `<MoralisProvider appId={MORALIS_APP_ID} serverUrl={MORALIS_SERVER_URL} ></MoralisProvider >`. Read more about moralis [here](https://docs.moralis.io/introduction/readme)
 

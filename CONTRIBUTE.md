@@ -8,7 +8,7 @@ Thank you for taking an interest in contributing to what we aim to be the indust
 # Our core goals for this kit 📈
 
 -   a fast and reliable kit that is easy to use for devs (**top DX**)
--   a friendly user experience that has great accessibility (**topUX**)
+-   a friendly user experience that has great accessibility (**top UX**)
 -   strict typed components to kill those bugs before they happen
 -   building a community of front end mages who are passion about web3
 -   finding our next FrontEnd master to join our expanding international team (that could be you)
@@ -25,7 +25,7 @@ We have made a battle tested front end web3 stack for the roaring 20s
 -   Storybook: lets us build quickly in isolation and test props on the fly
 -   RTL: React Test Library makes testing easy
 -   Prettier makes our code look nice and helps with Pull Requests
--   pnpm is used to get reliable monorepo package management on Mac, PC & Lynx
+-   pnpm is used to get reliable monorepo package management on Mac, PC & Linux
 
 &nbsp;
 
@@ -261,7 +261,7 @@ So if i fix the validation to the `<Form />` my branch is `fix-form-validation`.
 
 ## Conventional Commits
 
-We follow a strict convectional commits pattern, and please if you change more than one component, then have 1 commit per components. No monster PRs please, its hard to review them if you change 500 files in one go, lol
+We follow a strict conventional commits pattern, and please if you change more than one component, then have 1 commit per components. No monster PRs please, its hard to review them if you change 500 files in one go, lol
 https://www.conventionalcommits.org/en/v1.0.0/
 
 ## PR Feedback
